@@ -1,0 +1,49 @@
+{
+  "operation": "read-only readiness and project-file preparation only",
+  "system_changes": false,
+  "installations": false,
+  "restarts": false,
+  "sandbox_or_original_game_launched": false,
+  "current_user_decision": "overall plan accepted; feature enable/install/restart deferred while other tasks run",
+  "restart_metadata": {
+    "sandbox": "Possible, not a currently-pending reboot proof",
+    "CBS_RebootPending": false,
+    "WindowsUpdate_RebootRequired": false
+  },
+  "config_xml_valid": true,
+  "config_has_no_autorun": true,
+  "config_maps": [
+    {
+      "HostFolder": "D:\\Steam\\steamapps\\common\\Grim Dawn",
+      "SandboxFolder": "C:\\GDReadOnly",
+      "ReadOnly": "true"
+    },
+    {
+      "HostFolder": "D:\\MyGitRepo\\Grim-Dynasty\\.tooling\\isolated-stage\\in",
+      "SandboxFolder": "C:\\GDProbeInput",
+      "ReadOnly": "true"
+    },
+    {
+      "HostFolder": "D:\\MyGitRepo\\Grim-Dynasty\\.tooling\\isolated-stage\\out",
+      "SandboxFolder": "C:\\GDResults",
+      "ReadOnly": "false"
+    }
+  ],
+  "config_sha256": "ed77b1350b502cd64d44f92ba98ff15b9a22bc7bf7b8e8f98646bf299d454c24",
+  "local_sandbox_component_package": {
+    "path": "C:\\Windows\\servicing\\Packages\\Containers-DisposableClientVM-Package~31bf3856ad364e35~amd64~~10.0.19041.6466.mum",
+    "sha256": "4344af15d13a43b29669d1898fa9f6d3b1135c843c50fa23f64036b6544294ac",
+    "contained_component_packages": [
+      "Containers-DisposableClientVM-merged-Package",
+      "Containers-Client-Manager-Package",
+      "HyperV-Feature-ApplicationGuard-Package",
+      "HyperV-Guest-KernelInt-Package",
+      "HyperV-KernelInt-VirtualDevice-Package",
+      "Microsoft-Hyper-V-Hypervisor-Package",
+      "Microsoft-Onecore-SPP-VirtualDevice-Package",
+      "Microsoft-OneCore-UtilityVm-SetupAgent-Package"
+    ]
+  },
+  "reboot_consolidation": "possible only if servicing accepts prestaging before BIOS; untested and not guaranteed; no feature command executed",
+  "steam": "static Engine import dependency plus Valve initialization requirements; actual sandbox launch/auth behavior unverified"
+}

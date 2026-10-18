@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.Rewards;
+using GrimDynasty.TaskLogic;
+using GrimDynasty.TaskAuto;
+class AcceptTests {
+ static int n;static void Need(bool b,string s){n++;if(!b)throw new Exception(s);}
+ static void Main(){
+  var x=ExampleAcceptQuest.Create();var a=x.Reward.Quest.Auto;x.Reward.Record.RewardTaskUidsAt50.Add(1);
+  Need(AutomaticTasks.Start(a).Status=="Known"&&x.Accept.Wallet.Money16C4==75&&x.Tutorials.UnlockOrder36CA0[0]==55&&x.Tutorials.UnlockOrder36CA0[1]==7,"decoded actions execute after first tutorial");
+  Need(x.Reward.Record.RewardTaskUidsAt50.Count==2&&x.Reward.Record.RewardTaskUidsAt50[0]==1&&x.Reward.Record.RewardTaskUidsAt50[1]==1,"native history append retains existing duplicate");
+  AutomaticTasks.Start(a);Need(x.Accept.Wallet.Money16C4==75&&x.Reward.Record.RewardTaskUidsAt50.Count==2,"active task does not replay accept rewards");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;x.Accept.Events[1].Actions.Add(new AcceptAction{TypeId=4,Money=new MoneyAction{Amount=-5}});Need(AutomaticTasks.Start(a).Status=="Known"&&x.Accept.Wallet.Money16C4==70&&x.Reward.Record.RewardTaskUidsAt50.Count==1,"ordered actions and one history append per start");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;x.Accept.Events[1].Actions[0].Money.Amount=0;Need(AutomaticTasks.Start(a).Status=="Known"&&x.Accept.Wallet.Money16C4==0&&x.Reward.Record.RewardTaskUidsAt50.Count==1,"zero money still classified as reward");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;x.Accept.Events[1].Actions.Add(new AcceptAction{TypeId=99});Need(AutomaticTasks.Start(a).Status=="Unsupported"&&x.Accept.Wallet.Money16C4==50&&a.Runtime.State.Task.State==1&&x.Tutorials.Produced.Count==0&&!x.Reward.Quest.Counter.CallbackOwnerAttached,"later unknown action prevents all acceptance writes");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;x.Accept.Wallet.StaticMoneyNameReady=false;x.Accept.Wallet.MoneyNameCache=new NameCacheSnapshot();x.Accept.QuestUidIndexComplete=false;x.Accept.QuestsByUid.Clear();Need(AutomaticTasks.Start(a).Status=="Unsupported"&&x.Accept.Wallet.Money16C4==50&&!x.Accept.Wallet.MoneyNameCache.Initialized&&x.Tutorials.UnlockOrder36CA0.Count==0,"late unknown parent lookup preserves cold cache and tutorial");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;x.Reward.Quest.Goal.ConditionsKnown=false;Need(AutomaticTasks.Start(a).Status=="Unsupported"&&x.Accept.Wallet.Money16C4==50&&x.Reward.Record.RewardTaskUidsAt50.Count==0&&x.Tutorials.Produced.Count==0,"objective validation failure preserves accepted actions");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;var g=new Group{Operation=0};g.Conditions.Add(new Predicate{TypeId=4,Version=0,ComparisonId=2,Value=2});x.Accept.Events[1].Conditions=g;x.Accept.Events[1].Actions[0]=new AcceptAction{TypeId=99};Need(AutomaticTasks.Start(a).Status=="Known"&&x.Accept.Wallet.Money16C4==50&&x.Reward.Record.RewardTaskUidsAt50.Count==0,"false condition skips unknown action and reward classification");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;a.Runtime.State.Difficulty=2;a.Runtime.World.Core.Difficulty=2;a.Runtime.State.Task.Objectives.Add(2,a.Runtime.State.Task.Objectives[0]);Need(AutomaticTasks.Start(a).Status=="Known"&&x.Accept.Wallet.Money16C4==75,"accept amount not completion difficulty-adjusted");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;x.Accept.Events[0].Actions[0].TutorialPage=uint.MaxValue;Need(AutomaticTasks.Start(a).Status=="Known"&&x.Tutorials.UnlockOrder36CA0.Count==1,"negative wire page retains unsigned bits and no-ops out of range");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;a.AcceptRuntime=null;Need(AutomaticTasks.Start(a).Status=="Unsupported"&&x.Tutorials.Produced.Count==0,"nonempty events need explicit adapter");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;a.Runtime.State.Task.RuntimeBlocked=1;a.AcceptRuntime=null;Need(AutomaticTasks.Start(a).Status=="Known"&&x.Accept.Wallet.Money16C4==50&&!x.Reward.Quest.Counter.CallbackOwnerAttached,"blocked branch bypasses accept actions and hooks");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;a.Runtime.State.OnAcceptEventCount=null;Need(AutomaticTasks.Start(a).Status=="Unsupported"&&x.Accept.Wallet.Money16C4==50,"unknown vector count stays unsupported");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;x.Accept.Events[1].Actions[0].Version=1;Need(AutomaticTasks.Start(a).Status=="Unsupported"&&x.Tutorials.Produced.Count==0,"unproved action version rejected before tutorial");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;x.Accept.Events[1].ConditionsKnown=false;Need(AutomaticTasks.Start(a).Status=="Unsupported"&&x.Accept.Wallet.Money16C4==50,"unknown condition pointer rejected");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;x.Accept.Events[1].Actions=null;Need(AutomaticTasks.Start(a).Status=="Known"&&x.Accept.Wallet.Money16C4==50&&x.Reward.Record.RewardTaskUidsAt50.Count==0,"null action pointer executes and classifies no reward");
+  x=ExampleAcceptQuest.Create();a=x.Reward.Quest.Auto;x.Accept.QuestsByUid.Clear();Need(AutomaticTasks.Start(a).Status=="Known"&&x.Accept.Wallet.Money16C4==75&&x.Reward.Record.RewardTaskUidsAt50.Count==0,"complete missing parent lookup skips history append");
+  Console.WriteLine("Accept action assertions passed: "+n);
+ }
+}

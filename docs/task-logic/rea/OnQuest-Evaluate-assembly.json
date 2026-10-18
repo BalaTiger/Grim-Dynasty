@@ -1,0 +1,109 @@
+{
+  "result": {
+    "_meta": {
+      "provenance": {
+        "untrusted_content": true,
+        "source": "analysis_target"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"evidence_id\":\"ev_8219633dcc3e69f917a6ea8539d4152bb47bb42790a15362a55317bde5ef8d1b\",\"subject\":{\"name\":\"Game.dll\",\"digest\":{\"sha256\":\"cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2\"},\"local_path\":\"D:\\\\Steam\\\\steamapps\\\\common\\\\Grim Dawn\\\\x64\\\\Game.dll\",\"format\":\"pe\",\"architecture\":\"x86_64\"},\"provider\":{\"id\":\"ghidra\",\"name\":\"Ghidra\",\"version\":\"12.1.4\"},\"analysis_profile\":{\"provider\":{\"id\":\"ghidra\",\"name\":\"Ghidra\",\"version\":\"12.1.4\"},\"parameters\":{\"target_kind\":\"executable\",\"target_format\":\"pe\",\"executable_role\":\"shared-library\",\"managed\":false,\"native_aot_metadata\":{\"contract_revision\":\"rtr-9.1-x64-pe-read-only-v3\",\"source_bytes\":134217728,\"work_units\":67108864,\"working_memory_bytes\":67108864,\"report_bytes\":4194304},\"architecture\":\"x86_64\",\"available_architectures\":[\"x86_64\"],\"import_mode\":\"ephemeral-source-immutable\",\"pdb_observations\":\"program-info-v1\",\"annotation_policy\":\"atomic-function-entry-metadata-v1\",\"load_image_observations\":\"source-mappings-entry-context-v2\",\"function_body_evidence\":\"complete-inclusive-ranges-v1\",\"function_references\":\"complete-body-and-entry-reference-manager-v2\",\"call_relationship_coverage\":\"function-body-call-coverage-v5\",\"function_dossier_coverage\":\"observed-facets-and-call-relationships-v1\",\"string_inventory_evidence\":\"defined-data-coverage-v1\",\"location_resolution\":\"explicit-address-exact-entry-symbol-first-v3\",\"procedure_file_offset_resolution\":\"address-first-unique-target-source-mapping-v2\",\"instruction_flow_evidence\":\"decoded-return-pcode-v1\",\"instruction_references\":\"exact-address-incoming-v1\",\"function_boundary_observations\":\"ghidra-function-boundary-limitations-v3\",\"no_return_repair\":\"disabled-windows-p0\",\"process_launch\":\"official-headless-script-v1\",\"jump_table_evidence\":\"typed-case-default-blocks-v1\",\"decompiler_jump_loads\":true,\"loader\":\"auto-from-header\",\"language_id\":\"auto-from-header\",\"compiler_spec_id\":\"auto-default\",\"analyzer_preset\":\"ghidra-default\"},\"digest\":\"dcc676845881c04a2d22833fb35d26569462e033daee5e99a95edac5aa61ac05\"},\"predicate_type\":\"rea.analysis\",\"operation\":\"procedure_assembly\",\"parameters\":{\"procedure\":\"0x180473e20\"},\"raw_result\":{\"value\":\"0x180473e20: MOV qword ptr [RSP + 0x18], RBX\\n0x180473e25: PUSH RSI\\n0x180473e26: PUSH RDI\\n0x180473e27: PUSH R14\\n0x180473e29: SUB RSP, 0x20\\n0x180473e2d: MOV R14, RCX\\n0x180473e30: CALL 0x1800294a0\\n0x180473e35: LEA RSI, [R14 + 0x20]\\n0x180473e39: MOV RBX, RAX\\n0x180473e3c: MOV R8, RSI\\n0x180473e3f: LEA RDX, [RSP + 0x40]\\n0x180473e44: LEA RCX, [RAX + 0x40]\\n0x180473e48: CALL 0x180018580\\n0x180473e4d: MOV RAX, qword ptr [RSP + 0x40]\\n0x180473e52: CMP RAX, qword ptr [RBX + 0x48]\\n0x180473e56: JZ 0x180473f05\\n0x180473e5c: MOV RDI, qword ptr [RAX + 0x30]\\n0x180473e60: TEST RDI, RDI\\n0x180473e63: JZ 0x180473f05\\n0x180473e69: MOV RAX, qword ptr [RDI + 0x38]\\n0x180473e6d: XOR ESI, ESI\\n0x180473e6f: SUB RAX, qword ptr [RDI + 0x30]\\n0x180473e73: MOV qword ptr [RSP + 0x48], RBP\\n0x180473e78: XOR BPL, BPL\\n0x180473e7b: SAR RAX, 0x3\\n0x180473e7f: TEST RAX, RAX\\n0x180473e82: JZ 0x180473ec5\\n0x180473e84: MOV ECX, ESI\\n0x180473e86: NOP dword ptr [RAX + RAX*0x1]\\n0x180473e90: MOV RAX, qword ptr [RDI + 0x30]\\n0x180473e94: MOV RBX, qword ptr [RAX + RCX*0x8]\\n0x180473e98: MOV RAX, qword ptr [0x180a66288]\\n0x180473e9f: MOV RCX, qword ptr [RAX + 0x4100]\\n0x180473ea6: MOV RAX, qword ptr [RCX]\\n0x180473ea9: CALL qword ptr [RAX + 0x18]\\n0x180473eac: TEST RAX, RAX\\n0x180473eaf: JNZ 0x180473ee0\\n0x180473eb1: CMP byte ptr [RBX + 0xc1], AL\\n0x180473eb7: JNZ 0x180473eee\\n0x180473eb9: CMP dword ptr [RBX + 0x90], 0x2\\n0x180473ec0: JNZ 0x180473eee\\n0x180473ec2: MOV BPL, 0x1\\n0x180473ec5: CMP byte ptr [R14 + 0x40], BPL\\n0x180473ec9: MOV RBP, qword ptr [RSP + 0x48]\\n0x180473ece: JNZ 0x180473f2e\\n0x180473ed0: MOV AL, 0x1\\n0x180473ed2: MOV RBX, qword ptr [RSP + 0x50]\\n0x180473ed7: ADD RSP, 0x20\\n0x180473edb: POP R14\\n0x180473edd: POP RDI\\n0x180473ede: POP RSI\\n0x180473edf: RET\\n0x180473ee0: CMP dword ptr [RBX + 0x90], 0x2\\n0x180473ee7: SETZ AL\\n0x180473eea: TEST AL, AL\\n0x180473eec: JNZ 0x180473ec2\\n0x180473eee: MOV RAX, qword ptr [RDI + 0x38]\\n0x180473ef2: INC ESI\\n0x180473ef4: SUB RAX, qword ptr [RDI + 0x30]\\n0x180473ef8: SAR RAX, 0x3\\n0x180473efc: MOV ECX, ESI\\n0x180473efe: CMP RCX, RAX\\n0x180473f01: JC 0x180473e90\\n0x180473f03: JMP 0x180473ec5\\n0x180473f05: CMP qword ptr [RSI + 0x18], 0x10\\n0x180473f0a: JC 0x180473f0f\\n0x180473f0c: MOV RSI, qword ptr [RSI]\\n0x180473f0f: MOV RAX, qword ptr [0x180609050]\\n0x180473f16: LEA R8, [0x1806bccf0]\\n0x180473f1d: MOV R9, RSI\\n0x180473f20: MOV EDX, 0x2\\n0x180473f25: MOV RCX, qword ptr [RAX]\\n0x180473f28: MOV RAX, qword ptr [RCX]\\n0x180473f2b: CALL qword ptr [RAX + 0x18]\\n0x180473f2e: XOR AL, AL\\n0x180473f30: MOV RBX, qword ptr [RSP + 0x50]\\n0x180473f35: ADD RSP, 0x20\\n0x180473f39: POP R14\\n0x180473f3b: POP RDI\\n0x180473f3c: POP RSI\\n0x180473f3d: RET\",\"limitations\":[]},\"normalized_result\":\"0x180473e20: MOV qword ptr [RSP + 0x18], RBX\\n0x180473e25: PUSH RSI\\n0x180473e26: PUSH RDI\\n0x180473e27: PUSH R14\\n0x180473e29: SUB RSP, 0x20\\n0x180473e2d: MOV R14, RCX\\n0x180473e30: CALL 0x1800294a0\\n0x180473e35: LEA RSI, [R14 + 0x20]\\n0x180473e39: MOV RBX, RAX\\n0x180473e3c: MOV R8, RSI\\n0x180473e3f: LEA RDX, [RSP + 0x40]\\n0x180473e44: LEA RCX, [RAX + 0x40]\\n0x180473e48: CALL 0x180018580\\n0x180473e4d: MOV RAX, qword ptr [RSP + 0x40]\\n0x180473e52: CMP RAX, qword ptr [RBX + 0x48]\\n0x180473e56: JZ 0x180473f05\\n0x180473e5c: MOV RDI, qword ptr [RAX + 0x30]\\n0x180473e60: TEST RDI, RDI\\n0x180473e63: JZ 0x180473f05\\n0x180473e69: MOV RAX, qword ptr [RDI + 0x38]\\n0x180473e6d: XOR ESI, ESI\\n0x180473e6f: SUB RAX, qword ptr [RDI + 0x30]\\n0x180473e73: MOV qword ptr [RSP + 0x48], RBP\\n0x180473e78: XOR BPL, BPL\\n0x180473e7b: SAR RAX, 0x3\\n0x180473e7f: TEST RAX, RAX\\n0x180473e82: JZ 0x180473ec5\\n0x180473e84: MOV ECX, ESI\\n0x180473e86: NOP dword ptr [RAX + RAX*0x1]\\n0x180473e90: MOV RAX, qword ptr [RDI + 0x30]\\n0x180473e94: MOV RBX, qword ptr [RAX + RCX*0x8]\\n0x180473e98: MOV RAX, qword ptr [0x180a66288]\\n0x180473e9f: MOV RCX, qword ptr [RAX + 0x4100]\\n0x180473ea6: MOV RAX, qword ptr [RCX]\\n0x180473ea9: CALL qword ptr [RAX + 0x18]\\n0x180473eac: TEST RAX, RAX\\n0x180473eaf: JNZ 0x180473ee0\\n0x180473eb1: CMP byte ptr [RBX + 0xc1], AL\\n0x180473eb7: JNZ 0x180473eee\\n0x180473eb9: CMP dword ptr [RBX + 0x90], 0x2\\n0x180473ec0: JNZ 0x180473eee\\n0x180473ec2: MOV BPL, 0x1\\n0x180473ec5: CMP byte ptr [R14 + 0x40], BPL\\n0x180473ec9: MOV RBP, qword ptr [RSP + 0x48]\\n0x180473ece: JNZ 0x180473f2e\\n0x180473ed0: MOV AL, 0x1\\n0x180473ed2: MOV RBX, qword ptr [RSP + 0x50]\\n0x180473ed7: ADD RSP, 0x20\\n0x180473edb: POP R14\\n0x180473edd: POP RDI\\n0x180473ede: POP RSI\\n0x180473edf: RET\\n0x180473ee0: CMP dword ptr [RBX + 0x90], 0x2\\n0x180473ee7: SETZ AL\\n0x180473eea: TEST AL, AL\\n0x180473eec: JNZ 0x180473ec2\\n0x180473eee: MOV RAX, qword ptr [RDI + 0x38]\\n0x180473ef2: INC ESI\\n0x180473ef4: SUB RAX, qword ptr [RDI + 0x30]\\n0x180473ef8: SAR RAX, 0x3\\n0x180473efc: MOV ECX, ESI\\n0x180473efe: CMP RCX, RAX\\n0x180473f01: JC 0x180473e90\\n0x180473f03: JMP 0x180473ec5\\n0x180473f05: CMP qword ptr [RSI + 0x18], 0x10\\n0x180473f0a: JC 0x180473f0f\\n0x180473f0c: MOV RSI, qword ptr [RSI]\\n0x180473f0f: MOV RAX, qword ptr [0x180609050]\\n0x180473f16: LEA R8, [0x1806bccf0]\\n0x180473f1d: MOV R9, RSI\\n0x180473f20: MOV EDX, 0x2\\n0x180473f25: MOV RCX, qword ptr [RAX]\\n0x180473f28: MOV RAX, qword ptr [RCX]\\n0x180473f2b: CALL qword ptr [RAX + 0x18]\\n0x180473f2e: XOR AL, AL\\n0x180473f30: MOV RBX, qword ptr [RSP + 0x50]\\n0x180473f35: ADD RSP, 0x20\\n0x180473f39: POP R14\\n0x180473f3b: POP RDI\\n0x180473f3c: POP RSI\\n0x180473f3d: RET\",\"confidence\":\"observed\",\"authority\":\"shipped-artifact\",\"environment\":null,\"limitations\":[\"The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.\",\"The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.\",\"Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.\",\"Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.\",\"Assembly is Ghidra Listing text and does not claim textual equivalence with Hopper output.\",\"Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.\",\"The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.\",\"Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.\",\"The target references PDB Game.pdb (GUID f552cf04-503e-4dc5-aa29-d7df6bd2a2a0, age (hex) 2, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion.\"],\"relationship_coverage\":null,\"locations\":[],\"evidence_links\":[]}"
+      }
+    ],
+    "structuredContent": {
+      "evidence_id": "ev_8219633dcc3e69f917a6ea8539d4152bb47bb42790a15362a55317bde5ef8d1b",
+      "subject": {
+        "name": "Game.dll",
+        "digest": {
+          "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+        },
+        "local_path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+        "format": "pe",
+        "architecture": "x86_64"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "pe",
+          "executable_role": "shared-library",
+          "managed": false,
+          "native_aot_metadata": {
+            "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+            "source_bytes": 134217728,
+            "work_units": 67108864,
+            "working_memory_bytes": 67108864,
+            "report_bytes": 4194304
+          },
+          "architecture": "x86_64",
+          "available_architectures": [
+            "x86_64"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "pdb_observations": "program-info-v1",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-v1",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v3",
+          "no_return_repair": "disabled-windows-p0",
+          "process_launch": "official-headless-script-v1",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "auto-from-header",
+          "language_id": "auto-from-header",
+          "compiler_spec_id": "auto-default",
+          "analyzer_preset": "ghidra-default"
+        },
+        "digest": "dcc676845881c04a2d22833fb35d26569462e033daee5e99a95edac5aa61ac05"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "procedure_assembly",
+      "parameters": {
+        "procedure": "0x180473e20"
+      },
+      "raw_result": {
+        "value": "0x180473e20: MOV qword ptr [RSP + 0x18], RBX\n0x180473e25: PUSH RSI\n0x180473e26: PUSH RDI\n0x180473e27: PUSH R14\n0x180473e29: SUB RSP, 0x20\n0x180473e2d: MOV R14, RCX\n0x180473e30: CALL 0x1800294a0\n0x180473e35: LEA RSI, [R14 + 0x20]\n0x180473e39: MOV RBX, RAX\n0x180473e3c: MOV R8, RSI\n0x180473e3f: LEA RDX, [RSP + 0x40]\n0x180473e44: LEA RCX, [RAX + 0x40]\n0x180473e48: CALL 0x180018580\n0x180473e4d: MOV RAX, qword ptr [RSP + 0x40]\n0x180473e52: CMP RAX, qword ptr [RBX + 0x48]\n0x180473e56: JZ 0x180473f05\n0x180473e5c: MOV RDI, qword ptr [RAX + 0x30]\n0x180473e60: TEST RDI, RDI\n0x180473e63: JZ 0x180473f05\n0x180473e69: MOV RAX, qword ptr [RDI + 0x38]\n0x180473e6d: XOR ESI, ESI\n0x180473e6f: SUB RAX, qword ptr [RDI + 0x30]\n0x180473e73: MOV qword ptr [RSP + 0x48], RBP\n0x180473e78: XOR BPL, BPL\n0x180473e7b: SAR RAX, 0x3\n0x180473e7f: TEST RAX, RAX\n0x180473e82: JZ 0x180473ec5\n0x180473e84: MOV ECX, ESI\n0x180473e86: NOP dword ptr [RAX + RAX*0x1]\n0x180473e90: MOV RAX, qword ptr [RDI + 0x30]\n0x180473e94: MOV RBX, qword ptr [RAX + RCX*0x8]\n0x180473e98: MOV RAX, qword ptr [0x180a66288]\n0x180473e9f: MOV RCX, qword ptr [RAX + 0x4100]\n0x180473ea6: MOV RAX, qword ptr [RCX]\n0x180473ea9: CALL qword ptr [RAX + 0x18]\n0x180473eac: TEST RAX, RAX\n0x180473eaf: JNZ 0x180473ee0\n0x180473eb1: CMP byte ptr [RBX + 0xc1], AL\n0x180473eb7: JNZ 0x180473eee\n0x180473eb9: CMP dword ptr [RBX + 0x90], 0x2\n0x180473ec0: JNZ 0x180473eee\n0x180473ec2: MOV BPL, 0x1\n0x180473ec5: CMP byte ptr [R14 + 0x40], BPL\n0x180473ec9: MOV RBP, qword ptr [RSP + 0x48]\n0x180473ece: JNZ 0x180473f2e\n0x180473ed0: MOV AL, 0x1\n0x180473ed2: MOV RBX, qword ptr [RSP + 0x50]\n0x180473ed7: ADD RSP, 0x20\n0x180473edb: POP R14\n0x180473edd: POP RDI\n0x180473ede: POP RSI\n0x180473edf: RET\n0x180473ee0: CMP dword ptr [RBX + 0x90], 0x2\n0x180473ee7: SETZ AL\n0x180473eea: TEST AL, AL\n0x180473eec: JNZ 0x180473ec2\n0x180473eee: MOV RAX, qword ptr [RDI + 0x38]\n0x180473ef2: INC ESI\n0x180473ef4: SUB RAX, qword ptr [RDI + 0x30]\n0x180473ef8: SAR RAX, 0x3\n0x180473efc: MOV ECX, ESI\n0x180473efe: CMP RCX, RAX\n0x180473f01: JC 0x180473e90\n0x180473f03: JMP 0x180473ec5\n0x180473f05: CMP qword ptr [RSI + 0x18], 0x10\n0x180473f0a: JC 0x180473f0f\n0x180473f0c: MOV RSI, qword ptr [RSI]\n0x180473f0f: MOV RAX, qword ptr [0x180609050]\n0x180473f16: LEA R8, [0x1806bccf0]\n0x180473f1d: MOV R9, RSI\n0x180473f20: MOV EDX, 0x2\n0x180473f25: MOV RCX, qword ptr [RAX]\n0x180473f28: MOV RAX, qword ptr [RCX]\n0x180473f2b: CALL qword ptr [RAX + 0x18]\n0x180473f2e: XOR AL, AL\n0x180473f30: MOV RBX, qword ptr [RSP + 0x50]\n0x180473f35: ADD RSP, 0x20\n0x180473f39: POP R14\n0x180473f3b: POP RDI\n0x180473f3c: POP RSI\n0x180473f3d: RET",
+        "limitations": []
+      },
+      "normalized_result": "0x180473e20: MOV qword ptr [RSP + 0x18], RBX\n0x180473e25: PUSH RSI\n0x180473e26: PUSH RDI\n0x180473e27: PUSH R14\n0x180473e29: SUB RSP, 0x20\n0x180473e2d: MOV R14, RCX\n0x180473e30: CALL 0x1800294a0\n0x180473e35: LEA RSI, [R14 + 0x20]\n0x180473e39: MOV RBX, RAX\n0x180473e3c: MOV R8, RSI\n0x180473e3f: LEA RDX, [RSP + 0x40]\n0x180473e44: LEA RCX, [RAX + 0x40]\n0x180473e48: CALL 0x180018580\n0x180473e4d: MOV RAX, qword ptr [RSP + 0x40]\n0x180473e52: CMP RAX, qword ptr [RBX + 0x48]\n0x180473e56: JZ 0x180473f05\n0x180473e5c: MOV RDI, qword ptr [RAX + 0x30]\n0x180473e60: TEST RDI, RDI\n0x180473e63: JZ 0x180473f05\n0x180473e69: MOV RAX, qword ptr [RDI + 0x38]\n0x180473e6d: XOR ESI, ESI\n0x180473e6f: SUB RAX, qword ptr [RDI + 0x30]\n0x180473e73: MOV qword ptr [RSP + 0x48], RBP\n0x180473e78: XOR BPL, BPL\n0x180473e7b: SAR RAX, 0x3\n0x180473e7f: TEST RAX, RAX\n0x180473e82: JZ 0x180473ec5\n0x180473e84: MOV ECX, ESI\n0x180473e86: NOP dword ptr [RAX + RAX*0x1]\n0x180473e90: MOV RAX, qword ptr [RDI + 0x30]\n0x180473e94: MOV RBX, qword ptr [RAX + RCX*0x8]\n0x180473e98: MOV RAX, qword ptr [0x180a66288]\n0x180473e9f: MOV RCX, qword ptr [RAX + 0x4100]\n0x180473ea6: MOV RAX, qword ptr [RCX]\n0x180473ea9: CALL qword ptr [RAX + 0x18]\n0x180473eac: TEST RAX, RAX\n0x180473eaf: JNZ 0x180473ee0\n0x180473eb1: CMP byte ptr [RBX + 0xc1], AL\n0x180473eb7: JNZ 0x180473eee\n0x180473eb9: CMP dword ptr [RBX + 0x90], 0x2\n0x180473ec0: JNZ 0x180473eee\n0x180473ec2: MOV BPL, 0x1\n0x180473ec5: CMP byte ptr [R14 + 0x40], BPL\n0x180473ec9: MOV RBP, qword ptr [RSP + 0x48]\n0x180473ece: JNZ 0x180473f2e\n0x180473ed0: MOV AL, 0x1\n0x180473ed2: MOV RBX, qword ptr [RSP + 0x50]\n0x180473ed7: ADD RSP, 0x20\n0x180473edb: POP R14\n0x180473edd: POP RDI\n0x180473ede: POP RSI\n0x180473edf: RET\n0x180473ee0: CMP dword ptr [RBX + 0x90], 0x2\n0x180473ee7: SETZ AL\n0x180473eea: TEST AL, AL\n0x180473eec: JNZ 0x180473ec2\n0x180473eee: MOV RAX, qword ptr [RDI + 0x38]\n0x180473ef2: INC ESI\n0x180473ef4: SUB RAX, qword ptr [RDI + 0x30]\n0x180473ef8: SAR RAX, 0x3\n0x180473efc: MOV ECX, ESI\n0x180473efe: CMP RCX, RAX\n0x180473f01: JC 0x180473e90\n0x180473f03: JMP 0x180473ec5\n0x180473f05: CMP qword ptr [RSI + 0x18], 0x10\n0x180473f0a: JC 0x180473f0f\n0x180473f0c: MOV RSI, qword ptr [RSI]\n0x180473f0f: MOV RAX, qword ptr [0x180609050]\n0x180473f16: LEA R8, [0x1806bccf0]\n0x180473f1d: MOV R9, RSI\n0x180473f20: MOV EDX, 0x2\n0x180473f25: MOV RCX, qword ptr [RAX]\n0x180473f28: MOV RAX, qword ptr [RCX]\n0x180473f2b: CALL qword ptr [RAX + 0x18]\n0x180473f2e: XOR AL, AL\n0x180473f30: MOV RBX, qword ptr [RSP + 0x50]\n0x180473f35: ADD RSP, 0x20\n0x180473f39: POP R14\n0x180473f3b: POP RDI\n0x180473f3c: POP RSI\n0x180473f3d: RET",
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Assembly is Ghidra Listing text and does not claim textual equivalence with Hopper output.",
+        "Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+        "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+        "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.",
+        "The target references PDB Game.pdb (GUID f552cf04-503e-4dc5-aa29-d7df6bd2a2a0, age (hex) 2, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 10
+}

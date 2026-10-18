@@ -1,0 +1,17 @@
+# 离线规则内核：构建与支持边界
+
+新PowerShell进程运行：
+
+```powershell
+pwsh -NoProfile -File D:\MyGitRepo\Grim-Dynasty\tools\build_offline.ps1
+```
+
+现有Windows Framework csc即可编译九个自有DLL：资源容器、任务定义、基础条件、任务判定、token/受限状态写入、生命周期、自动更新/事件调度、击杀条件、物品条件。输出`.tooling/offline-system`，含依赖与SHA256清单。未知来源或被改动的既有输出会停止保护；不会安装SDK、运行原版、复制原版资源或发布。
+
+统一目录中可直接运行四个原创命令行场景：TaskRuntimeDemo（显式无奖励完成）、AutoQuestDemo（token后自动完成）、KillQuestDemo（击杀事件计数与生命周期）、ItemQuestDemo（声明库存变化后事件/查询自动完成）。它们不读原版资源，不是图形游戏或已可进入原游戏的mod。物品场景没有实现原生GiveItem，击杀场景没有实现原生战斗事件生产。
+
+已恢复的是证据支持的控制流与值语义子域，输入为明确模拟快照；并非完整引擎、地图、战斗、背包写入、奖励、UI、原存档实现。可见提示、非空完成动作/奖励、原版事件订阅者、网络等依赖仍Unsupported。原版动态对照继续禁止且未运行。
+
+统一构建实际通过436条固定断言和四个场景。只读官方参数接入另行保存：247份任务完全解码，160击杀条件/368事件、84物品条件闭环；在声明无物品/无击杀的活动任务上下文中，每难度459项目标初始化更新可求值，但自动完成数量为0。不能以这些数字声称全部官方任务或游戏行为已恢复。
+
+当前源与验收入口：docs/task-auto、docs/task-kills、docs/task-items。完整当前依赖记录在docs/task-items/acceptance.json和统一输出manifest.json；历史阶段哈希保留不覆盖。后续可继续静态追踪提示/奖励/动作接口，无需把原版动态验收误当成自有模块编译运行的前置条件。

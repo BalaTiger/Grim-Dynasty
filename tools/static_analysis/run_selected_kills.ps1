@@ -1,0 +1,18 @@
+$ErrorActionPreference='Stop'
+$project='D:\MyGitRepo\Grim-Dynasty\analysis\selected-kill-project'
+$output='D:\MyGitRepo\Grim-Dynasty\docs\task-kills\ghidra-selected'
+if((Test-Path -LiteralPath $project) -and @(Get-ChildItem -LiteralPath $project -Force).Count -ne 0){throw 'Nonempty analysis project exists; preserve it'}
+if(Test-Path -LiteralPath "$output\functions.json"){throw 'Evidence exists; preserve it'}
+if(!(Test-Path -LiteralPath $project)){New-Item -ItemType Directory -Path $project -ErrorAction Stop | Out-Null}
+New-Item -ItemType Directory -Path $output -Force | Out-Null
+$paths=Get-Content -LiteralPath 'D:\MyGitRepo\Grim-Dynasty\.tooling\installed-paths.json' -Raw | ConvertFrom-Json
+$env:JAVA_HOME=$paths.jdk
+$env:GHIDRA_HEADLESS_MAXMEM='512M'
+$env:GHIDRA_HEADLESS_JAVA_OPTIONS='-Duser.home=D:\MyGitRepo\Grim-Dynasty\analysis\selected-kill-runtime'
+$env:APPDATA='D:\MyGitRepo\Grim-Dynasty\analysis\selected-kill-runtime\Roaming'
+$env:LOCALAPPDATA='D:\MyGitRepo\Grim-Dynasty\analysis\selected-kill-runtime\Local'
+New-Item -ItemType Directory -Path $env:APPDATA,$env:LOCALAPPDATA -Force | Out-Null
+$entries=@('0x180470ed0','0x180470f50','0x180470f80','0x180470fb0','0x1804713c0','0x180422450','0x180470d90','0x180470e20','0x180470ea0','0x180471080','0x18046e380')
+$launcher=Join-Path $paths.ghidra 'support\analyzeHeadless.bat'
+& $launcher $project 'TaskKills' -import 'D:\Steam\steamapps\common\Grim Dawn\x64\Game.dll' -scriptPath $PSScriptRoot -preScript SeedObservedFunctions.java @entries -postScript ExportObservedFunctions.java "$output\functions.json" @entries -analysisTimeoutPerFile 240 -max-cpu 2 -log "$output\analysis.log" -scriptlog "$output\scripts.log"
+if($LASTEXITCODE -ne 0){throw 'Selected static analysis failed'}

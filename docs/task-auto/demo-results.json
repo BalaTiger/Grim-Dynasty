@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "scenario": "Original Liaodong report fixture",
+  "trace": [
+    {
+      "step": "accept",
+      "task_state": 2
+    },
+    {
+      "step": "update_before_report",
+      "task_state": 2,
+      "objective_state": 2,
+      "event_flag": 0
+    },
+    {
+      "step": "apply_decoded_inbound_report_token"
+    },
+    {
+      "step": "update_automatically_completes",
+      "task_state": 3,
+      "objective_state": 1,
+      "reward_history_recorded": true,
+      "event_flag": 1,
+      "network_send": false
+    },
+    {
+      "step": "completed_query",
+      "value": true
+    },
+    {
+      "step": "reset",
+      "task_state": 1,
+      "objective_state": 0
+    }
+  ],
+  "scope": "Own code/fixture only. Task.Update branch auto-completes through empty-event Complete(true) value semantics; no explicit manual completion, no original DLL/resources, rewards granted, subscribers, network, Steam or saves."
+}

@@ -1,0 +1,110 @@
+{
+  "result": {
+    "_meta": {
+      "provenance": {
+        "untrusted_content": true,
+        "source": "analysis_target"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"evidence_id\":\"ev_76b3e6232ab23a84d53628fed81c9ef4114b42b2e3976b12042998132038915b\",\"subject\":{\"name\":\"Game.dll\",\"digest\":{\"sha256\":\"cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2\"},\"local_path\":\"D:\\\\Steam\\\\steamapps\\\\common\\\\Grim Dawn\\\\x64\\\\Game.dll\",\"format\":\"pe\",\"architecture\":\"x86_64\"},\"provider\":{\"id\":\"ghidra\",\"name\":\"Ghidra\",\"version\":\"12.1.4\"},\"analysis_profile\":{\"provider\":{\"id\":\"ghidra\",\"name\":\"Ghidra\",\"version\":\"12.1.4\"},\"parameters\":{\"target_kind\":\"executable\",\"target_format\":\"pe\",\"executable_role\":\"shared-library\",\"managed\":false,\"native_aot_metadata\":{\"contract_revision\":\"rtr-9.1-x64-pe-read-only-v3\",\"source_bytes\":134217728,\"work_units\":67108864,\"working_memory_bytes\":67108864,\"report_bytes\":4194304},\"architecture\":\"x86_64\",\"available_architectures\":[\"x86_64\"],\"import_mode\":\"ephemeral-source-immutable\",\"pdb_observations\":\"program-info-v1\",\"annotation_policy\":\"atomic-function-entry-metadata-v1\",\"load_image_observations\":\"source-mappings-entry-context-v2\",\"function_body_evidence\":\"complete-inclusive-ranges-v1\",\"function_references\":\"complete-body-and-entry-reference-manager-v2\",\"call_relationship_coverage\":\"function-body-call-coverage-v5\",\"function_dossier_coverage\":\"observed-facets-and-call-relationships-v1\",\"string_inventory_evidence\":\"defined-data-coverage-v1\",\"location_resolution\":\"explicit-address-exact-entry-symbol-first-v3\",\"procedure_file_offset_resolution\":\"address-first-unique-target-source-mapping-v2\",\"instruction_flow_evidence\":\"decoded-return-pcode-v1\",\"instruction_references\":\"exact-address-incoming-v1\",\"function_boundary_observations\":\"ghidra-function-boundary-limitations-v3\",\"no_return_repair\":\"disabled-windows-p0\",\"process_launch\":\"official-headless-script-v1\",\"jump_table_evidence\":\"typed-case-default-blocks-v1\",\"decompiler_jump_loads\":true,\"loader\":\"auto-from-header\",\"language_id\":\"auto-from-header\",\"compiler_spec_id\":\"auto-default\",\"analyzer_preset\":\"ghidra-default\"},\"digest\":\"dcc676845881c04a2d22833fb35d26569462e033daee5e99a95edac5aa61ac05\"},\"predicate_type\":\"rea.analysis\",\"operation\":\"procedure_pseudo_code\",\"parameters\":{\"procedure\":\"0x1803e6270\"},\"raw_result\":{\"value\":\"\\r\\n/* public: virtual void __cdecl GAME::Player::DetachItemAction(unsigned int) __ptr64 */\\r\\n\\r\\nvoid __thiscall GAME::Player::DetachItemAction(Player *this,uint param_1)\\r\\n\\r\\n{\\r\\n  uint uVar1;\\r\\n  longlong *plVar2;\\r\\n  char cVar3;\\r\\n  ObjectManager *pOVar4;\\r\\n  Object *pOVar5;\\r\\n  undefined8 *puVar6;\\r\\n  undefined **ppuVar7;\\r\\n  undefined8 *puVar8;\\r\\n  undefined8 *puVar9;\\r\\n  undefined8 *puVar10;\\r\\n  undefined1 local_res8 [8];\\r\\n  \\r\\n                    /* 0x3e6270  11057  ?DetachItemAction@Player@GAME@@UEAAXI@Z */\\r\\n  Character::DetachItemAction((Character *)this,param_1);\\r\\n  plVar2 = *(longlong **)(this + 0x4bb0);\\r\\n  if ((plVar2 != (longlong *)0x0) && (param_1 != 0)) {\\r\\n    puVar6 = *(undefined8 **)(this + 0x4bc0);\\r\\n    cVar3 = *(char *)((longlong)puVar6[1] + 0x19);\\r\\n    puVar10 = puVar6;\\r\\n    puVar9 = (undefined8 *)puVar6[1];\\r\\n    while (cVar3 == '\\\\0') {\\r\\n      if (*(uint *)((longlong)puVar9 + 0x1c) < param_1) {\\r\\n        puVar8 = (undefined8 *)puVar9[2];\\r\\n        puVar9 = puVar10;\\r\\n      }\\r\\n      else {\\r\\n        puVar8 = (undefined8 *)*puVar9;\\r\\n      }\\r\\n      puVar10 = puVar9;\\r\\n      puVar9 = puVar8;\\r\\n      cVar3 = *(char *)((longlong)puVar8 + 0x19);\\r\\n    }\\r\\n    if ((puVar10 == puVar6) || (param_1 < *(uint *)((longlong)puVar10 + 0x1c))) {\\r\\n      puVar10 = puVar6;\\r\\n    }\\r\\n    if (puVar10 != puVar6) {\\r\\n      uVar1 = *(uint *)(puVar10 + 4);\\r\\n      (**(code **)(*plVar2 + 0x788))(plVar2,uVar1);\\r\\n      FUN_1800188e0(this + 0x4bc0,local_res8);\\r\\n      Inventory::RemoveItemFromInventory((Inventory *)(*(longlong *)(this + 0x4bb0) + 0xd80),uVar1);\\r\\n      pOVar4 = GAME::Singleton<GAME::ObjectManager>::Get();\\r\\n      pOVar5 = (Object *)FUN_180019d40(pOVar4,uVar1);\\r\\n      pOVar4 = GAME::Singleton<GAME::ObjectManager>::Get();\\r\\n      GAME::ObjectManager::DestroyObjectEx(pOVar4,pOVar5,(char *)0x0,0);\\r\\n    }\\r\\n  }\\r\\n  pOVar4 = GAME::Singleton<GAME::ObjectManager>::Get();\\r\\n  puVar6 = (undefined8 *)FUN_180019d40(pOVar4,param_1);\\r\\n  if ((puVar6 != (undefined8 *)0x0) &&\\r\\n     ((ppuVar7 = (undefined **)(**(code **)*puVar6)(puVar6),\\r\\n      ppuVar7 == &WeaponArmor_Shield::classInfo ||\\r\\n      (((undefined **)ppuVar7[2] != (undefined **)0x0 &&\\r\\n       (((undefined **)ppuVar7[2] == &WeaponArmor_Shield::classInfo ||\\r\\n        (cVar3 = FUN_180591480(), cVar3 != '\\\\0')))))))) {\\r\\n    this[0x198c] = (Player)0x0;\\r\\n  }\\r\\n  return;\\r\\n}\\r\\n\\r\\n\",\"limitations\":[]},\"normalized_result\":\"\\r\\n/* public: virtual void __cdecl GAME::Player::DetachItemAction(unsigned int) __ptr64 */\\r\\n\\r\\nvoid __thiscall GAME::Player::DetachItemAction(Player *this,uint param_1)\\r\\n\\r\\n{\\r\\n  uint uVar1;\\r\\n  longlong *plVar2;\\r\\n  char cVar3;\\r\\n  ObjectManager *pOVar4;\\r\\n  Object *pOVar5;\\r\\n  undefined8 *puVar6;\\r\\n  undefined **ppuVar7;\\r\\n  undefined8 *puVar8;\\r\\n  undefined8 *puVar9;\\r\\n  undefined8 *puVar10;\\r\\n  undefined1 local_res8 [8];\\r\\n  \\r\\n                    /* 0x3e6270  11057  ?DetachItemAction@Player@GAME@@UEAAXI@Z */\\r\\n  Character::DetachItemAction((Character *)this,param_1);\\r\\n  plVar2 = *(longlong **)(this + 0x4bb0);\\r\\n  if ((plVar2 != (longlong *)0x0) && (param_1 != 0)) {\\r\\n    puVar6 = *(undefined8 **)(this + 0x4bc0);\\r\\n    cVar3 = *(char *)((longlong)puVar6[1] + 0x19);\\r\\n    puVar10 = puVar6;\\r\\n    puVar9 = (undefined8 *)puVar6[1];\\r\\n    while (cVar3 == '\\\\0') {\\r\\n      if (*(uint *)((longlong)puVar9 + 0x1c) < param_1) {\\r\\n        puVar8 = (undefined8 *)puVar9[2];\\r\\n        puVar9 = puVar10;\\r\\n      }\\r\\n      else {\\r\\n        puVar8 = (undefined8 *)*puVar9;\\r\\n      }\\r\\n      puVar10 = puVar9;\\r\\n      puVar9 = puVar8;\\r\\n      cVar3 = *(char *)((longlong)puVar8 + 0x19);\\r\\n    }\\r\\n    if ((puVar10 == puVar6) || (param_1 < *(uint *)((longlong)puVar10 + 0x1c))) {\\r\\n      puVar10 = puVar6;\\r\\n    }\\r\\n    if (puVar10 != puVar6) {\\r\\n      uVar1 = *(uint *)(puVar10 + 4);\\r\\n      (**(code **)(*plVar2 + 0x788))(plVar2,uVar1);\\r\\n      FUN_1800188e0(this + 0x4bc0,local_res8);\\r\\n      Inventory::RemoveItemFromInventory((Inventory *)(*(longlong *)(this + 0x4bb0) + 0xd80),uVar1);\\r\\n      pOVar4 = GAME::Singleton<GAME::ObjectManager>::Get();\\r\\n      pOVar5 = (Object *)FUN_180019d40(pOVar4,uVar1);\\r\\n      pOVar4 = GAME::Singleton<GAME::ObjectManager>::Get();\\r\\n      GAME::ObjectManager::DestroyObjectEx(pOVar4,pOVar5,(char *)0x0,0);\\r\\n    }\\r\\n  }\\r\\n  pOVar4 = GAME::Singleton<GAME::ObjectManager>::Get();\\r\\n  puVar6 = (undefined8 *)FUN_180019d40(pOVar4,param_1);\\r\\n  if ((puVar6 != (undefined8 *)0x0) &&\\r\\n     ((ppuVar7 = (undefined **)(**(code **)*puVar6)(puVar6),\\r\\n      ppuVar7 == &WeaponArmor_Shield::classInfo ||\\r\\n      (((undefined **)ppuVar7[2] != (undefined **)0x0 &&\\r\\n       (((undefined **)ppuVar7[2] == &WeaponArmor_Shield::classInfo ||\\r\\n        (cVar3 = FUN_180591480(), cVar3 != '\\\\0')))))))) {\\r\\n    this[0x198c] = (Player)0x0;\\r\\n  }\\r\\n  return;\\r\\n}\\r\\n\\r\\n\",\"confidence\":\"observed\",\"authority\":\"shipped-artifact\",\"environment\":null,\"limitations\":[\"The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.\",\"The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.\",\"Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.\",\"Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.\",\"Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.\",\"External functions and functions without an analyzable body return null; other decompiler failures remain explicit.\",\"Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.\",\"The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.\",\"Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.\",\"The target references PDB Game.pdb (GUID f552cf04-503e-4dc5-aa29-d7df6bd2a2a0, age (hex) 2, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion.\"],\"relationship_coverage\":null,\"locations\":[],\"evidence_links\":[]}"
+      }
+    ],
+    "structuredContent": {
+      "evidence_id": "ev_76b3e6232ab23a84d53628fed81c9ef4114b42b2e3976b12042998132038915b",
+      "subject": {
+        "name": "Game.dll",
+        "digest": {
+          "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+        },
+        "local_path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+        "format": "pe",
+        "architecture": "x86_64"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "pe",
+          "executable_role": "shared-library",
+          "managed": false,
+          "native_aot_metadata": {
+            "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+            "source_bytes": 134217728,
+            "work_units": 67108864,
+            "working_memory_bytes": 67108864,
+            "report_bytes": 4194304
+          },
+          "architecture": "x86_64",
+          "available_architectures": [
+            "x86_64"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "pdb_observations": "program-info-v1",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-v1",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v3",
+          "no_return_repair": "disabled-windows-p0",
+          "process_launch": "official-headless-script-v1",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "auto-from-header",
+          "language_id": "auto-from-header",
+          "compiler_spec_id": "auto-default",
+          "analyzer_preset": "ghidra-default"
+        },
+        "digest": "dcc676845881c04a2d22833fb35d26569462e033daee5e99a95edac5aa61ac05"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "procedure_pseudo_code",
+      "parameters": {
+        "procedure": "0x1803e6270"
+      },
+      "raw_result": {
+        "value": "\r\n/* public: virtual void __cdecl GAME::Player::DetachItemAction(unsigned int) __ptr64 */\r\n\r\nvoid __thiscall GAME::Player::DetachItemAction(Player *this,uint param_1)\r\n\r\n{\r\n  uint uVar1;\r\n  longlong *plVar2;\r\n  char cVar3;\r\n  ObjectManager *pOVar4;\r\n  Object *pOVar5;\r\n  undefined8 *puVar6;\r\n  undefined **ppuVar7;\r\n  undefined8 *puVar8;\r\n  undefined8 *puVar9;\r\n  undefined8 *puVar10;\r\n  undefined1 local_res8 [8];\r\n  \r\n                    /* 0x3e6270  11057  ?DetachItemAction@Player@GAME@@UEAAXI@Z */\r\n  Character::DetachItemAction((Character *)this,param_1);\r\n  plVar2 = *(longlong **)(this + 0x4bb0);\r\n  if ((plVar2 != (longlong *)0x0) && (param_1 != 0)) {\r\n    puVar6 = *(undefined8 **)(this + 0x4bc0);\r\n    cVar3 = *(char *)((longlong)puVar6[1] + 0x19);\r\n    puVar10 = puVar6;\r\n    puVar9 = (undefined8 *)puVar6[1];\r\n    while (cVar3 == '\\0') {\r\n      if (*(uint *)((longlong)puVar9 + 0x1c) < param_1) {\r\n        puVar8 = (undefined8 *)puVar9[2];\r\n        puVar9 = puVar10;\r\n      }\r\n      else {\r\n        puVar8 = (undefined8 *)*puVar9;\r\n      }\r\n      puVar10 = puVar9;\r\n      puVar9 = puVar8;\r\n      cVar3 = *(char *)((longlong)puVar8 + 0x19);\r\n    }\r\n    if ((puVar10 == puVar6) || (param_1 < *(uint *)((longlong)puVar10 + 0x1c))) {\r\n      puVar10 = puVar6;\r\n    }\r\n    if (puVar10 != puVar6) {\r\n      uVar1 = *(uint *)(puVar10 + 4);\r\n      (**(code **)(*plVar2 + 0x788))(plVar2,uVar1);\r\n      FUN_1800188e0(this + 0x4bc0,local_res8);\r\n      Inventory::RemoveItemFromInventory((Inventory *)(*(longlong *)(this + 0x4bb0) + 0xd80),uVar1);\r\n      pOVar4 = GAME::Singleton<GAME::ObjectManager>::Get();\r\n      pOVar5 = (Object *)FUN_180019d40(pOVar4,uVar1);\r\n      pOVar4 = GAME::Singleton<GAME::ObjectManager>::Get();\r\n      GAME::ObjectManager::DestroyObjectEx(pOVar4,pOVar5,(char *)0x0,0);\r\n    }\r\n  }\r\n  pOVar4 = GAME::Singleton<GAME::ObjectManager>::Get();\r\n  puVar6 = (undefined8 *)FUN_180019d40(pOVar4,param_1);\r\n  if ((puVar6 != (undefined8 *)0x0) &&\r\n     ((ppuVar7 = (undefined **)(**(code **)*puVar6)(puVar6),\r\n      ppuVar7 == &WeaponArmor_Shield::classInfo ||\r\n      (((undefined **)ppuVar7[2] != (undefined **)0x0 &&\r\n       (((undefined **)ppuVar7[2] == &WeaponArmor_Shield::classInfo ||\r\n        (cVar3 = FUN_180591480(), cVar3 != '\\0')))))))) {\r\n    this[0x198c] = (Player)0x0;\r\n  }\r\n  return;\r\n}\r\n\r\n",
+        "limitations": []
+      },
+      "normalized_result": "\r\n/* public: virtual void __cdecl GAME::Player::DetachItemAction(unsigned int) __ptr64 */\r\n\r\nvoid __thiscall GAME::Player::DetachItemAction(Player *this,uint param_1)\r\n\r\n{\r\n  uint uVar1;\r\n  longlong *plVar2;\r\n  char cVar3;\r\n  ObjectManager *pOVar4;\r\n  Object *pOVar5;\r\n  undefined8 *puVar6;\r\n  undefined **ppuVar7;\r\n  undefined8 *puVar8;\r\n  undefined8 *puVar9;\r\n  undefined8 *puVar10;\r\n  undefined1 local_res8 [8];\r\n  \r\n                    /* 0x3e6270  11057  ?DetachItemAction@Player@GAME@@UEAAXI@Z */\r\n  Character::DetachItemAction((Character *)this,param_1);\r\n  plVar2 = *(longlong **)(this + 0x4bb0);\r\n  if ((plVar2 != (longlong *)0x0) && (param_1 != 0)) {\r\n    puVar6 = *(undefined8 **)(this + 0x4bc0);\r\n    cVar3 = *(char *)((longlong)puVar6[1] + 0x19);\r\n    puVar10 = puVar6;\r\n    puVar9 = (undefined8 *)puVar6[1];\r\n    while (cVar3 == '\\0') {\r\n      if (*(uint *)((longlong)puVar9 + 0x1c) < param_1) {\r\n        puVar8 = (undefined8 *)puVar9[2];\r\n        puVar9 = puVar10;\r\n      }\r\n      else {\r\n        puVar8 = (undefined8 *)*puVar9;\r\n      }\r\n      puVar10 = puVar9;\r\n      puVar9 = puVar8;\r\n      cVar3 = *(char *)((longlong)puVar8 + 0x19);\r\n    }\r\n    if ((puVar10 == puVar6) || (param_1 < *(uint *)((longlong)puVar10 + 0x1c))) {\r\n      puVar10 = puVar6;\r\n    }\r\n    if (puVar10 != puVar6) {\r\n      uVar1 = *(uint *)(puVar10 + 4);\r\n      (**(code **)(*plVar2 + 0x788))(plVar2,uVar1);\r\n      FUN_1800188e0(this + 0x4bc0,local_res8);\r\n      Inventory::RemoveItemFromInventory((Inventory *)(*(longlong *)(this + 0x4bb0) + 0xd80),uVar1);\r\n      pOVar4 = GAME::Singleton<GAME::ObjectManager>::Get();\r\n      pOVar5 = (Object *)FUN_180019d40(pOVar4,uVar1);\r\n      pOVar4 = GAME::Singleton<GAME::ObjectManager>::Get();\r\n      GAME::ObjectManager::DestroyObjectEx(pOVar4,pOVar5,(char *)0x0,0);\r\n    }\r\n  }\r\n  pOVar4 = GAME::Singleton<GAME::ObjectManager>::Get();\r\n  puVar6 = (undefined8 *)FUN_180019d40(pOVar4,param_1);\r\n  if ((puVar6 != (undefined8 *)0x0) &&\r\n     ((ppuVar7 = (undefined **)(**(code **)*puVar6)(puVar6),\r\n      ppuVar7 == &WeaponArmor_Shield::classInfo ||\r\n      (((undefined **)ppuVar7[2] != (undefined **)0x0 &&\r\n       (((undefined **)ppuVar7[2] == &WeaponArmor_Shield::classInfo ||\r\n        (cVar3 = FUN_180591480(), cVar3 != '\\0')))))))) {\r\n    this[0x198c] = (Player)0x0;\r\n  }\r\n  return;\r\n}\r\n\r\n",
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+        "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+        "Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+        "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
+        "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.",
+        "The target references PDB Game.pdb (GUID f552cf04-503e-4dc5-aa29-d7df6bd2a2a0, age (hex) 2, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 10
+}

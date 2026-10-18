@@ -1,0 +1,72 @@
+{
+  "utc": "2026-10-18T11:54:01.922821+00:00",
+  "status": "passed",
+  "new_fixed_assertions": 121,
+  "unit": {
+    "TokenMutationTests": {
+      "status": "passed",
+      "fixed_assertions": 64
+    },
+    "RewardClassifierTests": {
+      "status": "passed",
+      "fixed_assertions": 39
+    },
+    "EventRewardProbeTests": {
+      "status": "passed",
+      "fixed_assertions": 18
+    }
+  },
+  "catalog_files": [
+    "token-catalog-results.json",
+    "reward-catalog-results.json",
+    "event-reward-catalog-results.json"
+  ],
+  "native_input_sha256": {
+    "Game.dll": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "Quests.arc": "cff68edb899b5b6a84c4d91e651ab52c558b8ed5e1c9813f443b1844c19e385d"
+  },
+  "source_sha256": {
+    "src\\token_actions\\build_token_actions.ps1": "242045245da263b9bbb8f1524c1299038f6111299f28c5b487bc9f1829daf7a1",
+    "src\\token_actions\\EventRewardCatalogProbe.cs": "8c4413d50c84761d9eabb0e610f4e315f01352356ca4c19e14e216fb818485f5",
+    "src\\token_actions\\EventRewardProbe.cs": "247afadc61e20f4cd18421053f0f074833b240d76ea513c93869e4ab436bd822",
+    "src\\token_actions\\EventRewardProbeTests.cs": "e7373fdaeccb86edf3221caba3e139670577323191bee73a4d546a052d5e1a7e",
+    "src\\token_actions\\RewardCatalogProbe.cs": "c52381d762c267eb0f8941dd0e13157f9212dfc6d984ae88a3ae4ec728942ad6",
+    "src\\token_actions\\RewardClassifier.cs": "543f1e01a86ce267c8da5fc4ab66ce67a00d09ffbaa088848e1248089f822710",
+    "src\\token_actions\\RewardClassifierTests.cs": "b499fcf80e9ba601b44514f4314dc8fb80fd2fb25c710a4e44277d260be2b730",
+    "src\\token_actions\\TaskStateMutations.cs": "a43533b09b1c3f4cb4a00cccc9cb75eb442414233ed957b875a95eb76608c156",
+    "src\\token_actions\\TokenActionCatalogProbe.cs": "9ec05da95b5cdd9e4809b9fcb8c14a25b14dcd68f230687486fbff52ac9d31c5",
+    "src\\token_actions\\TokenMutations.cs": "b88999d951c65b9173d60c7fa2ba5570b8ca02bf8793ce3f7038bed1b5152114",
+    "src\\token_actions\\TokenMutationTests.cs": "dc323234f0ff0bd10ae37fbb79ed1af530ba21523fe4936201fdea24cbc3f628"
+  },
+  "build_sha256": {
+    "EventRewardCatalogProbe.exe": "3ff090ca45e4f909aadf726a37683fa985666d15d0b4d119c87e2466d7e13ac8",
+    "EventRewardProbeTests.exe": "3988cbc085898da777f1334a85bbfdfe29759ae88cca8a30469a8813ac438887",
+    "GrimDynasty.Conditions.dll": "ae9b2c7c8fb74df834561849818a4d175ca965d672ac2ecd11d0e0159109868f",
+    "GrimDynasty.Quests.dll": "33e17e5965d090f9adf789aa94803ab66476f3652b3f916c57f6377ded49cae8",
+    "GrimDynasty.Resources.dll": "b7673608334772056f87c19fe93929bdaaaad197081d3c6b3891364f086da72d",
+    "GrimDynasty.TaskLogic.dll": "6d3a9a7d49622755effce1461df3fe34dcd8f809d010ecd198f8281f31a0dcd3",
+    "GrimDynasty.TokenActions.dll": "98710d8d5917812385d3d8387f91995b7c7b917485de606c9fbc82c7a7a99a46",
+    "RewardCatalogProbe.exe": "3957ec924dc59208324f258b24b96e1c85ef6ac6aa080cb74d9f5f14cc4265d0",
+    "RewardClassifierTests.exe": "8d18e3896ebe38a36e5e0dea3f1dbef5ac9fca4b6fbf5b4c82d65160825178b4",
+    "TokenActionCatalogProbe.exe": "95a7ac7008de287fa430d3eb4d85ae2696d3c1d935783119279569bc9c6d39c9",
+    "TokenMutationTests.exe": "3f9075f4e321b2da4fd8c826a42427dd6ccdc40c4daab4b163a9ee6af9dcbbee"
+  },
+  "module_references": [
+    "mscorlib 4.0.0.0",
+    "GrimDynasty.TaskLogic 0.0.0.0",
+    "GrimDynasty.Conditions 0.0.0.0"
+  ],
+  "reference_check": "Reflection over own compiled module only; no original assembly loaded",
+  "rea": {
+    "consumed": 48,
+    "pending": 0,
+    "last": "ActionCollection-HasRewardActions-assembly"
+  },
+  "original_dynamic_validation": "not performed",
+  "remaining_unsupported": [
+    "Full GiveToken/RemoveToken player action side effects",
+    "Task active-state2 completion callbacks and outbound dispatch",
+    "Nonempty objective lifecycle transitions",
+    "One event-vector v1 condition in difficulty1/2 synthetic catalog scenarios"
+  ]
+}

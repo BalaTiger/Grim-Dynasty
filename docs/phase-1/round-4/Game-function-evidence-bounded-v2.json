@@ -1,0 +1,163 @@
+[
+  {
+    "label": "?PostLuaInitialize@GameEngine@GAME@@QEAAXXZ",
+    "start": "1802f3450",
+    "end": "1802f34b4",
+    "bytesBudget": 101,
+    "function": "?PostLuaInitialize@GameEngine@GAME@@QEAAXXZ",
+    "instructions": [
+      "1802f3450 PUSH RBX",
+      "1802f3452 SUB RSP,0x70",
+      "1802f3456 MOV qword ptr [RSP + 0x20],-0x2",
+      "1802f345f MOV RBX,RCX",
+      "1802f3462 MOV RAX,qword ptr [0x180609050]",
+      "1802f3469 MOV RCX,qword ptr [RAX]",
+      "1802f346c MOV RCX,qword ptr [RCX + 0x68]",
+      "1802f3470 CALL qword ptr [0x18060a9b8]",
+      "1802f3476 LEA R8,[0x18069b590]",
+      "1802f347d MOV RDX,qword ptr [RAX]",
+      "1802f3480 LEA RCX,[RSP + 0x28]",
+      "1802f3485 CALL 0x18058fda0",
+      "1802f348a NOP",
+      "1802f348b LEA RCX,[RBX + 0x375a0]",
+      "1802f3492 MOV RDX,RAX",
+      "1802f3495 CALL 0x18058ef70",
+      "1802f349a NOP",
+      "1802f349b MOV RCX,qword ptr [RSP + 0x50]",
+      "1802f34a0 CALL 0x1805da5dc",
+      "1802f34a5 MOV RCX,qword ptr [RSP + 0x30]",
+      "1802f34aa CALL 0x1805da5dc",
+      "1802f34af ADD RSP,0x70",
+      "1802f34b3 POP RBX",
+      "1802f34b4 RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "1802f3462",
+        "to": "180609050",
+        "type": "READ",
+        "symbol": "PTR_?gEngine@GAME@@3PEAVEngine@1@EA_180609050"
+      },
+      {
+        "from": "1802f3470",
+        "to": "18060a9b8",
+        "type": "READ",
+        "symbol": "PTR_?GetState@LuaManager@GAME@@QEAAAEAVLuaState@LUAGLUE@@XZ_18060a9b8"
+      },
+      {
+        "from": "1802f3485",
+        "to": "18058fda0",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_18058fda0"
+      },
+      {
+        "from": "1802f3495",
+        "to": "18058ef70",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_18058ef70"
+      },
+      {
+        "from": "1802f34a0",
+        "to": "1805da5dc",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1805da5dc"
+      },
+      {
+        "from": "1802f34aa",
+        "to": "1805da5dc",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1805da5dc"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nvoid _PostLuaInitialize_GameEngine_GAME__QEAAXXZ\r\n               (longlong param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)\r\n\r\n{\r\n  undefined8 *puVar1;\r\n  undefined8 uVar2;\r\n  undefined1 auStack_50 [8];\r\n  undefined8 uStack_48;\r\n  undefined8 uStack_28;\r\n  \r\n                    /* 0x2f3450  20139  ?PostLuaInitialize@GameEngine@GAME@@QEAAXXZ */\r\n  uVar2 \u003d 0xfffffffffffffffe;\r\n  puVar1 \u003d (undefined8 *)\r\n           _GetState_LuaManager_GAME__QEAAAEAVLuaState_LUAGLUE__XZ\r\n                     (*(undefined8 *)(*(longlong *)_gEngine_GAME__3PEAVEngine_1_EA_exref + 0x68));\r\n  uVar2 \u003d FUN_18058fda0(auStack_50,*puVar1,\u0026UNK_18069b590,param_4,uVar2);\r\n  FUN_18058ef70(param_1 + 0x375a0,uVar2);\r\n  FUN_1805da5dc(uStack_28);\r\n  FUN_1805da5dc(uStack_48);\r\n  return;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "InitializeObjects",
+    "start": "18036b240",
+    "end": "18036b26e",
+    "bytesBudget": 47,
+    "function": "InitializeObjects",
+    "instructions": [
+      "18036b240 SUB RSP,0x28",
+      "18036b244 CALL qword ptr [0x18060b578]",
+      "18036b24a MOV ECX,0x37868",
+      "18036b24f CALL 0x1805da6c4",
+      "18036b254 MOV RCX,RAX",
+      "18036b257 CALL 0x1802c07a0",
+      "18036b25c MOV RCX,RAX",
+      "18036b25f MOV qword ptr [0x180a66288],RAX",
+      "18036b266 ADD RSP,0x28",
+      "18036b26a JMP 0x1802d7230"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "18036b244",
+        "to": "18060b578",
+        "type": "READ",
+        "symbol": "PTR_GetCurrentThreadId_18060b578"
+      },
+      {
+        "from": "18036b24f",
+        "to": "1805da6c4",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_1805da6c4"
+      },
+      {
+        "from": "18036b257",
+        "to": "1802c07a0",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "??0GameEngine@GAME@@QEAA@XZ"
+      },
+      {
+        "from": "18036b25f",
+        "to": "180a66288",
+        "type": "WRITE",
+        "symbol": "?gGameEngine@GAME@@3PEAVGameEngine@1@EA"
+      },
+      {
+        "from": "18036b26a",
+        "to": "1802d7230",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "?Initialize@GameEngine@GAME@@QEAAXXZ"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\n/* WARNING: Globals starting with \u0027_\u0027 overlap smaller symbols at the same address */\r\n\r\nvoid InitializeObjects(void)\r\n\r\n{\r\n  code *pcVar1;\r\n  undefined8 uVar2;\r\n  undefined8 in_R9;\r\n  ulonglong auStack_30 [2];\r\n  undefined8 uStack_20;\r\n  undefined8 uStack_18;\r\n  \r\n                    /* 0x36b240  25112  InitializeObjects */\r\n  auStack_30[0] \u003d 0x18036b24a;\r\n  GetCurrentThreadId();\r\n  auStack_30[0] \u003d 0x18036b254;\r\n  uVar2 \u003d FUN_1805da6c4(0x37868);\r\n  auStack_30[0] \u003d 0x18036b25c;\r\n  __gGameEngine_GAME__3PEAVGameEngine_1_EA \u003d __0GameEngine_GAME__QEAA_XZ(uVar2);\r\n  uVar2 \u003d 0xfffffffffffffffe;\r\n  FUN_180590300(__gGameEngine_GAME__3PEAVGameEngine_1_EA);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_180699f70,0x10,in_R9,uVar2);\r\n  pcVar1 \u003d _classInfo_Entity_GAME__1VRTTI_ClassInfo_2_B_exref;\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,pcVar1);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_180699f60,0xf);\r\n  pcVar1 \u003d _classInfo_Entity_GAME__1VRTTI_ClassInfo_2_B_exref;\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,pcVar1);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_180699fd0,0x17);\r\n  pcVar1 \u003d _classInfo_Entity_GAME__1VRTTI_ClassInfo_2_B_exref;\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,pcVar1);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_180699fc0,10);\r\n  pcVar1 \u003d _classInfo_Entity_GAME__1VRTTI_ClassInfo_2_B_exref;\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,pcVar1);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_180699fb0,0xb);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_Decoration_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_180699f98,0x14);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_Monster_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a018,0x14);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_Weapon_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a008,0xd);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_PatrolPoint_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_180699ff8,10);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_Monster_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_180699fe8,0xf);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_Proxy_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a060,0xd);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_NpcWanderPoint_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a050,0xd);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_Npc_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a040,9);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_StaticTeleporter_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a030,8);\r\n  pcVar1 \u003d _classInfo_Entity_GAME__1VRTTI_ClassInfo_2_B_exref;\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,pcVar1);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a0c0,0x11);\r\n  pcVar1 \u003d _classInfo_Entity_GAME__1VRTTI_ClassInfo_2_B_exref;\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,pcVar1);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a0a8,0x10);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_StaticShrine_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a088,0x19);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,0x180a588b0);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a070,0x15);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,0x180a588e0);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a140,0x1e);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_ProxyEndless_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a120,0x1c);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_ProxyEndless_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a100,0x1c);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_ProxyEndless_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a0d8,0x24);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_ProxyEndless_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a180,0x1f);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_ProxyEndless_GAME__1VRTTI_ClassInfo_2_B);\r\n  uStack_18 \u003d 0xf;\r\n  uStack_20 \u003d 0;\r\n  auStack_30[0] \u003d auStack_30[0] \u0026 0xffffffffffffff00;\r\n  FUN_180016460(auStack_30,\u0026UNK_18069a160,0x1e);\r\n  uVar2 \u003d _Get_InstanceGroupManager_GAME__SAPEAV12_XZ();\r\n  _AddGroupAffiliation_InstanceGroupManager_GAME__QEAAXV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__PEBVRTTI_ClassInfo_2__Z\r\n            (uVar2,auStack_30,\u0026_classInfo_ProxyEndless_GAME__1VRTTI_ClassInfo_2_B);\r\n  return;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "ShutdownObjects",
+    "start": "18036b270",
+    "end": "18036b27f",
+    "bytesBudget": 16,
+    "function": "ShutdownObjects",
+    "instructions": [
+      "18036b270 SUB RSP,0x28",
+      "18036b274 MOV RCX,qword ptr [0x180a66288]",
+      "18036b27b TEST RCX,RCX",
+      "18036b27e JZ 0x18036b2bb"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "18036b274",
+        "to": "180a66288",
+        "type": "READ",
+        "symbol": "?gGameEngine@GAME@@3PEAVGameEngine@1@EA"
+      },
+      {
+        "from": "18036b27e",
+        "to": "18036b2bb",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18036b2bb"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\n/* WARNING: Globals starting with \u0027_\u0027 overlap smaller symbols at the same address */\r\n\r\nvoid ShutdownObjects(void)\r\n\r\n{\r\n  longlong lVar1;\r\n  \r\n                    /* 0x36b270  25113  ShutdownObjects */\r\n  if (__gGameEngine_GAME__3PEAVGameEngine_1_EA !\u003d 0) {\r\n    _Shutdown_GameEngine_GAME__QEAAXXZ();\r\n    lVar1 \u003d __gGameEngine_GAME__3PEAVGameEngine_1_EA;\r\n    if (__gGameEngine_GAME__3PEAVGameEngine_1_EA !\u003d 0) {\r\n      __1GameEngine_GAME__QEAA_XZ(__gGameEngine_GAME__3PEAVGameEngine_1_EA);\r\n      FUN_1805da5dc(lVar1,0x37868);\r\n    }\r\n    __gGameEngine_GAME__3PEAVGameEngine_1_EA \u003d 0;\r\n  }\r\n  return;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  }
+]

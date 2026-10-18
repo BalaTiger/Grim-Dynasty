@@ -1,0 +1,23 @@
+# 离线规则内核：构建与支持边界
+
+运行 `D:\MyGitRepo\Grim-Dynasty\tools\build_offline.ps1`，使用现有 Windows Framework 编译器构建10个自有 DLL 和9个独立原创场景，输出至 `.tooling/offline-system`。构建会核验已有输出归属、SHA256 与依赖，无需启动原版、安装 SDK 或联网。
+
+完整构建通过695条固定断言。新增 `LevelUpQuestDemo.exe` 展示：显式击杀事件→任务自动完成→执行原创公式 `(playerLevel*100)`→主角等级1升至2、技能点0写为3、属性点0写为1→等级查询同步→生成技能/等级事件→“军功晋阶”字幕记录入队→奖励UID登记并注销处理器。该场景不再使用阈值样本。
+
+本轮恢复升级循环、最高等级经验改写、点数与计数回绕，以及字幕逻辑队列。公式暂支持完全加括号的整数四则运算和 playerLevel；官方曲线所需的 powf、小数转换尚未恢复，继续返回 Unsupported。显示队列不是画面渲染；本地化结果、空宠物/星座技能/事件订阅者、无服务/音效/粒子回调等仍是明确支持条件，十级主角教程分支未恢复。
+
+本轮10次 Rea 静态查询成功，其他算术细节由已标明来源的 Ghidra 缓存证据支持。Rea 启动曾因下载风险被自动审批拒绝；核验现有缓存并改成离线启动后已解决，没有安装或修改全局 MCP 配置。
+
+详见 [晋级闭环审计](rewards/LEVEL-UP-COMPLETION.md)、`docs/rewards/acceptance-levelup.json` 及包内 `manifest.json`。静态证据、原创场景均不冒称原版动态验证或完整明末游戏；原版资源不随包发布。历史审计、验收和源码备份保留。
+
+## CRT曲线与经验倍率后续完成
+
+现已支持显式C locale与已核对System32 UCRT配置下的powf、小数转float、官方经验曲线和经验倍率。当前通过695条断言、9个独立场景；3份官方记录共288项逐位与取整阈值对比通过。前文关于powf和小数尚未恢复的状态由本节更新；原版运行时locale、渲染/回调等边界仍有效。见[完成审计](rewards/CRT-CURVE-COMPLETION.md)与[验收证据](rewards/acceptance-crt.json)。
+
+## 教程状态规则与十级分支完成
+
+当前721条断言、10个独立场景通过。首次解锁写位图和有序列表，主角十级页0x14接入；ShowTutorialPage保留内容0x36/路由0x37差异。非空UI订阅者仍Unsupported。见[完成审计](rewards/TUTORIAL-COMPLETION.md)和[验收数据](rewards/acceptance-tutorial.json)。此前十级教程未恢复的状态由本节更新。
+
+## 任务首次接受教程继续完成
+
+当前731条固定断言、10个独立场景通过。同一原创场景接受任务解锁页55、完成后升十级解锁页20，有序列表为[55,20]。仅明确的已恢复教程适配器可开放此分支，任意onAccept动作及非空原UI订阅者仍Unsupported。见[来源审计](rewards/TUTORIAL-START-COMPLETION.md)与[最终验收](rewards/acceptance-tutorial-start.json)。

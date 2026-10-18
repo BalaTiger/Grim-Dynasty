@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
+using GrimDynasty.TaskItems;
+using GrimDynasty.TaskAuto;
+class InventoryDeliveryDemo {
+ static void Need(bool b,string s){if(!b)throw new Exception(s);}
+ static int Main(){try{Console.OutputEncoding=new System.Text.UTF8Encoding(false);var x=ExampleDeliveryQuest.Create();var a=x.Quest.Auto;Need(AutomaticTasks.Start(a).Status=="Known","start");Need(AutomaticTasks.Update(a).Status=="Known"&&a.Runtime.State.Task.State==2,"before delivery");var trace=new List<object>();
+  trace.Add(new{step="before_delivery",getter_count=x.Item.QuantityFromSlot618,raw88c=x.Item.RawStack88C,replica6b0=x.Item.RawReplicaStack6B0,money=x.Wallet.Money16C4});
+  int taken;Need(InventoryTake.Execute(x.Inventory,100,2,out taken).Status=="Known"&&taken==2&&x.Item.RawStack88C==1&&x.Item.RawReplicaStack6B0==1&&x.Quest.Condition.ChangedByte14==1&&x.Inventory.LastDelivered==1,"actual inventory write and covered nonempty callback");
+  trace.Add(new{step="partial_stack_take_and_event17",taken,getter_count=x.Item.QuantityFromSlot618,raw88c=x.Item.RawStack88C,replica6b0=x.Item.RawReplicaStack6B0,item_event_kind=x.Inventory.Produced[0].Kind,delivered=x.Inventory.LastDelivered,condition_dirty=x.Quest.Condition.ChangedByte14});
+  Need(AutomaticTasks.Update(a).Status=="Known"&&a.Runtime.State.Task.State==3&&x.Wallet.Money16C4==125&&!x.Quest.Condition.Owner17Attached,"delivery goal money completion");
+  trace.Add(new{step="item_condition_completes_and_rewards",task_state=a.Runtime.State.Task.State,money=x.Wallet.Money16C4,reward_uids=x.Record.RewardTaskUidsAt50,item_callbacks_detached=!x.Quest.Condition.Owner16Attached&&!x.Quest.Condition.Owner17Attached,retained_inventory_object=x.Quest.Stock.InventoryItemIds.Contains(100)});
+  Console.WriteLine(new JavaScriptSerializer().Serialize(new{status="passed",scene="交付行粮实扣闭环",trace,scope="Own retained non-relic stack object with explicit verified getter/setter method-pair profile. Native-derived two-field stack write then event17 and known HasItem receiver. Own original QST2 condition and own money completion. No manual quantity update after setup, native game, loot/GiveItem generation, full-stack deletion, stash save or real saves."}));return 0;
+ }catch(Exception e){Console.Error.WriteLine(e);return 1;}}
+}

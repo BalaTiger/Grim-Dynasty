@@ -1,0 +1,99 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.Conditions;
+using GrimDynasty.TaskLogic;
+using GrimDynasty.TokenActions;
+using GrimDynasty.TaskAuto;
+namespace GrimDynasty.Rewards {
+ public sealed class NumericAction {
+  public int TypeId;
+  public MoneyAction Money;
+  public PointAction Point;
+ }
+ public sealed class NumericEvent {
+  public bool ConditionsKnown;
+  public List<ConditionSpec> Conditions; // null is an evidenced null pointer.
+  public int Operation;
+  public List<NumericAction> Actions;
+ }
+ public sealed class AdjustmentResult {
+  public string Status,Reason;
+  public int[] Multipliers;
+ }
+ public static class RewardAdjustment {
+  public static EvaluationResult Evaluate(NumericEvent e,uint actual,uint over){
+   if(e==null||!e.ConditionsKnown)return EvaluationResult.Unsupported("UnknownRewardEventConditions");
+   if(e.Conditions==null)return EvaluationResult.Known(true);
+   var copy=new List<ConditionSpec>();
+   foreach(var c in e.Conditions){
+    if(c==null||c.TypeId!=4||c.Version!=0||c.DifficultyOverride!=uint.MaxValue)return EvaluationResult.Unsupported("RewardOverrideConditionOutsideCoveredDomain");
+    copy.Add(new ConditionSpec{TypeId=4,Version=0,StoredDifficulty=c.StoredDifficulty,ComparisonId=c.ComparisonId,DifficultyOverride=over});
+   }
+   return ConditionEvaluator.Collection(copy,e.Operation,false,new SimulatedContext{Difficulty=actual});
+  }
+  public static AdjustmentResult Calculate(IList<NumericEvent> events,uint? difficulty,bool[] history,byte? flags){
+   if(events==null||!difficulty.HasValue||difficulty.Value>2||history==null||history.Length!=3||!flags.HasValue)return new AdjustmentResult{Status="Unsupported",Reason="UnknownRewardAdjustmentBanks"};
+   int missing=0;for(int i=0;i<=difficulty.Value;i++)if(!history[i]&&(i==2||(flags.Value&(i==0?1:2))==0))missing++;
+   int[] multipliers=new int[events.Count];
+   for(int i=0;i<events.Count;i++){
+    multipliers[i]=-1;
+    bool all=true;for(uint d=0;d<3;d++){var q=Evaluate(events[i],difficulty.Value,d);if(q.Status!="Known")return new AdjustmentResult{Status=q.Status,Reason=q.Reason};if(!q.Value.Value){all=false;break;}}
+    if(all)multipliers[i]=missing;
+   }
+   return new AdjustmentResult{Status="Known",Multipliers=multipliers};
+  }
+ }
+ public sealed class AdjustedCompletion : ICompletionRuntime {
+  public WalletSnapshot Wallet;
+  public PointActor Actor;
+  public List<NumericEvent> Events;
+  public bool QuestUidIndexComplete;
+  public readonly Dictionary<uint,RewardQuestSnapshot> QuestsByUid=new Dictionary<uint,RewardQuestSnapshot>();
+  public int[] LastMultipliers;
+  bool activeReward;
+  static NumericAction Clone(NumericAction a){return a==null?null:new NumericAction{TypeId=a.TypeId,Money=a.Money==null?null:new MoneyAction{Version=a.Money.Version,Amount=a.Money.Amount},Point=a.Point==null?null:new PointAction{Version=a.Point.Version,Attribute=a.Point.Attribute,OriginalAmount=a.Point.OriginalAmount,CurrentAmount=a.Point.CurrentAmount}};}
+  static WalletSnapshot Copy(WalletSnapshot p){return p==null?null:new WalletSnapshot{MainPlayerResolved=p.MainPlayerResolved,StaticMoneyNameReady=p.StaticMoneyNameReady,Money16C4=p.Money16C4,MoneyNameCache=p.MoneyNameCache==null?null:p.MoneyNameCache.Copy()};}
+  static PointActor Copy(PointActor p){return p==null?null:new PointActor{MainPlayerResolved=p.MainPlayerResolved,Difficulty=p.Difficulty,ObjectId=p.ObjectId,Flags17F4=p.Flags17F4,Skill176C=p.Skill176C,Attribute1768=p.Attribute1768,StaticSkillNameReady=p.StaticSkillNameReady,SkillNameCache=p.SkillNameCache==null?null:p.SkillNameCache.Copy(),Events=new OfflineEvents(true){DebugEnabled=false}};}
+  MutationResult Validate(AutoSnapshot a,out AdjustmentResult plan){
+   plan=null;
+   if(a==null||a.Runtime==null||a.Runtime.State==null||a.Runtime.World==null||Events==null||a.OnCompleteEventCount!=Events.Count)return MutationResult.Unsupported("MismatchedAdjustedCompletionContext");
+   plan=RewardAdjustment.Calculate(Events,a.Runtime.State.Difficulty,a.RewardRecordedA3,a.MainPlayerFlags17F4);if(plan.Status!="Known")return MutationResult.Unsupported(plan.Reason);
+   if(!a.Runtime.World.MainPlayerResolved||!a.QuestUid.HasValue)return MutationResult.Unsupported("UnknownAdjustedRewardPlayerOrQuest");
+   if(Actor!=null&&(Actor.MainPlayerResolved!=true||Actor.Difficulty!=a.Runtime.State.Difficulty||Actor.Flags17F4!=a.MainPlayerFlags17F4||!Object.ReferenceEquals(Actor.Events,a.Events)))return MutationResult.Unsupported("AdjustedRewardActorIdentityMismatch");
+   if(Wallet!=null&&Wallet.MainPlayerResolved!=true)return MutationResult.Unsupported("AdjustedRewardWalletIdentityMismatch");
+   if(!a.Runtime.World.Core.Difficulty.HasValue||a.Runtime.World.Core.Difficulty!=a.Runtime.State.Difficulty)return MutationResult.Unsupported("AdjustedRewardDifficultyMismatch");
+   bool reward=false;var wallet=Copy(Wallet);var actor=Copy(Actor);var seen=new HashSet<NumericAction>();var points=new HashSet<PointAction>();var monies=new HashSet<MoneyAction>();
+   for(int i=0;i<Events.Count;i++){
+    var active=RewardAdjustment.Evaluate(Events[i],a.Runtime.State.Difficulty.Value,uint.MaxValue);if(active.Status!="Known")return MutationResult.Unsupported(active.Reason);
+    if(Events[i].Actions==null)continue;
+    foreach(var original in Events[i].Actions){
+     if(original!=null&&(!seen.Add(original)||(original.Point!=null&&!points.Add(original.Point))||(original.Money!=null&&!monies.Add(original.Money))))return MutationResult.Unsupported("AliasedNumericRewardAction");
+     var action=Clone(original);var valid=ValidateAction(action);if(valid.Status!="Known")return valid;
+     if(plan.Multipliers[i]>=0&&action.Point!=null){var m=PointRewards.Modify(action.Point,(uint)plan.Multipliers[i]);if(m.Status!="Known")return m;}
+     if(!active.Value.Value)continue;reward=true;
+     if(action.TypeId==18){if(Actor==null||Actor.Events==null)return MutationResult.Unsupported("UnknownAttributeNotificationContext");var route=Actor.Events.CheckEmpty(0x32);if(route.Status!="Known")return route;}
+     var executed=Execute(action,wallet,actor);if(executed.Status!="Known")return executed;
+    }
+   }
+   if(reward){RewardQuestSnapshot q;if(!QuestsByUid.TryGetValue(a.QuestUid.Value,out q)){if(!QuestUidIndexComplete)return MutationResult.Unsupported("IncompleteRewardQuestUidIndex");}
+    else{QuestState byName;if(q==null||q.RewardTaskUidsAt50==null||a.Runtime.QuestReference==null||!a.Runtime.World.Quests.TryGetValue(a.Runtime.QuestReference,out byName)||!Object.ReferenceEquals(q.Quest,byName))return MutationResult.Unsupported("RewardQuestIndexSnapshotMismatch");}}
+   return MutationResult.Known(false);
+  }
+  static MutationResult ValidateAction(NumericAction a){
+   if(a==null)return MutationResult.Unsupported("NullNumericRewardAction");
+   if(a.TypeId==4&&a.Money!=null&&a.Money.Version==0&&a.Point==null)return MutationResult.Known(false);
+   if((a.TypeId==15||a.TypeId==18)&&a.Point!=null&&a.Point.Version==0&&a.Money==null&&a.Point.Attribute==(a.TypeId==18))return MutationResult.Known(false);
+   return MutationResult.Unsupported("NumericRewardActionOutsideCoveredDomain");
+  }
+  static MutationResult Execute(NumericAction a,WalletSnapshot wallet,PointActor actor){return a.TypeId==4?MoneyRewards.Execute(a.Money,wallet):PointRewards.Execute(a.Point,actor);}
+  public MutationResult Check(AutoSnapshot a){AdjustmentResult p;return Validate(a,out p);}
+  public MutationResult BeforeRewardHistory(AutoSnapshot a){
+   AdjustmentResult plan;var valid=Validate(a,out plan);if(valid.Status!="Known")return valid;LastMultipliers=plan.Multipliers;activeReward=false;bool changed=false;
+   // Native adjusts every eligible event's actions before executing any event.
+   for(int i=0;i<Events.Count;i++)if(plan.Multipliers[i]>=0&&Events[i].Actions!=null)foreach(var action in Events[i].Actions)if(action.Point!=null){var m=PointRewards.Modify(action.Point,(uint)plan.Multipliers[i]);changed|=m.Changed.Value;}
+   foreach(var e in Events){var active=RewardAdjustment.Evaluate(e,a.Runtime.State.Difficulty.Value,uint.MaxValue);if(!active.Value.Value||e.Actions==null)continue;foreach(var action in e.Actions){activeReward=true;var r=Execute(action,Wallet,Actor);if(r.Status!="Known")throw new InvalidOperationException("Reward snapshot changed during commit: "+r.Reason);changed|=r.Changed.Value;}}
+   return MutationResult.Known(changed);
+  }
+  public MutationResult AfterRewardHistory(AutoSnapshot a){RewardQuestSnapshot q;if(activeReward&&QuestsByUid.TryGetValue(a.QuestUid.Value,out q)){q.RewardTaskUidsAt50.Add(a.Runtime.State.Task.Uid);return MutationResult.Known(true);}return MutationResult.Known(false);}
+ }
+}

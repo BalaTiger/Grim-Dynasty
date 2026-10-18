@@ -1,0 +1,11 @@
+# 离线规则内核：构建与支持边界
+
+运行 `D:\MyGitRepo\Grim-Dynasty\tools\build_offline.ps1`，使用现有 Windows Framework 编译器构建10个自有 DLL 和7个独立场景，输出至 `.tooling/offline-system`。构建会校验已有输出归属、SHA256 与依赖，无需启动原版、安装 SDK 或联网。
+
+完整构建通过563条固定断言。新增 `ExperienceQuestDemo.exe` 展示：两次显式击杀事件→任务自动完成→冷启动 Name 初始化→构造经验 Bonus 并走本地入站接口→经验100写为175、累计经验200写为275→记录奖励UID并注销处理器。等级保持4；生命状态和零值 Bonus 统计影响在明确支持的范围内处理。
+
+经验分支以14次成功 Rea 静态查询为证据。目前要求给定阈值求值样本、未升级、经验加成为零、星座技能列表为空及已知生命状态。原版公式解释器、升级和显示副作用尚未恢复；网络出站、未知上下文返回 Unsupported。已有金额、技能点、属性点、贡品及难度奖励调节继续可用。
+
+击杀事件仍是显式输入，物品示例仍使用声明库存快照；这些场景不是原版动态对照，也不代表完整游戏或明末可玩切片已经完成。原版资源不随包发布。
+
+详见 [经验分支审计](rewards/EXPERIENCE-COMPLETION.md)、`docs/rewards/acceptance-experience.json`、[既有奖励审计](rewards/ADJUSTED-COMPLETION.md) 及包内 `manifest.json`。历史审计、验收和源码备份保留。

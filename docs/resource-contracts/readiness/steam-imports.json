@@ -1,0 +1,70 @@
+{
+  "operation": "read-only normal PE import metadata",
+  "files": [
+    {
+      "relative_path": "Grim Dawn.exe",
+      "steam_normal_imports": []
+    },
+    {
+      "relative_path": "x64/Grim Dawn.exe",
+      "steam_normal_imports": []
+    },
+    {
+      "relative_path": "Game.dll",
+      "steam_normal_imports": []
+    },
+    {
+      "relative_path": "x64/Game.dll",
+      "steam_normal_imports": []
+    },
+    {
+      "relative_path": "Engine.dll",
+      "steam_normal_imports": [
+        {
+          "dll": "steam_api.dll",
+          "names": [
+            "SteamAPI_GetHSteamUser",
+            "SteamInternal_FindOrCreateUserInterface",
+            "SteamInternal_ContextInit",
+            "SteamAPI_UnregisterCallback",
+            "SteamAPI_RegisterCallback",
+            "SteamInternal_GameServer_Init_V2",
+            "SteamGameServer_Shutdown",
+            "SteamGameServer_RunCallbacks",
+            "SteamInternal_CreateInterface",
+            "SteamInternal_SteamAPI_Init",
+            "SteamAPI_RunCallbacks",
+            "SteamAPI_Shutdown",
+            "SteamGameServer_GetHSteamUser",
+            "SteamInternal_FindOrCreateGameServerInterface"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "x64/Engine.dll",
+      "steam_normal_imports": [
+        {
+          "dll": "steam_api64.dll",
+          "names": [
+            "SteamAPI_GetHSteamUser",
+            "SteamInternal_FindOrCreateUserInterface",
+            "SteamInternal_ContextInit",
+            "SteamInternal_GameServer_Init_V2",
+            "SteamInternal_CreateInterface",
+            "SteamAPI_RegisterCallback",
+            "SteamInternal_SteamAPI_Init",
+            "SteamAPI_RunCallbacks",
+            "SteamAPI_Shutdown",
+            "SteamAPI_UnregisterCallback",
+            "SteamGameServer_GetHSteamUser",
+            "SteamInternal_FindOrCreateGameServerInterface",
+            "SteamGameServer_Shutdown",
+            "SteamGameServer_RunCallbacks"
+          ]
+        }
+      ]
+    }
+  ],
+  "limitation": "Imports establish dependency, not observed runtime failure; original game not launched"
+}

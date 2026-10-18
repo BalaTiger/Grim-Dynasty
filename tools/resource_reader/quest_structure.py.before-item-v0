@@ -1,0 +1,99 @@
+"""Strict QST2 v9 graph reader derived from shipped QuestEditor metadata/IL.
+
+This does not execute conditions/actions. Unsupported script types/versions fail
+at their byte offset rather than guessing a length and silently losing alignment.
+"""
+import struct
+from gd_resources import span,FormatError,quest_record
+
+CONDITIONS={0:('OnQuest','quest:s on:b'),1:('QuestTaskComplete','quest:s task:u complete:b'),2:('HasExperience','amount:u'),3:('IsLevel','level:u'),4:('IsDifficulty','difficulty:u'),5:('IsHardcore','hardcore:b'),7:('HasToken','token:s has:b'),8:('HasMoney','amount:u'),9:('HasItem','dbr:s count:u complete:b'),13:('KnowsPlayer','known:b'),14:('OnQuestTask','quest:s task:u on:b'),15:('UsedQuestItem','dbr:s count:u'),17:('WaitForCompletion',''),18:('ServerHasToken','token:s has:b'),19:('QuestBlocked','quest:s blocked:b'),20:('AnyoneHasToken','token:s has:b'),21:('CheckRandomValue','name:s value:i'),22:('OwnsDLC','dlcId:u'),23:('HasTribute','amount:u'),24:('EarnedDevotion','amount:u'),25:('HasMastery','mastery:u has:b'),26:('IsChallenge','challenge:u'),27:('HasBuff','buffName:s has:b'),28:('HasKilledMonsterClass','monsterClass1:u monsterClass2:u count:u'),29:('HasKilledFaction','faction1:i faction2:i count:u')}
+ACTIONS={1:('BeginQuestTask','quest:s task:u'),2:('CompleteQuest','quest:s'),3:('CompleteQuestTask','quest:s task:u'),4:('GiveMoney','amount:i'),5:('GiveFaction','faction:s amount:i'),6:('GiveItem','dbr:s amount:i'),7:('GiveLevel','amount:u'),8:('GiveExperience','amount:u'),9:('GiveToken','token:s'),10:('RemoveToken','token:s'),12:('DebugPrint','text:s'),13:('PlaySound','dbr:s'),14:('PlayAnimation','animation:u'),15:('GiveSkillPoint','amount:u'),17:('Notification','tag:s'),18:('GiveAttributePoint','amount:u'),19:('ScriptEvent','eventName:s'),20:('GiveRandomItem','dbr:s amount:i'),21:('GenerateRandomValue','name:s min:i max:i'),22:('CastSkill','dbr:s'),23:('UnlockFaction','faction:s'),24:('SetFaction','faction:s amount:i'),25:('GiveDevotion','amount:i'),26:('GiveTribute','amount:i'),27:('UnlockTutorial','page:i'),28:('PlayVideo','path:s allowSkip:b')}
+COMPARISONS={0:'Less',1:'LessEqual',2:'Equal',3:'GreaterEqual',4:'Greater',5:'NotEqual'}
+
+class Cursor:
+ def __init__(self,data,end):self.data=data;self.p=12;self.end=end;self.nodes=0
+ def take(self,n):
+  if n>self.end-self.p:raise FormatError(f'QST graph truncated at {self.p}, need {n}')
+  b=span(self.data,self.p,n);self.p+=n;return b
+ def u(self):return struct.unpack('<I',self.take(4))[0]
+ def i(self):return struct.unpack('<i',self.take(4))[0]
+ def byte(self):return self.take(1)[0]
+ def floating(self):return struct.unpack('<f',self.take(4))[0]
+ def boolean(self):
+  b=self.byte()
+  if b not in (0,1):raise FormatError(f'Noncanonical bool {b} at {self.p-1}')
+  return bool(b)
+ def string(self):
+  n=self.u()
+  if n>1024*1024:raise FormatError('QST string limit')
+  return self.take(n).decode('utf8')
+ def count(self):
+  n=self.u()
+  if n>10000:raise FormatError('QST collection count limit')
+  return n
+ def fields(self,schema):
+  result={}
+  for token in schema.split():
+   name,typ=token.split(':');result[name]={'s':self.string,'u':self.u,'i':self.i,'b':self.boolean}[typ]()
+  return result
+ def lua(self):
+  function=self.string();args=[]
+  names={0:'PlayerId',1:'QuestGiverId',2:'Bool',3:'Number',4:'String',5:'Nil'}
+  for _ in range(self.count()):
+   typ=self.i()
+   if typ not in names:raise FormatError('Unknown Lua argument type')
+   args.append({'type_id':typ,'type':names[typ],'bool_value':self.boolean(),'number_value':self.floating(),'string_value':self.string()})
+  return {'function':function,'arguments':args,'execution':'not executed or evaluated'}
+ def script(self,condition):
+  start=self.p;typ=self.i();version=self.byte();comparison=self.i() if condition else None
+  if version>1:raise FormatError(f'Unverified script version {version}, type {typ}, offset {start}')
+  table=CONDITIONS if condition else ACTIONS
+  if (condition and typ==12) or (not condition and typ==11):entry=('LuaScript','')
+  elif condition and typ==6:entry=('HasFaction','faction:s'+(' value:i' if version>=1 else ''))
+  elif condition and typ==11:entry=('HasQuestObjective','questFile:s taskUid:u'+(' objectiveUid:u' if version==1 else '')+' satisfied:b')
+  elif condition and typ in (10,16):
+   names=[self.string() for _ in range(self.count())];amount=self.u()
+   return {'offset':start,'end':self.p,'type_id':typ,'type':'HasKilled' if typ==10 else 'HasKilledProxy','version':version,'comparison':COMPARISONS.get(comparison,comparison),'parameters':{'names':names,'count':amount}}
+  else:entry=table.get(typ)
+  if entry is None:raise FormatError(f'Unsupported {"condition" if condition else "action"} type {typ}, version {version}, offset {start}')
+  name,schema=entry;params=self.lua() if name=='LuaScript' else self.fields(schema)
+  if condition and name=='LuaScript':
+   params.update({'return_comparison_id':self.i(),'return_type_id':self.i(),'bool_return':self.boolean(),'number_return':self.floating(),'string_return':self.string()})
+  r={'offset':start,'end':self.p,'type_id':typ,'type':name,'version':version,'parameters':params}
+  if condition:r['comparison_id']=comparison;r['comparison']=COMPARISONS.get(comparison,'UNKNOWN')
+  return r
+ def conditions(self):
+  n=self.count();op=self.i() if n else None
+  if op not in (None,0,1):raise FormatError('Unknown QST condition operator')
+  return {'operator':{None:None,0:'And',1:'Or'}[op],'conditions':[self.script(True) for _ in range(n)]}
+ def node(self,kind):
+  self.nodes+=1
+  if self.nodes>20000:raise FormatError('QST total node limit')
+  start=self.p;r={'kind':kind,'offset':start}
+  if kind=='objective':r['uid']=self.u()
+  r['flags']=self.u();r['conditions']=self.conditions();r['actions']=[self.script(False) for _ in range(self.count())];r['end']=self.p
+  return r
+
+def quest_structure(data):
+ locale=quest_record(data);c=Cursor(data,locale['text_section_offset'])
+ q={'uid':c.u(),'flags':c.u(),'tasks':[]};text_nodes=[{'kind':'group'},{'kind':'quest'}]
+ for _ in range(c.count()):
+  task={'kind':'task','offset':c.p,'uid':c.u(),'flags':c.u()};description={'kind':'description'};text_nodes.extend([task,description]);task['description']=description
+  for group,kind in [('on_accept','event'),('objectives','objective'),('on_complete','event')]:
+   task[group]=[c.node(kind) for _ in range(c.count())];text_nodes.extend(task[group])
+  task['is_blocker']=c.boolean();task['dont_propagate']=c.boolean();task['end']=c.p;q['tasks'].append(task)
+ if c.p!=c.end:raise FormatError(f'QST graph not exactly consumed: {c.p} != {c.end}')
+ for language,strings in locale['locales'].items():
+  if len(strings)!=len(text_nodes):raise FormatError(f'QST text-node count mismatch {len(strings)} != {len(text_nodes)}')
+  for index,(node,string) in enumerate(zip(text_nodes,strings)):
+   node.setdefault('text',{})[language]={'index':index,**string}
+ q['group_text']=text_nodes[0]['text'];q['quest_text']=text_nodes[1]['text'];q['graph_end']=c.p;q['sha256']=locale['sha256']
+ q['coverage']={'graph':'all bytes consumed; all nodes, condition/action typed parameters decoded','execution':'not evaluated; external quest state, token provenance, Lua implementation and numeric flag semantics not inferred','unknowns':['numeric quest/node flags retained without inferred bit meanings','reserved script versions >1 and unsupported type identifiers rejected','Lua function names and typed arguments decoded; function bodies and execution semantics not recovered','not a runtime quest interpreter']}
+ return q
+
+if __name__=='__main__':
+ import argparse,json
+ from gd_resources import ARC
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('archive');ap.add_argument('member');a=ap.parse_args()
+ with ARC.open(a.archive) as arc:result=quest_structure(arc.read(a.member))
+ print(json.dumps(result,ensure_ascii=False,indent=2))

@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.TaskItems;
+using GrimDynasty.TaskAuto;
+class InventoryAddTests {
+ static int n;static void Need(bool b,string s){n++;if(!b)throw new Exception(s);}
+ static ExampleInventoryCycle Waiting(){var x=ExampleInventoryCycle.Create();AutomaticTasks.Start(x.Tasks[0]);AutomaticTasks.Update(x.Tasks[0]);int taken;InventoryTake.Execute(x.Base.Inventory,100,3,out taken);AutomaticTasks.Update(x.Tasks[0]);AutomaticTasks.Start(x.Tasks[1]);AutomaticTasks.Update(x.Tasks[1]);return x;}
+ static void Main(){
+  var x=Waiting();var original=x.Base.Item;Need(InventoryAdd.Check(x.Add,100,false).Status=="Known"&&x.Base.Quest.Stock.InventoryItemIds.Count==0&&original.RawGender874==0&&x.Add.Engine.ItemAddCount1C==7&&x.Conditions[1].ChangedByte14==0&&x.Add.Produced.Count==0,"add preflight does not mutate counter, gender, vector or callback");
+  Need(InventoryAdd.Execute(x.Add,100,false).Status=="Known"&&x.Base.Quest.Stock.InventoryItemIds.Count==1&&x.Base.Quest.Stock.InventoryItemIds[0]==100&&Object.ReferenceEquals(original,x.Base.Quest.Stock.Objects[100])&&original.RawStack88C==3&&original.RawReplicaStack6B0==99,"same object rejoined without generation or stack mutation");
+  Need(x.Add.Engine.ItemAddCount1C==8&&original.RawGender874==1&&x.Add.LastDelivered==1&&x.Conditions[1].ChangedByte14==1&&x.Base.Inventory.DetachedObjects.Count==0,"counter, gender and known item receiver reflect native add");
+  Need(String.Join(",",x.Add.Trace)=="engine_counter_increment,item_gender_set,item_event16,inventory_id_appended,item_hook0_noop,base_item_transmute_skipped","send16 precedes vector append and hook0");
+  var body=(ItemEventBody)x.Add.Produced[0].Body;Need(x.Add.Produced[0].Kind==16&&body.PlayerId==1&&body.ItemObjectId==100,"add payload fields");
+  Need(AutomaticTasks.Update(x.Tasks[1]).Status=="Known"&&x.Base.Wallet.Money16C4==165&&String.Join(",",x.Base.Record.RewardTaskUidsAt50)=="1,2"&&!x.Conditions[1].Owner16Attached&&!x.Conditions[1].Owner17Attached,"second distinct task completes once and unregisters");
+  int events=x.Add.Produced.Count;x.Add.InventoryGender24=-1;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Known"&&x.Add.Engine.ItemAddCount1C==9&&original.RawGender874==-1&&x.Add.Produced.Count==events&&x.Base.Quest.Stock.InventoryItemIds.Count==1,"duplicate still updates pre-guard counter and raw enum gender");
+  x=Waiting();InventoryAdd.Execute(x.Add,100,false);x.Add.SharedRemovalContext=null;x.Add.Events=null;x.Base.Item.ObjectName=null;x.Base.Item.RemovalHookPackInitialized=false;x.Base.Item.AddHook0CallbackPresent=true;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Known"&&x.Add.Engine.ItemAddCount1C==9&&x.Base.Quest.Stock.InventoryItemIds.Count==1,"duplicate skips event/name/hook dependencies");
+  x=Waiting();x.Base.Item.RemovalHookPackInitialized=false;x.Base.Item.AddHook0CallbackPresent=null;Need(InventoryAdd.Execute(x.Add,100,true).Status=="Known"&&x.Base.Quest.Stock.InventoryItemIds.Count==1&&x.Add.LastDelivered==1&&!x.Add.Trace.Contains("item_hook0_noop"),"skip-hook flag avoids lazy script initialization without skipping event");
+  x=Waiting();x.Base.Item.AddHook0CallbackPresent=true;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Unsupported"&&x.Add.Engine.ItemAddCount1C==7&&x.Base.Item.RawGender874==0&&x.Base.Quest.Stock.InventoryItemIds.Count==0&&x.Add.Produced.Count==0&&x.Conditions[1].ChangedByte14==0,"unrecovered add callback rejects before all writes");
+  x=Waiting();x.Base.Item.RemovalHookPackInitialized=false;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Unsupported"&&x.Add.Engine.ItemAddCount1C==7,"hook initialization not guessed");
+  x=Waiting();x.Add.Events.Register(16,new OfflineHandler{Invoke=e=>{throw new Exception("must not run");}});Need(InventoryAdd.Execute(x.Add,100,false).Status=="Unsupported"&&x.Base.Quest.Stock.InventoryItemIds.Count==0&&x.Add.Engine.ItemAddCount1C==7&&x.Base.Item.RawGender874==0,"unknown subscriber rejects before pre-event counter and gender");
+  x=Waiting();x.Add.CoveredConditions=null;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Unsupported"&&x.Base.Quest.Stock.InventoryItemIds.Count==0,"active item subscriber cannot be silently omitted");
+  x=Waiting();x.Base.Item.ObjectName=null;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Unsupported"&&x.Add.Engine.ItemAddCount1C==7&&x.Base.Inventory.DetachedObjects.Contains(100),"receiver validation failure preserves detached ledger and global counter");
+  x=Waiting();Need(InventoryAdd.Execute(x.Add,999,false).Status=="Unsupported"&&x.Add.Engine.ItemAddCount1C==7&&x.Base.Quest.Stock.InventoryItemIds.Count==0,"missing preexisting item is not generated or inserted as a dangling ID");
+  x=Waiting();x.Base.Item.AddMethods=ItemAddMethods.Unknown;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Unsupported"&&x.Base.Quest.Stock.InventoryItemIds.Count==0,"unknown primary table cannot inherit base item assumptions");
+  x=Waiting();x.Base.Item.IsRelic=true;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Unsupported"&&x.Add.Engine.ItemAddCount1C==7,"special-item tutorial path excluded");
+  x=Waiting();x.Add.InventoryGender24=null;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Unsupported"&&x.Add.Engine.ItemAddCount1C==7,"unknown inventory gender rejects before counter");
+  x=Waiting();x.Add.Engine.ItemAddCount1C=null;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Unsupported"&&x.Base.Quest.Stock.InventoryItemIds.Count==0,"local-view unknown counter not zero");
+  x=Waiting();x.Add.Engine.ItemAddCount1C=uint.MaxValue;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Known"&&x.Add.Engine.ItemAddCount1C==0,"engine counter uses native 32-bit wrap");
+  x=Waiting();x.Add.InventoryOwner20=2;x.Add.SharedRemovalContext=null;x.Add.Engine.ItemAddCount1C=null;x.Base.Item.RemovalHookPackInitialized=null;x.Base.Item.AddHook0CallbackPresent=null;x.Base.Item.ObjectName=null;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Known"&&x.Add.Engine.ItemAddCount1C==null&&x.Add.LastDelivered==1&&x.Conditions[1].ChangedByte14==0,"foreign inventory skips local counter/hook and retains receiver player filter");
+  x=Waiting();x.Add.Engine.ClientPlayerId=0;x.Add.Stock.ClientPlayerId=0;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Known"&&x.Add.Engine.ItemAddCount1C==8&&!x.Add.Trace.Contains("item_hook0_noop"),"zero client ID still counts adds but owner mismatch skips hook0");
+  x=Waiting();x.Add.Engine.ClientGetterStable=false;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Unsupported"&&x.Add.Engine.ItemAddCount1C==7,"unstable repeated client getter rejected");
+  x=Waiting();x.Add.Engine.ClientPlayerId=2;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Unsupported"&&x.Base.Quest.Stock.InventoryItemIds.Count==0,"client snapshots cannot disagree");
+  x=Waiting();x.Add.SharedRemovalContext=ExampleFullDelivery.Create(3).Inventory;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Unsupported"&&x.Base.Quest.Stock.InventoryItemIds.Count==0,"do not update another inventory's detached audit");
+  x=Waiting();Need(InventoryAdd.Execute(x.Add,0,false).Status=="Unsupported"&&x.Add.Engine.ItemAddCount1C==7,"invalid zero ID not assumed to be a native no-op");
+  Console.WriteLine("Inventory add assertions passed: "+n);
+ }
+}

@@ -1,0 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
+using GrimDynasty.TaskAuto;
+using GrimDynasty.Rewards;
+class LevelUpQuestDemo {
+ static void Need(bool b,string s){if(!b)throw new Exception(s);}
+ static int Main(){try{Console.OutputEncoding=new System.Text.UTF8Encoding(false);
+  var x=ExampleLevelUpQuest.Create();ArithmeticEquation equation;Need(ArithmeticEquation.Compile("(playerLevel*100)",out equation).Status=="Known","equation compile");x.Player.Progression.Equation=equation;x.Player.Progression.FormulaSamples.Clear();x.Player.NextThreshold=null;var a=x.Quest.Auto;var p=x.Player;var w=x.Completion.World;var trace=new List<object>();Need(AutomaticTasks.Start(a).Status=="Known","start");AutomaticTasks.Update(a);trace.Add(new{step="accept_border_report",level=p.Level1760,experience=p.Experience1764,skill=p.Progression.SkillPoints176C,attribute=p.Progression.AttributePoints1768});
+  for(int i=0;i<2;i++){Need(x.Quest.Kill().Delivered==1,"decoded kill event");Need(AutomaticTasks.Update(a).Status=="Known","automatic update");}
+  Need(a.Runtime.State.Task.State==3&&p.Level1760==2&&p.Progression.SkillPoints176C==3&&p.Progression.AttributePoints1768==1,"level-up state");var kinds=new List<uint>();foreach(var e in w.ProducedLevelEvents)kinds.Add(e.Kind);var m=w.LevelDisplay.Queue.Messages[0];trace.Add(new{step="automatic_reward_and_actual_level_up",level=p.Level1760,experience=p.Experience1764,lifetime=p.Lifetime1968,skill=p.Progression.SkillPoints176C,attribute=p.Progression.AttributePoints1768,masteries_allowed=p.Progression.MasteriesAllowed,level_change_count=p.Progression.LevelChangeCount17F0,events=kinds});trace.Add(new{step="cinematic_message_queued",title=m.Title,text=m.Text,type=m.Type,color_bits=new[]{m.RedBits,m.GreenBits,m.BlueBits,m.AlphaBits},reward_task_uid=x.Completion.QuestsByUid[2].RewardTaskUidsAt50[0],kill_handler_detached=!x.Quest.Counter.CallbackOwnerAttached});
+  Console.WriteLine(new JavaScriptSerializer().Serialize(new{status="passed",trace,scope="Own original main-player scenario with parsed fully parenthesized integer-arithmetic equation and explicit localization snapshots; actual own XP/level/point/mastery/history writes and native-derived logical cinematic queue. Empty pets/devotion/subscribers, no service/audio/particle hooks, no level-ten tutorial, native rendering, original game or saves."}));return 0;
+ }catch(Exception e){Console.Error.WriteLine(e);return 1;}}
+}

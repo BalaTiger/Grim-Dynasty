@@ -1,0 +1,29 @@
+param([string]$OutputDirectory='D:\MyGitRepo\Grim-Dynasty\.tooling\task-items-build')
+$ErrorActionPreference='Stop'
+$compiler='C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe'
+$root=[IO.Path]::GetFullPath('D:\MyGitRepo\Grim-Dynasty')+[IO.Path]::DirectorySeparatorChar
+$target=[IO.Path]::GetFullPath($OutputDirectory)
+if (!$target.StartsWith($root,[StringComparison]::OrdinalIgnoreCase)) {throw 'Project output required'}
+New-Item -ItemType Directory -Path $target -Force | Out-Null
+foreach($name in @('GrimDynasty.Conditions.dll','GrimDynasty.TaskLogic.dll','GrimDynasty.TokenActions.dll','GrimDynasty.TaskRuntime.dll','GrimDynasty.TaskAuto.dll','GrimDynasty.TaskKills.dll','GrimDynasty.Resources.dll','GrimDynasty.Quests.dll')) {Copy-Item -LiteralPath "D:\MyGitRepo\Grim-Dynasty\.tooling\task-kills-build\$name" -Destination $target -Force}
+Copy-Item -LiteralPath 'D:\MyGitRepo\Grim-Dynasty\.tooling\quest-definition-build\GrimDynasty.Quests.dll' -Destination $target -Force
+$refs=@("/reference:$target\GrimDynasty.Conditions.dll","/reference:$target\GrimDynasty.TaskLogic.dll","/reference:$target\GrimDynasty.TokenActions.dll","/reference:$target\GrimDynasty.TaskRuntime.dll","/reference:$target\GrimDynasty.TaskAuto.dll","/reference:$target\GrimDynasty.TaskKills.dll")
+& $compiler /nologo /target:library /checked+ /optimize+ @refs "/out:$target\GrimDynasty.TaskItems.dll" "$PSScriptRoot\ItemCountQuery.cs" "$PSScriptRoot\HasItemCondition.cs" "$PSScriptRoot\HasItemDefinitionAdapter.cs"
+if ($LASTEXITCODE -ne 0) {throw 'Item module compile failed'}
+$refs+="/reference:$target\GrimDynasty.TaskItems.dll"
+& $compiler /nologo /target:exe /checked+ /optimize+ @refs "/out:$target\ItemConditionTests.exe" "$PSScriptRoot\ItemConditionTests.cs"
+if ($LASTEXITCODE -ne 0) {throw 'Item tests compile failed'}
+& "$target\ItemConditionTests.exe"
+if ($LASTEXITCODE -ne 0) {throw 'Item tests failed'}
+& $compiler /nologo /target:exe /checked+ /optimize+ @refs "/out:$target\ItemAutoTests.exe" "$PSScriptRoot\ItemAutoTests.cs" "$PSScriptRoot\ExampleItemQuest.cs"
+if ($LASTEXITCODE -ne 0) {throw 'Item auto tests compile failed'}
+& "$target\ItemAutoTests.exe"
+if ($LASTEXITCODE -ne 0) {throw 'Item auto tests failed'}
+& $compiler /nologo /target:exe /checked+ /optimize+ /reference:System.Web.Extensions.dll @refs "/out:$target\ItemQuestDemo.exe" "$PSScriptRoot\ItemQuestDemo.cs" "$PSScriptRoot\ExampleItemQuest.cs"
+if ($LASTEXITCODE -ne 0) {throw 'Item demo compile failed'}
+& "$target\ItemQuestDemo.exe"
+if ($LASTEXITCODE -ne 0) {throw 'Item demo failed'}
+foreach($probe in @('ItemCatalogProbe','ItemAutoCatalogProbe')) {
+ & $compiler /nologo /target:exe /checked+ /optimize+ /reference:System.Web.Extensions.dll @refs "/reference:$target\GrimDynasty.Resources.dll" "/reference:$target\GrimDynasty.Quests.dll" "/out:$target\$probe.exe" "$PSScriptRoot\$probe.cs"
+ if ($LASTEXITCODE -ne 0) {throw 'Item catalog compile failed'}
+}

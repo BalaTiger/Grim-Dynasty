@@ -1,0 +1,305 @@
+[
+  {
+    "label": "?SetSavePath@Engine@GAME@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+    "start": "1800738e0",
+    "end": "1800738f8",
+    "bytesBudget": 25,
+    "function": "?SetSavePath@Engine@GAME@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+    "instructions": [
+      "1800738e0 ADD RCX,0x240",
+      "1800738e7 CMP RCX,RDX",
+      "1800738ea JZ 0x1800738f8",
+      "1800738ec OR R9,-0x1",
+      "1800738f0 XOR R8D,R8D",
+      "1800738f3 JMP 0x180023180",
+      "1800738f8 RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "1800738ea",
+        "to": "1800738f8",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1800738f8"
+      },
+      {
+        "from": "1800738f3",
+        "to": "180023180",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "FUN_180023180"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\n/* WARNING: Removing unreachable block (ram,0x0001800231aa) */\r\n\r\nundefined8 *\r\n_SetSavePath_Engine_GAME__QEAAXAEBV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std___Z\r\n          (longlong param_1,undefined8 *param_2)\r\n\r\n{\r\n  code *pcVar1;\r\n  undefined8 *puVar2;\r\n  undefined8 *in_RAX;\r\n  undefined8 *puVar3;\r\n  ulonglong uVar4;\r\n  \r\n                    /* 0x738e0  5509\r\n                       ?SetSavePath@Engine@GAME@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z\r\n                        */\r\n  puVar3 \u003d (undefined8 *)(param_1 + 0x240);\r\n  if (puVar3 \u003d\u003d param_2) {\r\n    return in_RAX;\r\n  }\r\n  uVar4 \u003d 0xffffffffffffffff;\r\n  if (param_2[2] !\u003d 0xffffffffffffffff) {\r\n    uVar4 \u003d param_2[2];\r\n  }\r\n  if (puVar3 \u003d\u003d param_2) {\r\n    if (*(ulonglong *)(param_1 + 0x250) \u003c uVar4) {\r\n      __Xout_of_range_std__YAXPEBD_Z(\u0026UNK_180339fa0);\r\n      pcVar1 \u003d (code *)swi(3);\r\n      puVar3 \u003d (undefined8 *)(*pcVar1)();\r\n      return puVar3;\r\n    }\r\n    *(ulonglong *)(param_1 + 0x250) \u003d uVar4;\r\n    puVar2 \u003d puVar3;\r\n    if (0xf \u003c *(ulonglong *)(param_1 + 600)) {\r\n      puVar2 \u003d (undefined8 *)*puVar3;\r\n    }\r\n    *(undefined1 *)((longlong)puVar2 + uVar4) \u003d 0;\r\n    FUN_180022e30(puVar3,0);\r\n  }\r\n  else {\r\n    if (uVar4 \u003d\u003d 0xffffffffffffffff) {\r\n      __Xlength_error_std__YAXPEBD_Z(\u0026UNK_180339fb8);\r\n      pcVar1 \u003d (code *)swi(3);\r\n      puVar3 \u003d (undefined8 *)(*pcVar1)();\r\n      return puVar3;\r\n    }\r\n    if (*(ulonglong *)(param_1 + 600) \u003c uVar4) {\r\n      FUN_180022f70(puVar3,uVar4,*(undefined8 *)(param_1 + 0x250));\r\n      if (uVar4 \u003d\u003d 0) {\r\n        return puVar3;\r\n      }\r\n    }\r\n    else if (uVar4 \u003d\u003d 0) {\r\n      *(undefined8 *)(param_1 + 0x250) \u003d 0;\r\n      if (0xf \u003c *(ulonglong *)(param_1 + 600)) {\r\n        *(undefined1 *)*puVar3 \u003d 0;\r\n        return puVar3;\r\n      }\r\n      *(undefined1 *)puVar3 \u003d 0;\r\n      return puVar3;\r\n    }\r\n    if (0xf \u003c (ulonglong)param_2[3]) {\r\n      param_2 \u003d (undefined8 *)*param_2;\r\n    }\r\n    puVar2 \u003d puVar3;\r\n    if (0xf \u003c *(ulonglong *)(param_1 + 600)) {\r\n      puVar2 \u003d (undefined8 *)*puVar3;\r\n    }\r\n    if (uVar4 !\u003d 0) {\r\n      func_0x0001802ddb0e(puVar2,param_2,uVar4);\r\n    }\r\n    *(ulonglong *)(param_1 + 0x250) \u003d uVar4;\r\n    puVar2 \u003d puVar3;\r\n    if (0xf \u003c *(ulonglong *)(param_1 + 600)) {\r\n      puVar2 \u003d (undefined8 *)*puVar3;\r\n    }\r\n    *(undefined1 *)((longlong)puVar2 + uVar4) \u003d 0;\r\n  }\r\n  return puVar3;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "?GetBaseDataPathFromOptions@Engine@GAME@@QEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z",
+    "start": "180073700",
+    "end": "1800738cf",
+    "bytesBudget": 464,
+    "function": "?GetBaseDataPathFromOptions@Engine@GAME@@QEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z",
+    "instructions": [
+      "180073700 MOV RAX,RSP",
+      "180073703 PUSH RBP",
+      "180073704 LEA RBP,[RAX + -0xc8]",
+      "18007370b SUB RSP,0x1c0",
+      "180073712 MOV qword ptr [RSP + 0x50],-0x2",
+      "18007371b MOV qword ptr [RAX + 0x8],RBX",
+      "18007371f MOV qword ptr [RAX + 0x10],RDI",
+      "180073723 MOV RDI,RDX",
+      "180073726 CALL 0x180073660",
+      "18007372b MOV RCX,RAX",
+      "18007372e MOV R8D,0x1",
+      "180073734 LEA RDX,[RSP + 0x30]",
+      "180073739 CALL 0x180182ce0",
+      "18007373e NOP",
+      "18007373f MOV R9,qword ptr [RSP + 0x40]",
+      "180073744 TEST R9,R9",
+      "180073747 JZ 0x18007387e",
+      "18007374d LEA RAX,[RSP + 0x30]",
+      "180073752 MOV RDX,qword ptr [RSP + 0x30]",
+      "180073757 MOV R8,qword ptr [RSP + 0x48]",
+      "18007375c CMP R8,0x10",
+      "180073760 CMOVNC RAX,RDX",
+      "180073764 CMP byte ptr [R9 + RAX*0x1 + -0x1],0x5c",
+      "18007376a JZ 0x180073785",
+      "18007376c LEA RAX,[RSP + 0x30]",
+      "180073771 CMP R8,0x10",
+      "180073775 CMOVNC RAX,RDX",
+      "180073779 CMP byte ptr [R9 + RAX*0x1 + -0x1],0x2f",
+      "18007377f JNZ 0x180073812",
+      "180073785 DEC R9",
+      "180073788 XOR R8D,R8D",
+      "18007378b LEA RDX,[RSP + 0x58]",
+      "180073790 LEA RCX,[RSP + 0x30]",
+      "180073795 CALL 0x18007ac80",
+      "18007379a MOV RBX,RAX",
+      "18007379d LEA RAX,[RSP + 0x30]",
+      "1800737a2 CMP RAX,RBX",
+      "1800737a5 JZ 0x1800737ea",
+      "1800737a7 MOV RDX,qword ptr [RSP + 0x48]",
+      "1800737ac CMP RDX,0x10",
+      "1800737b0 JC 0x1800737c5",
+      "1800737b2 INC RDX",
+      "1800737b5 MOV R8D,0x1",
+      "1800737bb MOV RCX,qword ptr [RSP + 0x30]",
+      "1800737c0 CALL 0x180023090",
+      "1800737c5 MOV qword ptr [RSP + 0x48],0xf",
+      "1800737ce MOV qword ptr [RSP + 0x40],0x0",
+      "1800737d7 MOV byte ptr [RSP + 0x30],0x0",
+      "1800737dc MOV RDX,RBX",
+      "1800737df LEA RCX,[RSP + 0x30]",
+      "1800737e4 CALL 0x180022860",
+      "1800737e9 NOP",
+      "1800737ea MOV RDX,qword ptr [RSP + 0x70]",
+      "1800737ef CMP RDX,0x10",
+      "1800737f3 JC 0x180073808",
+      "1800737f5 INC RDX",
+      "1800737f8 MOV R8D,0x1",
+      "1800737fe MOV RCX,qword ptr [RSP + 0x58]",
+      "180073803 CALL 0x180023090",
+      "180073808 MOV RDX,qword ptr [RSP + 0x30]",
+      "18007380d MOV R8,qword ptr [RSP + 0x48]",
+      "180073812 LEA RCX,[RSP + 0x30]",
+      "180073817 CMP R8,0x10",
+      "18007381b CMOVNC RCX,RDX",
+      "18007381f MOV dword ptr [RSP + 0x28],0x0",
+      "180073827 MOV qword ptr [RSP + 0x20],0x0",
+      "180073830 XOR R9D,R9D",
+      "180073833 LEA R8,[RBP + -0x80]",
+      "180073837 XOR EDX,EDX",
+      "180073839 CALL qword ptr [0x180302248]",
+      "18007383f CMP RAX,-0x1",
+      "180073843 JZ 0x18007384b",
+      "180073845 CMP dword ptr [RBP + -0x80],0x10",
+      "180073849 JZ 0x18007385f",
+      "18007384b XOR R8D,R8D",
+      "18007384e LEA RDX,[0x180307f69]",
+      "180073855 LEA RCX,[RSP + 0x30]",
+      "18007385a CALL 0x180022ce0",
+      "18007385f CMP qword ptr [RSP + 0x40],0x0",
+      "180073865 JBE 0x18007387e",
+      "180073867 MOV R8D,0x1",
+      "18007386d LEA RDX,[0x180309af4]",
+      "180073874 LEA RCX,[RSP + 0x30]",
+      "180073879 CALL 0x1800310d0",
+      "18007387e LEA RAX,[RSP + 0x30]",
+      "180073883 CMP RDI,RAX",
+      "180073886 JZ 0x18007389d",
+      "180073888 OR R9,-0x1",
+      "18007388c XOR R8D,R8D",
+      "18007388f LEA RDX,[RSP + 0x30]",
+      "180073894 MOV RCX,RDI",
+      "180073897 CALL 0x180023180",
+      "18007389c NOP",
+      "18007389d MOV RDX,qword ptr [RSP + 0x48]",
+      "1800738a2 CMP RDX,0x10",
+      "1800738a6 JC 0x1800738bb",
+      "1800738a8 INC RDX",
+      "1800738ab MOV R8D,0x1",
+      "1800738b1 MOV RCX,qword ptr [RSP + 0x30]",
+      "1800738b6 CALL 0x180023090",
+      "1800738bb LEA R11,[RSP + 0x1c0]",
+      "1800738c3 MOV RBX,qword ptr [R11 + 0x10]",
+      "1800738c7 MOV RDI,qword ptr [R11 + 0x18]",
+      "1800738cb MOV RSP,R11",
+      "1800738ce POP RBP",
+      "1800738cf RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "180073726",
+        "to": "180073660",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "?GetOptions@Engine@GAME@@QEAAPEAVOptions@2@XZ"
+      },
+      {
+        "from": "180073739",
+        "to": "180182ce0",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "?GetString@Options@GAME@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4StringName@12@@Z"
+      },
+      {
+        "from": "180073747",
+        "to": "18007387e",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18007387e"
+      },
+      {
+        "from": "18007376a",
+        "to": "180073785",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073785"
+      },
+      {
+        "from": "18007377f",
+        "to": "180073812",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073812"
+      },
+      {
+        "from": "180073795",
+        "to": "18007ac80",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_18007ac80"
+      },
+      {
+        "from": "1800737a5",
+        "to": "1800737ea",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1800737ea"
+      },
+      {
+        "from": "1800737b0",
+        "to": "1800737c5",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1800737c5"
+      },
+      {
+        "from": "1800737c0",
+        "to": "180023090",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180023090"
+      },
+      {
+        "from": "1800737e4",
+        "to": "180022860",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180022860"
+      },
+      {
+        "from": "1800737f3",
+        "to": "180073808",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073808"
+      },
+      {
+        "from": "180073803",
+        "to": "180023090",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180023090"
+      },
+      {
+        "from": "180073839",
+        "to": "180302248",
+        "type": "READ",
+        "symbol": "PTR_FindFirstFileExA_180302248"
+      },
+      {
+        "from": "180073843",
+        "to": "18007384b",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18007384b"
+      },
+      {
+        "from": "180073849",
+        "to": "18007385f",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18007385f"
+      },
+      {
+        "from": "18007385a",
+        "to": "180022ce0",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180022ce0"
+      },
+      {
+        "from": "180073865",
+        "to": "18007387e",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18007387e"
+      },
+      {
+        "from": "180073879",
+        "to": "1800310d0",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_1800310d0"
+      },
+      {
+        "from": "180073886",
+        "to": "18007389d",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18007389d"
+      },
+      {
+        "from": "180073897",
+        "to": "180023180",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180023180"
+      },
+      {
+        "from": "1800738a6",
+        "to": "1800738bb",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1800738bb"
+      },
+      {
+        "from": "1800738b6",
+        "to": "180023090",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180023090"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nvoid _GetBaseDataPathFromOptions_Engine_GAME__QEAAXAEAV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std___N_Z\r\n               (undefined8 param_1,undefined1 *param_2)\r\n\r\n{\r\n  undefined8 uVar1;\r\n  undefined1 *puVar2;\r\n  undefined1 *puVar3;\r\n  longlong lVar4;\r\n  undefined1 uStack_198;\r\n  undefined7 uStack_197;\r\n  longlong lStack_188;\r\n  ulonglong uStack_180;\r\n  undefined8 uStack_178;\r\n  undefined8 auStack_170 [3];\r\n  ulonglong uStack_158;\r\n  int aiStack_148 [80];\r\n  \r\n                    /* 0x73700  2396\r\n                       ?GetBaseDataPathFromOptions@Engine@GAME@@QEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z\r\n                        */\r\n  uStack_178 \u003d 0xfffffffffffffffe;\r\n  uVar1 \u003d _GetOptions_Engine_GAME__QEAAPEAVOptions_2_XZ();\r\n  _GetString_Options_GAME__QEBA_BV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__W4StringName_12__Z\r\n            (uVar1,\u0026uStack_198,1);\r\n  if (lStack_188 \u003d\u003d 0) goto LAB_18007387e;\r\n  puVar3 \u003d (undefined1 *)CONCAT71(uStack_197,uStack_198);\r\n  puVar2 \u003d \u0026uStack_198;\r\n  if (0xf \u003c uStack_180) {\r\n    puVar2 \u003d puVar3;\r\n  }\r\n  if (puVar2[lStack_188 + -1] \u003d\u003d \u0027\\\\\u0027) {\r\nLAB_180073785:\r\n    puVar3 \u003d (undefined1 *)FUN_18007ac80(\u0026uStack_198,auStack_170,0,lStack_188 + -1);\r\n    if (\u0026uStack_198 !\u003d puVar3) {\r\n      if (0xf \u003c uStack_180) {\r\n        FUN_180023090(CONCAT71(uStack_197,uStack_198),uStack_180 + 1,1);\r\n      }\r\n      uStack_180 \u003d 0xf;\r\n      lStack_188 \u003d 0;\r\n      uStack_198 \u003d 0;\r\n      FUN_180022860(\u0026uStack_198,puVar3);\r\n    }\r\n    if (0xf \u003c uStack_158) {\r\n      FUN_180023090(auStack_170[0],uStack_158 + 1,1);\r\n    }\r\n    puVar3 \u003d (undefined1 *)CONCAT71(uStack_197,uStack_198);\r\n  }\r\n  else {\r\n    puVar2 \u003d \u0026uStack_198;\r\n    if (0xf \u003c uStack_180) {\r\n      puVar2 \u003d puVar3;\r\n    }\r\n    if (puVar2[lStack_188 + -1] \u003d\u003d \u0027/\u0027) goto LAB_180073785;\r\n  }\r\n  puVar2 \u003d \u0026uStack_198;\r\n  if (0xf \u003c uStack_180) {\r\n    puVar2 \u003d puVar3;\r\n  }\r\n  lVar4 \u003d FindFirstFileExA(puVar2,0,aiStack_148,0,0,0);\r\n  if ((lVar4 \u003d\u003d -1) || (aiStack_148[0] !\u003d 0x10)) {\r\n    FUN_180022ce0(\u0026uStack_198,\u0026UNK_180307f69,0);\r\n  }\r\n  if (lStack_188 !\u003d 0) {\r\n    FUN_1800310d0(\u0026uStack_198,\u0026UNK_180309af4,1);\r\n  }\r\nLAB_18007387e:\r\n  if (param_2 !\u003d \u0026uStack_198) {\r\n    FUN_180023180(param_2,\u0026uStack_198,0,0xffffffffffffffff);\r\n  }\r\n  if (0xf \u003c uStack_180) {\r\n    FUN_180023090(CONCAT71(uStack_197,uStack_198),uStack_180 + 1,1);\r\n  }\r\n  return;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "?GetDatabaseArchive@Engine@GAME@@QEAAPEAVDatabaseArchive@2@XZ",
+    "start": "1800777d0",
+    "end": "1800777d7",
+    "bytesBudget": 8,
+    "function": "?GetDatabaseArchive@Engine@GAME@@QEAAPEAVDatabaseArchive@2@XZ",
+    "instructions": [
+      "1800777d0 MOV RAX,qword ptr [RCX + 0x3d0]",
+      "1800777d7 RET"
+    ],
+    "outgoingReferences": [],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nundefined8 _GetDatabaseArchive_Engine_GAME__QEAAPEAVDatabaseArchive_2_XZ(longlong param_1)\r\n\r\n{\r\n                    /* 0x777d0  2586  ?GetDatabaseArchive@Engine@GAME@@QEAAPEAVDatabaseArchive@2@XZ\r\n                        */\r\n  return *(undefined8 *)(param_1 + 0x3d0);\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "scenario": "Original border patrol fixture",
+  "trace": [
+    {
+      "step": "start_and_register_event11",
+      "task_state": 2
+    },
+    {
+      "step": "initial_update",
+      "objective_state": 2
+    },
+    {
+      "step": "decoded_kill_event_then_update",
+      "count": 1,
+      "task_state": 2,
+      "objective_state": 2,
+      "notification_flag": 0
+    },
+    {
+      "step": "decoded_kill_event_then_update",
+      "count": 2,
+      "task_state": 3,
+      "objective_state": 1,
+      "notification_flag": 1
+    },
+    {
+      "step": "post_completion_event_not_delivered",
+      "counter": 2
+    },
+    {
+      "step": "reset",
+      "task_state": 1,
+      "count": 0
+    }
+  ],
+  "scope": "Decoded event/entity snapshots, evidenced HasKilled v1 lifecycle and automatic empty-action completion. UI time gate closed, no original combat producer, text renderer, reward grant, network, DLL/resources, Steam or saves."
+}

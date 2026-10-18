@@ -1,0 +1,24 @@
+param([string]$OutputDirectory='D:\MyGitRepo\Grim-Dynasty\.tooling\task-auto-build')
+$ErrorActionPreference='Stop'
+$compiler='C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe'
+$root=[IO.Path]::GetFullPath('D:\MyGitRepo\Grim-Dynasty')+[IO.Path]::DirectorySeparatorChar
+$target=[IO.Path]::GetFullPath($OutputDirectory)
+if (!$target.StartsWith($root,[StringComparison]::OrdinalIgnoreCase)) {throw 'Project output required'}
+New-Item -ItemType Directory -Path $target -Force | Out-Null
+foreach($name in @('GrimDynasty.Conditions.dll','GrimDynasty.TaskLogic.dll','GrimDynasty.TokenActions.dll','GrimDynasty.TaskRuntime.dll','GrimDynasty.Resources.dll','GrimDynasty.Quests.dll')) {Copy-Item -LiteralPath "D:\MyGitRepo\Grim-Dynasty\.tooling\task-runtime-build\$name" -Destination $target -Force}
+$refs=@("/reference:$target\GrimDynasty.Conditions.dll","/reference:$target\GrimDynasty.TaskLogic.dll","/reference:$target\GrimDynasty.TokenActions.dll","/reference:$target\GrimDynasty.TaskRuntime.dll")
+& $compiler /nologo /target:library /checked+ /optimize+ @refs "/out:$target\GrimDynasty.TaskAuto.dll" "$PSScriptRoot\OfflineEvents.cs" "$PSScriptRoot\AutomaticTasks.cs" "$PSScriptRoot\IConditionRuntime.cs" "$PSScriptRoot\ICompletionRuntime.cs"
+if ($LASTEXITCODE -ne 0) {throw 'Auto module compile failed'}
+$refs+="/reference:$target\GrimDynasty.TaskAuto.dll"
+foreach($test in @('EventDispatchTests','AutoTaskTests')) {
+ & $compiler /nologo /target:exe /checked+ /optimize+ @refs "/out:$target\$test.exe" "$PSScriptRoot\$test.cs"
+ if ($LASTEXITCODE -ne 0) {throw 'Auto tests compile failed'}
+ & "$target\$test.exe"
+ if ($LASTEXITCODE -ne 0) {throw 'Auto tests failed'}
+}
+& $compiler /nologo /target:exe /checked+ /optimize+ /reference:System.Web.Extensions.dll @refs "/out:$target\AutoQuestDemo.exe" "$PSScriptRoot\AutoQuestDemo.cs"
+if ($LASTEXITCODE -ne 0) {throw 'Auto demo compile failed'}
+& "$target\AutoQuestDemo.exe"
+if ($LASTEXITCODE -ne 0) {throw 'Auto demo failed'}
+& $compiler /nologo /target:exe /checked+ /optimize+ /reference:System.Web.Extensions.dll @refs "/reference:$target\GrimDynasty.Resources.dll" "/reference:$target\GrimDynasty.Quests.dll" "/out:$target\AutoCatalogProbe.exe" "$PSScriptRoot\AutoCatalogProbe.cs"
+if ($LASTEXITCODE -ne 0) {throw 'Auto catalog compile failed'}

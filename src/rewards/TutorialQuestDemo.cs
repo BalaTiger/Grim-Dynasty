@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
+using GrimDynasty.Rewards;
+using GrimDynasty.TaskAuto;
+class TutorialQuestDemo {
+ static void Need(bool b,string s){if(!b)throw new Exception(s);}
+ static int Main(){try{Console.OutputEncoding=new System.Text.UTF8Encoding(false);
+  var x=ExampleLevelUpQuest.Create();var p=x.Player;var w=x.Completion.World;var a=x.Quest.Auto;
+  ArithmeticEquation equation;Need(ArithmeticEquation.Compile("(playerLevel*100)",out equation).Status=="Known","own formula");p.Progression.Equation=equation;p.Progression.FormulaSamples.Clear();p.NextThreshold=null;p.Level1760=9;p.Experience1764=850;a.Runtime.World.Level=9;
+  w.LevelDisplay.LocalizedReachedText[10]="军功晋至十级，可研读军阵";w.Tutorials=new TutorialSnapshot{PageCount36CD0=75,UnlockWords36CB8=new uint[3],UnlockOrder36CA0=new List<uint>(),Events=w.Events};
+  a.Runtime.State.QuestFlags=4;a.TutorialRuntime=new TutorialTaskStart{State=w.Tutorials};
+  Need(AutomaticTasks.Start(a).Status=="Known","start");Need(w.Tutorials.UnlockOrder36CA0.Count==1&&w.Tutorials.UnlockOrder36CA0[0]==55,"accept tutorial");AutomaticTasks.Update(a);
+  for(int i=0;i<2;i++){Need(x.Quest.Kill().Delivered==1,"kill dispatch");Need(AutomaticTasks.Update(a).Status=="Known","update");}
+  Need(a.Runtime.State.Task.State==3&&p.Level1760==10&&w.Tutorials.UnlockOrder36CA0.Count==2&&w.Tutorials.UnlockOrder36CA0[1]==20,"tutorial quest closure");
+  var kinds=new List<uint>();foreach(var e in w.ProducedLevelEvents)kinds.Add(e.Kind);
+  Console.WriteLine(new JavaScriptSerializer().Serialize(new{status="passed",scene="边军研阵",level=p.Level1760,experience=p.Experience1764,skill=p.Progression.SkillPoints176C,attribute=p.Progression.AttributePoints1768,accept_tutorial_page=w.Tutorials.UnlockOrder36CA0[0],tutorial_page=w.Tutorials.UnlockOrder36CA0[1],tutorial_unlock_order=w.Tutorials.UnlockOrder36CA0,tutorial_word=w.Tutorials.UnlockWords36CB8[0],event_order=kinds,subtitle=w.LevelDisplay.Queue.Messages[0].Text,reward_uid=x.Completion.QuestsByUid[2].RewardTaskUidsAt50[0],scope="Own original quest and content; static-derived tutorial bit/vector/event logic. Explicit known empty subscribers. No original program, renderer, saves or system changes."}));return 0;
+ }catch(Exception e){Console.Error.WriteLine(e);return 1;}}
+}

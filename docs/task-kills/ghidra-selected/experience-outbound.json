@@ -1,0 +1,50 @@
+{
+  "source": "Existing Ghidra 12.1.4 with own observed-entry seed/export scripts; NOT a successful Rea MCP result",
+  "program": "Game.dll",
+  "functions": [
+    {
+      "observed_entry": "1802ed8f0",
+      "name": "CharacterExperienceOutbound",
+      "body": "[[1802ed8f0, 1802ed98a]]",
+      "assembly": [
+        "1802ed8f0: MOV dword ptr [RSP + 0x10],EDX",
+        "1802ed8f4: MOV R11,RSP",
+        "1802ed8f7: SUB RSP,0xa8",
+        "1802ed8fe: MOV qword ptr [RSP + 0x20],-0x2",
+        "1802ed907: MOV qword ptr [R11 + -0x20],0xf",
+        "1802ed90f: XOR EAX,EAX",
+        "1802ed911: MOV qword ptr [R11 + -0x28],RAX",
+        "1802ed915: MOV byte ptr [RSP + 0x70],AL",
+        "1802ed919: MOV qword ptr [R11 + -0x74],RAX",
+        "1802ed91d: MOV qword ptr [R11 + -0x6c],RAX",
+        "1802ed921: MOV qword ptr [R11 + -0x64],RAX",
+        "1802ed925: MOV qword ptr [R11 + -0x5c],RAX",
+        "1802ed929: MOV dword ptr [RSP + 0x54],EAX",
+        "1802ed92d: MOV qword ptr [R11 + -0x50],RAX",
+        "1802ed931: MOV qword ptr [R11 + -0x48],RAX",
+        "1802ed935: MOV dword ptr [R11 + -0x18],EAX",
+        "1802ed939: MOV dword ptr [R11 + -0x40],R8D",
+        "1802ed93d: MOV dword ptr [RSP + 0x6c],0x2",
+        "1802ed945: MOV dword ptr [RSP + 0x30],EDX",
+        "1802ed949: MOV RCX,qword ptr [RCX + 0x40e0]",
+        "1802ed950: MOV RAX,qword ptr [RCX]",
+        "1802ed953: LEA R8,[R11 + 0x10]",
+        "1802ed957: LEA RDX,[R11 + -0x78]",
+        "1802ed95b: CALL qword ptr [RAX + 0x90]",
+        "1802ed961: NOP",
+        "1802ed962: MOV RDX,qword ptr [RSP + 0x88]",
+        "1802ed96a: CMP RDX,0x10",
+        "1802ed96e: JC 0x1802ed983",
+        "1802ed970: INC RDX",
+        "1802ed973: MOV R8D,0x1",
+        "1802ed979: MOV RCX,qword ptr [RSP + 0x70]",
+        "1802ed97e: CALL 0x180016620",
+        "1802ed983: ADD RSP,0xa8",
+        "1802ed98a: RET"
+      ],
+      "decompile_completed": true,
+      "pseudocode": "\r\n/* public: void __cdecl GAME::GameEngine::CharacterExperienceOutbound(unsigned int,unsigned int)\r\n   __ptr64 */\r\n\r\nvoid __thiscall\r\nGAME::GameEngine::CharacterExperienceOutbound(GameEngine *this,uint param_1,uint param_2)\r\n\r\n{\r\n  undefined8 in_R9;\r\n  uint local_res10 [6];\r\n  uint local_78 [15];\r\n  undefined4 local_3c;\r\n  undefined1 local_38;\r\n  undefined7 uStack_37;\r\n  undefined8 local_28;\r\n  ulonglong local_20;\r\n  undefined4 local_18;\r\n  \r\n                    /* 0x2ed8f0  9534  ?CharacterExperienceOutbound@GameEngine@GAME@@QEAAXII@Z */\r\n  local_20 \u003d 0xf;\r\n  local_28 \u003d 0;\r\n  local_38 \u003d 0;\r\n  local_78[1] \u003d 0;\r\n  local_78[2] \u003d 0;\r\n  local_78[3] \u003d 0;\r\n  local_78[4] \u003d 0;\r\n  local_78[5] \u003d 0;\r\n  local_78[6] \u003d 0;\r\n  local_78[7] \u003d 0;\r\n  local_78[8] \u003d 0;\r\n  local_78[9] \u003d 0;\r\n  local_78[10] \u003d 0;\r\n  local_78[0xb] \u003d 0;\r\n  local_78[0xc] \u003d 0;\r\n  local_78[0xd] \u003d 0;\r\n  local_18 \u003d 0;\r\n  local_3c \u003d 2;\r\n  local_res10[0] \u003d param_1;\r\n  local_78[0] \u003d param_1;\r\n  local_78[0xe] \u003d param_2;\r\n  (**(code **)(**(longlong **)(this + 0x40e0) + 0x90))\r\n            (*(longlong **)(this + 0x40e0),local_78,local_res10,in_R9,0xfffffffffffffffe);\r\n  if (0xf \u003c local_20) {\r\n    FUN_180016620(CONCAT71(uStack_37,local_38),local_20 + 1,1);\r\n  }\r\n  return;\r\n}\r\n\r\n",
+      "diagnostic": ""
+    }
+  ]
+}

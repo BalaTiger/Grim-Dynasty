@@ -1,0 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
+using GrimDynasty.Rewards;
+using GrimDynasty.TaskAuto;
+class CrtLevelUpQuestDemo {
+ static void Need(bool b,string s){if(!b)throw new Exception(s);}
+ static int Main(){try{Console.OutputEncoding=new System.Text.UTF8Encoding(false);SystemCrtMath math;Need(SystemCrtMath.Create(TargetNumericLocale.CInvariant,out math).Status=="Known","system math profile");using(math){
+  var x=ExampleLevelUpQuest.Create();CrtEquation e;const string source="playerLevel^1.5*60.25+0.5";Need(CrtEquation.Compile(math,source,out e).Status=="Known","equation");x.Player.Progression.CrtEquation=e;x.Player.Progression.FormulaSamples.Clear();x.Player.NextThreshold=null;var a=x.Quest.Auto;var p=x.Player;var w=x.Completion.World;w.NumericMath=math;p.ExperienceGainPercent=50;uint before,after;math.Check(out before);AutomaticTasks.Start(a);AutomaticTasks.Update(a);for(int i=0;i<2;i++){x.Quest.Kill();Need(AutomaticTasks.Update(a).Status=="Known","update");}math.Check(out after);Need(p.Level1760==2&&p.Progression.SkillPoints176C==3&&p.Progression.AttributePoints1768==1&&before==after,"main level-up");var m=w.LevelDisplay.Queue.Messages[0];
+  Console.WriteLine(new JavaScriptSerializer().Serialize(new{status="passed",scenario="原创军功精算晋阶",equation=source,base_award=75,gain_modifier_percent=p.ExperienceGainPercent,effective_gain=113,level=p.Level1760,experience=p.Experience1764,skill_points=p.Progression.SkillPoints176C,attribute_points=p.Progression.AttributePoints1768,cinematic=new{m.Title,m.Text,m.Type},reward_task_uid=x.Completion.QuestsByUid[2].RewardTaskUidsAt50[0],float_control_before=before,float_control_after=after,scope="Own original quest and decoded kill events; actual powf(float,float), atof double-to-float, precedence and level-up through supported Windows10 x64 System32-UCRT C-locale profile. No threshold samples, original game/installation DLL, real saves, renderer or settings changes."}));return 0;
+ }}catch(Exception e){Console.Error.WriteLine(e);return 1;}}
+}

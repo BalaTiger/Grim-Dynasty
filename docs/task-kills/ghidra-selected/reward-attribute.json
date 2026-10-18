@@ -1,0 +1,72 @@
+{
+  "source": "Existing Ghidra 12.1.4 with own observed-entry seed/export scripts; NOT a successful Rea MCP result",
+  "program": "Game.dll",
+  "functions": [
+    {
+      "observed_entry": "180279e60",
+      "name": "SetAttacker",
+      "body": "[[180279e60, 180279e63]]",
+      "assembly": [
+        "180279e60: MOV dword ptr [RCX + 0x24],EDX",
+        "180279e63: RET"
+      ],
+      "decompile_completed": true,
+      "pseudocode": "\r\n/* public: void __cdecl GAME::DurationDamageManager::SetAttacker(unsigned int) __ptr64 */\r\n\r\nvoid __thiscall GAME::DurationDamageManager::SetAttacker(DurationDamageManager *this,uint param_1)\r\n\r\n{\r\n                    /* 0x279e60  22619  ?SetAttacker@DurationDamageManager@GAME@@QEAAXI@Z\r\n                       0x279e60  22847  ?SetGender@Inventory@GAME@@QEAAXW4Character_Gender@2@@Z */\r\n  *(uint *)(this + 0x24) \u003d param_1;\r\n  return;\r\n}\r\n\r\n",
+      "diagnostic": ""
+    },
+    {
+      "observed_entry": "18046aae0",
+      "name": "Execute",
+      "body": "[[18046aae0, 18046ab99]]",
+      "assembly": [
+        "18046aae0: MOV qword ptr [RSP + 0x8],RBX",
+        "18046aae5: PUSH RDI",
+        "18046aae6: SUB RSP,0x20",
+        "18046aaea: MOV RDI,RCX",
+        "18046aaed: MOV RCX,qword ptr [0x180a66288]",
+        "18046aaf4: CALL 0x1802ebb70",
+        "18046aaf9: MOV RBX,RAX",
+        "18046aafc: TEST RAX,RAX",
+        "18046aaff: JZ 0x18046ab8f",
+        "18046ab05: MOV RCX,qword ptr [0x180609050]",
+        "18046ab0c: MOV RCX,qword ptr [RCX]",
+        "18046ab0f: CALL qword ptr [0x18060a338]",
+        "18046ab15: MOV RCX,RAX",
+        "18046ab18: CALL qword ptr [0x18060a850]",
+        "18046ab1e: TEST EAX,EAX",
+        "18046ab20: JNZ 0x18046ab2b",
+        "18046ab22: TEST byte ptr [RBX + 0x17f4],0x1",
+        "18046ab29: JNZ 0x18046ab8f",
+        "18046ab2b: MOV RCX,qword ptr [0x180609050]",
+        "18046ab32: MOV RCX,qword ptr [RCX]",
+        "18046ab35: CALL qword ptr [0x18060a338]",
+        "18046ab3b: MOV RCX,RAX",
+        "18046ab3e: CALL qword ptr [0x18060a850]",
+        "18046ab44: CMP EAX,0x1",
+        "18046ab47: JNZ 0x18046ab56",
+        "18046ab49: MOVZX EAX,byte ptr [RBX + 0x17f4]",
+        "18046ab50: AND AL,0x2",
+        "18046ab52: CMP AL,0x1",
+        "18046ab54: JNC 0x18046ab8f",
+        "18046ab56: MOV EAX,dword ptr [RDI + 0x10]",
+        "18046ab59: MOV RCX,RBX",
+        "18046ab5c: ADD dword ptr [RBX + 0x1768],EAX",
+        "18046ab62: MOV qword ptr [RSP + 0x40],0x32",
+        "18046ab6b: CALL qword ptr [0x180609128]",
+        "18046ab71: MOV dword ptr [RSP + 0x44],EAX",
+        "18046ab75: CALL qword ptr [0x180609078]",
+        "18046ab7b: MOV R8D,0x32",
+        "18046ab81: LEA RDX,[RSP + 0x40]",
+        "18046ab86: MOV RCX,RAX",
+        "18046ab89: CALL qword ptr [0x180609070]",
+        "18046ab8f: MOV RBX,qword ptr [RSP + 0x30]",
+        "18046ab94: ADD RSP,0x20",
+        "18046ab98: POP RDI",
+        "18046ab99: RET"
+      ],
+      "decompile_completed": true,
+      "pseudocode": "\r\n/* public: virtual void __cdecl GAME::ScriptableAction_GiveAttribPoint::Execute(class GAME::Entity *\r\n   __ptr64) __ptr64 */\r\n\r\nvoid __thiscall\r\nGAME::ScriptableAction_GiveAttribPoint::Execute\r\n          (ScriptableAction_GiveAttribPoint *this,Entity *param_1)\r\n\r\n{\r\n  uint uVar1;\r\n  Player *this_00;\r\n  GameInfo *pGVar2;\r\n  EventManager *this_01;\r\n  undefined8 local_res18;\r\n  \r\n                    /* 0x46aae0  11686\r\n                       ?Execute@ScriptableAction_GiveAttribPoint@GAME@@UEAAXPEAVEntity@2@@Z */\r\n  this_00 \u003d GameEngine::GetMainPlayer(gGameEngine);\r\n  if (this_00 !\u003d (Player *)0x0) {\r\n    pGVar2 \u003d GAME::Engine::GetGameInfo(*(Engine **)gEngine_exref);\r\n    uVar1 \u003d GAME::GameInfo::GetDifficulty(pGVar2);\r\n    if ((uVar1 !\u003d 0) || (((byte)this_00[0x17f4] \u0026 1) \u003d\u003d 0)) {\r\n      pGVar2 \u003d GAME::Engine::GetGameInfo(*(Engine **)gEngine_exref);\r\n      uVar1 \u003d GAME::GameInfo::GetDifficulty(pGVar2);\r\n      if ((uVar1 !\u003d 1) || (((byte)this_00[0x17f4] \u0026 2) \u003d\u003d 0)) {\r\n        *(int *)(this_00 + 0x1768) \u003d *(int *)(this_00 + 0x1768) + *(int *)(this + 0x10);\r\n        local_res18 \u003d 0x32;\r\n        uVar1 \u003d GAME::Object::GetObjectId((Object *)this_00);\r\n        local_res18 \u003d CONCAT44(uVar1,(undefined4)local_res18);\r\n        this_01 \u003d GAME::Singleton\u003cGAME::EventManager\u003e::Get();\r\n        GAME::EventManager::Send(this_01,(GameEvent *)\u0026local_res18,0x32);\r\n      }\r\n    }\r\n  }\r\n  return;\r\n}\r\n\r\n",
+      "diagnostic": ""
+    }
+  ]
+}

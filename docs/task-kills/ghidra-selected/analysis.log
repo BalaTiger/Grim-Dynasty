@@ -1,0 +1,674 @@
+2026-10-18 20:28:09 INFO  (LoggingInitialization) Using log config file: jar:file:/D:/MyGitRepo/Grim-Dynasty/.tooling/ghidra/ghidra_12.1.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-10-18 20:28:09 INFO  (LoggingInitialization) Using log file: D:\MyGitRepo\Grim-Dynasty\docs\task-kills\ghidra-selected\analysis.log  
+2026-10-18 20:28:09 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
+2026-10-18 20:28:09 INFO  (Preferences) Loading user preferences: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\preferences  
+2026-10-18 20:28:09 INFO  (ClassSearcher) Searching for classes...  
+2026-10-18 20:28:10 INFO  (ClassSearcher) Class search complete (807 ms)  
+2026-10-18 20:28:10 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-10-18 20:28:10 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-10-18 20:28:10 INFO  (SecureRandomFactory) Random Number Generator initialization complete: SHA1PRNG  
+2026-10-18 20:28:10 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-10-18 20:28:10 INFO  (AnalyzeHeadless) Headless startup complete (2091 ms)  
+2026-10-18 20:28:10 INFO  (ClassSearcher) Class searcher loaded 59 extension points (20 false positives)  
+2026-10-18 20:28:10 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    C:\Users\Administrator\Documents\Codex\2026-10-18\task-2
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\ghidra_scripts  
+2026-10-18 20:28:10 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-10-18 20:28:10 ERROR (HeadlessAnalyzer) Abort due to Headless analyzer error: Path element starting with '.' is not permitted java.lang.IllegalArgumentException: Path element starting with '.' is not permitted
+	at ghidra.util.NamingUtilities.checkName(NamingUtilities.java:108)
+	at ghidra.framework.protocol.ghidra.GhidraURL.checkValidProjectPath(GhidraURL.java:440)
+	at ghidra.framework.protocol.ghidra.GhidraURL.checkLocalAbsolutePath(GhidraURL.java:421)
+	at ghidra.framework.model.ProjectLocator.<init>(ProjectLocator.java:75)
+	at ghidra.framework.model.ProjectLocator.<init>(ProjectLocator.java:60)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:420)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:199)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2026-10-18 20:28:37 INFO  (LoggingInitialization) Using log config file: jar:file:/D:/MyGitRepo/Grim-Dynasty/.tooling/ghidra/ghidra_12.1.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-10-18 20:28:37 INFO  (LoggingInitialization) Using log file: D:\MyGitRepo\Grim-Dynasty\docs\task-kills\ghidra-selected\analysis.log  
+2026-10-18 20:28:37 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
+2026-10-18 20:28:37 INFO  (Preferences) Loading user preferences: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\preferences  
+2026-10-18 20:28:37 INFO  (ClassSearcher) Searching for classes...  
+2026-10-18 20:28:38 INFO  (ClassSearcher) Class search complete (823 ms)  
+2026-10-18 20:28:38 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-10-18 20:28:38 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-10-18 20:28:38 INFO  (SecureRandomFactory) Random Number Generator initialization complete: SHA1PRNG  
+2026-10-18 20:28:38 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-10-18 20:28:38 INFO  (AnalyzeHeadless) Headless startup complete (2140 ms)  
+2026-10-18 20:28:38 INFO  (ClassSearcher) Class searcher loaded 59 extension points (20 false positives)  
+2026-10-18 20:28:38 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    C:\Users\Administrator\Documents\Codex\2026-10-18\task-2
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\ghidra_scripts  
+2026-10-18 20:28:38 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-10-18 20:28:38 INFO  (HeadlessAnalyzer) Creating project: D:\MyGitRepo\Grim-Dynasty\analysis\selected-kill-project\TaskKills  
+2026-10-18 20:28:38 DEBUG (DefaultProjectManager) No tools found; Installing default tools  
+2026-10-18 20:28:38 DEBUG (DefaultProjectManager) 	no recent project directories found  
+2026-10-18 20:28:39 INFO  (DefaultProject) Creating project: D:\MyGitRepo\Grim-Dynasty\analysis\selected-kill-project\TaskKills  
+2026-10-18 20:28:39 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2026-10-18 20:28:39 INFO  (HeadlessAnalyzer)      project: D:\MyGitRepo\Grim-Dynasty\analysis\selected-kill-project\TaskKills  
+2026-10-18 20:28:39 INFO  (HeadlessAnalyzer) IMPORTING: file:///D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll  
+2026-10-18 20:28:40 INFO  (ProgramLoader) Using Loader: Portable Executable (PE)  
+2026-10-18 20:28:40 INFO  (ProgramLoader) Using Language/Compiler: x86:LE:64:default:windows  
+2026-10-18 20:28:40 INFO  (ProgramLoader) Using Library Search Path: [., C:\Windows\SysWOW64, D:\MyGitRepo\Grim-Dynasty\.tooling\jdk\jdk-21.0.12.1+1\bin, C:\Windows\Sun\Java\bin, C:\Windows\system32, C:\Windows, C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell, C:\Users\Administrator\.codex\tmp\arg0-windows\codex-arg0S9ZCuX, C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\libheif\libheif\bin, C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\jxrlib\jxrlib\bin, C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\poppler\Library\bin, C:\Windows\System32\Wbem, C:\Windows\System32\WindowsPowerShell\v1.0\, C:\Windows\System32\OpenSSH\, C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR, C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common, C:\Program Files\dotnet\, C:\Program Files\nodejs\, C:\Program Files\Git\cmd, C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\, C:\Users\Administrator\AppData\Local\Programs\OpenAI\Codex\bin, C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps, C:\Program Files (x86)\Tencent\QQGameTempest\Hall.58195\, C:\Users\Administrator\AppData\Local\GitHubDesktop\bin, C:\Users\Administrator\AppData\Roaming\npm, C:\Users\Administrator\.diversion\bin, C:\Users\Administrator\AppData\Local\Microsoft\WinGet\Links, C:\Users\Administrator\AppData\Local\Python\bin, D:\WPS Office\12.1.0.27458\clitool, C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin, C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd]  
+2026-10-18 20:28:54 INFO  (TLSDirectory) TLS callbacks at 18060c8a0  
+2026-10-18 20:29:04 INFO  (TLSDirectory) TLS callbacks at 180303198  
+2026-10-18 20:29:11 INFO  (TLSDirectory) TLS callbacks at 1800d67b0  
+2026-10-18 20:29:11 DEBUG (WEVTResourceDataType) Error processing Provider Element.  
+2026-10-18 20:29:11 INFO  (TLSDirectory) TLS callbacks at 180604200  
+2026-10-18 20:29:11 WARN  (ExportDataDirectory) Invalid or missing function at 1806ed624  
+2026-10-18 20:29:15 WARN  (ExportDataDirectory) Invalid or missing function at 1800a3f84  
+2026-10-18 20:29:15 DEBUG (WEVTResourceDataType) Error processing Provider Element.  
+2026-10-18 20:29:16 DEBUG (WEVTResourceDataType) Error processing Provider Element.  
+2026-10-18 20:29:16 INFO  (ProgramLoader) Additional info:
+Loading file:///D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll?MD5=6ee91685adb4b3af495a3d32dbc97923...
+------------------------------------------------
+
+Searching 27 paths for library API-MS-WIN-CRT-CONVERT-L1-1-0.DLL...
+Loading file:///D:/Steam/steamapps/common/Grim Dawn/x64/api-ms-win-crt-convert-l1-1-0.dll?MD5=278857b86f667c47cbcce94f5ec73ca8...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-convert-l1-1-0.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL...
+Loading file:///D:/Steam/steamapps/common/Grim Dawn/x64/api-ms-win-crt-filesystem-l1-1-0.dll?MD5=ae83311041ee793253ff10736317a09e...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-filesystem-l1-1-0.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library API-MS-WIN-CRT-HEAP-L1-1-0.DLL...
+Loading file:///D:/Steam/steamapps/common/Grim Dawn/x64/api-ms-win-crt-heap-l1-1-0.dll?MD5=12311308d7d65895b3920b3dd3e54b3b...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-heap-l1-1-0.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library API-MS-WIN-CRT-MATH-L1-1-0.DLL...
+Loading file:///D:/Steam/steamapps/common/Grim Dawn/x64/api-ms-win-crt-math-l1-1-0.dll?MD5=f32bd567d35d2e85504c39dede609e72...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-math-l1-1-0.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL...
+Loading file:///D:/Steam/steamapps/common/Grim Dawn/x64/api-ms-win-crt-runtime-l1-1-0.dll?MD5=595a997bd415c8ae0ef1e3c3b73e6091...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-runtime-l1-1-0.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library API-MS-WIN-CRT-STDIO-L1-1-0.DLL...
+Loading file:///D:/Steam/steamapps/common/Grim Dawn/x64/api-ms-win-crt-stdio-l1-1-0.dll?MD5=415d765aa267382a79e56e428c80b1e1...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-stdio-l1-1-0.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library API-MS-WIN-CRT-STRING-L1-1-0.DLL...
+Loading file:///D:/Steam/steamapps/common/Grim Dawn/x64/api-ms-win-crt-string-l1-1-0.dll?MD5=5bd5a9001cb0555c5b2b14e0cbc8d922...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-string-l1-1-0.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library API-MS-WIN-CRT-TIME-L1-1-0.DLL...
+Loading file:///D:/Steam/steamapps/common/Grim Dawn/x64/api-ms-win-crt-time-l1-1-0.dll?MD5=f719ad4c04043f55a21e73805997b287...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-time-l1-1-0.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library API-MS-WIN-CRT-UTILITY-L1-1-0.DLL...
+Loading file:///D:/Steam/steamapps/common/Grim Dawn/x64/api-ms-win-crt-utility-l1-1-0.dll?MD5=a405399d5b958a03e6054307a631553a...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-utility-l1-1-0.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library ENGINE.DLL...
+Loading file:///D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll?MD5=ac1bda9365b883dffc55b7f544ee6a6c...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\engine.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library KERNEL32.DLL...
+Skipping library which is the wrong architecture: file:///C:/Windows/SysWOW64/kernel32.dll
+Loading file:///C:/Windows/System32/kernel32.dll?MD5=0a5960b161f98d6e85c108c0247f9da7...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\kernel32.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library LUA51.DLL...
+Loading file:///D:/Steam/steamapps/common/Grim Dawn/x64/lua51.dll?MD5=62296207471df2e90918195bc3daf13a...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\lua51.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library MSVCP140.DLL...
+Skipping library which is the wrong architecture: file:///C:/Windows/SysWOW64/msvcp140.dll
+Loading file:///D:/MyGitRepo/Grim-Dynasty/.tooling/jdk/jdk-21.0.12.1+1/bin/msvcp140.dll?MD5=72f3d84384e888bf0d38852eb863026b...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\msvcp140.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library OLE32.DLL...
+Skipping library which is the wrong architecture: file:///C:/Windows/SysWOW64/ole32.dll
+Loading file:///C:/Windows/System32/ole32.dll?MD5=9b825cacefc8d3b75af3b3038685a4a2...
+[ole32.dll]: failed to create WEVTResource at 180114218: Failed to resolve data length for WEVTResource
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\ole32.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library SHELL32.DLL...
+Skipping library which is the wrong architecture: file:///C:/Windows/SysWOW64/shell32.dll
+Loading file:///C:/Windows/System32/shell32.dll?MD5=84cdb89eb166e488b19590d92f4dc4bc...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\shell32.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library USER32.DLL...
+Skipping library which is the wrong architecture: file:///C:/Windows/SysWOW64/user32.dll
+Loading file:///C:/Windows/System32/user32.dll?MD5=dec6108270be2582a393b3889767b300...
+[user32.dll]: failed to create WEVTResource at 1800c0a70: Failed to resolve data length for WEVTResource
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\user32.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library VCRUNTIME140.DLL...
+Skipping library which is the wrong architecture: file:///C:/Windows/SysWOW64/vcruntime140.dll
+Loading file:///D:/MyGitRepo/Grim-Dynasty/.tooling/jdk/jdk-21.0.12.1+1/bin/vcruntime140.dll?MD5=caf9edded91c1f6c0022b278c16679aa...
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\vcruntime140.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 27 paths for library WINMM.DLL...
+Skipping library which is the wrong architecture: file:///C:/Windows/SysWOW64/winmm.dll
+Loading file:///C:/Windows/System32/winmm.dll?MD5=0059946611d1e824621bb881211acbd4...
+[winmm.dll]: failed to create WEVTResource at 180021310: Failed to resolve data length for WEVTResource
+Created exports file: C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\winmm.exports
+Library not saved to project.
+------------------------------------------------
+
+Applying cached symbols from LUA51.DLL
+Applying cached symbols from KERNEL32.DLL
+Applying cached symbols from USER32.DLL
+Applying cached symbols from ENGINE.DLL
+Applying cached symbols from MSVCP140.DLL
+Applying cached symbols from VCRUNTIME140.DLL
+Applying C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-runtime-l1-1-0.exports
+Applying C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-stdio-l1-1-0.exports
+Applying C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-utility-l1-1-0.exports
+Applying C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-string-l1-1-0.exports
+Applying C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-convert-l1-1-0.exports
+Applying C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-time-l1-1-0.exports
+Applying C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-filesystem-l1-1-0.exports
+Applying C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-math-l1-1-0.exports
+Applying C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\api-ms-win-crt-heap-l1-1-0.exports
+Applying C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\winmm.exports
+Applying C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\shell32.exports
+Applying C:\Users\Administrator\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\symbols\win64\ole32.exports
+Linking the External Programs of 'Game.dll' to imported libraries...
+  [LUA51.DLL] -> not found in project
+  [KERNEL32.DLL] -> not found in project
+  [USER32.DLL] -> not found in project
+  [ENGINE.DLL] -> not found in project
+  [MSVCP140.DLL] -> not found in project
+  [VCRUNTIME140.DLL] -> not found in project
+  [API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-STDIO-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-UTILITY-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-STRING-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-CONVERT-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-TIME-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-MATH-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-HEAP-L1-1-0.DLL] -> not found in project
+  [WINMM.DLL] -> not found in project
+  [SHELL32.DLL] -> not found in project
+  [OLE32.DLL] -> not found in project
+------------------------------------------------
+
+  
+2026-10-18 20:29:16 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2026-10-18 20:29:16 INFO  (HeadlessAnalyzer) REPORT: Execute script: SeedObservedFunctions.java '0x180470ed0' '0x180470f50' '0x180470f80' '0x180470fb0' '0x1804713c0' '0x180422450' '0x180470d90' '0x180470e20' '0x180470ea0' '0x180471080' '0x18046e380'   
+2026-10-18 20:29:20 INFO  (HeadlessAnalyzer) SCRIPT: C:\Users\Administrator\Documents\Codex\2026-10-18\task-2\SeedObservedFunctions.java  
+2026-10-18 20:29:20 INFO  (GhidraScript) SeedObservedFunctions.java> Observed vtable/export entry 180470ed0: Observed_180470ed0  
+2026-10-18 20:29:20 INFO  (GhidraScript) SeedObservedFunctions.java> Observed vtable/export entry 180470f50: FUN_180470f50  
+2026-10-18 20:29:20 INFO  (GhidraScript) SeedObservedFunctions.java> Observed vtable/export entry 180470f80: FUN_180470f80  
+2026-10-18 20:29:20 INFO  (GhidraScript) SeedObservedFunctions.java> Observed vtable/export entry 180470fb0: Observed_180470fb0  
+2026-10-18 20:29:20 INFO  (GhidraScript) SeedObservedFunctions.java> Observed vtable/export entry 1804713c0: Observed_1804713c0  
+2026-10-18 20:29:20 INFO  (GhidraScript) SeedObservedFunctions.java> Observed vtable/export entry 180422450: ?OnChanged@Quest2Objective@GAME@@QEAAXXZ  
+2026-10-18 20:29:20 INFO  (GhidraScript) SeedObservedFunctions.java> Observed vtable/export entry 180470d90: FUN_180470d90  
+2026-10-18 20:29:20 INFO  (GhidraScript) SeedObservedFunctions.java> Observed vtable/export entry 180470e20: Observed_180470e20  
+2026-10-18 20:29:20 INFO  (GhidraScript) SeedObservedFunctions.java> Observed vtable/export entry 180470ea0: FUN_180470ea0  
+2026-10-18 20:29:20 INFO  (GhidraScript) SeedObservedFunctions.java> Observed vtable/export entry 180471080: FUN_180471080  
+2026-10-18 20:29:20 INFO  (GhidraScript) SeedObservedFunctions.java> Observed vtable/export entry 18046e380: ?Execute@ScriptableActionCollection@GAME@@QEBAXPEAVEntity@2@@Z  
+2026-10-18 20:29:20 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll  
+2026-10-18 20:29:20 WARN  (NoReturnFunctionAnalyzer) Ignoring leading '_' chars on no-return name '___raise_securityfailure' specified in file: D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\data\PEFunctionsThatDoNotReturn  
+2026-10-18 20:29:20 WARN  (NoReturnFunctionAnalyzer) Ignoring leading '_' chars on no-return name '___report_rangecheckfailure' specified in file: D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\data\PEFunctionsThatDoNotReturn  
+2026-10-18 20:29:20 DEBUG (SymbolServerService) SymbolServerService: querying Program's Import Location - D:\Steam\steamapps\common\Grim Dawn\x64 for Game.pdb, f552cf04-503e-4dc5-aa29-d7df6bd2a2a0, 2, 0, ???  
+2026-10-18 20:29:20 DEBUG (SymbolServerService) SymbolServerService: got 0 results from Program's Import Location - D:\Steam\steamapps\common\Grim Dawn\x64  
+2026-10-18 20:29:20 DEBUG (SymbolServerService) SymbolServerService: found 0 matches  
+2026-10-18 20:29:20 INFO  (PdbUniversalAnalyzer) Skipping PDB processing: failed to locate PDB file in configured locations  
+2026-10-18 20:29:20 INFO  (PdbUniversalAnalyzer) Use a script to set the PDB file location. I.e.,
+    PdbAnalyzer.setPdbFileOption(currentProgram, new File("/path/to/pdb/file.pdb")); or
+    PdbUniversalAnalyzer.setPdbFileOption(currentProgram, new File("/path/to/pdb/file.pdb"));
+Or set the symbol server search configuration using:    PdbPlugin.saveSymbolServerServiceConfig(...);
+ This must be done using a pre-script (prior to analysis).  
+2026-10-18 20:29:20 INFO  (PackedDatabaseCache) Packed database cache: C:\Users\Administrator\AppData\Local\ghidra\packed-db-cache  
+2026-10-18 20:29:20 DEBUG (PackedDatabaseCache) Caching packed database: D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\data\typeinfo\win32\windows_vs12_64.gdt  
+2026-10-18 20:29:20 DEBUG (PackedDatabase) Unpacking database D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\data\typeinfo\win32\windows_vs12_64.gdt -> C:\Users\Administrator\AppData\Local\ghidra\packed-db-cache\pdb73CA77C3\db.1.gbf  
+2026-10-18 20:29:20 DEBUG (PackedDatabaseCache) Cache update completed: D:\MyGitRepo\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\data\typeinfo\win32\windows_vs12_64.gdt  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e428d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e428d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e410d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e410d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804a2260  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804a2260  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e436d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e436d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804a2e30  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804a2e30  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e443d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e443d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804a5ea0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804a5ea0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804a7720  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804a7720  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804ab960  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804ab960  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804ac830  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804ac830  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804aed20  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804aed20  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804b4350  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804b4350  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804b89a0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804b89a0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e3f2d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e3f2d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804e5630  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804e5630  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e3f7d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e3f7d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804e82f0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804e82f0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e403d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e403d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804eb0c0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804eb0c0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804eb620  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804eb620  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804ef3e0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804ef3e0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804f7f80  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804f7f80  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e41dd  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e41dd  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804fa0e0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804fa0e0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804fa6e0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804fa6e0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804fcd20  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804fcd20  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804fcda0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804fcda0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804fdc80  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804fdc80  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804fdd00  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804fdd00  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804fe450  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804fe450  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1804ff530  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1804ff530  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805014a0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805014a0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805021c0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805021c0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180502260  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180502260  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805028b0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805028b0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180503540  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180503540  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180503800  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180503800  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180503c90  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180503c90  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180503da0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180503da0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180503f10  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180503f10  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180504440  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180504440  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180504dc0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180504dc0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180506380  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180506380  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180507ec0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180507ec0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180509e90  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180509e90  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 18050bd80  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 18050bd80  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 18050dbe0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 18050dbe0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 18050dc70  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 18050dc70  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 18050ec60  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 18050ec60  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805112f0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805112f0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805122a0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805122a0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180512440  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180512440  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e42bd  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e42bd  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805178f0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805178f0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 18051b0c0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 18051b0c0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180525f90  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180525f90  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e439d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e439d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 18054fe10  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 18054fe10  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180552430  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180552430  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805538a0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805538a0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180554ec0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180554ec0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 180556240  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 180556240  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805deba0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805deba0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e24c0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e24c0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e24f0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e24f0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2510  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2510  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2550  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2550  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e25b0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e25b0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2610  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2610  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2620  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2620  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2630  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2630  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2650  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2650  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2790  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2790  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e27a0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e27a0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2860  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2860  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2880  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2880  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e28a0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e28a0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2900  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2900  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2910  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2910  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2980  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2980  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e29e0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e29e0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2a00  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2a00  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2a50  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2a50  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e2e6d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e2e6d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e3cfd  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e3cfd  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e3d4d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e3d4d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e400d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e400d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e417d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e417d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e41ad  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e41ad  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e420d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e420d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e430d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e430d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e433d  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e433d  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805e43cd  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805e43cd  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fa900  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fa900  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fa940  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fa940  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fa960  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fa960  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fa96c  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fa96c  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805faa40  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805faa40  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805faa4c  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805faa4c  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fab10  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fab10  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fab1c  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fab1c  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805facd0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805facd0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805facdc  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805facdc  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fad70  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fad70  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fad7c  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fad7c  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fae60  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fae60  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fae6c  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fae6c  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805faef0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805faef0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805faff0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805faff0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fb0b0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fb0b0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fb110  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fb110  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fb250  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fb250  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fb2d0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fb2d0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fb390  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fb390  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fb450  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fb450  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fb480  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fb480  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fb4a0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fb4a0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fb550  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fb550  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fba50  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fba50  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fbb00  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fbb00  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fbb60  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fbb60  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fbd20  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fbd20  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fbdc0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fbdc0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fbee0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fbee0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fc0a0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fc0a0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fc160  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fc160  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fc1b0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fc1b0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fc260  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fc260  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fc2a0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fc2a0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fc2b0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fc2b0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fc470  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fc470  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fc9f0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fc9f0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fcaa0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fcaa0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fcb20  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fcb20  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fcb30  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fcb30  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fcdc0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fcdc0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fcdd0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fcdd0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fcde0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fcde0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fce10  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fce10  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fce50  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fce50  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fce70  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fce70  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fcf20  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fcf20  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fcf40  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fcf40  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fcfb0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fcfb0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fd0d0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fd0d0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fd130  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fd130  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fd240  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fd240  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fd320  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fd320  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fd3d0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fd3d0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fd640  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fd640  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fd660  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fd660  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fd740  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fd740  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fd7b0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fd7b0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fd7bc  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fd7bc  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fdbd0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fdbd0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805fdc20  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805fdc20  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805ffa50  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805ffa50  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805ffa5c  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805ffa5c  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805ffab0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805ffab0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805ffabc  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805ffabc  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805ffba0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805ffba0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805ffbac  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805ffbac  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805ffbe0  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805ffbe0  
+2026-10-18 20:29:54 WARN  (ClearFlowAndRepairCmd) WARNING! Repairing body of function at 1805ffbec  
+2026-10-18 20:29:54 ERROR (ClearFlowAndRepairCmd) ... function body repair failed due to overlap with another function: 1805ffbec  
+2026-10-18 20:30:06 INFO  (DecompilerSwitchAnalyzer) hit non-returning function, restarting decompiler switch analyzer later  
+2026-10-18 20:31:19 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: windows_vs12_64  
+2026-10-18 20:31:23 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: windows_vs12_64  
+2026-10-18 20:31:28 ERROR (DemangledVariable) Could not create Data at address 180602d88  
+2026-10-18 20:31:28 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: windows_vs12_64  
+2026-10-18 20:32:28 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              1.652 secs
+    Apply Data Archives                        0.299 secs
+    Call Convention ID                         0.349 secs
+    Call-Fixup Installer                       2.187 secs
+    Create Address Tables                      2.754 secs
+    Create Address Tables - One Time          11.666 secs
+    Create Function                            0.224 secs
+    Data Reference                             4.943 secs
+    Decompiler Switch Analysis                 5.212 secs
+    Decompiler Switch Analysis - One Time      5.186 secs
+    Demangler Microsoft                        5.010 secs
+    Disassemble                                0.008 secs
+    Disassemble Entry Points                  26.477 secs
+    Disassemble Entry Points - One Time        0.052 secs
+    Embedded Media                             0.062 secs
+    External Entry References                  0.255 secs
+    Function ID                                8.488 secs
+    Function Start Search                      0.167 secs
+    Non-Returning Functions - Discovered       6.089 secs
+    Non-Returning Functions - Known            0.064 secs
+    PDB Universal                              0.017 secs
+    Reference                                  9.566 secs
+    Scalar Operand References                  8.829 secs
+    Shared Return Calls                        2.590 secs
+    Stack                                     37.669 secs
+    Subroutine References                      1.684 secs
+    Subroutine References - One Time           0.286 secs
+    Windows x86 PE Exception Handling          6.625 secs
+    Windows x86 PE RTTI Analyzer               0.270 secs
+    Windows x86 Thread Environment Block (TEB) Analyzer     0.015 secs
+    WindowsResourceReference                   3.387 secs
+    x86 Constant Reference Analyzer           36.316 secs
+-----------------------------------------------------
+     Total Time   188 secs
+-----------------------------------------------------
+  
+2026-10-18 20:32:28 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll  
+2026-10-18 20:32:28 INFO  (HeadlessAnalyzer) REPORT: Execute script: ExportObservedFunctions.java 'D:\MyGitRepo\Grim-Dynasty\docs\task-kills\ghidra-selected\functions.json' '0x180470ed0' '0x180470f50' '0x180470f80' '0x180470fb0' '0x1804713c0' '0x180422450' '0x180470d90' '0x180470e20' '0x180470ea0' '0x180471080' '0x18046e380'   
+2026-10-18 20:32:30 INFO  (HeadlessAnalyzer) SCRIPT: C:\Users\Administrator\Documents\Codex\2026-10-18\task-2\ExportObservedFunctions.java  
+2026-10-18 20:32:31 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll  
+2026-10-18 20:32:31 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll  
+2026-10-18 20:32:31 INFO  (LocalFileSystem) /Game.dll: file created (Administrator)  
+2026-10-18 20:32:31 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /Game.dll (TaskKills:/Game.dll)  
+2026-10-18 20:32:31 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  

@@ -1,0 +1,1021 @@
+[
+  {
+    "label": "??1Quest2@GAME@@QEAA@XZ",
+    "start": "180420280",
+    "end": "18042057e",
+    "bytesBudget": 767,
+    "function": "??1Quest2@GAME@@QEAA@XZ",
+    "instructions": [
+      "180420280 MOV qword ptr [RSP + 0x8],RBX",
+      "180420285 MOV qword ptr [RSP + 0x10],RBP",
+      "18042028a MOV qword ptr [RSP + 0x18],RSI",
+      "18042028f PUSH RDI",
+      "180420290 SUB RSP,0x20",
+      "180420294 MOV RBX,qword ptr [RCX + 0x28]",
+      "180420298 XOR EBP,EBP",
+      "18042029a MOV RDI,RCX",
+      "18042029d TEST RBX,RBX",
+      "1804202a0 JZ 0x1804202ba",
+      "1804202a2 MOV RCX,RBX",
+      "1804202a5 CALL qword ptr [0x18060a1d0]",
+      "1804202ab LEA EDX,[RBP + 0x20]",
+      "1804202ae MOV RCX,RBX",
+      "1804202b1 CALL 0x1805da5dc",
+      "1804202b6 MOV qword ptr [RDI + 0x28],RBP",
+      "1804202ba MOV RAX,qword ptr [RDI + 0x38]",
+      "1804202be MOV ESI,EBP",
+      "1804202c0 SUB RAX,qword ptr [RDI + 0x30]",
+      "1804202c4 SAR RAX,0x3",
+      "1804202c8 TEST RAX,RAX",
+      "1804202cb JZ 0x180420307",
+      "1804202cd MOV RCX,RBP",
+      "1804202d0 MOV RAX,qword ptr [RDI + 0x30]",
+      "1804202d4 MOV RBX,qword ptr [RAX + RCX*0x8]",
+      "1804202d8 TEST RBX,RBX",
+      "1804202db JZ 0x1804202f2",
+      "1804202dd MOV RCX,RBX",
+      "1804202e0 CALL 0x180425440",
+      "1804202e5 MOV EDX,0xc8",
+      "1804202ea MOV RCX,RBX",
+      "1804202ed CALL 0x1805da5dc",
+      "1804202f2 MOV RAX,qword ptr [RDI + 0x38]",
+      "1804202f6 INC ESI",
+      "1804202f8 SUB RAX,qword ptr [RDI + 0x30]",
+      "1804202fc SAR RAX,0x3",
+      "180420300 MOV ECX,ESI",
+      "180420302 CMP RCX,RAX",
+      "180420305 JC 0x1804202d0",
+      "180420307 MOV RCX,qword ptr [RDI + 0x90]",
+      "18042030e MOV RSI,0x1fffffffffffffff",
+      "180420318 TEST RCX,RCX",
+      "18042031b JZ 0x1804203a1",
+      "180420321 MOV RAX,qword ptr [RDI + 0xa0]",
+      "180420328 SUB RAX,RCX",
+      "18042032b SAR RAX,0x3",
+      "18042032f CMP RAX,RSI",
+      "180420332 JBE 0x18042033b",
+      "180420334 CALL qword ptr [0x18060b930]",
+      "18042033a INT3",
+      "18042033b LEA RAX,[RAX*0x8]",
+      "180420343 CMP RAX,0x1000",
+      "180420349 JC 0x180420387",
+      "18042034b TEST CL,0x1f",
+      "18042034e JZ 0x180420357",
+      "180420350 CALL qword ptr [0x18060b930]",
+      "180420356 INT3",
+      "180420357 MOV RAX,qword ptr [RCX + -0x8]",
+      "18042035b CMP RAX,RCX",
+      "18042035e JC 0x180420367",
+      "180420360 CALL qword ptr [0x18060b930]",
+      "180420366 INT3",
+      "180420367 SUB RCX,RAX",
+      "18042036a CMP RCX,0x8",
+      "18042036e JNC 0x180420377",
+      "180420370 CALL qword ptr [0x18060b930]",
+      "180420376 INT3",
+      "180420377 CMP RCX,0x27",
+      "18042037b JBE 0x180420384",
+      "18042037d CALL qword ptr [0x18060b930]",
+      "180420383 INT3",
+      "180420384 MOV RCX,RAX",
+      "180420387 CALL 0x1805da6bc",
+      "18042038c MOV qword ptr [RDI + 0x90],RBP",
+      "180420393 MOV qword ptr [RDI + 0x98],RBP",
+      "18042039a MOV qword ptr [RDI + 0xa0],RBP",
+      "1804203a1 MOV RAX,qword ptr [RDI + 0x80]",
+      "1804203a8 MOV RCX,qword ptr [RAX]",
+      "1804203ab MOV qword ptr [RAX],RAX",
+      "1804203ae MOV RAX,qword ptr [RDI + 0x80]",
+      "1804203b5 MOV qword ptr [RAX + 0x8],RAX",
+      "1804203b9 MOV qword ptr [RDI + 0x88],RBP",
+      "1804203c0 CMP RCX,qword ptr [RDI + 0x80]",
+      "1804203c7 JZ 0x1804203e4",
+      "1804203c9 NOP dword ptr [RAX]",
+      "1804203d0 MOV RBX,qword ptr [RCX]",
+      "1804203d3 CALL 0x1805da6bc",
+      "1804203d8 MOV RCX,RBX",
+      "1804203db CMP RBX,qword ptr [RDI + 0x80]",
+      "1804203e2 JNZ 0x1804203d0",
+      "1804203e4 MOV RCX,qword ptr [RDI + 0x80]",
+      "1804203eb CALL 0x1805da6bc",
+      "1804203f0 MOV RCX,qword ptr [RDI + 0x50]",
+      "1804203f4 TEST RCX,RCX",
+      "1804203f7 JZ 0x180420477",
+      "1804203f9 MOV RAX,qword ptr [RDI + 0x60]",
+      "1804203fd MOV RDX,0x3fffffffffffffff",
+      "180420407 SUB RAX,RCX",
+      "18042040a SAR RAX,0x2",
+      "18042040e CMP RAX,RDX",
+      "180420411 JBE 0x18042041a",
+      "180420413 CALL qword ptr [0x18060b930]",
+      "180420419 INT3",
+      "18042041a LEA RAX,[RAX*0x4]",
+      "180420422 CMP RAX,0x1000",
+      "180420428 JC 0x180420466",
+      "18042042a TEST CL,0x1f",
+      "18042042d JZ 0x180420436",
+      "18042042f CALL qword ptr [0x18060b930]",
+      "180420435 INT3",
+      "180420436 MOV RAX,qword ptr [RCX + -0x8]",
+      "18042043a CMP RAX,RCX",
+      "18042043d JC 0x180420446",
+      "18042043f CALL qword ptr [0x18060b930]",
+      "180420445 INT3",
+      "180420446 SUB RCX,RAX",
+      "180420449 CMP RCX,0x8",
+      "18042044d JNC 0x180420456",
+      "18042044f CALL qword ptr [0x18060b930]",
+      "180420455 INT3",
+      "180420456 CMP RCX,0x27",
+      "18042045a JBE 0x180420463",
+      "18042045c CALL qword ptr [0x18060b930]",
+      "180420462 INT3",
+      "180420463 MOV RCX,RAX",
+      "180420466 CALL 0x1805da6bc",
+      "18042046b MOV qword ptr [RDI + 0x50],RBP",
+      "18042046f MOV qword ptr [RDI + 0x58],RBP",
+      "180420473 MOV qword ptr [RDI + 0x60],RBP",
+      "180420477 MOV RCX,qword ptr [RDI + 0x30]",
+      "18042047b TEST RCX,RCX",
+      "18042047e JZ 0x1804204f4",
+      "180420480 MOV RAX,qword ptr [RDI + 0x40]",
+      "180420484 SUB RAX,RCX",
+      "180420487 SAR RAX,0x3",
+      "18042048b CMP RAX,RSI",
+      "18042048e JBE 0x180420497",
+      "180420490 CALL qword ptr [0x18060b930]",
+      "180420496 INT3",
+      "180420497 LEA RAX,[RAX*0x8]",
+      "18042049f CMP RAX,0x1000",
+      "1804204a5 JC 0x1804204e3",
+      "1804204a7 TEST CL,0x1f",
+      "1804204aa JZ 0x1804204b3",
+      "1804204ac CALL qword ptr [0x18060b930]",
+      "1804204b2 INT3",
+      "1804204b3 MOV RAX,qword ptr [RCX + -0x8]",
+      "1804204b7 CMP RAX,RCX",
+      "1804204ba JC 0x1804204c3",
+      "1804204bc CALL qword ptr [0x18060b930]",
+      "1804204c2 INT3",
+      "1804204c3 SUB RCX,RAX",
+      "1804204c6 CMP RCX,0x8",
+      "1804204ca JNC 0x1804204d3",
+      "1804204cc CALL qword ptr [0x18060b930]",
+      "1804204d2 INT3",
+      "1804204d3 CMP RCX,0x27",
+      "1804204d7 JBE 0x1804204e0",
+      "1804204d9 CALL qword ptr [0x18060b930]",
+      "1804204df INT3",
+      "1804204e0 MOV RCX,RAX",
+      "1804204e3 CALL 0x1805da6bc",
+      "1804204e8 MOV qword ptr [RDI + 0x30],RBP",
+      "1804204ec MOV qword ptr [RDI + 0x38],RBP",
+      "1804204f0 MOV qword ptr [RDI + 0x40],RBP",
+      "1804204f4 MOV RAX,qword ptr [RDI + 0x20]",
+      "1804204f8 ADD RDI,0x8",
+      "1804204fc CMP RAX,0x10",
+      "180420500 JC 0x180420551",
+      "180420502 MOV RCX,qword ptr [RDI]",
+      "180420505 INC RAX",
+      "180420508 CMP RAX,0x1000",
+      "18042050e JC 0x18042054c",
+      "180420510 TEST CL,0x1f",
+      "180420513 JZ 0x18042051c",
+      "180420515 CALL qword ptr [0x18060b930]",
+      "18042051b INT3",
+      "18042051c MOV RAX,qword ptr [RCX + -0x8]",
+      "180420520 CMP RAX,RCX",
+      "180420523 JC 0x18042052c",
+      "180420525 CALL qword ptr [0x18060b930]",
+      "18042052b INT3",
+      "18042052c SUB RCX,RAX",
+      "18042052f CMP RCX,0x8",
+      "180420533 JNC 0x18042053c",
+      "180420535 CALL qword ptr [0x18060b930]",
+      "18042053b INT3",
+      "18042053c CMP RCX,0x27",
+      "180420540 JBE 0x180420549",
+      "180420542 CALL qword ptr [0x18060b930]",
+      "180420548 INT3",
+      "180420549 MOV RCX,RAX",
+      "18042054c CALL 0x1805da6bc",
+      "180420551 MOV qword ptr [RDI + 0x18],0xf",
+      "180420559 CMP qword ptr [RDI + 0x18],0x10",
+      "18042055e MOV qword ptr [RDI + 0x10],RBP",
+      "180420562 JC 0x180420567",
+      "180420564 MOV RDI,qword ptr [RDI]",
+      "180420567 MOV RBX,qword ptr [RSP + 0x30]",
+      "18042056c MOV RSI,qword ptr [RSP + 0x40]",
+      "180420571 MOV byte ptr [RDI],BPL",
+      "180420574 MOV RBP,qword ptr [RSP + 0x38]",
+      "180420579 ADD RSP,0x20",
+      "18042057d POP RDI",
+      "18042057e RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "1804202a0",
+        "to": "1804202ba",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804202ba"
+      },
+      {
+        "from": "1804202a5",
+        "to": "18060a1d0",
+        "type": "READ",
+        "symbol": "PTR_??1PortableLocalization@GAME@@QEAA@XZ_18060a1d0"
+      },
+      {
+        "from": "1804202b1",
+        "to": "1805da5dc",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1805da5dc"
+      },
+      {
+        "from": "1804202cb",
+        "to": "180420307",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420307"
+      },
+      {
+        "from": "1804202db",
+        "to": "1804202f2",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804202f2"
+      },
+      {
+        "from": "1804202e0",
+        "to": "180425440",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "??1Quest2Task@GAME@@QEAA@XZ"
+      },
+      {
+        "from": "1804202ed",
+        "to": "1805da5dc",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1805da5dc"
+      },
+      {
+        "from": "180420305",
+        "to": "1804202d0",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804202d0"
+      },
+      {
+        "from": "18042031b",
+        "to": "1804203a1",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804203a1"
+      },
+      {
+        "from": "180420332",
+        "to": "18042033b",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18042033b"
+      },
+      {
+        "from": "180420334",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "180420349",
+        "to": "180420387",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420387"
+      },
+      {
+        "from": "18042034e",
+        "to": "180420357",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420357"
+      },
+      {
+        "from": "180420350",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "18042035e",
+        "to": "180420367",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420367"
+      },
+      {
+        "from": "180420360",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "18042036e",
+        "to": "180420377",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420377"
+      },
+      {
+        "from": "180420370",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "18042037b",
+        "to": "180420384",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420384"
+      },
+      {
+        "from": "18042037d",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "180420387",
+        "to": "1805da6bc",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1805da6bc"
+      },
+      {
+        "from": "1804203c7",
+        "to": "1804203e4",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804203e4"
+      },
+      {
+        "from": "1804203d3",
+        "to": "1805da6bc",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1805da6bc"
+      },
+      {
+        "from": "1804203e2",
+        "to": "1804203d0",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804203d0"
+      },
+      {
+        "from": "1804203eb",
+        "to": "1805da6bc",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1805da6bc"
+      },
+      {
+        "from": "1804203f7",
+        "to": "180420477",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420477"
+      },
+      {
+        "from": "180420411",
+        "to": "18042041a",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18042041a"
+      },
+      {
+        "from": "180420413",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "180420428",
+        "to": "180420466",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420466"
+      },
+      {
+        "from": "18042042d",
+        "to": "180420436",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420436"
+      },
+      {
+        "from": "18042042f",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "18042043d",
+        "to": "180420446",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420446"
+      },
+      {
+        "from": "18042043f",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "18042044d",
+        "to": "180420456",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420456"
+      },
+      {
+        "from": "18042044f",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "18042045a",
+        "to": "180420463",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420463"
+      },
+      {
+        "from": "18042045c",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "180420466",
+        "to": "1805da6bc",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1805da6bc"
+      },
+      {
+        "from": "18042047e",
+        "to": "1804204f4",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804204f4"
+      },
+      {
+        "from": "18042048e",
+        "to": "180420497",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420497"
+      },
+      {
+        "from": "180420490",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "1804204a5",
+        "to": "1804204e3",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804204e3"
+      },
+      {
+        "from": "1804204aa",
+        "to": "1804204b3",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804204b3"
+      },
+      {
+        "from": "1804204ac",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "1804204ba",
+        "to": "1804204c3",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804204c3"
+      },
+      {
+        "from": "1804204bc",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "1804204ca",
+        "to": "1804204d3",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804204d3"
+      },
+      {
+        "from": "1804204cc",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "1804204d7",
+        "to": "1804204e0",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804204e0"
+      },
+      {
+        "from": "1804204d9",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "1804204e3",
+        "to": "1805da6bc",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1805da6bc"
+      },
+      {
+        "from": "180420500",
+        "to": "180420551",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420551"
+      },
+      {
+        "from": "18042050e",
+        "to": "18042054c",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18042054c"
+      },
+      {
+        "from": "180420513",
+        "to": "18042051c",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18042051c"
+      },
+      {
+        "from": "180420515",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "180420523",
+        "to": "18042052c",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18042052c"
+      },
+      {
+        "from": "180420525",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "180420533",
+        "to": "18042053c",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18042053c"
+      },
+      {
+        "from": "180420535",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "180420540",
+        "to": "180420549",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420549"
+      },
+      {
+        "from": "180420542",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "18042054c",
+        "to": "1805da6bc",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1805da6bc"
+      },
+      {
+        "from": "180420562",
+        "to": "180420567",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180420567"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nvoid __1Quest2_GAME__QEAA_XZ(longlong param_1)\r\n\r\n{\r\n  longlong lVar1;\r\n  longlong *plVar2;\r\n  code *pcVar3;\r\n  ulonglong uVar4;\r\n  longlong *plVar5;\r\n  ulonglong uVar6;\r\n  ulonglong uVar7;\r\n  ulonglong *puVar8;\r\n  \r\n                    /* 0x420280  4135  ??1Quest2@GAME@@QEAA@XZ */\r\n  lVar1 \u003d *(longlong *)(param_1 + 0x28);\r\n  uVar7 \u003d 0;\r\n  if (lVar1 !\u003d 0) {\r\n    __1PortableLocalization_GAME__QEAA_XZ(lVar1);\r\n    FUN_1805da5dc(lVar1,0x20);\r\n    *(undefined8 *)(param_1 + 0x28) \u003d 0;\r\n  }\r\n  if (*(longlong *)(param_1 + 0x38) - *(longlong *)(param_1 + 0x30) \u003e\u003e 3 !\u003d 0) {\r\n    do {\r\n      lVar1 \u003d *(longlong *)(*(longlong *)(param_1 + 0x30) + uVar7 * 8);\r\n      if (lVar1 !\u003d 0) {\r\n        __1Quest2Task_GAME__QEAA_XZ(lVar1);\r\n        FUN_1805da5dc(lVar1,200);\r\n      }\r\n      uVar7 \u003d (ulonglong)((int)uVar7 + 1);\r\n    } while (uVar7 \u003c (ulonglong)(*(longlong *)(param_1 + 0x38) - *(longlong *)(param_1 + 0x30) \u003e\u003e 3)\r\n            );\r\n  }\r\n  uVar7 \u003d *(ulonglong *)(param_1 + 0x90);\r\n  if (uVar7 !\u003d 0) {\r\n    uVar4 \u003d (longlong)(*(longlong *)(param_1 + 0xa0) - uVar7) \u003e\u003e 3;\r\n    if (0x1fffffffffffffff \u003c uVar4) {\r\n      _invalid_parameter_noinfo_noreturn();\r\n      pcVar3 \u003d (code *)swi(3);\r\n      (*pcVar3)();\r\n      return;\r\n    }\r\n    uVar6 \u003d uVar7;\r\n    if (0xfff \u003c uVar4 * 8) {\r\n      if ((uVar7 \u0026 0x1f) !\u003d 0) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n      uVar6 \u003d *(ulonglong *)(uVar7 - 8);\r\n      if (uVar7 \u003c\u003d uVar6) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n      if (uVar7 - uVar6 \u003c 8) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n      if (0x27 \u003c uVar7 - uVar6) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n    }\r\n    FUN_1805da6bc(uVar6);\r\n    *(undefined8 *)(param_1 + 0x90) \u003d 0;\r\n    *(undefined8 *)(param_1 + 0x98) \u003d 0;\r\n    *(undefined8 *)(param_1 + 0xa0) \u003d 0;\r\n  }\r\n  plVar2 \u003d *(longlong **)(param_1 + 0x80);\r\n  plVar5 \u003d (longlong *)*plVar2;\r\n  *plVar2 \u003d (longlong)plVar2;\r\n  *(longlong *)(*(longlong *)(param_1 + 0x80) + 8) \u003d *(longlong *)(param_1 + 0x80);\r\n  *(undefined8 *)(param_1 + 0x88) \u003d 0;\r\n  if (plVar5 !\u003d *(longlong **)(param_1 + 0x80)) {\r\n    do {\r\n      plVar5 \u003d (longlong *)*plVar5;\r\n      FUN_1805da6bc();\r\n    } while (plVar5 !\u003d (longlong *)*(longlong *)(param_1 + 0x80));\r\n  }\r\n  FUN_1805da6bc(*(undefined8 *)(param_1 + 0x80));\r\n  uVar7 \u003d *(ulonglong *)(param_1 + 0x50);\r\n  if (uVar7 !\u003d 0) {\r\n    uVar4 \u003d (longlong)(*(longlong *)(param_1 + 0x60) - uVar7) \u003e\u003e 2;\r\n    if (0x3fffffffffffffff \u003c uVar4) {\r\n      _invalid_parameter_noinfo_noreturn();\r\n      pcVar3 \u003d (code *)swi(3);\r\n      (*pcVar3)();\r\n      return;\r\n    }\r\n    uVar6 \u003d uVar7;\r\n    if (0xfff \u003c uVar4 * 4) {\r\n      if ((uVar7 \u0026 0x1f) !\u003d 0) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n      uVar6 \u003d *(ulonglong *)(uVar7 - 8);\r\n      if (uVar7 \u003c\u003d uVar6) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n      if (uVar7 - uVar6 \u003c 8) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n      if (0x27 \u003c uVar7 - uVar6) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n    }\r\n    FUN_1805da6bc(uVar6);\r\n    *(undefined8 *)(param_1 + 0x50) \u003d 0;\r\n    *(undefined8 *)(param_1 + 0x58) \u003d 0;\r\n    *(undefined8 *)(param_1 + 0x60) \u003d 0;\r\n  }\r\n  uVar7 \u003d *(ulonglong *)(param_1 + 0x30);\r\n  if (uVar7 !\u003d 0) {\r\n    uVar4 \u003d (longlong)(*(longlong *)(param_1 + 0x40) - uVar7) \u003e\u003e 3;\r\n    if (0x1fffffffffffffff \u003c uVar4) {\r\n      _invalid_parameter_noinfo_noreturn();\r\n      pcVar3 \u003d (code *)swi(3);\r\n      (*pcVar3)();\r\n      return;\r\n    }\r\n    uVar6 \u003d uVar7;\r\n    if (0xfff \u003c uVar4 * 8) {\r\n      if ((uVar7 \u0026 0x1f) !\u003d 0) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n      uVar6 \u003d *(ulonglong *)(uVar7 - 8);\r\n      if (uVar7 \u003c\u003d uVar6) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n      if (uVar7 - uVar6 \u003c 8) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n      if (0x27 \u003c uVar7 - uVar6) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n    }\r\n    FUN_1805da6bc(uVar6);\r\n    *(undefined8 *)(param_1 + 0x30) \u003d 0;\r\n    *(undefined8 *)(param_1 + 0x38) \u003d 0;\r\n    *(undefined8 *)(param_1 + 0x40) \u003d 0;\r\n  }\r\n  puVar8 \u003d (ulonglong *)(param_1 + 8);\r\n  if (0xf \u003c *(ulonglong *)(param_1 + 0x20)) {\r\n    uVar7 \u003d *puVar8;\r\n    uVar4 \u003d uVar7;\r\n    if (0xfff \u003c *(ulonglong *)(param_1 + 0x20) + 1) {\r\n      if ((uVar7 \u0026 0x1f) !\u003d 0) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n      uVar4 \u003d *(ulonglong *)(uVar7 - 8);\r\n      if (uVar7 \u003c\u003d uVar4) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n      if (uVar7 - uVar4 \u003c 8) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n      if (0x27 \u003c uVar7 - uVar4) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n        pcVar3 \u003d (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n    }\r\n    FUN_1805da6bc(uVar4);\r\n  }\r\n  *(undefined8 *)(param_1 + 0x20) \u003d 0xf;\r\n  *(undefined8 *)(param_1 + 0x18) \u003d 0;\r\n  if (0xf \u003c *(ulonglong *)(param_1 + 0x20)) {\r\n    puVar8 \u003d (ulonglong *)*puVar8;\r\n  }\r\n  *(undefined1 *)puVar8 \u003d 0;\r\n  return;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "??1Quest2Task@GAME@@QEAA@XZ",
+    "start": "180425440",
+    "end": "1804256cd",
+    "bytesBudget": 654,
+    "function": "??1Quest2Task@GAME@@QEAA@XZ",
+    "instructions": [
+      "180425440 PUSH R12",
+      "180425442 PUSH R14",
+      "180425444 PUSH R15",
+      "180425446 SUB RSP,0x30",
+      "18042544a MOV qword ptr [RSP + 0x20],-0x2",
+      "180425453 MOV qword ptr [RSP + 0x50],RBX",
+      "180425458 MOV qword ptr [RSP + 0x58],RBP",
+      "18042545d MOV qword ptr [RSP + 0x60],RSI",
+      "180425462 MOV qword ptr [RSP + 0x68],RDI",
+      "180425467 MOV RBP,RCX",
+      "18042546a LEA RBX,[RCX + 0x18]",
+      "18042546e MOV R14D,0x3",
+      "180425474 XOR R12D,R12D",
+      "180425477 NOP word ptr [RAX + RAX*0x1]",
+      "180425480 MOV ESI,R12D",
+      "180425483 MOV RDX,qword ptr [RBX]",
+      "180425486 MOV RAX,qword ptr [RBX + 0x8]",
+      "18042548a SUB RAX,RDX",
+      "18042548d SAR RAX,0x3",
+      "180425491 TEST RAX,RAX",
+      "180425494 JZ 0x1804254d1",
+      "180425496 MOV RCX,R12",
+      "180425499 NOP dword ptr [RAX]",
+      "1804254a0 LEA RDI,[RDX + RCX*0x8]",
+      "1804254a4 MOV RCX,qword ptr [RDI]",
+      "1804254a7 TEST RCX,RCX",
+      "1804254aa JZ 0x1804254ba",
+      "1804254ac MOV RAX,qword ptr [RCX]",
+      "1804254af MOV EDX,0x1",
+      "1804254b4 CALL qword ptr [RAX]",
+      "1804254b6 NOP",
+      "1804254b7 MOV qword ptr [RDI],R12",
+      "1804254ba INC ESI",
+      "1804254bc MOV RDX,qword ptr [RBX]",
+      "1804254bf MOV ECX,ESI",
+      "1804254c1 MOV RAX,qword ptr [RBX + 0x8]",
+      "1804254c5 SUB RAX,RDX",
+      "1804254c8 SAR RAX,0x3",
+      "1804254cc CMP RCX,RAX",
+      "1804254cf JC 0x1804254a0",
+      "1804254d1 ADD RBX,0x18",
+      "1804254d5 SUB R14,0x1",
+      "1804254d9 JNZ 0x180425480",
+      "1804254db MOV EDI,R12D",
+      "1804254de MOV RAX,qword ptr [RBP + 0x68]",
+      "1804254e2 SUB RAX,qword ptr [RBP + 0x60]",
+      "1804254e6 SAR RAX,0x3",
+      "1804254ea TEST RAX,RAX",
+      "1804254ed JZ 0x180425533",
+      "1804254ef MOV RCX,R12",
+      "1804254f2 NOP dword ptr [RAX]",
+      "1804254f6 NOP dword ptr [RAX + RAX*0x1]",
+      "180425500 MOV RAX,qword ptr [RBP + 0x60]",
+      "180425504 LEA RBX,[RAX + RCX*0x8]",
+      "180425508 MOV RCX,qword ptr [RBX]",
+      "18042550b TEST RCX,RCX",
+      "18042550e JZ 0x18042551e",
+      "180425510 MOV RAX,qword ptr [RCX]",
+      "180425513 MOV EDX,0x1",
+      "180425518 CALL qword ptr [RAX]",
+      "18042551a NOP",
+      "18042551b MOV qword ptr [RBX],R12",
+      "18042551e INC EDI",
+      "180425520 MOV ECX,EDI",
+      "180425522 MOV RAX,qword ptr [RBP + 0x68]",
+      "180425526 SUB RAX,qword ptr [RBP + 0x60]",
+      "18042552a SAR RAX,0x3",
+      "18042552e CMP RCX,RAX",
+      "180425531 JC 0x180425500",
+      "180425533 MOV EDI,R12D",
+      "180425536 MOV RAX,qword ptr [RBP + 0x80]",
+      "18042553d SUB RAX,qword ptr [RBP + 0x78]",
+      "180425541 SAR RAX,0x3",
+      "180425545 TEST RAX,RAX",
+      "180425548 JZ 0x180425586",
+      "18042554a MOV RCX,R12",
+      "18042554d NOP dword ptr [RAX]",
+      "180425550 MOV RAX,qword ptr [RBP + 0x78]",
+      "180425554 LEA RBX,[RAX + RCX*0x8]",
+      "180425558 MOV RCX,qword ptr [RBX]",
+      "18042555b TEST RCX,RCX",
+      "18042555e JZ 0x18042556e",
+      "180425560 MOV RAX,qword ptr [RCX]",
+      "180425563 MOV EDX,0x1",
+      "180425568 CALL qword ptr [RAX]",
+      "18042556a NOP",
+      "18042556b MOV qword ptr [RBX],R12",
+      "18042556e INC EDI",
+      "180425570 MOV ECX,EDI",
+      "180425572 MOV RAX,qword ptr [RBP + 0x80]",
+      "180425579 SUB RAX,qword ptr [RBP + 0x78]",
+      "18042557d SAR RAX,0x3",
+      "180425581 CMP RCX,RAX",
+      "180425584 JC 0x180425550",
+      "180425586 MOV RCX,qword ptr [RBP + 0x78]",
+      "18042558a MOV RBX,0x1fffffffffffffff",
+      "180425594 TEST RCX,RCX",
+      "180425597 JZ 0x180425617",
+      "180425599 MOV RAX,qword ptr [RBP + 0x88]",
+      "1804255a0 SUB RAX,RCX",
+      "1804255a3 SAR RAX,0x3",
+      "1804255a7 CMP RAX,RBX",
+      "1804255aa JBE 0x1804255b3",
+      "1804255ac CALL qword ptr [0x18060b930]",
+      "1804255b2 NOP",
+      "1804255b3 LEA RAX,[RAX*0x8]",
+      "1804255bb CMP RAX,0x1000",
+      "1804255c1 JC 0x1804255ff",
+      "1804255c3 TEST CL,0x1f",
+      "1804255c6 JZ 0x1804255cf",
+      "1804255c8 CALL qword ptr [0x18060b930]",
+      "1804255ce NOP",
+      "1804255cf MOV RAX,qword ptr [RCX + -0x8]",
+      "1804255d3 CMP RAX,RCX",
+      "1804255d6 JC 0x1804255df",
+      "1804255d8 CALL qword ptr [0x18060b930]",
+      "1804255de NOP",
+      "1804255df SUB RCX,RAX",
+      "1804255e2 CMP RCX,0x8",
+      "1804255e6 JNC 0x1804255ef",
+      "1804255e8 CALL qword ptr [0x18060b930]",
+      "1804255ee NOP",
+      "1804255ef CMP RCX,0x27",
+      "1804255f3 JBE 0x1804255fc",
+      "1804255f5 CALL qword ptr [0x18060b930]",
+      "1804255fb NOP",
+      "1804255fc MOV RCX,RAX",
+      "1804255ff CALL 0x1805da6bc",
+      "180425604 NOP",
+      "180425605 MOV qword ptr [RBP + 0x78],R12",
+      "180425609 MOV qword ptr [RBP + 0x80],R12",
+      "180425610 MOV qword ptr [RBP + 0x88],R12",
+      "180425617 MOV RCX,qword ptr [RBP + 0x60]",
+      "18042561b TEST RCX,RCX",
+      "18042561e JZ 0x180425695",
+      "180425620 MOV RAX,qword ptr [RBP + 0x70]",
+      "180425624 SUB RAX,RCX",
+      "180425627 SAR RAX,0x3",
+      "18042562b CMP RAX,RBX",
+      "18042562e JBE 0x180425637",
+      "180425630 CALL qword ptr [0x18060b930]",
+      "180425636 NOP",
+      "180425637 LEA RAX,[RAX*0x8]",
+      "18042563f CMP RAX,0x1000",
+      "180425645 JC 0x180425683",
+      "180425647 TEST CL,0x1f",
+      "18042564a JZ 0x180425653",
+      "18042564c CALL qword ptr [0x18060b930]",
+      "180425652 NOP",
+      "180425653 MOV RAX,qword ptr [RCX + -0x8]",
+      "180425657 CMP RAX,RCX",
+      "18042565a JC 0x180425663",
+      "18042565c CALL qword ptr [0x18060b930]",
+      "180425662 NOP",
+      "180425663 SUB RCX,RAX",
+      "180425666 CMP RCX,0x8",
+      "18042566a JNC 0x180425673",
+      "18042566c CALL qword ptr [0x18060b930]",
+      "180425672 NOP",
+      "180425673 CMP RCX,0x27",
+      "180425677 JBE 0x180425680",
+      "180425679 CALL qword ptr [0x18060b930]",
+      "18042567f NOP",
+      "180425680 MOV RCX,RAX",
+      "180425683 CALL 0x1805da6bc",
+      "180425688 NOP",
+      "180425689 MOV qword ptr [RBP + 0x60],R12",
+      "18042568d MOV qword ptr [RBP + 0x68],R12",
+      "180425691 MOV qword ptr [RBP + 0x70],R12",
+      "180425695 LEA R9,[0x180017180]",
+      "18042569c MOV EDX,0x18",
+      "1804256a1 LEA R8D,[RDX + -0x15]",
+      "1804256a5 LEA RCX,[RBP + 0x18]",
+      "1804256a9 CALL 0x1805da5ec",
+      "1804256ae NOP",
+      "1804256af MOV RBX,qword ptr [RSP + 0x50]",
+      "1804256b4 MOV RBP,qword ptr [RSP + 0x58]",
+      "1804256b9 MOV RSI,qword ptr [RSP + 0x60]",
+      "1804256be MOV RDI,qword ptr [RSP + 0x68]",
+      "1804256c3 ADD RSP,0x30",
+      "1804256c7 POP R15",
+      "1804256c9 POP R14",
+      "1804256cb POP R12",
+      "1804256cd RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "180425494",
+        "to": "1804254d1",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804254d1"
+      },
+      {
+        "from": "1804254aa",
+        "to": "1804254ba",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804254ba"
+      },
+      {
+        "from": "1804254cf",
+        "to": "1804254a0",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804254a0"
+      },
+      {
+        "from": "1804254d9",
+        "to": "180425480",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425480"
+      },
+      {
+        "from": "1804254ed",
+        "to": "180425533",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425533"
+      },
+      {
+        "from": "18042550e",
+        "to": "18042551e",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18042551e"
+      },
+      {
+        "from": "180425531",
+        "to": "180425500",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425500"
+      },
+      {
+        "from": "180425548",
+        "to": "180425586",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425586"
+      },
+      {
+        "from": "18042555e",
+        "to": "18042556e",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18042556e"
+      },
+      {
+        "from": "180425584",
+        "to": "180425550",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425550"
+      },
+      {
+        "from": "180425597",
+        "to": "180425617",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425617"
+      },
+      {
+        "from": "1804255aa",
+        "to": "1804255b3",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804255b3"
+      },
+      {
+        "from": "1804255ac",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "1804255c1",
+        "to": "1804255ff",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804255ff"
+      },
+      {
+        "from": "1804255c6",
+        "to": "1804255cf",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804255cf"
+      },
+      {
+        "from": "1804255c8",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "1804255d6",
+        "to": "1804255df",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804255df"
+      },
+      {
+        "from": "1804255d8",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "1804255e6",
+        "to": "1804255ef",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804255ef"
+      },
+      {
+        "from": "1804255e8",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "1804255f3",
+        "to": "1804255fc",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1804255fc"
+      },
+      {
+        "from": "1804255f5",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "1804255ff",
+        "to": "1805da6bc",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_1805da6bc"
+      },
+      {
+        "from": "18042561e",
+        "to": "180425695",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425695"
+      },
+      {
+        "from": "18042562e",
+        "to": "180425637",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425637"
+      },
+      {
+        "from": "180425630",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "180425645",
+        "to": "180425683",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425683"
+      },
+      {
+        "from": "18042564a",
+        "to": "180425653",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425653"
+      },
+      {
+        "from": "18042564c",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "18042565a",
+        "to": "180425663",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425663"
+      },
+      {
+        "from": "18042565c",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "18042566a",
+        "to": "180425673",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425673"
+      },
+      {
+        "from": "18042566c",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "180425677",
+        "to": "180425680",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180425680"
+      },
+      {
+        "from": "180425679",
+        "to": "18060b930",
+        "type": "READ",
+        "symbol": "PTR__invalid_parameter_noinfo_noreturn_18060b930"
+      },
+      {
+        "from": "180425683",
+        "to": "1805da6bc",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_1805da6bc"
+      },
+      {
+        "from": "1804256a9",
+        "to": "1805da5ec",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_1805da5ec"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nvoid __1Quest2Task_GAME__QEAA_XZ(longlong *param_1)\r\n\r\n{\r\n  longlong *plVar1;\r\n  longlong *plVar2;\r\n  undefined8 *puVar3;\r\n  ulonglong uVar4;\r\n  ulonglong uVar5;\r\n  longlong lVar6;\r\n  longlong *plVar7;\r\n  longlong lVar8;\r\n  \r\n  lVar8 \u003d 3;\r\n  uVar5 \u003d 0;\r\n  plVar2 \u003d param_1;\r\n  do {\r\n    plVar7 \u003d plVar2 + 3;\r\n    lVar6 \u003d *plVar7;\r\n    uVar4 \u003d uVar5;\r\n    if (plVar2[4] - lVar6 \u003e\u003e 3 !\u003d 0) {\r\n      do {\r\n        plVar1 \u003d (longlong *)(lVar6 + uVar4 * 8);\r\n        puVar3 \u003d (undefined8 *)*plVar1;\r\n        if (puVar3 !\u003d (undefined8 *)0x0) {\r\n          (**(code **)*puVar3)(puVar3,1);\r\n          *plVar1 \u003d 0;\r\n        }\r\n        uVar4 \u003d (ulonglong)((int)uVar4 + 1);\r\n        lVar6 \u003d *plVar7;\r\n      } while (uVar4 \u003c (ulonglong)(plVar2[4] - lVar6 \u003e\u003e 3));\r\n    }\r\n    lVar8 \u003d lVar8 + -1;\r\n    plVar2 \u003d plVar7;\r\n  } while (lVar8 !\u003d 0);\r\n  uVar4 \u003d uVar5;\r\n  if (param_1[0xd] - param_1[0xc] \u003e\u003e 3 !\u003d 0) {\r\n    do {\r\n      plVar2 \u003d (longlong *)(param_1[0xc] + uVar4 * 8);\r\n      puVar3 \u003d (undefined8 *)*plVar2;\r\n      if (puVar3 !\u003d (undefined8 *)0x0) {\r\n        (**(code **)*puVar3)(puVar3,1);\r\n        *plVar2 \u003d 0;\r\n      }\r\n      uVar4 \u003d (ulonglong)((int)uVar4 + 1);\r\n    } while (uVar4 \u003c (ulonglong)(param_1[0xd] - param_1[0xc] \u003e\u003e 3));\r\n  }\r\n  if (param_1[0x10] - param_1[0xf] \u003e\u003e 3 !\u003d 0) {\r\n    do {\r\n      plVar2 \u003d (longlong *)(param_1[0xf] + uVar5 * 8);\r\n      puVar3 \u003d (undefined8 *)*plVar2;\r\n      if (puVar3 !\u003d (undefined8 *)0x0) {\r\n        (**(code **)*puVar3)(puVar3,1);\r\n        *plVar2 \u003d 0;\r\n      }\r\n      uVar5 \u003d (ulonglong)((int)uVar5 + 1);\r\n    } while (uVar5 \u003c (ulonglong)(param_1[0x10] - param_1[0xf] \u003e\u003e 3));\r\n  }\r\n  uVar5 \u003d param_1[0xf];\r\n  if (uVar5 !\u003d 0) {\r\n    uVar4 \u003d (longlong)(param_1[0x11] - uVar5) \u003e\u003e 3;\r\n    if (0x1fffffffffffffff \u003c uVar4) {\r\n      uVar4 \u003d _invalid_parameter_noinfo_noreturn();\r\n    }\r\n    if (0xfff \u003c uVar4 * 8) {\r\n      if ((uVar5 \u0026 0x1f) !\u003d 0) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n      }\r\n      uVar4 \u003d *(ulonglong *)(uVar5 - 8);\r\n      if (uVar5 \u003c\u003d uVar4) {\r\n        uVar4 \u003d _invalid_parameter_noinfo_noreturn();\r\n      }\r\n      uVar5 \u003d uVar5 - uVar4;\r\n      if (uVar5 \u003c 8) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n      }\r\n      if (0x27 \u003c uVar5) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n      }\r\n    }\r\n    FUN_1805da6bc();\r\n    param_1[0xf] \u003d 0;\r\n    param_1[0x10] \u003d 0;\r\n    param_1[0x11] \u003d 0;\r\n  }\r\n  uVar5 \u003d param_1[0xc];\r\n  if (uVar5 !\u003d 0) {\r\n    uVar4 \u003d (longlong)(param_1[0xe] - uVar5) \u003e\u003e 3;\r\n    if (0x1fffffffffffffff \u003c uVar4) {\r\n      uVar4 \u003d _invalid_parameter_noinfo_noreturn();\r\n    }\r\n    if (0xfff \u003c uVar4 * 8) {\r\n      if ((uVar5 \u0026 0x1f) !\u003d 0) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n      }\r\n      uVar4 \u003d *(ulonglong *)(uVar5 - 8);\r\n      if (uVar5 \u003c\u003d uVar4) {\r\n        uVar4 \u003d _invalid_parameter_noinfo_noreturn();\r\n      }\r\n      uVar5 \u003d uVar5 - uVar4;\r\n      if (uVar5 \u003c 8) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n      }\r\n      if (0x27 \u003c uVar5) {\r\n        _invalid_parameter_noinfo_noreturn();\r\n      }\r\n    }\r\n    FUN_1805da6bc();\r\n    param_1[0xc] \u003d 0;\r\n    param_1[0xd] \u003d 0;\r\n    param_1[0xe] \u003d 0;\r\n  }\r\n  FUN_1805da5ec(param_1 + 3,0x18,3,FUN_180017180);\r\n  return;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  }
+]

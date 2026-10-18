@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.TaskLogic;
+using GrimDynasty.TokenActions;
+using GrimDynasty.TaskAuto;
+namespace GrimDynasty.Rewards {
+ public sealed class WalletSnapshot {
+  public bool? MainPlayerResolved;
+  public bool StaticMoneyNameReady;
+  public uint? Money16C4;
+ }
+ public sealed class MoneyAction {public int Version,Amount;}
+ public static class MoneyRewards {
+  public static MutationResult Execute(MoneyAction action,WalletSnapshot wallet){
+   if(action==null||action.Version!=0)return MutationResult.Unsupported("UnknownMoneyActionVersion");
+   if(wallet==null||!wallet.StaticMoneyNameReady)return MutationResult.Unsupported("StaticMoneyNameInitializationNotRecovered");
+   if(!wallet.MainPlayerResolved.HasValue)return MutationResult.Unsupported("UnknownRewardMainPlayer");if(!wallet.MainPlayerResolved.Value)return MutationResult.Known(false);
+   if(!wallet.Money16C4.HasValue)return MutationResult.Unsupported("UnknownWalletValue");uint old=wallet.Money16C4.Value,next;
+   if(action.Amount>0){next=unchecked(old+(uint)action.Amount);if(next>2000000000u)next=2000000000u;}
+   else if(action.Amount<0){int sum=unchecked((int)old+action.Amount);next=sum<0?0u:(uint)sum;}
+   else next=0;
+   wallet.Money16C4=next;return MutationResult.Known(next!=old);
+  }
+  public static MutationResult CharacterAddMoney(WalletSnapshot wallet,uint amount){
+   if(wallet==null||!wallet.Money16C4.HasValue)return MutationResult.Unsupported("UnknownWalletValue");uint old=wallet.Money16C4.Value,next=unchecked(old+amount);if(next>2000000000u)next=2000000000u;wallet.Money16C4=next;return MutationResult.Known(next!=old);
+  }
+ }
+ public sealed class MoneyCompletionEvent {
+  public bool ConditionsKnown,ConditionsAreNull;
+  public List<MoneyAction> Actions;
+ }
+ public sealed class RewardQuestSnapshot {
+  public QuestState Quest;
+  public List<uint> RewardTaskUidsAt50;
+ }
+ public sealed class MoneyCompletion : ICompletionRuntime {
+  public WalletSnapshot Wallet;
+  public List<MoneyCompletionEvent> Events;
+  public bool QuestUidIndexComplete;
+  public readonly Dictionary<uint,RewardQuestSnapshot> QuestsByUid=new Dictionary<uint,RewardQuestSnapshot>();
+  bool HasReward(){if(Events!=null)foreach(var e in Events)if(e.Actions!=null&&e.Actions.Count>0)return true;return false;}
+  public MutationResult Check(AutoSnapshot a){
+   if(a==null||a.Runtime==null||Events==null||a.OnCompleteEventCount!=Events.Count)return MutationResult.Unsupported("UnknownOrMismatchedCompletionEventVector");
+   var preview=Wallet==null?null:new WalletSnapshot{MainPlayerResolved=Wallet.MainPlayerResolved,StaticMoneyNameReady=Wallet.StaticMoneyNameReady,Money16C4=Wallet.Money16C4};
+   foreach(var e in Events){if(e==null||!e.ConditionsKnown||!e.ConditionsAreNull)return MutationResult.Unsupported("RewardEventConditionsNotRecovered");
+    if(e.Actions!=null)foreach(var action in e.Actions){var r=MoneyRewards.Execute(action,preview);if(r.Status!="Known")return r;}
+   }
+   if(HasReward()){
+    if(a.Runtime.World==null||!a.Runtime.World.MainPlayerResolved||Wallet==null||Wallet.MainPlayerResolved!=true)return MutationResult.Unsupported("RewardPlayerIdentityMismatch");
+    if(!a.QuestUid.HasValue)return MutationResult.Unsupported("UnknownParentQuestUid");RewardQuestSnapshot q;
+    if(!QuestsByUid.TryGetValue(a.QuestUid.Value,out q)){if(!QuestUidIndexComplete)return MutationResult.Unsupported("IncompleteRewardQuestUidIndex");}
+    else{QuestState byName;if(q==null||q.RewardTaskUidsAt50==null||a.Runtime.QuestReference==null||!a.Runtime.World.Quests.TryGetValue(a.Runtime.QuestReference,out byName)||!Object.ReferenceEquals(byName,q.Quest))return MutationResult.Unsupported("RewardQuestIndexSnapshotMismatch");}
+   }
+   return MutationResult.Known(false);
+  }
+  public MutationResult BeforeRewardHistory(AutoSnapshot a){
+   bool changed=false;foreach(var e in Events)if(e.Actions!=null)foreach(var action in e.Actions){var r=MoneyRewards.Execute(action,Wallet);if(r.Status!="Known")return r;changed|=r.Changed.Value;}return MutationResult.Known(changed);
+  }
+  public MutationResult AfterRewardHistory(AutoSnapshot a){
+   RewardQuestSnapshot q;if(HasReward()&&QuestsByUid.TryGetValue(a.QuestUid.Value,out q)){q.RewardTaskUidsAt50.Add(a.Runtime.State.Task.Uid);return MutationResult.Known(true);}return MutationResult.Known(false);
+  }
+ }
+}

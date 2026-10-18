@@ -1,0 +1,93 @@
+{
+  "source": "Existing Ghidra 12.1.4 with own observed-entry seed/export scripts; NOT a successful Rea MCP result",
+  "program": "Game.dll",
+  "functions": [
+    {
+      "observed_entry": "18046aca0",
+      "name": "Read",
+      "body": "[[18046aca0, 18046acb3]]",
+      "assembly": [
+        "18046aca0: MOV RAX,qword ptr [RDX + 0x8]",
+        "18046aca4: MOV R8D,dword ptr [RAX]",
+        "18046aca7: ADD RAX,0x4",
+        "18046acab: MOV qword ptr [RDX + 0x8],RAX",
+        "18046acaf: MOV dword ptr [RCX + 0x10],R8D",
+        "18046acb3: RET"
+      ],
+      "decompile_completed": true,
+      "pseudocode": "\r\n/* public: virtual void __cdecl GAME::ScriptableAction_GiveDevotion::Read(class GAME::BinaryReader \u0026\r\n   __ptr64) __ptr64 */\r\n\r\nvoid __thiscall\r\nGAME::ScriptableAction_GiveDevotion::Read(ScriptableAction_GiveDevotion *this,BinaryReader *param_1)\r\n\r\n{\r\n  undefined4 uVar1;\r\n  \r\n                    /* 0x46aca0  21279\r\n                       ?Read@ScriptableAction_GiveDevotion@GAME@@UEAAXAEAVBinaryReader@2@@Z\r\n                       0x46aca0  21280\r\n                       ?Read@ScriptableAction_GiveExperience@GAME@@UEAAXAEAVBinaryReader@2@@Z\r\n                       0x46aca0  21282\r\n                       ?Read@ScriptableAction_GiveLevel@GAME@@UEAAXAEAVBinaryReader@2@@Z\r\n                       0x46aca0  21283\r\n                       ?Read@ScriptableAction_GiveMoney@GAME@@UEAAXAEAVBinaryReader@2@@Z\r\n                       0x46aca0  21285\r\n                       ?Read@ScriptableAction_GiveTribute@GAME@@UEAAXAEAVBinaryReader@2@@Z\r\n                       0x46aca0  21287\r\n                       ?Read@ScriptableAction_UnlockTutorial@GAME@@UEAAXAEAVBinaryReader@2@@Z */\r\n  uVar1 \u003d **(undefined4 **)(param_1 + 8);\r\n  *(undefined4 **)(param_1 + 8) \u003d *(undefined4 **)(param_1 + 8) + 1;\r\n  *(undefined4 *)(this + 0x10) \u003d uVar1;\r\n  return;\r\n}\r\n\r\n",
+      "diagnostic": ""
+    },
+    {
+      "observed_entry": "18046aac0",
+      "name": "Read",
+      "body": "[[18046aac0, 18046aad7]]",
+      "assembly": [
+        "18046aac0: MOV RAX,qword ptr [RDX + 0x8]",
+        "18046aac4: MOV R8D,dword ptr [RAX]",
+        "18046aac7: ADD RAX,0x4",
+        "18046aacb: MOV qword ptr [RDX + 0x8],RAX",
+        "18046aacf: MOV dword ptr [RCX + 0x10],R8D",
+        "18046aad3: MOV dword ptr [RCX + 0x14],R8D",
+        "18046aad7: RET"
+      ],
+      "decompile_completed": true,
+      "pseudocode": "\r\n/* public: virtual void __cdecl GAME::ScriptableAction_GiveAttribPoint::Read(class\r\n   GAME::BinaryReader \u0026 __ptr64) __ptr64 */\r\n\r\nvoid __thiscall\r\nGAME::ScriptableAction_GiveAttribPoint::Read\r\n          (ScriptableAction_GiveAttribPoint *this,BinaryReader *param_1)\r\n\r\n{\r\n  undefined4 uVar1;\r\n  \r\n                    /* 0x46aac0  21278\r\n                       ?Read@ScriptableAction_GiveAttribPoint@GAME@@UEAAXAEAVBinaryReader@2@@Z\r\n                       0x46aac0  21284\r\n                       ?Read@ScriptableAction_GiveSkillPoint@GAME@@UEAAXAEAVBinaryReader@2@@Z */\r\n  uVar1 \u003d **(undefined4 **)(param_1 + 8);\r\n  *(undefined4 **)(param_1 + 8) \u003d *(undefined4 **)(param_1 + 8) + 1;\r\n  *(undefined4 *)(this + 0x10) \u003d uVar1;\r\n  *(undefined4 *)(this + 0x14) \u003d uVar1;\r\n  return;\r\n}\r\n\r\n",
+      "diagnostic": ""
+    },
+    {
+      "observed_entry": "1800290d0",
+      "name": "FUN_1800290d0",
+      "body": "[[1800290d0, 18002915b]]",
+      "assembly": [
+        "1800290d0: MOV qword ptr [RSP + 0x8],RBX",
+        "1800290d5: PUSH RDI",
+        "1800290d6: SUB RSP,0x20",
+        "1800290da: MOV RAX,qword ptr [RCX + 0x8]",
+        "1800290de: MOV RDI,RDX",
+        "1800290e1: MOV RBX,RCX",
+        "1800290e4: CMP RDX,RAX",
+        "1800290e7: JNC 0x18002912c",
+        "1800290e9: MOV RCX,qword ptr [RCX]",
+        "1800290ec: CMP RCX,RDX",
+        "1800290ef: JA 0x18002912c",
+        "1800290f1: SUB RDI,RCX",
+        "1800290f4: SAR RDI,0x2",
+        "1800290f8: CMP RAX,qword ptr [RBX + 0x10]",
+        "1800290fc: JNZ 0x18002910b",
+        "1800290fe: MOV EDX,0x1",
+        "180029103: MOV RCX,RBX",
+        "180029106: CALL 0x1800292c0",
+        "18002910b: MOV RDX,qword ptr [RBX + 0x8]",
+        "18002910f: TEST RDX,RDX",
+        "180029112: JZ 0x18002914c",
+        "180029114: MOV RAX,qword ptr [RBX]",
+        "180029117: MOV ECX,dword ptr [RAX + RDI*0x4]",
+        "18002911a: MOV dword ptr [RDX],ECX",
+        "18002911c: ADD qword ptr [RBX + 0x8],0x4",
+        "180029121: MOV RBX,qword ptr [RSP + 0x30]",
+        "180029126: ADD RSP,0x20",
+        "18002912a: POP RDI",
+        "18002912b: RET",
+        "18002912c: CMP RAX,qword ptr [RBX + 0x10]",
+        "180029130: JNZ 0x18002913f",
+        "180029132: MOV EDX,0x1",
+        "180029137: MOV RCX,RBX",
+        "18002913a: CALL 0x1800292c0",
+        "18002913f: MOV RCX,qword ptr [RBX + 0x8]",
+        "180029143: TEST RCX,RCX",
+        "180029146: JZ 0x18002914c",
+        "180029148: MOV EAX,dword ptr [RDI]",
+        "18002914a: MOV dword ptr [RCX],EAX",
+        "18002914c: ADD qword ptr [RBX + 0x8],0x4",
+        "180029151: MOV RBX,qword ptr [RSP + 0x30]",
+        "180029156: ADD RSP,0x20",
+        "18002915a: POP RDI",
+        "18002915b: RET"
+      ],
+      "decompile_completed": true,
+      "pseudocode": "\r\nvoid FUN_1800290d0(longlong *param_1,undefined4 *param_2)\r\n\r\n{\r\n  undefined4 *puVar1;\r\n  undefined4 *puVar2;\r\n  \r\n  puVar1 \u003d (undefined4 *)param_1[1];\r\n  if ((param_2 \u003c puVar1) \u0026\u0026 (puVar2 \u003d (undefined4 *)*param_1, puVar2 \u003c\u003d param_2)) {\r\n    if (puVar1 \u003d\u003d (undefined4 *)param_1[2]) {\r\n      FUN_1800292c0(param_1,1);\r\n    }\r\n    if ((undefined4 *)param_1[1] !\u003d (undefined4 *)0x0) {\r\n      *(undefined4 *)param_1[1] \u003d\r\n           *(undefined4 *)(*param_1 + ((longlong)param_2 - (longlong)puVar2 \u003e\u003e 2) * 4);\r\n      param_1[1] \u003d param_1[1] + 4;\r\n      return;\r\n    }\r\n  }\r\n  else {\r\n    if (puVar1 \u003d\u003d (undefined4 *)param_1[2]) {\r\n      FUN_1800292c0(param_1,1);\r\n    }\r\n    if ((undefined4 *)param_1[1] !\u003d (undefined4 *)0x0) {\r\n      *(undefined4 *)param_1[1] \u003d *param_2;\r\n    }\r\n  }\r\n  param_1[1] \u003d param_1[1] + 4;\r\n  return;\r\n}\r\n\r\n",
+      "diagnostic": ""
+    }
+  ]
+}

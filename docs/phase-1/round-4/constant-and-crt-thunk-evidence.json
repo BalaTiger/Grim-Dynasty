@@ -1,0 +1,114 @@
+[
+  {
+    "module": "x64/Engine.dll",
+    "literals": [
+      {
+        "rva": "0x30b77c",
+        "preferredVA": "0x18030b77c",
+        "fileOffset": "0x30a77c",
+        "asciiUntilNUL": ".html"
+      },
+      {
+        "rva": "0x30bfd4",
+        "preferredVA": "0x18030bfd4",
+        "fileOffset": "0x30afd4",
+        "asciiUntilNUL": ".xml"
+      },
+      {
+        "rva": "0x309c04",
+        "preferredVA": "0x180309c04",
+        "fileOffset": "0x308c04",
+        "asciiUntilNUL": "wt"
+      },
+      {
+        "rva": "0x309bb4",
+        "preferredVA": "0x180309bb4",
+        "fileOffset": "0x308bb4",
+        "asciiUntilNUL": "wb"
+      },
+      {
+        "rva": "0x30be38",
+        "preferredVA": "0x18030be38",
+        "fileOffset": "0x30ae38",
+        "asciiUntilNUL": "/database/database.arz"
+      },
+      {
+        "rva": "0x30bee0",
+        "preferredVA": "0x18030bee0",
+        "fileOffset": "0x30aee0",
+        "asciiUntilNUL": "/gdx1/database/gdx1.arz"
+      },
+      {
+        "rva": "0x30bef8",
+        "preferredVA": "0x18030bef8",
+        "fileOffset": "0x30aef8",
+        "asciiUntilNUL": "/gdx2/database/gdx2.arz"
+      },
+      {
+        "rva": "0x30beb0",
+        "preferredVA": "0x18030beb0",
+        "fileOffset": "0x30aeb0",
+        "asciiUntilNUL": "/gdx3/database/gdx3.arz"
+      },
+      {
+        "rva": "0x30bec8",
+        "preferredVA": "0x18030bec8",
+        "fileOffset": "0x30aec8",
+        "asciiUntilNUL": "/mods/database.arz"
+      },
+      {
+        "rva": "0x30c270",
+        "preferredVA": "0x18030c270",
+        "fileOffset": "0x30b270",
+        "asciiUntilNUL": "- EffectResourceManager"
+      },
+      {
+        "rva": "0x30c288",
+        "preferredVA": "0x18030c288",
+        "fileOffset": "0x30b288",
+        "asciiUntilNUL": "- ImageResourceManager"
+      },
+      {
+        "rva": "0x30c228",
+        "preferredVA": "0x18030c228",
+        "fileOffset": "0x30b228",
+        "asciiUntilNUL": "- ConversationResourceManager"
+      }
+    ],
+    "thunks": [
+      {
+        "rva": "0x2ddb38",
+        "bytes": "ff 25 2a 4e 02 00 ff 25 2c 4e 02 00",
+        "recognized": "RIP-relative import JMP",
+        "iatRVA": "0x302968",
+        "import": {
+          "module": "api-ms-win-crt-heap-l1-1-0.dll",
+          "symbol": "malloc"
+        }
+      }
+    ]
+  },
+  {
+    "module": "x64/Game.dll",
+    "literals": [
+      {
+        "rva": "0x69b590",
+        "preferredVA": "0x18069b590",
+        "fileOffset": "0x699b90",
+        "asciiUntilNUL": "QuestEventDispatch"
+      }
+    ],
+    "thunks": [
+      {
+        "rva": "0x5da6c4",
+        "bytes": "40 53 48 83 ec 20 48 8b d9 eb 21 48",
+        "recognized": "not a simple import JMP; not followed"
+      },
+      {
+        "rva": "0x5da5dc",
+        "bytes": "e9 db 00 00 00 cc cc cc e9 f3 ff ff",
+        "recognized": "not a simple import JMP; not followed"
+      }
+    ]
+  }
+]

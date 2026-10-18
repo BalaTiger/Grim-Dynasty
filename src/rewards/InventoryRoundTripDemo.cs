@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
+using GrimDynasty.TaskItems;
+using GrimDynasty.TaskAuto;
+class InventoryRoundTripDemo {
+ static void Need(bool b,string s){if(!b)throw new Exception(s);}
+ static int Main(){try{Console.OutputEncoding=new System.Text.UTF8Encoding(false);var x=ExampleInventoryCycle.Create();var original=x.Base.Item;var trace=new List<object>();
+  AutomaticTasks.Start(x.Tasks[0]);AutomaticTasks.Update(x.Tasks[0]);int taken;Need(InventoryTake.ExecuteInventoryByName(x.Base.Inventory,"ming/items/military_ration.dbr",3,out taken).Status=="Known"&&taken==3&&AutomaticTasks.Update(x.Tasks[0]).Status=="Known","first delivery");Need(x.Base.Wallet.Money16C4==125&&x.Base.Quest.Stock.InventoryItemIds.Count==0,"removed and first reward");
+  trace.Add(new{step="deliver_existing_stack",inventory_ids=new List<uint>(x.Base.Quest.Stock.InventoryItemIds),same_object_alive=Object.ReferenceEquals(original,x.Base.Quest.Stock.Objects[100]),money=x.Base.Wallet.Money16C4,reward_uids=new List<uint>(x.Base.Record.RewardTaskUidsAt50)});
+  AutomaticTasks.Start(x.Tasks[1]);AutomaticTasks.Update(x.Tasks[1]);Need(InventoryAdd.Execute(x.Add,100,false).Status=="Known"&&x.Add.LastDelivered==1&&x.Base.Quest.Stock.InventoryItemIds.Count==1&&x.Conditions[1].ChangedByte14==1,"add same object with nonempty item receiver");Need(AutomaticTasks.Update(x.Tasks[1]).Status=="Known"&&x.Base.Wallet.Money16C4==165&&x.Base.Record.RewardTaskUidsAt50.Count==2,"second target and reward");
+  trace.Add(new{step="return_same_object_and_complete_second_target",inventory_ids=new List<uint>(x.Base.Quest.Stock.InventoryItemIds),same_object_identity=Object.ReferenceEquals(original,x.Base.Quest.Stock.Objects[100]),stack=original.RawStack88C,gender874=original.RawGender874,engine_counter1c=x.Add.Engine.ItemAddCount1C,add_order=new List<string>(x.Add.Trace),money=x.Base.Wallet.Money16C4,reward_uids=new List<uint>(x.Base.Record.RewardTaskUidsAt50),detached_audit_cleared=x.Base.Inventory.DetachedObjects.Count==0});
+  int events=x.Add.Produced.Count;Need(InventoryAdd.Execute(x.Add,100,false).Status=="Known"&&x.Add.Produced.Count==events&&x.Base.Quest.Stock.InventoryItemIds.Count==1&&x.Add.Engine.ItemAddCount1C==9,"duplicate keeps pre-dedup counter semantics");
+  Need(InventoryTake.ExecuteInventoryByName(x.Base.Inventory,"ming/items/military_ration.dbr",3,out taken).Status=="Known"&&InventoryAdd.Execute(x.Add,100,false).Status=="Known"&&x.Add.LastDelivered==0&&x.Base.Inventory.LastDelivered==0&&x.Base.Wallet.Money16C4==165&&x.Base.Record.RewardTaskUidsAt50.Count==2,"round trip after callback unregister does not replay rewards");
+  trace.Add(new{step="duplicate_and_second_round_trip",inventory_ids=x.Base.Quest.Stock.InventoryItemIds,same_object_identity=Object.ReferenceEquals(original,x.Base.Quest.Stock.Objects[100]),engine_counter1c=x.Add.Engine.ItemAddCount1C,money=x.Base.Wallet.Money16C4,reward_uids=x.Base.Record.RewardTaskUidsAt50,both_task_callbacks_detached=!x.Conditions[0].Owner16Attached&&!x.Conditions[0].Owner17Attached&&!x.Conditions[1].Owner16Attached&&!x.Conditions[1].Owner17Attached});
+  Console.WriteLine(new JavaScriptSerializer().Serialize(new{status="passed",scene="同一行粮对象出入库双向闭环",trace,scope="Own QST2 two-task chain, same preexisting BaseItem primary-method profile, real membership remove/add, event17/event16, known empty hooks and covered item callbacks. No item factory, loot, Player GiveItem pose/controller/UI, transmute/save, destructor or original program."}));return 0;
+ }catch(Exception e){Console.Error.WriteLine(e);return 1;}}
+}

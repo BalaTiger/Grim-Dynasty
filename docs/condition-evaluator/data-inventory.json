@@ -1,0 +1,206 @@
+{
+  "source_archive": "D:\\Steam\\steamapps\\common\\Grim Dawn\\resources\\Quests.arc",
+  "sha256": "cff68edb899b5b6a84c4d91e651ab52c558b8ed5e1c9813f443b1844c19e385d",
+  "kind": "official resource parameter evidence, not observed runtime behavior",
+  "collections": [
+    {
+      "operator": "None",
+      "empty": true,
+      "count": 1525
+    },
+    {
+      "operator": "And",
+      "empty": false,
+      "count": 2354
+    },
+    {
+      "operator": "Or",
+      "empty": false,
+      "count": 22
+    }
+  ],
+  "difficulty_parameters": [
+    {
+      "comparison_id": 2,
+      "difficulty": 0,
+      "count": 595
+    },
+    {
+      "comparison_id": 2,
+      "difficulty": 1,
+      "count": 594
+    },
+    {
+      "comparison_id": 2,
+      "difficulty": 2,
+      "count": 595
+    }
+  ],
+  "types": [
+    {
+      "type_id": 1,
+      "name": "QuestTaskComplete",
+      "version": 0,
+      "count": 1
+    },
+    {
+      "type_id": 3,
+      "name": "IsLevel",
+      "version": 0,
+      "count": 1
+    },
+    {
+      "type_id": 4,
+      "name": "IsDifficulty",
+      "version": 0,
+      "count": 1784
+    },
+    {
+      "type_id": 6,
+      "name": "HasFaction",
+      "version": 1,
+      "count": 4
+    },
+    {
+      "type_id": 7,
+      "name": "HasToken",
+      "version": 0,
+      "count": 124
+    },
+    {
+      "type_id": 9,
+      "name": "HasItem",
+      "version": 1,
+      "count": 84
+    },
+    {
+      "type_id": 10,
+      "name": "HasKilled",
+      "version": 1,
+      "count": 160
+    },
+    {
+      "type_id": 14,
+      "name": "OnQuestTask",
+      "version": 0,
+      "count": 1
+    },
+    {
+      "type_id": 17,
+      "name": "WaitForCompletion",
+      "version": 0,
+      "count": 260
+    },
+    {
+      "type_id": 18,
+      "name": "ServerHasToken",
+      "version": 0,
+      "count": 16
+    }
+  ],
+  "examples": [
+    {
+      "member": "bounties/bl/bq_bl01.qst",
+      "task_uid": 1187819008,
+      "group": "on_complete",
+      "condition": {
+        "offset": 419,
+        "end": 432,
+        "type_id": 4,
+        "type": "IsDifficulty",
+        "version": 0,
+        "parameters": {
+          "difficulty": 0
+        },
+        "comparison_id": 2,
+        "comparison": "Equal"
+      }
+    },
+    {
+      "member": "bounties/bl/bq_bl01.qst",
+      "task_uid": 1187819008,
+      "group": "on_complete",
+      "condition": {
+        "offset": 457,
+        "end": 470,
+        "type_id": 4,
+        "type": "IsDifficulty",
+        "version": 0,
+        "parameters": {
+          "difficulty": 1
+        },
+        "comparison_id": 2,
+        "comparison": "Equal"
+      }
+    },
+    {
+      "member": "bounties/bl/bq_bl01.qst",
+      "task_uid": 1187819008,
+      "group": "on_complete",
+      "condition": {
+        "offset": 495,
+        "end": 508,
+        "type_id": 4,
+        "type": "IsDifficulty",
+        "version": 0,
+        "parameters": {
+          "difficulty": 2
+        },
+        "comparison_id": 2,
+        "comparison": "Equal"
+      }
+    },
+    {
+      "member": "bounties/bl/bq_bl01.qst",
+      "task_uid": 1187819008,
+      "group": "on_complete",
+      "condition": {
+        "offset": 533,
+        "end": 546,
+        "type_id": 4,
+        "type": "IsDifficulty",
+        "version": 0,
+        "parameters": {
+          "difficulty": 0
+        },
+        "comparison_id": 2,
+        "comparison": "Equal"
+      }
+    },
+    {
+      "member": "bounties/bl/bq_bl01.qst",
+      "task_uid": 1187819008,
+      "group": "on_complete",
+      "condition": {
+        "offset": 571,
+        "end": 584,
+        "type_id": 4,
+        "type": "IsDifficulty",
+        "version": 0,
+        "parameters": {
+          "difficulty": 1
+        },
+        "comparison_id": 2,
+        "comparison": "Equal"
+      }
+    },
+    {
+      "member": "bounties/bl/bq_bl01.qst",
+      "task_uid": 1187819008,
+      "group": "on_complete",
+      "condition": {
+        "offset": 609,
+        "end": 622,
+        "type_id": 4,
+        "type": "IsDifficulty",
+        "version": 0,
+        "parameters": {
+          "difficulty": 2
+        },
+        "comparison_id": 2,
+        "comparison": "Equal"
+      }
+    }
+  ],
+  "limitation": "Actual catalog only exercises equality and thresholds 0/1/2 for difficulty; other comparison/boundary semantics need native function evidence"
+}

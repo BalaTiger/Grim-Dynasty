@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.TokenActions;
+using GrimDynasty.TaskAuto;
+namespace GrimDynasty.TaskItems {
+ public sealed class InventoryTakeContext {
+  public ItemWorld Stock;
+  public OfflineEvents Events;
+  public uint? CharacterObjectId;
+  public List<HasItemCondition> CoveredConditions;
+  public readonly List<QuestEvent> Produced=new List<QuestEvent>();
+  public int LastDelivered;
+ }
+ public static class InventoryTake {
+  static MutationResult U(string s){return MutationResult.Unsupported(s);}
+  static MutationResult Validate(InventoryTakeContext c,uint id,int amount,out ItemObject item,out int remaining,out List<OfflineHandler> actual){
+   item=null;remaining=0;actual=null;
+   if(c==null||c.Stock==null)return U("UnknownTakeInventoryContext");
+   if(!c.Stock.Lookup(id,out item))return U("UnknownTakeItemObjectIndex");
+   if(item==null||item.Kind==ItemObjectKind.Other||item.Kind==ItemObjectKind.ControllerCharacter)return MutationResult.Known(false);
+   if(item.Kind!=ItemObjectKind.Item)return U("UnknownTakeItemRtti");
+   if(item.IsRelic!=false)return U("RelicOrUnknownTakeFragmentBranch");
+   if(item.StackMethods!=ItemStackMethods.DirectItemFields88C6B0||!item.RawStack88C.HasValue)return U("UnrestoredTakeStackVirtualMethods");
+   int count=unchecked((int)item.RawStack88C.Value);
+   if(amount<0||count<1||amount>=count)return U("TakeFullRemovalOrSignedAmountOutsideCoveredDomain");
+   remaining=count-amount;
+   if(c.Events==null||!c.CharacterObjectId.HasValue)return U("UnknownTakeItemNotificationContext");
+   var known=new Dictionary<OfflineHandler,HasItemCondition>();var covered=new List<OfflineHandler>();
+   if(c.CoveredConditions!=null)foreach(var condition in c.CoveredConditions){
+    if(condition==null||!Object.ReferenceEquals(condition.EventManager,c.Events)||!Object.ReferenceEquals(condition.ItemSnapshot,c.Stock))return U("TakeItemReceiverSnapshotMismatch");
+    var handler=condition.ItemHandler(17);if(!known.ContainsKey(handler)){known.Add(handler,condition);covered.Add(handler);}
+   }
+   var admitted=c.Events.CheckCovered(17,covered,out actual);if(admitted.Status!="Known")return admitted;
+   var body=new ItemEventBody{PlayerId=c.CharacterObjectId.Value,ItemObjectId=id};
+   foreach(var handler in actual){var ready=known[handler].CheckReceive(body,17);if(ready.Status!="Known")return ready;}
+   return MutationResult.Known(false);
+  }
+  public static MutationResult Check(InventoryTakeContext c,uint id,int amount){ItemObject item;int remaining;List<OfflineHandler> actual;return Validate(c,id,amount,out item,out remaining,out actual);}
+  // Covered branch of Character::TakeItemFromCharacter(objectId, count, ...):
+  // non-relic, declared direct Item stack methods, and a retained positive stack.
+  public static MutationResult Execute(InventoryTakeContext c,uint id,int amount,out int taken){
+   taken=0;ItemObject item;int remaining;List<OfflineHandler> actual;
+   var ready=Validate(c,id,amount,out item,out remaining,out actual);if(ready.Status!="Known")return ready;
+   if(item==null||item.Kind!=ItemObjectKind.Item)return MutationResult.Known(false);
+   // The native setter writes both fields before Send. The count query's
+   // declared getter profile reads RawStack88C, rather than a sampled count.
+   item.RawStack88C=(uint)remaining;item.RawReplicaStack6B0=(uint)remaining;
+   var payload=new QuestEvent{Kind=17,Body=new ItemEventBody{PlayerId=c.CharacterObjectId.Value,ItemObjectId=id}};
+   c.Produced.Add(payload);var sent=c.Events.Send(payload,17);
+   if(sent.Status!="Known")throw new InvalidOperationException("Take item context changed after preflight: "+sent.Reason);
+   c.LastDelivered=sent.Delivered;taken=amount;return MutationResult.Known(true);
+  }
+ }
+}

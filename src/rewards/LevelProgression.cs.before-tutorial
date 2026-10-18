@@ -1,0 +1,85 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.TokenActions;
+using GrimDynasty.TaskAuto;
+namespace GrimDynasty.Rewards {
+ public sealed class LevelProgressionSnapshot {
+  public int? AttributePoints1768,SkillPoints176C,AttributeGainPerLevel;
+  public List<int> SkillPointSchedule;
+  public ArithmeticEquation Equation;
+  public CrtEquation CrtEquation;
+  public readonly Dictionary<int,float> FormulaSamples=new Dictionary<int,float>();
+  public byte? Dirty1699;
+  public uint? LevelChangeCount17F0,MasteriesAllowed;
+  public List<uint> MasteryThresholds;
+  public bool[] PetVectorsEmpty;
+  public ulong? LevelFxNameLength2320;
+  public bool? LevelSound22D0NonNull;
+  public LevelProgressionSnapshot Copy(){var c=new LevelProgressionSnapshot{AttributePoints1768=AttributePoints1768,SkillPoints176C=SkillPoints176C,AttributeGainPerLevel=AttributeGainPerLevel,SkillPointSchedule=SkillPointSchedule==null?null:new List<int>(SkillPointSchedule),Equation=Equation,CrtEquation=CrtEquation,Dirty1699=Dirty1699,LevelChangeCount17F0=LevelChangeCount17F0,MasteriesAllowed=MasteriesAllowed,MasteryThresholds=MasteryThresholds==null?null:new List<uint>(MasteryThresholds),PetVectorsEmpty=PetVectorsEmpty==null?null:(bool[])PetVectorsEmpty.Clone(),LevelFxNameLength2320=LevelFxNameLength2320,LevelSound22D0NonNull=LevelSound22D0NonNull};foreach(var p in FormulaSamples)c.FormulaSamples.Add(p.Key,p.Value);return c;}
+ }
+ internal static class LevelProgression {
+  static MutationResult U(string s){return MutationResult.Unsupported(s);}
+  static int Input(uint level,uint maximum){return Math.Min(Math.Max(unchecked((int)level),0),unchecked((int)maximum));}
+  static bool Threshold(ExperienceActor p,LevelProgressionSnapshot c,int input,out uint value){
+   float f;value=0;
+   if(c.CrtEquation!=null){if(c.Equation!=null)return false;var q=c.CrtEquation.Evaluate(input,out f);if(q.Status!="Known")return false;}
+   else if(c.Equation!=null){var q=c.Equation.Evaluate(input,out f);if(q.Status!="Known")return false;}
+   else if(!c.FormulaSamples.TryGetValue(input,out f)){if(p.NextThreshold==null||p.NextThreshold.Input!=input)return false;f=p.NextThreshold.FormulaResult;}
+   if(float.IsNaN(f)||float.IsInfinity(f)||f<0||f>1000000000f)return false;
+   f=BitConverter.ToSingle(BitConverter.GetBytes(f+0.5f),0);value=(uint)(long)f;return true;
+  }
+  internal static MutationResult Receive(ExperienceWorld w,ExperienceActor p,uint amount){
+   var c=p.Progression;
+   if(c==null)return U("UnknownProgression");
+   if(!p.Experience1764.HasValue||!p.Level1760.HasValue||!p.MaximumLevel175C.HasValue||!p.Lifetime1968.HasValue)return U("UnknownExperienceCounters");
+   if(p.DevotionSkillVectorEmpty!=true)return U("NonemptyOrUnknownDevotionSkillExperienceVector");
+   uint level=p.Level1760.Value,max=p.MaximumLevel175C.Value,xp=unchecked(p.Experience1764.Value+amount);int input=p.EquationInput1710.GetValueOrDefault();
+   int attribute=c.AttributePoints1768.GetValueOrDefault(),skill=c.SkillPoints176C.GetValueOrDefault(),skillNotices=0,levels=0;bool tutorialLevelTen=false;
+   while(level<max){
+    input=Input(level,max);uint threshold;if(!Threshold(p,c,input,out threshold))return U("MissingProgressionFormulaSample");
+    if(xp<threshold)break;
+    if(levels>=256)return U("ProgressionLoopOutsideCoveredBudget");
+    if(!c.AttributePoints1768.HasValue||!c.SkillPoints176C.HasValue||!c.AttributeGainPerLevel.HasValue||c.SkillPointSchedule==null)return U("UnknownLevelPointSchedule");
+    level=unchecked(level+1);levels++;if(level==10)tutorialLevelTen=true;
+    attribute=unchecked(attribute+c.AttributeGainPerLevel.Value);
+    int grant=0;if(c.SkillPointSchedule.Count!=0){uint index=unchecked(level-2);uint last=(uint)c.SkillPointSchedule.Count-1;if(index>last)index=last;grant=c.SkillPointSchedule[(int)index];}
+    int sum=unchecked(skill+grant);skill=sum<0?0:sum;if(grant>0)skillNotices++;
+   }
+   if(level>=max){
+    int previous=Math.Max(unchecked((int)level-1),0);input=Math.Min(previous,unchecked((int)max));
+    if(input==0)xp=0;else if(!Threshold(p,c,input,out xp))return U("MissingMaximumLevelClampFormulaSample");
+   }
+   uint allowed=c.MasteriesAllowed.GetValueOrDefault();
+   if(levels!=0){
+    if(!w.MainPlayerQueryKnown)return U("UnknownProgressionMainPlayerIdentity");
+    if(w.MainPlayerId==p.ObjectId){
+     if(tutorialLevelTen)return U("LevelTenTutorialUnlockNotRecovered");
+     if(c.LevelSound22D0NonNull!=false)return U("UnknownOrUnrestoredLevelSound");
+     if(w.LevelDisplay==null)return U("UnknownLevelDisplaySnapshot");var display=w.LevelDisplay.Copy().EnqueueLevel(level);if(display.Status!="Known")return display;
+    }
+    if(!w.EngineInitialized.HasValue||(w.EngineInitialized.Value&&w.Service19B0Present!=false))return U("UnknownOrUnrestoredProgressionServiceCallback");
+    if(c.PetVectorsEmpty==null||c.PetVectorsEmpty.Length!=3||!c.PetVectorsEmpty[0]||!c.PetVectorsEmpty[1]||!c.PetVectorsEmpty[2])return U("NonemptyOrUnknownLevelPetVectors");
+    if(!c.MasteriesAllowed.HasValue||c.MasteryThresholds==null||!c.LevelChangeCount17F0.HasValue||c.LevelFxNameLength2320!=0)return U("UnknownLevelMasteryCounterOrParticleContext");
+    if(allowed<(uint)c.MasteryThresholds.Count){uint threshold=c.MasteryThresholds[(int)allowed];if(threshold!=0&&threshold<=level)allowed=unchecked(allowed+1);}
+    if(w.Events==null)return U("UnknownLevelNotificationContext");
+    if(skillNotices!=0){var e=w.Events.CheckEmpty(0x31);if(e.Status!="Known")return e;}
+    var update=w.Events.CheckEmpty(0x30);if(update.Status!="Known")return update;
+   }
+   // All callbacks/routes/thresholds are checked before observable writes.
+   bool changed=xp!=p.Experience1764.Value||p.EquationInput1710!=input||level!=p.Level1760.Value;
+   p.Experience1764=xp;p.EquationInput1710=input;p.Level1760=level;
+   if(levels!=0){
+    c.AttributePoints1768=attribute;c.SkillPoints176C=skill;
+    for(int i=0;i<skillNotices;i++)Send(w,p.ObjectId,0x31);
+    c.Dirty1699=1;c.MasteriesAllowed=allowed;Send(w,p.ObjectId,0x30);
+    c.LevelChangeCount17F0=unchecked(c.LevelChangeCount17F0.Value+1);
+    if(w.MainPlayerId==p.ObjectId){var display=w.LevelDisplay.EnqueueLevel(level);if(display.Status!="Known")throw new InvalidOperationException("Display snapshot changed during commit");}
+   }
+   uint lifetime=unchecked(p.Lifetime1968.Value+amount);changed|=lifetime!=p.Lifetime1968.Value;p.Lifetime1968=lifetime;return MutationResult.Known(changed);
+  }
+  static void Send(ExperienceWorld w,uint id,uint kind){
+   var e=new QuestEvent{Kind=kind,Body=new LevelNotification{PlayerObjectId=id}};w.ProducedLevelEvents.Add(e);var sent=w.Events.Send(e,kind);if(sent.Status!="Known")throw new InvalidOperationException("Level route changed during commit: "+sent.Reason);
+  }
+ }
+ public sealed class LevelNotification {public uint PlayerObjectId;}
+}

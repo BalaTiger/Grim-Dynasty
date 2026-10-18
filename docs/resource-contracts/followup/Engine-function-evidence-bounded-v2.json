@@ -1,0 +1,545 @@
+[
+  {
+    "label": "??1MemoryMappedFile@GAME@@UEAA@XZ",
+    "start": "18014f270",
+    "end": "18014f2bc",
+    "bytesBudget": 77,
+    "function": "??1MemoryMappedFile@GAME@@UEAA@XZ",
+    "instructions": [
+      "18014f270 MOV qword ptr [RSP + 0x8],RBX",
+      "18014f275 PUSH RDI",
+      "18014f276 SUB RSP,0x20",
+      "18014f27a LEA RAX,[0x1803423e8]",
+      "18014f281 MOV RBX,RCX",
+      "18014f284 MOV qword ptr [RCX],RAX",
+      "18014f287 XOR EDI,EDI",
+      "18014f289 MOV RCX,qword ptr [RCX + 0x10]",
+      "18014f28d TEST RCX,RCX",
+      "18014f290 JZ 0x18014f29c",
+      "18014f292 CALL qword ptr [0x180302228]",
+      "18014f298 MOV qword ptr [RBX + 0x10],RDI",
+      "18014f29c MOV RCX,qword ptr [RBX + 0x8]",
+      "18014f2a0 TEST RCX,RCX",
+      "18014f2a3 JZ 0x18014f2af",
+      "18014f2a5 CALL qword ptr [0x180302228]",
+      "18014f2ab MOV qword ptr [RBX + 0x8],RDI",
+      "18014f2af MOV dword ptr [RBX + 0x18],EDI",
+      "18014f2b2 MOV RBX,qword ptr [RSP + 0x30]",
+      "18014f2b7 ADD RSP,0x20",
+      "18014f2bb POP RDI",
+      "18014f2bc RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "18014f290",
+        "to": "18014f29c",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18014f29c"
+      },
+      {
+        "from": "18014f292",
+        "to": "180302228",
+        "type": "READ",
+        "symbol": "PTR_CloseHandle_180302228"
+      },
+      {
+        "from": "18014f2a3",
+        "to": "18014f2af",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18014f2af"
+      },
+      {
+        "from": "18014f2a5",
+        "to": "180302228",
+        "type": "READ",
+        "symbol": "PTR_CloseHandle_180302228"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nvoid __1MemoryMappedFile_GAME__UEAA_XZ(undefined8 *param_1)\r\n\r\n{\r\n                    /* 0x14f270  703  ??1MemoryMappedFile@GAME@@UEAA@XZ */\r\n  *param_1 \u003d \u0026UNK_1803423e8;\r\n  if (param_1[2] !\u003d 0) {\r\n    CloseHandle();\r\n    param_1[2] \u003d 0;\r\n  }\r\n  if (param_1[1] !\u003d 0) {\r\n    CloseHandle();\r\n    param_1[1] \u003d 0;\r\n  }\r\n  *(undefined4 *)(param_1 + 3) \u003d 0;\r\n  return;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "?Open@MemoryMappedFile@GAME@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+    "start": "18014f2c0",
+    "end": "18014f369",
+    "bytesBudget": 170,
+    "function": "?Open@MemoryMappedFile@GAME@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+    "instructions": [
+      "18014f2c0 MOV qword ptr [RSP + 0x10],RBX",
+      "18014f2c5 PUSH RDI",
+      "18014f2c6 SUB RSP,0x40",
+      "18014f2ca CMP qword ptr [RDX + 0x18],0x10",
+      "18014f2cf MOV RAX,RDX",
+      "18014f2d2 MOV RBX,RCX",
+      "18014f2d5 JC 0x18014f2da",
+      "18014f2d7 MOV RAX,qword ptr [RDX]",
+      "18014f2da XOR EDI,EDI",
+      "18014f2dc XOR R9D,R9D",
+      "18014f2df MOV qword ptr [RSP + 0x30],RDI",
+      "18014f2e4 MOV EDX,0x80000000",
+      "18014f2e9 MOV dword ptr [RSP + 0x28],EDI",
+      "18014f2ed MOV RCX,RAX",
+      "18014f2f0 MOV dword ptr [RSP + 0x20],0x3",
+      "18014f2f8 LEA R8D,[RDI + 0x1]",
+      "18014f2fc CALL qword ptr [0x180302210]",
+      "18014f302 MOV qword ptr [RBX + 0x8],RAX",
+      "18014f306 CMP RAX,-0x1",
+      "18014f30a JZ 0x18014f33a",
+      "18014f30c MOV qword ptr [RSP + 0x28],RDI",
+      "18014f311 LEA R8D,[RDI + 0x2]",
+      "18014f315 XOR R9D,R9D",
+      "18014f318 MOV dword ptr [RSP + 0x20],EDI",
+      "18014f31c XOR EDX,EDX",
+      "18014f31e MOV RCX,RAX",
+      "18014f321 CALL qword ptr [0x180302298]",
+      "18014f327 MOV RCX,qword ptr [RBX + 0x8]",
+      "18014f32b MOV qword ptr [RBX + 0x10],RAX",
+      "18014f32f TEST RAX,RAX",
+      "18014f332 JNZ 0x18014f34b",
+      "18014f334 CALL qword ptr [0x180302228]",
+      "18014f33a MOV qword ptr [RBX + 0x8],RDI",
+      "18014f33e XOR AL,AL",
+      "18014f340 MOV RBX,qword ptr [RSP + 0x58]",
+      "18014f345 ADD RSP,0x40",
+      "18014f349 POP RDI",
+      "18014f34a RET",
+      "18014f34b LEA RDX,[RSP + 0x50]",
+      "18014f350 CALL qword ptr [0x180302220]",
+      "18014f356 MOV EAX,dword ptr [RSP + 0x50]",
+      "18014f35a MOV dword ptr [RBX + 0x18],EAX",
+      "18014f35d MOV AL,0x1",
+      "18014f35f MOV RBX,qword ptr [RSP + 0x58]",
+      "18014f364 ADD RSP,0x40",
+      "18014f368 POP RDI",
+      "18014f369 RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "18014f2d5",
+        "to": "18014f2da",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18014f2da"
+      },
+      {
+        "from": "18014f2fc",
+        "to": "180302210",
+        "type": "READ",
+        "symbol": "PTR_CreateFileA_180302210"
+      },
+      {
+        "from": "18014f30a",
+        "to": "18014f33a",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18014f33a"
+      },
+      {
+        "from": "18014f321",
+        "to": "180302298",
+        "type": "READ",
+        "symbol": "PTR_CreateFileMappingA_180302298"
+      },
+      {
+        "from": "18014f332",
+        "to": "18014f34b",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18014f34b"
+      },
+      {
+        "from": "18014f334",
+        "to": "180302228",
+        "type": "READ",
+        "symbol": "PTR_CloseHandle_180302228"
+      },
+      {
+        "from": "18014f350",
+        "to": "180302220",
+        "type": "READ",
+        "symbol": "PTR_GetFileSizeEx_180302220"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nulonglong _Open_MemoryMappedFile_GAME__QEAA_NAEBV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std___Z\r\n                    (longlong param_1,undefined8 *param_2)\r\n\r\n{\r\n  ulonglong uVar1;\r\n  longlong lVar2;\r\n  undefined4 auStackX_8 [2];\r\n  ulonglong in_stack_ffffffffffffffe0;\r\n  \r\n                    /* 0x14f2c0  4393\r\n                       ?Open@MemoryMappedFile@GAME@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z\r\n                        */\r\n  if (0xf \u003c (ulonglong)param_2[3]) {\r\n    param_2 \u003d (undefined8 *)*param_2;\r\n  }\r\n  uVar1 \u003d CreateFileA(param_2,0x80000000,1,0,3,in_stack_ffffffffffffffe0 \u0026 0xffffffff00000000,0);\r\n  *(ulonglong *)(param_1 + 8) \u003d uVar1;\r\n  if (uVar1 !\u003d 0xffffffffffffffff) {\r\n    lVar2 \u003d CreateFileMappingA(uVar1,0,2,0,0,0);\r\n    *(longlong *)(param_1 + 0x10) \u003d lVar2;\r\n    if (lVar2 !\u003d 0) {\r\n      GetFileSizeEx(*(undefined8 *)(param_1 + 8),auStackX_8);\r\n      *(undefined4 *)(param_1 + 0x18) \u003d auStackX_8[0];\r\n      return CONCAT71((uint7)(uint3)((uint)auStackX_8[0] \u003e\u003e 8),1);\r\n    }\r\n    uVar1 \u003d CloseHandle();\r\n  }\r\n  *(undefined8 *)(param_1 + 8) \u003d 0;\r\n  return uVar1 \u0026 0xffffffffffffff00;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "0x280000",
+    "start": "180280000",
+    "end": "1802800d5",
+    "bytesBudget": 214,
+    "function": "FUN_180280000",
+    "instructions": [
+      "180280000 MOV qword ptr [RSP + 0x10],RBX",
+      "180280005 MOV qword ptr [RSP + 0x18],RSI",
+      "18028000a PUSH RDI",
+      "18028000b PUSH R14",
+      "18028000d PUSH R15",
+      "18028000f SUB RSP,0x50",
+      "180280013 MOV R9D,dword ptr [RCX + 0x2c]",
+      "180280017 LEA RBX,[RCX + 0x2c]",
+      "18028001b XOR R14B,R14B",
+      "18028001e MOV R15D,R8D",
+      "180280021 MOV RSI,RDX",
+      "180280024 MOV RDI,RCX",
+      "180280027 TEST R9D,R9D",
+      "18028002a JNZ 0x180280079",
+      "18028002c MOV R10D,dword ptr [RDX]",
+      "18028002f MOVZX EAX,R10W",
+      "180280033 MOV dword ptr [RBX],R10D",
+      "180280036 CMP EAX,dword ptr [RCX + 0x8]",
+      "180280039 JNC 0x180280042",
+      "18028003b XOR AL,AL",
+      "18028003d JMP 0x1802800cf",
+      "180280042 SHR R10D,0x10",
+      "180280046 NOT R10B",
+      "180280049 XOR R10B,byte ptr [RBX + 0x2]",
+      "18028004d TEST R10B,0x1",
+      "180280051 JNZ 0x180280057",
+      "180280053 XOR AL,AL",
+      "180280055 JMP 0x1802800cf",
+      "180280057 MOV EAX,dword ptr [RDX + 0x4]",
+      "18028005a MOV dword ptr [RBX + 0x4],EAX",
+      "18028005d MOV EAX,dword ptr [RDX + 0x8]",
+      "180280060 MOV dword ptr [RBX + 0x8],EAX",
+      "180280063 MOV EAX,dword ptr [RDX + 0xc]",
+      "180280066 MOV dword ptr [RBX + 0xc],EAX",
+      "180280069 MOV EAX,dword ptr [RDX + 0x10]",
+      "18028006c MOV dword ptr [RBX + 0x10],EAX",
+      "18028006f MOV EAX,dword ptr [RDX + 0x14]",
+      "180280072 MOV dword ptr [RBX + 0x14],EAX",
+      "180280075 MOV AL,0x1",
+      "180280077 JMP 0x1802800cf",
+      "180280079 MOV EDX,dword ptr [RDX]",
+      "18028007b MOVZX EAX,DX",
+      "18028007e MOV dword ptr [RSP + 0x30],EDX",
+      "180280082 CMP EAX,dword ptr [RCX + 0x8]",
+      "180280085 JNC 0x18028008b",
+      "180280087 XOR AL,AL",
+      "180280089 JMP 0x1802800c7",
+      "18028008b SHR R9D,0x10",
+      "18028008f SHR EDX,0x10",
+      "180280092 NOT R9B",
+      "180280095 XOR R9B,DL",
+      "180280098 TEST R9B,0x1",
+      "18028009c JNZ 0x1802800a2",
+      "18028009e XOR AL,AL",
+      "1802800a0 JMP 0x1802800c7",
+      "1802800a2 MOV EAX,dword ptr [RSI + 0x4]",
+      "1802800a5 MOV dword ptr [RSP + 0x34],EAX",
+      "1802800a9 MOV EAX,dword ptr [RSI + 0x8]",
+      "1802800ac MOV dword ptr [RSP + 0x38],EAX",
+      "1802800b0 MOV EAX,dword ptr [RSI + 0xc]",
+      "1802800b3 MOV dword ptr [RSP + 0x3c],EAX",
+      "1802800b7 MOV EAX,dword ptr [RSI + 0x10]",
+      "1802800ba MOV dword ptr [RSP + 0x40],EAX",
+      "1802800be MOV EAX,dword ptr [RSI + 0x14]",
+      "1802800c1 MOV dword ptr [RSP + 0x44],EAX",
+      "1802800c5 MOV AL,0x1",
+      "1802800c7 LEA RBX,[RSP + 0x30]",
+      "1802800cc MOV R14B,0x1",
+      "1802800cf TEST AL,AL",
+      "1802800d1 JZ 0x180280143",
+      "1802800d3 MOV R9D,R15D"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "18028002a",
+        "to": "180280079",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180280079"
+      },
+      {
+        "from": "180280039",
+        "to": "180280042",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180280042"
+      },
+      {
+        "from": "18028003d",
+        "to": "1802800cf",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_1802800cf"
+      },
+      {
+        "from": "180280051",
+        "to": "180280057",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180280057"
+      },
+      {
+        "from": "180280055",
+        "to": "1802800cf",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_1802800cf"
+      },
+      {
+        "from": "180280077",
+        "to": "1802800cf",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_1802800cf"
+      },
+      {
+        "from": "180280085",
+        "to": "18028008b",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18028008b"
+      },
+      {
+        "from": "180280089",
+        "to": "1802800c7",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_1802800c7"
+      },
+      {
+        "from": "18028009c",
+        "to": "1802800a2",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1802800a2"
+      },
+      {
+        "from": "1802800a0",
+        "to": "1802800c7",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_1802800c7"
+      },
+      {
+        "from": "1802800d1",
+        "to": "180280143",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180280143"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nundefined1 FUN_180280000(longlong param_1,uint *param_2,undefined4 param_3)\r\n\r\n{\r\n  uint uVar1;\r\n  bool bVar2;\r\n  undefined1 uVar3;\r\n  longlong lVar4;\r\n  uint *puVar5;\r\n  char cVar6;\r\n  uint uStack_38;\r\n  uint uStack_34;\r\n  uint uStack_30;\r\n  uint uStack_2c;\r\n  uint uStack_28;\r\n  uint uStack_24;\r\n  \r\n  puVar5 \u003d (uint *)(param_1 + 0x2c);\r\n  cVar6 \u003d \u0027\\0\u0027;\r\n  if (*(int *)(param_1 + 0x2c) \u003d\u003d 0) {\r\n    uVar1 \u003d *param_2;\r\n    *puVar5 \u003d uVar1;\r\n    if ((uVar1 \u0026 0xffff) \u003c *(uint *)(param_1 + 8)) {\r\n      bVar2 \u003d false;\r\n    }\r\n    else if (((~(byte)(uVar1 \u003e\u003e 0x10) ^ *(byte *)(param_1 + 0x2e)) \u0026 1) \u003d\u003d 0) {\r\n      bVar2 \u003d false;\r\n    }\r\n    else {\r\n      *(uint *)(param_1 + 0x30) \u003d param_2[1];\r\n      *(uint *)(param_1 + 0x34) \u003d param_2[2];\r\n      *(uint *)(param_1 + 0x38) \u003d param_2[3];\r\n      *(uint *)(param_1 + 0x3c) \u003d param_2[4];\r\n      *(uint *)(param_1 + 0x40) \u003d param_2[5];\r\n      bVar2 \u003d true;\r\n    }\r\n  }\r\n  else {\r\n    uStack_38 \u003d *param_2;\r\n    if ((uStack_38 \u0026 0xffff) \u003c *(uint *)(param_1 + 8)) {\r\n      bVar2 \u003d false;\r\n    }\r\n    else if (((~(byte)((uint)*(int *)(param_1 + 0x2c) \u003e\u003e 0x10) ^ (byte)(uStack_38 \u003e\u003e 0x10)) \u0026 1) \u003d\u003d\r\n             0) {\r\n      bVar2 \u003d false;\r\n    }\r\n    else {\r\n      uStack_34 \u003d param_2[1];\r\n      uStack_30 \u003d param_2[2];\r\n      uStack_2c \u003d param_2[3];\r\n      uStack_28 \u003d param_2[4];\r\n      uStack_24 \u003d param_2[5];\r\n      bVar2 \u003d true;\r\n    }\r\n    puVar5 \u003d \u0026uStack_38;\r\n    cVar6 \u003d \u0027\\x01\u0027;\r\n  }\r\n  uVar3 \u003d 0;\r\n  if (bVar2) {\r\n    lVar4 \u003d FUN_180280160(param_1,puVar5,param_2,param_3);\r\n    if (cVar6 !\u003d \u0027\\0\u0027) {\r\n      *(longlong *)(param_1 + 0x180) \u003d lVar4;\r\n    }\r\n    if (lVar4 !\u003d 0) {\r\n      FUN_180280960(param_1,puVar5,param_2,param_3,cVar6);\r\n      FUN_180280220(param_1,puVar5,param_2,param_3,lVar4,cVar6);\r\n      FUN_1802809f0(param_1,puVar5,param_2,param_3);\r\n    }\r\n    uVar3 \u003d 1;\r\n  }\r\n  return uVar3;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "0x397b0",
+    "start": "1800397b0",
+    "end": "180039843",
+    "bytesBudget": 148,
+    "function": "FUN_1800397b0",
+    "instructions": [
+      "1800397b0 PUSH RBX",
+      "1800397b2 SUB RSP,0x830",
+      "1800397b9 MOV RBX,RCX",
+      "1800397bc MOV RCX,qword ptr [RCX + 0x10]",
+      "1800397c0 CMP RCX,-0x1",
+      "1800397c4 JNZ 0x1800397d1",
+      "1800397c6 XOR AL,AL",
+      "1800397c8 ADD RSP,0x830",
+      "1800397cf POP RBX",
+      "1800397d0 RET",
+      "1800397d1 LEA R9,[RSP + 0x840]",
+      "1800397d9 MOV qword ptr [RSP + 0x20],0x0",
+      "1800397e2 MOV R8D,0x800",
+      "1800397e8 LEA RDX,[RSP + 0x30]",
+      "1800397ed CALL qword ptr [0x180302230]",
+      "1800397f3 CMP dword ptr [RSP + 0x840],0x800",
+      "1800397fe JNZ 0x1800397c6",
+      "180039800 LEA RAX,[RSP + 0x30]",
+      "180039805 LEA R8,[0x180308454]",
+      "18003980c SUB R8,RAX",
+      "18003980f NOP",
+      "180039810 MOVZX EDX,byte ptr [RAX]",
+      "180039813 MOVZX ECX,byte ptr [RAX + R8*0x1]",
+      "180039818 SUB EDX,ECX",
+      "18003981a JNZ 0x180039823",
+      "18003981c INC RAX",
+      "18003981f TEST ECX,ECX",
+      "180039821 JNZ 0x180039810",
+      "180039823 TEST EDX,EDX",
+      "180039825 JNZ 0x1800397c6",
+      "180039827 CMP dword ptr [RSP + 0x34],0x3",
+      "18003982c JNZ 0x1800397c6",
+      "18003982e LEA RDX,[RSP + 0x30]",
+      "180039833 MOV RCX,RBX",
+      "180039836 CALL 0x180039850",
+      "18003983b ADD RSP,0x830",
+      "180039842 POP RBX",
+      "180039843 RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "1800397c4",
+        "to": "1800397d1",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1800397d1"
+      },
+      {
+        "from": "1800397ed",
+        "to": "180302230",
+        "type": "READ",
+        "symbol": "PTR_ReadFile_180302230"
+      },
+      {
+        "from": "1800397fe",
+        "to": "1800397c6",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1800397c6"
+      },
+      {
+        "from": "18003981a",
+        "to": "180039823",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180039823"
+      },
+      {
+        "from": "180039821",
+        "to": "180039810",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180039810"
+      },
+      {
+        "from": "180039825",
+        "to": "1800397c6",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1800397c6"
+      },
+      {
+        "from": "18003982c",
+        "to": "1800397c6",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1800397c6"
+      },
+      {
+        "from": "180039836",
+        "to": "180039850",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180039850"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nulonglong FUN_1800397b0(longlong param_1)\r\n\r\n{\r\n  char cVar1;\r\n  char cVar2;\r\n  char *in_RAX;\r\n  ulonglong uVar3;\r\n  longlong lVar4;\r\n  int aiStackX_8 [8];\r\n  char acStack_808 [4];\r\n  int iStack_804;\r\n  \r\n  if (*(longlong *)(param_1 + 0x10) !\u003d -1) {\r\n    in_RAX \u003d (char *)ReadFile(*(longlong *)(param_1 + 0x10),acStack_808,0x800,aiStackX_8,0);\r\n    if (aiStackX_8[0] \u003d\u003d 0x800) {\r\n      in_RAX \u003d acStack_808;\r\n      lVar4 \u003d (longlong)\u0026UNK_180308454 - (longlong)in_RAX;\r\n      do {\r\n        cVar1 \u003d *in_RAX;\r\n        cVar2 \u003d in_RAX[lVar4];\r\n        if (cVar1 !\u003d cVar2) break;\r\n        in_RAX \u003d in_RAX + 1;\r\n      } while (cVar2 !\u003d \u0027\\0\u0027);\r\n      if ((cVar1 \u003d\u003d cVar2) \u0026\u0026 (iStack_804 \u003d\u003d 3)) {\r\n        uVar3 \u003d FUN_180039850(param_1,acStack_808);\r\n        return uVar3;\r\n      }\r\n    }\r\n  }\r\n  return (ulonglong)in_RAX \u0026 0xffffffffffffff00;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "0x39be0",
+    "start": "180039be0",
+    "end": "180039cca",
+    "bytesBudget": 235,
+    "function": "FUN_180039be0",
+    "instructions": [
+      "180039be0 MOV qword ptr [RSP + 0x8],RBX",
+      "180039be5 MOV qword ptr [RSP + 0x10],RSI",
+      "180039bea PUSH RDI",
+      "180039beb SUB RSP,0x20",
+      "180039bef MOV RSI,qword ptr [RCX + 0x48]",
+      "180039bf3 LEA R8,[0x1803093a0]",
+      "180039bfa SUB RSI,qword ptr [RCX + 0x40]",
+      "180039bfe MOV RBX,RCX",
+      "180039c01 SAR RSI,0x6",
+      "180039c05 XOR EDI,EDI",
+      "180039c07 MOV ECX,EDI",
+      "180039c09 NOP dword ptr [RAX]",
+      "180039c10 MOV EAX,ECX",
+      "180039c12 INC ECX",
+      "180039c14 MOV EDX,dword ptr [R8 + RAX*0x4]",
+      "180039c18 MOV dword ptr [RBX + 0x80],EDX",
+      "180039c1e CMP ECX,0x11",
+      "180039c21 JNC 0x180039c2c",
+      "180039c23 MOV EAX,ESI",
+      "180039c25 SHR EAX,0x2",
+      "180039c28 CMP EAX,EDX",
+      "180039c2a JA 0x180039c10",
+      "180039c2c MOV ECX,dword ptr [RBX + 0x80]",
+      "180039c32 MOV EAX,0x8",
+      "180039c37 MUL RCX",
+      "180039c3a MOV RCX,-0x1",
+      "180039c41 CMOVO RAX,RCX",
+      "180039c45 MOV RCX,RAX",
+      "180039c48 CALL 0x1802dc900",
+      "180039c4d MOV R8D,dword ptr [RBX + 0x80]",
+      "180039c54 XOR EDX,EDX",
+      "180039c56 SHL R8,0x3",
+      "180039c5a MOV RCX,RAX",
+      "180039c5d MOV qword ptr [RBX + 0x88],RAX",
+      "180039c64 CALL 0x1802ddb14",
+      "180039c69 TEST ESI,ESI",
+      "180039c6b JZ 0x180039cbb",
+      "180039c6d MOV ESI,ESI",
+      "180039c6f NOP",
+      "180039c70 MOV R9,qword ptr [RBX + 0x40]",
+      "180039c74 ADD R9,RDI",
+      "180039c77 TEST byte ptr [R9],0x1",
+      "180039c7b JZ 0x180039cb1",
+      "180039c7d MOV R8D,dword ptr [R9 + 0x28]",
+      "180039c81 MOV RCX,RBX",
+      "180039c84 MOV RDX,qword ptr [R9 + 0x30]",
+      "180039c88 CALL 0x180039b30",
+      "180039c8d MOV EAX,EAX",
+      "180039c8f LEA RDX,[RAX*0x8]",
+      "180039c97 MOV RAX,qword ptr [RBX + 0x88]",
+      "180039c9e MOV RCX,qword ptr [RDX + RAX*0x1]",
+      "180039ca2 MOV qword ptr [R9 + 0x38],RCX",
+      "180039ca6 MOV RAX,qword ptr [RBX + 0x88]",
+      "180039cad MOV qword ptr [RDX + RAX*0x1],R9",
+      "180039cb1 ADD RDI,0x40",
+      "180039cb5 SUB RSI,0x1",
+      "180039cb9 JNZ 0x180039c70",
+      "180039cbb MOV RBX,qword ptr [RSP + 0x30]",
+      "180039cc0 MOV RSI,qword ptr [RSP + 0x38]",
+      "180039cc5 ADD RSP,0x20",
+      "180039cc9 POP RDI",
+      "180039cca RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "180039c21",
+        "to": "180039c2c",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180039c2c"
+      },
+      {
+        "from": "180039c2a",
+        "to": "180039c10",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180039c10"
+      },
+      {
+        "from": "180039c48",
+        "to": "1802dc900",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1802dc900"
+      },
+      {
+        "from": "180039c64",
+        "to": "1802ddb14",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1802ddb14"
+      },
+      {
+        "from": "180039c6b",
+        "to": "180039cbb",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180039cbb"
+      },
+      {
+        "from": "180039c7b",
+        "to": "180039cb1",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180039cb1"
+      },
+      {
+        "from": "180039c88",
+        "to": "180039b30",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180039b30"
+      },
+      {
+        "from": "180039cb9",
+        "to": "180039c70",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180039c70"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nvoid FUN_180039be0(longlong param_1)\r\n\r\n{\r\n  undefined1 auVar1 [16];\r\n  uint uVar2;\r\n  undefined8 uVar3;\r\n  uint uVar4;\r\n  ulonglong uVar5;\r\n  ulonglong uVar6;\r\n  ulonglong uVar7;\r\n  byte *pbVar8;\r\n  \r\n  uVar6 \u003d *(longlong *)(param_1 + 0x48) - *(longlong *)(param_1 + 0x40) \u003e\u003e 6;\r\n  uVar7 \u003d 0;\r\n  uVar5 \u003d uVar7;\r\n  do {\r\n    uVar4 \u003d (int)uVar5 + 1;\r\n    uVar2 \u003d *(uint *)(\u0026UNK_1803093a0 + uVar5 * 4);\r\n    *(uint *)(param_1 + 0x80) \u003d uVar2;\r\n    if (0x10 \u003c uVar4) break;\r\n    uVar5 \u003d (ulonglong)uVar4;\r\n  } while (uVar2 \u003c ((uint)(uVar6 \u003e\u003e 2) \u0026 0x3fffffff));\r\n  auVar1 \u003d ZEXT816(8) * ZEXT416(*(uint *)(param_1 + 0x80));\r\n  uVar3 \u003d auVar1._0_8_;\r\n  if (auVar1._8_8_ !\u003d 0) {\r\n    uVar3 \u003d 0xffffffffffffffff;\r\n  }\r\n  uVar3 \u003d FUN_1802dc900(uVar3);\r\n  *(undefined8 *)(param_1 + 0x88) \u003d uVar3;\r\n  FUN_1802ddb14(uVar3,0,(ulonglong)*(uint *)(param_1 + 0x80) \u003c\u003c 3);\r\n  if ((int)uVar6 !\u003d 0) {\r\n    uVar6 \u003d uVar6 \u0026 0xffffffff;\r\n    do {\r\n      pbVar8 \u003d (byte *)(*(longlong *)(param_1 + 0x40) + uVar7);\r\n      if ((*pbVar8 \u0026 1) !\u003d 0) {\r\n        uVar2 \u003d FUN_180039b30(param_1,*(undefined8 *)(pbVar8 + 0x30),*(undefined4 *)(pbVar8 + 0x28))\r\n        ;\r\n        *(undefined8 *)(pbVar8 + 0x38) \u003d\r\n             *(undefined8 *)((ulonglong)uVar2 * 8 + *(longlong *)(param_1 + 0x88));\r\n        *(byte **)((ulonglong)uVar2 * 8 + *(longlong *)(param_1 + 0x88)) \u003d pbVar8;\r\n      }\r\n      uVar7 \u003d uVar7 + 0x40;\r\n      uVar6 \u003d uVar6 - 1;\r\n    } while (uVar6 !\u003d 0);\r\n  }\r\n  return;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  }
+]

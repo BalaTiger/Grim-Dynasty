@@ -1,0 +1,133 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.TokenActions;
+using GrimDynasty.TaskAuto;
+namespace GrimDynasty.Rewards {
+ public enum ExperienceRoute {Unknown,LocalInbound,NetworkOutbound}
+ public sealed class ExperienceAction {public int Version;public uint Amount;}
+ public sealed class ThresholdSample {public int Input;public float FormulaResult;}
+ public sealed class ZeroBonusBio {
+  public bool GetterResultsStable;
+  public double Life;
+  public float MaximumLife,ReserveLifeCap,Energy,MaximumEnergy,Stamina,MaximumStamina;
+  public float HealingPercent,PercentHealingPercent;
+  public byte? DirtyGate16B1,Dirty1698;
+  public bool LifeStatsIndexComplete;
+  public readonly Dictionary<int,float> LifeStats=new Dictionary<int,float>();
+  public ZeroBonusBio Copy(){var b=(ZeroBonusBio)MemberwiseClone();var c=new ZeroBonusBio{GetterResultsStable=b.GetterResultsStable,Life=b.Life,MaximumLife=b.MaximumLife,ReserveLifeCap=b.ReserveLifeCap,Energy=b.Energy,MaximumEnergy=b.MaximumEnergy,Stamina=b.Stamina,MaximumStamina=b.MaximumStamina,HealingPercent=b.HealingPercent,PercentHealingPercent=b.PercentHealingPercent,DirtyGate16B1=b.DirtyGate16B1,Dirty1698=b.Dirty1698,LifeStatsIndexComplete=b.LifeStatsIndexComplete};foreach(var p in LifeStats)c.LifeStats.Add(p.Key,p.Value);return c;}
+ }
+ public sealed class ExperienceActor {
+  public uint ObjectId;
+  public bool? IsPlayer,IsAlive,DevotionSkillVectorEmpty;
+  public uint? Experience1764,Level1760,MaximumLevel175C,Lifetime1968;
+  public int? EquationInput1710;
+  public float? ExperienceGainPercent;
+  public ThresholdSample NextThreshold;
+  public ZeroBonusBio Bio;
+  public LevelProgressionSnapshot Progression;
+  public ExperienceActor Copy(){return new ExperienceActor{ObjectId=ObjectId,IsPlayer=IsPlayer,IsAlive=IsAlive,DevotionSkillVectorEmpty=DevotionSkillVectorEmpty,Experience1764=Experience1764,Level1760=Level1760,MaximumLevel175C=MaximumLevel175C,Lifetime1968=Lifetime1968,EquationInput1710=EquationInput1710,ExperienceGainPercent=ExperienceGainPercent,NextThreshold=NextThreshold==null?null:new ThresholdSample{Input=NextThreshold.Input,FormulaResult=NextThreshold.FormulaResult},Bio=Bio==null?null:Bio.Copy(),Progression=Progression==null?null:Progression.Copy()};}
+ }
+ public sealed class ExperienceBonus {
+  public uint TargetId,Amount;
+  public readonly uint ExperienceSource=2,OriginId=0;
+  public readonly bool OtherFieldsZero=true;
+ }
+ public sealed class ExperienceWorld {
+  public NameCacheSnapshot ExperienceNameCache;
+  public bool MainPlayerQueryKnown,EntityIndexComplete;
+  public uint? MainPlayerId,ClientPlayerId;
+  public bool? ClientManagerResolved;
+  public ExperienceRoute Route;
+  public bool? EngineInitialized,Service19B0Present;
+  public OfflineEvents Events;
+  public LevelDisplaySnapshot LevelDisplay;
+  public SystemCrtMath NumericMath;
+  public TutorialSnapshot Tutorials;
+  public readonly List<QuestEvent> ProducedLevelEvents=new List<QuestEvent>();
+  public readonly Dictionary<uint,ExperienceActor> Actors=new Dictionary<uint,ExperienceActor>();
+  // Own audit trace of generated Bonus objects, not a native pending network queue.
+  public readonly List<ExperienceBonus> DispatchTrace=new List<ExperienceBonus>();
+  public ExperienceWorld Copy(){var c=new ExperienceWorld{ExperienceNameCache=ExperienceNameCache==null?null:ExperienceNameCache.Copy(),MainPlayerQueryKnown=MainPlayerQueryKnown,EntityIndexComplete=EntityIndexComplete,MainPlayerId=MainPlayerId,ClientPlayerId=ClientPlayerId,ClientManagerResolved=ClientManagerResolved,Route=Route,EngineInitialized=EngineInitialized,Service19B0Present=Service19B0Present,Events=Events,LevelDisplay=LevelDisplay==null?null:LevelDisplay.Copy(),NumericMath=NumericMath,Tutorials=Tutorials==null?null:Tutorials.Copy()};c.ProducedLevelEvents.AddRange(ProducedLevelEvents);foreach(var p in Actors)c.Actors.Add(p.Key,p.Value==null?null:p.Value.Copy());c.DispatchTrace.AddRange(DispatchTrace);return c;}
+ }
+ public static class ExperienceRewards {
+  static MutationResult U(string s){return MutationResult.Unsupported(s);}
+  static bool Finite(float f){return !float.IsNaN(f)&&!float.IsInfinity(f);}
+  static bool CanonicalNonnegative(float f){return Finite(f)&&f>=0&&(f!=0||BitConverter.ToInt32(BitConverter.GetBytes(f),0)==0);}
+  static float Single(float f){return BitConverter.ToSingle(BitConverter.GetBytes(f),0);}
+  static MutationResult Find(ExperienceWorld w,uint id,out ExperienceActor actor){
+   if(!w.Actors.TryGetValue(id,out actor))return w.EntityIndexComplete?MutationResult.Known(false):U("IncompleteExperienceEntityIndex");
+   if(actor==null||actor.ObjectId!=id||!actor.IsPlayer.HasValue)return U("UnknownExperienceEntityTypeOrIdentity");
+   return MutationResult.Known(false);
+  }
+  static MutationResult ValidateBio(ZeroBonusBio b){
+   if(b==null||!b.GetterResultsStable||!b.DirtyGate16B1.HasValue)return U("UnknownZeroBonusBioContext");
+   if(double.IsNaN(b.Life)||double.IsInfinity(b.Life)||b.Life<=0||!Finite(b.MaximumLife)||!Finite(b.ReserveLifeCap)||b.Life>b.MaximumLife||b.Life>b.ReserveLifeCap||!Finite(b.HealingPercent)||!Finite(b.PercentHealingPercent)||!CanonicalNonnegative(b.Energy)||!CanonicalNonnegative(b.MaximumEnergy)||b.Energy>b.MaximumEnergy||!CanonicalNonnegative(b.Stamina)||!CanonicalNonnegative(b.MaximumStamina)||b.Stamina>b.MaximumStamina)return U("ZeroBonusBioOutsideCanonicalFiniteDomain");
+   float value;if(b.LifeStats.TryGetValue(0,out value)){if(!Finite(value))return U("UnknownLifeStatsFloatDomain");}else if(!b.LifeStatsIndexComplete)return U("IncompleteLifeStatsIndex");return MutationResult.Known(false);
+  }
+  static MutationResult ReceiveExperience(ExperienceWorld w,ExperienceActor p,uint original){
+   uint effective;var scale=ExperienceScaling.Scale(original,p.ExperienceGainPercent,w.NumericMath,out effective);if(scale.Status!="Known")return scale;if(effective==0)return MutationResult.Known(false);return ReceiveBelowThreshold(w,p,effective);
+  }
+  static MutationResult ReceiveBelowThreshold(ExperienceWorld w,ExperienceActor p,uint amount){
+   if(p.Progression!=null)return LevelProgression.Receive(w,p,amount);
+   
+   if(!p.Experience1764.HasValue||!p.Level1760.HasValue||!p.MaximumLevel175C.HasValue||!p.Lifetime1968.HasValue)return U("UnknownExperienceCounters");
+   if(p.DevotionSkillVectorEmpty!=true)return U("NonemptyOrUnknownDevotionSkillExperienceVector");
+   uint level=p.Level1760.Value,max=p.MaximumLevel175C.Value;
+   if(level>=max)return U("MaximumLevelExperienceClampNotRecovered");
+   int input=Math.Min(Math.Max(unchecked((int)level),0),unchecked((int)max));
+   var sample=p.NextThreshold;
+   if(sample==null||sample.Input!=input||!Finite(sample.FormulaResult)||sample.FormulaResult<0||sample.FormulaResult>1000000000f)return U("UnknownOrOutOfDomainThresholdFormulaResult");
+   uint threshold=(uint)(long)Single(sample.FormulaResult+0.5f);
+   uint next=unchecked(p.Experience1764.Value+amount);
+   if(next>=threshold)return U("LevelUpRequiresUnrestoredSideEffects");
+   bool changed=next!=p.Experience1764.Value||p.EquationInput1710!=input;
+   p.Experience1764=next;p.EquationInput1710=input;
+   uint lifetime=unchecked(p.Lifetime1968.Value+amount);changed|=lifetime!=p.Lifetime1968.Value;p.Lifetime1968=lifetime;
+   return MutationResult.Known(changed);
+  }
+  static MutationResult LocalBonus(ExperienceWorld w,ExperienceBonus bonus){
+   if(!w.ClientManagerResolved.HasValue)return U("UnknownExperienceClientManager");
+   if(!w.ClientManagerResolved.Value)return MutationResult.Known(false);
+   if(!w.ClientPlayerId.HasValue)return U("UnknownExperienceClientPlayerId");
+   if(bonus.OriginId==w.ClientPlayerId.Value)return MutationResult.Known(false);
+   ExperienceActor p;var found=Find(w,bonus.TargetId,out p);if(found.Status!="Known")return found;
+   if(p==null||p.IsPlayer==false)return MutationResult.Known(false);
+   if(!p.IsAlive.HasValue)return U("UnknownBonusTargetAliveState");
+   if(p.IsAlive.Value){var bio=ValidateBio(p.Bio);if(bio.Status!="Known")return bio;}
+   bool changed=false;
+   if(bonus.Amount!=0){var gain=ReceiveExperience(w,p,bonus.Amount);if(gain.Status!="Known")return gain;changed|=gain.Changed.Value;}
+   if(p.IsAlive.Value){var b=p.Bio;if(b.DirtyGate16B1.Value!=0){changed|=b.Dirty1698!=1;b.Dirty1698=1;}
+    // Every other Bonus numeric field is zero. Canonical finite bounds above
+    // establish that all native life/energy/stamina clamps retain their values.
+    float value;if(!b.LifeStats.TryGetValue(0,out value)){b.LifeStats.Add(0,0);changed=true;}
+    else {float next=Single(value+0f);changed|=BitConverter.ToInt32(BitConverter.GetBytes(next),0)!=BitConverter.ToInt32(BitConverter.GetBytes(value),0);b.LifeStats[0]=next;} // operator[] + GetBonusLifeAmount == 0.
+   }
+   return MutationResult.Known(changed);
+  }
+  static MutationResult Apply(ExperienceWorld w,ExperienceAction action){
+   if(w==null||action==null||action.Version!=0)return U("UnknownExperienceActionOrWorld");
+   if(w.ExperienceNameCache==null)return U("UnknownExperienceNameCache");var name=w.ExperienceNameCache.EnsureHeadEffect();if(name.Status!="Known")return name;
+   bool changed=name.Changed.Value;
+   if(!w.MainPlayerQueryKnown)return U("UnknownExperienceMainPlayerQuery");
+   if(!w.MainPlayerId.HasValue)return MutationResult.Known(changed);
+   ExperienceActor main;var found=Find(w,w.MainPlayerId.Value,out main);if(found.Status!="Known")return found;
+   if(main==null||main.IsPlayer==false)return MutationResult.Known(changed);
+   if(w.Route==ExperienceRoute.LocalInbound&&(w.ClientManagerResolved!=true||w.ClientPlayerId!=w.MainPlayerId))return U("UnstableClientIdentityAcrossExperienceCalls");
+   var routed=RouteApply(w,main.ObjectId,action.Amount);if(routed.Status!="Known")return routed;return MutationResult.Known(changed||routed.Changed.Value);
+  }
+  static MutationResult RouteApply(ExperienceWorld w,uint target,uint amount){
+   if(w==null)return U("UnknownExperienceWorld");
+   if(w.Route!=ExperienceRoute.LocalInbound)return U(w.Route==ExperienceRoute.NetworkOutbound?"NetworkBonusTransportNotExecuted":"UnknownExperienceDispatchInterface");
+   var bonus=new ExperienceBonus{TargetId=target,Amount=amount};var local=LocalBonus(w,bonus);if(local.Status!="Known")return local;w.DispatchTrace.Add(bonus);return local;
+  }
+  // Separate native entry: this does not resolve a main player or initialize
+  // the ScriptableAction's local static cache before constructing its Bonus.
+  public static MutationResult CharacterExperienceOutbound(ExperienceWorld w,uint target,uint amount){
+   if(w==null)return U("UnknownExperienceWorld");var check=RouteApply(w.Copy(),target,amount);if(check.Status!="Known")return check;return RouteApply(w,target,amount);
+  }
+  public static MutationResult Check(ExperienceWorld w,ExperienceAction action){return w==null?U("UnknownExperienceWorld"):Apply(w.Copy(),action);}
+  public static MutationResult Execute(ExperienceWorld w,ExperienceAction action){
+   var check=Check(w,action);if(check.Status!="Known")return check;return Apply(w,action);
+  }
+ }
+}

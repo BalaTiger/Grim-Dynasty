@@ -1,0 +1,31 @@
+{
+  "assertion": {
+    "title": "Assert Failed: ArchiveTool.exe",
+    "source": "archivewriter.cpp",
+    "line": 848,
+    "expression": "outputFile != INVALID_HANDLE_VALUE",
+    "reported_screenshot_time": "09:39 UTC"
+  },
+  "owner": "this task official_sample_probe.py",
+  "cwd": "D:\\MyGitRepo\\Grim-Dynasty\\.tooling\\resource-reader-validation",
+  "cause": "missing output directory: tags initially, then quest/gdareab; precreating directories alone made identical extraction arguments succeed",
+  "first_attempt": {
+    "input": "D:\\Steam\\steamapps\\common\\Grim Dawn\\resources\\Text_EN.arc",
+    "mode": "-extract",
+    "output": "D:\\MyGitRepo\\Grim-Dynasty\\.tooling\\resource-reader-validation\\tags",
+    "member": "tags_skills.txt",
+    "result": "subprocess.TimeoutExpired after 60 seconds; Python killed its own child"
+  },
+  "later_attempts": "official-commands.json and official-quest-retry.json",
+  "ignored_assertion": false,
+  "input_sha256": {
+    "D:\\Steam\\steamapps\\common\\Grim Dawn\\database\\database.arz": "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603",
+    "D:\\Steam\\steamapps\\common\\Grim Dawn\\resources\\Text_EN.arc": "82defd8a0fddf71e8491b7494fada51b034b1af14ffc0a6cf9c8aabdf8700c25",
+    "D:\\Steam\\steamapps\\common\\Grim Dawn\\resources\\Quests.arc": "cff68edb899b5b6a84c4d91e651ab52c558b8ed5e1c9813f443b1844c19e385d",
+    "D:\\Steam\\steamapps\\common\\Grim Dawn\\ArchiveTool.exe": "6fcbbf7089305a7ae6d9fd64606d4826f38894a727108f85aac0e17fb17079e5"
+  },
+  "hash_before_vs_after_official_retry_equal": true,
+  "database_matches_phase1_baseline": true,
+  "hash_limitation": "ARC baseline captured after earliest failed extraction, before subsequent retries; no claim of a pre-first-attempt ARC baseline",
+  "rea_review": "same method retry approved after installed cache/config verification; MCP decompilation completed; no alternate route"
+}

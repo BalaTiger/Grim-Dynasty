@@ -1,0 +1,23 @@
+using System;
+using System.IO;
+using System.Text;
+using System.Collections.Generic;
+using GrimDynasty.Quests;
+public static class OwnAcceptQuestFixture {
+ static void Text(BinaryWriter w,string s){var b=Encoding.UTF8.GetBytes(s);w.Write((uint)b.Length);w.Write(b);}
+ public static Dictionary<string,object> Read(){
+  using(var stream=new MemoryStream())using(var w=new BinaryWriter(stream)){
+   w.Write(Encoding.ASCII.GetBytes("QST2"));w.Write(9u);w.Write(0u);
+   w.Write(2u);w.Write(4u);w.Write(1u); // own quest ID, tutorial flag, one task
+   w.Write(1u);w.Write(0u);w.Write(2u); // own task ID, flags, two accept events
+   foreach(int type in new[]{27,4}){
+    w.Write(0u);w.Write(0u);w.Write(1u); // event flags, null conditions, one action
+    w.Write(type);w.Write((byte)0);w.Write(type==27?7:25);
+   }
+   w.Write(0u);w.Write(0u);w.Write(false);w.Write(true); // no fixture goals/completion; runtime supplies own kill objective
+   long locale=stream.Position;w.Write(1u);Text(w,"zh");w.Write(6u);
+   foreach(string text in new[]{"辽东军营","边军领饷","领取行粮","巡视两处哨位后复命","领受军令","支领行粮"})Text(w,text);
+   w.Flush();stream.Position=8;w.Write((uint)locale);w.Flush();return QuestDefinition.Read(stream.ToArray());
+  }
+ }
+}

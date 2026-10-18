@@ -1,0 +1,432 @@
+[
+  {
+    "label": "?LoadMainDatabase@Engine@GAME@@AEAAXXZ",
+    "start": "180073a60",
+    "end": "180073c86",
+    "bytesBudget": 551,
+    "function": "?LoadMainDatabase@Engine@GAME@@AEAAXXZ",
+    "instructions": [
+      "180073a60 PUSH RBP",
+      "180073a62 MOV RBP,RSP",
+      "180073a65 SUB RSP,0x70",
+      "180073a69 MOV qword ptr [RBP + -0x50],-0x2",
+      "180073a71 MOV qword ptr [RSP + 0x88],RBX",
+      "180073a79 MOV RBX,RCX",
+      "180073a7c CALL 0x18001c040",
+      "180073a81 LEA RCX,[RAX + 0x170]",
+      "180073a88 CALL 0x1801c52a0",
+      "180073a8d MOV RCX,qword ptr [RBX + 0x3d0]",
+      "180073a94 TEST RCX,RCX",
+      "180073a97 JZ 0x180073aae",
+      "180073a99 MOV RAX,qword ptr [RCX]",
+      "180073a9c MOV EDX,0x1",
+      "180073aa1 CALL qword ptr [RAX]",
+      "180073aa3 MOV qword ptr [RBX + 0x3d0],0x0",
+      "180073aae MOV ECX,0x1d0",
+      "180073ab3 CALL 0x1802dc398",
+      "180073ab8 MOV qword ptr [RBP + 0x10],RAX",
+      "180073abc MOV RCX,RAX",
+      "180073abf CALL 0x18027f9c0",
+      "180073ac4 NOP",
+      "180073ac5 MOV qword ptr [RBX + 0x3d0],RAX",
+      "180073acc LEA RDX,[RBX + 0x138]",
+      "180073ad3 MOV qword ptr [RBP + -0x30],0xf",
+      "180073adb MOV qword ptr [RBP + -0x38],0x0",
+      "180073ae3 MOV byte ptr [RBP + -0x48],0x0",
+      "180073ae7 OR R9,-0x1",
+      "180073aeb XOR R8D,R8D",
+      "180073aee LEA RCX,[RBP + -0x48]",
+      "180073af2 CALL 0x180023180",
+      "180073af7 NOP",
+      "180073af8 LEA R8,[0x18030be38]",
+      "180073aff LEA RDX,[RBP + -0x48]",
+      "180073b03 LEA RCX,[RBP + -0x28]",
+      "180073b07 CALL 0x18004cf40",
+      "180073b0c NOP",
+      "180073b0d MOV RDX,RAX",
+      "180073b10 MOV RCX,RBX",
+      "180073b13 CALL 0x180074280",
+      "180073b18 NOP",
+      "180073b19 MOV RDX,qword ptr [RBP + -0x10]",
+      "180073b1d CMP RDX,0x10",
+      "180073b21 JC 0x180073b35",
+      "180073b23 INC RDX",
+      "180073b26 MOV R8D,0x1",
+      "180073b2c MOV RCX,qword ptr [RBP + -0x28]",
+      "180073b30 CALL 0x180023090",
+      "180073b35 CMP byte ptr [RBX + 0xc25],0x0",
+      "180073b3c JZ 0x180073b7b",
+      "180073b3e LEA R8,[0x18030bee0]",
+      "180073b45 LEA RDX,[RBP + -0x48]",
+      "180073b49 LEA RCX,[RBP + -0x28]",
+      "180073b4d CALL 0x18004cf40",
+      "180073b52 NOP",
+      "180073b53 MOV RDX,RAX",
+      "180073b56 MOV RCX,RBX",
+      "180073b59 CALL 0x180074280",
+      "180073b5e NOP",
+      "180073b5f MOV RDX,qword ptr [RBP + -0x10]",
+      "180073b63 CMP RDX,0x10",
+      "180073b67 JC 0x180073b7b",
+      "180073b69 INC RDX",
+      "180073b6c MOV R8D,0x1",
+      "180073b72 MOV RCX,qword ptr [RBP + -0x28]",
+      "180073b76 CALL 0x180023090",
+      "180073b7b CMP byte ptr [RBX + 0xc26],0x0",
+      "180073b82 JZ 0x180073bc1",
+      "180073b84 LEA R8,[0x18030bef8]",
+      "180073b8b LEA RDX,[RBP + -0x48]",
+      "180073b8f LEA RCX,[RBP + -0x28]",
+      "180073b93 CALL 0x18004cf40",
+      "180073b98 NOP",
+      "180073b99 MOV RDX,RAX",
+      "180073b9c MOV RCX,RBX",
+      "180073b9f CALL 0x180074280",
+      "180073ba4 NOP",
+      "180073ba5 MOV RDX,qword ptr [RBP + -0x10]",
+      "180073ba9 CMP RDX,0x10",
+      "180073bad JC 0x180073bc1",
+      "180073baf INC RDX",
+      "180073bb2 MOV R8D,0x1",
+      "180073bb8 MOV RCX,qword ptr [RBP + -0x28]",
+      "180073bbc CALL 0x180023090",
+      "180073bc1 CMP byte ptr [RBX + 0xc27],0x0",
+      "180073bc8 JZ 0x180073c07",
+      "180073bca LEA R8,[0x18030beb0]",
+      "180073bd1 LEA RDX,[RBP + -0x48]",
+      "180073bd5 LEA RCX,[RBP + -0x28]",
+      "180073bd9 CALL 0x18004cf40",
+      "180073bde NOP",
+      "180073bdf MOV RDX,RAX",
+      "180073be2 MOV RCX,RBX",
+      "180073be5 CALL 0x180074280",
+      "180073bea NOP",
+      "180073beb MOV RDX,qword ptr [RBP + -0x10]",
+      "180073bef CMP RDX,0x10",
+      "180073bf3 JC 0x180073c07",
+      "180073bf5 INC RDX",
+      "180073bf8 MOV R8D,0x1",
+      "180073bfe MOV RCX,qword ptr [RBP + -0x28]",
+      "180073c02 CALL 0x180023090",
+      "180073c07 CMP byte ptr [RBX + 0xc21],0x0",
+      "180073c0e JZ 0x180073c4d",
+      "180073c10 LEA R8,[0x18030bec8]",
+      "180073c17 LEA RDX,[RBP + -0x48]",
+      "180073c1b LEA RCX,[RBP + -0x28]",
+      "180073c1f CALL 0x18004cf40",
+      "180073c24 NOP",
+      "180073c25 MOV RDX,RAX",
+      "180073c28 MOV RCX,RBX",
+      "180073c2b CALL 0x180074280",
+      "180073c30 NOP",
+      "180073c31 MOV RDX,qword ptr [RBP + -0x10]",
+      "180073c35 CMP RDX,0x10",
+      "180073c39 JC 0x180073c4d",
+      "180073c3b INC RDX",
+      "180073c3e MOV R8D,0x1",
+      "180073c44 MOV RCX,qword ptr [RBP + -0x28]",
+      "180073c48 CALL 0x180023090",
+      "180073c4d MOV RAX,qword ptr [RBX + 0x3d0]",
+      "180073c54 MOV ECX,dword ptr [RAX + 0x10]",
+      "180073c57 MOV dword ptr [RBX + 0xba8],ECX",
+      "180073c5d MOV RDX,qword ptr [RBP + -0x30]",
+      "180073c61 CMP RDX,0x10",
+      "180073c65 JC 0x180073c79",
+      "180073c67 INC RDX",
+      "180073c6a MOV R8D,0x1",
+      "180073c70 MOV RCX,qword ptr [RBP + -0x48]",
+      "180073c74 CALL 0x180023090",
+      "180073c79 MOV RBX,qword ptr [RSP + 0x88]",
+      "180073c81 ADD RSP,0x70",
+      "180073c85 POP RBP",
+      "180073c86 RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "180073a7c",
+        "to": "18001c040",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "?Get@?$Singleton@VObjectManager@GAME@@@GAME@@SAPEAVObjectManager@2@XZ"
+      },
+      {
+        "from": "180073a88",
+        "to": "1801c52a0",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "?ClearCache@TableDepot@GAME@@QEAAXXZ"
+      },
+      {
+        "from": "180073a97",
+        "to": "180073aae",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073aae"
+      },
+      {
+        "from": "180073ab3",
+        "to": "1802dc398",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_1802dc398"
+      },
+      {
+        "from": "180073abf",
+        "to": "18027f9c0",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_18027f9c0"
+      },
+      {
+        "from": "180073af2",
+        "to": "180023180",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180023180"
+      },
+      {
+        "from": "180073b07",
+        "to": "18004cf40",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_18004cf40"
+      },
+      {
+        "from": "180073b13",
+        "to": "180074280",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "?LoadDatabase@Engine@GAME@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+      },
+      {
+        "from": "180073b21",
+        "to": "180073b35",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073b35"
+      },
+      {
+        "from": "180073b30",
+        "to": "180023090",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180023090"
+      },
+      {
+        "from": "180073b3c",
+        "to": "180073b7b",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073b7b"
+      },
+      {
+        "from": "180073b4d",
+        "to": "18004cf40",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_18004cf40"
+      },
+      {
+        "from": "180073b59",
+        "to": "180074280",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "?LoadDatabase@Engine@GAME@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+      },
+      {
+        "from": "180073b67",
+        "to": "180073b7b",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073b7b"
+      },
+      {
+        "from": "180073b76",
+        "to": "180023090",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180023090"
+      },
+      {
+        "from": "180073b82",
+        "to": "180073bc1",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073bc1"
+      },
+      {
+        "from": "180073b93",
+        "to": "18004cf40",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_18004cf40"
+      },
+      {
+        "from": "180073b9f",
+        "to": "180074280",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "?LoadDatabase@Engine@GAME@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+      },
+      {
+        "from": "180073bad",
+        "to": "180073bc1",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073bc1"
+      },
+      {
+        "from": "180073bbc",
+        "to": "180023090",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180023090"
+      },
+      {
+        "from": "180073bc8",
+        "to": "180073c07",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073c07"
+      },
+      {
+        "from": "180073bd9",
+        "to": "18004cf40",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_18004cf40"
+      },
+      {
+        "from": "180073be5",
+        "to": "180074280",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "?LoadDatabase@Engine@GAME@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+      },
+      {
+        "from": "180073bf3",
+        "to": "180073c07",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073c07"
+      },
+      {
+        "from": "180073c02",
+        "to": "180023090",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180023090"
+      },
+      {
+        "from": "180073c0e",
+        "to": "180073c4d",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073c4d"
+      },
+      {
+        "from": "180073c1f",
+        "to": "18004cf40",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_18004cf40"
+      },
+      {
+        "from": "180073c2b",
+        "to": "180074280",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "?LoadDatabase@Engine@GAME@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+      },
+      {
+        "from": "180073c39",
+        "to": "180073c4d",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073c4d"
+      },
+      {
+        "from": "180073c48",
+        "to": "180023090",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180023090"
+      },
+      {
+        "from": "180073c65",
+        "to": "180073c79",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180073c79"
+      },
+      {
+        "from": "180073c74",
+        "to": "180023090",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180023090"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nvoid _LoadMainDatabase_Engine_GAME__AEAAXXZ(longlong param_1)\r\n\r\n{\r\n  undefined8 *puVar1;\r\n  longlong lVar2;\r\n  undefined8 uVar3;\r\n  undefined1 uStack_50;\r\n  undefined7 uStack_4f;\r\n  undefined8 uStack_40;\r\n  ulonglong uStack_38;\r\n  undefined8 auStack_30 [3];\r\n  ulonglong uStack_18;\r\n  \r\n                    /* 0x73a60  4220  ?LoadMainDatabase@Engine@GAME@@AEAAXXZ */\r\n  lVar2 \u003d _Get___Singleton_VObjectManager_GAME___GAME__SAPEAVObjectManager_2_XZ();\r\n  _ClearCache_TableDepot_GAME__QEAAXXZ(lVar2 + 0x170);\r\n  puVar1 \u003d *(undefined8 **)(param_1 + 0x3d0);\r\n  if (puVar1 !\u003d (undefined8 *)0x0) {\r\n    (**(code **)*puVar1)(puVar1,1);\r\n    *(undefined8 *)(param_1 + 0x3d0) \u003d 0;\r\n  }\r\n  uVar3 \u003d FUN_1802dc398(0x1d0);\r\n  uVar3 \u003d FUN_18027f9c0(uVar3);\r\n  *(undefined8 *)(param_1 + 0x3d0) \u003d uVar3;\r\n  uStack_38 \u003d 0xf;\r\n  uStack_40 \u003d 0;\r\n  uStack_50 \u003d 0;\r\n  FUN_180023180(\u0026uStack_50,param_1 + 0x138,0,0xffffffffffffffff);\r\n  uVar3 \u003d FUN_18004cf40(auStack_30,\u0026uStack_50,\u0026UNK_18030be38);\r\n  _LoadDatabase_Engine_GAME__AEAA_NAEBV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std___Z\r\n            (param_1,uVar3);\r\n  if (0xf \u003c uStack_18) {\r\n    FUN_180023090(auStack_30[0],uStack_18 + 1,1);\r\n  }\r\n  if (*(char *)(param_1 + 0xc25) !\u003d \u0027\\0\u0027) {\r\n    uVar3 \u003d FUN_18004cf40(auStack_30,\u0026uStack_50,\u0026UNK_18030bee0);\r\n    _LoadDatabase_Engine_GAME__AEAA_NAEBV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std___Z\r\n              (param_1,uVar3);\r\n    if (0xf \u003c uStack_18) {\r\n      FUN_180023090(auStack_30[0],uStack_18 + 1,1);\r\n    }\r\n  }\r\n  if (*(char *)(param_1 + 0xc26) !\u003d \u0027\\0\u0027) {\r\n    uVar3 \u003d FUN_18004cf40(auStack_30,\u0026uStack_50,\u0026UNK_18030bef8);\r\n    _LoadDatabase_Engine_GAME__AEAA_NAEBV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std___Z\r\n              (param_1,uVar3);\r\n    if (0xf \u003c uStack_18) {\r\n      FUN_180023090(auStack_30[0],uStack_18 + 1,1);\r\n    }\r\n  }\r\n  if (*(char *)(param_1 + 0xc27) !\u003d \u0027\\0\u0027) {\r\n    uVar3 \u003d FUN_18004cf40(auStack_30,\u0026uStack_50,\u0026UNK_18030beb0);\r\n    _LoadDatabase_Engine_GAME__AEAA_NAEBV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std___Z\r\n              (param_1,uVar3);\r\n    if (0xf \u003c uStack_18) {\r\n      FUN_180023090(auStack_30[0],uStack_18 + 1,1);\r\n    }\r\n  }\r\n  if (*(char *)(param_1 + 0xc21) !\u003d \u0027\\0\u0027) {\r\n    uVar3 \u003d FUN_18004cf40(auStack_30,\u0026uStack_50,\u0026UNK_18030bec8);\r\n    _LoadDatabase_Engine_GAME__AEAA_NAEBV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std___Z\r\n              (param_1,uVar3);\r\n    if (0xf \u003c uStack_18) {\r\n      FUN_180023090(auStack_30[0],uStack_18 + 1,1);\r\n    }\r\n  }\r\n  *(undefined4 *)(param_1 + 0xba8) \u003d *(undefined4 *)(*(longlong *)(param_1 + 0x3d0) + 0x10);\r\n  if (0xf \u003c uStack_38) {\r\n    FUN_180023090(CONCAT71(uStack_4f,uStack_50),uStack_38 + 1,1);\r\n  }\r\n  return;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "allocation_helper",
+    "start": "1802dc398",
+    "end": "1802dc3d3",
+    "bytesBudget": 60,
+    "function": "FUN_1802dc398",
+    "instructions": [
+      "1802dc398 PUSH RBX",
+      "1802dc39a SUB RSP,0x20",
+      "1802dc39e MOV RBX,RCX",
+      "1802dc3a1 JMP 0x1802dc3c4",
+      "1802dc3a3 MOV RCX,RBX",
+      "1802dc3a6 CALL 0x1802ddb7a",
+      "1802dc3ab TEST EAX,EAX",
+      "1802dc3ad JNZ 0x1802dc3c1",
+      "1802dc3af CMP RBX,-0x1",
+      "1802dc3b3 JNZ 0x1802dc3bc",
+      "1802dc3b5 CALL 0x1802dd600",
+      "1802dc3ba JMP 0x1802dc3c1",
+      "1802dc3bc CALL 0x1802dd5e0",
+      "1802dc3c1 MOV RCX,RBX",
+      "1802dc3c4 CALL 0x1802ddb38",
+      "1802dc3c9 TEST RAX,RAX",
+      "1802dc3cc JZ 0x1802dc3a3",
+      "1802dc3ce ADD RSP,0x20",
+      "1802dc3d2 POP RBX",
+      "1802dc3d3 RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "1802dc3a1",
+        "to": "1802dc3c4",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_1802dc3c4"
+      },
+      {
+        "from": "1802dc3a6",
+        "to": "1802ddb7a",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1802ddb7a"
+      },
+      {
+        "from": "1802dc3ad",
+        "to": "1802dc3c1",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1802dc3c1"
+      },
+      {
+        "from": "1802dc3b3",
+        "to": "1802dc3bc",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1802dc3bc"
+      },
+      {
+        "from": "1802dc3b5",
+        "to": "1802dd600",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_1802dd600"
+      },
+      {
+        "from": "1802dc3ba",
+        "to": "1802dc3c1",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_1802dc3c1"
+      },
+      {
+        "from": "1802dc3bc",
+        "to": "1802dd5e0",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_1802dd5e0"
+      },
+      {
+        "from": "1802dc3c4",
+        "to": "1802ddb38",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1802ddb38"
+      },
+      {
+        "from": "1802dc3cc",
+        "to": "1802dc3a3",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1802dc3a3"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nvoid FUN_1802dc398(longlong param_1)\r\n\r\n{\r\n  longlong lVar1;\r\n  int iVar2;\r\n  \r\n  while (lVar1 \u003d FUN_1802ddb38(param_1), lVar1 \u003d\u003d 0) {\r\n    iVar2 \u003d FUN_1802ddb7a(param_1);\r\n    if (iVar2 \u003d\u003d 0) {\r\n      if (param_1 \u003d\u003d -1) {\r\n        FUN_1802dd600();\r\n      }\r\n      else {\r\n        FUN_1802dd5e0();\r\n      }\r\n    }\r\n  }\r\n  return;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  }
+]

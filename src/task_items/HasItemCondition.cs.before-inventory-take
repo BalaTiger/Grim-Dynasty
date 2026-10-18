@@ -1,0 +1,39 @@
+using System;
+using GrimDynasty.Conditions;
+using GrimDynasty.TaskLogic;
+using GrimDynasty.TokenActions;
+using GrimDynasty.TaskAuto;
+namespace GrimDynasty.TaskItems {
+ public sealed class ItemEventBody {public uint PlayerId,ItemObjectId;}
+ public sealed class HasItemCondition : IConditionRuntime {
+  readonly int version,comparison;readonly uint required;readonly bool complete;readonly string query;readonly OfflineEvents bus;readonly ItemWorld stock;
+  readonly OfflineHandler h16,h17;
+  public byte ChangedByte14 {get;set;}
+  public byte TextByte15 {get;private set;}
+  public bool Owner16Attached {get;private set;}
+  public bool Owner17Attached {get;private set;}
+  public bool PureLocalizationContextKnown;
+  public int? SystemTimeSnapshot;public int LastDisplayTick,DisplayDelay=4000;
+  public OfflineEvents EventManager {get{return bus;}}
+  HasItemCondition(int v,int cmp,uint target,bool flag,string name,OfflineEvents events,ItemWorld world){version=v;comparison=cmp;required=target;complete=v==0?true:flag;query=name;bus=events;stock=world;h16=new OfflineHandler{TryInvoke=e=>Receive(e==null?null:e.Body as ItemEventBody,16)};h17=new OfflineHandler{TryInvoke=e=>Receive(e==null?null:e.Body as ItemEventBody,17)};}
+  static MutationResult U(string s){return MutationResult.Unsupported(s);}
+  public static MutationResult Create(int v,int cmp,uint target,bool flag,string name,OfflineEvents events,ItemWorld stock,out HasItemCondition c){c=null;if(v!=0&&v!=1)return U("HasItemVersion:"+v);if(!ItemCountQuery.Ascii(name))return U("ItemQueryOutsideAsciiDomain");c=new HasItemCondition(v,cmp,target,flag,name,events,stock);return MutationResult.Known(true);}
+  public bool Matches(Predicate p){return p!=null&&p.TypeId==9&&p.Version==version&&p.ComparisonId==comparison&&p.Value==required;}
+  public EvaluationResult Evaluate(World world){
+   if(world==null||!world.MainPlayerResolved)return EvaluationResult.Unsupported("UnresolvedMainPlayerForItemQuery");var count=ItemCountQuery.CountForHasItem(stock,query,complete);if(count.Status!="Known")return EvaluationResult.Unsupported(count.Reason);int a=count.Count.Value,b=unchecked((int)required);bool value;
+   switch(comparison){case 0:value=a<b;break;case 1:value=a<=b;break;case 2:value=a==b;break;case 3:value=a>=b;break;case 4:value=a>b;break;case 5:value=a!=b;break;default:return EvaluationResult.Unsupported("Comparison:"+comparison);}return EvaluationResult.Known(value);
+  }
+  public MutationResult CheckStart(){if(bus==null)return U("UnknownEventManager");return bus.ContainsRow(16).HasValue&&bus.ContainsRow(17).HasValue?MutationResult.Known(false):U("IncompleteEventIndex");}
+  public MutationResult Start(){var check=CheckStart();if(check.Status!="Known")return check;bool changed=!Owner16Attached||!Owner17Attached;Owner16Attached=true;var a=bus.Register(16,h16);Owner17Attached=true;var b=bus.Register(17,h17);if(a.Status!="Known"||b.Status!="Known")throw new InvalidOperationException("Validated registration changed");return MutationResult.Known(changed||a.Changed.Value||b.Changed.Value);}
+  public MutationResult CheckEnd(){return CheckStart();}
+  public MutationResult End(){var check=CheckEnd();if(check.Status!="Known")return check;bool changed=Owner16Attached||Owner17Attached;var a=bus.UnRegister(16,h16);Owner16Attached=false;var b=bus.UnRegister(17,h17);Owner17Attached=false;if(a.Status!="Known"||b.Status!="Known")throw new InvalidOperationException("Validated registration changed");return MutationResult.Known(changed||a.Changed.Value||b.Changed.Value);}
+  public MutationResult CheckReset(){return MutationResult.Known(false);}
+  public MutationResult Reset(){return MutationResult.Known(false);}
+  public MutationResult CheckOnChangedNoDisplay(){if(TextByte15==0)return MutationResult.Known(false);if(!PureLocalizationContextKnown)return U("UnknownPureLocalizationInputs");if(!SystemTimeSnapshot.HasValue)return U("UnknownSystemTimeSnapshot");return DisplayDelay<unchecked(SystemTimeSnapshot.Value-LastDisplayTick)?U("CinematicTextDisplayNotRecovered"):MutationResult.Known(false);}
+  public MutationResult Receive(ItemEventBody e,uint route){
+   if((route==16&&!Owner16Attached)||(route==17&&!Owner17Attached)||(route!=16&&route!=17))return U("InvalidItemCallbackOwnerDomain");if(stock==null||!stock.ClientPlayerId.HasValue||e==null)return U("UnknownItemEventContext");if(e.PlayerId!=stock.ClientPlayerId.Value)return MutationResult.Known(false);
+   ItemObject item;if(!stock.Lookup(e.ItemObjectId,out item))return U("UnknownEventItemObject");if(item==null)return MutationResult.Known(false);if(item.Kind==ItemObjectKind.Unknown)return U("UnknownEventItemRtti");if(item.Kind!=ItemObjectKind.Item)return MutationResult.Known(false);
+   var match=ItemCountQuery.Match(item.ObjectName,query,false,true,stock.AsciiCLocaleKnown);if(match.Status!="Known")return U(match.Reason);if(!match.Value.Value)return MutationResult.Known(false);bool changed=ChangedByte14!=1||TextByte15!=1;ChangedByte14=1;TextByte15=1;return MutationResult.Known(changed);
+  }
+ }
+}

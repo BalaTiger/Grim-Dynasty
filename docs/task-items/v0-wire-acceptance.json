@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "case": "v0-no-bool",
+      "next_condition_type": 4,
+      "typed_parameters": {
+        "dbr": "records/items/quest/test.dbr",
+        "count": 3
+      },
+      "python_compiled_match": true
+    },
+    {
+      "case": "v1-false",
+      "next_condition_type": 4,
+      "typed_parameters": {
+        "dbr": "records/items/quest/test.dbr",
+        "count": 3,
+        "complete": false
+      },
+      "python_compiled_match": true
+    },
+    {
+      "case": "v1-true",
+      "next_condition_type": 4,
+      "typed_parameters": {
+        "dbr": "records/items/quest/test.dbr",
+        "count": 3,
+        "complete": true
+      },
+      "python_compiled_match": true
+    }
+  ],
+  "source": "Native HasItem Read0x180470220 checks stored version==1 before bool; hand-built bytes independent of parser"
+}

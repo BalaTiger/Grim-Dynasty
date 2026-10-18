@@ -1,0 +1,41 @@
+# Formula-driven main-player level-up
+
+The own runtime now closes a main-player level-up through an original quest scenario. `LevelUpQuestDemo.exe` consumes two explicitly supplied kill events, completes its task, evaluates the parsed own equation `(playerLevel*100)`, and changes level 1→2, experience 50→125, skill points 0→3, attribute points 0→1, and mastery availability 0→1. It generates skill/level notifications in order, refreshes the level-query projection to 2, queues the Chinese cinematic message, records the reward task UID and unregisters the kill condition.
+
+The guarded complete build passed **624 fixed assertions and eight original standalone scenarios**, comprising the previous 563 plus 31 level-up/display assertions and 30 equation assertions. The package still contains ten own managed DLLs; no original DLL is loaded or shipped. `acceptance-levelup.json` stores the actual new scenario output, package manifest, current source/evidence hashes and unchanged original-file hashes.
+
+## Evidence and Rea execution
+
+Seven new Game.dll queries and three Engine.dll queries completed successfully through the already installed Rea 6.5.0. Their raw results and caveats are retained in `rea-levelup/` and `rea-level-display/`. Game queries cover pet/mastery updates, current/previous level threshold helpers, increment assembly, the level-data loader and formula parse entry. Engine queries cover ShowCinematicText pseudo-code/assembly and its record copy function.
+
+An initial launch was **denied before execution** by automatic approval review because `npx -y` could download third-party code. We read-checked the existing 6.5.0 cache against the previously SHA512-verified package: all 1650 files matched. We then changed only the local script invocation to `npx --offline --no rea-agents@6.5.0 mcp`; approval accepted the retry and the static sessions completed. No software or new persistent MCP permission was installed. `rea-offline-launch-check.json` records this resolved approval event. The global MCP configuration was not edited.
+
+Seven additional Game operator candidates were appended to the plan after that Rea session had already closed. They have no Rea responses and are **not counted as successful Rea queries**. Their observed entries, additional arithmetic/binding routines and the playerLevel resolver were inspected using the existing cached Ghidra project; the exports explicitly label that provenance.
+
+## Level progression semantics
+
+The implemented increment helper at Game.dll `0x18028e990` adds experience with 32-bit wrap, writes the signed clamped equation input, checks the threshold and may repeat level increments. Each increment wraps the attribute-point addition, selects skill points with unsigned `newLevel - 2` capped to the final schedule index, adds them with signed wrap and clamps negative skill-point totals to zero. A positive scheduled grant emits event 0x31 even if overflow subsequently clamps the total to zero. A negative grant emits no such event. The level-0→1 index underflow case is tested.
+
+At maximum level, the native helper rewrites experience to the previous-level threshold and writes the corresponding equation input; it does not merely retain overshoot. Lifetime experience still receives the entire award. Both already-capped and cap-reaching paths are implemented. Arithmetic uses the finite threshold domain already declared for the earlier experience module.
+
+When one or more levels were gained, Character::ReceiveExperience sets +0x1699, updates pets/masteries, emits one 0x30 event and increments raw +0x17F0 once per receive, regardless of how many levels were crossed. MasteriesAllowed advances at most once in its separate call, using its next nonzero threshold. The three pet vectors must be known empty. The engine service callback at +0x19B0 must be absent, or its engine-initialized gate must be false. Main-player sound must be known absent and the particle-effect name must be empty. These conditions preserve the actual no-call branches rather than dropping unresolved effects.
+
+Events 0x31 and 0x30 carry player object ID at +4. Known empty subscriber routes are supported; nonempty or partial subscribers return Unsupported before committing progression. Main-player crossings through level 10 remain Unsupported because that branch calls the unrecovered tutorial-page unlock. A non-main level-10 path is tested separately and does not invent the main-player tutorial/cinematic effects.
+
+ExperienceCompletion still preflights its complete ordered action sequence. Failed thresholds, subscribers, effects, callbacks or localization inputs preserve task state, cold caches, points, histories and queue contents. Its main-player level getter snapshot is refreshed after successful execution so the existing IsLevel query sees the new level. This refresh is a projection from the authoritative own actor field, not an invented native memory field.
+
+## Cinematic display data model
+
+Engine::ShowCinematicText at `0x180075E90` copies two UTF-16 strings, a type and four raw color words into its logical deque. `true` inserts at the front; `false` appends. Its record copy routine at `0x18007C2F0` confirms fields at +0, +0x20, +0x40 and +0x44…+0x50. `CinematicTextQueue.cs` restores that value/order behavior, including color-copy independence and embedded NULs for direct string inputs. Native ring-buffer allocation, deallocation, renderer consumption, timing and pixels are not implemented or claimed equivalent.
+
+The level-up caller builds its strings from localization C-string results, so that adapter truncates at the first UTF-16 NUL before calling the queue. It uses type 5, four `0x3F800000` color words and back insertion. The localized title and fully formatted reached-level text remain explicit result snapshots from the content provider; the native formatting engine is not claimed recovered. The original scenario supplies original Chinese text. Missing results or an unknown queue reject before level writes.
+
+## Formula interpreter subset and remaining numeric gap
+
+The formula loader at Game.dll `0x18028E1D0` reads `experienceLevelEquation` and calls the parser at `0x18003F0E0`. Its variable node resolves through the supplied resolver. The level-control resolver at `0x18028EC00` compares `playerLevel` case-insensitively and converts the **unsigned** bits at input +0x28 to float. Its other `charLevel` branch requires further game/player context and remains Unsupported.
+
+`ArithmeticEquation.cs` restores a deliberately bounded, proved subset: fully parenthesized binary `+`, `-`, `*`, `/`, grouping, ASCII-case-insensitive playerLevel, and exact nonnegative integer literals/input values through 2^24. The node and constant-folding implementations use ADDSS/SUBSS/MULSS/DIVSS with the observed operand order. Each own node rounds to single precision. Nonfinite and subnormal results are excluded; source/depth bounds and explicit Unsupported results keep uncovered syntax separate from native syntax errors. This is verified in the selected Windows x64 environment, not a blanket cross-runtime floating-point claim.
+
+The native exponent node tail-jumps to **powf**, not a double Math.Pow followed by a float cast. Bit-level agreement near float and threshold-rounding boundaries has not been established; no replacement was enabled. Decimal token conversion goes through atof and has not been ported either. Consequently the official player-level equation containing exponentiation and decimals is still **Unsupported by this interpreter**. The demo equation is original fixture content and is not a changed or purportedly evaluated original game curve. A faithful CRT math/conversion recovery or a separately authorized native conformance oracle is needed before widening that domain; no original process was run to resolve it.
+
+The broader original game, nonempty pets/devotion skill experience, service/audio/particle hooks, tutorial unlock, rendering, network transport and save mechanisms remain outside this increment. Existing protected 0x32/0x3F subscriber boundaries are unchanged. No protected code was unpacked, original installation modified, save accessed, system setting changed, software installed, commit created or publication performed.

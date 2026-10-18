@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.TokenActions;
+namespace GrimDynasty.TaskAuto {
+ public sealed class QuestEvent {
+  public uint Kind,QuestUid,TaskUid;
+  public byte FlagC,FlagD,FlagE;
+  public object Body;
+ }
+ public sealed class OfflineHandler {
+  // Supplied handler implementation is an explicit contract. Native game
+  // handler bodies are not recovered merely by registering a delegate.
+  public Action<QuestEvent> Invoke;
+  public Func<QuestEvent,MutationResult> TryInvoke;
+ }
+ public sealed class DispatchResult {
+  public string Status,Reason;public int Delivered;
+  public bool PartialEffects {get{return Status!="Known"&&Delivered!=0;}}
+  public static DispatchResult Known(int n){return new DispatchResult{Status="Known",Delivered=n};}
+  public static DispatchResult Unsupported(string reason,int n){return new DispatchResult{Status="Unsupported",Reason=reason,Delivered=n};}
+ }
+ public sealed class OfflineEvents {
+  readonly object gate=new object();
+  readonly Dictionary<uint,List<OfflineHandler>> routes=new Dictionary<uint,List<OfflineHandler>>();
+  public bool IndexComplete;public bool? DebugEnabled;
+  public OfflineEvents(bool complete){IndexComplete=complete;}
+  public bool? ContainsRow(uint id){lock(gate){return routes.ContainsKey(id)?true:IndexComplete?(bool?)false:null;}}
+  public MutationResult Register(uint id,OfflineHandler handler){lock(gate){
+   if(handler==null)return MutationResult.Unsupported("InvalidHandlerPointerDomain");List<OfflineHandler> list;
+   if(!routes.TryGetValue(id,out list)){if(!IndexComplete)return MutationResult.Unsupported("IncompleteEventIndex");list=new List<OfflineHandler>();routes.Add(id,list);}
+   foreach(var h in list)if(Object.ReferenceEquals(h,handler))return MutationResult.Known(false);
+   list.Add(handler);return MutationResult.Known(true);
+  }}
+  public MutationResult UnRegister(uint id,OfflineHandler handler){lock(gate){
+   if(handler==null)return MutationResult.Unsupported("InvalidHandlerPointerDomain");List<OfflineHandler> list;
+   if(!routes.TryGetValue(id,out list)){if(!IndexComplete)return MutationResult.Unsupported("IncompleteEventIndex");routes.Add(id,new List<OfflineHandler>());return MutationResult.Known(true);}
+   for(int i=0;i<list.Count;i++)if(Object.ReferenceEquals(list[i],handler)){list.RemoveAt(i);return MutationResult.Known(true);}return MutationResult.Known(false);
+  }}
+  public MutationResult CheckEmpty(uint id){lock(gate){List<OfflineHandler> list;
+   if(!routes.TryGetValue(id,out list))return IndexComplete?MutationResult.Known(false):MutationResult.Unsupported("IncompleteEventIndex");
+   if(DebugEnabled!=false)return MutationResult.Unsupported("EventDebugLoggingNotRecovered");
+   return list.Count==0?MutationResult.Known(false):MutationResult.Unsupported("NonemptyEventSubscriberContext");
+  }}
+  public DispatchResult Send(QuestEvent payload,uint route){lock(gate){List<OfflineHandler> list;
+   if(!routes.TryGetValue(route,out list))return IndexComplete?DispatchResult.Known(0):DispatchResult.Unsupported("IncompleteEventIndex",0);
+   if(DebugEnabled!=false)return DispatchResult.Unsupported("EventDebugLoggingNotRecovered",0);
+   int delivered=0;
+   // Native rechecks the live vector bound after every invocation. Register/
+   // UnRegister callbacks are reentrant and can change this same vector.
+   for(int i=0;i<list.Count;i++){
+    if(delivered>=4096)return DispatchResult.Unsupported("DeliveryBudgetOutsideCoveredDomain",delivered);
+    var h=list[i];if(h==null||(h.Invoke==null&&h.TryInvoke==null))return DispatchResult.Unsupported("UnrestoredHandlerImplementation",delivered);
+    if(h.TryInvoke!=null){var result=h.TryInvoke(payload);if(result==null||result.Status!="Known")return DispatchResult.Unsupported(result==null?"UnknownHandlerOutcome":result.Reason,delivered);}
+    else h.Invoke(payload);delivered++;
+   }return DispatchResult.Known(delivered);
+  }}
+ }
+}

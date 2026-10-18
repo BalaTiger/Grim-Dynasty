@@ -1,0 +1,111 @@
+{
+  "status": "passed",
+  "tests": [
+    {
+      "name": "arz-zero-array-float",
+      "expected": "accept",
+      "exit_code": 0,
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "arz-unicode-string",
+      "expected": "accept",
+      "exit_code": 0,
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "arz-invalid-type",
+      "expected": "reject",
+      "exit_code": 2,
+      "passed": true,
+      "error": "InvalidDataException: unknown ARZ field type"
+    },
+    {
+      "name": "arz-invalid-string-index",
+      "expected": "reject",
+      "exit_code": 2,
+      "passed": true,
+      "error": "InvalidDataException: ARZ string index"
+    },
+    {
+      "name": "arz-truncated-table",
+      "expected": "reject",
+      "exit_code": 2,
+      "passed": true,
+      "error": "InvalidDataException: resource extent outside file"
+    },
+    {
+      "name": "arz-overflow-extent",
+      "expected": "reject",
+      "exit_code": 2,
+      "passed": true,
+      "error": "InvalidDataException: resource extent outside file"
+    },
+    {
+      "name": "arz-record-count-limit",
+      "expected": "reject",
+      "exit_code": 2,
+      "passed": true,
+      "error": "InvalidDataException: ARZ record limit"
+    },
+    {
+      "name": "arz-unsupported-version",
+      "expected": "reject",
+      "exit_code": 2,
+      "passed": true,
+      "error": "InvalidDataException: unsupported ARZ marker/version"
+    },
+    {
+      "name": "arc-raw-member",
+      "expected": "accept",
+      "exit_code": 0,
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "arc-mixed-parts",
+      "expected": "accept",
+      "exit_code": 0,
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "arc-wrong-adler32",
+      "expected": "reject",
+      "exit_code": 2,
+      "passed": true,
+      "error": "InvalidDataException: ARC decoded size/checksum"
+    },
+    {
+      "name": "arc-truncated-entry",
+      "expected": "reject",
+      "exit_code": 2,
+      "passed": true,
+      "error": "InvalidDataException: resource extent outside file"
+    },
+    {
+      "name": "arc-invalid-part-table-size",
+      "expected": "reject",
+      "exit_code": 2,
+      "passed": true,
+      "error": "InvalidDataException: ARC count/part size limit"
+    },
+    {
+      "name": "arc-invalid-name-extent",
+      "expected": "reject",
+      "exit_code": 2,
+      "passed": true,
+      "error": "InvalidDataException: ARC entry bounds"
+    },
+    {
+      "name": "production-path-whitelist",
+      "expected": "reject before opening",
+      "exit_code": 2,
+      "passed": true
+    }
+  ],
+  "count": 15,
+  "fixture_provenance": "own synthetic data; no original resources or saves embedded"
+}

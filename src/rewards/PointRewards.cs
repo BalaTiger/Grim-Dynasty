@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.TokenActions;
+using GrimDynasty.TaskAuto;
+namespace GrimDynasty.Rewards {
+ public sealed class PointActor {
+  public bool? MainPlayerResolved;
+  public uint? Difficulty, ObjectId;
+  public byte? Flags17F4;
+  public int? Skill176C, Attribute1768;
+  public uint? Tribute16C8;
+  public bool StaticSkillNameReady;
+  public NameCacheSnapshot SkillNameCache;
+  public OfflineEvents Events;
+  public readonly List<QuestEvent> Produced = new List<QuestEvent>();
+ }
+ public sealed class PointAction {
+  public int Version;
+  public uint OriginalAmount, CurrentAmount;
+  public bool Attribute;
+ }
+ public static class PointRewards {
+  // Both point-action Read functions set +10 and +14. ModifyValue always
+  // multiplies the original +14 value; the current value is not compounded.
+  public static MutationResult Modify(PointAction a,uint multiplier) {
+   if(a==null||a.Version!=0)return MutationResult.Unsupported("UnknownPointActionVersion");
+   uint next=unchecked(a.OriginalAmount*multiplier);bool changed=next!=a.CurrentAmount;a.CurrentAmount=next;return MutationResult.Known(changed);
+  }
+  public static MutationResult Execute(PointAction a,PointActor p) {
+   if(a==null||a.Version!=0)return MutationResult.Unsupported("UnknownPointActionVersion");
+   if(p==null)return MutationResult.Unsupported("UnknownPointActor");
+   bool initialized=false;if(!a.Attribute&&!p.StaticSkillNameReady){if(p.SkillNameCache==null)return MutationResult.Unsupported("StaticSkillNameInitializationNotRecovered");var init=p.SkillNameCache.EnsureHeadEffect();if(init.Status!="Known")return init;initialized=init.Changed.Value;}
+   if(!p.MainPlayerResolved.HasValue)return MutationResult.Unsupported("UnknownRewardMainPlayer");
+   if(!p.MainPlayerResolved.Value)return MutationResult.Known(initialized);
+   if(!p.Difficulty.HasValue)return MutationResult.Unsupported("UnknownPointDifficulty");
+   uint d=p.Difficulty.Value;
+   if(d==0||d==1){if(!p.Flags17F4.HasValue)return MutationResult.Unsupported("UnknownPointProfileFlags");if((p.Flags17F4.Value&(d==0?1:2))!=0)return MutationResult.Known(initialized);}
+   if(a.Attribute){
+    if(!p.Attribute1768.HasValue||!p.ObjectId.HasValue||p.Events==null)return MutationResult.Unsupported("UnknownAttributeNotificationContext");
+    var empty=p.Events.CheckEmpty(0x32);if(empty.Status!="Known")return empty;
+    int old=p.Attribute1768.Value,next=unchecked(old+(int)a.CurrentAmount);
+    p.Attribute1768=next;
+    var e=new QuestEvent{Kind=0x32,Body=new AttributePointNotification{PlayerObjectId=p.ObjectId.Value}};
+    p.Produced.Add(e);var sent=p.Events.Send(e,0x32);
+    if(sent.Status!="Known")return MutationResult.Unsupported(sent.Reason);
+    return MutationResult.Known(true); // The event is produced even for zero.
+   }
+   if(!p.Skill176C.HasValue)return MutationResult.Unsupported("UnknownSkillPointValue");
+   int before=p.Skill176C.Value,sum=unchecked(before+(int)a.CurrentAmount),after=sum<0?0:sum;
+   p.Skill176C=after;return MutationResult.Known(before!=after||initialized);
+  }
+ }
+ public sealed class AttributePointNotification {public uint PlayerObjectId;}
+}

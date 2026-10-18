@@ -1,0 +1,146 @@
+{
+  "scope": "Static partial order, not a runnable recipe",
+  "goNoGo": "NO-GO for executing a new host with original runtime under present constraints",
+  "steps": [
+    {
+      "step": 1,
+      "stage": "宿主入口与全局启动顺序",
+      "status": "unknown",
+      "evidence": "main-entry-metadata.json + main imports",
+      "known": "主EXE导入Engine构造/Initialize、InitializeObjects、Lua阶段等；入口RVA0x448310处于.bind；有限FF15/FF25搜索无匹配目标",
+      "missing": "原宿主引导与平台入口契约；不解析或绕过入口层"
+    },
+    {
+      "step": 2,
+      "stage": "Engine对象构造",
+      "status": "observed-local",
+      "evidence": "Engine 0x180072930",
+      "known": "虚表、字符串/容器、临界区、计时器、Display/GameInfo、分配及线程ID相关初始化",
+      "missing": "完整对象分配大小、全局gEngine赋值及跨模块初始化顺序"
+    },
+    {
+      "step": 3,
+      "stage": "FileSystem归档源注册",
+      "status": "observed-routine; startup placement unknown",
+      "evidence": "Engine 0x1800869d0",
+      "known": "分配0x90→FileSourceArchive构造→Attach→成功加入partition容器/失败虚表清理形态调用",
+      "missing": "partition枚举、源优先级、完整所有权/销毁及调用方安排"
+    },
+    {
+      "step": 4,
+      "stage": "Engine::Initialize正常后续路径",
+      "status": "observed-local",
+      "evidence": "Engine 0x1800743d0",
+      "known": "保存FileSystem/标志→日志与线程操作→Options/本地化→图形CreateDevice→LoadMainDatabase→ResourceLoader/StartThreads→资源管理器与其余子系统",
+      "missing": "参数类型完整定义、错误回滚、可选无窗口模式及主宿主调用位置"
+    },
+    {
+      "step": 5,
+      "stage": "主数据库加载",
+      "status": "observed-local",
+      "evidence": "Engine 0x180073a60",
+      "known": "清缓存/替换数据库对象→base→有条件gdx1→gdx2→gdx3→mods路径",
+      "missing": "LoadDatabase的冲突覆盖/格式与失败策略；原mods路径仅观察非交付路线"
+    },
+    {
+      "step": 6,
+      "stage": "Game对象创建",
+      "status": "observed-direct entry; placement unknown",
+      "evidence": "Game 0x18036b240",
+      "known": "调用分配helper(0x37868)→GameEngine构造→写gGameEngine→尾跳GameEngine::Initialize",
+      "missing": "5KiB构造器与GameEngine::Initialize完整语义、相对Engine初始化的先后"
+    },
+    {
+      "step": 7,
+      "stage": "Lua后初始化",
+      "status": "observed precondition; global placement unknown",
+      "evidence": "Game 0x1802f3450",
+      "known": "读取全局gEngine的LuaManager→GetState→QuestEventDispatch常量相关辅助调用",
+      "missing": "Lua状态创建/脚本加载步骤和函数值类型契约"
+    },
+    {
+      "step": 8,
+      "stage": "退出与销毁",
+      "status": "incomplete",
+      "evidence": "Game 0x18036b270 + shutdown imports",
+      "known": "ShutdownObjects入口检查gGameEngine；展开伪代码显示更多清理形态但超出所选入口unwind区间",
+      "missing": "线程join、Lua预关闭、游戏销毁、文件系统/平台退出的完整次序和跨模块释放契约"
+    }
+  ],
+  "functions": [
+    {
+      "module": "x64/Engine.dll",
+      "address": "180072930",
+      "label": "??0Engine@GAME@@QEAA@XZ",
+      "explicitUnwindOrLeafRegionBytes": 1579,
+      "evidenceFile": "Engine-function-evidence-bounded-v2.json"
+    },
+    {
+      "module": "x64/Engine.dll",
+      "address": "1800869d0",
+      "label": "?AddSourceArchive@FileSystem@GAME@@QEAA_NW4Partition@12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD_N@Z",
+      "explicitUnwindOrLeafRegionBytes": 274,
+      "evidenceFile": "Engine-function-evidence-bounded-v2.json"
+    },
+    {
+      "module": "x64/Engine.dll",
+      "address": "1800743d0",
+      "label": "?Initialize@Engine@GAME@@UEAAXPEAVEWindow@2@AEBVGraphicsEngineSettings@2@_NPEAVFileSystem@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N54555@Z",
+      "explicitUnwindOrLeafRegionBytes": 3049,
+      "evidenceFile": "Engine-function-evidence-bounded-v2.json"
+    },
+    {
+      "module": "x64/Game.dll",
+      "address": "1802f3450",
+      "label": "?PostLuaInitialize@GameEngine@GAME@@QEAAXXZ",
+      "explicitUnwindOrLeafRegionBytes": 101,
+      "evidenceFile": "Game-function-evidence-bounded-v2.json"
+    },
+    {
+      "module": "x64/Game.dll",
+      "address": "18036b240",
+      "label": "InitializeObjects",
+      "explicitUnwindOrLeafRegionBytes": 47,
+      "evidenceFile": "Game-function-evidence-bounded-v2.json"
+    },
+    {
+      "module": "x64/Game.dll",
+      "address": "18036b270",
+      "label": "ShutdownObjects",
+      "explicitUnwindOrLeafRegionBytes": 16,
+      "evidenceFile": "Game-function-evidence-bounded-v2.json"
+    },
+    {
+      "module": "x64/Engine.dll",
+      "address": "180073a60",
+      "label": "?LoadMainDatabase@Engine@GAME@@AEAAXXZ",
+      "explicitUnwindOrLeafRegionBytes": 551,
+      "evidenceFile": "followup\\Engine-function-evidence-bounded-v2.json"
+    },
+    {
+      "module": "x64/Engine.dll",
+      "address": "1802dc398",
+      "label": "allocation_helper",
+      "explicitUnwindOrLeafRegionBytes": 60,
+      "evidenceFile": "followup\\Engine-function-evidence-bounded-v2.json"
+    }
+  ],
+  "explicitRegionBytes": 5677,
+  "integrity": [
+    {
+      "module": "x64/Grim Dawn.exe",
+      "sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+      "matchesInput": true
+    },
+    {
+      "module": "x64/Engine.dll",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "matchesInput": true
+    },
+    {
+      "module": "x64/Game.dll",
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "matchesInput": true
+    }
+  ]
+}

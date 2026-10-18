@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
+using GrimDynasty.Resources;
+using GrimDynasty.Quests;
+using GrimDynasty.TaskLogic;
+public static class TaskCatalogProbe {
+ public static int Main(string[] args){try{
+  if(args.Length!=1)throw new ArgumentException("TaskCatalogProbe <authorized Quests.arc>");
+  int quests=0,events=0,emptyEvents=0,leaves=0;var types=new Dictionary<int,int>();var contexts=new List<object>();
+  for(uint diff=0;diff<3;diff++){
+   int knownTrue=0,knownFalse=0,unsupported=0;var reasons=new Dictionary<string,int>();
+   var w=new World{MainPlayerResolved=true,Level=10,GameMode=0,QuestIndexComplete=true,RepositoryTokensComplete=true,ServerPlayerId=1,ServerServiceSlot18NonNull=false};w.Core.Difficulty=diff;w.Core.MainPlayerHardcoreByte=0;w.OtherModeTokens.Add(diff,new List<string>());w.ModeOneTokens.Add(diff,new List<string>());
+   using(var input=ResourceInput.OpenGameResource(args[0]))using(var arc=new ArcArchive(input))foreach(var entry in arc.Entries.Values){
+    var q=QuestDefinition.Read(arc.ReadMember(entry.name));if(diff==0)quests++;
+    foreach(Dictionary<string,object> task in (List<object>)q["tasks"])foreach(string key in new[]{"on_accept","objectives","on_complete"})foreach(Dictionary<string,object> node in (List<object>)task[key]){
+     var def=(Dictionary<string,object>)node["conditions"];var g=DefinitionAdapter.ReadGroup(def);
+     if(diff==0){if(key!="objectives"){events++;if(g==null)emptyEvents++;}foreach(Dictionary<string,object> row in (List<object>)def["conditions"]){int type=Convert.ToInt32(row["type_id"]);if(!types.ContainsKey(type))types.Add(type,0);types[type]++;leaves++;}}
+     // Event caller restored; objective callers need live task snapshots. We also
+     // measure direct nonempty collections without inferring objective state.
+     var r=key!="objectives"?Evaluator.EventGate(g,true,w):g==null?GrimDynasty.Conditions.EvaluationResult.Unsupported("ObjectiveCallerRequiresTaskSnapshot"):Evaluator.Collection(g,true,w);
+     if(r.Status=="Known"){if(r.Value.Value)knownTrue++;else knownFalse++;}else{unsupported++;if(!reasons.ContainsKey(r.Reason))reasons.Add(r.Reason,0);reasons[r.Reason]++;}
+    }
+   }
+   contexts.Add(new{difficulty=diff,known_true=knownTrue,known_false=knownFalse,unsupported,reasons});
+  }
+  if(quests!=247||events!=3340||leaves!=2435)throw new Exception("Official resource count changed");
+  Console.WriteLine(new JavaScriptSerializer{MaxJsonLength=1000000}.Serialize(new{status="passed",quests,events,empty_events=emptyEvents,condition_leaves=leaves,types,contexts,scope="Own DLLs only. Explicit synthetic level10, normal, no tokens and complete empty quest index; not original runtime state. Objective standalone null-pointer semantics intentionally not inferred."}));return 0;
+ }catch(Exception e){Console.Error.WriteLine(e);return 1;}}
+}

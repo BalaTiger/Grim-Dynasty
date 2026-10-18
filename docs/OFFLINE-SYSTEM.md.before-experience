@@ -1,0 +1,11 @@
+# 离线规则内核：构建与支持边界
+
+运行 `D:\MyGitRepo\Grim-Dynasty\tools\build_offline.ps1`，使用现有 Windows Framework 编译器构建10个自有 DLL 和6个独立场景程序，输出至 `.tooling/offline-system`。构建会校验已有输出归属、SHA256 与依赖，无需启动原版、安装 SDK 或联网。
+
+完整构建通过532条固定断言。新增 `AdjustedQuestDemo.exe` 展示：冷启动 Name 哈希初始化→两次显式击杀事件→任务自动完成→按难度、历史和玩家标志计算奖励倍数→余额50写为55、技能点4写为10、属性点3写为6→生产属性事件→记录奖励UID并注销处理器。贡品奖励及事件0x3F也已接入同一完成链。
+
+当前支持金额、技能点、属性点、贡品奖励，以及空条件或 IsDifficulty 条件集合的奖励调节。首次 Name 哈希已由 Rea 成功核实并实现。属性/贡品通知暂只支持已知空订阅列表；通用条件、经验、奉献显示、原版战斗/掉落事件生产、界面、地图、真实存档和网络仍有未恢复部分，未知上下文返回 Unsupported。
+
+示例击杀事件仍是显式输入，物品示例仍使用声明库存快照。静态证据与自有场景不是原版动态对照，也不代表完整游戏或明末可玩切片已完成。
+
+详见 [本轮奖励审计](rewards/ADJUSTED-COMPLETION.md)、`docs/rewards/acceptance-adjusted.json` 及包内 `manifest.json`。原版资源不随包发布；历史审计、验收与源码备份保留。

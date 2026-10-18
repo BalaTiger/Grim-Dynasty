@@ -1,0 +1,547 @@
+[
+  {
+    "label": "save_base_source",
+    "start": "180593560",
+    "end": "18059364f",
+    "bytesBudget": 240,
+    "function": "FUN_180593560",
+    "instructions": [
+      "180593560 MOV qword ptr [RSP + 0x8],RBX",
+      "180593565 MOV qword ptr [RSP + 0x10],RSI",
+      "18059356a PUSH RDI",
+      "18059356b SUB RSP,0x140",
+      "180593572 XOR EDI,EDI",
+      "180593574 LEA RDX,[RSP + 0x30]",
+      "180593579 MOV RBX,RCX",
+      "18059357c MOV dword ptr [RSP + 0x20],EDI",
+      "180593580 XOR R9D,R9D",
+      "180593583 XOR ECX,ECX",
+      "180593585 LEA R8D,[RDI + 0x5]",
+      "180593589 CALL qword ptr [0x18060b778]",
+      "18059358f OR RSI,-0x1",
+      "180593593 TEST EAX,EAX",
+      "180593595 JZ 0x1805935ae",
+      "180593597 LEA RCX,[RSP + 0x30]",
+      "18059359c MOV RAX,RSI",
+      "18059359f NOP",
+      "1805935a0 INC RAX",
+      "1805935a3 CMP byte ptr [RCX + RAX*0x1],DIL",
+      "1805935a7 JNZ 0x1805935a0",
+      "1805935a9 TEST RAX,RAX",
+      "1805935ac JNZ 0x1805935c2",
+      "1805935ae XOR R9D,R9D",
+      "1805935b1 LEA RDX,[RSP + 0x30]",
+      "1805935b6 XOR ECX,ECX",
+      "1805935b8 LEA R8D,[R9 + 0x5]",
+      "1805935bc CALL qword ptr [0x18060b778]",
+      "1805935c2 MOV qword ptr [RBX + 0x18],0xf",
+      "1805935ca MOV qword ptr [RBX + 0x10],RDI",
+      "1805935ce MOV byte ptr [RBX],DIL",
+      "1805935d1 CMP byte ptr [RSP + 0x30],DIL",
+      "1805935d6 JNZ 0x1805935dd",
+      "1805935d8 MOV RSI,RDI",
+      "1805935db JMP 0x1805935eb",
+      "1805935dd LEA RAX,[RSP + 0x30]",
+      "1805935e2 INC RSI",
+      "1805935e5 CMP byte ptr [RAX + RSI*0x1],DIL",
+      "1805935e9 JNZ 0x1805935e2",
+      "1805935eb MOV R8,RSI",
+      "1805935ee LEA RDX,[RSP + 0x30]",
+      "1805935f3 MOV RCX,RBX",
+      "1805935f6 CALL 0x180016460",
+      "1805935fb CMP qword ptr [RBX + 0x10],RDI",
+      "1805935ff JBE 0x180593638",
+      "180593601 MOV RAX,RDI",
+      "180593604 MOV RCX,qword ptr [RBX + 0x18]",
+      "180593608 CMP RCX,0x10",
+      "18059360c JC 0x180593613",
+      "18059360e MOV RDX,qword ptr [RBX]",
+      "180593611 JMP 0x180593616",
+      "180593613 MOV RDX,RBX",
+      "180593616 CMP byte ptr [RAX + RDX*0x1],0x2f",
+      "18059361a JNZ 0x18059362e",
+      "18059361c CMP RCX,0x10",
+      "180593620 JC 0x180593627",
+      "180593622 MOV RCX,qword ptr [RBX]",
+      "180593625 JMP 0x18059362a",
+      "180593627 MOV RCX,RBX",
+      "18059362a MOV byte ptr [RAX + RCX*0x1],0x5c",
+      "18059362e INC EDI",
+      "180593630 MOV EAX,EDI",
+      "180593632 CMP RAX,qword ptr [RBX + 0x10]",
+      "180593636 JC 0x180593604",
+      "180593638 LEA R11,[RSP + 0x140]",
+      "180593640 MOV RAX,RBX",
+      "180593643 MOV RBX,qword ptr [R11 + 0x10]",
+      "180593647 MOV RSI,qword ptr [R11 + 0x18]",
+      "18059364b MOV RSP,R11",
+      "18059364e POP RDI",
+      "18059364f RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "180593589",
+        "to": "18060b778",
+        "type": "READ",
+        "symbol": "PTR_SHGetSpecialFolderPathA_18060b778"
+      },
+      {
+        "from": "180593595",
+        "to": "1805935ae",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1805935ae"
+      },
+      {
+        "from": "1805935a7",
+        "to": "1805935a0",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1805935a0"
+      },
+      {
+        "from": "1805935ac",
+        "to": "1805935c2",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1805935c2"
+      },
+      {
+        "from": "1805935bc",
+        "to": "18060b778",
+        "type": "READ",
+        "symbol": "PTR_SHGetSpecialFolderPathA_18060b778"
+      },
+      {
+        "from": "1805935d6",
+        "to": "1805935dd",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1805935dd"
+      },
+      {
+        "from": "1805935db",
+        "to": "1805935eb",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_1805935eb"
+      },
+      {
+        "from": "1805935e9",
+        "to": "1805935e2",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1805935e2"
+      },
+      {
+        "from": "1805935f6",
+        "to": "180016460",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180016460"
+      },
+      {
+        "from": "1805935ff",
+        "to": "180593638",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180593638"
+      },
+      {
+        "from": "18059360c",
+        "to": "180593613",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180593613"
+      },
+      {
+        "from": "180593611",
+        "to": "180593616",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_180593616"
+      },
+      {
+        "from": "18059361a",
+        "to": "18059362e",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_18059362e"
+      },
+      {
+        "from": "180593620",
+        "to": "180593627",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180593627"
+      },
+      {
+        "from": "180593625",
+        "to": "18059362a",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_18059362a"
+      },
+      {
+        "from": "180593636",
+        "to": "180593604",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180593604"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nundefined8 * FUN_180593560(undefined8 *param_1)\r\n\r\n{\r\n  longlong lVar1;\r\n  ulonglong uVar2;\r\n  int iVar3;\r\n  longlong lVar4;\r\n  undefined8 *puVar6;\r\n  ulonglong uVar7;\r\n  ulonglong uVar8;\r\n  undefined4 uVar9;\r\n  char acStack_118 [272];\r\n  longlong lVar5;\r\n  \r\n  uVar8 \u003d 0;\r\n  uVar9 \u003d 0;\r\n  iVar3 \u003d SHGetSpecialFolderPathA(0,acStack_118,5,0,0);\r\n  if (iVar3 !\u003d 0) {\r\n    lVar5 \u003d -1;\r\n    do {\r\n      lVar4 \u003d lVar5 + 1;\r\n      lVar1 \u003d lVar5 + 1;\r\n      lVar5 \u003d lVar4;\r\n    } while (acStack_118[lVar1] !\u003d \u0027\\0\u0027);\r\n    if (lVar4 !\u003d 0) goto LAB_1805935c2;\r\n  }\r\n  SHGetSpecialFolderPathA(0,acStack_118,5,0,uVar9);\r\nLAB_1805935c2:\r\n  param_1[3] \u003d 0xf;\r\n  param_1[2] \u003d 0;\r\n  *(undefined1 *)param_1 \u003d 0;\r\n  uVar2 \u003d 0xffffffffffffffff;\r\n  uVar7 \u003d uVar8;\r\n  while (acStack_118[0] !\u003d \u0027\\0\u0027) {\r\n    uVar7 \u003d uVar2 + 1;\r\n    acStack_118[0] \u003d acStack_118[uVar2 + 1];\r\n    uVar2 \u003d uVar7;\r\n  }\r\n  FUN_180016460(param_1,acStack_118,uVar7);\r\n  if (param_1[2] !\u003d 0) {\r\n    do {\r\n      puVar6 \u003d param_1;\r\n      if (0xf \u003c (ulonglong)param_1[3]) {\r\n        puVar6 \u003d (undefined8 *)*param_1;\r\n      }\r\n      if (*(char *)(uVar8 + (longlong)puVar6) \u003d\u003d \u0027/\u0027) {\r\n        puVar6 \u003d param_1;\r\n        if (0xf \u003c (ulonglong)param_1[3]) {\r\n          puVar6 \u003d (undefined8 *)*param_1;\r\n        }\r\n        *(undefined1 *)(uVar8 + (longlong)puVar6) \u003d 0x5c;\r\n      }\r\n      uVar8 \u003d (ulonglong)((int)uVar8 + 1);\r\n    } while (uVar8 \u003c (ulonglong)param_1[2]);\r\n  }\r\n  return param_1;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "string_combine_A",
+    "start": "180301350",
+    "end": "1803013b1",
+    "bytesBudget": 98,
+    "function": "FUN_180301350",
+    "instructions": [
+      "180301350 PUSH RBX",
+      "180301352 SUB RSP,0x30",
+      "180301356 CMP byte ptr [R8],0x0",
+      "18030135a MOV RAX,R8",
+      "18030135d MOV R9,RDX",
+      "180301360 MOV dword ptr [RSP + 0x20],0x0",
+      "180301368 MOV RBX,RCX",
+      "18030136b JNZ 0x180301372",
+      "18030136d XOR R8D,R8D",
+      "180301370 JMP 0x180301380",
+      "180301372 OR R8,-0x1",
+      "180301376 INC R8",
+      "180301379 CMP byte ptr [RAX + R8*0x1],0x0",
+      "18030137e JNZ 0x180301376",
+      "180301380 MOV RDX,RAX",
+      "180301383 MOV RCX,R9",
+      "180301386 CALL 0x180089e10",
+      "18030138b MOV qword ptr [RBX + 0x18],0xf",
+      "180301393 MOV RDX,RAX",
+      "180301396 MOV qword ptr [RBX + 0x10],0x0",
+      "18030139e MOV RCX,RBX",
+      "1803013a1 MOV byte ptr [RBX],0x0",
+      "1803013a4 CALL 0x18001a3f0",
+      "1803013a9 MOV RAX,RBX",
+      "1803013ac ADD RSP,0x30",
+      "1803013b0 POP RBX",
+      "1803013b1 RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "18030136b",
+        "to": "180301372",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180301372"
+      },
+      {
+        "from": "180301370",
+        "to": "180301380",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_180301380"
+      },
+      {
+        "from": "18030137e",
+        "to": "180301376",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180301376"
+      },
+      {
+        "from": "180301386",
+        "to": "180089e10",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180089e10"
+      },
+      {
+        "from": "1803013a4",
+        "to": "18001a3f0",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_18001a3f0"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nundefined1 * FUN_180301350(undefined1 *param_1,undefined8 param_2,char *param_3)\r\n\r\n{\r\n  undefined8 uVar1;\r\n  longlong lVar2;\r\n  \r\n  if (*param_3 \u003d\u003d \u0027\\0\u0027) {\r\n    lVar2 \u003d 0;\r\n  }\r\n  else {\r\n    lVar2 \u003d -1;\r\n    do {\r\n      lVar2 \u003d lVar2 + 1;\r\n    } while (param_3[lVar2] !\u003d \u0027\\0\u0027);\r\n  }\r\n  uVar1 \u003d FUN_180089e10(param_2,param_3,lVar2,param_2,0);\r\n  *(undefined8 *)(param_1 + 0x18) \u003d 0xf;\r\n  *(undefined8 *)(param_1 + 0x10) \u003d 0;\r\n  *param_1 \u003d 0;\r\n  FUN_18001a3f0(param_1,uVar1);\r\n  return param_1;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "string_combine_B",
+    "start": "180089e10",
+    "end": "180089f51",
+    "bytesBudget": 322,
+    "function": "FUN_180089e10",
+    "instructions": [
+      "180089e10 MOV qword ptr [RSP + 0x10],RBX",
+      "180089e15 MOV qword ptr [RSP + 0x18],RBP",
+      "180089e1a PUSH RSI",
+      "180089e1b SUB RSP,0x20",
+      "180089e1f MOV RSI,R8",
+      "180089e22 MOV RBP,RDX",
+      "180089e25 MOV RBX,RCX",
+      "180089e28 TEST RDX,RDX",
+      "180089e2b JZ 0x180089e87",
+      "180089e2d MOV R9,qword ptr [RCX + 0x18]",
+      "180089e31 CMP R9,0x10",
+      "180089e35 JC 0x180089e3c",
+      "180089e37 MOV RAX,qword ptr [RCX]",
+      "180089e3a JMP 0x180089e3f",
+      "180089e3c MOV RAX,RBX",
+      "180089e3f CMP RBP,RAX",
+      "180089e42 JC 0x180089e87",
+      "180089e44 CMP R9,0x10",
+      "180089e48 JC 0x180089e4d",
+      "180089e4a MOV RCX,qword ptr [RCX]",
+      "180089e4d ADD RCX,qword ptr [RBX + 0x10]",
+      "180089e51 CMP RCX,RBP",
+      "180089e54 JBE 0x180089e87",
+      "180089e56 CMP R9,0x10",
+      "180089e5a JC 0x180089e61",
+      "180089e5c MOV RAX,qword ptr [RBX]",
+      "180089e5f JMP 0x180089e64",
+      "180089e61 MOV RAX,RBX",
+      "180089e64 SUB RBP,RAX",
+      "180089e67 MOV R9,RSI",
+      "180089e6a MOV R8,RBP",
+      "180089e6d MOV RDX,RBX",
+      "180089e70 MOV RCX,RBX",
+      "180089e73 MOV RBX,qword ptr [RSP + 0x38]",
+      "180089e78 MOV RBP,qword ptr [RSP + 0x40]",
+      "180089e7d ADD RSP,0x20",
+      "180089e81 POP RSI",
+      "180089e82 JMP 0x18007e5d0",
+      "180089e87 MOV R8,qword ptr [RBX + 0x10]",
+      "180089e8b MOV RAX,R8",
+      "180089e8e NOT RAX",
+      "180089e91 CMP RAX,RSI",
+      "180089e94 JA 0x180089ea4",
+      "180089e96 LEA RCX,[0x1806d3bd0]",
+      "180089e9d CALL qword ptr [0x18060b680]",
+      "180089ea3 INT3",
+      "180089ea4 MOV qword ptr [RSP + 0x30],RDI",
+      "180089ea9 LEA RDI,[R8 + RSI*0x1]",
+      "180089ead TEST RSI,RSI",
+      "180089eb0 JZ 0x180089f3a",
+      "180089eb6 CMP RDI,-0x2",
+      "180089eba JBE 0x180089eca",
+      "180089ebc LEA RCX,[0x1806d3bd0]",
+      "180089ec3 CALL qword ptr [0x18060b680]",
+      "180089ec9 INT3",
+      "180089eca CMP qword ptr [RBX + 0x18],RDI",
+      "180089ece JNC 0x180089eec",
+      "180089ed0 MOV RDX,RDI",
+      "180089ed3 MOV RCX,RBX",
+      "180089ed6 CALL 0x180016340",
+      "180089edb TEST RDI,RDI",
+      "180089ede JZ 0x180089f3a",
+      "180089ee0 CMP qword ptr [RBX + 0x18],0x10",
+      "180089ee5 JC 0x180089f0c",
+      "180089ee7 MOV RCX,qword ptr [RBX]",
+      "180089eea JMP 0x180089f0f",
+      "180089eec TEST RDI,RDI",
+      "180089eef JNZ 0x180089ee0",
+      "180089ef1 MOV qword ptr [RBX + 0x10],RDI",
+      "180089ef5 CMP qword ptr [RBX + 0x18],0x10",
+      "180089efa JC 0x180089f04",
+      "180089efc MOV RAX,qword ptr [RBX]",
+      "180089eff MOV byte ptr [RAX],DIL",
+      "180089f02 JMP 0x180089f3a",
+      "180089f04 MOV RAX,RBX",
+      "180089f07 MOV byte ptr [RBX],0x0",
+      "180089f0a JMP 0x180089f3a",
+      "180089f0c MOV RCX,RBX",
+      "180089f0f TEST RSI,RSI",
+      "180089f12 JZ 0x180089f23",
+      "180089f14 ADD RCX,qword ptr [RBX + 0x10]",
+      "180089f18 MOV R8,RSI",
+      "180089f1b MOV RDX,RBP",
+      "180089f1e CALL 0x1805dc344",
+      "180089f23 CMP qword ptr [RBX + 0x18],0x10",
+      "180089f28 MOV qword ptr [RBX + 0x10],RDI",
+      "180089f2c JC 0x180089f33",
+      "180089f2e MOV RAX,qword ptr [RBX]",
+      "180089f31 JMP 0x180089f36",
+      "180089f33 MOV RAX,RBX",
+      "180089f36 MOV byte ptr [RAX + RDI*0x1],0x0",
+      "180089f3a MOV RDI,qword ptr [RSP + 0x30]",
+      "180089f3f MOV RAX,RBX",
+      "180089f42 MOV RBX,qword ptr [RSP + 0x38]",
+      "180089f47 MOV RBP,qword ptr [RSP + 0x40]",
+      "180089f4c ADD RSP,0x20",
+      "180089f50 POP RSI",
+      "180089f51 RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "180089e2b",
+        "to": "180089e87",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089e87"
+      },
+      {
+        "from": "180089e35",
+        "to": "180089e3c",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089e3c"
+      },
+      {
+        "from": "180089e3a",
+        "to": "180089e3f",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_180089e3f"
+      },
+      {
+        "from": "180089e42",
+        "to": "180089e87",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089e87"
+      },
+      {
+        "from": "180089e48",
+        "to": "180089e4d",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089e4d"
+      },
+      {
+        "from": "180089e54",
+        "to": "180089e87",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089e87"
+      },
+      {
+        "from": "180089e5a",
+        "to": "180089e61",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089e61"
+      },
+      {
+        "from": "180089e5f",
+        "to": "180089e64",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_180089e64"
+      },
+      {
+        "from": "180089e82",
+        "to": "18007e5d0",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "FUN_18007e5d0"
+      },
+      {
+        "from": "180089e94",
+        "to": "180089ea4",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089ea4"
+      },
+      {
+        "from": "180089e9d",
+        "to": "18060b680",
+        "type": "READ",
+        "symbol": "PTR_?_Xlength_error@std@@YAXPEBD@Z_18060b680"
+      },
+      {
+        "from": "180089eb0",
+        "to": "180089f3a",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089f3a"
+      },
+      {
+        "from": "180089eba",
+        "to": "180089eca",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089eca"
+      },
+      {
+        "from": "180089ec3",
+        "to": "18060b680",
+        "type": "READ",
+        "symbol": "PTR_?_Xlength_error@std@@YAXPEBD@Z_18060b680"
+      },
+      {
+        "from": "180089ece",
+        "to": "180089eec",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089eec"
+      },
+      {
+        "from": "180089ed6",
+        "to": "180016340",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180016340"
+      },
+      {
+        "from": "180089ede",
+        "to": "180089f3a",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089f3a"
+      },
+      {
+        "from": "180089ee5",
+        "to": "180089f0c",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089f0c"
+      },
+      {
+        "from": "180089eea",
+        "to": "180089f0f",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_180089f0f"
+      },
+      {
+        "from": "180089eef",
+        "to": "180089ee0",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089ee0"
+      },
+      {
+        "from": "180089efa",
+        "to": "180089f04",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089f04"
+      },
+      {
+        "from": "180089f02",
+        "to": "180089f3a",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_180089f3a"
+      },
+      {
+        "from": "180089f0a",
+        "to": "180089f3a",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_180089f3a"
+      },
+      {
+        "from": "180089f12",
+        "to": "180089f23",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089f23"
+      },
+      {
+        "from": "180089f1e",
+        "to": "1805dc344",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "SUB_1805dc344"
+      },
+      {
+        "from": "180089f2c",
+        "to": "180089f33",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_180089f33"
+      },
+      {
+        "from": "180089f31",
+        "to": "180089f36",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_180089f36"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nundefined8 * FUN_180089e10(undefined8 *param_1,undefined8 *param_2,ulonglong param_3)\r\n\r\n{\r\n  code *pcVar1;\r\n  undefined8 *puVar2;\r\n  ulonglong uVar3;\r\n  undefined8 *puVar4;\r\n  ulonglong uVar5;\r\n  \r\n  if (param_2 !\u003d (undefined8 *)0x0) {\r\n    uVar5 \u003d param_1[3];\r\n    puVar2 \u003d param_1;\r\n    if (0xf \u003c uVar5) {\r\n      puVar2 \u003d (undefined8 *)*param_1;\r\n    }\r\n    if (puVar2 \u003c\u003d param_2) {\r\n      puVar2 \u003d param_1;\r\n      if (0xf \u003c uVar5) {\r\n        puVar2 \u003d (undefined8 *)*param_1;\r\n      }\r\n      if (param_2 \u003c (undefined8 *)((longlong)puVar2 + param_1[2])) {\r\n        puVar2 \u003d param_1;\r\n        if (0xf \u003c uVar5) {\r\n          puVar2 \u003d (undefined8 *)*param_1;\r\n        }\r\n        uVar5 \u003d (longlong)param_2 - (longlong)puVar2;\r\n        if (uVar5 \u003c\u003d (ulonglong)param_1[2]) {\r\n          uVar3 \u003d param_1[2] - uVar5;\r\n          if (uVar3 \u003c param_3) {\r\n            param_3 \u003d uVar3;\r\n          }\r\n          if (param_3 \u003c (ulonglong)~param_1[2]) {\r\n            uVar3 \u003d param_1[2] + param_3;\r\n            if (param_3 !\u003d 0) {\r\n              if (uVar3 \u003d\u003d 0xffffffffffffffff) {\r\n                __Xlength_error_std__YAXPEBD_Z(\u0026UNK_1806d3bd0);\r\n                pcVar1 \u003d (code *)swi(3);\r\n                puVar2 \u003d (undefined8 *)(*pcVar1)();\r\n                return puVar2;\r\n              }\r\n              if ((ulonglong)param_1[3] \u003c uVar3) {\r\n                FUN_180016340(param_1,uVar3);\r\n                if (uVar3 \u003d\u003d 0) {\r\n                  return param_1;\r\n                }\r\n              }\r\n              else if (uVar3 \u003d\u003d 0) {\r\n                param_1[2] \u003d 0;\r\n                if (0xf \u003c (ulonglong)param_1[3]) {\r\n                  *(undefined1 *)*param_1 \u003d 0;\r\n                  return param_1;\r\n                }\r\n                *(undefined1 *)param_1 \u003d 0;\r\n                return param_1;\r\n              }\r\n              puVar2 \u003d param_1;\r\n              if (0xf \u003c (ulonglong)param_1[3]) {\r\n                puVar2 \u003d (undefined8 *)*param_1;\r\n              }\r\n              puVar4 \u003d param_1;\r\n              if (0xf \u003c (ulonglong)param_1[3]) {\r\n                puVar4 \u003d (undefined8 *)*param_1;\r\n              }\r\n              if (param_3 !\u003d 0) {\r\n                FUN_1805dc344((longlong)puVar4 + param_1[2],(longlong)puVar2 + uVar5,param_3);\r\n              }\r\n              param_1[2] \u003d uVar3;\r\n              puVar2 \u003d param_1;\r\n              if (0xf \u003c (ulonglong)param_1[3]) {\r\n                puVar2 \u003d (undefined8 *)*param_1;\r\n              }\r\n              *(undefined1 *)((longlong)puVar2 + uVar3) \u003d 0;\r\n            }\r\n            return param_1;\r\n          }\r\n          __Xlength_error_std__YAXPEBD_Z(\u0026UNK_1806d3bd0);\r\n          pcVar1 \u003d (code *)swi(3);\r\n          puVar2 \u003d (undefined8 *)(*pcVar1)();\r\n          return puVar2;\r\n        }\r\n        __Xout_of_range_std__YAXPEBD_Z(\u0026UNK_1806d3bb8);\r\n        pcVar1 \u003d (code *)swi(3);\r\n        puVar2 \u003d (undefined8 *)(*pcVar1)();\r\n        return puVar2;\r\n      }\r\n    }\r\n  }\r\n  if ((ulonglong)~param_1[2] \u003c\u003d param_3) {\r\n    __Xlength_error_std__YAXPEBD_Z(\u0026UNK_1806d3bd0);\r\n    pcVar1 \u003d (code *)swi(3);\r\n    puVar2 \u003d (undefined8 *)(*pcVar1)();\r\n    return puVar2;\r\n  }\r\n  uVar5 \u003d param_1[2] + param_3;\r\n  if (param_3 !\u003d 0) {\r\n    if (uVar5 \u003d\u003d 0xffffffffffffffff) {\r\n      __Xlength_error_std__YAXPEBD_Z(\u0026UNK_1806d3bd0);\r\n      pcVar1 \u003d (code *)swi(3);\r\n      puVar2 \u003d (undefined8 *)(*pcVar1)();\r\n      return puVar2;\r\n    }\r\n    if ((ulonglong)param_1[3] \u003c uVar5) {\r\n      FUN_180016340(param_1,uVar5);\r\n      if (uVar5 \u003d\u003d 0) {\r\n        return param_1;\r\n      }\r\n    }\r\n    else if (uVar5 \u003d\u003d 0) {\r\n      param_1[2] \u003d 0;\r\n      if (0xf \u003c (ulonglong)param_1[3]) {\r\n        *(undefined1 *)*param_1 \u003d 0;\r\n        return param_1;\r\n      }\r\n      *(undefined1 *)param_1 \u003d 0;\r\n      return param_1;\r\n    }\r\n    puVar2 \u003d param_1;\r\n    if (0xf \u003c (ulonglong)param_1[3]) {\r\n      puVar2 \u003d (undefined8 *)*param_1;\r\n    }\r\n    if (param_3 !\u003d 0) {\r\n      FUN_1805dc344((longlong)puVar2 + param_1[2],param_2,param_3);\r\n    }\r\n    param_1[2] \u003d uVar5;\r\n    puVar2 \u003d param_1;\r\n    if (0xf \u003c (ulonglong)param_1[3]) {\r\n      puVar2 \u003d (undefined8 *)*param_1;\r\n    }\r\n    *(undefined1 *)((longlong)puVar2 + uVar5) \u003d 0;\r\n  }\r\n  return param_1;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "?SetCloudStorage@GameEngine@GAME@@QEAAX_N@Z",
+    "start": "1802ef740",
+    "end": "1802ef746",
+    "bytesBudget": 7,
+    "function": "?SetCloudStorage@GameEngine@GAME@@QEAAX_N@Z",
+    "instructions": [
+      "1802ef740 MOV byte ptr [RCX + 0x375ea],DL",
+      "1802ef746 RET"
+    ],
+    "outgoingReferences": [],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nvoid _SetCloudStorage_GameEngine_GAME__QEAAX_N_Z(longlong param_1,undefined1 param_2)\r\n\r\n{\r\n                    /* 0x2ef740  22690  ?SetCloudStorage@GameEngine@GAME@@QEAAX_N@Z */\r\n  *(undefined1 *)(param_1 + 0x375ea) \u003d param_2;\r\n  return;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  }
+]

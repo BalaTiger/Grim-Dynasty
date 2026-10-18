@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-18T11:39:39.284871+00:00",
+  "status": "passed",
+  "unit": {
+    "status": "passed",
+    "fixed_assertions": 71
+  },
+  "catalog": "catalog-results.json",
+  "native_input_sha256": {
+    "Game.dll": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "Engine.dll": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "source_sha256": {
+    "src\\task_logic\\build_tasks.ps1": "9e9b9a34a694d4431e46cc9f30637fc42afb62a7f8f6a8e8427f2a3eb9558fa6",
+    "src\\task_logic\\TaskCatalogProbe.cs": "93445debac889e225249ee86f4284b4a5b6a54da0045d449b0768d9d645166a4",
+    "src\\task_logic\\TaskDefinitionAdapter.cs": "e68db026db220d880d89a4ad6043d3d3ed055c75f92f53aa4c1990f2adce7a25",
+    "src\\task_logic\\TaskLogic.cs": "4bdc39809e967955e9afd32201901b6414e86e43eaf6bad2efb290bbe8d31953",
+    "src\\task_logic\\TaskLogicTests.cs": "c0efd8d4d0a0b8741d52f690e80622d2d88b094b64c8e4567e0f2e181ef04d55"
+  },
+  "build_sha256": {
+    "GrimDynasty.Conditions.dll": "ae9b2c7c8fb74df834561849818a4d175ca965d672ac2ecd11d0e0159109868f",
+    "GrimDynasty.Quests.dll": "33e17e5965d090f9adf789aa94803ab66476f3652b3f916c57f6377ded49cae8",
+    "GrimDynasty.Resources.dll": "b7673608334772056f87c19fe93929bdaaaad197081d3c6b3891364f086da72d",
+    "GrimDynasty.TaskLogic.dll": "6d3a9a7d49622755effce1461df3fe34dcd8f809d010ecd198f8281f31a0dcd3",
+    "TaskCatalogProbe.exe": "f605a851620c9182ec0875626e0e8e750263c98f4d76cad946c9a648fb933b8d",
+    "TaskLogicTests.exe": "8151972983fc4c71e9276a0bf3a55f42be1d1ee33726c3d643d6558064a21d10"
+  },
+  "task_module_references": [
+    "mscorlib 4.0.0.0",
+    "GrimDynasty.Conditions 0.0.0.0",
+    "System.Core 4.0.0.0"
+  ],
+  "reference_inspection": "Reflection.Assembly.LoadFrom(own TaskLogic.dll).GetReferencedAssemblies(); no original assemblies loaded",
+  "evidence": "Actual Rea 6.5.0 Ghidra static calls in rea and rea-engine; session close_binary completed",
+  "limits": [
+    "No original dynamic execution",
+    "No actions or task-state writes",
+    "No game/save/Steam changes",
+    "244 catalog groups remain unsupported"
+  ]
+}

@@ -1,0 +1,28 @@
+<!-- Review-only proposal. Directories must exist; do not launch until approved
+     and isolation probes have been planned. No automatic game command. -->
+<Configuration>
+  <vGPU>Disable</vGPU>
+  <Networking>Disable</Networking>
+  <AudioInput>Disable</AudioInput>
+  <VideoInput>Disable</VideoInput>
+  <PrinterRedirection>Disable</PrinterRedirection>
+  <ClipboardRedirection>Disable</ClipboardRedirection>
+  <MemoryInMB>4096</MemoryInMB>
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>D:\Steam\steamapps\common\Grim Dawn</HostFolder>
+      <SandboxFolder>C:\GDReadOnly</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+    <MappedFolder>
+      <HostFolder>D:\MyGitRepo\Grim-Dynasty\.tooling\isolated-stage\in</HostFolder>
+      <SandboxFolder>C:\GDProbeInput</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+    <MappedFolder>
+      <HostFolder>D:\MyGitRepo\Grim-Dynasty\.tooling\isolated-stage\out</HostFolder>
+      <SandboxFolder>C:\GDResults</SandboxFolder>
+      <ReadOnly>false</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+</Configuration>

@@ -1,0 +1,15 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.TaskLogic;
+using GrimDynasty.TaskRuntime;
+using GrimDynasty.TaskAuto;
+using GrimDynasty.TaskItems;
+public sealed class ExampleItemQuest {
+ public ItemWorld Stock;public OfflineEvents Events;public HasItemCondition Condition;public AutoSnapshot Auto;public Objective Goal;
+ public static ExampleItemQuest Create(){
+  var x=new ExampleItemQuest();x.Stock=ItemWorld.Empty();x.Stock.ClientPlayerId=1;x.Stock.Objects.Add(100,new ItemObject{Kind=ItemObjectKind.Item,ObjectName="ming/items/military_ration.dbr",DataNameFromSlot590="ming/items/military_ration.dbr",PrefixFromSlot590="",SuffixFromSlot590="",CompleteByteFromSlot3F8=1,QuantityFromSlot618=0});x.Stock.InventoryItemIds.Add(100);x.Events=new OfflineEvents(true){DebugEnabled=false};var created=HasItemCondition.Create(1,3,2,true,"ming/items/military_ration.dbr",x.Events,x.Stock,out x.Condition);if(created.Status!="Known")throw new Exception(created.Reason);x.Condition.SystemTimeSnapshot=0;x.Condition.PureLocalizationContextKnown=true;
+  var p=new Predicate{TypeId=9,Version=1,ComparisonId=3,Value=2};var group=new Group{Operation=0};group.Conditions.Add(p);x.Goal=new Objective{Uid=1,ConditionsKnown=true,Conditions=group};var task=new TaskState{Uid=1,State=1};task.Objectives.Add(0,new List<Objective>{x.Goal});var world=new World{MainPlayerResolved=true,QuestIndexComplete=true};world.Core.Difficulty=0;var q=new QuestState();q.Tasks.Add(task);world.Quests.Add("ming/supply_check",q);
+  var r=new RuntimeSnapshot{State=new TaskMutationSnapshot{Task=task,Difficulty=0,QuestFlags=0,OnAcceptEventCount=0,StatesByDifficulty=new[]{1,1,1}},World=world,QuestReference="ming/supply_check",DontPropagateByte=1,CompletionRecorded=new bool[3],Outbound=new OutboundSnapshot{ProviderIsKnownOutbound=true}};r.ObjectiveCounters.Add(x.Goal,0);x.Auto=new AutoSnapshot{Runtime=r,QuestUid=3,Events=x.Events,OnCompleteEventCount=0,RewardRecordedA3=new bool[3],MainPlayerFlags17F4=0};x.Auto.ConditionRuntimes.Add(p,x.Condition);x.Auto.ObjectiveActionCounts.Add(x.Goal,0);return x;
+ }
+ public DispatchResult Notify(uint route){return Events.Send(new QuestEvent{Kind=route,Body=new ItemEventBody{PlayerId=1,ItemObjectId=100}},route);}
+}

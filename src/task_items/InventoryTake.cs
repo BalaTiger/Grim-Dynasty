@@ -1,0 +1,109 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.TokenActions;
+using GrimDynasty.TaskAuto;
+namespace GrimDynasty.TaskItems {
+ public enum InventoryActorRemovalMethods {Unknown,Player}
+ public sealed class InventoryTakeContext {
+  public ItemWorld Stock;
+  public OfflineEvents Events;
+  public uint? CharacterObjectId;
+  public List<HasItemCondition> CoveredConditions;
+  public InventoryActorRemovalMethods ActorRemovalMethods;
+  public bool? DestroyAfterFullTake,MirrorPlayerPresent;
+  public List<uint> AttachedActionItemIds;
+  public uint? InventoryOwnerObjectId;
+  public readonly List<QuestEvent> Produced=new List<QuestEvent>();
+  public readonly List<string> RemovalTrace=new List<string>();
+  // Own audit of deliberately retained objects, not a native object-manager field.
+  public readonly HashSet<uint> DetachedObjects=new HashSet<uint>();
+  public int LastDelivered;
+ }
+ public static class InventoryTake {
+  sealed class Step {public uint Id,Owner;public ItemObject Item;public int Taken,Remaining;public bool Full;}
+  static MutationResult U(string s){return MutationResult.Unsupported(s);}
+  static MutationResult Receivers(InventoryTakeContext c,Step step){
+   if(c.Events==null)return U("UnknownTakeItemNotificationContext");
+   var known=new Dictionary<OfflineHandler,HasItemCondition>();var covered=new List<OfflineHandler>();
+   if(c.CoveredConditions!=null)foreach(var condition in c.CoveredConditions){
+    if(condition==null||!Object.ReferenceEquals(condition.EventManager,c.Events)||!Object.ReferenceEquals(condition.ItemSnapshot,c.Stock))return U("TakeItemReceiverSnapshotMismatch");
+    var handler=condition.ItemHandler(17);if(!known.ContainsKey(handler)){known.Add(handler,condition);covered.Add(handler);}
+   }
+   List<OfflineHandler> actual;var admitted=c.Events.CheckCovered(17,covered,out actual);if(admitted.Status!="Known")return admitted;
+   var body=new ItemEventBody{PlayerId=step.Owner,ItemObjectId=step.Id};
+   foreach(var handler in actual){var ready=known[handler].CheckReceive(body,17);if(ready.Status!="Known")return ready;}
+   return MutationResult.Known(false);
+  }
+  static MutationResult ValidateFull(InventoryTakeContext c,Step step){
+   if(c.ActorRemovalMethods!=InventoryActorRemovalMethods.Player||c.DestroyAfterFullTake!=false)return U("FullTakeActorMethodsOrDestructionNotRecovered");
+   if(c.AttachedActionItemIds==null||c.AttachedActionItemIds.Contains(step.Id)||c.MirrorPlayerPresent!=false||step.Item.IsShield!=false)return U("FullTakeDetachActionBranchNotRecovered");
+   if(c.Stock.InventoryItemIds==null||step.Id==0||!c.Stock.InventoryItemIds.Contains(step.Id))return U("FullTakeInventoryMembershipOutsideCoveredDomain");
+   if(!c.InventoryOwnerObjectId.HasValue)return U("UnknownFullTakeInventoryOwner");
+   if(step.Item.RemovalHookPackInitialized!=true||step.Item.RemovalHook1CallbackPresent!=false)return U("FullTakeItemRemovalHookNotRecovered");
+   if(!c.Stock.RawControllerId16C0.HasValue)return U("UnknownFullTakeController");
+   ItemObject controller;if(!c.Stock.Lookup(c.Stock.RawControllerId16C0.Value,out controller)||controller!=null)return U("FullTakeControllerRemovalNotRecovered");
+   step.Owner=c.InventoryOwnerObjectId.Value;return MutationResult.Known(false);
+  }
+  static MutationResult Validate(InventoryTakeContext c,uint id,int amount,out Step step){
+   step=null;if(c==null||c.Stock==null)return U("UnknownTakeInventoryContext");
+   ItemObject item;if(!c.Stock.Lookup(id,out item))return U("UnknownTakeItemObjectIndex");
+   if(item==null||item.Kind==ItemObjectKind.Other||item.Kind==ItemObjectKind.ControllerCharacter)return MutationResult.Known(false);
+   if(item.Kind!=ItemObjectKind.Item)return U("UnknownTakeItemRtti");
+   if(item.IsRelic!=false)return U("RelicOrUnknownTakeFragmentBranch");
+   if(!item.DirectStackMethodsKnown||!item.RawStack88C.HasValue)return U("UnrestoredTakeStackVirtualMethods");
+   int count=unchecked((int)item.RawStack88C.Value);if(count<1||amount< -1)return U("TakeSignedCountOutsideCoveredDomain");
+   int taken=amount==-1||amount>count?count:amount;
+   var plan=new Step{Id=id,Item=item,Taken=taken,Remaining=count-taken,Full=taken==count};
+   if(plan.Full){var full=ValidateFull(c,plan);if(full.Status!="Known")return full;}
+   else {if(!c.CharacterObjectId.HasValue)return U("UnknownTakeItemNotificationContext");plan.Owner=c.CharacterObjectId.Value;}
+   var ready=Receivers(c,plan);if(ready.Status!="Known")return ready;step=plan;return MutationResult.Known(false);
+  }
+  static int Apply(InventoryTakeContext c,Step step){
+   if(step.Full){
+    c.RemovalTrace.Add("detach_action_noop:"+step.Id);
+    // Native Inventory::RemoveItemFromInventory removes every matching ID,
+    // preserving the order of all other IDs, and emits one notification.
+    c.Stock.InventoryItemIds.RemoveAll(id=>id==step.Id);c.RemovalTrace.Add("inventory_ids_removed:"+step.Id);
+   }else {step.Item.RawStack88C=(uint)step.Remaining;step.Item.RawReplicaStack6B0=(uint)step.Remaining;}
+   var payload=new QuestEvent{Kind=17,Body=new ItemEventBody{PlayerId=step.Owner,ItemObjectId=step.Id}};
+   c.Produced.Add(payload);var sent=c.Events.Send(payload,17);
+   if(sent.Status!="Known")throw new InvalidOperationException("Take item context changed after preflight: "+sent.Reason);
+   if(step.Full){
+    c.RemovalTrace.Add("item_event17:"+step.Id);c.RemovalTrace.Add("item_hook1_noop:"+step.Id);c.RemovalTrace.Add("controller_notify_noop:"+step.Id);
+    // Destroy=false: the object stays resolvable through notification and
+    // afterwards. Its old stack fields are deliberately not zeroed.
+    c.DetachedObjects.Add(step.Id);c.RemovalTrace.Add("object_retained:"+step.Id);
+   }
+   return sent.Delivered;
+  }
+  public static MutationResult Check(InventoryTakeContext c,uint id,int amount){Step step;return Validate(c,id,amount,out step);}
+  public static MutationResult Execute(InventoryTakeContext c,uint id,int amount,out int taken){
+   taken=0;Step step;var ready=Validate(c,id,amount,out step);if(ready.Status!="Known"||step==null)return ready;
+   c.LastDelivered=Apply(c,step);taken=step.Taken;return MutationResult.Known(true);
+  }
+  static MutationResult SelectInventory(InventoryTakeContext c,string query,int amount,out List<Step> steps){
+   steps=new List<Step>();if(c==null)return U("UnknownTakeInventoryContext");if(amount<=0)return MutationResult.Known(false);
+   if(c.Stock==null||c.Stock.InventoryItemIds==null)return U("UnknownTakeInventoryIdVector");int remaining=amount;
+   foreach(uint id in new List<uint>(c.Stock.InventoryItemIds)){
+    ItemObject item;if(!c.Stock.Lookup(id,out item))return U("UnknownTakeItemObjectIndex");if(item==null)continue;
+    if(item.ObjectName==null||!ItemCountQuery.Ascii(query))return U("UnknownOrNonAsciiTakeObjectName");
+    string name=item.ObjectName;int zero=name.IndexOf('\0');if(zero>=0)name=name.Substring(0,zero);
+    if(!ItemCountQuery.Ascii(name)||!c.Stock.AsciiCLocaleKnown)return U("TakeNameCrtCaseProfileNotKnown");
+    var match=ItemCountQuery.Match(query,name,true,false,true);if(match.Status!="Known")return U(match.Reason);if(!match.Value.Value)continue;
+    if(!c.Stock.RawControllerId16C0.HasValue)return U("UnknownTakeEquipmentController");
+    ItemObject controller;if(!c.Stock.Lookup(c.Stock.RawControllerId16C0.Value,out controller))return U("UnknownTakeEquipmentController");
+    if(controller!=null){if(controller.Kind==ItemObjectKind.Unknown)return U("UnknownTakeControllerRtti");if(controller.Kind==ItemObjectKind.ControllerCharacter){int location;if(!controller.EquippedLocations.TryGetValue(id,out location)){if(!controller.EquipmentIndexComplete)return U("UnknownTakeEquipmentLocation");location=0;}if(location!=0)continue;}}
+    if(item.Kind==ItemObjectKind.Other||item.Kind==ItemObjectKind.ControllerCharacter)continue;
+    foreach(var prior in steps)if(prior.Id==id||Object.ReferenceEquals(prior.Item,item))return U("TakeNameAliasedItemOutsideCoveredDomain");
+    Step step;var ready=Validate(c,id,remaining,out step);if(ready.Status!="Known")return ready;if(step==null)continue;
+    if(steps.Count>=4096)return U("TakeNamePlanBudgetOutsideCoveredDomain");steps.Add(step);remaining-=step.Taken;if(remaining<=0)break;
+   }
+   return MutationResult.Known(false);
+  }
+  public static MutationResult CheckInventoryByName(InventoryTakeContext c,string query,int amount){List<Step> steps;return SelectInventory(c,query,amount,out steps);}
+  public static MutationResult ExecuteInventoryByName(InventoryTakeContext c,string query,int amount,out int taken){
+   taken=0;List<Step> steps;var ready=SelectInventory(c,query,amount,out steps);if(ready.Status!="Known")return ready;
+   int delivered=0;foreach(var step in steps){delivered+=Apply(c,step);taken+=step.Taken;}if(steps.Count!=0)c.LastDelivered=delivered;return MutationResult.Known(steps.Count!=0);
+  }
+ }
+}

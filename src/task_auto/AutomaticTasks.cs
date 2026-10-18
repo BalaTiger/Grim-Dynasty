@@ -1,0 +1,117 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.Conditions;
+using GrimDynasty.TaskLogic;
+using GrimDynasty.TokenActions;
+using GrimDynasty.TaskRuntime;
+namespace GrimDynasty.TaskAuto {
+ // Only independently evidenced accept providers are within the restored contract.
+ public interface IAcceptRuntime {MutationResult Check(AutoSnapshot a);MutationResult Execute(AutoSnapshot a);}
+ public interface IStartTutorialRuntime {MutationResult Check(AutoSnapshot a);MutationResult Execute(AutoSnapshot a);}
+ public sealed class AutoSnapshot {
+  public RuntimeSnapshot Runtime;
+  public uint? QuestUid;
+  public OfflineEvents Events;
+  public readonly Dictionary<Predicate,byte> ConditionChangedBytes=new Dictionary<Predicate,byte>();
+  public readonly Dictionary<Objective,int> ObjectiveActionCounts=new Dictionary<Objective,int>();
+  public int? OnCompleteEventCount;
+  public bool[] RewardRecordedA3;
+  public byte? MainPlayerFlags17F4;
+  public readonly Dictionary<Predicate,IConditionRuntime> ConditionRuntimes=new Dictionary<Predicate,IConditionRuntime>();
+  public ICompletionRuntime CompletionRuntime;
+  public IStartTutorialRuntime TutorialRuntime;
+  public IAcceptRuntime AcceptRuntime;
+ }
+ public sealed class AutoResult {
+  public string Status,Reason;public bool? NativeReturn;
+  public readonly List<QuestEvent> Emitted=new List<QuestEvent>();
+  public static AutoResult Known(bool value){return new AutoResult{Status="Known",NativeReturn=value};}
+  public static AutoResult Unsupported(string reason){return new AutoResult{Status="Unsupported",Reason=reason};}
+ }
+ public static class AutomaticTasks {
+  static AutoResult U(string why){return AutoResult.Unsupported(why);}
+  static bool StableAcrossCompletion(Predicate p){switch(p.TypeId){case 3:case 4:case 5:case 7:case 17:case 18:case 20:return true;}return false;}
+  static IConditionRuntime Provider(AutoSnapshot a,Predicate p){IConditionRuntime value;return p!=null&&a.ConditionRuntimes.TryGetValue(p,out value)&&value!=null&&value.Matches(p)?value:null;}
+  static MutationResult Validate(AutoSnapshot a,bool counters){
+   if(a==null||a.Runtime==null||a.Runtime.State==null||a.Runtime.State.Task==null)return MutationResult.Unsupported("MissingRuntimeSnapshot");var r=a.Runtime;var s=r.State;
+   if(!s.Difficulty.HasValue||s.Difficulty.Value>2)return MutationResult.Unsupported("UnknownDifficulty");List<Objective> list;
+   if(!s.Task.Objectives.TryGetValue(s.Difficulty.Value,out list)||list==null)return MutationResult.Unsupported("UnknownObjectiveVector");var seen=new HashSet<Objective>();
+   foreach(var g in list){if(g==null||!seen.Add(g)||!g.ConditionsKnown)return MutationResult.Unsupported("UnknownOrAliasedObjective");if(counters&&!r.ObjectiveCounters.ContainsKey(g))return MutationResult.Unsupported("UnknownObjectiveCounter");
+    if(g.Conditions!=null)foreach(var p in g.Conditions.Conditions){var provider=Provider(a,p);if(!Lifecycle.KnownNoOp(p)&&provider==null)return MutationResult.Unsupported("UnrestoredConditionLifecycle");if(provider!=null&&!Object.ReferenceEquals(provider.EventManager,a.Events))return MutationResult.Unsupported("ConditionEventManagerMismatch");}
+   }return MutationResult.Known(false);
+  }
+  static EvaluationResult Evaluate(AutoSnapshot a,Group g){
+   if(g==null)return EvaluationResult.Known(true);if(g.Operation!=0&&g.Operation!=1)return EvaluationResult.Unsupported("CollectionOperator:"+g.Operation);
+   foreach(var p in g.Conditions){var provider=Provider(a,p);var result=provider==null?Evaluator.Evaluate(p,a.Runtime.World):provider.Evaluate(a.Runtime.World);if(result.Status!="Known")return result;
+    if((g.Operation==0&&!result.Value.Value)||(g.Operation==1&&result.Value.Value))return result;
+   }return EvaluationResult.Known(g.Operation==0);
+  }
+  static string CheckCompletion(AutoSnapshot a,List<Objective> goals){
+   var r=a.Runtime;var s=r.State;
+   if(a.CompletionRuntime!=null){var check=a.CompletionRuntime.Check(a);if(check.Status!="Known")return check.Reason;}
+   else if(a.OnCompleteEventCount!=0)return "CompletionEventsRequireActionExecution";
+   if(a.RewardRecordedA3==null||a.RewardRecordedA3.Length!=3||r.CompletionRecorded==null||r.CompletionRecorded.Length!=3||s.StatesByDifficulty==null||s.StatesByDifficulty.Length!=3)return "UnknownCompletionAndRewardBanks";
+   if(r.World==null||!r.World.MainPlayerResolved||!a.MainPlayerFlags17F4.HasValue)return "UnknownRewardAdjustmentPlayerContext";
+   foreach(var g in goals){int count;if(!a.ObjectiveActionCounts.TryGetValue(g,out count)||count!=0)return "CompletionRequiresObjectiveActionSemantics";
+    if(g.Conditions!=null)foreach(var p in g.Conditions.Conditions){var provider=Provider(a,p);if(provider!=null){var end=provider.CheckEnd();if(end.Status!="Known")return end.Reason;}else if(!StableAcrossCompletion(p))return "CompletionSensitiveConditionOutsideCoveredDomain";}
+   }
+   if(r.Outbound==null||!r.Outbound.ProviderIsKnownOutbound||r.QuestReference==null)return "UnknownCompletionDispatchProvider";
+   QuestState q;
+   if(!r.World.Quests.TryGetValue(r.QuestReference,out q)){if(!r.World.QuestIndexComplete)return "IncompleteOutboundQuestIndex";return null;}
+   if(q==null)return "UnknownOutboundQuest";var ids=new HashSet<uint>();
+   foreach(var t in q.Tasks){if(t==null||!ids.Add(t.Uid))return "InconsistentOutboundTaskIndex";if(t.Uid==s.Task.Uid){if(!Object.ReferenceEquals(t,s.Task))return "OutboundTargetSnapshotMismatch";if(!r.DontPropagateByte.HasValue)return "UnknownDontPropagateByte";if(r.DontPropagateByte.Value==0)return "NetworkSendSemanticsNotRecovered";}}
+   return null;
+  }
+  public static AutoResult Update(AutoSnapshot a){
+   if(a==null||a.Runtime==null||a.Runtime.State==null||a.Runtime.State.Task==null)return U("MissingRuntimeSnapshot");var r=a.Runtime;var s=r.State;var task=s.Task;
+   if(task.RuntimeBlocked!=0)return AutoResult.Known(false);
+   if(task.State!=2)return U("UpdateTaskStateOutsideActiveDomain");
+   var valid=Validate(a,true);if(valid.Status!="Known")return U(valid.Reason);
+   var goals=task.Objectives[s.Difficulty.Value];if(goals.Count==0)return AutoResult.Known(false);
+   var next=new List<int>();var dirtyPlan=new Dictionary<IConditionRuntime,byte>();bool changed=false,notice=false,allMet=true;
+   foreach(var g in goals){
+    var met=Evaluate(a,g.Conditions);if(met.Status!="Known")return U(met.Reason);bool dirtyAny=false;
+    if(g.Conditions!=null)foreach(var p in g.Conditions.Conditions){var provider=Provider(a,p);if(provider!=null){byte dirty;if(!dirtyPlan.TryGetValue(provider,out dirty))dirty=provider.ChangedByte14;if(dirty!=0){dirtyAny=true;dirtyPlan[provider]=0;}}else{if(!StableAcrossCompletion(p))return U("TaskReferencingConditionOutsideAutoDomain");byte dirty;if(!a.ConditionChangedBytes.TryGetValue(p,out dirty))return U("UnknownConditionChangedByte");if(dirty!=0)return U("ObjectiveOnChangedSemanticsNotRecovered");}}
+    int old=r.ObjectiveCounters[g],value=old;if(old<0||old>2)return U("ObjectiveStateOutsideCoveredDomain");
+    if(dirtyAny){notice=false;changed=true;if(old==1&&met.Value.Value)changed=false;else if(g.Conditions!=null)foreach(var p in g.Conditions.Conditions){var provider=Provider(a,p);if(provider!=null&&provider.TextByte15!=0){var check=provider.CheckOnChangedNoDisplay();if(check.Status!="Known")return U(check.Reason);}}}
+    if(old==0){value=met.Value.Value?1:2;changed=true;}
+    else if(old==2&&met.Value.Value){int count;if(!a.ObjectiveActionCounts.TryGetValue(g,out count)||count!=0)return U("ObjectiveTransitionRequiresActionExecution");value=1;changed=true;notice=true;}
+    else if(old==1&&!met.Value.Value){value=2;changed=true;notice=true;}
+    next.Add(value);if(value==2)allMet=false;
+   }
+   if(changed){if(a.Events==null||!a.QuestUid.HasValue)return U("UnknownObjectiveNotificationContext");var empty=a.Events.CheckEmpty(0x2a);if(empty.Status!="Known")return U(empty.Reason);
+    if(allMet){string reason=CheckCompletion(a,goals);if(reason!=null)return U(reason);}}
+   // All dependencies were checked before committing observable snapshot writes.
+   for(int i=0;i<goals.Count;i++)r.ObjectiveCounters[goals[i]]=next[i];
+   foreach(var entry in dirtyPlan)entry.Key.ChangedByte14=entry.Value;
+   if(!changed)return AutoResult.Known(false);
+   var payload=new QuestEvent{Kind=0x2a,QuestUid=a.QuestUid.Value,TaskUid=task.Uid,FlagC=notice?(byte)1:(byte)0,FlagD=notice?(byte)1:(byte)0,FlagE=0};
+   var sent=a.Events.Send(payload,0x2a);if(sent.Status!="Known")throw new InvalidOperationException("Snapshot changed during commit");
+   if(allMet){
+    int d=(int)s.Difficulty.Value;task.State=3;s.StatesByDifficulty[d]=3;r.CompletionRecorded[d]=true;
+    if(a.CompletionRuntime!=null&&a.CompletionRuntime.BeforeRewardHistory(a).Status!="Known")throw new InvalidOperationException("Validated reward actions changed");
+    for(int i=0;i<=(int)s.Difficulty.Value;i++)a.RewardRecordedA3[i]=true;
+    if(a.CompletionRuntime!=null&&a.CompletionRuntime.AfterRewardHistory(a).Status!="Known")throw new InvalidOperationException("Validated reward record changed");
+    foreach(var goal in goals)if(goal.Conditions!=null)foreach(var p in goal.Conditions.Conditions){var provider=Provider(a,p);if(provider!=null&&provider.End().Status!="Known")throw new InvalidOperationException("Validated end snapshot changed");}
+    r.Outbound.LastQuestReference=r.QuestReference;r.Outbound.LastTaskUid=task.Uid;
+   }
+   var result=AutoResult.Known(true);result.Emitted.Add(payload);return result;
+  }
+  public static MutationResult Start(AutoSnapshot a){
+   if(a==null||a.Runtime==null||a.Runtime.State==null||a.Runtime.State.Task==null)return MutationResult.Unsupported("MissingRuntimeSnapshot");var s=a.Runtime.State;
+   bool tutorial=false,accept=false;
+   if(s.Task.State==1&&s.Task.RuntimeBlocked==0){if(!s.QuestFlags.HasValue||!s.OnAcceptEventCount.HasValue)return MutationResult.Unsupported("StartRequiresTutorialOrAcceptExecution");if((s.QuestFlags.Value&4)!=0){if(a.TutorialRuntime==null)return MutationResult.Unsupported("StartRequiresTutorialOrAcceptExecution");var t=a.TutorialRuntime.Check(a);if(t.Status!="Known")return t;tutorial=true;}if(s.OnAcceptEventCount.Value!=0){if(a.AcceptRuntime==null)return MutationResult.Unsupported("StartRequiresTutorialOrAcceptExecution");var actions=a.AcceptRuntime.Check(a);if(actions.Status!="Known")return actions;accept=true;}}
+   if(s.Task.RuntimeBlocked==0){var v=Validate(a,false);if(v.Status!="Known")return v;foreach(var g in s.Task.Objectives[s.Difficulty.Value])if(g.Conditions!=null)foreach(var p in g.Conditions.Conditions){var provider=Provider(a,p);if(provider!=null){var check=provider.CheckStart();if(check.Status!="Known")return check;}}}
+   bool changed=s.Task.State!=2;if(tutorial){var t=a.TutorialRuntime.Execute(a);if(t.Status!="Known")throw new InvalidOperationException("Validated tutorial changed");changed|=t.Changed.Value;}if(accept){var actions=a.AcceptRuntime.Execute(a);if(actions.Status!="Known")throw new InvalidOperationException("Validated accept actions changed");changed|=actions.Changed.Value;}s.Task.State=2;
+   if(s.Task.RuntimeBlocked==0)foreach(var g in s.Task.Objectives[s.Difficulty.Value])if(g.Conditions!=null)foreach(var p in g.Conditions.Conditions){var provider=Provider(a,p);if(provider!=null){var start=provider.Start();if(start.Status!="Known")throw new InvalidOperationException("Validated start changed");changed|=start.Changed.Value;}}
+   return MutationResult.Known(changed);
+  }
+  public static MutationResult Reset(AutoSnapshot a){
+   if(a==null||a.Runtime==null||a.Runtime.State==null||a.Runtime.State.Task==null)return MutationResult.Unsupported("MissingRuntimeSnapshot");var r=a.Runtime;var s=r.State;if(s.Task.State!=3)return MutationResult.Known(false);
+   var v=Validate(a,true);if(v.Status!="Known")return v;if(s.StatesByDifficulty==null||s.StatesByDifficulty.Length!=3)return MutationResult.Unsupported("UnknownDifficultyStateBank");
+   foreach(var g in s.Task.Objectives[s.Difficulty.Value])if(g.Conditions!=null)foreach(var p in g.Conditions.Conditions){var provider=Provider(a,p);if(provider!=null){var check=provider.CheckReset();if(check.Status!="Known")return check;}}
+   foreach(var g in s.Task.Objectives[s.Difficulty.Value]){r.ObjectiveCounters[g]=0;if(g.Conditions!=null)foreach(var p in g.Conditions.Conditions){var provider=Provider(a,p);if(provider!=null&&provider.Reset().Status!="Known")throw new InvalidOperationException("Validated reset changed");}}
+   s.Task.State=1;s.StatesByDifficulty[(int)s.Difficulty.Value]=1;return MutationResult.Known(true);
+  }
+ }
+}

@@ -1,0 +1,147 @@
+{
+  "kind": "static-native evidence plus official format data; no original runtime execution",
+  "source_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "native_evidence": [
+    {
+      "role": "collection",
+      "evidence_id": "ev_80c48f8b802a93399e5ea71bfbeee26e47afad6558be1124de414beef76807ca",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x180474680"
+    },
+    {
+      "role": "factory",
+      "evidence_id": "ev_c3555204561136dd61de18a8e6cb82a66df8aca9a36fe240a18f3bc7d210454e",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x18046ec30"
+    },
+    {
+      "role": "difficulty",
+      "evidence_id": "ev_aaa802029ff34a9086ec6e042b2c089da03044183deefe5d39915c6349b9ee52",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x180472f20"
+    },
+    {
+      "role": "hardcore",
+      "evidence_id": "ev_d7498f3b49a8fbde5afd02ce71acbc33c4eef435f951b21193c88b48886700cb",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x180472ff0"
+    },
+    {
+      "role": "wait_shared_false_leaf",
+      "evidence_id": "ev_11adfffcc65603bd75a251449e76d381133ad59a3bb26c876474bd6bb776b3b3",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x18001a700"
+    },
+    {
+      "role": "collection_shared_ctor",
+      "evidence_id": "ev_f859c47b651b86fd4c2fb0421547543432e4766beec9c80f0156ec324f2f5e03",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x180019fc0"
+    }
+  ],
+  "vtable_mapping": [
+    {
+      "class": "IsDifficulty",
+      "vtable": "0x180796c90",
+      "evaluate_slot": 5,
+      "evaluate_address": "0x180472f20",
+      "evaluate_bytes": 176,
+      "slots": [
+        "0x18046f9b0",
+        "0x18046f9e0",
+        "0x18046f4f0",
+        "0x18046f4f0",
+        "0x18046f4f0",
+        "0x180472f20",
+        "0x180468c10",
+        "0x180015880"
+      ]
+    },
+    {
+      "class": "IsHardcore",
+      "vtable": "0x180796cf0",
+      "evaluate_slot": 5,
+      "evaluate_address": "0x180472ff0",
+      "evaluate_bytes": 40,
+      "slots": [
+        "0x18046f9b0",
+        "0x180472fd0",
+        "0x18046f4f0",
+        "0x18046f4f0",
+        "0x18046f4f0",
+        "0x180472ff0",
+        "0x180468c10",
+        "0x180015880"
+      ]
+    },
+    {
+      "class": "IsLevel",
+      "vtable": "0x180796d50",
+      "evaluate_slot": 5,
+      "evaluate_address": "0x180473020",
+      "evaluate_bytes": 280,
+      "slots": [
+        "0x18046f9b0",
+        "0x18046f9e0",
+        "0x18046f4f0",
+        "0x18046f4f0",
+        "0x18046f4f0",
+        "0x180473020",
+        "0x180468c10",
+        "0x180015880"
+      ]
+    },
+    {
+      "class": "WaitForCompletion",
+      "vtable": "0x180797198",
+      "evaluate_slot": 5,
+      "evaluate_address": "0x18001a700",
+      "evaluate_bytes": 0,
+      "slots": [
+        "0x180474ee0",
+        "0x180015880",
+        "0x18046f4f0",
+        "0x18046f4f0",
+        "0x18046f4f0",
+        "0x18001a700",
+        "0x180468c10",
+        "0x180015880"
+      ]
+    }
+  ],
+  "difficulty_assembly": "0x180472f20: PUSH RBX\n0x180472f22: SUB RSP, 0x20\n0x180472f26: MOV RBX, RCX\n0x180472f29: MOV RCX, qword ptr [0x180609050]\n0x180472f30: MOV RCX, qword ptr [RCX]\n0x180472f33: CALL qword ptr [0x18060a338]\n0x180472f39: MOV RCX, RAX\n0x180472f3c: CALL qword ptr [0x18060a850]\n0x180472f42: CMP dword ptr [RBX + 0x24], -0x1\n0x180472f46: MOVSXD RCX, dword ptr [RBX + 0x10]\n0x180472f4a: CMOVNZ EAX, dword ptr [RBX + 0x24]\n0x180472f4e: CMP ECX, 0x5\n0x180472f51: JA 0x180472faf\n0x180472f53: LEA R8, [0x180000000]\n0x180472f5a: MOV EDX, dword ptr [R8 + RCX*0x4 + 0x472fb8]\n0x180472f62: ADD RDX, R8\n0x180472f65: JMP RDX\n0x180472f67: CMP dword ptr [RBX + 0x20], EAX\n0x180472f6a: SETL AL\n0x180472f6d: ADD RSP, 0x20\n0x180472f71: POP RBX\n0x180472f72: RET\n0x180472f73: CMP dword ptr [RBX + 0x20], EAX\n0x180472f76: SETLE AL\n0x180472f79: ADD RSP, 0x20\n0x180472f7d: POP RBX\n0x180472f7e: RET\n0x180472f7f: CMP dword ptr [RBX + 0x20], EAX\n0x180472f82: SETZ AL\n0x180472f85: ADD RSP, 0x20\n0x180472f89: POP RBX\n0x180472f8a: RET\n0x180472f8b: CMP dword ptr [RBX + 0x20], EAX\n0x180472f8e: SETGE AL\n0x180472f91: ADD RSP, 0x20\n0x180472f95: POP RBX\n0x180472f96: RET\n0x180472f97: CMP dword ptr [RBX + 0x20], EAX\n0x180472f9a: SETG AL\n0x180472f9d: ADD RSP, 0x20\n0x180472fa1: POP RBX\n0x180472fa2: RET\n0x180472fa3: CMP dword ptr [RBX + 0x20], EAX\n0x180472fa6: SETNZ AL\n0x180472fa9: ADD RSP, 0x20\n0x180472fad: POP RBX\n0x180472fae: RET\n0x180472faf: XOR AL, AL\n0x180472fb1: ADD RSP, 0x20\n0x180472fb5: POP RBX\n0x180472fb6: RET",
+  "wait_assembly": "0x18001a700: XOR AL, AL\n0x18001a702: RET",
+  "difficulty_rule": {
+    "left_operand": "stored threshold [this+0x20] reinterpreted int32",
+    "right_operand": "GameInfo difficulty, replaced by [this+0x24] when not 0xffffffff",
+    "selectors": {
+      "0": "stored < observed (signed)",
+      "1": "stored <= observed (signed)",
+      "2": "stored == observed",
+      "3": "stored >= observed (signed)",
+      "4": "stored > observed (signed)",
+      "5": "stored != observed"
+    },
+    "getter_order": "GetGameInfo/GetDifficulty called before override selection",
+    "invalid_native_selector": "native returns false; restored API reports Unsupported outside covered enum domain"
+  },
+  "hardcore_rule": "byte equality between main-player offset0x4bd5 and stored byte this+0x20; comparison selector unused; main player is not supplied Entity",
+  "collection_rule": {
+    "operation0": "AND; false short-circuit; empty true",
+    "operation1": "OR; true short-circuit; empty false",
+    "flag": "skip type17 before virtual Evaluate at vtable+0x28",
+    "invalid_native_operator": "native false; restored API reports Unsupported outside covered domain"
+  },
+  "aliases": "Wait false leaf and vector-only ctor are linker-folded with many unrelated export names; role established by factory/vtable and call slot, not displayed decompiler name",
+  "empty_serialized_definition": "Quest2Event::Read allocates native condition container only when count>0; ctor only zeros vector, not operator field. No assumption that serialized null operator means AND. Adapter returns Unsupported until caller gate semantics are restored.",
+  "event_read_evidence": {
+    "source": "docs/resource-contracts/Game-function-evidence-bounded-v2.json",
+    "start": "180421c20",
+    "end": "180421d02"
+  },
+  "test_evidence_levels": {
+    "unit_truth_vectors": "fixed expectations from static branches; no Python behavioral oracle",
+    "catalog": "official serialized parameters supplied to own evaluator with local simulated inputs; not original game state or behavior observation",
+    "original_dynamic_run": "not performed"
+  }
+}

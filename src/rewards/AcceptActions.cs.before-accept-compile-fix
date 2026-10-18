@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using GrimDynasty.TaskLogic;
+using GrimDynasty.TokenActions;
+using GrimDynasty.TaskAuto;
+namespace GrimDynasty.Rewards {
+ public sealed class AcceptActions : IAcceptRuntime {
+  public List<AcceptEvent> Events;
+  public WalletSnapshot Wallet;
+  public TutorialSnapshot Tutorials;
+  public bool QuestUidIndexComplete;
+  public readonly Dictionary<uint,RewardQuestSnapshot> QuestsByUid=new Dictionary<uint,RewardQuestSnapshot>();
+  static MutationResult U(string s){return MutationResult.Unsupported(s);}
+  static WalletSnapshot Copy(WalletSnapshot w){return w==null?null:new WalletSnapshot{MainPlayerResolved=w.MainPlayerResolved,StaticMoneyNameReady=w.StaticMoneyNameReady,MoneyNameCache=w.MoneyNameCache==null?null:w.MoneyNameCache.Copy(),Money16C4=w.Money16C4};}
+  static EvaluationResult Gate(AcceptEvent e,World world){
+   if(e==null)return EvaluationResult.Unsupported("UnknownAcceptEvent");
+   if(e.Conditions!=null)foreach(var p in e.Conditions.Conditions){
+    if(p==null)return EvaluationResult.Unsupported("UnknownAcceptCondition");
+    // These getters are unaffected by the two recovered action kinds.
+    switch(p.TypeId){case 3:case 4:case 5:case 7:case 18:case 20:break;default:return EvaluationResult.Unsupported("AcceptConditionOutsideStableDomain");}
+   }
+   return Evaluator.EventGate(e.Conditions,e.ConditionsKnown,world);
+  }
+  MutationResult Parent(AutoSnapshot a,out RewardQuestSnapshot q){
+   q=null;if(!a.QuestUid.HasValue)return U("UnknownAcceptParentQuestUid");
+   if(!QuestsByUid.TryGetValue(a.QuestUid.Value,out q))return QuestUidIndexComplete?MutationResult.Known(false):U("IncompleteAcceptQuestUidIndex");
+   QuestState byName;
+   if(q==null||q.RewardTaskUidsAt50==null||a.Runtime.World==null||a.Runtime.QuestReference==null||!a.Runtime.World.Quests.TryGetValue(a.Runtime.QuestReference,out byName)||!Object.ReferenceEquals(q.Quest,byName))return U("AcceptParentQuestSnapshotMismatch");
+   return MutationResult.Known(false);
+  }
+  MutationResult Run(AutoSnapshot a,bool preview){
+   if(a==null||a.Runtime==null||a.Runtime.State==null||a.Runtime.State.Task==null||Events==null||a.Runtime.State.OnAcceptEventCount!=Events.Count)return U("UnknownOrMismatchedAcceptVector");
+   var first=a.TutorialRuntime as TutorialTaskStart;
+   if((a.Runtime.State.QuestFlags.GetValueOrDefault()&4)!=0&&first!=null&&Tutorials!=null&&!Object.ReferenceEquals(first.State,Tutorials))return U("AcceptTutorialEngineSnapshotMismatch");
+   var wallet=preview?Copy(Wallet):Wallet;var tutorials=preview&&Tutorials!=null?Tutorials.Copy():Tutorials;bool changed=false;
+   foreach(var e in Events){
+    var active=Gate(e,a.Runtime.World);if(active.Status!="Known")return U(active.Reason);if(!active.Value.Value||e.Actions==null)continue;
+    // Native before/after hooks for Money and Tutorial are the proved RET body.
+    foreach(var action in e.Actions){
+     if(action==null||action.Version!=0)return U("UnknownAcceptActionVersion");MutationResult result;
+     if(action.TypeId==4){if(action.Money==null||action.Money.Version!=action.Version)return U("UnknownAcceptMoneyAction");result=MoneyRewards.Execute(action.Money,wallet);}
+     else if(action.TypeId==27){if(tutorials!=null&&tutorials.Events!=null&&!Object.ReferenceEquals(tutorials.Events,a.Events))return U("AcceptTutorialEventManagerMismatch");result=TutorialRules.ExecuteAction(tutorials,action.TutorialPage);}
+     else return U("AcceptActionOutsideRecoveredDomain:"+action.TypeId);
+     if(result.Status!="Known")return result;changed|=result.Changed.Value;
+    }
+   }
+   // Task.Start re-evaluates events for HasRewardActions after executing them.
+   bool reward=false;
+   foreach(var e in Events){var active=Gate(e,a.Runtime.World);if(active.Status!="Known")return U(active.Reason);if(!active.Value.Value||e.Actions==null)continue;foreach(var action in e.Actions)if(action.TypeId==4){reward=true;break;}if(reward)break;}
+   if(reward){RewardQuestSnapshot q;var parent=Parent(a,out q);if(parent.Status!="Known")return parent;if(q!=null){if(!preview)q.RewardTaskUidsAt50.Add(a.Runtime.State.Task.Uid);changed=true;}}
+   return MutationResult.Known(changed);
+  }
+  public MutationResult Check(AutoSnapshot a){return Run(a,true);}
+  public MutationResult Execute(AutoSnapshot a){var check=Check(a);return check.Status=="Known"?Run(a,false):check;}
+ }
+}

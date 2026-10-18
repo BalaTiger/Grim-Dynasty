@@ -1,0 +1,229 @@
+[
+  {
+    "label": "?GetRootSavePath@GameEngine@GAME@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+    "start": "1802c7f50",
+    "end": "1802c7fae",
+    "bytesBudget": 95,
+    "function": "?GetRootSavePath@GameEngine@GAME@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+    "instructions": [
+      "1802c7f50 PUSH RBX",
+      "1802c7f52 SUB RSP,0x50",
+      "1802c7f56 MOV qword ptr [RSP + 0x28],-0x2",
+      "1802c7f5f MOV RBX,RCX",
+      "1802c7f62 MOV dword ptr [RSP + 0x20],0x0",
+      "1802c7f6a LEA RCX,[RSP + 0x30]",
+      "1802c7f6f CALL 0x180593560",
+      "1802c7f74 NOP",
+      "1802c7f75 LEA R8,[0x180693d00]",
+      "1802c7f7c MOV RDX,RAX",
+      "1802c7f7f MOV RCX,RBX",
+      "1802c7f82 CALL 0x180301350",
+      "1802c7f87 NOP",
+      "1802c7f88 MOV RDX,qword ptr [RSP + 0x48]",
+      "1802c7f8d CMP RDX,0x10",
+      "1802c7f91 JC 0x1802c7fa6",
+      "1802c7f93 INC RDX",
+      "1802c7f96 MOV R8D,0x1",
+      "1802c7f9c MOV RCX,qword ptr [RSP + 0x30]",
+      "1802c7fa1 CALL 0x180016620",
+      "1802c7fa6 MOV RAX,RBX",
+      "1802c7fa9 ADD RSP,0x50",
+      "1802c7fad POP RBX",
+      "1802c7fae RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "1802c7f6f",
+        "to": "180593560",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180593560"
+      },
+      {
+        "from": "1802c7f82",
+        "to": "180301350",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180301350"
+      },
+      {
+        "from": "1802c7f91",
+        "to": "1802c7fa6",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1802c7fa6"
+      },
+      {
+        "from": "1802c7fa1",
+        "to": "180016620",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180016620"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nundefined8\r\n_GetRootSavePath_GameEngine_GAME__SA_AV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__XZ\r\n          (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)\r\n\r\n{\r\n  undefined8 uVar1;\r\n  undefined4 uVar2;\r\n  undefined8 uVar3;\r\n  undefined8 auStack_28 [3];\r\n  ulonglong uStack_10;\r\n  \r\n                    /* 0x2c7f50  15991\r\n                       ?GetRootSavePath@GameEngine@GAME@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ\r\n                        */\r\n  uVar3 \u003d 0xfffffffffffffffe;\r\n  uVar2 \u003d 0;\r\n  uVar1 \u003d FUN_180593560(auStack_28);\r\n  FUN_180301350(param_1,uVar1,\u0026UNK_180693d00,param_4,uVar2,uVar3);\r\n  if (0xf \u003c uStack_10) {\r\n    FUN_180016620(auStack_28[0],uStack_10 + 1,1);\r\n  }\r\n  return param_1;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "?GetUserSaveDataFolder@GameEngine@GAME@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+    "start": "1802e3270",
+    "end": "1802e330c",
+    "bytesBudget": 157,
+    "function": "?GetUserSaveDataFolder@GameEngine@GAME@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+    "instructions": [
+      "1802e3270 MOV qword ptr [RSP + 0x10],RDX",
+      "1802e3275 PUSH RBX",
+      "1802e3276 SUB RSP,0x50",
+      "1802e327a MOV qword ptr [RSP + 0x28],-0x2",
+      "1802e3283 MOV RBX,RDX",
+      "1802e3286 XOR EAX,EAX",
+      "1802e3288 MOV dword ptr [RSP + 0x20],EAX",
+      "1802e328c MOV qword ptr [RDX + 0x18],0xf",
+      "1802e3294 MOV qword ptr [RDX + 0x10],RAX",
+      "1802e3298 CMP qword ptr [RDX + 0x18],0x10",
+      "1802e329d JC 0x1802e32a4",
+      "1802e329f MOV RAX,qword ptr [RDX]",
+      "1802e32a2 JMP 0x1802e32a7",
+      "1802e32a4 MOV RAX,RBX",
+      "1802e32a7 MOV byte ptr [RAX],0x0",
+      "1802e32aa MOV dword ptr [RSP + 0x20],0x1",
+      "1802e32b2 CMP byte ptr [RCX + 0x375ea],0x0",
+      "1802e32b9 JNZ 0x1802e32ee",
+      "1802e32bb LEA RCX,[RSP + 0x30]",
+      "1802e32c0 CALL 0x1802e3100",
+      "1802e32c5 MOV RDX,RAX",
+      "1802e32c8 MOV RCX,RBX",
+      "1802e32cb CALL 0x1800309b0",
+      "1802e32d0 MOV RDX,qword ptr [RSP + 0x48]",
+      "1802e32d5 CMP RDX,0x10",
+      "1802e32d9 JC 0x1802e32ee",
+      "1802e32db INC RDX",
+      "1802e32de MOV R8D,0x1",
+      "1802e32e4 MOV RCX,qword ptr [RSP + 0x30]",
+      "1802e32e9 CALL 0x180016620",
+      "1802e32ee MOV R8D,0x5",
+      "1802e32f4 LEA RDX,[0x18069a2b8]",
+      "1802e32fb MOV RCX,RBX",
+      "1802e32fe CALL 0x180089e10",
+      "1802e3303 MOV RAX,RBX",
+      "1802e3306 ADD RSP,0x50",
+      "1802e330a POP RBX",
+      "1802e330b RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "1802e329d",
+        "to": "1802e32a4",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1802e32a4"
+      },
+      {
+        "from": "1802e32a2",
+        "to": "1802e32a7",
+        "type": "UNCONDITIONAL_JUMP",
+        "symbol": "LAB_1802e32a7"
+      },
+      {
+        "from": "1802e32b9",
+        "to": "1802e32ee",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1802e32ee"
+      },
+      {
+        "from": "1802e32c0",
+        "to": "1802e3100",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "?GetBaseFolder@GameEngine@GAME@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ"
+      },
+      {
+        "from": "1802e32cb",
+        "to": "1800309b0",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_1800309b0"
+      },
+      {
+        "from": "1802e32d9",
+        "to": "1802e32ee",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1802e32ee"
+      },
+      {
+        "from": "1802e32e9",
+        "to": "180016620",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180016620"
+      },
+      {
+        "from": "1802e32fe",
+        "to": "180089e10",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180089e10"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nundefined8 *\r\n_GetUserSaveDataFolder_GameEngine_GAME__QEBA_AV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__XZ\r\n          (longlong param_1,undefined8 *param_2,undefined8 param_3,undefined8 param_4)\r\n\r\n{\r\n  undefined8 *puVar1;\r\n  undefined8 uVar2;\r\n  undefined4 uVar3;\r\n  undefined8 uVar4;\r\n  undefined8 auStack_28 [3];\r\n  ulonglong uStack_10;\r\n  \r\n                    /* 0x2e3270  17181\r\n                       ?GetUserSaveDataFolder@GameEngine@GAME@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ\r\n                        */\r\n  uVar4 \u003d 0xfffffffffffffffe;\r\n  param_2[3] \u003d 0xf;\r\n  param_2[2] \u003d 0;\r\n  puVar1 \u003d param_2;\r\n  if (0xf \u003c (ulonglong)param_2[3]) {\r\n    puVar1 \u003d (undefined8 *)*param_2;\r\n  }\r\n  *(undefined1 *)puVar1 \u003d 0;\r\n  uVar3 \u003d 1;\r\n  if (*(char *)(param_1 + 0x375ea) \u003d\u003d \u0027\\0\u0027) {\r\n    uVar2 \u003d _GetBaseFolder_GameEngine_GAME__SA_AV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__XZ\r\n                      (auStack_28);\r\n    FUN_1800309b0(param_2,uVar2);\r\n    if (0xf \u003c uStack_10) {\r\n      FUN_180016620(auStack_28[0],uStack_10 + 1,1);\r\n    }\r\n  }\r\n  FUN_180089e10(param_2,\u0026UNK_18069a2b8,5,param_4,uVar3,uVar4);\r\n  return param_2;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  },
+  {
+    "label": "?GetBaseFolder@GameEngine@GAME@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+    "start": "1802e3100",
+    "end": "1802e315e",
+    "bytesBudget": 95,
+    "function": "?GetBaseFolder@GameEngine@GAME@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+    "instructions": [
+      "1802e3100 PUSH RBX",
+      "1802e3102 SUB RSP,0x50",
+      "1802e3106 MOV qword ptr [RSP + 0x28],-0x2",
+      "1802e310f MOV RBX,RCX",
+      "1802e3112 MOV dword ptr [RSP + 0x20],0x0",
+      "1802e311a LEA RCX,[RSP + 0x30]",
+      "1802e311f CALL 0x1802c7f50",
+      "1802e3124 NOP",
+      "1802e3125 LEA R8,[0x1806190ec]",
+      "1802e312c MOV RDX,RAX",
+      "1802e312f MOV RCX,RBX",
+      "1802e3132 CALL 0x180301350",
+      "1802e3137 NOP",
+      "1802e3138 MOV RDX,qword ptr [RSP + 0x48]",
+      "1802e313d CMP RDX,0x10",
+      "1802e3141 JC 0x1802e3156",
+      "1802e3143 INC RDX",
+      "1802e3146 MOV R8D,0x1",
+      "1802e314c MOV RCX,qword ptr [RSP + 0x30]",
+      "1802e3151 CALL 0x180016620",
+      "1802e3156 MOV RAX,RBX",
+      "1802e3159 ADD RSP,0x50",
+      "1802e315d POP RBX",
+      "1802e315e RET"
+    ],
+    "outgoingReferences": [
+      {
+        "from": "1802e311f",
+        "to": "1802c7f50",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "?GetRootSavePath@GameEngine@GAME@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ"
+      },
+      {
+        "from": "1802e3132",
+        "to": "180301350",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180301350"
+      },
+      {
+        "from": "1802e3141",
+        "to": "1802e3156",
+        "type": "CONDITIONAL_JUMP",
+        "symbol": "LAB_1802e3156"
+      },
+      {
+        "from": "1802e3151",
+        "to": "180016620",
+        "type": "UNCONDITIONAL_CALL",
+        "symbol": "FUN_180016620"
+      }
+    ],
+    "decompileCompleted": true,
+    "error": "",
+    "pseudocode": "\r\nundefined8\r\n_GetBaseFolder_GameEngine_GAME__SA_AV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__XZ\r\n          (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)\r\n\r\n{\r\n  undefined8 uVar1;\r\n  undefined4 uVar2;\r\n  undefined8 uVar3;\r\n  undefined8 auStack_28 [3];\r\n  ulonglong uStack_10;\r\n  \r\n                    /* 0x2e3100  12123\r\n                       ?GetBaseFolder@GameEngine@GAME@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ\r\n                        */\r\n  uVar3 \u003d 0xfffffffffffffffe;\r\n  uVar2 \u003d 0;\r\n  uVar1 \u003d _GetRootSavePath_GameEngine_GAME__SA_AV__basic_string_DU__char_traits_D_std__V__allocator_D_2__std__XZ\r\n                    (auStack_28);\r\n  FUN_180301350(param_1,uVar1,\u0026UNK_1806190ec,param_4,uVar2,uVar3);\r\n  if (0xf \u003c uStack_10) {\r\n    FUN_180016620(auStack_28[0],uStack_10 + 1,1);\r\n  }\r\n  return param_1;\r\n}\r\n\r\n",
+    "limitations": "No auto-analysis; only selected bounded bodies disassembled/decompiled. Callee bodies and incoming references outside those ranges are not analyzed; inferred types/calling signatures remain uncertain."
+  }
+]
