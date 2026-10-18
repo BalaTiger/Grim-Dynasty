@@ -44,6 +44,7 @@ foreach($item in @(
  @('InventoryDeliveryDemo.exe','rewards-build'),
  @('FullInventoryDeliveryDemo.exe','rewards-build'),
  @('InventoryRoundTripDemo.exe','rewards-build'),
+ @('RuntimeIdInventoryDemo.exe','rewards-build'),
  @('CrtCurveCatalogProbe.exe','rewards-build'),
  @('MoneyCatalogProbe.exe','rewards-build'),
  @('ItemAutoCatalogProbe.exe','task-items-build'),
@@ -67,7 +68,7 @@ foreach($name in $files.Keys){
   $dependencies[$name]=$refs
  }
 }
-foreach($name in @('TaskRuntimeDemo.exe','AutoQuestDemo.exe','KillQuestDemo.exe','ItemQuestDemo.exe','RewardQuestDemo.exe','AdjustedQuestDemo.exe','ExperienceQuestDemo.exe','LevelUpQuestDemo.exe','CrtLevelUpQuestDemo.exe','TutorialQuestDemo.exe','AcceptQuestDemo.exe','ItemAcceptQuestDemo.exe','InventoryDeliveryDemo.exe','FullInventoryDeliveryDemo.exe','InventoryRoundTripDemo.exe')){& (Join-Path $target $name);if($LASTEXITCODE -ne 0){throw "Packaged demo failed: $name"}}
+foreach($name in @('TaskRuntimeDemo.exe','AutoQuestDemo.exe','KillQuestDemo.exe','ItemQuestDemo.exe','RewardQuestDemo.exe','AdjustedQuestDemo.exe','ExperienceQuestDemo.exe','LevelUpQuestDemo.exe','CrtLevelUpQuestDemo.exe','TutorialQuestDemo.exe','AcceptQuestDemo.exe','ItemAcceptQuestDemo.exe','InventoryDeliveryDemo.exe','FullInventoryDeliveryDemo.exe','InventoryRoundTripDemo.exe','RuntimeIdInventoryDemo.exe')){& (Join-Path $target $name);if($LASTEXITCODE -ne 0){throw "Packaged demo failed: $name"}}
 $record=[ordered]@{owner='GrimDynastyOfflineBuild-v1';utc=[DateTime]::UtcNow.ToString('o');status='passed';modules=10;native_math_provider=[ordered]@{path='C:\Windows\System32\ucrtbase.dll';sha256='3c60056371f82e4744185b6f2fa0c69042b1e78804685944132974dd13f3b6d9';scope='Optional verified Windows10 x64 System32 CRT, explicit C-locale and unchanged floating control. No original installation DLL.'};files=$hashes;dependencies=$dependencies;scope='Own managed DLLs and own original fixtures. Build/demos need no original game DLL, resources, Steam, saves, network or new SDK. Catalog tools only read authorized resources when explicitly invoked.'}
 $json=$record | ConvertTo-Json -Depth 8
 if(Test-Path -LiteralPath $manifestPath){$backup=Join-Path $target ('manifest.'+[DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfffffff')+'.json');Copy-Item -LiteralPath $manifestPath -Destination $backup -ErrorAction Stop}
@@ -75,4 +76,4 @@ $pending=Join-Path $target 'manifest.pending.json'
 if(Test-Path -LiteralPath $pending){throw 'Pending manifest exists; preserving'}
 [IO.File]::WriteAllText($pending,$json,[Text.UTF8Encoding]::new($false))
 Move-Item -LiteralPath $pending -Destination $manifestPath -Force
-Write-Output "Built and verified ten own modules and fifteen standalone scenario CLIs at $target"
+Write-Output "Built and verified ten own modules and sixteen standalone scenario CLIs at $target"

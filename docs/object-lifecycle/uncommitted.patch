@@ -1,0 +1,59 @@
+diff --git a/src/rewards/build_rewards.ps1 b/src/rewards/build_rewards.ps1
+index 5cc913b..1ae8d66 100644
+--- a/src/rewards/build_rewards.ps1
++++ b/src/rewards/build_rewards.ps1
+@@ -84,8 +84,12 @@ if ($LASTEXITCODE -ne 0) {throw 'Full inventory take tests failed'}
+ if ($LASTEXITCODE -ne 0) {throw 'Inventory add tests compile failed'}
+ & "$target\InventoryAddTests.exe"
+ if ($LASTEXITCODE -ne 0) {throw 'Inventory add tests failed'}
+-foreach($program in @('InventoryRoundTripDemo','FullInventoryDeliveryDemo','InventoryDeliveryDemo','ItemAcceptQuestDemo','AcceptQuestDemo','TutorialQuestDemo','RewardQuestDemo','MoneyCatalogProbe','AdjustedQuestDemo','ExperienceQuestDemo','LevelUpQuestDemo','CrtLevelUpQuestDemo','CrtCurveCatalogProbe')) {
+- $extraSources=@();if($program -eq 'InventoryRoundTripDemo'){$extraSources=@("$PSScriptRoot\ExampleInventoryCycle.cs","$PSScriptRoot\OwnInventoryCycleFixture.cs","$PSScriptRoot\ExampleFullDelivery.cs","$PSScriptRoot\OwnDeliveryFixture.cs","$PSScriptRoot\ExampleDeliveryQuest.cs","D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs")};if($program -eq 'FullInventoryDeliveryDemo'){$extraSources=@("$PSScriptRoot\ExampleFullDelivery.cs","$PSScriptRoot\OwnDeliveryFixture.cs","$PSScriptRoot\ExampleDeliveryQuest.cs","D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs")};if($program -eq 'InventoryDeliveryDemo'){$extraSources=@("$PSScriptRoot\OwnDeliveryFixture.cs","$PSScriptRoot\ExampleDeliveryQuest.cs","D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs")};if($program -eq 'ItemAcceptQuestDemo'){$extraSources=@("$PSScriptRoot\OwnItemAcceptFixture.cs","$PSScriptRoot\ExampleItemAcceptQuest.cs","D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs")};if($program -eq 'AcceptQuestDemo'){$extraSources=@("$PSScriptRoot\ExampleAcceptQuest.cs","$PSScriptRoot\OwnAcceptQuestFixture.cs")};if($program -eq 'CrtCurveCatalogProbe'){$extraSources=@("$PSScriptRoot\CrtReference.cs")}
++& $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ @refs "/out:$target\ObjectIdTests.exe" "$PSScriptRoot\ObjectIdTests.cs"
++if ($LASTEXITCODE -ne 0) {throw 'Object ID tests compile failed'}
++& "$target\ObjectIdTests.exe"
++if ($LASTEXITCODE -ne 0) {throw 'Object ID tests failed'}
++foreach($program in @('RuntimeIdInventoryDemo','InventoryRoundTripDemo','FullInventoryDeliveryDemo','InventoryDeliveryDemo','ItemAcceptQuestDemo','AcceptQuestDemo','TutorialQuestDemo','RewardQuestDemo','MoneyCatalogProbe','AdjustedQuestDemo','ExperienceQuestDemo','LevelUpQuestDemo','CrtLevelUpQuestDemo','CrtCurveCatalogProbe')) {
++ $extraSources=@();if($program -eq 'InventoryRoundTripDemo' -or $program -eq 'RuntimeIdInventoryDemo'){$extraSources=@("$PSScriptRoot\ExampleInventoryCycle.cs","$PSScriptRoot\OwnInventoryCycleFixture.cs","$PSScriptRoot\ExampleFullDelivery.cs","$PSScriptRoot\OwnDeliveryFixture.cs","$PSScriptRoot\ExampleDeliveryQuest.cs","D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs")};if($program -eq 'FullInventoryDeliveryDemo'){$extraSources=@("$PSScriptRoot\ExampleFullDelivery.cs","$PSScriptRoot\OwnDeliveryFixture.cs","$PSScriptRoot\ExampleDeliveryQuest.cs","D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs")};if($program -eq 'InventoryDeliveryDemo'){$extraSources=@("$PSScriptRoot\OwnDeliveryFixture.cs","$PSScriptRoot\ExampleDeliveryQuest.cs","D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs")};if($program -eq 'ItemAcceptQuestDemo'){$extraSources=@("$PSScriptRoot\OwnItemAcceptFixture.cs","$PSScriptRoot\ExampleItemAcceptQuest.cs","D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs")};if($program -eq 'AcceptQuestDemo'){$extraSources=@("$PSScriptRoot\ExampleAcceptQuest.cs","$PSScriptRoot\OwnAcceptQuestFixture.cs")};if($program -eq 'CrtCurveCatalogProbe'){$extraSources=@("$PSScriptRoot\CrtReference.cs")}
+  & $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ /reference:System.Web.Extensions.dll @refs "/reference:$target\GrimDynasty.Resources.dll" "/reference:$target\GrimDynasty.Quests.dll" "/out:$target\$program.exe" "$PSScriptRoot\$program.cs" "$PSScriptRoot\ExampleRewardQuest.cs" "$PSScriptRoot\ExampleExperienceQuest.cs" "$PSScriptRoot\ExampleLevelUpQuest.cs" $fixture @extraSources
+  if ($LASTEXITCODE -ne 0) {throw 'Reward demo/catalog compile failed'}
+ }
+diff --git a/src/task_items/build_items.ps1 b/src/task_items/build_items.ps1
+index 752059a..e123bc9 100644
+--- a/src/task_items/build_items.ps1
++++ b/src/task_items/build_items.ps1
+@@ -8,7 +8,7 @@ New-Item -ItemType Directory -Path $target -Force | Out-Null
+ foreach($name in @('GrimDynasty.Conditions.dll','GrimDynasty.TaskLogic.dll','GrimDynasty.TokenActions.dll','GrimDynasty.TaskRuntime.dll','GrimDynasty.TaskAuto.dll','GrimDynasty.TaskKills.dll','GrimDynasty.Resources.dll','GrimDynasty.Quests.dll')) {Copy-Item -LiteralPath "D:\MyGitRepo\Grim-Dynasty\.tooling\task-kills-build\$name" -Destination $target -Force}
+ Copy-Item -LiteralPath 'D:\MyGitRepo\Grim-Dynasty\.tooling\quest-definition-build\GrimDynasty.Quests.dll' -Destination $target -Force
+ $refs=@("/reference:$target\GrimDynasty.Conditions.dll","/reference:$target\GrimDynasty.TaskLogic.dll","/reference:$target\GrimDynasty.TokenActions.dll","/reference:$target\GrimDynasty.TaskRuntime.dll","/reference:$target\GrimDynasty.TaskAuto.dll","/reference:$target\GrimDynasty.TaskKills.dll")
+-& $compiler /nologo /target:library /checked+ /optimize+ @refs "/out:$target\GrimDynasty.TaskItems.dll" "$PSScriptRoot\ItemCountQuery.cs" "$PSScriptRoot\HasItemCondition.cs" "$PSScriptRoot\HasItemDefinitionAdapter.cs" "$PSScriptRoot\InventoryTake.cs" "$PSScriptRoot\InventoryAdd.cs"
++& $compiler /nologo /target:library /checked+ /optimize+ @refs "/out:$target\GrimDynasty.TaskItems.dll" "$PSScriptRoot\ItemCountQuery.cs" "$PSScriptRoot\HasItemCondition.cs" "$PSScriptRoot\HasItemDefinitionAdapter.cs" "$PSScriptRoot\InventoryTake.cs" "$PSScriptRoot\InventoryAdd.cs" "$PSScriptRoot\ObjectIdAllocator.cs"
+ if ($LASTEXITCODE -ne 0) {throw 'Item module compile failed'}
+ $refs+="/reference:$target\GrimDynasty.TaskItems.dll"
+ & $compiler /nologo /target:exe /checked+ /optimize+ @refs "/out:$target\ItemConditionTests.exe" "$PSScriptRoot\ItemConditionTests.cs"
+diff --git a/tools/build_offline.ps1 b/tools/build_offline.ps1
+index 5b43dd7..9253d7b 100644
+--- a/tools/build_offline.ps1
++++ b/tools/build_offline.ps1
+@@ -44,6 +44,7 @@ foreach($item in @(
+  @('InventoryDeliveryDemo.exe','rewards-build'),
+  @('FullInventoryDeliveryDemo.exe','rewards-build'),
+  @('InventoryRoundTripDemo.exe','rewards-build'),
++ @('RuntimeIdInventoryDemo.exe','rewards-build'),
+  @('CrtCurveCatalogProbe.exe','rewards-build'),
+  @('MoneyCatalogProbe.exe','rewards-build'),
+  @('ItemAutoCatalogProbe.exe','task-items-build'),
+@@ -67,7 +68,7 @@ foreach($name in $files.Keys){
+   $dependencies[$name]=$refs
+  }
+ }
+-foreach($name in @('TaskRuntimeDemo.exe','AutoQuestDemo.exe','KillQuestDemo.exe','ItemQuestDemo.exe','RewardQuestDemo.exe','AdjustedQuestDemo.exe','ExperienceQuestDemo.exe','LevelUpQuestDemo.exe','CrtLevelUpQuestDemo.exe','TutorialQuestDemo.exe','AcceptQuestDemo.exe','ItemAcceptQuestDemo.exe','InventoryDeliveryDemo.exe','FullInventoryDeliveryDemo.exe','InventoryRoundTripDemo.exe')){& (Join-Path $target $name);if($LASTEXITCODE -ne 0){throw "Packaged demo failed: $name"}}
++foreach($name in @('TaskRuntimeDemo.exe','AutoQuestDemo.exe','KillQuestDemo.exe','ItemQuestDemo.exe','RewardQuestDemo.exe','AdjustedQuestDemo.exe','ExperienceQuestDemo.exe','LevelUpQuestDemo.exe','CrtLevelUpQuestDemo.exe','TutorialQuestDemo.exe','AcceptQuestDemo.exe','ItemAcceptQuestDemo.exe','InventoryDeliveryDemo.exe','FullInventoryDeliveryDemo.exe','InventoryRoundTripDemo.exe','RuntimeIdInventoryDemo.exe')){& (Join-Path $target $name);if($LASTEXITCODE -ne 0){throw "Packaged demo failed: $name"}}
+ $record=[ordered]@{owner='GrimDynastyOfflineBuild-v1';utc=[DateTime]::UtcNow.ToString('o');status='passed';modules=10;native_math_provider=[ordered]@{path='C:\Windows\System32\ucrtbase.dll';sha256='3c60056371f82e4744185b6f2fa0c69042b1e78804685944132974dd13f3b6d9';scope='Optional verified Windows10 x64 System32 CRT, explicit C-locale and unchanged floating control. No original installation DLL.'};files=$hashes;dependencies=$dependencies;scope='Own managed DLLs and own original fixtures. Build/demos need no original game DLL, resources, Steam, saves, network or new SDK. Catalog tools only read authorized resources when explicitly invoked.'}
+ $json=$record | ConvertTo-Json -Depth 8
+ if(Test-Path -LiteralPath $manifestPath){$backup=Join-Path $target ('manifest.'+[DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfffffff')+'.json');Copy-Item -LiteralPath $manifestPath -Destination $backup -ErrorAction Stop}
+@@ -75,4 +76,4 @@ $pending=Join-Path $target 'manifest.pending.json'
+ if(Test-Path -LiteralPath $pending){throw 'Pending manifest exists; preserving'}
+ [IO.File]::WriteAllText($pending,$json,[Text.UTF8Encoding]::new($false))
+ Move-Item -LiteralPath $pending -Destination $manifestPath -Force
+-Write-Output "Built and verified ten own modules and fifteen standalone scenario CLIs at $target"
++Write-Output "Built and verified ten own modules and sixteen standalone scenario CLIs at $target"

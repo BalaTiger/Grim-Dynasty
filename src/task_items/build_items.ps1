@@ -8,7 +8,7 @@ New-Item -ItemType Directory -Path $target -Force | Out-Null
 foreach($name in @('GrimDynasty.Conditions.dll','GrimDynasty.TaskLogic.dll','GrimDynasty.TokenActions.dll','GrimDynasty.TaskRuntime.dll','GrimDynasty.TaskAuto.dll','GrimDynasty.TaskKills.dll','GrimDynasty.Resources.dll','GrimDynasty.Quests.dll')) {Copy-Item -LiteralPath "D:\MyGitRepo\Grim-Dynasty\.tooling\task-kills-build\$name" -Destination $target -Force}
 Copy-Item -LiteralPath 'D:\MyGitRepo\Grim-Dynasty\.tooling\quest-definition-build\GrimDynasty.Quests.dll' -Destination $target -Force
 $refs=@("/reference:$target\GrimDynasty.Conditions.dll","/reference:$target\GrimDynasty.TaskLogic.dll","/reference:$target\GrimDynasty.TokenActions.dll","/reference:$target\GrimDynasty.TaskRuntime.dll","/reference:$target\GrimDynasty.TaskAuto.dll","/reference:$target\GrimDynasty.TaskKills.dll")
-& $compiler /nologo /target:library /checked+ /optimize+ @refs "/out:$target\GrimDynasty.TaskItems.dll" "$PSScriptRoot\ItemCountQuery.cs" "$PSScriptRoot\HasItemCondition.cs" "$PSScriptRoot\HasItemDefinitionAdapter.cs" "$PSScriptRoot\InventoryTake.cs" "$PSScriptRoot\InventoryAdd.cs"
+& $compiler /nologo /target:library /checked+ /optimize+ @refs "/out:$target\GrimDynasty.TaskItems.dll" "$PSScriptRoot\ItemCountQuery.cs" "$PSScriptRoot\HasItemCondition.cs" "$PSScriptRoot\HasItemDefinitionAdapter.cs" "$PSScriptRoot\InventoryTake.cs" "$PSScriptRoot\InventoryAdd.cs" "$PSScriptRoot\ObjectIdAllocator.cs"
 if ($LASTEXITCODE -ne 0) {throw 'Item module compile failed'}
 $refs+="/reference:$target\GrimDynasty.TaskItems.dll"
 & $compiler /nologo /target:exe /checked+ /optimize+ @refs "/out:$target\ItemConditionTests.exe" "$PSScriptRoot\ItemConditionTests.cs"
