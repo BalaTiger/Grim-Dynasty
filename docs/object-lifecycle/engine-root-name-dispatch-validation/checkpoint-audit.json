@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-21T02:32:22.0148377Z",
+  "manifest": ".tooling/checkpoints/engine-root-names-dispatch-complete/manifest.json",
+  "manifest_sha256": "bd87777cbe63203bead0bb4dcda4f6f4b0cfa5d058c8817c84dc6a44863af1c7",
+  "verified_copies": 23,
+  "original_and_copy_hashes_match": true,
+  "ancestors_are_plain_directories": true,
+  "corrective_scope": "Read-only audit of already-written checkpoint; no rebuild, rerun, recopy or overwrite.",
+  "creation_observation": {
+    "nonterminating_warnings": 2,
+    "exact_message": "Split-Path: Parameter set cannot be resolved using the specified named parameters. One or more parameters issued cannot be used together or an insufficient number of parameters were provided.",
+    "cause": "The initial checkpoint-parent checks combined Split-Path -LiteralPath with -Parent. This invalid parameter combination was not an authorization denial.",
+    "subsequent_actions": "The fresh directory creation and per-source/per-destination ancestor checks ran, all 23 copies were hash-compared, and the manifest was written. No source or output was overwritten.",
+    "verification": "A separate read-only audit with ErrorActionPreference=Stop used System.IO path handling, checked checkpoint ancestors, and compared every current source, copy, byte count and manifest hash successfully.",
+    "safety_settings_changed": false,
+    "tests_rerun": false
+  }
+}

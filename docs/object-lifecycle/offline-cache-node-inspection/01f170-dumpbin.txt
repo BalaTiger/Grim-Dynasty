@@ -1,0 +1,31 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-cache-node\Engine.readonly.dll
+
+File Type: DLL
+
+  000000018001F170: 48 89 5C 24 08     mov         qword ptr [rsp+8],rbx
+  000000018001F175: 57                 push        rdi
+  000000018001F176: 48 83 EC 20        sub         rsp,20h
+  000000018001F17A: B9 38 00 00 00     mov         ecx,38h
+  000000018001F17F: 49 8B F8           mov         rdi,r8
+  000000018001F182: 48 8B DA           mov         rbx,rdx
+  000000018001F185: E8 0E D2 2B 00     call        00000001802DC398
+  000000018001F18A: 48 85 DB           test        rbx,rbx
+  000000018001F18D: 75 06              jne         000000018001F195
+  000000018001F18F: 48 8B D8           mov         rbx,rax
+  000000018001F192: 48 8B F8           mov         rdi,rax
+  000000018001F195: 48 85 C0           test        rax,rax
+  000000018001F198: 74 03              je          000000018001F19D
+  000000018001F19A: 48 89 18           mov         qword ptr [rax],rbx
+  000000018001F19D: 48 8D 48 08        lea         rcx,[rax+8]
+  000000018001F1A1: 48 85 C9           test        rcx,rcx
+  000000018001F1A4: 74 03              je          000000018001F1A9
+  000000018001F1A6: 48 89 39           mov         qword ptr [rcx],rdi
+  000000018001F1A9: 48 8B 5C 24 30     mov         rbx,qword ptr [rsp+30h]
+  000000018001F1AE: 48 83 C4 20        add         rsp,20h
+  000000018001F1B2: 5F                 pop         rdi
+  000000018001F1B3: C3                 ret
+
+  Summary
+
+      301000 .text

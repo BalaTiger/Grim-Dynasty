@@ -1,0 +1,93 @@
+{
+  "date_utc": "2026-10-21",
+  "phase": "Frozen pre-execution review; no build result claimed here",
+  "inventory": {
+    "utc": "2026-10-21T02:05:58.2574886Z",
+    "files": [
+      {
+        "path": "src/task_items/EngineRootRegistration.cs",
+        "bytes": 17586,
+        "sha256": "408e28c7d6fbb0fee2f4a74909b1209700e01f02d10837cb265a168a6a331caf"
+      },
+      {
+        "path": "src/task_items/EngineRootRegistrationTests.cs",
+        "bytes": 43323,
+        "sha256": "045330dc7740b3ebe83f88c92e5bb5dd3854ae2c2ae49ff01603fdb8ad658239"
+      },
+      {
+        "path": "src/task_items/build_engine_root_registration.ps1",
+        "bytes": 4346,
+        "sha256": "c38ad69e72d9b41674c5e58c2e0fe50264801243f26e94b562164155a69e4151"
+      },
+      {
+        "path": "docs/object-lifecycle/ENGINE-ROOT-MODEL-DESIGN-PENDING.md",
+        "bytes": 17365,
+        "sha256": "1b90976c3fa748c4e796f2c1a7f85454388d2593dfd5eee9e1edc90bdc45f00e"
+      },
+      {
+        "path": "docs/object-lifecycle/ENGINE-ROOT-HELPERS-RESULT.md",
+        "bytes": 7976,
+        "sha256": "d3132f419deb477704012d2e8c22c8af727ebab1ce9d67b69f607f8c03400686"
+      },
+      {
+        "path": "docs/object-lifecycle/ENGINE-ROOT-WRITERS-RESULT.md",
+        "bytes": 8021,
+        "sha256": "fa968e82bb66f27a0131041349c44a0cb35a8b40a0298793b53390395f823c10"
+      }
+    ],
+    "output_directory_exists": false,
+    "compiler": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\csc.exe",
+    "compiler_sha256": "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00"
+  },
+  "compiler_file_version": "4.8.9221.0 built by: NET481REL1LAST_25H2",
+  "notes_on_inventory": "Original inventory timestamp precedes the final bounded-test callback fix. Test entry updated from root read and final agent freeze; other entries unchanged.",
+  "exact_command": "& 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -NoProfile -NonInteractive -File 'C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\src\\task_items\\build_engine_root_registration.ps1'",
+  "requested_mechanism": "require_escalated, separate from the prior read-only policy probe",
+  "script_review": {
+    "no_arguments": true,
+    "fixed_workspace": true,
+    "fixed_fresh_output": ".tooling/engine-root-model-build-20261021",
+    "rejects_reparse_inputs_outputs_ancestors": true,
+    "rejects_existing_output": true,
+    "compiler_noconfig": true,
+    "language_version": 5,
+    "checked_arithmetic": true,
+    "product_sources": [
+      "src/task_items/EngineRootRegistration.cs"
+    ],
+    "fixture_sources": [
+      "src/task_items/EngineRootRegistrationTests.cs"
+    ],
+    "generated_files": [
+      ".tooling/engine-root-model-build-20261021/GrimDynasty.EngineRootRegistration.dll",
+      ".tooling/engine-root-model-build-20261021/EngineRootRegistrationTests.exe"
+    ],
+    "other_tool_io": "Installed compiler/framework reads and any normal compiler temporary files; no other project suite or game input",
+    "execution_target": "Only the newly built EngineRootRegistrationTests.exe",
+    "failure_policy": "Stop immediately; preserve fixed output and failure evidence. No automatic retry, cleanup, overwrite or alternate route."
+  },
+  "implementation_review": "Independent static review found no blocking mismatch with archived Engine evidence. Own alias/span guards and semantic traces are not native memory-access traces.",
+  "fixture_review": {
+    "planned_assertions": 221,
+    "planned_scenario_groups": 11,
+    "executed": false,
+    "maximum_fixture_array_slots": 8,
+    "default_semantic_step_limit": 128,
+    "independent_retry_callback_ceiling": 4,
+    "golden_arithmetic_reviewed": true,
+    "only_new_fixture_main": true
+  },
+  "security_scope": {
+    "policy_changes": false,
+    "registry_writes": false,
+    "acl_changes": false,
+    "bypass": false,
+    "original_game_or_dll_execution": false,
+    "rea": false,
+    "java": false,
+    "saves": false,
+    "commit_or_push": false
+  },
+  "prior_checkpoint": ".tooling/checkpoints/execution-policy-approved-probe-2026-10-21/manifest.json",
+  "prior_checkpoint_sha256": "72653d267baad00ee37496f7e03e01f5a10f7095299a838120d21edc71de7b4f"
+}

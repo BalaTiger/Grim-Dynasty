@@ -1,0 +1,32 @@
+{
+  "status": "no-blocking-findings-in-declared-normal-domain",
+  "method": "primary read-through plus independent read-only source/saved-instruction review; checked full regression",
+  "source_hashes": {
+    "src/resource_codec/ArchiveStringImport.cs": "ac9a190a7568fc6b166052beb9a3e1c4d3031f6d2da4a6bd51333ff607b79d03",
+    "src/resource_codec/ArchiveStringImportTests.cs": "3a09855fc52253cbe9fdf37b5c6256d280ddd94227f1bd180e27461896bd0b5b",
+    "src/task_items/RecordLoadFromArzGeneratedMapTests.cs": "7698ffe6c0962ce1fa58cbe922a7ff39c30f49ccb0da58fceda0abc02930da34",
+    "src/resource_codec/ArzRawRecordReader.cs": "96dfa7b0f8b9949bde050228a7b2e2b5d4a627d51de104e03e9ae14fcdb5db55",
+    "src/task_items/ArzRecordRemapContext.cs": "75209d0b0f2b25871b5ffb1b136fb3f5771518a3b2054c296c9ea12435c27823",
+    "src/task_items/ArzRecordBinarySource.cs": "61740fd6fd9444989c6cdce9dddbe8bb5b313c8cf1fbb4fbeb72daa160e4f75e",
+    "src/task_items/build_items.ps1": "fd12ce590f722f3c72665178c60802f89c26356a5e23718407d654018399b741",
+    "src/resource_codec/RecordStringRemap.cs": "3933eea9d0b66fdcca6fe2826407d971cf62ceff4ca73f07c434298403a2c798",
+    "src/resource_codec/RecordStringRemapTests.cs": "f69bb0c40fc112f8167852059b0951dbd4c7bc01b36872a665c3b7c5ae33adef",
+    "src/resource_codec/Lz4OutputSizeProfile.cs": "1c068756df036f1a69c384bcee3f7537a881b64b606d1767bb604763238c1898",
+    "src/resource_codec/ArzRawFixture.cs": "0b0bd6bab888bb3893fcd7ed9c3e72cc4c034a29ea33bae69644b46874eb516a",
+    ".tooling/test-archive-string-map.ps1": "578101a013aeb48c0246462b5503db6d7ad322d4326565aef925c2567cc4e097"
+  },
+  "original_read_by_review": false,
+  "review_tests_rerun": false,
+  "reviewed_items": [
+    "initial deduplication without fabricated source map",
+    "append raw-slot count/base including repeats and zero",
+    "full stored bytes; stale-length temporary reuse",
+    "unknown mapping slots and sticky partial effects",
+    "historical handle ownership and immutable mapping/pool snapshots",
+    "source pool validation before scratch allocation"
+  ],
+  "preserved_boundaries": [
+    "Initial no-map binding is the fresh owned model contract, not proof of arbitrary native map-pointer absence.",
+    "Container/allocator normal success is conditional; native pointer-cache, ctor, selector acquisition and EH are not recovered."
+  ]
+}

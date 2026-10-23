@@ -1,0 +1,104 @@
+{
+  "schema": "grim-dynasty-actor-array-check-ret-immediate-v1",
+  "started_utc": "2026-10-21T04:14:00.868Z",
+  "status": "file-initializer-ret-imm16-zero-observed",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-array-check-slot/metadata.json",
+      "sha256": "0104909b53b3c083ecceb817c1b3048f101f8021ffbcd51fcb438ebd408d56d7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-array-check-file-target/metadata.json",
+      "sha256": "651d25f0a7a4bababcf62cd86d8331b9e55645f373533b826750dcd442fcf976"
+    }
+  ],
+  "instruction_rva": "0xce70",
+  "operand_begin_rva": "0xce71",
+  "operand_end_rva_exclusive": "0xce73",
+  "file_offset": 49777,
+  "opcode_read_this_run": false,
+  "limits": {
+    "code_bytes": 2,
+    "metadata_bytes": 0,
+    "fingerprint_chunk_bytes": 65536
+  },
+  "code_bytes": 2,
+  "metadata_bytes": 0,
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    }
+  ],
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "subprocesses": 0,
+  "dumpbin_invoked": false,
+  "build_or_test_execution": false,
+  "original_modified": false,
+  "permission_change": false,
+  "full_target_copy_created": false,
+  "runtime_slot_value_observed": false,
+  "loader_rebinding_observed": false,
+  "limitations": [
+    "The only semantic read is [CE71,CE73), the two immediate bytes after the previously saved C2 opcode. CE70 is not reread.",
+    "Fixed x64 C2 iw decoding yields the unsigned little-endian imm16 stack adjustment. Its value is not presumed zero; a nonzero value is not treated as an ordinary guard return.",
+    "No neighbors, tables, imports, .pdata or additional code are read. File-entry behavior does not establish the loaded guard target or runtime exception behavior.",
+    "No instruction executes. Fingerprints are separate from this two-byte scope; before/after hash/stat checks are not an atomic snapshot."
+  ],
+  "script_sha256": "0de6ed0cc53a67f77bf0f666c487ce09d5b5479f5eb8951548cbb722d75e783c",
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "raw_operand_hex": "0000",
+  "immediate_u16": 0,
+  "file_initializer_stack_adjustment_zero": true,
+  "ordinary_loaded_guard_return_claimed": false,
+  "instruction": {
+    "address": "0x18000ce70",
+    "bytes": "c20000",
+    "instruction": "ret 0x0",
+    "length": 3,
+    "opcode_source": "docs/object-lifecycle/offline-actor-array-check-file-target/metadata.json",
+    "operands_source": "00ce71-ret-operands.bin",
+    "derivation": "fixed x64 C2 iw encoding; no disassembler or execution"
+  },
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "source_handle_closed": true,
+  "source_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T04:14:00.876Z",
+  "controller_resource_usage": {
+    "userCPUTime": 15000,
+    "systemCPUTime": 46000,
+    "maxRSS": 41244,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 10866,
+    "swappedOut": 0,
+    "fsRead": 145,
+    "fsWrite": 1,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

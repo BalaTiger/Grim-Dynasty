@@ -1,0 +1,38 @@
+{
+  "schema": "grim-dynasty-actor-synchronization-initialization-static-review-v1",
+  "status": "no-blocking-issue-found-in-declared-caller-projection",
+  "review_kind": "Independent project-source and saved-instruction review only",
+  "final_acceptance": false,
+  "source": {
+    "path": "src/task_items/ActorSynchronizationInitialization.cs",
+    "sha256": "6c047e10a63baaea1a868e2b673410c3922c379bf377d64f9006d70060ca40bf"
+  },
+  "evidence": [
+    {"path":"docs/object-lifecycle/offline-actor-crt-initializer/2dc908-instructions.json","sha256":"cae592eaadda08627d1b0f96f784685ee26532d36996524a6f250c1e10c1bc17"},
+    {"path":"docs/object-lifecycle/offline-actor-crt-initializer-metadata/metadata.json","sha256":"b907ad2551979f23adfe850e8d856067f88a9bc533f834cc239373447bd79b2b"},
+    {"path":"docs/object-lifecycle/offline-engine-root-static-helper-entry-prefixes/2dc8e0-instructions.json","sha256":"91fa08fbe9560888cc994d2038a703de917c405e6c06c0be1fbe04738d12a5c5"},
+    {"path":"docs/object-lifecycle/offline-engine-root-static-helper-direct-targets/2dc890-instructions.json","sha256":"4c12d5b4e3644970bc5053a99607652e5b3222be5920c79c181e97d54134981b"}
+  ],
+  "checks": [
+    "2DC926 receives critical-section token420D88, spin4000 and flags0. Its numerical return is ignored; a normal external return is still required.",
+    "2DC932 resolves the saved kernel32.dll literal via GetModuleHandleW. Unknown module stops at2DC93B; zero reaches the separate fatal-call/INT3 frontier.",
+    "All three GetProcAddress calls occur before tests at2DC97D/2DC982/2DC987. Their names bind to InitializeConditionVariable, SleepConditionVariableCS and WakeAllConditionVariable. Ordered short-circuit zero tests preserve a known earlier fallback even when a later value is unknown.",
+    "Event fallback requests(0,1,0,0), writes420DB8 at2DCA02 before testing its returned value, and preserves both encoded callback slots.",
+    "Condition path clears420DB8 at2DC98C before the indirect-target check and condition initializer. Shared Cookie is read only after the callback returns, at2DC9A5; unknown Cookie retains the earlier prefix.",
+    "Native ROR64(target,64-(cookie&63)) XOR cookie equals the implemented ROL64(target,cookie&63) XOR cookie, including masked shift count0. Wait is stored at420DC0 before wake at420DC8.",
+    "Both normal branches register callback token2DCA28 through the whole2DC8E0 external-call boundary. Registration return values, including unknown or negative numerical values, do not select caller failure after normal return; native caller then returns EAX0.",
+    "Fatal calls receive7. Unknown/non-normal return stops at the call; a reported normal return stops at its following INT3. Neither frontier is represented as a normal initializer return.",
+    "A fresh own invocation is required for another Run. This restriction does not claim that repeated native initializer calls are idempotent.",
+    "IsNativeSynchronizationReady remains false; callback return observations and pointer-like integer tokens do not establish a loaded OS handle, function pointer, TLS path or concurrent synchronization behavior."
+  ],
+  "blocking_findings": [],
+  "limits": [
+    "This is caller control-flow and slot-write projection under supplied external-return observations, not an implementation of2DDB20, loaded2DD4C0,2DD7F4,2DCA28, CRT registration internals or Windows synchronization APIs.",
+    "The explicit cookie is mutable own state, not proof of runtime41C520 provenance. The callback is allowed to change it before the native caller's one read; encoding uses that read for both stored values.",
+    "Normal managed execution is required. Allocations or callback exceptions can escape with already-mutated own state; this review does not assert rollback, native EH equivalence or guaranteed partial-result allocation.",
+    "No compiler, test executable, backend, original binary or OS synchronization operation was executed by this review. Build and test acceptance are separate."
+  ],
+  "product_source_modified_by_reviewer": false,
+  "original_read_by_reviewer": false,
+  "build_or_test_run_by_reviewer": false
+}

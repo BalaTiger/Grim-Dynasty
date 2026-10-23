@@ -1,0 +1,93 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Engine.dll
+
+File Type: DLL
+
+  00000001802DCEF8: 48 8B C4           mov         rax,rsp
+  00000001802DCEFB: 48 89 58 20        mov         qword ptr [rax+20h],rbx
+  00000001802DCEFF: 4C 89 40 18        mov         qword ptr [rax+18h],r8
+  00000001802DCF03: 89 50 10           mov         dword ptr [rax+10h],edx
+  00000001802DCF06: 48 89 48 08        mov         qword ptr [rax+8],rcx
+  00000001802DCF0A: 56                 push        rsi
+  00000001802DCF0B: 57                 push        rdi
+  00000001802DCF0C: 41 56              push        r14
+  00000001802DCF0E: 48 83 EC 40        sub         rsp,40h
+  00000001802DCF12: 49 8B F0           mov         rsi,r8
+  00000001802DCF15: 8B FA              mov         edi,edx
+  00000001802DCF17: 4C 8B F1           mov         r14,rcx
+  00000001802DCF1A: 85 D2              test        edx,edx
+  00000001802DCF1C: 75 0F              jne         00000001802DCF2D
+  00000001802DCF1E: 39 15 AC 3E 14 00  cmp         dword ptr [0000000180420DD0h],edx
+  00000001802DCF24: 7F 07              jg          00000001802DCF2D
+  00000001802DCF26: 33 C0              xor         eax,eax
+  00000001802DCF28: E9 B2 00 00 00     jmp         00000001802DCFDF
+  00000001802DCF2D: 8D 42 FF           lea         eax,[rdx-1]
+  00000001802DCF30: 83 F8 01           cmp         eax,1
+  00000001802DCF33: 77 2A              ja          00000001802DCF5F
+  00000001802DCF35: E8 B6 00 00 00     call        00000001802DCFF0
+  00000001802DCF3A: 8B D8              mov         ebx,eax
+  00000001802DCF3C: 89 44 24 30        mov         dword ptr [rsp+30h],eax
+  00000001802DCF40: 85 C0              test        eax,eax
+  00000001802DCF42: 0F 84 8D 00 00 00  je          00000001802DCFD5
+  00000001802DCF48: 4C 8B C6           mov         r8,rsi
+  00000001802DCF4B: 8B D7              mov         edx,edi
+  00000001802DCF4D: 49 8B CE           mov         rcx,r14
+  00000001802DCF50: E8 A3 FD FF FF     call        00000001802DCCF8
+  00000001802DCF55: 8B D8              mov         ebx,eax
+  00000001802DCF57: 89 44 24 30        mov         dword ptr [rsp+30h],eax
+  00000001802DCF5B: 85 C0              test        eax,eax
+  00000001802DCF5D: 74 76              je          00000001802DCFD5
+  00000001802DCF5F: 4C 8B C6           mov         r8,rsi
+  00000001802DCF62: 8B D7              mov         edx,edi
+  00000001802DCF64: 49 8B CE           mov         rcx,r14
+  00000001802DCF67: E8 7C 0A 00 00     call        00000001802DD9E8
+  00000001802DCF6C: 8B D8              mov         ebx,eax
+  00000001802DCF6E: 89 44 24 30        mov         dword ptr [rsp+30h],eax
+  00000001802DCF72: 83 FF 01           cmp         edi,1
+  00000001802DCF75: 75 2B              jne         00000001802DCFA2
+  00000001802DCF77: 85 C0              test        eax,eax
+  00000001802DCF79: 75 27              jne         00000001802DCFA2
+  00000001802DCF7B: 4C 8B C6           mov         r8,rsi
+  00000001802DCF7E: 33 D2              xor         edx,edx
+  00000001802DCF80: 49 8B CE           mov         rcx,r14
+  00000001802DCF83: E8 60 0A 00 00     call        00000001802DD9E8
+  00000001802DCF88: 4C 8B C6           mov         r8,rsi
+  00000001802DCF8B: 33 D2              xor         edx,edx
+  00000001802DCF8D: 49 8B CE           mov         rcx,r14
+  00000001802DCF90: E8 63 FD FF FF     call        00000001802DCCF8
+  00000001802DCF95: 4C 8B C6           mov         r8,rsi
+  00000001802DCF98: 33 D2              xor         edx,edx
+  00000001802DCF9A: 49 8B CE           mov         rcx,r14
+  00000001802DCF9D: E8 4E 00 00 00     call        00000001802DCFF0
+  00000001802DCFA2: 85 FF              test        edi,edi
+  00000001802DCFA4: 74 05              je          00000001802DCFAB
+  00000001802DCFA6: 83 FF 03           cmp         edi,3
+  00000001802DCFA9: 75 2A              jne         00000001802DCFD5
+  00000001802DCFAB: 4C 8B C6           mov         r8,rsi
+  00000001802DCFAE: 8B D7              mov         edx,edi
+  00000001802DCFB0: 49 8B CE           mov         rcx,r14
+  00000001802DCFB3: E8 40 FD FF FF     call        00000001802DCCF8
+  00000001802DCFB8: 8B D8              mov         ebx,eax
+  00000001802DCFBA: 89 44 24 30        mov         dword ptr [rsp+30h],eax
+  00000001802DCFBE: 85 C0              test        eax,eax
+  00000001802DCFC0: 74 13              je          00000001802DCFD5
+  00000001802DCFC2: 4C 8B C6           mov         r8,rsi
+  00000001802DCFC5: 8B D7              mov         edx,edi
+  00000001802DCFC7: 49 8B CE           mov         rcx,r14
+  00000001802DCFCA: E8 21 00 00 00     call        00000001802DCFF0
+  00000001802DCFCF: 8B D8              mov         ebx,eax
+  00000001802DCFD1: 89 44 24 30        mov         dword ptr [rsp+30h],eax
+  00000001802DCFD5: EB 06              jmp         00000001802DCFDD
+  00000001802DCFD7: 33 DB              xor         ebx,ebx
+  00000001802DCFD9: 89 5C 24 30        mov         dword ptr [rsp+30h],ebx
+  00000001802DCFDD: 8B C3              mov         eax,ebx
+  00000001802DCFDF: 48 8B 5C 24 78     mov         rbx,qword ptr [rsp+78h]
+  00000001802DCFE4: 48 83 C4 40        add         rsp,40h
+  00000001802DCFE8: 41 5E              pop         r14
+  00000001802DCFEA: 5F                 pop         rdi
+  00000001802DCFEB: 5E                 pop         rsi
+  00000001802DCFEC: C3                 ret
+
+  Summary
+
+      301000 .text

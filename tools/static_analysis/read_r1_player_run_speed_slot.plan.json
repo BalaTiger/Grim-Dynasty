@@ -1,0 +1,92 @@
+{
+  "schema": "grim-dynasty.fixed-player-run-speed-slot.v1",
+  "script": "tools/static_analysis/read_r1_player_run_speed_slot.mjs",
+  "entrypoint": "inspectPlayerRunSpeedSlot(reviewedScriptSha256,reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-player-run-speed-slot/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "bytes": 11385856,
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+  },
+  "source_pins": [
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "player_ctor",
+      "path": "docs/reverse-client/r1-game-entity-constructors/08-GameEntityConstructor-0x1803cc3f0-procedure_assembly.json",
+      "sha256": "d68276f2f2212942eb66cf2180f34f0b527f5b9a48f473b4ac35098b3d479ded"
+    },
+    {
+      "key": "run_speed",
+      "path": "docs/reverse-client/r1-game-run-speed-run1/05-GameRunSpeed-0x180069040-procedure_assembly.json",
+      "sha256": "7ba2191d3009c003442e7f4f438ff3298a80371c38c1fb81e3e780ea2718a571"
+    },
+    {
+      "key": "run_speed_summary",
+      "path": "docs/reverse-client/r1-game-run-speed-run1/summary.json",
+      "sha256": "9b69042b1f3b6392b5f64f5847b15750196c4dd06d5421640c71234a44b6183b"
+    }
+  ],
+  "assembly_proofs": [
+    {
+      "key": "player_ctor",
+      "procedure": "0x1803cc3f0",
+      "instructions": [
+        "0x1803cc415: MOV RDI, RCX",
+        "0x1803cc418: CALL 0x180052030",
+        "0x1803cc41e: LEA RAX, [0x180787100]",
+        "0x1803cc425: MOV qword ptr [RDI], RAX"
+      ]
+    },
+    {
+      "key": "run_speed",
+      "procedure": "0x180069040",
+      "instructions": [
+        "0x180069076: MOV RDI, RCX",
+        "0x180069292: CMP byte ptr [RDI + 0x26b3], 0x0",
+        "0x180069299: JZ 0x1800692a2",
+        "0x1800692a2: MOV RAX, qword ptr [RDI]",
+        "0x1800692a5: CALL qword ptr [RAX + 0x678]"
+      ]
+    }
+  ],
+  "slot": {
+    "table_rva": "0x787100",
+    "offset": "0x678",
+    "rva": "0x787778",
+    "bytes": 8
+  },
+  "limits": {
+    "semantic_data_bytes": 8,
+    "semantic_read_operations": 1,
+    "code_bytes": 0,
+    "new_pe_header_bytes": 0,
+    "pdata_bytes": 0,
+    "rtti_bytes": 0,
+    "hash_chunk_bytes": 65536
+  },
+  "saved_metadata_dedup": {
+    "files_read": 135,
+    "directories": [
+      "docs/m3-evidence",
+      "docs/reverse-client/r1-game-entity-constructors",
+      "docs/reverse-client/r1-player-movement-interface-slots",
+      "docs/reverse-client/r1-mouse-getter-bindings",
+      "docs/reverse-client/r1-mouse-getter-bindings-retry1",
+      "docs/reverse-client/r1-game-stop-state-slots"
+    ],
+    "matching_slot_observation_files": [],
+    "scope": "Read-only local saved json/md/txt/cs <=1MiB; no787778 observation in inspected domain. No original read/backend."
+  },
+  "requirements": [
+    "Preparation only; root separately reviews and approves exact invocation with both hashes and performs Windows Attributes/reparse ancestor preflight. Import has no I/O.",
+    "Exactly8 bytes atGame RVA787778. Verify readable, nonwritable, nonexecutable source section; classify target only by cached same-hash PE map, without reading it. No other slot, RTTI/table[-1], strings, code, imports,exports or headers.",
+    "Same source handle before/after full SHA256 with64KiB buffer and stat/path identity checks; these are separate from8B semantic budget, not atomic snapshots. Source read-only and closed in finally; output directory absent, no overwrite.",
+    "A current Player constructor main-vptr and the actual069040 callsite justify the disk slot. Target executable membership is only a function candidate; loaded vptr, complete constructor,26B3 value, class/runtime identity and successful call remain unverified.",
+    "The prior connection optionalRTTI refusal is not retried or altered. NoRTTI is attempted or claimed by this independent exact-slot read.",
+    "No subprocess/backend/network/original loading/execution,saves/cloud,security settings,commit or push."
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "schema": "grim-dynasty.fixed-spatial-ground-callback-slots.v1",
+  "started_utc": "2026-10-23T04:36:09.751Z",
+  "script_sha256": "dd9459873095305072b49d8dd0d5775dda5f68589c605517bcef6adb0757cb5e",
+  "plan_sha256": "f9cfaec22d515477e31d551ef46343a946c28e5785ac7fcef764199ccfc52777",
+  "source_pins": [
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "constructor",
+      "path": "docs/reverse-client/r1-engine-spatial-ground/14-EngineSpatialGround-0x1801dda90-procedure_assembly.json",
+      "sha256": "858c4ee47d193164648b7fb068b0dfb2772dc6cd35347055d736d2584388a629"
+    },
+    {
+      "key": "spatial_assembly",
+      "path": "docs/reverse-client/r1-engine-spatial-ground/05-EngineSpatialGround-0x180134500-procedure_assembly.json",
+      "sha256": "6dfe2938844693c4bffecd4c9340076fc0278c28c195bc6f4bfa669eddecf0fb"
+    },
+    {
+      "key": "node_caller",
+      "path": "docs/reverse-client/r1-spatial-ground-direct/08-SpatialGroundDirect-0x18011bbc0-procedure_assembly.json",
+      "sha256": "1f8618dfe1a6c815e9bb5e75f2fb9d87ec273acea425e49c929d1ebe7fa16416"
+    },
+    {
+      "key": "ground_caller",
+      "path": "docs/reverse-client/r1-spatial-ground-direct/11-SpatialGroundDirect-0x1801de090-procedure_assembly.json",
+      "sha256": "280b8fc0515859b8de565e69e9ee40dcb047d76631ca4c9e368d3177faa105ff"
+    },
+    {
+      "key": "loader_binding",
+      "path": "docs/reverse-client/r1-ground-loader-slot/inspection.json",
+      "sha256": "aa504399179a7ff4d570d967544706e8ccc988e88cb34a7f282beb3514700215"
+    }
+  ],
+  "code_bytes": 0,
+  "metadata_bytes": 0,
+  "data_bytes": 24,
+  "data_operations": 3,
+  "new_PE_header_bytes": 0,
+  "whole_table_bytes": 0,
+  "target_body_bytes": 0,
+  "original_loaded_or_executed": false,
+  "subprocesses": 0,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "reads": [
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x340e60",
+          "file_offset": 3407456,
+          "section": ".rdata",
+          "bytes": 8,
+          "raw_hex": "30bb118001000000"
+        },
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x343bc8",
+          "file_offset": 3419080,
+          "section": ".rdata",
+          "bytes": 8,
+          "raw_hex": "10de1d8001000000"
+        },
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x343ce8",
+          "file_offset": 3419368,
+          "section": ".rdata",
+          "bytes": 8,
+          "raw_hex": "e0f41d8001000000"
+        }
+      ],
+      "hash_bytes": 8971264,
+      "closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "stable": true
+    }
+  ],
+  "values": [
+    {
+      "owner": "SpatialNode",
+      "table_rva": "0x340e60",
+      "slot_offset": "0x0",
+      "rva": "0x340e60",
+      "bytes": 8,
+      "callsite": "0x18011bc05",
+      "callsite_role": "Conditional nonnull matching child receiver,EDX=1;target role remains unproved",
+      "kind": "fixed-primary-vtable-slot",
+      "file_offset": 3407456,
+      "section": ".rdata",
+      "raw_hex": "30bb118001000000",
+      "target_va": "0x18011bb30",
+      "candidate_rva": "0x11bb30",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false,
+      "table_extent_verified": false,
+      "subsequent_overwrites_excluded": false,
+      "candidate_code_section": ".text"
+    },
+    {
+      "owner": "GroundPrimary",
+      "table_rva": "0x343b60",
+      "slot_offset": "0x68",
+      "rva": "0x343bc8",
+      "bytes": 8,
+      "callsite": "0x1801de0bd",
+      "callsite_role": "Ground loader entry virtual call before reader consumption;reset semantics remain to be verified",
+      "kind": "fixed-primary-vtable-slot",
+      "file_offset": 3419080,
+      "section": ".rdata",
+      "raw_hex": "10de1d8001000000",
+      "target_va": "0x1801dde10",
+      "candidate_rva": "0x1dde10",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false,
+      "table_extent_verified": false,
+      "subsequent_overwrites_excluded": false,
+      "candidate_code_section": ".text"
+    },
+    {
+      "owner": "GroundPrimary",
+      "table_rva": "0x343b60",
+      "slot_offset": "0x188",
+      "rva": "0x343ce8",
+      "bytes": 8,
+      "callsite": "0x1801de2cd",
+      "callsite_role": "Per-type virtual call withEDX=ESI andRCX=R14 after current record processing;body unknown",
+      "kind": "fixed-primary-vtable-slot",
+      "file_offset": 3419368,
+      "section": ".rdata",
+      "raw_hex": "e0f41d8001000000",
+      "target_va": "0x1801df4e0",
+      "candidate_rva": "0x1df4e0",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false,
+      "table_extent_verified": false,
+      "subsequent_overwrites_excluded": false,
+      "candidate_code_section": ".text"
+    }
+  ],
+  "disk_observations_complete": true,
+  "unsupported": [],
+  "failures": [],
+  "limitations": [
+    "Three exact primary-vtable slot candidates only; no table extent, later overwrite, loaded dispatch, function body or ABI is proved.",
+    "Node child dynamic types and actual final ground vptr remain runtime unknowns; the existing ground+88 binding only motivates this fixed disk table selection.",
+    "Whole-file hash streams are distinct from the24B semantic read budget. Before/after checks are not atomic snapshots.",
+    "Node path checks cannot identify every Windows reparse tag; separate Attributes preflight remains required."
+  ],
+  "proofs_verified": true,
+  "finished_utc": "2026-10-23T04:36:09.765Z",
+  "status": "passed"
+}

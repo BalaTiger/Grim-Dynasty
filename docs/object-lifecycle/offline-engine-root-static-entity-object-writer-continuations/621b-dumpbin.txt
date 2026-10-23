@@ -1,0 +1,40 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Engine.dll
+
+File Type: DLL
+
+  000000018000621B: 48 89 7C 24 30     mov         qword ptr [rsp+30h],rdi
+  0000000180006220: 48 63 C8           movsxd      rcx,eax
+  0000000180006223: B8 08 00 00 00     mov         eax,8
+  0000000180006228: 48 F7 E1           mul         rax,rcx
+  000000018000622B: 48 C7 C1 FF FF FF  mov         rcx,0FFFFFFFFFFFFFFFFh
+                    FF
+  0000000180006232: 48 0F 40 C1        cmovo       rax,rcx
+  0000000180006236: 48 8B C8           mov         rcx,rax
+  0000000180006239: E8 C2 66 2D 00     call        00000001802DC900
+  000000018000623E: 45 33 C9           xor         r9d,r9d
+  0000000180006241: 48 8B F8           mov         rdi,rax
+  0000000180006244: 44 39 4B 18        cmp         dword ptr [rbx+18h],r9d
+  0000000180006248: 7E 21              jle         000000018000626B
+  000000018000624A: 45 8B C1           mov         r8d,r9d
+  000000018000624D: 0F 1F 00           nop         dword ptr [rax]
+  0000000180006250: 48 8B 4B 20        mov         rcx,qword ptr [rbx+20h]
+  0000000180006254: 4D 8D 40 08        lea         r8,[r8+8]
+  0000000180006258: 41 FF C1           inc         r9d
+  000000018000625B: 49 8B 54 08 F8     mov         rdx,qword ptr [r8+rcx-8]
+  0000000180006260: 49 89 54 00 F8     mov         qword ptr [r8+rax-8],rdx
+  0000000180006265: 44 3B 4B 18        cmp         r9d,dword ptr [rbx+18h]
+  0000000180006269: 7C E5              jl          0000000180006250
+  000000018000626B: 48 63 43 18        movsxd      rax,dword ptr [rbx+18h]
+  000000018000626F: 48 8D 0D BA 6C 41  lea         rcx,[000000018041CF30h]
+                    00
+  0000000180006276: 48 89 0C C7        mov         qword ptr [rdi+rax*8],rcx
+  000000018000627A: FF 43 18           inc         dword ptr [rbx+18h]
+  000000018000627D: 48 8B 4B 20        mov         rcx,qword ptr [rbx+20h]
+  0000000180006281: E8 72 66 2D 00     call        00000001802DC8F8
+  0000000180006286: 48 89 7B 20        mov         qword ptr [rbx+20h],rdi
+  000000018000628A: 48 8B 7C 24 30     mov         rdi,qword ptr [rsp+30h]
+
+  Summary
+
+      301000 .text

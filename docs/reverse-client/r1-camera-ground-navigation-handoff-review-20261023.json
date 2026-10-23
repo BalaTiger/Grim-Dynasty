@@ -1,0 +1,71 @@
+{
+  "schema": "grim-dynasty.camera-ground-navigation-handoff-review.v1",
+  "status": "read-only-conclusions-and-new-probe-prepared-not-executed",
+  "saved_member": {
+    "path": "docs/reverse-client/r1-mainmenu-complete-member/mainmenu.map.bin",
+    "sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+    "ground_extent": [273260, 149073],
+    "pathing_extent": [422373, 442996]
+  },
+  "proven_differences": [
+    {
+      "finding": "The passed CameraGround and GameMoved fixtures do not share one region coordinate frame.",
+      "camera_region_offsets": [100, -200, 300],
+      "moved_region_offsets": [0, 0, 0],
+      "nav_mesh_origin": [0, 0, 0],
+      "camera_hit_is_region_local": [64.25, 16.05875, 64.75],
+      "camera_hit_world_with_its_existing_offsets_approximately": [164.25, -183.94125, 364.75],
+      "implication": "Equal token77 values in separate registries do not establish a shared Region identity. Actual22C1A0 adds signed region offsets; current camera world XZ would lie outside the produced0..128 NAV tile extent.",
+      "evidence": [
+        "src/reverse_client_actions/CameraGroundRayIntegrationTests.cs:78",
+        "src/reverse_client_actions/CameraGroundRayIntegrationTests.cs:97-104",
+        "src/reverse_client_actions/GameMovedIntegrationTests.cs:67",
+        "src/reverse_client_actions/MainmenuCrowdRequestPipeline.cs:33-38",
+        "src/reverse_client_actions/EntityMovementContracts.cs:154-169"
+      ]
+    },
+    {
+      "finding": "Both saved ready-frame Ground points are statically excluded by the current extent2 vertical enumeration window in the explicit NAV production domain.",
+      "frames": [
+        {"xz": [63.0971069, 52.82203], "navigation_y": 22.1706848, "ground_y": 17.2317123, "ground_search_max_y": 19.2317123},
+        {"xz": [63.1942139, 52.84406], "navigation_y": 22.157896, "ground_y": 17.2245941, "ground_search_max_y": 19.2245941}
+      ],
+      "proof": "Both XZ boxes with horizontal extent0.125 lie strictly inside tile(1,1). That saved RLTD layer starts at member471637; its header+24 bits42109b41 give MinY19.382938. Produced vertexY=round32(MinY+round32(ushortY*0.2)), so every vertexY is at least MinY. With no generated BV tree, EnumerateTile261320 uses polygon XYZ AABB overlap and rejects every polygon because polygonMinY exceeds GroundY+2. This is a static deduction, not a new query execution.",
+      "evidence": [
+        ".tooling/r1-crowd-ready-tick-validation/new-saved-ready-two-frames.log:last-line",
+        "docs/reverse-client/r1-mainmenu-pathing-data-probe/inspection.json:groups[5].layers[0]",
+        "src/reverse_client_actions/MainmenuTilePipeline.cs:40,70-71",
+        "src/reverse_client_actions/NavigationTileData.cs:145,151",
+        "src/reverse_client_actions/NavigationEnumerationContracts.cs:40,82,120"
+      ]
+    },
+    {
+      "finding": "The camera point is a different XZ sample in tile(2,2); the ready-point exclusion proof does not establish its nearest result.",
+      "camera_xz": [64.25, 64.75],
+      "camera_ground_y": 16.05875,
+      "tile_2_2_min_y": 15.782938,
+      "tile_2_2_layer_member_offset": 619293,
+      "evidence": [
+        ".tooling/r1-camera-world-ray-validation/new-camera-ground-ray-tests.log:last-line",
+        "docs/reverse-client/r1-mainmenu-pathing-data-probe/inspection.json:groups[10].layers[0]"
+      ]
+    }
+  ],
+  "interpretation_limits": [
+    "The two ready-frame height differences are approximately4.9389725 and4.9333019, not evidence for a fixed5-unit conversion.",
+    "Game066EE0 explicitly converts Agent world coordinates to region-local coordinates then performs real Floor placement. Entity Ground Y and Agent NAV Y are separate outputs; equality is not a proved invariant.",
+    "NAV cellHeight0.2, cellSize0.25, climb4 and nearest extent(0.125,2,0.125) are explicit OWN inputs. Their equivalence to loaded native configuration, or to the Ground triangle's authored walkable surface, is unproved.",
+    "No bug, corrective offset, changed extent or modified saved geometry is inferred."
+  ],
+  "new_probe_design": {
+    "source": "src/reverse_client_actions/CameraGroundNavigationHandoffTests.cs",
+    "scenarios": 3,
+    "shared_frame": "One canonical WorldCoordinateState and WorldRegion token77 with explicit OWN offsets0; NAV origin0. This is not native startup evidence.",
+    "chain": "Actual GameCamera getter /044A10 /229700 -> actual saved Ground Query1D0100 -> own typed WorldPosition24 carrying the same Region -> actual GetWorldPosition22C1A0 -> actual Project030B30 with unchanged extent2.",
+    "camera_expectation": "Report the actual returned reference, including normal zero miss; do not require or fabricate a navigation hit.",
+    "ready_expectation": "Both real Ground points return reference0; unchanged unknown projected output and actual lock release are checked.",
+    "geometry_check": "Read-only AABB inspection of only the point's existing tile, without changing query extent or coordinates.",
+    "producer": "MainmenuTilePipeline.BuildExplicitColdTiles method plus actual tile insertion; no old suite Main, agent callback, or full tick."
+  },
+  "execution": {"new_original_reads": 0, "backends_started": 0, "builds": 0, "tests_run": 0, "prior_sources_modified": false}
+}

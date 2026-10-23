@@ -1,0 +1,72 @@
+{
+  "schema": "actor-engine-context-preflight-v1",
+  "reviewed_utc": "2026-10-21T06:13:25.7599720Z",
+  "reviewer": "Root: complete new model/test/build text and affected Completion path; prior unaffected library sources retained by checkpoint hashes",
+  "execution_status": "pending_formal_approval",
+  "command": "& 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -NoProfile -NonInteractive -File 'C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\src\\task_items\\build_actor_engine_context.ps1'",
+  "compiler": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\csc.exe",
+  "compiler_sha256": "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00",
+  "compiler_invocations": 4,
+  "test_invocations": 3,
+  "new_suite": "ActorEngineContextTests",
+  "affected_regressions": [
+    "ActorConstructorCompletionTests",
+    "ActorMatrixInitializationTests"
+  ],
+  "output_directory": ".tooling/actor-engine-context-build-20261021",
+  "output_absent_verified": true,
+  "inputs": [
+    {
+      "relative_path": "src/task_items/ActorConstructorPrefix.cs",
+      "bytes": 5502,
+      "sha256": "c51710c512abe864d16feecd7972a779804d9d0cdc419b117e86ba7e37134b83"
+    },
+    {
+      "relative_path": "src/task_items/ActorConstructorArray.cs",
+      "bytes": 8940,
+      "sha256": "e08ecb7797516f31e453bfb48e85ef146ad6ba2fe44d623548a46fa848f5e66e"
+    },
+    {
+      "relative_path": "src/task_items/ActorConstructorContinuation.cs",
+      "bytes": 7277,
+      "sha256": "5cb82839b6e9245d101dd4991e466316fb958c40dfc0b53bf0119754ce69284c"
+    },
+    {
+      "relative_path": "src/task_items/ActorConstructorCompletion.cs",
+      "bytes": 17748,
+      "sha256": "78fd9e66aae877d7cac89ac9e8a2a2dc357b7903e89d390d4dd17ccdc74d6cce"
+    },
+    {
+      "relative_path": "src/task_items/ActorMatrixInitialization.cs",
+      "bytes": 5705,
+      "sha256": "4f9e51fdbb10b13724c59f05e696f5caeaf87ab3128df46800a3fdb3d0fedfd4"
+    },
+    {
+      "relative_path": "src/task_items/ActorEngineContext.cs",
+      "bytes": 8534,
+      "sha256": "36b309d143847f8b76273c7b9ca4f613135a75bbb42e62f18cf7bb7d6e8a0919"
+    },
+    {
+      "relative_path": "src/task_items/ActorEngineContextTests.cs",
+      "bytes": 14389,
+      "sha256": "c6bfa86ffd824ac5aba9e05c80ef454d1e5279882c354e4c8086da396f36661f"
+    },
+    {
+      "relative_path": "src/task_items/ActorConstructorCompletionTests.cs",
+      "bytes": 37088,
+      "sha256": "075909d98d502d19f20f2bd738d1d6d7a85f34f03b2a0c28cfec3b9e4abfb5b2"
+    },
+    {
+      "relative_path": "src/task_items/ActorMatrixInitializationTests.cs",
+      "bytes": 36772,
+      "sha256": "d64a170f11917f9ddef3962aa18f08f759120cfdbeb79f3e848b6c1429759b64"
+    },
+    {
+      "relative_path": "src/task_items/build_actor_engine_context.ps1",
+      "bytes": 7178,
+      "sha256": "da2c9bcdaa0d8d70b00b5673a523574bd5694748fa4ce3699d7908a04c8c0fb6"
+    }
+  ],
+  "effects": "Create one fresh project output directory; compile own managed library and three own fixture executables; run those three. No other scripts, native modules, installs, network, policy/ACL or environment changes.",
+  "unknown_compatibility": "Native Engine publication/timing, constructor callees, loader/threads/EH and formal sample compatibility remain unverified."
+}

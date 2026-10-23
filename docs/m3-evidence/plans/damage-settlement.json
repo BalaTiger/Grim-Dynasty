@@ -1,0 +1,24 @@
+{
+  "schema": "grim-dynasty-m3-bounded-plan-v1",
+  "id": "damage-settlement",
+  "purpose": "Inspect only the two direct damage-settlement references already saved from 11D340; do not follow any new calls.",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "bytes": 11385856,
+    "preferred_base": "0x180000000"
+  },
+  "proof": {
+    "path": "docs/m3-evidence/direct-bodies/direct-11d340.instructions.json",
+    "sha256": "495ea6962c563f9916fefc8a4cd71e0d279e4dc1d06ba1d9f9f63822130d904c"
+  },
+  "targets": [
+    {"id": "direct-068ab0", "rva": "0x68ab0", "caller_address": "0x18011d496", "caller_bytes": "e815b6f4ff"},
+    {"id": "direct-535a60", "rva": "0x535a60", "caller_address": "0x18011d5a7", "caller_bytes": "e8b4844100"}
+  ],
+  "limits": {"body_bytes_each": 8192, "body_bytes_total": 8192, "metadata_bytes": 16384, "dumpbin_calls": 2, "tool_timeout_ms_each": 10000},
+  "output": "docs/m3-evidence/damage-settlement",
+  "temporary": ".tooling/m3-damage-settlement-temp",
+  "automatic_callee_expansion": false,
+  "execution_requires_separate_review_and_approval": true
+}

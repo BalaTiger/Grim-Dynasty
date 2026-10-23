@@ -1,0 +1,55 @@
+{
+  "schema": "grim-dynasty.fixed-crowd-raycast-threshold.v1",
+  "started_utc": "2026-10-22T22:42:33.089Z",
+  "script_sha256": "6f7b2f73f13c0b9dafb75f9fabc2e0362a7b222244e0f1882acd290fd0dc2314",
+  "plan_sha256": "8eb5839dc4f7dbaf443a62ed8067f203c1e9deabeff3849ab06dd7530ca07db6",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "proof": {
+    "file": "docs/reverse-client/r1-crowd-motion-branches/17-CrowdMotionBranch-0x1800309f0-procedure_assembly.json",
+    "sha256": "42be90fb31c4edaaa251d6223a190977f7e7fa44240181d9f9dba1eb1ca19e62",
+    "procedure": "0x1800309f0",
+    "instruction": "0x180030aec: COMISS XMM0, dword ptr [0x18034bb38]"
+  },
+  "pe_cache": {
+    "file": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+    "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+  },
+  "data_bytes": 4,
+  "metadata_bytes": 0,
+  "code_bytes": 0,
+  "hash_bytes": 8971264,
+  "subprocesses": 0,
+  "original_loaded_or_executed": false,
+  "source_closed": true,
+  "values": [
+    {
+      "rva": "0x34bb38",
+      "va": "0x18034bb38",
+      "file_offset": 3451704,
+      "bytes": 4,
+      "section": ".rdata",
+      "raw_hex": "a4707d3f",
+      "uint32_hex": "0x3f7d70a4",
+      "float32_le": 0.9900000095367432,
+      "float32_nonfinite": null,
+      "loaded_value_observed": false
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "Only disk4B at Engine34BB38 bound to030AEC COMISS is observed. Loaded operand and native FP environment are unobserved.",
+    "No value is assumed before reading; hexadecimal bits are authoritative,including nonfinite floats.",
+    "Cached PE sections are reused with exact fileSHA256,not a fresh headerread or atomic snapshot.",
+    "External Windows reparse-tag/Attributes checks remain required;Node cannot identify every tag."
+  ],
+  "proofs_verified": true,
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "finished_utc": "2026-10-22T22:42:33.099Z",
+  "status": "passed"
+}

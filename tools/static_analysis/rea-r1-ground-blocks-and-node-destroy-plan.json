@@ -1,0 +1,368 @@
+{
+  "schema_version": 1,
+  "purpose": "Four directly bound Engine functions only:node slot0 flags1 target11BB30;ground main slots68/188 targets1DDE10/1DF4E0;ground-loader directCALL1CE910. Prioritize actual node destruction and ground block structure without expanding material/CRT branches.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-spatial-ground-callback-slots/inspection.json",
+      "sha256": "57cceb2a10b9aef18d7e4b2a8d175d35b5e02db7f069efe86faa00a99101c28b",
+      "addresses": [
+        "0x18011bb30",
+        "0x1801dde10",
+        "0x1801df4e0"
+      ],
+      "source_kind": "Passed fixed24B data read:node340E60 slot0 raw30bb118001000000;ground343BC8 slot68 raw10de1d8001000000;ground343CE8 slot188 rawe0f41d8001000000. SameEngine hash/closed. Callers11BC05 flags1,1DE0BD entry,and1DE2CD EDX=ESI are pinned. Names/function boundaries/loaded final dispatch remain unproved."
+    },
+    {
+      "file": "docs/reverse-client/r1-spatial-ground-direct/11-SpatialGroundDirect-0x1801de090-procedure_assembly.json",
+      "sha256": "280b8fc0515859b8de565e69e9ee40dcb047d76631ca4c9e368d3177faa105ff",
+      "addresses": [
+        "0x1801ce910"
+      ],
+      "source_kind": "1DE300 MOV RCX,R14(this);1DE303 CALL1CE910. Afterwards1DE308 reader cursor+4 andAL=1 without checking callee return. ConstructBlocks is a tentative semantic role until body is obtained."
+    },
+    {
+      "file": "docs/reverse-client/r1-spatial-ground-direct/12-SpatialGroundDirect-0x1801de090-procedure_callees.json",
+      "sha256": "23f702bd5fa05a6aa9bc12d1e079c144ebf2ad8f73ba29b03cf918750c2db970",
+      "addresses": [
+        "0x1801ce910"
+      ],
+      "source_kind": "Saved directcallee list independently includes1CE910;other material/allocator calls intentionally excluded."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 17,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Fixed four addresses11BB30,1DDE10,1DF4E0,1CE910 only;12body queries plus5 lifecycle=17calls. Backend execution requires root separate approval.",
+    "Filename-only inventory found no matching saved bodies for these four or1D0100 in reverse-client/object-lifecycle;1D0100 is not added to the query scope.",
+    "Pin actual immediately preceding spatial-ground-direct14/14 passed summary,normal cleanup and unchangedEngine hash. Do not repeat14batch targets.",
+    "Preserve384M Engine profile,base4.25GiB plus strict5GiB physical/commit launch gate,2GiB stop,ownership,identity,mutex and all monitor/sampler/recovery provenance guards.",
+    "Node slot0 called withEDX=1 remains candidate until nativebody;groundreset/postload/blockconstruction roles are questions,not assumed behavior. No original game execution or saves.",
+    "Do not expand1CE350 five-type material loading,CRT,network,other ground types or unresolvedfloor consumer. Read actualfour bodies before deciding the next minimum dependency."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18011bb30"
+      },
+      "label": "04-GroundBlocksNodeDestroy-0x18011bb30-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18011bb30"
+      },
+      "label": "05-GroundBlocksNodeDestroy-0x18011bb30-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18011bb30"
+      },
+      "label": "06-GroundBlocksNodeDestroy-0x18011bb30-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1801dde10"
+      },
+      "label": "07-GroundBlocksNodeDestroy-0x1801dde10-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1801dde10"
+      },
+      "label": "08-GroundBlocksNodeDestroy-0x1801dde10-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1801dde10"
+      },
+      "label": "09-GroundBlocksNodeDestroy-0x1801dde10-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1801df4e0"
+      },
+      "label": "10-GroundBlocksNodeDestroy-0x1801df4e0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1801df4e0"
+      },
+      "label": "11-GroundBlocksNodeDestroy-0x1801df4e0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1801df4e0"
+      },
+      "label": "12-GroundBlocksNodeDestroy-0x1801df4e0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1801ce910"
+      },
+      "label": "13-GroundBlocksNodeDestroy-0x1801ce910-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1801ce910"
+      },
+      "label": "14-GroundBlocksNodeDestroy-0x1801ce910-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1801ce910"
+      },
+      "label": "15-GroundBlocksNodeDestroy-0x1801ce910-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "16-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "17-final-session"
+    }
+  ],
+  "status": "prepared-fixed-four-ground-node-targets-not-executed",
+  "runner_mode_registered": true,
+  "planned_output": "docs/reverse-client/r1-ground-blocks-and-node-destroy",
+  "evidence_questions": [
+    "What exact slot0 flags1 destruction/free order and child ownership does11BB30 perform? Preserve failures/partial state rather than assuming a no-op destructor.",
+    "What reset operations does1DDE10 perform before1DE090 consumes the reader,and what state must already exist?",
+    "What per-type index,buffer and publication semantics does1DF4E0 consume at1DE2CD? Keep material loading1CE350 unknown without broad recursion.",
+    "What actual block spatial structure and ownership does1CE910 create from loaded ground state,and which results feed floor lookup? Do not use navigationY as real terrain."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Fixed node slot0 and three ground-loader direct dependencies only.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "previous_sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "serializer_file": "tools/static_analysis/rea_sampler_failure.ps1",
+    "serializer_sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "candidate_file": ".tooling/r1-owned-job-diagnostic-candidate/ReaOwnedJobDiagnosticCandidate.cs",
+    "candidate_sha256": "b52e6ba242277ab864a431433f43efe671bc6c37e73c1fd94d8b0977b7400544",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "serializer_validation_file": ".tooling/r1-owned-job-diagnostic-validation/serializer/result.json",
+    "serializer_validation_sha256": "eb5dc1cd79621686a5b646ba03897cec638674dd1d6894ec69cee1d5ceb04a60",
+    "runner_validation_file": ".tooling/r1-owned-job-diagnostic-validation/runner-result.json",
+    "runner_validation_sha256": "1ff5539479a0ba058bb7e3b4e6692293a07515e48d226c56f5b6667857c4bb29",
+    "deployment_file": ".tooling/r1-owned-job-diagnostic-deploy/deployment.json",
+    "deployment_sha256": "ef9be6d39c736f99fe4dd365b1ed08f6849f4280eacc698fdc9b4b75d4977dbf",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 49,
+    "scenario_groups": 10,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "serializer_assertions": 39,
+    "production_normalization": "Remove two candidate-only header lines and namespace suffix; serializer identical to tested candidate",
+    "limitations": "Diagnostic observation only. Native permissions,100ms shared wait budget,admission and fail-closed rules are unchanged. Isolated fault tests do not reproduce or establish the21:48 failure root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-spatial-ground-direct/summary.json",
+    "summary_sha256": "745705185e62c4969194cb5c6ec78dede1275fadfe06c5e10c7e6b5f4351a90e",
+    "required_status": "passed",
+    "expected_plan_calls": 14,
+    "completed_plan_calls": 14,
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "observed": true,
+    "refresh_required_before_registration": false,
+    "scope": "Actual immediately precedingEngine spatial-ground-direct14/14 passed,normal cleanup andstableEngine hash;this17callbatch remains unexecuted."
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  },
+  "diagnostic_monitor_review": {
+    "status": "passed-and-pinned",
+    "diagnostics_only_intended": true,
+    "approved_source_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "production_monitor_must_not_be_changed_by_this_preparation": true,
+    "root_cause_proven": false,
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false
+  },
+  "sampler_observation_deployment": {
+    "status": "passed-additive-serialization-deployed",
+    "previous_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "evidence": [
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/deployment.json",
+        "sha256": "e978a7fbb0256233a2a5bbdacec662ebcbe808c1c227d20ef216dce8cf3d0db9"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/measure_job_process_memory.before.ps1",
+        "sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/measure_job_process_memory.ps1",
+        "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test_member_identity_serialization.ps1",
+        "sha256": "3afa73f7130a87959e38e76ba313f715bd0e4448e146a0417b3163b55ac84ae2"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test-result.json",
+        "sha256": "812f576f55ce8989638accf2a668a6b1b19e0d23e2869328be63ba7822c3062d"
+      }
+    ],
+    "only_added_field": "membership_queries.after_counters_member_identities",
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false,
+    "resource_limits_changed": false,
+    "tests_rerun": false
+  },
+  "recovery_requirement": {
+    "status": "confirmed-retained-after-Codex-restart",
+    "recovery_result_file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+    "recovery_result_sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829",
+    "evidence": [
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+        "sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-inventory.json",
+        "sha256": "e9baee1d751ebe2dbc329ceb068f25fc33ee96d3474e77bfd0a84a6978ca3dcf"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-move.json",
+        "sha256": "34967759d2622ffe3f46942681014a903ebf626f7f9557a0633f0b8c49beb272"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-after-move.json",
+        "sha256": "b2500ac78ffab31fc94c6e19a6db7c3287401bbf40a6b3e7055b5bf4e1a0c8e8"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before-move.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-after.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-final.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/historical-identities.json",
+        "sha256": "98c290f49b3b071a4127529aa21c7bbf816a6b59596f9be210adc0fecd302d45"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/classification-test-result.json",
+        "sha256": "0158c21bfa6fa46d87656030888cce9e8853b18086547599a6ce668527d80554"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/retain_interrupted_runtime_post_restart.ps1",
+        "sha256": "0769a1fbcf8c44b12a09fe35a31823a6a75eee2d24494814d1ae4334d15b32a9"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/post_restart_classification.ps1",
+        "sha256": "c5fb0a7b207f5c6e0fdd4d55b624aef69df4619c758034c59ca1a5645cf534f2"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/test_post_restart_classification.ps1",
+        "sha256": "bb88bbf79eb8c61b023d6a7d1468b40af09d4007433a3f111c832235e89fe611"
+      }
+    ],
+    "require_source_runtime_absent_and_exact_retained_directory": true,
+    "require_equal_content_manifests_and_zero_deleted_files": true,
+    "require_normal_fresh_launch_identity_resource_mutex_guards": true,
+    "old_terminal_flags_must_remain_unconfirmed": true,
+    "single_owner_job_termination_is_inference": true
+  },
+  "planned_mode": "--r1-ground-blocks-and-node-destroy",
+  "pending_exact_binding": false
+}

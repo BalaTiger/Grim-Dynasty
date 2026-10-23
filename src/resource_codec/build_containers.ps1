@@ -1,7 +1,7 @@
-param([string]$OutputDirectory='D:\MyGitRepo\Grim-Dynasty\.tooling\resource-containers-build',[string]$Lz4Source='D:\MyGitRepo\Grim-Dynasty\src\resource_codec\Lz4Block.cs',[switch]$IncludeTests)
+param([string]$OutputDirectory=(Join-Path $PSScriptRoot '..\..\.tooling\resource-containers-build'),[string]$Lz4Source=(Join-Path $PSScriptRoot '..\..\src\resource_codec\Lz4Block.cs'),[switch]$IncludeTests)
 $ErrorActionPreference='Stop'
 $compiler='C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe'
-$root=[IO.Path]::GetFullPath('D:\MyGitRepo\Grim-Dynasty')+[IO.Path]::DirectorySeparatorChar
+$root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..'))+[IO.Path]::DirectorySeparatorChar
 $target=[IO.Path]::GetFullPath($OutputDirectory)
 if (!$target.StartsWith($root,[StringComparison]::OrdinalIgnoreCase)) {throw 'Output must remain inside project'}
 New-Item -ItemType Directory -Path $target -Force | Out-Null

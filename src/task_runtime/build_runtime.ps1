@@ -1,11 +1,11 @@
-param([string]$OutputDirectory='D:\MyGitRepo\Grim-Dynasty\.tooling\task-runtime-build')
+param([string]$OutputDirectory=(Join-Path $PSScriptRoot '..\..\.tooling\task-runtime-build'))
 $ErrorActionPreference='Stop'
 $compiler='C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe'
-$root=[IO.Path]::GetFullPath('D:\MyGitRepo\Grim-Dynasty')+[IO.Path]::DirectorySeparatorChar
+$root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..'))+[IO.Path]::DirectorySeparatorChar
 $target=[IO.Path]::GetFullPath($OutputDirectory)
 if (!$target.StartsWith($root,[StringComparison]::OrdinalIgnoreCase)) {throw 'Project output required'}
 New-Item -ItemType Directory -Path $target -Force | Out-Null
-foreach($name in @('GrimDynasty.Conditions.dll','GrimDynasty.TaskLogic.dll','GrimDynasty.TokenActions.dll','GrimDynasty.Resources.dll','GrimDynasty.Quests.dll')) {Copy-Item -LiteralPath "D:\MyGitRepo\Grim-Dynasty\.tooling\token-actions-build\$name" -Destination $target -Force}
+foreach($name in @('GrimDynasty.Conditions.dll','GrimDynasty.TaskLogic.dll','GrimDynasty.TokenActions.dll','GrimDynasty.Resources.dll','GrimDynasty.Quests.dll')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot "..\..\.tooling\token-actions-build\$name") -Destination $target -Force}
 & $compiler /nologo /target:library /checked+ /optimize+ "/reference:$target\GrimDynasty.TaskLogic.dll" "/reference:$target\GrimDynasty.TokenActions.dll" "/out:$target\GrimDynasty.TaskRuntime.dll" "$PSScriptRoot\TaskLifecycle.cs" "$PSScriptRoot\TokenStats.cs" "$PSScriptRoot\InboundTokens.cs"
 if ($LASTEXITCODE -ne 0) {throw 'Runtime compile failed'}
 & $compiler /nologo /target:exe /checked+ /optimize+ "/reference:$target\GrimDynasty.Conditions.dll" "/reference:$target\GrimDynasty.TaskLogic.dll" "/reference:$target\GrimDynasty.TokenActions.dll" "/reference:$target\GrimDynasty.TaskRuntime.dll" "/out:$target\TaskRuntimeTests.exe" "$PSScriptRoot\TaskRuntimeTests.cs"

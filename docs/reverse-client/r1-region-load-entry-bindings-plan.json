@@ -1,0 +1,47 @@
+{
+  "schema": "grim-dynasty-r1-fixed-export-address-plan-v1",
+  "purpose": "Bind only three exact names already saved in Game Engine imports: RegionLoader constructor,RegionLoader.Update and NavManager.IsNavDataLoaded. These metadata anchors connect a loading lifecycle candidate with navigation loaded-state inquiry; they do not prove tile-production semantics. Reconfirm the existing196380 constructor export against pinned metadata.",
+  "proof": {
+    "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+  },
+  "sources": [
+    {
+      "module": "Engine.dll",
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "bytes": 4485632,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "targets": [
+        {
+          "consumer": "x64/Game.dll",
+          "name": "??0RegionLoader@GAME@@QEAA@PEAVResourceLoader@1@AEBV?$vector@PEAVRegion@GAME@@@mem@@_N@Z",
+          "import_index": 1013,
+          "existing_export_rva": "0x196380"
+        },
+        {
+          "consumer": "x64/Game.dll",
+          "name": "?Update@RegionLoader@GAME@@QEAAXH@Z",
+          "import_index": 1015
+        },
+        {
+          "consumer": "x64/Game.dll",
+          "name": "?IsNavDataLoaded@NavManager@GAME@@QEBA_NPEBVRegion@2@@Z",
+          "import_index": 635
+        }
+      ]
+    }
+  ],
+  "limits": {
+    "metadata_bytes_per_module": 16384,
+    "metadata_bytes_total": 16384,
+    "metadata_operations_per_module": 2048,
+    "names_per_module": 64,
+    "name_bytes": 512,
+    "binary_search_steps": 32,
+    "code_bytes": 0,
+    "subprocesses": 0
+  },
+  "output": "docs/reverse-client/r1-region-load-entry-bindings",
+  "automatic_target_expansion": false,
+  "execution_requires_separate_review_and_approval": true
+}

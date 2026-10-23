@@ -1,0 +1,91 @@
+{
+  "schema": "grim-dynasty.fixed-game-radius-thunk-binding.v1",
+  "script": "tools/static_analysis/read_r1_game_radius_thunk_binding.mjs",
+  "entrypoint": "inspectGameRadiusThunkBinding(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-game-radius-thunk-binding/inspection.json",
+  "sources": {
+    "Game": {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "bytes": 11385856,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    "Engine": {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "bytes": 4485632,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  },
+  "fixed_candidate": {
+    "rva": "0x5d9f8c",
+    "bytes": 6,
+    "va": "0x1805d9f8c",
+    "source": "callback_slots",
+    "slot_offset": "0x1c8",
+    "character_slot_rva": "0x6df898",
+    "player_slot_rva": "0x7872c8"
+  },
+  "conditional_binding": {
+    "required_prefix_hex": "ff25",
+    "signed_disp32_offset": 2,
+    "next_instruction_rva": "0x5d9f92",
+    "iat_owner": "Only pinned Engine.dll IAT prefix indices0..487",
+    "iat_base_rva": "0x609000",
+    "lookup_base_rva": "0xa42ac0",
+    "lookup_entries": 488,
+    "lookup_source": "cached350-entry prefix plus cached138-entry continuation",
+    "original_reads": "Exact derived Game IAT8B + import hint2B + inventory-selected name; exact hinted Engine export name pointer4B/name/ordinal2B/EAT4B.",
+    "fallback": "Unsupported; no alternate opcode decoder, IAT scan, export-name search, forwarder traversal or target body read."
+  },
+  "source_pins": [
+    {
+      "key": "callback_slots",
+      "path": "docs/reverse-client/r1-game-callback-dependencies/inspection.json",
+      "sha256": "c0f0348d8f0712b35efd22d7ed36282065bfc31c78ee18b0f1d870e036a4afab"
+    },
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "key": "oft_tail",
+      "path": "docs/reverse-client/r1-navigation-binding/inspection.json",
+      "sha256": "d0c171ce77a6d67e153a6911fc7c3a17ea4d61e80ab9492f3287384524e14264"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    }
+  ],
+  "limits": {
+    "candidate_bytes": 6,
+    "metadata_bytes": 1056,
+    "metadata_operations": 7,
+    "metadata_single_read": 512,
+    "hash_chunk_bytes": 65536,
+    "new_PE_header_bytes": 0,
+    "new_OFT_bytes": 0,
+    "target_body_bytes": 0
+  },
+  "requirements": [
+    "Preparation and module import perform no filesystem I/O. Separate explicit execution approval is required.",
+    "External Windows Attributes/reparse-tag precheck of both fixed originals and output ancestors is required.",
+    "Reuse pinned PE maps only after the current same-descriptor whole-file hash equals the corresponding original fingerprint.",
+    "Read at most6B at the sole Game RVA5D9F8C. Do not classify it as an instruction until the observed bytes and executable-section mapping meet the exact FF25 gate.",
+    "Only the computed IAT entry inside the pinned Engine.dll prefix may be bound. Unsupported cases are preserved without broader reads.",
+    "Use the inventory-selected exact ASCII symbol length and its actual import hint for a single Engine export match; no whole tables or binary search.",
+    "Same-descriptor before/after SHA256/stat; fixed new output directory rejects overwrite and keeps partial failure/Unsupported evidence.",
+    "No DLL loading/execution, backend, subprocess, network, save data, runtime globals, security changes or radius-behavior claim."
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "utc": "2026-10-20T04:38:22.759Z",
+  "status": "passed",
+  "scope": "One 384M backend calibration and eight fixed static calls; offline evidence validation only",
+  "actual_heap_verified": "-Xmx384M",
+  "java_pid": 42820,
+  "source_files": [
+    {
+      "path": "tools/static_analysis/rea_native_registration.mjs",
+      "sha256": "7f1661220b6102d556571f66dec03dcad7a944215bc15cb31411e0647f364914"
+    },
+    {
+      "path": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "de3e6e04f73751b553e30852981985ac2994d55cc5643699de82c193436aaea0"
+    },
+    {
+      "path": "tools/static_analysis/measure_owned_process_memory.ps1",
+      "sha256": "133e68ab06b0d7d26c9b09200a1b2bb93b340b180f148a0b0a9465705efb144a"
+    },
+    {
+      "path": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "c27e57f076f8bf0a8f8c58a62cbecff39c2ce20b201a8476f054c8cc5b832d72"
+    },
+    {
+      "path": "tools/static_analysis/rea-binary-subobject-init-plan.json",
+      "sha256": "b10df059c65aa0dd3d42abf880f8b1147cf3fcf98db856866a987b4fc03f3e1e"
+    },
+    {
+      "path": "tools/static_analysis/rea_project_environment.mjs",
+      "sha256": "3808055da161a942867474e13edea86710d2981bda0ccf4ed5d385df5e794f88"
+    },
+    {
+      "path": ".codex/config.toml",
+      "sha256": "7aeed98559ed397816f78ae53356cf65477c6479aba1ece58b5dcb50b83c09df"
+    }
+  ],
+  "raw_samples": 70,
+  "raw_lines_all_valid": true,
+  "sampled_counter_gaps": 0,
+  "sampled_external_heavy_processes": 0,
+  "maximum_sample_start_gap_ms": 1675,
+  "final_raw_sample_live_owned_count": 0,
+  "sampler_stderr_bytes": 0,
+  "all_owned_release_verified": true,
+  "original_hash_unchanged": true,
+  "behavior_code_changed": false,
+  "behavior_tests_run": false,
+  "historical_behavior_assertions": 930,
+  "historical_combined_scenarios": 14,
+  "baseline_files": 82,
+  "baseline_unchanged": 81,
+  "expected_changes": [
+    {
+      "path": "tools/static_analysis/rea_native_registration.mjs",
+      "before": "115250f1e90cc281f86f44a1d683579114772c7ded003ed76c60f57782aab9c0",
+      "after": "7f1661220b6102d556571f66dec03dcad7a944215bc15cb31411e0647f364914"
+    }
+  ],
+  "operation_denied": false,
+  "uncertain_execution_outcome": false,
+  "caveat": "Raw final samples and sampler exit were independently checked because the current monitor ignores some late errors after beginFinalization. Sampling is not continuous and cannot certify unobserved short-lived processes."
+}

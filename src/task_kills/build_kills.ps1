@@ -1,11 +1,11 @@
-param([string]$OutputDirectory='D:\MyGitRepo\Grim-Dynasty\.tooling\task-kills-build')
+param([string]$OutputDirectory=(Join-Path $PSScriptRoot '..\..\.tooling\task-kills-build'))
 $ErrorActionPreference='Stop'
 $compiler='C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe'
-$root=[IO.Path]::GetFullPath('D:\MyGitRepo\Grim-Dynasty')+[IO.Path]::DirectorySeparatorChar
+$root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..'))+[IO.Path]::DirectorySeparatorChar
 $target=[IO.Path]::GetFullPath($OutputDirectory)
 if (!$target.StartsWith($root,[StringComparison]::OrdinalIgnoreCase)) {throw 'Project output required'}
 New-Item -ItemType Directory -Path $target -Force | Out-Null
-foreach($name in @('GrimDynasty.Conditions.dll','GrimDynasty.TaskLogic.dll','GrimDynasty.TokenActions.dll','GrimDynasty.TaskRuntime.dll','GrimDynasty.TaskAuto.dll','GrimDynasty.Resources.dll','GrimDynasty.Quests.dll')) {Copy-Item -LiteralPath "D:\MyGitRepo\Grim-Dynasty\.tooling\task-auto-build\$name" -Destination $target -Force}
+foreach($name in @('GrimDynasty.Conditions.dll','GrimDynasty.TaskLogic.dll','GrimDynasty.TokenActions.dll','GrimDynasty.TaskRuntime.dll','GrimDynasty.TaskAuto.dll','GrimDynasty.Resources.dll','GrimDynasty.Quests.dll')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot "..\..\.tooling\task-auto-build\$name") -Destination $target -Force}
 $refs=@("/reference:$target\GrimDynasty.Conditions.dll","/reference:$target\GrimDynasty.TaskLogic.dll","/reference:$target\GrimDynasty.TokenActions.dll","/reference:$target\GrimDynasty.TaskRuntime.dll","/reference:$target\GrimDynasty.TaskAuto.dll")
 & $compiler /nologo /target:library /checked+ /optimize+ @refs "/out:$target\GrimDynasty.TaskKills.dll" "$PSScriptRoot\KillCondition.cs" "$PSScriptRoot\KillDefinitionAdapter.cs"
 if ($LASTEXITCODE -ne 0) {throw 'Kill module compile failed'}

@@ -1,0 +1,65 @@
+{
+  "started_utc": "2026-10-20T09:45:45.446Z",
+  "status": "empty-query-and-normal-memcmp-import-confirmed",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-archive-map-publish/280ab0-instructions.json",
+      "sha256": "a18a7c5b8634bad69286945ddc42921328e39ab5d3b5a347b26382219037c547"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-cache-compare/05-Record-cache-compare-0x1802ee060-assembly.json",
+      "sha256": "626c6d2295f6614850500f4c1b4299a97a08fa8dd2e9f80210c3cc985d03c9f2"
+    }
+  ],
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "limitations": [
+    "Static on-disk normal import identity only; external CRT implementation and failure behavior are not recovered.",
+    "Only one first byte of the observed post-import query is interpreted; no string or library scan."
+  ],
+  "original_sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "empty_query": {
+    "va": "0x180339ce0",
+    "bytes": "00",
+    "bytes_read": 1
+  },
+  "compare_thunk": {
+    "va": "0x1802ee060",
+    "bytes": "ff25aa460100",
+    "bytes_read": 6,
+    "iat_va": "0x180302710"
+  },
+  "normal_import": {
+    "dll": "VCRUNTIME140.dll",
+    "name": "memcmp",
+    "descriptor_rva": 4282012,
+    "thunk_index": 3
+  },
+  "metadata_bytes": 2680,
+  "code_bytes_read": 6,
+  "fixed_data_bytes": 1,
+  "original_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "copy_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "original_hash_matches": true,
+  "copy_hash_matches": true,
+  "finished_utc": "2026-10-20T09:45:45.460Z",
+  "controller_resource_usage": {
+    "userCPUTime": 0,
+    "systemCPUTime": 78000,
+    "maxRSS": 41928,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11055,
+    "swappedOut": 0,
+    "fsRead": 560,
+    "fsWrite": 0,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

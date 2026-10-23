@@ -1,0 +1,39 @@
+{
+  "schema": "grim-dynasty.fixed-raycast-parallel-threshold.v1",
+  "script": "tools/static_analysis/read_r1_raycast_parallel_threshold.mjs",
+  "entrypoint": "inspectRaycastParallelThreshold(reviewedScriptSha256,reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-raycast-parallel-threshold/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "proof": {
+    "file": "docs/reverse-client/r1-crowd-direct-algorithms/08-CrowdDirectAlgorithm-0x180263290-procedure_assembly.json",
+    "sha256": "374dc7ce990f27d3a91d7e84df792f4de7cd8c99be757cb8ef5e2491ed885bd3",
+    "procedure": "0x180263290",
+    "instruction": "0x1802633af: MOVSS XMM14, dword ptr [0x18034b93c]"
+  },
+  "pe_cache": {
+    "file": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+    "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+  },
+  "target": {
+    "rva": "0x34b93c",
+    "bytes": 4
+  },
+  "limits": {
+    "data_bytes": 4,
+    "new_metadata_bytes": 0,
+    "code_bytes": 0,
+    "hash_chunk_bytes": 65536
+  },
+  "requirements": [
+    "Separate formal execution approval; module import performs noI/O.",
+    "External Windows Attributes/reparse ancestor checks remain required.",
+    "Reuse cached PE only after exact source SHA256 verification; readable nonexecutablesection andfilebounds enforced.",
+    "Exactly4Boperand; no expected value,adjacent data,code,loaded global,subprocess,backend ororiginal execution.",
+    "Same descriptor before/afterSHA256 andstat/path checks;newoutputexclusivewrite;failurespreserved."
+  ]
+}
+

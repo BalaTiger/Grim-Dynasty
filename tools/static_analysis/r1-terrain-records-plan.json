@@ -1,0 +1,79 @@
+{
+  "schema": "grim-dynasty-r1-fixed-terrain-record-plan-v1",
+  "purpose": "Read only five exact terrain record names already present in saved mainmenu ground data, using the pinned own M1 decoder; no native factory/runtime or DLC overlay claim.",
+  "input": {
+    "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\database\\database.arz",
+    "bytes": 58529720,
+    "sha256": "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603"
+  },
+  "tool": {
+    "path": "artifacts/m1-offline-20261022-03/gd-offline.exe",
+    "sha256": "c4a84feb1bedbaa9b08598ff2cdd01ab0aeaa0bf7a57bbfbcf937faa38ba508b",
+    "command": "inspect-record"
+  },
+  "archive_proof": {
+    "path": "docs/m3-evidence/content-formulas/manifest.json",
+    "sha256": "079eef1f317dee8d7b64c1e6e94df91fe90032c1b7e6147f6b275e64eb2d2653",
+    "status": "Collected",
+    "schema": "grim-dynasty-m3-direct-record-read-v1"
+  },
+  "name_proof": {
+    "path": "docs/reverse-client/r1-mainmenu-ground-layout/inspection.json",
+    "sha256": "64b6321a8a1e3a7c0fa0648cfd6aa3ad7e2ce65e5cfd47c094b3a40ad22335a6",
+    "schema": "grim-dynasty.saved-ground-layout.v1",
+    "status": "passed-conditional-saved-layout-only",
+    "saved_member_sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289"
+  },
+  "max_records": 5,
+  "recursive": false,
+  "follow_references": false,
+  "dlc_overlay_order_established": false,
+  "native_material_identity_established": false,
+  "output_directory": "docs/reverse-client/r1-terrain-records",
+  "hash_buffer_bytes": 65536,
+  "records": [
+    {
+      "terrain_index": 0,
+      "record_name": "records/terraintextures/earth/flat_rockdark.dbr",
+      "name_member_offset": 356505,
+      "name_bytes": 47,
+      "output_file": "terrain-0.json"
+    },
+    {
+      "terrain_index": 1,
+      "record_name": "records/terraintextures/grass/poly_grasssparserocky.dbr",
+      "name_member_offset": 356556,
+      "name_bytes": 55,
+      "output_file": "terrain-1.json"
+    },
+    {
+      "terrain_index": 2,
+      "record_name": "records/terraintextures/earth/flat_soilforestroots.dbr",
+      "name_member_offset": 372999,
+      "name_bytes": 54,
+      "output_file": "terrain-2.json"
+    },
+    {
+      "terrain_index": 3,
+      "record_name": "records/terraintextures/plants/poly_cornstalks_dead01.dbr",
+      "name_member_offset": 389441,
+      "name_bytes": 57,
+      "output_file": "terrain-3.json"
+    },
+    {
+      "terrain_index": 4,
+      "record_name": "records/terraintextures/earth/flat_leaflittermaplebrown.dbr",
+      "name_member_offset": 405886,
+      "name_bytes": 59,
+      "output_file": "terrain-4.json"
+    }
+  ],
+  "execution_status": "prepared-not-executed",
+  "execution_requires_root_review_and_formal_approval": true,
+  "limits": {
+    "plan_bytes": 32768,
+    "proof_bytes": 1048576,
+    "max_record_json_bytes": 4194304
+  },
+  "scope": "Hold read-only shared-read handles to exact original ARZ and own executable for the whole five-call batch. Hash each before and after only; preserve all returned output and partial manifest. No compiler, backend, game DLL loading, original game execution, saves, cloud, system changes or recursive lookup."
+}

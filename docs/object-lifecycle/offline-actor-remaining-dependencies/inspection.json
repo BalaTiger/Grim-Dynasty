@@ -1,0 +1,409 @@
+{
+  "schema": "grim-dynasty-fixed-actor-remaining-dependencies-v1",
+  "status": "fixed-actor-remaining-dependencies-verified",
+  "started_utc": "2026-10-21T04:45:40.566Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-body/0259a0-instructions.json",
+      "sha256": "59f402f428e04e2928bb485e58fa85896ac08db4548bff6fa33444a58fa521a7"
+    }
+  ],
+  "source_call": {
+    "address": "0x180025cc9",
+    "bytes": "e8127f0900",
+    "instruction": "call        00000001800BDBE0"
+  },
+  "requested_rva": "0xbdbe0",
+  "requested_data": [
+    {
+      "rva": "0x34bb44",
+      "bytes": 4,
+      "role": "MOVSS file constant",
+      "section": ".rdata",
+      "instruction": {
+        "address": "0x180025d15",
+        "bytes": "f30f100d275e3200",
+        "instruction": "movss       xmm1,dword ptr [000000018034BB44h]"
+      }
+    },
+    {
+      "rva": "0x421428",
+      "bytes": 8,
+      "role": "global pointer slot file-initial state only",
+      "section": ".data",
+      "instruction": {
+        "address": "0x180025d3d",
+        "bytes": "488b0de4b63f00",
+        "instruction": "mov         rcx,qword ptr [0000000180421428h]"
+      }
+    }
+  ],
+  "limits": {
+    "code_bytes": 4096,
+    "metadata_bytes": 384,
+    "pdata_entries": 32,
+    "search_steps": 32,
+    "requested_data_bytes": 12,
+    "semantic_read_operations": 34,
+    "proof_bytes_each": 32768,
+    "fingerprint_chunk_bytes": 65536,
+    "tool_timeout_ms": 10000,
+    "tool_max_buffer_bytes": 196608,
+    "report_bytes": 131072
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "runtime_value_observed": false,
+  "backend_started": false,
+  "build_or_test_execution": false,
+  "original_modified": false,
+  "full_target_copy_created": false,
+  "permission_change": false,
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "metadata_bytes": 156,
+  "code_bytes": 901,
+  "data_bytes": 4,
+  "virtual_zero_fill_bytes": 8,
+  "reads": [
+    {
+      "kind": "pdata",
+      "file_offset": 4390956,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "b066170000691700c8c13800"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4354320,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "200d0a00520d0a00a0213600"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4372644,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "30e810001dea100044f23700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4363488,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "c0f40d00f1f60d00b0a43700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4358904,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "17220c0066220c0000813700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4356612,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "e0780b0006790b00a0213600"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4357764,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "10be0b008fbe0b0080203600"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4358340,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "e0db0b0065df0b0078793700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4358052,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "50cc0b001acd0b00a0213600"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4358196,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "aed60b0072d70b00a8783700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4358268,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "07da0b001ada0b0020793700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4358304,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "cdda0b00e3da0b0044793700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4358328,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "50db0b00d8db0b0058793700"
+    },
+    {
+      "kind": "code",
+      "file_offset": 774112,
+      "requested_bytes": 901,
+      "read_bytes": 901,
+      "raw_hex": "48894c2408555657488bec4883ec6048c745d0feffffff48899c24900000000f29742450488bf9488d05fa1c280048890133f64889716848897170488971784889b1800000004889b1880000004889b1900000004889b1980000004889b1a00000004889b1a80000004889b1b00000004889b1b80000004889b1c00000004889b1c80000004889b1d00000004889b1d80000004881c110010000488d058ff8f4ff48894424204c8d0d73a8f7ff8d5668448d4601e8a3ef2100904889b778010000c78780010000f70100004889b7580200004889b7600200004889b768020000488d9f7002000048895d2889752848893348897308488973104c8d452833d2488bcbe809a5f8ff488973184889b7a00200004889b7a80200004889b7b002000048c787d4020000010000000f1005cee428000f1187dc0200004889b7f80200006689b7d00200004889b7f00200004088b700030000c787100300000000803fc7870c030000010000006689b7080300004088b7140300004889b7180300004889b7200300004889b728030000488d873003000048c740180f0000004889701048837818107203488b00c60000c787c40200000000803fc787c80200000000803f4889b7b802000089b7c0020000897738c6473c0048897708488977104889771848897740488977484889775048897758488977604889b788010000f30f100d61dd2800c745e00000803f0f28c10f14c1f20f11879c0100008b45e08987a40100000f57f6c745e0000000000f28c60f14c6f20f1187900100008b45e0898798010000e8895c1b000f10000f1187e00000000f1048100f118ff00000000f1040200f1187000100000f100562e528000f11872c02000089b73c020000c68740020000000f11874402000089b754020000c68790020000014889b794020000c745e0000000000f28c60f14c6f20f1187a80100008b45e08987b0010000c745e0000000000f28c60f14c6f20f1187b40100008b45e08987bc010000e8f25b1b000f10000f1187e40100000f1048100f118ff40100000f1040200f118704020000c745e0000000000f28c60f14c6f20f1187d80100008b45e08987e0010000c745e0000000000f28c60f14c6f20f1187140200008b45e089871c020000c745e0000000000f28c60f14c6f20f1187200200008b45e089872802000048897730488977284889772066c787500300000100488bc7488b9c24900000000f287424504883c4605f5e5dc3"
+    },
+    {
+      "kind": "data",
+      "file_offset": 3451716,
+      "requested_bytes": 4,
+      "read_bytes": 4,
+      "raw_hex": "0000803f"
+    }
+  ],
+  "data_results": [
+    {
+      "rva": "0x34bb44",
+      "bytes": 4,
+      "role": "MOVSS file constant",
+      "section": ".rdata",
+      "section_rva": "0x302000",
+      "section_raw_size": 1140736,
+      "section_virtual_size": 1140696,
+      "section_characteristics": "0x40000040",
+      "kind": "file-backed",
+      "file_offset": 3451716,
+      "runtime_observed": false,
+      "raw_hex": "0000803f",
+      "file_bytes_read": 4,
+      "unsigned_little_endian_hex": "0x3f800000"
+    },
+    {
+      "rva": "0x421428",
+      "bytes": 8,
+      "role": "global pointer slot file-initial state only",
+      "section": ".data",
+      "section_rva": "0x419000",
+      "section_raw_size": 27136,
+      "section_virtual_size": 44952,
+      "section_characteristics": "0xc0000040",
+      "kind": "virtual-zero-fill",
+      "file_offset": null,
+      "runtime_observed": false,
+      "file_initial_zero_fill_hex": "0000000000000000",
+      "file_bytes_read": 0,
+      "loaded_pointer_value": null
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    }
+  ],
+  "subprocesses": 1,
+  "body_read": true,
+  "limitations": [
+    "Only exact BeginAddress BDBE0 with size <=4096 admits one bounded dumpbin call. Missing/oversize boundaries stop before code or fixed data reads.",
+    "At most 32 distinct 12-byte .pdata entries; only encountered order is checked. No neighbor body, unwind/EH data, callee or additional target is followed.",
+    "The fixed data domain is 4 bytes at 34BB44 and 8 bytes at 421428. A wholly virtual-only .data slot is reported from pinned PE metadata as file-initial zero-fill, not read beyond raw data.",
+    "No global pointer dereference, loaded process memory, runtime initializer or full table is read. File initial state is not loaded runtime state.",
+    "Two same-handle full-file SHA256 passes use 64KiB buffers and are separate from semantic budgets. Hash/stat stability is not an atomic snapshot.",
+    "dumpbin performs static inspection only; its internal PE metadata I/O is not instrumented by these reader counters. Byte coverage does not prove a complete logical function or native EH."
+  ],
+  "script_sha256": "8959d1ff53a1ffc0f8dd310158ca16f6a087e129fb31e04bb1c937de2a6b8f0c",
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "stat_before": {
+    "size": 4485632,
+    "dev": 2562469142,
+    "ino": 1970324837085124,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "search_steps": 13,
+  "lower_bound_index": 3387,
+  "boundary": {
+    "index": 3387,
+    "begin": 777184,
+    "end": 778085,
+    "unwind": 3635576,
+    "raw_hex": "e0db0b0065df0b0078793700"
+  },
+  "code_file_offset": 774112,
+  "code_sha256": "2728ff3fd32f22e210fe14977b90533f7d8f9d586c8db43af6e38d084efccf79",
+  "command_arguments": [
+    "/NOLOGO",
+    "/NOPDB",
+    "/ERRORREPORT:NONE",
+    "/DISASM:BYTES",
+    "/RANGE:0x1800bdbe0,0x1800bdf64",
+    "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll"
+  ],
+  "tool_elapsed_ms": 47,
+  "tool_exit": 0,
+  "tool_signal": null,
+  "tool_error": null,
+  "byte_coverage_verified": true,
+  "instructions": 169,
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "stat_after": {
+    "size": 4485632,
+    "dev": 2562469142,
+    "ino": 1970324837085124,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "source_handle_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "entries": [
+    {
+      "index": 6105,
+      "begin": 1533616,
+      "end": 1534208,
+      "unwind": 3719624,
+      "raw_hex": "b066170000691700c8c13800"
+    },
+    {
+      "index": 3052,
+      "begin": 658720,
+      "end": 658770,
+      "unwind": 3547552,
+      "raw_hex": "200d0a00520d0a00a0213600"
+    },
+    {
+      "index": 4579,
+      "begin": 1108016,
+      "end": 1108509,
+      "unwind": 3666500,
+      "raw_hex": "30e810001dea100044f23700"
+    },
+    {
+      "index": 3816,
+      "begin": 914624,
+      "end": 915185,
+      "unwind": 3646640,
+      "raw_hex": "c0f40d00f1f60d00b0a43700"
+    },
+    {
+      "index": 3434,
+      "begin": 795159,
+      "end": 795238,
+      "unwind": 3637504,
+      "raw_hex": "17220c0066220c0000813700"
+    },
+    {
+      "index": 3243,
+      "begin": 751840,
+      "end": 751878,
+      "unwind": 3547552,
+      "raw_hex": "e0780b0006790b00a0213600"
+    },
+    {
+      "index": 3339,
+      "begin": 769552,
+      "end": 769679,
+      "unwind": 3547264,
+      "raw_hex": "10be0b008fbe0b0080203600"
+    },
+    {
+      "index": 3387,
+      "begin": 777184,
+      "end": 778085,
+      "unwind": 3635576,
+      "raw_hex": "e0db0b0065df0b0078793700"
+    },
+    {
+      "index": 3363,
+      "begin": 773200,
+      "end": 773402,
+      "unwind": 3547552,
+      "raw_hex": "50cc0b001acd0b00a0213600"
+    },
+    {
+      "index": 3375,
+      "begin": 775854,
+      "end": 776050,
+      "unwind": 3635368,
+      "raw_hex": "aed60b0072d70b00a8783700"
+    },
+    {
+      "index": 3381,
+      "begin": 776711,
+      "end": 776730,
+      "unwind": 3635488,
+      "raw_hex": "07da0b001ada0b0020793700"
+    },
+    {
+      "index": 3384,
+      "begin": 776909,
+      "end": 776931,
+      "unwind": 3635524,
+      "raw_hex": "cdda0b00e3da0b0044793700"
+    },
+    {
+      "index": 3386,
+      "begin": 777040,
+      "end": 777176,
+      "unwind": 3635544,
+      "raw_hex": "50db0b00d8db0b0058793700"
+    }
+  ],
+  "source_hash_preserved": true,
+  "tool_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T04:45:40.647Z",
+  "controller_resource_usage": {
+    "userCPUTime": 31000,
+    "systemCPUTime": 31000,
+    "maxRSS": 43112,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11428,
+    "swappedOut": 0,
+    "fsRead": 170,
+    "fsWrite": 3,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

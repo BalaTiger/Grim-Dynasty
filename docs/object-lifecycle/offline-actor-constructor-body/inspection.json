@@ -1,0 +1,133 @@
+{
+  "schema": "grim-dynasty-fixed-actor-constructor-body-v1",
+  "status": "fixed-actor-constructor-body-disassembly-verified",
+  "started_utc": "2026-10-21T03:37:07.534Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    }
+  ],
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "limits": {
+    "code_bytes": 1005,
+    "metadata_bytes": 12,
+    "fingerprint_chunk_bytes": 65536,
+    "proof_bytes": 65536,
+    "tool_timeout_ms": 10000,
+    "tool_max_buffer_bytes": 196608
+  },
+  "requested_rva": "0x259a0",
+  "end_rva_exclusive": "0x25d8d",
+  "code_file_offset": 150944,
+  "pdata_entry": {
+    "index": 1113,
+    "rva": "0x42742c",
+    "file_offset": 4331052,
+    "raw_hex": "a05902008d5d020048793600",
+    "unwind_rva": "0x367948"
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "original_modified": false,
+  "full_target_copy_created": false,
+  "build_or_test_execution": false,
+  "permission_change": false,
+  "code_bytes": 1005,
+  "metadata_bytes": 12,
+  "subprocesses": 1,
+  "reads": [
+    {
+      "kind": "pdata-recheck",
+      "file_offset": 4331052,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "a05902008d5d020048793600"
+    },
+    {
+      "kind": "code",
+      "file_offset": 150944,
+      "requested_bytes": 1005,
+      "read_bytes": 1005
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    }
+  ],
+  "limitations": [
+    "Exactly one saved .pdata fragment; no callee, adjacent code, continuation or EH/unwind-body following.",
+    "Byte coverage is not proof of complete logical constructor, external dependencies or exception behavior.",
+    "64KiB streaming full-file fingerprints are separate from 1005 code bytes and the 12-byte metadata recheck.",
+    "dumpbin RANGE bounds requested output; its internal PE metadata I/O is not instrumented.",
+    "The installed tool reads Engine.dll as data; neither the target nor its imports are executed.",
+    "Same-handle before/after fingerprints and stat checks require stability, not an atomic snapshot."
+  ],
+  "script_sha256": "b039eec52dc972dda8714c5beb7af340960fb4dd40f44120ebb5105dddcd172f",
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "code_sha256": "fd6b3d7b6904961c58cd72b9a57eb04fc0ac327ac58cd8929c744421a8c7ed3e",
+  "command_arguments": [
+    "/NOLOGO",
+    "/NOPDB",
+    "/ERRORREPORT:NONE",
+    "/DISASM:BYTES",
+    "/RANGE:0x1800259a0,0x180025d8c",
+    "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll"
+  ],
+  "tool_elapsed_ms": 36,
+  "tool_exit": 0,
+  "tool_signal": null,
+  "tool_error": null,
+  "instructions": 186,
+  "byte_coverage_verified": true,
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "source_handle_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "source_hash_preserved": true,
+  "tool_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T03:37:07.587Z",
+  "controller_resource_usage": {
+    "userCPUTime": 15000,
+    "systemCPUTime": 46000,
+    "maxRSS": 43052,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11350,
+    "swappedOut": 0,
+    "fsRead": 157,
+    "fsWrite": 3,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

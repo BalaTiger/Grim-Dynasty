@@ -1,0 +1,42 @@
+{
+  "schema": "item-actor-bridge-run-v1",
+  "approval_mechanism": "require_escalated",
+  "execution": "approved_and_completed",
+  "command": "& 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -NoProfile -NonInteractive -File 'C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\src\\task_items\\build_item_constructor_bridge.ps1'",
+  "build_attempts": 1,
+  "compiler_invocations": 4,
+  "test_invocations": 3,
+  "new_assertions": 55,
+  "new_scenario_groups": 9,
+  "regressions": [
+    {
+      "suite": "ItemConstructor858PrefixTests",
+      "assertions": 36,
+      "groups": 6,
+      "runs": 1
+    },
+    {
+      "suite": "ItemScalarInitializationTests",
+      "assertions": 18,
+      "reported_scenarios": 0,
+      "runs": 1
+    }
+  ],
+  "other_previous_suites_run": 0,
+  "warnings_in_build_output": 0,
+  "initial_tool_result": {
+    "chunk_id": "0afea4",
+    "wall_time_seconds": 1.001182494,
+    "session_id": 70191,
+    "original_token_count": 265,
+    "output": "NEW SUITE: ItemConstructorBridgeTests (counts reported separately)\r\nPASS LeafWritesAndPadding: 8 assertions\r\nPASS SharedViewsAndUnknownWidths: 7 assertions\r\nPASS SharedWriteOrderAndOwnException: 5 assertions\r\nPASS CompleteConditionalIntegration: 10 assertions\r\nPASS CallbackVisibility: 3 assertions\r\nPASS ActorFailurePrefixes: 5 assertions\r\nPASS OwnProjectionCoverageStops: 7 assertions\r\nPASS PriorIdentityAndReplay: 5 assertions\r\nPASS StorageIdentityAndIsolation: 5 assertions\r\nItemConstructorBridgeTests: 55 assertions, 9 groups passed; own conditional prefix only\r\nAFFECTED REGRESSION: ItemConstructor858PrefixTests (counts reported separately)\r\nPASS: 36 assertions, 6 scenario groups\r\nAFFECTED REGRESSION: ItemScalarInitializationTests (counts reported separately)\r\n{\"status\":\"passed\",\"fixed_assertions\":18,\"scenarios\":0,\"scope\":\"Own Item scalar initialization segment only; six exact stores, overlapping DWORD views and untouched-field preservation. No complete Item/Actor/QuestItem constructor, ClassInfo callback, original execution or rendering.\"}\r\n"
+  },
+  "completion_tool_result": {
+    "chunk_id": "8d1d5d",
+    "wall_time_seconds": 0.000023054,
+    "exit_code": 0,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "exit_code": 0
+}

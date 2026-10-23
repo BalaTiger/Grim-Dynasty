@@ -1,0 +1,40 @@
+{
+  "code_byte_limit": 256,
+  "source_evidence": [
+    {
+      "sha256": "29d059bdb204e1116c6a856537267152d54848c0fd8fc82fefc43914bbf4fa6e",
+      "path": "docs/object-lifecycle/offline-engine-root-initializer-table/table.json"
+    }
+  ],
+  "stage": "initializer-slot23",
+  "prior_inspections": [
+    {
+      "sha256": "f4b4a7a8d1fb008f1d7f216b4549dff6d6389c9903609c128a7bc62cff9eaea7",
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-attach/inspection.json"
+    },
+    {
+      "sha256": "193471ed69fea0b535b78491f1709a1d19a35c0c08d18391742d7a4b468192d9",
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-dispatch/inspection.json"
+    },
+    {
+      "sha256": "5ee250e52c8aed2fd40a85900f49100bcd2054b40abf61ee1883a2307ae4b5b4",
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-entry/inspection.json"
+    },
+    {
+      "sha256": "dbf9dcfb39929bf2331f07ce34dc10aeb3a87688dd8fc53a59e8fefec1156cc5",
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-reason/inspection.json"
+    },
+    {
+      "sha256": "07efe567de1b0435f0f3a3184745fcb2fd9e8674ae9e129df3c328f5b61b9231",
+      "path": "docs/object-lifecycle/offline-engine-root-static-initializer-thunks/inspection.json"
+    }
+  ],
+  "targets": [
+    {
+      "maximum_bytes": 256,
+      "basis": "Saved CRT table slot23 is exact preferred RVA5C70. It begins the observed run of B0-spaced pointer values; this spacing is a selection heuristic only, not class identity or algorithm evidence. One exact function fragment, no automatic neighbors.",
+      "rva": 23664,
+      "role": "Bounded initializer candidate at table slot23"
+    }
+  ]
+}

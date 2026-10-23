@@ -1,0 +1,128 @@
+{
+  "schema": "grim-dynasty-m3-fixed-export-targets-v1",
+  "started_utc": "2026-10-22T05:37:32.644Z",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "output_relative": "docs/m3-evidence/character-input-targets.json",
+  "limits": {
+    "source_bytes": 67108864,
+    "hash_chunk_bytes": 65536,
+    "metadata_bytes": 32768,
+    "metadata_operations": 4096,
+    "single_read_bytes": 4096,
+    "header_end": 65536,
+    "sections": 96,
+    "exports": 1000000,
+    "names_cached": 128,
+    "name_bytes": 1024,
+    "pdata_bytes": 2097152,
+    "search_steps": 32,
+    "candidates_per_prefix": 2,
+    "candidates_per_category": 4,
+    "report_bytes": 65536
+  },
+  "queries": {
+    "character_input": [
+      "?Load@Character@GAME@@",
+      "?Attack@Character@GAME@@"
+    ]
+  },
+  "target_open_mode": "r",
+  "target_loaded_or_executed": false,
+  "code_bytes_interpreted": 0,
+  "backend_started": false,
+  "whole_export_name_table_scanned": false,
+  "whole_pdata_table_scanned": false,
+  "metadata_bytes": 3562,
+  "metadata_operations": 141,
+  "metadata_by_kind": {
+    "header": 328,
+    "sections": 360,
+    "export-directory": 40,
+    "export-name-pointers": 132,
+    "export-name-ascii": 2528,
+    "export-ordinals": 2,
+    "export-addresses": 4,
+    "pdata-selected-search": 168
+  },
+  "categories": {
+    "character_input": {
+      "status": "NamedCandidatesOnly",
+      "searches": [
+        {
+          "prefix": "?Load@Character@GAME@@",
+          "matching_name_range": [
+            18590,
+            18591
+          ],
+          "matches": 1,
+          "emitted": 1,
+          "status": "NamedExportsLocated",
+          "omitted_due_to_fixed_limits": 0
+        },
+        {
+          "prefix": "?Attack@Character@GAME@@",
+          "matching_name_range": [
+            8915,
+            8915
+          ],
+          "matches": 0,
+          "emitted": 0,
+          "status": "UnknownNoMatchingExport",
+          "omitted_due_to_fixed_limits": 0
+        }
+      ],
+      "candidates": [
+        {
+          "decorated_name": "?Load@Character@GAME@@UEAAXAEBVLoadTable@2@@Z",
+          "query_prefix": "?Load@Character@GAME@@",
+          "name_index": 18590,
+          "ordinal": 18591,
+          "rva": "0x54e70",
+          "preferred_va": "0x180054e70",
+          "forwarded": false,
+          "pdata": {
+            "status": "ExactEntry",
+            "index": 2439,
+            "begin_rva": "0x54e70",
+            "end_rva_exclusive": "0x58440",
+            "begin_va": "0x180054e70",
+            "end_va_exclusive": "0x180058440",
+            "bytes": 13776,
+            "unwind_info_rva": "0x7e70d8",
+            "logical_function_complete": false
+          }
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Queries are candidate names, not claims that these exports exist or that behavior has been recovered.",
+    "Only fixed prefixes are searched in the sorted ASCII export-name table; only encountered ordering is checked.",
+    "An unmatched prefix means Unknown, not absence of unexported, differently named or inlined behavior.",
+    "Only containing .pdata entries for selected export RVAs are read. The range is [begin,end), not proof of a complete logical function.",
+    "Missing .pdata entries, interior export aliases and forwarded exports remain explicit unknown boundary cases.",
+    "Full-file SHA256 passes include uninterpreted code bytes. All semantic reads are PE headers, export metadata and .pdata only.",
+    "No damage formula, death-event producer, equipment policy, trade price, rollback, runtime ABI or compatibility is established."
+  ],
+  "plan": {
+    "path": "docs/m3-evidence/plans/character-input-targets.json",
+    "sha256": "3f25170e2eed89c668fab2e5534a30037d36ccbace91b05a7c9c28e09b84625d",
+    "id": "character-input-targets",
+    "mode": "metadata-only",
+    "candidates_total_limit": 4,
+    "automatic_prefix_expansion": false,
+    "reader_source_sha256": "cc5b1ff23b0ff5b38e631b6b493427dbf75e50317044789c49a06f22156a06d2",
+    "prior_reader_source_sha256": "4bf013c48819658641b5f57e77b871e6da562b6bd90608b93c8bac4b6a72f506"
+  },
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_bytes": 11385856,
+  "named_export_count": 25113,
+  "exception_entry_count": 22293,
+  "preferred_image_base": "0x180000000",
+  "distinct_export_names_read": 33,
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "fingerprint_bytes": 22771712,
+  "finished_utc": "2026-10-22T05:37:32.662Z",
+  "status": "MetadataOnlyCompleted"
+}

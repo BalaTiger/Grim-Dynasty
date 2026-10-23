@@ -1,0 +1,116 @@
+{
+  "utc": "2026-10-23T07:26:55.6303745Z",
+  "status": "ready-for-parent-resource-gated-new-floor-build-not-executed",
+  "owner": "/root/world_floor_resume",
+  "files": [
+    {
+      "path": "src/reverse_client_actions/WorldFloorContracts.cs",
+      "bytes": 22384,
+      "sha256": "2c9221fef2528ec32f5dc09718486c7f825c724c58fbb9e57aede982b7fc078f"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldFloorTests.cs",
+      "bytes": 23040,
+      "sha256": "cdad7614c6d877b969b2298c98d620f437ac128eb3cfc42d46c9a34b25c3653f"
+    },
+    {
+      "path": "tools/build_r1_world_floor.ps1",
+      "bytes": 8633,
+      "sha256": "7277f262f12f2545494762cc45cbb2d6dadde1f1e1aeee8a5e519e703daa203a"
+    },
+    {
+      "path": "tools/r1_world_floor_build_fingerprints.json",
+      "bytes": 6653,
+      "sha256": "7f1d1cfd6700bdbf3064c847fbc0f080b0540942847c8dc10226ac8a91988711"
+    },
+    {
+      "path": "docs/reverse-client/world-floor-opaque-mov-before.cs",
+      "bytes": 21968,
+      "sha256": "637ec9998cc3ac9e4422e587cdcbb7dd31a870cf98ef3ea64b7ddceb95381e63"
+    },
+    {
+      "path": "docs/reverse-client/world-floor-opaque-mov.patch",
+      "bytes": 1670,
+      "sha256": "63b9e2e6fdc93f7b44cf284b3f2e1039ed9a5577ebccc4cdd6ca7d2f35e185ae"
+    }
+  ],
+  "static_validation": {
+    "independent_assembly_review": "completed",
+    "independent_csharp5_public_api_review": "completed",
+    "powershell_parser_errors": 0,
+    "checked_pinned_inputs": 23,
+    "compiler_hash_matched": true,
+    "prior_passed_dependencies_matched": true,
+    "preserved_passed_sources": [
+      {
+        "path": "src/reverse_client_actions/GroundSpatialTreeContracts.cs",
+        "matches_passed_source": true
+      },
+      {
+        "path": "src/reverse_client_actions/GroundWaterContracts.cs",
+        "matches_passed_source": true
+      },
+      {
+        "path": "src/reverse_client_actions/WorldPublicationPrerequisites.cs",
+        "matches_passed_source": true
+      }
+    ],
+    "scenario_count": 21,
+    "tests_executed": false,
+    "compiled": false
+  },
+  "opaque_mov_fix": {
+    "before_sha256": "637ec9998cc3ac9e4422e587cdcbb7dd31a870cf98ef3ea64b7ddceb95381e63",
+    "after_sha256": "2c9221fef2528ec32f5dc09718486c7f825c724c58fbb9e57aede982b7fc078f",
+    "assembly_source": "docs/reverse-client/r1-movement-floor-core/11-MovementFloorCore-0x180221da0-procedure_assembly.json",
+    "assembly_sha256": "0b1444a11090ae60d9f508b8342bdb43d1f7a6961a21b3dce7b7ae40166c9472",
+    "exact_saved_instructions": [
+      "0x180221deb: MOVSS XMM1, dword ptr [R12 + 0x8]",
+      "0x180221df2: MOVSS XMM0, dword ptr [R12 + 0x10]",
+      "0x180221df9: MOVSS XMM2, dword ptr [R12 + 0xc]",
+      "0x180221e00: ADDSS XMM2, dword ptr [0x18034bc00]",
+      "0x180221e08: MOVSS dword ptr [RBP + -0x61], XMM0",
+      "0x180221e1d: MOVSS dword ptr [RBP + -0x69], XMM1",
+      "0x180221e22: MOVSS XMM1, dword ptr [0x18034bdf4]",
+      "0x180221e45: MOVSS dword ptr [RBP + -0x65], XMM2",
+      "0x180221e4a: MOVSD qword ptr [RBP + -0x5d], XMM0"
+    ],
+    "scope": "Only unbuilt Floor draft changed; X/Z/directionY opaque MOV snapshots and Y first arithmetic consumption at221E00",
+    "approval": "Initial patch denied as existing-source scope; parent clarified unbuilt Floor draft authorization; one narrow retry succeeded",
+    "narrow_retry_count": 1
+  },
+  "build_plan": {
+    "script": "tools/build_r1_world_floor.ps1",
+    "output": ".tooling/r1-world-floor-validation",
+    "compile_invocations": 2,
+    "new_test_invocations": 1,
+    "old_suites_rerun": 0,
+    "dependency_dlls": 12,
+    "dependency_bytes": 167424,
+    "source_bytes": 45424,
+    "new_background_processes": 0,
+    "execution_started": false,
+    "expected_low_memory_behavior": "Sequential Framework csc for two individual CSharp files with copied pinned DLLs; no build server, restore, broad project, Ghidra/Rea, original load or execution. Test reads one1091357-byte saved member, makes one real225-block tree and small2x2 OWN fixtures. Process memory not measured; runtime/managed allocation overhead remains."
+  },
+  "distinct_expected_results": {
+    "real_saved_ground": "Expected actual Tree/Block material Unknown stop1D1528; caller unchanged; not normal floor true",
+    "explicit_own_scene": "Expected true via actual flat Ground, actual saved empty Water under explicit OWN prerequisites, and explicit actor/neighbor contents; not real-map proof",
+    "unknown_lists": "Remain Unknown until explicit source publication; no default emptiness",
+    "real_material_adapter": "Deferred interface via same GroundOwner.Data TypeRecord.Material fields; no adapter invoked",
+    "wrapper": "Fresh temporary plus16+8 copy; final D14 Unknown"
+  },
+  "remaining": [
+    "Parent may run fixed script after resource release; no formal compile or21-scenario execution yet",
+    "Real material five-record adapter remains independently owned and is not integrated in this test recipe",
+    "Real loaded actor/neighbor state source still needed",
+    "Actor geometric candidate requires vtableC0/07F070/object30/actor49C",
+    "Non-null Terrain fallback requires actual B8 dispatch",
+    "Native Water constructor/Initialize and native Load not implemented",
+    "Older production movement caller not wired to new Floor API"
+  ],
+  "original_files_opened": false,
+  "original_executed": false,
+  "saves_touched": false,
+  "commit_or_push": false,
+  "gameplay_accepted": false
+}

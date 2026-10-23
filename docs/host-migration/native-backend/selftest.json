@@ -1,0 +1,436 @@
+{
+  "status": "passed",
+  "target_binaries_executed": false,
+  "environment": {
+    "SystemRoot": "C:\\WINDOWS",
+    "WINDIR": "C:\\WINDOWS",
+    "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "PATH": "C:\\Users\\zhuzi\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell;E:\\Codex\\codex-home\\tmp\\arg0-windows\\codex-arg0IaR5NK;C:\\Users\\zhuzi\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\libheif\\libheif\\bin;C:\\Users\\zhuzi\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\jxrlib\\jxrlib\\bin;C:\\Users\\zhuzi\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\TortoiseSVN\\bin;D:\\Git\\cmd;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files\\dotnet\\;D:\\NodeJS\\;C:\\Users\\zhuzi\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell;C:\\Users\\zhuzi\\AppData\\Local\\Microsoft\\WindowsApps;D:\\Microsoft VS Code\\bin;D:\\JetBrains Rider 2025.3.1\\bin;C:\\Users\\zhuzi\\.dotnet\\tools;C:\\Users\\zhuzi\\AppData\\Roaming\\npm;C:\\Users\\zhuzi\\Downloads\\platform-tools-latest-windows\\platform-tools;C:\\Users\\zhuzi\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\zhuzi\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\zhuzi\\.local\\bin;C:\\Users\\zhuzi\\AppData\\Local\\Python\\bin;C:\\Users\\zhuzi\\AppData\\Local\\Programs\\Antigravity IDE\\bin;C:\\Users\\zhuzi\\AppData\\Local\\Unity\\bin;C:\\Users\\zhuzi\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin;C:\\Users\\zhuzi\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\git\\cmd",
+    "TEMP": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\analysis-runtime\\rea",
+    "TMP": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\analysis-runtime\\rea",
+    "TMPDIR": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\analysis-runtime\\rea",
+    "USERPROFILE": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\analysis-runtime\\rea\\host\\home",
+    "HOME": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\analysis-runtime\\rea\\host\\home",
+    "APPDATA": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\analysis-runtime\\rea\\host\\config",
+    "LOCALAPPDATA": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\analysis-runtime\\rea\\host\\cache",
+    "XDG_CONFIG_HOME": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\analysis-runtime\\rea\\host\\config",
+    "XDG_CACHE_HOME": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\analysis-runtime\\rea\\host\\cache",
+    "XDG_DATA_HOME": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\analysis-runtime\\rea\\host\\data",
+    "GHIDRA_INSTALL_DIR": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC",
+    "JAVA_HOME": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\jdk\\jdk-21.0.12.1+1",
+    "GHIDRA_HEADLESS_MAXMEM": "512M",
+    "REA_LOG_LEVEL": "warn",
+    "REA_ANALYSIS_PROVIDER": "ghidra"
+  },
+  "runs": [
+    {
+      "label": "java-version",
+      "command": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\jdk\\jdk-21.0.12.1+1\\bin\\java.exe",
+      "args": [
+        "-version"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "stdout": "",
+      "stderr": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\r\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\r\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)\r\n"
+    },
+    {
+      "label": "javac-version",
+      "command": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\jdk\\jdk-21.0.12.1+1\\bin\\javac.exe",
+      "args": [
+        "-version"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "stdout": "javac 21.0.12.1\r\n",
+      "stderr": ""
+    },
+    {
+      "label": "rea-doctor-ghidra",
+      "command": "D:\\NodeJS\\node.exe",
+      "args": [
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\rea\\node_modules\\rea-agents\\scripts\\rea.mjs",
+        "doctor",
+        "--provider",
+        "ghidra",
+        "--json"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "stdout": "{\"healthy\":true,\"environment_healthy\":false,\"scope\":{\"mode\":\"explicit\",\"clients\":[],\"providers\":[\"ghidra\"],\"skill\":false,\"target\":null},\"scope_checks\":[{\"name\":\"node\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"24.14.0\",\"details\":{\"runtime\":\"node\",\"version\":\"24.14.0\"}},{\"name\":\"ghidra\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\"},{\"name\":\"ghidra-platform\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"win32\"},{\"name\":\"ghidra-architecture\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"x64\"},{\"name\":\"ghidra-installation\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\\\\Ghidra\\\\application.properties\"},{\"name\":\"ghidra-version\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"12.1.4\"},{\"name\":\"ghidra-headless\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\\\\support\\\\analyzeHeadless.bat\"},{\"name\":\"ghidra-native_decompiler\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\\\\Ghidra\\\\Features\\\\Decompiler\\\\os\\\\win_x86_64\\\\decompile.exe reports pe x86_64, which matches win32/x64\"},{\"name\":\"ghidra-java\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"21.0.12.1; 64-bit; JDK; C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\jdk\\\\jdk-21.0.12.1+1; accepted a 64-bit full JDK 21 or newer\"},{\"name\":\"ghidra-native_authority\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"Verified Windows native Job Object, private DACL, and reparse-safe handle controls; local NTFS only.\"}],\"informational_checks\":[{\"name\":\"host\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"win32 x64\"},{\"name\":\"hopper\",\"ok\":false,\"classification\":\"missing_analysis_engine\",\"remediation\":\"Run rea setup to install Hopper, or set HOPPER_LAUNCHER_PATH.\"},{\"name\":\"ida-registration\",\"ok\":false,\"classification\":\"missing_analysis_engine\",\"detail\":\"IDA MCP registration is not configured.\",\"remediation\":\"Set REA_IDA_MCP_CONFIG to your upstream IDA MCP registration JSON; see docs/ida-provider.md.\"},{\"name\":\"jadx\",\"ok\":false,\"classification\":\"missing_analysis_engine\",\"detail\":\"Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.\",\"remediation\":\"Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.\"},{\"name\":\"skill:identity\",\"ok\":false,\"classification\":\"config_drift\",\"detail\":\"Installed REA skill identity is missing.\",\"remediation\":\"Run rea setup to update the installed REA skill.\"}],\"providerInspections\":[{\"id\":\"ghidra\",\"configured\":true,\"available\":true,\"providerVersion\":\"12.1.4\",\"registrationEnvironment\":{\"GHIDRA_INSTALL_DIR\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\",\"JAVA_HOME\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\jdk\\\\jdk-21.0.12.1+1\"},\"checks\":[{\"name\":\"configuration\",\"ok\":true,\"code\":null,\"detail\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\",\"remediation\":null,\"classification\":\"config_drift\"},{\"name\":\"platform\",\"ok\":true,\"code\":null,\"detail\":\"win32\",\"remediation\":null,\"classification\":\"unsupported_host\"},{\"name\":\"architecture\",\"ok\":true,\"code\":null,\"detail\":\"x64\",\"remediation\":null,\"classification\":\"unsupported_host\"},{\"name\":\"installation\",\"ok\":true,\"code\":null,\"detail\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\\\\Ghidra\\\\application.properties\",\"remediation\":null,\"classification\":\"config_drift\"},{\"name\":\"version\",\"ok\":true,\"code\":null,\"detail\":\"12.1.4\",\"remediation\":null,\"classification\":\"config_drift\"},{\"name\":\"headless\",\"ok\":true,\"code\":null,\"detail\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\\\\support\\\\analyzeHeadless.bat\",\"remediation\":null,\"classification\":\"config_drift\"},{\"name\":\"native_decompiler\",\"ok\":true,\"code\":null,\"detail\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\\\\Ghidra\\\\Features\\\\Decompiler\\\\os\\\\win_x86_64\\\\decompile.exe reports pe x86_64, which matches win32/x64\",\"remediation\":null,\"classification\":\"config_drift\"},{\"name\":\"java\",\"ok\":true,\"code\":null,\"detail\":\"21.0.12.1; 64-bit; JDK; C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\jdk\\\\jdk-21.0.12.1+1; accepted a 64-bit full JDK 21 or newer\",\"remediation\":null,\"classification\":\"config_drift\"},{\"name\":\"native_authority\",\"ok\":true,\"code\":null,\"detail\":\"Verified Windows native Job Object, private DACL, and reparse-safe handle controls; local NTFS only.\",\"remediation\":null,\"classification\":\"unsupported_host\"}]},{\"id\":\"ida\",\"configured\":false,\"available\":false,\"providerVersion\":null,\"registrationEnvironment\":{},\"checks\":[{\"name\":\"registration\",\"ok\":false,\"code\":\"not_configured\",\"detail\":\"IDA MCP registration is not configured.\",\"remediation\":\"Set REA_IDA_MCP_CONFIG to your upstream IDA MCP registration JSON; see docs/ida-provider.md.\",\"classification\":\"missing_analysis_engine\"}]},{\"id\":\"jadx\",\"configured\":false,\"available\":false,\"providerVersion\":null,\"registrationEnvironment\":{},\"checks\":[{\"name\":\"configuration\",\"ok\":false,\"code\":\"not_configured\",\"detail\":\"Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.\",\"remediation\":\"Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.\",\"classification\":\"missing_analysis_engine\"}]}],\"checks\":[{\"name\":\"node\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"24.14.0\",\"details\":{\"runtime\":\"node\",\"version\":\"24.14.0\"}},{\"name\":\"host\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"win32 x64\"},{\"name\":\"hopper\",\"ok\":false,\"classification\":\"missing_analysis_engine\",\"remediation\":\"Run rea setup to install Hopper, or set HOPPER_LAUNCHER_PATH.\"},{\"name\":\"ghidra\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\"},{\"name\":\"ghidra-platform\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"win32\"},{\"name\":\"ghidra-architecture\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"x64\"},{\"name\":\"ghidra-installation\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\\\\Ghidra\\\\application.properties\"},{\"name\":\"ghidra-version\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"12.1.4\"},{\"name\":\"ghidra-headless\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\\\\support\\\\analyzeHeadless.bat\"},{\"name\":\"ghidra-native_decompiler\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\\\\Ghidra\\\\Features\\\\Decompiler\\\\os\\\\win_x86_64\\\\decompile.exe reports pe x86_64, which matches win32/x64\"},{\"name\":\"ghidra-java\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"21.0.12.1; 64-bit; JDK; C:\\\\Users\\\\zhuzi\\\\Documents\\\\Grim-Dynasty\\\\.tooling\\\\jdk\\\\jdk-21.0.12.1+1; accepted a 64-bit full JDK 21 or newer\"},{\"name\":\"ghidra-native_authority\",\"ok\":true,\"classification\":\"healthy\",\"detail\":\"Verified Windows native Job Object, private DACL, and reparse-safe handle controls; local NTFS only.\"},{\"name\":\"ida-registration\",\"ok\":false,\"classification\":\"missing_analysis_engine\",\"detail\":\"IDA MCP registration is not configured.\",\"remediation\":\"Set REA_IDA_MCP_CONFIG to your upstream IDA MCP registration JSON; see docs/ida-provider.md.\"},{\"name\":\"jadx\",\"ok\":false,\"classification\":\"missing_analysis_engine\",\"detail\":\"Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.\",\"remediation\":\"Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.\"},{\"name\":\"skill:identity\",\"ok\":false,\"classification\":\"config_drift\",\"detail\":\"Installed REA skill identity is missing.\",\"remediation\":\"Run rea setup to update the installed REA skill.\"}],\"identity\":{\"cli_package_version\":\"6.5.0\",\"expected_skill_version\":\"42\",\"sdk\":{\"server\":\"2.3.1\",\"client_test\":\"2.3.1\",\"core\":\"2.3.1\"},\"catalog\":{\"counts\":{\"cli_commands\":153,\"mcp_tools\":207,\"mcp_prompts\":6},\"digests\":{\"tools_sha256\":\"805433f17bb4f709558ff20c04f96fe561fca2938fd0f459b1f8cc0f6b438ded\",\"prompts_sha256\":\"7152916ab48bd2a9677a5ad9cdbde0a51dc53c113934952ad096e93f5f18aa7e\",\"combined_sha256\":\"405725e736ec8dc8483435b970acbf20f9f26b9f1fd25203b992f5ab4cd2a4f4\"}},\"live_server\":{\"state\":\"unknown\",\"remediation\":\"Call binary_session in the active client to inspect the running server identity.\"},\"installations\":{\"paths\":[],\"state\":\"unknown\"},\"skill\":{\"installed_version\":null,\"installed_tool_count\":null,\"state\":\"missing\",\"remediation\":\"Run rea setup to update the installed REA skill.\"},\"registrations\":[]}}\n",
+      "stderr": ""
+    }
+  ],
+  "doctor": {
+    "healthy": true,
+    "environment_healthy": false,
+    "scope": {
+      "mode": "explicit",
+      "clients": [],
+      "providers": [
+        "ghidra"
+      ],
+      "skill": false,
+      "target": null
+    },
+    "scope_checks": [
+      {
+        "name": "node",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "24.14.0",
+        "details": {
+          "runtime": "node",
+          "version": "24.14.0"
+        }
+      },
+      {
+        "name": "ghidra",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC"
+      },
+      {
+        "name": "ghidra-platform",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "win32"
+      },
+      {
+        "name": "ghidra-architecture",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "x64"
+      },
+      {
+        "name": "ghidra-installation",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC\\Ghidra\\application.properties"
+      },
+      {
+        "name": "ghidra-version",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "12.1.4"
+      },
+      {
+        "name": "ghidra-headless",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC\\support\\analyzeHeadless.bat"
+      },
+      {
+        "name": "ghidra-native_decompiler",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC\\Ghidra\\Features\\Decompiler\\os\\win_x86_64\\decompile.exe reports pe x86_64, which matches win32/x64"
+      },
+      {
+        "name": "ghidra-java",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "21.0.12.1; 64-bit; JDK; C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\jdk\\jdk-21.0.12.1+1; accepted a 64-bit full JDK 21 or newer"
+      },
+      {
+        "name": "ghidra-native_authority",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "Verified Windows native Job Object, private DACL, and reparse-safe handle controls; local NTFS only."
+      }
+    ],
+    "informational_checks": [
+      {
+        "name": "host",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "win32 x64"
+      },
+      {
+        "name": "hopper",
+        "ok": false,
+        "classification": "missing_analysis_engine",
+        "remediation": "Run rea setup to install Hopper, or set HOPPER_LAUNCHER_PATH."
+      },
+      {
+        "name": "ida-registration",
+        "ok": false,
+        "classification": "missing_analysis_engine",
+        "detail": "IDA MCP registration is not configured.",
+        "remediation": "Set REA_IDA_MCP_CONFIG to your upstream IDA MCP registration JSON; see docs/ida-provider.md."
+      },
+      {
+        "name": "jadx",
+        "ok": false,
+        "classification": "missing_analysis_engine",
+        "detail": "Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.",
+        "remediation": "Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it."
+      },
+      {
+        "name": "skill:identity",
+        "ok": false,
+        "classification": "config_drift",
+        "detail": "Installed REA skill identity is missing.",
+        "remediation": "Run rea setup to update the installed REA skill."
+      }
+    ],
+    "providerInspections": [
+      {
+        "id": "ghidra",
+        "configured": true,
+        "available": true,
+        "providerVersion": "12.1.4",
+        "registrationEnvironment": {
+          "GHIDRA_INSTALL_DIR": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC",
+          "JAVA_HOME": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\jdk\\jdk-21.0.12.1+1"
+        },
+        "checks": [
+          {
+            "name": "configuration",
+            "ok": true,
+            "code": null,
+            "detail": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC",
+            "remediation": null,
+            "classification": "config_drift"
+          },
+          {
+            "name": "platform",
+            "ok": true,
+            "code": null,
+            "detail": "win32",
+            "remediation": null,
+            "classification": "unsupported_host"
+          },
+          {
+            "name": "architecture",
+            "ok": true,
+            "code": null,
+            "detail": "x64",
+            "remediation": null,
+            "classification": "unsupported_host"
+          },
+          {
+            "name": "installation",
+            "ok": true,
+            "code": null,
+            "detail": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC\\Ghidra\\application.properties",
+            "remediation": null,
+            "classification": "config_drift"
+          },
+          {
+            "name": "version",
+            "ok": true,
+            "code": null,
+            "detail": "12.1.4",
+            "remediation": null,
+            "classification": "config_drift"
+          },
+          {
+            "name": "headless",
+            "ok": true,
+            "code": null,
+            "detail": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC\\support\\analyzeHeadless.bat",
+            "remediation": null,
+            "classification": "config_drift"
+          },
+          {
+            "name": "native_decompiler",
+            "ok": true,
+            "code": null,
+            "detail": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC\\Ghidra\\Features\\Decompiler\\os\\win_x86_64\\decompile.exe reports pe x86_64, which matches win32/x64",
+            "remediation": null,
+            "classification": "config_drift"
+          },
+          {
+            "name": "java",
+            "ok": true,
+            "code": null,
+            "detail": "21.0.12.1; 64-bit; JDK; C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\jdk\\jdk-21.0.12.1+1; accepted a 64-bit full JDK 21 or newer",
+            "remediation": null,
+            "classification": "config_drift"
+          },
+          {
+            "name": "native_authority",
+            "ok": true,
+            "code": null,
+            "detail": "Verified Windows native Job Object, private DACL, and reparse-safe handle controls; local NTFS only.",
+            "remediation": null,
+            "classification": "unsupported_host"
+          }
+        ]
+      },
+      {
+        "id": "ida",
+        "configured": false,
+        "available": false,
+        "providerVersion": null,
+        "registrationEnvironment": {},
+        "checks": [
+          {
+            "name": "registration",
+            "ok": false,
+            "code": "not_configured",
+            "detail": "IDA MCP registration is not configured.",
+            "remediation": "Set REA_IDA_MCP_CONFIG to your upstream IDA MCP registration JSON; see docs/ida-provider.md.",
+            "classification": "missing_analysis_engine"
+          }
+        ]
+      },
+      {
+        "id": "jadx",
+        "configured": false,
+        "available": false,
+        "providerVersion": null,
+        "registrationEnvironment": {},
+        "checks": [
+          {
+            "name": "configuration",
+            "ok": false,
+            "code": "not_configured",
+            "detail": "Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.",
+            "remediation": "Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.",
+            "classification": "missing_analysis_engine"
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "name": "node",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "24.14.0",
+        "details": {
+          "runtime": "node",
+          "version": "24.14.0"
+        }
+      },
+      {
+        "name": "host",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "win32 x64"
+      },
+      {
+        "name": "hopper",
+        "ok": false,
+        "classification": "missing_analysis_engine",
+        "remediation": "Run rea setup to install Hopper, or set HOPPER_LAUNCHER_PATH."
+      },
+      {
+        "name": "ghidra",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC"
+      },
+      {
+        "name": "ghidra-platform",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "win32"
+      },
+      {
+        "name": "ghidra-architecture",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "x64"
+      },
+      {
+        "name": "ghidra-installation",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC\\Ghidra\\application.properties"
+      },
+      {
+        "name": "ghidra-version",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "12.1.4"
+      },
+      {
+        "name": "ghidra-headless",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC\\support\\analyzeHeadless.bat"
+      },
+      {
+        "name": "ghidra-native_decompiler",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\ghidra\\ghidra_12.1.4_PUBLIC\\Ghidra\\Features\\Decompiler\\os\\win_x86_64\\decompile.exe reports pe x86_64, which matches win32/x64"
+      },
+      {
+        "name": "ghidra-java",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "21.0.12.1; 64-bit; JDK; C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\jdk\\jdk-21.0.12.1+1; accepted a 64-bit full JDK 21 or newer"
+      },
+      {
+        "name": "ghidra-native_authority",
+        "ok": true,
+        "classification": "healthy",
+        "detail": "Verified Windows native Job Object, private DACL, and reparse-safe handle controls; local NTFS only."
+      },
+      {
+        "name": "ida-registration",
+        "ok": false,
+        "classification": "missing_analysis_engine",
+        "detail": "IDA MCP registration is not configured.",
+        "remediation": "Set REA_IDA_MCP_CONFIG to your upstream IDA MCP registration JSON; see docs/ida-provider.md."
+      },
+      {
+        "name": "jadx",
+        "ok": false,
+        "classification": "missing_analysis_engine",
+        "detail": "Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it.",
+        "remediation": "Set REA_JADX_MCP_JAR to the absolute path of a caller-supplied jadx-headless-mcp 0.7.1 JAR. REA does not download or install it."
+      },
+      {
+        "name": "skill:identity",
+        "ok": false,
+        "classification": "config_drift",
+        "detail": "Installed REA skill identity is missing.",
+        "remediation": "Run rea setup to update the installed REA skill."
+      }
+    ],
+    "identity": {
+      "cli_package_version": "6.5.0",
+      "expected_skill_version": "42",
+      "sdk": {
+        "server": "2.3.1",
+        "client_test": "2.3.1",
+        "core": "2.3.1"
+      },
+      "catalog": {
+        "counts": {
+          "cli_commands": 153,
+          "mcp_tools": 207,
+          "mcp_prompts": 6
+        },
+        "digests": {
+          "tools_sha256": "805433f17bb4f709558ff20c04f96fe561fca2938fd0f459b1f8cc0f6b438ded",
+          "prompts_sha256": "7152916ab48bd2a9677a5ad9cdbde0a51dc53c113934952ad096e93f5f18aa7e",
+          "combined_sha256": "405725e736ec8dc8483435b970acbf20f9f26b9f1fd25203b992f5ab4cd2a4f4"
+        }
+      },
+      "live_server": {
+        "state": "unknown",
+        "remediation": "Call binary_session in the active client to inspect the running server identity."
+      },
+      "installations": {
+        "paths": [],
+        "state": "unknown"
+      },
+      "skill": {
+        "installed_version": null,
+        "installed_tool_count": null,
+        "state": "missing",
+        "remediation": "Run rea setup to update the installed REA skill."
+      },
+      "registrations": []
+    }
+  }
+}

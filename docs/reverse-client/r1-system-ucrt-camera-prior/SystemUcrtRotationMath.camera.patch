@@ -1,0 +1,63 @@
+diff --git a/docs/reverse-client/r1-system-ucrt-camera-prior/SystemUcrtRotationMath.cs b/src/reverse_client_actions/SystemUcrtRotationMath.cs
+index f1668ae..b1ac9c5 100644
+--- a/docs/reverse-client/r1-system-ucrt-camera-prior/SystemUcrtRotationMath.cs
++++ b/src/reverse_client_actions/SystemUcrtRotationMath.cs
+@@ -53,6 +53,7 @@ namespace GrimDynasty.ReverseClient.Actions {
+   readonly ModuleHandle module;
+   readonly Unary acos,cos,sin;
+   Binary atan2;SystemUcrtCrowdMath crowd;
++  Unary tan;SystemUcrtCameraMath camera;
+   readonly QueryControl control;
+   readonly Dictionary<string,long> exportRvas=new Dictionary<string,long>(StringComparer.Ordinal);
+   bool disposed;long calls;
+@@ -63,6 +64,10 @@ namespace GrimDynasty.ReverseClient.Actions {
+   // Opt-in view of the same owned module, control contract and call counter.
+   // Old rotation clients still bind exactly their original four exports.
+   public SystemUcrtCrowdMath Crowd{get{lock(gate){Live(0);if(crowd==null){atan2=(Binary)Bind("atan2f",typeof(Binary));crowd=new SystemUcrtCrowdMath(this);}return crowd;}}}
++  // Explicit Camera selection adds tanf only. The same locked system module,
++  // ownership checks and floating-control contract remain authoritative.
++  // Engine2EE09C's named disk import is evidenced, not loaded-game equivalence.
++  public SystemUcrtCameraMath Camera{get{lock(gate){Live(0);if(camera==null){tan=(Unary)Bind("tanf",typeof(Unary));camera=new SystemUcrtCameraMath(this);}return camera;}}}
+   SystemUcrtRotationMath(FileStream file,ModuleHandle handle){
+    lockedFile=file;module=handle;LoadedPath=ModulePath(handle.DangerousGetHandle(),0);
+    if(!String.Equals(LoadedPath,Library,StringComparison.OrdinalIgnoreCase))throw new MissingContract(0,"Loaded UCRT module path differs from fixed system profile");
+@@ -119,6 +124,10 @@ namespace GrimDynasty.ReverseClient.Actions {
+   public static void RequireAtan2Inputs(float y,float x,uint at){
+    if(!Ordinary(y)||!Ordinary(x))throw new MissingContract(at,"Own atan2f inputs require finite normal-or-zero y then x; no NaN/infinity/subnormal handling");
+   }
++  public static void RequireCameraTangentInput(float halfFov,uint at){
++   if(!Ordinary(halfFov)||halfFov< -1.5f||halfFov>1.5f)
++    throw new MissingContract(at,"Own camera tanf domain is finite normal-or-zero [-1.5,1.5] radians, bounded away from poles; not a native camera validation rule");
++  }
+   public static SystemUcrtRotationMath OpenOwnProfile(){
+    if(System.Environment.OSVersion.Platform!=PlatformID.Win32NT||!System.Environment.Is64BitProcess||IntPtr.Size!=8)
+     throw new MissingContract(0,"Own system UCRT profile requires Windows x64");
+@@ -191,6 +200,16 @@ namespace GrimDynasty.ReverseClient.Actions {
+     return result;
+    }
+   }
++  internal float CameraTan(float halfFov,uint at){
++   lock(gate){
++    Live(at);RequireCameraTangentInput(halfFov,at);if(camera==null||tan==null)throw new MissingContract(at,"Camera math profile has not been selected");
++    uint before=Query(at);calls++;float result=tan(halfFov);uint after=Query(at);
++    if(before!=after)throw new MissingContract(at,"System tanf changed the queried floating control word");
++    if(!Ordinary(result))throw new MissingContract(at,"System camera tanf result is outside own finite normal-or-zero output domain");
++    // This own profile does not inspect or restore errno or sticky FP flags.
++    return result;
++   }
++  }
+   public void Dispose(){lock(gate){if(disposed)return;disposed=true;module.Dispose();lockedFile.Dispose();}}
+  }
+  // Fixed concrete view; no public constructor, overridable math methods or
+@@ -202,4 +221,11 @@ namespace GrimDynasty.ReverseClient.Actions {
+   public float Cos(float angle,uint at){return owner.CrowdTrig(angle,false,at);}
+   public float Sin(float angle,uint at){return owner.CrowdTrig(angle,true,at);}
+  }
++ // No public constructor, delegate injection or independent module lifetime.
++ // Production computes the half-FOV before this actual float(float) call.
++ public sealed class SystemUcrtCameraMath {
++  readonly SystemUcrtRotationMath owner;
++  internal SystemUcrtCameraMath(SystemUcrtRotationMath owner){this.owner=owner;}
++  public float Tan(float halfFov,uint at){return owner.CameraTan(halfFov,at);}
++ }
+ }

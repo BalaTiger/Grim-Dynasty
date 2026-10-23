@@ -1,0 +1,63 @@
+{
+  "started_utc": "2026-10-22T19:41:19.807Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_size": 4485632,
+  "script_sha256": "366b069f91c34ee18f8b9be7667388b60182692781b516b0481a70f456ce1758",
+  "proof": {
+    "file": "docs/reverse-client/r1-triangulation-and-tile-connection/11-TriangulationTileConnection-0x180266760-procedure_assembly.json",
+    "sha256": "3dc70d0847894488b3f6bacf7ae25708e8635d3d77179922cf5667212c507894",
+    "procedure": "0x180266760"
+  },
+  "metadata_bytes": 688,
+  "data_bytes": 8,
+  "hash_bytes": 8971264,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "rva": "0x34b9e0",
+      "va": "0x18034b9e0",
+      "file_offset": 3451360,
+      "bytes": 4,
+      "section": ".rdata",
+      "raw_hex": "0ad7233c",
+      "float32_le": 0.009999999776482582,
+      "uint32_hex": [
+        "0x3c23d70a"
+      ],
+      "evidence_instruction": "0x18026693d: MOVSS XMM12, dword ptr [0x18034b9e0]",
+      "loaded_value_observed": false
+    },
+    {
+      "rva": "0x34bbd8",
+      "va": "0x18034bbd8",
+      "file_offset": 3451864,
+      "bytes": 4,
+      "section": ".rdata",
+      "raw_hex": "00000040",
+      "float32_le": 2,
+      "uint32_hex": [
+        "0x40000000"
+      ],
+      "evidence_instruction": "0x180266b0b: MULSS XMM0, dword ptr [0x18034bbd8]",
+      "loaded_value_observed": false
+    }
+  ],
+  "failures": [],
+  "scope": "PE headers/section metadata at most4096B, then exactly4B each at RVA34B9E0 and34BBD8. Entire-file streams are only before/after SHA256.",
+  "limitations": [
+    "Disk float32 values bound to266760 instructions; no loaded mutable value or navigation success is proved.",
+    "No adjacent data, function body, DLL execution, backend, other original file or saves are accessed.",
+    "Node does not expose every Windows reparse tag; the established external Attributes precheck is still required.",
+    "Same-descriptor before/after hash/stat equality is not an atomic filesystem snapshot."
+  ],
+  "proof_verified": true,
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T19:41:19.816Z",
+  "status": "passed"
+}

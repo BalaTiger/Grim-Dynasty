@@ -1,0 +1,121 @@
+{
+  "date_utc": "2026-10-21",
+  "phase": "Frozen source/script review before this separate approval; no execution result claimed",
+  "inventory": {
+    "utc": "2026-10-21T02:41:51.5074261Z",
+    "files": [
+      {
+        "path": "src/task_items/ClassRegistrationInitialization.cs",
+        "bytes": 9525,
+        "sha256": "306f9e640877d09ac845fc0799cdac7ab805399ead0cc6c1ac6b99e37873b49f"
+      },
+      {
+        "path": "src/task_items/EngineRootRegistration.cs",
+        "bytes": 17586,
+        "sha256": "408e28c7d6fbb0fee2f4a74909b1209700e01f02d10837cb265a168a6a331caf"
+      },
+      {
+        "path": "src/task_items/ClassFactoryDispatch.cs",
+        "bytes": 4302,
+        "sha256": "9da196b70ecc9fc1737e466d3dd952eeac26ccdd635ab8a629b53823cee402ac"
+      },
+      {
+        "path": "src/task_items/EngineRootObservedNames.cs",
+        "bytes": 1032,
+        "sha256": "bca35ac22926af8406b3c03dea18a49dc4c2153b23733e13cc0dd6544a49a903"
+      },
+      {
+        "path": "src/task_items/EngineRootSnapshot.cs",
+        "bytes": 6322,
+        "sha256": "65687ead304949a03d24dcbe07d65197d0104cbb2a6a177a295af94a40166970"
+      },
+      {
+        "path": "src/task_items/SharedClassRegistration.cs",
+        "bytes": 7639,
+        "sha256": "492a5709f5b8b0d0e173894e38ca7521c1a0416bb13d8f4086f705201bdda70d"
+      },
+      {
+        "path": "src/task_items/SharedClassRegistrationTests.cs",
+        "bytes": 35539,
+        "sha256": "ef5107da5842c26884b114e52b060dcb8724712258915c9516192e261f649cc5"
+      },
+      {
+        "path": "src/task_items/build_shared_class_registration.ps1",
+        "bytes": 5016,
+        "sha256": "cbd53577f0d70cd97a960e0ae649407496b3a70a7283b0e4be1c04d117567121"
+      }
+    ],
+    "output_directory_exists": false,
+    "compiler_file_version": "4.8.9221.0 built by: NET481REL1LAST_25H2",
+    "compiler_sha256": "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00"
+  },
+  "exact_command": "& 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -NoProfile -NonInteractive -File 'C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\src\\task_items\\build_shared_class_registration.ps1'",
+  "requested_mechanism": "A new exact require_escalated request; previous read-only and build approvals are not reused.",
+  "script_review": {
+    "fixed_workspace": true,
+    "requires_Windows_PowerShell_5_1_Desktop": true,
+    "no_arguments": true,
+    "rejects_reparse_paths_and_ancestors": true,
+    "rejects_existing_output": true,
+    "compiler_noconfig": true,
+    "language_version": 5,
+    "checked_arithmetic": true,
+    "library_sources": [
+      "src/task_items/ClassRegistrationInitialization.cs",
+      "src/task_items/EngineRootRegistration.cs",
+      "src/task_items/ClassFactoryDispatch.cs",
+      "src/task_items/EngineRootObservedNames.cs",
+      "src/task_items/EngineRootSnapshot.cs",
+      "src/task_items/SharedClassRegistration.cs"
+    ],
+    "fixture_source": "src/task_items/SharedClassRegistrationTests.cs",
+    "fixed_output_directory": ".tooling/shared-class-registration-build-20261021",
+    "generated_files": [
+      "GrimDynasty.SharedClassRegistration.dll",
+      "SharedClassRegistrationTests.exe"
+    ],
+    "execution_target": "Only the new SharedClassRegistrationTests.exe",
+    "other_io": "Installed compiler/framework reads and normal compiler temporary files; new tests use small own objects/arrays and Console only.",
+    "failure_policy": "Stop, retain output and report. No automatic retry, replacement host, overwrite or cleanup."
+  },
+  "implementation_review": "Independent static review confirms direct reads/writes of the exact EngineRootNode/Storage objects, Item parent-before-strdup, post-callback rereads, selected-parent stability, ordered prefix and Game whole-helper callbacks. Original five source modules are unchanged.",
+  "fixture_review": {
+    "planned_assertions": 77,
+    "planned_scenario_groups": 8,
+    "new_fixture_only": true,
+    "executed": false,
+    "old_suites_rerun": false,
+    "new_paired_legacy_API_cases": 4,
+    "maximum_pointer_array_slots": 3,
+    "own_allocator_ceiling_bytes": 64,
+    "engine_limits": {
+      "steps": 128,
+      "slots": 8
+    },
+    "snapshot_limits": {
+      "nodes": 16,
+      "edges": 32,
+      "name_bytes": 256,
+      "depth": 16
+    }
+  },
+  "native_evidence": {
+    "new_original_reads": 0,
+    "archived_game_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "archived_engine_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "hashes_newly_measured_this_step": false
+  },
+  "security_scope": {
+    "policy_changes": false,
+    "registry_writes": false,
+    "acl_changes": false,
+    "bypass": false,
+    "original_game_or_dll_execution": false,
+    "rea": false,
+    "java": false,
+    "saves": false,
+    "commit_or_push": false
+  },
+  "prior_checkpoint": ".tooling/checkpoints/engine-root-names-dispatch-complete/manifest.json",
+  "prior_checkpoint_sha256": "bd87777cbe63203bead0bb4dcda4f6f4b0cfa5d058c8817c84dc6a44863af1c7"
+}

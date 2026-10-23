@@ -1,0 +1,42 @@
+{
+  "schema": "grim-dynasty-actor-prefix-build-preflight-v1",
+  "created_utc": "2026-10-21T03:46:08.6167840Z",
+  "status": "reviewed-awaiting-separate-formal-build-approval",
+  "files": [
+    {
+      "path": "src/task_items/ActorConstructorPrefix.cs",
+      "bytes": 5502,
+      "sha256": "c51710c512abe864d16feecd7972a779804d9d0cdc419b117e86ba7e37134b83"
+    },
+    {
+      "path": "src/task_items/ActorConstructorPrefixTests.cs",
+      "bytes": 19320,
+      "sha256": "a68136dbca5dbe2792eed4a90e9dfd5bafba4f49463282a8fde4d588555f1e58"
+    },
+    {
+      "path": "src/task_items/build_actor_constructor_prefix.ps1",
+      "bytes": 4603,
+      "sha256": "12919611d07735aab7b09bcb528528b5c2dfcba7b9ccd819e2c29d06d1e1172d"
+    }
+  ],
+  "compiler": {
+    "path": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\csc.exe",
+    "sha256": "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00",
+    "version": "4.8.9221.0 built by: NET481REL1LAST_25H2"
+  },
+  "command": "& 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -NoProfile -NonInteractive -File 'C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\src\\task_items\\build_actor_constructor_prefix.ps1'",
+  "outputs": [
+    ".tooling/actor-constructor-prefix-build-20261021/GrimDynasty.ActorConstructorPrefix.dll",
+    ".tooling/actor-constructor-prefix-build-20261021/ActorConstructorPrefixTests.exe"
+  ],
+  "fresh_output_exists": false,
+  "review": "One new own library source and one new fixture. Windows PowerShell 5.1, installed csc only. Fixed workspace, no args, reparse rejection, new output directory, no overwrite. Two separate bounded segments; no original code, static readers, other scripts, old suites or external data executed.",
+  "expected_assertions": 48,
+  "expected_scenario_groups": 8,
+  "old_suites_to_rerun": 0,
+  "original_access": false,
+  "network_access": false,
+  "security_change": false,
+  "prior_rejected_script_retried": false,
+  "preflight_recording_attempt1": "The shell report construction used bare false instead of $false, so it wrote a null preflight. No compiler or test was invoked. Original null file retained; this is the corrected reviewed record."
+}

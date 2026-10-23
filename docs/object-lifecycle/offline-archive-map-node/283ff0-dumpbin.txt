@@ -1,0 +1,47 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-cache-node\Engine.readonly.dll
+
+File Type: DLL
+
+  0000000180283FF0: 4C 89 4C 24 20     mov         qword ptr [rsp+20h],r9
+  0000000180283FF5: 48 89 4C 24 08     mov         qword ptr [rsp+8],rcx
+  0000000180283FFA: 57                 push        rdi
+  0000000180283FFB: 48 83 EC 30        sub         rsp,30h
+  0000000180283FFF: 48 C7 44 24 20 FE  mov         qword ptr [rsp+20h],0FFFFFFFFFFFFFFFEh
+                    FF FF FF
+  0000000180284008: 48 89 5C 24 48     mov         qword ptr [rsp+48h],rbx
+  000000018028400D: E8 5E B1 D9 FF     call        000000018001F170
+  0000000180284012: 48 8B F8           mov         rdi,rax
+  0000000180284015: 48 89 44 24 58     mov         qword ptr [rsp+58h],rax
+  000000018028401A: 48 8D 58 10        lea         rbx,[rax+10h]
+  000000018028401E: 48 89 5C 24 40     mov         qword ptr [rsp+40h],rbx
+  0000000180284023: 48 89 5C 24 68     mov         qword ptr [rsp+68h],rbx
+  0000000180284028: 48 85 DB           test        rbx,rbx
+  000000018028402B: 74 40              je          000000018028406D
+  000000018028402D: 48 8B 54 24 60     mov         rdx,qword ptr [rsp+60h]
+  0000000180284032: 48 8B 12           mov         rdx,qword ptr [rdx]
+  0000000180284035: 48 C7 43 18 0F 00  mov         qword ptr [rbx+18h],0Fh
+                    00 00
+  000000018028403D: 48 C7 43 10 00 00  mov         qword ptr [rbx+10h],0
+                    00 00
+  0000000180284045: 48 83 7B 18 10     cmp         qword ptr [rbx+18h],10h
+  000000018028404A: 72 05              jb          0000000180284051
+  000000018028404C: 48 8B 03           mov         rax,qword ptr [rbx]
+  000000018028404F: EB 03              jmp         0000000180284054
+  0000000180284051: 48 8B C3           mov         rax,rbx
+  0000000180284054: C6 00 00           mov         byte ptr [rax],0
+  0000000180284057: 49 83 C9 FF        or          r9,0FFFFFFFFFFFFFFFFh
+  000000018028405B: 45 33 C0           xor         r8d,r8d
+  000000018028405E: 48 8B CB           mov         rcx,rbx
+  0000000180284061: E8 1A F1 D9 FF     call        0000000180023180
+  0000000180284066: C7 43 20 00 00 00  mov         dword ptr [rbx+20h],0
+                    00
+  000000018028406D: 48 8B C7           mov         rax,rdi
+  0000000180284070: 48 8B 5C 24 48     mov         rbx,qword ptr [rsp+48h]
+  0000000180284075: 48 83 C4 30        add         rsp,30h
+  0000000180284079: 5F                 pop         rdi
+  000000018028407A: C3                 ret
+
+  Summary
+
+      301000 .text

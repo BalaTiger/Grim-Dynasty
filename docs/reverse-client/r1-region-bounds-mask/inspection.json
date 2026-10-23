@@ -1,0 +1,49 @@
+{
+  "started_utc": "2026-10-22T20:50:40.167Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_size": 4485632,
+  "script_sha256": "8315e7bd0a0a5db510a9bc8412e52193085469f3e0411c98607dc8e425fa60f2",
+  "proof": {
+    "file": "docs/reverse-client/r1-movement-floor-core/08-MovementFloorCore-0x1800664d0-procedure_assembly.json",
+    "sha256": "a037090ed5a98acca8b997f5884be1255a923c6906eba76df08af5f4847bae90",
+    "procedure": "0x1800664d0"
+  },
+  "metadata_bytes": 688,
+  "data_bytes": 4,
+  "hash_bytes": 8971264,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "rva": "0x34c450",
+      "va": "0x18034c450",
+      "file_offset": 3454032,
+      "bytes": 4,
+      "section": ".rdata",
+      "raw_hex": "00000080",
+      "float32_le": 0,
+      "uint32_hex": [
+        "0x80000000"
+      ],
+      "evidence_instruction": "0x180066512: MOVSS XMM2, dword ptr [0x18034c450]",
+      "loaded_value_observed": false
+    }
+  ],
+  "failures": [],
+  "scope": "PE headers/section metadata at most4096B, then exactly4B at RVA34C450. Entire-file streams are only before/after SHA256.",
+  "limitations": [
+    "Disk DWORD XOR mask operand bound to0664D0 instruction066512; no expected value is assumed and no loaded mutable value or navigation success is proved.",
+    "No adjacent data, function body, DLL execution, backend, other original file or saves are accessed.",
+    "Node does not expose every Windows reparse tag; the established external Attributes precheck is still required.",
+    "Same-descriptor before/after hash/stat equality is not an atomic filesystem snapshot."
+  ],
+  "proof_verified": true,
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T20:50:40.175Z",
+  "status": "passed"
+}

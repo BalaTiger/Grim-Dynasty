@@ -1,0 +1,44 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Engine.dll
+
+File Type: DLL
+
+  00000001802DCC3C: 48 8B C4           mov         rax,rsp
+  00000001802DCC3F: 48 89 58 18        mov         qword ptr [rax+18h],rbx
+  00000001802DCC43: 48 89 70 20        mov         qword ptr [rax+20h],rsi
+  00000001802DCC47: 48 89 50 10        mov         qword ptr [rax+10h],rdx
+  00000001802DCC4B: 48 89 48 08        mov         qword ptr [rax+8],rcx
+  00000001802DCC4F: 57                 push        rdi
+  00000001802DCC50: 41 56              push        r14
+  00000001802DCC52: 41 57              push        r15
+  00000001802DCC54: 48 83 EC 30        sub         rsp,30h
+  00000001802DCC58: 49 8B F1           mov         rsi,r9
+  00000001802DCC5B: 4D 8B F8           mov         r15,r8
+  00000001802DCC5E: 4C 8B F2           mov         r14,rdx
+  00000001802DCC61: 48 8B F9           mov         rdi,rcx
+  00000001802DCC64: 33 DB              xor         ebx,ebx
+  00000001802DCC66: 48 89 58 E0        mov         qword ptr [rax-20h],rbx
+  00000001802DCC6A: 88 58 D8           mov         byte ptr [rax-28h],bl
+  00000001802DCC6D: 49 3B DF           cmp         rbx,r15
+  00000001802DCC70: 74 1F              je          00000001802DCC91
+  00000001802DCC72: 48 8B CE           mov         rcx,rsi
+  00000001802DCC75: E8 46 08 00 00     call        00000001802DD4C0
+  00000001802DCC7A: 48 8B CF           mov         rcx,rdi
+  00000001802DCC7D: FF D6              call        rsi
+  00000001802DCC7F: 49 03 FE           add         rdi,r14
+  00000001802DCC82: 48 89 7C 24 50     mov         qword ptr [rsp+50h],rdi
+  00000001802DCC87: 48 FF C3           inc         rbx
+  00000001802DCC8A: 48 89 5C 24 28     mov         qword ptr [rsp+28h],rbx
+  00000001802DCC8F: EB DC              jmp         00000001802DCC6D
+  00000001802DCC91: C6 44 24 20 01     mov         byte ptr [rsp+20h],1
+  00000001802DCC96: 48 8B 5C 24 60     mov         rbx,qword ptr [rsp+60h]
+  00000001802DCC9B: 48 8B 74 24 68     mov         rsi,qword ptr [rsp+68h]
+  00000001802DCCA0: 48 83 C4 30        add         rsp,30h
+  00000001802DCCA4: 41 5F              pop         r15
+  00000001802DCCA6: 41 5E              pop         r14
+  00000001802DCCA8: 5F                 pop         rdi
+  00000001802DCCA9: C3                 ret
+
+  Summary
+
+      301000 .text

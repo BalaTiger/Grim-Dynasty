@@ -1,0 +1,35 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Game.dll
+
+File Type: DLL
+
+  00000001805DAE68: 40 53              push        rbx
+  00000001805DAE6A: 48 83 EC 20        sub         rsp,20h
+  00000001805DAE6E: 48 8B 15 2B D2 47  mov         rdx,qword ptr [0000000180A580A0h]
+                    00
+  00000001805DAE75: 48 8B D9           mov         rbx,rcx
+  00000001805DAE78: 8B CA              mov         ecx,edx
+  00000001805DAE7A: 48 33 15 27 AE 48  xor         rdx,qword ptr [0000000180A65CA8h]
+                    00
+  00000001805DAE81: 83 E1 3F           and         ecx,3Fh
+  00000001805DAE84: 48 D3 CA           ror         rdx,cl
+  00000001805DAE87: 48 83 FA FF        cmp         rdx,0FFFFFFFFFFFFFFFFh
+  00000001805DAE8B: 75 0A              jne         00000001805DAE97
+  00000001805DAE8D: 48 8B CB           mov         rcx,rbx
+  00000001805DAE90: E8 39 15 00 00     call        00000001805DC3CE
+  00000001805DAE95: EB 0F              jmp         00000001805DAEA6
+  00000001805DAE97: 48 8B D3           mov         rdx,rbx
+  00000001805DAE9A: 48 8D 0D 07 AE 48  lea         rcx,[0000000180A65CA8h]
+                    00
+  00000001805DAEA1: E8 1C 15 00 00     call        00000001805DC3C2
+  00000001805DAEA6: 33 C9              xor         ecx,ecx
+  00000001805DAEA8: 85 C0              test        eax,eax
+  00000001805DAEAA: 48 0F 44 CB        cmove       rcx,rbx
+  00000001805DAEAE: 48 8B C1           mov         rax,rcx
+  00000001805DAEB1: 48 83 C4 20        add         rsp,20h
+  00000001805DAEB5: 5B                 pop         rbx
+  00000001805DAEB6: C3                 ret
+
+  Summary
+
+      608000 .text

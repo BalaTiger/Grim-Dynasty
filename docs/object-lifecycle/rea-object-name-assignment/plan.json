@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "purpose": "Bounded static evidence for the observed Object SetObjectName assignment helper at Engine 0x180023180; no target execution or automatic expansion to newly discovered callees.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-object-base/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/object-lifecycle/rea-object-base/09-Object-SetObjectName-0x18003a780-direct-callees.json",
+      "evidence_id": "ev_135019f377c0b0bd90830df034c151aaa30fec7ebf2af6d607ef20291c1c4268",
+      "caller": "0x18003a780",
+      "selected_callees": [
+        "0x180023180"
+      ]
+    },
+    {
+      "file": "docs/object-lifecycle/rea-object-base/08-Object-SetObjectName-0x18003a780-assembly.json",
+      "evidence_id": "ev_02f520976fff3f51f842bb6e2d813a779655d8fa40ea6120adc0618577c1f4e4",
+      "caller": "0x18003a780",
+      "call_site": "0x18003a7a0",
+      "selected_target": "0x180023180"
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_info",
+    "procedure_callees",
+    "xrefs",
+    "address_name"
+  ],
+  "execution_requirements": [
+    "Before dispatch, verify the target SHA256 and actual MCP tools/list schemas against this plan; stop on mismatch.",
+    "The calls array already contains normal-path open, close, and session checks; do not add duplicate lifecycle calls.",
+    "Use only the fixed Engine target and provider. Do not launch or load the target DLL for execution, change target bytes, query saves, or expand the tool allowlist.",
+    "Dispatch sequentially, save each raw result under its unique label, and retain provider evidence and limitations.",
+    "Stop the remaining plan on errors, denial, unavailable provider, unexpected target identity, or unavailable analysis; do not silently substitute another backend or guess callees.",
+    "If stopped while a target is open, perform only necessary close_binary cleanup when permitted, within the total call budget, and record whether closure is confirmed.",
+    "The final session result must confirm no active target; verify the original Engine SHA256 again after closure.",
+    "Calls to newly discovered direct callees are not included in this batch. Review returned addresses and scope before preparing another bounded batch."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180023180"
+      },
+      "label": "04-Object-name-assignment-0x180023180-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180023180"
+      },
+      "label": "05-Object-name-assignment-0x180023180-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180023180"
+      },
+      "label": "06-Object-name-assignment-0x180023180-direct-callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ]
+}

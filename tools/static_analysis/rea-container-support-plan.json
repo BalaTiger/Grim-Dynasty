@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "purpose": "Bounded static follow-up for four observed container-support direct callees; reserve/rehash evidence defines coverage limits and does not imply a complete registration implementation.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-registration-containers/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/object-lifecycle/rea-registration-containers/15-Index-node-allocation-0x180021a80-direct-callees.json",
+      "evidence_id": "ev_04fc97df6444bd4a5db942f1ee6cce23675fc12892151c60ae5efa115528c758",
+      "caller": "0x180021a80",
+      "selected_callees": [
+        "0x180020960"
+      ]
+    },
+    {
+      "file": "docs/object-lifecycle/rea-registration-containers/12-Container-whole-chain-followup-0x18001b4f0-direct-callees.json",
+      "evidence_id": "ev_f6788c6ee6c8476bf99dca0fed27c841a09f5e00f12a38025216c1e57c3f3f25",
+      "caller": "0x18001b4f0",
+      "selected_callees": [
+        "0x18001bd30",
+        "0x18001bfb0"
+      ]
+    },
+    {
+      "file": "docs/object-lifecycle/rea-registration-containers/18-Index-post-link-maintenance-0x1800207c0-direct-callees.json",
+      "evidence_id": "ev_1d75b5a714f918720fbd5420363949fc2826e33e3562c298deeac94a7cc3e492",
+      "caller": "0x1800207c0",
+      "selected_callees": [
+        "0x18001fd50"
+      ]
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 17,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_info",
+    "procedure_callees",
+    "xrefs",
+    "address_name"
+  ],
+  "execution_requirements": [
+    "Before dispatch, verify the target SHA256 and actual MCP tools/list schemas against this plan; stop on mismatch.",
+    "The calls array already contains normal-path open, close, and session checks; do not add duplicate lifecycle calls.",
+    "Use only the fixed Engine target and provider. Do not launch or load the target DLL for execution, change target bytes, query saves, or expand the tool allowlist.",
+    "Dispatch sequentially, save each raw result under its unique label, and retain provider evidence and limitations.",
+    "Stop the remaining plan on errors, denial, unavailable provider, unexpected target identity, or unavailable analysis; do not silently substitute another backend or guess callees.",
+    "If stopped while a target is open, perform only necessary close_binary cleanup when permitted, within the total call budget, and record whether closure is confirmed.",
+    "The final session result must confirm no active target; verify the original Engine SHA256 again after closure.",
+    "Calls to newly discovered direct callees are not included in this batch. Review returned addresses and scope before preparing another bounded batch."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180020960"
+      },
+      "label": "04-Container-support-0x180020960-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180020960"
+      },
+      "label": "05-Container-support-0x180020960-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180020960"
+      },
+      "label": "06-Container-support-0x180020960-direct-callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18001bd30"
+      },
+      "label": "07-Container-support-0x18001bd30-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18001bd30"
+      },
+      "label": "08-Container-support-0x18001bd30-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18001bd30"
+      },
+      "label": "09-Container-support-0x18001bd30-direct-callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18001bfb0"
+      },
+      "label": "10-Container-support-0x18001bfb0-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18001bfb0"
+      },
+      "label": "11-Container-support-0x18001bfb0-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18001bfb0"
+      },
+      "label": "12-Container-support-0x18001bfb0-direct-callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18001fd50"
+      },
+      "label": "13-Container-support-0x18001fd50-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18001fd50"
+      },
+      "label": "14-Container-support-0x18001fd50-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18001fd50"
+      },
+      "label": "15-Container-support-0x18001fd50-direct-callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "16-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "17-final-session"
+    }
+  ]
+}

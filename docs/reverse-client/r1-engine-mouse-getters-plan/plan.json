@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "purpose": "Four fixed direct movement dependencies: exact-bound GetCoordsUnparented, Engine GetOptions, Options GetInt and retained-binding WorldVec3 operator subtraction. No recursion, scans, original execution or assumed results.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-engine-mouse-getters-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 17,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-mouse-getter-bindings-retry1/inspection.json",
+      "sha256": "252a7a73f4d88e51e333f64e11203a3edebb9e1639429b945b4690002236861d",
+      "addresses": [
+        "0x18000bbe0",
+        "0x180073660",
+        "0x180182d60"
+      ],
+      "source_kind": "Exact three Game IAT symbols and exact hinted Engine EAT metadata, stable original before/after hashes; no target behavior inferred."
+    },
+    {
+      "file": "docs/reverse-client/r1-game-callback-dependencies/inspection.json",
+      "sha256": "c0f0348d8f0712b35efd22d7ed36282065bfc31c78ee18b0f1d870e036a4afab",
+      "addresses": [
+        "0x18022c240"
+      ],
+      "source_kind": "Saved exact Game609A48 symbol/hint1131 resolves Engine22C240 in exports array; this binding is reused without new read."
+    }
+  ],
+  "saved_body_dedup": {
+    "method": "Checked procedure_assembly normalized-result entry lines under docs/reverse-client and docs/object-lifecycle, including semantic filenames, and prior saved exact operator content inventory. No matching target body found. Old GameEngine cache is a separate target and is not queried.",
+    "addresses": [
+      "0x18000bbe0",
+      "0x180073660",
+      "0x180182d60",
+      "0x18022c240"
+    ],
+    "matching_target_files": [],
+    "original_read": false,
+    "backend_started": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18000bbe0"
+      },
+      "label": "04-EngineMouseGetter-0x18000bbe0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18000bbe0"
+      },
+      "label": "05-EngineMouseGetter-0x18000bbe0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18000bbe0"
+      },
+      "label": "06-EngineMouseGetter-0x18000bbe0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180073660"
+      },
+      "label": "07-EngineMouseGetter-0x180073660-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180073660"
+      },
+      "label": "08-EngineMouseGetter-0x180073660-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180073660"
+      },
+      "label": "09-EngineMouseGetter-0x180073660-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180182d60"
+      },
+      "label": "10-EngineMouseGetter-0x180182d60-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180182d60"
+      },
+      "label": "11-EngineMouseGetter-0x180182d60-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180182d60"
+      },
+      "label": "12-EngineMouseGetter-0x180182d60-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18022c240"
+      },
+      "label": "13-EngineMouseGetter-0x18022c240-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18022c240"
+      },
+      "label": "14-EngineMouseGetter-0x18022c240-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18022c240"
+      },
+      "label": "15-EngineMouseGetter-0x18022c240-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "16-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "17-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Exactly four pseudo/assembly/direct-callee triples and five lifecycle calls. No recursive queries, callers, xrefs, search or import/table scans.",
+    "Separate root review and formal execution approval. Preserve existing resource, mutex, identity, Job, monitor and cleanup controls without changes.",
+    "Unchanged 384M heap, 5GiB launch /2GiB stop floors and pinned runtime profile. No original loading/execution, saves, cloud, installations or security changes.",
+    "Keep fixed plan separate from raw output; preserve incomplete or failed responses and never count a missing return as success."
+  ],
+  "evidence_questions": [
+    "Confirm exact return identities for Entity unparented coordinates and Engine Options.",
+    "Confirm Options int indexing / validation / unknown and failure behavior.",
+    "Confirm WorldVec3 operator subtraction region conversion and read/write/return order needed by08E200."
+  ],
+  "runner_before_sha256": "f630ff10258a29de0464b2ded28a19726b5fe243765e36f9b9214665b292556b"
+}

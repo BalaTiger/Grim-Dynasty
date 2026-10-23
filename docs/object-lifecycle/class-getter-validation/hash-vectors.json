@@ -1,0 +1,20 @@
+{
+  "method": "Independent PowerShell arithmetic over literal ASCII/NUL bytes, FNV1a32 modulo 2^32; all bytes below 128 so signed and unsigned extensions coincide",
+  "vectors": [
+    {
+      "payload_hex": "5265636f7264735c4d695865445c456e747279005441494c2f4162432e646272",
+      "length": 32,
+      "expected_fnv32": "b0853751"
+    },
+    {
+      "payload_hex": "46495253545c50415448",
+      "length": 10,
+      "expected_fnv32": "4724fbb0"
+    },
+    {
+      "payload_hex": "5345434f4e445c50415448",
+      "length": 11,
+      "expected_fnv32": "bbc228b4"
+    }
+  ]
+}

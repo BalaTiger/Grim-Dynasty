@@ -1,0 +1,29 @@
+{
+  "purpose": "Read only the disk float32 operand at Engine34B960 used by262480 instruction26274A COMISS;preserve raw bits without assuming a pseudocode-derived threshold.",
+  "script": "tools/static_analysis/read_r1_straight_path_constant.mjs",
+  "script_sha256": "fb2cfc943e6cc2c11df26567cc541f4f8cb29fd6abe9e3c8b7d4f346ade0408d",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "proof": "docs/reverse-client/r1-navigation-core/11-NavigationCore-0x180262480-procedure_assembly.json",
+  "proof_sha256": "60dd81bd3ffd941308c2407ead408c40bf9b42df47bfc5fa5ae08f042c7055d7",
+  "semantic_rvas": [
+    "34B960"
+  ],
+  "semantic_bytes": 4,
+  "maximum_metadata_bytes": 4096,
+  "output": "docs/reverse-client/r1-straight-path-constant/inspection.json",
+  "guards": [
+    "Fixed target/output/proof; refusal to overwrite; regular nonredirected path and same-descriptor before/after hash/stat",
+    "External Windows Attributes ancestor precheck required",
+    "Whole-file streams only for before/after hash; no code or adjacent data read",
+    "No subprocess, backend, game execution, saves/cloud or security change"
+  ],
+  "existing_evidence_check": "No34B960 raw value found in JSON within ten current reverse-client constant/quantization and object-lifecycle constant/remaining-dependency directories. Bounded inventory only,not a whole-repository absence claim.",
+  "template": {
+    "file": "tools/static_analysis/read_r1_navigation_search_constant.mjs",
+    "sha256": "e19e277ff2745e185cf8d13f2400134e4ceda1d59aa9c2c1b9628be43b0608c6"
+  },
+  "status": "prepared-not-executed",
+  "expected_value_assumed": false,
+  "evidence_instruction": "0x18026274a: COMISS XMM2, dword ptr [0x18034b960]"
+}

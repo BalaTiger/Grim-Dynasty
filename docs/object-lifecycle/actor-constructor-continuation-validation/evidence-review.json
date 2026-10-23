@@ -1,0 +1,66 @@
+{
+  "schema": "grim-dynasty-actor-continuation-evidence-review-v1",
+  "created_utc": "2026-10-21T04:32:15.0127308Z",
+  "sources": [
+    {
+      "path": "docs/object-lifecycle/rea-record-getter-support/08-CString-copy-0x180022ce0-assembly.json",
+      "bytes": 23514,
+      "sha256": "d9a273b1b818d9a83aaffd434bd592aedfdebcb14a74ca23b3e1a2431cc7a05e"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-getter-support/07-CString-copy-0x180022ce0-pseudocode.json",
+      "bytes": 19110,
+      "sha256": "4916b868bd68e2fc63022a9d97cb7317187395873514701ef2001f6684ee1c52"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-getter-support/09-CString-copy-0x180022ce0-direct-callees.json",
+      "bytes": 13067,
+      "sha256": "f1a32b3ae4cdc2b5d754270071e5f3cd9804cc46e90f1d7a17d86cb163b63d23"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-getter-support/summary.json",
+      "bytes": 28332,
+      "sha256": "cb77b628caa53fb766feb2b144ea7fb405d4900c0416cc6a2b40feaca9e12b78"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-body/0259a0-instructions.json",
+      "bytes": 23411,
+      "sha256": "59f402f428e04e2928bb485e58fa85896ac08db4548bff6fa33444a58fa521a7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-helper-direct-targets/2dc398-instructions.json",
+      "bytes": 2135,
+      "sha256": "0a7c6ecf1ff10400847871340eeba0c9239bb9a3e89d7281d03c45587088b887"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-helper-imports/metadata.json",
+      "bytes": 19179,
+      "sha256": "0b81751351efeaeb5bc8cd5103035887b5ffbd4798d29edf2be50c697f84d369"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-continuation-constant/metadata.json",
+      "bytes": 4138,
+      "sha256": "ba62396d83b9e10a71afab41473f62bdba18d45d80b2ded371a856ba66f95110"
+    }
+  ],
+  "reused_engine_assembly_evidence_id": "ev_11c9b1ee555aca0e8cce63184b7c54b2ead44ad1abfcc56803cecea33208c5c7",
+  "reused_listing": "0x180022ce0: MOV qword ptr [RSP + 0x8], RBX\n0x180022ce5: MOV qword ptr [RSP + 0x10], RSI\n0x180022cea: PUSH RDI\n0x180022ceb: SUB RSP, 0x20\n0x180022cef: MOV RDI, R8\n0x180022cf2: MOV RSI, RDX\n0x180022cf5: MOV RBX, RCX\n0x180022cf8: TEST RDX, RDX\n0x180022cfb: JZ 0x180022d57\n0x180022cfd: MOV RDX, qword ptr [RCX + 0x18]\n0x180022d01: CMP RDX, 0x10\n0x180022d05: JC 0x180022d0c\n0x180022d07: MOV RAX, qword ptr [RCX]\n0x180022d0a: JMP 0x180022d0f\n0x180022d0c: MOV RAX, RBX\n0x180022d0f: CMP RSI, RAX\n0x180022d12: JC 0x180022d57\n0x180022d14: CMP RDX, 0x10\n0x180022d18: JC 0x180022d1d\n0x180022d1a: MOV RCX, qword ptr [RCX]\n0x180022d1d: ADD RCX, qword ptr [RBX + 0x10]\n0x180022d21: CMP RCX, RSI\n0x180022d24: JBE 0x180022d57\n0x180022d26: CMP RDX, 0x10\n0x180022d2a: JC 0x180022d31\n0x180022d2c: MOV RAX, qword ptr [RBX]\n0x180022d2f: JMP 0x180022d34\n0x180022d31: MOV RAX, RBX\n0x180022d34: SUB RSI, RAX\n0x180022d37: MOV R9, RDI\n0x180022d3a: MOV R8, RSI\n0x180022d3d: MOV RDX, RBX\n0x180022d40: MOV RCX, RBX\n0x180022d43: MOV RBX, qword ptr [RSP + 0x30]\n0x180022d48: MOV RSI, qword ptr [RSP + 0x38]\n0x180022d4d: ADD RSP, 0x20\n0x180022d51: POP RDI\n0x180022d52: JMP 0x180023180\n0x180022d57: CMP RDI, -0x2\n0x180022d5b: JBE 0x180022d6b\n0x180022d5d: LEA RCX, [0x180339fb8]\n0x180022d64: CALL qword ptr [0x180302560]\n0x180022d6a: INT3\n0x180022d6b: CMP qword ptr [RBX + 0x18], RDI\n0x180022d6f: JNC 0x180022d91\n0x180022d71: MOV R8, qword ptr [RBX + 0x10]\n0x180022d75: MOV RDX, RDI\n0x180022d78: MOV RCX, RBX\n0x180022d7b: CALL 0x180022f70\n0x180022d80: TEST RDI, RDI\n0x180022d83: JZ 0x180022dfa\n0x180022d85: CMP qword ptr [RBX + 0x18], 0x10\n0x180022d8a: JC 0x180022dd0\n0x180022d8c: MOV RCX, qword ptr [RBX]\n0x180022d8f: JMP 0x180022dd3\n0x180022d91: TEST RDI, RDI\n0x180022d94: JNZ 0x180022d85\n0x180022d96: CMP qword ptr [RBX + 0x18], 0x10\n0x180022d9b: MOV qword ptr [RBX + 0x10], RDI\n0x180022d9f: JC 0x180022dba\n0x180022da1: MOV RAX, qword ptr [RBX]\n0x180022da4: MOV byte ptr [RAX], DIL\n0x180022da7: MOV RAX, RBX\n0x180022daa: MOV RBX, qword ptr [RSP + 0x30]\n0x180022daf: MOV RSI, qword ptr [RSP + 0x38]\n0x180022db4: ADD RSP, 0x20\n0x180022db8: POP RDI\n0x180022db9: RET\n0x180022dba: MOV RAX, RBX\n0x180022dbd: MOV byte ptr [RBX], 0x0\n0x180022dc0: MOV RBX, qword ptr [RSP + 0x30]\n0x180022dc5: MOV RSI, qword ptr [RSP + 0x38]\n0x180022dca: ADD RSP, 0x20\n0x180022dce: POP RDI\n0x180022dcf: RET\n0x180022dd0: MOV RCX, RBX\n0x180022dd3: TEST RDI, RDI\n0x180022dd6: JZ 0x180022de3\n0x180022dd8: MOV R8, RDI\n0x180022ddb: MOV RDX, RSI\n0x180022dde: CALL 0x1802ddb0e\n0x180022de3: CMP qword ptr [RBX + 0x18], 0x10\n0x180022de8: MOV qword ptr [RBX + 0x10], RDI\n0x180022dec: JC 0x180022df3\n0x180022dee: MOV RAX, qword ptr [RBX]\n0x180022df1: JMP 0x180022df6\n0x180022df3: MOV RAX, RBX\n0x180022df6: MOV byte ptr [RAX + RDI*0x1], 0x0\n0x180022dfa: MOV RSI, qword ptr [RSP + 0x38]\n0x180022dff: MOV RAX, RBX\n0x180022e02: MOV RBX, qword ptr [RSP + 0x30]\n0x180022e07: ADD RSP, 0x20\n0x180022e0b: POP RDI\n0x180022e0c: RET",
+  "old_session_closed": true,
+  "current_new_reads": {
+    "data_bytes": 16,
+    "metadata_bytes": 0,
+    "code_bytes": 0,
+    "full_hash_passes": 2,
+    "buffer_bytes": 65536,
+    "dumpbin": 0,
+    "rea": 0,
+    "java": 0,
+    "reader_tool_chunk": "82dd94",
+    "original_hash_preserved": true
+  },
+  "derived_fixed_path": "RCX=this+250, RDX=preferred307E61, R8=0. Current length0/capacity15 makes alias range empty; 22D9B stores length0 and22DBD stores firstbyte0;22DCF returns destination. No source payload read or subcall on this path.",
+  "next_stage": "Eight scalar stores,16B copy,one byte store, known856-byte initial-allocation observation, then stop before BDBE0 call. Never publish allocation input to1E0.",
+  "reviewed_source_sha256": "5cb82839b6e9245d101dd4991e466316fb958c40dfc0b53bf0119754ce69284c",
+  "independent_review": "No normal-path blocker. Preserve explicit archived-check profile and normal managed execution conditions. No native EH or runtime guard equivalence inferred.",
+  "next_dependency_search": "Bounded project evidence filename check found no independent BDBE0 body; not a full content or binary scan."
+}

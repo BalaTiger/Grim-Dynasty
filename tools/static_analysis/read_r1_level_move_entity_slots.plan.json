@@ -1,0 +1,116 @@
+{
+  "schema": "grim-dynasty.fixed-level-move-entity-slots.v1",
+  "script": "tools/static_analysis/read_r1_level_move_entity_slots.mjs",
+  "entrypoint": "inspectLevelMoveEntitySlots(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-level-move-entity-slots/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "bytes": 11385856,
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+  },
+  "source_pins": [
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "primary_tables",
+      "path": "docs/reverse-client/r1-game-callback-dependencies/inspection.json",
+      "sha256": "c0f0348d8f0712b35efd22d7ed36282065bfc31c78ee18b0f1d870e036a4afab"
+    },
+    {
+      "key": "level_assembly",
+      "path": "docs/reverse-client/r1-same-region-movement/08-SameRegionMovement-0x18012f4f0-procedure_assembly.json",
+      "sha256": "cf6f5a0ed0faface5f8ddf543c58f3681e96a437e6a919670c54a9d9ce9ed01b"
+    }
+  ],
+  "fixed_slots": [
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x270",
+      "rva": "0x6df940",
+      "bytes": 8,
+      "callsite": "0x18012f670",
+      "opcode": "CALL"
+    },
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0xd8",
+      "rva": "0x6df7a8",
+      "bytes": 8,
+      "callsite": "0x18012f67c",
+      "opcode": "CALL"
+    },
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x90",
+      "rva": "0x6df760",
+      "bytes": 8,
+      "callsite": "0x18012f6b3",
+      "opcode": "JMP"
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x270",
+      "rva": "0x787370",
+      "bytes": 8,
+      "callsite": "0x18012f670",
+      "opcode": "CALL"
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0xd8",
+      "rva": "0x7871d8",
+      "bytes": 8,
+      "callsite": "0x18012f67c",
+      "opcode": "CALL"
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x90",
+      "rva": "0x787190",
+      "bytes": 8,
+      "callsite": "0x18012f6b3",
+      "opcode": "JMP"
+    }
+  ],
+  "limits": {
+    "metadata_bytes": 48,
+    "metadata_operations": 6,
+    "metadata_single_read": 8,
+    "hash_chunk_bytes": 65536,
+    "new_PE_header_bytes": 0,
+    "whole_table_bytes": 0,
+    "target_body_bytes": 0
+  },
+  "requirements": [
+    "Importing the module performs no filesystem I/O. Execute only after separate exact approval with frozen script and plan hashes.",
+    "Separate Windows Attributes/reparse-tag preflight of original file and output ancestors is required; no security settings changed.",
+    "Only six fixed primary-table slots (+270,+D8,+90 for Character and Player) are read; +190 is excluded. No vtable scan, target body, import/export scan, runtime value, or new function analysis.",
+    "Pinned cached PE map is used only after same-descriptor whole-file hash matches the known original.",
+    "Preserve raw bytes and target candidate; no function name is inferred from slot purpose. No saved exact-name lookup is present in this plan.",
+    "Primary-table extent and subsequent constructor-callee overwrite remain unverified; disk candidate is not loaded dispatch proof.",
+    "Same-descriptor before/after SHA256 and stat/path identity checks; output must be absent and partial failure evidence is preserved.",
+    "No original execution/loading, backend, subprocess, network, save data, system settings, commit or push."
+  ],
+  "expected_instructions": [
+    "0x18012f517: MOV RDI, RDX",
+    "0x18012f5fb: MOV RCX, RDI",
+    "0x18012f654: MOV RAX, qword ptr [RDI]",
+    "0x18012f670: CALL qword ptr [RAX + 0x270]",
+    "0x18012f676: MOV RAX, qword ptr [RDI]",
+    "0x18012f679: MOV RCX, RDI",
+    "0x18012f67c: CALL qword ptr [RAX + 0xd8]",
+    "0x18012f68e: MOV RAX, qword ptr [RDI]",
+    "0x18012f691: MOV RDX, R14",
+    "0x18012f694: MOV RCX, RDI",
+    "0x18012f6b3: JMP qword ptr [RAX + 0x90]"
+  ]
+}

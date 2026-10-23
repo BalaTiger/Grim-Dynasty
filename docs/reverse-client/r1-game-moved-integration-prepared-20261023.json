@@ -1,0 +1,104 @@
+{
+  "schema": "grim-dynasty.game-moved-prepared.v1",
+  "status": "prepared-not-built",
+  "prepared_utc": "2026-10-23T08:01:17.6362843Z",
+  "sources": [
+    {
+      "path": "src/reverse_client_actions/SkillMovedContracts.cs",
+      "sha256": "0b4d954d6fdda807a1ff1a249ef70b1c2e687fa8428375aa4ea27e7155a8df1c"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMovedContracts.cs",
+      "sha256": "340049eaf569e12d78bec8f32396531ee77a700cd06e6c6019300019044e23b0"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMovedReachedContinuationContracts.cs",
+      "sha256": "b910d06a7c654709939f48c5713e794df3badc27af6933792ae56d397950d8fa"
+    },
+    {
+      "path": "src/reverse_client_actions/SkillMovedTests.cs",
+      "sha256": "c777d8136f0e8a7275678bed285a6b11fa72c0ecf365c7433c13fd49458943fe"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMovedIntegrationTests.cs",
+      "sha256": "1ceed4afe7671f134a721a459ddc212b5dc0295c30a65270eeff0ef1016bcd15"
+    }
+  ],
+  "builder": {
+    "path": "tools/build_r1_game_moved_integration.ps1",
+    "sha256": "6f100825635290bdd24efbe439837d1ef3d3b8bb2fd24a19e47a0c0752b3e108"
+  },
+  "manifest": {
+    "path": "tools/r1_game_moved_integration_build_fingerprints.json",
+    "sha256": "1117422c3b68006a47d37f76d6b7afbbbab531e03587b916597aad4a39bd9b79"
+  },
+  "output": ".tooling/r1-game-moved-integration-validation",
+  "compiles": 2,
+  "new_skill_scenarios": 8,
+  "new_game_component_scenarios": 13,
+  "new_saved_resource_scenarios": 1,
+  "dependencies": 37,
+  "prerequisites": 6,
+  "evidence": 34,
+  "checked_fingerprints": 82,
+  "fingerprint_mismatches": [],
+  "powershell_parse_errors": [],
+  "old_sources_changed": [],
+  "old_test_suites_rerun": [],
+  "build_executed": false,
+  "tests_executed": false,
+  "rea_executed": false,
+  "original_read": false,
+  "original_executed": false,
+  "security_settings_changed": false,
+  "pending_operations": false,
+  "owner_identity": "GameMovementCharacterState -> existing Interface38/Entity; WorldPosition24 local; canonical shared WorldCoordinateState/WorldPublicationRegistry/WorldRegion/Level; Skill manager unique per canonical owner",
+  "entry_chain": "actual saved nine-tile/corridor -> frozen conditional Crowd producer Position48/Vector60 -> exact known25E087 stop + explicit concrete boundary recheck ->066EE0 ->22C690 actual TranslateTrue ->22C620 actual saved Ground Floor ->05E160 existing UCRT rotation ->same Entity coordinates/bbox/spatial publication ->533410 explicit OWN empty vectors",
+  "fixed_resume_guard": "Address25E087 plus frozen exact diagnostic string plus producer invocation address plus same actual Agent.Callback08 and attached owner plus observed Character/Player interface table; same-address Unknown/unbound tables never resume",
+  "support_boundaries": [
+    "Only reached single-Work and single-Member callback continuation; post-CALL tick tail remains absent and FullTick always false",
+    "Stale nonzero frame stop066F29: IsGameTimePaused1E9760 not guessed",
+    "Actions13/15 stop066FDF before unrecovered subtraction22C240/interpolation/flip",
+    "Cross-region path retains Translate22C593 stop",
+    "Skill vectors all Unknown by default; explicit OWN empty ranges can return; nonempty1B0 targets stop533436/533466/533496",
+    "OWN actors/neighbors/skill population, water opaque prerequisites, engine/frame/ticks, mesh/spatial setup are explicit; native startup and loaded scene are not established",
+    "Actual saved FloorY independently compared with barycentric triangle oracle, never substituted from navigation projection height",
+    "System UCRT is own pinned platform, not original runtime equivalence"
+  ],
+  "dependency_selections": [
+    {
+      "name": "GrimDynasty.NavigationCrowdState.dll",
+      "selected": {
+        "name": "GrimDynasty.NavigationCrowdState.dll",
+        "path": ".tooling/r1-crowd-tick-production-validation/GrimDynasty.NavigationCrowdState.dll",
+        "sha256": "064f74a1649af7301276fc510fd1793ef5250660b25ba39a8ee69b5258d50198",
+        "result": ".tooling/r1-crowd-tick-production-validation/result.json"
+      },
+      "not_loaded": {
+        "name": "GrimDynasty.NavigationCrowdState.dll",
+        "path": ".tooling/r1-game-rotation-publication-validation/GrimDynasty.NavigationCrowdState.dll",
+        "sha256": "3c37f78adff8799df3d1da6624145d4cf1037f44416c7e550fa904c48ecf25e0",
+        "result": ".tooling/r1-game-rotation-publication-validation/result.json"
+      },
+      "reason": "Use already-passed newer Crowd producer dependencies for one canonical assembly identity; validate compatibility through new nonzero-tick UCRT/rotation/publication scenarios, do not rebuild old source or rerun old suites"
+    },
+    {
+      "name": "GrimDynasty.SystemUcrtRotationMath.dll",
+      "selected": {
+        "name": "GrimDynasty.SystemUcrtRotationMath.dll",
+        "path": ".tooling/r1-crowd-tick-production-validation/GrimDynasty.SystemUcrtRotationMath.dll",
+        "sha256": "2e82ebf9208f7bafe6a53bb469ba3cfaff9ac236b7faf124a58c759a8d38a85a",
+        "result": ".tooling/r1-crowd-tick-production-validation/result.json"
+      },
+      "not_loaded": {
+        "name": "GrimDynasty.SystemUcrtRotationMath.dll",
+        "path": ".tooling/r1-game-rotation-publication-validation/GrimDynasty.SystemUcrtRotationMath.dll",
+        "sha256": "ef72de65d999e42cfdc123de277d5492c2f0abc3966170b3e013be0f04b4b751",
+        "result": ".tooling/r1-game-rotation-publication-validation/result.json"
+      },
+      "reason": "Use already-passed newer Crowd producer dependencies for one canonical assembly identity; validate compatibility through new nonzero-tick UCRT/rotation/publication scenarios, do not rebuild old source or rerun old suites"
+    }
+  ],
+  "constructor_evidence_limit": "The offline-worldvec3-constructor inspection reports failed due to truncated trailing window. Only complete first11 bytes at228AB0..228ABA MOV qword[RCX],0;MOV RAX,RCX;RET plus exact export binding are reused; no claim that entire inspection passed.",
+  "next": "Root may execute the fixed builder once after its review. Preserve output and report exact step if compilation or new validation stops."
+}

@@ -1,0 +1,127 @@
+{
+  "status": "passed",
+  "started": "2026-10-19T03:45:30.973Z",
+  "finished": "2026-10-19T03:47:57.822Z",
+  "plan_sha256": "8cfd4de2e4baa7debf90aa5a5bfc9a5c765266ee431af4bd5286f3fc9618012a",
+  "request_timeout_ms": 600000,
+  "tool_calls": 8,
+  "completed_plan_calls": 8,
+  "targets_launched": false,
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "close_acknowledged": true,
+  "closed_session_verified": true,
+  "process_exit_confirmed": true,
+  "forced_termination": false,
+  "child_exit_code": 0,
+  "child_signal": null,
+  "stderr_truncated": false,
+  "evidence_redaction": "Credential values are redacted; other parsed tool-response fields are retained.",
+  "records": [
+    {
+      "label": "01-initial-session",
+      "tool": "binary_session",
+      "call_number": 1,
+      "status": "passed",
+      "elapsed_ms": 349
+    },
+    {
+      "label": "02-Engine-open",
+      "tool": "open_binary",
+      "call_number": 2,
+      "status": "passed",
+      "elapsed_ms": 13
+    },
+    {
+      "label": "03-Engine-session",
+      "tool": "binary_session",
+      "call_number": 3,
+      "status": "passed",
+      "elapsed_ms": 29
+    },
+    {
+      "label": "04-Object-name-assignment-0x180023180-pseudocode",
+      "tool": "procedure_pseudo_code",
+      "call_number": 4,
+      "status": "passed",
+      "evidence_id": "ev_7cbb5a25bdfd6720c0d931ccaeab21fd1d0e49bb2f940fd8b7bae165e131bd55",
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.",
+        "External functions and functions without an analyzable body return null; other decompiler failures remain explicit.",
+        "Ghidra Listing reports a terminal call at 0x1800231b7 with no resolved callee; its no-return basis is unknown.",
+        "Ghidra Listing reports a terminal call at 0x1800231de with no resolved callee; its no-return basis is unknown.",
+        "Ghidra Listing reports a terminal call at 0x180023213 with no resolved callee; its no-return basis is unknown.",
+        "Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+        "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no Bearer [REDACTED]",
+        "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.",
+        "The target references PDB Engine.pdb (GUID ec8709dc-8335-4732-aeed-629eb2e398f4, age (hex) 2, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion."
+      ],
+      "elapsed_ms": 144904
+    },
+    {
+      "label": "05-Object-name-assignment-0x180023180-assembly",
+      "tool": "procedure_assembly",
+      "call_number": 5,
+      "status": "passed",
+      "evidence_id": "ev_27960d32613bbb127faf9a27e45a42b5ce221954ffde06b9c7be628790c5e7f1",
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Assembly is Ghidra Listing text and does not claim textual equivalence with Hopper output.",
+        "Ghidra Listing reports a terminal call at 0x1800231b7 with no resolved callee; its no-return basis is unknown.",
+        "Ghidra Listing reports a terminal call at 0x1800231de with no resolved callee; its no-return basis is unknown.",
+        "Ghidra Listing reports a terminal call at 0x180023213 with no resolved callee; its no-return basis is unknown.",
+        "Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+        "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no Bearer [REDACTED]",
+        "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.",
+        "The target references PDB Engine.pdb (GUID ec8709dc-8335-4732-aeed-629eb2e398f4, age (hex) 2, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion."
+      ],
+      "elapsed_ms": 10
+    },
+    {
+      "label": "06-Object-name-assignment-0x180023180-direct-callees",
+      "tool": "procedure_callees",
+      "call_number": 6,
+      "status": "passed",
+      "evidence_id": "ev_a1a20c4fdcb70b8ec46f18eed54045320df760d9592dc0829289d3481145914d",
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Ghidra Listing reports a terminal call at 0x1800231b7 with no resolved callee; its no-return basis is unknown.",
+        "Ghidra Listing reports a terminal call at 0x1800231de with no resolved callee; its no-return basis is unknown.",
+        "Ghidra Listing reports a terminal call at 0x180023213 with no resolved callee; its no-return basis is unknown.",
+        "Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+        "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no Bearer [REDACTED]",
+        "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.",
+        "The target references PDB Engine.pdb (GUID ec8709dc-8335-4732-aeed-629eb2e398f4, age (hex) 2, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion."
+      ],
+      "elapsed_ms": 13
+    },
+    {
+      "label": "07-Engine-close",
+      "tool": "close_binary",
+      "call_number": 7,
+      "status": "passed",
+      "elapsed_ms": 369
+    },
+    {
+      "label": "08-final-session",
+      "tool": "binary_session",
+      "call_number": 8,
+      "status": "passed",
+      "elapsed_ms": 39
+    }
+  ],
+  "errors": []
+}

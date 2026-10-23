@@ -1,0 +1,82 @@
+{
+  "status": "prepared-from-saved-evidence-only-not-executed",
+  "scope": "Two successful CrowdAgentMoved body gaps plus one upstream first-Level initialization gap; root owns formal identity/resource/approval execution.",
+  "query_operations_per_target": ["procedure_pseudo_code", "procedure_assembly", "procedure_callees"],
+  "body_query_count": 9,
+  "grouping": "Engine two targets in one session; Game one target in a separate session. Lifecycle calls and current guards belong to root.",
+  "inputs": {
+    "Engine.dll": {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "expected_bytes": 4485632,
+      "image_base": "0x180000000",
+      "text_raw_backed_rva_range": ["0x1000", "0x301c00"],
+      "text_file_range": ["0x400", "0x301000"]
+    },
+    "Game.dll": {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "expected_bytes": 11385856,
+      "image_base": "0x180000000",
+      "text_raw_backed_rva_range": ["0x1000", "0x608200"],
+      "text_file_range": ["0x400", "0x607600"]
+    }
+  },
+  "pe_mapping": {
+    "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+    "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58",
+    "secondary_game_pe": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+    "secondary_game_pe_sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b",
+    "ranges_are_end_exclusive": true,
+    "file_offset_rule": "For these .text entries only: RVA - 0x1000 + 0x400.",
+    "limitation": "Saved PE section/file bounds, not recovered target-function ends. No target-specific pdata boundary was established in this bounded review. Reuse only after exact current input SHA256 equality. Original files were not read in this preparation."
+  },
+  "targets": [
+    {
+      "module": "Engine.dll",
+      "va": "0x18012b750",
+      "rva": "0x12b750",
+      "file_offset": "0x12ab50",
+      "symbol": "GAME::Level::Level",
+      "dependency": "Upstream first-Level initialization; not a direct callee of WorldFloor221DA0.",
+      "proof": "194E58 reads Region+68; 194E5F branches to194E8B when null. 194E8B/194E90 allocate5538. 194E9D RDX=Region,194EA0 RCX=new allocation,194EA3 CALL12B750,194EA9 publishes returnedRAX toRegion+68;194F7F later calls12C6A0 Level.Load.",
+      "reuse": "Saved194E20 body proves allocation/call/publication only. Its Landscape30@1950B8 and Water40@1950C7 reads do not establish initial nulls or empty54D8/54E0.",
+      "limit": "Ctor evidence alone cannot establish post-Load actor contents or Region100/108 neighbors. Preserve sourced live state and Unknown boundaries."
+    },
+    {
+      "module": "Engine.dll",
+      "va": "0x18022c690",
+      "rva": "0x22c690",
+      "file_offset": "0x22ba90",
+      "symbol": "?SetFromWorldPosition@WorldVec3@GAME@@QEAA_NAEBVVec3@2@PEAVRegion@2@@Z",
+      "dependency": "Required before successful066EE0 floor/publication path.",
+      "proof": "Game066F55 CALL[IAT609DC0],066F5B TEST AL,066F5D returns on false. Existing exact Engine export binding resolves609DC0 to22C690 (ordinal5286); it explicitly records code_read=false.",
+      "reuse": "Binding and caller body are reusable; they do not supply SetFromWorldPosition behavior. Special13/15 branch also calls same slot at0670CF."
+    },
+    {
+      "module": "Game.dll",
+      "va": "0x180533410",
+      "rva": "0x533410",
+      "file_offset": "0x532810",
+      "symbol": "GAME::SkillManager::Moved",
+      "dependency": "Required suffix after successful066EE0 floor and RotateTowards/publication.",
+      "proof": "067146 CALL05E160;06714B LEA RCX,[RSI+818];067152 CALL533410. RSI is movement-interface this=full owner+38, so SkillManager receiver is owner+850.",
+      "reuse": "Saved066EE0 pseudo names Moved; assembly and callee list prove address. Caller cannot justify a no-op success suffix."
+    }
+  ],
+  "body_inventory": "Filename-only inventory across docs found no saved files named22c690,533410,12b750. No exhaustive historical body-content search or global absence claim.",
+  "conditional_not_in_minimum": "Engine1E9760 IsGameTimePaused: Game066F29 is reached only when ticks!=0 and unsigned lastFrame<frameCount-1. A ticks0 bounded path skips it; any claimed complete nonzero-tick path must account for this gap.",
+  "evidence_pins": [
+    ["docs/reverse-client/game-crowd-moved-preparation-paused.json", "7245f4ae5a28d891d188d9714f41bf8170550aa3a0a7d17116e7b0ff6f81e8eb"],
+    ["docs/reverse-client/world-floor-shared-state-plan.json", "60031ef8f13ea843d52b744be61d3ee69e7fec2a6fb147ca2cf89621eca59eba"],
+    ["docs/reverse-client/r1-game-callback-dependencies/inspection.json", "c0f0348d8f0712b35efd22d7ed36282065bfc31c78ee18b0f1d870e036a4afab"],
+    ["docs/reverse-client/r1-game-movement-interface/13-GameMovementInterface-0x180066ee0-procedure_pseudo_code.json", "d70edbb33b9436e87d8e84e55b081ea899c458715a3d5fcb1c03f7fe007ab42b"],
+    ["docs/reverse-client/r1-game-movement-interface/14-GameMovementInterface-0x180066ee0-procedure_assembly.json", "78d9bfaa180ff24e5d0cb8dfa8e77b25298bf92bfca1c4d5c8962a8dd1b3ccce"],
+    ["docs/reverse-client/r1-game-movement-interface/15-GameMovementInterface-0x180066ee0-procedure_callees.json", "f84f2acbc02fd412c13d2dae681028c381b0c02e7d86bdcc7c1463166da6cba7"],
+    ["docs/reverse-client/r1-region-blob-loading/04-RegionBlobLoading-0x180194e20-procedure_pseudo_code.json", "aff3321055c7cf23d560c525e7d1d18dc0d4d61594b926b3a9d901d9380fcb6d"],
+    ["docs/reverse-client/r1-region-blob-loading/05-RegionBlobLoading-0x180194e20-procedure_assembly.json", "c217945dfd8f300cddda134ac9cae9e7b92316149382de9f63fd0a9fca264e5b"],
+    ["docs/reverse-client/r1-region-blob-loading/06-RegionBlobLoading-0x180194e20-procedure_callees.json", "b923b86b6bc0c13a718585f3f4277e2932f5e92e3668731392e34c3a6893ddd7"]
+  ],
+  "not_performed": ["original file reads", "backend or game launch", "native queries", "runner changes", "builds or tests", "save access", "commit or push"],
+  "pending_operations": false
+}

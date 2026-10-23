@@ -1,0 +1,40 @@
+{
+  "schema": "grim-dynasty.fixed-ground-loader-slot.v1",
+  "script": "tools/static_analysis/read_r1_ground_loader_slot.mjs",
+  "entrypoint": "inspectGroundLoaderSlot(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-ground-loader-slot/inspection.json",
+  "source": {
+   "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+   "bytes": 4485632,
+   "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "source_pins": [
+   {"key":"engine_pe","path":"docs/object-lifecycle/offline-class-registration-exports/discovery.json","sha256":"0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"},
+   {"key":"constructor","path":"docs/reverse-client/r1-engine-spatial-ground/14-EngineSpatialGround-0x1801dda90-procedure_assembly.json","sha256":"858c4ee47d193164648b7fb068b0dfb2772dc6cd35347055d736d2584388a629"},
+   {"key":"caller","path":"docs/reverse-client/r1-level-load-and-navjob-candidates/05-LevelLoadNavJobCandidate-0x18012c770-procedure_assembly.json","sha256":"edbe0f2ba35b41bfb9c412aae4ec3e61a45ef7c29ec74b569801c4b6797a07f5"},
+   {"key":"spatial_assembly","path":"docs/reverse-client/r1-engine-spatial-ground/05-EngineSpatialGround-0x180134500-procedure_assembly.json","sha256":"6dfe2938844693c4bffecd4c9340076fc0278c28c195bc6f4bfa669eddecf0fb"},
+   {"key":"half_constant","path":"docs/reverse-client/r1-navigation-compressor-slot/inspection.json","sha256":"191e63e5cc34d9b1abf1326426827a27041743913768a3159e73af3dc62126de"},
+   {"key":"sign_mask","path":"docs/reverse-client/r1-region-bounds-mask/inspection.json","sha256":"d3c63d6c8ed7c470da6a01b88146c75cecd8d91abfb654771be1e9961ea0fb75"}
+  ],
+  "fixed_slot": {"table_rva":"0x343b60","slot_offset":"0x88","rva":"0x343be8","bytes":8,"constructor":"0x1801dda90","callsite":"0x18012ca70"},
+  "new_constant": {"rva":"0x34bad8","bytes":4,"instructions":["0x18013455c: MULSS XMM1, dword ptr [0x18034bad8]","0x180134564: MULSS XMM2, dword ptr [0x18034bad8]"]},
+  "reused_constants": [
+   {"key":"half_constant","collection":"constants","rva":"0x34badc","bytes":4,"raw_hex":"0000003f","uint32_hex":"0x3f000000","instruction":"0x18013459b: MOVSS XMM8, dword ptr [0x18034badc]"},
+   {"key":"sign_mask","collection":"values","rva":"0x34c450","bytes":4,"raw_hex":"00000080","uint32_hex":"0x80000000","instruction":"0x18013456f: MOVSS XMM4, dword ptr [0x18034c450]"}
+  ],
+  "assembly_proofs": [
+   {"key":"constructor","procedure":"0x1801dda90","instructions":["0x1801ddaad: MOV RDI, RCX","0x1801ddabe: LEA RAX, [0x180343b60]","0x1801ddac5: MOV qword ptr [RDI], RAX","0x1801ddac8: LEA RBX, [RDI + 0x68]","0x1801ddad9: LEA RAX, [0x18033e338]","0x1801ddae0: MOV qword ptr [RBX], RAX","0x1801ddbb7: MOV RAX, RDI"]},
+   {"key":"caller","procedure":"0x18012c770","instructions":["0x18012ca57: CALL 0x1801dda90","0x18012ca5d: MOV qword ptr [RDI + 0x30], RAX","0x18012ca61: MOV R9, qword ptr [RAX]","0x18012ca64: MOVSX R8D, R14B","0x18012ca68: LEA RDX, [RSP + 0x30]","0x18012ca6d: MOV RCX, RAX","0x18012ca70: CALL qword ptr [R9 + 0x88]"]},
+   {"key":"spatial_assembly","procedure":"0x180134500","instructions":["0x18013455c: MULSS XMM1, dword ptr [0x18034bad8]","0x180134564: MULSS XMM2, dword ptr [0x18034bad8]","0x18013456f: MOVSS XMM4, dword ptr [0x18034c450]","0x180134598: XORPS XMM2, XMM4","0x18013459b: MOVSS XMM8, dword ptr [0x18034badc]"]}
+  ],
+  "limits": {"new_data_bytes":12,"data_operations":2,"single_read_bytes":8,"hash_chunk_bytes":65536,"new_PE_header_bytes":0,"whole_table_bytes":0,"target_body_bytes":0},
+  "requirements": [
+   "Import performs no I/O. Execute only after exact approval of frozen script/plan and separate Windows Attributes/reparse-tag preflight.",
+   "Only Engine RVA343BE8 8B and RVA34BAD8 4B are newly observed. No fresh PE headers, code, RTTI, neighboring slots, imports or exports.",
+   "343B60 is the constructor's main vptr; 33E338 at this+68 is separate. Table extent and later overwrites remain unverified.",
+   "Reuse pinned raw4B at34BADC/34C450 from the identical Engine hash. MOVSS reads34C450 as4B; subsequent XORPS has register operands only.",
+   "Cached PE map requires same-descriptor whole-file hash identity. Before/after hash/stat/path checks do not constitute an atomic snapshot.",
+   "Preserve raw bits. Executable address classification establishes neither function name nor body/ABI, and disk constants are not loaded-state observations.",
+   "Output directory must be absent; retain failure evidence. No DLL load/execution, backend, subprocess, network, saves, security settings, commit or push."
+  ]
+ }

@@ -1,0 +1,42 @@
+{
+  "schema": "actor-engine-context-run-v1",
+  "approval_mechanism": "require_escalated",
+  "execution": "approved_and_completed",
+  "command": "& 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -NoProfile -NonInteractive -File 'C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\src\\task_items\\build_actor_engine_context.ps1'",
+  "build_attempts": 1,
+  "compiler_invocations": 4,
+  "test_invocations": 3,
+  "new_assertions": 52,
+  "new_scenario_groups": 9,
+  "regressions": [
+    {
+      "suite": "ActorConstructorCompletionTests",
+      "assertions": 69,
+      "groups": 11,
+      "runs": 1
+    },
+    {
+      "suite": "ActorMatrixInitializationTests",
+      "assertions": 64,
+      "groups": 10,
+      "runs": 1
+    }
+  ],
+  "other_previous_suites_run": 0,
+  "warnings_in_build_output": 0,
+  "initial_tool_result": {
+    "chunk_id": "f3a5e5",
+    "wall_time_seconds": 1.000836935,
+    "session_id": 97516,
+    "original_token_count": 155,
+    "output": "NEW SUITE: ActorEngineContextTests (counts reported separately)\r\nPASS OwnCreationAndIdentity: 6 assertions\r\nPASS CallArgumentsAndPublication: 7 assertions\r\nPASS LateStubRead: 4 assertions\r\nPASS FailurePrefixes: 11 assertions\r\nPASS UnknownValuesAndZeroInputs: 6 assertions\r\nPASS OwnExceptionsAndReplay: 4 assertions\r\nPASS SlotSampleAndLateBinding: 4 assertions\r\nPASS UnknownTailStages: 7 assertions\r\nPASS SourceTimingAndExceptions: 3 assertions\r\nActorEngineContextTests: 52 assertions, 9 groups passed; own conditional projection only\r\nAFFECTED REGRESSION: ActorConstructorCompletionTests (counts reported separately)\r\n"
+  },
+  "completion_tool_result": {
+    "chunk_id": "be6afe",
+    "wall_time_seconds": 0.000032718,
+    "exit_code": 0,
+    "original_token_count": 266,
+    "output": "PASS CompleteArchivedIntegration: 8 assertions\r\nPASS PriorAndIdentityGuards: 7 assertions\r\nPASS SentinelBoundary: 6 assertions\r\nPASS ConstantDependencyStops: 6 assertions\r\nPASS RawConstantsAndInputCopies: 6 assertions\r\nPASS MatrixEpochBoundaries: 7 assertions\r\nPASS FirstMatrixChunks: 6 assertions\r\nPASS SecondMatrixChunks: 6 assertions\r\nPASS GlobalEquality: 4 assertions\r\nPASS GlobalObservationStops: 7 assertions\r\nPASS WidthAndStorageIsolation: 6 assertions\r\nPASS: 69 assertions, 11 scenario groups\r\nAFFECTED REGRESSION: ActorMatrixInitializationTests (counts reported separately)\r\nPASS StorageAndArchivedFactories: 6 assertions\r\nPASS ColdThenWarm: 6 assertions\r\nPASS SharedStateHeaderExisting: 6 assertions\r\nPASS EntryAndSynchronizationStops: 7 assertions\r\nPASS GlobalAndNotificationPrefixes: 7 assertions\r\nPASS SignedOrderingAndWrap: 6 assertions\r\nPASS DeferredIntegration: 7 assertions\r\nPASS EarlyIntegrationStops: 6 assertions\r\nPASS PartialMatrixSources: 6 assertions\r\nPASS ReadResultsAndOldApiParity: 7 assertions\r\nPASS: 64 assertions, 10 scenario groups\r\n"
+  },
+  "exit_code": 0
+}

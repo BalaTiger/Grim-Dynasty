@@ -1,6 +1,6 @@
-param([string]$OutputDirectory='D:\MyGitRepo\Grim-Dynasty\.tooling\offline-system')
+param([string]$OutputDirectory=(Join-Path $PSScriptRoot '..\.tooling\offline-system'))
 $ErrorActionPreference='Stop'
-$project=[IO.Path]::GetFullPath('D:\MyGitRepo\Grim-Dynasty')
+$project=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $target=[IO.Path]::GetFullPath($OutputDirectory)
 if(!$target.StartsWith($project+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'Output must remain in project'}
 $manifestPath=Join-Path $target 'manifest.json'

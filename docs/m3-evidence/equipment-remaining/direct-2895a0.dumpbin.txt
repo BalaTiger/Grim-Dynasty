@@ -1,0 +1,53 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\m3-equipment-remaining-temp\direct-2895a0.inspect.dll
+
+File Type: DLL
+
+  00000001802895A0: 40 56              push        rsi
+  00000001802895A2: 48 83 EC 50        sub         rsp,50h
+  00000001802895A6: 80 79 18 00        cmp         byte ptr [rcx+18h],0
+  00000001802895AA: 48 8B F2           mov         rsi,rdx
+  00000001802895AD: 74 08              je          00000001802895B7
+  00000001802895AF: B0 01              mov         al,1
+  00000001802895B1: 48 83 C4 50        add         rsp,50h
+  00000001802895B5: 5E                 pop         rsi
+  00000001802895B6: C3                 ret
+  00000001802895B7: 48 89 5C 24 60     mov         qword ptr [rsp+60h],rbx
+  00000001802895BC: BA 01 00 00 00     mov         edx,1
+  00000001802895C1: 48 89 7C 24 68     mov         qword ptr [rsp+68h],rdi
+  00000001802895C6: 48 8B 79 08        mov         rdi,qword ptr [rcx+8]
+  00000001802895CA: 0F 29 74 24 40     movaps      xmmword ptr [rsp+40h],xmm6
+  00000001802895CF: 0F 29 7C 24 30     movaps      xmmword ptr [rsp+30h],xmm7
+  00000001802895D4: 48 8D 8F 78 0F 00  lea         rcx,[rdi+0000000000000F78h]
+                    00
+  00000001802895DB: E8 00 61 E4 FF     call        00000001800CF6E0
+  00000001802895E0: BA 02 00 00 00     mov         edx,2
+  00000001802895E5: 48 8D 8F 78 0F 00  lea         rcx,[rdi+0000000000000F78h]
+                    00
+  00000001802895EC: 0F 28 F8           movaps      xmm7,xmm0
+  00000001802895EF: E8 EC 60 E4 FF     call        00000001800CF6E0
+  00000001802895F4: BA 03 00 00 00     mov         edx,3
+  00000001802895F9: 48 8D 8F 78 0F 00  lea         rcx,[rdi+0000000000000F78h]
+                    00
+  0000000180289600: 0F 28 F0           movaps      xmm6,xmm0
+  0000000180289603: E8 D8 60 E4 FF     call        00000001800CF6E0
+  0000000180289608: F3 48 0F 2C C0     cvttss2si   rax,xmm0
+  000000018028960D: 48 8B D7           mov         rdx,rdi
+  0000000180289610: 48 8B CE           mov         rcx,rsi
+  0000000180289613: F3 4C 0F 2C CE     cvttss2si   r9,xmm6
+  0000000180289618: 89 44 24 20        mov         dword ptr [rsp+20h],eax
+  000000018028961C: F3 4C 0F 2C C7     cvttss2si   r8,xmm7
+  0000000180289621: E8 3A D2 09 00     call        0000000180326860
+  0000000180289626: 0F 28 7C 24 30     movaps      xmm7,xmmword ptr [rsp+30h]
+  000000018028962B: 84 C0              test        al,al
+  000000018028962D: 0F 28 74 24 40     movaps      xmm6,xmmword ptr [rsp+40h]
+  0000000180289632: 48 8B 7C 24 68     mov         rdi,qword ptr [rsp+68h]
+  0000000180289637: 0F 95 C0           setne       al
+  000000018028963A: 48 8B 5C 24 60     mov         rbx,qword ptr [rsp+60h]
+  000000018028963F: 48 83 C4 50        add         rsp,50h
+  0000000180289643: 5E                 pop         rsi
+  0000000180289644: C3                 ret
+
+  Summary
+
+        1000 .text

@@ -1,11 +1,11 @@
-param([string]$OutputDirectory='D:\MyGitRepo\Grim-Dynasty\.tooling\quest-definition-build')
+param([string]$OutputDirectory=(Join-Path $PSScriptRoot '..\..\.tooling\quest-definition-build'))
 $ErrorActionPreference='Stop'
 $compiler='C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe'
-$root=[IO.Path]::GetFullPath('D:\MyGitRepo\Grim-Dynasty')+[IO.Path]::DirectorySeparatorChar
+$root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..'))+[IO.Path]::DirectorySeparatorChar
 $target=[IO.Path]::GetFullPath($OutputDirectory)
 if (!$target.StartsWith($root,[StringComparison]::OrdinalIgnoreCase)) {throw 'Project output required'}
 New-Item -ItemType Directory -Path $target -Force | Out-Null
-$resources='D:\MyGitRepo\Grim-Dynasty\.tooling\resource-containers-build\GrimDynasty.Resources.dll'
+$resources=(Join-Path $PSScriptRoot '..\..\.tooling\resource-containers-build\GrimDynasty.Resources.dll')
 Copy-Item -LiteralPath $resources -Destination "$target\GrimDynasty.Resources.dll" -Force
 & $compiler /nologo /target:library /checked+ /optimize+ "/reference:$target\GrimDynasty.Resources.dll" "/out:$target\GrimDynasty.Quests.dll" "$PSScriptRoot\QuestDefinition.cs"
 if ($LASTEXITCODE -ne 0) {throw 'Quest module compilation failed'}

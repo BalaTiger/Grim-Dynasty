@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "purpose": "Bounded static evidence for four observed direct dependencies of the Engine LoadTable and LoadTableBinary Class getter entries: base tree search, C-string copy, binary name-to-ID lookup and ID getter; no target execution or automatic calls to newly discovered callees.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-class-getters/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/object-lifecycle/rea-record-class-getters/06-LoadTable-class-getter-0x18013c6b0-direct-callees.json",
+      "evidence_id": "ev_3daccfd3e69c365a5653d81c4bf3754348e764e892753aa6794bdd50932dc8ac",
+      "caller": "0x18013c6b0",
+      "selected_callees": [
+        "0x18013ebc0",
+        "0x180022ce0"
+      ]
+    },
+    {
+      "file": "docs/object-lifecycle/rea-record-class-getters/05-LoadTable-class-getter-0x18013c6b0-assembly.json",
+      "evidence_id": "ev_adef7a7356ecbdb85c27499c853261deafd746876dfeffe91ad40da611cd4901",
+      "caller": "0x18013c6b0",
+      "selected_calls": [
+        {
+          "call_site": "0x18013c734",
+          "selected_target": "0x18013ebc0"
+        },
+        {
+          "call_site": "0x18013c723",
+          "selected_target": "0x180022ce0"
+        }
+      ]
+    },
+    {
+      "file": "docs/object-lifecycle/rea-record-class-getters/09-LoadTableBinary-class-getter-0x18013fb60-direct-callees.json",
+      "evidence_id": "ev_423215ab67e8c33017786edbe41be0f41863655cb2090824fe6bc7bbe944c181",
+      "caller": "0x18013fb60",
+      "selected_callees": [
+        "0x180283840",
+        "0x18013fc80"
+      ]
+    },
+    {
+      "file": "docs/object-lifecycle/rea-record-class-getters/08-LoadTableBinary-class-getter-0x18013fb60-assembly.json",
+      "evidence_id": "ev_d93b24e727701aecbda12dae18888d260725700fb0eb4669912000fd6f6e2376",
+      "caller": "0x18013fb60",
+      "selected_calls": [
+        {
+          "call_site": "0x18013fbb1",
+          "selected_target": "0x180283840"
+        },
+        {
+          "call_site": "0x18013fbbe",
+          "selected_target": "0x18013fc80"
+        }
+      ]
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 17,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_info",
+    "procedure_callees",
+    "xrefs",
+    "address_name"
+  ],
+  "execution_requirements": [
+    "Before dispatch, verify the target SHA256 and actual MCP tools/list schemas against this plan; stop on mismatch.",
+    "The calls array already contains normal-path open, close, and session checks; do not add duplicate lifecycle calls.",
+    "Use only the fixed Engine target and provider. Do not launch or load the target DLL for execution, change target bytes, query saves, or expand the tool allowlist.",
+    "Dispatch sequentially, save each raw result under its unique label, and retain provider evidence and limitations.",
+    "Stop the remaining plan on errors, denial, unavailable provider, unexpected target identity, or unavailable analysis; do not silently substitute another backend or guess callees.",
+    "If stopped while a target is open, perform only necessary close_binary cleanup when permitted, within the total call budget, and record whether closure is confirmed.",
+    "The final session result must confirm no active target; verify the original Engine SHA256 again after closure.",
+    "Calls to newly discovered direct callees are not included in this batch. Review returned addresses and scope before preparing another bounded batch."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18013ebc0"
+      },
+      "label": "04-LoadTable-tree-search-0x18013ebc0-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18013ebc0"
+      },
+      "label": "05-LoadTable-tree-search-0x18013ebc0-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18013ebc0"
+      },
+      "label": "06-LoadTable-tree-search-0x18013ebc0-direct-callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180022ce0"
+      },
+      "label": "07-CString-copy-0x180022ce0-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180022ce0"
+      },
+      "label": "08-CString-copy-0x180022ce0-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180022ce0"
+      },
+      "label": "09-CString-copy-0x180022ce0-direct-callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180283840"
+      },
+      "label": "10-LoadTableBinary-name-to-id-0x180283840-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180283840"
+      },
+      "label": "11-LoadTableBinary-name-to-id-0x180283840-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180283840"
+      },
+      "label": "12-LoadTableBinary-name-to-id-0x180283840-direct-callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18013fc80"
+      },
+      "label": "13-LoadTableBinary-id-getter-0x18013fc80-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18013fc80"
+      },
+      "label": "14-LoadTableBinary-id-getter-0x18013fc80-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18013fc80"
+      },
+      "label": "15-LoadTableBinary-id-getter-0x18013fc80-direct-callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "16-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "17-final-session"
+    }
+  ]
+}

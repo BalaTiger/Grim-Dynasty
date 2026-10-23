@@ -1,0 +1,433 @@
+{
+  "schema": "grim-dynasty-fixed-actor-engine-context-v1",
+  "status": "fixed-actor-engine-context-verified",
+  "started_utc": "2026-10-21T06:06:44.163Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json",
+      "sha256": "ab597744f4a4cf617c6227fe7a50100e5b03733aa48dda43a730f65509bdca26"
+    },
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    }
+  ],
+  "limits": {
+    "code_bytes": 248,
+    "semantic_bytes": 248,
+    "semantic_read_operations": 5,
+    "metadata_bytes": 0,
+    "data_bytes": 0,
+    "fingerprint_chunk_bytes": 65536,
+    "proof_bytes_each": 1048576,
+    "synthetic_pe_bytes_each": 4608,
+    "synthetic_pe_bytes_total": 16896,
+    "subprocesses": 5,
+    "timeout_ms_each": 10000,
+    "max_buffer_bytes_each": 196608,
+    "report_bytes": 262144
+  },
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "cached_global_references": [
+    {
+      "from": "18007471f",
+      "to": "180421428",
+      "type": "READ",
+      "symbol": "?gEngine@GAME@@3PEAVEngine@1@EA"
+    },
+    {
+      "from": "180074ae0",
+      "to": "180421428",
+      "type": "READ",
+      "symbol": "?gEngine@GAME@@3PEAVEngine@1@EA"
+    },
+    {
+      "from": "180074c87",
+      "to": "180421428",
+      "type": "READ",
+      "symbol": "?gEngine@GAME@@3PEAVEngine@1@EA"
+    }
+  ],
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "compilation_or_tests": false,
+  "original_path_given_to_dumpbin": false,
+  "direct_callees_followed": 0,
+  "export_queries": 0,
+  "metadata_bytes": 0,
+  "data_bytes": 0,
+  "code_bytes": 248,
+  "semantic_reads": [
+    {
+      "id": "072951-ctor-identity",
+      "rva": "0x72951",
+      "file_offset": 466257,
+      "requested_bytes": 3,
+      "read_bytes": 3,
+      "raw_hex": "488bf9"
+    },
+    {
+      "id": "07295e-ctor-zero",
+      "rva": "0x7295e",
+      "file_offset": 466270,
+      "requested_bytes": 2,
+      "read_bytes": 2,
+      "raw_hex": "33ed"
+    },
+    {
+      "id": "072c26-ctor-fields",
+      "rva": "0x72c26",
+      "file_offset": 466982,
+      "requested_bytes": 28,
+      "read_bytes": 28,
+      "raw_hex": "4889af680600004889af700600004889af780600004889af80060000"
+    },
+    {
+      "id": "074405-initialize-identity",
+      "rva": "0x74405",
+      "file_offset": 473093,
+      "requested_bytes": 3,
+      "read_bytes": 3,
+      "raw_hex": "488bf1"
+    },
+    {
+      "id": "074d77-initialize-context",
+      "rva": "0x74d77",
+      "file_offset": 475511,
+      "requested_bytes": 212,
+      "read_bytes": 212,
+      "raw_hex": "b900030000e817762600488985a0000000488bc8e8d0920e009048898670060000b940030000e8f6752600488985a0000000488bc8e8ff5a0e009048898678060000b9a0020000e8d5752600488985a0000000488bc8e8fe590e009048898680060000b920000000e8b4752600488985a0000000488bc8e83de10f009048898690060000b920000000e893752600488985a0000000488bc8e81ce10f009048898698060000b920000000e872752600488985a0000000488bc8e89be00f0090488986a0060000488b8e8006000048898e68060000"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    }
+  ],
+  "subprocesses": 5,
+  "synthetic_bytes": 16896,
+  "windows": [
+    {
+      "id": "072951-ctor-identity",
+      "begin_rva": "0x72951",
+      "end_rva_exclusive": "0x72954",
+      "cached_function": {
+        "label": "??0Engine@GAME@@QEAA@XZ",
+        "start": "180072930",
+        "end": "180072f5a"
+      },
+      "cached_instructions": [
+        "180072951 MOV RDI,RCX"
+      ],
+      "byte_coverage_verified": true,
+      "code_sha256": "3a513e755bcc92dc07f967959cf4f4be34e79b71b62c3aec3954f17bee488df0",
+      "synthetic_pe": {
+        "section_rva": "0x72000",
+        "code_file_offset": 2897,
+        "generated_prefix_bytes": 2385,
+        "generated_tail_bytes": 172,
+        "header_bytes": 512,
+        "entry_point_rva": 0,
+        "imports": 0,
+        "relocations": 0,
+        "never_executed": true,
+        "path": ".tooling/offline-actor-engine-context-temp/072951-ctor-identity.inspect.dll",
+        "bytes": 3072,
+        "sha256": "9372de23ccc5c6645114829c3e32231c1bc48910a2c97c838be8a689bfb3a784",
+        "sha256_after": "9372de23ccc5c6645114829c3e32231c1bc48910a2c97c838be8a689bfb3a784"
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180072951,0x180072953",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-actor-engine-context-temp\\072951-ctor-identity.inspect.dll"
+      ],
+      "tool_elapsed_ms": 36,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 1
+    },
+    {
+      "id": "07295e-ctor-zero",
+      "begin_rva": "0x7295e",
+      "end_rva_exclusive": "0x72960",
+      "cached_function": {
+        "label": "??0Engine@GAME@@QEAA@XZ",
+        "start": "180072930",
+        "end": "180072f5a"
+      },
+      "cached_instructions": [
+        "18007295e XOR EBP,EBP"
+      ],
+      "byte_coverage_verified": true,
+      "code_sha256": "42ca97c72e80c793858560bb0346957d0dd739467c9f756d92aadebb54ed089f",
+      "synthetic_pe": {
+        "section_rva": "0x72000",
+        "code_file_offset": 2910,
+        "generated_prefix_bytes": 2398,
+        "generated_tail_bytes": 160,
+        "header_bytes": 512,
+        "entry_point_rva": 0,
+        "imports": 0,
+        "relocations": 0,
+        "never_executed": true,
+        "path": ".tooling/offline-actor-engine-context-temp/07295e-ctor-zero.inspect.dll",
+        "bytes": 3072,
+        "sha256": "96e2a2c4eb9608198803db2b87179964cf910ab66502014fdbaca2358c9b8bb8",
+        "sha256_after": "96e2a2c4eb9608198803db2b87179964cf910ab66502014fdbaca2358c9b8bb8"
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x18007295e,0x18007295f",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-actor-engine-context-temp\\07295e-ctor-zero.inspect.dll"
+      ],
+      "tool_elapsed_ms": 31,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 1
+    },
+    {
+      "id": "072c26-ctor-fields",
+      "begin_rva": "0x72c26",
+      "end_rva_exclusive": "0x72c42",
+      "cached_function": {
+        "label": "??0Engine@GAME@@QEAA@XZ",
+        "start": "180072930",
+        "end": "180072f5a"
+      },
+      "cached_instructions": [
+        "180072c26 MOV qword ptr [RDI + 0x668],RBP",
+        "180072c2d MOV qword ptr [RDI + 0x670],RBP",
+        "180072c34 MOV qword ptr [RDI + 0x678],RBP",
+        "180072c3b MOV qword ptr [RDI + 0x680],RBP"
+      ],
+      "byte_coverage_verified": true,
+      "code_sha256": "4b591162e3c163ae513861af2b64d2c3687673c222e4797a9db913e781b77b3f",
+      "synthetic_pe": {
+        "section_rva": "0x72000",
+        "code_file_offset": 3622,
+        "generated_prefix_bytes": 3110,
+        "generated_tail_bytes": 446,
+        "header_bytes": 512,
+        "entry_point_rva": 0,
+        "imports": 0,
+        "relocations": 0,
+        "never_executed": true,
+        "path": ".tooling/offline-actor-engine-context-temp/072c26-ctor-fields.inspect.dll",
+        "bytes": 4096,
+        "sha256": "39706d6587bec263cb8265be6efc09d7eeed494b15b97cab024fd4409142a0a7",
+        "sha256_after": "39706d6587bec263cb8265be6efc09d7eeed494b15b97cab024fd4409142a0a7"
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180072c26,0x180072c41",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-actor-engine-context-temp\\072c26-ctor-fields.inspect.dll"
+      ],
+      "tool_elapsed_ms": 33,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 4
+    },
+    {
+      "id": "074405-initialize-identity",
+      "begin_rva": "0x74405",
+      "end_rva_exclusive": "0x74408",
+      "cached_function": {
+        "label": "?Initialize@Engine@GAME@@UEAAXPEAVEWindow@2@AEBVGraphicsEngineSettings@2@_NPEAVFileSystem@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N54555@Z",
+        "start": "1800743d0",
+        "end": "180074fb8"
+      },
+      "cached_instructions": [
+        "180074405 MOV RSI,RCX"
+      ],
+      "byte_coverage_verified": true,
+      "code_sha256": "0f0740370df205195a82094bf53ddc4663fe6f0b8fb9dd737ce3412e7b6c7ef3",
+      "synthetic_pe": {
+        "section_rva": "0x74000",
+        "code_file_offset": 1541,
+        "generated_prefix_bytes": 1029,
+        "generated_tail_bytes": 504,
+        "header_bytes": 512,
+        "entry_point_rva": 0,
+        "imports": 0,
+        "relocations": 0,
+        "never_executed": true,
+        "path": ".tooling/offline-actor-engine-context-temp/074405-initialize-identity.inspect.dll",
+        "bytes": 2048,
+        "sha256": "e27bfa4537a8601288213c20fd27fd3e33c3870ef7f75a66c1da3f4a6e2f58c7",
+        "sha256_after": "e27bfa4537a8601288213c20fd27fd3e33c3870ef7f75a66c1da3f4a6e2f58c7"
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180074405,0x180074407",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-actor-engine-context-temp\\074405-initialize-identity.inspect.dll"
+      ],
+      "tool_elapsed_ms": 38,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 1
+    },
+    {
+      "id": "074d77-initialize-context",
+      "begin_rva": "0x74d77",
+      "end_rva_exclusive": "0x74e4b",
+      "cached_function": {
+        "label": "?Initialize@Engine@GAME@@UEAAXPEAVEWindow@2@AEBVGraphicsEngineSettings@2@_NPEAVFileSystem@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N54555@Z",
+        "start": "1800743d0",
+        "end": "180074fb8"
+      },
+      "cached_instructions": [
+        "180074d77 MOV ECX,0x300",
+        "180074d7c CALL 0x1802dc398",
+        "180074d81 MOV qword ptr [RBP + 0xa0],RAX",
+        "180074d88 MOV RCX,RAX",
+        "180074d8b CALL 0x18015e060",
+        "180074d90 NOP",
+        "180074d91 MOV qword ptr [RSI + 0x670],RAX",
+        "180074d98 MOV ECX,0x340",
+        "180074d9d CALL 0x1802dc398",
+        "180074da2 MOV qword ptr [RBP + 0xa0],RAX",
+        "180074da9 MOV RCX,RAX",
+        "180074dac CALL 0x18015a8b0",
+        "180074db1 NOP",
+        "180074db2 MOV qword ptr [RSI + 0x678],RAX",
+        "180074db9 MOV ECX,0x2a0",
+        "180074dbe CALL 0x1802dc398",
+        "180074dc3 MOV qword ptr [RBP + 0xa0],RAX",
+        "180074dca MOV RCX,RAX",
+        "180074dcd CALL 0x18015a7d0",
+        "180074dd2 NOP",
+        "180074dd3 MOV qword ptr [RSI + 0x680],RAX",
+        "180074dda MOV ECX,0x20",
+        "180074ddf CALL 0x1802dc398",
+        "180074de4 MOV qword ptr [RBP + 0xa0],RAX",
+        "180074deb MOV RCX,RAX",
+        "180074dee CALL 0x180172f30",
+        "180074df3 NOP",
+        "180074df4 MOV qword ptr [RSI + 0x690],RAX",
+        "180074dfb MOV ECX,0x20",
+        "180074e00 CALL 0x1802dc398",
+        "180074e05 MOV qword ptr [RBP + 0xa0],RAX",
+        "180074e0c MOV RCX,RAX",
+        "180074e0f CALL 0x180172f30",
+        "180074e14 NOP",
+        "180074e15 MOV qword ptr [RSI + 0x698],RAX",
+        "180074e1c MOV ECX,0x20",
+        "180074e21 CALL 0x1802dc398",
+        "180074e26 MOV qword ptr [RBP + 0xa0],RAX",
+        "180074e2d MOV RCX,RAX",
+        "180074e30 CALL 0x180172ed0",
+        "180074e35 NOP",
+        "180074e36 MOV qword ptr [RSI + 0x6a0],RAX",
+        "180074e3d MOV RCX,qword ptr [RSI + 0x680]",
+        "180074e44 MOV qword ptr [RSI + 0x668],RCX"
+      ],
+      "byte_coverage_verified": true,
+      "code_sha256": "d7a1025763d8a7c0f764f8cc6f2f824881e23f41c0e5e7b29684c7478e5b0e71",
+      "synthetic_pe": {
+        "section_rva": "0x74000",
+        "code_file_offset": 3959,
+        "generated_prefix_bytes": 3447,
+        "generated_tail_bytes": 437,
+        "header_bytes": 512,
+        "entry_point_rva": 0,
+        "imports": 0,
+        "relocations": 0,
+        "never_executed": true,
+        "path": ".tooling/offline-actor-engine-context-temp/074d77-initialize-context.inspect.dll",
+        "bytes": 4608,
+        "sha256": "27b0a6dd8002f1e1da6c19445fdcfca8ec2702cc3f2c0f2a3ab4bce99f529773",
+        "sha256_after": "27b0a6dd8002f1e1da6c19445fdcfca8ec2702cc3f2c0f2a3ab4bce99f529773"
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180074d77,0x180074e4a",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-actor-engine-context-temp\\074d77-initialize-context.inspect.dll"
+      ],
+      "tool_elapsed_ms": 33,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 44
+    }
+  ],
+  "byte_coverage_verified": true,
+  "limitations": [
+    "Exactly five instruction windows, 248B total, are selected from pinned saved Engine constructor/Initialize assembly; no new PE, export, .pdata, data or import metadata read.",
+    "The three constructor identity/zero/store windows are disconnected samples. They do not establish complete intervening control flow or constructor success.",
+    "Initialize window preserves intervening allocations/calls, but no callee body is read. RAX constructor results are not assumed equal to allocation input. No runtime state or global writer is established.",
+    "The gEngine symbol at421428 is an explicitly attributed cached outgoing reference, not a new exact EAT binding or dereference.",
+    "Each dumpbin invocation sees only an owned minimal PE with generated zero padding and the selected bytes, and is restricted to the exact corresponding RANGE. Generated PEs are never executed.",
+    "Two same-handle original fingerprints use64KiB buffers and are outside semantic budgets. Stable stat/hash is not an atomic runtime snapshot. Failure preserves evidence without retry or cleanup."
+  ],
+  "script_sha256": "d0af3d449d378efdac5bb2d3574c7f3a41ca98d47d0ea5c082c3f1aef889adc2",
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "stat_before": {
+    "size": 4485632,
+    "ino": 1970324837085124,
+    "dev": 2562469142,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "instructions": 51,
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "stat_after": {
+    "size": 4485632,
+    "ino": 1970324837085124,
+    "dev": 2562469142,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "source_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "source_hash_preserved": true,
+  "tool_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T06:06:44.490Z"
+}

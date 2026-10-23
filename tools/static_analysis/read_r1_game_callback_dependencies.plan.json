@@ -1,0 +1,330 @@
+{
+  "schema": "grim-dynasty.fixed-game-callback-dependencies.v1",
+  "script": "tools/static_analysis/read_r1_game_callback_dependencies.mjs",
+  "entrypoint": "inspectGameCallbackDependencies(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-game-callback-dependencies/inspection.json",
+  "sources": {
+    "Game": {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "bytes": 11385856,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    "Engine": {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "bytes": 4485632,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  },
+  "tables": [
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x0",
+      "rva": "0x6df6d0",
+      "bytes": 8
+    },
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x1c8",
+      "rva": "0x6df898",
+      "bytes": 8
+    },
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x458",
+      "rva": "0x6dfb28",
+      "bytes": 8
+    },
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x830",
+      "rva": "0x6dff00",
+      "bytes": 8
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x0",
+      "rva": "0x787100",
+      "bytes": 8
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x1c8",
+      "rva": "0x7872c8",
+      "bytes": 8
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x458",
+      "rva": "0x787558",
+      "bytes": 8
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x830",
+      "rva": "0x787930",
+      "bytes": 8
+    }
+  ],
+  "new_export_bindings": [
+    {
+      "iat_rva": "0x609050",
+      "index": 10,
+      "symbol": "?gEngine@GAME@@3PEAVEngine@1@EA",
+      "kind": "data",
+      "import_source": "cached-raw-import"
+    },
+    {
+      "iat_rva": "0x609098",
+      "index": 19,
+      "symbol": "?Get@?$Singleton@VObjectManager@GAME@@@GAME@@SAPEAVObjectManager@2@XZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata"
+    },
+    {
+      "iat_rva": "0x609518",
+      "index": 163,
+      "symbol": "?GetCoords@Entity@GAME@@QEBA?AVWorldCoords@2@XZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata"
+    },
+    {
+      "iat_rva": "0x609530",
+      "index": 166,
+      "symbol": "?GetRegion@Entity@GAME@@QEBAPEAVRegion@2@XZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata"
+    },
+    {
+      "iat_rva": "0x609a48",
+      "index": 329,
+      "symbol": "??GWorldVec3@GAME@@QEBA?AVVec3@1@AEBV01@@Z",
+      "kind": "function",
+      "import_source": "exact-new-metadata"
+    },
+    {
+      "iat_rva": "0x609d08",
+      "index": 417,
+      "symbol": "?GetMotion@Entity@GAME@@QEBAAEBVVec3@2@XZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata"
+    },
+    {
+      "iat_rva": "0x609d98",
+      "index": 435,
+      "symbol": "?GetWorldPosition@WorldVec3@GAME@@QEBA?AVVec3@2@XZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata"
+    },
+    {
+      "iat_rva": "0x609da0",
+      "index": 436,
+      "symbol": "?GetHeight@Actor@GAME@@QEBAMXZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata"
+    },
+    {
+      "iat_rva": "0x609da8",
+      "index": 437,
+      "symbol": "?GetLastFrameUpdated@Entity@GAME@@QEBAIXZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata"
+    },
+    {
+      "iat_rva": "0x609db0",
+      "index": 438,
+      "symbol": "?GetFrameCount@Engine@GAME@@QEBAIXZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata"
+    },
+    {
+      "iat_rva": "0x609db8",
+      "index": 439,
+      "symbol": "?IsGameTimePaused@GAME@@YA_NXZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata"
+    },
+    {
+      "iat_rva": "0x609dc0",
+      "index": 440,
+      "symbol": "?SetFromWorldPosition@WorldVec3@GAME@@QEAA_NAEBVVec3@2@PEAVRegion@2@@Z",
+      "kind": "function",
+      "import_source": "exact-new-metadata"
+    },
+    {
+      "iat_rva": "0x609dc8",
+      "index": 441,
+      "symbol": "?ExecuteEventHook@HookPack@GAME@@QEBAXI@Z",
+      "kind": "function",
+      "import_source": "exact-new-metadata"
+    }
+  ],
+  "reused_bindings": [
+    {
+      "iat_rva": "0x6094a0",
+      "index": 148,
+      "symbol": "?GetRegion@WorldVec3@GAME@@QEBAPEAVRegion@2@XZ",
+      "target_rva": "0x22c0b0",
+      "proof_key": "world_region"
+    },
+    {
+      "iat_rva": "0x609720",
+      "index": 228,
+      "symbol": "??0WorldVec3@GAME@@QEAA@XZ",
+      "target_rva": "0x228ab0",
+      "proof_key": "world_ctor"
+    },
+    {
+      "iat_rva": "0x609bb0",
+      "index": 374,
+      "symbol": "?PutOnFloor@WorldVec3@GAME@@QEAA_NXZ",
+      "target_rva": "0x22c620",
+      "proof_key": "floor"
+    }
+  ],
+  "source_pins": [
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "oft_tail",
+      "path": "docs/reverse-client/r1-navigation-binding/inspection.json",
+      "sha256": "d0c171ce77a6d67e153a6911fc7c3a17ea4d61e80ab9492f3287384524e14264"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "world_region",
+      "path": "docs/reverse-client/r1-camera-target-bindings/inspection.json",
+      "sha256": "2a64f2baaf6549b24fc2d0e3071c6e91c5ff2b18de3195d990dc32b23026608a"
+    },
+    {
+      "key": "world_ctor",
+      "path": "docs/object-lifecycle/offline-worldvec3-constructor-boundary/metadata.json",
+      "sha256": "030c5dfda0c05127a67e6fb4dd1b77996ff6248f58b0f1a33e3a8f592c467dad"
+    },
+    {
+      "key": "floor",
+      "path": "docs/reverse-client/r1-move-and-floor-bindings/inspection.json",
+      "sha256": "66785d22a81c7f2ee2fc2fd497836b3b56f4a12310f31131f73721ef9a266665"
+    },
+    {
+      "key": "character_ctor",
+      "path": "docs/reverse-client/r1-game-entity-constructors/05-GameEntityConstructor-0x180052030-procedure_assembly.json",
+      "sha256": "34a334ae8f918b20469fb57e7d55af0ffbcfba0d5900c42a4e371192d534f856",
+      "procedure": "0x180052030",
+      "instructions": [
+        "0x180052055: MOV R15, RCX",
+        "0x18005205f: LEA RAX, [0x1806df6d0]",
+        "0x180052066: MOV qword ptr [R15], RAX"
+      ]
+    },
+    {
+      "key": "player_ctor",
+      "path": "docs/reverse-client/r1-game-entity-constructors/08-GameEntityConstructor-0x1803cc3f0-procedure_assembly.json",
+      "sha256": "d68276f2f2212942eb66cf2180f34f0b527f5b9a48f473b4ac35098b3d479ded",
+      "procedure": "0x1803cc3f0",
+      "instructions": [
+        "0x1803cc415: MOV RDI, RCX",
+        "0x1803cc418: CALL 0x180052030",
+        "0x1803cc41e: LEA RAX, [0x180787100]",
+        "0x1803cc425: MOV qword ptr [RDI], RAX"
+      ]
+    },
+    {
+      "key": "created",
+      "path": "docs/reverse-client/r1-game-movement-interface/05-GameMovementInterface-0x180066c20-procedure_assembly.json",
+      "sha256": "1613fb9d39f0fdc7967e5fba6ab7a3cd0f0a6468d04e32cfe4565e8ae7a316fe",
+      "procedure": "0x180066c20",
+      "instructions": [
+        "0x180066c4f: CALL qword ptr [0x180609518]",
+        "0x180066c5a: CALL qword ptr [0x1806094a0]",
+        "0x180066c6f: CALL qword ptr [0x180609d98]",
+        "0x180066cbf: CALL qword ptr [0x180609da0]",
+        "0x180066cce: CALL qword ptr [0x180609d08]",
+        "0x180066d12: CALL qword ptr [RAX + 0x1c8]"
+      ]
+    },
+    {
+      "key": "update",
+      "path": "docs/reverse-client/r1-game-movement-interface/11-GameMovementInterface-0x180066d60-procedure_assembly.json",
+      "sha256": "39c761a562f79f260e94f94b816e38d3fc8d0fe61daad05394c7b493c55b0132",
+      "procedure": "0x180066d60",
+      "instructions": [
+        "0x180066e04: CALL qword ptr [RAX]",
+        "0x180066e4a: CALL qword ptr [RAX + 0x458]",
+        "0x180066e8d: MOV RCX, qword ptr [0x180609050]",
+        "0x180066e97: CALL qword ptr [0x180609db0]",
+        "0x180066ea3: CALL qword ptr [0x180609da8]"
+      ]
+    },
+    {
+      "key": "moved",
+      "path": "docs/reverse-client/r1-game-movement-interface/14-GameMovementInterface-0x180066ee0-procedure_assembly.json",
+      "sha256": "78d9bfaa180ff24e5d0cb8dfa8e77b25298bf92bfca1c4d5c8962a8dd1b3ccce",
+      "procedure": "0x180066ee0",
+      "instructions": [
+        "0x180066f29: CALL qword ptr [0x180609db8]",
+        "0x180066f3b: CALL qword ptr [0x180609720]",
+        "0x180066f45: CALL qword ptr [0x180609530]",
+        "0x180066f55: CALL qword ptr [0x180609dc0]",
+        "0x180066f67: CALL qword ptr [0x180609bb0]",
+        "0x180066fdf: CALL qword ptr [0x180609a48]"
+      ]
+    },
+    {
+      "key": "reached",
+      "path": "docs/reverse-client/r1-game-movement-interface/17-GameMovementInterface-0x180067170-procedure_assembly.json",
+      "sha256": "c9282463916cd02ecc5c95af0010f9cba3fca714678b3e2f0900dfd5c7b1d888",
+      "procedure": "0x180067170",
+      "instructions": [
+        "0x1800671f7: CALL qword ptr [RAX + 0x830]",
+        "0x18006720e: CALL qword ptr [0x180609098]",
+        "0x180067273: JMP qword ptr [0x180609dc8]"
+      ]
+    }
+  ],
+  "limits": {
+    "table_bytes": 64,
+    "metadata_bytes": 4096,
+    "metadata_single_read": 512,
+    "metadata_operations": 128,
+    "hash_chunk_bytes": 65536,
+    "code_bytes": 0,
+    "new_OFT_bytes": 0
+  },
+  "requirements": [
+    "Separate explicit execution approval; preparation and module import perform no original I/O.",
+    "External Windows Attributes/reparse-tag precheck of both originals and output ancestors.",
+    "Reuse pinned Game/Engine PE and exact Engine export-directory metadata, and nonzero Game OFT prefix0..487.",
+    "Read only eight primary-table QWORDs; do not read surrounding slots or function bodies.",
+    "Resolve only the13 listed Engine exports by exact import hint/name/ordinal/EAT; no binary search, fallback, whole name table or pdata scan.",
+    "Reuse3 already exact bindings and cached gEngine raw import bytes; no repeated original metadata reads for those records.",
+    "gEngine export address only; no imported data payload, loaded IAT or runtime global read.",
+    "New output directory and exclusive evidence write; same-descriptor before/after SHA256/stat/normal-path verification and close.",
+    "No DLL loading, execution, Rea/backend, subprocess, network, saves or security change."
+  ]
+}
+

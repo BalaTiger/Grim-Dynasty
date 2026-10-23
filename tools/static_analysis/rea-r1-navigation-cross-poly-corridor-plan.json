@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "purpose": "Six fixed direct dependencies for the existing261CB0 cross-polygon corridor search and25F910 real node-pool initialization. Prepare only; actual saved-data mesh acceptance must complete and parent authorization must occur before backend launch. No funnel expansion or simulated corridor callback.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-navigation-core/08-NavigationCore-0x180261cb0-procedure_assembly.json",
+      "sha256": "3660397c5a9de075f7edcd686d5ffde091b4dbb525eb1d8cc5b15fa00f8f66f4",
+      "addresses": [
+        "0x18026dca0",
+        "0x18025f680",
+        "0x18026ddc0",
+        "0x1802631e0",
+        "0x18025f6f0"
+      ],
+      "source_kind": "Exact direct calls:261D8B/261FCE->26DCA0 with query+58 node pool;261E1F/262212->25F680 with query+60 heap;261E81->26DDC0 after decrementing heap count;262021->2631E0 for a newly visited neighbor node position;262200->25F6F0 for an existing open node. Do not infer unknown helper internals from conventional algorithm names."
+    },
+    {
+      "file": "docs/reverse-client/r1-navigation-core/09-NavigationCore-0x180261cb0-procedure_callees.json",
+      "sha256": "8361fae41da9913a68d2b38ec9a99a2d501da6ed0e545708f0c859a3bf3ec78b",
+      "addresses": [
+        "0x18026dca0",
+        "0x18025f680",
+        "0x18026ddc0",
+        "0x1802631e0",
+        "0x18025f6f0"
+      ],
+      "source_kind": "Five unresolved direct search helpers,excluding already saved2688C0 and CRT2DDB14. Existing261CB0 is reused,not queried again."
+    },
+    {
+      "file": "docs/reverse-client/r1-navigation-mesh-query-initialization/08-MeshQueryInitialization-0x18025f910-procedure_assembly.json",
+      "sha256": "b7294b3bc03ca0ad8eb937f6e4be31abe1ce3716f3f7192ec38f8df3c9583119",
+      "addresses": [
+        "0x18026dc10"
+      ],
+      "source_kind": "25F9CF calls26DC10(this,2048,512),then publishes result to query+58;25FA0F calls the same constructor with64/32 then publishes query+50. Query+60 heap construction is already inline in25F910 and is not a new query. Allocation success cannot be strengthened beyond observed prefix."
+    },
+    {
+      "file": "docs/reverse-client/r1-navigation-mesh-query-initialization/09-MeshQueryInitialization-0x18025f910-procedure_callees.json",
+      "sha256": "20506bfff387a7323e18fec66c5520200adb9476938d05e2a411ffc29c7a7d12",
+      "addresses": [
+        "0x18026dc10"
+      ],
+      "source_kind": "Exact pool constructor direct callee;allocation/free/CRT functions are excluded."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 23,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Only six fixed Engine targets,twenty-three calls including five lifecycle calls; no automatic recursion.",
+    "Preparation is authorized now; backend execution must wait for actual saved-data mesh acceptance and separate parent approval. This plan does not claim the preceding mesh pipeline has passed.",
+    "Preserve384M heap,5GiB physical-and-commit launch floor,2GiB stop,ownership/mutex and freshness checks.",
+    "Pin completed triangulation-and-tile-connection17/17 cleanup and four existing direct-call evidence files.",
+    "Scope is real node-pool initialization and cross-polygon corridor only. Reuse existing query,mesh and mutable tile/link identities;no injected corridor callback or unknown-state default.",
+    "Preserve out-of-nodes,partial-path and capacity status details,read/write order and failed initialization prefixes. Function addresses do not prove those contracts before bodies.",
+    "No funnel expansion,original execution,extra constant/table reads,CRT/thread recursion,saves/cloud or security changes."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18026dca0"
+      },
+      "label": "04-CrossPolyCorridor-0x18026dca0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18026dca0"
+      },
+      "label": "05-CrossPolyCorridor-0x18026dca0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18026dca0"
+      },
+      "label": "06-CrossPolyCorridor-0x18026dca0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18025f680"
+      },
+      "label": "07-CrossPolyCorridor-0x18025f680-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18025f680"
+      },
+      "label": "08-CrossPolyCorridor-0x18025f680-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18025f680"
+      },
+      "label": "09-CrossPolyCorridor-0x18025f680-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18026ddc0"
+      },
+      "label": "10-CrossPolyCorridor-0x18026ddc0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18026ddc0"
+      },
+      "label": "11-CrossPolyCorridor-0x18026ddc0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18026ddc0"
+      },
+      "label": "12-CrossPolyCorridor-0x18026ddc0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1802631e0"
+      },
+      "label": "13-CrossPolyCorridor-0x1802631e0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1802631e0"
+      },
+      "label": "14-CrossPolyCorridor-0x1802631e0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1802631e0"
+      },
+      "label": "15-CrossPolyCorridor-0x1802631e0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18025f6f0"
+      },
+      "label": "16-CrossPolyCorridor-0x18025f6f0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18025f6f0"
+      },
+      "label": "17-CrossPolyCorridor-0x18025f6f0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18025f6f0"
+      },
+      "label": "18-CrossPolyCorridor-0x18025f6f0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18026dc10"
+      },
+      "label": "19-CrossPolyCorridor-0x18026dc10-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18026dc10"
+      },
+      "label": "20-CrossPolyCorridor-0x18026dc10-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18026dc10"
+      },
+      "label": "21-CrossPolyCorridor-0x18026dc10-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "22-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "23-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "26DCA0/26DC10: What exact node lookup/allocation,hash chains,packed state and pool initialization writes establish the real search state,including null/partial allocation prefixes?",
+    "25F680/26DDC0/25F6F0: What heap entry layout,comparison and update order is required,including tie/NaN behavior and finite own-domain bounds?",
+    "2631E0: How is the neighbor entry position produced from the actual current/next tile/poly and their shared link records? Which direct dependency remains if any?",
+    "Which observed subset can connect to the actual saved-data published mesh and preserve261CB0 partial/out-of-nodes/capacity semantics without extending to funnel or claiming mouse/game acceptance?"
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Six fixed corridor search/pool initialization helpers only; unchanged Engine384M/base4.25GiB budget with stricter5GiB physical-and-commit launch floor,2GiB stop. Backend gated by preceding real-mesh acceptance and parent approval.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "previous_sha256": "f06ef3bb91be422afa3e1eef639243be2b711c4f701da462767649e34851b0c1",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_sha256": "6d07a2a1e29565930ebd091f070128aeb6a59feaafd8e8fcdce01bb7b4a743a9",
+    "validation_file": ".tooling/r0-owned-job-terminal-candidate-20261022-attempt2/test-result.json",
+    "validation_sha256": "1ad80a494a359d16012698a0ffde723308ebe8e3d6bd06d488dd156e22a305d2",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 36,
+    "scenario_groups": 8,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "production_normalization": "Candidate header and namespace removed; isolated label removed from comment. Algorithm otherwise unchanged.",
+    "limitations": "Missing image is accepted only with positive same-handle exit evidence, never for live roles or counters. The limit is per Probe or QueryMembers operation, not a whole sampler-cycle latency guarantee. Fault tests are not an R0 reproduction or proof of root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-triangulation-and-tile-connection/summary.json",
+    "summary_sha256": "fc592626c4706f8e2d3c5bf1ab1c224ea443861cf088820ebaf1087349235e4c",
+    "completed_plan_calls": 17,
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  }
+}

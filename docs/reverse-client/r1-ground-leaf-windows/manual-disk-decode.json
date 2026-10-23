@@ -1,0 +1,91 @@
+{
+  "schema": "grim-dynasty.manual-disk-byte-decode.v1",
+  "method": "Manual x86-64 instruction decoding of already saved disk bytes; not Rea pseudocode or a target execution observation",
+  "source": {
+    "file": "docs/reverse-client/r1-ground-leaf-windows/inspection.json",
+    "sha256": "3d5f9a5ceff6b5933437c5c67c3f92557f0fa71d3c027c6b0bbeab0b56cd9815",
+    "engine_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "observation_status": "passed",
+    "original_read_executed_by_this_analysis": false,
+    "backend_executed_by_this_analysis": false
+  },
+  "functions": [
+    {
+      "entry": "0x1801de810",
+      "instructions": [
+        ["0x1801de810", "488b8160010000", "MOV RAX, qword ptr [RCX+0x160]"],
+        ["0x1801de817", "448bc2", "MOV R8D, EDX"],
+        ["0x1801de81a", "49c1e005", "SHL R8, 5"],
+        ["0x1801de81e", "498b0400", "MOV RAX, qword ptr [R8+RAX]"],
+        ["0x1801de822", "c3", "RET"]
+      ],
+      "decoded_bytes": 19,
+      "contract": "Read record-array base from Ground+160; zero-extend input EDX, multiply it by32 in64 bits, then return the qword at that record's offset0. No bounds, null, lifetime or type validation occurs in these instructions.",
+      "neighbor_policy": "Bytes after1DE822 are not part of this observed straight-line return. The separately present1DE830 entry is not assigned any semantics or contract here."
+    },
+    {
+      "entry": "0x1801de850",
+      "instructions": [
+        ["0x1801de850", "458bd0", "MOV R10D, R8D"],
+        ["0x1801de853", "85d2", "TEST EDX, EDX"],
+        ["0x1801de855", "7503", "JNZ 0x1801de85a"],
+        ["0x1801de857", "b0ff", "MOV AL, 0xff"],
+        ["0x1801de859", "c3", "RET"],
+        ["0x1801de85a", "448bc2", "MOV R8D, EDX"],
+        ["0x1801de85d", "488b9160010000", "MOV RDX, qword ptr [RCX+0x160]"],
+        ["0x1801de864", "8b4960", "MOV ECX, dword ptr [RCX+0x60]"],
+        ["0x1801de867", "ffc9", "DEC ECX"],
+        ["0x1801de869", "49c1e005", "SHL R8, 5"],
+        ["0x1801de86d", "410fafc9", "IMUL ECX, R9D"],
+        ["0x1801de871", "498b441010", "MOV RAX, qword ptr [R8+RDX+0x10]"],
+        ["0x1801de876", "4103ca", "ADD ECX, R10D"],
+        ["0x1801de879", "0fb60401", "MOVZX EAX, byte ptr [RCX+RAX]"],
+        ["0x1801de87d", "c3", "RET"]
+      ],
+      "decoded_bytes": 46,
+      "contract": "Inputs are Ground RCX, record index EDX, cellX R8D, cellZ R9D. Record index0 returns AL=255 without reading Ground. Only AL is established on that branch, not the upper return-register bits. Otherwise use the qword at record[index*32]+10 as the byte plane and return byte[(width-1)*cellZ+cellX]. Width decrement and index multiply/add are32-bit operations with wrap and final zero-extension. Record offset uses zero-extended index shifted in64 bits. No bounds/null checks are present.",
+      "branch_boundary": "The only conditional branch targets1DE85A within the saved window. Both reachable paths terminate at1DE859 or1DE87D; no CALL or external branch was decoded.1DE87E..1DE87F padding is excluded."
+    }
+  ],
+  "native_connections": {
+    "caller": {
+      "file": "docs/reverse-client/r1-ground-ray-tree/17-GroundRayTree-0x1801d1330-procedure_assembly.json",
+      "sha256": "d357bf689cb3222286ff59bc8bfa10e72905ef3906e65108095d9aee63bfdae1",
+      "observations": [
+        "1D14B1 calls primary+F0 with EDX=Block material candidate and R8D/R9D=hit cellX/Z;1D14B7 consumes only AL via MOVZX.",
+        "1D1512 calls primary+D8 with chosen candidate. If returned pointer is nonnull,1D152D reads DWORD[pointer+FC] as hit surface value; if null or no candidates, initialized DWORD100 remains.",
+        "This fallback100 is native branch behavior, not permission to invent absent material candidates or a null resource."
+      ]
+    },
+    "candidate_producer": {
+      "file": "docs/reverse-client/r1-ground-intersection-remaining/11-GroundIntersectionRemaining-0x1801deb80-procedure_assembly.json",
+      "sha256": "5e573fa7eb94b60e885304656fa1dfb997f35640b5d28163e8554b3fe3ac1ba8",
+      "output": "At entry1DEB91/97, output vector end is set to its current begin; caller1D130E passes Block+C8. This mutation precedes coordinate or bitmap reads.",
+      "bounds": "Use X/Z center and extent at input+0/+8/+C/+14. Lower bounds use truncating signed float conversion then clamp negatives to0. Upper bounds use center+extent+observed0.5, truncate, then unsigned min with width-2/height-2. Preserve out-of-range/NaN conversion and DWORD behavior rather than applying a generic math clamp.",
+      "scan": "N is the signed low32 result of (Ground+168 minus Ground+160) arithmetic-shifted5. Candidates i=N-1 down to0 are tested. For nonnegative candidate domain, bitmap bit is i+1, NOT i. Byte offset is uint32((z*width+x)*Ground[118]+uint8((i+1)/8)); mask is low8(1<<((i+1)%8)). Ground+120 supplies the raw byte array. The x/z scan is inclusive and stops after a set bit for this candidate.",
+      "insertion": "For each candidate whose bit is found,1DED18 calls1CE0E0 with output vector, a local result-iterator pointer, current begin as requested position, vector identity, and pointer to DWORD i.1CE0E0 body is not yet observed. Candidate membership and descending issuance order are known; final vector order, growth, aliasing and failure prefixes must not be invented as List.Add or assumed insertion.",
+      "sufficiency": "The real Ground+120 occupancy bytes, +118 bytes-per-grid-point, +60/+64 dimensions, the real record count and Block bounding box suffice to decide candidate membership. Raw+120 alone is insufficient. Complete native output vector semantics still depend on1CE0E0. Coverage weights from each nonzero record+10 and resource+FC are additional hit-surface inputs, not occupancy-mask substitutes."
+    },
+    "grass_cleanup": {
+      "file": "docs/reverse-client/r1-ground-intersection-remaining/14-GroundIntersectionRemaining-0x180113150-procedure_assembly.json",
+      "sha256": "ce2738efb12aebc8811d49d4a32a092a58766fd6be75289f570209ed74b6ae90",
+      "observations": [
+        "Rea names113150 GrassObject::DestroyGrass. Receiver is Block+48, so its+58 state is Block+A0.",
+        "113158/113162 returns when this+58==-1. Existing1D0E20 constructor at1D0EC7 writes Block+A0=FFFFFFFF, proving this branch for that observed cold construction before later mutation.",
+        "Noncold path iterates40B grass records, calls Ground vslot160, clears/frees data, then stores sentinel-1. No geometry producer or material-index producer appears in this body. The graphically related cleanup cannot be skipped for unknown loaded state."
+      ],
+      "cold_constructor_source": "docs/reverse-client/r1-ground-floor-geometry/11-GroundFloorGeometry-0x1801d0e20-procedure_assembly.json",
+      "cold_constructor_sha256": "45b7816c25261a5cfd6b313cc67031527dfe22416b015723bdd8912e8c2e0b7b"
+    }
+  },
+  "minimum_floor_state": [
+    "Geometric distance and world hit point require actual height plane Ground+128, dimensions, produced Block AABBs and cell ranges, a real spatial tree and Ray, plus complete plane/point-in-triangle helpers. Material coverage is not the producer of geometric heights.",
+    "A native hit result including surface code additionally consumes real candidate membership/order, nonzero record coverage byte planes and resource+FC or a genuinely observed null-resource/no-candidate branch. Do not fabricate empty/default state to bypass these dependencies.",
+    "The observed cold Block GrassObject sentinel permits its DestroyGrass early return while retaining the exact constructor provenance. This does not establish complete native loader, rendering, grass or runtime compatibility."
+  ],
+  "limitations": [
+    "Only manually decoded disk-byte instructions and separately identified Rea evidence are asserted. Original inspection remains unchanged.",
+    "No original game, Rea, Java, decoder executable, build or test was run for this analysis.",
+    "Actual sample candidate counts and membership have not been evaluated here; invalid indices and unknown lifetimes remain unsupported rather than zero-filled."
+  ]
+}

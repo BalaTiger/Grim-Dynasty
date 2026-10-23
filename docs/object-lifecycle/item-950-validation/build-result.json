@@ -1,0 +1,38 @@
+{
+  "schema": "item-950-build-result-v1",
+  "formal_mechanism": "require_escalated",
+  "approval": "approved",
+  "command": "Windows PowerShell 5.1 -NoProfile -NonInteractive -File src/task_items/build_item_constructor_950.ps1",
+  "build_attempts": 1,
+  "compiler_invocations": 3,
+  "own_test_invocations": 2,
+  "new_suite": {
+    "assertions": 80,
+    "groups": 9,
+    "passed": true
+  },
+  "affected_regression": {
+    "suite": "ItemConstructorBridgeTests",
+    "assertions": 55,
+    "groups": 9,
+    "passed": true
+  },
+  "old_standalone_suites_not_run": [
+    "ActorConstructorPrefixTests",
+    "ActorConstructorArrayTests",
+    "ActorConstructorContinuationTests",
+    "ActorConstructorCompletionTests",
+    "ActorMatrixInitializationTests",
+    "ActorEngineContextTests",
+    "ItemConstructor858PrefixTests",
+    "ItemScalarInitializationTests"
+  ],
+  "compiler_warnings": 0,
+  "result": {
+    "chunk_id": "f67be2",
+    "wall_time_seconds": 1.053493045,
+    "exit_code": 0,
+    "original_token_count": 289,
+    "output": "NEW SUITE: ItemConstructor950Tests (counts reported separately)\r\nPASS FactoryIdentityAndBounds: 8 assertions\r\nPASS DefaultUnknownCheck: 5 assertions\r\nPASS CompleteFootprintAndOwnership: 7 assertions\r\nPASS UnknownBytesRemainUnknown: 4 assertions\r\nPASS EachCheckCanStop: 21 assertions\r\nPASS CallbackSeesAndChangesLiveState: 5 assertions\r\nPASS ProjectionStopsInActualOrder: 21 assertions\r\nPASS ExceptionsAndSingleInvocation: 6 assertions\r\nPASS InvalidPriorDoesNotAuthorizeWrites: 3 assertions\r\nItemConstructor950Tests: 80 assertions, 9 groups passed; own conditional prefix only\r\nAFFECTED REGRESSION: ItemConstructorBridgeTests (counts reported separately)\r\nPASS LeafWritesAndPadding: 8 assertions\r\nPASS SharedViewsAndUnknownWidths: 7 assertions\r\nPASS SharedWriteOrderAndOwnException: 5 assertions\r\nPASS CompleteConditionalIntegration: 10 assertions\r\nPASS CallbackVisibility: 3 assertions\r\nPASS ActorFailurePrefixes: 5 assertions\r\nPASS OwnProjectionCoverageStops: 7 assertions\r\nPASS PriorIdentityAndReplay: 5 assertions\r\nPASS StorageIdentityAndIsolation: 5 assertions\r\nItemConstructorBridgeTests: 55 assertions, 9 groups passed; own conditional prefix only\r\n"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "status": "fixed-engine-parent-record-read",
+  "started_utc": "2026-10-20T14:23:43.626Z",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-registration-metadata/metadata.json",
+      "sha256": "54aa510cffe5a281c54e6de4a594f40224585822f0b40cad6c847f8318ef76b7"
+    }
+  ],
+  "script_sha256": "782b81fb3ed8467ba1b99395daf705d17c74ea44e45237e0e9a463731d940d11",
+  "basis": "The already-read Actor ClassInfo parent field points exactly to Engine 41CF30.",
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "subprocesses": 0,
+  "backend_started": false,
+  "code_bytes_read": 0,
+  "metadata_bytes": 48,
+  "requested_record_bytes": 48,
+  "followed_pointers": 0,
+  "reads": [
+    {
+      "rva": "0x41cf30",
+      "file_offset": 4306736,
+      "bytes": 48,
+      "section": ".data"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "bytes": 4485632,
+      "chunk_bytes": 65536,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "label": "after",
+      "bytes": 4485632,
+      "chunk_bytes": 65536,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "restriction_boundary": {
+    "purpose": "read-only static data analysis",
+    "build_or_test_execution": false,
+    "refused_script_retried": false,
+    "equivalent_build_command": false,
+    "execution_policy_change": false,
+    "installation_or_escalation": false
+  },
+  "limitations": [
+    "A 48-byte on-disk record is not a runtime registry or successful initialization.",
+    "No name string, factory, parent, vtable, children or writer code is followed automatically.",
+    "Whole-file hash passes use 64KiB buffers and are separate from the 48 interpreted bytes.",
+    "O_RDONLY and before/after fingerprints do not guarantee an atomic snapshot."
+  ],
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "record": {
+    "rva": "0x41cf30",
+    "preferred_va": "0x18041cf30",
+    "raw_bytes": "3088348001000000000000000000000000cf41800100000000000000000000000000000000000000a099048001000000",
+    "qwords": [
+      "0x180348830",
+      "0x0",
+      "0x18041cf00",
+      "0x0",
+      "0x0",
+      "0x1800499a0"
+    ],
+    "vtable": "0x180348830",
+    "name": "0x0",
+    "parent": "0x18041cf00",
+    "count_signed32": 0,
+    "count_adjacent_word": 0,
+    "children": "0x0",
+    "factory": "0x1800499a0"
+  },
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_hash_preserved": true,
+  "source_stat_stable": true,
+  "finished_utc": "2026-10-20T14:23:43.639Z"
+}

@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "purpose": "One separately prepared retry of exactly034EC0/034FE0 after the prior owned monitor correctly failed closed during QueryFullProcessImageName. Preserve failed evidence and runtime quarantine. A later no-process observation is not retroactive proof of normal close or old Job emptiness. No resume of request4 or automatic backend retry.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-helpers/17-CrowdMotionHelper-0x180034cf0-procedure_assembly.json",
+      "sha256": "d516114701fdadbd07358e688ac77d38b346929736841dc3f09bb9ca6b3f5b23",
+      "addresses": [
+        "0x180034ec0"
+      ],
+      "source_kind": "034D26 and034D5C CALL034EC0 after capacity equality, RCX=the same vector and EDX=1. Preserve alias and append failure prefixes rather than inventing spare capacity."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-helpers/18-CrowdMotionHelper-0x180034cf0-procedure_callees.json",
+      "sha256": "a47e2634bfe4350bf8251de938d5eacf28412c924f983c274701f4383e69bcac",
+      "addresses": [
+        "0x180034ec0"
+      ],
+      "source_kind": "Saved034CF0 direct-callee evidence contains only034EC0."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-helpers/20-CrowdMotionHelper-0x180058190-procedure_assembly.json",
+      "sha256": "bc6af029796ec9647671f51f51b24506856f07ce4752b10859123f6daa09fbde",
+      "addresses": [
+        "0x180034fe0"
+      ],
+      "source_kind": "05820A tail JMP034FE0 after observed capacity arithmetic/CMOVs, with RCX=R8 vector and RDX=requested capacity. Tail transfer is direct; do not treat the flow-model terminal label as an established exception or no-return contract."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-helpers/21-CrowdMotionHelper-0x180058190-procedure_callees.json",
+      "sha256": "66d42d9c032b9c3b15730cafdb6ef7cd126e0704eb9a4b2c2ffc56fd1f0b4030",
+      "addresses": [
+        "0x180034fe0"
+      ],
+      "source_kind": "Saved058190 direct-callee list contains034FE0 and an external failure target. Only034FE0 is selected; external failure target and CRT expansion excluded."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 11,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Exactly two evidence-bound Engine targets and11 total calls including lifecycle. Root confirmed no saved full bodies available; do not repeat prior entries or query recursive children.",
+    "Separate formal approval required for real execution; offline verification never opens originals or starts a backend.",
+    "Preserve384M heap,existing4.25GiB base budget plus stricter5GiB physical-and-commit launch,2GiB stop,ownership/mutex/freshness/monitor guards.",
+    "No original execution,save/cloud access,installation,security changes,broad scan or generic CRT expansion.",
+    "Keep actual growth arithmetic,storage identity,borrowed element aliases,move/copy/publication order and failure prefixes. Do not substitute List.Add or assumed preallocation for real new-group or member registration.",
+    "Immediately preceding Game constructor name-search batch must be6/6 passed with closed session,exited process,empty Job and exited sampler; pinned Game hashes must remain stable. Target of this new batch remains exact Engine hash.",
+    "Failed first batch remains failed:4attempts/3completed,closed_session_verified=false,old job_empty_confirmed=false. Bind its exact summary and sampler failure evidence; no earlier body response may exist.",
+    "Bind the later27-PID Get-Process snapshot,exact-name process snapshot and content-preserving runtime quarantine; failed CIM query must remain status failed-cim-query/completeness_confirmed=false and is not an empty-process proof.",
+    "Retry alone strictly pins the tested diagnostic-only monitor,serializer,unchanged sampler and isolated validation/deployment records. Previous modes keep their exact original monitor pins; no generic bypass or relaxed admission/wait/ownership rule.",
+    "Retry uses a new evidence directory and fresh session/target/hash/ownership/resource/mutex checks. Previous observations are recovery provenance,not a substitute for live preflight."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180034ec0"
+      },
+      "label": "04-CrowdVectorGrowth-0x180034ec0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180034ec0"
+      },
+      "label": "05-CrowdVectorGrowth-0x180034ec0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180034ec0"
+      },
+      "label": "06-CrowdVectorGrowth-0x180034ec0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180034fe0"
+      },
+      "label": "07-CrowdVectorGrowth-0x180034fe0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180034fe0"
+      },
+      "label": "08-CrowdVectorGrowth-0x180034fe0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180034fe0"
+      },
+      "label": "09-CrowdVectorGrowth-0x180034fe0-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "10-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "11-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "What actual growth arithmetic,allocation,element relocation and pointer-publication order does034EC0 apply,including aliased borrowed-element and failure-prefix behavior?",
+    "What capacity and storage contract does034FE0 receive from058190 tail transfer,including zero/null/overflow branches and ownership on failure?",
+    "Which direct unknowns remain after these two bodies? Record them without automatic recursion or substituting generic collection behavior."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Two direct Engine registration vector-growth bodies; unchanged384M/base4.25GiB budget plus stricter5GiB launch and2GiB stop.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "previous_sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "serializer_file": "tools/static_analysis/rea_sampler_failure.ps1",
+    "serializer_sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_file": ".tooling/r1-owned-job-diagnostic-candidate/ReaOwnedJobDiagnosticCandidate.cs",
+    "candidate_sha256": "b52e6ba242277ab864a431433f43efe671bc6c37e73c1fd94d8b0977b7400544",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "serializer_validation_file": ".tooling/r1-owned-job-diagnostic-validation/serializer/result.json",
+    "serializer_validation_sha256": "eb5dc1cd79621686a5b646ba03897cec638674dd1d6894ec69cee1d5ceb04a60",
+    "runner_validation_file": ".tooling/r1-owned-job-diagnostic-validation/runner-result.json",
+    "runner_validation_sha256": "1ff5539479a0ba058bb7e3b4e6692293a07515e48d226c56f5b6667857c4bb29",
+    "deployment_file": ".tooling/r1-owned-job-diagnostic-deploy/deployment.json",
+    "deployment_sha256": "ef9be6d39c736f99fe4dd365b1ed08f6849f4280eacc698fdc9b4b75d4977dbf",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 49,
+    "scenario_groups": 10,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "serializer_assertions": 39,
+    "production_normalization": "Remove two candidate-only header lines and namespace suffix; serializer identical to tested candidate",
+    "limitations": "Diagnostic observation only. Native permissions,100ms shared wait budget,admission and fail-closed rules are unchanged. Isolated fault tests do not reproduce or establish the21:48 failure root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-game-entity-constructor-search/summary.json",
+    "summary_sha256": "def1d0911951c67449794738404529609e9e626c23a381af7e8d731824e58a1f",
+    "completed_plan_calls": 6,
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  },
+  "recovery_from_failed_batch": {
+    "pinned_evidence": [
+      {
+        "key": "summary",
+        "file": "docs/reverse-client/r1-crowd-vector-growth/summary.json",
+        "sha256": "e58ed47f4ff779696016b9ea77626d8dad5957467f81363cf988c967c2454631"
+      },
+      {
+        "key": "failure",
+        "file": "docs/reverse-client/r1-crowd-vector-growth/owned-memory.ndjson.failure.json",
+        "sha256": "a5eadc1735b5fc5298a362c95fe6cafb8bb47009e174ed4a36d9b299dec7eea8"
+      },
+      {
+        "key": "runtime_before",
+        "file": ".tooling/r1-crowd-vector-growth-retry-prepared/runtime-before.json",
+        "sha256": "5353b05a1a977a289d304ab3d193986d7e2bfe372d12354cb987d3a1701219e6"
+      },
+      {
+        "key": "process_names",
+        "file": ".tooling/r1-crowd-vector-growth-retry-prepared/process-name-snapshot.json",
+        "sha256": "01abfc7124ff8072d8a42e719bd0e99f1e4718d1203ac538b7ba44fff25bcdb3"
+      },
+      {
+        "key": "rejected_cim",
+        "file": ".tooling/r1-crowd-vector-growth-retry-prepared/process-inventory.json",
+        "sha256": "a2f45b4433d64b79f840962a9bc3e5622762df5293b0860d022ace01ffd9c10d"
+      },
+      {
+        "key": "content_before",
+        "file": ".tooling/r1-crowd-vector-growth-retry-prepared/runtime-content-before.json",
+        "sha256": "01c5457f805e6d73eaebf46c2a2128eeda0461a33861e23688b4ac01484dc9eb"
+      },
+      {
+        "key": "content_after",
+        "file": ".tooling/r1-crowd-vector-growth-retry-prepared/runtime-content-after.json",
+        "sha256": "01c5457f805e6d73eaebf46c2a2128eeda0461a33861e23688b4ac01484dc9eb"
+      },
+      {
+        "key": "quarantine",
+        "file": ".tooling/r1-crowd-vector-growth-retry-prepared/runtime-quarantine-result.json",
+        "sha256": "7f52b6c7351cbe990115254309238a6509543182868632a57c1c0e0eb055d273"
+      }
+    ],
+    "original_closed_session_verified": false,
+    "original_job_empty_confirmed": false,
+    "later_pid_absence_is_not_old_job_empty_proof": true,
+    "same_exact_targets": true,
+    "fresh_formal_approval_and_live_guards_required": true,
+    "monitor_review": {
+      "status": "passed-and-pinned",
+      "diagnostics_only_intended": true,
+      "approved_source_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+      "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+      "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+      "production_monitor_must_not_be_changed_by_this_preparation": true,
+      "root_cause_proven": false,
+      "permissions_changed": false,
+      "wait_limit_changed": false,
+      "admission_checks_changed": false
+    },
+    "failed_runtime_source": "analysis-runtime/rea/rea-ghidra-3f638a53485fa8f0a86b2d3f67878f03",
+    "retained_runtime": "analysis-runtime/retained/failed-r1-crowd-vector-growth-3f638a53485fa8f0a86b2d3f67878f03",
+    "limitations": "Saved process snapshots are later observations. They do not reconstruct the old Job terminal state or explain the Windows image-query denial. CIM failure is preserved and excluded as proof."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "code_byte_limit": 12,
+  "prior_inspections": [
+    {
+      "sha256": "f4b4a7a8d1fb008f1d7f216b4549dff6d6389c9903609c128a7bc62cff9eaea7",
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-attach/inspection.json"
+    },
+    {
+      "sha256": "193471ed69fea0b535b78491f1709a1d19a35c0c08d18391742d7a4b468192d9",
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-dispatch/inspection.json"
+    },
+    {
+      "sha256": "5ee250e52c8aed2fd40a85900f49100bcd2054b40abf61ee1883a2307ae4b5b4",
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-entry/inspection.json"
+    },
+    {
+      "sha256": "dbf9dcfb39929bf2331f07ce34dc10aeb3a87688dd8fc53a59e8fefec1156cc5",
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-reason/inspection.json"
+    }
+  ],
+  "targets": [
+    {
+      "maximum_bytes": 6,
+      "leaf_bytes": 6,
+      "role": "Engine initialization table call thunk",
+      "basis": "Direct call 2DCDFE passes fixed303170 end and302D48 begin.",
+      "rva": 3005360
+    },
+    {
+      "maximum_bytes": 6,
+      "leaf_bytes": 6,
+      "role": "Engine preceding fallible table call thunk",
+      "basis": "Direct call2DCDDE passes fixed303188 end and303178 begin then tests EAX.",
+      "rva": 3005366
+    }
+  ],
+  "source_evidence": [
+    {
+      "sha256": "f4b4a7a8d1fb008f1d7f216b4549dff6d6389c9903609c128a7bc62cff9eaea7",
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-attach/inspection.json"
+    }
+  ],
+  "stage": "initializer-thunks"
+}

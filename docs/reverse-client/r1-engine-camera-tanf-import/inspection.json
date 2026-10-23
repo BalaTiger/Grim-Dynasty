@@ -1,0 +1,208 @@
+{
+  "schema": "grim-dynasty.fixed-engine-camera-tanf-import.v1",
+  "started_utc": "2026-10-23T08:17:08.707Z",
+  "script_sha256": "be2a57dc9d00b4d12b299bd13749aea271d6ce217488dd0982059b9d18d44572",
+  "plan_sha256": "ecc3c35dd2e08567c28ba9fa6cb613bd911b84846e929a2aad67549157ceaa7d",
+  "source_pins": [
+    {
+      "key": "camera_assembly",
+      "path": "docs/reverse-client/r1-engine-mouse-core/05-Camera-GetImagePoint-0x180044a10-procedure_assembly.json",
+      "sha256": "1e4690f5a50aa7a602bda3fc8973a31ac96afbce2e93b88f229b3ea3dcf09f27"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-depot-ctor-boundaries/boundary.json",
+      "sha256": "646053e4565e3f08c696ae0e9a16ddb5c2e81ab22ffe046c5057fc41aa64bb15"
+    },
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-load-ticks-imports/tick-import-bindings.json",
+      "sha256": "eb1e49dfe763e207be743b91d03b2b4c066057063da052cb3e1e3a97807aab0e"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "inventory_source",
+      "path": "docs/phase-1/boundary-audit/boundary_inventory.py",
+      "sha256": "354e00aeefbdfbc1beefa3de4f2c8c93635a0cb9ad824329f0011454f47ce224"
+    },
+    {
+      "key": "prior_math_imports",
+      "path": "docs/reverse-client/r1-engine-crowd-math-imports/inspection.json",
+      "sha256": "f0fa298bf90996afdd7fb04a898a7c037827d3c858b33fb4515c19d8db5e4a02"
+    },
+    {
+      "key": "half_constant",
+      "path": "docs/reverse-client/r1-navigation-compressor-slot/inspection.json",
+      "sha256": "191e63e5cc34d9b1abf1326426827a27041743913768a3159e73af3dc62126de"
+    },
+    {
+      "key": "one_constant",
+      "path": "docs/object-lifecycle/offline-actor-remaining-dependencies/inspection.json",
+      "sha256": "6639fbb457720057edb6ea37834e6f5aa2534593b26020fda7d83044b73325c5"
+    },
+    {
+      "key": "infinity_constant",
+      "path": "docs/reverse-client/r1-ground-geometry-bindings/inspection.json",
+      "sha256": "8be1f21796126e33fae05d412b4690b8d7cf5618bda89593d4f6021230621d17"
+    }
+  ],
+  "code_bytes": 6,
+  "code_operations": 1,
+  "metadata_bytes": 74,
+  "metadata_operations": 6,
+  "new_PE_header_bytes": 0,
+  "new_descriptor_bytes": 20,
+  "new_OFT_bytes": 8,
+  "target_body_bytes": 0,
+  "new_constant_bytes": 0,
+  "reused_constants": [
+    {
+      "source_key": "half_constant",
+      "rva": "0x34badc",
+      "bytes": 4,
+      "raw_hex": "0000003f",
+      "new_original_bytes": 0,
+      "loaded_value_observed": false
+    },
+    {
+      "source_key": "one_constant",
+      "rva": "0x34bb44",
+      "bytes": 4,
+      "raw_hex": "0000803f",
+      "new_original_bytes": 0,
+      "loaded_value_observed": false
+    },
+    {
+      "source_key": "infinity_constant",
+      "rva": "0x338458",
+      "bytes": 4,
+      "raw_hex": "0000807f",
+      "new_original_bytes": 0,
+      "loaded_value_observed": false
+    }
+  ],
+  "original_loaded_or_executed": false,
+  "imported_functions_executed": false,
+  "crt_files_opened": false,
+  "api_set_resolved": false,
+  "backend_started": false,
+  "subprocesses": 0,
+  "whole_table_scanned": false,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "reads": [
+        {
+          "kind": "fixed-FF25-thunk-candidate",
+          "rva": "0x2ee09c",
+          "file_offset": 3069084,
+          "bytes": 6,
+          "raw_hex": "ff2576490100"
+        },
+        {
+          "kind": "fixed-math-import-descriptor",
+          "rva": "0x415778",
+          "file_offset": 4278136,
+          "bytes": 20,
+          "raw_hex": "4861410000000000000000005a84410090293000"
+        },
+        {
+          "kind": "fixed-exact-DLL-name",
+          "rva": "0x41845a",
+          "file_offset": 4289626,
+          "bytes": 31,
+          "raw_hex": "6170692d6d732d77696e2d6372742d6d6174682d6c312d312d302e646c6c00"
+        },
+        {
+          "kind": "fixed-selected-OFT",
+          "rva": "0x4161d0",
+          "file_offset": 4280784,
+          "bytes": 8,
+          "raw_hex": "d087410000000000"
+        },
+        {
+          "kind": "fixed-selected-IAT",
+          "rva": "0x302a18",
+          "file_offset": 3152408,
+          "bytes": 8,
+          "raw_hex": "d087410000000000"
+        },
+        {
+          "kind": "fixed-import-hint",
+          "rva": "0x4187d0",
+          "file_offset": 4290512,
+          "bytes": 2,
+          "raw_hex": "1901"
+        },
+        {
+          "kind": "fixed-exact-import-name",
+          "rva": "0x4187d2",
+          "file_offset": 4290514,
+          "bytes": 5,
+          "raw_hex": "74616e6600"
+        }
+      ],
+      "hash_bytes": 8971264,
+      "closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "stable": true
+    }
+  ],
+  "thunks": [
+    {
+      "rva": "0x2ee09c",
+      "bytes": 6,
+      "raw_hex": "ff2576490100",
+      "source_key": "camera_assembly",
+      "instruction": "0x180044a57: CALL 0x1802ee09c",
+      "opcode_verified": true,
+      "iat_rva": "0x302a18",
+      "displacement": 84342
+    }
+  ],
+  "bindings": [
+    {
+      "thunk_rva": "0x2ee09c",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "descriptor_index": 24,
+      "index": 17,
+      "symbol": "tanf",
+      "hint": 281,
+      "iat_rva": "0x302a18",
+      "lookup_rva": "0x4161d0",
+      "hint_name_rva": "0x4187d0",
+      "classification": "ExactOrdinaryApiSetNamedImport",
+      "loaded_iat_read": false,
+      "host_dll_resolved": false,
+      "target_body_read": false,
+      "numeric_contract_verified": false
+    }
+  ],
+  "disk_bindings_complete": true,
+  "unsupported": [],
+  "failures": [],
+  "limitations": [
+    "Fixed6B FF25 candidate plus at most74B import metadata; saved constants are reused without original reads. No original or imported function is executed.",
+    "The API-set DLL contract name is not the actual host CRT DLL. Host resolution/version/function implementation and floating-point behavior remain unverified.",
+    "Disk import relationships do not prove loaded IATs, callable ABI, numeric accuracy, exception/errno behavior, rounding modes, signed-zero/NaN payload behavior or native runtime compatibility.",
+    "Whole-file hash streams are identity checks separate from scoped payload budgets, not atomic snapshots.",
+    "Node path checks cannot identify every Windows reparse tag; separate Attributes preflight remains required."
+  ],
+  "proofs_verified": true,
+  "descriptor": {
+    "index": 24,
+    "rva": "0x415778",
+    "original_first_thunk_rva": "0x416148",
+    "first_thunk_rva": "0x302990",
+    "name_rva": "0x41845a",
+    "dll": "api-ms-win-crt-math-l1-1-0.dll"
+  },
+  "finished_utc": "2026-10-23T08:17:08.722Z",
+  "status": "passed"
+}

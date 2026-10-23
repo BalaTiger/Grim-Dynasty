@@ -1,0 +1,134 @@
+{
+  "status": "fixed-archive-init-boundaries-assessed",
+  "started_utc": "2026-10-20T11:24:22.563Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "working_copy": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll",
+  "source_evidence": [
+    {
+      "path": "docs/phase-1/round-4/followup/Engine-function-evidence-bounded-v2.json",
+      "sha256": "cbae1984329cb2a490d5ea9224543535776ae518fc6f3fff89c7c97108e573bb"
+    },
+    {
+      "path": "docs/resource-contracts/followup/Engine-function-evidence-bounded-v2.json",
+      "sha256": "3fb2d8de177305c978a6e64d8d2c26130919a4b26593d3c3145bae47642011de"
+    },
+    {
+      "path": "docs/resource-contracts/database-ownership/Engine-function-evidence-bounded-v2.json",
+      "sha256": "6779a5d15657b3058907af317d5e6869e4fa0509b8ec6670dbddd7e27627f0c5"
+    }
+  ],
+  "targets": [
+    {
+      "rva": 2619840,
+      "exact": true,
+      "role": "archive-constructor",
+      "caller": "073ABF",
+      "proof": 0,
+      "rva_hex": "0x27f9c0",
+      "boundary": {
+        "begin_rva": 2619840,
+        "end_rva": 2620187,
+        "unwind_rva": 3825744,
+        "index": 9996,
+        "bytes": 347
+      },
+      "index_reads": 14
+    },
+    {
+      "rva": 2621654,
+      "exact": false,
+      "role": "archive-load-missing-continuation",
+      "caller": "2800D3 last saved instruction",
+      "proof": 1,
+      "rva_hex": "0x2800d6",
+      "boundary": {
+        "begin_rva": 2621654,
+        "end_rva": 2621763,
+        "unwind_rva": 3825984,
+        "index": 10004,
+        "bytes": 109
+      },
+      "index_reads": 13
+    },
+    {
+      "rva": 2621763,
+      "exact": false,
+      "role": "archive-load-known-unread-jump-target",
+      "caller": "2800D1 JZ",
+      "proof": 1,
+      "rva_hex": "0x280143",
+      "boundary": {
+        "begin_rva": 2621763,
+        "end_rva": 2621786,
+        "unwind_rva": 3826004,
+        "index": 10005,
+        "bytes": 23
+      },
+      "index_reads": 14
+    },
+    {
+      "rva": 2621216,
+      "exact": true,
+      "role": "archive-region-acquisition",
+      "caller": "280191",
+      "proof": 2,
+      "rva_hex": "0x27ff20",
+      "boundary": {
+        "begin_rva": 2621216,
+        "end_rva": 2621348,
+        "unwind_rva": 3825908,
+        "index": 10000,
+        "bytes": 132
+      },
+      "index_reads": 12
+    },
+    {
+      "rva": 186704,
+      "exact": true,
+      "role": "offset-vector-append",
+      "caller": "2801E7 / 280210",
+      "proof": 2,
+      "rva_hex": "0x2d950",
+      "boundary": {
+        "begin_rva": 186704,
+        "end_rva": 186844,
+        "unwind_rva": 3547264,
+        "index": 1301,
+        "bytes": 140
+      },
+      "index_reads": 12
+    }
+  ],
+  "code_bytes_read": 0,
+  "dumpbin_started": false,
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "metadata_byte_limit": 32768,
+  "hash_chunk_bytes": 65536,
+  "boundary_scope": "Unwind entries delimit fragments, not proof of complete logical functions",
+  "original_sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "metadata_bytes": 1468,
+  "original_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "copy_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "original_hash_matches": true,
+  "copy_hash_matches": true,
+  "finished_utc": "2026-10-20T11:24:22.573Z",
+  "controller_resource_usage": {
+    "userCPUTime": 15000,
+    "systemCPUTime": 31000,
+    "maxRSS": 41116,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 10901,
+    "swappedOut": 0,
+    "fsRead": 364,
+    "fsWrite": 0,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

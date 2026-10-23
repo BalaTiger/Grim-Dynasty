@@ -1,0 +1,38 @@
+{
+  "utc": "2026-10-20T07:35:50.697Z",
+  "status": "completed-with-original-failures-preserved",
+  "original_run": {
+    "summary": "docs/object-lifecycle/offline-cache-node-validation/test-summary.json",
+    "exit_code": 1,
+    "last_stage": "own-assembly-metadata",
+    "all_behavior_suites_passed": true,
+    "assertions": 1260,
+    "scenario_groups": 27,
+    "demo": "passed",
+    "failure": "PowerShell 7 ReflectionOnlyLoadFrom is unsupported"
+  },
+  "refused_legacy_call": {
+    "action": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -NoProfile -File .tooling/inspect-offline-node-assembly.ps1",
+    "target": "Own generated GrimDynasty.TaskItems.dll metadata only",
+    "exit_code": 1,
+    "reason": "AuthorizationManager check failed; SecurityError / UnauthorizedAccess",
+    "status": "denied-by-local-shell-authorization",
+    "automatic_sandbox_review_rejection": false,
+    "retried": false,
+    "execution_policy_changed": false,
+    "outcome_uncertain": false
+  },
+  "completed_alternative": {
+    "path": "docs/object-lifecycle/offline-cache-node-validation/assembly-references.json",
+    "method": "Current PowerShell PEReader/GetMetadataReader reads own PE metadata without Assembly.Load",
+    "status": "passed",
+    "exit_code": 0,
+    "permission_expansion": false
+  },
+  "revised_wrapper": ".tooling/test-offline-cache-node.ps1",
+  "full_wrapper_rerun": false,
+  "behavior_tests_rerun": false,
+  "monitor_diagnostic_tests_rerun": false,
+  "pending_approval": false,
+  "remaining_blocker": false
+}

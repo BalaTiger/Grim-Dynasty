@@ -1,0 +1,337 @@
+{
+  "schema": "grim-dynasty-fixed-actor-direct-dependency-v1",
+  "started_utc": "2026-10-21T03:42:21.909Z",
+  "status": "fixed-actor-direct-dependency-disassembly-verified",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-body/0259a0-instructions.json",
+      "sha256": "59f402f428e04e2928bb485e58fa85896ac08db4548bff6fa33444a58fa521a7"
+    }
+  ],
+  "requested_rva": "0x7d020",
+  "source_call": {
+    "address": "0x1800259bb",
+    "bytes": "e860760500",
+    "instruction": "call        000000018007D020"
+  },
+  "limits": {
+    "code_bytes": 2048,
+    "metadata_bytes": 384,
+    "search_steps": 32,
+    "proof_bytes": 131072,
+    "fingerprint_chunk_bytes": 65536,
+    "tool_timeout_ms": 10000,
+    "tool_max_buffer_bytes": 196608
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "build_or_test_execution": false,
+  "original_modified": false,
+  "full_target_copy_created": false,
+  "permission_change": false,
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "metadata_bytes": 168,
+  "code_bytes": 554,
+  "reads": [
+    {
+      "kind": "pdata",
+      "file_offset": 4390956,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "b066170000691700c8c13800"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4354320,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "200d0a00520d0a00a0213600"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4336008,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "cfc00300fec10300a49e3600"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4345164,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "a00a07002c0b0700e8523600"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4349748,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "e06f080054710800f8223700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4347456,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "40ca070075cb0700580b3700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4348608,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "40080800d9080800e8283600"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4348032,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "20ea070061ea070084103700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4347744,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "10db070058db07009c0e3700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4347600,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "a0d4070061d50700780d3700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4347528,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "20cf070074cf0700480c3700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4347564,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "50d20700bbd30700100d3700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4347552,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "20d007004ad20700b80c3700"
+    },
+    {
+      "kind": "pdata",
+      "file_offset": 4347540,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "80cf07001ad00700800c3700"
+    },
+    {
+      "kind": "code",
+      "file_offset": 508960,
+      "requested_bytes": 554,
+      "read_bytes": 554,
+      "sha256": "9815392fa3793ece0169d8d86cede2011ae20735675f2e617c7d8506b325e6df"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    }
+  ],
+  "subprocesses": 1,
+  "body_read": true,
+  "limitations": [
+    "Only an exact BeginAddress for RVA 07D020, at most 2048 bytes, admits one dumpbin call; absent/oversize entries stop without body reading.",
+    "At most 32 distinct 12-byte .pdata entries. Binary search relies on sorted-table format; only encountered ordering is checked.",
+    "No neighboring code, callee, EH/unwind-body, import target or additional function is followed; function identity is not inferred.",
+    "Full-file fingerprints use 64KiB buffers and are separate from semantic byte budgets. dumpbin internal metadata I/O is not instrumented.",
+    "The target is only data; .pdata and instruction byte coverage do not prove complete logical control flow or exception behavior.",
+    "Before/after same-handle hash/stat stability is not an atomic snapshot."
+  ],
+  "script_sha256": "263e767759a46a6d9ffd8f094cce11efdd3e55f85905974ad1be33ac6789f23f",
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "search_steps": 14,
+  "lower_bound_index": 2488,
+  "boundary": {
+    "index": 2488,
+    "begin": 512032,
+    "end": 512586,
+    "unwind": 3607736,
+    "raw_hex": "20d007004ad20700b80c3700"
+  },
+  "code_file_offset": 508960,
+  "code_sha256": "9815392fa3793ece0169d8d86cede2011ae20735675f2e617c7d8506b325e6df",
+  "command_arguments": [
+    "/NOLOGO",
+    "/NOPDB",
+    "/ERRORREPORT:NONE",
+    "/DISASM:BYTES",
+    "/RANGE:0x18007d020,0x18007d249",
+    "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll"
+  ],
+  "tool_elapsed_ms": 35,
+  "tool_exit": 0,
+  "tool_signal": null,
+  "tool_error": null,
+  "byte_coverage_verified": true,
+  "instructions": 106,
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "source_handle_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "entries": [
+    {
+      "index": 6105,
+      "begin": 1533616,
+      "end": 1534208,
+      "unwind": 3719624,
+      "raw_hex": "b066170000691700c8c13800"
+    },
+    {
+      "index": 3052,
+      "begin": 658720,
+      "end": 658770,
+      "unwind": 3547552,
+      "raw_hex": "200d0a00520d0a00a0213600"
+    },
+    {
+      "index": 1526,
+      "begin": 245967,
+      "end": 246270,
+      "unwind": 3579556,
+      "raw_hex": "cfc00300fec10300a49e3600"
+    },
+    {
+      "index": 2289,
+      "begin": 461472,
+      "end": 461612,
+      "unwind": 3560168,
+      "raw_hex": "a00a07002c0b0700e8523600"
+    },
+    {
+      "index": 2671,
+      "begin": 552928,
+      "end": 553300,
+      "unwind": 3613432,
+      "raw_hex": "e06f080054710800f8223700"
+    },
+    {
+      "index": 2480,
+      "begin": 510528,
+      "end": 510837,
+      "unwind": 3607384,
+      "raw_hex": "40ca070075cb0700580b3700"
+    },
+    {
+      "index": 2576,
+      "begin": 526400,
+      "end": 526553,
+      "unwind": 3549416,
+      "raw_hex": "40080800d9080800e8283600"
+    },
+    {
+      "index": 2528,
+      "begin": 518688,
+      "end": 518753,
+      "unwind": 3608708,
+      "raw_hex": "20ea070061ea070084103700"
+    },
+    {
+      "index": 2504,
+      "begin": 514832,
+      "end": 514904,
+      "unwind": 3608220,
+      "raw_hex": "10db070058db07009c0e3700"
+    },
+    {
+      "index": 2492,
+      "begin": 513184,
+      "end": 513377,
+      "unwind": 3607928,
+      "raw_hex": "a0d4070061d50700780d3700"
+    },
+    {
+      "index": 2486,
+      "begin": 511776,
+      "end": 511860,
+      "unwind": 3607624,
+      "raw_hex": "20cf070074cf0700480c3700"
+    },
+    {
+      "index": 2489,
+      "begin": 512592,
+      "end": 512955,
+      "unwind": 3607824,
+      "raw_hex": "50d20700bbd30700100d3700"
+    },
+    {
+      "index": 2488,
+      "begin": 512032,
+      "end": 512586,
+      "unwind": 3607736,
+      "raw_hex": "20d007004ad20700b80c3700"
+    },
+    {
+      "index": 2487,
+      "begin": 511872,
+      "end": 512026,
+      "unwind": 3607680,
+      "raw_hex": "80cf07001ad00700800c3700"
+    }
+  ],
+  "source_hash_preserved": true,
+  "tool_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T03:42:21.958Z",
+  "controller_resource_usage": {
+    "userCPUTime": 46000,
+    "systemCPUTime": 15000,
+    "maxRSS": 43156,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11445,
+    "swappedOut": 0,
+    "fsRead": 167,
+    "fsWrite": 3,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

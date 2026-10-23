@@ -1,0 +1,187 @@
+{
+  "schema": "grim-dynasty-fixed-class-helper-exit-imports-v1",
+  "started_utc": "2026-10-20T14:02:33.226Z",
+  "status": "fixed-class-helper-exit-imports-resolved",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "expected_file_bytes": 11385856,
+  "script_sha256": "fd207f0bc0237960e6e20532f54518df61b033c69bbd7aabd37e09311b7c99c2",
+  "source_evidence": [
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-questitem-boundaries/boundary.json",
+      "sha256": "fa5ae01ef102377d8ec976607622c3aab8d1af23144d8a408e42cf15f3ec4f05"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-game-crt-imports-metadata/metadata.json",
+      "sha256": "675999fee760e0a6b84e881818942b25950d1e4c563f2c6964fd13fa25c4ed2b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-exit-thunks/inspection.json",
+      "sha256": "300b74953ddec18733b5df2b2d732d9a89c09660a3dcfb60d99f6c152d811e06"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-exit-thunks/5dc3ce.bin",
+      "sha256": "a632c93a8f2e5da9baa6f1d095923db47d2b9457edc4b8c3963aca8fd725f9dd"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-exit-thunks/5dc3c2.bin",
+      "sha256": "6404e3652a4e90f2108f8ea5568188c99952c710747d69cf63999fb60309736e"
+    }
+  ],
+  "requested": [
+    {
+      "thunk_index": 7,
+      "name": "_crt_atexit",
+      "caller_thunk_rva": 6144974,
+      "expected_iat_rva": 6338904,
+      "code_sha256": "a632c93a8f2e5da9baa6f1d095923db47d2b9457edc4b8c3963aca8fd725f9dd"
+    },
+    {
+      "thunk_index": 9,
+      "name": "_register_onexit_function",
+      "caller_thunk_rva": 6144962,
+      "expected_iat_rva": 6338920,
+      "code_sha256": "6404e3652a4e90f2108f8ea5568188c99952c710747d69cf63999fb60309736e"
+    }
+  ],
+  "descriptor_reused_from_pinned_evidence": {
+    "index": 6,
+    "rva": "0xa429b8",
+    "file_offset": 10751928,
+    "raw_bytes": "e053a40000000000000000002e7aa50020b96000",
+    "original_first_thunk_rva": "0xa453e0",
+    "name_rva": "0xa57a2e",
+    "module_name": "api-ms-win-crt-runtime-l1-1-0.dll",
+    "first_thunk_rva": "0x60b920"
+  },
+  "import_directory_reused_from_pinned_evidence": {
+    "rva": "0xa42940",
+    "size": 380
+  },
+  "limits": {
+    "fingerprint_chunk_bytes": 65536,
+    "metadata_read_bytes": 1024,
+    "metadata_single_read_bytes": 64,
+    "metadata_read_operations": 4,
+    "planned_metadata_bytes": 58,
+    "saved_evidence_bytes": 2097152,
+    "report_bytes": 131072
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "code_bytes_read": 0,
+  "iat_payload_bytes_read": 0,
+  "runtime_global_bytes_read": 0,
+  "import_descriptor_bytes_read": 0,
+  "other_import_thunks_read": 0,
+  "initializer_table_bytes_read": 0,
+  "backend_started": false,
+  "subprocesses": 0,
+  "metadata_bytes": 58,
+  "metadata_reads": [
+    {
+      "kind": "fixed-oft-thunk-7",
+      "rva": "0xa45418",
+      "file_offset": 10762776,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_bytes": "fc79a50000000000"
+    },
+    {
+      "kind": "exact-hint-name-_crt_atexit",
+      "rva": "0xa579fc",
+      "file_offset": 10838012,
+      "requested_bytes": 14,
+      "read_bytes": 14,
+      "raw_bytes": "1e005f6372745f61746578697400"
+    },
+    {
+      "kind": "fixed-oft-thunk-9",
+      "rva": "0xa45428",
+      "file_offset": 10762792,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_bytes": "c879a50000000000"
+    },
+    {
+      "kind": "exact-hint-name-_register_onexit_function",
+      "rva": "0xa579c8",
+      "file_offset": 10837960,
+      "requested_bytes": 28,
+      "read_bytes": 28,
+      "raw_bytes": "3c005f72656769737465725f6f6e657869745f66756e6374696f6e00"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "bytes": 11385856,
+      "chunk_bytes": 65536,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "label": "after",
+      "bytes": 11385856,
+      "chunk_bytes": 65536,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    }
+  ],
+  "bindings": [
+    {
+      "module": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "name": "_crt_atexit",
+      "descriptor_index": 6,
+      "thunk_index": 7,
+      "original_thunk_rva": "0xa45418",
+      "original_thunk_file_offset": 10762776,
+      "raw_thunk_bytes": "fc79a50000000000",
+      "import_by_name_rva": "0xa579fc",
+      "import_by_name_file_offset": 10838012,
+      "raw_hint_name_bytes": "1e005f6372745f61746578697400",
+      "hint": 30,
+      "iat_rva": "0x60b958",
+      "preferred_iat_va": "0x18060b958",
+      "iat_file_offset": 6332248,
+      "iat_section": ".rdata",
+      "caller_thunk_va": "0x1805dc3ce",
+      "iat_payload_bytes_read": 0,
+      "code_bytes_read": 0
+    },
+    {
+      "module": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "name": "_register_onexit_function",
+      "descriptor_index": 6,
+      "thunk_index": 9,
+      "original_thunk_rva": "0xa45428",
+      "original_thunk_file_offset": 10762792,
+      "raw_thunk_bytes": "c879a50000000000",
+      "import_by_name_rva": "0xa579c8",
+      "import_by_name_file_offset": 10837960,
+      "raw_hint_name_bytes": "3c005f72656769737465725f6f6e657869745f66756e6374696f6e00",
+      "hint": 60,
+      "iat_rva": "0x60b968",
+      "preferred_iat_va": "0x18060b968",
+      "iat_file_offset": 6332264,
+      "iat_section": ".rdata",
+      "caller_thunk_va": "0x1805dc3c2",
+      "iat_payload_bytes_read": 0,
+      "code_bytes_read": 0
+    }
+  ],
+  "limitations": [
+    "Only OFT slots 7/9 in descriptor 6 and their exact hint/name records are read; descriptor, module name and PE mappings reuse hash-pinned evidence.",
+    "Fixed on-disk import identity does not prove runtime resolution, imported implementation, registration success, callback execution or failure semantics.",
+    "No IAT payload, code, security cookie, onexit table or other runtime global is read or executed.",
+    "Before/after full-file hashes use 64KiB buffers and are outside semantic byte totals.",
+    "O_RDONLY plus same-handle stat/hash checks does not guarantee atomic snapshot or exclusive Windows FileShare.Read."
+  ],
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-20T14:02:33.241Z"
+}

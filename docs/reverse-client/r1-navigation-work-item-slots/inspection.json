@@ -1,0 +1,91 @@
+{
+  "started_utc": "2026-10-22T17:52:48.968Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "proofs": [
+    {
+      "file": "docs/reverse-client/r1-level-stream-and-navjob/11-LevelStreamNavJob-0x180109410-procedure_assembly.json",
+      "sha256": "35dffd832978a00824520053493f0a6bc7bc204940533048dd919f836fb0fe84",
+      "procedure": "0x180109410"
+    }
+  ],
+  "script_sha256": "0a4b8633476ae9dda1c1180ed22e451f495160c1922a6e256908f64c55b103a1",
+  "metadata_bytes": 688,
+  "data_bytes": 24,
+  "code_bytes": 0,
+  "hash_bytes": 8971264,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "index": 0,
+      "slot_offset": "0x0",
+      "rva": "0x340a58",
+      "file_offset": 3406424,
+      "bytes": 8,
+      "raw_hex": "c095108001000000",
+      "target_va": "0x1801095c0",
+      "target_rva": "0x1095c0",
+      "target_section": ".text",
+      "candidate_status": "ExecutableAddressCandidate",
+      "target_body_read": false,
+      "slot_role": "unknown",
+      "table_membership_verified": false
+    },
+    {
+      "index": 1,
+      "slot_offset": "0x8",
+      "rva": "0x340a60",
+      "file_offset": 3406432,
+      "bytes": 8,
+      "raw_hex": "4095108001000000",
+      "target_va": "0x180109540",
+      "target_rva": "0x109540",
+      "target_section": ".text",
+      "candidate_status": "ExecutableAddressCandidate",
+      "target_body_read": false,
+      "slot_role": "unknown",
+      "table_membership_verified": false
+    },
+    {
+      "index": 2,
+      "slot_offset": "0x10",
+      "rva": "0x340a68",
+      "file_offset": 3406440,
+      "bytes": 8,
+      "raw_hex": "9095108001000000",
+      "target_va": "0x180109590",
+      "target_rva": "0x109590",
+      "target_section": ".text",
+      "candidate_status": "ExecutableAddressCandidate",
+      "target_body_read": false,
+      "slot_role": "unknown",
+      "table_membership_verified": false
+    }
+  ],
+  "failures": [],
+  "scope": "PE headers/section metadata plus exactly 24 data bytes at Engine RVA 0x340a58; whole-file reads only for before/after SHA256. Three qwords at offsets0/8/16 only; no target body,other slot or RTTI read; table extent and roles remain unknown.",
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "window": {
+    "vptr_rva": "0x340a58",
+    "vptr_va": "0x180340a58",
+    "rva": "0x340a58",
+    "file_offset": 3406424,
+    "bytes": 24,
+    "raw_hex": "c09510800100000040951080010000009095108001000000",
+    "section": ".rdata",
+    "table_extent_verified": false
+  },
+  "limitations": [
+    "109410 constructor directly writes vptr340A58. Only the following three qwords are read; complete vtable extent and membership of later entries are not proven.",
+    "Executable-section addresses are candidates,not verified function boundaries or Execute/destructor roles. Unknown candidates are retained without fallback reads.",
+    "No RTTI,adjacent entries,target bodies,thread implementation or worker dispatch is read. Actual publication semantics require separate evidence.",
+    "Loaded table mutation,live receiver identity and completed construction remain unobserved.",
+    "Before/after hashes and file metadata checks are not an atomic filesystem snapshot."
+  ],
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T17:52:48.975Z",
+  "status": "passed"
+}

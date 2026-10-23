@@ -1,0 +1,74 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\m3-damage-settlement-temp\direct-068ab0.inspect.dll
+
+File Type: DLL
+
+  0000000180068AB0: 48 89 5C 24 08     mov         qword ptr [rsp+8],rbx
+  0000000180068AB5: 57                 push        rdi
+  0000000180068AB6: 48 83 EC 30        sub         rsp,30h
+  0000000180068ABA: 0F 29 74 24 20     movaps      xmmword ptr [rsp+20h],xmm6
+  0000000180068ABF: 0F 28 F1           movaps      xmm6,xmm1
+  0000000180068AC2: 49 8B F8           mov         rdi,r8
+  0000000180068AC5: 48 8B D9           mov         rbx,rcx
+  0000000180068AC8: 45 84 C9           test        r9b,r9b
+  0000000180068ACB: 75 1D              jne         0000000180068AEA
+  0000000180068ACD: 48 8B 01           mov         rax,qword ptr [rcx]
+  0000000180068AD0: FF 90 38 08 00 00  call        qword ptr [rax+0000000000000838h]
+  0000000180068AD6: 84 C0              test        al,al
+  0000000180068AD8: 0F 85 AD 00 00 00  jne         0000000180068B8B
+  0000000180068ADE: 38 83 72 1F 00 00  cmp         byte ptr [rbx+0000000000001F72h],al
+  0000000180068AE4: 0F 85 A1 00 00 00  jne         0000000180068B8B
+  0000000180068AEA: 0F 57 D2           xorps       xmm2,xmm2
+  0000000180068AED: 0F 57 DB           xorps       xmm3,xmm3
+  0000000180068AF0: F3 0F 5A D6        cvtss2sd    xmm2,xmm6
+  0000000180068AF4: 66 0F 2F D3        comisd      xmm2,xmm3
+  0000000180068AF8: 72 2F              jb          0000000180068B29
+  0000000180068AFA: F2 0F 10 83 00 0F  movsd       xmm0,mmword ptr [rbx+0000000000000F00h]
+                    00 00
+  0000000180068B02: F3 0F 10 8B 0C 0F  movss       xmm1,dword ptr [rbx+0000000000000F0Ch]
+                    00 00
+  0000000180068B0A: F2 0F 5C C2        subsd       xmm0,xmm2
+  0000000180068B0E: 0F 5A C9           cvtps2pd    xmm1,xmm1
+  0000000180068B11: F2 0F 11 83 00 0F  movsd       mmword ptr [rbx+0000000000000F00h],xmm0
+                    00 00
+  0000000180068B19: F2 0F 58 CA        addsd       xmm1,xmm2
+  0000000180068B1D: 66 0F 5A C1        cvtpd2ps    xmm0,xmm1
+  0000000180068B21: F3 0F 11 83 0C 0F  movss       dword ptr [rbx+0000000000000F0Ch],xmm0
+                    00 00
+  0000000180068B29: 80 7C 24 60 00     cmp         byte ptr [rsp+60h],0
+  0000000180068B2E: C6 83 98 16 00 00  mov         byte ptr [rbx+0000000000001698h],1
+                    01
+  0000000180068B35: 74 42              je          0000000180068B79
+  0000000180068B37: 83 3F 01           cmp         dword ptr [rdi],1
+  0000000180068B3A: 75 3D              jne         0000000180068B79
+  0000000180068B3C: F2 0F 10 83 00 0F  movsd       xmm0,mmword ptr [rbx+0000000000000F00h]
+                    00 00
+  0000000180068B44: F2 0F 5F C3        maxsd       xmm0,xmm3
+  0000000180068B48: 66 0F 5A C8        cvtpd2ps    xmm1,xmm0
+  0000000180068B4C: 0F 57 C0           xorps       xmm0,xmm0
+  0000000180068B4F: 0F 2F C8           comiss      xmm1,xmm0
+  0000000180068B52: 77 25              ja          0000000180068B79
+  0000000180068B54: 48 8D 8B 78 0F 00  lea         rcx,[rbx+0000000000000F78h]
+                    00
+  0000000180068B5B: BA 04 00 00 00     mov         edx,4
+  0000000180068B60: E8 7B 6B 06 00     call        00000001800CF6E0
+  0000000180068B65: F3 0F 59 83 C8 27  mulss       xmm0,dword ptr [rbx+00000000000027C8h]
+                    00 00
+  0000000180068B6D: 0F 2F F0           comiss      xmm6,xmm0
+  0000000180068B70: 72 07              jb          0000000180068B79
+  0000000180068B72: C6 83 D8 27 00 00  mov         byte ptr [rbx+00000000000027D8h],1
+                    01
+  0000000180068B79: 48 8D 8B 90 17 00  lea         rcx,[rbx+0000000000001790h]
+                    00
+  0000000180068B80: 4C 8B C7           mov         r8,rdi
+  0000000180068B83: 0F 28 CE           movaps      xmm1,xmm6
+  0000000180068B86: E8 05 58 39 00     call        00000001803FE390
+  0000000180068B8B: 48 8B 5C 24 40     mov         rbx,qword ptr [rsp+40h]
+  0000000180068B90: 0F 28 74 24 20     movaps      xmm6,xmmword ptr [rsp+20h]
+  0000000180068B95: 48 83 C4 30        add         rsp,30h
+  0000000180068B99: 5F                 pop         rdi
+  0000000180068B9A: C3                 ret
+
+  Summary
+
+        1000 .text

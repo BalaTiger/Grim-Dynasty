@@ -1,0 +1,1127 @@
+{
+  "schema": "grim-dynasty-levels-first-blocks-v1",
+  "status": "Succeeded",
+  "phase": "complete",
+  "startedUtc": "2026-10-22T17:32:58.561Z",
+  "target": "D:\\Steam\\steamapps\\common\\Grim Dawn\\resources\\Levels.arc",
+  "outputDirectory": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\docs\\reverse-client\\r1-levels-first-blocks",
+  "acceptedIndexInputSha256": "adfc68f1f5d5b388226a86f997dcff0c8510512993ede2e86d0e90a39ae65f87",
+  "acceptedIndexDirectorySha256": "32c76a11e9a984f5c889428e584fb75baa9ab9cdfe706977b50b6a56e4c79e17",
+  "provenance": [
+    "docs/reverse-client/r1-levels-archive-index/inspection.json",
+    "docs/reverse-client/r1-levels-archive-index/entries.json",
+    "src/resource_codec/ResourceContainers.cs:86-95",
+    "src/resource_codec/Lz4Block.cs:Length/Decode/Tests"
+  ],
+  "limits": {
+    "fixedMembers": 2,
+    "partRecordsPerMember": 1,
+    "compressedBytesPerMember": 1048576,
+    "decodedBytesPerMember": 1048576,
+    "hexBytesPerMember": 1024,
+    "asciiObservationBytesPerMember": 4096,
+    "reportBytes": 1048576
+  },
+  "boundaries": {
+    "sourceAccess": "read-only same descriptor",
+    "wholeFileStreamedForHash": true,
+    "wholeArchiveDecompressed": false,
+    "wholeMemberDecompressed": false,
+    "wholeMemberAdler32Validated": false,
+    "mapOrNavFormatValidated": false,
+    "gameOrBackendStarted": false,
+    "savesAccessed": false,
+    "reparseTagCaveat": "Node lstat/realpath/nlink do not expose every reparse tag; approved Attributes preflight remains required"
+  },
+  "structuralReadRanges": [
+    {
+      "offset": 0,
+      "bytes": 28,
+      "purpose": "ARC header"
+    },
+    {
+      "offset": 221754826,
+      "bytes": 35,
+      "purpose": "fixed35-byte name table"
+    },
+    {
+      "offset": 221754861,
+      "bytes": 88,
+      "purpose": "fixed two-entry directory"
+    },
+    {
+      "offset": 221717266,
+      "bytes": 12,
+      "purpose": "mainmenu/mainmenu.map: first part record only"
+    },
+    {
+      "offset": 2048,
+      "bytes": 211505,
+      "purpose": "mainmenu/mainmenu.map: first compressed/raw block only"
+    },
+    {
+      "offset": 221717326,
+      "bytes": 12,
+      "purpose": "world001.map: first part record only"
+    },
+    {
+      "offset": 344557,
+      "bytes": 100682,
+      "purpose": "world001.map: first compressed/raw block only"
+    }
+  ],
+  "members": [
+    {
+      "entry": {
+        "ordinal": 0,
+        "type": 3,
+        "offset": 2048,
+        "packed": 342509,
+        "unpacked": 1091357,
+        "checksum": 760486028,
+        "filetime": "134145362835729907",
+        "parts": 5,
+        "firstPart": 0,
+        "nameLength": 21,
+        "nameOffset": 0,
+        "name": "mainmenu/mainmenu.map"
+      },
+      "status": "DecodedFirstPartOnly",
+      "wholeMemberAdler32Validated": false,
+      "boundary": "Only first part; member checksum covers all parts and cannot be checked here",
+      "part": {
+        "ordinal": 0,
+        "recordOffset": 221717266,
+        "offset": 2048,
+        "packed": 211505,
+        "unpacked": 262144
+      },
+      "packedSha256": "e3f5a87a74c65d0ba6cda661ff5afa2b2a9a21aaee40b75fb0692b102368c42e",
+      "encodingRule": "raw LZ4 (different ARC part lengths)",
+      "decodedBytes": 262144,
+      "decodedSha256": "17a7e728a455cc92afc53228d3832d1a07c3331519f849b2d50d2da565f05180",
+      "observations": {
+        "meaning": "Byte observations only; no magic/version/count/mesh/map semantics inferred",
+        "first16BytesHex": "4d4150094a0400001b00000004000000",
+        "first256BytesAsU32LE": [
+          {
+            "offset": 0,
+            "u32LE": 156254541,
+            "hex": "0x0950414d"
+          },
+          {
+            "offset": 4,
+            "u32LE": 1098,
+            "hex": "0x0000044a"
+          },
+          {
+            "offset": 8,
+            "u32LE": 27,
+            "hex": "0x0000001b"
+          },
+          {
+            "offset": 12,
+            "u32LE": 4,
+            "hex": "0x00000004"
+          },
+          {
+            "offset": 16,
+            "u32LE": 0,
+            "hex": "0x00000000"
+          },
+          {
+            "offset": 20,
+            "u32LE": 17,
+            "hex": "0x00000011"
+          },
+          {
+            "offset": 24,
+            "u32LE": 8,
+            "hex": "0x00000008"
+          },
+          {
+            "offset": 28,
+            "u32LE": 0,
+            "hex": "0x00000000"
+          },
+          {
+            "offset": 32,
+            "u32LE": 0,
+            "hex": "0x00000000"
+          },
+          {
+            "offset": 36,
+            "u32LE": 24,
+            "hex": "0x00000018"
+          },
+          {
+            "offset": 40,
+            "u32LE": 903,
+            "hex": "0x00000387"
+          },
+          {
+            "offset": 44,
+            "u32LE": 2,
+            "hex": "0x00000002"
+          },
+          {
+            "offset": 48,
+            "u32LE": 14,
+            "hex": "0x0000000e"
+          },
+          {
+            "offset": 52,
+            "u32LE": 1,
+            "hex": "0x00000001"
+          },
+          {
+            "offset": 56,
+            "u32LE": 1,
+            "hex": "0x00000001"
+          },
+          {
+            "offset": 60,
+            "u32LE": 1,
+            "hex": "0x00000001"
+          },
+          {
+            "offset": 64,
+            "u32LE": 7,
+            "hex": "0x00000007"
+          },
+          {
+            "offset": 68,
+            "u32LE": 1970169165,
+            "hex": "0x756e654d"
+          },
+          {
+            "offset": 72,
+            "u32LE": 376206924,
+            "hex": "0x166c764c"
+          },
+          {
+            "offset": 76,
+            "u32LE": 511834914,
+            "hex": "0x1e81fb22"
+          },
+          {
+            "offset": 80,
+            "u32LE": 1890596657,
+            "hex": "0x70b03731"
+          },
+          {
+            "offset": 84,
+            "u32LE": 2177790284,
+            "hex": "0x81ce714c"
+          },
+          {
+            "offset": 88,
+            "u32LE": 936154406,
+            "hex": "0x37cc9526"
+          },
+          {
+            "offset": 92,
+            "u32LE": 2621358473,
+            "hex": "0x9c3ec189"
+          },
+          {
+            "offset": 96,
+            "u32LE": 3191800004,
+            "hex": "0xbe3f00c4"
+          },
+          {
+            "offset": 100,
+            "u32LE": 4160159,
+            "hex": "0x003f7a9f"
+          },
+          {
+            "offset": 104,
+            "u32LE": 3242131456,
+            "hex": "0xc13f0000"
+          },
+          {
+            "offset": 108,
+            "u32LE": 3997049290,
+            "hex": "0xee3e21ca"
+          },
+          {
+            "offset": 112,
+            "u32LE": 3275702140,
+            "hex": "0xc33f3f7c"
+          },
+          {
+            "offset": 116,
+            "u32LE": 4139253,
+            "hex": "0x003f28f5"
+          },
+          {
+            "offset": 120,
+            "u32LE": 3007250432,
+            "hex": "0xb33f0000"
+          },
+          {
+            "offset": 124,
+            "u32LE": 2168369842,
+            "hex": "0x813eb2b2"
+          },
+          {
+            "offset": 128,
+            "u32LE": 2252275840,
+            "hex": "0x863f0080"
+          },
+          {
+            "offset": 132,
+            "u32LE": 4130181,
+            "hex": "0x003f0585"
+          },
+          {
+            "offset": 136,
+            "u32LE": 4161536,
+            "hex": "0x003f8000"
+          },
+          {
+            "offset": 140,
+            "u32LE": 4161536,
+            "hex": "0x003f8000"
+          },
+          {
+            "offset": 144,
+            "u32LE": 4161536,
+            "hex": "0x003f8000"
+          },
+          {
+            "offset": 148,
+            "u32LE": 4161536,
+            "hex": "0x003f8000"
+          },
+          {
+            "offset": 152,
+            "u32LE": 3812589568,
+            "hex": "0xe33f8000"
+          },
+          {
+            "offset": 156,
+            "u32LE": 3258933986,
+            "hex": "0xc23f62e2"
+          },
+          {
+            "offset": 160,
+            "u32LE": 2889826753,
+            "hex": "0xac3f41c1"
+          },
+          {
+            "offset": 164,
+            "u32LE": 4139947,
+            "hex": "0x003f2bab"
+          },
+          {
+            "offset": 168,
+            "u32LE": 2621407232,
+            "hex": "0x9c3f8000"
+          },
+          {
+            "offset": 172,
+            "u32LE": 3040811931,
+            "hex": "0xb53f1b9b"
+          },
+          {
+            "offset": 176,
+            "u32LE": 3409917108,
+            "hex": "0xcb3f34b4"
+          },
+          {
+            "offset": 180,
+            "u32LE": 4147914,
+            "hex": "0x003f4aca"
+          },
+          {
+            "offset": 184,
+            "u32LE": 3091169280,
+            "hex": "0xb83f8000"
+          },
+          {
+            "offset": 188,
+            "u32LE": 1027507486,
+            "hex": "0x3d3e851e"
+          },
+          {
+            "offset": 192,
+            "u32LE": 339662602,
+            "hex": "0x143ed70a"
+          },
+          {
+            "offset": 196,
+            "u32LE": 503316480,
+            "hex": "0x1e000000"
+          },
+          {
+            "offset": 200,
+            "u32LE": 352321536,
+            "hex": "0x15000000"
+          },
+          {
+            "offset": 204,
+            "u32LE": 268435456,
+            "hex": "0x10000000"
+          },
+          {
+            "offset": 208,
+            "u32LE": 33554432,
+            "hex": "0x02000000"
+          },
+          {
+            "offset": 212,
+            "u32LE": 0,
+            "hex": "0x00000000"
+          },
+          {
+            "offset": 216,
+            "u32LE": 33554432,
+            "hex": "0x02000000"
+          },
+          {
+            "offset": 220,
+            "u32LE": 16777216,
+            "hex": "0x01000000"
+          },
+          {
+            "offset": 224,
+            "u32LE": 16777216,
+            "hex": "0x01000000"
+          },
+          {
+            "offset": 228,
+            "u32LE": 268435456,
+            "hex": "0x10000000"
+          },
+          {
+            "offset": 232,
+            "u32LE": 1308622848,
+            "hex": "0x4e000000"
+          },
+          {
+            "offset": 236,
+            "u32LE": 1394636645,
+            "hex": "0x53207765"
+          },
+          {
+            "offset": 240,
+            "u32LE": 1869898597,
+            "hex": "0x6f746365"
+          },
+          {
+            "offset": 244,
+            "u32LE": 1951604850,
+            "hex": "0x74532072"
+          },
+          {
+            "offset": 248,
+            "u32LE": 1264938105,
+            "hex": "0x4b656c79"
+          },
+          {
+            "offset": 252,
+            "u32LE": 1069196468,
+            "hex": "0x3fbaa4b4"
+          }
+        ],
+        "printableAsciiScanBytes": 4096,
+        "printableAsciiRuns": [
+          {
+            "offset": 68,
+            "observedLength": 7,
+            "text": "MenuLvl",
+            "textTruncated": false
+          },
+          {
+            "offset": 235,
+            "observedLength": 17,
+            "text": "New Sector StyleK",
+            "textTruncated": false
+          },
+          {
+            "offset": 307,
+            "observedLength": 50,
+            "text": "records/sounds/soundpak_ambient/ambpak_wetland.dbr",
+            "textTruncated": false
+          },
+          {
+            "offset": 385,
+            "observedLength": 7,
+            "text": "Sunrise",
+            "textTruncated": false
+          },
+          {
+            "offset": 425,
+            "observedLength": 4,
+            "text": "tS?D",
+            "textTruncated": false
+          },
+          {
+            "offset": 439,
+            "observedLength": 4,
+            "text": "?DNC",
+            "textTruncated": false
+          },
+          {
+            "offset": 549,
+            "observedLength": 4,
+            "text": "0d>A",
+            "textTruncated": false
+          },
+          {
+            "offset": 576,
+            "observedLength": 16,
+            "text": "New Sector Style",
+            "textTruncated": false
+          },
+          {
+            "offset": 639,
+            "observedLength": 5,
+            "text": "?333?",
+            "textTruncated": false
+          },
+          {
+            "offset": 645,
+            "observedLength": 4,
+            "text": "Q8?=",
+            "textTruncated": false
+          },
+          {
+            "offset": 688,
+            "observedLength": 17,
+            "text": "New Sector Styles",
+            "textTruncated": false
+          },
+          {
+            "offset": 756,
+            "observedLength": 39,
+            "text": "records/fx/climate/climate_mainmenu.dbr",
+            "textTruncated": false
+          },
+          {
+            "offset": 819,
+            "observedLength": 17,
+            "text": "New Sector Stylex",
+            "textTruncated": false
+          },
+          {
+            "offset": 895,
+            "observedLength": 5,
+            "text": "33s?=",
+            "textTruncated": false
+          },
+          {
+            "offset": 995,
+            "observedLength": 7,
+            "text": "grc'bLH",
+            "textTruncated": false
+          },
+          {
+            "offset": 1027,
+            "observedLength": 36,
+            "text": "Levels/MainMenu/MainMenuLevel02.lvl|",
+            "textTruncated": false
+          }
+        ],
+        "hexViewBytes": 1024
+      },
+      "memberFormat": "Unknown",
+      "outputFiles": {
+        "decodedFirstBlock": "mainmenu-first-part.bin",
+        "first1024BytesHex": "mainmenu-first-part.hex.txt"
+      }
+    },
+    {
+      "entry": {
+        "ordinal": 1,
+        "type": 3,
+        "offset": 344557,
+        "packed": 221372709,
+        "unpacked": 818974129,
+        "checksum": 1539222734,
+        "filetime": "134342282181451447",
+        "parts": 3125,
+        "firstPart": 5,
+        "nameLength": 12,
+        "nameOffset": 22,
+        "name": "world001.map"
+      },
+      "status": "DecodedFirstPartOnly",
+      "wholeMemberAdler32Validated": false,
+      "boundary": "Only first part; member checksum covers all parts and cannot be checked here",
+      "part": {
+        "ordinal": 5,
+        "recordOffset": 221717326,
+        "offset": 344557,
+        "packed": 100682,
+        "unpacked": 262144
+      },
+      "packedSha256": "e681a564e36668786cbb88b1a83e503e01b7ee31da091d48293ac75f399f79ef",
+      "encodingRule": "raw LZ4 (different ARC part lengths)",
+      "decodedBytes": 262144,
+      "decodedSha256": "3b7eb42396953b15bbeca75c3c65adc0ad45c65ad5c87d41716261c1313d8fce",
+      "observations": {
+        "meaning": "Byte observations only; no magic/version/count/mesh/map semantics inferred",
+        "first16BytesHex": "4d415009572e07001b000000dd230000",
+        "first256BytesAsU32LE": [
+          {
+            "offset": 0,
+            "u32LE": 156254541,
+            "hex": "0x0950414d"
+          },
+          {
+            "offset": 4,
+            "u32LE": 470615,
+            "hex": "0x00072e57"
+          },
+          {
+            "offset": 8,
+            "u32LE": 27,
+            "hex": "0x0000001b"
+          },
+          {
+            "offset": 12,
+            "u32LE": 9181,
+            "hex": "0x000023dd"
+          },
+          {
+            "offset": 16,
+            "u32LE": 255,
+            "hex": "0x000000ff"
+          },
+          {
+            "offset": 20,
+            "u32LE": 30,
+            "hex": "0x0000001e"
+          },
+          {
+            "offset": 24,
+            "u32LE": 1936029009,
+            "hex": "0x73657551"
+          },
+          {
+            "offset": 28,
+            "u32LE": 1647276916,
+            "hex": "0x622f7374"
+          },
+          {
+            "offset": 32,
+            "u32LE": 1953396079,
+            "hex": "0x746e756f"
+          },
+          {
+            "offset": 36,
+            "u32LE": 796091753,
+            "hex": "0x2f736569"
+          },
+          {
+            "offset": 40,
+            "u32LE": 1647275106,
+            "hex": "0x622f6c62"
+          },
+          {
+            "offset": 44,
+            "u32LE": 1818386289,
+            "hex": "0x6c625f71"
+          },
+          {
+            "offset": 48,
+            "u32LE": 1898852656,
+            "hex": "0x712e3130"
+          },
+          {
+            "offset": 52,
+            "u32LE": 1995891,
+            "hex": "0x001e7473"
+          },
+          {
+            "offset": 56,
+            "u32LE": 1968242688,
+            "hex": "0x75510000"
+          },
+          {
+            "offset": 60,
+            "u32LE": 1937011557,
+            "hex": "0x73747365"
+          },
+          {
+            "offset": 64,
+            "u32LE": 1970233903,
+            "hex": "0x756f622f"
+          },
+          {
+            "offset": 68,
+            "u32LE": 1701409902,
+            "hex": "0x6569746e"
+          },
+          {
+            "offset": 72,
+            "u32LE": 1818374003,
+            "hex": "0x6c622f73"
+          },
+          {
+            "offset": 76,
+            "u32LE": 1601266223,
+            "hex": "0x5f71622f"
+          },
+          {
+            "offset": 80,
+            "u32LE": 842034274,
+            "hex": "0x32306c62"
+          },
+          {
+            "offset": 84,
+            "u32LE": 1953722670,
+            "hex": "0x7473712e"
+          },
+          {
+            "offset": 88,
+            "u32LE": 30,
+            "hex": "0x0000001e"
+          },
+          {
+            "offset": 92,
+            "u32LE": 1936029009,
+            "hex": "0x73657551"
+          },
+          {
+            "offset": 96,
+            "u32LE": 1647276916,
+            "hex": "0x622f7374"
+          },
+          {
+            "offset": 100,
+            "u32LE": 1953396079,
+            "hex": "0x746e756f"
+          },
+          {
+            "offset": 104,
+            "u32LE": 796091753,
+            "hex": "0x2f736569"
+          },
+          {
+            "offset": 108,
+            "u32LE": 1647275106,
+            "hex": "0x622f6c62"
+          },
+          {
+            "offset": 112,
+            "u32LE": 1818386289,
+            "hex": "0x6c625f71"
+          },
+          {
+            "offset": 116,
+            "u32LE": 1898853168,
+            "hex": "0x712e3330"
+          },
+          {
+            "offset": 120,
+            "u32LE": 1995891,
+            "hex": "0x001e7473"
+          },
+          {
+            "offset": 124,
+            "u32LE": 1968242688,
+            "hex": "0x75510000"
+          },
+          {
+            "offset": 128,
+            "u32LE": 1937011557,
+            "hex": "0x73747365"
+          },
+          {
+            "offset": 132,
+            "u32LE": 1970233903,
+            "hex": "0x756f622f"
+          },
+          {
+            "offset": 136,
+            "u32LE": 1701409902,
+            "hex": "0x6569746e"
+          },
+          {
+            "offset": 140,
+            "u32LE": 1818374003,
+            "hex": "0x6c622f73"
+          },
+          {
+            "offset": 144,
+            "u32LE": 1601266223,
+            "hex": "0x5f71622f"
+          },
+          {
+            "offset": 148,
+            "u32LE": 875588706,
+            "hex": "0x34306c62"
+          },
+          {
+            "offset": 152,
+            "u32LE": 1953722670,
+            "hex": "0x7473712e"
+          },
+          {
+            "offset": 156,
+            "u32LE": 30,
+            "hex": "0x0000001e"
+          },
+          {
+            "offset": 160,
+            "u32LE": 1936029009,
+            "hex": "0x73657551"
+          },
+          {
+            "offset": 164,
+            "u32LE": 1647276916,
+            "hex": "0x622f7374"
+          },
+          {
+            "offset": 168,
+            "u32LE": 1953396079,
+            "hex": "0x746e756f"
+          },
+          {
+            "offset": 172,
+            "u32LE": 796091753,
+            "hex": "0x2f736569"
+          },
+          {
+            "offset": 176,
+            "u32LE": 1647275106,
+            "hex": "0x622f6c62"
+          },
+          {
+            "offset": 180,
+            "u32LE": 1818386289,
+            "hex": "0x6c625f71"
+          },
+          {
+            "offset": 184,
+            "u32LE": 1898853680,
+            "hex": "0x712e3530"
+          },
+          {
+            "offset": 188,
+            "u32LE": 1995891,
+            "hex": "0x001e7473"
+          },
+          {
+            "offset": 192,
+            "u32LE": 1968242688,
+            "hex": "0x75510000"
+          },
+          {
+            "offset": 196,
+            "u32LE": 1937011557,
+            "hex": "0x73747365"
+          },
+          {
+            "offset": 200,
+            "u32LE": 1970233903,
+            "hex": "0x756f622f"
+          },
+          {
+            "offset": 204,
+            "u32LE": 1701409902,
+            "hex": "0x6569746e"
+          },
+          {
+            "offset": 208,
+            "u32LE": 1818374003,
+            "hex": "0x6c622f73"
+          },
+          {
+            "offset": 212,
+            "u32LE": 1601266223,
+            "hex": "0x5f71622f"
+          },
+          {
+            "offset": 216,
+            "u32LE": 909143138,
+            "hex": "0x36306c62"
+          },
+          {
+            "offset": 220,
+            "u32LE": 1953722670,
+            "hex": "0x7473712e"
+          },
+          {
+            "offset": 224,
+            "u32LE": 30,
+            "hex": "0x0000001e"
+          },
+          {
+            "offset": 228,
+            "u32LE": 1936029009,
+            "hex": "0x73657551"
+          },
+          {
+            "offset": 232,
+            "u32LE": 1647276916,
+            "hex": "0x622f7374"
+          },
+          {
+            "offset": 236,
+            "u32LE": 1953396079,
+            "hex": "0x746e756f"
+          },
+          {
+            "offset": 240,
+            "u32LE": 796091753,
+            "hex": "0x2f736569"
+          },
+          {
+            "offset": 244,
+            "u32LE": 1647275106,
+            "hex": "0x622f6c62"
+          },
+          {
+            "offset": 248,
+            "u32LE": 1818386289,
+            "hex": "0x6c625f71"
+          },
+          {
+            "offset": 252,
+            "u32LE": 1898854192,
+            "hex": "0x712e3730"
+          }
+        ],
+        "printableAsciiScanBytes": 4096,
+        "printableAsciiRuns": [
+          {
+            "offset": 24,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl01.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 58,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl02.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 92,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl03.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 126,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl04.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 160,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl05.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 194,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl06.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 228,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl07.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 262,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl08.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 296,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl09.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 330,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl10.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 364,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl11.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 398,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl12.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 432,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl13.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 466,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl14.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 500,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl15.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 534,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl16.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 568,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl17.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 602,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl18.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 636,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl19.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 670,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl20.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 704,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl21.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 738,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl22.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 772,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl23.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 806,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl24.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 840,
+            "observedLength": 30,
+            "text": "Quests/bounties/bl/bq_bl25.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 874,
+            "observedLength": 30,
+            "text": "Quests/bounties/dc/bq_dc01.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 908,
+            "observedLength": 30,
+            "text": "Quests/bounties/dc/bq_dc02.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 942,
+            "observedLength": 30,
+            "text": "Quests/bounties/dc/bq_dc03.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 976,
+            "observedLength": 30,
+            "text": "Quests/bounties/dc/bq_dc04.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 1010,
+            "observedLength": 30,
+            "text": "Quests/bounties/dc/bq_dc05.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 1044,
+            "observedLength": 30,
+            "text": "Quests/bounties/dc/bq_dc06.qst",
+            "textTruncated": false
+          },
+          {
+            "offset": 1078,
+            "observedLength": 30,
+            "text": "Quests/bounties/dc/bq_dc07.qst",
+            "textTruncated": false
+          }
+        ],
+        "hexViewBytes": 1024
+      },
+      "memberFormat": "Unknown",
+      "outputFiles": {
+        "decodedFirstBlock": "world001-first-part.bin",
+        "first1024BytesHex": "world001-first-part.hex.txt"
+      }
+    }
+  ],
+  "sha256Before": "adfc68f1f5d5b388226a86f997dcff0c8510512993ede2e86d0e90a39ae65f87",
+  "sha256After": "adfc68f1f5d5b388226a86f997dcff0c8510512993ede2e86d0e90a39ae65f87",
+  "codecFixtureCases": 8,
+  "statBefore": {
+    "dev": "2562469142",
+    "ino": "1970324837085107",
+    "mode": "33206",
+    "nlink": "1",
+    "size": "221754949",
+    "mtimeNs": "1791500362319960100",
+    "ctimeNs": "1791500395328151300",
+    "birthtimeNs": "1788936363587854200"
+  },
+  "headerRawWords": [
+    4411969,
+    3,
+    2,
+    3130,
+    37560,
+    35,
+    221717266
+  ],
+  "statAfter": {
+    "dev": "2562469142",
+    "ino": "1970324837085107",
+    "mode": "33206",
+    "nlink": "1",
+    "size": "221754949",
+    "mtimeNs": "1791500362319960100",
+    "ctimeNs": "1791500395328151300",
+    "birthtimeNs": "1788936363587854200"
+  },
+  "sha256Unchanged": true,
+  "completedUtc": "2026-10-22T17:32:58.813Z"
+}

@@ -1,0 +1,413 @@
+{
+  "schema_version": 1,
+  "purpose": "Exactly five distinct Game primary-vtable candidates in the World::SetCoords / Level::MoveEntity publication path: Character016D20 and Player3D5BC0 at+190,plus shared5D9FF2 at+270,5D9F02 at+D8,and015880 at+90. Obtain actual bodies before assigning names or runtime-final dispatch; disk slots do not establish later loaded state.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-entity-publication-slot/inspection.json",
+      "sha256": "0ab3d46d0ee8d8f45cc784969617872d24a3948bb969b3318dd1327e1696237f",
+      "addresses": [
+        "0x180016d20",
+        "0x1803d5bc0"
+      ],
+      "source_kind": "Passed fixed16B disk read: Character primary table6DF6D0+190(slot6DF860) raw206d018001000000->016D20; Player primary table787100+190(slot787290) rawc05b3d8001000000->3D5BC0. Game before/after hash stable. Table extents,subsequent callee writes,function boundaries,names and loaded dispatch remain unverified."
+    },
+    {
+      "file": "docs/reverse-client/r1-position-publication/05-PositionPublication-0x18021bb40-procedure_assembly.json",
+      "sha256": "424610e3452d712d7a795ca7b4a1307bd269607163e390802deb107e83ef2c86",
+      "addresses": [],
+      "source_kind": "21BB8B reads Entity primary vptr,21BB8E RCX=Entity,21BB91 CALL[vptr+190],21BB97 TEST AL,AL and21BB99 conditional branch. This is caller ABI/branch evidence only; no name-based implementation or assumption about candidate return."
+    },
+    {
+      "file": "docs/reverse-client/r1-level-move-entity-slots/inspection.json",
+      "sha256": "1eac17c7c6d015175f0b149dfa7587e507dab84b87eedfbfcaa90b81d2201690",
+      "addresses": [
+        "0x1805d9ff2",
+        "0x1805d9f02",
+        "0x180015880"
+      ],
+      "source_kind": "Passed six fixed primary-table slots48B: Character and Player+270->5D9FF2,+D8->5D9F02,+90->015880. Game before/after hash stable. Both owner tables remain disk candidates; function names,bounds,loaded dispatch and subsequent overwrites unverified."
+    },
+    {
+      "file": "docs/reverse-client/r1-same-region-movement/08-SameRegionMovement-0x18012f4f0-procedure_assembly.json",
+      "sha256": "cf6f5a0ed0faface5f8ddf543c58f3681e96a437e6a919670c54a9d9ce9ed01b",
+      "addresses": [],
+      "source_kind": "12F670 CALL Entityprimary+270 after four16B state writes;12F67C CALL primary+D8;then12F689 direct1333E0 (excluded this Game batch);12F6B3 tailJMP primary+90 with RCX Entity,RDX Level. Exact caller order retained,not inferred body semantics."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 20,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Game-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Game-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180016d20"
+      },
+      "label": "04-EntityPublicationGate-0x180016d20-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180016d20"
+      },
+      "label": "05-EntityPublicationGate-0x180016d20-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180016d20"
+      },
+      "label": "06-EntityPublicationGate-0x180016d20-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1803d5bc0"
+      },
+      "label": "07-EntityPublicationGate-0x1803d5bc0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1803d5bc0"
+      },
+      "label": "08-EntityPublicationGate-0x1803d5bc0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1803d5bc0"
+      },
+      "label": "09-EntityPublicationGate-0x1803d5bc0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1805d9ff2"
+      },
+      "label": "10-EntityPublicationGate-0x1805d9ff2-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1805d9ff2"
+      },
+      "label": "11-EntityPublicationGate-0x1805d9ff2-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1805d9ff2"
+      },
+      "label": "12-EntityPublicationGate-0x1805d9ff2-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1805d9f02"
+      },
+      "label": "13-EntityPublicationGate-0x1805d9f02-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1805d9f02"
+      },
+      "label": "14-EntityPublicationGate-0x1805d9f02-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1805d9f02"
+      },
+      "label": "15-EntityPublicationGate-0x1805d9f02-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180015880"
+      },
+      "label": "16-EntityPublicationGate-0x180015880-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180015880"
+      },
+      "label": "17-EntityPublicationGate-0x180015880-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180015880"
+      },
+      "label": "18-EntityPublicationGate-0x180015880-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "19-Game-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "20-final-session"
+    }
+  ],
+  "status": "prepared-fixed-Game-publication-five-candidates-not-executed",
+  "runner_mode_registered": true,
+  "planned_output": "docs/reverse-client/r1-game-entity-publication-gates",
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "game-mouse-first-calibration-384m-v1",
+    "calibration_only": false,
+    "measured_game_peak_available": true,
+    "budget_source": "unchanged-provisional-Game-budget-with-prior-trial-observation",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "task_allowance_gib": 3,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "no_system_settings_change": true,
+    "scope": "Five distinct primary-vtable publication candidates; unchanged Game budget and protections.",
+    "legacy_budget_fields": "The reused game-mouse-first-calibration-384m-v1 budget object retains its original calibrationOnly/measuredGamePeakAvailable labels. Those immutable labels describe budget provenance, not the current observation inventory; use this plan and prior_game_trial_observation for current evidence."
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "previous_sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "serializer_file": "tools/static_analysis/rea_sampler_failure.ps1",
+    "serializer_sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "candidate_file": ".tooling/r1-owned-job-diagnostic-candidate/ReaOwnedJobDiagnosticCandidate.cs",
+    "candidate_sha256": "b52e6ba242277ab864a431433f43efe671bc6c37e73c1fd94d8b0977b7400544",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "serializer_validation_file": ".tooling/r1-owned-job-diagnostic-validation/serializer/result.json",
+    "serializer_validation_sha256": "eb5dc1cd79621686a5b646ba03897cec638674dd1d6894ec69cee1d5ceb04a60",
+    "runner_validation_file": ".tooling/r1-owned-job-diagnostic-validation/runner-result.json",
+    "runner_validation_sha256": "1ff5539479a0ba058bb7e3b4e6692293a07515e48d226c56f5b6667857c4bb29",
+    "deployment_file": ".tooling/r1-owned-job-diagnostic-deploy/deployment.json",
+    "deployment_sha256": "ef9be6d39c736f99fe4dd365b1ed08f6849f4280eacc698fdc9b4b75d4977dbf",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 49,
+    "scenario_groups": 10,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "serializer_assertions": 39,
+    "production_normalization": "Remove two candidate-only header lines and namespace suffix; serializer identical to tested candidate",
+    "limitations": "Diagnostic observation only. Native permissions,100ms shared wait budget,admission and fail-closed rules are unchanged. Isolated fault tests do not reproduce or establish the21:48 failure root cause."
+  },
+  "diagnostic_monitor_review": {
+    "status": "passed-and-pinned",
+    "diagnostics_only_intended": true,
+    "approved_source_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "production_monitor_must_not_be_changed_by_this_preparation": true,
+    "root_cause_proven": false,
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false
+  },
+  "sampler_observation_deployment": {
+    "status": "passed-additive-serialization-deployed",
+    "previous_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "evidence": [
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/deployment.json",
+        "sha256": "e978a7fbb0256233a2a5bbdacec662ebcbe808c1c227d20ef216dce8cf3d0db9"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/measure_job_process_memory.before.ps1",
+        "sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/measure_job_process_memory.ps1",
+        "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test_member_identity_serialization.ps1",
+        "sha256": "3afa73f7130a87959e38e76ba313f715bd0e4448e146a0417b3163b55ac84ae2"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test-result.json",
+        "sha256": "812f576f55ce8989638accf2a668a6b1b19e0d23e2869328be63ba7822c3062d"
+      }
+    ],
+    "only_added_field": "membership_queries.after_counters_member_identities",
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false,
+    "resource_limits_changed": false,
+    "tests_rerun": false
+  },
+  "prior_engine_mouse_core": {
+    "summary_file": "docs/reverse-client/r1-engine-mouse-core/summary.json",
+    "summary_sha256": "4d26ffeb36f6c1bc0e8b8faf0a77c7f601ef08b5ce31a6a2aa2ca56c2449ba77",
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true
+  },
+  "prior_game_trial_observation": {
+    "summary_file": "docs/reverse-client/r1-game-mouse-calibration/summary.json",
+    "summary_sha256": "1397b49afa2556c97b2c1ea5ab9807a92c1a1306cd98262d10e697a2ed4d571e",
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "completed_plan_calls": 8,
+    "sampled_tree_private_commit_peak_bytes": 993013760,
+    "sampled_with_controller_and_sampler_private_peak_bytes": 1175207936,
+    "limitations": "One previous Game query trial with discrete sampling; no guarantee for this different fixed batch and no permission to reduce the existing resource gates."
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false,
+    "scope": "Existing startup absolute deadline and per-request outer deadline; not a whole-batch runtime guarantee."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-same-region-movement/summary.json",
+    "summary_sha256": "1266e603157f4ac42b7f8cb164daa057de79e96c40b95f029b94bbd4336ce3b2",
+    "required_status": "passed",
+    "completed_plan_calls": 11,
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "observed": true,
+    "refresh_required_before_registration": false,
+    "scope": "Actual immediately preceding Engine same-region11/11 passed with full normal cleanup and unchanged Engine hash. Earlier prelaunch resource stop was not a query result."
+  },
+  "execution_requirements": [
+    "Exactly016D20,3D5BC0,5D9FF2,5D9F02,015880 in this order:15 body queries plus five lifecycle calls. No returned-callee recursion,other target,slot scan or cross-region/network/destroy expansion.",
+    "Root bounded filename inventory found no exact saved bodies. Do not rescan historical inventories or silently add fallback selectors; a tool mapping error must be preserved and reviewed.",
+    "Preserve current Game384M,5GiB physical-and-commit launch,2GiB stop,identity/mutex/freshness and unchanged diagnostic monitor/serializer/additive sampler pins.",
+    "Registration follows actual passed Engine same-region11/11 with all normal cleanup flags and exact Engine hashes. Only one offline verification; backend requires root formal approval and fresh resource/ownership guards.",
+    "All five bindings are disk candidates with proved constructor table assignments but unknown later writes and loaded dispatch. Preserve actual field reads,writes,registers,return semantics and failure prefixes; do not assume a thunk,ret or default boolean.",
+    "No original execution,saves/cloud,security changes,installation or automatic retry. No current backend is launched by preparation."
+  ],
+  "evidence_questions": [
+    "What exact bodies and return semantics are proved for Character016D20 and Player3D5BC0 consumed at World21BB91? Preserve names/classification as actually returned.",
+    "What actual state/callback/return behavior do5D9FF2,5D9F02,015880 implement for Level12F4F0+270,+D8,+90,including caller order,aliasing and partial state on failure? Do not infer behavior from nearby addresses.",
+    "Which directly evidenced contracts connect to shared Entity/Level state,while loaded-vptr selection and later overwrites remain unknown? No whole-game or cross-region compatibility claim."
+  ],
+  "recovery_requirement": {
+    "status": "confirmed-retained-after-Codex-restart",
+    "recovery_result_file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+    "recovery_result_sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829",
+    "evidence": [
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+        "sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-inventory.json",
+        "sha256": "e9baee1d751ebe2dbc329ceb068f25fc33ee96d3474e77bfd0a84a6978ca3dcf"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-move.json",
+        "sha256": "34967759d2622ffe3f46942681014a903ebf626f7f9557a0633f0b8c49beb272"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-after-move.json",
+        "sha256": "b2500ac78ffab31fc94c6e19a6db7c3287401bbf40a6b3e7055b5bf4e1a0c8e8"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before-move.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-after.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-final.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/historical-identities.json",
+        "sha256": "98c290f49b3b071a4127529aa21c7bbf816a6b59596f9be210adc0fecd302d45"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/classification-test-result.json",
+        "sha256": "0158c21bfa6fa46d87656030888cce9e8853b18086547599a6ce668527d80554"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/retain_interrupted_runtime_post_restart.ps1",
+        "sha256": "0769a1fbcf8c44b12a09fe35a31823a6a75eee2d24494814d1ae4334d15b32a9"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/post_restart_classification.ps1",
+        "sha256": "c5fb0a7b207f5c6e0fdd4d55b624aef69df4619c758034c59ca1a5645cf534f2"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/test_post_restart_classification.ps1",
+        "sha256": "bb88bbf79eb8c61b023d6a7d1468b40af09d4007433a3f111c832235e89fe611"
+      }
+    ],
+    "require_source_runtime_absent_and_exact_retained_directory": true,
+    "require_equal_content_manifests_and_zero_deleted_files": true,
+    "require_normal_fresh_launch_identity_resource_mutex_guards": true,
+    "old_terminal_flags_must_remain_unconfirmed": true,
+    "single_owner_job_termination_is_inference": true
+  },
+  "planned_mode": "--r1-game-entity-publication-gates"
+}

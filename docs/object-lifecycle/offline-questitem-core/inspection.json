@@ -1,0 +1,118 @@
+{
+  "status": "fixed-questitem-core-disassembly-verified",
+  "started_utc": "2026-10-20T12:11:36.897Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-questitem-boundaries/boundary.json",
+      "sha256": "fa5ae01ef102377d8ec976607622c3aab8d1af23144d8a408e42cf15f3ec4f05"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-questitem-factory-boundary/boundary.json",
+      "sha256": "7f50d86ca63154ae11ab0d98a199e4eb316cadc08aa79685edc919149178b75b"
+    }
+  ],
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "code_byte_limit": 577,
+  "code_bytes": 577,
+  "metadata_recheck_byte_limit": 36,
+  "metadata_bytes": 36,
+  "fragments": [
+    {
+      "role": "classInfo-plus28-factory",
+      "start_va": "0x1801066b0",
+      "end_va_exclusive": "0x1801066da",
+      "code_bytes": 42,
+      "code_sha256": "f2758466695ebffa7c311429d70624c28aa2f9dce23e309a69d1fc8794ec14b3",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1801066b0,0x1801066d9",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_elapsed_ms": 34,
+      "tool_exit": 0,
+      "tool_error": null,
+      "instructions": 10,
+      "byte_coverage_verified": true
+    },
+    {
+      "role": "QuestItem-constructor",
+      "start_va": "0x180427c90",
+      "end_va_exclusive": "0x180427d2c",
+      "code_bytes": 156,
+      "code_sha256": "ab20e7fa773c4f2302a460dd60a1371460fac751407ab1f509ec2dd740af6b82",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180427c90,0x180427d2b",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_elapsed_ms": 33,
+      "tool_exit": 0,
+      "tool_error": null,
+      "instructions": 28,
+      "byte_coverage_verified": true
+    },
+    {
+      "role": "QuestItem-Object-vtable-plus8-Read",
+      "start_va": "0x180427e40",
+      "end_va_exclusive": "0x180427fbb",
+      "code_bytes": 379,
+      "code_sha256": "acb7c1f0cc8e391915064a3ff805cbc13f6923329cecdef3728ad7660a00e936",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180427e40,0x180427fba",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_elapsed_ms": 30,
+      "tool_exit": 0,
+      "tool_error": null,
+      "instructions": 93,
+      "byte_coverage_verified": true
+    }
+  ],
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "original_modified": false,
+  "full_target_copy_created": false,
+  "dumpbin_input": "Original file read directly; no DLL loading or new whole-file copy",
+  "scope": "Three frozen unwind fragments; no automatic continuation, callee or inheritance traversal",
+  "hash_scope": "64KiB streaming full-file SHA256 before and after; separate from code/metadata byte totals",
+  "dumpbin_io_scope": "RANGE limits output; internal dumpbin metadata I/O is not instrumented",
+  "original_sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "original_stat_stable": true,
+  "original_hash_matches": true,
+  "tool_hash_matches": true,
+  "failures": [],
+  "finished_utc": "2026-10-20T12:11:37.015Z",
+  "controller_resource_usage": {
+    "userCPUTime": 62000,
+    "systemCPUTime": 15000,
+    "maxRSS": 43000,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11308,
+    "swappedOut": 0,
+    "fsRead": 378,
+    "fsWrite": 9,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "status": "frozen-unbuilt-awaiting-root-approved-resource-slot",
+  "reason": "1D152D MOV EAX,[material+FC] and1D1533 MOV[hit+10],EAX only transfer bits. A known valid field containing unknown DWORD bits must propagate Unknown rather than require a known numeric value. Original resource pointer still must be known for TEST1D1528, and a nonnull resource still needs an established valid FC field view.",
+  "source": ["src/reverse_client_actions/GroundBlockIntersectionContracts.cs", "4542efbc0d2be6d2e3539c5daaed34c8aa4b39537cea447c882b825eaba568b9"],
+  "tests": ["src/reverse_client_actions/GroundBlockIntersectionTests.cs", "348e81c8bc301660de374a4e39efc1890901da062e6805dcee3cf2838a73fa44"],
+  "script": ["tools/build_r1_ground_block_fc_copy.ps1", "b51aced5426f1f200a9fb63e104b95f76c31e7fcca5fafad5c89d2c1706d0675"],
+  "output": ".tooling/r1-ground-block-fc-copy-validation/result.json",
+  "preserved_baseline": {
+    "source_and_script_backup": ".tooling/r1-ground-block-fc-copy-baseline",
+    "passed_result": ".tooling/r1-ground-block-intersection-validation/result.json",
+    "result_sha256": "e1fc057812c6e78678095f11e6e5da09e9a57dc8ddfba906df12230f36d1a7b7",
+    "scenarios": 8,
+    "assertions": 49
+  },
+  "planned_validation": "Two compiles; eight affected Block scenarios including corrected opaque-FC expectation and unchanged real-material-pointer failure; one added exact-DWORD-output/FC-alias scenario. No other old suite. PowerShell parser zero errors; no compile/test execution here.",
+  "world_floor_design": "docs/reverse-client/world-floor-shared-state-plan.json",
+  "remaining": "Real resource identity/source, GroundTree integration, Water, actual pathable-actor and neighboring-region state remain required. No default empty state or real gameplay success is supplied."
+}

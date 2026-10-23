@@ -1,0 +1,597 @@
+{
+  "utc": "2026-10-23T09:50:47.026Z",
+  "status": "bounded-saved-map-movement-components-passed-not-playable",
+  "deliverables": [
+    {
+      "capability": "Crowd producer",
+      "path": ".tooling/r1-crowd-tick-production-validation/result.json",
+      "sha256": "ed6cd6c871321c0f9e294d096ebbf876f3ce0c6b593310931b24d54dc145074e",
+      "new_scenarios": 23,
+      "new_assertions": 95
+    },
+    {
+      "capability": "WorldFloor",
+      "path": ".tooling/r1-world-floor-validation/result.json",
+      "sha256": "fb8aa582b41b46897f127dab007eb8c9dfd9e88c9c09d6b14ea24cb93a639dbc",
+      "new_scenarios": 21,
+      "new_assertions": 135
+    },
+    {
+      "capability": "Terrain material collision",
+      "path": ".tooling/r1-terrain-material-collision-validation/result.json",
+      "sha256": "2d707ba5dfcbdf2c2f1d6a057d79b32f4c01bf4ddb69872bbe1928ba58c58dc6",
+      "new_scenarios": 8,
+      "new_assertions": 384
+    },
+    {
+      "capability": "Saved real Ground Floor",
+      "path": ".tooling/r1-real-ground-floor-integration-validation/result.json",
+      "sha256": "352dec2d8e3aaa709f16a4828746ef56aa7d6e35320f1c0dda8131eff9a97840",
+      "new_scenarios": 6,
+      "new_assertions": 120
+    },
+    {
+      "capability": "World position initialization",
+      "path": ".tooling/r1-world-position-initialization-validation/result.json",
+      "sha256": "097519bdee7265759c044807b999591f5d664cc0352ddf804b69db334ef1fe9d",
+      "new_scenarios": 9,
+      "new_assertions": 88
+    },
+    {
+      "capability": "Game Moved integration",
+      "path": "docs/reverse-client/r1-game-moved-integration-result-20261023.json",
+      "sha256": "db564ea6cc767297ccd3ae267592cf160419c4e7a7144ab59cd2c5977c169a61",
+      "new_scenarios": 22,
+      "new_assertions": 373
+    },
+    {
+      "capability": "Camera ray through saved Ground",
+      "path": ".tooling/r1-camera-world-ray-validation/result.json",
+      "sha256": "927e66c82ec1e7c797cee446380922bbfd031ea5355a853515baec6e7775e52d",
+      "new_scenarios": 23,
+      "new_assertions": 256
+    },
+    {
+      "capability": "Bounded ready member two frames",
+      "path": ".tooling/r1-crowd-ready-tick-validation/result.json",
+      "sha256": "c66bd4047d3aa7c33e34f65d9792b67af2e4ce5231873f06823ad5d362b3efef",
+      "new_scenarios": 32,
+      "new_assertions": 309
+    },
+    {
+      "capability": "Shared identity, real lookup and conditional arrival components",
+      "path": ".tooling/r1-game-reached-goal-validation/result.json",
+      "sha256": "1e9210d3e0227447232e75f71e28aece2cc03c301dec0bb7f96fd3b1c0256661",
+      "new_scenarios": 23,
+      "new_assertions": 564
+    },
+    {
+      "capability": "Four mouse entry components",
+      "path": ".tooling/r1-player-mouse-validation/result.json",
+      "sha256": "8f3f6d4265af16f5ed0f0e8553a9b4508f8435a78f78c92e00b9df2034cf015b",
+      "new_scenarios": 13,
+      "new_assertions": 157
+    },
+    {
+      "key": "player_mouse_player_lookup_validation",
+      "capability": "Real128530 player resolution using canonical identity and actual ObjectManager lookup",
+      "path": ".tooling/r1-player-lookup-validation/result.json",
+      "new_scenarios": 5,
+      "new_assertions": 105,
+      "sha256": "e64f58bc078d2b576472e253fdc3c6fb27941721bc105536506682a1750d0b29"
+    },
+    {
+      "key": "skill_reference_validation",
+      "capability": "Actual531C50 five-vector skill reference and03A740 ObjectID getter",
+      "path": ".tooling/r1-skill-reference-validation/result.json",
+      "new_scenarios": 6,
+      "new_assertions": 76,
+      "sha256": "921562ead910a729005b3b47befba1f07afa6f42c3de81cf361819db5d303797"
+    },
+    {
+      "capability": "Canonical GameCamera -> actual Ground ->22C1A0 -> actual nearest handoff",
+      "path": ".tooling/r1-camera-ground-navigation-handoff-validation/result.json",
+      "sha256": "a82baad139d29656fac7374ab89f6694803ad26f3af6767493df6d24830cdcfb",
+      "new_scenarios": 3,
+      "new_assertions": 89,
+      "samples": [
+        {
+          "name": "camera-click",
+          "ground": [
+            64.25,
+            16.05875,
+            64.75
+          ],
+          "region_token": 77,
+          "region_offset": [
+            0,
+            0,
+            0
+          ],
+          "nearest_reference": 4198400,
+          "navigation_hit": true,
+          "projected": [
+            64.25,
+            19.025795,
+            64.75
+          ],
+          "tile": [
+            2,
+            2
+          ],
+          "tile_min_y": 15.782938,
+          "walkable_xz": 1,
+          "walkable_xyz": 1,
+          "expected_negative": false,
+          "extent": [
+            0.125,
+            2,
+            0.125
+          ],
+          "actual_camera_getters": 2
+        },
+        {
+          "name": "ready-frame-1-ground",
+          "ground": [
+            63.0971069,
+            17.2317123,
+            52.82203
+          ],
+          "region_token": 77,
+          "region_offset": [
+            0,
+            0,
+            0
+          ],
+          "nearest_reference": 0,
+          "navigation_hit": false,
+          "projected": null,
+          "tile": [
+            1,
+            1
+          ],
+          "tile_min_y": 19.3829384,
+          "walkable_xz": 1,
+          "walkable_xyz": 0,
+          "expected_negative": true,
+          "extent": [
+            0.125,
+            2,
+            0.125
+          ],
+          "actual_camera_getters": 2
+        },
+        {
+          "name": "ready-frame-2-ground",
+          "ground": [
+            63.1942139,
+            17.2245941,
+            52.84406
+          ],
+          "region_token": 77,
+          "region_offset": [
+            0,
+            0,
+            0
+          ],
+          "nearest_reference": 0,
+          "navigation_hit": false,
+          "projected": null,
+          "tile": [
+            1,
+            1
+          ],
+          "tile_min_y": 19.3829384,
+          "walkable_xz": 1,
+          "walkable_xyz": 0,
+          "expected_negative": true,
+          "extent": [
+            0.125,
+            2,
+            0.125
+          ],
+          "actual_camera_getters": 2
+        }
+      ],
+      "helper_source_recompiled": true,
+      "old_suites_rerun": 0,
+      "physical_mouse": false,
+      "walking_accepted": false
+    },
+    {
+      "capability": "Actual3EAE40 shared HotSlot tree lookup wired to concrete mouse selector boundary",
+      "path": ".tooling/r1-hot-slot-displayed-validation/result.json",
+      "sha256": "ac20fbca502dc5964f98e0823109e0be6e3e1eb585b192faebe6560cc62acdb1",
+      "new_scenarios": 6,
+      "new_assertions": 101,
+      "compiles": 2,
+      "old_suites_rerun": 0,
+      "physical_mouse": false,
+      "full_mouse_chain": false
+    }
+  ],
+  "new_scenarios": 200,
+  "new_assertions": 2852,
+  "affected_existing_regression": {
+    "suite": "SystemUcrtRotationMathTests",
+    "scenarios": 11,
+    "assertions": 96
+  },
+  "observed_outputs": [
+    "Actual Game Moved callback queries saved terrain Ground rather than substituting navigation height, then publishes rotation and Entity position.",
+    "Actual shared GameCamera getter, projection and normalized ray intersects saved terrain; independent triangle height agrees and short ray misses.",
+    "One actual ready member with original Created flags0x481/speed2/minimum1.1/limit400 advances two bounded frames on the same mutable state; real tail trims references, measures speed, and clears Work."
+  ],
+  "owned_prerequisites": [
+    "Explicit frame counts100/101 and prior gates99/100; native producer unclosed.",
+    "Own camera/viewport/region inputs, finite arithmetic and pinned System32 UCRT math profile.",
+    "Single ready agent, no replan, empty neighbor/actor/skill collections, supported saved-material/tree subset."
+  ],
+  "unsupported": [
+    "Arrival/stuck callback completion",
+    "Physical mouse to native pick coordinates",
+    "Native frame lifecycle and full tick states",
+    "Cold scene startup and resource rendering/HUD",
+    "Playable reverse client and original runtime equivalence"
+  ],
+  "failure_recovery": {
+    "first_game_build": "Missing previously passed managed MainmenuTilePipeline assembly; first21new components already passed.",
+    "repair": "Added exact pinned assembly to isolated new folder; reran only failed saved1/64, zero compilation/old suite repetition."
+  },
+  "resources": {
+    "small_serial_compile_observed_seconds_range": [
+      0.511,
+      3.673
+    ],
+    "small_compile_peak_memory_measured": false,
+    "resource_snapshot_utc": "2026-10-23T08:45:28.5293876Z",
+    "available_physical_bytes": 15416090624,
+    "commit_bytes": 27276091392,
+    "commit_limit_bytes": 52369920000,
+    "external_conflicts": [],
+    "rea_launch_floor_gib": 5,
+    "rea_stop_floor_gib": 2,
+    "rea_mutex_and_identity_unchanged": true,
+    "blanket_light_compile_UE_hold_required": false,
+    "latest_snapshot": {
+      "utc": "2026-10-23T10:21:16.9448491Z",
+      "available_physical_bytes": 15293472768,
+      "commit_bytes": 27115319296,
+      "commit_limit_bytes": 52369920000,
+      "external_conflicts": []
+    }
+  },
+  "next": "Continue shared Player gate/request -> saved same-region NavigationSearch -> original MoveObject/Agent bridge; no repeat queries for retained body. No runnable reversed client yet.",
+  "gameplay_accepted": false,
+  "original_executed": false,
+  "saves_or_cloud_accessed": false,
+  "security_changed": false,
+  "committed_or_pushed": false,
+  "arrival_queries": {
+    "game": {
+      "path": "docs/reverse-client/r1-game-reached-goal-dependencies-run1/summary.json",
+      "sha256": "cb7bbcee00109b8c407ba1ced0972b6fe73c89f07cd76fb318174136418099d1",
+      "status": "passed",
+      "calls": 11,
+      "closed_session_verified": true,
+      "process_exit_confirmed": true,
+      "job_empty_confirmed": true,
+      "sampler_exit_confirmed": true,
+      "original_hash_stable": true,
+      "sampled_working_set_peak_bytes": 1302073344
+    },
+    "engine": {
+      "path": "docs/reverse-client/r1-engine-reached-goal-dependencies-run1/summary.json",
+      "sha256": "6d626a6bcef3d81d2436d3bfad65fc5f05779f47f2eaf51fcd0e9a802b870ae6",
+      "status": "passed",
+      "calls": 13,
+      "closed_session_verified": true,
+      "process_exit_confirmed": true,
+      "job_empty_confirmed": true,
+      "sampler_exit_confirmed": true,
+      "original_hash_stable": true,
+      "sampled_working_set_peak_bytes": 1335644160,
+      "ray_callers": [],
+      "ray_xrefs": [
+        "0x1803b2bb0",
+        "0x18043dc80"
+      ],
+      "ray_attribution": "No direct caller established; refs alone do not close physical input."
+    },
+    "stop_state": {
+      "path": "docs/reverse-client/r1-game-stop-state-direct-run1/summary.json",
+      "sha256": "b3fab2b782bfa21fd622406ea31ed32b213e711dcf098d93aa34ce9c9f93c63d",
+      "status": "passed",
+      "calls": 8,
+      "closed_session_verified": true,
+      "process_exit_confirmed": true,
+      "job_empty_confirmed": true,
+      "sampler_exit_confirmed": true,
+      "original_hash_stable": true,
+      "sampled_working_set_peak_bytes": 1321598976,
+      "body": "05B710 DWORD24B4=EDX;05B716 DWORD20A8=0;05B720 RET",
+      "direct_callees": []
+    },
+    "skill_reference": {
+      "path": "docs/reverse-client/r1-game-skill-reference-direct-run1/summary.json",
+      "sha256": "156176008eb2982eecc81040a376bd09921bc1176656a21523b08431e5275cd9",
+      "status": "passed",
+      "calls": 8,
+      "closed_session_verified": true,
+      "process_exit_confirmed": true,
+      "job_empty_confirmed": true,
+      "sampler_exit_confirmed": true,
+      "original_hash_stable": true,
+      "sampled_working_set_peak_bytes": 1312538624,
+      "body": "Five ordered pointer-vector probes with uint subtraction and signed-shift counts; no reference-zero shortcut; non-null candidate tail-jumps609128 ObjectID.",
+      "model_tested": true
+    }
+  },
+  "increment_since_0733": {
+    "as_of_utc": "2026-10-23T10:32:15.658Z",
+    "new_passed_scenarios": 148,
+    "new_passed_assertions": 2238,
+    "affected_old_scenarios": 11,
+    "affected_old_assertions": 96,
+    "passed": [
+      "07:37 saved actual Ground floor integration: six material/tree/triangle cases; navigation height not substituted.",
+      "07:48 canonical WorldPosition initialization: nine cases.",
+      "Actual Game Moved callback and saved map motion: 22 cases, including repaired missing managed dependency without recompilation.",
+      "08:39 GameCamera target/projection/normalized ray intersecting actual saved Ground: 23 cases.",
+      "08:47 same ready agent advances two frames through real movement callback, terrain position publication and tail: 32 cases.",
+      "09:36 shared canonical identity, Engine hot helpers, actual ObjectManager FNV/bucket lookup, conditional arrival/active-action unsupported prefix:23/564; two compiles; old suites0.",
+      "09:50 four mouse dispatch entries13/157; opaque argument/alias tests with explicit external observations; no physical-click claim.",
+      "10:08 actual128530 player lookup5/105;10:09 actual531C50 reference parsing6/76; four serial compiles total; no old-suite rerun.",
+      "10:25 canonical actual camera->saved Ground->world->nearest handoff3/89; one positive nav ref4198400 and two true misses. One reused helper source recompiled, no old Main.",
+      "10:30 actual3EAE40 shared HotSlot lookup6/101, concrete mouse adapter invokes both getters and retains queue/4A61 mutation before Unsupported option;2 compiles, no old tests."
+    ],
+    "not_counted_as_new_since_0733": [
+      "Crowd producer23/95 passed07:26",
+      "WorldFloor21/135 passed07:28",
+      "Material8/384 passed07:28"
+    ],
+    "written_unbuilt": [],
+    "remaining": [
+      "Wire actual Player IsAlive and direct request prechecks without defaulting Unknown",
+      "Implement saved ordinary NavigationSearch wrapper with its own observed extents and shared buffers; then real609F08 Agent submission",
+      "Connect physical mouse event/coordinate producer to request chain",
+      "Arrival/destructor/full tick and real resource rendering/startup/UI"
+    ],
+    "blocker_kind": "Evidence-backed production integration remains. No current model-capacity failure, approval denial, resource hold or pending execution. Physical-input binding and scene renderer remain unclosed.",
+    "designed_not_implemented": [
+      "PlayerIsAlive05BB80/3CE7B0 with actual2FA290 video-null branch and explicit owner/global cells",
+      "Ordinary same-region NavigationSearch10C6C0 wrapper and original mouse request/Agent submission integration"
+    ]
+  },
+  "coordinate_handoff_open_issue": {
+    "status": "Three fixed canonical-frame probes passed; full mouse request integration remains",
+    "camera_fixture_region_offset": [
+      100,
+      -200,
+      300
+    ],
+    "motion_fixture_region_offset": [
+      0,
+      0,
+      0
+    ],
+    "meaning": "Independent fixtures use different region objects. Same token77 is not shared identity. Do not pass region-local hit as world point.",
+    "ready_point_tile_min_y": 19.382938,
+    "ready_ground_y_plus_extent": [
+      19.2317123,
+      19.2245941
+    ],
+    "extent_y": 2,
+    "camera_target_y_miss_not_inferred": true,
+    "validation": {
+      "capability": "Canonical GameCamera -> actual Ground ->22C1A0 -> actual nearest handoff",
+      "path": ".tooling/r1-camera-ground-navigation-handoff-validation/result.json",
+      "sha256": "a82baad139d29656fac7374ab89f6694803ad26f3af6767493df6d24830cdcfb",
+      "new_scenarios": 3,
+      "new_assertions": 89,
+      "samples": [
+        {
+          "name": "camera-click",
+          "ground": [
+            64.25,
+            16.05875,
+            64.75
+          ],
+          "region_token": 77,
+          "region_offset": [
+            0,
+            0,
+            0
+          ],
+          "nearest_reference": 4198400,
+          "navigation_hit": true,
+          "projected": [
+            64.25,
+            19.025795,
+            64.75
+          ],
+          "tile": [
+            2,
+            2
+          ],
+          "tile_min_y": 15.782938,
+          "walkable_xz": 1,
+          "walkable_xyz": 1,
+          "expected_negative": false,
+          "extent": [
+            0.125,
+            2,
+            0.125
+          ],
+          "actual_camera_getters": 2
+        },
+        {
+          "name": "ready-frame-1-ground",
+          "ground": [
+            63.0971069,
+            17.2317123,
+            52.82203
+          ],
+          "region_token": 77,
+          "region_offset": [
+            0,
+            0,
+            0
+          ],
+          "nearest_reference": 0,
+          "navigation_hit": false,
+          "projected": null,
+          "tile": [
+            1,
+            1
+          ],
+          "tile_min_y": 19.3829384,
+          "walkable_xz": 1,
+          "walkable_xyz": 0,
+          "expected_negative": true,
+          "extent": [
+            0.125,
+            2,
+            0.125
+          ],
+          "actual_camera_getters": 2
+        },
+        {
+          "name": "ready-frame-2-ground",
+          "ground": [
+            63.1942139,
+            17.2245941,
+            52.84406
+          ],
+          "region_token": 77,
+          "region_offset": [
+            0,
+            0,
+            0
+          ],
+          "nearest_reference": 0,
+          "navigation_hit": false,
+          "projected": null,
+          "tile": [
+            1,
+            1
+          ],
+          "tile_min_y": 19.3829384,
+          "walkable_xz": 1,
+          "walkable_xyz": 0,
+          "expected_negative": true,
+          "extent": [
+            0.125,
+            2,
+            0.125
+          ],
+          "actual_camera_getters": 2
+        }
+      ],
+      "helper_source_recompiled": true,
+      "old_suites_rerun": 0,
+      "physical_mouse": false,
+      "walking_accepted": false
+    }
+  },
+  "mouse_direct_query": {
+    "path": "docs/reverse-client/r1-game-mouse-direct-dependencies-run1/summary.json",
+    "sha256": "a130d0512c48743812fdba59a91c6b7ae02693d76c65b0417bf91f20c404daf3",
+    "status": "passed",
+    "calls": 14,
+    "started": "2026-10-23T10:09:53.702Z",
+    "finished": "2026-10-23T10:13:01.422Z",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "sampled_working_set_peak_bytes": 1314803712,
+    "original_hash_stable": true,
+    "actual_role_slot460": "IsAlive; not a generic permission gate",
+    "character": "byte24B9 nonzero=>false; else uint24B0 maskedFFFFFFFD equals0",
+    "player": "byte24B9 nonzero=>false; else realObjectID->gGameEngine->2FA290 IsPlayingVideo; false then test24B0 mask",
+    "displayed_skillset": "9C nonzero else98 captured search key;88 header,08 root,00/10 children,19 nil,20 unsigned key,28 result;lower_bound/miss null",
+    "unclosed_direct": "Player2FA290 IsPlayingVideo; original startup state and physical mapping unclosed"
+  },
+  "updated_utc": "2026-10-23T10:32:15.658Z",
+  "current_operation": "Natural validation checkpoint; all issued builds and Rea batches have final results",
+  "click_route_inventory": {
+    "status": "saved-bodies-reviewed; integration not implemented",
+    "direct_chain": [
+      "165CB0",
+      "163490",
+      "3CE890",
+      "08E200",
+      "150590",
+      "10C6C0"
+    ],
+    "all_chain_bodies_already_saved": true,
+    "navigation_search_body": "docs/reverse-client/r1-engine-navigation-search/04-NavigationSearch-procedure_pseudo_code.json",
+    "navigation_search_assembly": "docs/reverse-client/r1-engine-navigation-search/05-NavigationSearch-procedure_assembly.json",
+    "reuse": [
+      "Nearest2610F0",
+      "Corridor261CB0",
+      "StraightPath262480",
+      "Translate22C350",
+      "Floor22C620"
+    ],
+    "no_new_navigation_algorithm_required": true,
+    "search_extents": "first live Impl75F4; second captured before first call as(param4,Impl75F8,param4)",
+    "constructor_scalar_evidence": {
+      "path": "docs/reverse-client/r1-navigation-implementation-constructor/05-NavigationImplementationConstructor-procedure_assembly.json",
+      "writes": [
+        "10A9B7",
+        "10A9C1",
+        "10A9CB"
+      ],
+      "values": [
+        0.05,
+        3,
+        0.05
+      ],
+      "loaded_runtime_observed": false
+    },
+    "unsupported_or_unwired": [
+      "Shared query/filter/buffers/counter ownership and exact output-write order",
+      "GetCoordsUnparented609BE8 binding/adapter",
+      "GetMainPlayer/Options direct prerequisites",
+      "609F08 MoveObject bridge to existing Agent",
+      "Physical input mapping and resource scene presentation"
+    ],
+    "ordinary_minimum_domain": "same Region; output vector null; preserve genuine callback/failure prefixes; no fabricated successful corridor"
+  },
+  "player_video_query": {
+    "path": "docs/reverse-client/r1-game-player-video-direct-run1/summary.json",
+    "sha256": "c119e6bd8cc9384438aaea204ceafb33175438cee72c7172ff777b23234c1aed",
+    "status": "passed",
+    "calls": 8,
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "original_hash_stable": true,
+    "sampled_working_set_peak_bytes": 1321721856,
+    "body": "2FA290:19B0 null returnsfalse; nonnull40F8.slot18 result+10 ID compare; equal reload19B0 tail168, unequal scans37300..37308 uints.",
+    "model_implemented": false
+  },
+  "latest_validation_outputs": {
+    "positive_camera_ground_nav": {
+      "ground": [
+        64.25,
+        16.05875,
+        64.75
+      ],
+      "reference": 4198400,
+      "projected": [
+        64.25,
+        19.025795,
+        64.75
+      ],
+      "region": "One explicit OWN origin0 shared Region; native startup not claimed"
+    },
+    "negative_ground_points": 2,
+    "bounded_movement_frames": 2,
+    "mouse_physical_chain_complete": false,
+    "r1_gameplay_accepted": false
+  }
+}

@@ -1,0 +1,134 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-cache-node\Engine.readonly.dll
+
+File Type: DLL
+
+  0000000180283840: 48 89 5C 24 10     mov         qword ptr [rsp+10h],rbx
+  0000000180283845: 48 89 6C 24 18     mov         qword ptr [rsp+18h],rbp
+  000000018028384A: 56                 push        rsi
+  000000018028384B: 57                 push        rdi
+  000000018028384C: 41 56              push        r14
+  000000018028384E: 48 83 EC 40        sub         rsp,40h
+  0000000180283852: 48 8B 59 70        mov         rbx,qword ptr [rcx+70h]
+  0000000180283856: 48 8B FA           mov         rdi,rdx
+  0000000180283859: 48 8B E9           mov         rbp,rcx
+  000000018028385C: 48 85 DB           test        rbx,rbx
+  000000018028385F: 74 31              je          0000000180283892
+  0000000180283861: 8B 49 58           mov         ecx,dword ptr [rcx+58h]
+  0000000180283864: 4C 8B C2           mov         r8,rdx
+  0000000180283867: 8B 45 60           mov         eax,dword ptr [rbp+60h]
+  000000018028386A: 49 D3 E8           shr         r8,cl
+  000000018028386D: 45 8B C0           mov         r8d,r8d
+  0000000180283870: 4C 23 C0           and         r8,rax
+  0000000180283873: 4A 8B 1C C3        mov         rbx,qword ptr [rbx+r8*8]
+  0000000180283877: 48 85 DB           test        rbx,rbx
+  000000018028387A: 74 16              je          0000000180283892
+  000000018028387C: 0F 1F 40 00        nop         dword ptr [rax]
+  0000000180283880: 48 39 3B           cmp         qword ptr [rbx],rdi
+  0000000180283883: 0F 84 A6 00 00 00  je          000000018028392F
+  0000000180283889: 48 8B 5B 10        mov         rbx,qword ptr [rbx+10h]
+  000000018028388D: 48 85 DB           test        rbx,rbx
+  0000000180283890: 75 EE              jne         0000000180283880
+  0000000180283892: 45 33 C0           xor         r8d,r8d
+  0000000180283895: 48 C7 44 24 38 0F  mov         qword ptr [rsp+38h],0Fh
+                    00 00 00
+  000000018028389E: 48 83 CE FF        or          rsi,0FFFFFFFFFFFFFFFFh
+  00000001802838A2: 4C 89 44 24 30     mov         qword ptr [rsp+30h],r8
+  00000001802838A7: 44 88 44 24 20     mov         byte ptr [rsp+20h],r8b
+  00000001802838AC: 44 38 02           cmp         byte ptr [rdx],r8b
+  00000001802838AF: 74 0D              je          00000001802838BE
+  00000001802838B1: 4C 8B C6           mov         r8,rsi
+  00000001802838B4: 49 FF C0           inc         r8
+  00000001802838B7: 42 80 3C 02 00     cmp         byte ptr [rdx+r8],0
+  00000001802838BC: 75 F6              jne         00000001802838B4
+  00000001802838BE: 48 8D 4C 24 20     lea         rcx,[rsp+20h]
+  00000001802838C3: E8 18 F4 D9 FF     call        0000000180022CE0
+  00000001802838C8: 4C 8D 44 24 20     lea         r8,[rsp+20h]
+  00000001802838CD: 48 8B CD           mov         rcx,rbp
+  00000001802838D0: 48 8D 54 24 60     lea         rdx,[rsp+60h]
+  00000001802838D5: E8 06 90 DB FF     call        000000018003C8E0
+  00000001802838DA: 48 8B 44 24 60     mov         rax,qword ptr [rsp+60h]
+  00000001802838DF: 48 3B 45 08        cmp         rax,qword ptr [rbp+8]
+  00000001802838E3: 74 03              je          00000001802838E8
+  00000001802838E5: 8B 70 30           mov         esi,dword ptr [rax+30h]
+  00000001802838E8: 48 8B 54 24 38     mov         rdx,qword ptr [rsp+38h]
+  00000001802838ED: 48 83 FA 10        cmp         rdx,10h
+  00000001802838F1: 72 13              jb          0000000180283906
+  00000001802838F3: 48 8B 4C 24 20     mov         rcx,qword ptr [rsp+20h]
+  00000001802838F8: 48 FF C2           inc         rdx
+  00000001802838FB: 41 B8 01 00 00 00  mov         r8d,1
+  0000000180283901: E8 8A F7 D9 FF     call        0000000180023090
+  0000000180283906: 83 FE FF           cmp         esi,0FFFFFFFFh
+  0000000180283909: 74 0F              je          000000018028391A
+  000000018028390B: 4C 63 C6           movsxd      r8,esi
+  000000018028390E: 48 8D 4D 58        lea         rcx,[rbp+58h]
+  0000000180283912: 48 8B D7           mov         rdx,rdi
+  0000000180283915: E8 46 08 00 00     call        0000000180284160
+  000000018028391A: 8B C6              mov         eax,esi
+  000000018028391C: 48 8B 5C 24 68     mov         rbx,qword ptr [rsp+68h]
+  0000000180283921: 48 8B 6C 24 70     mov         rbp,qword ptr [rsp+70h]
+  0000000180283926: 48 83 C4 40        add         rsp,40h
+  000000018028392A: 41 5E              pop         r14
+  000000018028392C: 5F                 pop         rdi
+  000000018028392D: 5E                 pop         rsi
+  000000018028392E: C3                 ret
+  000000018028392F: 48 85 DB           test        rbx,rbx
+  0000000180283932: 0F 84 5A FF FF FF  je          0000000180283892
+  0000000180283938: 48 8B 43 08        mov         rax,qword ptr [rbx+8]
+  000000018028393C: 48 C1 E0 05        shl         rax,5
+  0000000180283940: 48 03 45 40        add         rax,qword ptr [rbp+40h]
+  0000000180283944: 48 83 78 18 10     cmp         qword ptr [rax+18h],10h
+  0000000180283949: 72 03              jb          000000018028394E
+  000000018028394B: 48 8B 00           mov         rax,qword ptr [rax]
+  000000018028394E: 4C 8B C7           mov         r8,rdi
+  0000000180283951: 4C 2B C0           sub         r8,rax
+  0000000180283954: 0F B6 10           movzx       edx,byte ptr [rax]
+  0000000180283957: 42 0F B6 0C 00     movzx       ecx,byte ptr [rax+r8]
+  000000018028395C: 2B D1              sub         edx,ecx
+  000000018028395E: 75 07              jne         0000000180283967
+  0000000180283960: 48 FF C0           inc         rax
+  0000000180283963: 85 C9              test        ecx,ecx
+  0000000180283965: 75 ED              jne         0000000180283954
+  0000000180283967: 85 D2              test        edx,edx
+  0000000180283969: 0F 84 89 00 00 00  je          00000001802839F8
+  000000018028396F: 45 33 C0           xor         r8d,r8d
+  0000000180283972: 48 C7 44 24 38 0F  mov         qword ptr [rsp+38h],0Fh
+                    00 00 00
+  000000018028397B: 48 83 CE FF        or          rsi,0FFFFFFFFFFFFFFFFh
+  000000018028397F: 4C 89 44 24 30     mov         qword ptr [rsp+30h],r8
+  0000000180283984: 44 88 44 24 20     mov         byte ptr [rsp+20h],r8b
+  0000000180283989: 44 38 07           cmp         byte ptr [rdi],r8b
+  000000018028398C: 74 0D              je          000000018028399B
+  000000018028398E: 4C 8B C6           mov         r8,rsi
+  0000000180283991: 49 FF C0           inc         r8
+  0000000180283994: 42 80 3C 07 00     cmp         byte ptr [rdi+r8],0
+  0000000180283999: 75 F6              jne         0000000180283991
+  000000018028399B: 48 8B D7           mov         rdx,rdi
+  000000018028399E: 48 8D 4C 24 20     lea         rcx,[rsp+20h]
+  00000001802839A3: E8 38 F3 D9 FF     call        0000000180022CE0
+  00000001802839A8: 4C 8D 44 24 20     lea         r8,[rsp+20h]
+  00000001802839AD: 48 8B CD           mov         rcx,rbp
+  00000001802839B0: 48 8D 54 24 60     lea         rdx,[rsp+60h]
+  00000001802839B5: 8B FE              mov         edi,esi
+  00000001802839B7: E8 24 8F DB FF     call        000000018003C8E0
+  00000001802839BC: 48 8B 44 24 60     mov         rax,qword ptr [rsp+60h]
+  00000001802839C1: 48 3B 45 08        cmp         rax,qword ptr [rbp+8]
+  00000001802839C5: 74 03              je          00000001802839CA
+  00000001802839C7: 8B 78 30           mov         edi,dword ptr [rax+30h]
+  00000001802839CA: 48 8B 54 24 38     mov         rdx,qword ptr [rsp+38h]
+  00000001802839CF: 48 83 FA 10        cmp         rdx,10h
+  00000001802839D3: 72 13              jb          00000001802839E8
+  00000001802839D5: 48 8B 4C 24 20     mov         rcx,qword ptr [rsp+20h]
+  00000001802839DA: 48 FF C2           inc         rdx
+  00000001802839DD: 41 B8 01 00 00 00  mov         r8d,1
+  00000001802839E3: E8 A8 F6 D9 FF     call        0000000180023090
+  00000001802839E8: 83 FF FF           cmp         edi,0FFFFFFFFh
+  00000001802839EB: 0F 84 29 FF FF FF  je          000000018028391A
+  00000001802839F1: 48 63 C7           movsxd      rax,edi
+  00000001802839F4: 48 89 43 08        mov         qword ptr [rbx+8],rax
+  00000001802839F8: 8B 43 08           mov         eax,dword ptr [rbx+8]
+  00000001802839FB: E9 1C FF FF FF     jmp         000000018028391C
+
+  Summary
+
+      301000 .text

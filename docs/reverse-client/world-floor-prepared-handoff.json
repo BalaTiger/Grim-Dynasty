@@ -1,0 +1,108 @@
+{
+  "utc": "2026-10-23T07:03:03.783Z",
+  "status": "safe-resource-handoff-new-world-floor-source-not-built",
+  "owner": "/root/ground_tree_validation",
+  "no_pending_operation": true,
+  "new_background_processes": 0,
+  "files": [
+    {
+      "file": "src/reverse_client_actions/WorldFloorContracts.cs",
+      "bytes": 21968,
+      "sha256": "637ec9998cc3ac9e4422e587cdcbb7dd31a870cf98ef3ea64b7ddceb95381e63"
+    },
+    {
+      "file": "tools/static_analysis/read_r1_world_floor_operands.mjs",
+      "bytes": 10414,
+      "sha256": "dae5e4e911f3ad67817236300f301932a6acee892c8cc3761b678749d6733e28"
+    },
+    {
+      "file": "tools/static_analysis/read_r1_world_floor_operands.plan.json",
+      "bytes": 3122,
+      "sha256": "41c93b68ec677d44cf55c0532f24617bae9b0d0134ee065e9646981691061697"
+    },
+    {
+      "file": "docs/reverse-client/r1-world-floor-operands/inspection.json",
+      "bytes": 4415,
+      "sha256": "c91fef5f5208773247838f1804fd3c2b95420dccdfe691354eb5d6cace299a13"
+    },
+    {
+      "file": ".tooling/r1-ground-spatial-tree-validation/result.json",
+      "bytes": 18114,
+      "sha256": "0ad251a681a3834a0ea4039ad7c215f6bbeefcf46b5672cc9584a2f801adcc42"
+    },
+    {
+      "file": ".tooling/r1-ground-water-empty-validation/result.json",
+      "bytes": 15516,
+      "sha256": "ae4dd2938b997b79c4168a3478810e9ec7a306a70858efab80726ca77f1c3fed"
+    },
+    {
+      "file": ".tooling/r1-world-publication-prerequisites-validation/result.json",
+      "bytes": 11819,
+      "sha256": "43da143e7dca57b18fffa4316797c734a809d2a223a91295fb8b95d9a6855c42"
+    }
+  ],
+  "new_source": {
+    "file": "src/reverse_client_actions/WorldFloorContracts.cs",
+    "compiled": false,
+    "tested": false,
+    "static_review": "Independent review found no API/visibility or declared-domain control-flow blocker. Found eager MOVSS mask/margin knowledge consumption and corrected it to Snapshot plus first actual XOR/ADD/AND Read; corrected revision not compiled.",
+    "changes": "New shared canonical region/level attachments; same Ground data/tree/context identity; actual managed lock borrow; actual Tree/empty-Water calls;130270 empty or actual bounds-rejected actor subdomain; live neighbor availability/level/bounds skipping;221DA0/22C620 output16+8 and Unknown D14.",
+    "unchanged_existing_sources": true,
+    "old_movement_wrapper_wired": false,
+    "new_constants": "Root performed fixed12B read; explicit disk selector uses40200000/bf800000/41800000.34C410 reused7fffffff.",
+    "normal_real_map_floor_claimed": false,
+    "gameplay_accepted": false
+  },
+  "tests": {
+    "file": "src/reverse_client_actions/WorldFloorTests.cs",
+    "exists": false,
+    "executed": false,
+    "complete_draft": false,
+    "build_script_created": false,
+    "planned_scope": "New Floor only: separately report real saved-ground Unknown-material stop and explicitly OWN-established normal true return; unknown lists, early flags/lock release, fallback, actor bounds, neighbor skipping. No old Tree/Water suite rerun.",
+    "recipe": {
+      "saved_member": "docs/reverse-client/r1-mainmenu-complete-member/mainmenu.map.bin",
+      "sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+      "ground_offset": 273260,
+      "ground_bytes": 149073,
+      "water_offset": 422341,
+      "water_bytes": 24
+    },
+    "test_caution": "Unknown neighbor AbsMask must not first be consumed by actual Ground. Use explicitly known Landscape/Ground20=null producing+Inf, established actor empty and skipped neighbors: expected normal false, not true."
+  },
+  "confirmed_prior_results": {
+    "tree": "Root passed7 scenarios/2430 assertions,225 entries,312nodes,maxdepth6,225nonroot; not rerun here",
+    "operands": "Root fixed3 DWORD reads passed; unchanged original hashes and closed fd reported; not rerun here"
+  },
+  "direct_evidence": {
+    "region_neighbor_cold_zero": {
+      "file": "docs/reverse-client/r1-map-region-and-tile-product/05-MapRegionTileProduct-0x180191980-procedure_assembly.json",
+      "sha256": "9a07b4fb5b76ab6b7d4c2b6450638727449bd124b81c97bc5797d39ee7c16be3",
+      "stores": [
+        "191AEC +100=R12",
+        "191AF3 +108=R12",
+        "191AFA +110=R12"
+      ],
+      "zero_source": "1919D9 XOR R12D,R12D",
+      "boundary": "Cold constructor fields only; not post-load emptiness"
+    },
+    "level_actor_writer_next": {
+      "candidate": "Engine12B750 Level::Level",
+      "source": "docs/reverse-client/r1-region-blob-loading/05-RegionBlobLoading-0x180194e20-procedure_assembly.json",
+      "sha256": "c217945dfd8f300cddda134ac9cae9e7b92316149382de9f63fd0a9fca264e5b",
+      "direct_call": "194EA3 CALL12B750;194EA9 publishes Region+68",
+      "body_saved": false,
+      "query_started": false
+    }
+  },
+  "remaining": [
+    "Finish new Floor test source and fixed two-compile script; root review/formal execution only after resource release",
+    "Real Actor/neighbor lists require actual state source, not default empty; native12B750 writer body unqueried",
+    "Actor bounds-eligible collision stops130395 pending vtable+C0/07F070/object+30/+49C",
+    "Non-null terrain fallback stops221EA6 pending actual vtableB8",
+    "Original raw Ground material pointers remain Unknown until the separately prepared strict real record binding; no test callback substitute",
+    "Water native render constructor/Initialize differs from explicit OWN empty-payload semantic state",
+    "Existing production movement caller still invokes older unsupported wrapper; new WorldFloor API not yet wired into it"
+  ],
+  "next_action": "Resume only after parent resource release. Finish focused test source, review it, generate pinned build script using passed Tree/Water/WorldPublication libraries; no old suite rerun or new Rea needed for this preparation."
+}

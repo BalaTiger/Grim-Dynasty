@@ -1,0 +1,39 @@
+{
+  "schema": "grim-dynasty.fixed-crowd-raycast-threshold.v1",
+  "script": "tools/static_analysis/read_r1_crowd_raycast_threshold.mjs",
+  "entrypoint": "inspectCrowdRaycastThreshold(reviewedScriptSha256,reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-crowd-raycast-threshold/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "proof": {
+    "file": "docs/reverse-client/r1-crowd-motion-branches/17-CrowdMotionBranch-0x1800309f0-procedure_assembly.json",
+    "sha256": "42be90fb31c4edaaa251d6223a190977f7e7fa44240181d9f9dba1eb1ca19e62",
+    "procedure": "0x1800309f0",
+    "instruction": "0x180030aec: COMISS XMM0, dword ptr [0x18034bb38]"
+  },
+  "pe_cache": {
+    "file": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+    "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+  },
+  "target": {
+    "rva": "0x34bb38",
+    "bytes": 4
+  },
+  "limits": {
+    "data_bytes": 4,
+    "new_metadata_bytes": 0,
+    "code_bytes": 0,
+    "hash_chunk_bytes": 65536
+  },
+  "requirements": [
+    "Separate formal execution approval; module import performs noI/O.",
+    "External Windows Attributes/reparse ancestor checks remain required.",
+    "Reuse cached PE only after exact source SHA256 verification; readable nonexecutablesection andfilebounds enforced.",
+    "Exactly4Boperand; no expected value,adjacent data,code,loaded global,subprocess,backend ororiginal execution.",
+    "Same descriptor before/afterSHA256 andstat/path checks;newoutputexclusivewrite;failurespreserved."
+  ]
+}
+

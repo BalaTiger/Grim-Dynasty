@@ -1,0 +1,35 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Engine.dll
+
+File Type: DLL
+
+  00000001802DC890: 40 53              push        rbx
+  00000001802DC892: 48 83 EC 20        sub         rsp,20h
+  00000001802DC896: 48 8B 15 83 FC 13  mov         rdx,qword ptr [000000018041C520h]
+                    00
+  00000001802DC89D: 48 8B D9           mov         rbx,rcx
+  00000001802DC8A0: 8B CA              mov         ecx,edx
+  00000001802DC8A2: 48 33 15 A7 44 14  xor         rdx,qword ptr [0000000180420D50h]
+                    00
+  00000001802DC8A9: 83 E1 3F           and         ecx,3Fh
+  00000001802DC8AC: 48 D3 CA           ror         rdx,cl
+  00000001802DC8AF: 48 83 FA FF        cmp         rdx,0FFFFFFFFFFFFFFFFh
+  00000001802DC8B3: 75 0A              jne         00000001802DC8BF
+  00000001802DC8B5: 48 8B CB           mov         rcx,rbx
+  00000001802DC8B8: E8 E7 12 00 00     call        00000001802DDBA4
+  00000001802DC8BD: EB 0F              jmp         00000001802DC8CE
+  00000001802DC8BF: 48 8B D3           mov         rdx,rbx
+  00000001802DC8C2: 48 8D 0D 87 44 14  lea         rcx,[0000000180420D50h]
+                    00
+  00000001802DC8C9: E8 CA 12 00 00     call        00000001802DDB98
+  00000001802DC8CE: 33 C9              xor         ecx,ecx
+  00000001802DC8D0: 85 C0              test        eax,eax
+  00000001802DC8D2: 48 0F 44 CB        cmove       rcx,rbx
+  00000001802DC8D6: 48 8B C1           mov         rax,rcx
+  00000001802DC8D9: 48 83 C4 20        add         rsp,20h
+  00000001802DC8DD: 5B                 pop         rbx
+  00000001802DC8DE: C3                 ret
+
+  Summary
+
+      301000 .text

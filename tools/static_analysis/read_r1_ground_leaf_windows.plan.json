@@ -1,0 +1,65 @@
+{
+  "schema": "grim-dynasty.fixed-ground-leaf-windows.v1",
+  "script": "tools/static_analysis/read_r1_ground_leaf_windows.mjs",
+  "entrypoint": "inspectGroundLeafWindows(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-ground-leaf-windows/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "source_pins": [
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "intersection_slots",
+      "path": "docs/reverse-client/r1-ground-intersection-slots/inspection.json",
+      "sha256": "a07945f156610a3ee5b49b9a954079b46f1a04610bde8d2cf20a04af1ab177c7"
+    },
+    {
+      "key": "geometry_slots",
+      "path": "docs/reverse-client/r1-ground-geometry-bindings/inspection.json",
+      "sha256": "8be1f21796126e33fae05d412b4690b8d7cf5618bda89593d4f6021230621d17"
+    },
+    {
+      "key": "failed_summary",
+      "path": "docs/reverse-client/r1-ground-intersection-direct/summary.json",
+      "sha256": "f225eb802df82ac96bcaf20b1535bf45e2eecc932e9112876feadfb6e9a92b1b"
+    },
+    {
+      "key": "failed_response",
+      "path": "docs/reverse-client/r1-ground-intersection-direct/07-GroundIntersectionDirect-0x1801de850-procedure_pseudo_code.json",
+      "sha256": "7916cd78076ac681958d68e14d2f87333976e343c5f54fc3ec480d6145c507ae"
+    }
+  ],
+  "windows": [
+    {
+      "rva": "0x1de810",
+      "bytes": 64,
+      "exclusive_stop_rva": "0x1de850"
+    },
+    {
+      "rva": "0x1de850",
+      "bytes": 48,
+      "exclusive_stop_rva": "0x1de880"
+    }
+  ],
+  "limits": {
+    "code_bytes": 112,
+    "code_operations": 2,
+    "single_read_bytes": 64,
+    "hash_chunk_bytes": 65536,
+    "new_PE_header_bytes": 0,
+    "metadata_bytes": 0
+  },
+  "requirements": [
+    "Root reviews exact script and plan then formally approves the original read; run separate Windows Attributes/reparse-tag preflight. Import alone does not perform I/O.",
+    "Only two explicit code windows:1DE810..1DE84F and1DE850..1DE87F. These ceilings come from independently observed entry candidates, not verified function-end boundaries. No scan, execution, disassembly subprocess, new PE metadata or widening on failure.",
+    "Preserve exact raw bytes. This observation does not imply Ghidra function creation, Rea pseudocode, complete control-flow or loaded runtime behavior. Any required branch outside the fixed window remains unknown.",
+    "Cached Engine PE mapping is accepted only with pinned evidence and matching original before-hash. Same O_RDONLY descriptor whole-file hashes before/after plus stat/path checks; close on failure and retain fresh output. Hash streams are separate from112 semantic bytes.",
+    "Prior batch remains failed6/29 with1DF220 triplet preserved and confirmed normal cleanup. Do not retry failed selectors or overwrite old results."
+  ]
+}

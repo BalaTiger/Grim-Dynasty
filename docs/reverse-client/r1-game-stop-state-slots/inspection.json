@@ -1,0 +1,125 @@
+{
+  "schema": "grim-dynasty.fixed-game-stop-state-slots.v1",
+  "started_utc": "2026-10-23T09:09:09.308Z",
+  "script_sha256": "f2d7e97c17fff13ce3095b4f2d16d4a09f1cbcc367af71176c285480e1d7b8d0",
+  "plan_sha256": "8e20ad1589d47fb8632b0f5a8450e2864a841f215747f43f287276e391bf2ca6",
+  "source_pins": [
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "primary_tables",
+      "path": "docs/reverse-client/r1-game-callback-dependencies/inspection.json",
+      "sha256": "c0f0348d8f0712b35efd22d7ed36282065bfc31c78ee18b0f1d870e036a4afab"
+    },
+    {
+      "key": "stop_assembly",
+      "path": "docs/reverse-client/r1-game-reached-goal-dependencies-run1/05-GameReachedGoal-0x18005fc30-procedure_assembly.json",
+      "sha256": "4561fc9318786d5efd3c87dbdb81525d49699b1da6244111c7dfb06fb5aaa46e"
+    }
+  ],
+  "code_bytes": 0,
+  "metadata_bytes": 16,
+  "metadata_operations": 2,
+  "new_PE_header_bytes": 0,
+  "whole_table_bytes": 0,
+  "target_body_bytes": 0,
+  "original_loaded_or_executed": false,
+  "subprocesses": 0,
+  "whole_table_scanned": false,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "reads": [
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x6dfb20",
+          "file_offset": 7201056,
+          "bytes": 8,
+          "raw_hex": "10b7058001000000"
+        },
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x787550",
+          "file_offset": 7887696,
+          "bytes": 8,
+          "raw_hex": "10b7058001000000"
+        }
+      ],
+      "hash_bytes": 22771712,
+      "closed": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "stable": true
+    }
+  ],
+  "values": [
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x450",
+      "rva": "0x6dfb20",
+      "bytes": 8,
+      "callsite": "0x18005fc83",
+      "opcode": "JMP",
+      "section": ".rdata",
+      "file_offset": 7201056,
+      "raw_hex": "10b7058001000000",
+      "uint64_va": "0x18005b710",
+      "candidate_rva": "0x5b710",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_name_source": null,
+      "function_boundary_verified": false,
+      "callback_abi_verified": false,
+      "loaded_value_observed": false,
+      "candidate_code_section": ".text"
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x450",
+      "rva": "0x787550",
+      "bytes": 8,
+      "callsite": "0x18005fc83",
+      "opcode": "JMP",
+      "section": ".rdata",
+      "file_offset": 7887696,
+      "raw_hex": "10b7058001000000",
+      "uint64_va": "0x18005b710",
+      "candidate_rva": "0x5b710",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_name_source": null,
+      "function_boundary_verified": false,
+      "callback_abi_verified": false,
+      "loaded_value_observed": false,
+      "candidate_code_section": ".text"
+    }
+  ],
+  "disk_bindings_complete": true,
+  "unsupported": [],
+  "failures": [],
+  "limitations": [
+    "Only two disk primary-vtable candidates at+450; no other slot read. Original executable code is never loaded or executed.",
+    "Table extents and subsequent constructor-callee overwrites are not excluded by the saved proof; actual loaded dispatch remains unverified.",
+    "Executable address classification does not establish function boundaries, target names, ABI or behavior.",
+    "No function name is inferred from the role of the calling slot; exact saved name lookup is absent.",
+    "Whole-file hash streams check identity separately from the16B semantic read budget, and are not atomic snapshots.",
+    "Node path checks cannot identify every Windows reparse tag; separate Attributes preflight remains required."
+  ],
+  "proofs_verified": true,
+  "primary_tables": {
+    "interface_offset": 0,
+    "constructor_writes_verified": true,
+    "player_overwrite_verified": true,
+    "table_extents_verified": false,
+    "subsequent_callee_writes_excluded": false,
+    "loaded_values_observed": false
+  },
+  "finished_utc": "2026-10-23T09:09:09.326Z",
+  "status": "passed"
+}

@@ -1,0 +1,202 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\m3-statistics-node-link-temp\direct-4da10.inspect.dll
+
+File Type: DLL
+
+  000000018004DA10: 40 53              push        rbx
+  000000018004DA12: 48 83 EC 20        sub         rsp,20h
+  000000018004DA16: 48 8B 41 08        mov         rax,qword ptr [rcx+8]
+  000000018004DA1A: 4C 8B D1           mov         r10,rcx
+  000000018004DA1D: 48 B9 65 66 66 66  mov         rcx,666666666666665h
+                    66 66 66 06
+  000000018004DA27: 48 8B DA           mov         rbx,rdx
+  000000018004DA2A: 48 3B C1           cmp         rax,rcx
+  000000018004DA2D: 72 18              jb          000000018004DA47
+  000000018004DA2F: 48 8B 4C 24 58     mov         rcx,qword ptr [rsp+58h]
+  000000018004DA34: E8 83 CC 58 00     call        00000001805DA6BC
+  000000018004DA39: 48 8D 0D C8 72 68  lea         rcx,[00000001806D4D08h]
+                    00
+  000000018004DA40: FF 15 3A DC 5B 00  call        qword ptr [000000018060B680h]
+  000000018004DA46: CC                 int         3
+  000000018004DA47: 4C 8B 5C 24 58     mov         r11,qword ptr [rsp+58h]
+  000000018004DA4C: 48 FF C0           inc         rax
+  000000018004DA4F: 49 89 42 08        mov         qword ptr [r10+8],rax
+  000000018004DA53: 4D 89 4B 08        mov         qword ptr [r11+8],r9
+  000000018004DA57: 49 8B 02           mov         rax,qword ptr [r10]
+  000000018004DA5A: 4C 3B C8           cmp         r9,rax
+  000000018004DA5D: 75 0F              jne         000000018004DA6E
+  000000018004DA5F: 4C 89 58 08        mov         qword ptr [rax+8],r11
+  000000018004DA63: 49 8B 02           mov         rax,qword ptr [r10]
+  000000018004DA66: 4C 89 18           mov         qword ptr [rax],r11
+  000000018004DA69: 49 8B 02           mov         rax,qword ptr [r10]
+  000000018004DA6C: EB 22              jmp         000000018004DA90
+  000000018004DA6E: 45 84 C0           test        r8b,r8b
+  000000018004DA71: 74 10              je          000000018004DA83
+  000000018004DA73: 4D 89 19           mov         qword ptr [r9],r11
+  000000018004DA76: 49 8B 02           mov         rax,qword ptr [r10]
+  000000018004DA79: 4C 3B 08           cmp         r9,qword ptr [rax]
+  000000018004DA7C: 75 16              jne         000000018004DA94
+  000000018004DA7E: 4C 89 18           mov         qword ptr [rax],r11
+  000000018004DA81: EB 11              jmp         000000018004DA94
+  000000018004DA83: 4D 89 59 10        mov         qword ptr [r9+10h],r11
+  000000018004DA87: 49 8B 02           mov         rax,qword ptr [r10]
+  000000018004DA8A: 4C 3B 48 10        cmp         r9,qword ptr [rax+10h]
+  000000018004DA8E: 75 04              jne         000000018004DA94
+  000000018004DA90: 4C 89 58 10        mov         qword ptr [rax+10h],r11
+  000000018004DA94: 49 8B 4B 08        mov         rcx,qword ptr [r11+8]
+  000000018004DA98: 49 8B C3           mov         rax,r11
+  000000018004DA9B: 80 79 18 00        cmp         byte ptr [rcx+18h],0
+  000000018004DA9F: 0F 85 FB 01 00 00  jne         000000018004DCA0
+  000000018004DAA5: 66 66 66 0F 1F 84  nop         word ptr [rax+rax+0000000000000000h]
+                    00 00 00 00 00
+  000000018004DAB0: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DAB4: 4C 8B 41 08        mov         r8,qword ptr [rcx+8]
+  000000018004DAB8: 49 8B 10           mov         rdx,qword ptr [r8]
+  000000018004DABB: 48 3B CA           cmp         rcx,rdx
+  000000018004DABE: 0F 85 F1 00 00 00  jne         000000018004DBB5
+  000000018004DAC4: 49 8B 50 10        mov         rdx,qword ptr [r8+10h]
+  000000018004DAC8: 80 7A 18 00        cmp         byte ptr [rdx+18h],0
+  000000018004DACC: 75 21              jne         000000018004DAEF
+  000000018004DACE: C6 41 18 01        mov         byte ptr [rcx+18h],1
+  000000018004DAD2: C6 42 18 01        mov         byte ptr [rdx+18h],1
+  000000018004DAD6: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DADA: 48 8B 51 08        mov         rdx,qword ptr [rcx+8]
+  000000018004DADE: C6 42 18 00        mov         byte ptr [rdx+18h],0
+  000000018004DAE2: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DAE6: 48 8B 41 08        mov         rax,qword ptr [rcx+8]
+  000000018004DAEA: E9 A3 01 00 00     jmp         000000018004DC92
+  000000018004DAEF: 48 3B 41 10        cmp         rax,qword ptr [rcx+10h]
+  000000018004DAF3: 75 4B              jne         000000018004DB40
+  000000018004DAF5: 48 8B 51 10        mov         rdx,qword ptr [rcx+10h]
+  000000018004DAF9: 48 8B C1           mov         rax,rcx
+  000000018004DAFC: 48 8B 0A           mov         rcx,qword ptr [rdx]
+  000000018004DAFF: 48 89 48 10        mov         qword ptr [rax+10h],rcx
+  000000018004DB03: 48 8B 0A           mov         rcx,qword ptr [rdx]
+  000000018004DB06: 80 79 19 00        cmp         byte ptr [rcx+19h],0
+  000000018004DB0A: 75 04              jne         000000018004DB10
+  000000018004DB0C: 48 89 41 08        mov         qword ptr [rcx+8],rax
+  000000018004DB10: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DB14: 48 89 4A 08        mov         qword ptr [rdx+8],rcx
+  000000018004DB18: 49 8B 0A           mov         rcx,qword ptr [r10]
+  000000018004DB1B: 48 3B 41 08        cmp         rax,qword ptr [rcx+8]
+  000000018004DB1F: 75 06              jne         000000018004DB27
+  000000018004DB21: 48 89 51 08        mov         qword ptr [rcx+8],rdx
+  000000018004DB25: EB 12              jmp         000000018004DB39
+  000000018004DB27: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DB2B: 48 3B 01           cmp         rax,qword ptr [rcx]
+  000000018004DB2E: 75 05              jne         000000018004DB35
+  000000018004DB30: 48 89 11           mov         qword ptr [rcx],rdx
+  000000018004DB33: EB 04              jmp         000000018004DB39
+  000000018004DB35: 48 89 51 10        mov         qword ptr [rcx+10h],rdx
+  000000018004DB39: 48 89 02           mov         qword ptr [rdx],rax
+  000000018004DB3C: 48 89 50 08        mov         qword ptr [rax+8],rdx
+  000000018004DB40: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DB44: C6 41 18 01        mov         byte ptr [rcx+18h],1
+  000000018004DB48: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DB4C: 48 8B 51 08        mov         rdx,qword ptr [rcx+8]
+  000000018004DB50: C6 42 18 00        mov         byte ptr [rdx+18h],0
+  000000018004DB54: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DB58: 48 8B 51 08        mov         rdx,qword ptr [rcx+8]
+  000000018004DB5C: 4C 8B 02           mov         r8,qword ptr [rdx]
+  000000018004DB5F: 49 8B 48 10        mov         rcx,qword ptr [r8+10h]
+  000000018004DB63: 48 89 0A           mov         qword ptr [rdx],rcx
+  000000018004DB66: 49 8B 48 10        mov         rcx,qword ptr [r8+10h]
+  000000018004DB6A: 80 79 19 00        cmp         byte ptr [rcx+19h],0
+  000000018004DB6E: 75 04              jne         000000018004DB74
+  000000018004DB70: 48 89 51 08        mov         qword ptr [rcx+8],rdx
+  000000018004DB74: 48 8B 4A 08        mov         rcx,qword ptr [rdx+8]
+  000000018004DB78: 49 89 48 08        mov         qword ptr [r8+8],rcx
+  000000018004DB7C: 49 8B 0A           mov         rcx,qword ptr [r10]
+  000000018004DB7F: 48 3B 51 08        cmp         rdx,qword ptr [rcx+8]
+  000000018004DB83: 75 0D              jne         000000018004DB92
+  000000018004DB85: 4C 89 41 08        mov         qword ptr [rcx+8],r8
+  000000018004DB89: 49 89 50 10        mov         qword ptr [r8+10h],rdx
+  000000018004DB8D: E9 FC 00 00 00     jmp         000000018004DC8E
+  000000018004DB92: 48 8B 4A 08        mov         rcx,qword ptr [rdx+8]
+  000000018004DB96: 48 3B 51 10        cmp         rdx,qword ptr [rcx+10h]
+  000000018004DB9A: 75 0D              jne         000000018004DBA9
+  000000018004DB9C: 4C 89 41 10        mov         qword ptr [rcx+10h],r8
+  000000018004DBA0: 49 89 50 10        mov         qword ptr [r8+10h],rdx
+  000000018004DBA4: E9 E5 00 00 00     jmp         000000018004DC8E
+  000000018004DBA9: 4C 89 01           mov         qword ptr [rcx],r8
+  000000018004DBAC: 49 89 50 10        mov         qword ptr [r8+10h],rdx
+  000000018004DBB0: E9 D9 00 00 00     jmp         000000018004DC8E
+  000000018004DBB5: 80 7A 18 00        cmp         byte ptr [rdx+18h],0
+  000000018004DBB9: 75 21              jne         000000018004DBDC
+  000000018004DBBB: C6 41 18 01        mov         byte ptr [rcx+18h],1
+  000000018004DBBF: C6 42 18 01        mov         byte ptr [rdx+18h],1
+  000000018004DBC3: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DBC7: 48 8B 51 08        mov         rdx,qword ptr [rcx+8]
+  000000018004DBCB: C6 42 18 00        mov         byte ptr [rdx+18h],0
+  000000018004DBCF: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DBD3: 48 8B 41 08        mov         rax,qword ptr [rcx+8]
+  000000018004DBD7: E9 B6 00 00 00     jmp         000000018004DC92
+  000000018004DBDC: 48 3B 01           cmp         rax,qword ptr [rcx]
+  000000018004DBDF: 75 4D              jne         000000018004DC2E
+  000000018004DBE1: 48 8B 11           mov         rdx,qword ptr [rcx]
+  000000018004DBE4: 48 8B C1           mov         rax,rcx
+  000000018004DBE7: 48 8B 4A 10        mov         rcx,qword ptr [rdx+10h]
+  000000018004DBEB: 48 89 08           mov         qword ptr [rax],rcx
+  000000018004DBEE: 48 8B 4A 10        mov         rcx,qword ptr [rdx+10h]
+  000000018004DBF2: 80 79 19 00        cmp         byte ptr [rcx+19h],0
+  000000018004DBF6: 75 04              jne         000000018004DBFC
+  000000018004DBF8: 48 89 41 08        mov         qword ptr [rcx+8],rax
+  000000018004DBFC: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DC00: 48 89 4A 08        mov         qword ptr [rdx+8],rcx
+  000000018004DC04: 49 8B 0A           mov         rcx,qword ptr [r10]
+  000000018004DC07: 48 3B 41 08        cmp         rax,qword ptr [rcx+8]
+  000000018004DC0B: 75 06              jne         000000018004DC13
+  000000018004DC0D: 48 89 51 08        mov         qword ptr [rcx+8],rdx
+  000000018004DC11: EB 13              jmp         000000018004DC26
+  000000018004DC13: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DC17: 48 3B 41 10        cmp         rax,qword ptr [rcx+10h]
+  000000018004DC1B: 75 06              jne         000000018004DC23
+  000000018004DC1D: 48 89 51 10        mov         qword ptr [rcx+10h],rdx
+  000000018004DC21: EB 03              jmp         000000018004DC26
+  000000018004DC23: 48 89 11           mov         qword ptr [rcx],rdx
+  000000018004DC26: 48 89 42 10        mov         qword ptr [rdx+10h],rax
+  000000018004DC2A: 48 89 50 08        mov         qword ptr [rax+8],rdx
+  000000018004DC2E: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DC32: C6 41 18 01        mov         byte ptr [rcx+18h],1
+  000000018004DC36: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DC3A: 48 8B 51 08        mov         rdx,qword ptr [rcx+8]
+  000000018004DC3E: C6 42 18 00        mov         byte ptr [rdx+18h],0
+  000000018004DC42: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DC46: 48 8B 51 08        mov         rdx,qword ptr [rcx+8]
+  000000018004DC4A: 4C 8B 42 10        mov         r8,qword ptr [rdx+10h]
+  000000018004DC4E: 49 8B 08           mov         rcx,qword ptr [r8]
+  000000018004DC51: 48 89 4A 10        mov         qword ptr [rdx+10h],rcx
+  000000018004DC55: 49 8B 08           mov         rcx,qword ptr [r8]
+  000000018004DC58: 80 79 19 00        cmp         byte ptr [rcx+19h],0
+  000000018004DC5C: 75 04              jne         000000018004DC62
+  000000018004DC5E: 48 89 51 08        mov         qword ptr [rcx+8],rdx
+  000000018004DC62: 48 8B 4A 08        mov         rcx,qword ptr [rdx+8]
+  000000018004DC66: 49 89 48 08        mov         qword ptr [r8+8],rcx
+  000000018004DC6A: 49 8B 0A           mov         rcx,qword ptr [r10]
+  000000018004DC6D: 48 3B 51 08        cmp         rdx,qword ptr [rcx+8]
+  000000018004DC71: 75 06              jne         000000018004DC79
+  000000018004DC73: 4C 89 41 08        mov         qword ptr [rcx+8],r8
+  000000018004DC77: EB 12              jmp         000000018004DC8B
+  000000018004DC79: 48 8B 4A 08        mov         rcx,qword ptr [rdx+8]
+  000000018004DC7D: 48 3B 11           cmp         rdx,qword ptr [rcx]
+  000000018004DC80: 75 05              jne         000000018004DC87
+  000000018004DC82: 4C 89 01           mov         qword ptr [rcx],r8
+  000000018004DC85: EB 04              jmp         000000018004DC8B
+  000000018004DC87: 4C 89 41 10        mov         qword ptr [rcx+10h],r8
+  000000018004DC8B: 49 89 10           mov         qword ptr [r8],rdx
+  000000018004DC8E: 4C 89 42 08        mov         qword ptr [rdx+8],r8
+  000000018004DC92: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DC96: 80 79 18 00        cmp         byte ptr [rcx+18h],0
+  000000018004DC9A: 0F 84 10 FE FF FF  je          000000018004DAB0
+  000000018004DCA0: 49 8B 02           mov         rax,qword ptr [r10]
+  000000018004DCA3: 4C 89 1B           mov         qword ptr [rbx],r11
+  000000018004DCA6: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018004DCAA: 48 8B C3           mov         rax,rbx
+  000000018004DCAD: C6 41 18 01        mov         byte ptr [rcx+18h],1
+  000000018004DCB1: 48 83 C4 20        add         rsp,20h
+  000000018004DCB5: 5B                 pop         rbx
+  000000018004DCB6: C3                 ret
+
+  Summary
+
+        1000 .text

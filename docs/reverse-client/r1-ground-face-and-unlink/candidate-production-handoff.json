@@ -1,0 +1,50 @@
+{
+  "schema": "grim-dynasty.ground-candidate-handoff.v1",
+  "status": "sources-and-tests-prepared-not-built",
+  "engine_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sources": {
+    "src/reverse_client_actions/GroundGeometryContracts.cs": "485d779e8f3712ab8fca4d055b2f935c10aea4cae6233335bd83eeb83926d854",
+    "src/reverse_client_actions/GroundMaterialCandidateContracts.cs": "c68f1681942bf2511b943afa28b6d3be541b61ee624fff8013169f7bdccab002",
+    "src/reverse_client_actions/GroundMaterialCandidateTests.cs": "8aaf6f37148147a55c84f35c17e17eed2d56e527275b8b1873aeac9b164631fc"
+  },
+  "evidence": {
+    "docs/reverse-client/r1-ground-ray-tree/23-GroundRayTree-0x1801d12f0-procedure_assembly.json": "9367198fcf07978f6ba927aa80a6dbf351c66a8ac0a3a79bd0c2ad217e544cfc",
+    "docs/reverse-client/r1-ground-intersection-remaining/11-GroundIntersectionRemaining-0x1801deb80-procedure_assembly.json": "5e573fa7eb94b60e885304656fa1dfb997f35640b5d28163e8554b3fe3ac1ba8",
+    "docs/reverse-client/r1-ground-face-and-unlink/14-GroundFaceUnlink-0x1801ce0e0-procedure_assembly.json": "61798838ae53d663ffe29a1fbab4b6c282e8e96cf43e561b2ef118b79d3affbb",
+    "docs/object-lifecycle/offline-binary-bits-fill-prefix-walk-v3/0483a0-instructions.json": "29a3815ce82ea25d998d3ffd7472f918bbf1ca1e2e5bd0239a109dda92611f3c",
+    "docs/object-lifecycle/offline-binary-bits-fill-prefix-walk-v3/inspection.json": "089f04a6e64e6fc5f11fee85e8b20d263d1eacf954626f90342bd86d780b904d",
+    "docs/reverse-client/r1-ground-ray-tree/17-GroundRayTree-0x1801d1330-procedure_assembly.json": "d357bf689cb3222286ff59bc8bfa10e72905ef3906e65108095d9aee63bfdae1",
+    "docs/reverse-client/r1-ground-leaf-windows/manual-disk-decode.json": "b9cb5ebeac0db7910bbe3728e8c20526b4fff202ed7058ce48b9016ab9d55de0",
+    "docs/reverse-client/r1-ground-face-and-unlink/11-GroundFaceUnlink-0x1801cff90-procedure_assembly.json": "50194bf64c796d90a918e0349e7cf1679a4115bf537a2539bc662d0b74488866"
+  },
+  "new_contract": [
+    "1DEB80 resets End to Begin before Box, dimensions or packed bitmap reads. It borrows the same OwnGroundData packed buffer and the Block's live XZ Box fields.",
+    "Candidate i uses occupancy bit i+1. Candidates are visited descending; each observed bit calls1CE0E0 at current Begin. The resulting vector is ascending, without replacing the scan with a fabricated empty list.",
+    "1CE0E0 normal Begin insertion uses max(count+1, capacity+floor(capacity/2)); cold capacity for256 records reaches316. New storage publishes capacity, End, Begin in that order. The current own model preserves the visible count/storage prefix and excludes concurrent observation, arbitrary iterator/input aliases and native allocation exceptions.",
+    "Existing0483A0 evidence is bounded dumpbin disk-instruction evidence, not a new Rea result. For valid destination and count1 it loads the input DWORD, stores that DWORD, then returns. This is the exact normal fill call used by the insertion model.",
+    "Managed allocation/release is an explicit own platform adapter. Finite FP, bounded dimensions, nonwrapping indices and valid extents are the supported domain; Unsupported is not a native exception contract. Material fields remain Unknown."
+  ],
+  "consumer_interface": {
+    "identity": "GroundBlockMaterialState retains the authoritative GroundBlockState. CandidatesC8 is the one mutable output vector; Populate rereads Block.TerrainA8 and uses the same Block.Box10. TypeRecordAt and ReadWeight return the original record identity and a byte from its immutable weight plane; they do not resolve Material.",
+    "live_reads": "GroundCandidateVector.Count and ReadAt(index,address) support the future1D1330 consumer's fresh Begin/value reads. SnapshotValues is inspection-only; retaining it across mutation is not the native contract.",
+    "material_selection": "1D1330 visits the candidate vector from its last index. Its recurrence uses remaining=1-previousWeight, weight=byte*observedNormalization*remaining; best changes only on a strictly larger weight. This is not a generic sum/normalization. The chosen value is candidate[selectedVectorIndex].",
+    "direct_remaining": "1DE850 coverage bytes are already identified by manual disk decode: index0 establishes AL255 only; other records borrow their own byte plane at (width-1)*cellZ+cellX.1DE810 returns the selected record's Material pointer. An unknown Material must stop; nonnull Material+FC still needs a real resource producer. Do not substitute null or100.",
+    "failure_prefix": "1D1330 actually writes surface100 before selection. A later Unknown material stop may leave that prefix and a finite triangle distance, but cannot be returned as a completed native floor hit. XYZ writes occur only after material selection."
+  },
+  "tree_unlink_read_only_contract": [
+    "1CFF90 captures previous+30 and next+28, clears object owner+8, updates previous+28 or node head+48, then rereads object+28 and, if nonnull, object+30 before writing next+30. Finally it clears object+30 followed by object+28. Aliasing cannot be erased by an initial full snapshot.",
+    "It returns current node if head or any of the four ordered children+10/+18/+20/+28 remains nonnull. Otherwise parent+8 nonnull tail-calls11BBC0(parent,node). This task does not implement or execute tree unlink/refine."
+  ],
+  "verification_prepared": {
+    "new_scenarios": 12,
+    "real_sample": "Fixed saved mainmenu member:225 Block bounds compared item-by-item with an independent union of serialized packed bytes; no original read required.",
+    "base_recompile": "Geometry source changes only by TypeRecordCount, ReadPacked120, TypeRecordAt and ReadWeight. Rebuild that library for the new APIs; reuse prior8/55 evidence and pinned dependencies without rerunning its old tests.",
+    "build_executed": false,
+    "tests_executed": false,
+    "original_read": false,
+    "backend_started": false,
+    "full_native_load": false,
+    "floor_hit_completed": false,
+    "gameplay_accepted": false
+  }
+}

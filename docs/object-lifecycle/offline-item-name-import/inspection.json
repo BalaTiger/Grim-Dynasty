@@ -1,0 +1,346 @@
+{
+  "schema": "item-name-import-export-v1",
+  "status": "fixed-item-name-import-export-verified",
+  "started_utc": "2026-10-21T08:49:02.962Z",
+  "sources": [
+    {
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-item-identity-import/inspection.json",
+      "sha256": "c0b80a81f7094c25816017d8e4adaeeff74c835f3049daabd0842b9563740b59"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-item-identity-import/32396e-instructions.json",
+      "sha256": "6d28b1412db5c9d04a261a5b480dfc6869fef32aca613cbeaf080616b8db0ba5"
+    }
+  ],
+  "limits": {
+    "game_code_bytes": 0,
+    "engine_code_bytes": 0,
+    "metadata_bytes": 98,
+    "read_operations": 6,
+    "dumpbin_calls": 0,
+    "hash_buffer": 65536
+  },
+  "original_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "callees_followed": 0,
+  "pdata_read": false,
+  "reads": [
+    {
+      "module": "Game",
+      "rva": "0x609520",
+      "file_offset": 6322976,
+      "kind": "iat",
+      "bytes": 8,
+      "hex": "9079a40000000000"
+    },
+    {
+      "module": "Game",
+      "rva": "0xa47990",
+      "file_offset": 10772368,
+      "kind": "hint-and-name",
+      "bytes": 41,
+      "hex": "770c3f4765744f626a6563744e616d65404f626a6563744047414d4540405145424150454244585a00"
+    },
+    {
+      "module": "Engine",
+      "rva": "0x3b8b30",
+      "file_offset": 3898160,
+      "kind": "fixed-hint-name-pointer",
+      "bytes": 4,
+      "hex": "8a8a3e00"
+    },
+    {
+      "module": "Engine",
+      "rva": "0x3e8a8a",
+      "file_offset": 4094602,
+      "kind": "fixed-hint-name",
+      "bytes": 39,
+      "hex": "3f4765744f626a6563744e616d65404f626a6563744047414d4540405145424150454244585a00"
+    },
+    {
+      "module": "Engine",
+      "rva": "0x3bd46e",
+      "file_offset": 3916910,
+      "kind": "fixed-hint-ordinal",
+      "bytes": 2,
+      "hex": "770c"
+    },
+    {
+      "module": "Engine",
+      "rva": "0x3b2904",
+      "file_offset": 3873028,
+      "kind": "fixed-export-address",
+      "bytes": 4,
+      "hex": "60a70300"
+    }
+  ],
+  "metadata_bytes": 98,
+  "failures": [],
+  "restrictions": [
+    "Only Game IAT609520 and fixed hint/name A47990, then that exact Engine hint name/ordinal/EAT are newly read.",
+    "Existing 323974/323977 caller bytes, descriptor/OFT164/module name and PE/export headers are reused from hash-pinned reports.",
+    "The OFT index164 is not an export hint. Hint is read from the fixed import name record and exact name equality is required in both modules.",
+    "Hint mismatch stops without fallback scan. Export target is mapped for identity only, never read as code or .pdata.",
+    "No Game caller reread, getter layout hypothesis, string algorithm, loaded IAT claim, subprocess, DLL loading, dumpbin or native execution.",
+    "Each opened original uses read-only same-handle access and before/after64KiB full-file hashes, distinct from semantic reads."
+  ],
+  "script_sha256": "2b5ac69401211b32ff8e361853a422e69bc53581f1baadd44e7d4583e83ac34e",
+  "cached_caller": {
+    "source_index": 2,
+    "this_move": {
+      "address": "0x180323974",
+      "bytes": "488bcf",
+      "instruction": "mov         rcx,rdi"
+    },
+    "call": {
+      "address": "0x180323977",
+      "bytes": "ff15a35b2e00",
+      "instruction": "call        qword ptr [0000000180609520h]"
+    }
+  },
+  "cached_binding": {
+    "descriptor": {
+      "rva": "0xa4297c",
+      "file_offset": 10751868,
+      "bytes": "c02aa4000000000000000000a66aa50000906000"
+    },
+    "lookup_index": 164,
+    "lookup_raw": "9079a40000000000",
+    "dll": {
+      "rva": "0xa56aa6",
+      "file_offset": 10834086,
+      "bytes": "456e67696e652e646c6c00",
+      "text": "Engine.dll"
+    }
+  },
+  "files": [
+    {
+      "name": "Game",
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "size": 11385856,
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "pe": {
+        "pe_header_file_offset": 272,
+        "size_of_headers": 1024,
+        "size_of_image": 11427840,
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 4096,
+            "virtual_size": 6320499,
+            "raw_size": 6320640,
+            "raw_offset": 1024,
+            "characteristics": 1610612768
+          },
+          {
+            "name": ".rdata",
+            "rva": 6328320,
+            "virtual_size": 4517464,
+            "raw_size": 4517888,
+            "raw_offset": 6321664,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".data",
+            "rva": 10846208,
+            "virtual_size": 73456,
+            "raw_size": 56832,
+            "raw_offset": 10839552,
+            "characteristics": 3221225536
+          },
+          {
+            "name": ".pdata",
+            "rva": 10919936,
+            "virtual_size": 267516,
+            "raw_size": 267776,
+            "raw_offset": 10896384,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".gfids",
+            "rva": 11190272,
+            "virtual_size": 60,
+            "raw_size": 512,
+            "raw_offset": 11164160,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".tls",
+            "rva": 11194368,
+            "virtual_size": 9,
+            "raw_size": 512,
+            "raw_offset": 11164672,
+            "characteristics": 3221225536
+          },
+          {
+            "name": "_RDATA",
+            "rva": 11198464,
+            "virtual_size": 2096,
+            "raw_size": 2560,
+            "raw_offset": 11165184,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".rsrc",
+            "rva": 11202560,
+            "virtual_size": 480,
+            "raw_size": 512,
+            "raw_offset": 11167744,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".reloc",
+            "rva": 11206656,
+            "virtual_size": 217548,
+            "raw_size": 217600,
+            "raw_offset": 11168256,
+            "characteristics": 1107296320
+          }
+        ],
+        "export_directory_rva": "0x870640",
+        "export_directory_size": 1909504,
+        "export_directory_file_offset": 8842304,
+        "export_directory_bytes": "0000000008f6c76a0000000062db8a0001000000196200001962000068068700cc8e880030178a00",
+        "ordinal_base": 1,
+        "function_count": 25113,
+        "named_export_count": 25113,
+        "address_table_rva": "0x870668",
+        "name_pointer_table_rva": "0x888ecc",
+        "name_ordinal_table_rva": "0x8a1730"
+      },
+      "source_closed": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "source_stat_stable": true,
+      "source_hash_preserved": true
+    },
+    {
+      "name": "Engine",
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "size": 4485632,
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "pe": {
+        "pe_header_file_offset": 288,
+        "size_of_headers": 1024,
+        "size_of_image": 4521984,
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 4096,
+            "virtual_size": 3148433,
+            "raw_size": 3148800,
+            "raw_offset": 1024,
+            "characteristics": 1610612768
+          },
+          {
+            "name": ".rdata",
+            "rva": 3153920,
+            "virtual_size": 1140696,
+            "raw_size": 1140736,
+            "raw_offset": 3149824,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".data",
+            "rva": 4296704,
+            "virtual_size": 44952,
+            "raw_size": 27136,
+            "raw_offset": 4290560,
+            "characteristics": 3221225536
+          },
+          {
+            "name": ".pdata",
+            "rva": 4341760,
+            "virtual_size": 146520,
+            "raw_size": 146944,
+            "raw_offset": 4317696,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".gfids",
+            "rva": 4489216,
+            "virtual_size": 60,
+            "raw_size": 512,
+            "raw_offset": 4464640,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".tls",
+            "rva": 4493312,
+            "virtual_size": 9,
+            "raw_size": 512,
+            "raw_offset": 4465152,
+            "characteristics": 3221225536
+          },
+          {
+            "name": "_RDATA",
+            "rva": 4497408,
+            "virtual_size": 3120,
+            "raw_size": 3584,
+            "raw_offset": 4465664,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".rsrc",
+            "rva": 4501504,
+            "virtual_size": 480,
+            "raw_size": 512,
+            "raw_offset": 4469248,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".reloc",
+            "rva": 4505600,
+            "virtual_size": 15700,
+            "raw_size": 15872,
+            "raw_offset": 4469760,
+            "characteristics": 1107296320
+          }
+        ],
+        "export_directory_rva": "0x3af700",
+        "export_directory_size": 417432,
+        "export_directory_file_offset": 3860224,
+        "export_directory_bytes": "00000000d2f5c76a0000000096ec3b00010000008b1800008b18000028f73a0054593b0080bb3b00",
+        "ordinal_base": 1,
+        "function_count": 6283,
+        "named_export_count": 6283,
+        "address_table_rva": "0x3af728",
+        "name_pointer_table_rva": "0x3b5954",
+        "name_ordinal_table_rva": "0x3bbb80"
+      },
+      "source_closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "source_stat_stable": true,
+      "source_hash_preserved": true
+    }
+  ],
+  "import_binding": {
+    "iat_rva": "0x609520",
+    "dll": "Engine.dll",
+    "symbol": "?GetObjectName@Object@GAME@@QEBAPEBDXZ",
+    "hint": 3191,
+    "hint_name_rva": "0xa47990"
+  },
+  "export_binding": {
+    "name": "?GetObjectName@Object@GAME@@QEBAPEBDXZ",
+    "index": 3191,
+    "name_rva": "0x3e8a8a",
+    "ordinal_index": 3191,
+    "ordinal": 3192,
+    "target_rva": "0x3a760",
+    "target_va": "0x18003a760"
+  },
+  "unread_getter_target": {
+    "rva": "0x3a760",
+    "file_offset": 236384,
+    "body_bytes_read": 0,
+    "boundary_known": false
+  },
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-21T08:49:02.993Z"
+}

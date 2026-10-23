@@ -1,0 +1,204 @@
+{
+  "schema": "grim-dynasty-fixed-actor-sync-init-thunk-v1",
+  "status": "bounded-actor-sync-init-thunk-and-import-verified",
+  "started_utc": "2026-10-21T05:46:01.610Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-crt-initializer/inspection.json",
+      "sha256": "c1eb9ae91463cd1b7304dfff290220bfe9e21eb8ccdd947433dd017a5245d9c0"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-crt-initializer/2dc908-instructions.json",
+      "sha256": "cae592eaadda08627d1b0f96f784685ee26532d36996524a6f250c1e10c1bc17"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-helper-imports/metadata.json",
+      "sha256": "0b81751351efeaeb5bc8cd5103035887b5ffbd4798d29edf2be50c697f84d369"
+    }
+  ],
+  "caller": {
+    "address": "0x1802dc926",
+    "bytes": "e8f5110000",
+    "instruction": "call        00000001802DDB20"
+  },
+  "requested_rva": "0x2ddb20",
+  "candidate_iat_rva": "0x3026f8",
+  "expected_module": "VCRUNTIME140.dll",
+  "expected_name": "__vcrt_InitializeCriticalSectionEx",
+  "reused_metadata": [
+    {
+      "source": {
+        "path": "docs/object-lifecycle/offline-engine-root-helper-imports/metadata.json",
+        "sha256": "0b81751351efeaeb5bc8cd5103035887b5ffbd4798d29edf2be50c697f84d369"
+      },
+      "kind": "fixed-descriptor-13",
+      "rva": "0x41569c",
+      "file_offset": 4277916,
+      "requested_bytes": 20,
+      "read_bytes": 20,
+      "raw_bytes": "b05e41000000000000000000947d4100f8263000"
+    },
+    {
+      "source": {
+        "path": "docs/object-lifecycle/offline-engine-root-helper-imports/metadata.json",
+        "sha256": "0b81751351efeaeb5bc8cd5103035887b5ffbd4798d29edf2be50c697f84d369"
+      },
+      "kind": "exact-module-name-13",
+      "rva": "0x417d94",
+      "file_offset": 4287892,
+      "requested_bytes": 17,
+      "read_bytes": 17,
+      "raw_bytes": "564352554e54494d453134302e646c6c00"
+    }
+  ],
+  "limits": {
+    "code_bytes": 6,
+    "metadata_bytes": 45,
+    "semantic_bytes": 51,
+    "semantic_read_operations": 3,
+    "fingerprint_chunk_bytes": 65536,
+    "proof_bytes_each": 65536,
+    "synthetic_pe_bytes": 3584,
+    "subprocesses": 1,
+    "timeout_ms": 10000,
+    "max_buffer_bytes": 196608,
+    "report_bytes": 131072
+  },
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "compilation_or_tests": false,
+  "new_header_bytes_read": 0,
+  "new_pdata_bytes_read": 0,
+  "iat_payload_bytes_read": 0,
+  "original_path_given_to_dumpbin": false,
+  "code_bytes": 6,
+  "metadata_bytes": 45,
+  "semantic_reads": [
+    {
+      "kind": "fixed-six-byte-thunk",
+      "rva": "0x2ddb20",
+      "file_offset": 3002144,
+      "requested_bytes": 6,
+      "read_bytes": 6,
+      "raw_hex": "ff25d24b0200"
+    },
+    {
+      "kind": "fixed-oft-zero",
+      "rva": "0x415eb0",
+      "file_offset": 4279984,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_hex": "387d410000000000"
+    },
+    {
+      "kind": "exact-hint-name",
+      "rva": "0x417d38",
+      "file_offset": 4287800,
+      "requested_bytes": 37,
+      "read_bytes": 37,
+      "raw_hex": "30005f5f766372745f496e697469616c697a65437269746963616c53656374696f6e457800"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    }
+  ],
+  "subprocesses": 1,
+  "byte_coverage_verified": true,
+  "binding": {
+    "module": "VCRUNTIME140.dll",
+    "name": "__vcrt_InitializeCriticalSectionEx",
+    "descriptor_index": 13,
+    "descriptor_rva": "0x41569c",
+    "original_first_thunk_rva": "0x415eb0",
+    "first_thunk_rva": "0x3026f8",
+    "thunk_index": 0,
+    "original_thunk_rva": "0x415eb0",
+    "hint_name_rva": "0x417d38",
+    "hint": 48,
+    "iat_rva": "0x3026f8",
+    "thunk_rva": "0x2ddb20",
+    "iat_payload_bytes_read": 0
+  },
+  "unexecuted_frontiers": [
+    "0x1802dca28 cleanup callback",
+    "0x1802dd7f4 failure helper"
+  ],
+  "limitations": [
+    "This is explicit bounded six-byte import-thunk recognition from the archived 2DC926 direct call, not a .pdata boundary or proof of a complete logical function. Opcode/target mismatch stops without extension or import reads.",
+    "Only original[2DDB20,2DDB26), OFT[415EB0,415EB8), and the one selected exact hint/name are new semantic reads. No headers, .pdata, IAT payload, other import, cleanup body or failure body are read.",
+    "The VCRUNTIME descriptor and module bytes are reused from pinned raw evidence; only FF25 RIP target3026F8 plus exact OFT0 and name equality resolves this static binding.",
+    "dumpbin receives one owned synthetic PE containing only the six original bytes and generated padding, with an exact six-byte RANGE. Neither original DLL nor synthetic PE is loaded or executed.",
+    "Name binding does not prove runtime loader resolution, imported implementation, critical-section initialization success, thread initialization, exception handling or cleanup behavior.",
+    "Same-handle original hashes and tool before/after hashes use64KiB buffers. Hash reads are separate from semantic budgets; stable stat/hash is not an atomic snapshot or exclusive FileShare.Read."
+  ],
+  "script_sha256": "0013e4036143a96dac381bb876ef0b31c0310185e6dc5d303afb06e5f2185355",
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "decoded_iat_rva": "0x3026f8",
+  "raw_thunk_recognized": true,
+  "selected_hint_name_rva": 4291896,
+  "synthetic_pe": {
+    "section_rva": "0x2dd000",
+    "code_file_offset": 3360,
+    "generated_prefix_bytes": 2848,
+    "generated_tail_bytes": 218,
+    "header_bytes": 512,
+    "entry_point_rva": 0,
+    "imports": 0,
+    "relocations": 0,
+    "never_executed": true,
+    "path": ".tooling/offline-actor-sync-init-thunk-temp/2ddb20.inspect.dll",
+    "bytes": 3584,
+    "sha256": "faeb670a370fefdfdb4aa2f7f9ee35d45fb2ee4d6008e221d501777832f29626",
+    "sha256_after": "faeb670a370fefdfdb4aa2f7f9ee35d45fb2ee4d6008e221d501777832f29626"
+  },
+  "command_arguments": [
+    "/NOLOGO",
+    "/NOPDB",
+    "/ERRORREPORT:NONE",
+    "/DISASM:BYTES",
+    "/RANGE:0x1802ddb20,0x1802ddb25",
+    "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-actor-sync-init-thunk-temp\\2ddb20.inspect.dll"
+  ],
+  "tool_exit": 0,
+  "tool_signal": null,
+  "tool_error": null,
+  "instructions": 1,
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "source_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "source_hash_preserved": true,
+  "tool_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T05:46:01.694Z"
+}

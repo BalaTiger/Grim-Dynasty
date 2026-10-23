@@ -1,0 +1,40 @@
+{
+  "status": "saved-12B750-body-reviewed-no-implementation-or-new-query",
+  "module_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "zero_source": "0x18012b77e XOR ESI,ESI; RSI is preserved across calls by the normal x64 ABI.",
+  "ordered_field_writes": [
+    {"field": "Landscape30", "instruction": "0x18012b7bd", "width": 8, "value": 0, "prior_callees": []},
+    {"field": "TerrainFallback38", "instruction": "0x18012b7c1", "width": 8, "value": 0, "prior_callees": []},
+    {"field": "Water40", "instruction": "0x18012b7c5", "width": 8, "value": 0, "prior_callees": []},
+    {"field": "Ready538C", "instruction": "0x18012b81e", "width": 1, "value": 0, "prior_callees": ["0x1802ddb14", "0x18005bcb0"]},
+    {"field": "PathableActors54D8", "instruction": "0x18012b914", "width": 8, "value": 0, "prior_callees": ["0x1802ddb14", "0x18005bcb0", "0x18019b910", "0x1800481f0"]},
+    {"field": "PathableActors54E0", "instruction": "0x18012b91b", "width": 8, "value": 0, "prior_callees": ["0x1802ddb14", "0x18005bcb0", "0x18019b910", "0x1800481f0"]},
+    {"field": "PathableActors54E8", "instruction": "0x18012b922", "width": 8, "value": 0, "prior_callees": ["0x1802ddb14", "0x18005bcb0", "0x18019b910", "0x1800481f0"]}
+  ],
+  "direct_call_order": [
+    {"site": "0x18012b7f3", "target": "0x1802ddb14", "saved_pseudo_name": "memset", "arguments": "Level+78,0,5300 bytes; range[78,5378), excludes538C and54D8"},
+    {"site": "0x18012b7fc", "target": "0x18005bcb0", "saved_pseudo_name": "DecalSet::Initialize", "arguments": "RCX=Level+48"},
+    {"site": "0x18012b82c", "target": "0x18019b910", "saved_pseudo_name": "SectorLayers::SectorLayers", "arguments": "RCX=Level+5390"},
+    {"site": "0x18012b8f6", "target": "0x1800481f0", "saved_pseudo_name": "FUN_1800481f0", "arguments": "RCX=Level+54A0,EDX=0,R8=&stack local whose low DWORD was cleared; do not infer the whole local is zero"},
+    {"site": "0x18012b935", "target": "0x1800b0e40", "saved_pseudo_name": "FUN_1800b0e40", "arguments": "RCX=Level+54F0; occurs after all requested zero writes and before return"}
+  ],
+  "return_prefix": "After0B0E40 returns:5530 byte0@12B93A; RAX=Level@12B941; RET@12B953. Saved body alone does not discharge callee effects or prove their successful return.",
+  "own_cold_state": [
+    "An explicitly own fresh Level view may model the observed zero-initialization cutpoints without claiming native construction:30/38/40 become known null before any callee;538C becomes known false only at its later write;54D8/54E0/54E8 become a known empty triple only after reaching their writes.",
+    "When modeling the native ordered prefix, do not move538C or actor-vector clearing before their prerequisite calls. Unknown/nonreturning/failed prerequisite effects keep later fields Unknown. Do not insert a fabricated successful call result to reach a later cutpoint.",
+    "The evidence establishes writes at those cutpoints, not a complete successful native constructor or absence of indirect mutations by later callees. Preserve the actual shared Level identity and attach terrain/water/actor state through explicit own provenance.",
+    "Cold null Landscape30 plus null Fallback38 does not by itself prove a valid WorldFloor hit/miss; saved221DA0 leaves its hit local uninitialized on that path. Ready538C is not read by221DA0."
+  ],
+  "not_established": [
+    "Post-Load actor vector emptiness: saved194E20 invokes12C6A0 Level.Load at194F7F after ctor publication194EA9.",
+    "Post-Load Landscape30,Fallback38 orWater40 remaining null.",
+    "Region100/108 neighbor emptiness; these are outside Level12B750."
+  ],
+  "pins": [
+    ["docs/reverse-client/r1-world-position-and-level-initialization/07-WorldPositionLevelInitialization-0x18012b750-procedure_pseudo_code.json", "9a5f57dc2cf05481fb61d5ecd3a23c2640ba14fe9f383ecfb3ea1e4ca355b31f"],
+    ["docs/reverse-client/r1-world-position-and-level-initialization/08-WorldPositionLevelInitialization-0x18012b750-procedure_assembly.json", "f2aa4e3addd16b5ee1390500929bec148976086f72d6e56b90b2c83fb3f4741a"],
+    ["docs/reverse-client/r1-world-position-and-level-initialization/09-WorldPositionLevelInitialization-0x18012b750-procedure_callees.json", "bf1d3b14d83dc2745670116c2ed62cd894ab428aadb9bbec9522cd798caef621"],
+    ["docs/reverse-client/r1-world-position-and-level-initialization/summary.json", "dba34660d80fc2cf496d5025f2e160de946f07908ad9373aa49e5dfe5ea350f8"]
+  ],
+  "not_performed": ["callee follow-up", "original reads", "backend launch", "Level reimplementation", "builds or tests", "runner or frozen-plan edits"]
+}

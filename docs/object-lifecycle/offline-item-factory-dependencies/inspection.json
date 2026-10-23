@@ -1,0 +1,168 @@
+{
+  "schema": "grim-dynasty-item-factory-dependency-disassembly-v1",
+  "status": "fixed-item-factory-dependency-disassembly-verified",
+  "started_utc": "2026-10-21T03:14:39.022Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "expected_bytes": 11385856,
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-item-factory-dependency-boundaries/metadata.json",
+      "sha256": "59265ca3af388f48af8da9a66bee439949fa8cfeca5fe1cc40a066998ad46d29"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-registration-metadata/metadata.json",
+      "sha256": "54aa510cffe5a281c54e6de4a594f40224585822f0b40cad6c847f8318ef76b7"
+    },
+    {
+      "path": "docs/rewards/rea-inventory-add/Item-constructor-primary-table-assembly.json",
+      "sha256": "7a078d11495b5b7c10a07d7b6309c9d633f8ec39dfc444e5f0decfbd5efe1a3f"
+    }
+  ],
+  "limits": {
+    "code_bytes": 80,
+    "metadata_bytes": 24,
+    "saved_proof_bytes_per_file": 131072,
+    "fingerprint_chunk_bytes": 65536,
+    "tool_timeout_ms": 10000,
+    "tool_max_buffer_bytes": 196608
+  },
+  "code_bytes": 80,
+  "metadata_bytes": 24,
+  "metadata_reads": [
+    {
+      "file_offset": 10952724,
+      "bytes": 12,
+      "raw_hex": "004e10002a4e1000dc5e7f00"
+    },
+    {
+      "file_offset": 10992648,
+      "bytes": 12,
+      "raw_hex": "40a31f0066a31f0010eb7d00"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "original-before",
+      "bytes": 11385856,
+      "chunk_bytes": 65536,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "label": "original-after",
+      "bytes": 11385856,
+      "chunk_bytes": 65536,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    }
+  ],
+  "fragments": [
+    {
+      "role": "Item-classInfo-plus28-factory",
+      "requested_rva": "0x104e00",
+      "status": "byte-coverage-verified",
+      "start_va": "0x180104e00",
+      "end_va_exclusive": "0x180104e2a",
+      "expected_code_bytes": 42,
+      "body_read": true,
+      "byte_coverage_verified": true,
+      "exact_boundary_verified": true,
+      "code_bytes": 42,
+      "code_sha256": "16d13a22e97124e4f977db8839e42e084404927965ac65045d80a2a6e3782897",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180104e00,0x180104e29",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_elapsed_ms": 182,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 10
+    },
+    {
+      "role": "Item-plus858-direct-helper",
+      "requested_rva": "0x1fa340",
+      "status": "byte-coverage-verified",
+      "start_va": "0x1801fa340",
+      "end_va_exclusive": "0x1801fa366",
+      "expected_code_bytes": 38,
+      "body_read": true,
+      "byte_coverage_verified": true,
+      "exact_boundary_verified": true,
+      "code_bytes": 38,
+      "code_sha256": "b54f3ade86276a53efcfa8e71dcffde293f73e36d748172f464cff1d95e52834",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1801fa340,0x1801fa365",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_elapsed_ms": 30,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 13
+    }
+  ],
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "original_modified": false,
+  "target_copy_created": false,
+  "backend_started": false,
+  "installations": false,
+  "permission_escalation": false,
+  "subprocesses": 2,
+  "restrictions": "Only these two exact fragments; no adjacent ranges, continuations, callee following, DLL execution, build, policy change or player data.",
+  "limitations": [
+    "A .pdata entry may be a fragment, not a complete logical function. Byte coverage does not prove complete control flow, ABI, EH, allocator or failure behavior.",
+    "Missing exact entries or changed boundaries stop all code reads; no neighboring or containing body is selected.",
+    "64KiB streaming full-file fingerprints traverse all bytes without interpreting them; those bytes are separate from the 80 code and 24 metadata bytes.",
+    "dumpbin /RANGE limits requested disassembly output. Its internal PE metadata I/O is not instrumented.",
+    "The installed dumpbin reads the original as data. Neither Game.dll nor its imports are loaded or executed as code.",
+    "Same-handle stat/hash checks require a stable file and cannot exclude every transient concurrent change."
+  ],
+  "script_sha256": "25c0c977d1fff5f835379eb14e85d584fbb802540c66c4a900f030f8d5d1be5f",
+  "tool_fingerprint_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "original_sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_stat_stable": true,
+  "tool_fingerprint_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "source_handle_closed": true,
+  "original_hash_matches": true,
+  "tool_hash_matches": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T03:14:39.285Z",
+  "controller_resource_usage": {
+    "userCPUTime": 31000,
+    "systemCPUTime": 46000,
+    "maxRSS": 43208,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11444,
+    "swappedOut": 0,
+    "fsRead": 370,
+    "fsWrite": 6,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

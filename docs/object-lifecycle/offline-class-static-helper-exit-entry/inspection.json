@@ -1,0 +1,183 @@
+{
+  "status": "fixed-game-init-fragments-verified",
+  "started_utc": "2026-10-20T13:55:57.954Z",
+  "stage": "helper-exit-entry",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "plan": {
+    "path": "docs/object-lifecycle/class-static-init-plans/helper-exit-entry.json",
+    "sha256": "3f2c0af376aa2988f9a4ef89edc7887e4f527193741b7f1839afff9c737d1094"
+  },
+  "source_evidence": [
+    {
+      "sha256": "08ded9b6ff52c160c3699f4c369f0c1420151772313f615f39bbff1818f557e7",
+      "path": "docs/object-lifecycle/offline-class-static-crt-reason/inspection.json"
+    },
+    {
+      "sha256": "5c5498246f2d2b4ed14cb5cb12c0e8238b167c4320c642007e8f7f302756ecbf",
+      "path": "docs/object-lifecycle/offline-class-static-writer-continuations/inspection.json"
+    }
+  ],
+  "script_sha256": "a3fb916a2d92977505f743c0d9ac22bf0efa563fb57d3e57635c51f9d5a99590",
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "code_byte_limit": 23,
+  "code_bytes": 23,
+  "prior_code_bytes": 11241,
+  "global_code_byte_limit": 65536,
+  "metadata_byte_limit": 65536,
+  "metadata_bytes": 168,
+  "metadata_reads": [
+    {
+      "index": 11146,
+      "rva": "0xa8aa78",
+      "file_offset": 11030136,
+      "bytes": "f01530002a16300030f27d00"
+    },
+    {
+      "index": 16720,
+      "rva": "0xa9afc0",
+      "file_offset": 11097024,
+      "bytes": "70764a0012774a00c8178500"
+    },
+    {
+      "index": 19507,
+      "rva": "0xaa3264",
+      "file_offset": 11130468,
+      "bytes": "f6c657003fc75700489c8600"
+    },
+    {
+      "index": 20900,
+      "rva": "0xaa73b0",
+      "file_offset": 11147184,
+      "bytes": "a02f5e00bd2f5e0008ee7d00"
+    },
+    {
+      "index": 20204,
+      "rva": "0xaa5310",
+      "file_offset": 11138832,
+      "bytes": "b05d5b00b95e5b00c8e38600"
+    },
+    {
+      "index": 20552,
+      "rva": "0xaa6360",
+      "file_offset": 11143008,
+      "bytes": "fc805d0029815d003c008700"
+    },
+    {
+      "index": 20726,
+      "rva": "0xaa6b88",
+      "file_offset": 11145096,
+      "bytes": "58fd5d0075fd5d0008ee7d00"
+    },
+    {
+      "index": 20639,
+      "rva": "0xaa6774",
+      "file_offset": 11144052,
+      "bytes": "60bc5d00aabc5d0070ea7d00"
+    },
+    {
+      "index": 20596,
+      "rva": "0xaa6570",
+      "file_offset": 11143536,
+      "bytes": "f4aa5d002dab5d0054ec7d00"
+    },
+    {
+      "index": 20618,
+      "rva": "0xaa6678",
+      "file_offset": 11143800,
+      "bytes": "b4b25d00f1b25d0070ea7d00"
+    },
+    {
+      "index": 20607,
+      "rva": "0xaa65f4",
+      "file_offset": 11143668,
+      "bytes": "18ae5d003cae5d0010eb7d00"
+    },
+    {
+      "index": 20613,
+      "rva": "0xaa663c",
+      "file_offset": 11143740,
+      "bytes": "68af5d00b8af5d0054ec7d00"
+    },
+    {
+      "index": 20610,
+      "rva": "0xaa6618",
+      "file_offset": 11143704,
+      "bytes": "b8ae5d00cfae5d0054ec7d00"
+    },
+    {
+      "index": 20609,
+      "rva": "0xaa660c",
+      "file_offset": 11143692,
+      "bytes": "68ae5d00b7ae5d0010eb7d00"
+    }
+  ],
+  "fragments": [
+    {
+      "role": "Both writer terminal transfer helper",
+      "basis": "Authorized helper target5DAEB8 is reached by tail transfers5FAB/9EBB. Saved .pdata20610 gives exact[5DAEB8,5DAECF)23B; inspect only this new body, not callbacks.",
+      "start_rva": "0x5daeb8",
+      "end_rva_exclusive": "0x5daecf",
+      "range_kind": "exact-unwind-fragment",
+      "start_va": "0x1805daeb8",
+      "end_va_exclusive": "0x1805daecf",
+      "code_bytes": 23,
+      "code_sha256": "0b1106e1c4cd71d2b57dd6c26ec869afa75d70e8489fcff4005f2dae41f7d5a2",
+      "exact_unwind_entry": {
+        "index": 20610,
+        "begin": 6139576,
+        "end": 6139599,
+        "unwind": 8252500,
+        "entry_rva": 11167256
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1805daeb8,0x1805daece",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "instructions": 8,
+      "byte_coverage_verified": true
+    }
+  ],
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "full_target_copy_created": false,
+  "limitations": [
+    "Only explicitly planned targets are followed; no callee, table or neighboring code discovery is automatic.",
+    "Unwind ranges are fragments, not a claim of whole-function or exception-path coverage.",
+    "Full-file fingerprints use 64KiB buffers and are outside semantic byte totals; dumpbin internal metadata I/O is not measured.",
+    "All target bytes are read-only. No DLL initialization, game launch, backend, install or permission change."
+  ],
+  "original_sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_hash_matches": true,
+  "original_stat_stable": true,
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "tool_hash_matches": true,
+  "failures": [],
+  "finished_utc": "2026-10-20T13:55:58.030Z",
+  "controller_resource_usage": {
+    "userCPUTime": 0,
+    "systemCPUTime": 78000,
+    "maxRSS": 43164,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11439,
+    "swappedOut": 0,
+    "fsRead": 393,
+    "fsWrite": 3,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

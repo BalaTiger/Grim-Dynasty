@@ -1,0 +1,250 @@
+{
+  "schema": "grim-dynasty-m3-bounded-read-v1",
+  "status": "FixedBodiesDecodedReviewRequired",
+  "started_utc": "2026-10-22T04:53:12.397Z",
+  "plan": {
+    "path": "docs/m3-evidence/plans/damage-postprocess-body.json",
+    "sha256": "a74426f4d1aa64d88f62f5b974c022ee73ee6e803131dfc9645b4a38d0eb8a78"
+  },
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "bytes": 11385856,
+    "preferred_base": "0x180000000"
+  },
+  "proof": {
+    "path": "docs/m3-evidence/damage-settlement/direct-068ab0.instructions.json",
+    "sha256": "29cb0371f9a2cfb9638d3d9d11e0426db5821f6740ecbc32e6dd72d314abc033"
+  },
+  "mode": "bodies",
+  "range_policy": "exact-entry",
+  "excluded_proof_range": {
+    "begin_rva": "0x68ab0",
+    "end_rva_exclusive": "0x68b9b",
+    "reason": "Pinned saved instruction bytes already read"
+  },
+  "limits": {
+    "body_bytes_each": 8192,
+    "body_bytes_total": 8192,
+    "metadata_bytes": 16384,
+    "dumpbin_calls": 2,
+    "tool_timeout_ms_each": 10000
+  },
+  "fixed_limits": {
+    "plan_bytes": 16384,
+    "proof_bytes": 1048576,
+    "hash_buffer_bytes": 65536,
+    "header_end": 4096,
+    "sections": 16,
+    "metadata_read_bytes": 512,
+    "pdata_bytes": 2097152,
+    "binary_search_steps": 32,
+    "synthetic_each": 16384,
+    "synthetic_total": 24576,
+    "tool_buffer_each": 1048576
+  },
+  "source_open_mode": "r",
+  "source_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "automatic_callee_expansion": false,
+  "metadata_bytes": 868,
+  "metadata_operations": 27,
+  "body_bytes": 126,
+  "body_read_operations": 1,
+  "dumpbin_calls": 1,
+  "synthetic_bytes": 2048,
+  "export_table_bytes": 0,
+  "global_data_bytes": 0,
+  "unwind_body_bytes": 0,
+  "source_closed": true,
+  "boundaries": [
+    {
+      "id": "direct-3fe390",
+      "rva": "0x3fe390",
+      "caller_address": "0x180068b86",
+      "reference_kind": "direct-call",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 14801,
+        "begin_rva": "0x3fe390",
+        "end_rva_exclusive": "0x3fe40e",
+        "bytes": 126,
+        "unwind_info_rva": "0x845170"
+      }
+    }
+  ],
+  "bodies": [
+    {
+      "id": "direct-3fe390",
+      "reference_ids": [
+        "direct-3fe390"
+      ],
+      "begin_rva": "0x3fe390",
+      "end_rva_exclusive": "0x3fe40e",
+      "bytes": 126,
+      "file_offset": 4183952,
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 14801,
+        "begin_rva": "0x3fe390",
+        "end_rva_exclusive": "0x3fe40e",
+        "bytes": 126,
+        "unwind_info_rva": "0x845170"
+      },
+      "sha256": "b7fdcc2a30182b74ce2866663bec727c32498ed573f734e8c79efb55b114ed99",
+      "synthetic": {
+        "relative_path": ".tooling/m3-damage-postprocess-body-temp/direct-3fe390.inspect.dll",
+        "bytes": 2048,
+        "sha256": "94b1c7d110de003c11972c0a6c1582b2f121405f8a1e7b8ede62031a36fcfc08",
+        "never_executed": true
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1803fe390,0x1803fe40d",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\m3-damage-postprocess-body-temp\\direct-3fe390.inspect.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "decoded_rows": 31,
+      "decode_issues": [],
+      "instruction_byte_coverage_verified": true,
+      "code_data_classification": "ReviewRequired",
+      "calls": [
+        {
+          "address": "0x1803fe3b9",
+          "bytes": "e802570000",
+          "instruction": "call        0000000180403AC0"
+        },
+        {
+          "address": "0x1803fe3cd",
+          "bytes": "e8ee560000",
+          "instruction": "call        0000000180403AC0"
+        }
+      ],
+      "branches": [
+        {
+          "address": "0x1803fe3ec",
+          "bytes": "750b",
+          "instruction": "jne         00000001803FE3F9"
+        },
+        {
+          "address": "0x1803fe3f2",
+          "bytes": "7605",
+          "instruction": "jbe         00000001803FE3F9"
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "All targets are supplied by a separately reviewed plan and matched against pinned saved direct-call or conditional-branch bytes.",
+    "Binary search reads .pdata records only; no export scan, unwind decoding or callees are followed.",
+    "V1 requires an exact .pdata start. V2 may explicitly permit the containing runtime fragment; this is not a whole source function.",
+    "Known proof bytes are excluded. Duplicate containing fragments are read once; overlap, missing boundaries or budget excess stops all body reads.",
+    "Metadata-only plans never read body bytes or start dumpbin, regardless of reported boundaries.",
+    "Decoder rows are candidates, not proof that all bytes are instructions. Inline data can resemble valid code; all bodies need code/data review.",
+    "All gaps, byte mismatches and invalid/data decodes are retained. These findings never trigger new reads or automatic expansion.",
+    "Full source before/after hashes use 64 KiB chunks without interpreting bytes outside the approved ranges.",
+    "Static evidence does not establish source names, runtime compatibility, exception behavior or a complete damage contract."
+  ],
+  "script_sha256": "428d5ce5204fe7779a006bb8c047dbee6fcf73f1697b0790cd8b51c3c0ff97d7",
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "pe": {
+    "image_base": "0x180000000",
+    "sections": [
+      {
+        "name": ".text",
+        "rva": 4096,
+        "raw_size": 6320640,
+        "raw_offset": 1024,
+        "characteristics": 1610612768
+      },
+      {
+        "name": ".rdata",
+        "rva": 6328320,
+        "raw_size": 4517888,
+        "raw_offset": 6321664,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".data",
+        "rva": 10846208,
+        "raw_size": 56832,
+        "raw_offset": 10839552,
+        "characteristics": 3221225536
+      },
+      {
+        "name": ".pdata",
+        "rva": 10919936,
+        "raw_size": 267776,
+        "raw_offset": 10896384,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".gfids",
+        "rva": 11190272,
+        "raw_size": 512,
+        "raw_offset": 11164160,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".tls",
+        "rva": 11194368,
+        "raw_size": 512,
+        "raw_offset": 11164672,
+        "characteristics": 3221225536
+      },
+      {
+        "name": "_RDATA",
+        "rva": 11198464,
+        "raw_size": 2560,
+        "raw_offset": 11165184,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".rsrc",
+        "rva": 11202560,
+        "raw_size": 512,
+        "raw_offset": 11167744,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".reloc",
+        "rva": 11206656,
+        "raw_size": 217600,
+        "raw_offset": 11168256,
+        "characteristics": 1107296320
+      }
+    ],
+    "pdata_rva": "0xa6a000",
+    "pdata_bytes": 267516
+  },
+  "selected_fragments": [
+    {
+      "id": "direct-3fe390",
+      "rva": "0x3fe390",
+      "caller_address": "0x180068b86",
+      "reference_kind": "direct-call",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 14801,
+        "begin_rva": "0x3fe390",
+        "end_rva_exclusive": "0x3fe40e",
+        "bytes": 126,
+        "unwind_info_rva": "0x845170"
+      },
+      "reference_ids": [
+        "direct-3fe390"
+      ]
+    }
+  ],
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-22T04:53:12.458Z"
+}

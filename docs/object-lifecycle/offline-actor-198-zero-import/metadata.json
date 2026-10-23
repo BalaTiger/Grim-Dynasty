@@ -1,0 +1,115 @@
+{
+  "schema": "grim-dynasty-actor-198-zero-import-v1",
+  "status": "exact-memset-import-binding-verified",
+  "started_utc": "2026-10-21T03:59:53.821Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sources": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-helper-imports/metadata.json",
+      "sha256": "0b81751351efeaeb5bc8cd5103035887b5ffbd4798d29edf2be50c697f84d369"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-198-array-helpers/2ddb14-instructions.json",
+      "sha256": "918cc3a51ab772c2b55fe9455c6ae90170bc9d1dc23a9dc7e6dcfb7453cfb08e"
+    }
+  ],
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "subprocesses": 0,
+  "code_bytes": 0,
+  "iat_payload_bytes": 0,
+  "metadata_limit": 256,
+  "metadata_bytes": 78,
+  "reads": [
+    {
+      "kind": "descriptor",
+      "rva": "0x41569c",
+      "file_offset": 4277916,
+      "bytes": 20,
+      "raw_hex": "b05e41000000000000000000947d4100f8263000"
+    },
+    {
+      "kind": "module-name",
+      "rva": "0x417d94",
+      "file_offset": 4287892,
+      "bytes": 16,
+      "raw_hex": "564352554e54494d453134302e646c6c"
+    },
+    {
+      "kind": "module-name",
+      "rva": "0x417da4",
+      "file_offset": 4287908,
+      "bytes": 16,
+      "raw_hex": "000039005f696e76616c69645f706172"
+    },
+    {
+      "kind": "original-thunk",
+      "rva": "0x415f28",
+      "file_offset": 4280104,
+      "bytes": 8,
+      "raw_hex": "0c7d410000000000"
+    },
+    {
+      "kind": "hint",
+      "rva": "0x417d0c",
+      "file_offset": 4287756,
+      "bytes": 2,
+      "raw_hex": "3e00"
+    },
+    {
+      "kind": "symbol-name",
+      "rva": "0x417d0e",
+      "file_offset": 4287758,
+      "bytes": 16,
+      "raw_hex": "6d656d73657400004000737472636872"
+    }
+  ],
+  "limitations": [
+    "Only descriptor 13, its module name, OFT index 15 and that symbol/hint are read. No complete import table or headers scanned.",
+    "This binds the import name; no CRT implementation or loader-resolved target is executed or read.",
+    "Before/after full-file hashes use 64KiB buffers, separate from semantic reads, and do not provide an atomic snapshot."
+  ],
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "binding": {
+    "module": "VCRUNTIME140.dll",
+    "name": "memset",
+    "hint": 62,
+    "descriptor_index": 13,
+    "descriptor_rva": "0x41569c",
+    "first_thunk_rva": "0x3026f8",
+    "original_first_thunk_rva": "0x415eb0",
+    "thunk_index": 15,
+    "original_thunk_rva": "0x415f28",
+    "hint_name_rva": "0x417d0c",
+    "iat_rva": "0x302770",
+    "caller_rva": "0x2ddb14"
+  },
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "source_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T03:59:53.828Z",
+  "controller_resource_usage": {
+    "userCPUTime": 15000,
+    "systemCPUTime": 31000,
+    "maxRSS": 41236,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 10836,
+    "swappedOut": 0,
+    "fsRead": 148,
+    "fsWrite": 0,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

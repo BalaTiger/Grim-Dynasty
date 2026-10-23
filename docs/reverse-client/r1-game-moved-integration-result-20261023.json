@@ -1,0 +1,152 @@
+{
+  "schema": "grim-dynasty.game-moved-integration-result.v1",
+  "status": "passed-bounded-game-moved-callback-integration",
+  "verified_utc": "2026-10-23T08:13:23.1635284Z",
+  "counts": {
+    "new_scenarios": 22,
+    "new_assertions": 373,
+    "first_build_passed_scenarios": 21,
+    "first_build_passed_assertions": 309,
+    "saved_resource_scenarios": 1,
+    "saved_resource_assertions": 64,
+    "total_compiles": 2,
+    "repair_compiles": 0,
+    "old_suites_rerun": 0,
+    "passed_scenarios_rerun": 0,
+    "verified_native_math_calls_in_passed_scenarios": 12
+  },
+  "execution": {
+    "first_attempt": "Two new-source compilations succeeded; Skill8/73 and Game13/236 passed. Saved-resource mode failed loading omitted managed MainmenuTilePipeline.exe.",
+    "repair": "Only the failed saved-resource mode was run once after copying the missing existing managed reference into a new directory; it passed1/64.",
+    "source_or_algorithm_changes_during_repair": false,
+    "original_failed_evidence_preserved": true,
+    "prior_flags_note": "The original failed result top-level system_library_loaded=false and native_math_calls=0 are unfinalized defaults. Its pinned component stdout confirms13/236 and9 actual UCRT calls. The successful saved-resource stdout confirms3 additional calls; original result was not rewritten."
+  },
+  "sample": {
+    "tiles": 9,
+    "corridor_count": 2,
+    "tile_crossings": 1,
+    "agent_before": [
+      63,
+      22.1429386,
+      52.8
+    ],
+    "agent_after": [
+      63.09718,
+      22.17068,
+      52.8220444
+    ],
+    "entity_after": [
+      63.09718,
+      17.2317066,
+      52.8220444
+    ],
+    "actual_ground_floor_y": 17.2317066,
+    "independent_triangle_y": 17.231706250589923,
+    "navigation_y": 22.17068,
+    "projection": "030B30-success",
+    "projected_reference": 4195329,
+    "native_math_calls": 3,
+    "same_agent": true,
+    "same_character": true,
+    "floor_rotation_publication_notification_returned": true,
+    "nav_height_substituted": false
+  },
+  "supported": "Reached one-agent conditional Crowd producer -> exact known25E087 call continuation -> ordinary nonstale066EE0 -> actual22C690/TranslateTrue -> actual saved Ground Floor22C620 -> existing05E160 UCRT rotation and same Entity bbox/spatial publication ->533410 explicit OWN empty skills.",
+  "boundaries": {
+    "full_tick": false,
+    "physical_mouse": false,
+    "render": false,
+    "playable_executable_created": false,
+    "native_scene_startup": false,
+    "native_loaded_actor_neighbor_skill_state": false,
+    "gameplay_accepted": false,
+    "original_read": false,
+    "original_executed": false,
+    "explicit_own_actor_neighbor_skill_frame_configuration": true,
+    "remaining_stops": [
+      "stale066F29/IsGameTimePaused1E9760",
+      "special13/15 at066FDF",
+      "cross-region22C593",
+      "nonempty skill1B0 at533436/533466/533496"
+    ]
+  },
+  "source_refs": [
+    {
+      "path": "src/reverse_client_actions/SkillMovedContracts.cs",
+      "sha256": "0b4d954d6fdda807a1ff1a249ef70b1c2e687fa8428375aa4ea27e7155a8df1c"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMovedContracts.cs",
+      "sha256": "340049eaf569e12d78bec8f32396531ee77a700cd06e6c6019300019044e23b0"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMovedReachedContinuationContracts.cs",
+      "sha256": "b910d06a7c654709939f48c5713e794df3badc27af6933792ae56d397950d8fa"
+    },
+    {
+      "path": "src/reverse_client_actions/SkillMovedTests.cs",
+      "sha256": "c777d8136f0e8a7275678bed285a6b11fa72c0ecf365c7433c13fd49458943fe"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMovedIntegrationTests.cs",
+      "sha256": "1ceed4afe7671f134a721a459ddc212b5dc0295c30a65270eeff0ef1016bcd15"
+    }
+  ],
+  "binary_refs": [
+    {
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.GameMoved.dll",
+      "sha256": "eb47edce8ecb3d495ea1263eefee90e19c8d17bf828213e34359af560f4e59ec"
+    },
+    {
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GameMovedIntegrationTests.exe",
+      "sha256": "69c5d29b116453a20b6e340c8e4f3728f76447188afa2ed6a37f8f261be7a290"
+    },
+    {
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/MainmenuTilePipeline.exe",
+      "sha256": "4d006bb08378360bdcccca167bc8d841b7f2ddbef48b55325ab9973658d173e7"
+    },
+    {
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.SystemUcrtRotationMath.dll",
+      "sha256": "2e82ebf9208f7bafe6a53bb469ba3cfaff9ac236b7faf124a58c759a8d38a85a"
+    }
+  ],
+  "result_refs": [
+    {
+      "path": ".tooling/r1-game-moved-integration-validation/result.json",
+      "sha256": "24df9a6c384e5446d08c73e28954fc6e199f5105b9f38c20e90e68ac27c59eec"
+    },
+    {
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json",
+      "sha256": "1d785208662928bb59fedbee1d660b4e011950bb45221ea63a80d7c75b7b13e9"
+    }
+  ],
+  "raw_log_refs": [
+    {
+      "path": ".tooling/r1-game-moved-integration-validation/new-skill-moved-tests.log",
+      "sha256": "99e02bc31a32c08baf261ed261d5da9e0cd474db4e53626203fc823835c7d652"
+    },
+    {
+      "path": ".tooling/r1-game-moved-integration-validation/new-game-moved-tests.log",
+      "sha256": "190fabe5b8998cb40c6e529a05db2dec146a6ee745a84186c11a62d384d53b64"
+    },
+    {
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/new-real-crowd-game-moved.log",
+      "sha256": "69af9a2abf49e90efbabf34f42c19b38801f283cfcd7589b290eeff21633391d"
+    },
+    {
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/new-real-crowd-game-moved.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "manifest_refs": [
+    {
+      "path": "tools/r1_game_moved_integration_build_fingerprints.json",
+      "sha256": "1117422c3b68006a47d37f76d6b7afbbbab531e03587b916597aad4a39bd9b79"
+    },
+    {
+      "path": "tools/r1_game_moved_saved_dependency_repair_fingerprints.json",
+      "sha256": "3521cda0f1a37677cb94df06ca5f7d58c24dee8ba9e3f49aead3c94000757d26"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# BA8 own model review before execution
+
+Root read ItemConstructorBA8.cs in full and the only Bridge addition. The implementation agent independently compared all20 caller stores with the saved raw instructions. WorldVec3DefaultConstructor applies only at BA8 or BC0, validates all8bytes before its one store, returns the original storage token plus offset, and claims only the11byte archived normal body. It has no invented callback, external dependency, destructor or cleanup.
+
+The named BC8 capture factory is selected before the existing Actor/Item950 chain. Its tail limit698 and token upper bound MaxValue-BC7 correspond to the last known written byte. The 8A0 and B18 profiles retain their constants and original behavior. Actor storage and existing scalar/858 views remain live; no completed object or report is copied into a replacement state.
+
+The BA8 invocation accepts only an actual950 result at323811. It performs all20 caller writes in order and checks each complete range. The first constructor must return before the second begins. On a leaf coverage stop, the result preserves both the Engine leaf PC228AB0 and the Game callsite3238AB or3238B8. A successful result reaches3238BE, while IsCompleteItemConstructor remains false. Same invocation replay is rejected. No RAX-success predicate or rollback is added to the native caller contract.
+
+The new named execution method explicitly uses the archived WorldVec3 body. Actual IAT binding and loaded-state guarantees are not observed; inherited950 guard conditions remain unchanged. Missing own storage is not a demonstrated native fault branch. No real exception or asynchronous native synchronization is validated.
+
+The fixed build script was read in full. It requires Windows PowerShell5.1, fixed workspace/script paths, the previously pinned installed csc, normal ancestor paths and fresh output. It compiles eleven own library sources, a new BA8 test executable, and the affected old950 test executable: exactly three compiler calls and two own test invocations. Output is restricted to .tooling/item-constructor-ba8-build-20261021. Existing scripts are not invoked; no network, policy/ACL change, original DLL load or tool installation occurs. Execution still needs its separate formal require_escalated approval.
+
+This file records static review, not a passed build. Actual test counts/results will be recorded separately after the approved command completes.
+
+Root subsequently read ItemConstructorBA8Tests.cs in full. Static count is65 assertions/8groups: profile and identity8, full footprint8, unknown padding4, inherited callback state4, each caller's short projection21, two leaf boundaries10, standalone leaf4, prerequisite/replay6. The independent grouped byte oracle covers107caller bytes plus16leaf bytes and preserves every unmentioned byte. Its twenty missing-last-byte cases verify no partial field write and the exact previous prefix. No source change or compile/test retry was required during review. Only old950's80assertions/9groups is selected as regression; historical standalone Bridge/Actor/858/scalar suites are not run by this build.

@@ -1,0 +1,113 @@
+{
+  "schema": "object-name-getter-entry-v1",
+  "status": "fixed-object-name-entry-decoded-manual-review-required",
+  "started_utc": "2026-10-21T08:51:44.772Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sources": [
+    [
+      "docs/object-lifecycle/offline-item-name-import/inspection.json",
+      "c3ba3e79ecceb98225a9034a85649807d8d00444feccf771b294a41d1e443f31"
+    ],
+    [
+      "docs/object-lifecycle/offline-object-id-getter/inspection.json",
+      "ece892d8a5f9fea5a7575bcb85fee8270ff6e08becbba696e5c81beb00095475"
+    ]
+  ],
+  "entry_rva": "0x3a760",
+  "end_rva_exclusive": "0x3a780",
+  "boundary_assessment": "fixed32B-entry-candidate-in-cached-pdata-gap-not-whole-function",
+  "limits": {
+    "metadata_bytes": 0,
+    "metadata_reads": 0,
+    "code_bytes": 32,
+    "code_reads": 1,
+    "dumpbin_calls": 1,
+    "tiny_pe_bytes": 8192,
+    "hash_buffer": 65536
+  },
+  "metadata_bytes": 0,
+  "code_bytes": 32,
+  "reads": [
+    {
+      "kind": "entry-code",
+      "rva": "0x3a760",
+      "file_offset": 236384,
+      "bytes": 32,
+      "hex": "4883792010488d41087203488b00c3cc8b4128c3cccccccccccccccccccccccc"
+    }
+  ],
+  "failures": [],
+  "original_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "unwind_body_read": false,
+  "callees_followed": 0,
+  "restrictions": [
+    "The symbol target is bound to3A760 by exact name/hint/ordinal/EAT; all proof files are hash-pinned.",
+    "The cached preceding pdata end3A73D and nextbegin3A780 only bound the candidate; neither the gap nor32B is claimed as a whole function boundary.",
+    "Read exactly[3A760,3A780), with no new PE headers, pdata, imports, constants or other function bytes.",
+    "Decode all candidate bytes, preserving any parse failure and raw bytes. Manual normal-path review is still required; RET/layout/CMOV/callees are not assumed.",
+    "No loaded IAT/heap/string hypothesis, original module loading/execution, automatic continuation, safety setting changes or native memory dereference."
+  ],
+  "script_sha256": "964edd1feed8de67d6553fdd0cb233fbbc7d5b6cf76b0d0b98f9d5170e384f44",
+  "cached_pdata_bracket": {
+    "previous": {
+      "index": 1508,
+      "begin": 239328,
+      "end": 239421,
+      "unwind": 3547552,
+      "raw_hex": "e0a603003da70300a0213600"
+    },
+    "next": {
+      "index": 1509,
+      "begin": 239488,
+      "end": 239603,
+      "unwind": 3547264,
+      "raw_hex": "80a70300f3a7030080203600"
+    },
+    "source_index": 1
+  },
+  "tool_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "synthetic": {
+    "bytes": 2560,
+    "sha256": "f17c35a88258cbabeee8f61396e72f571f5e4f3fd904b21ad9f57ac968992b50",
+    "never_executed": true
+  },
+  "command_arguments": [
+    "/NOLOGO",
+    "/NOPDB",
+    "/ERRORREPORT:NONE",
+    "/DISASM:BYTES",
+    "/RANGE:0x18003a760,0x18003a77f",
+    "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-object-name-getter-temp\\03a760-entry.inspect.dll"
+  ],
+  "tool_exit": 0,
+  "instructions": 20,
+  "byte_coverage_verified": true,
+  "returns": [
+    {
+      "address": "0x18003a76e",
+      "bytes": "c3",
+      "instruction": "ret"
+    },
+    {
+      "address": "0x18003a773",
+      "bytes": "c3",
+      "instruction": "ret"
+    }
+  ],
+  "calls_or_branches": [
+    {
+      "address": "0x18003a769",
+      "bytes": "7203",
+      "instruction": "jb          000000018003A76E"
+    }
+  ],
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "source_closed": true,
+  "tool_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-21T08:51:44.833Z"
+}

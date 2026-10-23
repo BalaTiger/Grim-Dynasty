@@ -1,0 +1,384 @@
+{
+  "schema_version": 1,
+  "purpose": "Only the two exact767C98 table methods now observed on disk: +8 target089CB0 used by GameEngine connection initialization and +18 target0D04E0 consumed twice by GetMainPlayer2EBB70. Resolve real initialization and returned record identity/field dependencies. Optional RTTI lookup failed safely and is not retried, expanded or treated as recovered.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "planned_output": "docs/reverse-client/r1-game-mainplayer-connection-methods-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 11,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-mainplayer-connection-slots/inspection.json",
+      "sha256": "ba5c9153177d0bcaaa82738ad743bbc8ed3b362392d2091fd5bc2bdbd04ca4e5",
+      "addresses": [
+        "0x180089cb0",
+        "0x1800d04e0"
+      ],
+      "source_kind": "Partial-result evidence: overall status failed solely when optional vtable[-1] pointer1805DA340 classified as executable bytes, before any pointed-to code read. slot_bindings_complete=true and exact767CA0 rawb09c088001000000 ->180089CB0,767CB0 rawe0040d8001000000 ->1800D04E0 were already read.24 data bytes total,0 code bytes; same-handle before/after Game hashes match and handle closed. This plan uses only the two independently present slot observations, not successful RTTI or an overall successful reader claim."
+    }
+  ],
+  "saved_body_dedup": {
+    "method": "Read-only exact-address content inventory of5678 saved docs json/md/txt files at most1MiB found no target function bodies. The slot inspection is the only actual089CB0/0D04E0 address evidence. Two substring hits were inspected and excluded as SHA/evidence-id fragments: r1-real-navigation-checkpoint-20261022T2153Z.json and task-runtime/rea/Inbound-GiveToken-assembly.json (actual procedure311DE0). Larger files, logs and analysis databases were not inspected.",
+    "addresses": [
+      "0x180089cb0",
+      "0x1800d04e0"
+    ],
+    "matching_target_files": [],
+    "matching_binding_files": [
+      "docs/reverse-client/r1-mainplayer-connection-slots/inspection.json"
+    ],
+    "original_read": false,
+    "backend_started": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Game-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Game-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180089cb0"
+      },
+      "label": "04-GameMainPlayerConnectionMethod-0x180089cb0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180089cb0"
+      },
+      "label": "05-GameMainPlayerConnectionMethod-0x180089cb0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180089cb0"
+      },
+      "label": "06-GameMainPlayerConnectionMethod-0x180089cb0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1800d04e0"
+      },
+      "label": "07-GameMainPlayerConnectionMethod-0x1800d04e0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1800d04e0"
+      },
+      "label": "08-GameMainPlayerConnectionMethod-0x1800d04e0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1800d04e0"
+      },
+      "label": "09-GameMainPlayerConnectionMethod-0x1800d04e0-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "10-Game-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "11-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Preparation only. Root reviews and registers the fixed mode, checks current resource/mutex/profile/approval gates before execution. This plan neither edits nor executes the runner.",
+    "Exactly pseudo/assembly/direct-callees for089CB0 and0D04E0 plus five lifecycle calls,11 total. No xrefs,callers,searches,metadata reads,original execution,retries,or recursive follow-up.",
+    "Original partial slot report remains unchanged with overall status failed. Use only its completed raw two-slot observations with preserved same-handle hashes and closure; optional RTTI did not establish a locator/type.",
+    "Do not retry the rejected executable-data read at1805DA340 or reinterpret it as RTTI. No5DA340 query, additional table entries or class-tree expansion.",
+    "Reuse unchanged actual Game384M resource policy and tools/static_analysis/rea-r1-skill-moved-direct-plan.json:5GiB launch floor,2GiB stop floor,330000ms provider startup,existing owned-session/Job/sampler guards. No protection or timeout changes.",
+    "Target addresses have executable-section classification only until new body evidence is returned. Preserve exact return identity,field widths and dependency stops; no invented null connection or record.",
+    "Preserve all raw responses,normal cleanup and before/after original SHA256. No game runtime,saves,cloud,installation,security changes,commit or push."
+  ],
+  "evidence_questions": [
+    "What does089CB0 write/read, and does it retain the GameEngine40E0 address passed by the saved initializer? No initialized connection state is assumed.",
+    "What exact identity does0D04E0 return, and which fields, null/empty conditions and direct callees produce that identity? Returned record+10 is consumed by actual2EBB70.",
+    "Which concrete fields/data producers must be represented to execute two separate live+18 calls without successful fixture callbacks? Preserve lifetime and mutation/exception boundaries.",
+    "Report direct unclosed dependencies only. Do not query new targets or infer complete main-player startup, mouse movement or native runtime compatibility."
+  ],
+  "runner_before_sha256": "016eabaed4002cb2f2e45830368551c5ef4f1f18c49a67ce1cbebd32c5da1f06",
+  "preparation_template": {
+    "file": "docs/reverse-client/r1-game-mainplayer-connection-plan/plan.json",
+    "sha256": "de234801052907606224c63aa61311d9dccbdebcadc097febf89e003888cda29"
+  },
+  "runtime_profile_source": {
+    "file": "tools/static_analysis/rea-r1-skill-moved-direct-plan.json",
+    "sha256": "96e164adb4ff4909806229a8a4a7dce460cb134d76de0cc21768e9ea29313677",
+    "changed": false
+  },
+  "partial_result_scope": {
+    "source": "docs/reverse-client/r1-mainplayer-connection-slots/inspection.json",
+    "overall_status": "failed",
+    "slot_bindings_complete": true,
+    "optional_rtti_complete": false,
+    "retry": false,
+    "scope": "Use only completed two-slot observations; preserve failure and do not follow1805DA340"
+  },
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "game-mouse-first-calibration-384m-v1",
+    "calibration_only": false,
+    "measured_game_peak_available": true,
+    "budget_source": "unchanged-provisional-Game-budget-with-prior-trial-observation",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "task_allowance_gib": 3,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "no_system_settings_change": true,
+    "scope": "One exact Game533410 direct target; unchanged proven Game384M budget and protections.",
+    "legacy_budget_fields": "The reused game-mouse-first-calibration-384m-v1 budget object retains its original calibrationOnly/measuredGamePeakAvailable labels. Those immutable labels describe budget provenance, not the current observation inventory; use this plan and prior_game_trial_observation for current evidence."
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false,
+    "scope": "Existing startup absolute deadline and per-request outer deadline; not a whole-batch runtime guarantee."
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "previous_sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "serializer_file": "tools/static_analysis/rea_sampler_failure.ps1",
+    "serializer_sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "candidate_file": ".tooling/r1-owned-job-diagnostic-candidate/ReaOwnedJobDiagnosticCandidate.cs",
+    "candidate_sha256": "b52e6ba242277ab864a431433f43efe671bc6c37e73c1fd94d8b0977b7400544",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "serializer_validation_file": ".tooling/r1-owned-job-diagnostic-validation/serializer/result.json",
+    "serializer_validation_sha256": "eb5dc1cd79621686a5b646ba03897cec638674dd1d6894ec69cee1d5ceb04a60",
+    "runner_validation_file": ".tooling/r1-owned-job-diagnostic-validation/runner-result.json",
+    "runner_validation_sha256": "1ff5539479a0ba058bb7e3b4e6692293a07515e48d226c56f5b6667857c4bb29",
+    "deployment_file": ".tooling/r1-owned-job-diagnostic-deploy/deployment.json",
+    "deployment_sha256": "ef9be6d39c736f99fe4dd365b1ed08f6849f4280eacc698fdc9b4b75d4977dbf",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 49,
+    "scenario_groups": 10,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "serializer_assertions": 39,
+    "production_normalization": "Remove two candidate-only header lines and namespace suffix; serializer identical to tested candidate",
+    "limitations": "Diagnostic observation only. Native permissions,100ms shared wait budget,admission and fail-closed rules are unchanged. Isolated fault tests do not reproduce or establish the21:48 failure root cause."
+  },
+  "diagnostic_monitor_review": {
+    "status": "passed-and-pinned",
+    "diagnostics_only_intended": true,
+    "approved_source_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "production_monitor_must_not_be_changed_by_this_preparation": true,
+    "root_cause_proven": false,
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false
+  },
+  "sampler_observation_deployment": {
+    "status": "passed-additive-serialization-deployed",
+    "previous_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "evidence": [
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/deployment.json",
+        "sha256": "e978a7fbb0256233a2a5bbdacec662ebcbe808c1c227d20ef216dce8cf3d0db9"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/measure_job_process_memory.before.ps1",
+        "sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/measure_job_process_memory.ps1",
+        "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test_member_identity_serialization.ps1",
+        "sha256": "3afa73f7130a87959e38e76ba313f715bd0e4448e146a0417b3163b55ac84ae2"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test-result.json",
+        "sha256": "812f576f55ce8989638accf2a668a6b1b19e0d23e2869328be63ba7822c3062d"
+      }
+    ],
+    "only_added_field": "membership_queries.after_counters_member_identities",
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false,
+    "resource_limits_changed": false,
+    "tests_rerun": false
+  },
+  "recovery_requirement": {
+    "status": "confirmed-retained-after-Codex-restart",
+    "recovery_result_file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+    "recovery_result_sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829",
+    "evidence": [
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+        "sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-inventory.json",
+        "sha256": "e9baee1d751ebe2dbc329ceb068f25fc33ee96d3474e77bfd0a84a6978ca3dcf"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-move.json",
+        "sha256": "34967759d2622ffe3f46942681014a903ebf626f7f9557a0633f0b8c49beb272"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-after-move.json",
+        "sha256": "b2500ac78ffab31fc94c6e19a6db7c3287401bbf40a6b3e7055b5bf4e1a0c8e8"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before-move.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-after.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-final.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/historical-identities.json",
+        "sha256": "98c290f49b3b071a4127529aa21c7bbf816a6b59596f9be210adc0fecd302d45"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/classification-test-result.json",
+        "sha256": "0158c21bfa6fa46d87656030888cce9e8853b18086547599a6ce668527d80554"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/retain_interrupted_runtime_post_restart.ps1",
+        "sha256": "0769a1fbcf8c44b12a09fe35a31823a6a75eee2d24494814d1ae4334d15b32a9"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/post_restart_classification.ps1",
+        "sha256": "c5fb0a7b207f5c6e0fdd4d55b624aef69df4619c758034c59ca1a5645cf534f2"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/test_post_restart_classification.ps1",
+        "sha256": "bb88bbf79eb8c61b023d6a7d1468b40af09d4007433a3f111c832235e89fe611"
+      }
+    ],
+    "require_source_runtime_absent_and_exact_retained_directory": true,
+    "require_equal_content_manifests_and_zero_deleted_files": true,
+    "require_normal_fresh_launch_identity_resource_mutex_guards": true,
+    "old_terminal_flags_must_remain_unconfirmed": true,
+    "single_owner_job_termination_is_inference": true
+  },
+  "prior_engine_mouse_core": {
+    "summary_file": "docs/reverse-client/r1-engine-mouse-core/summary.json",
+    "summary_sha256": "4d26ffeb36f6c1bc0e8b8faf0a77c7f601ef08b5ce31a6a2aa2ca56c2449ba77",
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true
+  },
+  "prior_game_trial_observation": {
+    "summary_file": "docs/reverse-client/r1-game-mouse-calibration/summary.json",
+    "summary_sha256": "1397b49afa2556c97b2c1ea5ab9807a92c1a1306cd98262d10e697a2ed4d571e",
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "completed_plan_calls": 8,
+    "sampled_tree_private_commit_peak_bytes": 993013760,
+    "sampled_with_controller_and_sampler_private_peak_bytes": 1175207936,
+    "limitations": "One previous Game query trial with discrete sampling; no guarantee for this different fixed batch and no permission to reduce the existing resource gates."
+  },
+  "runtime_registration": {
+    "query_plan_sha256": "c436f9a73988fbef9032d30cb8a9be1b66a5b1d957425f3baa4953b442612cac",
+    "profile": {
+      "file": "tools/static_analysis/rea-r1-skill-moved-direct-plan.json",
+      "sha256": "96e164adb4ff4909806229a8a4a7dce460cb134d76de0cc21768e9ea29313677"
+    },
+    "metadata_keys": [
+      "memory_profile",
+      "time_limits",
+      "monitor_revision",
+      "diagnostic_monitor_review",
+      "sampler_observation_deployment",
+      "recovery_requirement",
+      "prior_engine_mouse_core",
+      "prior_game_trial_observation"
+    ],
+    "cleanup_prerequisites": [
+      {
+        "file": "docs/reverse-client/r1-skill-moved-direct/summary.json",
+        "sha256": "596d4499deb89419964abfd35c52e9df60ee0f6785c4a4d40b9c930f4c773dab",
+        "calls": 8,
+        "target": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+      },
+      {
+        "file": "docs/reverse-client/r1-world-position-and-level-initialization/summary.json",
+        "sha256": "dba34660d80fc2cf496d5025f2e160de946f07908ad9373aa49e5dfe5ea350f8",
+        "calls": 11,
+        "target": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+      }
+    ],
+    "frozen_query_input": "plan.json",
+    "profile_scope_text_is_historical": true,
+    "query_scope_unchanged": true
+  }
+}

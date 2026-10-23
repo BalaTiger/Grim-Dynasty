@@ -1,0 +1,78 @@
+{
+    "schema":  "grim-dynasty-m3-direct-record-read-v1",
+    "status":  "Collected",
+    "started_utc":  "2026-10-22T04:58:33.6757245Z",
+    "plan":  "docs/m3-evidence/plans/content-formulas.json",
+    "plan_sha256":  "2c5c6710c8e262d864efb666218c680856a776442b0f26fb9d51ee2f4eb48641",
+    "script":  "tools/static_analysis/read_m3_records.ps1",
+    "script_sha256":  "076aaccce3c8a2bb38a09b988110d72a4cdb0c66473c4d33dff44a1e8f7c6065",
+    "proof":  {
+                  "path":  "docs/m3-evidence/m3-content-slice/content-slice.json",
+                  "schema":  "grim-dynasty-m3-content-slice-v1",
+                  "sha256":  "3e5fe5ce265fa2367685d36531fd6bde2ebbbfc5af0b9da0fcbd9f60739a804d"
+              },
+    "input":  {
+                  "path":  "D:\\Steam\\steamapps\\common\\Grim Dawn\\database\\database.arz",
+                  "bytes":  58529720,
+                  "sha256":  "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603"
+              },
+    "tool":  {
+                 "path":  "artifacts/m1-offline-20261022-03/gd-offline.exe",
+                 "sha256":  "c4a84feb1bedbaa9b08598ff2cdd01ab0aeaa0bf7a57bbfbcf937faa38ba508b"
+             },
+    "output_directory":  "docs/m3-evidence/content-formulas",
+    "sha256_before":  "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603",
+    "sha256_after":  "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603",
+    "tool_sha256_after":  "c4a84feb1bedbaa9b08598ff2cdd01ab0aeaa0bf7a57bbfbcf937faa38ba508b",
+    "hash_buffer_bytes":  65536,
+    "max_records":  2,
+    "recursive":  false,
+    "invocations_started":  2,
+    "successful_decodes":  2,
+    "records":  [
+                    {
+                        "record_name":  "records/creatures/enemies/bios/bio_zombie_01.dbr",
+                        "source":  {
+                                       "record_name":  "records/creatures/enemies/boss\u0026quest/waveevent_burrwitchrift_zombie_a01.dbr",
+                                       "class":  "Monster",
+                                       "body_sha256":  "5b23632773c4a461ef96c220b8bc6344092feea34382dff9d261ac00284d8766",
+                                       "field":  "characterAttributeEquations",
+                                       "value":  "records/creatures/enemies/bios/bio_zombie_01.dbr"
+                                   },
+                        "output_file":  "bio-zombie.json",
+                        "arguments":  [
+                                          "inspect-record",
+                                          "D:\\Steam\\steamapps\\common\\Grim Dawn\\database\\database.arz",
+                                          "records/creatures/enemies/bios/bio_zombie_01.dbr"
+                                      ],
+                        "status":  "Decoded",
+                        "exit_code":  0,
+                        "output_sha256":  "0d2bb942186b76c3f6fceedd8c12fe0e504e5a7d79cf0a5803e22e1ece395b1c",
+                        "class":  "",
+                        "body_sha256":  "2ac2f28a6485fbdc2d985765ba82786eb7b414bcd832b98f1f77710d9ddd4593"
+                    },
+                    {
+                        "record_name":  "records/game/itemcostformulas.dbr",
+                        "source":  {
+                                       "record_name":  "records/items/crafting/crafting_randomtorso_caster.dbr",
+                                       "class":  "ArmorProtective_Chest",
+                                       "body_sha256":  "53872786bc6039de0c930585e32b603591d8b36ed0588b58cf05d9de711df9ee",
+                                       "field":  "itemCostName",
+                                       "value":  "records/game/itemcostformulas.dbr"
+                                   },
+                        "output_file":  "item-cost-formulas.json",
+                        "arguments":  [
+                                          "inspect-record",
+                                          "D:\\Steam\\steamapps\\common\\Grim Dawn\\database\\database.arz",
+                                          "records/game/itemcostformulas.dbr"
+                                      ],
+                        "status":  "Decoded",
+                        "exit_code":  0,
+                        "output_sha256":  "5f1a015c96f1ea5927b6c7777454cd436285ee55dfb3ec7139d42e8d28811e37",
+                        "class":  "",
+                        "body_sha256":  "31851adc97ae1c6f86b33c447c2198331189d364dd22044ea57d1c5407af8925"
+                    }
+                ],
+    "scope":  "Only pinned own M1 inspect-record invocations for saved direct references. No formula evaluation, recursive follow-up, extraction of other resources, native game execution, saves, installation, compilation, or security changes.",
+    "finished_utc":  "2026-10-22T04:58:34.1466448Z"
+}

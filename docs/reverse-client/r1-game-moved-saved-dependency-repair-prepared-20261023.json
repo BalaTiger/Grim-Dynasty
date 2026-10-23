@@ -1,0 +1,108 @@
+{
+  "schema": "grim-dynasty.game-moved-saved-dependency-repair-prepared.v1",
+  "status": "prepared-not-executed",
+  "reason": "Initial dependency union enumerated only *.dll and omitted the already-passed managed MainmenuTilePipeline.exe referenced by MainmenuCrowdRequestProducer. The prior Crowd manifest21-dependency closure has exactly this one missing file; other20 names/hashes match. Copy it as an assembly without executing its Main; preserve original failed result and reuse already-compiled new GameMoved artifacts.",
+  "previous_result": ".tooling/r1-game-moved-integration-validation/result.json",
+  "prior_verified": [
+    {
+      "mode": "--skills",
+      "scenarios": 8,
+      "assertions": 73
+    },
+    {
+      "mode": "components",
+      "scenarios": 13,
+      "assertions": 236,
+      "native_math_calls": 9
+    }
+  ],
+  "prior_failed_mode": "--saved-resource",
+  "failure": "FileNotFoundException: MainmenuTilePipeline, Version=0.0.0.0",
+  "not_approval_blocked": true,
+  "added_dependencies": [
+    {
+      "name": "MainmenuTilePipeline.exe",
+      "path": ".tooling/r1-crowd-path-validation/MainmenuTilePipeline.exe",
+      "sha256": "4d006bb08378360bdcccca167bc8d841b7f2ddbef48b55325ab9973658d173e7",
+      "bytes": 12288,
+      "result": ".tooling/r1-crowd-path-validation/result.json",
+      "use": "Referenced managed assembly only; its old executable entrypoint is never invoked"
+    }
+  ],
+  "dependency_closure": [
+    {
+      "assembly": "MainmenuCrowdRequestProducer",
+      "managed_reference": "MainmenuTilePipeline.exe",
+      "evidence": ".tooling/r1-crowd-path-validation/result.json compile-request-producer"
+    },
+    {
+      "assembly": "MainmenuTilePipeline",
+      "direct_project_references": [
+        "GrimDynasty.PathingData.dll",
+        "GrimDynasty.NavigationLayers.dll",
+        "GrimDynasty.NavigationContours.dll",
+        "GrimDynasty.NavigationPolygons.dll",
+        "GrimDynasty.NavigationTileData.dll"
+      ],
+      "evidence": "tools/build_r1_real_tiles.ps1 compile-real-pipeline; .tooling/r1-real-tile-validation/result.json"
+    },
+    {
+      "assembly": "GrimDynasty.NavigationPolygons",
+      "project_references": [
+        "GrimDynasty.NavigationContours.dll",
+        "GrimDynasty.PathingData.dll",
+        "GrimDynasty.NavigationLayers.dll"
+      ]
+    },
+    {
+      "assembly": "GrimDynasty.NavigationContours",
+      "project_references": [
+        "GrimDynasty.PathingData.dll",
+        "GrimDynasty.NavigationLayers.dll"
+      ]
+    },
+    {
+      "assembly": "GrimDynasty.NavigationLayers",
+      "project_references": [
+        "GrimDynasty.PathingData.dll"
+      ]
+    },
+    {
+      "assembly": "GrimDynasty.PathingData",
+      "project_references": []
+    },
+    {
+      "assembly": "GrimDynasty.NavigationTileData",
+      "project_references": []
+    }
+  ],
+  "script": {
+    "path": "tools/run_r1_game_moved_saved_dependency_repair.ps1",
+    "sha256": "3748573db33b8a74aa394c2eb13a103e2a90511556b30572fa3ccda3e6379688"
+  },
+  "manifest": {
+    "path": "tools/r1_game_moved_saved_dependency_repair_fingerprints.json",
+    "sha256": "3521cda0f1a37677cb94df06ca5f7d58c24dee8ba9e3f49aead3c94000757d26"
+  },
+  "output": ".tooling/r1-game-moved-saved-dependency-repair-validation",
+  "compiles": 0,
+  "test_modes_run": 0,
+  "planned_test_modes": [
+    "--saved-resource"
+  ],
+  "passed_scenarios_rerun": 0,
+  "fingerprints_checked": 142,
+  "fingerprint_mismatches": [],
+  "powershell_parse_errors": 0,
+  "assembly_loads_during_preparation": 0,
+  "old_executable_entrypoints_invoked": [],
+  "old_failed_directory_modified": false,
+  "production_semantics_changed": false,
+  "tests_source_changed": false,
+  "repair_executed": false,
+  "original_read": false,
+  "original_executed": false,
+  "backend_started": false,
+  "pending_operations": false,
+  "next": "Root review and execute the fixed saved-resource-only script once; preserve its new output even if failure."
+}

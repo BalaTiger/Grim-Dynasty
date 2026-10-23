@@ -1,0 +1,26 @@
+{
+  "source_evidence": [
+    {
+      "sha256": "fa0c4a5b7a5d1a2ccb3ed3a35d4a2c98a1192d4fc79cafae9c63a28eaa71366c",
+      "path": "docs/object-lifecycle/offline-class-static-crt-attach/inspection.json"
+    }
+  ],
+  "targets": [
+    {
+      "maximum_bytes": 6,
+      "leaf_bytes": 6,
+      "rva": 6144992,
+      "basis": "Game attach 0x1805db04e calls this exact address after RCX=0x18060c880 RDX=0x18060c890. Limit to six-byte indirect-jump candidate; do not select neighbors.",
+      "role": "First table call explicit thunk"
+    },
+    {
+      "maximum_bytes": 6,
+      "leaf_bytes": 6,
+      "rva": 6144986,
+      "basis": "Game attach 0x1805db06e calls this exact address after RCX=0x18060bab8 RDX=0x18060c878. Limit to six-byte indirect-jump candidate; do not select neighbors.",
+      "role": "Second table call explicit thunk"
+    }
+  ],
+  "stage": "crt-thunks",
+  "code_byte_limit": 12
+}

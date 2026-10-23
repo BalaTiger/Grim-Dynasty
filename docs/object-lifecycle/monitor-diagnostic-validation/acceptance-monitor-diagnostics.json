@@ -1,0 +1,128 @@
+{
+  "schema": "grim-dynasty-monitor-diagnostics-v1",
+  "utc": "2026-10-20T07:09:04.029Z",
+  "status": "diagnostics-validated-root-cause-unresolved-node-query-paused",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "prior_implementation": {
+    "checkpoint": ".tooling/checkpoints/cache-index-complete/manifest.json",
+    "assertions": 1209,
+    "scenario_groups": 25,
+    "demo": "passed",
+    "behavior_sources_unchanged": true
+  },
+  "source_hashes": {
+    "tools/static_analysis/ReaOwnedJob.cs": "f06ef3bb91be422afa3e1eef639243be2b711c4f701da462767649e34851b0c1",
+    "tools/static_analysis/measure_job_process_memory.ps1": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "tools/static_analysis/rea_sampler_failure.ps1": "fd43462fe384b002bcc78fbf13563b0ad22e017b8298e4720a4af6ddda27369c",
+    "tools/static_analysis/test_sampler_failure.ps1": "9693ed2f0ad4b6e974ee4275cafe2bd5e075cd45fa1d26e2af233a9fb768a08e",
+    "tools/static_analysis/rea_job_memory_profile.test.mjs": "c4e02845392cafa7714be168f25ce34903f94c9fff63e57d6d46b71ff95e3f20",
+    "tools/static_analysis/test_owned_job_diagnostics.ps1": "8db818b7ad41e2f7afd628065abdcfa6c7a41cdbddbec96470bf449ead5a1b3f",
+    "tools/static_analysis/OwnedJobDiagnosticFixture.cs": "734acb67adac25f0faa146b4e5835ded697767dd503bfea2217e1f4493fd66af"
+  },
+  "unchanged_guard_hashes": {
+    "tools/static_analysis/rea_owned_memory_profile.mjs": "c00d80d68f03f04ea29831037e3889475c1ae9e88f201745895f353d97a66716",
+    "tools/static_analysis/rea_resource_budget.mjs": "6089d637f629c7f1b4526754c5d1702f99dd71ce170f539b520643f7d75071e0",
+    "tools/static_analysis/rea_java_role.mjs": "33c3ea9388a48f631234accc039dffd516362020de1a60b9ffeb29f97fa4614c",
+    "tools/static_analysis/rea_profiled_server.mjs": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be",
+    "tools/static_analysis/read_rea_resource_preflight.ps1": "9d61ef613ea1be941b02a47be881a59ae28b9dd90e98dc209248697c984dfff9",
+    "tools/static_analysis/rea_native_registration.mjs": "a1102a8ce31b66a39f7626e8450b21c4438bfe2776d5ce7d9557fa21539d9bce"
+  },
+  "diagnostic_fields": [
+    "PID",
+    "known same-handle UTC creation and lossless ticks",
+    "known Job membership",
+    "fixed API step",
+    "original Win32 code",
+    "image error and secondary wait error",
+    "actual exit check result or unknown",
+    "QueryMembers index/count",
+    "sampler phase"
+  ],
+  "redaction": {
+    "allowlisted_scalars_only": true,
+    "arbitrary_error_text": false,
+    "environment": false,
+    "argv": false,
+    "executable_path": false
+  },
+  "sidecar": {
+    "create_new": true,
+    "overwrites_existing": false,
+    "separate_from_memory_samples": true,
+    "broken_stderr_does_not_prevent_write": true,
+    "diagnostic_failure_does_not_replace_original": true
+  },
+  "acceptance_and_termination_rules_changed": false,
+  "memory_thresholds_changed": false,
+  "production_fault_hook": false,
+  "tests": {
+    "native_diagnostics": {
+      "path": "docs/object-lifecycle/monitor-diagnostic-validation/native-diagnostics/result.json",
+      "assertions": 296,
+      "variants": 5,
+      "root_processes_confirmed_exited": 13,
+      "external_control_preserved_until_teardown": true,
+      "observations": {
+        "normal": 16,
+        "exited": 8,
+        "open_process_87": 0
+      }
+    },
+    "owned_job_regression": {
+      "path": "docs/object-lifecycle/monitor-diagnostic-validation/owned-job-regression/result.json",
+      "assertions": 115
+    },
+    "projection": {
+      "path": "docs/object-lifecycle/monitor-diagnostic-validation/projection-v2/result.json",
+      "assertions": 30,
+      "earlier_successful_revision_retained": "docs/object-lifecycle/monitor-diagnostic-validation/projection/result.json"
+    },
+    "controller": {
+      "path": "docs/object-lifecycle/monitor-diagnostic-validation/controller-tests.txt",
+      "tests": 79,
+      "failures": 0,
+      "new_cases": 3
+    },
+    "gate": {
+      "path": ".tooling/owned-start-gate-1c7aa512-69e9-4de3-9ba6-e7cf25d58474/result.json",
+      "passed": true,
+      "gate_released": false,
+      "job_empty": true,
+      "sampler_exit_code": 0,
+      "expected_controlled_root_exit_code": 92
+    }
+  },
+  "resource_release": {
+    "path": "docs/object-lifecycle/monitor-diagnostic-validation/resource-release.json",
+    "utc": "2026-10-20T07:05:20.2933474Z",
+    "active_analysis_processes": 0,
+    "runtime_files": 0
+  },
+  "original_failure_reproduced": false,
+  "root_cause_proven": false,
+  "behavior_repair_applied": false,
+  "node_query_retry_performed": false,
+  "node_query_paused": true,
+  "decision": "Diagnostic enhancement and synthetic-fault tests do not satisfy the condition of a proven specific repair; do not start Rea to collect failure logs",
+  "original_node_query": {
+    "summary": "docs/object-lifecycle/rea-record-cache-node/summary.json",
+    "issued_calls": 4,
+    "completed_calls": 3,
+    "body_obtained": false,
+    "normal_close_confirmed": false
+  },
+  "baseline_checkpoint": ".tooling/checkpoints/monitor-diagnostic-before/manifest.json",
+  "baseline_copies_verified": 14,
+  "prior_copies_verified": 290,
+  "rea_or_java_started": false,
+  "original_binary_read_this_phase": false,
+  "original_binary_execution": false,
+  "saves_or_cloud_access": false,
+  "installations": false,
+  "persistent_permission_changes": false,
+  "commit_or_push": false,
+  "approval_denied": false,
+  "pending_approval": false,
+  "uncertain_running_action": false,
+  "checkpoint": ".tooling/checkpoints/monitor-diagnostic-complete/manifest.json"
+}

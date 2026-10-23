@@ -1,0 +1,181 @@
+{
+  "schema": "grim-dynasty.fixed-entity-bounds-slots.v1",
+  "started_utc": "2026-10-23T04:02:40.626Z",
+  "script_sha256": "5774ca66a67bbcb789955db58098b3e3a3f118524b583ee179b524913832ea10",
+  "plan_sha256": "c302c49c6e766f143dc731a343d142e246739b01a7967676726967b6d1dc5770",
+  "source_pins": [
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "primary_tables",
+      "path": "docs/reverse-client/r1-game-callback-dependencies/inspection.json",
+      "sha256": "c0f0348d8f0712b35efd22d7ed36282065bfc31c78ee18b0f1d870e036a4afab"
+    },
+    {
+      "key": "bounds_assembly",
+      "path": "docs/reverse-client/r1-engine-entity-publication-core/08-EngineEntityPublication-0x18002a990-procedure_assembly.json",
+      "sha256": "7903afdba78a2aa2b7f7d1d6c59b52bcc3778966752253f56b2fb245dd81ae8f"
+    }
+  ],
+  "code_bytes": 0,
+  "metadata_bytes": 32,
+  "metadata_operations": 4,
+  "new_PE_header_bytes": 0,
+  "whole_table_bytes": 0,
+  "target_body_bytes": 0,
+  "original_loaded_or_executed": false,
+  "subprocesses": 0,
+  "whole_table_scanned": false,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "reads": [
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x6df730",
+          "file_offset": 7200048,
+          "bytes": 8,
+          "raw_hex": "d89e5d8001000000"
+        },
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x6dfa40",
+          "file_offset": 7200832,
+          "bytes": 8,
+          "raw_hex": "30da068001000000"
+        },
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x787160",
+          "file_offset": 7886688,
+          "bytes": 8,
+          "raw_hex": "d89e5d8001000000"
+        },
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x787470",
+          "file_offset": 7887472,
+          "bytes": 8,
+          "raw_hex": "30da068001000000"
+        }
+      ],
+      "hash_bytes": 22771712,
+      "closed": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "stable": true
+    }
+  ],
+  "values": [
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x60",
+      "rva": "0x6df730",
+      "bytes": 8,
+      "callsite": "0x18002a9a8",
+      "opcode": "CALL",
+      "section": ".rdata",
+      "file_offset": 7200048,
+      "raw_hex": "d89e5d8001000000",
+      "uint64_va": "0x1805d9ed8",
+      "candidate_rva": "0x5d9ed8",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_name_source": null,
+      "function_boundary_verified": false,
+      "callback_abi_verified": false,
+      "loaded_value_observed": false,
+      "candidate_code_section": ".text"
+    },
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x370",
+      "rva": "0x6dfa40",
+      "bytes": 8,
+      "callsite": "0x18002aa70",
+      "opcode": "CALL",
+      "section": ".rdata",
+      "file_offset": 7200832,
+      "raw_hex": "30da068001000000",
+      "uint64_va": "0x18006da30",
+      "candidate_rva": "0x6da30",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_name_source": null,
+      "function_boundary_verified": false,
+      "callback_abi_verified": false,
+      "loaded_value_observed": false,
+      "candidate_code_section": ".text"
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x60",
+      "rva": "0x787160",
+      "bytes": 8,
+      "callsite": "0x18002a9a8",
+      "opcode": "CALL",
+      "section": ".rdata",
+      "file_offset": 7886688,
+      "raw_hex": "d89e5d8001000000",
+      "uint64_va": "0x1805d9ed8",
+      "candidate_rva": "0x5d9ed8",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_name_source": null,
+      "function_boundary_verified": false,
+      "callback_abi_verified": false,
+      "loaded_value_observed": false,
+      "candidate_code_section": ".text"
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x370",
+      "rva": "0x787470",
+      "bytes": 8,
+      "callsite": "0x18002aa70",
+      "opcode": "CALL",
+      "section": ".rdata",
+      "file_offset": 7887472,
+      "raw_hex": "30da068001000000",
+      "uint64_va": "0x18006da30",
+      "candidate_rva": "0x6da30",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_name_source": null,
+      "function_boundary_verified": false,
+      "callback_abi_verified": false,
+      "loaded_value_observed": false,
+      "candidate_code_section": ".text"
+    }
+  ],
+  "disk_bindings_complete": true,
+  "unsupported": [],
+  "failures": [],
+  "limitations": [
+    "Only four disk primary-vtable candidates at+60,+370; no other slot read. Original executable code is never loaded or executed.",
+    "Table extents and subsequent constructor-callee overwrites are not excluded by the saved proof; actual loaded dispatch remains unverified.",
+    "Executable address classification does not establish function boundaries, target names, ABI or behavior.",
+    "No function name is inferred from the role of the calling slot; exact saved name lookup is absent.",
+    "Whole-file hash streams check identity separately from the32B semantic read budget, and are not atomic snapshots.",
+    "Node path checks cannot identify every Windows reparse tag; separate Attributes preflight remains required."
+  ],
+  "proofs_verified": true,
+  "primary_tables": {
+    "interface_offset": 0,
+    "constructor_writes_verified": true,
+    "player_overwrite_verified": true,
+    "table_extents_verified": false,
+    "subsequent_callee_writes_excluded": false,
+    "loaded_values_observed": false
+  },
+  "finished_utc": "2026-10-23T04:02:40.643Z",
+  "status": "passed"
+}

@@ -1,0 +1,163 @@
+{
+  "schema": "grim-dynasty.camera-world-ray-component-design.v1",
+  "status": "implemented-awaiting-root-build-validation",
+  "implementation_started": true,
+  "existing_sources_to_preserve": [
+    "src/reverse_client_actions/PortalCameraContracts.cs",
+    "src/reverse_client_actions/CameraTargetContracts.cs",
+    "src/reverse_client_actions/EvidenceCameraBoundaries.cs",
+    "src/reverse_client_actions/SystemUcrtRotationMath.cs",
+    "tools/static_analysis/camera_mode1_math.mjs",
+    "tools/static_analysis/camera_mode1_math.test.mjs"
+  ],
+  "evidence": {
+    "camera_assembly": "docs/reverse-client/r1-engine-mouse-core/05-Camera-GetImagePoint-0x180044a10-procedure_assembly.json",
+    "ray_assembly": "docs/reverse-client/r1-engine-input/08-GetRayThroughImagePoint-0x180229700-procedure_assembly.json",
+    "actual_getter": "src/reverse_client_actions/EvidenceCameraBoundaries.cs: ReadGameTarget -> CameraTargetContracts.GetTarget",
+    "tangent_binding": "docs/reverse-client/r1-engine-camera-tanf-import/inspection.json (root execution passed)",
+    "constants": "Reuse the three local pins recorded in read_r1_engine_camera_tanf_import.plan.json; do not reread original constants"
+  },
+  "proposed_new_file": "src/reverse_client_actions/CameraWorldRayContracts.cs",
+  "views": [
+    {
+      "name": "CameraImageState",
+      "constructor": "CameraImageState(PortalCameraState shared)",
+      "new_fields": [
+        "Field<int> Mode6C",
+        "Field<float> FovA0",
+        "Field<float> WidthA4",
+        "Field<float> HeightA8"
+      ],
+      "shared_fields": {
+        "Camera+04..24": "shared.Basis70[0..8]",
+        "Camera+28/+2C": "low/high DWORD read projections of shared.Position94; one authoritative qword",
+        "Camera+30": "shared.Position9C"
+      },
+      "invariants": [
+        "No mirrored camera XYZ or basis",
+        "Only explicit state attachment; reject conflicting state per PortalCamera identity",
+        "All newly represented mutable fields initially Unknown; no invented native construction"
+      ]
+    },
+    {
+      "name": "CameraImagePoint2",
+      "constructor": "CameraImagePoint2(Field<float> x, Field<float> y)",
+      "fields": [
+        "X0",
+        "Y4"
+      ],
+      "invariants": [
+        "Borrow existing float cells; no clamp/range producer inferred"
+      ]
+    },
+    {
+      "name": "CameraViewport",
+      "fields": [
+        "Field<int> Width08",
+        "Field<int> Height0C"
+      ],
+      "invariants": [
+        "Only observed signed32 width/height reads; no invented window/activity fields"
+      ]
+    },
+    {
+      "name": "WorldRayObserved36",
+      "constructor": "WorldRayObserved36(WorldPosition24 origin, NavigationPoint3 direction)",
+      "fields": [
+        "WorldPosition24 Origin00",
+        "NavigationPoint3 Direction18"
+      ],
+      "invariants": [
+        "Only 36 observed bytes; do not claim native sizeof",
+        "WorldPosition24 uses canonical region tokens and existing independent D14 knowledge"
+      ]
+    },
+    {
+      "name": "CameraWorldRayContext",
+      "references": [
+        "The existing EvidenceCameraBoundaries instance",
+        "The existing canonical WorldCoordinateState",
+        "An attached CameraImageState per existing PortalCamera"
+      ],
+      "constant_fields": [
+        "Field<uint> Half34BADC",
+        "Field<uint> One34BB44",
+        "Field<uint> Fallback338458"
+      ],
+      "invariants": [
+        "No success getter callback; bind observed concrete GameCamera to its actual GetTarget implementation",
+        "Explicit configuration may install only the three pinned disk bit patterns; no loaded-state claim",
+        "Root confirmed exact tangent binding and assigned the opt-in own SystemUcrtCameraMath provider; the old default exports and guards remain"
+      ]
+    }
+  ],
+  "apis": [
+    "NavigationPoint3 CameraWorldRayContracts.GetImagePoint044A10(CameraImageState camera, NavigationPoint3 output, CameraImagePoint2 input, CameraViewport viewport, CameraWorldRayContext context, Invocation invocation)",
+    "WorldRayObserved36 CameraWorldRayContracts.GetRay229700(PortalCamera camera, WorldRayObserved36 output, CameraImagePoint2 input, CameraViewport viewport, CameraWorldRayContext context, Invocation invocation)"
+  ],
+  "instruction_obligations": [
+    "044A24 consumes mode. Modes other than0/1 write qword+0 and dword+8 zero without consuming image/viewport fields.",
+    "Mode0 snapshots FOV then consumes Half and actual tanf at044A57; no Math.Tan replacement, injected tangent result or implicit provider.",
+    "Preserve each branch's exact scalar read, float32 arithmetic and output X/Y/Z store order; do not reuse the old array model as if it models aliases or Unknown.",
+    "22971C clears only output Origin00.Q0 before first virtual call.",
+    "Read vptr/slot18 twice independently at22972F/22973B and22977E/229781; use fresh hidden buffers and each actual returned pointer Q0.",
+    "First getter result token and late Position94/Position9C produce origin through16+8 stores at229774/229778.",
+    "The fresh local padding in the second8B origin copy is Unknown: output D14 becomes Unknown, even if previously known; it is not retained or zero-filled.",
+    "229793 captures second returned token; after044A10,22979B rereads output origin token before zero tests.",
+    "Resolve nonzero tokens through canonical WorldCoordinateState. Offset differences are unchecked32-bit subtract then signed32-to-binary32 conversion, never wide-integer subtraction.",
+    "Normalization preserves y*y+x*x then+z*z order, SQRTSS, reciprocal, and scalar multiply; do not add a zero-length guard or normalize only finite vectors without declaring an own-domain boundary.",
+    "Final direction stores are qword+18 then dword+20; earlier output and callee failures never roll back.",
+    "Optional diagnostic observations may record actual invocation/read events but must not create returned tokens, tangent values or successful getter results."
+  ],
+  "new_targeted_test_groups": [
+    {
+      "name": "shared-view-mapping",
+      "purpose": "C# shared basis/qword-position read projections, later state changes, and conflicting identity rejection; no repeat of old9 mode1 arithmetic examples"
+    },
+    {
+      "name": "mode-and-unknown-read-order",
+      "purpose": "Unknown mode, unrecognized mode bypass, mode1 viewport bypass, exact unknown operand ordering, and aliased/short output ordered-store prefix"
+    },
+    {
+      "name": "actual-gettarget-ray-chain",
+      "purpose": "Run observed concrete GameGetTarget twice with separately observed fresh hidden buffers through mode1 and normalized direction, without fixed successful getter callbacks"
+    },
+    {
+      "name": "ray-partial-output",
+      "purpose": "First real getter failure leaves initial Q0 zero only; image-helper failure after two actual getter calls preserves origin16+8 copy and unwritten direction"
+    },
+    {
+      "name": "ray-padding-and-final-stores",
+      "purpose": "Known origin.D14 becomes Unknown, both successful and later-failing paths; direction qword/dword writes preserve origin cells"
+    },
+    {
+      "name": "ray-numeric-edge-consumption",
+      "purpose": "Explicit constant absence, null-token fallback and zero-length unguarded normalization; offset subtract signed32/wrap case only through a separately identified pure observed arithmetic segment or test observer that still invokes actual getter, never fake success"
+    },
+    {
+      "name": "mode0-after-binding",
+      "purpose": "Only after root assigns actual tanf provider: validate real bounded provider invocation plus signed viewport conversion/order and downstream failure prefix; no old UCRT suite rerun"
+    }
+  ],
+  "unresolved_external_connections": [
+    "Physical mouse events and pixel-to-image coordinate production",
+    "Viewport/activity producer and native camera initialization/update",
+    "WorldRay region selection and Ground query flags/maxDistance/ignoreObject producer",
+    "Ground hit to WorldVec3/ObjectID and Game15E1F0 action input",
+    "Own System32 UCRT tangent is bounded to finite normal-or-zero [-1.5,1.5] input; original loaded CRT equivalence remains unclaimed"
+  ],
+  "retained_ground_reuse": [
+    "GroundRay24",
+    "GroundSpatialTreeContracts.Query1D0100",
+    "RealGroundFloorIntegrationTests saved geometry/material/tree setup",
+    "Canonical Region->Level68->Landscape30.Ground20->Tree.Root10 mapping; do not substitute the floor entry for a recovered mouse query caller"
+  ],
+  "validation_plan": {
+    "build": "root only after implementation scope assignment; new fixed output and pinned dependencies",
+    "old_mode1_tests_rerun": false,
+    "old_ucrt_tests_rerun": false,
+    "original_execution": false,
+    "rea_queries": false,
+    "ui_or_rendering_expansion": false
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "started_utc": "2026-10-20T05:29:03.172Z",
+  "passed": true,
+  "gate_released": false,
+  "root_pid": 47564,
+  "profile": {
+    "sampler_pid": 44756,
+    "budget": {
+      "id": "engine-parser-384m-v1",
+      "heap": "384M",
+      "launchBytes": 4563402752,
+      "stopBytes": 2147483648,
+      "maximumSampleAgeMs": 5000,
+      "staleAfterMs": 15000,
+      "taskAllowanceGiB": 2.25,
+      "systemSpareGiB": 2
+    },
+    "ownership_policy": "windows-job-v1",
+    "expected_heap_observed": false,
+    "job_empty_confirmed": true,
+    "requested_interval_ms": 1000,
+    "samples": 2,
+    "last_sample_utc": "2026-10-20T05:29:07.3027423Z",
+    "tree_private_commit_peak_bytes": 23937024,
+    "tree_working_set_peak_bytes": 40763392,
+    "with_controller_and_sampler_private_peak_bytes": 156344320,
+    "with_controller_and_sampler_working_set_peak_bytes": 213262336,
+    "minimum_available_physical_bytes": 13679960064,
+    "minimum_commit_headroom_bytes": 26445844480,
+    "largest_receipt_gap_ms": 1440,
+    "counter_read_gap_count": 0,
+    "processes": [
+      {
+        "pid": 12976,
+        "parent_pid": 47240,
+        "name": "node.exe",
+        "role": "controller",
+        "creation_utc": "2026-10-20T05:29:03.1376117Z",
+        "private_commit_sample_peak_bytes": 26247168,
+        "lifetime_commit_peak_observed_bytes": 26247168,
+        "working_set_sample_peak_bytes": 44281856,
+        "lifetime_working_set_peak_observed_bytes": 44281856,
+        "maximum_threads_observed": 15,
+        "java_heap_switches": []
+      },
+      {
+        "pid": 47564,
+        "parent_pid": 12976,
+        "name": "node.exe",
+        "role": "owned_backend_tree",
+        "creation_utc": "2026-10-20T05:29:04.9489383Z",
+        "private_commit_sample_peak_bytes": 23937024,
+        "lifetime_commit_peak_observed_bytes": 23937024,
+        "working_set_sample_peak_bytes": 40763392,
+        "lifetime_working_set_peak_observed_bytes": 40763392,
+        "maximum_threads_observed": 14,
+        "java_heap_switches": []
+      },
+      {
+        "pid": 44756,
+        "parent_pid": 12976,
+        "name": "powershell.exe",
+        "role": "sampler",
+        "creation_utc": "2026-10-20T05:29:04.9876203Z",
+        "private_commit_sample_peak_bytes": 116420608,
+        "lifetime_commit_peak_observed_bytes": 131170304,
+        "working_set_sample_peak_bytes": 141443072,
+        "lifetime_working_set_peak_observed_bytes": 152743936,
+        "maximum_threads_observed": 40,
+        "java_heap_switches": []
+      }
+    ],
+    "failures": [],
+    "job_stop_requested": true,
+    "sampler_exit_confirmed": true,
+    "sampler_exit_code": 0,
+    "sampler_output_drained": true,
+    "limitations": [
+      "Sampled tree sums are not continuous peaks; short-lived processes or the last interval before exit may be missed.",
+      "Working sets may contain shared pages. Sum of per-process lifetime peaks is not simultaneous tree usage.",
+      "Controller and PowerShell sampler overhead are recorded separately and also included in total task peaks."
+    ]
+  },
+  "root_exit_code": 92,
+  "finished_utc": "2026-10-20T05:29:07.780Z"
+}

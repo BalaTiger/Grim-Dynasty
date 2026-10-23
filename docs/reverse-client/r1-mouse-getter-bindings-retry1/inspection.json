@@ -1,0 +1,364 @@
+{
+  "schema": "grim-dynasty.fixed-mouse-getter-bindings.v1",
+  "started_utc": "2026-10-23T10:49:05.749Z",
+  "script_sha256": "0fc38e460e6a63192c35a6b9e6bd81b8a897365c06aa63a804fabef692c46688",
+  "plan_sha256": "ec82e866c962dd506098931aea0261330e06bff77e4b4c2a443ecb6ebb7842ae",
+  "source_pins": [
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "dispatch",
+      "path": "docs/reverse-client/r1-player-move-dispatch/04-MoveDispatch-0x180163490-procedure_assembly.json",
+      "sha256": "083eade1979ad63423a26e516f3681e1e3b2dc213586d2d6e747f85eddea9e1a"
+    },
+    {
+      "key": "move",
+      "path": "docs/reverse-client/r1-movement-action-path/05-MoveAction-0x1803ce890-procedure_assembly.json",
+      "sha256": "e93a0992a69b1a04b9a552163943fe49ad3a4e2a3c5cf5bcc2e5f6ac00fdffd1"
+    }
+  ],
+  "selected": [
+    {
+      "iat_rva": "0x609be8",
+      "index": 381,
+      "symbol": "?GetCoordsUnparented@Entity@GAME@@QEBAAEBVWorldCoords@2@XZ",
+      "caller": "0x180163547: CALL qword ptr [0x180609be8]"
+    },
+    {
+      "iat_rva": "0x609ad8",
+      "index": 347,
+      "symbol": "?GetOptions@Engine@GAME@@QEAAPEAVOptions@2@XZ",
+      "caller": "0x1803ce8e8: CALL qword ptr [0x180609ad8]"
+    },
+    {
+      "iat_rva": "0x60a148",
+      "index": 553,
+      "symbol": "?GetInt@Options@GAME@@QEBAHW4IntName@12@@Z",
+      "caller": "0x1803ce8f6: CALL qword ptr [0x18060a148]"
+    }
+  ],
+  "limits": {
+    "metadata_bytes": 512,
+    "metadata_operations": 24,
+    "single_read_bytes": 128,
+    "hash_chunk_bytes": 65536,
+    "code_bytes": 0,
+    "subprocesses": 0
+  },
+  "metadata_bytes": 380,
+  "metadata_operations": 24,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_loaded_or_executed": false,
+  "whole_export_table_scanned": false,
+  "new_PE_headers_read": false,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "reads": [
+        {
+          "kind": "exact-OFT-slot",
+          "rva": "0xa436a8",
+          "file_offset": 10755240,
+          "bytes": 8,
+          "raw_hex": "38a7a40000000000"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609be8",
+          "file_offset": 6324712,
+          "bytes": 8,
+          "raw_hex": "38a7a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4a738",
+          "file_offset": 10784056,
+          "bytes": 2,
+          "raw_hex": "000a"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa4a73a",
+          "file_offset": 10784058,
+          "bytes": 59,
+          "raw_hex": "3f476574436f6f726473556e706172656e74656440456e746974794047414d4540405145424141454256576f726c64436f6f726473403240585a00"
+        },
+        {
+          "kind": "exact-OFT-slot",
+          "rva": "0xa43598",
+          "file_offset": 10754968,
+          "bytes": 8,
+          "raw_hex": "e49fa40000000000"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609ad8",
+          "file_offset": 6324440,
+          "bytes": 8,
+          "raw_hex": "e49fa40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa49fe4",
+          "file_offset": 10782180,
+          "bytes": 2,
+          "raw_hex": "8a0c"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa49fe6",
+          "file_offset": 10782182,
+          "bytes": 46,
+          "raw_hex": "3f4765744f7074696f6e7340456e67696e654047414d45404051454141504541564f7074696f6e73403240585a00"
+        },
+        {
+          "kind": "exact-OFT-slot",
+          "rva": "0xa43c08",
+          "file_offset": 10756616,
+          "bytes": 8,
+          "raw_hex": "2ccea40000000000"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x60a148",
+          "file_offset": 6326088,
+          "bytes": 8,
+          "raw_hex": "2ccea40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4ce2c",
+          "file_offset": 10794028,
+          "bytes": 2,
+          "raw_hex": "430b"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa4ce2e",
+          "file_offset": 10794030,
+          "bytes": 43,
+          "raw_hex": "3f476574496e74404f7074696f6e734047414d45404051454241485734496e744e616d6540313240405a00"
+        }
+      ],
+      "hash_bytes": 22771712,
+      "closed": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "stable": true
+    },
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "reads": [
+        {
+          "kind": "exact-hinted-name-pointer",
+          "rva": "0x3b8154",
+          "file_offset": 3895636,
+          "bytes": 4,
+          "raw_hex": "97f13d00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3df197",
+          "file_offset": 4055447,
+          "bytes": 59,
+          "raw_hex": "3f476574436f6f726473556e706172656e74656440456e746974794047414d4540405145424141454256576f726c64436f6f726473403240585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bcf80",
+          "file_offset": 3915648,
+          "bytes": 2,
+          "raw_hex": "000a"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b1f28",
+          "file_offset": 3870504,
+          "bytes": 4,
+          "raw_hex": "e0bb0000"
+        },
+        {
+          "kind": "exact-hinted-name-pointer",
+          "rva": "0x3b8b7c",
+          "file_offset": 3898236,
+          "bytes": 4,
+          "raw_hex": "2d8f3e00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3e8f2d",
+          "file_offset": 4095789,
+          "bytes": 46,
+          "raw_hex": "3f4765744f7074696f6e7340456e67696e654047414d45404051454141504541564f7074696f6e73403240585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bd494",
+          "file_offset": 3916948,
+          "bytes": 2,
+          "raw_hex": "8a0c"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b2950",
+          "file_offset": 3873104,
+          "bytes": 4,
+          "raw_hex": "60360700"
+        },
+        {
+          "kind": "exact-hinted-name-pointer",
+          "rva": "0x3b8660",
+          "file_offset": 3896928,
+          "bytes": 4,
+          "raw_hex": "77413e00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3e4177",
+          "file_offset": 4075895,
+          "bytes": 43,
+          "raw_hex": "3f476574496e74404f7074696f6e734047414d45404051454241485734496e744e616d6540313240405a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bd206",
+          "file_offset": 3916294,
+          "bytes": 2,
+          "raw_hex": "430b"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b2434",
+          "file_offset": 3871796,
+          "bytes": 4,
+          "raw_hex": "602d1800"
+        }
+      ],
+      "hash_bytes": 8971264,
+      "closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "stable": true
+    }
+  ],
+  "bindings": [
+    {
+      "dll": "Engine.dll",
+      "iat_rva": "0x609be8",
+      "lookup_index": 381,
+      "lookup_rva": "0xa436a8",
+      "hint_name_rva": "0xa4a738",
+      "hint": 2560,
+      "symbol": "?GetCoordsUnparented@Entity@GAME@@QEBAAEBVWorldCoords@2@XZ",
+      "within_cached_nonzero_prefix": false,
+      "loaded_binding_observed": false
+    },
+    {
+      "dll": "Engine.dll",
+      "iat_rva": "0x609ad8",
+      "lookup_index": 347,
+      "lookup_rva": "0xa43598",
+      "hint_name_rva": "0xa49fe4",
+      "hint": 3210,
+      "symbol": "?GetOptions@Engine@GAME@@QEAAPEAVOptions@2@XZ",
+      "within_cached_nonzero_prefix": true,
+      "loaded_binding_observed": false
+    },
+    {
+      "dll": "Engine.dll",
+      "iat_rva": "0x60a148",
+      "lookup_index": 553,
+      "lookup_rva": "0xa43c08",
+      "hint_name_rva": "0xa4ce2c",
+      "hint": 2883,
+      "symbol": "?GetInt@Options@GAME@@QEBAHW4IntName@12@@Z",
+      "within_cached_nonzero_prefix": false,
+      "loaded_binding_observed": false
+    }
+  ],
+  "exports": [
+    {
+      "iat_rva": "0x609be8",
+      "symbol": "?GetCoordsUnparented@Entity@GAME@@QEBAAEBVWorldCoords@2@XZ",
+      "hint": 2560,
+      "name_rva": "0x3df197",
+      "ordinal_index": 2560,
+      "ordinal": 2561,
+      "target_rva": "0xbbe0",
+      "target_va": "0x18000bbe0",
+      "code_read": false,
+      "function_boundary_verified": false,
+      "loaded_binding_observed": false
+    },
+    {
+      "iat_rva": "0x609ad8",
+      "symbol": "?GetOptions@Engine@GAME@@QEAAPEAVOptions@2@XZ",
+      "hint": 3210,
+      "name_rva": "0x3e8f2d",
+      "ordinal_index": 3210,
+      "ordinal": 3211,
+      "target_rva": "0x73660",
+      "target_va": "0x180073660",
+      "code_read": false,
+      "function_boundary_verified": false,
+      "loaded_binding_observed": false
+    },
+    {
+      "iat_rva": "0x60a148",
+      "symbol": "?GetInt@Options@GAME@@QEBAHW4IntName@12@@Z",
+      "hint": 2883,
+      "name_rva": "0x3e4177",
+      "ordinal_index": 2883,
+      "ordinal": 2884,
+      "target_rva": "0x182d60",
+      "target_va": "0x180182d60",
+      "code_read": false,
+      "function_boundary_verified": false,
+      "loaded_binding_observed": false
+    }
+  ],
+  "failures": [],
+  "cached_contiguous_nonzero_prefix_entries": 350,
+  "extended_contiguous_prefix_claimed": false,
+  "limitations": [
+    "Separate exact approval with script and plan hashes; separate Windows Attributes/reparse preflight for originals, script, plan, proof files and output ancestors.",
+    "Only three fixed IAT/OFT slots, exact import hint/name and exact hinted Engine export metadata; no scan or hint fallback, no code, PE headers, pdata or runtime read.",
+    "Index 553 is outside the cached 350-entry nonzero prefix. Its evidence is the pinned full import-name inventory, cached descriptor and current exact OFT/IAT/name; no unseen contiguous prefix is asserted.",
+    "Read-only originals with same-handle before/after SHA256 and stat/path checks. Hash streaming is separate from the metadata budget and is not an atomic snapshot.",
+    "Output must not exist; preserve partial failure evidence. No original loading/execution, backend, subprocess, network, save data or security-setting changes."
+  ],
+  "cached_descriptor": {
+    "descriptor_index": 3,
+    "evidence_selection_index": 4,
+    "import_directory_rva": "0xa42940",
+    "raw": {
+      "rva": "0xa4297c",
+      "file_offset": 10751868,
+      "bytes": "c02aa4000000000000000000a66aa50000906000"
+    }
+  },
+  "proofs_verified": true,
+  "finished_utc": "2026-10-23T10:49:05.837Z",
+  "status": "passed"
+}

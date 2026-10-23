@@ -1,0 +1,79 @@
+{
+  "started_utc": "2026-10-22T19:01:44.967Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_size": 4485632,
+  "script_sha256": "daadf0904a25e5d2fe9f37d8a4a83cb5beb9d04edc31efc5710751080a0d535e",
+  "proof": {
+    "file": "docs/reverse-client/r1-nav-update-and-contours/08-NavUpdateContours-0x180269590-procedure_assembly.json",
+    "sha256": "d47f1e7b61345b4fd31a551d5a002d20ccf256e07b8fab70b093f517ecc36919",
+    "procedure": "0x180269590"
+  },
+  "metadata_bytes": 688,
+  "data_bytes": 32,
+  "hash_bytes": 8971264,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "rva": "0x34bee0",
+      "va": "0x18034bee0",
+      "file_offset": 3452640,
+      "bytes": 16,
+      "section": ".rdata",
+      "raw_hex": "ffffffff000000000100000000000000",
+      "int32_le": [
+        -1,
+        0,
+        1,
+        0
+      ],
+      "uint32_hex": [
+        "0xffffffff",
+        "0x00000000",
+        "0x00000001",
+        "0x00000000"
+      ],
+      "evidence_instruction": "0x1802696bd: MOVDQA XMM0, xmmword ptr [0x18034bee0]",
+      "loaded_value_observed": false
+    },
+    {
+      "rva": "0x34c480",
+      "va": "0x18034c480",
+      "file_offset": 3454080,
+      "bytes": 16,
+      "section": ".rdata",
+      "raw_hex": "000000000100000000000000ffffffff",
+      "int32_le": [
+        0,
+        1,
+        0,
+        -1
+      ],
+      "uint32_hex": [
+        "0x00000000",
+        "0x00000001",
+        "0x00000000",
+        "0xffffffff"
+      ],
+      "evidence_instruction": "0x1802696ce: MOVDQA XMM0, xmmword ptr [0x18034c480]",
+      "loaded_value_observed": false
+    }
+  ],
+  "failures": [],
+  "scope": "PE headers/section metadata at most4096B, then exactly16B each at RVA34BEE0 and34C480. Entire-file streams are only before/after SHA256.",
+  "limitations": [
+    "Disk int32[4] tables bound to269590 MOVDQA instructions; no loaded values, traversal success or complete contour algorithm is proved.",
+    "No adjacent data, function body, DLL execution, backend, other original file or saves are accessed.",
+    "Node does not expose every Windows reparse tag; the established external Attributes precheck is still required.",
+    "Same-descriptor before/after hash/stat equality is not an atomic filesystem snapshot."
+  ],
+  "proof_verified": true,
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T19:01:44.976Z",
+  "status": "passed"
+}

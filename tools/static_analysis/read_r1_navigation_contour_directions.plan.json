@@ -1,0 +1,52 @@
+{
+  "status": "PreparedNotExecuted",
+  "script": "tools/static_analysis/read_r1_navigation_contour_directions.mjs",
+  "script_bytes": 7297,
+  "script_sha256": "daadf0904a25e5d2fe9f37d8a4a83cb5beb9d04edc31efc5710751080a0d535e",
+  "invocation_javascript": "const m = await import('./tools/static_analysis/read_r1_navigation_contour_directions.mjs'); console.log(JSON.stringify(m.inspectNavigationContourDirections()));",
+  "explicit_invocation_required": true,
+  "import_has_file_io": false,
+  "execution_requires_separate_review_and_approval": true,
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "size": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "mode": "read only, one descriptor",
+    "hash_passes": 2,
+    "hash_buffer_bytes": 65536,
+    "hash_bytes_on_success": 8971264,
+    "metadata_bytes_max": 4096,
+    "metadata_single_read_bytes_max": 512,
+    "data_reads": [
+      { "rva": "0x34bee0", "bytes": 16, "interpretation": "four little-endian int32, exact bits retained" },
+      { "rva": "0x34c480", "bytes": 16, "interpretation": "four little-endian int32, exact bits retained" }
+    ],
+    "data_bytes_on_success": 32,
+    "code_bytes": 0
+  },
+  "proof": {
+    "file": "docs/reverse-client/r1-nav-update-and-contours/08-NavUpdateContours-0x180269590-procedure_assembly.json",
+    "sha256": "d47f1e7b61345b4fd31a551d5a002d20ccf256e07b8fab70b093f517ecc36919",
+    "procedure": "0x180269590",
+    "exact_instructions": [
+      "0x1802696bd: MOVDQA XMM0, xmmword ptr [0x18034bee0]",
+      "0x1802696ce: MOVDQA XMM0, xmmword ptr [0x18034c480]"
+    ]
+  },
+  "output": {
+    "new_directory": "docs/reverse-client/r1-navigation-contour-directions",
+    "files": ["inspection.json"],
+    "reject_existing_directory": true,
+    "write_mode": "wx",
+    "failure_policy": "Preserve created directory and failure report; never delete evidence or retry within the reader."
+  },
+  "guards": [
+    "Fixed Windows workspace, original source, script name, proof, two RVA windows and output. No path or range arguments.",
+    "Regular single-link files, nonzero inode, ancestor lstat/realpath checks. Parent retains the required external Windows Attributes/reparse precheck.",
+    "Proof hash, Engine identity/path and exact Ghidra instructions match before opening the original.",
+    "Same descriptor before/after SHA256; preopen, opened and final path/descriptor stats agree.",
+    "Unique file-backed readable nonexecutable section mapping for both16B windows.",
+    "No original execution, backend, subprocess, other original file, saves, adjacent table bytes or function bodies."
+  ],
+  "interpretation_limit": "On-disk direction-table observation only; does not prove loaded constants, contour algorithm completion or gameplay compatibility."
+}

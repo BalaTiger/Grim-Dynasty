@@ -1,0 +1,18 @@
+{
+  "schema": "grim-dynasty-m3-bounded-plan-v2",
+  "id": "damage-postprocess-bounds",
+  "purpose": "Report .pdata bounds only for the direct 068B60 call to CF6E0 and 068B86 call to 3FE390, both proven by the same saved settlement instructions. No body read or backend run is authorized by this plan.",
+  "source": {"path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll", "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2", "bytes": 11385856, "preferred_base": "0x180000000"},
+  "proof": {"path": "docs/m3-evidence/damage-settlement/direct-068ab0.instructions.json", "sha256": "29cb0371f9a2cfb9638d3d9d11e0426db5821f6740ecbc32e6dd72d314abc033"},
+  "targets": [
+    {"id": "direct-0cf6e0", "rva": "0xcf6e0", "caller_address": "0x180068b60", "caller_bytes": "e87b6b0600", "reference_kind": "direct-call"},
+    {"id": "direct-3fe390", "rva": "0x3fe390", "caller_address": "0x180068b86", "caller_bytes": "e805583900", "reference_kind": "direct-call"}
+  ],
+  "limits": {"body_bytes_each": 8192, "body_bytes_total": 8192, "metadata_bytes": 16384, "dumpbin_calls": 2, "tool_timeout_ms_each": 10000},
+  "mode": "metadata-only",
+  "range_policy": "exact-entry",
+  "output": "docs/m3-evidence/damage-postprocess-bounds",
+  "temporary": ".tooling/m3-damage-postprocess-bounds-temp",
+  "automatic_callee_expansion": false,
+  "execution_requires_separate_review_and_approval": true
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "grim-dynasty-m3-bounded-plan-v5",
+  "id": "attribute-scalar-constants",
+  "purpose": "Read only two four-byte readonly .rdata operands at 7A8134 and 7A7FC8, proved by saved CF703/CF71A/CF72E RIP-relative MULSS instructions. No new code, runtime function table or export table is read; no decoder is started.",
+  "source": {"path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll", "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2", "bytes": 11385856, "preferred_base": "0x180000000"},
+  "proof": {"path": "docs/m3-evidence/attribute-leaf-continuation/continuation-0cf700.decode-candidates.json", "sha256": "45cad69f7d68dc85e6fb4f7b3feafd25c92a4117d2cb3ddae152d6ef629b7d40"},
+  "targets": [
+    {"id": "constant-7a8134", "rva": "0x7a8134", "bytes": 4, "references": [
+      {"address": "0x1800cf703", "bytes": "f30f591d298a6d00"}
+    ]},
+    {"id": "constant-7a7fc8", "rva": "0x7a7fc8", "bytes": 4, "references": [
+      {"address": "0x1800cf71a", "bytes": "f30f5915a6886d00"},
+      {"address": "0x1800cf72e", "bytes": "f30f591592886d00"}
+    ]}
+  ],
+  "limits": {"body_bytes_each": 0, "body_bytes_total": 0, "metadata_bytes": 16384, "dumpbin_calls": 0, "tool_timeout_ms_each": 10000, "data_bytes": 8},
+  "mode": "readonly-rdata",
+  "range_policy": "fixed-data-not-code",
+  "output": "docs/m3-evidence/attribute-scalar-constants",
+  "temporary": ".tooling/m3-attribute-scalar-constants-temp",
+  "automatic_callee_expansion": false,
+  "execution_requires_separate_review_and_approval": true
+}

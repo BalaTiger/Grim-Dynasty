@@ -1,0 +1,63 @@
+{
+  "schema": "item-950-guard-disk-target-v1",
+  "status": "disk-target-first-byte-unresolved",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_evidence": [
+    [
+      "docs/object-lifecycle/offline-item-950-pre-call-slot/inspection.json",
+      "0ec0004ed71bd4fe285eba606335946ca70aa516d4adbd478cd79d61a27fe8bb"
+    ],
+    [
+      "docs/object-lifecycle/offline-item-950-pre-call-slot/5db8b8-complete.bin",
+      "2d30e891ac5d78e2fdf3ea6ec095ff186c7f80de7b51c82b63b9c4cf138156b4"
+    ],
+    [
+      "docs/object-lifecycle/offline-item-950-pre-call-slot/5db8b8-dumpbin.txt",
+      "8e00d1306325e14cf71446a3503ec4abf5c68c2e9920ef60da5c0d8e2993d27a"
+    ],
+    [
+      "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    ]
+  ],
+  "offline_repair": "Saved seven-byte REX.W FF25 thunk verified including dumpbin continuation byte; no repeated original code read",
+  "limits": {
+    "data_bytes": 8,
+    "code_bytes": 1,
+    "read_operations": 2,
+    "dumpbin_calls": 1,
+    "hash_buffer": 65536,
+    "tiny_pe_max": 4608
+  },
+  "reads": [
+    {
+      "rva": "0x60baa8",
+      "bytes": 8,
+      "file_offset": 6332584,
+      "hex": "8058018001000000"
+    },
+    {
+      "rva": "0x15880",
+      "bytes": 1,
+      "file_offset": 85120,
+      "hex": "c2"
+    }
+  ],
+  "original_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "loaded_slot_unknown": true,
+  "failures": [],
+  "script_sha256": "f14c8ad5ebbb86ff5843aa3100bb545a7afad8280efc013e1b6ad1ac4a0b410c",
+  "tool_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "disk_target_va": "0x180015880",
+  "disk_target_rva": 88192,
+  "normal_return_established": false,
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "source_closed": true,
+  "tool_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-21T07:25:18.617Z"
+}

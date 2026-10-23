@@ -1,0 +1,66 @@
+{
+  "status": "packaging-recovered-after-own-fixture-guard",
+  "utc": "2026-10-20T10:54:48.370Z",
+  "first_script": ".tooling/finalize-parser-tag3.mjs",
+  "first_script_sha256": "0d7a3c0e5e1d1dd07adacb39d1f8514c85c92effe030fa1616d9d819951094a0",
+  "failure": "AssertionError at final file enumeration: assert(!p.endsWith('.arz')&&!p.endsWith('/Engine.dll'))",
+  "reason": "Overbroad archive extension guard rejected regression-generated own fixtures, not official archive data",
+  "partial_checkpoint_retained": ".tooling/checkpoints/parser-tag3-complete",
+  "partial_copies_verified": 57,
+  "first_attempt_completed": [
+    "acceptance JSON",
+    "status document updates",
+    "preservation audit",
+    "partial immutable copies"
+  ],
+  "failed_attempt_test_results_invalidated": false,
+  "tests_rerun": false,
+  "original_binary_or_archive_read": false,
+  "prior_fixture_manifest": ".tooling/checkpoints/archive-string-map-complete/manifest.json",
+  "prior_fixture_manifest_sha256": "a7a0ad2ff103101ef5e4f9dfef08061c410ec810331203cae319b20791a30a69",
+  "allowed_own_fixtures": [
+    {
+      "path": ".tooling/parser-tag3-build/fixtures/own-generated-map-a.arz",
+      "bytes": 123,
+      "sha256": "9586e2d0e175648d34cbbc6513e3fa01bcb0663142e3975321dbe09a77e526c9",
+      "previous_own_fixture": ".tooling/archive-string-map-build/fixtures/own-generated-map-a.arz"
+    },
+    {
+      "path": ".tooling/parser-tag3-build/fixtures/own-generated-map-b.arz",
+      "bytes": 131,
+      "sha256": "678d1c2c78b42463d52ba943611a4b18db29ba3ae44c196cb4a5f7d9460f826c",
+      "previous_own_fixture": ".tooling/archive-string-map-build/fixtures/own-generated-map-b.arz"
+    },
+    {
+      "path": ".tooling/parser-tag3-build/fixtures/own-generated-map-c.arz",
+      "bytes": 131,
+      "sha256": "8974d7b3e230d5f1a4eda9a75f78d2ab4d15081aff14693e91df33007db38b84",
+      "previous_own_fixture": ".tooling/archive-string-map-build/fixtures/own-generated-map-c.arz"
+    },
+    {
+      "path": ".tooling/parser-tag3-build/fixtures/own-output-profile.arz",
+      "bytes": 135,
+      "sha256": "efa27a69ad7202981a9629a66f7953cb26bb96a52af947d5a9c730c1ba7d0cd1",
+      "previous_own_fixture": ".tooling/archive-string-map-build/fixtures/own-output-profile.arz"
+    },
+    {
+      "path": ".tooling/parser-tag3-build/fixtures/own-remap-a.arz",
+      "bytes": 131,
+      "sha256": "d4f83976b3ec85851d18460d9a2485f22da5553fec86accdcd92b360d137dd58",
+      "previous_own_fixture": ".tooling/archive-string-map-build/fixtures/own-remap-a.arz"
+    },
+    {
+      "path": ".tooling/parser-tag3-build/fixtures/own-remap-b.arz",
+      "bytes": 131,
+      "sha256": "678d1c2c78b42463d52ba943611a4b18db29ba3ae44c196cb4a5f7d9460f826c",
+      "previous_own_fixture": ".tooling/archive-string-map-build/fixtures/own-remap-b.arz"
+    },
+    {
+      "path": ".tooling/parser-tag3-build/fixtures/own-two-field.arz",
+      "bytes": 139,
+      "sha256": "8d7277fd58eece5313f44718b943bf02c3fb7cbac61019e376e2736a1bb83757",
+      "previous_own_fixture": ".tooling/archive-string-map-build/fixtures/own-two-field.arz"
+    }
+  ],
+  "new_checkpoint": ".tooling/checkpoints/parser-tag3-complete-retry1"
+}

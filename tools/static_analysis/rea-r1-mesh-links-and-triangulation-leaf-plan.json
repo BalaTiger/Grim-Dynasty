@@ -1,0 +1,339 @@
+{
+  "schema_version": 1,
+  "purpose": "Seven fixed direct targets only: final observed triangulation leaf,and actual mesh-add linking/neighborhood plus mesh-remove unlink dependency. Preserve partially published mesh state and ownership; no recursive allocator/thread or unrelated navigation expansion.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-mesh-tile-and-predicates/14-NavMeshTilePredicates-0x18026a860-procedure_assembly.json",
+      "sha256": "73a97f62d51bc24e6acd5dc9318eaf4890d054bcf87c1a1c87962122694daa66",
+      "addresses": [
+        "0x18026a7d0"
+      ],
+      "source_kind": "26A973 CALL26A7D0 after candidate/edge endpoint XZ equality exclusions. RCX/RDX are candidate byte-vertex pointers; R8/R9 are the current edge endpoints selected by ushort indices masked7FFF. AL nonzero leads to predicate rejection26A9AE. Actual geometry remains unknown until leaf body."
+    },
+    {
+      "file": "docs/reverse-client/r1-mesh-tile-and-predicates/15-NavMeshTilePredicates-0x18026a860-procedure_callees.json",
+      "sha256": "bf8202295582c8803c4ef4dec336b86e553e9a52e56fe651a59ea9caeb0642ca",
+      "addresses": [
+        "0x18026a7d0"
+      ],
+      "source_kind": "26A7D0 is the sole resolved direct callee of26A860.26A9C0 has no new direct callees and is not repeated."
+    },
+    {
+      "file": "docs/reverse-client/r1-mesh-tile-and-predicates/11-NavMeshTilePredicates-0x180268270-procedure_assembly.json",
+      "sha256": "e96b530ff6d5b057ade8b236f7dc1af82a5ac153947c0d3effcc40bfedeefb28",
+      "addresses": [
+        "0x180267330",
+        "0x180267450",
+        "0x180266dd0",
+        "0x1802670d0",
+        "0x1802686c0"
+      ],
+      "source_kind": "After tile fields are stored,2684B1 CALL267330(mesh,newTile),2684BC CALL267450(mesh,newTile). Same-coordinate tiles receive266DD0 at268547/559 and2670D0 at26856B/57D with side=-1; self tile skips266DD0 but not2670D0.2685AB CALL2686C0(mesh,headerX,headerY,side,&stackTiles),for sides0..7; neighbor pairs call266DD0 at2685D1/E2 and2670D0 at2685F3/604 with side/opposite(side-4)&7. Direct calls do not prove link internals or rollback."
+    },
+    {
+      "file": "docs/reverse-client/r1-mesh-tile-and-predicates/12-NavMeshTilePredicates-0x180268270-procedure_callees.json",
+      "sha256": "9255540e46e961960a6be9c9b300d5bde88a2b0b6d10628fbeafbbf22ed869ad",
+      "addresses": [
+        "0x180267330",
+        "0x180267450",
+        "0x180266dd0",
+        "0x1802670d0",
+        "0x1802686c0"
+      ],
+      "source_kind": "Resolved exact five mesh-add direct dependencies. Existing tile lookup/add body is not queried again."
+    },
+    {
+      "file": "docs/reverse-client/r1-mesh-tile-and-predicates/08-NavMeshTilePredicates-0x180268970-procedure_assembly.json",
+      "sha256": "7a4bcc6432f92599f7448ce85c331f70bf88969629b2069336b6f67332f5084b",
+      "addresses": [
+        "0x180266c60",
+        "0x1802686c0"
+      ],
+      "source_kind": "268B10 CALL266C60(mesh,otherSameCoordinateTile,removedTile),skipping self.268B3E CALL2686C0(mesh,removedHeaderX,removedHeaderY,side,&stackTiles);268B5B CALL266C60(mesh,neighbor,removedTile),sides0..7. Unlink semantics remain necessary for replacement/removal even if first empty-mesh removal returns early."
+    },
+    {
+      "file": "docs/reverse-client/r1-mesh-tile-and-predicates/09-NavMeshTilePredicates-0x180268970-procedure_callees.json",
+      "sha256": "a9b4c341b7ce96a22f3f3dd66f1bc320b89833cea435e3d008719e3760097996",
+      "addresses": [
+        "0x180266c60",
+        "0x1802686c0"
+      ],
+      "source_kind": "Resolved remove unlink/neighborhood dependencies; free callback/CRT excluded."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 26,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Only seven fixed Engine targets,twenty-six calls including five lifecycle calls; no automatic recursion.",
+    "Preserve384M heap,5GiB physical-and-commit launch floor,2GiB stop,ownership/mutex and freshness checks.",
+    "Pin completed mesh-tile-and-predicates20/20 cleanup and six direct-call evidence files.",
+    "Resolve triangulation leaf plus actual mesh linking,neighbor enumeration and unlinking. Preserve own-domain constraints,reference/ownership identities,partial publication and failure prefixes.",
+    "Do not infer full native runtime compatibility from isolated geometry or mesh tests. No repeated existing entry query or removal of unresolved dependencies.",
+    "No original execution,extra vtable/constant read,CRT/thread expansion,saves/cloud or security changes."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18026a7d0"
+      },
+      "label": "04-MeshLinksTriangulationLeaf-0x18026a7d0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18026a7d0"
+      },
+      "label": "05-MeshLinksTriangulationLeaf-0x18026a7d0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18026a7d0"
+      },
+      "label": "06-MeshLinksTriangulationLeaf-0x18026a7d0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180267330"
+      },
+      "label": "07-MeshLinksTriangulationLeaf-0x180267330-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180267330"
+      },
+      "label": "08-MeshLinksTriangulationLeaf-0x180267330-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180267330"
+      },
+      "label": "09-MeshLinksTriangulationLeaf-0x180267330-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180267450"
+      },
+      "label": "10-MeshLinksTriangulationLeaf-0x180267450-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180267450"
+      },
+      "label": "11-MeshLinksTriangulationLeaf-0x180267450-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180267450"
+      },
+      "label": "12-MeshLinksTriangulationLeaf-0x180267450-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180266dd0"
+      },
+      "label": "13-MeshLinksTriangulationLeaf-0x180266dd0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180266dd0"
+      },
+      "label": "14-MeshLinksTriangulationLeaf-0x180266dd0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180266dd0"
+      },
+      "label": "15-MeshLinksTriangulationLeaf-0x180266dd0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1802670d0"
+      },
+      "label": "16-MeshLinksTriangulationLeaf-0x1802670d0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1802670d0"
+      },
+      "label": "17-MeshLinksTriangulationLeaf-0x1802670d0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1802670d0"
+      },
+      "label": "18-MeshLinksTriangulationLeaf-0x1802670d0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1802686c0"
+      },
+      "label": "19-MeshLinksTriangulationLeaf-0x1802686c0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1802686c0"
+      },
+      "label": "20-MeshLinksTriangulationLeaf-0x1802686c0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1802686c0"
+      },
+      "label": "21-MeshLinksTriangulationLeaf-0x1802686c0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180266c60"
+      },
+      "label": "22-MeshLinksTriangulationLeaf-0x180266c60-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180266c60"
+      },
+      "label": "23-MeshLinksTriangulationLeaf-0x180266c60-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180266c60"
+      },
+      "label": "24-MeshLinksTriangulationLeaf-0x180266c60-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "25-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "26-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "26A7D0: What exact integer orientation/intersection/collinearity tests operate on the four byte-coordinate pointers?",
+    "267330/267450: What initial links are written after tile fields have been published,and which cold offmesh-zero branches can be supported from evidence?",
+    "266DD0/2670D0: How do same-coordinate and side/opposite-side tile pairs mutate links,with which capacity/ownership/failure behavior? Preserve actual no-op conditions rather than assuming all helpers are needed for all inputs.",
+    "2686C0: What coordinate offsets,side mapping,output bounds and enumeration order produce the neighborhood list?",
+    "266C60: How are links to the removed tile detached and link slots returned,without claiming rollback or unaffected prior state?"
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Seven fixed triangulation and mesh-link/unlink dependencies only; unchanged Engine384M/base4.25GiB budget with stricter5GiB physical-and-commit launch floor,2GiB stop.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "previous_sha256": "f06ef3bb91be422afa3e1eef639243be2b711c4f701da462767649e34851b0c1",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_sha256": "6d07a2a1e29565930ebd091f070128aeb6a59feaafd8e8fcdce01bb7b4a743a9",
+    "validation_file": ".tooling/r0-owned-job-terminal-candidate-20261022-attempt2/test-result.json",
+    "validation_sha256": "1ad80a494a359d16012698a0ffde723308ebe8e3d6bd06d488dd156e22a305d2",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 36,
+    "scenario_groups": 8,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "production_normalization": "Candidate header and namespace removed; isolated label removed from comment. Algorithm otherwise unchanged.",
+    "limitations": "Missing image is accepted only with positive same-handle exit evidence, never for live roles or counters. The limit is per Probe or QueryMembers operation, not a whole sampler-cycle latency guarantee. Fault tests are not an R0 reproduction or proof of root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-mesh-tile-and-predicates/summary.json",
+    "summary_sha256": "dae05f09bcf264a990f8a0e89114aaab92315c82e252cc91f77c164cf6c07450",
+    "completed_plan_calls": 20,
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  }
+}
+

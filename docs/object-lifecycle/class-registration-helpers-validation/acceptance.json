@@ -1,0 +1,122 @@
+{
+  "utc": "2026-10-20T14:19:41.118Z",
+  "status": "helpers-bound-local-writer-model-tested-root-registry-open",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "overall_goal_completed": false,
+  "product_changed": true,
+  "changed_existing_product": [
+    "src/task_items/build_items.ps1"
+  ],
+  "new_product": [
+    "src/task_items/ClassRegistrationInitialization.cs",
+    "src/task_items/ClassRegistrationInitializationTests.cs",
+    "src/task_items/build_class_registration.ps1"
+  ],
+  "old_suites_rerun": false,
+  "new_assertions": 65,
+  "new_scenario_groups": 6,
+  "targeted_validation": {
+    "path": "docs/object-lifecycle/class-registration-helpers-retry1-validation/targeted-run.json",
+    "sha256": "cafb6840b8f8dcfb468853f98ac41fc62ff878c51dd377fd9625540acab14f94"
+  },
+  "initial_attempt": {
+    "path": "docs/object-lifecycle/class-registration-helpers-validation/targeted-run.json",
+    "status": "script-refused-before-compile",
+    "action": "powershell.exe -NoProfile -NonInteractive -File src/task_items/build_class_registration.ps1",
+    "reason": "AuthorizationManager UnauthorizedAccess",
+    "automatic_approval_review_denial": false,
+    "execution_policy_changed": false,
+    "recovery": "Direct installed csc and own test executable passed; refused script was not retried"
+  },
+  "prior_validation": {
+    "assertions": 2282,
+    "scenario_groups": 83,
+    "rerun": false,
+    "path": "docs/object-lifecycle/class-registration-retry1-validation/acceptance.json"
+  },
+  "static_evidence": {
+    "code_bytes": 280,
+    "instructions": 77,
+    "dumpbin_calls": 14,
+    "metadata_bytes": 1679,
+    "original_fingerprint_passes": 20,
+    "fingerprint_chunk_bytes": 65536,
+    "original_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "excludes_from_semantic_counts": "Whole-file fingerprints and uninstrumented dumpbin metadata I/O",
+    "reports": [
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-exit-entry/inspection.json",
+        "sha256": "7e36b6a33bb8959236b19f290db2808f456561f15e86f492f0e51181d2dd46f0"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-exit-body/inspection.json",
+        "sha256": "cb14e388af4f8526e0c2e90151d87e0f331823d8253ed781212792ffad26d38b"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-exit-thunks/inspection.json",
+        "sha256": "300b74953ddec18733b5df2b2d732d9a89c09660a3dcfb60d99f6c152d811e06"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-storage-entries/inspection.json",
+        "sha256": "bd9fe6163afbed04cabcd1ebe908995c9529f0fc057cd18d4ea8b5567ba41a0f"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-storage-bodies/inspection.json",
+        "sha256": "97e178eafde7660a117f6b146fa4ed9123e8ccf1faca0562c10f858a00398b8c"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-storage-failure/inspection.json",
+        "sha256": "bef2849860977dbbdad1e979051f3e9521983d1b964f3ae10a72720a5f21517e"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-throw-thunk/inspection.json",
+        "sha256": "e7579a6faff63557f5a16b92739ea3af4356c799d382e2fd5909d3f234e1eecd"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-helper-boundaries/metadata.json",
+        "sha256": "3f5fa9f5d532be7fe4f4624bf56d3fc0ff487a01bdf710c3a9376abe8c536627"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-helper-exit-imports/metadata.json",
+        "sha256": "5e9335b3cd8910f0dd142ada81a82dc4f44680023cd6866668d610f3a791b411"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-helper-storage-imports/metadata.json",
+        "sha256": "8b8138b7268652cad7c60683ce0b0d7fa366e3903cd0b4b9ade7ca9e3767e9c1"
+      }
+    ]
+  },
+  "gaps": [
+    {
+      "target": "Engine 41CF30 identity and parent; root/ancestor/Actor registration writers and child order",
+      "reason": "Current file parent pointers do not establish successful runtime child registration or dispatch.",
+      "status": "evidence-gap",
+      "denied": false,
+      "pending_approval": false,
+      "uncertain_outcome": false
+    },
+    {
+      "target": "Native allocator internals, exception classes/unwind, exit callbacks, complete item factory and formal sample compatibility",
+      "reason": "Own callback fixtures and local writer effects do not execute or reproduce these native components.",
+      "status": "not-implemented-or-not-verified",
+      "denied": false,
+      "pending_approval": false,
+      "uncertain_outcome": false
+    }
+  ],
+  "result": "docs/object-lifecycle/CLASS-REGISTRATION-HELPERS-RESULT.md",
+  "result_sha256": "81a6ca42aae5f75cc5e9d1fe35ccc6c853ec90ec475636f048c0fc707f64caa4",
+  "evidence": "docs/object-lifecycle/CLASS-REGISTRATION-HELPERS-EVIDENCE.md",
+  "evidence_sha256": "294cb84f4942b95ecd7cc4b85b1db07c2c58b00aebe7b33e78b0feb1b0cbcc70",
+  "restrictions": {
+    "original_game_or_dll_executed": false,
+    "rea_started": false,
+    "java_started": false,
+    "installations": false,
+    "permission_escalation": false,
+    "player_save_or_steam_cloud_access": false,
+    "commit_or_push": false,
+    "new_official_arz_reads": 0
+  },
+  "checkpoint": ".tooling/checkpoints/class-registration-helpers-complete/manifest.json"
+}

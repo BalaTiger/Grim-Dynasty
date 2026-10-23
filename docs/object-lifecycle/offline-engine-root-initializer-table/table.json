@@ -1,0 +1,1566 @@
+{
+  "schema": "grim-dynasty-fixed-engine-root-initializer-table-v1",
+  "status": "fixed-engine-initializer-table-and-crt-bindings-read",
+  "started_utc": "2026-10-20T14:42:02.633Z",
+  "script_sha256": "3b234fcdbac531e7b37e6ec7ef101236f58273a5ae1e1cd8f0e3c304d2662e4f",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-depot-ctor-boundaries/boundary.json",
+      "sha256": "646053e4565e3f08c696ae0e9a16ddb5c2e81ab22ffe046c5057fc41aa64bb15"
+    },
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-attach/inspection.json",
+      "sha256": "f4b4a7a8d1fb008f1d7f216b4549dff6d6389c9903609c128a7bc62cff9eaea7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-attach/2dcd48-instructions.json",
+      "sha256": "4f306451fb2a46246081c0bb65b68280c9f1367d941de8982652a80d4bd82150"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-initializer-thunks/inspection.json",
+      "sha256": "07efe567de1b0435f0f3a3184745fcb2fd9e8674ae9e129df3c328f5b61b9231"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-initializer-thunks/2ddbb0-instructions.json",
+      "sha256": "3c35fadbc9f0cf20921e572d14761013828f7bf97fe1b5bbf2b1b106d7a7446f"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-load-ticks-imports/tick-import-bindings.json",
+      "sha256": "eb1e49dfe763e207be743b91d03b2b4c066057063da052cb3e1e3a97807aab0e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-initializer-thunks/2ddbb6-instructions.json",
+      "sha256": "8785acc63ebf178522171b600a088a41ecf6dfcf4d2342b21c1a5339d86de6e4"
+    }
+  ],
+  "caller": [
+    {
+      "address": "0x1802dcdf0",
+      "bytes": "488d1579630200",
+      "instruction": "lea         rdx,[0000000180303170h]"
+    },
+    {
+      "address": "0x1802dcdf7",
+      "bytes": "488d0d4a5f0200",
+      "instruction": "lea         rcx,[0000000180302D48h]"
+    },
+    {
+      "address": "0x1802dcdfe",
+      "bytes": "e8ad0d0000",
+      "instruction": "call        00000001802DDBB0"
+    }
+  ],
+  "thunks": [
+    {
+      "address": "0x1802ddbb6",
+      "bytes": "ff25944e0200",
+      "instruction": "jmp         qword ptr [0000000180302A50h]"
+    },
+    {
+      "address": "0x1802ddbb0",
+      "bytes": "ff25a24e0200",
+      "instruction": "jmp         qword ptr [0000000180302A58h]"
+    }
+  ],
+  "limits": {
+    "table_bytes": 1064,
+    "import_metadata_bytes": 96,
+    "total_metadata_bytes": 1160,
+    "metadata_reads": 6,
+    "single_import_read_bytes": 64,
+    "slots": 133,
+    "fingerprint_chunk_bytes": 65536,
+    "saved_proof_bytes_each": 2097152,
+    "report_bytes": 131072
+  },
+  "target_open_mode": "O_RDONLY",
+  "reused_import_directory": {
+    "rva": "0x415598",
+    "size": 540,
+    "source": {
+      "path": "docs/object-lifecycle/offline-load-ticks-imports/tick-import-bindings.json",
+      "sha256": "eb1e49dfe763e207be743b91d03b2b4c066057063da052cb3e1e3a97807aab0e"
+    },
+    "optional_header_file_offset": 312,
+    "directory_field_file_offset": 432,
+    "new_header_bytes_read": 0
+  },
+  "descriptor_selection": {
+    "index": 14,
+    "rva": "0x4156b0",
+    "inventory": {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    "basis": "Ordered inventory suggests descriptor 14/OFT 5,6; exact descriptor/name and both archived IAT addresses are independently verified before reading the table."
+  },
+  "target_loaded_or_executed": false,
+  "original_code_semantic_reads": 0,
+  "backend_started": false,
+  "subprocesses": 0,
+  "compilation_or_tests": false,
+  "target_payloads_followed": 0,
+  "iat_payload_bytes_read": 0,
+  "metadata_bytes": 1160,
+  "import_metadata_bytes": 96,
+  "metadata_reads": [
+    {
+      "kind": "fixed-import-descriptor-14",
+      "rva": "0x4156b0",
+      "file_offset": 4277936,
+      "requested_bytes": 20,
+      "read_bytes": 20,
+      "raw_bytes": "e0614100000000000000000004834100282a3000"
+    },
+    {
+      "kind": "exact-runtime-module-name",
+      "rva": "0x418304",
+      "file_offset": 4289284,
+      "requested_bytes": 34,
+      "read_bytes": 34,
+      "raw_bytes": "6170692d6d732d77696e2d6372742d72756e74696d652d6c312d312d302e646c6c00"
+    },
+    {
+      "kind": "fixed-oft-thunks-5-through-6",
+      "rva": "0x416208",
+      "file_offset": 4280840,
+      "requested_bytes": 16,
+      "read_bytes": 16,
+      "raw_bytes": "f682410000000000ea82410000000000"
+    },
+    {
+      "kind": "exact-hint-name-_initterm_e",
+      "rva": "0x4182f6",
+      "file_offset": 4289270,
+      "requested_bytes": 14,
+      "read_bytes": 14,
+      "raw_bytes": "37005f696e69747465726d5f6500"
+    },
+    {
+      "kind": "exact-hint-name-_initterm",
+      "rva": "0x4182ea",
+      "file_offset": 4289258,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_bytes": "36005f696e69747465726d00"
+    },
+    {
+      "kind": "fixed-initializer-table",
+      "rva": "0x302d48",
+      "file_offset": 3153224,
+      "requested_bytes": 1064,
+      "read_bytes": 1064,
+      "raw_bytes": "00000000000000009880008001000000c080008001000000b0800080010000007057008001000000b057008001000000f05700800100000030580080010000007058008001000000b058008001000000f05800800100000040590080010000009059008001000000e059008001000000205a008001000000605a008001000000a05a008001000000f05a008001000000305b008001000000705b008001000000b05b008001000000e05b008001000000305c008001000000705c008001000000205d008001000000d05d008001000000805e008001000000305f008001000000e05f00800100000090600080010000004061008001000000f061008001000000a06200800100000050630080010000000064008001000000b06400800100000060650080010000001066008001000000c06600800100000070670080010000002068008001000000d0680080010000008069008001000000306a008001000000e06a008001000000906b008001000000406c008001000000f06c008001000000a06d008001000000506e008001000000006f008001000000b06f00800100000060700080010000001071008001000000c07100800100000070720080010000002073008001000000d073008001000000f07300800100000010740080010000003074008001000000507400800100000070740080010000009074008001000000b074008001000000d074008001000000f07400800100000010750080010000003075008001000000507500800100000070750080010000009075008001000000b075008001000000d075008001000000f07500800100000010760080010000003076008001000000507600800100000070760080010000009076008001000000b076008001000000d076008001000000f07600800100000010770080010000003077008001000000507700800100000070770080010000009077008001000000b077008001000000d077008001000000f0770080010000001078008001000000307800800100000050780080010000008078008001000000a078008001000000c078008001000000e07800800100000000790080010000002079008001000000407900800100000060790080010000008079008001000000a079008001000000c079008001000000e079008001000000007a008001000000207a008001000000407a008001000000607a008001000000807a008001000000a07a008001000000c07a008001000000d07a008001000000207b008001000000707b008001000000c07b008001000000107c008001000000307c008001000000607c008001000000a07c008001000000c07c008001000000e07c008001000000407d008001000000207e008001000000c07e008001000000607f008001000000c07f008001000000f07f0080010000001080008001000000308000800100000070800080010000009080008001000000"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "bytes": 4485632,
+      "chunk_bytes": 65536,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "label": "after",
+      "bytes": 4485632,
+      "chunk_bytes": 65536,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "table": {
+    "start_rva": "0x302d48",
+    "end_rva_exclusive": "0x303170",
+    "byte_count": 1064,
+    "slot_count": 133,
+    "file_offset": 3153224,
+    "slots": [
+      {
+        "index": 0,
+        "slot_rva": "0x302d48",
+        "file_offset": 3153224,
+        "raw_bytes": "0000000000000000",
+        "stored_pointer": "0x0",
+        "is_null": true,
+        "preferred_rva_uint32": null,
+        "target_followed": false
+      },
+      {
+        "index": 1,
+        "slot_rva": "0x302d50",
+        "file_offset": 3153232,
+        "raw_bytes": "9880008001000000",
+        "stored_pointer": "0x180008098",
+        "is_null": false,
+        "preferred_rva_uint32": "0x8098",
+        "target_followed": false
+      },
+      {
+        "index": 2,
+        "slot_rva": "0x302d58",
+        "file_offset": 3153240,
+        "raw_bytes": "c080008001000000",
+        "stored_pointer": "0x1800080c0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x80c0",
+        "target_followed": false
+      },
+      {
+        "index": 3,
+        "slot_rva": "0x302d60",
+        "file_offset": 3153248,
+        "raw_bytes": "b080008001000000",
+        "stored_pointer": "0x1800080b0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x80b0",
+        "target_followed": false
+      },
+      {
+        "index": 4,
+        "slot_rva": "0x302d68",
+        "file_offset": 3153256,
+        "raw_bytes": "7057008001000000",
+        "stored_pointer": "0x180005770",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5770",
+        "target_followed": false
+      },
+      {
+        "index": 5,
+        "slot_rva": "0x302d70",
+        "file_offset": 3153264,
+        "raw_bytes": "b057008001000000",
+        "stored_pointer": "0x1800057b0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x57b0",
+        "target_followed": false
+      },
+      {
+        "index": 6,
+        "slot_rva": "0x302d78",
+        "file_offset": 3153272,
+        "raw_bytes": "f057008001000000",
+        "stored_pointer": "0x1800057f0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x57f0",
+        "target_followed": false
+      },
+      {
+        "index": 7,
+        "slot_rva": "0x302d80",
+        "file_offset": 3153280,
+        "raw_bytes": "3058008001000000",
+        "stored_pointer": "0x180005830",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5830",
+        "target_followed": false
+      },
+      {
+        "index": 8,
+        "slot_rva": "0x302d88",
+        "file_offset": 3153288,
+        "raw_bytes": "7058008001000000",
+        "stored_pointer": "0x180005870",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5870",
+        "target_followed": false
+      },
+      {
+        "index": 9,
+        "slot_rva": "0x302d90",
+        "file_offset": 3153296,
+        "raw_bytes": "b058008001000000",
+        "stored_pointer": "0x1800058b0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x58b0",
+        "target_followed": false
+      },
+      {
+        "index": 10,
+        "slot_rva": "0x302d98",
+        "file_offset": 3153304,
+        "raw_bytes": "f058008001000000",
+        "stored_pointer": "0x1800058f0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x58f0",
+        "target_followed": false
+      },
+      {
+        "index": 11,
+        "slot_rva": "0x302da0",
+        "file_offset": 3153312,
+        "raw_bytes": "4059008001000000",
+        "stored_pointer": "0x180005940",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5940",
+        "target_followed": false
+      },
+      {
+        "index": 12,
+        "slot_rva": "0x302da8",
+        "file_offset": 3153320,
+        "raw_bytes": "9059008001000000",
+        "stored_pointer": "0x180005990",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5990",
+        "target_followed": false
+      },
+      {
+        "index": 13,
+        "slot_rva": "0x302db0",
+        "file_offset": 3153328,
+        "raw_bytes": "e059008001000000",
+        "stored_pointer": "0x1800059e0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x59e0",
+        "target_followed": false
+      },
+      {
+        "index": 14,
+        "slot_rva": "0x302db8",
+        "file_offset": 3153336,
+        "raw_bytes": "205a008001000000",
+        "stored_pointer": "0x180005a20",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5a20",
+        "target_followed": false
+      },
+      {
+        "index": 15,
+        "slot_rva": "0x302dc0",
+        "file_offset": 3153344,
+        "raw_bytes": "605a008001000000",
+        "stored_pointer": "0x180005a60",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5a60",
+        "target_followed": false
+      },
+      {
+        "index": 16,
+        "slot_rva": "0x302dc8",
+        "file_offset": 3153352,
+        "raw_bytes": "a05a008001000000",
+        "stored_pointer": "0x180005aa0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5aa0",
+        "target_followed": false
+      },
+      {
+        "index": 17,
+        "slot_rva": "0x302dd0",
+        "file_offset": 3153360,
+        "raw_bytes": "f05a008001000000",
+        "stored_pointer": "0x180005af0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5af0",
+        "target_followed": false
+      },
+      {
+        "index": 18,
+        "slot_rva": "0x302dd8",
+        "file_offset": 3153368,
+        "raw_bytes": "305b008001000000",
+        "stored_pointer": "0x180005b30",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5b30",
+        "target_followed": false
+      },
+      {
+        "index": 19,
+        "slot_rva": "0x302de0",
+        "file_offset": 3153376,
+        "raw_bytes": "705b008001000000",
+        "stored_pointer": "0x180005b70",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5b70",
+        "target_followed": false
+      },
+      {
+        "index": 20,
+        "slot_rva": "0x302de8",
+        "file_offset": 3153384,
+        "raw_bytes": "b05b008001000000",
+        "stored_pointer": "0x180005bb0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5bb0",
+        "target_followed": false
+      },
+      {
+        "index": 21,
+        "slot_rva": "0x302df0",
+        "file_offset": 3153392,
+        "raw_bytes": "e05b008001000000",
+        "stored_pointer": "0x180005be0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5be0",
+        "target_followed": false
+      },
+      {
+        "index": 22,
+        "slot_rva": "0x302df8",
+        "file_offset": 3153400,
+        "raw_bytes": "305c008001000000",
+        "stored_pointer": "0x180005c30",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5c30",
+        "target_followed": false
+      },
+      {
+        "index": 23,
+        "slot_rva": "0x302e00",
+        "file_offset": 3153408,
+        "raw_bytes": "705c008001000000",
+        "stored_pointer": "0x180005c70",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5c70",
+        "target_followed": false
+      },
+      {
+        "index": 24,
+        "slot_rva": "0x302e08",
+        "file_offset": 3153416,
+        "raw_bytes": "205d008001000000",
+        "stored_pointer": "0x180005d20",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5d20",
+        "target_followed": false
+      },
+      {
+        "index": 25,
+        "slot_rva": "0x302e10",
+        "file_offset": 3153424,
+        "raw_bytes": "d05d008001000000",
+        "stored_pointer": "0x180005dd0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5dd0",
+        "target_followed": false
+      },
+      {
+        "index": 26,
+        "slot_rva": "0x302e18",
+        "file_offset": 3153432,
+        "raw_bytes": "805e008001000000",
+        "stored_pointer": "0x180005e80",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5e80",
+        "target_followed": false
+      },
+      {
+        "index": 27,
+        "slot_rva": "0x302e20",
+        "file_offset": 3153440,
+        "raw_bytes": "305f008001000000",
+        "stored_pointer": "0x180005f30",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5f30",
+        "target_followed": false
+      },
+      {
+        "index": 28,
+        "slot_rva": "0x302e28",
+        "file_offset": 3153448,
+        "raw_bytes": "e05f008001000000",
+        "stored_pointer": "0x180005fe0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x5fe0",
+        "target_followed": false
+      },
+      {
+        "index": 29,
+        "slot_rva": "0x302e30",
+        "file_offset": 3153456,
+        "raw_bytes": "9060008001000000",
+        "stored_pointer": "0x180006090",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6090",
+        "target_followed": false
+      },
+      {
+        "index": 30,
+        "slot_rva": "0x302e38",
+        "file_offset": 3153464,
+        "raw_bytes": "4061008001000000",
+        "stored_pointer": "0x180006140",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6140",
+        "target_followed": false
+      },
+      {
+        "index": 31,
+        "slot_rva": "0x302e40",
+        "file_offset": 3153472,
+        "raw_bytes": "f061008001000000",
+        "stored_pointer": "0x1800061f0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x61f0",
+        "target_followed": false
+      },
+      {
+        "index": 32,
+        "slot_rva": "0x302e48",
+        "file_offset": 3153480,
+        "raw_bytes": "a062008001000000",
+        "stored_pointer": "0x1800062a0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x62a0",
+        "target_followed": false
+      },
+      {
+        "index": 33,
+        "slot_rva": "0x302e50",
+        "file_offset": 3153488,
+        "raw_bytes": "5063008001000000",
+        "stored_pointer": "0x180006350",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6350",
+        "target_followed": false
+      },
+      {
+        "index": 34,
+        "slot_rva": "0x302e58",
+        "file_offset": 3153496,
+        "raw_bytes": "0064008001000000",
+        "stored_pointer": "0x180006400",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6400",
+        "target_followed": false
+      },
+      {
+        "index": 35,
+        "slot_rva": "0x302e60",
+        "file_offset": 3153504,
+        "raw_bytes": "b064008001000000",
+        "stored_pointer": "0x1800064b0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x64b0",
+        "target_followed": false
+      },
+      {
+        "index": 36,
+        "slot_rva": "0x302e68",
+        "file_offset": 3153512,
+        "raw_bytes": "6065008001000000",
+        "stored_pointer": "0x180006560",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6560",
+        "target_followed": false
+      },
+      {
+        "index": 37,
+        "slot_rva": "0x302e70",
+        "file_offset": 3153520,
+        "raw_bytes": "1066008001000000",
+        "stored_pointer": "0x180006610",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6610",
+        "target_followed": false
+      },
+      {
+        "index": 38,
+        "slot_rva": "0x302e78",
+        "file_offset": 3153528,
+        "raw_bytes": "c066008001000000",
+        "stored_pointer": "0x1800066c0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x66c0",
+        "target_followed": false
+      },
+      {
+        "index": 39,
+        "slot_rva": "0x302e80",
+        "file_offset": 3153536,
+        "raw_bytes": "7067008001000000",
+        "stored_pointer": "0x180006770",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6770",
+        "target_followed": false
+      },
+      {
+        "index": 40,
+        "slot_rva": "0x302e88",
+        "file_offset": 3153544,
+        "raw_bytes": "2068008001000000",
+        "stored_pointer": "0x180006820",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6820",
+        "target_followed": false
+      },
+      {
+        "index": 41,
+        "slot_rva": "0x302e90",
+        "file_offset": 3153552,
+        "raw_bytes": "d068008001000000",
+        "stored_pointer": "0x1800068d0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x68d0",
+        "target_followed": false
+      },
+      {
+        "index": 42,
+        "slot_rva": "0x302e98",
+        "file_offset": 3153560,
+        "raw_bytes": "8069008001000000",
+        "stored_pointer": "0x180006980",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6980",
+        "target_followed": false
+      },
+      {
+        "index": 43,
+        "slot_rva": "0x302ea0",
+        "file_offset": 3153568,
+        "raw_bytes": "306a008001000000",
+        "stored_pointer": "0x180006a30",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6a30",
+        "target_followed": false
+      },
+      {
+        "index": 44,
+        "slot_rva": "0x302ea8",
+        "file_offset": 3153576,
+        "raw_bytes": "e06a008001000000",
+        "stored_pointer": "0x180006ae0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6ae0",
+        "target_followed": false
+      },
+      {
+        "index": 45,
+        "slot_rva": "0x302eb0",
+        "file_offset": 3153584,
+        "raw_bytes": "906b008001000000",
+        "stored_pointer": "0x180006b90",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6b90",
+        "target_followed": false
+      },
+      {
+        "index": 46,
+        "slot_rva": "0x302eb8",
+        "file_offset": 3153592,
+        "raw_bytes": "406c008001000000",
+        "stored_pointer": "0x180006c40",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6c40",
+        "target_followed": false
+      },
+      {
+        "index": 47,
+        "slot_rva": "0x302ec0",
+        "file_offset": 3153600,
+        "raw_bytes": "f06c008001000000",
+        "stored_pointer": "0x180006cf0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6cf0",
+        "target_followed": false
+      },
+      {
+        "index": 48,
+        "slot_rva": "0x302ec8",
+        "file_offset": 3153608,
+        "raw_bytes": "a06d008001000000",
+        "stored_pointer": "0x180006da0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6da0",
+        "target_followed": false
+      },
+      {
+        "index": 49,
+        "slot_rva": "0x302ed0",
+        "file_offset": 3153616,
+        "raw_bytes": "506e008001000000",
+        "stored_pointer": "0x180006e50",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6e50",
+        "target_followed": false
+      },
+      {
+        "index": 50,
+        "slot_rva": "0x302ed8",
+        "file_offset": 3153624,
+        "raw_bytes": "006f008001000000",
+        "stored_pointer": "0x180006f00",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6f00",
+        "target_followed": false
+      },
+      {
+        "index": 51,
+        "slot_rva": "0x302ee0",
+        "file_offset": 3153632,
+        "raw_bytes": "b06f008001000000",
+        "stored_pointer": "0x180006fb0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x6fb0",
+        "target_followed": false
+      },
+      {
+        "index": 52,
+        "slot_rva": "0x302ee8",
+        "file_offset": 3153640,
+        "raw_bytes": "6070008001000000",
+        "stored_pointer": "0x180007060",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7060",
+        "target_followed": false
+      },
+      {
+        "index": 53,
+        "slot_rva": "0x302ef0",
+        "file_offset": 3153648,
+        "raw_bytes": "1071008001000000",
+        "stored_pointer": "0x180007110",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7110",
+        "target_followed": false
+      },
+      {
+        "index": 54,
+        "slot_rva": "0x302ef8",
+        "file_offset": 3153656,
+        "raw_bytes": "c071008001000000",
+        "stored_pointer": "0x1800071c0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x71c0",
+        "target_followed": false
+      },
+      {
+        "index": 55,
+        "slot_rva": "0x302f00",
+        "file_offset": 3153664,
+        "raw_bytes": "7072008001000000",
+        "stored_pointer": "0x180007270",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7270",
+        "target_followed": false
+      },
+      {
+        "index": 56,
+        "slot_rva": "0x302f08",
+        "file_offset": 3153672,
+        "raw_bytes": "2073008001000000",
+        "stored_pointer": "0x180007320",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7320",
+        "target_followed": false
+      },
+      {
+        "index": 57,
+        "slot_rva": "0x302f10",
+        "file_offset": 3153680,
+        "raw_bytes": "d073008001000000",
+        "stored_pointer": "0x1800073d0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x73d0",
+        "target_followed": false
+      },
+      {
+        "index": 58,
+        "slot_rva": "0x302f18",
+        "file_offset": 3153688,
+        "raw_bytes": "f073008001000000",
+        "stored_pointer": "0x1800073f0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x73f0",
+        "target_followed": false
+      },
+      {
+        "index": 59,
+        "slot_rva": "0x302f20",
+        "file_offset": 3153696,
+        "raw_bytes": "1074008001000000",
+        "stored_pointer": "0x180007410",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7410",
+        "target_followed": false
+      },
+      {
+        "index": 60,
+        "slot_rva": "0x302f28",
+        "file_offset": 3153704,
+        "raw_bytes": "3074008001000000",
+        "stored_pointer": "0x180007430",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7430",
+        "target_followed": false
+      },
+      {
+        "index": 61,
+        "slot_rva": "0x302f30",
+        "file_offset": 3153712,
+        "raw_bytes": "5074008001000000",
+        "stored_pointer": "0x180007450",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7450",
+        "target_followed": false
+      },
+      {
+        "index": 62,
+        "slot_rva": "0x302f38",
+        "file_offset": 3153720,
+        "raw_bytes": "7074008001000000",
+        "stored_pointer": "0x180007470",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7470",
+        "target_followed": false
+      },
+      {
+        "index": 63,
+        "slot_rva": "0x302f40",
+        "file_offset": 3153728,
+        "raw_bytes": "9074008001000000",
+        "stored_pointer": "0x180007490",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7490",
+        "target_followed": false
+      },
+      {
+        "index": 64,
+        "slot_rva": "0x302f48",
+        "file_offset": 3153736,
+        "raw_bytes": "b074008001000000",
+        "stored_pointer": "0x1800074b0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x74b0",
+        "target_followed": false
+      },
+      {
+        "index": 65,
+        "slot_rva": "0x302f50",
+        "file_offset": 3153744,
+        "raw_bytes": "d074008001000000",
+        "stored_pointer": "0x1800074d0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x74d0",
+        "target_followed": false
+      },
+      {
+        "index": 66,
+        "slot_rva": "0x302f58",
+        "file_offset": 3153752,
+        "raw_bytes": "f074008001000000",
+        "stored_pointer": "0x1800074f0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x74f0",
+        "target_followed": false
+      },
+      {
+        "index": 67,
+        "slot_rva": "0x302f60",
+        "file_offset": 3153760,
+        "raw_bytes": "1075008001000000",
+        "stored_pointer": "0x180007510",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7510",
+        "target_followed": false
+      },
+      {
+        "index": 68,
+        "slot_rva": "0x302f68",
+        "file_offset": 3153768,
+        "raw_bytes": "3075008001000000",
+        "stored_pointer": "0x180007530",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7530",
+        "target_followed": false
+      },
+      {
+        "index": 69,
+        "slot_rva": "0x302f70",
+        "file_offset": 3153776,
+        "raw_bytes": "5075008001000000",
+        "stored_pointer": "0x180007550",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7550",
+        "target_followed": false
+      },
+      {
+        "index": 70,
+        "slot_rva": "0x302f78",
+        "file_offset": 3153784,
+        "raw_bytes": "7075008001000000",
+        "stored_pointer": "0x180007570",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7570",
+        "target_followed": false
+      },
+      {
+        "index": 71,
+        "slot_rva": "0x302f80",
+        "file_offset": 3153792,
+        "raw_bytes": "9075008001000000",
+        "stored_pointer": "0x180007590",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7590",
+        "target_followed": false
+      },
+      {
+        "index": 72,
+        "slot_rva": "0x302f88",
+        "file_offset": 3153800,
+        "raw_bytes": "b075008001000000",
+        "stored_pointer": "0x1800075b0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x75b0",
+        "target_followed": false
+      },
+      {
+        "index": 73,
+        "slot_rva": "0x302f90",
+        "file_offset": 3153808,
+        "raw_bytes": "d075008001000000",
+        "stored_pointer": "0x1800075d0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x75d0",
+        "target_followed": false
+      },
+      {
+        "index": 74,
+        "slot_rva": "0x302f98",
+        "file_offset": 3153816,
+        "raw_bytes": "f075008001000000",
+        "stored_pointer": "0x1800075f0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x75f0",
+        "target_followed": false
+      },
+      {
+        "index": 75,
+        "slot_rva": "0x302fa0",
+        "file_offset": 3153824,
+        "raw_bytes": "1076008001000000",
+        "stored_pointer": "0x180007610",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7610",
+        "target_followed": false
+      },
+      {
+        "index": 76,
+        "slot_rva": "0x302fa8",
+        "file_offset": 3153832,
+        "raw_bytes": "3076008001000000",
+        "stored_pointer": "0x180007630",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7630",
+        "target_followed": false
+      },
+      {
+        "index": 77,
+        "slot_rva": "0x302fb0",
+        "file_offset": 3153840,
+        "raw_bytes": "5076008001000000",
+        "stored_pointer": "0x180007650",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7650",
+        "target_followed": false
+      },
+      {
+        "index": 78,
+        "slot_rva": "0x302fb8",
+        "file_offset": 3153848,
+        "raw_bytes": "7076008001000000",
+        "stored_pointer": "0x180007670",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7670",
+        "target_followed": false
+      },
+      {
+        "index": 79,
+        "slot_rva": "0x302fc0",
+        "file_offset": 3153856,
+        "raw_bytes": "9076008001000000",
+        "stored_pointer": "0x180007690",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7690",
+        "target_followed": false
+      },
+      {
+        "index": 80,
+        "slot_rva": "0x302fc8",
+        "file_offset": 3153864,
+        "raw_bytes": "b076008001000000",
+        "stored_pointer": "0x1800076b0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x76b0",
+        "target_followed": false
+      },
+      {
+        "index": 81,
+        "slot_rva": "0x302fd0",
+        "file_offset": 3153872,
+        "raw_bytes": "d076008001000000",
+        "stored_pointer": "0x1800076d0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x76d0",
+        "target_followed": false
+      },
+      {
+        "index": 82,
+        "slot_rva": "0x302fd8",
+        "file_offset": 3153880,
+        "raw_bytes": "f076008001000000",
+        "stored_pointer": "0x1800076f0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x76f0",
+        "target_followed": false
+      },
+      {
+        "index": 83,
+        "slot_rva": "0x302fe0",
+        "file_offset": 3153888,
+        "raw_bytes": "1077008001000000",
+        "stored_pointer": "0x180007710",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7710",
+        "target_followed": false
+      },
+      {
+        "index": 84,
+        "slot_rva": "0x302fe8",
+        "file_offset": 3153896,
+        "raw_bytes": "3077008001000000",
+        "stored_pointer": "0x180007730",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7730",
+        "target_followed": false
+      },
+      {
+        "index": 85,
+        "slot_rva": "0x302ff0",
+        "file_offset": 3153904,
+        "raw_bytes": "5077008001000000",
+        "stored_pointer": "0x180007750",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7750",
+        "target_followed": false
+      },
+      {
+        "index": 86,
+        "slot_rva": "0x302ff8",
+        "file_offset": 3153912,
+        "raw_bytes": "7077008001000000",
+        "stored_pointer": "0x180007770",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7770",
+        "target_followed": false
+      },
+      {
+        "index": 87,
+        "slot_rva": "0x303000",
+        "file_offset": 3153920,
+        "raw_bytes": "9077008001000000",
+        "stored_pointer": "0x180007790",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7790",
+        "target_followed": false
+      },
+      {
+        "index": 88,
+        "slot_rva": "0x303008",
+        "file_offset": 3153928,
+        "raw_bytes": "b077008001000000",
+        "stored_pointer": "0x1800077b0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x77b0",
+        "target_followed": false
+      },
+      {
+        "index": 89,
+        "slot_rva": "0x303010",
+        "file_offset": 3153936,
+        "raw_bytes": "d077008001000000",
+        "stored_pointer": "0x1800077d0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x77d0",
+        "target_followed": false
+      },
+      {
+        "index": 90,
+        "slot_rva": "0x303018",
+        "file_offset": 3153944,
+        "raw_bytes": "f077008001000000",
+        "stored_pointer": "0x1800077f0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x77f0",
+        "target_followed": false
+      },
+      {
+        "index": 91,
+        "slot_rva": "0x303020",
+        "file_offset": 3153952,
+        "raw_bytes": "1078008001000000",
+        "stored_pointer": "0x180007810",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7810",
+        "target_followed": false
+      },
+      {
+        "index": 92,
+        "slot_rva": "0x303028",
+        "file_offset": 3153960,
+        "raw_bytes": "3078008001000000",
+        "stored_pointer": "0x180007830",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7830",
+        "target_followed": false
+      },
+      {
+        "index": 93,
+        "slot_rva": "0x303030",
+        "file_offset": 3153968,
+        "raw_bytes": "5078008001000000",
+        "stored_pointer": "0x180007850",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7850",
+        "target_followed": false
+      },
+      {
+        "index": 94,
+        "slot_rva": "0x303038",
+        "file_offset": 3153976,
+        "raw_bytes": "8078008001000000",
+        "stored_pointer": "0x180007880",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7880",
+        "target_followed": false
+      },
+      {
+        "index": 95,
+        "slot_rva": "0x303040",
+        "file_offset": 3153984,
+        "raw_bytes": "a078008001000000",
+        "stored_pointer": "0x1800078a0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x78a0",
+        "target_followed": false
+      },
+      {
+        "index": 96,
+        "slot_rva": "0x303048",
+        "file_offset": 3153992,
+        "raw_bytes": "c078008001000000",
+        "stored_pointer": "0x1800078c0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x78c0",
+        "target_followed": false
+      },
+      {
+        "index": 97,
+        "slot_rva": "0x303050",
+        "file_offset": 3154000,
+        "raw_bytes": "e078008001000000",
+        "stored_pointer": "0x1800078e0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x78e0",
+        "target_followed": false
+      },
+      {
+        "index": 98,
+        "slot_rva": "0x303058",
+        "file_offset": 3154008,
+        "raw_bytes": "0079008001000000",
+        "stored_pointer": "0x180007900",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7900",
+        "target_followed": false
+      },
+      {
+        "index": 99,
+        "slot_rva": "0x303060",
+        "file_offset": 3154016,
+        "raw_bytes": "2079008001000000",
+        "stored_pointer": "0x180007920",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7920",
+        "target_followed": false
+      },
+      {
+        "index": 100,
+        "slot_rva": "0x303068",
+        "file_offset": 3154024,
+        "raw_bytes": "4079008001000000",
+        "stored_pointer": "0x180007940",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7940",
+        "target_followed": false
+      },
+      {
+        "index": 101,
+        "slot_rva": "0x303070",
+        "file_offset": 3154032,
+        "raw_bytes": "6079008001000000",
+        "stored_pointer": "0x180007960",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7960",
+        "target_followed": false
+      },
+      {
+        "index": 102,
+        "slot_rva": "0x303078",
+        "file_offset": 3154040,
+        "raw_bytes": "8079008001000000",
+        "stored_pointer": "0x180007980",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7980",
+        "target_followed": false
+      },
+      {
+        "index": 103,
+        "slot_rva": "0x303080",
+        "file_offset": 3154048,
+        "raw_bytes": "a079008001000000",
+        "stored_pointer": "0x1800079a0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x79a0",
+        "target_followed": false
+      },
+      {
+        "index": 104,
+        "slot_rva": "0x303088",
+        "file_offset": 3154056,
+        "raw_bytes": "c079008001000000",
+        "stored_pointer": "0x1800079c0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x79c0",
+        "target_followed": false
+      },
+      {
+        "index": 105,
+        "slot_rva": "0x303090",
+        "file_offset": 3154064,
+        "raw_bytes": "e079008001000000",
+        "stored_pointer": "0x1800079e0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x79e0",
+        "target_followed": false
+      },
+      {
+        "index": 106,
+        "slot_rva": "0x303098",
+        "file_offset": 3154072,
+        "raw_bytes": "007a008001000000",
+        "stored_pointer": "0x180007a00",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7a00",
+        "target_followed": false
+      },
+      {
+        "index": 107,
+        "slot_rva": "0x3030a0",
+        "file_offset": 3154080,
+        "raw_bytes": "207a008001000000",
+        "stored_pointer": "0x180007a20",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7a20",
+        "target_followed": false
+      },
+      {
+        "index": 108,
+        "slot_rva": "0x3030a8",
+        "file_offset": 3154088,
+        "raw_bytes": "407a008001000000",
+        "stored_pointer": "0x180007a40",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7a40",
+        "target_followed": false
+      },
+      {
+        "index": 109,
+        "slot_rva": "0x3030b0",
+        "file_offset": 3154096,
+        "raw_bytes": "607a008001000000",
+        "stored_pointer": "0x180007a60",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7a60",
+        "target_followed": false
+      },
+      {
+        "index": 110,
+        "slot_rva": "0x3030b8",
+        "file_offset": 3154104,
+        "raw_bytes": "807a008001000000",
+        "stored_pointer": "0x180007a80",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7a80",
+        "target_followed": false
+      },
+      {
+        "index": 111,
+        "slot_rva": "0x3030c0",
+        "file_offset": 3154112,
+        "raw_bytes": "a07a008001000000",
+        "stored_pointer": "0x180007aa0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7aa0",
+        "target_followed": false
+      },
+      {
+        "index": 112,
+        "slot_rva": "0x3030c8",
+        "file_offset": 3154120,
+        "raw_bytes": "c07a008001000000",
+        "stored_pointer": "0x180007ac0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7ac0",
+        "target_followed": false
+      },
+      {
+        "index": 113,
+        "slot_rva": "0x3030d0",
+        "file_offset": 3154128,
+        "raw_bytes": "d07a008001000000",
+        "stored_pointer": "0x180007ad0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7ad0",
+        "target_followed": false
+      },
+      {
+        "index": 114,
+        "slot_rva": "0x3030d8",
+        "file_offset": 3154136,
+        "raw_bytes": "207b008001000000",
+        "stored_pointer": "0x180007b20",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7b20",
+        "target_followed": false
+      },
+      {
+        "index": 115,
+        "slot_rva": "0x3030e0",
+        "file_offset": 3154144,
+        "raw_bytes": "707b008001000000",
+        "stored_pointer": "0x180007b70",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7b70",
+        "target_followed": false
+      },
+      {
+        "index": 116,
+        "slot_rva": "0x3030e8",
+        "file_offset": 3154152,
+        "raw_bytes": "c07b008001000000",
+        "stored_pointer": "0x180007bc0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7bc0",
+        "target_followed": false
+      },
+      {
+        "index": 117,
+        "slot_rva": "0x3030f0",
+        "file_offset": 3154160,
+        "raw_bytes": "107c008001000000",
+        "stored_pointer": "0x180007c10",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7c10",
+        "target_followed": false
+      },
+      {
+        "index": 118,
+        "slot_rva": "0x3030f8",
+        "file_offset": 3154168,
+        "raw_bytes": "307c008001000000",
+        "stored_pointer": "0x180007c30",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7c30",
+        "target_followed": false
+      },
+      {
+        "index": 119,
+        "slot_rva": "0x303100",
+        "file_offset": 3154176,
+        "raw_bytes": "607c008001000000",
+        "stored_pointer": "0x180007c60",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7c60",
+        "target_followed": false
+      },
+      {
+        "index": 120,
+        "slot_rva": "0x303108",
+        "file_offset": 3154184,
+        "raw_bytes": "a07c008001000000",
+        "stored_pointer": "0x180007ca0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7ca0",
+        "target_followed": false
+      },
+      {
+        "index": 121,
+        "slot_rva": "0x303110",
+        "file_offset": 3154192,
+        "raw_bytes": "c07c008001000000",
+        "stored_pointer": "0x180007cc0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7cc0",
+        "target_followed": false
+      },
+      {
+        "index": 122,
+        "slot_rva": "0x303118",
+        "file_offset": 3154200,
+        "raw_bytes": "e07c008001000000",
+        "stored_pointer": "0x180007ce0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7ce0",
+        "target_followed": false
+      },
+      {
+        "index": 123,
+        "slot_rva": "0x303120",
+        "file_offset": 3154208,
+        "raw_bytes": "407d008001000000",
+        "stored_pointer": "0x180007d40",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7d40",
+        "target_followed": false
+      },
+      {
+        "index": 124,
+        "slot_rva": "0x303128",
+        "file_offset": 3154216,
+        "raw_bytes": "207e008001000000",
+        "stored_pointer": "0x180007e20",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7e20",
+        "target_followed": false
+      },
+      {
+        "index": 125,
+        "slot_rva": "0x303130",
+        "file_offset": 3154224,
+        "raw_bytes": "c07e008001000000",
+        "stored_pointer": "0x180007ec0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7ec0",
+        "target_followed": false
+      },
+      {
+        "index": 126,
+        "slot_rva": "0x303138",
+        "file_offset": 3154232,
+        "raw_bytes": "607f008001000000",
+        "stored_pointer": "0x180007f60",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7f60",
+        "target_followed": false
+      },
+      {
+        "index": 127,
+        "slot_rva": "0x303140",
+        "file_offset": 3154240,
+        "raw_bytes": "c07f008001000000",
+        "stored_pointer": "0x180007fc0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7fc0",
+        "target_followed": false
+      },
+      {
+        "index": 128,
+        "slot_rva": "0x303148",
+        "file_offset": 3154248,
+        "raw_bytes": "f07f008001000000",
+        "stored_pointer": "0x180007ff0",
+        "is_null": false,
+        "preferred_rva_uint32": "0x7ff0",
+        "target_followed": false
+      },
+      {
+        "index": 129,
+        "slot_rva": "0x303150",
+        "file_offset": 3154256,
+        "raw_bytes": "1080008001000000",
+        "stored_pointer": "0x180008010",
+        "is_null": false,
+        "preferred_rva_uint32": "0x8010",
+        "target_followed": false
+      },
+      {
+        "index": 130,
+        "slot_rva": "0x303158",
+        "file_offset": 3154264,
+        "raw_bytes": "3080008001000000",
+        "stored_pointer": "0x180008030",
+        "is_null": false,
+        "preferred_rva_uint32": "0x8030",
+        "target_followed": false
+      },
+      {
+        "index": 131,
+        "slot_rva": "0x303160",
+        "file_offset": 3154272,
+        "raw_bytes": "7080008001000000",
+        "stored_pointer": "0x180008070",
+        "is_null": false,
+        "preferred_rva_uint32": "0x8070",
+        "target_followed": false
+      },
+      {
+        "index": 132,
+        "slot_rva": "0x303168",
+        "file_offset": 3154280,
+        "raw_bytes": "9080008001000000",
+        "stored_pointer": "0x180008090",
+        "is_null": false,
+        "preferred_rva_uint32": "0x8090",
+        "target_followed": false
+      }
+    ],
+    "sha256": "0e842e707875426c06985551de55a35d2bf6364e052d828e9f11792f11c0d963",
+    "raw_bytes": "00000000000000009880008001000000c080008001000000b0800080010000007057008001000000b057008001000000f05700800100000030580080010000007058008001000000b058008001000000f05800800100000040590080010000009059008001000000e059008001000000205a008001000000605a008001000000a05a008001000000f05a008001000000305b008001000000705b008001000000b05b008001000000e05b008001000000305c008001000000705c008001000000205d008001000000d05d008001000000805e008001000000305f008001000000e05f00800100000090600080010000004061008001000000f061008001000000a06200800100000050630080010000000064008001000000b06400800100000060650080010000001066008001000000c06600800100000070670080010000002068008001000000d0680080010000008069008001000000306a008001000000e06a008001000000906b008001000000406c008001000000f06c008001000000a06d008001000000506e008001000000006f008001000000b06f00800100000060700080010000001071008001000000c07100800100000070720080010000002073008001000000d073008001000000f07300800100000010740080010000003074008001000000507400800100000070740080010000009074008001000000b074008001000000d074008001000000f07400800100000010750080010000003075008001000000507500800100000070750080010000009075008001000000b075008001000000d075008001000000f07500800100000010760080010000003076008001000000507600800100000070760080010000009076008001000000b076008001000000d076008001000000f07600800100000010770080010000003077008001000000507700800100000070770080010000009077008001000000b077008001000000d077008001000000f0770080010000001078008001000000307800800100000050780080010000008078008001000000a078008001000000c078008001000000e07800800100000000790080010000002079008001000000407900800100000060790080010000008079008001000000a079008001000000c079008001000000e079008001000000007a008001000000207a008001000000407a008001000000607a008001000000807a008001000000a07a008001000000c07a008001000000d07a008001000000207b008001000000707b008001000000c07b008001000000107c008001000000307c008001000000607c008001000000a07c008001000000c07c008001000000e07c008001000000407d008001000000207e008001000000c07e008001000000607f008001000000c07f008001000000f07f0080010000001080008001000000308000800100000070800080010000009080008001000000",
+    "non_null_slots": 132
+  },
+  "bindings": [
+    {
+      "module": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "name": "_initterm_e",
+      "descriptor_index": 14,
+      "descriptor_rva": "0x4156b0",
+      "original_first_thunk_rva": "0x4161e0",
+      "thunk_index": 5,
+      "original_thunk_rva": "0x416208",
+      "hint_name_rva": "0x4182f6",
+      "hint": 55,
+      "first_thunk_rva": "0x302a28",
+      "iat_rva": "0x302a50",
+      "preferred_iat_va": "0x180302a50",
+      "iat_payload_bytes_read": 0
+    },
+    {
+      "module": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "name": "_initterm",
+      "descriptor_index": 14,
+      "descriptor_rva": "0x4156b0",
+      "original_first_thunk_rva": "0x4161e0",
+      "thunk_index": 6,
+      "original_thunk_rva": "0x416210",
+      "hint_name_rva": "0x4182ea",
+      "hint": 54,
+      "first_thunk_rva": "0x302a28",
+      "iat_rva": "0x302a58",
+      "preferred_iat_va": "0x180302a58",
+      "iat_payload_bytes_read": 0
+    }
+  ],
+  "limitations": [
+    "The fixed closed-open initializer-array range is proved by archived caller arguments and its six-byte thunk. New semantic reads contain only this 1064-byte table and the selected import metadata.",
+    "The import-directory RVA/size come from the pinned tick-import metadata; its optional-header field is not read again. Descriptor 14 and OFT indices 5,6 come from the pinned ordered inventory.",
+    "Exact module/names and FirstThunk+5*8 / +6*8 must bind to archived IATs 0x302a50 / 0x302a58 before reading the table. These new reads total exactly 96 bytes: descriptor20, module34, OFT16, hint/names14+12.",
+    "All 133 stored pointer values, including null slots and ordering, are recorded. Pointer targets, callbacks, factories, relocation contents, TLS and other initialization arrays are not read or executed.",
+    "Pointer values are preferred-image addresses on disk, not resolved live process pointers. Values outside the preferred image are recorded without following them.",
+    "Archived instruction bytes are checked only to prove this fixed metadata request; no new original code bytes are interpreted.",
+    "Whole-file before/after hashes use 64KiB streaming buffers. O_RDONLY and same-handle stat/hash checks do not imply an atomic snapshot or exclusive Windows FileShare.Read."
+  ],
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "source_hash_preserved": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-20T14:42:02.640Z"
+}

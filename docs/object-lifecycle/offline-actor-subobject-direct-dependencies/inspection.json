@@ -1,0 +1,755 @@
+{
+  "schema": "grim-dynasty-fixed-actor-subobject-direct-dependencies-v1",
+  "status": "fixed-actor-subobject-direct-dependencies-verified",
+  "started_utc": "2026-10-21T04:50:22.183Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-remaining-dependencies/0bdbe0-instructions.json",
+      "sha256": "2deb380656810ec48388c9c68f8b5b319e5acd9d9733bfef84def99abe104240"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-remaining-dependencies/inspection.json",
+      "sha256": "6639fbb457720057edb6ea37834e6f5aa2534593b26020fda7d83044b73325c5"
+    }
+  ],
+  "limits": {
+    "code_bytes_each": 4096,
+    "code_bytes_total": 8192,
+    "metadata_bytes": 768,
+    "pdata_entries_each": 32,
+    "pdata_entries_total": 64,
+    "search_steps_each": 32,
+    "data_bytes": 16,
+    "semantic_read_operations": 67,
+    "proof_bytes_each": 32768,
+    "fingerprint_chunk_bytes": 65536,
+    "subprocesses": 2,
+    "tool_timeout_ms_each": 10000,
+    "tool_max_buffer_bytes_each": 196608,
+    "report_bytes": 196608
+  },
+  "requested_targets": [
+    {
+      "rva": "0x38500",
+      "role": "R9 element-constructor operand for the observed 2DCC3C iterator call",
+      "evidence": [
+        {
+          "address": "0x1800bdc86",
+          "bytes": "4c8d0d73a8f7ff",
+          "instruction": "lea         r9,[0000000180038500h]"
+        },
+        {
+          "address": "0x1800bdc94",
+          "bytes": "e8a3ef2100",
+          "instruction": "call        00000001802DCC3C"
+        }
+      ],
+      "context": [
+        {
+          "address": "0x1800bdc11",
+          "bytes": "33f6",
+          "instruction": "xor         esi,esi"
+        },
+        {
+          "address": "0x1800bdc73",
+          "bytes": "4881c110010000",
+          "instruction": "add         rcx,110h"
+        },
+        {
+          "address": "0x1800bdc8d",
+          "bytes": "8d5668",
+          "instruction": "lea         edx,[rsi+68h]"
+        },
+        {
+          "address": "0x1800bdc90",
+          "bytes": "448d4601",
+          "instruction": "lea         r8d,[rsi+1]"
+        }
+      ]
+    },
+    {
+      "rva": "0x273ab0",
+      "role": "same direct helper at two observed call sites",
+      "evidence": [
+        {
+          "address": "0x1800bde22",
+          "bytes": "e8895c1b00",
+          "instruction": "call        0000000180273AB0"
+        },
+        {
+          "address": "0x1800bdeb9",
+          "bytes": "e8f25b1b00",
+          "instruction": "call        0000000180273AB0"
+        }
+      ]
+    }
+  ],
+  "requested_data": {
+    "rva": "0x34c1e0",
+    "bytes": 16,
+    "source_instruction": {
+      "address": "0x1800bdd0b",
+      "bytes": "0f1005cee42800",
+      "instruction": "movups      xmm0,xmmword ptr [000000018034C1E0h]"
+    }
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "runtime_value_observed": false,
+  "backend_started": false,
+  "build_or_test_execution": false,
+  "original_modified": false,
+  "full_target_copy_created": false,
+  "permission_change": false,
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "metadata_bytes": 324,
+  "code_bytes": 271,
+  "data_bytes": 16,
+  "reads": [
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4390956,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "b066170000691700c8c13800"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4354320,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "200d0a00520d0a00a0213600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4336008,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "cfc00300fec10300a49e3600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4326852,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "009c0100159c0100c03c3600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4331436,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "c0740200cd760200c07c3600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4333728,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "40eb0200b5eb020080203600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4334868,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "cc680300d26803003c943600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4335444,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "6d96030089970300f0983600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4335156,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "a0830300c3830300c8213600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4335300,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "408f0300d08f030080203600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4335228,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "e08603008b87030090963600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4335192,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "c0840300fb840300a0213600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4335216,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "b0850300d786030038963600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x38500",
+      "file_offset": 4335204,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "008503009685030000963600"
+    },
+    {
+      "kind": "code",
+      "owner": "0x38500",
+      "file_offset": 227584,
+      "requested_bytes": 150,
+      "read_bytes": 150,
+      "raw_hex": "48894c2408574883ec4048c7442420feffffff48895c24604889742468488bf9c641180033f689711c48897110c741200000803f0f57c9897424300f28c10f14c1f20f1141248bc689412c48897130488d593848895c2458488933488973084533c033d2e8076cfeff48890348897750c74758f7010000488977484889770840887760488bc7488b5c2460488b7424684883c4405fc3"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4427592,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "aa022400bf022400b0193a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4445904,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "c0bd2a0032be2a0034b23a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4436748,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "106e2700ca6e270048873600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4432176,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "40c3250035c425006ce43700"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4434468,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "5098260060982600bc483a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4435608,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "ddfb2600dffb2600b8523a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4436184,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "102e27002536270054573a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4436472,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "004b2700764b2700e8283600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4436328,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "90432700a74427002c583a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4436256,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "a03c2700023f2700fc573a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4436220,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "60382700ab3a2700c8573a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4436244,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "303b2700923c2700e8573a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x273ab0",
+      "file_offset": 4436232,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "b03a2700293b27003c863600"
+    },
+    {
+      "kind": "code",
+      "owner": "0x273ab0",
+      "file_offset": 2567856,
+      "requested_bytes": 121,
+      "read_bytes": 121,
+      "raw_hex": "4883ec3865488b0425580000008b0d11d31a00ba04000000488b0cc88b040a3905b3041b007f0c488d05b2991a004883c438c3488d0d9e041b00e8f18f0600833d92041b00ff75df0f57c9c7442428000000008b442428488d0d7a041b000f28c18905a5991a000f14c1f20f110592991a00e8598f0600ebae"
+    },
+    {
+      "kind": "data",
+      "owner": "0x34c1e0",
+      "file_offset": 3453408,
+      "requested_bytes": 16,
+      "read_bytes": 16,
+      "raw_hex": "0000803f00000000000000000000803f"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    }
+  ],
+  "subprocesses": 2,
+  "targets": [
+    {
+      "rva": "0x38500",
+      "role": "R9 element-constructor operand for the observed 2DCC3C iterator call",
+      "status": "exact-body-disassembly-verified",
+      "body_read": true,
+      "code_bytes": 150,
+      "byte_coverage_verified": true,
+      "selected_code_range": {
+        "begin": 230656,
+        "end_exclusive": 230806
+      },
+      "search_steps": 14,
+      "lower_bound_index": 1459,
+      "lower_bound_entry": {
+        "index": 1459,
+        "begin": 230656,
+        "end": 230806,
+        "unwind": 3577344,
+        "raw_hex": "008503009685030000963600"
+      },
+      "classification": "exact",
+      "code_file_offset": 227584,
+      "code_sha256": "99733fa0caa58aa96813a0b765928f1b2c983cd825635417d32d31709a7bb4ff",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180038500,0x180038595",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll"
+      ],
+      "tool_elapsed_ms": 32,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 39,
+      "instructions_file": "038500-instructions.json",
+      "visited_entry_indices": [
+        6105,
+        3052,
+        1526,
+        763,
+        1145,
+        1336,
+        1431,
+        1479,
+        1455,
+        1467,
+        1461,
+        1458,
+        1460,
+        1459
+      ],
+      "new_metadata_bytes": 168
+    },
+    {
+      "rva": "0x273ab0",
+      "role": "same direct helper at two observed call sites",
+      "status": "exact-body-disassembly-verified",
+      "body_read": true,
+      "code_bytes": 121,
+      "byte_coverage_verified": true,
+      "selected_code_range": {
+        "begin": 2570928,
+        "end_exclusive": 2571049
+      },
+      "search_steps": 14,
+      "lower_bound_index": 9878,
+      "lower_bound_entry": {
+        "index": 9878,
+        "begin": 2570928,
+        "end": 2571049,
+        "unwind": 3573308,
+        "raw_hex": "b03a2700293b27003c863600"
+      },
+      "classification": "exact",
+      "code_file_offset": 2567856,
+      "code_sha256": "86673fdbb2da5e18ff3cf2fca7127b32f50f9a572d972f8bdaad661e0170d313",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180273ab0,0x180273b28",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll"
+      ],
+      "tool_elapsed_ms": 31,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 25,
+      "instructions_file": "273ab0-instructions.json",
+      "visited_entry_indices": [
+        6105,
+        9158,
+        10684,
+        9921,
+        9540,
+        9731,
+        9826,
+        9874,
+        9898,
+        9886,
+        9880,
+        9877,
+        9879,
+        9878
+      ],
+      "new_metadata_bytes": 156
+    }
+  ],
+  "limitations": [
+    "Only 038500 and 273AB0 are searched. Exact BeginAddress and <=4096 bytes each / <=8192 bytes total are required for body reading and at most two bounded dumpbin calls. 0481F0 is excluded because its same-module body is already archived.",
+    "Each target visits at most 32 .pdata entries including a necessary previous entry for no-exact classification. Shared raw-entry cache bounds new metadata to 64 entries / 768 bytes.",
+    "A missing exact entry records lower bound and adjacent metadata only; containing/gap never authorizes neighboring code, a guessed leaf prefix, or another target. Independent fixed targets may continue.",
+    "No callee, unwind/EH body, import, global pointer, runtime initializer or neighboring datum is followed. The iterator is contextual caller evidence, not another body target.",
+    "Only the 16 file bytes at 34C1E0 are read as data. File observations do not establish loaded runtime values or native behavior.",
+    "Two same-handle full-file fingerprints use 64KiB buffers and are separate from semantic budgets. Hash/stat stability is not an atomic snapshot.",
+    "dumpbin internal PE metadata I/O is not instrumented. Exact byte coverage does not prove complete logical control flow, constructor semantics or native EH."
+  ],
+  "script_sha256": "f08fcdadbcf32459fba883535facd83b439defa2659048f96ded4af1a955f7c5",
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "stat_before": {
+    "size": 4485632,
+    "dev": 2562469142,
+    "ino": 1970324837085124,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "data_result": {
+    "rva": "0x34c1e0",
+    "file_offset": 3453408,
+    "bytes": 16,
+    "raw_hex": "0000803f00000000000000000000803f",
+    "section": ".rdata",
+    "section_characteristics": "0x40000040",
+    "runtime_observed": false,
+    "little_endian_qwords": [
+      {
+        "byte_offset": 0,
+        "unsigned_hex": "0x3f800000"
+      },
+      {
+        "byte_offset": 8,
+        "unsigned_hex": "0x3f80000000000000"
+      }
+    ]
+  },
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "stat_after": {
+    "size": 4485632,
+    "dev": 2562469142,
+    "ino": 1970324837085124,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "source_handle_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "entries": [
+    {
+      "index": 6105,
+      "begin": 1533616,
+      "end": 1534208,
+      "unwind": 3719624,
+      "raw_hex": "b066170000691700c8c13800"
+    },
+    {
+      "index": 3052,
+      "begin": 658720,
+      "end": 658770,
+      "unwind": 3547552,
+      "raw_hex": "200d0a00520d0a00a0213600"
+    },
+    {
+      "index": 1526,
+      "begin": 245967,
+      "end": 246270,
+      "unwind": 3579556,
+      "raw_hex": "cfc00300fec10300a49e3600"
+    },
+    {
+      "index": 763,
+      "begin": 105472,
+      "end": 105493,
+      "unwind": 3554496,
+      "raw_hex": "009c0100159c0100c03c3600"
+    },
+    {
+      "index": 1145,
+      "begin": 160960,
+      "end": 161485,
+      "unwind": 3570880,
+      "raw_hex": "c0740200cd760200c07c3600"
+    },
+    {
+      "index": 1336,
+      "begin": 191296,
+      "end": 191413,
+      "unwind": 3547264,
+      "raw_hex": "40eb0200b5eb020080203600"
+    },
+    {
+      "index": 1431,
+      "begin": 223436,
+      "end": 223442,
+      "unwind": 3576892,
+      "raw_hex": "cc680300d26803003c943600"
+    },
+    {
+      "index": 1479,
+      "begin": 235117,
+      "end": 235401,
+      "unwind": 3578096,
+      "raw_hex": "6d96030089970300f0983600"
+    },
+    {
+      "index": 1455,
+      "begin": 230304,
+      "end": 230339,
+      "unwind": 3547592,
+      "raw_hex": "a0830300c3830300c8213600"
+    },
+    {
+      "index": 1467,
+      "begin": 233280,
+      "end": 233424,
+      "unwind": 3547264,
+      "raw_hex": "408f0300d08f030080203600"
+    },
+    {
+      "index": 1461,
+      "begin": 231136,
+      "end": 231307,
+      "unwind": 3577488,
+      "raw_hex": "e08603008b87030090963600"
+    },
+    {
+      "index": 1458,
+      "begin": 230592,
+      "end": 230651,
+      "unwind": 3547552,
+      "raw_hex": "c0840300fb840300a0213600"
+    },
+    {
+      "index": 1460,
+      "begin": 230832,
+      "end": 231127,
+      "unwind": 3577400,
+      "raw_hex": "b0850300d786030038963600"
+    },
+    {
+      "index": 1459,
+      "begin": 230656,
+      "end": 230806,
+      "unwind": 3577344,
+      "raw_hex": "008503009685030000963600"
+    },
+    {
+      "index": 9158,
+      "begin": 2359978,
+      "end": 2359999,
+      "unwind": 3807664,
+      "raw_hex": "aa022400bf022400b0193a00"
+    },
+    {
+      "index": 10684,
+      "begin": 2801088,
+      "end": 2801202,
+      "unwind": 3846708,
+      "raw_hex": "c0bd2a0032be2a0034b23a00"
+    },
+    {
+      "index": 9921,
+      "begin": 2584080,
+      "end": 2584266,
+      "unwind": 3573576,
+      "raw_hex": "106e2700ca6e270048873600"
+    },
+    {
+      "index": 9540,
+      "begin": 2474816,
+      "end": 2475061,
+      "unwind": 3662956,
+      "raw_hex": "40c3250035c425006ce43700"
+    },
+    {
+      "index": 9731,
+      "begin": 2529360,
+      "end": 2529376,
+      "unwind": 3819708,
+      "raw_hex": "5098260060982600bc483a00"
+    },
+    {
+      "index": 9826,
+      "begin": 2554845,
+      "end": 2554847,
+      "unwind": 3822264,
+      "raw_hex": "ddfb2600dffb2600b8523a00"
+    },
+    {
+      "index": 9874,
+      "begin": 2567696,
+      "end": 2569765,
+      "unwind": 3823444,
+      "raw_hex": "102e27002536270054573a00"
+    },
+    {
+      "index": 9898,
+      "begin": 2575104,
+      "end": 2575222,
+      "unwind": 3549416,
+      "raw_hex": "004b2700764b2700e8283600"
+    },
+    {
+      "index": 9886,
+      "begin": 2573200,
+      "end": 2573479,
+      "unwind": 3823660,
+      "raw_hex": "90432700a74427002c583a00"
+    },
+    {
+      "index": 9880,
+      "begin": 2571424,
+      "end": 2572034,
+      "unwind": 3823612,
+      "raw_hex": "a03c2700023f2700fc573a00"
+    },
+    {
+      "index": 9877,
+      "begin": 2570336,
+      "end": 2570923,
+      "unwind": 3823560,
+      "raw_hex": "60382700ab3a2700c8573a00"
+    },
+    {
+      "index": 9879,
+      "begin": 2571056,
+      "end": 2571410,
+      "unwind": 3823592,
+      "raw_hex": "303b2700923c2700e8573a00"
+    },
+    {
+      "index": 9878,
+      "begin": 2570928,
+      "end": 2571049,
+      "unwind": 3573308,
+      "raw_hex": "b03a2700293b27003c863600"
+    }
+  ],
+  "source_hash_preserved": true,
+  "tool_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T04:50:22.288Z",
+  "controller_resource_usage": {
+    "userCPUTime": 15000,
+    "systemCPUTime": 93000,
+    "maxRSS": 43888,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11591,
+    "swappedOut": 0,
+    "fsRead": 183,
+    "fsWrite": 6,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

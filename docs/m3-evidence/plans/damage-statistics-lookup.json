@@ -1,0 +1,15 @@
+{
+  "schema": "grim-dynasty-m3-bounded-plan-v2",
+  "id": "damage-statistics-lookup",
+  "purpose": "Read only the exact-entry runtime fragment at 403AC0, directly called twice by saved 3FE390. Both calls have the same callee; this plan uses the first reference and reads that target once. The identities returned through the two output locations, possible insertion, and failure semantics remain unknown and block closure of conditional final statistics settlement. Do not assume a map algorithm or expand callees.",
+  "source": {"path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll", "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2", "bytes": 11385856, "preferred_base": "0x180000000"},
+  "proof": {"path": "docs/m3-evidence/damage-postprocess-body/direct-3fe390.instructions.json", "sha256": "89e67ed95509369edf2a52d5345c0727cff5a0cdae44192909bdebf217a6b876"},
+  "targets": [{"id": "direct-403ac0", "rva": "0x403ac0", "caller_address": "0x1803fe3b9", "caller_bytes": "e802570000", "reference_kind": "direct-call"}],
+  "limits": {"body_bytes_each": 8192, "body_bytes_total": 8192, "metadata_bytes": 16384, "dumpbin_calls": 2, "tool_timeout_ms_each": 10000},
+  "mode": "bodies",
+  "range_policy": "exact-entry",
+  "output": "docs/m3-evidence/damage-statistics-lookup",
+  "temporary": ".tooling/m3-damage-statistics-lookup-temp",
+  "automatic_callee_expansion": false,
+  "execution_requires_separate_review_and_approval": true
+}

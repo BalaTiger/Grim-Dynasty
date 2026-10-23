@@ -1,0 +1,48 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-cache-node\Engine.readonly.dll
+
+File Type: DLL
+
+  0000000180022860: 48 89 5C 24 08     mov         qword ptr [rsp+8],rbx
+  0000000180022865: 57                 push        rdi
+  0000000180022866: 48 83 EC 20        sub         rsp,20h
+  000000018002286A: 48 83 7A 18 10     cmp         qword ptr [rdx+18h],10h
+  000000018002286F: 48 8B DA           mov         rbx,rdx
+  0000000180022872: 48 8B F9           mov         rdi,rcx
+  0000000180022875: 73 12              jae         0000000180022889
+  0000000180022877: 4C 8B 42 10        mov         r8,qword ptr [rdx+10h]
+  000000018002287B: 49 83 C0 01        add         r8,1
+  000000018002287F: 74 1A              je          000000018002289B
+  0000000180022881: FF 15 A1 FE 2D 00  call        qword ptr [0000000180302728h]
+  0000000180022887: EB 12              jmp         000000018002289B
+  0000000180022889: 48 85 FF           test        rdi,rdi
+  000000018002288C: 74 06              je          0000000180022894
+  000000018002288E: 48 8B 02           mov         rax,qword ptr [rdx]
+  0000000180022891: 48 89 01           mov         qword ptr [rcx],rax
+  0000000180022894: 48 C7 02 00 00 00  mov         qword ptr [rdx],0
+                    00
+  000000018002289B: 48 8B 43 10        mov         rax,qword ptr [rbx+10h]
+  000000018002289F: 48 89 47 10        mov         qword ptr [rdi+10h],rax
+  00000001800228A3: 48 8B 43 18        mov         rax,qword ptr [rbx+18h]
+  00000001800228A7: 48 89 47 18        mov         qword ptr [rdi+18h],rax
+  00000001800228AB: 48 C7 43 18 0F 00  mov         qword ptr [rbx+18h],0Fh
+                    00 00
+  00000001800228B3: 48 83 7B 18 10     cmp         qword ptr [rbx+18h],10h
+  00000001800228B8: 48 C7 43 10 00 00  mov         qword ptr [rbx+10h],0
+                    00 00
+  00000001800228C0: 72 11              jb          00000001800228D3
+  00000001800228C2: 48 8B 03           mov         rax,qword ptr [rbx]
+  00000001800228C5: C6 00 00           mov         byte ptr [rax],0
+  00000001800228C8: 48 8B 5C 24 30     mov         rbx,qword ptr [rsp+30h]
+  00000001800228CD: 48 83 C4 20        add         rsp,20h
+  00000001800228D1: 5F                 pop         rdi
+  00000001800228D2: C3                 ret
+  00000001800228D3: C6 03 00           mov         byte ptr [rbx],0
+  00000001800228D6: 48 8B 5C 24 30     mov         rbx,qword ptr [rsp+30h]
+  00000001800228DB: 48 83 C4 20        add         rsp,20h
+  00000001800228DF: 5F                 pop         rdi
+  00000001800228E0: C3                 ret
+
+  Summary
+
+      301000 .text

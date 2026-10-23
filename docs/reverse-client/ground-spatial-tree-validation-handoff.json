@@ -1,0 +1,66 @@
+{
+  "utc": "2026-10-23T06:44:41.704Z",
+  "status": "prepared-reviewed-not-executed",
+  "owner": "/root/ground_tree_validation",
+  "script": "tools/build_r1_ground_spatial_tree.ps1",
+  "script_sha256": "cf694ec02fd614fda0bfd8532aa1199641429d993f808f795188b17d7e4930fd",
+  "files": [
+    {
+      "file": "src/reverse_client_actions/GroundSpatialTreeContracts.cs",
+      "bytes": 29786,
+      "sha256": "926275130fcbc85df2bad1a012a0914fa241e0c19ca289f37174623d7a247726"
+    },
+    {
+      "file": "src/reverse_client_actions/GroundSpatialTreeTests.cs",
+      "bytes": 17666,
+      "sha256": "01d3a3eba0ccfeb1a3dc1f790a100d4b958597fb705088362f58f3656780d4ae"
+    },
+    {
+      "file": "tools/build_r1_ground_spatial_tree.ps1",
+      "bytes": 11982,
+      "sha256": "cf694ec02fd614fda0bfd8532aa1199641429d993f808f795188b17d7e4930fd"
+    },
+    {
+      "file": ".tooling/r1-ground-tree-validation-prepared/GroundSpatialTreeTests.before.cs",
+      "bytes": 17131,
+      "sha256": "692d77ff84ad351fe52554eacfd8c08d230d7359b3df1f40cfdedec1982b93cc"
+    }
+  ],
+  "execution": {
+    "compiles": 2,
+    "new_scenarios": 7,
+    "old_suites_rerun": [],
+    "output": ".tooling/r1-ground-spatial-tree-validation",
+    "output_exists_at_handoff": false,
+    "compiler": "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/csc.exe",
+    "compiler_sha256": "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00",
+    "build_or_test_executed_by_child": false,
+    "requires_parent_review_and_normal_approval": true
+  },
+  "required_prior": {
+    "result": ".tooling/r1-ground-block-fc-copy-validation/result.json",
+    "sha256": "7163537075c2be8cc649b3d358beabb3d1cd631f943590d017bb82b36db3f8cc",
+    "status": "passed-ground-block-fc-copy-regression",
+    "corrected_block_dll_sha256": "67c72c5b9fbeffa329a6e4dc2609c8b45ba0656b49d12fed758e5c397e1a70d2",
+    "old_block_fallback": false
+  },
+  "review": {
+    "powershell_parse_errors": 0,
+    "verified_input_pins": 28,
+    "dependency_dlls": 9,
+    "source_modified": false,
+    "tests_change": "Three assertions in existing fifth scenario: actual Block+Tree query must preserve selected near entry, distance5 and XYZ(5.25,5,.75) while opaque Material DWORD remains Unknown in output and source.",
+    "independent_static_review": "No blocking geometry, API or scenario-state issue found; no compilation or test execution.",
+    "source_evidence": "Saved 11A600 and1D0100 assembly reviewed against finite OWN support domain; other existing cited evidence pinned.",
+    "runtime_result": "Pending parent execution; not passed"
+  },
+  "protections": [
+    "Fixed workspace and no arguments",
+    "Reject reparse ancestors",
+    "Compiler, sources, prior result, nine dependency DLLs and fifteen saved evidence inputs pinned",
+    "Require corrected passed Block FC result and matching unique artifact entries",
+    "Fresh output only; preserve failure logs and result; no deletion",
+    "No original binaries, player saves, Rea, Java, policy or ACL changes"
+  ],
+  "remaining_boundary": "Declared finite sequential OWN tree/allocation adaptation plus saved225 Block/candidate identity path; real material pointers still Unknown. Does not establish native fullLoad, world floor, completed mouse movement or gameplay."
+}

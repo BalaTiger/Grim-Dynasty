@@ -1,0 +1,20 @@
+{
+  "schema": "grim-dynasty.saved-ground-layout.v1",
+  "script": "tools/static_analysis/read_r1_saved_ground_layout.mjs",
+  "entrypoint": "inspectSavedGroundLayout(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-mainmenu-ground-layout/inspection.json",
+  "source": {
+    "path": "docs/reverse-client/r1-mainmenu-complete-member/mainmenu.map.bin",
+    "bytes": 1091357,
+    "sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289"
+  },
+  "chunk": {"id": 6, "offset": 273260, "bytes": 149073, "level_version": 15, "type": 2},
+  "observed_header": [1, 5, 129, 129, 0, 0, 0, 0],
+  "evidence": [
+    {"kind": "chunk-extent", "path": "docs/reverse-client/r1-mainmenu-complete-member/level-chunk-observation.json", "sha256": "558a9ac7959da4e64394c4195623e4576b6b081c8978f0869d18744d4d52e6d3"},
+    {"kind": "caller", "path": "docs/reverse-client/r1-level-load-and-navjob-candidates/05-LevelLoadNavJobCandidate-0x18012c770-procedure_assembly.json", "sha256": "edbe0f2ba35b41bfb9c412aae4ec3e61a45ef7c29ec74b569801c4b6797a07f5"},
+    {"kind": "loader", "path": "docs/reverse-client/r1-spatial-ground-direct/11-SpatialGroundDirect-0x1801de090-procedure_assembly.json", "sha256": "280b8fc0515859b8de565e69e9ee40dcb047d76631ca4c9e368d3177faa105ff"}
+  ],
+  "limits": {"saved_member_payload_bytes": 149073, "hash_chunk_bytes": 65536, "maximum_string_bytes": 1048576, "original_reads": 0, "backend_starts": 0, "subprocesses": 0},
+  "scope": "Conditional structural projection of the fixed saved type2 ground chunk only. No native call is executed or simulated as successful. Raw array128 float interpretation is an observation, not a floor/collision semantic guarantee."
+}

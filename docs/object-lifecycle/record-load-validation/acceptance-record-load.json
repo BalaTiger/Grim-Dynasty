@@ -1,0 +1,159 @@
+{
+  "utc": "2026-10-19T04:17:28.8331859Z",
+  "status": "bounded-record-cache-hit-passed",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "static_batches": [
+    {
+      "directory": "rea-record-load-dependencies",
+      "calls": 14,
+      "analysis_calls": 9,
+      "plan_sha256": "73337fb202fb932af8312ab799f3aa4403da91f4ab377c5b5cf124bcbe4578f9",
+      "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "closed_session_verified": true,
+      "child_exit_code": 0
+    },
+    {
+      "directory": "rea-record-cache-compare",
+      "calls": 8,
+      "analysis_calls": 3,
+      "plan_sha256": "7c8ab947e489c860d9be56f93f1666409f8cc1f272ae7aae8c2a76e4e2535cd3",
+      "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "closed_session_verified": true,
+      "child_exit_code": 0
+    }
+  ],
+  "static_call_total": 22,
+  "assertions": {
+    "RecordLoadFile": 42,
+    "ObjectLifecycleCombined": 20,
+    "ObjectNameAssignment": 37,
+    "ObjectBaseConstructor": 40,
+    "RegistrationIndex": 183,
+    "RegistrationGrowth": 141,
+    "LoadedObjectRegistration": 47,
+    "ClassFactoryDispatch": 40,
+    "ItemCondition": 39,
+    "ItemAuto": 11,
+    "ObjectId": 20,
+    "total": 620
+  },
+  "combined_scenarios": 2,
+  "existing_scenarios": [
+    "ItemQuestDemo"
+  ],
+  "own_build_directory": ".tooling/record-load-build",
+  "source_and_binary_manifest": [
+    {
+      "path": "src/task_items/RecordCache.cs",
+      "sha256": "5d3d4a7c9487b6aa8faac7e1c8defa423d0a912ebb1d12e721bb1c35ff0aa97c"
+    },
+    {
+      "path": "src/task_items/RecordLoadFile.cs",
+      "sha256": "0c552a5267fe4fa5003d63fd828186a13f3dfbf718dbbd58f3d980584a7ee1fc"
+    },
+    {
+      "path": "src/task_items/RecordLoadFileTests.cs",
+      "sha256": "232ded23367ea358eb87807efc2e3d3b80449e1eee0359661e97dd288506abe1"
+    },
+    {
+      "path": "src/task_items/ObjectLifecycleCombinedTests.cs",
+      "sha256": "4e7bc50fbc81e457e099c93b400121028542c4094f2d308968692eda7c040690"
+    },
+    {
+      "path": "src/task_items/ObjectNameAssignment.cs",
+      "sha256": "55d0c434931a62ec1f3504e22abf4301e7b9d5d3493fae3c57a29f3beddc8a3d"
+    },
+    {
+      "path": "src/task_items/ObjectNameString.cs",
+      "sha256": "dd9910120e90971d63e190596dd9dc925d2cc41dfb29337fbea55a5aca2f06e6"
+    },
+    {
+      "path": "src/task_items/ObjectBaseConstructor.cs",
+      "sha256": "863810dbeb3c7ebc8304879c0d2484f48997a1592be2fe7cf8d7e2db97edce94"
+    },
+    {
+      "path": "src/task_items/LoadedObjectRegistration.cs",
+      "sha256": "f73afc1a1d09974f66a1b06101ced3bffa5f6d47d9960c25709aea19441c3c1a"
+    },
+    {
+      "path": "src/task_items/RegistrationIndex.cs",
+      "sha256": "66b32306c7945f3f4678a48f3f54ce6dcd0889571f9f13bb4c151b0ab7087bed"
+    },
+    {
+      "path": "src/task_items/ClassFactoryDispatch.cs",
+      "sha256": "9da196b70ecc9fc1737e466d3dd952eeac26ccdd635ab8a629b53823cee402ac"
+    },
+    {
+      "path": "src/task_items/ObjectIdAllocator.cs",
+      "sha256": "0394ec36898f8d9b813e7ab1929c3eab911e0e3c1bde1f5fb6752c37c3615308"
+    },
+    {
+      "path": "src/task_items/build_items.ps1",
+      "sha256": "f831689ff3686988e261be992e02d6e12dd9f1c8eea12bc7628abd6dbd4e3ca7"
+    },
+    {
+      "path": "tools/static_analysis/rea_native_registration.mjs",
+      "sha256": "0fd78a234ec49c8853015f9b77e6b807bfaad1a1363c95421f5d5080147e9783"
+    },
+    {
+      "path": "tools/static_analysis/rea-record-load-dependencies-plan.json",
+      "sha256": "73337fb202fb932af8312ab799f3aa4403da91f4ab377c5b5cf124bcbe4578f9"
+    },
+    {
+      "path": "tools/static_analysis/rea-record-cache-compare-plan.json",
+      "sha256": "7c8ab947e489c860d9be56f93f1666409f8cc1f272ae7aae8c2a76e4e2535cd3"
+    },
+    {
+      "path": ".tooling/record-load-build/GrimDynasty.TaskItems.dll",
+      "sha256": "6d3d3e0277ab30911027eeaa0b702d7ef3e88bee25e536138dbd043bf4de1bc9"
+    },
+    {
+      "path": ".tooling/record-load-build/RecordLoadFileTests.exe",
+      "sha256": "05fa152ba4ab66069b849fde3761e0abc209e48405080259c8241a6358b7468d"
+    },
+    {
+      "path": ".tooling/record-load-build/ObjectLifecycleCombinedTests.exe",
+      "sha256": "ae5dc331de43600c61234c69b857f9270994017dc5053673b9b31461d97e913e"
+    },
+    {
+      "path": ".tooling/record-load-build/ObjectIdTests.exe",
+      "sha256": "7fd965aa8b399ad9ca2e4797b07f828205f05e0f10e98b382efae49951217603"
+    }
+  ],
+  "scope": "Complete stable supplied cache snapshots, valid byte-string storage, exclusive own gate, normal successful native copy/allocation/release and memcmp contracts; cache-hit result only",
+  "locale": "KnownC must be explicit for every byte reaching tolower; native current locale is not inferred. Empty/all-backslash strings need no locale.",
+  "high_bit_normalization": "Unsupported for all bytes >=128, including FF; this is conservative coverage, not a native invalid-input claim",
+  "maximum_name_bytes": 65536,
+  "maximum_cache_entries": 4096,
+  "maximum_cache_buckets": 4096,
+  "maximum_total_cache_key_bytes": 1048576,
+  "snapshot_mask_contract": "mask = BucketCount-1, correct contiguous bucket endpoints",
+  "lookup_hash": "unsigned full-length FNV1a64 modulo 2^64",
+  "stored_keys_renormalized": false,
+  "embedded_nul_preserved": true,
+  "known_null_table_is_cache_hit": true,
+  "hit_counter_uint32_wrap": true,
+  "cache_miss_implemented": false,
+  "native_table_constructors_or_parser_implemented": false,
+  "table_class_getter_implemented": false,
+  "concrete_object_read_implemented": false,
+  "native_class_info_population_implemented": false,
+  "full_allocator_lifecycle_integrated": false,
+  "combined_test_scope": "Explicit own factory callback -> recovered base model -> SetObjectName twice -> pending erase -> both indices grow 8 to 64 -> own callback outside gate; second scenario Unsupported after full prefix when Read is absent",
+  "cache_registration_test_scope": "Known cache hit table identity feeds LoadedObjectRegistration; missing Read remains Unsupported after complete registration",
+  "native_crt_body_or_abi_claimed": false,
+  "own_cleanup": "Monitor finally on Unsupported/managed exceptions is own policy, not a recovered native exception handler or rollback",
+  "original_binary_hashes_unchanged": 13,
+  "project_configuration_sha256": "7aeed98559ed397816f78ae53356cf65477c6479aba1ece58b5dcb50b83c09df",
+  "rewards_cs_changed": false,
+  "ucrt_whitelist_changed": false,
+  "full_offline_acceptance": "Not rerun; historical 894/16 acceptance and unchanged UCRT fingerprint gate remain distinct",
+  "approvals": "Both fixed Rea batches allowed; no denied, pending or uncertain actions",
+  "persistent_mcp_connection_claimed": false,
+  "target_executed": false,
+  "saves_or_steam_cloud_accessed": false,
+  "global_configuration_changed": false,
+  "host_reloaded_or_restarted": false,
+  "additional_software_installed": false,
+  "commit_or_push": false
+}

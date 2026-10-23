@@ -1,0 +1,81 @@
+{
+  "schema": "grim-dynasty-saved-mainmenu-level-chunks-v1",
+  "status": "bounded-saved-member-observation",
+  "source": {
+    "file": "docs/reverse-client/r1-mainmenu-complete-member/mainmenu.map.bin",
+    "bytes": 1091357,
+    "sha256Before": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+    "sha256After": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+    "archiveAdler32PreviouslyVerified": 760486028,
+    "archiveReadThisOperation": false,
+    "memberDecodedThisOperation": false
+  },
+  "evidence": [
+    {
+      "file": "docs/reverse-client/r1-levels-first-blocks/mainmenu-metadata-observation.json",
+      "sha256": "cc6e981d4abd97b0d21872a364dc5dc1aea5aa452883ba4aaadb314b0f790d22",
+      "relation": "Observed Region record tail DWORDs at member1062/1066 are263292/828065; original observation was intentionally unmapped"
+    },
+    {
+      "file": "docs/reverse-client/r1-map-region-and-tile-product/05-MapRegionTileProduct-0x180191980-procedure_assembly.json",
+      "sha256": "9a07b4fb5b76ab6b7d4c2b6450638727449bd124b81c97bc5797d39ee7c16be3",
+      "relation": "Independent caller/constructor review:223C13/223C1E tail words become args8/9;191A82 writes Region98 and191A90 writes Region9C"
+    },
+    {
+      "file": "docs/reverse-client/r1-level-stream-and-navjob/08-LevelStreamNavJob-0x180195af0-procedure_assembly.json",
+      "sha256": "e75891f8e6a615f9e64dcb987806dfe7e588c862c90f31dc24453a746ce92f8f",
+      "relation": "195B4E/195B55 pass Region9C/98 directly as length/offset to stream+10 at195B5B, without metadata-base addition"
+    },
+    {
+      "file": "docs/reverse-client/r1-level-load-and-navjob-candidates/05-LevelLoadNavJobCandidate-0x18012c770-procedure_assembly.json",
+      "sha256": "edbe0f2ba35b41bfb9c412aae4ec3e61a45ef7c29ec74b569801c4b6797a07f5",
+      "relation": "LVL signed-byte version gates12C80D/12C889; >=15 copies six raw DWORDs; chunk ID/size12C8C0/12C8CB;1C data-copy branch12C928..12C963"
+    }
+  ],
+  "level": {
+    "memberOffset": 263292,
+    "bytes": 828065,
+    "memberEndExclusive": 1091357,
+    "sha256": "0ff450f3d09e2ec606b00906330d7ae6c31bfa3911410daf521520a22bc556ca",
+    "magic": "LVL",
+    "versionSignedByte": 15,
+    "headerBytes": 28,
+    "first28BytesHex": "4c564c0f000080429e8d1b43c9c37c42000080427141274306899f42",
+    "extendedHeaderRawDwords": [1115684864,1125879198,1115472841,1115684864,1126646129,1117751558]
+  },
+  "framing": {
+    "method": "Begin at proven Region extent, consume version15 header, then each declared ID:u32LE/size:i32LE header and exact payload length; no magic search",
+    "ownBounds": "Require complete8-byte headers, nonnegative size within remaining Level bytes and at most256 chunks; rejection is own safety adaptation, not native malformed-input behavior",
+    "chunkCount": 6,
+    "declaredEndLevelOffset": 828065,
+    "allDeclaredPayloadsWithinLevel": true,
+    "declaredChunksConsumeLevelExactly": true,
+    "nativeChildLoaderConsumptionVerified": false
+  },
+  "chunks": [
+    {"id":5,"headerLevelOffset":28,"headerMemberOffset":263320,"payloadLevelOffset":36,"payloadMemberOffset":263328,"payloadBytes":8216,"endLevelOffset":8252},
+    {"id":20,"headerLevelOffset":8252,"headerMemberOffset":271544,"payloadLevelOffset":8260,"payloadMemberOffset":271552,"payloadBytes":1700,"endLevelOffset":9960},
+    {"id":6,"headerLevelOffset":9960,"headerMemberOffset":273252,"payloadLevelOffset":9968,"payloadMemberOffset":273260,"payloadBytes":149073,"endLevelOffset":159041},
+    {"id":9,"headerLevelOffset":159041,"headerMemberOffset":422333,"payloadLevelOffset":159049,"payloadMemberOffset":422341,"payloadBytes":24,"endLevelOffset":159073},
+    {"id":28,"headerLevelOffset":159073,"headerMemberOffset":422365,"payloadLevelOffset":159081,"payloadMemberOffset":422373,"payloadBytes":442996,"endLevelOffset":602077},
+    {"id":23,"headerLevelOffset":602077,"headerMemberOffset":865369,"payloadLevelOffset":602085,"payloadMemberOffset":865377,"payloadBytes":225980,"endLevelOffset":828065}
+  ],
+  "pathingChunkObservations": [
+    {
+      "id": 28,
+      "payloadMemberOffset": 422373,
+      "payloadLevelOffset": 159081,
+      "bytes": 442996,
+      "sha256": "0a0a38176e69847c02d65e90805da18c8b849fe1806e16bfc03bcebabc07ccee",
+      "first16BytesHex": "50544844010000000000000000000000",
+      "headerObservation": "Bytes spell PTHD followed by little-endian DWORD1; nested PTHD blocks have not been parsed in this operation",
+      "binaryExtracted": false
+    }
+  ],
+  "limitations": [
+    "Declared chunk framing and exact exhaustion do not establish Terrain/Water/SectorLayers child-loader consumption or native Level.Load acceptance.",
+    "No gameplay, mesh construction, tile publication, input, navigation query or scene rendering was executed.",
+    "Only the saved complete mainmenu member was read. No original archive or executable, saves, backend, compiler or old test suite was used.",
+    "No new Level/PTHD binary copy was saved; the exact region and payload remain identified by source-relative extents and hashes."
+  ]
+}

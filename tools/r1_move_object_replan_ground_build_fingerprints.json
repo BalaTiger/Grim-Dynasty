@@ -1,0 +1,569 @@
+{
+  "schema": "grim-dynasty.fixed-move-object-replan-ground-build.v1",
+  "compiles": 2,
+  "execution_state": "prepared-not-executed",
+  "sources": [
+    {
+      "path": "src/reverse_client_actions/NavigationCrowdTickViews.cs",
+      "bytes": 6842,
+      "sha256": "cd0b75140fdd72bcb6dd57ec6bb228146755b73be79082a4c6d40bb01863342c"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationCrowdTickTailContracts.cs",
+      "bytes": 11605,
+      "sha256": "d17447f473a6224972c1294c588869de33f6b6bc530b226181801996cfad0a65"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMovedReachedTailContracts.cs",
+      "bytes": 1662,
+      "sha256": "1f4a191363df8d29cfd1edcd9e30855ba7379092e5a981b8316b321189378907"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationCrowdTickPrefixContracts.cs",
+      "bytes": 18740,
+      "sha256": "f39fe2cb29bc87a8d8ba9edc6fc7822cb4d50d00d58e8d29be06a0f499d05f6b"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationCrowdSynchronousReplanContracts.cs",
+      "bytes": 3104,
+      "sha256": "2fe0386dcdd38e3df17d0fc60bd406c365488cc675ef5ec0c4673b8d6531a588"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationMoveObjectReplanGroundTests.cs",
+      "bytes": 24513,
+      "sha256": "f93c86fd1fba2c3acce362e6cb54f7483cd88c8d120fc97701fb2fa67b7c80ed"
+    }
+  ],
+  "assemblies": [
+    {
+      "name": "GameMovedIntegrationTests.exe",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GameMovedIntegrationTests.exe",
+      "sha256": "69c5d29b116453a20b6e340c8e4f3728f76447188afa2ed6a37f8f261be7a290",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.Actions.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.Actions.dll",
+      "sha256": "3ea34074db9d5a67d7dffb702eb053b703dc3b754d0db442aeadd71247e15c58",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.ActorBoundingBox.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.ActorBoundingBox.dll",
+      "sha256": "0d95e34f3a1111bd639f3f4fe915aec0ae2d07779198ac4a6559e5edb1b83d1f",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.EntityMovement.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.EntityMovement.dll",
+      "sha256": "85d848625fce7d5fc580feb04839898bd580a96f0c48308c3aca5b8ab142f84d",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.EntitySpatialTree.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.EntitySpatialTree.dll",
+      "sha256": "c0693fa22b00a00220283bfd78b76b1768864936522589588e8a060f152f82ed",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GameMoved.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.GameMoved.dll",
+      "sha256": "eb47edce8ecb3d495ea1263eefee90e19c8d17bf828213e34359af560f4e59ec",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GameMovementCallbacks.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.GameMovementCallbacks.dll",
+      "sha256": "21aa8443153c7a06575f25c32b4f7ef53d73b8d20c0cdc8ccda11c532ee0f5ed",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GameMovementMath.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.GameMovementMath.dll",
+      "sha256": "5536adaf8749d8e703db53b92c7b63d7c0caa1578ffed0b917c03a5bd625ad4b",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GameRotationPublication.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.GameRotationPublication.dll",
+      "sha256": "52133b2a65f04d1bb21599337cff013c9a46d57bc58bafb9a55d920beccdfd66",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundBlockIntersection.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.GroundBlockIntersection.dll",
+      "sha256": "67c72c5b9fbeffa329a6e4dc2609c8b45ba0656b49d12fed758e5c397e1a70d2",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundGeometry.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.GroundGeometry.dll",
+      "sha256": "b9d70554dddcdc5936731647ec4caaa5b86fc0660f329ab3d044b9b956b7416b",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundMaterialCandidates.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.GroundMaterialCandidates.dll",
+      "sha256": "57363683c84b1cc3d1fae94ee3e6ed7ad24190f6cc3ffc8e83c99454868724fe",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundSpatialTree.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.GroundSpatialTree.dll",
+      "sha256": "06e457c22322efc89111a42f822e01c11929a2c8a2918c7c7b2b945efdfd316d",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundTriangleIntersection.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.GroundTriangleIntersection.dll",
+      "sha256": "ab1260f81b132b5b7db7bdd0dd5b721e9e100fc7d665269c6b562b9d0c551401",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundWater.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.GroundWater.dll",
+      "sha256": "da81c4a1769dc470061293f23d830c817425b476d71b13ebcb4e6b92bb165cbc",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.MoveManager.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.MoveManager.dll",
+      "sha256": "7563b6e32745e79ddc8308d2ea48ca7336050271d8dc8c9ce1e75346a52232da",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationContours.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationContours.dll",
+      "sha256": "c63bacce93c83700d3113ec36ade462a67b48b1030f2e293a39322e149cad263",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationCorridor.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationCorridor.dll",
+      "sha256": "1afd6850ae3f2fc1c0f13c6562ce6b5749a3ea98d3b2e5792d67234d4c779e33",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdAdapter.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationCrowdAdapter.dll",
+      "sha256": "04215144406cd87357b98bd32911f96281453c4010e4f2f61e1c6997b065b73e",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdAvoidance.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationCrowdAvoidance.dll",
+      "sha256": "20e03f03bbf7671aa4abff835b0346d378ed0f7fcfaa085481f417c8da44206e",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdPath.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationCrowdPath.dll",
+      "sha256": "afcb8e815f9c15d406f9512087b097ab822cf7eaea23a767124d5e173837a0b4",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdProximity.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationCrowdProximity.dll",
+      "sha256": "e7a7621b27543a33e296901184874ff393173efb3ca82bf74e5d1d2fc73f541a",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdState.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationCrowdState.dll",
+      "sha256": "064f74a1649af7301276fc510fd1793ef5250660b25ba39a8ee69b5258d50198",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdTickProduction.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationCrowdTickProduction.dll",
+      "sha256": "1210754e8956080f813413dfa1db79a53f3145f28cf3e1a0093272744498476a",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationLayers.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationLayers.dll",
+      "sha256": "80137bab7ceb54a3688655501b2d5c66b59de05d97a9a65edd052e8953e254ee",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationMeshTiles.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationMeshTiles.dll",
+      "sha256": "0b8604244b7681e6f0f5e13a63c93f2f815069bbe74109e974938c94d9ee4d57",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationNearest.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationNearest.dll",
+      "sha256": "75f303c482679df6ba2c8f01aad7759ba9ed322ad6386100525b690cd9b9dfd0",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationPolygons.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationPolygons.dll",
+      "sha256": "6e33b858bc8073d59beacd7cc0a94d5ad15c24aa6f8f3ac966f2966175fa6856",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationTileData.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationTileData.dll",
+      "sha256": "b0459f94ca130467c2ec7f8c0379700250926c5a8eb8a3e6f617910a3bb02cd9",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.PathingData.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.PathingData.dll",
+      "sha256": "4f105f145ccdfb4b17b33b1167f8b700f06f38a4a07f8dc36cdf50f3d12aac4f",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.SystemUcrtRotationMath.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.SystemUcrtRotationMath.dll",
+      "sha256": "2e82ebf9208f7bafe6a53bb469ba3cfaff9ac236b7faf124a58c759a8d38a85a",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.TerrainMaterialCollision.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.TerrainMaterialCollision.dll",
+      "sha256": "7b0a3e8bf53586831ba80dc2301857af74a3869e3cb0c305b7835dafbc0d3b57",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.WorldCoordinates.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.WorldCoordinates.dll",
+      "sha256": "6365ad6a051d6ffbb4009824d98fa899bec89f5933dea383a9a3d98f193e71c7",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.WorldFloor.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.WorldFloor.dll",
+      "sha256": "4532394b7543825752d88c673509f37cc403e4c74cbb5e9e6185200617679cad",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.WorldPositionInitialization.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.WorldPositionInitialization.dll",
+      "sha256": "1188bb599cf306775e6a5d3c56a55345e8327333f9ede838ec3a434292cbf931",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.WorldPublicationGates.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.WorldPublicationGates.dll",
+      "sha256": "947e168347dc27653a3aead5c254d1b15bda8f4a609d677ab7ed6645b06d0f93",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.WorldPublicationPrerequisites.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.WorldPublicationPrerequisites.dll",
+      "sha256": "1ef75d179844014d4bd5c12974466eda89a5d3e1b34c3bedb47e37510f2eeb3e",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.WorldSameRegionPublication.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.WorldSameRegionPublication.dll",
+      "sha256": "ea1ed7cfac9b45e8fdbd01007e846b1ac791603ad15e19309407292aec0e4549",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "MainmenuCrowdRequestProducer.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/MainmenuCrowdRequestProducer.dll",
+      "sha256": "087e7c1b5aadc0d63efe19856b6790f981239c4f90456d32037dbc2ec0715e9c",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "MainmenuTilePipeline.exe",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/MainmenuTilePipeline.exe",
+      "sha256": "4d006bb08378360bdcccca167bc8d841b7f2ddbef48b55325ab9973658d173e7",
+      "result": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdRaycast.dll",
+      "path": ".tooling/r1-crowd-raycast-validation/GrimDynasty.NavigationCrowdRaycast.dll",
+      "sha256": "aa18259a78edf67a73c9609cdb04b34c3af9d7c93466b24f55b0a244e0d66c31",
+      "result": ".tooling/r1-crowd-raycast-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationMoveObject.dll",
+      "path": ".tooling/r1-move-object-validation/GrimDynasty.NavigationMoveObject.dll",
+      "sha256": "5417f770b3e339602893c68b3c59618ebfb43871161bb3d677d2eb5a114800ef",
+      "result": ".tooling/r1-move-object-validation/result.json"
+    },
+    {
+      "name": "NavigationMoveObjectTests.exe",
+      "path": ".tooling/r1-move-object-validation/NavigationMoveObjectTests.exe",
+      "sha256": "626da1c95c713ab9300be1d3e2c47a49f088731e5a30a42fbfcc169a1cd2f479",
+      "result": ".tooling/r1-move-object-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationSearchWrapper.dll",
+      "path": ".tooling/r1-navigation-search-wrapper-validation/GrimDynasty.NavigationSearchWrapper.dll",
+      "sha256": "23d355e4f4a8c7fa7f66838838af9c6772c0a172ce6fb59fe8f57f23bd8df28c",
+      "result": ".tooling/r1-navigation-search-wrapper-validation/result.json"
+    },
+    {
+      "name": "NavigationSearchWrapperTests.exe",
+      "path": ".tooling/r1-navigation-search-wrapper-validation/NavigationSearchWrapperTests.exe",
+      "sha256": "d7f1c56ee534db07adaca8085654412a68146809b04a9725d15d7c9075fe8f3c",
+      "result": ".tooling/r1-navigation-search-wrapper-validation/result.json"
+    },
+    {
+      "name": "NavigationCrowdReadyTickTests.exe",
+      "path": ".tooling/r1-crowd-ready-tick-validation/NavigationCrowdReadyTickTests.exe",
+      "sha256": "9b1c3652164feef9d076342f9c98bac03534b95b588ecbff6f2664a36edb5ec2",
+      "result": ".tooling/r1-crowd-ready-tick-validation/result.json"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-worldvec3-constructor-boundary/metadata.json",
+      "bytes": 11304,
+      "sha256": "030c5dfda0c05127a67e6fb4dd1b77996ff6248f58b0f1a33e3a8f592c467dad"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-worldvec3-constructor/228ab0-candidate.bin",
+      "bytes": 48,
+      "sha256": "c21e5be4a0e6a717e2ce4fe8986c46810e49e140f0d6c416fe93adb4d95b4a7d"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-worldvec3-constructor/228ab0-dumpbin.txt",
+      "bytes": 1228,
+      "sha256": "cffd222dc90e8c18fb53c6e4abb355ec0a5b93f7808116408ea80e5def355abe"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-worldvec3-constructor/inspection.json",
+      "bytes": 2342,
+      "sha256": "f9bd0aa503ff1c7d5f3388662cab6eccb1a5267419db4b51bbc4cd66f5851b2f"
+    },
+    {
+      "path": "docs/reverse-client/r1-crowd-motion-bindings/inspection.json",
+      "bytes": 7390,
+      "sha256": "cefbf931ba37144e6400be0d7a0c3c894f9a82828c19723d78be440a729334d3"
+    },
+    {
+      "path": "docs/reverse-client/r1-crowd-motion-helpers/14-CrowdMotionHelper-0x18025bf40-procedure_assembly.json",
+      "bytes": 19696,
+      "sha256": "ddae8e8c0552cdcddad26ca8a3ddb1ae77890300ecee9bc3531b53389205e7eb"
+    },
+    {
+      "path": "docs/reverse-client/r1-crowd-movement-direct/07-CrowdMovementDirect-0x18025c440-procedure_pseudo_code.json",
+      "bytes": 207826,
+      "sha256": "e3462a6653d56d799d695af1bb2f1696823cef8a4729e1ac4c51010b3fb5366e"
+    },
+    {
+      "path": "docs/reverse-client/r1-crowd-movement-direct/08-CrowdMovementDirect-0x18025c440-procedure_assembly.json",
+      "bytes": 279180,
+      "sha256": "62da8b3465041af3522b3e36a72e4680485d0c9b2a832ab8b3207ce27bf5b8ae"
+    },
+    {
+      "path": "docs/reverse-client/r1-crowd-tick-operands/inspection.json",
+      "bytes": 15113,
+      "sha256": "a61c64361ffb10912b26e103456f12fc1b26b7434f9d1c17b5dac9c2ee112529"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-callback-dependencies/inspection.json",
+      "bytes": 41045,
+      "sha256": "c0f0348d8f0712b35efd22d7ed36282065bfc31c78ee18b0f1d870e036a4afab"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-movement-interface/13-GameMovementInterface-0x180066ee0-procedure_pseudo_code.json",
+      "bytes": 22864,
+      "sha256": "d70edbb33b9436e87d8e84e55b081ea899c458715a3d5fcb1c03f7fe007ab42b"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-movement-interface/14-GameMovementInterface-0x180066ee0-procedure_assembly.json",
+      "bytes": 31883,
+      "sha256": "78d9bfaa180ff24e5d0cb8dfa8e77b25298bf92bfca1c4d5c8962a8dd1b3ccce"
+    },
+    {
+      "path": "docs/reverse-client/r1-ground-face-and-unlink/08-GroundFaceUnlink-0x1801cf420-procedure_assembly.json",
+      "bytes": 51655,
+      "sha256": "e50bc2eb66a19510e0d48279ab26e9165fe9d51e249e490b1e7ee9315cbb3bd6"
+    },
+    {
+      "path": "docs/reverse-client/r1-mainmenu-complete-member/mainmenu.map.bin",
+      "bytes": 1091357,
+      "sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289"
+    },
+    {
+      "path": "docs/reverse-client/r1-player-movement-interface-slots/inspection.json",
+      "bytes": 8563,
+      "sha256": "5045ca6aa8708930c026e116289a673d279010e50c357d80437ee7d3775c8696"
+    },
+    {
+      "path": "docs/reverse-client/r1-skill-moved-direct/04-SkillMovedDirect-0x180533410-procedure_pseudo_code.json",
+      "bytes": 14303,
+      "sha256": "0d38c7d6ee6edf732c1dd1afa09226d9d18a74794cf2bca1c57089fbfeca29e9"
+    },
+    {
+      "path": "docs/reverse-client/r1-skill-moved-direct/05-SkillMovedDirect-0x180533410-procedure_assembly.json",
+      "bytes": 15206,
+      "sha256": "c53ecc5a268e16f67805db5710f6e615b21ccae5b8d3a05ad6ef814c14e05da0"
+    },
+    {
+      "path": "docs/reverse-client/r1-skill-moved-direct/06-SkillMovedDirect-0x180533410-procedure_callees.json",
+      "bytes": 11179,
+      "sha256": "80ec620df278a4be61f7fc14874c3346799a22c37f65b0cb6094d8de81d4bb03"
+    },
+    {
+      "path": "docs/reverse-client/r1-system-ucrt-crowd-profile.json",
+      "bytes": 4648,
+      "sha256": "535be8051b9f605b6a210c1ff857adb68e9a720c6a2bc60aa85299cee1104b15"
+    },
+    {
+      "path": "docs/reverse-client/r1-system-ucrt-rotation-profile.json",
+      "bytes": 5556,
+      "sha256": "def13e5755f5969dd042a4e058a73a38b77c5e5fa69574a4e246a32bb81d41e7"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-0.json",
+      "bytes": 1306,
+      "sha256": "99174ba1196eae2c109ad46c18fdcbf2e368923d49117739d0496829d3389d93"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-1.json",
+      "bytes": 1492,
+      "sha256": "d3d75935c98d5909f95ce0ca5c330e110dd42f5a4251ec881706c95c00edd4bf"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-2.json",
+      "bytes": 1260,
+      "sha256": "267ec1e9b06cd9c54812eeaee3e0a8a7b7ff7cc9223f42823de48c2a43213895"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-3.json",
+      "bytes": 1494,
+      "sha256": "6512c54802bcd3b6ad1bb83fe86b8b35a5f0e98397245a8347501cece66c7b4b"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-4.json",
+      "bytes": 1423,
+      "sha256": "e829033a0fb91dfb904973a53809b1eda34f41c5369a9b22726637dc4cde98ee"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-surface-strings/inspection.json",
+      "bytes": 5962,
+      "sha256": "56db24887edb67e188ba5f034d3734c24042e973c70be4c3e833896942b1a75f"
+    },
+    {
+      "path": "tools/r1_game_moved_saved_dependency_repair_fingerprints.json",
+      "bytes": 44042,
+      "sha256": "3521cda0f1a37677cb94df06ca5f7d58c24dee8ba9e3f49aead3c94000757d26"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationCrowdTickPrefixTests.cs",
+      "bytes": 19826,
+      "sha256": "83f4da71b115b3f6f30cada73483a046da2a6fc46766de046d5253136f827a94"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationMoveObjectTests.cs",
+      "bytes": 16259,
+      "sha256": "141c4c374cc9908d9e3ab418048e2a62f2ce64ceffe4d738f73a85ecb4835571"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationSearchWrapperTests.cs",
+      "bytes": 21865,
+      "sha256": "f382f369a54a2062e1e68257e2923f6dc6f36c18aa142218e1137a62f6ceb6ef"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMovedIntegrationTests.cs",
+      "bytes": 32465,
+      "sha256": "1ceed4afe7671f134a721a459ddc212b5dc0295c30a65270eeff0ef1016bcd15"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationCrowdStateContracts.cs",
+      "bytes": 26800,
+      "sha256": "5777a5d208a95ee9ae72d352ac871a70bb72925382ffa2cccc0c945245506154"
+    },
+    {
+      "path": "tools/r1_move_object_build_fingerprints.json",
+      "bytes": 8423,
+      "sha256": "19a1996afe550f877b38b663d53fd4034664ed33a4b13b39a04700f7ba394928"
+    },
+    {
+      "path": "tools/r1_navigation_search_wrapper_build_fingerprints.json",
+      "bytes": 13761,
+      "sha256": "dc05130b23aa836ba4ff908fbe04d9cfc08a7f99221d5f307533058e6651c614"
+    },
+    {
+      "path": "tools/r1_crowd_ready_tick_build_fingerprints.json",
+      "bytes": 24234,
+      "sha256": "3eec41b28b215c98f0faa3ba8a981d95d42f28fad2156b4e539f451cbc1fa60c"
+    }
+  ],
+  "prerequisites": [
+    {
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json",
+      "bytes": 78335,
+      "sha256": "1d785208662928bb59fedbee1d660b4e011950bb45221ea63a80d7c75b7b13e9",
+      "status": "passed-new-real-crowd-game-moved-after-managed-dependency-repair"
+    },
+    {
+      "path": ".tooling/r1-crowd-raycast-validation/result.json",
+      "bytes": 11975,
+      "sha256": "d95b7c020e06c48016411b7a88fb6e0709614d5e659ab71604c2b53ada90fce9",
+      "status": "passed-new-isolated-crowd-raycast-and-nearest-adapter-only"
+    },
+    {
+      "path": ".tooling/r1-move-object-validation/result.json",
+      "bytes": 25897,
+      "sha256": "1788c04715e0a5dcd4c8c53370bf7e104264e8efbf829d7112945ef6027d0e3d",
+      "status": "passed-new-move-object-request-and-shared-state-only"
+    },
+    {
+      "path": ".tooling/r1-navigation-search-wrapper-validation/result.json",
+      "bytes": 41988,
+      "sha256": "5a3d0ebe1bcf36ef442363f1efef3778265af69204d4f57f2938e127a2c7cf6a",
+      "status": "passed-new-navigation-search-wrapper-only"
+    },
+    {
+      "path": ".tooling/r1-crowd-ready-tick-validation/result.json",
+      "bytes": 77347,
+      "sha256": "c66bd4047d3aa7c33e34f65d9792b67af2e4ce5231873f06823ad5d362b3efef",
+      "status": "passed-new-bounded-ready-member-prefix-moved-tail-two-frames-only"
+    }
+  ],
+  "suites": [
+    {
+      "name": "new-sync-replan-components",
+      "arguments": [
+        "--components"
+      ],
+      "status": "passed-move-object-replan-ground--components",
+      "scenarios": 12,
+      "kind": "new",
+      "saved": false,
+      "uses_ucrt": false
+    },
+    {
+      "name": "changed-replan-gate-regression",
+      "arguments": [
+        "--gate-regression"
+      ],
+      "status": "passed-move-object-replan-ground--gate-regression",
+      "scenarios": 1,
+      "kind": "targeted-regression-of-one-prior-case",
+      "saved": false,
+      "uses_ucrt": true
+    },
+    {
+      "name": "new-move-sync-saved-ground-two-frames",
+      "arguments": [
+        "--saved-resource"
+      ],
+      "status": "passed-move-object-replan-ground--saved-resource",
+      "scenarios": 1,
+      "kind": "new",
+      "saved": true,
+      "uses_ucrt": true
+    }
+  ],
+  "assembly_boundary": "Replace only same-name GrimDynasty.NavigationCrowdReadyTick.dll inside fresh output. Recompile its original four sources plus one new continuation; only existing Prefix source changed. Never copy/reference old ReadyTick.dll. Frozen ReadyTickTests.exe fixture methods resolve to the new same-name assembly. Other passed DLLs reused byte-for-byte.",
+  "fixture_policy": "Use only constructors and typed fields of exact pinned MoveObject Fixture, ReadyTick Tiny, GameMoved SavedAssets/Fixture, and SearchWrapper Scene. Do not invoke old test Main/Run methods or old suites. New saved case never writes Target78/State2/NeedReplan1/Work.",
+  "support_boundary": "One original Character481, explicit OWN cold position/filter costs/lock/frame/BSS/registration-sidecar inputs; real MoveObject, synchronous Submit, saved-map search, ReadyTick, Ground, publication and reached tail. Failure slot38, State1/async/native registration/startup/mouse remain Unsupported.",
+  "original_read": false,
+  "original_executed": false,
+  "full_tick": false,
+  "physical_mouse": false,
+  "native_registration": false,
+  "target_prewritten": false,
+  "work_prewritten": false
+}

@@ -1,0 +1,116 @@
+{
+  "schema": "grim-dynasty-saved-level-object-record-execution-plan-v1",
+  "status": "prepared-not-executed",
+  "scope": "Only new format tests and fixed saved mainmenu MAP9/LVL15 chunk5 observation; no native actor execution or factory implementation",
+  "runtime": {
+    "file": "D:/NodeJS/node.exe",
+    "sha256": "63c259c81e5d472b5f11c8d506070130cb04a1ecf84b80377a34ed6ec9048088",
+    "installation_required": false
+  },
+  "sources": [
+    {
+      "file": "tools/static_analysis/parse_r1_mainmenu_level_objects.mjs",
+      "sha256": "7df7c8f4ee816760bd04a76974a153d1b764fa69c8144286a9e988e4797c925e"
+    },
+    {
+      "file": "tools/static_analysis/parse_r1_mainmenu_level_objects.test.mjs",
+      "sha256": "6126c826f86f13c077309bc9ac0aca9ad7f7570efcf773c91237cb22377d1eaf"
+    }
+  ],
+  "evidence": [
+    {
+      "file": "docs/reverse-client/r1-level-object-records-run1/summary.json",
+      "sha256": "ca9ba44521e33be91a4084d5787fb741620dbf2391f403f6cb428bc41d2846a3"
+    },
+    {
+      "file": "docs/reverse-client/r1-level-object-records-run1/04-LevelObjectRecords-0x180132580-procedure_pseudo_code.json",
+      "sha256": "ec0967dbc443de0d0c8823695d2cf15f5f549b3208b0af96bdc3574ed7028f61"
+    },
+    {
+      "file": "docs/reverse-client/r1-level-object-records-run1/05-LevelObjectRecords-0x180132580-procedure_assembly.json",
+      "sha256": "d77ef1437b3cf3c1471fc1b333fc8858b1b0234cfda01e4516eb29ee2512c249"
+    },
+    {
+      "file": "docs/reverse-client/r1-level-object-records-run1/06-LevelObjectRecords-0x180132580-procedure_callees.json",
+      "sha256": "da7620b9e2f5d75451947a8232f3fafbb9f7aa8c5ddf23c42c161a56554aeca1"
+    },
+    {
+      "file": "docs/reverse-client/r1-mainmenu-complete-member/chunk5-string-table-observation.json",
+      "sha256": "fa6b528ca3e2bc89508c9b2b46bd7cad6d41cc73094071de71722af0e6ed47d9"
+    },
+    {
+      "file": "docs/object-lifecycle/offline-archive-map-initial/283a80-instructions.json",
+      "sha256": "819e3c51bd1688bf0778405467bd17f4a5f60f93eb75174871b38a6e5186c8f4"
+    },
+    {
+      "file": "docs/reverse-client/r1-mainmenu-complete-member/level-chunk-observation.json",
+      "sha256": "558a9ac7959da4e64394c4195623e4576b6b081c8978f0869d18744d4d52e6d3"
+    }
+  ],
+  "saved_binary": {
+    "file": "docs/reverse-client/r1-mainmenu-complete-member/mainmenu.map.bin",
+    "sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+    "bytes": 1091357,
+    "semantic_ranges": [
+      [
+        0,
+        8
+      ],
+      [
+        263292,
+        28
+      ],
+      [
+        263320,
+        8
+      ],
+      [
+        263328,
+        8216
+      ]
+    ],
+    "whole_saved_hash_before_and_after_same_handle": true
+  },
+  "calls": [
+    {
+      "kind": "new-pure-format-tests",
+      "executable": "D:/NodeJS/node.exe",
+      "arguments": [
+        "tools/static_analysis/parse_r1_mainmenu_level_objects.test.mjs"
+      ],
+      "expected_scenarios": 4,
+      "expected_assertions": 28,
+      "saved_map_read": false
+    },
+    {
+      "kind": "fixed-saved-map-observation",
+      "executable": "D:/NodeJS/node.exe",
+      "arguments": [
+        "tools/static_analysis/parse_r1_mainmenu_level_objects.mjs",
+        "--expected-script-sha256",
+        "7df7c8f4ee816760bd04a76974a153d1b764fa69c8144286a9e988e4797c925e"
+      ],
+      "output": "docs/reverse-client/r1-mainmenu-level-object-records/inspection.json",
+      "expected_string_count": 58,
+      "expected_string_end_member_exclusive": 266612,
+      "expected_chunk_end_member_exclusive": 271544,
+      "record_count": "Observed when the reviewed reader executes; not assumed in this plan"
+    }
+  ],
+  "review": {
+    "independent": "review_player_lookup",
+    "mode": "read-only source and native assembly comparison",
+    "result": "No blocking or substantive finding; no execution",
+    "additional_parent_change": "Diagnostic proximity accepts preserved negative zero as finite; raw record bits remain unchanged"
+  },
+  "requirements": [
+    "Root must review the frozen sources and run both calls under formal approval; this plan does not execute them.",
+    "Verify runtime/source/evidence hashes first. Output directory must not exist; reader refuses overwrite.",
+    "No original binary or archive read, backend, compiler, DLL load, install, native factory, GUI, old test suite, Ground/Nav change or runner edit.",
+    "Record count is deliberately unasserted; all parsed records retained. Diagnostic nearest8 origins around[63,52.8] do not establish bounds overlap/pathability and do not select a spawn.",
+    "Keep factory17DEA0,class/mode filters,UID application,vslot270,LoadObjectData17E3D0,vslotD8,spatial133A10 and PathableActors registration outside this parser."
+  ],
+  "runner_edited": false,
+  "tests_executed": false,
+  "saved_record_parser_executed": false
+}

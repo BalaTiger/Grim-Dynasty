@@ -1,0 +1,50 @@
+{
+  "schema": "grim-dynasty-fixed-add-object-binding-plan-v1",
+  "status": "prepared-not-executed",
+  "reader": "tools/static_analysis/read_r1_add_object_binding.mjs",
+  "reader_sha256": "64c53357870de408a3805f29be33f548d76c500a8df9c090280edfcb3c64e089",
+  "entry_function": "inspectAddObjectBinding(reviewedScriptSha256)",
+  "template": "tools/static_analysis/read_r1_move_and_floor_bindings.mjs",
+  "template_sha256": "5a910175604cb83ce70951f3f39a681070dbf79d1237e80d306e76c166a1fa75",
+  "scope": "Resolve the one fixed Game AddObject import to its exact hinted Engine export. No behavior inference,code reads,backend,loader or execution.",
+  "inputs": [
+    {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "bytes": 11385856,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "bytes": 4485632,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "fixed_import": {
+    "module": "Engine.dll",
+    "index": 491,
+    "iat_rva": "0x609f58",
+    "lookup_rva": "0xa43a18",
+    "symbol": "?AddObject@NavManager@GAME@@QEAAXPEAVEntity@2@@Z",
+    "inventory": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "inventory_sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+  },
+  "metadata_scope": [
+    "Game OFT continuation488..491 atRVA A43A00,32B; all nonzero,selected last entry must be hint/name RVA. Cached pinned descriptor and0..487 nonzero evidence establish ownership.",
+    "Game IAT609F58,8B; equals selected OFT value. Exact imported hint2B and fixed49B ASCII symbol including NUL.",
+    "Engine export name-pointer4B at the imported hint,exact49B symbol including NUL,name-ordinal2B and EAT4B. Hint mismatch or forwarder stops; no name scan or fallback.",
+    "Target must map to an executable section; target code is not read."
+  ],
+  "metadata_bytes_expected_on_success": 150,
+  "metadata_limit_bytes": 4096,
+  "metadata_operations_expected_on_success": 8,
+  "hashing": "Same open read-only descriptor SHA256 before and after each file,64KiB stream buffers. Hashing reads whole files independently of the150B metadata scope; same descriptor and path stat identity/size/timestamps checked.",
+  "output": "docs/reverse-client/r1-add-object-binding/inspection.json",
+  "guards": [
+    "Explicit function call and exact script SHA required; import alone performs no filesystem I/O.",
+    "Fixed root/source paths,original fingerprints,pinned proof JSON and cached PE metadata.",
+    "Existing output directory refused; wx report; failure evidence retained without claiming a binding.",
+    "Normal-path no-link guards for inputs/ancestors; parent must separately verify Windows Attributes for every involved path because Node cannot identify every reparse tag.",
+    "No original writes,game/Steam/save/cloud access,security changes,Rea/Java or subprocesses."
+  ],
+  "separate_formal_approval_required": true
+}

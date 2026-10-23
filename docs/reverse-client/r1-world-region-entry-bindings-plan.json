@@ -1,0 +1,42 @@
+{
+  "schema": "grim-dynasty-r1-fixed-export-address-plan-v1",
+  "purpose": "Bind only World::Load and Region constructor using exact names and indices saved in the x64 executable's Engine imports. These are metadata anchors for investigating MAP directory to Region+98/+9C provenance, not proof of header layout, field writers or loading behavior. Exclude SetName and all other targets.",
+  "proof": {
+    "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+  },
+  "sources": [
+    {
+      "module": "Engine.dll",
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "bytes": 4485632,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "targets": [
+        {
+          "consumer": "x64/Grim Dawn.exe",
+          "name": "?Load@World@GAME@@QEAA_NPEBD_N1@Z",
+          "import_index": 289
+        },
+        {
+          "consumer": "x64/Grim Dawn.exe",
+          "name": "??0Region@GAME@@QEAA@AEBVABBox@1@@Z",
+          "import_index": 592
+        }
+      ]
+    }
+  ],
+  "limits": {
+    "metadata_bytes_per_module": 16384,
+    "metadata_bytes_total": 16384,
+    "metadata_operations_per_module": 2048,
+    "names_per_module": 64,
+    "name_bytes": 512,
+    "binary_search_steps": 32,
+    "code_bytes": 0,
+    "subprocesses": 0
+  },
+  "output": "docs/reverse-client/r1-world-region-entry-bindings",
+  "automatic_target_expansion": false,
+  "execution_requires_separate_review_and_approval": true
+}
+

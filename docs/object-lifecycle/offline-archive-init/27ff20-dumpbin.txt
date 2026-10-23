@@ -1,0 +1,49 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-cache-node\Engine.readonly.dll
+
+File Type: DLL
+
+  000000018027FF20: 48 89 5C 24 18     mov         qword ptr [rsp+18h],rbx
+  000000018027FF25: 48 89 7C 24 20     mov         qword ptr [rsp+20h],rdi
+  000000018027FF2A: 41 56              push        r14
+  000000018027FF2C: 48 83 EC 20        sub         rsp,20h
+  000000018027FF30: 8B FA              mov         edi,edx
+  000000018027FF32: 4D 8B F0           mov         r14,r8
+  000000018027FF35: 48 8B D9           mov         rbx,rcx
+  000000018027FF38: 85 D2              test        edx,edx
+  000000018027FF3A: 75 13              jne         000000018027FF4F
+  000000018027FF3C: 33 C0              xor         eax,eax
+  000000018027FF3E: 48 8B 5C 24 40     mov         rbx,qword ptr [rsp+40h]
+  000000018027FF43: 48 8B 7C 24 48     mov         rdi,qword ptr [rsp+48h]
+  000000018027FF48: 48 83 C4 20        add         rsp,20h
+  000000018027FF4C: 41 5E              pop         r14
+  000000018027FF4E: C3                 ret
+  000000018027FF4F: 8B 41 28           mov         eax,dword ptr [rcx+28h]
+  000000018027FF52: 85 C0              test        eax,eax
+  000000018027FF54: 75 32              jne         000000018027FF88
+  000000018027FF56: 48 83 79 20 00     cmp         qword ptr [rcx+20h],0
+  000000018027FF5B: 75 2B              jne         000000018027FF88
+  000000018027FF5D: 48 8B CF           mov         rcx,rdi
+  000000018027FF60: E8 9B C9 05 00     call        00000001802DC900
+  000000018027FF65: 48 89 43 20        mov         qword ptr [rbx+20h],rax
+  000000018027FF69: 89 7B 28           mov         dword ptr [rbx+28h],edi
+  000000018027FF6C: 41 C7 06 00 00 00  mov         dword ptr [r14],0
+                    00
+  000000018027FF73: 48 8B 43 20        mov         rax,qword ptr [rbx+20h]
+  000000018027FF77: 48 8B 5C 24 40     mov         rbx,qword ptr [rsp+40h]
+  000000018027FF7C: 48 8B 7C 24 48     mov         rdi,qword ptr [rsp+48h]
+  000000018027FF81: 48 83 C4 20        add         rsp,20h
+  000000018027FF85: 41 5E              pop         r14
+  000000018027FF87: C3                 ret
+  000000018027FF88: 8D 0C 07           lea         ecx,[rdi+rax]
+  000000018027FF8B: 48 89 74 24 38     mov         qword ptr [rsp+38h],rsi
+  000000018027FF90: E8 6B C9 05 00     call        00000001802DC900
+  000000018027FF95: 48 8B F0           mov         rsi,rax
+  000000018027FF98: 48 85 C0           test        rax,rax
+  000000018027FF9B: 74 40              je          000000018027FFDD
+  000000018027FF9D: 48 8B 53 20        mov         rdx,qword ptr [rbx+20h]
+  000000018027FFA1: 48 8B CE           mov         rcx,rsi
+
+  Summary
+
+      301000 .text

@@ -1,0 +1,14 @@
+{
+  "schema": "item-be0-checkpoint-precheck-recovery-v1",
+  "first_tool_chunk": "46a130",
+  "first_exit_code": 1,
+  "first_error": "Unexpected prior source changes",
+  "cause": "PowerShell -join/comparison precedence in the inline checkpoint precheck; the two joined lists were not assigned separately before comparison.",
+  "independent_followup_chunk": "8c112c",
+  "actual_changed_sources": ["docs/object-lifecycle/LIFECYCLE-PROGRESS.md", "src/task_items/ItemConstructorBridge.cs"],
+  "actual_changes_expected": true,
+  "checkpoint_created_by_first_attempt": false,
+  "source_or_build_mutations_by_first_attempt": false,
+  "authorization_denial": false,
+  "resolution": "Use separately assigned actual/expected joined strings for the same expected-two-files check. Preserve all source and build outputs; no test or original read is repeated."
+}

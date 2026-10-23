@@ -1,0 +1,82 @@
+{
+  "sampler_pid": 33496,
+  "budget": {
+    "id": "engine-parser-384m-v1",
+    "heap": "384M",
+    "launchBytes": 4563402752,
+    "stopBytes": 2147483648,
+    "maximumSampleAgeMs": 5000,
+    "staleAfterMs": 15000,
+    "taskAllowanceGiB": 2.25,
+    "systemSpareGiB": 2
+  },
+  "ownership_policy": "windows-job-v1",
+  "expected_heap_observed": false,
+  "job_empty_confirmed": false,
+  "requested_interval_ms": 1000,
+  "samples": 9,
+  "last_sample_utc": "2026-10-22T06:00:55.1803874Z",
+  "tree_private_commit_peak_bytes": 421253120,
+  "tree_working_set_peak_bytes": 404758528,
+  "with_controller_and_sampler_private_peak_bytes": 606633984,
+  "with_controller_and_sampler_working_set_peak_bytes": 617234432,
+  "minimum_available_physical_bytes": 4959277056,
+  "minimum_commit_headroom_bytes": 20336578560,
+  "largest_receipt_gap_ms": 1672,
+  "counter_read_gap_count": 0,
+  "processes": [
+    {
+      "pid": 5748,
+      "parent_pid": 5192,
+      "name": "node.exe",
+      "role": "controller",
+      "creation_utc": "2026-10-22T06:00:35.9105471Z",
+      "private_commit_sample_peak_bytes": 86728704,
+      "lifetime_commit_peak_observed_bytes": 86728704,
+      "working_set_sample_peak_bytes": 87912448,
+      "lifetime_working_set_peak_observed_bytes": 87912448,
+      "maximum_threads_observed": 14,
+      "java_heap_switches": []
+    },
+    {
+      "pid": 48912,
+      "parent_pid": 5748,
+      "name": "node.exe",
+      "role": "owned_backend_tree",
+      "creation_utc": "2026-10-22T06:00:40.2841863Z",
+      "private_commit_sample_peak_bytes": 421253120,
+      "lifetime_commit_peak_observed_bytes": 421269504,
+      "working_set_sample_peak_bytes": 404758528,
+      "lifetime_working_set_peak_observed_bytes": 404758528,
+      "maximum_threads_observed": 19,
+      "java_heap_switches": []
+    },
+    {
+      "pid": 33496,
+      "parent_pid": 5748,
+      "name": "powershell.exe",
+      "role": "sampler",
+      "creation_utc": "2026-10-22T06:00:40.3694184Z",
+      "private_commit_sample_peak_bytes": 98652160,
+      "lifetime_commit_peak_observed_bytes": 113709056,
+      "working_set_sample_peak_bytes": 124563456,
+      "lifetime_working_set_peak_observed_bytes": 136536064,
+      "maximum_threads_observed": 33,
+      "java_heap_switches": []
+    }
+  ],
+  "failures": [
+    "Memory sampler exited abnormally (1)",
+    "Memory sampler closed without confirmed empty Job",
+    "Explicit Job empty state unconfirmed; monitor close requested owned Job cleanup",
+    "Sampler exit code 1"
+  ],
+  "sampler_exit_confirmed": true,
+  "sampler_exit_code": 1,
+  "sampler_output_drained": true,
+  "limitations": [
+    "Sampled tree sums are not continuous peaks; short-lived processes or the last interval before exit may be missed.",
+    "Working sets may contain shared pages. Sum of per-process lifetime peaks is not simultaneous tree usage.",
+    "Controller and PowerShell sampler overhead are recorded separately and also included in total task peaks."
+  ]
+}

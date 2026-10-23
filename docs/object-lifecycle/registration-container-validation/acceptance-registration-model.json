@@ -1,0 +1,108 @@
+{
+  "utc": "2026-10-19T03:12:10.1719675Z",
+  "status": "bounded-registration-model-passed",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "static_batches": [
+    {
+      "directory": "rea-registration-containers",
+      "calls": 20,
+      "analysis_calls": 15,
+      "plan_sha256": "d43e8709234b703bfa55a338a2b579839a029bfeaf179709831f250439f22668",
+      "closed_session_verified": true,
+      "child_exit_code": 0,
+      "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "directory": "rea-container-support",
+      "calls": 17,
+      "analysis_calls": 12,
+      "plan_sha256": "f7a2b4899dba830f96c1db438ff6a1ca635ea616f82c7fec30b6d7bf504ecad0",
+      "closed_session_verified": true,
+      "child_exit_code": 0,
+      "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "directory": "rea-container-fill",
+      "calls": 11,
+      "analysis_calls": 6,
+      "plan_sha256": "34f71ca6bb85ed654e5e76f946d7d78bc3bca36a8b74a6769e251803efbf33fb",
+      "closed_session_verified": true,
+      "child_exit_code": 0,
+      "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "new_assertions": {
+    "RegistrationIndex": 183,
+    "LoadedObjectRegistration": 43,
+    "total": 226
+  },
+  "existing_assertions": {
+    "ClassFactoryDispatch": 40,
+    "ItemCondition": 39,
+    "ItemAuto": 11,
+    "ObjectId": 20,
+    "total": 110
+  },
+  "existing_scenarios": [
+    "ItemQuestDemo"
+  ],
+  "own_build_directory": ".tooling/registration-containers-build",
+  "build_note": "The successful build initially wrote to an in-workspace directory with an accidental leading space. After exit 0 its artifacts were moved to this canonical project-local directory; no tests were rerun for the move.",
+  "source_and_binary_manifest": [
+    {
+      "path": "src/task_items/RegistrationIndex.cs",
+      "sha256": "093ec290fab78ef4e6d29dc9b0cbb4336c82d4a3f24cda936512534998203ad9"
+    },
+    {
+      "path": "src/task_items/RegistrationIndexTests.cs",
+      "sha256": "b190b2eb908798df6bf2614aaf4f3f996dee6c0a14327d5314415d1d3e1f016e"
+    },
+    {
+      "path": "src/task_items/LoadedObjectRegistration.cs",
+      "sha256": "f73afc1a1d09974f66a1b06101ced3bffa5f6d47d9960c25709aea19441c3c1a"
+    },
+    {
+      "path": "src/task_items/LoadedObjectRegistrationTests.cs",
+      "sha256": "eb35ffde71fa3abdd3ae059a64e54f4719408b0be0eb9ce70bbf2a0f1bfe7461"
+    },
+    {
+      "path": "src/task_items/build_items.ps1",
+      "sha256": "a580f1ad31e66b52ad6b4f73ae75cfb14ce2134d35043e5886f2584225f7737a"
+    },
+    {
+      "path": "tools/static_analysis/rea_native_registration.mjs",
+      "sha256": "f54ad28246132be84ec66ef6949fa02c287bed2b327fe3607f13b19581032526"
+    },
+    {
+      "path": ".tooling/registration-containers-build/GrimDynasty.TaskItems.dll",
+      "sha256": "8d1403ef9fad8897200c7e323a5f600024a8ae39e9d37ec49cdb8527dfd5ffa9"
+    },
+    {
+      "path": ".tooling/registration-containers-build/RegistrationIndexTests.exe",
+      "sha256": "6099837ed99c744eccae1827e7a74e7f594ae16ff4d67fb997cda01253ac6bb1"
+    },
+    {
+      "path": ".tooling/registration-containers-build/LoadedObjectRegistrationTests.exe",
+      "sha256": "a93f3b0722e74efa01637e67a46c3e3c7136286e5cfa59963f897feb132a58e2"
+    },
+    {
+      "path": ".tooling/registration-containers-build/ObjectIdTests.exe",
+      "sha256": "0f2f0943054fb7cdc15f26a7f08da01002d5eeed94476971d2bd02606c09b2da"
+    }
+  ],
+  "original_binary_hashes_unchanged": 13,
+  "current_task_native_rea_tools": false,
+  "persistent_mcp_connection_established": false,
+  "full_offline_acceptance": "Not rerun; existing UCRT fingerprint gate remains unresolved and unchanged",
+  "native_factory_complete": false,
+  "native_registration_complete": false,
+  "covered_memory_contract": "Own list/bucket/payload state under normal allocation/release success; not allocator/free internals, native addresses or exceptions",
+  "growth_and_reserve": "Unsupported after preserving the observed prefix; incomplete containers reject later mutations",
+  "approvals": "All requested actions allowed; none denied or pending",
+  "target_executed": false,
+  "saves_or_steam_cloud_accessed": false,
+  "host_reloaded_or_restarted": false,
+  "global_configuration_changed": false,
+  "additional_software_installed": false,
+  "commit_or_push": false
+}

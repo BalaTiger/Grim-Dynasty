@@ -1,0 +1,211 @@
+{
+  "schema": "grim-dynasty.light-work-resource-calibration.v1",
+  "utc": "2026-10-23T07:30:46.125Z",
+  "source": "Parent resumed light code/build assessment; later confirmed OW additional capture completed and Job released.",
+  "coordination": {
+    "gd_depends_on_ue": false,
+    "rea_mutex_is_launcher_hard_guard": true,
+    "rea_minimum_free_gib": 5,
+    "own_csharp_build_has_ue_mutex": false,
+    "blanket_compile_pause_was_parent_scheduling": true,
+    "rea_guards_modified": false,
+    "external_processes_terminated": false,
+    "parent_heavy_hold_active": false
+  },
+  "resource_snapshots": [
+    {
+      "utc": "2026-10-23T07:16:07.3082391Z",
+      "available_physical_bytes": 10985803776,
+      "system_commit_bytes": 35474915328,
+      "system_commit_limit_bytes": 52369920000,
+      "external": [
+        {
+          "pid": 9268,
+          "parent": 39252,
+          "name": "UnrealEditor-Cmd.exe"
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-23T07:25:18.7378060Z",
+      "available_physical_bytes": 15269912576,
+      "system_commit_bytes": 27442192384,
+      "system_commit_limit_bytes": 52369920000,
+      "external": []
+    },
+    {
+      "utc": "2026-10-23T07:27:47.5113573Z",
+      "available_physical_bytes": 15324483584,
+      "system_commit_bytes": 27469492224,
+      "system_commit_limit_bytes": 52369920000,
+      "external": []
+    }
+  ],
+  "decision": {
+    "during_active_ue": "Source preparation and23B read proceeded. Build peak and capture phase unknown; did not assert memory slack guarantees timing isolation.",
+    "after_ue_exit": "Three separate fixed two-csc plus new-tests validations ran sequentially with formal approval.",
+    "compiler_test_peak_memory_measured": false,
+    "compiler_test_ram_estimate": "Small two-source Framework builds, no server or restore; up to1.1MB saved map and fixed4096-node pools. Runtime overhead unmeasured; not a hard peak guarantee.",
+    "future": "Keep Rea hard mutex and5GiB gate. Do not blanket-pause lightweight code or treat UE as a GD dependency. Assess small builds by live load and capture timing."
+  },
+  "fixed_surface_read": {
+    "path": "docs/reverse-client/r1-terrain-surface-strings/inspection.json",
+    "sha256": "56db24887edb67e188ba5f034d3734c24042e973c70be4c3e833896942b1a75f",
+    "data_bytes": 23,
+    "read_operations": 6,
+    "observed": {
+      "Dirt": 2,
+      "Sand": 3,
+      "Snow": 4,
+      "Wood": 6,
+      "Lava": 9,
+      "Mud": 10
+    },
+    "original_hash_preserved": true,
+    "closed": true
+  },
+  "results": {
+    "crowd": {
+      "path": ".tooling/r1-crowd-tick-production-validation/result.json",
+      "sha256": "ed6cd6c871321c0f9e294d096ebbf876f3ce0c6b593310931b24d54dc145074e",
+      "status": "passed-new-conditional-crowd-position-production-and-saved-resource-prefix-only",
+      "started_utc": "2026-10-23T07:26:03.3554179Z",
+      "finished_utc": "2026-10-23T07:26:05.0413794Z",
+      "duration_seconds": 1.686,
+      "tests": [
+        {
+          "name": "new-tick-production-tests",
+          "kind": "new",
+          "scenarios": 22,
+          "assertions": 84
+        },
+        {
+          "name": "real-saved-resource-position-production",
+          "kind": "new",
+          "scenarios": 1,
+          "assertions": 11
+        }
+      ],
+      "old_suites_rerun": 0,
+      "steps": [
+        {
+          "name": "compile-crowd-tick-production",
+          "exit_code": 0
+        },
+        {
+          "name": "compile-new-tick-production-tests",
+          "exit_code": 0
+        },
+        {
+          "name": "new-tick-production-tests",
+          "exit_code": 0
+        },
+        {
+          "name": "real-saved-resource-position-production",
+          "exit_code": 0
+        }
+      ],
+      "gameplay_accepted": false
+    },
+    "floor": {
+      "path": ".tooling/r1-world-floor-validation/result.json",
+      "sha256": "fb8aa582b41b46897f127dab007eb8c9dfd9e88c9c09d6b14ea24cb93a639dbc",
+      "status": "passed-new-world-floor-own-composition-only",
+      "started_utc": "2026-10-23T07:28:05.4950774Z",
+      "finished_utc": "2026-10-23T07:28:06.7214813Z",
+      "duration_seconds": 1.226,
+      "tests": [
+        {
+          "status": "passed",
+          "scenarios": 21,
+          "assertions": 135,
+          "real_saved_ground_unknown_material_stop": true,
+          "explicitly_own_established_true": true,
+          "own_wrapper_true": true,
+          "real_material_binding_exercised": false,
+          "real_map_floor_success": false,
+          "native_load": false,
+          "native_water_constructor_initialize": false,
+          "old_movement_wrapper_wired": false,
+          "gameplay_accepted": false,
+          "saved_member_sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289"
+        }
+      ],
+      "old_suites_rerun": 0,
+      "steps": [
+        {
+          "name": "compile-world-floor",
+          "exit_code": 0
+        },
+        {
+          "name": "compile-world-floor-tests",
+          "exit_code": 0
+        },
+        {
+          "name": "new-world-floor-tests",
+          "exit_code": 0
+        }
+      ],
+      "gameplay_accepted": false
+    },
+    "material": {
+      "path": ".tooling/r1-terrain-material-collision-validation/result.json",
+      "sha256": "2d707ba5dfcbdf2c2f1d6a057d79b32f4c01bf4ddb69872bbe1928ba58c58dc6",
+      "status": "passed-new-terrain-material-collision-only",
+      "started_utc": "2026-10-23T07:28:51.5739291Z",
+      "finished_utc": "2026-10-23T07:28:52.6655408Z",
+      "duration_seconds": 1.092,
+      "tests": [
+        {
+          "status": "passed",
+          "scenarios": 8,
+          "assertions": 384,
+          "real_entries": 225,
+          "real_nodes": 312,
+          "real_hit_fc": 1,
+          "actual_dirt_fc": 2,
+          "same_material_identity": true,
+          "block_tree_same_hit": true,
+          "real_external_miss": true,
+          "real_material_resolved": true,
+          "collision_adapter_only": true,
+          "native_load": false,
+          "world_floor": false,
+          "original_read": false,
+          "backend_started": false,
+          "gameplay_accepted": false,
+          "saved_member_sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+          "operand_report_sha256": "56db24887edb67e188ba5f034d3734c24042e973c70be4c3e833896942b1a75f"
+        }
+      ],
+      "old_suites_rerun": 0,
+      "steps": [
+        {
+          "name": "compile-terrain-material-adapter",
+          "exit_code": 0
+        },
+        {
+          "name": "compile-terrain-material-tests",
+          "exit_code": 0
+        },
+        {
+          "name": "new-terrain-material-tests",
+          "exit_code": 0
+        }
+      ],
+      "gameplay_accepted": false
+    }
+  },
+  "new_scenarios": 52,
+  "new_assertions": 614,
+  "old_suites_rerun": 0,
+  "remaining": [
+    "Real-map Material→WorldFloor integration under explicitOWN actor/neighbor andWater prerequisites is being prepared.",
+    "Game066EE0 direct Engine22C690 andGame533410 bodies pending; Level12B750 may establish actual empty-list state.",
+    "FullCrowd tick, physical mouse target source and rendering not accepted."
+  ],
+  "pending_executions": [],
+  "original_executed": false,
+  "saves_touched": false,
+  "gameplay_accepted": false
+}

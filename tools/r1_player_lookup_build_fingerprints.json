@@ -1,0 +1,106 @@
+{
+  "schema": "grim-dynasty.player-lookup-build.v1",
+  "source_review_ready": true,
+  "static_review": "Independent exact128530 assembly review, five-scenario source/count review and eight-dependency signature review complete. Actual production lookup/class code has no successful external callbacks. No build or test execution occurred during preparation.",
+  "sources": [
+    {
+      "path": "src/reverse_client_actions/PlayerMousePlayerLookupContracts.cs",
+      "sha256": "40df8e21d774702b9d0156e242e1cde96f546633f17db85f27e5c2911ef5582a"
+    },
+    {
+      "path": "src/reverse_client_actions/PlayerMousePlayerLookupTests.cs",
+      "sha256": "55c34fd366994135b5011cafe665f26b3a4ae4fd64cf60df3cd419f9549ebade"
+    }
+  ],
+  "prior_results": [
+    {
+      "path": ".tooling/r1-game-reached-goal-validation/result.json",
+      "sha256": "1e9210d3e0227447232e75f71e28aece2cc03c301dec0bb7f96fd3b1c0256661",
+      "expected_status": "passed-new-reached-goal-conditional-hot-components-only"
+    },
+    {
+      "path": ".tooling/r1-player-mouse-validation/result.json",
+      "sha256": "8f3f6d4265af16f5ed0f0e8553a9b4508f8435a78f78c92e00b9df2034cf015b",
+      "expected_status": "passed-new-player-mouse-entry-contracts-only"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "GrimDynasty.Actions.dll",
+      "path": ".tooling/r1-game-reached-goal-validation/GrimDynasty.Actions.dll",
+      "sha256": "3ea34074db9d5a67d7dffb702eb053b703dc3b754d0db442aeadd71247e15c58",
+      "prior_result": ".tooling/r1-game-reached-goal-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.MoveManager.dll",
+      "path": ".tooling/r1-game-reached-goal-validation/GrimDynasty.MoveManager.dll",
+      "sha256": "7563b6e32745e79ddc8308d2ea48ca7336050271d8dc8c9ce1e75346a52232da",
+      "prior_result": ".tooling/r1-game-reached-goal-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.WorldCoordinates.dll",
+      "path": ".tooling/r1-game-reached-goal-validation/GrimDynasty.WorldCoordinates.dll",
+      "sha256": "6365ad6a051d6ffbb4009824d98fa899bec89f5933dea383a9a3d98f193e71c7",
+      "prior_result": ".tooling/r1-game-reached-goal-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.EntityMovement.dll",
+      "path": ".tooling/r1-game-reached-goal-validation/GrimDynasty.EntityMovement.dll",
+      "sha256": "85d848625fce7d5fc580feb04839898bd580a96f0c48308c3aca5b8ab142f84d",
+      "prior_result": ".tooling/r1-game-reached-goal-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GameMovementCallbacks.dll",
+      "path": ".tooling/r1-game-reached-goal-validation/GrimDynasty.GameMovementCallbacks.dll",
+      "sha256": "21aa8443153c7a06575f25c32b4f7ef53d73b8d20c0cdc8ccda11c532ee0f5ed",
+      "prior_result": ".tooling/r1-game-reached-goal-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GameReachedGoal.dll",
+      "path": ".tooling/r1-game-reached-goal-validation/GrimDynasty.GameReachedGoal.dll",
+      "sha256": "e552a5952f658366b507f9b7d57e096c1aca93808adad109ba3a887e60554971",
+      "prior_result": ".tooling/r1-game-reached-goal-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationNearest.dll",
+      "path": ".tooling/r1-game-reached-goal-validation/GrimDynasty.NavigationNearest.dll",
+      "sha256": "75f303c482679df6ba2c8f01aad7759ba9ed322ad6386100525b690cd9b9dfd0",
+      "prior_result": ".tooling/r1-game-reached-goal-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.PlayerMouse.dll",
+      "path": ".tooling/r1-player-mouse-validation/GrimDynasty.PlayerMouse.dll",
+      "sha256": "fd3ab8c501e3282ca5939b5c356e0ab91319097d6c63b951309cad3b445905c0",
+      "prior_result": ".tooling/r1-player-mouse-validation/result.json"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/reverse-client/r1-game-mouse-state/08-Role-binding-helper-0x180128530-procedure_assembly.json",
+      "sha256": "b4b4d63dd41e85ac7c9e118aee7fec0ae407269a5a39fe697358aa83ea505f7c"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMovementCallbackContracts.cs",
+      "sha256": "5fcd747af2a3ecc44beeee1f783b04e0a0057f01c808eb708c385dcb6b929b7e"
+    },
+    {
+      "path": "docs/reverse-client/r1-player-movement-interface-slots/inspection.json",
+      "sha256": "5045ca6aa8708930c026e116289a673d279010e50c357d80437ee7d3775c8696"
+    }
+  ],
+  "test_expectations": {
+    "scenarios": 5,
+    "assertions": 105,
+    "entrypoint": "PlayerMousePlayerLookupTestProgram",
+    "static_counts_not_execution": true
+  },
+  "excluded": [
+    "All old test entrypoints, including passed mouse13 and reached-goal23 suites",
+    "Recompilation of old production sources",
+    "Native system-library load",
+    "Original program and backend",
+    "CanAct and Options/hot-slot concrete dependencies",
+    "Movement request or physical input integration"
+  ],
+  "output": ".tooling/r1-player-lookup-validation"
+}

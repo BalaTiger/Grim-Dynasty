@@ -1,0 +1,47 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-item-global-float-value-temp\140420-selected.inspect.dll
+
+File Type: DLL
+
+  0000000180140420: 4C 8B 99 B8 00 00  mov         r11,qword ptr [rcx+00000000000000B8h]
+                    00
+  0000000180140427: 4C 8B D1           mov         r10,rcx
+  000000018014042A: 4C 63 CA           movsxd      r9,edx
+  000000018014042D: 4D 85 DB           test        r11,r11
+  0000000180140430: 74 2F              je          0000000180140461
+  0000000180140432: 41 8B 82 A8 00 00  mov         eax,dword ptr [r10+00000000000000A8h]
+                    00
+  0000000180140439: 49 8B D1           mov         rdx,r9
+  000000018014043C: 8B 89 A0 00 00 00  mov         ecx,dword ptr [rcx+00000000000000A0h]
+  0000000180140442: 48 D3 EA           shr         rdx,cl
+  0000000180140445: 8B D2              mov         edx,edx
+  0000000180140447: 48 23 D0           and         rdx,rax
+  000000018014044A: 49 8B 04 D3        mov         rax,qword ptr [r11+rdx*8]
+  000000018014044E: 48 85 C0           test        rax,rax
+  0000000180140451: 74 0E              je          0000000180140461
+  0000000180140453: 4C 39 08           cmp         qword ptr [rax],r9
+  0000000180140456: 74 0D              je          0000000180140465
+  0000000180140458: 48 8B 40 10        mov         rax,qword ptr [rax+10h]
+  000000018014045C: 48 85 C0           test        rax,rax
+  000000018014045F: 75 F2              jne         0000000180140453
+  0000000180140461: 0F 28 C3           movaps      xmm0,xmm3
+  0000000180140464: C3                 ret
+  0000000180140465: 48 85 C0           test        rax,rax
+  0000000180140468: 74 F7              je          0000000180140461
+  000000018014046A: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  000000018014046E: 83 39 01           cmp         dword ptr [rcx],1
+  0000000180140471: 75 EE              jne         0000000180140461
+  0000000180140473: 8B 41 08           mov         eax,dword ptr [rcx+8]
+  0000000180140476: 44 3B C0           cmp         r8d,eax
+  0000000180140479: 72 04              jb          000000018014047F
+  000000018014047B: 44 8D 40 FF        lea         r8d,[rax-1]
+  000000018014047F: 8B 49 04           mov         ecx,dword ptr [rcx+4]
+  0000000180140482: 49 8B 42 48        mov         rax,qword ptr [r10+48h]
+  0000000180140486: 41 03 C8           add         ecx,r8d
+  0000000180140489: F3 0F 10 04 88     movss       xmm0,dword ptr [rax+rcx*4]
+  000000018014048E: C3                 ret
+  000000018014048F: CC                 int         3
+
+  Summary
+
+        1000 .text

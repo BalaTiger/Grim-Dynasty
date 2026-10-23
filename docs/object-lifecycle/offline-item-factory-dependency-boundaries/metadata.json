@@ -1,0 +1,752 @@
+{
+  "schema": "grim-dynasty-item-factory-dependency-pdata-v1",
+  "status": "all-fixed-exact-boundaries-assessed",
+  "started_utc": "2026-10-21T03:11:24.824Z",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "expected_bytes": 11385856,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-class-registration-metadata/metadata.json",
+      "sha256": "54aa510cffe5a281c54e6de4a594f40224585822f0b40cad6c847f8318ef76b7"
+    },
+    {
+      "path": "docs/rewards/rea-inventory-add/Item-constructor-primary-table-assembly.json",
+      "sha256": "7a078d11495b5b7c10a07d7b6309c9d633f8ec39dfc444e5f0decfbd5efe1a3f"
+    }
+  ],
+  "caller_evidence": {
+    "evidence_id": "ev_dc74728b755b7c7439ee4b8d39c086823605e9c076f29830caff716706ea11ee",
+    "exact_lines": [
+      "0x1803236b0: MOV RDI, RCX",
+      "0x180323702: LEA RCX, [RDI + 0x858]",
+      "0x180323709: MOV qword ptr [RSP + 0x58], RCX",
+      "0x18032370e: CALL 0x1801fa340"
+    ]
+  },
+  "factory_evidence": {
+    "classinfo_rva": "0xa5c8a0",
+    "field_offset": "0x28",
+    "raw_hex": "587e7a80010000000000000000000000000000000000000000000000000000000000000000000000004e108001000000",
+    "factory_va": "0x180104e00"
+  },
+  "requested": [
+    {
+      "role": "Item-classInfo-plus28-factory",
+      "rva": "0x104e00",
+      "source_index": 0,
+      "preferred_va": "0x180104e00"
+    },
+    {
+      "role": "Item-plus858-direct-helper",
+      "rva": "0x1fa340",
+      "source_index": 1,
+      "preferred_va": "0x1801fa340"
+    }
+  ],
+  "limits": {
+    "fingerprint_chunk_bytes": 65536,
+    "metadata_single_read_bytes": 4096,
+    "metadata_total_bytes": 8192,
+    "metadata_read_operations": 96,
+    "binary_search_steps_per_target": 32,
+    "header_end": 65536,
+    "sections": 96,
+    "exception_directory_bytes": 2097152,
+    "saved_proof_bytes_per_file": 65536,
+    "missing_exact_additional_previous_entries_per_target": 1
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "child_process_started": false,
+  "dumpbin_started": false,
+  "target_copy_created": false,
+  "code_bytes_interpreted": 0,
+  "unwind_body_bytes_read": 0,
+  "whole_exception_table_scanned": false,
+  "metadata_bytes": 916,
+  "metadata_read_operations": 31,
+  "metadata_reads": [
+    {
+      "kind": "dos-header",
+      "file_offset": 0,
+      "requested_bytes": 64,
+      "read_bytes": 64,
+      "operations": 1,
+      "raw_hex": "4d5a90000300000004000000ffff0000b80000000000000040000000000000000000000000000000000000000000000000000000000000000000000010010000"
+    },
+    {
+      "kind": "signature-and-coff-header",
+      "file_offset": 272,
+      "requested_bytes": 24,
+      "read_bytes": 24,
+      "operations": 1,
+      "raw_hex": "50450000648609004bf6c76a0000000000000000f0002220"
+    },
+    {
+      "kind": "optional-header-prefix",
+      "file_offset": 296,
+      "requested_bytes": 144,
+      "read_bytes": 144,
+      "operations": 1,
+      "raw_hex": "0b020e000072600000884d0000000000b4b25d000010000000000080010000000010000000020000050002000000000005000200000000000060ae00000400000000000002006001000010000000000000100000000000000000100000000000001000000000000000000000100000004006870000231d004029a4007c01000000f0aa00e001000000a0a600fc140400"
+    },
+    {
+      "kind": "section-headers",
+      "file_offset": 536,
+      "requested_bytes": 360,
+      "read_bytes": 360,
+      "operations": 1,
+      "raw_hex": "2e7465787400000073716000001000000072600000040000000000000000000000000000200000602e7264617461000058ee44000090600000f0440000766000000000000000000000000000400000402e64617461000000f01e01000080a50000de00000066a500000000000000000000000000400000c02e70646174610000fc14040000a0a600001604000044a600000000000000000000000000400000402e676669647300003c00000000c0aa0000020000005aaa00000000000000000000000000400000402e746c73000000000900000000d0aa0000020000005caa00000000000000000000000000400000c05f524441544100003008000000e0aa00000a0000005eaa00000000000000000000000000400000402e72737263000000e001000000f0aa00000200000068aa00000000000000000000000000400000402e72656c6f630000cc5103000000ab0000520300006aaa0000000000000000000000000040000042"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 11030136,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "f01530002a16300030f27d00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10963260,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "248012000181120038038000"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10929816,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "60cb06009dcb060094ea7d00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10946544,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "c02a0f005a2b0f0094ea7d00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10954908,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "907c1000f57c10005c9a7f00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10950732,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "50001000e100100094ea7d00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10952820,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "005010002a5010008c617f00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10951776,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "103910006139100094447f00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10952304,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "404510006a4510003c537f00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10952568,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "504a1000bd4a1000a45a7f00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10952700,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "704d1000c34d10003c5e7f00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10952760,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "904e1000ba4e1000e45f7f00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10952736,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "304e10005a4e1000345f7f00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10952724,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "004e10002a4e1000dc5e7f00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10952712,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "d04d1000fa4d10008c5e7f00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10996704,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "1058200039582000a01f8100"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10979988,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "609d18003aa0180018d98000"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10988352,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "d07e1b00fd821b0034098100"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10992528,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "b7961f00c3961f0098118100"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10994616,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "a0eb1f00c1eb1f0010eb7d00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10993572,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "f0d71f0011d81f0010eb7d00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10993056,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "65be1f006abe1f0090168100"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10992792,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "b0a81f00c9a81f00b8ed7d00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10992660,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "70a31f00fca31f00d8f17d00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10992600,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "40a01f0003a11f0094ea7d00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10992636,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "b0a21f0032a31f0054ec7d00"
+    },
+    {
+      "kind": "selected-runtime-function",
+      "file_offset": 10992648,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "operations": 1,
+      "raw_hex": "40a31f0066a31f0010eb7d00"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "bytes": 11385856,
+      "chunk_bytes": 65536,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "label": "after",
+      "bytes": 11385856,
+      "chunk_bytes": 65536,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    }
+  ],
+  "assessments": [
+    {
+      "role": "Item-classInfo-plus28-factory",
+      "requested_rva": "0x104e00",
+      "steps": 15,
+      "probes": [
+        {
+          "index": 11146,
+          "entry_rva": "0xa8aa78",
+          "file_offset": 11030136,
+          "begin_rva": "0x3015f0",
+          "end_rva_exclusive": "0x30162a",
+          "unwind_rva": "0x7df230",
+          "raw_hex": "f01530002a16300030f27d00"
+        },
+        {
+          "index": 5573,
+          "entry_rva": "0xa7a53c",
+          "file_offset": 10963260,
+          "begin_rva": "0x128024",
+          "end_rva_exclusive": "0x128101",
+          "unwind_rva": "0x800338",
+          "raw_hex": "248012000181120038038000"
+        },
+        {
+          "index": 2786,
+          "entry_rva": "0xa72298",
+          "file_offset": 10929816,
+          "begin_rva": "0x6cb60",
+          "end_rva_exclusive": "0x6cb9d",
+          "unwind_rva": "0x7dea94",
+          "raw_hex": "60cb06009dcb060094ea7d00"
+        },
+        {
+          "index": 4180,
+          "entry_rva": "0xa763f0",
+          "file_offset": 10946544,
+          "begin_rva": "0xf2ac0",
+          "end_rva_exclusive": "0xf2b5a",
+          "unwind_rva": "0x7dea94",
+          "raw_hex": "c02a0f005a2b0f0094ea7d00"
+        },
+        {
+          "index": 4877,
+          "entry_rva": "0xa7849c",
+          "file_offset": 10954908,
+          "begin_rva": "0x107c90",
+          "end_rva_exclusive": "0x107cf5",
+          "unwind_rva": "0x7f9a5c",
+          "raw_hex": "907c1000f57c10005c9a7f00"
+        },
+        {
+          "index": 4529,
+          "entry_rva": "0xa7744c",
+          "file_offset": 10950732,
+          "begin_rva": "0x100050",
+          "end_rva_exclusive": "0x1000e1",
+          "unwind_rva": "0x7dea94",
+          "raw_hex": "50001000e100100094ea7d00"
+        },
+        {
+          "index": 4703,
+          "entry_rva": "0xa77c74",
+          "file_offset": 10952820,
+          "begin_rva": "0x105000",
+          "end_rva_exclusive": "0x10502a",
+          "unwind_rva": "0x7f618c",
+          "raw_hex": "005010002a5010008c617f00"
+        },
+        {
+          "index": 4616,
+          "entry_rva": "0xa77860",
+          "file_offset": 10951776,
+          "begin_rva": "0x103910",
+          "end_rva_exclusive": "0x103961",
+          "unwind_rva": "0x7f4494",
+          "raw_hex": "103910006139100094447f00"
+        },
+        {
+          "index": 4660,
+          "entry_rva": "0xa77a70",
+          "file_offset": 10952304,
+          "begin_rva": "0x104540",
+          "end_rva_exclusive": "0x10456a",
+          "unwind_rva": "0x7f533c",
+          "raw_hex": "404510006a4510003c537f00"
+        },
+        {
+          "index": 4682,
+          "entry_rva": "0xa77b78",
+          "file_offset": 10952568,
+          "begin_rva": "0x104a50",
+          "end_rva_exclusive": "0x104abd",
+          "unwind_rva": "0x7f5aa4",
+          "raw_hex": "504a1000bd4a1000a45a7f00"
+        },
+        {
+          "index": 4693,
+          "entry_rva": "0xa77bfc",
+          "file_offset": 10952700,
+          "begin_rva": "0x104d70",
+          "end_rva_exclusive": "0x104dc3",
+          "unwind_rva": "0x7f5e3c",
+          "raw_hex": "704d1000c34d10003c5e7f00"
+        },
+        {
+          "index": 4698,
+          "entry_rva": "0xa77c38",
+          "file_offset": 10952760,
+          "begin_rva": "0x104e90",
+          "end_rva_exclusive": "0x104eba",
+          "unwind_rva": "0x7f5fe4",
+          "raw_hex": "904e1000ba4e1000e45f7f00"
+        },
+        {
+          "index": 4696,
+          "entry_rva": "0xa77c20",
+          "file_offset": 10952736,
+          "begin_rva": "0x104e30",
+          "end_rva_exclusive": "0x104e5a",
+          "unwind_rva": "0x7f5f34",
+          "raw_hex": "304e10005a4e1000345f7f00"
+        },
+        {
+          "index": 4695,
+          "entry_rva": "0xa77c14",
+          "file_offset": 10952724,
+          "begin_rva": "0x104e00",
+          "end_rva_exclusive": "0x104e2a",
+          "unwind_rva": "0x7f5edc",
+          "raw_hex": "004e10002a4e1000dc5e7f00"
+        },
+        {
+          "index": 4694,
+          "entry_rva": "0xa77c08",
+          "file_offset": 10952712,
+          "begin_rva": "0x104dd0",
+          "end_rva_exclusive": "0x104dfa",
+          "unwind_rva": "0x7f5e8c",
+          "raw_hex": "d04d1000fa4d10008c5e7f00"
+        }
+      ],
+      "status": "exact-begin",
+      "lower_bound_index": 4695
+    },
+    {
+      "role": "Item-plus858-direct-helper",
+      "requested_rva": "0x1fa340",
+      "steps": 14,
+      "probes": [
+        {
+          "index": 11146,
+          "entry_rva": "0xa8aa78",
+          "file_offset": 11030136,
+          "begin_rva": "0x3015f0",
+          "end_rva_exclusive": "0x30162a",
+          "unwind_rva": "0x7df230",
+          "raw_hex": "f01530002a16300030f27d00"
+        },
+        {
+          "index": 5573,
+          "entry_rva": "0xa7a53c",
+          "file_offset": 10963260,
+          "begin_rva": "0x128024",
+          "end_rva_exclusive": "0x128101",
+          "unwind_rva": "0x800338",
+          "raw_hex": "248012000181120038038000"
+        },
+        {
+          "index": 8360,
+          "entry_rva": "0xa827e0",
+          "file_offset": 10996704,
+          "begin_rva": "0x205810",
+          "end_rva_exclusive": "0x205839",
+          "unwind_rva": "0x811fa0",
+          "raw_hex": "1058200039582000a01f8100"
+        },
+        {
+          "index": 6967,
+          "entry_rva": "0xa7e694",
+          "file_offset": 10979988,
+          "begin_rva": "0x189d60",
+          "end_rva_exclusive": "0x18a03a",
+          "unwind_rva": "0x80d918",
+          "raw_hex": "609d18003aa0180018d98000"
+        },
+        {
+          "index": 7664,
+          "entry_rva": "0xa80740",
+          "file_offset": 10988352,
+          "begin_rva": "0x1b7ed0",
+          "end_rva_exclusive": "0x1b82fd",
+          "unwind_rva": "0x810934",
+          "raw_hex": "d07e1b00fd821b0034098100"
+        },
+        {
+          "index": 8012,
+          "entry_rva": "0xa81790",
+          "file_offset": 10992528,
+          "begin_rva": "0x1f96b7",
+          "end_rva_exclusive": "0x1f96c3",
+          "unwind_rva": "0x811198",
+          "raw_hex": "b7961f00c3961f0098118100"
+        },
+        {
+          "index": 8186,
+          "entry_rva": "0xa81fb8",
+          "file_offset": 10994616,
+          "begin_rva": "0x1feba0",
+          "end_rva_exclusive": "0x1febc1",
+          "unwind_rva": "0x7deb10",
+          "raw_hex": "a0eb1f00c1eb1f0010eb7d00"
+        },
+        {
+          "index": 8099,
+          "entry_rva": "0xa81ba4",
+          "file_offset": 10993572,
+          "begin_rva": "0x1fd7f0",
+          "end_rva_exclusive": "0x1fd811",
+          "unwind_rva": "0x7deb10",
+          "raw_hex": "f0d71f0011d81f0010eb7d00"
+        },
+        {
+          "index": 8056,
+          "entry_rva": "0xa819a0",
+          "file_offset": 10993056,
+          "begin_rva": "0x1fbe65",
+          "end_rva_exclusive": "0x1fbe6a",
+          "unwind_rva": "0x811690",
+          "raw_hex": "65be1f006abe1f0090168100"
+        },
+        {
+          "index": 8034,
+          "entry_rva": "0xa81898",
+          "file_offset": 10992792,
+          "begin_rva": "0x1fa8b0",
+          "end_rva_exclusive": "0x1fa8c9",
+          "unwind_rva": "0x7dedb8",
+          "raw_hex": "b0a81f00c9a81f00b8ed7d00"
+        },
+        {
+          "index": 8023,
+          "entry_rva": "0xa81814",
+          "file_offset": 10992660,
+          "begin_rva": "0x1fa370",
+          "end_rva_exclusive": "0x1fa3fc",
+          "unwind_rva": "0x7df1d8",
+          "raw_hex": "70a31f00fca31f00d8f17d00"
+        },
+        {
+          "index": 8018,
+          "entry_rva": "0xa817d8",
+          "file_offset": 10992600,
+          "begin_rva": "0x1fa040",
+          "end_rva_exclusive": "0x1fa103",
+          "unwind_rva": "0x7dea94",
+          "raw_hex": "40a01f0003a11f0094ea7d00"
+        },
+        {
+          "index": 8021,
+          "entry_rva": "0xa817fc",
+          "file_offset": 10992636,
+          "begin_rva": "0x1fa2b0",
+          "end_rva_exclusive": "0x1fa332",
+          "unwind_rva": "0x7dec54",
+          "raw_hex": "b0a21f0032a31f0054ec7d00"
+        },
+        {
+          "index": 8022,
+          "entry_rva": "0xa81808",
+          "file_offset": 10992648,
+          "begin_rva": "0x1fa340",
+          "end_rva_exclusive": "0x1fa366",
+          "unwind_rva": "0x7deb10",
+          "raw_hex": "40a31f0066a31f0010eb7d00"
+        }
+      ],
+      "status": "exact-begin",
+      "lower_bound_index": 8022
+    }
+  ],
+  "exact_boundaries": [
+    {
+      "index": 4695,
+      "entry_rva": "0xa77c14",
+      "file_offset": 10952724,
+      "begin_rva": "0x104e00",
+      "end_rva_exclusive": "0x104e2a",
+      "unwind_rva": "0x7f5edc",
+      "raw_hex": "004e10002a4e1000dc5e7f00",
+      "role": "Item-classInfo-plus28-factory",
+      "begin_va": "0x180104e00",
+      "end_va_exclusive": "0x180104e2a",
+      "range_bytes": 42,
+      "code_file_offset": 1065472,
+      "section": ".text",
+      "code_bytes_read": 0
+    },
+    {
+      "index": 8022,
+      "entry_rva": "0xa81808",
+      "file_offset": 10992648,
+      "begin_rva": "0x1fa340",
+      "end_rva_exclusive": "0x1fa366",
+      "unwind_rva": "0x7deb10",
+      "raw_hex": "40a31f0066a31f0010eb7d00",
+      "role": "Item-plus858-direct-helper",
+      "begin_va": "0x1801fa340",
+      "end_va_exclusive": "0x1801fa366",
+      "range_bytes": 38,
+      "code_file_offset": 2070336,
+      "section": ".text",
+      "code_bytes_read": 0
+    }
+  ],
+  "limitations": [
+    "Two full-file hashes traverse all bytes without code interpretation; each uses the same 64 KiB buffer and read-only handle. Semantic metadata reads are accounted separately.",
+    "Binary search assumes the PE exception directory is sorted by BeginAddress; only encountered ordering is checked, without a whole-table scan.",
+    "An exact .pdata entry may describe only a function fragment. It does not establish complete control flow, constructor semantics, or a callable ABI.",
+    "Missing exact entries retain lower-bound and already-read adjacent metadata, with at most one necessary preceding entry read. Containing/gap reports never authorize adjacent code reads.",
+    "No code, unwind body, callee, import or export table is read by the semantic reader. Preferred addresses are not runtime pointers.",
+    "Same-handle stat/hash checks require a stable source and cannot rule out every transient concurrent change."
+  ],
+  "stat_before": {
+    "size": 11385856,
+    "dev": 2562469142,
+    "ino": 1970324837085125,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "pe": {
+    "pe_file_offset": 272,
+    "image_base": "0x180000000",
+    "image_size": 11427840,
+    "sections": [
+      {
+        "name": ".text",
+        "rva": 4096,
+        "raw_size": 6320640,
+        "raw_offset": 1024,
+        "characteristics": 1610612768
+      },
+      {
+        "name": ".rdata",
+        "rva": 6328320,
+        "raw_size": 4517888,
+        "raw_offset": 6321664,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".data",
+        "rva": 10846208,
+        "raw_size": 56832,
+        "raw_offset": 10839552,
+        "characteristics": 3221225536
+      },
+      {
+        "name": ".pdata",
+        "rva": 10919936,
+        "raw_size": 267776,
+        "raw_offset": 10896384,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".gfids",
+        "rva": 11190272,
+        "raw_size": 512,
+        "raw_offset": 11164160,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".tls",
+        "rva": 11194368,
+        "raw_size": 512,
+        "raw_offset": 11164672,
+        "characteristics": 3221225536
+      },
+      {
+        "name": "_RDATA",
+        "rva": 11198464,
+        "raw_size": 2560,
+        "raw_offset": 11165184,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".rsrc",
+        "rva": 11202560,
+        "raw_size": 512,
+        "raw_offset": 11167744,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".reloc",
+        "rva": 11206656,
+        "raw_size": 217600,
+        "raw_offset": 11168256,
+        "characteristics": 1107296320
+      }
+    ],
+    "exception_rva": "0xa6a000",
+    "exception_file_offset": 10896384,
+    "exception_bytes": 267516,
+    "entry_count": 22293
+  },
+  "distinct_exception_entries_read": 27,
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "stat_after": {
+    "size": 11385856,
+    "dev": 2562469142,
+    "ino": 1970324837085125,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "source_stat_stable": true,
+  "source_hash_preserved": true,
+  "source_handle_closed": true,
+  "finished_utc": "2026-10-21T03:11:25.038Z"
+}

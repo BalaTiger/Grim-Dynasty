@@ -1,0 +1,55 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Engine.dll
+
+File Type: DLL
+
+  00000001802DCBA4: 48 89 5C 24 08     mov         qword ptr [rsp+8],rbx
+  00000001802DCBA9: 48 89 74 24 10     mov         qword ptr [rsp+10h],rsi
+  00000001802DCBAE: 57                 push        rdi
+  00000001802DCBAF: 48 83 EC 20        sub         rsp,20h
+  00000001802DCBB3: 33 FF              xor         edi,edi
+  00000001802DCBB5: 8B F1              mov         esi,ecx
+  00000001802DCBB7: 48 39 3D FA 41 14  cmp         qword ptr [0000000180420DB8h],rdi
+                    00
+  00000001802DCBBE: 75 38              jne         00000001802DCBF8
+  00000001802DCBC0: 48 8B 1D 59 F9 13  mov         rbx,qword ptr [000000018041C520h]
+                    00
+  00000001802DCBC7: 8B CB              mov         ecx,ebx
+  00000001802DCBC9: 48 33 1D F0 41 14  xor         rbx,qword ptr [0000000180420DC0h]
+                    00
+  00000001802DCBD0: 83 E1 3F           and         ecx,3Fh
+  00000001802DCBD3: 48 D3 CB           ror         rbx,cl
+  00000001802DCBD6: 48 8B CB           mov         rcx,rbx
+  00000001802DCBD9: E8 E2 08 00 00     call        00000001802DD4C0
+  00000001802DCBDE: 44 8B C6           mov         r8d,esi
+  00000001802DCBE1: 48 8D 15 A0 41 14  lea         rdx,[0000000180420D88h]
+                    00
+  00000001802DCBE8: 48 8D 0D C1 41 14  lea         rcx,[0000000180420DB0h]
+                    00
+  00000001802DCBEF: FF D3              call        rbx
+  00000001802DCBF1: 85 C0              test        eax,eax
+  00000001802DCBF3: 0F 95 C0           setne       al
+  00000001802DCBF6: EB 33              jmp         00000001802DCC2B
+  00000001802DCBF8: 48 8D 0D 89 41 14  lea         rcx,[0000000180420D88h]
+                    00
+  00000001802DCBFF: FF 15 2B 57 02 00  call        qword ptr [0000000180302330h]
+  00000001802DCC05: 48 8B 0D AC 41 14  mov         rcx,qword ptr [0000000180420DB8h]
+                    00
+  00000001802DCC0C: 45 33 C0           xor         r8d,r8d
+  00000001802DCC0F: 8B D6              mov         edx,esi
+  00000001802DCC11: FF 15 91 57 02 00  call        qword ptr [00000001803023A8h]
+  00000001802DCC17: 48 8D 0D 6A 41 14  lea         rcx,[0000000180420D88h]
+                    00
+  00000001802DCC1E: 8B D8              mov         ebx,eax
+  00000001802DCC20: FF 15 02 57 02 00  call        qword ptr [0000000180302328h]
+  00000001802DCC26: 85 DB              test        ebx,ebx
+  00000001802DCC28: 0F 94 C0           sete        al
+  00000001802DCC2B: 48 8B 5C 24 30     mov         rbx,qword ptr [rsp+30h]
+  00000001802DCC30: 48 8B 74 24 38     mov         rsi,qword ptr [rsp+38h]
+  00000001802DCC35: 48 83 C4 20        add         rsp,20h
+  00000001802DCC39: 5F                 pop         rdi
+  00000001802DCC3A: C3                 ret
+
+  Summary
+
+      301000 .text

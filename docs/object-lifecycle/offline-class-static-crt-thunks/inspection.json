@@ -1,0 +1,201 @@
+{
+  "status": "fixed-game-init-fragments-verified",
+  "started_utc": "2026-10-20T13:04:39.972Z",
+  "stage": "crt-thunks",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "plan": {
+    "path": "docs/object-lifecycle/class-static-init-plans/crt-thunks.json",
+    "sha256": "d39148fefdd0f5b2377cb896d585150f55b752e6145486d5e98940a67913b6d7"
+  },
+  "source_evidence": [
+    {
+      "sha256": "fa0c4a5b7a5d1a2ccb3ed3a35d4a2c98a1192d4fc79cafae9c63a28eaa71366c",
+      "path": "docs/object-lifecycle/offline-class-static-crt-attach/inspection.json"
+    }
+  ],
+  "script_sha256": "eda5bbf8833af166bd1a8a2b20f30104e666137f5cfa3ed93bf6cd579433390d",
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "code_byte_limit": 12,
+  "code_bytes": 12,
+  "metadata_byte_limit": 65536,
+  "metadata_bytes": 180,
+  "metadata_reads": [
+    {
+      "index": 11146,
+      "rva": "0xa8aa78",
+      "file_offset": 11030136,
+      "bytes": "f01530002a16300030f27d00"
+    },
+    {
+      "index": 16720,
+      "rva": "0xa9afc0",
+      "file_offset": 11097024,
+      "bytes": "70764a0012774a00c8178500"
+    },
+    {
+      "index": 19507,
+      "rva": "0xaa3264",
+      "file_offset": 11130468,
+      "bytes": "f6c657003fc75700489c8600"
+    },
+    {
+      "index": 20900,
+      "rva": "0xaa73b0",
+      "file_offset": 11147184,
+      "bytes": "a02f5e00bd2f5e0008ee7d00"
+    },
+    {
+      "index": 20204,
+      "rva": "0xaa5310",
+      "file_offset": 11138832,
+      "bytes": "b05d5b00b95e5b00c8e38600"
+    },
+    {
+      "index": 20552,
+      "rva": "0xaa6360",
+      "file_offset": 11143008,
+      "bytes": "fc805d0029815d003c008700"
+    },
+    {
+      "index": 20726,
+      "rva": "0xaa6b88",
+      "file_offset": 11145096,
+      "bytes": "58fd5d0075fd5d0008ee7d00"
+    },
+    {
+      "index": 20639,
+      "rva": "0xaa6774",
+      "file_offset": 11144052,
+      "bytes": "60bc5d00aabc5d0070ea7d00"
+    },
+    {
+      "index": 20683,
+      "rva": "0xaa6984",
+      "file_offset": 11144580,
+      "bytes": "6cdb5d008cdb5d00e8377e00"
+    },
+    {
+      "index": 20661,
+      "rva": "0xaa687c",
+      "file_offset": 11144316,
+      "bytes": "9cca5d00c9ca5d00d0017e00"
+    },
+    {
+      "index": 20650,
+      "rva": "0xaa67f8",
+      "file_offset": 11144184,
+      "bytes": "bcc65d00e9c65d00c0f27d00"
+    },
+    {
+      "index": 20645,
+      "rva": "0xaa67bc",
+      "file_offset": 11144124,
+      "bytes": "a4c45d00fac45d0010ec7d00"
+    },
+    {
+      "index": 20642,
+      "rva": "0xaa6798",
+      "file_offset": 11144088,
+      "bytes": "f0bf5d00c0c25d00d0048700"
+    },
+    {
+      "index": 20644,
+      "rva": "0xaa67b0",
+      "file_offset": 11144112,
+      "bytes": "70c45d00a4c45d0000ec7d00"
+    },
+    {
+      "index": 20643,
+      "rva": "0xaa67a4",
+      "file_offset": 11144100,
+      "bytes": "30c45d0032c45d00e0048700"
+    }
+  ],
+  "fragments": [
+    {
+      "role": "First table call explicit thunk",
+      "basis": "Game attach 0x1805db04e calls this exact address after RCX=0x18060c880 RDX=0x18060c890. Limit to six-byte indirect-jump candidate; do not select neighbors.",
+      "start_rva": "0x5dc3e0",
+      "end_rva_exclusive": "0x5dc3e6",
+      "range_kind": "explicit-fixed-entry-prefix-no-exact-unwind",
+      "start_va": "0x1805dc3e0",
+      "end_va_exclusive": "0x1805dc3e6",
+      "code_bytes": 6,
+      "code_sha256": "167ea4ca2a984715370eb6c4ca336b677c045803770fef420f30d5fb7e872b01",
+      "exact_unwind_entry": null,
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1805dc3e0,0x1805dc3e5",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "instructions": 1,
+      "byte_coverage_verified": true
+    },
+    {
+      "role": "Second table call explicit thunk",
+      "basis": "Game attach 0x1805db06e calls this exact address after RCX=0x18060bab8 RDX=0x18060c878. Limit to six-byte indirect-jump candidate; do not select neighbors.",
+      "start_rva": "0x5dc3da",
+      "end_rva_exclusive": "0x5dc3e0",
+      "range_kind": "explicit-fixed-entry-prefix-no-exact-unwind",
+      "start_va": "0x1805dc3da",
+      "end_va_exclusive": "0x1805dc3e0",
+      "code_bytes": 6,
+      "code_sha256": "93901f9077ba8881d1c966694454c0d205f86c322b3a7cc76364359c91c140ad",
+      "exact_unwind_entry": null,
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1805dc3da,0x1805dc3df",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "instructions": 1,
+      "byte_coverage_verified": true
+    }
+  ],
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "full_target_copy_created": false,
+  "limitations": [
+    "Only explicitly planned targets are followed; no callee, table or neighboring code discovery is automatic.",
+    "Unwind ranges are fragments, not a claim of whole-function or exception-path coverage.",
+    "Full-file fingerprints use 64KiB buffers and are outside semantic byte totals; dumpbin internal metadata I/O is not measured.",
+    "All target bytes are read-only. No DLL initialization, game launch, backend, install or permission change."
+  ],
+  "original_sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_hash_matches": true,
+  "original_stat_stable": true,
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "tool_hash_matches": true,
+  "failures": [],
+  "finished_utc": "2026-10-20T13:04:40.049Z",
+  "controller_resource_usage": {
+    "userCPUTime": 15000,
+    "systemCPUTime": 31000,
+    "maxRSS": 42012,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11107,
+    "swappedOut": 0,
+    "fsRead": 384,
+    "fsWrite": 6,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

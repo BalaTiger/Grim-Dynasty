@@ -1,0 +1,46 @@
+{
+  "status": "constructor-query-complete-parser-binding-not-started",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "completed_query": {
+    "procedure": "0x18013f300",
+    "tool_calls": 8,
+    "closed": true,
+    "returned_original_this": true,
+    "explicit_vptr_assignment": "0x180341fe0",
+    "archive_pointer_offset": "0xc8",
+    "direct_dependencies_without_queried_body": ["0x18013c1d0", "0x1800481f0"]
+  },
+  "next_action_not_executed": {
+    "kind": "bounded-read-only-pe-qword-binding",
+    "slot_va": "0x180341fe8",
+    "bytes": 8,
+    "candidate_file_offset": "0x340fe8",
+    "required_checks": [
+      "Verify the same original SHA256 and PE mapping before reading.",
+      "Treat the slot address as data, not the parser procedure address.",
+      "Bind the returned value only within the same x64 Engine image.",
+      "Prepare a separate fixed analysis batch only after resolving the actual target."
+    ],
+    "actual_parser_target": null,
+    "included_in_completed_eight_calls": false
+  },
+  "implementation": {
+    "behavior_source_changed": false,
+    "tests_rerun": false,
+    "prior_passed_assertions": 930,
+    "prior_passed_combined_scenarios": 14,
+    "prior_passed_demo": "ItemQuestDemo",
+    "load_file_miss_still_unsupported": true,
+    "reason": "Constructor writes alone do not provide parser output, base/helper initialization, archive snapshots or cache publication behavior."
+  },
+  "operation_state": {
+    "query_denied": false,
+    "query_pending": false,
+    "query_outcome_uncertain": false,
+    "backend_released": true,
+    "automatic_followup_started": false
+  }
+}

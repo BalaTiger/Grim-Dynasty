@@ -1,0 +1,20 @@
+# Local static-analysis MCP. Requires a trusted project; no global setting changes.
+# Tool allowlisting is not an OS filesystem sandbox. Keep targets within the
+# authorized game installation or project; never select saves or Steam userdata.
+[mcp_servers.rea]
+command = 'D:\NodeJS\node.exe'
+args = ['C:\Users\zhuzi\Documents\Grim-Dynasty\tools\static_analysis\rea_project_server.mjs']
+cwd = 'C:\Users\zhuzi\Documents\Grim-Dynasty'
+startup_timeout_sec = 30
+tool_timeout_sec = 600
+enabled_tools = ['binary_session', 'open_binary', 'close_binary', 'procedure_pseudo_code', 'procedure_assembly', 'procedure_info', 'procedure_callees', 'xrefs', 'address_name']
+default_tools_approval_mode = 'prompt'
+
+[mcp_servers.rea.env]
+REA_LOG_LEVEL = 'warn'
+REA_ANALYSIS_PROVIDER = 'ghidra'
+GHIDRA_INSTALL_DIR = 'C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\ghidra\ghidra_12.1.4_PUBLIC'
+JAVA_HOME = 'C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\jdk\jdk-21.0.12.1+1'
+GHIDRA_HEADLESS_MAXMEM = '512M'
+TEMP = 'C:\Users\zhuzi\Documents\Grim-Dynasty\analysis-runtime\rea'
+TMP = 'C:\Users\zhuzi\Documents\Grim-Dynasty\analysis-runtime\rea'

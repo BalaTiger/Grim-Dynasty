@@ -1,0 +1,263 @@
+{
+  "schema": "grim-dynasty-post-parser-dependencies-v1",
+  "created_utc": "2026-10-20T06:07:16.4797344Z",
+  "status": "offline-dependency-inventory-only",
+  "source_document": {
+    "path": "docs/object-lifecycle/POST-PARSER-DEPENDENCIES.md",
+    "sha256": "f631b22558ece212a7187b794bcd4664d64e16ebfeda333d7ed2d03636d98a6a"
+  },
+  "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "operations_this_task": {
+    "project_source_and_archive_reads": true,
+    "original_binary_reads": 0,
+    "backend_launches": 0,
+    "compiles": 0,
+    "tests": 0,
+    "source_edits": 0,
+    "commit_or_push": false
+  },
+  "current_boundary": {
+    "record_loadfile_miss": "UnimplementedRecordCacheMissLoader",
+    "complete_native_miss_closed": false,
+    "raw_word_parser_mixed_tag_increment": "being implemented separately; not accepted by this document",
+    "unknowns_replaced_by_callback_or_success_stub": false
+  },
+  "gaps": [
+    {
+      "address": "0x18005deb0",
+      "independent_body_found": false,
+      "callsite": "0x1801c508b",
+      "source": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "known_inputs": [
+        "RDX=current first node",
+        "R8=current first.prev",
+        "R9=address of temporary full name plus table payload"
+      ],
+      "unknown_inputs": [
+        "RCX not explicitly reset after the prior 023180 call; do not invent an allocator/this ABI"
+      ],
+      "known_output": "RAX is consumed as a node by subsequent list linking",
+      "needed_contracts": [
+        "allocation and payload ownership",
+        "node links and payload copying",
+        "normal successful node construction",
+        "callee effects and failure boundary"
+      ],
+      "priority": "recommended first batch"
+    },
+    {
+      "address": "0x18002e770",
+      "independent_body_found": false,
+      "callsite": "0x1801c50da",
+      "source": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "known_inputs": [
+        "RCX=depot+8",
+        "RDX=address of output stack slot",
+        "R8=current sentinel.next+0x10",
+        "R9=current sentinel.next"
+      ],
+      "prior_effects": [
+        "depot+0x18 list count increment",
+        "first.prev and returned-node.prev.next linking"
+      ],
+      "needed_contracts": [
+        "bucket publication and placement",
+        "duplicate handling",
+        "load maintenance and growth",
+        "side effects and callee requirements"
+      ],
+      "priority": "recommended first batch"
+    },
+    {
+      "address": "0x18013c1d0",
+      "independent_body_found": false,
+      "callsites": [
+        "0x18013f320",
+        "0x1801c5046"
+      ],
+      "source": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "known_inputs": [
+        "RCX=storage; called both by Binary ctor and by 0x30-byte fallback creation"
+      ],
+      "needed_contracts": [
+        "base fields and gate initialization",
+        "ordinary LoadTable state",
+        "constructor callees and normal return"
+      ],
+      "priority": "separate later batch"
+    },
+    {
+      "address": "0x180280e20",
+      "independent_body_found": false,
+      "callsite": "0x1801c4ef3",
+      "source": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "known_inputs": [
+        "RCX=archive",
+        "RDX=address of data pointer output initially zero",
+        "R8=address of DWORD length output initially zero",
+        "R9D=raw uint32 record ID"
+      ],
+      "unknown_inputs": [
+        "No proven fifth business parameter"
+      ],
+      "known_output": "Caller reads the two output slots; does not test the call return value",
+      "needed_contracts": [
+        "archive storage mode and lookup",
+        "actual data/decompression operation",
+        "length and buffer ownership",
+        "failure and caching effects"
+      ],
+      "priority": "separate later batch"
+    }
+  ],
+  "next_query_recommendation": {
+    "kind": "recommendation-not-runnable-plan",
+    "functions": [
+      "0x18005deb0",
+      "0x18002e770"
+    ],
+    "analyses_per_function": [
+      "procedure_pseudo_code",
+      "procedure_assembly",
+      "procedure_callees"
+    ],
+    "analysis_calls": 6,
+    "lifecycle_calls": 5,
+    "total_calls": 11,
+    "alternative_without_callees_total": 9,
+    "data_plan_owned_by_parent": "tools/static_analysis/rea-record-cache-publication-plan.json",
+    "runner_registered": false,
+    "executed": false,
+    "requires_ow_window_release": true,
+    "existing_approval_and_fresh_preflight_remain_required": true,
+    "automatic_callee_followup": false,
+    "heap": "384M",
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "old_measurements_are_hard_upper_bound": false
+  },
+  "arz_v3_flag_inference": {
+    "source": "docs/resource-contracts/followup/Engine-function-evidence-bounded-v2.json",
+    "function": "0x180280000",
+    "conditions": [
+      "archive+0x2c equals zero on entry",
+      "successful applicable initial load path",
+      "relevant header field not subsequently changed"
+    ],
+    "instructions": [
+      "0x18028002c MOV R10D,dword ptr [RDX]",
+      "0x180280033 MOV dword ptr [RBX],R10D; RBX=archive+0x2c"
+    ],
+    "format_source": "src/resource_codec/ResourceContainers.cs",
+    "marker_u16": 2,
+    "version_u16": 3,
+    "little_endian_header_bytes": "02 00 03 00",
+    "header_dword": "0x00030002",
+    "archive_byte_2e": "0x03",
+    "bit0": 1,
+    "miss_branch": "0x180280e20",
+    "algorithm_identity_proven": false,
+    "old_archive_limitation": "Declared end 0x1802800d5; listing stops at 0x1802800d3 while pseudocode contains later processing. Only the explicit early header-copy instructions support this inference."
+  },
+  "resource_codec": {
+    "usable_apis": [
+      "ResourceInput(Stream)",
+      "ResourceInput.Read(offset,count)",
+      "ArzArchive.Entries",
+      "Lz4Block.Decode(input,expected)"
+    ],
+    "raw_body_composition": "Select an explicit entry, range-check and snapshot its metadata, read its compressed extent, then Decode to the exact unpacked length",
+    "read_record_is_lossless_parser_input": false,
+    "read_record_limits": [
+      "string IDs replaced with text",
+      "field dictionary rejects duplicates",
+      "private string pool",
+      "ResourceUtil.Key Unicode lowercase and trailing NUL removal differ from native full-byte names"
+    ],
+    "native_loader_equivalence_claimed": false,
+    "historical_acceptance": "docs/compiled-containers/acceptance.json",
+    "historical_record_bodies": 34180,
+    "historical_decoded_fields": 9623280,
+    "historical_results_reexecuted_this_task": false
+  },
+  "source_count": 14,
+  "sources": [
+    {
+      "path": "src/resource_codec/Lz4Block.cs",
+      "sha256": "821dfbfe3695482b0da88b5dc8a948600b6c98c4015c1ae978dbd23b1105be24",
+      "bytes": 3616
+    },
+    {
+      "path": "src/resource_codec/ResourceContainers.cs",
+      "sha256": "f414cdecdaa58ba7d24cd7a8d6384f98874fc4a267fa3512e3b80bfb634b82a3",
+      "bytes": 9796
+    },
+    {
+      "path": "src/task_items/RecordCache.cs",
+      "sha256": "5d3d4a7c9487b6aa8faac7e1c8defa423d0a912ebb1d12e721bb1c35ff0aa97c",
+      "bytes": 3652
+    },
+    {
+      "path": "src/task_items/RecordLoadFile.cs",
+      "sha256": "0c552a5267fe4fa5003d63fd828186a13f3dfbf718dbbd58f3d980584a7ee1fc",
+      "bytes": 4276
+    },
+    {
+      "path": "docs/compiled-containers/acceptance.json",
+      "sha256": "95bdc07c249fb1e594abbc5658a01eff33745589f423b8230a4f765dc7685ec6",
+      "bytes": 3243
+    },
+    {
+      "path": "docs/compiled-containers/boundary-tests.json",
+      "sha256": "1846e9c0408c9d8057c9243587c44fd9bd8da63db1f7910aab93963eefc6e1e9",
+      "bytes": 2827
+    },
+    {
+      "path": "docs/resource-contracts/compiled-lz4-acceptance.json",
+      "sha256": "fc922258e0d1c35633e75536cc9b3c83b33e5f6b2b9154edd0ca1497de96cc92",
+      "bytes": 3091
+    },
+    {
+      "path": "docs/resource-contracts/database-ownership/Engine-function-evidence-bounded-v2.json",
+      "sha256": "6779a5d15657b3058907af317d5e6869e4fa0509b8ec6670dbddd7e27627f0c5",
+      "bytes": 31238
+    },
+    {
+      "path": "docs/resource-contracts/followup/Engine-function-evidence-bounded-v2.json",
+      "sha256": "3fb2d8de177305c978a6e64d8d2c26130919a4b26593d3c3145bae47642011de",
+      "bytes": 24664
+    },
+    {
+      "path": "docs/object-lifecycle/rea-object-base/11-TableDepot-LoadFile-0x1801c4d20-assembly.json",
+      "sha256": "09c5e996bbe2d23b35ad7de140e77940899602a35a0209bc5f070ee8bbc2b166",
+      "bytes": 17485,
+      "evidence_id": "ev_96470b4b09146924e942ed9eca9c169a8a3d77d7bc9b3fb5eec3360ef4ebe57e",
+      "operation": "procedure_assembly",
+      "procedure": "0x1801c4d20"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "sha256": "d696e7b2141e5fe9ee6f518555d32a615ab174deabd6f676a15c299be1b7e3b1",
+      "bytes": 40578,
+      "evidence_id": "ev_23bf6a83dc20e5e716f1454ed05f04ab266b5e67430c35070017de7c68eb1937",
+      "operation": "procedure_assembly",
+      "procedure": "0x1801c4e20"
+    },
+    {
+      "path": "docs/object-lifecycle/record-load-discovery/memcmp-import.json",
+      "sha256": "da3d62fe0d3b6ad9d8f501b1311b86216cf367c2072121bdc4632b0387fe9618",
+      "bytes": 1387
+    },
+    {
+      "path": "docs/object-lifecycle/record-load-discovery/tolower-import.json",
+      "sha256": "adbb67caa6d2d9c6a3c5673eb4a2790a063e7a1e7485bc831af0736ce531428b",
+      "bytes": 1421
+    },
+    {
+      "path": "tools/static_analysis/rea-record-cache-publication-plan.json",
+      "sha256": "b8edfd6904516091befee8c69d6111080b5c7f58ad342b6a69d378f5589eb762",
+      "bytes": 6332,
+      "role": "parent-owned prepared data plan; not executed"
+    }
+  ]
+}

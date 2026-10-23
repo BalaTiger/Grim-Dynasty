@@ -1,0 +1,30 @@
+{
+  "schema": "grim-dynasty.fixed-world-floor-operands.v1",
+  "script": "tools/static_analysis/read_r1_world_floor_operands.mjs",
+  "entrypoint": "inspectWorldFloorOperands(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-world-floor-operands/inspection.json",
+  "source": {"path":"D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll","bytes":4485632,"sha256":"4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"},
+  "source_pins": [
+    {"key":"engine_pe","path":"docs/object-lifecycle/offline-class-registration-exports/discovery.json","sha256":"0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"},
+    {"key":"world_floor","path":"docs/reverse-client/r1-movement-floor-core/11-MovementFloorCore-0x180221da0-procedure_assembly.json","sha256":"0b1444a11090ae60d9f508b8342bdb43d1f7a6961a21b3dce7b7ae40166c9472"},
+    {"key":"nearest_constant","path":"docs/reverse-client/r1-navigation-nearest-constants/inspection.json","sha256":"02c4ec5592fdac55c1bf652b1eabdab326232c59150942f8222cd2da652d14e1"}
+  ],
+  "fixed_constants": [
+    {"key":"ray_origin_y_addend","rva":"0x34bc00","bytes":4,"instruction":"0x180221e00: ADDSS XMM2, dword ptr [0x18034bc00]"},
+    {"key":"ray_direction_y","rva":"0x34bdf4","bytes":4,"instruction":"0x180221e22: MOVSS XMM1, dword ptr [0x18034bdf4]"},
+    {"key":"neighbor_bounds_margin","rva":"0x34bc8c","bytes":4,"instruction":"0x180221f82: MOVSS XMM9, dword ptr [0x18034bc8c]"}
+  ],
+  "reused_constants": [
+    {"key":"neighbor_absolute_mask_low_lane","source_pin":"nearest_constant","rva":"0x34c410","bytes":4,"instruction":"0x180221f70: MOVSS XMM8, dword ptr [0x18034c410]","uses":["0x18022203a: ANDPS XMM1, XMM8","0x18022205c: ANDPS XMM2, XMM8"]}
+  ],
+  "assembly_proof": {"key":"world_floor","procedure":"0x180221da0"},
+  "limits": {"new_data_bytes":12,"data_operations":3,"single_read_bytes":4,"hash_chunk_bytes":65536,"new_PE_header_bytes":0,"whole_table_bytes":0,"target_body_bytes":0},
+  "requirements": [
+    "Import performs no I/O. Invoke only after exact script/plan review and a separate Windows Attributes/reparse preflight on the source, project inputs, output parent and every ancestor.",
+    "Read exactly three Engine DWORD operands:34BC00,34BDF4,34BC8C. Reuse identical-hash cached PE metadata; never read new headers, code, neighboring data, exports or whole tables.",
+    "34C410 is reused only from the pinned navigation-nearest-constants observation; its bytes must not be reread from Engine. The existing4B low lane and MOVSS/ANDPS use do not establish other SIMD lanes.",
+    "Open Engine O_RDONLY once. Stream before/after SHA256 and compare descriptor/path metadata. Hash streams are separate from12B semantic reads; checks are not an atomic snapshot.",
+    "Node lstat/realpath checks do not expose every Windows ReparsePoint attribute/tag; Node alone cannot satisfy the separate Attributes preflight.",
+    "Refuse existing output directories. Preserve failure evidence and source state. No DLL execution, Rea/Java, backend, subprocess, network, saves, installation, security changes, commit or push."
+  ]
+}

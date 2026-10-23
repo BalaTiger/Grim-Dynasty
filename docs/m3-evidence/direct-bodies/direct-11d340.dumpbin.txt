@@ -1,0 +1,266 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\m3-direct-bodies-temp\direct-11d340.inspect.dll
+
+File Type: DLL
+
+  000000018011D340: 48 8B C4           mov         rax,rsp
+  000000018011D343: 57                 push        rdi
+  000000018011D344: 41 54              push        r12
+  000000018011D346: 41 55              push        r13
+  000000018011D348: 41 56              push        r14
+  000000018011D34A: 41 57              push        r15
+  000000018011D34C: 48 81 EC F0 00 00  sub         rsp,0F0h
+                    00
+  000000018011D353: 48 C7 44 24 48 FE  mov         qword ptr [rsp+48h],0FFFFFFFFFFFFFFFEh
+                    FF FF FF
+  000000018011D35C: 48 89 58 08        mov         qword ptr [rax+8],rbx
+  000000018011D360: 48 89 68 10        mov         qword ptr [rax+10h],rbp
+  000000018011D364: 48 89 70 18        mov         qword ptr [rax+18h],rsi
+  000000018011D368: 0F 29 70 C8        movaps      xmmword ptr [rax-38h],xmm6
+  000000018011D36C: 0F 29 78 B8        movaps      xmmword ptr [rax-48h],xmm7
+  000000018011D370: 44 0F 29 40 A8     movaps      xmmword ptr [rax-58h],xmm8
+  000000018011D375: 44 0F 29 48 98     movaps      xmmword ptr [rax-68h],xmm9
+  000000018011D37A: 41 8B F1           mov         esi,r9d
+  000000018011D37D: 49 8B F8           mov         rdi,r8
+  000000018011D380: 0F 28 F9           movaps      xmm7,xmm1
+  000000018011D383: 48 8B E9           mov         rbp,rcx
+  000000018011D386: 45 0F 57 C0        xorps       xmm8,xmm8
+  000000018011D38A: 41 0F 2F F8        comiss      xmm7,xmm8
+  000000018011D38E: 0F 86 2B 03 00 00  jbe         000000018011D6BF
+  000000018011D394: 48 8B 49 08        mov         rcx,qword ptr [rcx+8]
+  000000018011D398: F2 0F 10 81 00 0F  movsd       xmm0,mmword ptr [rcx+0000000000000F00h]
+                    00 00
+  000000018011D3A0: 45 0F 57 C9        xorps       xmm9,xmm9
+  000000018011D3A4: F2 41 0F 5F C1     maxsd       xmm0,xmm9
+  000000018011D3A9: 66 41 0F 2F C1     comisd      xmm0,xmm9
+  000000018011D3AE: 41 0F 96 C6        setbe       r14b
+  000000018011D3B2: 48 8B 05 CF 8E 94  mov         rax,qword ptr [0000000180A66288h]
+                    00
+  000000018011D3B9: F3 0F 10 98 98 75  movss       xmm3,dword ptr [rax+0000000000037598h]
+                    03 00
+  000000018011D3C1: F3 0F 59 DF        mulss       xmm3,xmm7
+  000000018011D3C5: F3 0F 5D 1D 87 AC  minss       xmm3,dword ptr [00000001807A8054h]
+                    68 00
+  000000018011D3CD: 48 8B 01           mov         rax,qword ptr [rcx]
+  000000018011D3D0: 0F 28 D1           movaps      xmm2,xmm1
+  000000018011D3D3: 41 8B D1           mov         edx,r9d
+  000000018011D3D6: FF 90 70 08 00 00  call        qword ptr [rax+0000000000000870h]
+  000000018011D3DC: F3 0F 10 8D CC 02  movss       xmm1,dword ptr [rbp+00000000000002CCh]
+                    00 00
+  000000018011D3E4: 41 0F 2F C8        comiss      xmm1,xmm8
+  000000018011D3E8: 76 5E              jbe         000000018011D448
+  000000018011D3EA: 0F 28 F1           movaps      xmm6,xmm1
+  000000018011D3ED: F3 0F 5D F7        minss       xmm6,xmm7
+  000000018011D3F1: 48 8B 05 58 BC 4E  mov         rax,qword ptr [0000000180609050h]
+                    00
+  000000018011D3F8: 48 8B 08           mov         rcx,qword ptr [rax]
+  000000018011D3FB: 48 8B 01           mov         rax,qword ptr [rcx]
+  000000018011D3FE: 0F 5A C6           cvtps2pd    xmm0,xmm6
+  000000018011D401: 0F 5A C9           cvtps2pd    xmm1,xmm1
+  000000018011D404: F2 0F 11 44 24 28  movsd       mmword ptr [rsp+28h],xmm0
+  000000018011D40A: F2 0F 11 4C 24 20  movsd       mmword ptr [rsp+20h],xmm1
+  000000018011D410: 4C 8D 0D 79 F8 54  lea         r9,[000000018066CC90h]
+                    00
+  000000018011D417: 44 8B 05 5E 8E 94  mov         r8d,dword ptr [0000000180A6627Ch]
+                    00
+  000000018011D41E: 33 D2              xor         edx,edx
+  000000018011D420: FF 50 10           call        qword ptr [rax+10h]
+  000000018011D423: F3 0F 10 85 CC 02  movss       xmm0,dword ptr [rbp+00000000000002CCh]
+                    00 00
+  000000018011D42B: F3 0F 5C C6        subss       xmm0,xmm6
+  000000018011D42F: F3 0F 11 85 CC 02  movss       dword ptr [rbp+00000000000002CCh],xmm0
+                    00 00
+  000000018011D437: F3 0F 5C FE        subss       xmm7,xmm6
+  000000018011D43B: 41 0F 2F F8        comiss      xmm7,xmm8
+  000000018011D43F: 77 07              ja          000000018011D448
+  000000018011D441: 32 C0              xor         al,al
+  000000018011D443: E9 79 02 00 00     jmp         000000018011D6C1
+  000000018011D448: 48 8B 9D B0 02 00  mov         rbx,qword ptr [rbp+00000000000002B0h]
+                    00
+  000000018011D44F: 48 3B 9D B8 02 00  cmp         rbx,qword ptr [rbp+00000000000002B8h]
+                    00
+  000000018011D456: 74 2C              je          000000018011D484
+  000000018011D458: 0F 1F 84 00 00 00  nop         dword ptr [rax+rax+0000000000000000h]
+                    00 00
+  000000018011D460: 48 8B 0B           mov         rcx,qword ptr [rbx]
+  000000018011D463: 48 8B 01           mov         rax,qword ptr [rcx]
+  000000018011D466: 44 8B C6           mov         r8d,esi
+  000000018011D469: 0F 28 CF           movaps      xmm1,xmm7
+  000000018011D46C: FF 10              call        qword ptr [rax]
+  000000018011D46E: 0F 28 F8           movaps      xmm7,xmm0
+  000000018011D471: 41 0F 2F C0        comiss      xmm0,xmm8
+  000000018011D475: 76 CA              jbe         000000018011D441
+  000000018011D477: 48 83 C3 08        add         rbx,8
+  000000018011D47B: 48 3B 9D B8 02 00  cmp         rbx,qword ptr [rbp+00000000000002B8h]
+                    00
+  000000018011D482: 75 DC              jne         000000018011D460
+  000000018011D484: C6 44 24 20 01     mov         byte ptr [rsp+20h],1
+  000000018011D489: 45 33 C9           xor         r9d,r9d
+  000000018011D48C: 4C 8B C7           mov         r8,rdi
+  000000018011D48F: 0F 28 CF           movaps      xmm1,xmm7
+  000000018011D492: 48 8B 4D 08        mov         rcx,qword ptr [rbp+8]
+  000000018011D496: E8 15 B6 F4 FF     call        0000000180068AB0
+  000000018011D49B: 48 8B 05 AE BB 4E  mov         rax,qword ptr [0000000180609050h]
+                    00
+  000000018011D4A2: 48 8B 08           mov         rcx,qword ptr [rax]
+  000000018011D4A5: 48 8B 39           mov         rdi,qword ptr [rcx]
+  000000018011D4A8: 8B CE              mov         ecx,esi
+  000000018011D4AA: E8 41 51 00 00     call        00000001801225F0
+  000000018011D4AF: 48 8B D8           mov         rbx,rax
+  000000018011D4B2: 48 8B 4D 08        mov         rcx,qword ptr [rbp+8]
+  000000018011D4B6: FF 15 6C BC 4E 00  call        qword ptr [0000000180609128h]
+  000000018011D4BC: 0F 57 C0           xorps       xmm0,xmm0
+  000000018011D4BF: F3 0F 5A C7        cvtss2sd    xmm0,xmm7
+  000000018011D4C3: 48 89 5C 24 30     mov         qword ptr [rsp+30h],rbx
+  000000018011D4C8: 89 44 24 28        mov         dword ptr [rsp+28h],eax
+  000000018011D4CC: F2 0F 11 44 24 20  movsd       mmword ptr [rsp+20h],xmm0
+  000000018011D4D2: 4C 8D 0D 8F F7 54  lea         r9,[000000018066CC68h]
+                    00
+  000000018011D4D9: 44 8B 05 9C 8D 94  mov         r8d,dword ptr [0000000180A6627Ch]
+                    00
+  000000018011D4E0: 33 D2              xor         edx,edx
+  000000018011D4E2: 48 8B 0D 67 BB 4E  mov         rcx,qword ptr [0000000180609050h]
+                    00
+  000000018011D4E9: 48 8B 09           mov         rcx,qword ptr [rcx]
+  000000018011D4EC: FF 57 10           call        qword ptr [rdi+10h]
+  000000018011D4EF: 48 8B 4D 08        mov         rcx,qword ptr [rbp+8]
+  000000018011D4F3: FF 15 2F BC 4E 00  call        qword ptr [0000000180609128h]
+  000000018011D4F9: 8B D0              mov         edx,eax
+  000000018011D4FB: 0F 28 DF           movaps      xmm3,xmm7
+  000000018011D4FE: 44 8B 85 6C 01 00  mov         r8d,dword ptr [rbp+000000000000016Ch]
+                    00
+  000000018011D505: 48 8B 0D 7C 8D 94  mov         rcx,qword ptr [0000000180A66288h]
+                    00
+  000000018011D50C: E8 AF 86 1A 00     call        00000001802C5BC0
+  000000018011D511: 48 8B 45 08        mov         rax,qword ptr [rbp+8]
+  000000018011D515: F2 0F 10 80 00 0F  movsd       xmm0,mmword ptr [rax+0000000000000F00h]
+                    00 00
+  000000018011D51D: F2 41 0F 5F C1     maxsd       xmm0,xmm9
+  000000018011D522: 66 41 0F 2F C1     comisd      xmm0,xmm9
+  000000018011D527: 0F 96 C0           setbe       al
+  000000018011D52A: 84 C0              test        al,al
+  000000018011D52C: 0F 84 8D 01 00 00  je          000000018011D6BF
+  000000018011D532: 45 84 F6           test        r14b,r14b
+  000000018011D535: 0F 85 84 01 00 00  jne         000000018011D6BF
+  000000018011D53B: FF 15 57 BB 4E 00  call        qword ptr [0000000180609098h]
+  000000018011D541: 48 8B C8           mov         rcx,rax
+  000000018011D544: 8B 95 6C 01 00 00  mov         edx,dword ptr [rbp+000000000000016Ch]
+  000000018011D54A: E8 41 BC EF FF     call        0000000180019190
+  000000018011D54F: 4C 8B E8           mov         r13,rax
+  000000018011D552: 48 85 C0           test        rax,rax
+  000000018011D555: 0F 84 64 01 00 00  je          000000018011D6BF
+  000000018011D55B: 0F 57 C0           xorps       xmm0,xmm0
+  000000018011D55E: F3 0F 7F 44 24 50  movdqu      xmmword ptr [rsp+50h],xmm0
+  000000018011D564: 45 33 F6           xor         r14d,r14d
+  000000018011D567: 4C 89 74 24 60     mov         qword ptr [rsp+60h],r14
+  000000018011D56C: 48 8D B8 50 08 00  lea         rdi,[rax+0000000000000850h]
+                    00
+  000000018011D573: 48 89 7C 24 40     mov         qword ptr [rsp+40h],rdi
+  000000018011D578: 48 8D 54 24 68     lea         rdx,[rsp+68h]
+  000000018011D57D: 48 8B 4D 08        mov         rcx,qword ptr [rbp+8]
+  000000018011D581: FF 15 91 BF 4E 00  call        qword ptr [0000000180609518h]
+  000000018011D587: 48 8B D8           mov         rbx,rax
+  000000018011D58A: 48 8B 4D 08        mov         rcx,qword ptr [rbp+8]
+  000000018011D58E: FF 15 94 BB 4E 00  call        qword ptr [0000000180609128h]
+  000000018011D594: 44 8B C0           mov         r8d,eax
+  000000018011D597: 48 89 5C 24 20     mov         qword ptr [rsp+20h],rbx
+  000000018011D59C: 4C 8D 4C 24 50     lea         r9,[rsp+50h]
+  000000018011D5A1: 49 8B D5           mov         rdx,r13
+  000000018011D5A4: 48 8B CF           mov         rcx,rdi
+  000000018011D5A7: E8 B4 84 41 00     call        0000000180535A60
+  000000018011D5AC: 45 8B FE           mov         r15d,r14d
+  000000018011D5AF: 48 8B B4 24 40 01  mov         rsi,qword ptr [rsp+0000000000000140h]
+                    00 00
+  000000018011D5B7: 48 8B 46 08        mov         rax,qword ptr [rsi+8]
+  000000018011D5BB: 48 2B 06           sub         rax,qword ptr [rsi]
+  000000018011D5BE: 48 C1 F8 02        sar         rax,2
+  000000018011D5C2: 48 85 C0           test        rax,rax
+  000000018011D5C5: 74 78              je          000000018011D63F
+  000000018011D5C7: 41 8B FE           mov         edi,r14d
+  000000018011D5CA: 66 0F 1F 44 00 00  nop         word ptr [rax+rax]
+  000000018011D5D0: 48 8B 1E           mov         rbx,qword ptr [rsi]
+  000000018011D5D3: FF 15 BF BA 4E 00  call        qword ptr [0000000180609098h]
+  000000018011D5D9: 48 8B C8           mov         rcx,rax
+  000000018011D5DC: 8B 14 1F           mov         edx,dword ptr [rdi+rbx]
+  000000018011D5DF: E8 BC E4 EF FF     call        000000018001BAA0
+  000000018011D5E4: 4C 8B E0           mov         r12,rax
+  000000018011D5E7: 48 85 C0           test        rax,rax
+  000000018011D5EA: 74 34              je          000000018011D620
+  000000018011D5EC: 48 8D 54 24 68     lea         rdx,[rsp+68h]
+  000000018011D5F1: 48 8B 4D 08        mov         rcx,qword ptr [rbp+8]
+  000000018011D5F5: FF 15 1D BF 4E 00  call        qword ptr [0000000180609518h]
+  000000018011D5FB: 48 8B D8           mov         rbx,rax
+  000000018011D5FE: 48 8B 4D 08        mov         rcx,qword ptr [rbp+8]
+  000000018011D602: FF 15 20 BB 4E 00  call        qword ptr [0000000180609128h]
+  000000018011D608: 44 8B C0           mov         r8d,eax
+  000000018011D60B: 48 89 5C 24 20     mov         qword ptr [rsp+20h],rbx
+  000000018011D610: 4C 8D 4C 24 50     lea         r9,[rsp+50h]
+  000000018011D615: 49 8B D5           mov         rdx,r13
+  000000018011D618: 49 8B CC           mov         rcx,r12
+  000000018011D61B: E8 B0 F9 37 00     call        000000018049CFD0
+  000000018011D620: 41 FF C7           inc         r15d
+  000000018011D623: 48 83 C7 04        add         rdi,4
+  000000018011D627: 48 8B 56 08        mov         rdx,qword ptr [rsi+8]
+  000000018011D62B: 48 2B 16           sub         rdx,qword ptr [rsi]
+  000000018011D62E: 48 C1 FA 02        sar         rdx,2
+  000000018011D632: 49 63 C7           movsxd      rax,r15d
+  000000018011D635: 48 3B C2           cmp         rax,rdx
+  000000018011D638: 72 96              jb          000000018011D5D0
+  000000018011D63A: 48 8B 7C 24 40     mov         rdi,qword ptr [rsp+40h]
+  000000018011D63F: 48 8B 07           mov         rax,qword ptr [rdi]
+  000000018011D642: 48 8B CF           mov         rcx,rdi
+  000000018011D645: FF 50 08           call        qword ptr [rax+8]
+  000000018011D648: 4C 8B E0           mov         r12,rax
+  000000018011D64B: 48 85 C0           test        rax,rax
+  000000018011D64E: 74 4E              je          000000018011D69E
+  000000018011D650: 48 8B 4E 08        mov         rcx,qword ptr [rsi+8]
+  000000018011D654: 48 2B 0E           sub         rcx,qword ptr [rsi]
+  000000018011D657: 48 C1 F9 02        sar         rcx,2
+  000000018011D65B: 48 85 C9           test        rcx,rcx
+  000000018011D65E: 74 3E              je          000000018011D69E
+  000000018011D660: 4D 8B FE           mov         r15,r14
+  000000018011D663: 48 8B 1E           mov         rbx,qword ptr [rsi]
+  000000018011D666: 49 8B 3C 24        mov         rdi,qword ptr [r12]
+  000000018011D66A: 48 8B 4D 08        mov         rcx,qword ptr [rbp+8]
+  000000018011D66E: FF 15 B4 BA 4E 00  call        qword ptr [0000000180609128h]
+  000000018011D674: 44 8B C0           mov         r8d,eax
+  000000018011D677: 41 8B 14 1F        mov         edx,dword ptr [r15+rbx]
+  000000018011D67B: 49 8B CC           mov         rcx,r12
+  000000018011D67E: FF 97 D0 00 00 00  call        qword ptr [rdi+00000000000000D0h]
+  000000018011D684: 41 FF C6           inc         r14d
+  000000018011D687: 4D 8D 7F 04        lea         r15,[r15+4]
+  000000018011D68B: 48 8B 4E 08        mov         rcx,qword ptr [rsi+8]
+  000000018011D68F: 48 2B 0E           sub         rcx,qword ptr [rsi]
+  000000018011D692: 48 C1 F9 02        sar         rcx,2
+  000000018011D696: 49 63 C6           movsxd      rax,r14d
+  000000018011D699: 48 3B C1           cmp         rax,rcx
+  000000018011D69C: 72 C5              jb          000000018011D663
+  000000018011D69E: 48 8B 4C 24 50     mov         rcx,qword ptr [rsp+50h]
+  000000018011D6A3: 48 85 C9           test        rcx,rcx
+  000000018011D6A6: 74 17              je          000000018011D6BF
+  000000018011D6A8: 48 8B 54 24 60     mov         rdx,qword ptr [rsp+60h]
+  000000018011D6AD: 48 2B D1           sub         rdx,rcx
+  000000018011D6B0: 48 C1 FA 02        sar         rdx,2
+  000000018011D6B4: 41 B8 04 00 00 00  mov         r8d,4
+  000000018011D6BA: E8 61 8F EF FF     call        0000000180016620
+  000000018011D6BF: B0 01              mov         al,1
+  000000018011D6C1: 4C 8D 9C 24 F0 00  lea         r11,[rsp+00000000000000F0h]
+                    00 00
+  000000018011D6C9: 49 8B 5B 30        mov         rbx,qword ptr [r11+30h]
+  000000018011D6CD: 49 8B 6B 38        mov         rbp,qword ptr [r11+38h]
+  000000018011D6D1: 49 8B 73 40        mov         rsi,qword ptr [r11+40h]
+  000000018011D6D5: 41 0F 28 73 F0     movaps      xmm6,xmmword ptr [r11-10h]
+  000000018011D6DA: 41 0F 28 7B E0     movaps      xmm7,xmmword ptr [r11-20h]
+  000000018011D6DF: 45 0F 28 43 D0     movaps      xmm8,xmmword ptr [r11-30h]
+  000000018011D6E4: 45 0F 28 4B C0     movaps      xmm9,xmmword ptr [r11-40h]
+  000000018011D6E9: 49 8B E3           mov         rsp,r11
+  000000018011D6EC: 41 5F              pop         r15
+  000000018011D6EE: 41 5E              pop         r14
+  000000018011D6F0: 41 5D              pop         r13
+  000000018011D6F2: 41 5C              pop         r12
+  000000018011D6F4: 5F                 pop         rdi
+  000000018011D6F5: C3                 ret
+
+  Summary
+
+        1000 .text

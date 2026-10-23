@@ -1,0 +1,195 @@
+{
+  "schema": "grim-dynasty-fixed-actor-initialization-tables-v1",
+  "status": "fixed-actor-initialization-tables-read",
+  "started_utc": "2026-10-21T05:36:13.061Z",
+  "script_sha256": "9a0f317b6d503a5657a8621a07bf06455a2704b195a1a0f54185cf31eab31a02",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-matrix-sync-dependencies/inspection.json",
+      "sha256": "5941d7ab01b2c2bd96957c8eeb369cb033aa79a256a54d371e026e9b870045c3"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-initializer-table/table.json",
+      "sha256": "29d059bdb204e1116c6a856537267152d54848c0fd8fc82fefc43914bbf4fa6e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-attach/2dcd48-instructions.json",
+      "sha256": "4f306451fb2a46246081c0bb65b68280c9f1367d941de8982652a80d4bd82150"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-attach/inspection.json",
+      "sha256": "f4b4a7a8d1fb008f1d7f216b4549dff6d6389c9903609c128a7bc62cff9eaea7"
+    }
+  ],
+  "limits": {
+    "semantic_bytes": 80,
+    "single_semantic_read_bytes": 16,
+    "semantic_read_operations": 9,
+    "init_e_bytes": 16,
+    "tls_callback_slots": 8,
+    "tls_callback_bytes": 64,
+    "fingerprint_chunk_bytes": 65536,
+    "proof_bytes_each": 65536,
+    "report_bytes": 65536
+  },
+  "init_e_caller": [
+    {
+      "address": "0x1802dcdd0",
+      "bytes": "488d15b1630200",
+      "instruction": "lea         rdx,[0000000180303188h]"
+    },
+    {
+      "address": "0x1802dcdd7",
+      "bytes": "488d0d9a630200",
+      "instruction": "lea         rcx,[0000000180303178h]"
+    },
+    {
+      "address": "0x1802dcdde",
+      "bytes": "e8d30d0000",
+      "instruction": "call        00000001802DDBB6"
+    }
+  ],
+  "init_e_thunk": {
+    "address": "0x1802ddbb6",
+    "bytes": "ff25944e0200",
+    "instruction": "jmp         qword ptr [0000000180302A50h]"
+  },
+  "init_e_binding": {
+    "module": "api-ms-win-crt-runtime-l1-1-0.dll",
+    "name": "_initterm_e",
+    "descriptor_index": 14,
+    "descriptor_rva": "0x4156b0",
+    "original_first_thunk_rva": "0x4161e0",
+    "thunk_index": 5,
+    "original_thunk_rva": "0x416208",
+    "hint_name_rva": "0x4182f6",
+    "hint": 55,
+    "first_thunk_rva": "0x302a28",
+    "iat_rva": "0x302a50",
+    "preferred_iat_va": "0x180302a50",
+    "iat_payload_bytes_read": 0
+  },
+  "tls_callbacks_source": {
+    "directory_rva": "0x35d468",
+    "directory_raw_hex": "00904480010000000890448001000000d40d42800100000098313080010000000000000000003000",
+    "address_of_callbacks": "0x180303198"
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "subprocesses": 0,
+  "backend_started": false,
+  "compilation_or_tests": false,
+  "original_code_semantic_reads": 0,
+  "new_header_bytes_read": 0,
+  "new_import_bytes_read": 0,
+  "target_payloads_followed": false,
+  "semantic_bytes": 24,
+  "semantic_reads": [
+    {
+      "kind": "init_e",
+      "rva": "0x303178",
+      "file_offset": 3154296,
+      "requested_bytes": 16,
+      "read_bytes": 16,
+      "raw_hex": "000000000000000008c92d8001000000"
+    },
+    {
+      "kind": "tls_callback",
+      "rva": "0x303198",
+      "file_offset": 3154328,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_hex": "0000000000000000"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "bytes": 4485632,
+      "chunk_bytes": 65536,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "label": "after",
+      "bytes": 4485632,
+      "chunk_bytes": 65536,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "init_e": {
+    "begin_rva": "0x303178",
+    "end_exclusive_rva": "0x303188",
+    "slots": [
+      {
+        "index": 0,
+        "slot_rva": "0x303178",
+        "file_offset": 3154296,
+        "raw_hex": "0000000000000000",
+        "pointer_hex": "0x0",
+        "is_null": true,
+        "target_followed": false
+      },
+      {
+        "index": 1,
+        "slot_rva": "0x303180",
+        "file_offset": 3154304,
+        "raw_hex": "08c92d8001000000",
+        "pointer_hex": "0x1802dc908",
+        "is_null": false,
+        "target_followed": false
+      }
+    ],
+    "complete": true,
+    "raw_hex": "000000000000000008c92d8001000000"
+  },
+  "tls_callbacks": {
+    "begin_rva": "0x303198",
+    "maximum_slots": 8,
+    "slots": [
+      {
+        "index": 0,
+        "slot_rva": "0x303198",
+        "file_offset": 3154328,
+        "raw_hex": "0000000000000000",
+        "pointer_hex": "0x0",
+        "is_null": true,
+        "target_followed": false
+      }
+    ],
+    "terminated": true
+  },
+  "limitations": [
+    "Only the fixed init_e half-open 16B span and at most eight 8B TLS callback slots are read. TLS reading stops at the first zero slot; no terminator within 64B is an insufficiency, not permission to extend.",
+    "Pointers are recorded as file-image values, including zero entries in init_e. No target, relocation, callback code, ordering dependency or initializer return behavior is followed or executed.",
+    "PE mapping, TLS directory and _initterm_e identity are reused from hash-pinned project evidence; no header or import metadata is reread.",
+    "Two whole-file hashes traverse bytes without code interpretation using one 64KiB buffer. Stable same-handle stat/hash checks are not an atomic snapshot or an exclusive Windows FileShare.Read guarantee."
+  ],
+  "stat_before": {
+    "size": 4485632,
+    "dev": 2562469142,
+    "ino": 1970324837085124,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stat_after": {
+    "size": 4485632,
+    "dev": 2562469142,
+    "ino": 1970324837085124,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "source_stat_stable": true,
+  "source_hash_preserved": true,
+  "source_closed": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T05:36:13.069Z"
+}

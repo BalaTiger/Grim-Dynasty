@@ -1,0 +1,90 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Game.dll
+
+File Type: DLL
+
+  00000001805DAFB8: 48 89 5C 24 08     mov         qword ptr [rsp+8],rbx
+  00000001805DAFBD: 48 89 74 24 10     mov         qword ptr [rsp+10h],rsi
+  00000001805DAFC2: 48 89 7C 24 20     mov         qword ptr [rsp+20h],rdi
+  00000001805DAFC7: 41 56              push        r14
+  00000001805DAFC9: 48 83 EC 20        sub         rsp,20h
+  00000001805DAFCD: 48 8B F2           mov         rsi,rdx
+  00000001805DAFD0: 4C 8B F1           mov         r14,rcx
+  00000001805DAFD3: 33 C9              xor         ecx,ecx
+  00000001805DAFD5: E8 8A FC FF FF     call        00000001805DAC64
+  00000001805DAFDA: 84 C0              test        al,al
+  00000001805DAFDC: 75 07              jne         00000001805DAFE5
+  00000001805DAFDE: 33 C0              xor         eax,eax
+  00000001805DAFE0: E9 E8 00 00 00     jmp         00000001805DB0CD
+  00000001805DAFE5: E8 0A FB FF FF     call        00000001805DAAF4
+  00000001805DAFEA: 8A D8              mov         bl,al
+  00000001805DAFEC: 88 44 24 40        mov         byte ptr [rsp+40h],al
+  00000001805DAFF0: 40 B7 01           mov         dil,1
+  00000001805DAFF3: 83 3D 9E AC 48 00  cmp         dword ptr [0000000180A65C98h],0
+                    00
+  00000001805DAFFA: 74 0A              je          00000001805DB006
+  00000001805DAFFC: B9 07 00 00 00     mov         ecx,7
+  00000001805DB001: E8 12 0A 00 00     call        00000001805DBA18
+  00000001805DB006: C7 05 88 AC 48 00  mov         dword ptr [0000000180A65C98h],1
+                    01 00 00 00
+  00000001805DB010: E8 4F FB FF FF     call        00000001805DAB64
+  00000001805DB015: 84 C0              test        al,al
+  00000001805DB017: 74 67              je          00000001805DB080
+  00000001805DB019: E8 42 0C 00 00     call        00000001805DBC60
+  00000001805DB01E: 48 8D 0D 87 0C 00  lea         rcx,[00000001805DBCACh]
+                    00
+  00000001805DB025: E8 8E FE FF FF     call        00000001805DAEB8
+  00000001805DB02A: E8 FD F6 FF FF     call        00000001805DA72C
+  00000001805DB02F: 48 8D 0D 06 F7 FF  lea         rcx,[00000001805DA73Ch]
+                    FF
+  00000001805DB036: E8 7D FE FF FF     call        00000001805DAEB8
+  00000001805DB03B: E8 FC 0B 00 00     call        00000001805DBC3C
+  00000001805DB040: 48 8D 15 49 18 03  lea         rdx,[000000018060C890h]
+                    00
+  00000001805DB047: 48 8D 0D 32 18 03  lea         rcx,[000000018060C880h]
+                    00
+  00000001805DB04E: E8 8D 13 00 00     call        00000001805DC3E0
+  00000001805DB053: 85 C0              test        eax,eax
+  00000001805DB055: 75 29              jne         00000001805DB080
+  00000001805DB057: E8 D4 FA FF FF     call        00000001805DAB30
+  00000001805DB05C: 84 C0              test        al,al
+  00000001805DB05E: 74 20              je          00000001805DB080
+  00000001805DB060: 48 8D 15 11 18 03  lea         rdx,[000000018060C878h]
+                    00
+  00000001805DB067: 48 8D 0D 4A 0A 03  lea         rcx,[000000018060BAB8h]
+                    00
+  00000001805DB06E: E8 67 13 00 00     call        00000001805DC3DA
+  00000001805DB073: C7 05 1B AC 48 00  mov         dword ptr [0000000180A65C98h],2
+                    02 00 00 00
+  00000001805DB07D: 40 32 FF           xor         dil,dil
+  00000001805DB080: 8A CB              mov         cl,bl
+  00000001805DB082: E8 91 FD FF FF     call        00000001805DAE18
+  00000001805DB087: 40 84 FF           test        dil,dil
+  00000001805DB08A: 0F 85 4E FF FF FF  jne         00000001805DAFDE
+  00000001805DB090: E8 C3 0B 00 00     call        00000001805DBC58
+  00000001805DB095: 48 8B D8           mov         rbx,rax
+  00000001805DB098: 48 83 38 00        cmp         qword ptr [rax],0
+  00000001805DB09C: 74 24              je          00000001805DB0C2
+  00000001805DB09E: 48 8B C8           mov         rcx,rax
+  00000001805DB0A1: E8 D6 FC FF FF     call        00000001805DAD7C
+  00000001805DB0A6: 84 C0              test        al,al
+  00000001805DB0A8: 74 18              je          00000001805DB0C2
+  00000001805DB0AA: 48 8B 1B           mov         rbx,qword ptr [rbx]
+  00000001805DB0AD: 48 8B CB           mov         rcx,rbx
+  00000001805DB0B0: E8 03 08 00 00     call        00000001805DB8B8
+  00000001805DB0B5: 4C 8B C6           mov         r8,rsi
+  00000001805DB0B8: BA 02 00 00 00     mov         edx,2
+  00000001805DB0BD: 49 8B CE           mov         rcx,r14
+  00000001805DB0C0: FF D3              call        rbx
+  00000001805DB0C2: FF 05 14 AC 48 00  inc         dword ptr [0000000180A65CDCh]
+  00000001805DB0C8: B8 01 00 00 00     mov         eax,1
+  00000001805DB0CD: 48 8B 5C 24 30     mov         rbx,qword ptr [rsp+30h]
+  00000001805DB0D2: 48 8B 74 24 38     mov         rsi,qword ptr [rsp+38h]
+  00000001805DB0D7: 48 8B 7C 24 48     mov         rdi,qword ptr [rsp+48h]
+  00000001805DB0DC: 48 83 C4 20        add         rsp,20h
+  00000001805DB0E0: 41 5E              pop         r14
+  00000001805DB0E2: C3                 ret
+
+  Summary
+
+      608000 .text

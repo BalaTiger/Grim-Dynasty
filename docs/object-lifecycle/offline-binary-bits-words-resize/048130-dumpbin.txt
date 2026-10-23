@@ -1,0 +1,65 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-cache-node\Engine.readonly.dll
+
+File Type: DLL
+
+  0000000180048130: 48 89 5C 24 08     mov         qword ptr [rsp+8],rbx
+  0000000180048135: 48 89 6C 24 10     mov         qword ptr [rsp+10h],rbp
+  000000018004813A: 48 89 74 24 18     mov         qword ptr [rsp+18h],rsi
+  000000018004813F: 57                 push        rdi
+  0000000180048140: 48 83 EC 30        sub         rsp,30h
+  0000000180048144: 48 8B F9           mov         rdi,rcx
+  0000000180048147: 49 8B F0           mov         rsi,r8
+  000000018004814A: 48 8B 49 08        mov         rcx,qword ptr [rcx+8]
+  000000018004814E: 48 8B DA           mov         rbx,rdx
+  0000000180048151: 48 8B C1           mov         rax,rcx
+  0000000180048154: 48 8B 2F           mov         rbp,qword ptr [rdi]
+  0000000180048157: 48 2B C5           sub         rax,rbp
+  000000018004815A: 48 C1 F8 02        sar         rax,2
+  000000018004815E: 48 3B D0           cmp         rdx,rax
+  0000000180048161: 73 0D              jae         0000000180048170
+  0000000180048163: 48 2B D8           sub         rbx,rax
+  0000000180048166: 48 8D 04 99        lea         rax,[rcx+rbx*4]
+  000000018004816A: 48 89 47 08        mov         qword ptr [rdi+8],rax
+  000000018004816E: EB 67              jmp         00000001800481D7
+  0000000180048170: 48 3B C3           cmp         rax,rbx
+  0000000180048173: 73 62              jae         00000001800481D7
+  0000000180048175: 48 3B F1           cmp         rsi,rcx
+  0000000180048178: 73 20              jae         000000018004819A
+  000000018004817A: 48 3B EE           cmp         rbp,rsi
+  000000018004817D: 77 1B              ja          000000018004819A
+  000000018004817F: 48 2B D0           sub         rdx,rax
+  0000000180048182: 48 8B CF           mov         rcx,rdi
+  0000000180048185: E8 B6 5C FE FF     call        000000018002DE40
+  000000018004818A: 48 8B 07           mov         rax,qword ptr [rdi]
+  000000018004818D: 48 2B F5           sub         rsi,rbp
+  0000000180048190: 48 C1 FE 02        sar         rsi,2
+  0000000180048194: 48 8D 34 B0        lea         rsi,[rax+rsi*4]
+  0000000180048198: EB 0B              jmp         00000001800481A5
+  000000018004819A: 48 2B D0           sub         rdx,rax
+  000000018004819D: 48 8B CF           mov         rcx,rdi
+  00000001800481A0: E8 9B 5C FE FF     call        000000018002DE40
+  00000001800481A5: 48 8B 4F 08        mov         rcx,qword ptr [rdi+8]
+  00000001800481A9: 48 8B D3           mov         rdx,rbx
+  00000001800481AC: 48 8B C1           mov         rax,rcx
+  00000001800481AF: 4C 8B C6           mov         r8,rsi
+  00000001800481B2: 48 2B 07           sub         rax,qword ptr [rdi]
+  00000001800481B5: 48 C1 F8 02        sar         rax,2
+  00000001800481B9: 48 2B D0           sub         rdx,rax
+  00000001800481BC: E8 DF 01 00 00     call        00000001800483A0
+  00000001800481C1: 48 8B 47 08        mov         rax,qword ptr [rdi+8]
+  00000001800481C5: 48 2B 07           sub         rax,qword ptr [rdi]
+  00000001800481C8: 48 C1 F8 02        sar         rax,2
+  00000001800481CC: 48 2B D8           sub         rbx,rax
+  00000001800481CF: 48 C1 E3 02        shl         rbx,2
+  00000001800481D3: 48 01 5F 08        add         qword ptr [rdi+8],rbx
+  00000001800481D7: 48 8B 5C 24 40     mov         rbx,qword ptr [rsp+40h]
+  00000001800481DC: 48 8B 6C 24 48     mov         rbp,qword ptr [rsp+48h]
+  00000001800481E1: 48 8B 74 24 50     mov         rsi,qword ptr [rsp+50h]
+  00000001800481E6: 48 83 C4 30        add         rsp,30h
+  00000001800481EA: 5F                 pop         rdi
+  00000001800481EB: C3                 ret
+
+  Summary
+
+      301000 .text

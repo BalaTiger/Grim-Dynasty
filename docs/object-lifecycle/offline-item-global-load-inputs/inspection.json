@@ -1,0 +1,4581 @@
+{
+  "schema": "grim-dynasty-item-global-load-inputs-v1",
+  "status": "fixed-global-load-inputs-observed",
+  "started_utc": "2026-10-21T09:48:54.573Z",
+  "sources": [
+    [
+      "docs/object-lifecycle/offline-item-global-load-body/inspection.json",
+      "26a01be264dbad6706bdc6e8553d37ba8811f7cf523eda93e0e5d21d0a9f33a8"
+    ],
+    [
+      "docs/object-lifecycle/offline-item-global-load-body/instructions.json",
+      "cee579cfa26e049167595ac55792993201e6268bd459474da6689f648e382262"
+    ],
+    [
+      "docs/task-kills/ghidra-selected/subscriber-constructor-routes.json",
+      "e907b67d57a568784a19f887a3c71883b0f7726a14defee449cf8693422ee165"
+    ],
+    [
+      "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    ],
+    [
+      "docs/object-lifecycle/offline-item-name-import/inspection.json",
+      "c3ba3e79ecceb98225a9034a85649807d8d00444feccf771b294a41d1e443f31"
+    ],
+    [
+      "docs/phase-1/boundary-audit/module-boundaries.json",
+      "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    ],
+    [
+      "docs/object-lifecycle/record-interface-discovery/record-interface-exports.json",
+      "33d7527e64565cc4e56a31b3665b41e004ad9e53f93739e3a645f205cf0b1603"
+    ]
+  ],
+  "files": [
+    {
+      "name": "Game",
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "size": 11385856,
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "pe": {
+        "pe_header_file_offset": 272,
+        "size_of_headers": 1024,
+        "size_of_image": 11427840,
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 4096,
+            "virtual_size": 6320499,
+            "raw_size": 6320640,
+            "raw_offset": 1024,
+            "characteristics": 1610612768
+          },
+          {
+            "name": ".rdata",
+            "rva": 6328320,
+            "virtual_size": 4517464,
+            "raw_size": 4517888,
+            "raw_offset": 6321664,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".data",
+            "rva": 10846208,
+            "virtual_size": 73456,
+            "raw_size": 56832,
+            "raw_offset": 10839552,
+            "characteristics": 3221225536
+          },
+          {
+            "name": ".pdata",
+            "rva": 10919936,
+            "virtual_size": 267516,
+            "raw_size": 267776,
+            "raw_offset": 10896384,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".gfids",
+            "rva": 11190272,
+            "virtual_size": 60,
+            "raw_size": 512,
+            "raw_offset": 11164160,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".tls",
+            "rva": 11194368,
+            "virtual_size": 9,
+            "raw_size": 512,
+            "raw_offset": 11164672,
+            "characteristics": 3221225536
+          },
+          {
+            "name": "_RDATA",
+            "rva": 11198464,
+            "virtual_size": 2096,
+            "raw_size": 2560,
+            "raw_offset": 11165184,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".rsrc",
+            "rva": 11202560,
+            "virtual_size": 480,
+            "raw_size": 512,
+            "raw_offset": 11167744,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".reloc",
+            "rva": 11206656,
+            "virtual_size": 217548,
+            "raw_size": 217600,
+            "raw_offset": 11168256,
+            "characteristics": 1107296320
+          }
+        ],
+        "export_directory_rva": "0x870640",
+        "export_directory_size": 1909504,
+        "export_directory_file_offset": 8842304,
+        "export_directory_bytes": "0000000008f6c76a0000000062db8a0001000000196200001962000068068700cc8e880030178a00",
+        "ordinal_base": 1,
+        "function_count": 25113,
+        "named_export_count": 25113,
+        "address_table_rva": "0x870668",
+        "name_pointer_table_rva": "0x888ecc",
+        "name_ordinal_table_rva": "0x8a1730"
+      },
+      "code_bytes": 26,
+      "data_bytes": 90,
+      "metadata_bytes": 401,
+      "source_closed": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "source_stat_stable": true,
+      "source_hash_preserved": true
+    },
+    {
+      "name": "Engine",
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "size": 4485632,
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "pe": {
+        "pe_header_file_offset": 288,
+        "size_of_headers": 1024,
+        "size_of_image": 4521984,
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 4096,
+            "virtual_size": 3148433,
+            "raw_size": 3148800,
+            "raw_offset": 1024,
+            "characteristics": 1610612768
+          },
+          {
+            "name": ".rdata",
+            "rva": 3153920,
+            "virtual_size": 1140696,
+            "raw_size": 1140736,
+            "raw_offset": 3149824,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".data",
+            "rva": 4296704,
+            "virtual_size": 44952,
+            "raw_size": 27136,
+            "raw_offset": 4290560,
+            "characteristics": 3221225536
+          },
+          {
+            "name": ".pdata",
+            "rva": 4341760,
+            "virtual_size": 146520,
+            "raw_size": 146944,
+            "raw_offset": 4317696,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".gfids",
+            "rva": 4489216,
+            "virtual_size": 60,
+            "raw_size": 512,
+            "raw_offset": 4464640,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".tls",
+            "rva": 4493312,
+            "virtual_size": 9,
+            "raw_size": 512,
+            "raw_offset": 4465152,
+            "characteristics": 3221225536
+          },
+          {
+            "name": "_RDATA",
+            "rva": 4497408,
+            "virtual_size": 3120,
+            "raw_size": 3584,
+            "raw_offset": 4465664,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".rsrc",
+            "rva": 4501504,
+            "virtual_size": 480,
+            "raw_size": 512,
+            "raw_offset": 4469248,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".reloc",
+            "rva": 4505600,
+            "virtual_size": 15700,
+            "raw_size": 15872,
+            "raw_offset": 4469760,
+            "characteristics": 1107296320
+          }
+        ],
+        "export_directory_rva": "0x3af700",
+        "export_directory_size": 417432,
+        "export_directory_file_offset": 3860224,
+        "export_directory_bytes": "00000000d2f5c76a0000000096ec3b00010000008b1800008b18000028f73a0054593b0080bb3b00",
+        "ordinal_base": 1,
+        "function_count": 6283,
+        "named_export_count": 6283,
+        "address_table_rva": "0x3af728",
+        "name_pointer_table_rva": "0x3b5954",
+        "name_ordinal_table_rva": "0x3bbb80"
+      },
+      "code_bytes": 0,
+      "data_bytes": 16,
+      "metadata_bytes": 0,
+      "source_closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "source_stat_stable": true,
+      "source_hash_preserved": true
+    }
+  ],
+  "cached_references": [
+    {
+      "address": "0x1802c8803",
+      "bytes": "ff1587083400",
+      "instruction": "call        qword ptr [0000000180609090h]"
+    },
+    {
+      "address": "0x1802c87f7",
+      "bytes": "ff159b083400",
+      "instruction": "call        qword ptr [0000000180609098h]"
+    },
+    {
+      "address": "0x1802c8815",
+      "bytes": "ff1575123400",
+      "instruction": "call        qword ptr [0000000180609A90h]"
+    },
+    {
+      "address": "0x1802ca400",
+      "bytes": "4c8d0528dd3400",
+      "instruction": "lea         r8,[000000018061812Fh]"
+    },
+    {
+      "address": "0x1802ca407",
+      "bytes": "488d151aa33c00",
+      "instruction": "lea         rdx,[0000000180694728h]"
+    },
+    {
+      "address": "0x1802cec37",
+      "bytes": "488d153a773c00",
+      "instruction": "lea         rdx,[0000000180696378h]"
+    },
+    {
+      "address": "0x1802cec58",
+      "bytes": "488d1501773c00",
+      "instruction": "lea         rdx,[0000000180696360h]"
+    },
+    {
+      "address": "0x1802cec2a",
+      "bytes": "f3440f103d85944d00",
+      "instruction": "movss       xmm15,dword ptr [00000001807A80B8h]"
+    },
+    {
+      "address": "0x1802cec50",
+      "bytes": "f30f101570944d00",
+      "instruction": "movss       xmm2,dword ptr [00000001807A80C8h]"
+    }
+  ],
+  "cached_constructor_lines": [
+    "1802c18ca: LEA RDX,[RBP + -0x28]",
+    "1802c18ce: MOV RCX,RDI",
+    "1802c18d1: CALL 0x1802c8750",
+    "1802c08cc: LEA RAX,[0x180693a48]",
+    "1802c08d3: MOV qword ptr [RCX + 0x1a8],RAX"
+  ],
+  "cached_engine_descriptor": {
+    "rva": "0xa4297c",
+    "file_offset": 10751868,
+    "bytes": "c02aa4000000000000000000a66aa50000906000"
+  },
+  "cached_oft_entries": 332,
+  "limits": {
+    "game_code_bytes": 26,
+    "game_data_bytes": 648,
+    "game_metadata_bytes": 854,
+    "engine_data_bytes": 16,
+    "engine_code_bytes": 0,
+    "engine_metadata_bytes": 0,
+    "literal_bytes_each": 128,
+    "import_name_bytes_each": 256,
+    "oft_tail_bytes": 56,
+    "read_operations": 1424,
+    "hash_buffer_bytes": 65536
+  },
+  "original_loaded_or_executed": false,
+  "subprocesses": 0,
+  "dumpbin_calls": 0,
+  "callees_followed": 0,
+  "global_state_read": false,
+  "archives_read": false,
+  "read_operations": 410,
+  "reads": [
+    {
+      "module": "Game",
+      "kind": "constructor-load-call-anchor",
+      "category": "code",
+      "rva": "0x2c18ca",
+      "file_offset": 2886858,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "488d55d8488bcfe87a6e0000"
+    },
+    {
+      "module": "Game",
+      "kind": "constructor-record-name-anchor",
+      "category": "code",
+      "rva": "0x2c08cc",
+      "file_offset": 2882764,
+      "requested_bytes": 14,
+      "read_bytes": 14,
+      "raw_hex": "488d0575313d00488981a8010000"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a48",
+      "file_offset": 6889544,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a49",
+      "file_offset": 6889545,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a4a",
+      "file_offset": 6889546,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "63"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a4b",
+      "file_offset": 6889547,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a4c",
+      "file_offset": 6889548,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a4d",
+      "file_offset": 6889549,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "64"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a4e",
+      "file_offset": 6889550,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "73"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a4f",
+      "file_offset": 6889551,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "2f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a50",
+      "file_offset": 6889552,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "67"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a51",
+      "file_offset": 6889553,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a52",
+      "file_offset": 6889554,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a53",
+      "file_offset": 6889555,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a54",
+      "file_offset": 6889556,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "2f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a55",
+      "file_offset": 6889557,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "67"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a56",
+      "file_offset": 6889558,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a57",
+      "file_offset": 6889559,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a58",
+      "file_offset": 6889560,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a59",
+      "file_offset": 6889561,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a5a",
+      "file_offset": 6889562,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a5b",
+      "file_offset": 6889563,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "67"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a5c",
+      "file_offset": 6889564,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a5d",
+      "file_offset": 6889565,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a5e",
+      "file_offset": 6889566,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a5f",
+      "file_offset": 6889567,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "2e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a60",
+      "file_offset": 6889568,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "64"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a61",
+      "file_offset": 6889569,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "62"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a62",
+      "file_offset": 6889570,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x693a63",
+      "file_offset": 6889571,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "00"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x694728",
+      "file_offset": 6892840,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x694729",
+      "file_offset": 6892841,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69472a",
+      "file_offset": 6892842,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69472b",
+      "file_offset": 6892843,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69472c",
+      "file_offset": 6892844,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "49"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69472d",
+      "file_offset": 6892845,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69472e",
+      "file_offset": 6892846,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "66"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69472f",
+      "file_offset": 6892847,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x694730",
+      "file_offset": 6892848,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "52"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x694731",
+      "file_offset": 6892849,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x694732",
+      "file_offset": 6892850,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "63"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x694733",
+      "file_offset": 6892851,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x694734",
+      "file_offset": 6892852,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x694735",
+      "file_offset": 6892853,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "64"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x694736",
+      "file_offset": 6892854,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "00"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x61812f",
+      "file_offset": 6383407,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "00"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696378",
+      "file_offset": 6900088,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696379",
+      "file_offset": 6900089,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69637a",
+      "file_offset": 6900090,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69637b",
+      "file_offset": 6900091,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69637c",
+      "file_offset": 6900092,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "53"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69637d",
+      "file_offset": 6900093,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "70"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69637e",
+      "file_offset": 6900094,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69637f",
+      "file_offset": 6900095,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696380",
+      "file_offset": 6900096,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6b"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696381",
+      "file_offset": 6900097,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696382",
+      "file_offset": 6900098,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696383",
+      "file_offset": 6900099,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696384",
+      "file_offset": 6900100,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696385",
+      "file_offset": 6900101,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696386",
+      "file_offset": 6900102,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "54"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696387",
+      "file_offset": 6900103,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696388",
+      "file_offset": 6900104,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696389",
+      "file_offset": 6900105,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69638a",
+      "file_offset": 6900106,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "00"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696360",
+      "file_offset": 6900064,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696361",
+      "file_offset": 6900065,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696362",
+      "file_offset": 6900066,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696363",
+      "file_offset": 6900067,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696364",
+      "file_offset": 6900068,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "53"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696365",
+      "file_offset": 6900069,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "70"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696366",
+      "file_offset": 6900070,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696367",
+      "file_offset": 6900071,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696368",
+      "file_offset": 6900072,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6b"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696369",
+      "file_offset": 6900073,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69636a",
+      "file_offset": 6900074,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69636b",
+      "file_offset": 6900075,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69636c",
+      "file_offset": 6900076,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69636d",
+      "file_offset": 6900077,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "78"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69636e",
+      "file_offset": 6900078,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "54"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x69636f",
+      "file_offset": 6900079,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696370",
+      "file_offset": 6900080,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696371",
+      "file_offset": 6900081,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-literal",
+      "category": "data",
+      "rva": "0x696372",
+      "file_offset": 6900082,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "00"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-default",
+      "category": "data",
+      "rva": "0x7a80b8",
+      "file_offset": 8021688,
+      "requested_bytes": 4,
+      "read_bytes": 4,
+      "raw_hex": "00004040"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-default",
+      "category": "data",
+      "rva": "0x7a80c8",
+      "file_offset": 8021704,
+      "requested_bytes": 4,
+      "read_bytes": 4,
+      "raw_hex": "0000a040"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-oft-tail-332-through-338",
+      "category": "metadata",
+      "rva": "0xa43520",
+      "file_offset": 10754848,
+      "requested_bytes": 56,
+      "read_bytes": 56,
+      "raw_hex": "909ca40000000000bc9ca40000000000009da40000000000269da40000000000589da400000000008e9da40000000000bc9da40000000000"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-iat",
+      "category": "metadata",
+      "rva": "0x609090",
+      "file_offset": 6321808,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_hex": "f058a40000000000"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-hint",
+      "category": "metadata",
+      "rva": "0xa458f0",
+      "file_offset": 10764016,
+      "requested_bytes": 2,
+      "read_bytes": 2,
+      "raw_hex": "8f10"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458f2",
+      "file_offset": 10764018,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "3f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458f3",
+      "file_offset": 10764019,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458f4",
+      "file_offset": 10764020,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458f5",
+      "file_offset": 10764021,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458f6",
+      "file_offset": 10764022,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "64"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458f7",
+      "file_offset": 10764023,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "54"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458f8",
+      "file_offset": 10764024,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458f9",
+      "file_offset": 10764025,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "62"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458fa",
+      "file_offset": 10764026,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458fb",
+      "file_offset": 10764027,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458fc",
+      "file_offset": 10764028,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "46"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458fd",
+      "file_offset": 10764029,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458fe",
+      "file_offset": 10764030,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa458ff",
+      "file_offset": 10764031,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45900",
+      "file_offset": 10764032,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45901",
+      "file_offset": 10764033,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45902",
+      "file_offset": 10764034,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "62"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45903",
+      "file_offset": 10764035,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6a"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45904",
+      "file_offset": 10764036,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45905",
+      "file_offset": 10764037,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "63"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45906",
+      "file_offset": 10764038,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45907",
+      "file_offset": 10764039,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45908",
+      "file_offset": 10764040,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45909",
+      "file_offset": 10764041,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4590a",
+      "file_offset": 10764042,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4590b",
+      "file_offset": 10764043,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "67"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4590c",
+      "file_offset": 10764044,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4590d",
+      "file_offset": 10764045,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4590e",
+      "file_offset": 10764046,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4590f",
+      "file_offset": 10764047,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "47"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45910",
+      "file_offset": 10764048,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "41"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45911",
+      "file_offset": 10764049,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45912",
+      "file_offset": 10764050,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "45"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45913",
+      "file_offset": 10764051,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45914",
+      "file_offset": 10764052,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45915",
+      "file_offset": 10764053,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "51"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45916",
+      "file_offset": 10764054,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "45"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45917",
+      "file_offset": 10764055,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "41"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45918",
+      "file_offset": 10764056,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "41"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45919",
+      "file_offset": 10764057,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "50"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4591a",
+      "file_offset": 10764058,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "45"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4591b",
+      "file_offset": 10764059,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "42"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4591c",
+      "file_offset": 10764060,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "56"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4591d",
+      "file_offset": 10764061,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4591e",
+      "file_offset": 10764062,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4591f",
+      "file_offset": 10764063,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45920",
+      "file_offset": 10764064,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "64"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45921",
+      "file_offset": 10764065,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "54"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45922",
+      "file_offset": 10764066,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45923",
+      "file_offset": 10764067,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "62"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45924",
+      "file_offset": 10764068,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45925",
+      "file_offset": 10764069,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45926",
+      "file_offset": 10764070,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45927",
+      "file_offset": 10764071,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "32"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45928",
+      "file_offset": 10764072,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45929",
+      "file_offset": 10764073,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "41"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4592a",
+      "file_offset": 10764074,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "45"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4592b",
+      "file_offset": 10764075,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "42"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4592c",
+      "file_offset": 10764076,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "56"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4592d",
+      "file_offset": 10764077,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "3f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4592e",
+      "file_offset": 10764078,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "24"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4592f",
+      "file_offset": 10764079,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "62"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45930",
+      "file_offset": 10764080,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45931",
+      "file_offset": 10764081,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "73"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45932",
+      "file_offset": 10764082,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45933",
+      "file_offset": 10764083,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "63"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45934",
+      "file_offset": 10764084,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "5f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45935",
+      "file_offset": 10764085,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "73"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45936",
+      "file_offset": 10764086,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45937",
+      "file_offset": 10764087,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45938",
+      "file_offset": 10764088,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45939",
+      "file_offset": 10764089,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4593a",
+      "file_offset": 10764090,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "67"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4593b",
+      "file_offset": 10764091,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4593c",
+      "file_offset": 10764092,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "44"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4593d",
+      "file_offset": 10764093,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "55"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4593e",
+      "file_offset": 10764094,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "3f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4593f",
+      "file_offset": 10764095,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "24"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45940",
+      "file_offset": 10764096,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "63"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45941",
+      "file_offset": 10764097,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "68"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45942",
+      "file_offset": 10764098,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45943",
+      "file_offset": 10764099,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45944",
+      "file_offset": 10764100,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "5f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45945",
+      "file_offset": 10764101,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45946",
+      "file_offset": 10764102,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45947",
+      "file_offset": 10764103,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45948",
+      "file_offset": 10764104,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45949",
+      "file_offset": 10764105,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4594a",
+      "file_offset": 10764106,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "73"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4594b",
+      "file_offset": 10764107,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4594c",
+      "file_offset": 10764108,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "44"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4594d",
+      "file_offset": 10764109,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4594e",
+      "file_offset": 10764110,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "73"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4594f",
+      "file_offset": 10764111,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45950",
+      "file_offset": 10764112,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "64"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45951",
+      "file_offset": 10764113,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45952",
+      "file_offset": 10764114,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45953",
+      "file_offset": 10764115,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "56"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45954",
+      "file_offset": 10764116,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "3f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45955",
+      "file_offset": 10764117,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "24"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45956",
+      "file_offset": 10764118,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45957",
+      "file_offset": 10764119,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45958",
+      "file_offset": 10764120,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45959",
+      "file_offset": 10764121,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4595a",
+      "file_offset": 10764122,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "63"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4595b",
+      "file_offset": 10764123,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4595c",
+      "file_offset": 10764124,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4595d",
+      "file_offset": 10764125,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4595e",
+      "file_offset": 10764126,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4595f",
+      "file_offset": 10764127,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45960",
+      "file_offset": 10764128,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "44"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45961",
+      "file_offset": 10764129,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45962",
+      "file_offset": 10764130,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "32"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45963",
+      "file_offset": 10764131,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45964",
+      "file_offset": 10764132,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45965",
+      "file_offset": 10764133,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "73"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45966",
+      "file_offset": 10764134,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45967",
+      "file_offset": 10764135,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "64"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45968",
+      "file_offset": 10764136,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45969",
+      "file_offset": 10764137,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4596a",
+      "file_offset": 10764138,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4596b",
+      "file_offset": 10764139,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "5a"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4596c",
+      "file_offset": 10764140,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "00"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-iat",
+      "category": "metadata",
+      "rva": "0x609098",
+      "file_offset": 6321816,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_hex": "6e59a40000000000"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-hint",
+      "category": "metadata",
+      "rva": "0xa4596e",
+      "file_offset": 10764142,
+      "requested_bytes": 2,
+      "read_bytes": 2,
+      "raw_hex": "0109"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45970",
+      "file_offset": 10764144,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "3f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45971",
+      "file_offset": 10764145,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "47"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45972",
+      "file_offset": 10764146,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45973",
+      "file_offset": 10764147,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45974",
+      "file_offset": 10764148,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45975",
+      "file_offset": 10764149,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "3f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45976",
+      "file_offset": 10764150,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "24"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45977",
+      "file_offset": 10764151,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "53"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45978",
+      "file_offset": 10764152,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45979",
+      "file_offset": 10764153,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4597a",
+      "file_offset": 10764154,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "67"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4597b",
+      "file_offset": 10764155,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4597c",
+      "file_offset": 10764156,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4597d",
+      "file_offset": 10764157,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4597e",
+      "file_offset": 10764158,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4597f",
+      "file_offset": 10764159,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45980",
+      "file_offset": 10764160,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45981",
+      "file_offset": 10764161,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "56"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45982",
+      "file_offset": 10764162,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45983",
+      "file_offset": 10764163,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "62"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45984",
+      "file_offset": 10764164,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6a"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45985",
+      "file_offset": 10764165,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45986",
+      "file_offset": 10764166,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "63"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45987",
+      "file_offset": 10764167,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45988",
+      "file_offset": 10764168,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45989",
+      "file_offset": 10764169,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4598a",
+      "file_offset": 10764170,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4598b",
+      "file_offset": 10764171,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4598c",
+      "file_offset": 10764172,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "67"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4598d",
+      "file_offset": 10764173,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4598e",
+      "file_offset": 10764174,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4598f",
+      "file_offset": 10764175,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45990",
+      "file_offset": 10764176,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "47"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45991",
+      "file_offset": 10764177,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "41"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45992",
+      "file_offset": 10764178,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45993",
+      "file_offset": 10764179,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "45"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45994",
+      "file_offset": 10764180,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45995",
+      "file_offset": 10764181,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45996",
+      "file_offset": 10764182,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45997",
+      "file_offset": 10764183,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "47"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45998",
+      "file_offset": 10764184,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "41"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa45999",
+      "file_offset": 10764185,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4599a",
+      "file_offset": 10764186,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "45"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4599b",
+      "file_offset": 10764187,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4599c",
+      "file_offset": 10764188,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4599d",
+      "file_offset": 10764189,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "53"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4599e",
+      "file_offset": 10764190,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "41"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa4599f",
+      "file_offset": 10764191,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "50"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459a0",
+      "file_offset": 10764192,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "45"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459a1",
+      "file_offset": 10764193,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "41"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459a2",
+      "file_offset": 10764194,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "56"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459a3",
+      "file_offset": 10764195,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459a4",
+      "file_offset": 10764196,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "62"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459a5",
+      "file_offset": 10764197,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6a"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459a6",
+      "file_offset": 10764198,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459a7",
+      "file_offset": 10764199,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "63"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459a8",
+      "file_offset": 10764200,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459a9",
+      "file_offset": 10764201,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459aa",
+      "file_offset": 10764202,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459ab",
+      "file_offset": 10764203,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459ac",
+      "file_offset": 10764204,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459ad",
+      "file_offset": 10764205,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "67"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459ae",
+      "file_offset": 10764206,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459af",
+      "file_offset": 10764207,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459b0",
+      "file_offset": 10764208,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459b1",
+      "file_offset": 10764209,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "32"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459b2",
+      "file_offset": 10764210,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459b3",
+      "file_offset": 10764211,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "58"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459b4",
+      "file_offset": 10764212,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "5a"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa459b5",
+      "file_offset": 10764213,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "00"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-iat",
+      "category": "metadata",
+      "rva": "0x609a90",
+      "file_offset": 6324368,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_hex": "bc9da40000000000"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-hint",
+      "category": "metadata",
+      "rva": "0xa49dbc",
+      "file_offset": 10781628,
+      "requested_bytes": 2,
+      "read_bytes": 2,
+      "raw_hex": "bf0b"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dbe",
+      "file_offset": 10781630,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "3f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dbf",
+      "file_offset": 10781631,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "47"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dc0",
+      "file_offset": 10781632,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dc1",
+      "file_offset": 10781633,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dc2",
+      "file_offset": 10781634,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dc3",
+      "file_offset": 10781635,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dc4",
+      "file_offset": 10781636,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dc5",
+      "file_offset": 10781637,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "64"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dc6",
+      "file_offset": 10781638,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "54"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dc7",
+      "file_offset": 10781639,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dc8",
+      "file_offset": 10781640,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "62"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dc9",
+      "file_offset": 10781641,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dca",
+      "file_offset": 10781642,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dcb",
+      "file_offset": 10781643,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dcc",
+      "file_offset": 10781644,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dcd",
+      "file_offset": 10781645,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "62"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dce",
+      "file_offset": 10781646,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6a"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dcf",
+      "file_offset": 10781647,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dd0",
+      "file_offset": 10781648,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "63"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dd1",
+      "file_offset": 10781649,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dd2",
+      "file_offset": 10781650,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dd3",
+      "file_offset": 10781651,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dd4",
+      "file_offset": 10781652,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dd5",
+      "file_offset": 10781653,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dd6",
+      "file_offset": 10781654,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "67"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dd7",
+      "file_offset": 10781655,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dd8",
+      "file_offset": 10781656,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dd9",
+      "file_offset": 10781657,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dda",
+      "file_offset": 10781658,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "47"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49ddb",
+      "file_offset": 10781659,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "41"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49ddc",
+      "file_offset": 10781660,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4d"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49ddd",
+      "file_offset": 10781661,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "45"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dde",
+      "file_offset": 10781662,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49ddf",
+      "file_offset": 10781663,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49de0",
+      "file_offset": 10781664,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "51"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49de1",
+      "file_offset": 10781665,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "45"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49de2",
+      "file_offset": 10781666,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "42"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49de3",
+      "file_offset": 10781667,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "41"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49de4",
+      "file_offset": 10781668,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "41"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49de5",
+      "file_offset": 10781669,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "45"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49de6",
+      "file_offset": 10781670,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "42"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49de7",
+      "file_offset": 10781671,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "56"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49de8",
+      "file_offset": 10781672,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "4c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49de9",
+      "file_offset": 10781673,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dea",
+      "file_offset": 10781674,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49deb",
+      "file_offset": 10781675,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "64"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dec",
+      "file_offset": 10781676,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "54"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49ded",
+      "file_offset": 10781677,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dee",
+      "file_offset": 10781678,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "62"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49def",
+      "file_offset": 10781679,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49df0",
+      "file_offset": 10781680,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "65"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49df1",
+      "file_offset": 10781681,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49df2",
+      "file_offset": 10781682,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "32"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49df3",
+      "file_offset": 10781683,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49df4",
+      "file_offset": 10781684,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "41"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49df5",
+      "file_offset": 10781685,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "45"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49df6",
+      "file_offset": 10781686,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "42"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49df7",
+      "file_offset": 10781687,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "56"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49df8",
+      "file_offset": 10781688,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "3f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49df9",
+      "file_offset": 10781689,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "24"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dfa",
+      "file_offset": 10781690,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "62"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dfb",
+      "file_offset": 10781691,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dfc",
+      "file_offset": 10781692,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "73"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dfd",
+      "file_offset": 10781693,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dfe",
+      "file_offset": 10781694,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "63"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49dff",
+      "file_offset": 10781695,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "5f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e00",
+      "file_offset": 10781696,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "73"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e01",
+      "file_offset": 10781697,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e02",
+      "file_offset": 10781698,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e03",
+      "file_offset": 10781699,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e04",
+      "file_offset": 10781700,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6e"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e05",
+      "file_offset": 10781701,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "67"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e06",
+      "file_offset": 10781702,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e07",
+      "file_offset": 10781703,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "44"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e08",
+      "file_offset": 10781704,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "55"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e09",
+      "file_offset": 10781705,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "3f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e0a",
+      "file_offset": 10781706,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "24"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e0b",
+      "file_offset": 10781707,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "63"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e0c",
+      "file_offset": 10781708,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "68"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e0d",
+      "file_offset": 10781709,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e0e",
+      "file_offset": 10781710,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e0f",
+      "file_offset": 10781711,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "5f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e10",
+      "file_offset": 10781712,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e11",
+      "file_offset": 10781713,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e12",
+      "file_offset": 10781714,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e13",
+      "file_offset": 10781715,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "69"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e14",
+      "file_offset": 10781716,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e15",
+      "file_offset": 10781717,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "73"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e16",
+      "file_offset": 10781718,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e17",
+      "file_offset": 10781719,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "44"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e18",
+      "file_offset": 10781720,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e19",
+      "file_offset": 10781721,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "73"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e1a",
+      "file_offset": 10781722,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e1b",
+      "file_offset": 10781723,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "64"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e1c",
+      "file_offset": 10781724,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e1d",
+      "file_offset": 10781725,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e1e",
+      "file_offset": 10781726,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "56"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e1f",
+      "file_offset": 10781727,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "3f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e20",
+      "file_offset": 10781728,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "24"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e21",
+      "file_offset": 10781729,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e22",
+      "file_offset": 10781730,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e23",
+      "file_offset": 10781731,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6c"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e24",
+      "file_offset": 10781732,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e25",
+      "file_offset": 10781733,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "63"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e26",
+      "file_offset": 10781734,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "61"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e27",
+      "file_offset": 10781735,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e28",
+      "file_offset": 10781736,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "6f"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e29",
+      "file_offset": 10781737,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "72"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e2a",
+      "file_offset": 10781738,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e2b",
+      "file_offset": 10781739,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "44"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e2c",
+      "file_offset": 10781740,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e2d",
+      "file_offset": 10781741,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "32"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e2e",
+      "file_offset": 10781742,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e2f",
+      "file_offset": 10781743,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e30",
+      "file_offset": 10781744,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "73"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e31",
+      "file_offset": 10781745,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "74"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e32",
+      "file_offset": 10781746,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "64"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e33",
+      "file_offset": 10781747,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e34",
+      "file_offset": 10781748,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e35",
+      "file_offset": 10781749,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "40"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e36",
+      "file_offset": 10781750,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "5a"
+    },
+    {
+      "module": "Game",
+      "kind": "fixed-import-name",
+      "category": "metadata",
+      "rva": "0xa49e37",
+      "file_offset": 10781751,
+      "requested_bytes": 1,
+      "read_bytes": 1,
+      "raw_hex": "00"
+    },
+    {
+      "module": "Engine",
+      "kind": "fixed-vtable-slot-plus48",
+      "category": "data",
+      "rva": "0x341f58",
+      "file_offset": 3411800,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_hex": "00ca138001000000"
+    },
+    {
+      "module": "Engine",
+      "kind": "fixed-vtable-slot-plus48",
+      "category": "data",
+      "rva": "0x342028",
+      "file_offset": 3412008,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_hex": "50fd138001000000"
+    }
+  ],
+  "literals": [
+    {
+      "rva": "0x693a48",
+      "role": "constructor-record-name",
+      "text": "records/game/gameengine.dbr",
+      "raw_hex": "7265636f7264732f67616d652f67616d65656e67696e652e64627200",
+      "bytes": 28
+    },
+    {
+      "rva": "0x694728",
+      "role": "secondary-table-key",
+      "text": "itemInfoRecord",
+      "raw_hex": "6974656d496e666f5265636f726400",
+      "bytes": 15
+    },
+    {
+      "rva": "0x61812f",
+      "role": "secondary-table-default",
+      "text": "",
+      "raw_hex": "00",
+      "bytes": 1
+    },
+    {
+      "rva": "0x696378",
+      "role": "first-float-key",
+      "text": "itemSparkleMinTime",
+      "raw_hex": "6974656d537061726b6c654d696e54696d6500",
+      "bytes": 19
+    },
+    {
+      "rva": "0x696360",
+      "role": "second-float-key",
+      "text": "itemSparkleMaxTime",
+      "raw_hex": "6974656d537061726b6c654d617854696d6500",
+      "bytes": 19
+    }
+  ],
+  "defaults": [
+    {
+      "rva": "0x7a80b8",
+      "raw_hex": "00004040",
+      "uint32": 1077936128,
+      "float32": 3
+    },
+    {
+      "rva": "0x7a80c8",
+      "raw_hex": "0000a040",
+      "uint32": 1084227584,
+      "float32": 5
+    }
+  ],
+  "import_bindings": [
+    {
+      "iat_rva": "0x609090",
+      "lookup_index": 18,
+      "oft_rva": "0xa42b50",
+      "dll": "Engine.dll",
+      "hint_name_rva": "0xa458f0",
+      "hint": 4239,
+      "text": "?LoadTableFile@ObjectManager@GAME@@QEAAPEBVLoadTable@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      "raw_hex": "3f4c6f61645461626c6546696c65404f626a6563744d616e616765724047414d45404051454141504542564c6f61645461626c65403240414542563f2462617369635f737472696e674044553f24636861725f7472616974734044407374644040563f24616c6c6f6361746f724044403240407374644040405a00",
+      "bytes": 123
+    },
+    {
+      "iat_rva": "0x609098",
+      "lookup_index": 19,
+      "oft_rva": "0xa42b58",
+      "dll": "Engine.dll",
+      "hint_name_rva": "0xa4596e",
+      "hint": 2305,
+      "text": "?Get@?$Singleton@VObjectManager@GAME@@@GAME@@SAPEAVObjectManager@2@XZ",
+      "raw_hex": "3f476574403f2453696e676c65746f6e40564f626a6563744d616e616765724047414d4540404047414d4540405341504541564f626a6563744d616e61676572403240585a00",
+      "bytes": 70
+    },
+    {
+      "iat_rva": "0x609a90",
+      "lookup_index": 338,
+      "oft_rva": "0xa43550",
+      "dll": "Engine.dll",
+      "hint_name_rva": "0xa49dbc",
+      "hint": 3007,
+      "text": "?GetLoadTable@ObjectManager@GAME@@QEBAAEBVLoadTable@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      "raw_hex": "3f4765744c6f61645461626c65404f626a6563744d616e616765724047414d45404051454241414542564c6f61645461626c65403240414542563f2462617369635f737472696e674044553f24636861725f7472616974734044407374644040563f24616c6c6f6361746f724044403240407374644040405a00",
+      "bytes": 122
+    }
+  ],
+  "vtable_slots": [
+    {
+      "class_name": "LoadTable",
+      "cached_export": {
+        "class_name": "LoadTable",
+        "member": "vftable",
+        "kind": "vftable",
+        "decorated_name": "??_7LoadTable@GAME@@6B@",
+        "ordinal": 1253,
+        "name_rva": "0x3cb236",
+        "export_address_table_index": 1252,
+        "rva": "0x341f10",
+        "preferred_va": "0x180341f10",
+        "file_offset": "0x340f10",
+        "forwarder": null
+      },
+      "slot_rva": "0x341f58",
+      "slot_offset": "0x48",
+      "raw_hex": "00ca138001000000",
+      "preferred_pointer": "0x18013ca00",
+      "pointee_bytes_read": 0
+    },
+    {
+      "class_name": "LoadTableBinary",
+      "cached_export": {
+        "class_name": "LoadTableBinary",
+        "member": "vftable",
+        "kind": "vftable",
+        "decorated_name": "??_7LoadTableBinary@GAME@@6B@",
+        "ordinal": 1254,
+        "name_rva": "0x3cb24e",
+        "export_address_table_index": 1253,
+        "rva": "0x341fe0",
+        "preferred_va": "0x180341fe0",
+        "file_offset": "0x340fe0",
+        "forwarder": null
+      },
+      "slot_rva": "0x342028",
+      "slot_offset": "0x48",
+      "raw_hex": "50fd138001000000",
+      "preferred_pointer": "0x18013fd50",
+      "pointee_bytes_read": 0
+    }
+  ],
+  "anchors": [
+    {
+      "rva": "0x2c18ca",
+      "bytes": 12,
+      "raw_hex": "488d55d8488bcfe87a6e0000",
+      "verified": "LEA RDX,[RBP-28]; MOV RCX,RDI; CALL2C8750"
+    },
+    {
+      "rva": "0x2c08cc",
+      "bytes": 14,
+      "raw_hex": "488d0575313d00488981a8010000",
+      "verified": "LEA RAX,693A48; QWORD[RCX+1A8]=RAX"
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "Strings are read one byte at a time and stop immediately at NUL or the fixed limit. No adjacent string discovery is performed.",
+    "Only the missing seven OFT entries332..338 are newly read; the first332 and descriptor/name ownership are hash-pinned cache.",
+    "The three named imports are bound on disk only. No Engine export/callee resolution is performed here.",
+    "Two fixed +48 vtable slots are observed from disk. Their pointees and loaded replacements are not read or executed.",
+    "The constructor anchors verify only their local instructions, not reachability, object lifetime, database values or absence of later writers.",
+    "Separate same-handle64KiB before/after module hashes are identity checks, not atomic snapshots or loaded compatibility."
+  ],
+  "script_sha256": "c557d9c0783985cc17b342eee4f82ee96746e50e30935e98a1f3c5b97b296cf3",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-21T09:48:54.600Z"
+}

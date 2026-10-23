@@ -1,0 +1,36 @@
+{
+  "operation": "Fixed VA instruction and normal PE import metadata inspection",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "target_binary_loaded_or_executed": false,
+  "image_base": "0x180000000",
+  "address": "0x1802ddb0e",
+  "rva": "0x2ddb0e",
+  "file_offset": "0x2dcf0e",
+  "instruction_bytes_inspected": 6,
+  "instruction_bytes": "ff25544c0200",
+  "status": "resolved_normal_import",
+  "limitations": [
+    "Static on-disk import association only; no runtime resolution or DLL loading.",
+    "No ordinary jump-chain following, delay-import scan, or CRT implementation/OOM behavior claim.",
+    "An imported memcpy name establishes identity only; normal successful copy semantics remain a separately stated contract."
+  ],
+  "instruction": "JMP qword ptr [RIP + disp32]",
+  "displacement": 150612,
+  "iat_address": "0x180302768",
+  "iat_rva": "0x302768",
+  "iat_file_offset": "0x301768",
+  "iat_file_value": "0x417d02",
+  "normal_import": {
+    "dll": "VCRUNTIME140.dll",
+    "hint": 60,
+    "name": "memcpy",
+    "descriptor_rva": "0x41569c",
+    "first_thunk_rva": "0x3026f8",
+    "original_first_thunk_rva": "0x415eb0",
+    "thunk_index": 14,
+    "lookup_entry_value": "0x417d02"
+  },
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+}

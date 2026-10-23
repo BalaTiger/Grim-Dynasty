@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "purpose": "One fixed official Game procedure-name index query for Player and Character constructors, in observed demangled GAME::Class::Method style or the two constructor decorated-name prefixes. This only locates candidates for the unresolved derived Entity+38 navigation-interface vptr writer. It neither assumes constructor addresses nor proves any returned candidate writes that interface. No body query, export-table enumeration or automatic expansion.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7",
+      "source_kind": "Saved Game metadata has exact ?SetPathPosition@Character@GAME@@QEAAXAEBVWorldVec3@2@@Z at RVA 5D9A0 and ?SetPathPositionNotCoords@Character@GAME@@QEAAXAEBVWorldVec3@2@@Z at 5DA20. Player class metadata also exists. These justify class names only; neither constructor address nor a complete constructor decorated symbol is asserted."
+    },
+    {
+      "file": "docs/reverse-client/r1-player-register-states/04-PlayerRegisterStates-0x18015e440-procedure_pseudo_code.json",
+      "sha256": "e4a8d00e03fc7921ab835f9fb728de3d8a675ebeec83de2003ee918724b5b9f5",
+      "source_kind": "Saved real body uses GAME::ControllerPlayer::RegisterStates and ControllerPlayerStateStartup vtable writes. It proves observed naming style and that these state objects are distinct from Player entity construction; this search excludes ControllerPlayer and its states."
+    },
+    {
+      "file": "docs/reverse-client/r1-game-state-registration-search/04-ControllerAI-state-registration-search.json",
+      "sha256": "dad6e1f3b97f4041fe48ee25311d604dcb03ee3778b8f8b6b4f5ff281c121fdb",
+      "source_kind": "Previously successful official search_procedures returned address/value rows, including GAME::ControllerAI::AddState, with exact pattern/mode/case_sensitive evidence. Reuses that tool contract, not the prior regex or result address."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 6,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "search_procedures"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Game-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Game-session"
+    },
+    {
+      "tool": "search_procedures",
+      "args": {
+        "pattern": "^(?:(?:GAME::)?(?:Player::Player|Character::Character)(?:\\s*\\([^\\r\\n]*\\))?|\\?\\?0(?:Player|Character)@GAME@@[^\\r\\n]*)$",
+        "mode": "regex",
+        "case_sensitive": true
+      },
+      "label": "04-Player-Character-constructor-name-search"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "05-Game-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "06-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "execution_requirements": [
+    "Only a separately reviewed fixed Game batch may launch one installed Rea backend. Preserve Game hash/profile, process ownership, descriptor/image admission, heap, deadlines and cleanup guards. Never execute the original or access saves/Steam cloud.",
+    "Exactly one search_procedures request, with this fixed regex and case_sensitive true. It covers only Player::Player/Character::Character (optional observed GAME:: prefix and parameter suffix), plus ??0Player@GAME@@/??0Character@GAME@@ decorated prefixes. It excludes controller state names. The official API internally enumerates analyzed names; no result limit, cursor or range exists and no result-count cap is claimed.",
+    "An empty array is valid and does not prove the constructors absent. Every returned normalized row must have exactly address/value string fields, a lowercase default-space 0x address, and a value matching the fixed pattern. Unexpected schema, address-space, name, parameter echo or tool failure stops the batch; no silent regex widening, fallback, retry or follow-up body lookup.",
+    "Retain raw response, operation, pattern/mode/case_sensitive, provider, Game identity, evidence_id and limitations. Names and addresses are candidates only, not proof of a derived vptr write, ownership or movement production.",
+    "Use unchanged Game 384M heap, 5 GiB physical-and-commit launch and 2 GiB stop gates, 330000 ms provider startup and 600000 ms request deadlines. Prior Game trial sampled peaks are resource provenance, not a bound for this different query.",
+    "Require pinned preceding 23-call Engine crowd-motion batch passed, closed, process exited, empty Job and sampler exited with stable Engine hashes. Preserve all earlier plans/results. No installation, monitor/security/CPU changes."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "game-mouse-first-calibration-384m-v1",
+    "calibration_only": false,
+    "measured_game_peak_available": true,
+    "budget_source": "unchanged-provisional-Game-budget-with-prior-trial-observation",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "task_allowance_gib": 3,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "no_system_settings_change": true,
+    "scope": "One fixed Game constructor-name index search. The previously successful Game profile and trial observation are reused unchanged; all-name index matching inside the official tool is acknowledged and fixed matches alone are returned. The 5/2 GiB gates remain.",
+    "legacy_budget_fields": "The reused game-mouse-first-calibration-384m-v1 budget object retains its original calibrationOnly/measuredGamePeakAvailable labels. Those immutable labels describe budget provenance, not the current observation inventory; use this plan and prior_game_trial_observation for current evidence."
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "previous_sha256": "f06ef3bb91be422afa3e1eef639243be2b711c4f701da462767649e34851b0c1",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_sha256": "6d07a2a1e29565930ebd091f070128aeb6a59feaafd8e8fcdce01bb7b4a743a9",
+    "validation_file": ".tooling/r0-owned-job-terminal-candidate-20261022-attempt2/test-result.json",
+    "validation_sha256": "1ad80a494a359d16012698a0ffde723308ebe8e3d6bd06d488dd156e22a305d2",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 36,
+    "scenario_groups": 8,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "production_normalization": "Candidate header and namespace removed; isolated label removed from comment. Algorithm otherwise unchanged.",
+    "limitations": "Missing image is accepted only with positive same-handle exit evidence, never for live roles or counters. The limit is per Probe or QueryMembers operation, not a whole sampler-cycle latency guarantee. Fault tests are not an R0 reproduction or proof of root cause."
+  },
+  "prior_engine_mouse_core": {
+    "summary_file": "docs/reverse-client/r1-engine-mouse-core/summary.json",
+    "summary_sha256": "4d26ffeb36f6c1bc0e8b8faf0a77c7f601ef08b5ce31a6a2aa2ca56c2449ba77",
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true
+  },
+  "prior_game_trial_observation": {
+    "summary_file": "docs/reverse-client/r1-game-mouse-calibration/summary.json",
+    "summary_sha256": "1397b49afa2556c97b2c1ea5ab9807a92c1a1306cd98262d10e697a2ed4d571e",
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "completed_plan_calls": 8,
+    "sampled_tree_private_commit_peak_bytes": 993013760,
+    "sampled_with_controller_and_sampler_private_peak_bytes": 1175207936,
+    "limitations": "One previous Game query trial with discrete sampling; no guarantee for this different fixed batch and no permission to reduce the existing resource gates."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-crowd-motion-helpers/summary.json",
+    "summary_sha256": "bc08e52772df1c5ff42063bcade04ee162daa47b544d00194da980e17bd50b48",
+    "required_status": "passed",
+    "completed_plan_calls": 23,
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "scope": "Immediately preceding Engine motion batch cleanup; original Engine hash must remain stable. This does not replace Game target identity/profile checks."
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false,
+    "scope": "Existing startup absolute deadline and per-request outer deadline; not a whole-batch runtime guarantee."
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "status": "prepared-not-registered-not-started",
+  "purpose": "Recover the two dependencies of cache node creation. This is a separate later batch, not part of maintenance scope. Fixed data plan only; no execution authorization.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "address_sources": [
+    {
+      "file": "docs/object-lifecycle/rea-record-cache-publication/05-Cache-publication-0x18005deb0-assembly.json",
+      "sha256": "a4fe68eb62328f6715c70fe810645e60d6045720d8ad94ae11a1379260d917c9",
+      "caller": "0x18005deb0",
+      "call_sites": [
+        {
+          "site": "0x18005dec2",
+          "target": "0x18001f170"
+        },
+        {
+          "site": "0x18005deec",
+          "target": "0x180022860"
+        }
+      ],
+      "evidence_id": "ev_58fd83bd301795b7c4f186903d19d345ff9ded2395479a15634d4d1fb9cf5dab"
+    }
+  ],
+  "questions": [
+    {
+      "address": "0x18001f170",
+      "site": "0x18005dec2",
+      "question": "Determine actual input use including inherited RCX, exact allocation size and next/previous initialization, and normal allocation dependencies."
+    },
+    {
+      "address": "0x180022860",
+      "site": "0x18005deec",
+      "question": "Recover fresh destination string transfer behavior, source changes, copy versus move, inline versus external storage, and lifetime/allocator dependencies. Do not substitute 023180."
+    }
+  ],
+  "max_tool_calls": 11,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "This plan is not registered or executed. Confirm the parent-approved workload window and exact scope before execution; no automatic followup, scheduling or retry.",
+    "Bind this exact plan hash in a reviewed runner mode; verify saved and live tool schemas, pinned versions and original target hash. Obtain per-action approval when enforced.",
+    "Reuse the validated owned Windows Job and gated startup. Main Java heap384M, serial backend; fresh physical availability and commit headroom both>=4.25GiB. Stop only the owned Job if either<2GiB or ownership/monitoring fails.",
+    "Exactly eleven calls on these two targets. Callees are inventory only; do not automatically query them or merge the other prepared batch.",
+    "No installation, system/security/persistent-permission changes, original execution, saves/cloud, commit or push.",
+    "Normal close, final session, empty owned Job, process/runtime release and unchanged target hash must be confirmed before implementation."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Proposed reuse of validated Engine384M guard for exactly this fixed two-target11-call batch; no current resource clearance or execution."
+  },
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18001f170"
+      },
+      "label": "04-Cache-helper-0x18001f170-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18001f170"
+      },
+      "label": "05-Cache-helper-0x18001f170-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18001f170"
+      },
+      "label": "06-Cache-helper-0x18001f170-direct-callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180022860"
+      },
+      "label": "07-Cache-helper-0x180022860-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180022860"
+      },
+      "label": "08-Cache-helper-0x180022860-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180022860"
+      },
+      "label": "09-Cache-helper-0x180022860-direct-callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "10-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "11-final-session"
+    }
+  ]
+}

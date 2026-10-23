@@ -1,0 +1,283 @@
+{
+  "schema": "grim-dynasty.fixed-engine-crowd-math-imports.v1",
+  "started_utc": "2026-10-23T05:47:45.599Z",
+  "script_sha256": "1289de7c616cdd1cb7a9318ad922a6b5a2cc16e9e0686330da31afced1aeb139",
+  "plan_sha256": "4ff3de79df0b41f5676d5670f0b299f24247b6a4d6d7a484a85701fa7c09c3f5",
+  "source_pins": [
+    {
+      "key": "avoidance_assembly",
+      "path": "docs/reverse-client/r1-crowd-motion-branches/20-CrowdMotionBranch-0x18025f250-procedure_assembly.json",
+      "sha256": "4ccf1f9256b2ab72f5367398a2717d6316e22ca769104f96695dccb90cac9b57"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-depot-ctor-boundaries/boundary.json",
+      "sha256": "646053e4565e3f08c696ae0e9a16ddb5c2e81ab22ffe046c5057fc41aa64bb15"
+    },
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-load-ticks-imports/tick-import-bindings.json",
+      "sha256": "eb1e49dfe763e207be743b91d03b2b4c066057063da052cb3e1e3a97807aab0e"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "inventory_source",
+      "path": "docs/phase-1/boundary-audit/boundary_inventory.py",
+      "sha256": "354e00aeefbdfbc1beefa3de4f2c8c93635a0cb9ad824329f0011454f47ce224"
+    }
+  ],
+  "code_bytes": 18,
+  "code_operations": 3,
+  "metadata_bytes": 122,
+  "metadata_operations": 14,
+  "new_PE_header_bytes": 0,
+  "new_descriptor_bytes": 20,
+  "new_OFT_bytes": 24,
+  "target_body_bytes": 0,
+  "original_loaded_or_executed": false,
+  "imported_functions_executed": false,
+  "crt_files_opened": false,
+  "api_set_resolved": false,
+  "backend_started": false,
+  "subprocesses": 0,
+  "whole_table_scanned": false,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "reads": [
+        {
+          "kind": "fixed-FF25-thunk-candidate",
+          "rva": "0x2ddb5c",
+          "file_offset": 3002204,
+          "bytes": 6,
+          "raw_hex": "ff259e4e0200"
+        },
+        {
+          "kind": "fixed-FF25-thunk-candidate",
+          "rva": "0x2ddb50",
+          "file_offset": 3002192,
+          "bytes": 6,
+          "raw_hex": "ff259a4e0200"
+        },
+        {
+          "kind": "fixed-FF25-thunk-candidate",
+          "rva": "0x2ddb56",
+          "file_offset": 3002198,
+          "bytes": 6,
+          "raw_hex": "ff259c4e0200"
+        },
+        {
+          "kind": "fixed-math-import-descriptor",
+          "rva": "0x415778",
+          "file_offset": 4278136,
+          "bytes": 20,
+          "raw_hex": "4861410000000000000000005a84410090293000"
+        },
+        {
+          "kind": "fixed-exact-DLL-name",
+          "rva": "0x41845a",
+          "file_offset": 4289626,
+          "bytes": 31,
+          "raw_hex": "6170692d6d732d77696e2d6372742d6d6174682d6c312d312d302e646c6c00"
+        },
+        {
+          "kind": "fixed-selected-OFT",
+          "rva": "0x4161b8",
+          "file_offset": 4280760,
+          "bytes": 8,
+          "raw_hex": "8881410000000000"
+        },
+        {
+          "kind": "fixed-selected-IAT",
+          "rva": "0x302a00",
+          "file_offset": 3152384,
+          "bytes": 8,
+          "raw_hex": "8881410000000000"
+        },
+        {
+          "kind": "fixed-import-hint",
+          "rva": "0x418188",
+          "file_offset": 4288904,
+          "bytes": 2,
+          "raw_hex": "5600"
+        },
+        {
+          "kind": "fixed-exact-import-name",
+          "rva": "0x41818a",
+          "file_offset": 4288906,
+          "bytes": 7,
+          "raw_hex": "6174616e326600"
+        },
+        {
+          "kind": "fixed-selected-OFT",
+          "rva": "0x4161a8",
+          "file_offset": 4280744,
+          "bytes": 8,
+          "raw_hex": "7881410000000000"
+        },
+        {
+          "kind": "fixed-selected-IAT",
+          "rva": "0x3029f0",
+          "file_offset": 3152368,
+          "bytes": 8,
+          "raw_hex": "7881410000000000"
+        },
+        {
+          "kind": "fixed-import-hint",
+          "rva": "0x418178",
+          "file_offset": 4288888,
+          "bytes": 2,
+          "raw_hex": "9100"
+        },
+        {
+          "kind": "fixed-exact-import-name",
+          "rva": "0x41817a",
+          "file_offset": 4288890,
+          "bytes": 5,
+          "raw_hex": "636f736600"
+        },
+        {
+          "kind": "fixed-selected-OFT",
+          "rva": "0x4161b0",
+          "file_offset": 4280752,
+          "bytes": 8,
+          "raw_hex": "8081410000000000"
+        },
+        {
+          "kind": "fixed-selected-IAT",
+          "rva": "0x3029f8",
+          "file_offset": 3152376,
+          "bytes": 8,
+          "raw_hex": "8081410000000000"
+        },
+        {
+          "kind": "fixed-import-hint",
+          "rva": "0x418180",
+          "file_offset": 4288896,
+          "bytes": 2,
+          "raw_hex": "1301"
+        },
+        {
+          "kind": "fixed-exact-import-name",
+          "rva": "0x418182",
+          "file_offset": 4288898,
+          "bytes": 5,
+          "raw_hex": "73696e6600"
+        }
+      ],
+      "hash_bytes": 8971264,
+      "closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "stable": true
+    }
+  ],
+  "thunks": [
+    {
+      "rva": "0x2ddb5c",
+      "bytes": 6,
+      "raw_hex": "ff259e4e0200",
+      "source_key": "avoidance_assembly",
+      "instruction": "0x18025f40c: CALL 0x1802ddb5c",
+      "opcode_verified": true,
+      "iat_rva": "0x302a00",
+      "displacement": 151198
+    },
+    {
+      "rva": "0x2ddb50",
+      "bytes": 6,
+      "raw_hex": "ff259a4e0200",
+      "source_key": "avoidance_assembly",
+      "instruction": "0x18025f483: CALL 0x1802ddb50",
+      "opcode_verified": true,
+      "iat_rva": "0x3029f0",
+      "displacement": 151194
+    },
+    {
+      "rva": "0x2ddb56",
+      "bytes": 6,
+      "raw_hex": "ff259c4e0200",
+      "source_key": "avoidance_assembly",
+      "instruction": "0x18025f495: CALL 0x1802ddb56",
+      "opcode_verified": true,
+      "iat_rva": "0x3029f8",
+      "displacement": 151196
+    }
+  ],
+  "bindings": [
+    {
+      "thunk_rva": "0x2ddb5c",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "descriptor_index": 24,
+      "index": 14,
+      "symbol": "atan2f",
+      "hint": 86,
+      "iat_rva": "0x302a00",
+      "lookup_rva": "0x4161b8",
+      "hint_name_rva": "0x418188",
+      "classification": "ExactOrdinaryApiSetNamedImport",
+      "loaded_iat_read": false,
+      "host_dll_resolved": false,
+      "target_body_read": false,
+      "numeric_contract_verified": false
+    },
+    {
+      "thunk_rva": "0x2ddb50",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "descriptor_index": 24,
+      "index": 12,
+      "symbol": "cosf",
+      "hint": 145,
+      "iat_rva": "0x3029f0",
+      "lookup_rva": "0x4161a8",
+      "hint_name_rva": "0x418178",
+      "classification": "ExactOrdinaryApiSetNamedImport",
+      "loaded_iat_read": false,
+      "host_dll_resolved": false,
+      "target_body_read": false,
+      "numeric_contract_verified": false
+    },
+    {
+      "thunk_rva": "0x2ddb56",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "descriptor_index": 24,
+      "index": 13,
+      "symbol": "sinf",
+      "hint": 275,
+      "iat_rva": "0x3029f8",
+      "lookup_rva": "0x4161b0",
+      "hint_name_rva": "0x418180",
+      "classification": "ExactOrdinaryApiSetNamedImport",
+      "loaded_iat_read": false,
+      "host_dll_resolved": false,
+      "target_body_read": false,
+      "numeric_contract_verified": false
+    }
+  ],
+  "disk_bindings_complete": true,
+  "unsupported": [],
+  "failures": [],
+  "limitations": [
+    "Fixed18B FF25 candidates plus at most122B import metadata. No original or imported function is executed.",
+    "The API-set DLL contract name is not the actual host CRT DLL. Host resolution/version/function implementation and floating-point behavior remain unverified.",
+    "Disk import relationships do not prove loaded IATs, callable ABI, numeric accuracy, exception/errno behavior, rounding modes, signed-zero/NaN payload behavior or native runtime compatibility.",
+    "Whole-file hash streams are identity checks separate from scoped payload budgets, not atomic snapshots.",
+    "Node path checks cannot identify every Windows reparse tag; separate Attributes preflight remains required."
+  ],
+  "proofs_verified": true,
+  "descriptor": {
+    "index": 24,
+    "rva": "0x415778",
+    "original_first_thunk_rva": "0x416148",
+    "first_thunk_rva": "0x302990",
+    "name_rva": "0x41845a",
+    "dll": "api-ms-win-crt-math-l1-1-0.dll"
+  },
+  "finished_utc": "2026-10-23T05:47:45.612Z",
+  "status": "passed"
+}

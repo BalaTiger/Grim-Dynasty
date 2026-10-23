@@ -1,0 +1,194 @@
+{
+  "started_utc": "2026-10-22T22:05:30.490Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_size": 4485632,
+  "script_sha256": "e10414f09ef3029a8e0e19d22f119e14352abda779b5f39b955c72daf4d733ad",
+  "plan_sha256": "b4c121abdb3568aa097c1a1b5ceff863a2ad33e01c1ec1dd7ca3508325c3faec",
+  "proofs": [
+    {
+      "file": "docs/reverse-client/r1-crowd-movement-direct/05-CrowdMovementDirect-0x18002f800-procedure_assembly.json",
+      "sha256": "e1889f6e7564b2eb23fa4cedef700eb8ea5693f8e06b30cad2577838ac13240f",
+      "procedure": "0x18002f800",
+      "instructions": [
+        "0x18002f826: MOV RSI, RCX",
+        "0x18002f829: LEA RAX, [0x18033a6c0]",
+        "0x18002f830: MOV qword ptr [RCX], RAX",
+        "0x18002f8c3: MOV RDX, RSI",
+        "0x18002f8c6: MOV RCX, RAX",
+        "0x18002f8c9: CALL 0x18025a880",
+        "0x18002f8cf: MOV qword ptr [RSI + 0x8], RAX"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-query-production/05-CrowdQueryProduction-0x18025a880-procedure_assembly.json",
+      "sha256": "28d78e7f8452eb2dc8c4a5219114c1a751ad1ed9a519b4864f8edeff40f4fa92",
+      "procedure": "0x18025a880",
+      "instructions": [
+        "0x18025a89f: MOV RSI, RDX",
+        "0x18025a8a2: MOV RBX, RCX",
+        "0x18025a9a8: MOV qword ptr [RBX + 0xb8], RSI"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-agent-group-registration/08-CrowdAgentGroupRegistration-0x18025a250-procedure_assembly.json",
+      "sha256": "c99cc6804a210776df2057c3daa3c2ffee9b4255ea042e67d8c145f761edfda6",
+      "procedure": "0x18025a250",
+      "instructions": [
+        "0x18025a271: MOV RSI, RCX",
+        "0x18025a3df: MOV RAX, qword ptr [RSI + 0xb8]",
+        "0x18025a3f1: MOV qword ptr [RDI + 0x8], RAX",
+        "0x18025a3fd: MOV qword ptr [RDI], RSI"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-movement-direct/08-CrowdMovementDirect-0x18025c440-procedure_assembly.json",
+      "sha256": "62da8b3465041af3522b3e36a72e4680485d0c9b2a832ab8b3207ce27bf5b8ae",
+      "procedure": "0x18025c440",
+      "instructions": [
+        "0x18025c4a1: MOVSS XMM13, dword ptr [0x18034b9b0]",
+        "0x18025c51f: MOVSS XMM14, dword ptr [0x18034bc70]",
+        "0x18025ca4f: MOVSS XMM12, dword ptr [0x18034bc64]",
+        "0x18025caa3: MOV RCX, qword ptr [R12 + 0x8]",
+        "0x18025caa8: MOV RAX, qword ptr [RCX]",
+        "0x18025caab: CALL qword ptr [RAX + 0x8]",
+        "0x18025caeb: MOV RAX, qword ptr [R12 + 0x8]",
+        "0x18025caf7: MOV RBX, qword ptr [RAX]",
+        "0x18025cb04: LEA RDX, [RDI + 0x48]",
+        "0x18025cb0b: CALL qword ptr [RBX + 0x10]",
+        "0x18025ce50: COMISS XMM3, dword ptr [0x18034b984]"
+      ]
+    }
+  ],
+  "metadata_bytes": 688,
+  "data_bytes": 32,
+  "hash_bytes": 8971264,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "rva": "0x33a6c8",
+      "va": "0x18033a6c8",
+      "file_offset": 3380936,
+      "bytes": 8,
+      "section": ".rdata",
+      "kind": "vtable-slot",
+      "consumer": "0x18025caab",
+      "raw_hex": "0009038001000000",
+      "loaded_value_observed": false,
+      "slot_offset": "0x8",
+      "uint64_va": "0x180030900",
+      "candidate_rva": "0x30900",
+      "classification": "ExecutableAddressCandidate",
+      "candidate_code_section": ".text",
+      "function_boundary_verified": false
+    },
+    {
+      "rva": "0x33a6d0",
+      "va": "0x18033a6d0",
+      "file_offset": 3380944,
+      "bytes": 8,
+      "section": ".rdata",
+      "kind": "vtable-slot",
+      "consumer": "0x18025cb0b",
+      "raw_hex": "f009038001000000",
+      "loaded_value_observed": false,
+      "slot_offset": "0x10",
+      "uint64_va": "0x1800309f0",
+      "candidate_rva": "0x309f0",
+      "classification": "ExecutableAddressCandidate",
+      "candidate_code_section": ".text",
+      "function_boundary_verified": false
+    },
+    {
+      "rva": "0x34b9b0",
+      "va": "0x18034b9b0",
+      "file_offset": 3451312,
+      "bytes": 4,
+      "section": ".rdata",
+      "kind": "float32-bits",
+      "consumer": "0x18025c4a1",
+      "raw_hex": "6f12833a",
+      "loaded_value_observed": false,
+      "uint32_bits": "0x3a83126f",
+      "float32": 0.0010000000474974513,
+      "float32_text": "0.0010000000474974513",
+      "classification": "ObservedDiskFloat32Bits"
+    },
+    {
+      "rva": "0x34b984",
+      "va": "0x18034b984",
+      "file_offset": 3451268,
+      "bytes": 4,
+      "section": ".rdata",
+      "kind": "float32-bits",
+      "consumer": "0x18025ce50",
+      "raw_hex": "17b7d138",
+      "loaded_value_observed": false,
+      "uint32_bits": "0x38d1b717",
+      "float32": 0.00009999999747378752,
+      "float32_text": "0.00009999999747378752",
+      "classification": "ObservedDiskFloat32Bits"
+    },
+    {
+      "rva": "0x34bc64",
+      "va": "0x18034bc64",
+      "file_offset": 3452004,
+      "bytes": 4,
+      "section": ".rdata",
+      "kind": "float32-bits",
+      "consumer": "0x18025ca4f",
+      "raw_hex": "00000041",
+      "loaded_value_observed": false,
+      "uint32_bits": "0x41000000",
+      "float32": 8,
+      "float32_text": "8",
+      "classification": "ObservedDiskFloat32Bits"
+    },
+    {
+      "rva": "0x34bc70",
+      "va": "0x18034bc70",
+      "file_offset": 3452016,
+      "bytes": 4,
+      "section": ".rdata",
+      "kind": "float32-bits",
+      "consumer": "0x18025c51f",
+      "raw_hex": "00002041",
+      "loaded_value_observed": false,
+      "uint32_bits": "0x41200000",
+      "float32": 10,
+      "float32_text": "10",
+      "classification": "ObservedDiskFloat32Bits"
+    }
+  ],
+  "failures": [],
+  "vtable": {
+    "rva": "0x33a6c0",
+    "static_constructor_binding_verified": true,
+    "table_extent_verified": false,
+    "loaded_value_observed": false,
+    "chain": [
+      "02F800 publishes vptr33A6C0 at outer+0 and passes outer as RDX to25A880.",
+      "25A880 stores captured outer into manager+B8.",
+      "25A250 new-group path stores manager+B8 into group+8, and manager into group+0.",
+      "25C440 reads the group+8 query object before slots+8 and+10. These are not Agent.Callback08 slots."
+    ]
+  },
+  "scope": "Only six fixed semantic fields: two8B slots and four4B floats (32B); PE metadata at most4096B. Whole-file streams only verify SHA256.",
+  "limitations": [
+    "Static constructor binding applies to those completed paths only; later mutable or loaded identities are not observed.",
+    "An address in an executable file-backed section is only a candidate, not a proven function boundary or recovered behavior.",
+    "Float fields are raw disk bits; no decimal is assumed and no current loaded value is established.",
+    "No runtime global initialization value, adjacent slot, code body, DLL execution, backend, other original or save is accessed.",
+    "Node cannot expose all Windows reparse tags; separate external Attributes precheck remains required.",
+    "Before/after same-descriptor hash and stat equality is not an atomic filesystem snapshot."
+  ],
+  "proofs_verified": true,
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T22:05:30.501Z",
+  "status": "passed"
+}

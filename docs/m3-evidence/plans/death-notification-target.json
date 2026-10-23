@@ -1,0 +1,17 @@
+{
+  "schema": "grim-dynasty-m3-bounded-plan-v2",
+  "id": "death-notification-target",
+  "purpose": "Inspect only 49CB80, the direct target of the saved 535AB6 call in the 535A60 iteration fragment. Assess whether an event-production contract is evidenced; do not infer event meaning from numeric 3 or 11 and do not follow additional callees.",
+  "source": {"path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll", "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2", "bytes": 11385856, "preferred_base": "0x180000000"},
+  "proof": {"path": "docs/m3-evidence/damage-notification-fragments/fallthrough-535a8f.instructions.json", "sha256": "04595c4896827a3d97e2981e55cd192fdef7586b89055dc679555165d7deacee"},
+  "targets": [
+    {"id": "direct-49cb80", "rva": "0x49cb80", "caller_address": "0x180535ab6", "caller_bytes": "e8c570f6ff", "reference_kind": "direct-call"}
+  ],
+  "limits": {"body_bytes_each": 8192, "body_bytes_total": 8192, "metadata_bytes": 16384, "dumpbin_calls": 2, "tool_timeout_ms_each": 10000},
+  "mode": "bodies",
+  "range_policy": "exact-entry",
+  "output": "docs/m3-evidence/death-notification-target",
+  "temporary": ".tooling/m3-death-notification-target-temp",
+  "automatic_callee_expansion": false,
+  "execution_requires_separate_review_and_approval": true
+}

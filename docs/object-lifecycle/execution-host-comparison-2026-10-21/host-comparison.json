@@ -1,0 +1,136 @@
+{
+  "date_utc": "2026-10-21",
+  "purpose": "Read-only comparison after user supplied ordinary Windows PowerShell policy list",
+  "user_evidence": {
+    "source": "Trusted transcript_evidence supplied by parent delegation",
+    "transcript_id": "Sentinel_0083caba18888191b7c4c68e065a6fe4",
+    "prompt": "PS C:\\WINDOWS\\system32>",
+    "command": "Get-ExecutionPolicy -List",
+    "policy_list": {
+      "MachinePolicy": "Undefined",
+      "UserPolicy": "Undefined",
+      "Process": "Undefined",
+      "CurrentUser": "RemoteSigned",
+      "LocalMachine": "Undefined"
+    },
+    "process_identity_sid_path_version_bitness_token": "not supplied",
+    "authorizes_security_change_or_build": false
+  },
+  "task_host": {
+    "recording_method": "Transcribed from completed identity and whoami query output",
+    "utc": "2026-10-21T01:44:54.8252165Z",
+    "identity_name": "DESKTOP-9RQJ5OB\\zhuzi",
+    "user_sid": "S-1-5-21-1110971053-2661352112-2715398133-1001",
+    "process_path": "C:\\Users\\zhuzi\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+    "ps_version": "7.6.5",
+    "ps_edition": "Core",
+    "is_64bit_process": true,
+    "is_64bit_os": true,
+    "whoami_integrity_label": {
+      "name": "Mandatory Label\\Low Mandatory Level",
+      "sid": "S-1-16-4096"
+    },
+    "whoami_limitations": "Non-ASCII labels/attributes were damaged by native-output decoding; only intact ASCII name and SID are relied on. Restricting SID list and exact access rule were not obtained."
+  },
+  "windows_powershell_probe": {
+    "decoded_tool_capture": "windows-powershell-query.tool-output.json",
+    "utc": "2026-10-21T01:45:28.3252867Z",
+    "identity_name": "DESKTOP-9RQJ5OB\\zhuzi",
+    "user_sid": "S-1-5-21-1110971053-2661352112-2715398133-1001",
+    "process_path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "ps_version": "5.1.26100.9711",
+    "ps_edition": "Desktop",
+    "is_64bit_process": true,
+    "executable_file_version": "10.0.26100.8875 (WinBuild.160101.0800)",
+    "executable_product_version": "10.0.26100.8875",
+    "executable_bytes": 495616,
+    "query_statuses": [
+      {
+        "query": "effective_policy",
+        "status": "error",
+        "value": null,
+        "error_id": "System.Security.SecurityException,Microsoft.PowerShell.Commands.GetExecutionPolicyCommand"
+      },
+      {
+        "query": "policy_list",
+        "status": "error",
+        "value": null,
+        "error_id": "System.Security.SecurityException,Microsoft.PowerShell.Commands.GetExecutionPolicyCommand"
+      },
+      {
+        "query": "hkcu_visibility",
+        "status": "returned",
+        "value": true,
+        "error_id": null
+      },
+      {
+        "query": "hkcu_property",
+        "status": "error",
+        "value": null,
+        "error_id": "System.Security.SecurityException,Microsoft.PowerShell.Commands.GetItemPropertyCommand"
+      },
+      {
+        "query": "hklm_visibility",
+        "status": "returned",
+        "value": true,
+        "error_id": null
+      },
+      {
+        "query": "hklm_property",
+        "status": "returned",
+        "value": {
+          "ExecutionPolicy": null
+        },
+        "error_id": null
+      }
+    ],
+    "effective_policy": "unknown; query failed",
+    "important_exit_code_note": "Probe exit code 0 means errors were caught and serialized; it does not mean policy queries succeeded."
+  },
+  "confirmed": [
+    "The current task commands run under the stated local account and a low-integrity whoami child token.",
+    "The specified original Windows PowerShell path is x64 Desktop 5.1.26100.9711 and sees the same account SID as the task Core host.",
+    "Both Windows PowerShell policy queries fail at RegistryKey.OpenSubKey through SecuritySupport.GetLocalPreferenceValue.",
+    "The exact HKCU policy key is visible but property read is denied; HKLM is visible and queried ExecutionPolicy returns null.",
+    "The user's ordinary window and the task environment have different observed policy-read outcomes."
+  ],
+  "not_proven": [
+    "The user window process has the same executable path, bitness, account SID or security token as the task probe.",
+    "A specific sandbox rule, restricting SID, DACL entry or mandatory label caused the current registry denial.",
+    "Low integrity by itself explains this read denial; default MIC no-write-up does not prove a no-read-up condition.",
+    "The historical AuthorizationManager failure has exactly the same underlying cause as the present policy-query failure.",
+    "Connected/attached/authorized device status or the user's RemoteSigned output grants this task permission to run the build."
+  ],
+  "exact_remaining_gap": {
+    "user_window_identity": "Actual process path, version/bitness, account SID and token integrity for the window that supplied the policy list",
+    "denial_attribution": "The exact registry key's applicable access rules and restricted-token/host denial attribution; no usable descriptor was obtained in the previous scoped ACL query",
+    "historical_link": "Original historical error lacks an intact underlying exception stack"
+  },
+  "decisions": {
+    "denied_build_retried": false,
+    "denied_registry_reads_retried_once_under_new_evidence": true,
+    "subsequent_retry_or_alternative_registry_api": false,
+    "outside_sandbox_execution_requested": false,
+    "justification": "The conditional prerequisite of proving the historical failure's environment cause is not met. No build approval is inferred.",
+    "pending_or_uncertain_execution": [],
+    "smallest_future_formal_action": "If a permission-controlled comparison is later authorized, run only the same Windows PowerShell identity + Get-ExecutionPolicy -List + exact HKCU ExecutionPolicy read through the official approval channel; no -File, compiler, game, network, or security-setting mutation."
+  },
+  "preserved": {
+    "prior_manifest": ".tooling/checkpoints/execution-restriction-diagnosis/manifest.json",
+    "prior_manifest_sha256": "1abcf107b997dd1840618a7fddc1ce40f25725190f4beb01989f80d6ed60d92a",
+    "verified_prior_files": 6,
+    "design_path": "docs/object-lifecycle/ENGINE-ROOT-MODEL-DESIGN-PENDING.md",
+    "design_sha256": "1b90976c3fa748c4e796f2c1a7f85454388d2593dfd5eee9e1edc90bdc45f00e",
+    "git_head": "6dfdae419d1c92f7738eefe241937057d83134df"
+  },
+  "this_turn_counts": {
+    "builds": 0,
+    "tests": 0,
+    "security_changes": 0,
+    "original_binary_reads": 0,
+    "original_binary_executions": 0,
+    "save_accesses": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

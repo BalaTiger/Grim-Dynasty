@@ -1,0 +1,136 @@
+{
+  "schema": "grim-dynasty-r1-fixed-export-addresses-v1",
+  "status": "MetadataOnlyCompleted",
+  "started_utc": "2026-10-22T17:20:03.966Z",
+  "plan": {
+    "path": "docs/reverse-client/r1-region-load-entry-bindings-plan.json",
+    "sha256": "0a6a734b73b52e2f19b3b6f0ba3ffe6322ee543a12d584613ef5c355f09ad8ea"
+  },
+  "script_sha256": "1322eb71d61a27914d1f17458a56390b615e286a7e73b46398fca572f3ed34ef",
+  "proof": {
+    "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+  },
+  "limits": {
+    "metadata_bytes_per_module": 16384,
+    "metadata_bytes_total": 16384,
+    "metadata_operations_per_module": 2048,
+    "names_per_module": 64,
+    "name_bytes": 512,
+    "binary_search_steps": 32,
+    "code_bytes": 0,
+    "subprocesses": 0
+  },
+  "metadata_bytes": 3282,
+  "modules": [
+    {
+      "source": {
+        "module": "Engine.dll",
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "bytes": 4485632,
+        "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+        "targets": [
+          {
+            "consumer": "x64/Game.dll",
+            "name": "??0RegionLoader@GAME@@QEAA@PEAVResourceLoader@1@AEBV?$vector@PEAVRegion@GAME@@@mem@@_N@Z",
+            "import_index": 1013,
+            "existing_export_rva": "0x196380"
+          },
+          {
+            "consumer": "x64/Game.dll",
+            "name": "?Update@RegionLoader@GAME@@QEAAXH@Z",
+            "import_index": 1015
+          },
+          {
+            "consumer": "x64/Game.dll",
+            "name": "?IsNavDataLoaded@NavManager@GAME@@QEBA_NPEBVRegion@2@@Z",
+            "import_index": 635
+          }
+        ]
+      },
+      "status": "MetadataOnlyCompleted",
+      "source_open_mode": "r",
+      "source_closed": true,
+      "metadata_bytes": 3282,
+      "metadata_operations": 128,
+      "metadata_by_kind": {
+        "header": 328,
+        "section-header": 360,
+        "export-directory": 40,
+        "name-pointer": 136,
+        "export-name": 2400,
+        "export-ordinal": 6,
+        "export-address": 12
+      },
+      "targets": [
+        {
+          "consumer": "x64/Game.dll",
+          "name": "??0RegionLoader@GAME@@QEAA@PEAVResourceLoader@1@AEBV?$vector@PEAVRegion@GAME@@@mem@@_N@Z",
+          "import_index": 1013,
+          "existing_export_rva": "0x196380",
+          "status": "ExactNamedExportLocated",
+          "name_index": 368,
+          "ordinal": 369,
+          "rva": "0x196380",
+          "preferred_va": "0x180196380",
+          "forwarded": false,
+          "section": ".text",
+          "section_executable": true,
+          "code_read": false
+        },
+        {
+          "consumer": "x64/Game.dll",
+          "name": "?Update@RegionLoader@GAME@@QEAAXH@Z",
+          "import_index": 1015,
+          "status": "ExactNamedExportLocated",
+          "name_index": 5916,
+          "ordinal": 5917,
+          "rva": "0x196790",
+          "preferred_va": "0x180196790",
+          "forwarded": false,
+          "section": ".text",
+          "section_executable": true,
+          "code_read": false
+        },
+        {
+          "consumer": "x64/Game.dll",
+          "name": "?IsNavDataLoaded@NavManager@GAME@@QEBA_NPEBVRegion@2@@Z",
+          "import_index": 635,
+          "status": "ExactNamedExportLocated",
+          "name_index": 4055,
+          "ordinal": 4056,
+          "rva": "0x150d20",
+          "preferred_va": "0x180150d20",
+          "forwarded": false,
+          "section": ".text",
+          "section_executable": true,
+          "code_read": false
+        }
+      ],
+      "failures": [],
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "named_export_count": 6283,
+      "image_base": "0x180000000",
+      "distinct_names_read": 34,
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "descriptor_stable": true,
+      "path_stable": true,
+      "source_hash_preserved": true
+    }
+  ],
+  "failures": [],
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "originals_loaded_or_executed": false,
+  "whole_export_table_scanned": false,
+  "pdata_read": false,
+  "limitations": [
+    "Three exact names and indices are pinned in saved Game imports; export identity does not establish tile-loading or producer semantics.",
+    "Only encountered export-name ordering is checked; no full name-table traversal is performed.",
+    "No match, null or forwarded exports remain explicit unknowns. No automatic query expansion follows.",
+    "No code, .pdata, unwind body, vtable, import table or callee is read; target section labels come from PE headers.",
+    "Full same-descriptor before/after SHA256 passes use 64 KiB buffers; hashing does not interpret code bytes.",
+    "Hash and stat checks do not provide an atomic snapshot or exclusive file lock."
+  ],
+  "finished_utc": "2026-10-22T17:20:03.975Z"
+}

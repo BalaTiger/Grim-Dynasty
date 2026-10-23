@@ -1,0 +1,62 @@
+{
+  "schema": "grim-dynasty-fixed-navigation-26d580-constants-v1",
+  "started_utc": "2026-10-22T16:51:07.948Z",
+  "proofs": [
+    [
+      "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    ],
+    [
+      "docs/reverse-client/r1-navigation-nearest-dependencies/08-NearestDependency-0x18026d580-procedure_assembly.json",
+      "c3908bfd8c9fc19adcfffed6871a1fa265e58243a3656d756c8fd74c852efc3e"
+    ]
+  ],
+  "script_sha256": "88921826db2c3c940a44c8d6ff7023250799b64e1ea8e201794865fb477ba985",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "payload_bytes": 8,
+  "payload_limit": 8,
+  "hash_bytes": 8971264,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "target_open_mode": "O_RDONLY",
+  "reads": [
+    {
+      "rva": "0x34bdd4",
+      "file_offset": 3452372,
+      "section": ".rdata",
+      "bytes": 4,
+      "raw_hex": "17b7d1b8",
+      "bits": "0xb8d1b717",
+      "float32": -0.00009999999747378752,
+      "evidence_file": "docs/reverse-client/r1-navigation-nearest-dependencies/08-NearestDependency-0x18026d580-procedure_assembly.json",
+      "instruction": "0x18026d69e: MOVSS XMM0, dword ptr [0x18034bdd4]"
+    },
+    {
+      "rva": "0x34bb48",
+      "file_offset": 3451720,
+      "section": ".rdata",
+      "bytes": 4,
+      "raw_hex": "4703803f",
+      "bits": "0x3f800347",
+      "float32": 1.000100016593933,
+      "evidence_file": "docs/reverse-client/r1-navigation-nearest-dependencies/08-NearestDependency-0x18026d580-procedure_assembly.json",
+      "instruction": "0x18026d6c7: COMISS XMM0, dword ptr [0x18034bb48]"
+    }
+  ],
+  "failures": [],
+  "scope": "Only Engine RVAs34BDD4 and34BB48, exactly4bytes each, mapped using the pinned existing PE section cache. Whole-file reads only for before/after SHA256. No code, other constants including34BB44, runtime globals, fallback scans or backend.",
+  "limitations": [
+    "Raw bits describe the pinned disk image only; they do not establish loaded memory, runtime globals or floating environment.",
+    "The two operands are observed independently; their values are not presumed from pseudocode, another constant, or expected comparison behavior.",
+    "Before/after hashes and metadata checks do not provide an atomic snapshot.",
+    "No native mesh initialization, nearest search or gameplay compatibility is established."
+  ],
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "closed": true,
+  "finished_utc": "2026-10-22T16:51:07.955Z",
+  "status": "passed"
+}

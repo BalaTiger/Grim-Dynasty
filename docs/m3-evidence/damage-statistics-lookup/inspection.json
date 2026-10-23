@@ -1,0 +1,310 @@
+{
+  "schema": "grim-dynasty-m3-bounded-read-v1",
+  "status": "FixedBodiesDecodedReviewRequired",
+  "started_utc": "2026-10-22T05:16:11.781Z",
+  "plan": {
+    "path": "docs/m3-evidence/plans/damage-statistics-lookup.json",
+    "sha256": "e8e18a440452e3d5d06efe8e3ae202cbc7a664a961505cf066be0ecd454d15ec"
+  },
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "bytes": 11385856,
+    "preferred_base": "0x180000000"
+  },
+  "proof": {
+    "path": "docs/m3-evidence/damage-postprocess-body/direct-3fe390.instructions.json",
+    "sha256": "89e67ed95509369edf2a52d5345c0727cff5a0cdae44192909bdebf217a6b876"
+  },
+  "mode": "bodies",
+  "range_policy": "exact-entry",
+  "excluded_proof_range": {
+    "begin_rva": "0x3fe390",
+    "end_rva_exclusive": "0x3fe40e",
+    "reason": "Pinned saved instruction bytes already read"
+  },
+  "limits": {
+    "body_bytes_each": 8192,
+    "body_bytes_total": 8192,
+    "metadata_bytes": 16384,
+    "dumpbin_calls": 2,
+    "tool_timeout_ms_each": 10000
+  },
+  "fixed_limits": {
+    "plan_bytes": 16384,
+    "proof_bytes": 1048576,
+    "hash_buffer_bytes": 65536,
+    "header_end": 4096,
+    "sections": 16,
+    "metadata_read_bytes": 512,
+    "pdata_bytes": 2097152,
+    "binary_search_steps": 32,
+    "synthetic_each": 16384,
+    "synthetic_total": 24576,
+    "tool_buffer_each": 1048576
+  },
+  "excluded_saved_ranges": [
+    {
+      "begin_rva": "0x3fe390",
+      "end_rva_exclusive": "0x3fe40e",
+      "reason": "Pinned saved instruction bytes already read"
+    }
+  ],
+  "source_open_mode": "r",
+  "source_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "automatic_callee_expansion": false,
+  "metadata_bytes": 856,
+  "metadata_operations": 26,
+  "body_bytes": 214,
+  "body_read_operations": 1,
+  "dumpbin_calls": 1,
+  "synthetic_bytes": 3584,
+  "export_table_bytes": 0,
+  "global_data_bytes": 0,
+  "unwind_body_bytes": 0,
+  "source_closed": true,
+  "boundaries": [
+    {
+      "id": "direct-403ac0",
+      "rva": "0x403ac0",
+      "caller_address": "0x1803fe3b9",
+      "reference_kind": "direct-call",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 14835,
+        "begin_rva": "0x403ac0",
+        "end_rva_exclusive": "0x403b96",
+        "bytes": 214,
+        "unwind_info_rva": "0x7ea290"
+      }
+    }
+  ],
+  "bodies": [
+    {
+      "id": "direct-403ac0",
+      "reference_ids": [
+        "direct-403ac0"
+      ],
+      "begin_rva": "0x403ac0",
+      "end_rva_exclusive": "0x403b96",
+      "bytes": 214,
+      "file_offset": 4206272,
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 14835,
+        "begin_rva": "0x403ac0",
+        "end_rva_exclusive": "0x403b96",
+        "bytes": 214,
+        "unwind_info_rva": "0x7ea290"
+      },
+      "sha256": "3f8d8dcd66673b48886950708d55dbe1e1a5f0292ee509d17e339667d9a909c0",
+      "synthetic": {
+        "relative_path": ".tooling/m3-damage-statistics-lookup-temp/direct-403ac0.inspect.dll",
+        "bytes": 3584,
+        "sha256": "04e6af7582a2dea0473c306d91721c6ff491bb4862dafc5c569eb90a3df5cb2a",
+        "never_executed": true
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180403ac0,0x180403b95",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\m3-damage-statistics-lookup-temp\\direct-403ac0.inspect.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "decoded_rows": 63,
+      "decode_issues": [],
+      "instruction_byte_coverage_verified": true,
+      "code_data_classification": "ReviewRequired",
+      "calls": [
+        {
+          "address": "0x180403b59",
+          "bytes": "e842000000",
+          "instruction": "call        0000000180403BA0"
+        },
+        {
+          "address": "0x180403b72",
+          "bytes": "e869000000",
+          "instruction": "call        0000000180403BE0"
+        }
+      ],
+      "branches": [
+        {
+          "address": "0x180403ae4",
+          "bytes": "7532",
+          "instruction": "jne         0000000180403B18"
+        },
+        {
+          "address": "0x180403af7",
+          "bytes": "7c14",
+          "instruction": "jl          0000000180403B0D"
+        },
+        {
+          "address": "0x180403af9",
+          "bytes": "7f0a",
+          "instruction": "jg          0000000180403B05"
+        },
+        {
+          "address": "0x180403b03",
+          "bytes": "7c08",
+          "instruction": "jl          0000000180403B0D"
+        },
+        {
+          "address": "0x180403b0b",
+          "bytes": "eb04",
+          "instruction": "jmp         0000000180403B11"
+        },
+        {
+          "address": "0x180403b16",
+          "bytes": "74d8",
+          "instruction": "je          0000000180403AF0"
+        },
+        {
+          "address": "0x180403b1b",
+          "bytes": "742f",
+          "instruction": "je          0000000180403B4C"
+        },
+        {
+          "address": "0x180403b25",
+          "bytes": "7c25",
+          "instruction": "jl          0000000180403B4C"
+        },
+        {
+          "address": "0x180403b27",
+          "bytes": "7f09",
+          "instruction": "jg          0000000180403B32"
+        },
+        {
+          "address": "0x180403b30",
+          "bytes": "7c1a",
+          "instruction": "jl          0000000180403B4C"
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "All targets are supplied by a separately reviewed plan and matched against pinned saved direct-call or conditional-branch bytes.",
+    "Binary search reads .pdata records only; no export scan, unwind decoding or callees are followed.",
+    "V1 requires an exact .pdata start. V2 may explicitly permit the containing runtime fragment; this is not a whole source function.",
+    "Known proof bytes are excluded. Duplicate containing fragments are read once; overlap, missing boundaries or budget excess stops all body reads.",
+    "Metadata-only plans never read body bytes or start dumpbin, regardless of reported boundaries.",
+    "V3 reads one explicit 32-byte E8-target window only when .pdata has no containing entry. The window is not a function boundary.",
+    "V3 never follows transfers. A conservative straight-line prefix through plain C3 ret may be reported; bytes after ret remain unclassified.",
+    "V4 permits one fixed 96-byte continuation after a pinned, contiguous, control-transfer-free 32-byte prefix. Cumulative original window is 128 bytes, with no prefix reread or further continuation.",
+    "An optional V4 four-byte read must be the first saved MOVSS RIP-relative operand in readonly non-executable .rdata; only original bits are recorded.",
+    "V5 reads exactly two four-byte readonly .rdata operands proved by saved RIP-relative MULSS bytes; it reads no new instructions, .pdata or exports and never starts dumpbin.",
+    "Decoder rows are candidates, not proof that all bytes are instructions. Inline data can resemble valid code; all bodies need code/data review.",
+    "All gaps, byte mismatches and invalid/data decodes are retained. These findings never trigger new reads or automatic expansion.",
+    "Full source before/after hashes use 64 KiB chunks without interpreting bytes outside the approved ranges.",
+    "Static evidence does not establish source names, runtime compatibility, exception behavior or a complete damage contract."
+  ],
+  "script_sha256": "e69c7865f627b2fc435e5a9cb4068cba771aeb1e4d958aaca4e14d689a87ac5e",
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "pe": {
+    "image_base": "0x180000000",
+    "sections": [
+      {
+        "name": ".text",
+        "rva": 4096,
+        "raw_size": 6320640,
+        "raw_offset": 1024,
+        "characteristics": 1610612768
+      },
+      {
+        "name": ".rdata",
+        "rva": 6328320,
+        "raw_size": 4517888,
+        "raw_offset": 6321664,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".data",
+        "rva": 10846208,
+        "raw_size": 56832,
+        "raw_offset": 10839552,
+        "characteristics": 3221225536
+      },
+      {
+        "name": ".pdata",
+        "rva": 10919936,
+        "raw_size": 267776,
+        "raw_offset": 10896384,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".gfids",
+        "rva": 11190272,
+        "raw_size": 512,
+        "raw_offset": 11164160,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".tls",
+        "rva": 11194368,
+        "raw_size": 512,
+        "raw_offset": 11164672,
+        "characteristics": 3221225536
+      },
+      {
+        "name": "_RDATA",
+        "rva": 11198464,
+        "raw_size": 2560,
+        "raw_offset": 11165184,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".rsrc",
+        "rva": 11202560,
+        "raw_size": 512,
+        "raw_offset": 11167744,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".reloc",
+        "rva": 11206656,
+        "raw_size": 217600,
+        "raw_offset": 11168256,
+        "characteristics": 1107296320
+      }
+    ],
+    "pdata_rva": "0xa6a000",
+    "pdata_bytes": 267516
+  },
+  "selected_fragments": [
+    {
+      "id": "direct-403ac0",
+      "rva": "0x403ac0",
+      "caller_address": "0x1803fe3b9",
+      "reference_kind": "direct-call",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 14835,
+        "begin_rva": "0x403ac0",
+        "end_rva_exclusive": "0x403b96",
+        "bytes": 214,
+        "unwind_info_rva": "0x7ea290"
+      },
+      "range": {
+        "status": "ExactEntry",
+        "index": 14835,
+        "begin_rva": "0x403ac0",
+        "end_rva_exclusive": "0x403b96",
+        "bytes": 214,
+        "unwind_info_rva": "0x7ea290"
+      },
+      "reference_ids": [
+        "direct-403ac0"
+      ]
+    }
+  ],
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-22T05:16:11.842Z"
+}

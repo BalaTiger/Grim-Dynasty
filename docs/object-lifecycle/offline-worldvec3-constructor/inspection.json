@@ -1,0 +1,61 @@
+{
+  "schema": "worldvec3-entry-candidate-v1",
+  "status": "failed",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_evidence": {
+    "path": "docs/object-lifecycle/offline-worldvec3-constructor-boundary/metadata.json",
+    "sha256": "030c5dfda0c05127a67e6fb4dd1b77996ff6248f58b0f1a33e3a8f592c467dad"
+  },
+  "candidate": {
+    "rva": "0x228ab0",
+    "end_exclusive": "0x228ae0",
+    "bytes": 48,
+    "exact_pdata_boundary": false,
+    "reason": "Explicit small entry window inside adjacent metadata limits; gap is not a whole-function claim"
+  },
+  "limits": {
+    "code_bytes": 48,
+    "metadata_bytes": 0,
+    "data_bytes": 0,
+    "read_operations": 1,
+    "dumpbin_calls": 1,
+    "tiny_pe_bytes": 3584,
+    "hash_buffer": 65536
+  },
+  "original_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "targets_followed": 0,
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(row.instruction&&!/[?]|\\(bad\\)|invalid/i.test(row.instruction))\n"
+  ],
+  "script_sha256": "8efbe0980fb2b82b0f45193b925d6f1c7501d8fc9ca31dfd2c7f15d54141f94f",
+  "tool_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "read": {
+    "rva": "0x228ab0",
+    "file_offset": 2260656,
+    "bytes": 48,
+    "raw_hex": "48c70100000000488bc1c3cccccccccc0f10020f1101f20f104a10f20f114910f2410f1000f20f114118418b40088941"
+  },
+  "synthetic": {
+    "bytes": 3584,
+    "sha256": "5e233afb0a43b0fcf76aa0d02b4a9e01a335b267f47be9ff8913e6ca96b4e350",
+    "never_executed": true
+  },
+  "command_arguments": [
+    "/NOLOGO",
+    "/NOPDB",
+    "/ERRORREPORT:NONE",
+    "/DISASM:BYTES",
+    "/RANGE:0x180228ab0,0x180228adf",
+    "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-worldvec3-constructor-temp\\228ab0-candidate.inspect.dll"
+  ],
+  "tool_exit": 0,
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "source_closed": true,
+  "tool_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-21T07:46:18.039Z"
+}

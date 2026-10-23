@@ -1,0 +1,113 @@
+{
+  "schema": "grim-dynasty-official-cache-chain-preflight-v1",
+  "utc": "2026-10-20T11:16:03.614Z",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "status": "blocked-before-official-cache-chain-initialization",
+  "completed": [
+    "current-source dependency review",
+    "owned pool-checker selftest",
+    "fixed official full string-pool uniqueness inspection",
+    "memory accounting"
+  ],
+  "latest_product_regression": {
+    "assertions": 1971,
+    "scenario_groups": 57,
+    "rerun_this_phase": false
+  },
+  "prior_official_parser": {
+    "records": 1,
+    "fields": 38,
+    "rerun_this_phase": false
+  },
+  "separate_checker_selftest": {
+    "assertions": 47,
+    "scenario_groups": 8,
+    "runs": 1,
+    "merged_into_product_total": false
+  },
+  "official_pool": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/database/database.arz",
+    "count": 82999,
+    "unique_count": 82999,
+    "duplicate_excess_entries": 0,
+    "empty_id": 82687,
+    "max_string_bytes": 259,
+    "wire_bytes": 3978638,
+    "payload_bytes": 3646638,
+    "wire_sha256": "657ecaace92c1f1b9863f04776d504167fcebceeaba15db660e18af2d5e13af0",
+    "archive_sha256": "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603",
+    "before_after_preserved": true,
+    "original_ids_reordered": false,
+    "pool_copied_to_project": false,
+    "identity_only_under_fresh_normal_exact_byte_import": true,
+    "native_initializer_executed": false
+  },
+  "tests_requested": {
+    "first_load_and_publication": "not-run: complete source/context, native initialization and timing inputs unestablished",
+    "repeated_hit": "not-run: no completed official first publication",
+    "hit_after_source_close": "not-run: no completed official first publication",
+    "failure_states": "no new official chain attempt; existing own failure tests and code reviewed only"
+  },
+  "blockers": [
+    {
+      "kind": "coverage-budget",
+      "reason": "Source/Supplied/Warm require full TableString[] within 4096 entries and 2 MiB; importer source limit 65536"
+    },
+    {
+      "kind": "native-initialization-evidence",
+      "reason": "Archive map A+170/+178 state, pointer-cache shift, complete archive construction/offset selection remain unproven"
+    },
+    {
+      "kind": "required-model-context",
+      "reason": "Names/NameIds are not queried by parser/publication but current API requires complete known inputs; no fabricated empty or prewarmed context"
+    },
+    {
+      "kind": "used-miss-inputs",
+      "reason": "Depot cache configuration and converted start/end ticks remain explicit supplied inputs; unknown start stops before read, unknown end leaves pending after publication"
+    }
+  ],
+  "initial_duplicate_risk_for_this_pool": "ruled out by full-byte inspection; does not prove initialization",
+  "memory": {
+    "inspection_explicit_arrays": 4974626,
+    "inspection_arrays_hash_header_count": 5040190,
+    "inspection_node_max_rss_kib": 51320,
+    "inspection_node_max_rss_mib": 50.1171875,
+    "inspection_peak_scope": "Node process.resourceUsage maxRSS for this pool inspection only; not official cache-chain memory",
+    "raw_reader_metadata_array_charge": 5985283,
+    "raw_reader_record_array_charge": 5986566,
+    "detached_raw_retained_array_payload": 4643134,
+    "unimplemented_compact_wire_offsets_lengths_payload": 4642630,
+    "unimplemented_file_lazy_offsets_lengths_payload": 663992,
+    "existing_eager_chain_counterfactual_minimum_cumulative_array_payload": 15937217,
+    "eager_reference_size_assumption": 8,
+    "exclusions": "object/array headers, alignment, CLR/JIT/GC, full name index, parser and publication; cumulative allocations are not simultaneous live bytes",
+    "cache_chain_peak_measured": false,
+    "production_limits_changed": false,
+    "provider_implemented": false
+  },
+  "source_hashes": {
+    "src/task_items/ArzRecordBinarySource.cs": "61740fd6fd9444989c6cdce9dddbe8bb5b313c8cf1fbb4fbeb72daa160e4f75e",
+    "src/task_items/SuppliedBinaryRecord.cs": "e5c35b95a998442a1cc32b2cc29639206c79629e366bbbb528e532284a1f55af",
+    "src/task_items/RecordLoadFromSuppliedBinary.cs": "39cf32fbd8f23c525df518792e854cdd62ff69e944b6509d0fd178b71ba1edbe",
+    "src/task_items/RecordLoadFile.cs": "d1fc982f371ab6d69103affaf02c83db733cde1a7ce58e9f4ed3a6d3d4a41aa6",
+    "src/task_items/BinaryWarmTable.cs": "ec2816f959467d118dbbaee5314b65641d4183c0686e43f02578ef0bc6603ed9",
+    "src/task_items/BinaryNameIdSnapshot.cs": "ca345e73f8ad99283b9e5cd3f59e7a12a602f40258dc6a2cfe5aa5ec4a099c14",
+    "src/resource_codec/ArchiveStringImport.cs": "ac9a190a7568fc6b166052beb9a3e1c4d3031f6d2da4a6bd51333ff607b79d03",
+    "src/resource_codec/ArzRawRecordReader.cs": "96dfa7b0f8b9949bde050228a7b2e2b5d4a627d51de104e03e9ae14fcdb5db55"
+  },
+  "actions": {
+    "production_code_changed": false,
+    "production_tests_rerun": false,
+    "engine_read": false,
+    "game_or_rea_or_java_started": false,
+    "install_or_escalation": false,
+    "save_or_cloud_access": false,
+    "commit_or_push": false,
+    "denied_action": false,
+    "pending_approval": false,
+    "uncertain_outcome": false
+  },
+  "stop": "Evidence boundary requested by user; no permission request pending",
+  "prior_checkpoint": ".tooling/checkpoints/parser-tag3-complete-retry1/manifest.json",
+  "before_checkpoint": ".tooling/checkpoints/official-cache-chain-before/manifest.json"
+}

@@ -1,0 +1,159 @@
+{
+  "utc": "2026-10-20T12:28:37.742Z",
+  "status": "evidence-verified-official-object-loop-blocked",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "requested_goal": "Official scrapmetal record drives a concrete own item constructor and Read",
+  "goal_completed": false,
+  "product_code_changed": false,
+  "previous_baseline": {
+    "manifest": ".tooling/checkpoints/native-init-tick-complete-retry1/manifest.json",
+    "sha256": "6ce28f1f9c3f46f9628ddeb535596d3fd7c684b9bd3818eb6920f5f71842353a",
+    "assertions": 2264,
+    "scenario_groups": 83,
+    "official_probe_assertions": 123,
+    "rerun_this_phase": false
+  },
+  "new_product_tests": 0,
+  "new_official_record_tests": 0,
+  "new_original_arz_reads": 0,
+  "static_evidence": {
+    "fixed_code_fragments": 4,
+    "code_bytes": 1679,
+    "instructions": 394,
+    "dumpbin_calls": 4,
+    "explicit_metadata_and_fixed_data_bytes": 10810,
+    "fixed_data_bytes_included": 145,
+    "full_file_hash_passes": 14,
+    "hash_chunk_bytes": 65536,
+    "counts_exclude": "Whole-file fingerprint passes and internal dumpbin metadata I/O",
+    "source_game_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "all_recorded_before_after_hashes_match": true,
+    "reports": [
+      {
+        "path": "docs/object-lifecycle/offline-questitem-exports/questitem-exports.json",
+        "sha256": "53c9b253d57e25c50a577c58b5f093390d710ef76ef0585ee543b72ab4966cad",
+        "status": "metadata-discovery-completed",
+        "explicit_noncode_bytes": 4676
+      },
+      {
+        "path": "docs/object-lifecycle/offline-questitem-boundaries/boundary.json",
+        "sha256": "fa5ae01ef102377d8ec976607622c3aab8d1af23144d8a408e42cf15f3ec4f05",
+        "status": "questitem-ctor-read-boundaries-and-classinfo-assessed",
+        "explicit_noncode_bytes": 864
+      },
+      {
+        "path": "docs/object-lifecycle/offline-questitem-factory-boundary/boundary.json",
+        "sha256": "7f50d86ca63154ae11ab0d98a199e4eb316cadc08aa79685edc919149178b75b",
+        "status": "questitem-factory-range-assessed",
+        "explicit_noncode_bytes": 772
+      },
+      {
+        "path": "docs/object-lifecycle/offline-questitem-core/inspection.json",
+        "sha256": "2bb0b904a42abe435e7fcf956c444a6fe7e1a81209e3dba492f76a442e561663",
+        "status": "fixed-questitem-core-disassembly-verified",
+        "explicit_noncode_bytes": 36
+      },
+      {
+        "path": "docs/object-lifecycle/offline-questitem-read-dependencies/dependencies.json",
+        "sha256": "34da4f65ac861c51fe2f64dda560543629c3652b1768e920af2213135f58abbc",
+        "status": "fixed-QuestItem-literals-and-base-boundary-confirmed",
+        "explicit_noncode_bytes": 257
+      },
+      {
+        "path": "docs/object-lifecycle/offline-questitem-item-read/inspection.json",
+        "sha256": "17e076619bdad87bdad191752b64c558f6f3b9cc1c333a413b334559817ad99d",
+        "status": "fixed-questitem-item-read-disassembly-verified",
+        "explicit_noncode_bytes": 12
+      },
+      {
+        "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+        "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e",
+        "status": "fixed-seven-questitem-imports-confirmed",
+        "explicit_noncode_bytes": 4193
+      }
+    ]
+  },
+  "exact_targets": {
+    "factory": "Game 0x1801066B0",
+    "constructor": "Game 0x180427C90",
+    "primary_vtable": "Game 0x18078E058",
+    "read": "Game 0x180427E40",
+    "direct_item_read": "Game 0x180324C60"
+  },
+  "blockers": [
+    {
+      "action": "Resolve Class=QuestItem through the actual initialized registration tree",
+      "target": "QuestItem ClassInfo 0x180A5C150 name +08 and root-reachable children",
+      "reason": "On-disk name is null; runtime name installation and downward registration are not recovered",
+      "status": "evidence-and-implementation-gap",
+      "denied": false,
+      "pending_approval": false,
+      "uncertain_outcome": false
+    },
+    {
+      "action": "Construct a complete own QuestItem",
+      "target": "Item::Item 0x180323690 and imported Actor::Actor",
+      "reason": "Mandatory base state, direct helpers and engine-global initialization lack own equivalent implementations",
+      "status": "evidence-and-implementation-gap",
+      "denied": false,
+      "pending_approval": false,
+      "uncertain_outcome": false
+    },
+    {
+      "action": "Complete a concrete Read of the official scrapmetal record",
+      "target": "Item::Read, imported Actor::Load and GraphicsEngine::LoadTexture",
+      "reason": "Mandatory base/resource effects and return-object contracts remain unknown; no-op callbacks would manufacture success",
+      "status": "evidence-and-implementation-gap",
+      "denied": false,
+      "pending_approval": false,
+      "uncertain_outcome": false
+    },
+    {
+      "action": "Report partial Read without false ReadComplete",
+      "target": "CreatePartialObject, cached parsed fields and LoadedObjectRegistration read contract",
+      "reason": "Current sealed base, tag2-only warm state and Action callback contract require evidence-driven integration changes",
+      "status": "evidence-and-implementation-gap",
+      "denied": false,
+      "pending_approval": false,
+      "uncertain_outcome": false
+    }
+  ],
+  "next_bounded_target": "Mandatory Item/Actor initialization and Load plus graphics resource contracts; do not expand the entire inheritance tree",
+  "broader_compatibility": {
+    "formal_sample_compatibility": false,
+    "native_clock_globals": false,
+    "general_archive_lifecycle": false
+  },
+  "current_phase_restrictions": {
+    "original_game_started": false,
+    "rea_started": false,
+    "java_started": false,
+    "installations": false,
+    "permission_escalation": false,
+    "player_save_or_steam_cloud_access": false,
+    "commit_or_push": false
+  },
+  "failed_preexecution_attempt": {
+    "kind": "Node syntax error from duplicate local identifier",
+    "original_read": false,
+    "dumpbin_started": false,
+    "repaired_first_actual_execution_passed": true
+  },
+  "before_manifest": ".tooling/checkpoints/questitem-before/manifest.json",
+  "before_manifest_sha256": "f6fd5b5940659a6b43fc9584cbfc8640402d21462d80eb9e9c16d4378b5ff617",
+  "evidence_documents": [
+    {
+      "path": "docs/object-lifecycle/QUESTITEM-FACTORY-READ-RESULT.md",
+      "sha256": "e09e7de6993e422c08640ec3816d61190265d011d7a866dd1f4b8903a07e5df5"
+    },
+    {
+      "path": "docs/object-lifecycle/QUESTITEM-FACTORY-READ-EVIDENCE.md",
+      "sha256": "a194d5501f869de06994aa2e633c6e09f9b823f6eb60c2dae9ede9120ce75bf5"
+    }
+  ],
+  "sealing_script": {
+    "path": ".tooling/finalize-questitem-evidence.mjs",
+    "sha256": "72b078f9d5b1fd2e7f4da5a27d28b080a94dac4a1b68360c6930f464921c0164"
+  },
+  "restore_manifest": ".tooling/checkpoints/questitem-evidence-complete/manifest.json"
+}

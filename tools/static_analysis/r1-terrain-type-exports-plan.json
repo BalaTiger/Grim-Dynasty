@@ -1,0 +1,50 @@
+{
+  "schema": "grim-dynasty-r1-terrain-type-export-plan-v1",
+  "purpose": "Locate at most four named TerrainType constructor/Load entry candidates needed for real saved-ground material identity; no generic ObjectManager expansion or renderer recovery.",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "bytes": 4485632
+  },
+  "prefixes": [
+    "??0TerrainType@GAME@@",
+    "?Load@TerrainType@GAME@@"
+  ],
+  "limits": {
+    "new_metadata_bytes": 16384,
+    "metadata_operations": 1024,
+    "export_name_bytes": 256,
+    "export_name_chunk_bytes": 32,
+    "distinct_names": 96,
+    "candidates_per_prefix": 2,
+    "candidates_total": 4,
+    "binary_search_steps": 32,
+    "hash_chunk_bytes": 65536,
+    "report_bytes": 262144
+  },
+  "evidence": [
+    {
+      "file": "docs/reverse-client/r1-ground-resources-and-water/04-GroundResourcesWater-0x1801ce350-procedure_pseudo_code.json",
+      "sha256": "f0300ff55cfd60df66640e5c9faf8f2639c53b9e44047e183cece6ec7514d034"
+    },
+    {
+      "file": "docs/reverse-client/r1-ground-resources-and-water/05-GroundResourcesWater-0x1801ce350-procedure_assembly.json",
+      "sha256": "538a994b662b338c29606d24d93406be5301e6acd4d04c83fdae03a4be3379eb"
+    },
+    {
+      "file": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    }
+  ],
+  "output": "docs/reverse-client/r1-terrain-type-exports/discovery.json",
+  "automatic_expansion": false,
+  "original_semantic_code_reads": 0,
+  "expected_actions": [
+    "One fixed O_RDONLY Engine.dll handle; check exact source size/hash before semantic metadata.",
+    "Two binary searches per exact class/method prefix; read selected EAT values and exact8B PE exception header plus bounded pdata binary searches.",
+    "Second same-handle hash/stat and close; preserve explicit failures and fresh workspace JSON."
+  ],
+  "execution_requires_root_review_and_formal_approval": true,
+  "prepared_only": true,
+  "not_executed": true
+}

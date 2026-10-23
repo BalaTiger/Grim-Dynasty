@@ -1,0 +1,100 @@
+{
+  "utc": "2026-10-19T03:24:28.2192706Z",
+  "status": "single-layer-registration-growth-passed",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "static_batch": {
+    "directory": "rea-container-reserve",
+    "calls": 11,
+    "analysis_calls": 6,
+    "plan_sha256": "f44bd9fccbc053a6bb058f29d34195cc4d35d0c95eff1e0afeb3c16f1016fc8c",
+    "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "closed_session_verified": true,
+    "child_exit_code": 0
+  },
+  "assertions": {
+    "RegistrationIndex": 183,
+    "RegistrationGrowth": 141,
+    "LoadedObjectRegistration": 47,
+    "ClassFactoryDispatch": 40,
+    "ItemCondition": 39,
+    "ItemAuto": 11,
+    "ObjectId": 20,
+    "total": 481
+  },
+  "existing_scenarios": [
+    "ItemQuestDemo"
+  ],
+  "own_build_directory": ".tooling/registration-growth-build",
+  "source_and_binary_manifest": [
+    {
+      "path": "src/task_items/RegistrationIndex.cs",
+      "sha256": "66b32306c7945f3f4678a48f3f54ce6dcd0889571f9f13bb4c151b0ab7087bed"
+    },
+    {
+      "path": "src/task_items/RegistrationIndexTests.cs",
+      "sha256": "b9b9ba0d7b875c0cd84d52da7e241ce34f1a07529bb9ed52a7a6195d8de72f6a"
+    },
+    {
+      "path": "src/task_items/RegistrationGrowthTests.cs",
+      "sha256": "ccdf58543911f8265034dee6b9322ecbd634caec08b0f00419affbd088224f20"
+    },
+    {
+      "path": "src/task_items/LoadedObjectRegistration.cs",
+      "sha256": "f73afc1a1d09974f66a1b06101ced3bffa5f6d47d9960c25709aea19441c3c1a"
+    },
+    {
+      "path": "src/task_items/LoadedObjectRegistrationTests.cs",
+      "sha256": "baa5a4ae16d3d188b719089edc9b547bc649e159fa8e5f64640c55f94e97fa50"
+    },
+    {
+      "path": "src/task_items/build_items.ps1",
+      "sha256": "304157278e8b511c359aa180e7f8581700872f141f876e3780269de6d296b0c7"
+    },
+    {
+      "path": "tools/static_analysis/rea_native_registration.mjs",
+      "sha256": "faf897f143792d0313263b542144aedb39e0404238c6bd44cc6196deb781df01"
+    },
+    {
+      "path": "tools/static_analysis/rea-container-reserve-plan.json",
+      "sha256": "f44bd9fccbc053a6bb058f29d34195cc4d35d0c95eff1e0afeb3c16f1016fc8c"
+    },
+    {
+      "path": ".tooling/registration-growth-build/GrimDynasty.TaskItems.dll",
+      "sha256": "023565f4f8c9226e4a1fc5b81d223391fa5615ea922de12bd60c11a530bbe42a"
+    },
+    {
+      "path": ".tooling/registration-growth-build/RegistrationIndexTests.exe",
+      "sha256": "7749c485047154629e9ac84c54233d0fdfe4c3ca221024b3c88a687b6bcc6e2f"
+    },
+    {
+      "path": ".tooling/registration-growth-build/RegistrationGrowthTests.exe",
+      "sha256": "2a2fc59bd014b469921767fa3fad02fc0c8de25ca1c0e03ef4d0bb50cc73a5b9"
+    },
+    {
+      "path": ".tooling/registration-growth-build/LoadedObjectRegistrationTests.exe",
+      "sha256": "42620df750b8c112bf2db7baf6743f56c39cdf56b038dfd3378087490d0fd2b4"
+    },
+    {
+      "path": ".tooling/registration-growth-build/ObjectIdTests.exe",
+      "sha256": "7249165480a2121acc47fe17b1a1c673149ea0156160b6f6eeab5854ed995348"
+    }
+  ],
+  "original_binary_hashes_unchanged": 13,
+  "covered_growth": "One layer per insert, target <=4096 and post-insert count/target <= threshold; subsequent independent growth calls supported",
+  "allocation_release_contract": "Logical metadata under valid normal allocation/release success only, not native pointers/alignment bytes, CRT, OOM or invalid-parameter behavior",
+  "unsupported_growth": "Post-link before bucket reset, effects retained, final flag unknown, incomplete container rejects subsequent mutations",
+  "coordinator_source_changed": false,
+  "old_object_id_allocator_changed": false,
+  "full_offline_acceptance": "Not rerun; unchanged unresolved UCRT fingerprint gate",
+  "native_factory_complete": false,
+  "native_registration_complete": false,
+  "persistent_host_diagnostics_retried": false,
+  "persistent_mcp_connection_claimed": false,
+  "approvals": "Requested fixed batch allowed; none denied or pending",
+  "target_executed": false,
+  "saves_or_steam_cloud_accessed": false,
+  "host_reloaded_or_restarted": false,
+  "global_configuration_changed": false,
+  "additional_software_installed": false,
+  "commit_or_push": false
+}

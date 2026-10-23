@@ -1,0 +1,37 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Engine.dll
+
+File Type: DLL
+
+  00000001802DCAE0: 40 53              push        rbx
+  00000001802DCAE2: 48 83 EC 20        sub         rsp,20h
+  00000001802DCAE6: 48 8B D9           mov         rbx,rcx
+  00000001802DCAE9: 48 8D 0D 98 42 14  lea         rcx,[0000000180420D88h]
+                    00
+  00000001802DCAF0: FF 15 32 58 02 00  call        qword ptr [0000000180302328h]
+  00000001802DCAF6: 83 3B 00           cmp         dword ptr [rbx],0
+  00000001802DCAF9: 75 11              jne         00000001802DCB0C
+  00000001802DCAFB: 83 0B FF           or          dword ptr [rbx],0FFFFFFFFh
+  00000001802DCAFE: EB 34              jmp         00000001802DCB34
+  00000001802DCB00: B9 64 00 00 00     mov         ecx,64h
+  00000001802DCB05: E8 9A 00 00 00     call        00000001802DCBA4
+  00000001802DCB0A: EB EA              jmp         00000001802DCAF6
+  00000001802DCB0C: 83 3B FF           cmp         dword ptr [rbx],0FFFFFFFFh
+  00000001802DCB0F: 74 EF              je          00000001802DCB00
+  00000001802DCB11: 65 48 8B 04 25 58  mov         rax,qword ptr gs:[0000000000000058h]
+                    00 00 00
+  00000001802DCB1A: 8B 0D B4 42 14 00  mov         ecx,dword ptr [0000000180420DD4h]
+  00000001802DCB20: 41 B8 04 00 00 00  mov         r8d,4
+  00000001802DCB26: 48 8B 14 C8        mov         rdx,qword ptr [rax+rcx*8]
+  00000001802DCB2A: 8B 05 EC F9 13 00  mov         eax,dword ptr [000000018041C51Ch]
+  00000001802DCB30: 41 89 04 10        mov         dword ptr [r8+rdx],eax
+  00000001802DCB34: 48 8D 0D 4D 42 14  lea         rcx,[0000000180420D88h]
+                    00
+  00000001802DCB3B: 48 83 C4 20        add         rsp,20h
+  00000001802DCB3F: 5B                 pop         rbx
+  00000001802DCB40: 48 FF 25 E9 57 02  jmp         qword ptr [0000000180302330h]
+                    00
+
+  Summary
+
+      301000 .text

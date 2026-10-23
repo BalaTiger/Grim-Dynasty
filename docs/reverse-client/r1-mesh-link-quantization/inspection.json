@@ -1,0 +1,49 @@
+{
+  "started_utc": "2026-10-22T19:34:20.709Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_size": 4485632,
+  "script_sha256": "461fdd342640a2c55a2b7e0d7be1e25a8e2ef8a60c933a30058c56434ad07528",
+  "proof": {
+    "file": "docs/reverse-client/r1-mesh-links-and-triangulation-leaf/14-MeshLinksTriangulationLeaf-0x180266dd0-procedure_assembly.json",
+    "sha256": "4bb83e4133ea102c407de8c1e91ba057b818b4d04bff793d8f2ea1b1a941c341",
+    "procedure": "0x180266dd0"
+  },
+  "metadata_bytes": 688,
+  "data_bytes": 4,
+  "hash_bytes": 8971264,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "rva": "0x34bd0c",
+      "va": "0x18034bd0c",
+      "file_offset": 3452172,
+      "bytes": 4,
+      "section": ".rdata",
+      "raw_hex": "00007f43",
+      "float32_le": 255,
+      "uint32_hex": [
+        "0x437f0000"
+      ],
+      "evidence_instruction": "0x180266e6d: MOVSS XMM8, dword ptr [0x18034bd0c]",
+      "loaded_value_observed": false
+    }
+  ],
+  "failures": [],
+  "scope": "PE headers/section metadata at most4096B, then exactly4B at RVA34BD0C. Entire-file streams are only before/after SHA256.",
+  "limitations": [
+    "Disk float32 bound to266DD0 MOVSS; no loaded mutable value or navigation success is proved.",
+    "No adjacent data, function body, DLL execution, backend, other original file or saves are accessed.",
+    "Node does not expose every Windows reparse tag; the established external Attributes precheck is still required.",
+    "Same-descriptor before/after hash/stat equality is not an atomic filesystem snapshot."
+  ],
+  "proof_verified": true,
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T19:34:20.717Z",
+  "status": "passed"
+}

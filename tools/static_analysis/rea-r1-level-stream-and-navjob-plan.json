@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "purpose": "Only Level.Load12C6A0,alternate direct loading path195AF0 and navigation work-item constructor109410. Distinguish MAP-embedded level streams from external files using actual data flow,and identify queued object ownership without claiming completed publication. No save restoration or thread implementation.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-region-blob-loading/05-RegionBlobLoading-0x180194e20-procedure_assembly.json",
+      "sha256": "c217945dfd8f300cddda134ac9cae9e7b92316149382de9f63fd0a9fca264e5b",
+      "addresses": [
+        "0x18012c6a0",
+        "0x180195af0"
+      ],
+      "source_kind": "194E20 calls195AF0 at194F04 after195A10,or12C6A0 at194F7F after195570,according to Region+98 branch. Do not assume the zero branch is the normal map path."
+    },
+    {
+      "file": "docs/reverse-client/r1-region-blob-loading/06-RegionBlobLoading-0x180194e20-procedure_callees.json",
+      "sha256": "b923b86b6bc0c13a718585f3f4277e2932f5e92e3668731392e34c3a6893ddd7",
+      "addresses": [
+        "0x18012c6a0",
+        "0x180195af0"
+      ],
+      "source_kind": "Saved resolved callees12C6A0 and195AF0 corroborate the two direct load branches. RestoreState131860 and all other callees excluded."
+    },
+    {
+      "file": "docs/reverse-client/r1-region-blob-loading/11-RegionBlobLoading-0x18010b1e0-procedure_assembly.json",
+      "sha256": "728ee52008c9659b7fd6c87204f66b74df5b53478f7a3539914ac152ae5a8b77",
+      "addresses": [
+        "0x180109410"
+      ],
+      "source_kind": "10B1E0 directly CALLs109410 at10B259 before queueing work. Work-item construction is not proof of executed mesh publication."
+    },
+    {
+      "file": "docs/reverse-client/r1-region-blob-loading/12-RegionBlobLoading-0x18010b1e0-procedure_callees.json",
+      "sha256": "14e27d41b2bacc61cc6f215fa4a68308a682ef3facc50c13a8ed83500e181a22",
+      "addresses": [
+        "0x180109410"
+      ],
+      "source_kind": "Saved resolved direct callee109410; queue helper,allocator and thread implementation excluded."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 14,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Only three fixed Engine targets,fourteen calls including five lifecycle calls; no automatic recursion.",
+    "Preserve384M heap,5GiB physical-and-commit launch floor,2GiB stop,ownership/mutex and freshness checks.",
+    "Pin latest completed region-blob-loading14/14 cleanup and four saved direct-call evidence files.",
+    "Distinguish Region+98 load branches,MAP-embedded data and external file paths. Queued work is not published mesh. Do not query RestoreState131860,real save/cloud data,background thread/queue implementation,NavMeshBuilder or CRT.",
+    "No original execution,saves/cloud or security changes."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18012c6a0"
+      },
+      "label": "04-LevelStreamNavJob-0x18012c6a0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18012c6a0"
+      },
+      "label": "05-LevelStreamNavJob-0x18012c6a0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18012c6a0"
+      },
+      "label": "06-LevelStreamNavJob-0x18012c6a0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180195af0"
+      },
+      "label": "07-LevelStreamNavJob-0x180195af0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180195af0"
+      },
+      "label": "08-LevelStreamNavJob-0x180195af0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180195af0"
+      },
+      "label": "09-LevelStreamNavJob-0x180195af0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180109410"
+      },
+      "label": "10-LevelStreamNavJob-0x180109410-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180109410"
+      },
+      "label": "11-LevelStreamNavJob-0x180109410-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180109410"
+      },
+      "label": "12-LevelStreamNavJob-0x180109410-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "13-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "14-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "12C6A0 actual Level.Load input path/stream contract,nav data read and failure prefix.",
+    "195AF0 actual source/ownership and relationship to the Region+98 nonzero branch; determine how MAP-embedded Level content differs from external files.",
+    "109410 exact queued work-item identity,stored blob/data ownership and callback target evidence; do not execute or expand its worker/thread implementation."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Three direct Level stream/alternate-load/navigation-work-item targets only; unchanged Engine384M/base4.25GiB budget with stricter5GiB physical-and-commit launch floor,2GiB stop.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "previous_sha256": "f06ef3bb91be422afa3e1eef639243be2b711c4f701da462767649e34851b0c1",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_sha256": "6d07a2a1e29565930ebd091f070128aeb6a59feaafd8e8fcdce01bb7b4a743a9",
+    "validation_file": ".tooling/r0-owned-job-terminal-candidate-20261022-attempt2/test-result.json",
+    "validation_sha256": "1ad80a494a359d16012698a0ffde723308ebe8e3d6bd06d488dd156e22a305d2",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 36,
+    "scenario_groups": 8,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "production_normalization": "Candidate header and namespace removed; isolated label removed from comment. Algorithm otherwise unchanged.",
+    "limitations": "Missing image is accepted only with positive same-handle exit evidence, never for live roles or counters. The limit is per Probe or QueryMembers operation, not a whole sampler-cycle latency guarantee. Fault tests are not an R0 reproduction or proof of root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-region-blob-loading/summary.json",
+    "summary_sha256": "36bfaaf37379ec842e252a76c3878f450a84a4d6f0c3db19d7f8a0a157e590c2",
+    "completed_plan_calls": 14,
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  }
+}

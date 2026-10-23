@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "purpose": "Five fixed direct dependencies only: mesh tile reference lookup/removal/insertion consumed by the staged publication loop,and the two exact triangulation predicates. Preserve pointer ownership and failure prefixes; no recursive expansion or invented insertion flags.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-nav-publish-and-polygon-core/05-NavPublishPolygonCore-0x180265680-procedure_assembly.json",
+      "sha256": "a3f68d1fe42033de384cebd2d53e34af71bd70fa3bf2551ee7e228bd7fdcced7",
+      "addresses": [
+        "0x180268820",
+        "0x180268970",
+        "0x180268270"
+      ],
+      "source_kind": "265700 CALL268820(mesh,entry+0C/+10/+14 DWORDs);26570A CALL268970(mesh,EAX reference),return ignored. After reloading entry pointer,26572D CALL268270 with RCX mesh,RDX entry pointer,R8D byte length,stack+28 address of local outRef; R9/stack+20 are not explicitly initialized at this call site and must not be guessed. On negative insert status265745 frees the freshly reloaded entry pointer without clearing the entry or rolling back prior removal."
+    },
+    {
+      "file": "docs/reverse-client/r1-nav-publish-and-polygon-core/06-NavPublishPolygonCore-0x180265680-procedure_callees.json",
+      "sha256": "bdb0b139f21bfb58b0bf3e41b3a8137204a1625322a1661f84d9cbf49a2dcd22",
+      "addresses": [
+        "0x180268820",
+        "0x180268970",
+        "0x180268270"
+      ],
+      "source_kind": "Resolved three direct mesh operations corroborate exact entries; free callback/CRT excluded."
+    },
+    {
+      "file": "docs/reverse-client/r1-nav-publish-and-polygon-core/08-NavPublishPolygonCore-0x18026ab20-procedure_assembly.json",
+      "sha256": "5c7a8cb8ed5420b3df92448ed27928d9bd600291d42da7f53c8fa07641686e92",
+      "addresses": [
+        "0x18026a860",
+        "0x18026a9c0"
+      ],
+      "source_kind": "26AB20 CALLs26A9C0 at26AB8A,26AD49,26ADA7 and26A860 at26ABA2,26AD62,26ADBF. Calls supply two candidate indices,current vertex count,original contour-byte pointer,and mutable ushort-index pointer; AL tests jointly determine ear0x8000 marker. Predicate geometry is not inferred from names."
+    },
+    {
+      "file": "docs/reverse-client/r1-nav-publish-and-polygon-core/09-NavPublishPolygonCore-0x18026ab20-procedure_callees.json",
+      "sha256": "abb439d63685f054aacd4e666f406a76b64336634ba211d0d319dd9833f22e74",
+      "addresses": [
+        "0x18026a860",
+        "0x18026a9c0"
+      ],
+      "source_kind": "The only two resolved direct triangulation predicates; no recursive helpers added."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 20,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Only five fixed Engine targets,twenty calls including five lifecycle calls; no automatic recursion.",
+    "Preserve384M heap,5GiB physical-and-commit launch floor,2GiB stop,ownership/mutex and freshness checks.",
+    "Pin completed nav-publish-and-polygon-core20/20 cleanup and four direct-call evidence files.",
+    "Resolve actual mesh lookup/removal/insertion ABI and ownership,reference widths,partial failure state,and exact triangulation predicates.",
+    "Marked-vertex26B260/26B480 remain unresolved pending actual contour output; no region-count inference.",
+    "No original execution,extra vtable/constant read,CRT/thread expansion,saves/cloud or security changes."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180268820"
+      },
+      "label": "04-NavMeshTilePredicates-0x180268820-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180268820"
+      },
+      "label": "05-NavMeshTilePredicates-0x180268820-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180268820"
+      },
+      "label": "06-NavMeshTilePredicates-0x180268820-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180268970"
+      },
+      "label": "07-NavMeshTilePredicates-0x180268970-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180268970"
+      },
+      "label": "08-NavMeshTilePredicates-0x180268970-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180268970"
+      },
+      "label": "09-NavMeshTilePredicates-0x180268970-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180268270"
+      },
+      "label": "10-NavMeshTilePredicates-0x180268270-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180268270"
+      },
+      "label": "11-NavMeshTilePredicates-0x180268270-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180268270"
+      },
+      "label": "12-NavMeshTilePredicates-0x180268270-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18026a860"
+      },
+      "label": "13-NavMeshTilePredicates-0x18026a860-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18026a860"
+      },
+      "label": "14-NavMeshTilePredicates-0x18026a860-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18026a860"
+      },
+      "label": "15-NavMeshTilePredicates-0x18026a860-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18026a9c0"
+      },
+      "label": "16-NavMeshTilePredicates-0x18026a9c0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18026a9c0"
+      },
+      "label": "17-NavMeshTilePredicates-0x18026a9c0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18026a9c0"
+      },
+      "label": "18-NavMeshTilePredicates-0x18026a9c0-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "19-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "20-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "268820: How are coordinate/layer DWORDs resolved to the exact mesh tile reference,and what denotes missing?",
+    "268970: Which reference validation,link mutation,buffer ownership and failure prefixes occur during old-tile removal? Caller ignores the return.",
+    "268270: Which incoming registers/stack arguments are actually consumed,how are flags/reference/output represented,and when does ownership transfer? Do not invent uninitialized caller arguments.",
+    "26A860/26A9C0: What exact integer geometry,edge intersections,orientation and index-marker masking implement the two triangulation predicates?",
+    "Conditional marked-vertex deletion remains outside this fixed batch until actual contour markers establish necessity."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Five fixed mesh tile operations and triangulation predicates only; unchanged Engine384M/base4.25GiB budget with stricter5GiB physical-and-commit launch floor,2GiB stop.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "previous_sha256": "f06ef3bb91be422afa3e1eef639243be2b711c4f701da462767649e34851b0c1",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_sha256": "6d07a2a1e29565930ebd091f070128aeb6a59feaafd8e8fcdce01bb7b4a743a9",
+    "validation_file": ".tooling/r0-owned-job-terminal-candidate-20261022-attempt2/test-result.json",
+    "validation_sha256": "1ad80a494a359d16012698a0ffde723308ebe8e3d6bd06d488dd156e22a305d2",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 36,
+    "scenario_groups": 8,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "production_normalization": "Candidate header and namespace removed; isolated label removed from comment. Algorithm otherwise unchanged.",
+    "limitations": "Missing image is accepted only with positive same-handle exit evidence, never for live roles or counters. The limit is per Probe or QueryMembers operation, not a whole sampler-cycle latency guarantee. Fault tests are not an R0 reproduction or proof of root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-nav-publish-and-polygon-core/summary.json",
+    "summary_sha256": "4f9b4952773a3370e2c6c73cd38f9c0d10a17449f617278e37f688dbef05fe94",
+    "completed_plan_calls": 20,
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  }
+}

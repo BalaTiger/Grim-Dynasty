@@ -1,0 +1,61 @@
+{
+  "started_utc": "2026-10-22T15:02:09.156Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "proofs": [
+    {
+      "file": "docs/reverse-client/r1-game-camera-constructor/05-GameCameraConstructor-procedure_assembly.json",
+      "sha256": "c13945a3fd983d1bd70b77dd25d7ead879ade5fb13156f2199761f7f8dcad373",
+      "operation": "procedure_assembly"
+    },
+    {
+      "file": "docs/reverse-client/r1-game-camera-constructor/04-GameCameraConstructor-procedure_pseudo_code.json",
+      "sha256": "0c85190b5a833472b9b0fa3e16890f066675b99f8357ecf8ee2fc2aae835cedc",
+      "operation": "procedure_pseudo_code"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-portal-camera/05-Camera-0x180229160-procedure_assembly.json",
+      "sha256": "12a6706ee8620f16fb92348dd751248f27e62085bb88ecf11d36350be346a422",
+      "operation": "procedure_assembly"
+    }
+  ],
+  "script_sha256": "32e212a590e5399e9d2579b22353d92b86a1e41bc065fef8a2fdcc5cda1af23b",
+  "metadata_bytes": 688,
+  "data_bytes": 8,
+  "code_bytes": 0,
+  "hash_bytes": 22771712,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "vtable_rva": "0x767938",
+      "vtable_va": "0x180767938",
+      "slot_offset": "0x18",
+      "rva": "0x767950",
+      "va": "0x180767950",
+      "file_offset": 7757648,
+      "bytes": 8,
+      "section": ".rdata",
+      "raw_hex": "e0e62b8001000000",
+      "target_va": "0x1802be6e0",
+      "target_rva": "0x2be6e0",
+      "target_section": ".text",
+      "target_body_read": false
+    }
+  ],
+  "failures": [],
+  "scope": "PE headers/section metadata plus exactly 8 data bytes at Game RVA 0x767950; whole-file reads only for before/after SHA256. No target body or other table slots.",
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "limitations": [
+    "Constructor evidence directly writes the vtable address; this read resolves only its +0x18 on-disk slot.",
+    "Engine GetCoords evidence motivates the +0x18 slot read. The slot target, return-object identity and GetPosition semantics require separate evidence; no such behavior is inferred here.",
+    "Executable-section membership is metadata only, not proof of a function boundary or behavior. No target body is read.",
+    "Loaded vtable mutation, live object identity, completed construction and virtual-call receiver validity remain unobserved.",
+    "Before/after hashes and file metadata checks are not an atomic filesystem snapshot."
+  ],
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T15:02:09.170Z",
+  "status": "passed"
+}

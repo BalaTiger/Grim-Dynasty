@@ -1,0 +1,36 @@
+{
+  "schema": "grim-dynasty-actor-prefix-execution-v1",
+  "status": "completed",
+  "formal_mechanism": "exec_command sandbox_permissions=require_escalated; exact new build request completed successfully",
+  "command": "& 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -NoProfile -NonInteractive -File 'C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\src\\task_items\\build_actor_constructor_prefix.ps1'",
+  "build_attempts": 1,
+  "tool_result": {
+    "chunk_id": "19dc6f",
+    "wall_time_seconds": 0.704569999,
+    "exit_code": 0,
+    "original_token_count": 115,
+    "output": "PASS group 1 UnknownObservation: 7 assertions\r\nPASS group 2 MixedInputAndNarrowWrites: 6 assertions\r\nPASS group 3 TwelveInlineStrings: 5 assertions\r\nPASS group 4 StopBeforeDependencies: 6 assertions\r\nPASS group 5 IdentityRepetitionAndIsolation: 5 assertions\r\nPASS group 6 OwnGuardsAndOutputCopies: 5 assertions\r\nPASS group 7 EntryUnknownObservation: 8 assertions\r\nPASS group 8 EntryMixedNeighborsAndStop: 6 assertions\r\nPASS: 48 assertions, 8 scenario groups\r\n"
+  },
+  "new_assertions": 48,
+  "new_scenario_groups": 8,
+  "groups": [
+    7,
+    6,
+    5,
+    6,
+    5,
+    5,
+    8,
+    6
+  ],
+  "old_suites_rerun": 0,
+  "old_implementation_api_cases": 0,
+  "original_execution": false,
+  "original_access_in_build": false,
+  "policy_or_acl_changes": false,
+  "notes": [
+    "Only new own Actor source and test were compiled.",
+    "Entry prefix and post-base conditional segment are separate fixtures; no full native constructor or formal sample compatibility is claimed.",
+    "Preflight report construction initially wrote null due to a PowerShell literal typo; corrected reviewed record retained separately. This was not a build/test attempt."
+  ]
+}

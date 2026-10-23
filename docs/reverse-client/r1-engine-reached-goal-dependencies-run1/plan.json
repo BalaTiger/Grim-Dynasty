@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "purpose": "Bounded ReachedGoal dependencies only: Engine01C040 ObjectManager singleton and0EC010 event hook dispatcher. Add229700 callers/xrefs solely to locate camera-ray ownership; its saved body is not queried again.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 13,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-game-movement-interface/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-game-callback-dependencies/inspection.json",
+      "sha256": "c0f0348d8f0712b35efd22d7ed36282065bfc31c78ee18b0f1d870e036a4afab",
+      "addresses": [
+        "0x18001c040",
+        "0x1800ec010"
+      ],
+      "source_kind": "Game IAT609098 Singleton<ObjectManager>::Get exact Engine ordinal2306 target01C040; Game IAT609DC8 HookPack::ExecuteEventHook exact Engine ordinal2205 target0EC010. Export targets are bound, bodies are not inferred."
+    },
+    {
+      "file": "docs/reverse-client/r1-game-movement-interface/17-GameMovementInterface-0x180067170-procedure_assembly.json",
+      "sha256": "c9282463916cd02ecc5c95af0010f9cba3fca714678b3e2f0900dfd5c7b1d888",
+      "addresses": [
+        "0x18001c040",
+        "0x1800ec010"
+      ],
+      "source_kind": "06720E CALL[609098] precedes019D40;06725D RCX=interface+45B8/full+45F0,067264 EDX=9,067273 tail JMP[609DC8]. Event9 is unconditional after the controller lookup branches."
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-input/08-GetRayThroughImagePoint-0x180229700-procedure_assembly.json",
+      "sha256": "4e70b6429b52f378c9decc3362e30bc018597fcff55bee0ac8e37df1da9c227e",
+      "addresses": [
+        "0x180229700"
+      ],
+      "source_kind": "Already saved actual camera-ray body. Only procedure_callers and address xrefs may run for ownership provenance, no pseudo/assembly/callees requery."
+    }
+  ],
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees",
+    "procedure_callers",
+    "xrefs"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18001c040"
+      },
+      "label": "04-EngineReachedGoal-0x18001c040-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18001c040"
+      },
+      "label": "05-EngineReachedGoal-0x18001c040-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18001c040"
+      },
+      "label": "06-EngineReachedGoal-0x18001c040-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1800ec010"
+      },
+      "label": "07-EngineReachedGoal-0x1800ec010-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1800ec010"
+      },
+      "label": "08-EngineReachedGoal-0x1800ec010-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1800ec010"
+      },
+      "label": "09-EngineReachedGoal-0x1800ec010-procedure_callees"
+    },
+    {
+      "tool": "procedure_callers",
+      "args": {
+        "procedure": "0x180229700"
+      },
+      "label": "10-EngineCameraOwner-0x180229700-procedure_callers"
+    },
+    {
+      "tool": "xrefs",
+      "args": {
+        "address": "0x180229700"
+      },
+      "label": "11-EngineCameraOwner-0x180229700-xrefs"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "12-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "13-final-session"
+    }
+  ],
+  "schema_checks": {
+    "procedure_callers": {
+      "required": [
+        "procedure"
+      ],
+      "args": {
+        "procedure": "0x180229700"
+      },
+      "selector": "procedure, not address"
+    },
+    "xrefs": {
+      "args": {
+        "address": "0x180229700"
+      },
+      "selector": "address, not procedure",
+      "additionalProperties": false
+    },
+    "lifecycle": "binary_session expected_package_version; open_binary absolute path/provider_id; close_binary empty args. No undocumented selector or scope argument."
+  },
+  "execution_requirements": [
+    "Preparation only. Root must review/register the fixed mode and perform current resource/mutex/profile/approval gates before execution. No runner, monitor or protection changes are included.",
+    "Exactly01C040/0EC010 pseudo/assembly/direct-callees,229700 callers/xrefs, and five lifecycle calls=13. No automatic recursive expansion or retry.",
+    "Do not infer an empty HookPack success or singleton value from names. Save exact fields, iteration/call order and unknown boundaries for later OWN composition.",
+    "The229700 extra pair is attribution only; do not requery its body or expand discovered callers in this batch.",
+    "Retain normal session close/process and sampler exit evidence and original read-only pre/post hashes. No original execution, saves, cloud, installation or security changes.",
+    "Apply the existing unchanged Engine384M resource profile and owned-session protections through the registered runner; this query plan alone does not claim launch readiness."
+  ],
+  "evidence_questions": [
+    "Does01C040 read a global, initialize anything, or add lifetime/locking dependencies? Bind its actual shared ObjectManager identity without a successful fake getter.",
+    "What0EC010 event9 gates, hook storage and callback bodies are actually required? An explicit OWN empty hook collection is valid only if its real body proves that return path.",
+    "Which direct camera-ray callers or reference owners are present for229700? Record attribution only, without interpreting callers as an executed input/render pipeline."
+  ]
+}

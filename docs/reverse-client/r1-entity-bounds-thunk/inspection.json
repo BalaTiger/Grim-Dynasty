@@ -1,0 +1,210 @@
+{
+  "schema": "grim-dynasty.fixed-entity-bounds-thunk.v1",
+  "started_utc": "2026-10-23T04:07:31.283Z",
+  "script_sha256": "5d2e33afdb18154a24a0303407c6fd17e6d99c656b5fb3ca187bfa37fea2aab3",
+  "plan_sha256": "b667fada64f4650410646a937ba9e15c1aee46e1a17133e8b7dc08073d6070d3",
+  "source_pins": [
+    {
+      "key": "bounds_assembly",
+      "path": "docs/reverse-client/r1-engine-entity-publication-core/08-EngineEntityPublication-0x18002a990-procedure_assembly.json",
+      "sha256": "7903afdba78a2aa2b7f7d1d6c59b52bcc3778966752253f56b2fb245dd81ae8f"
+    },
+    {
+      "key": "slots",
+      "path": "docs/reverse-client/r1-entity-bounds-slots/inspection.json",
+      "sha256": "465f039df3eda0556c16429cebf99062fae0d2990dde667a5b62a31b5a650c5e"
+    },
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "key": "oft_tail",
+      "path": "docs/reverse-client/r1-navigation-binding/inspection.json",
+      "sha256": "d0c171ce77a6d67e153a6911fc7c3a17ea4d61e80ab9492f3287384524e14264"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "saved_mask",
+      "path": "docs/reverse-client/r1-navigation-nearest-constants/inspection.json",
+      "sha256": "02c4ec5592fdac55c1bf652b1eabdab326232c59150942f8222cd2da652d14e1"
+    }
+  ],
+  "code_bytes": 6,
+  "code_operations": 1,
+  "metadata_bytes": 86,
+  "metadata_operations": 7,
+  "constant_bytes": 0,
+  "reused_constant_bytes": 4,
+  "new_PE_header_bytes": 0,
+  "new_OFT_bytes": 0,
+  "target_body_bytes": 0,
+  "original_loaded_or_executed": false,
+  "subprocesses": 0,
+  "whole_table_scanned": false,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "reads": [
+        {
+          "kind": "fixed-FF25-thunk-candidate",
+          "rva": "0x5d9ed8",
+          "file_offset": 6132440,
+          "bytes": 6,
+          "raw_hex": "ff25b2f20200"
+        },
+        {
+          "kind": "fixed-IAT-slot",
+          "rva": "0x609190",
+          "file_offset": 6322064,
+          "bytes": 8,
+          "raw_hex": "b85fa40000000000"
+        },
+        {
+          "kind": "fixed-import-hint",
+          "rva": "0xa45fb8",
+          "file_offset": 10765752,
+          "bytes": 2,
+          "raw_hex": "c60f"
+        },
+        {
+          "kind": "fixed-import-name",
+          "rva": "0xa45fba",
+          "file_offset": 10765754,
+          "bytes": 33,
+          "raw_hex": "3f4973496e576f726c6440456e746974794047414d454040554542415f4e585a00"
+        }
+      ],
+      "hash_bytes": 22771712,
+      "closed": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "stable": true
+    },
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "reads": [
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b986c",
+          "file_offset": 3901548,
+          "bytes": 4,
+          "raw_hex": "f45d3f00"
+        },
+        {
+          "kind": "exact-hinted-export-name",
+          "rva": "0x3f5df4",
+          "file_offset": 4148724,
+          "bytes": 33,
+          "raw_hex": "3f4973496e576f726c6440456e746974794047414d454040554542415f4e585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bdb0c",
+          "file_offset": 3918604,
+          "bytes": 2,
+          "raw_hex": "c60f"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b3640",
+          "file_offset": 3876416,
+          "bytes": 4,
+          "raw_hex": "70ed0700"
+        }
+      ],
+      "hash_bytes": 8971264,
+      "closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "stable": true
+    }
+  ],
+  "bindings": [
+    {
+      "dll": "Engine.dll",
+      "iat_rva": "0x609190",
+      "index": 50,
+      "symbol": "?IsInWorld@Entity@GAME@@UEBA_NXZ",
+      "hint": 4038,
+      "lookup_rva": "0xa42c50",
+      "hint_name_rva": "0xa45fb8",
+      "origins": [
+        {
+          "kind": "fixed-thunk",
+          "rva": "0x5d9ed8",
+          "primary_slot_offset": "0x60"
+        }
+      ],
+      "loaded_iat_read": false
+    }
+  ],
+  "exports": [
+    {
+      "symbol": "?IsInWorld@Entity@GAME@@UEBA_NXZ",
+      "iat_rva": "0x609190",
+      "hint": 4038,
+      "ordinal_index": 4038,
+      "ordinal": 4039,
+      "target_rva": "0x7ed70",
+      "target_va": "0x18007ed70",
+      "target_body_read": false,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false,
+      "target_section": ".text",
+      "classification": "ExactNamedExportExecutableAddressCandidate"
+    }
+  ],
+  "thunks": [
+    {
+      "rva": "0x5d9ed8",
+      "bytes": 6,
+      "raw_hex": "ff25b2f20200",
+      "opcode_verified": true,
+      "iat_rva": "0x609190",
+      "displacement": 193202
+    }
+  ],
+  "reused_constants": [
+    {
+      "module": "Engine",
+      "rva": "0x34c410",
+      "bytes": 4,
+      "raw_hex": "ffffff7f",
+      "source_key": "saved_mask",
+      "instruction": "0x18002ab5f",
+      "new_original_bytes_read": 0,
+      "loaded_value_observed": false
+    }
+  ],
+  "disk_bindings_complete": true,
+  "unsupported": [],
+  "failures": [],
+  "limitations": [
+    "Exactly one6B FF25 candidate thunk and bounded import/export metadata only; no original function or DLL is executed.",
+    "Import symbols and export addresses do not prove loaded IAT values, function bounds, publication semantics or ABI compatibility.",
+    "Only the one fixed thunk-derived import is supported; any opcode, ownership or name mismatch stops without fallback.",
+    "Whole-file hash streams are identity checks, separate from the6B code plus322B metadata budgets, and are not atomic snapshots.",
+    "Node path checks cannot identify every Windows reparse tag; separate Attributes preflight remains required."
+  ],
+  "proofs_verified": true,
+  "finished_utc": "2026-10-23T04:07:31.315Z",
+  "status": "passed"
+}

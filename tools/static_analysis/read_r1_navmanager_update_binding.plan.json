@@ -1,0 +1,39 @@
+{
+  "schema": "grim-dynasty-r1-navmanager-update-prefix-plan-v1",
+  "purpose": "Locate at most two Engine named-export candidates with the sole prefix ?Update@NavManager@GAME@@. Saved Game imports establish NavManager/FindPath class spelling and original Engine identity, but contain no Update import. This is a candidate lookup, not proof of runtime Update existence or behavior. No code or automatic target expansion is allowed.",
+  "proof": {
+    "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+  },
+  "source": {
+    "module": "Engine.dll",
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "candidate": {
+    "prefix": "?Update@NavManager@GAME@@",
+    "basis": "Unproven method-name candidate within the observed NavManager class; no Update import or complete decorated name is claimed",
+    "maximum_bindings": 2
+  },
+  "class_anchor": {
+    "consumer": "x64/Game.dll",
+    "module": "Engine.dll",
+    "import_index": 487,
+    "name": "?FindPath@NavManager@GAME@@QEAA_NAEBVWorldVec3@2@0MPEAV32@PEAIPEAMPEAV?$vector@VWorldVec3@GAME@@@mem@@PEAVVec3@2@_N@Z"
+  },
+  "limits": {
+    "metadata_bytes": 16384,
+    "metadata_operations": 2048,
+    "distinct_names": 64,
+    "name_bytes": 512,
+    "binary_search_steps": 32,
+    "maximum_bindings": 2,
+    "following_boundary_names": 1,
+    "code_bytes": 0,
+    "subprocesses": 0
+  },
+  "output": "docs/reverse-client/r1-navmanager-update-binding",
+  "automatic_target_expansion": false,
+  "execution_requires_separate_review_and_approval": true
+}

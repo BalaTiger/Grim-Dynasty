@@ -1,0 +1,177 @@
+{
+  "status": "fixed-game-init-fragments-verified",
+  "started_utc": "2026-10-20T13:03:19.138Z",
+  "stage": "crt-entry",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "plan": {
+    "path": "docs/object-lifecycle/class-static-init-plans/crt-entry.json",
+    "sha256": "50c960f84f4a7c810724b518a654ddbf4f87220cc4a38559458fc359a5ff7ea5"
+  },
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-game-crt-entry-metadata/metadata.json",
+      "sha256": "ccc2b7859049df05a285bc37b49ca2cbeed61959b458c95e33191ab3834a01ac"
+    }
+  ],
+  "script_sha256": "eda5bbf8833af166bd1a8a2b20f30104e666137f5cfa3ed93bf6cd579433390d",
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "code_byte_limit": 61,
+  "code_bytes": 61,
+  "metadata_byte_limit": 65536,
+  "metadata_bytes": 168,
+  "metadata_reads": [
+    {
+      "index": 11146,
+      "rva": "0xa8aa78",
+      "file_offset": 11030136,
+      "bytes": "f01530002a16300030f27d00"
+    },
+    {
+      "index": 16720,
+      "rva": "0xa9afc0",
+      "file_offset": 11097024,
+      "bytes": "70764a0012774a00c8178500"
+    },
+    {
+      "index": 19507,
+      "rva": "0xaa3264",
+      "file_offset": 11130468,
+      "bytes": "f6c657003fc75700489c8600"
+    },
+    {
+      "index": 20900,
+      "rva": "0xaa73b0",
+      "file_offset": 11147184,
+      "bytes": "a02f5e00bd2f5e0008ee7d00"
+    },
+    {
+      "index": 20204,
+      "rva": "0xaa5310",
+      "file_offset": 11138832,
+      "bytes": "b05d5b00b95e5b00c8e38600"
+    },
+    {
+      "index": 20552,
+      "rva": "0xaa6360",
+      "file_offset": 11143008,
+      "bytes": "fc805d0029815d003c008700"
+    },
+    {
+      "index": 20726,
+      "rva": "0xaa6b88",
+      "file_offset": 11145096,
+      "bytes": "58fd5d0075fd5d0008ee7d00"
+    },
+    {
+      "index": 20639,
+      "rva": "0xaa6774",
+      "file_offset": 11144052,
+      "bytes": "60bc5d00aabc5d0070ea7d00"
+    },
+    {
+      "index": 20596,
+      "rva": "0xaa6570",
+      "file_offset": 11143536,
+      "bytes": "f4aa5d002dab5d0054ec7d00"
+    },
+    {
+      "index": 20618,
+      "rva": "0xaa6678",
+      "file_offset": 11143800,
+      "bytes": "b4b25d00f1b25d0070ea7d00"
+    },
+    {
+      "index": 20607,
+      "rva": "0xaa65f4",
+      "file_offset": 11143668,
+      "bytes": "18ae5d003cae5d0010eb7d00"
+    },
+    {
+      "index": 20613,
+      "rva": "0xaa663c",
+      "file_offset": 11143740,
+      "bytes": "68af5d00b8af5d0054ec7d00"
+    },
+    {
+      "index": 20616,
+      "rva": "0xaa6660",
+      "file_offset": 11143776,
+      "bytes": "68b15d005db25d004c048700"
+    },
+    {
+      "index": 20617,
+      "rva": "0xaa666c",
+      "file_offset": 11143788,
+      "bytes": "60b25d00b4b25d0080ea7d00"
+    }
+  ],
+  "fragments": [
+    {
+      "role": "Game PE entry point",
+      "basis": "The pinned entry-field and exact runtime-function evidence establishes only 0x5db2b4..0x5db2f1. Inspect this entry to identify explicit DLL process-attach calls.",
+      "start_rva": "0x5db2b4",
+      "end_rva_exclusive": "0x5db2f1",
+      "range_kind": "exact-unwind-fragment",
+      "start_va": "0x1805db2b4",
+      "end_va_exclusive": "0x1805db2f1",
+      "code_bytes": 61,
+      "code_sha256": "caa7305381f48aaf394836891a48290f0c00e6c9661fcbf57cef4ca7ec54e973",
+      "exact_unwind_entry": {
+        "index": 20618,
+        "begin": 6140596,
+        "end": 6140657,
+        "unwind": 8252016,
+        "entry_rva": 11167352
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1805db2b4,0x1805db2f0",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "instructions": 18,
+      "byte_coverage_verified": true
+    }
+  ],
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "full_target_copy_created": false,
+  "limitations": [
+    "Only explicitly planned targets are followed; no callee, table or neighboring code discovery is automatic.",
+    "Unwind ranges are fragments, not a claim of whole-function or exception-path coverage.",
+    "Full-file fingerprints use 64KiB buffers and are outside semantic byte totals; dumpbin internal metadata I/O is not measured.",
+    "All target bytes are read-only. No DLL initialization, game launch, backend, install or permission change."
+  ],
+  "original_sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_hash_matches": true,
+  "original_stat_stable": true,
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "tool_hash_matches": true,
+  "failures": [],
+  "finished_utc": "2026-10-20T13:03:19.188Z",
+  "controller_resource_usage": {
+    "userCPUTime": 15000,
+    "systemCPUTime": 31000,
+    "maxRSS": 42260,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11125,
+    "swappedOut": 0,
+    "fsRead": 378,
+    "fsWrite": 3,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

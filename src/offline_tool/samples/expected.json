@@ -1,0 +1,60 @@
+{
+  "record_name": "ming/items/military_ration.dbr",
+  "record_class": "QuestItem",
+  "fields": {
+    "health": 125,
+    "speed": 1.5,
+    "label": "Original ration",
+    "enabled": 1,
+    "negative_zero": "negative zero"
+  },
+  "float_bits": {
+    "speed": "0x3FC00000",
+    "negative_zero": "0x80000000"
+  },
+  "quest_uid": 3,
+  "locale": "en",
+  "tasks": [
+    {
+      "uid": 1,
+      "name": "Collect one ration",
+      "objective_uid": 1,
+      "condition": "HasItem",
+      "version": 1,
+      "comparison": "LessEqual",
+      "dbr": "ming/items/military_ration.dbr",
+      "count": 1,
+      "complete": true,
+      "give_money": 75
+    },
+    {
+      "uid": 2,
+      "name": "Verify remaining rations",
+      "objective_uid": 1,
+      "condition": "HasItem",
+      "version": 1,
+      "comparison": "GreaterEqual",
+      "dbr": "ming/items/military_ration.dbr",
+      "count": 2,
+      "complete": true,
+      "give_money": 40
+    }
+  ],
+  "arc_member": "quests/m1-ration-cycle.qst",
+  "arc_member_type": 1,
+  "arc_member_adler32": "0x798D63CF",
+  "quest_graph_end": 246,
+  "authorship": "Original fixture bytes, authored for M1; no game data. Quest graph follows the existing OwnInventoryCycleFixture structure with new English text.",
+  "validation_status": "Fixture construction only in codec subtask; compilation and decoder acceptance are performed by the parent M1 task.",
+  "files": {
+    "m1-records.arz": {
+      "bytes": 236
+    },
+    "m1-ration-cycle.qst": {
+      "bytes": 495
+    },
+    "m1-quests.arc": {
+      "bytes": 593
+    }
+  }
+}

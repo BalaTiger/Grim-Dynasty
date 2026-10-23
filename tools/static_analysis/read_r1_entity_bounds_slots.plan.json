@@ -1,0 +1,95 @@
+{
+  "schema": "grim-dynasty.fixed-entity-bounds-slots.v1",
+  "script": "tools/static_analysis/read_r1_entity_bounds_slots.mjs",
+  "entrypoint": "inspectEntityBoundsSlots(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-entity-bounds-slots/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "bytes": 11385856,
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+  },
+  "source_pins": [
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "primary_tables",
+      "path": "docs/reverse-client/r1-game-callback-dependencies/inspection.json",
+      "sha256": "c0f0348d8f0712b35efd22d7ed36282065bfc31c78ee18b0f1d870e036a4afab"
+    },
+    {
+      "key": "bounds_assembly",
+      "path": "docs/reverse-client/r1-engine-entity-publication-core/08-EngineEntityPublication-0x18002a990-procedure_assembly.json",
+      "sha256": "7903afdba78a2aa2b7f7d1d6c59b52bcc3778966752253f56b2fb245dd81ae8f"
+    }
+  ],
+  "fixed_slots": [
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x60",
+      "rva": "0x6df730",
+      "bytes": 8,
+      "callsite": "0x18002a9a8",
+      "opcode": "CALL"
+    },
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x370",
+      "rva": "0x6dfa40",
+      "bytes": 8,
+      "callsite": "0x18002aa70",
+      "opcode": "CALL"
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x60",
+      "rva": "0x787160",
+      "bytes": 8,
+      "callsite": "0x18002a9a8",
+      "opcode": "CALL"
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x370",
+      "rva": "0x787470",
+      "bytes": 8,
+      "callsite": "0x18002aa70",
+      "opcode": "CALL"
+    }
+  ],
+  "limits": {
+    "metadata_bytes": 32,
+    "metadata_operations": 4,
+    "metadata_single_read": 8,
+    "hash_chunk_bytes": 65536,
+    "new_PE_header_bytes": 0,
+    "whole_table_bytes": 0,
+    "target_body_bytes": 0
+  },
+  "requirements": [
+    "Importing the module performs no filesystem I/O. Execute only after separate exact approval with frozen script and plan hashes.",
+    "Separate Windows Attributes/reparse-tag preflight of original file and output ancestors is required; no security settings changed.",
+    "Only four fixed primary-table slots (+60,+370 for Character and Player) are read. No other slots, vtable scan, target body, import/export scan, runtime value, or new function analysis.",
+    "Pinned cached PE map is used only after same-descriptor whole-file hash matches the known original.",
+    "Preserve raw bytes and target candidate; no function name is inferred from slot purpose. No saved exact-name lookup is present in this plan.",
+    "Primary-table extent and subsequent constructor-callee overwrite remain unverified; disk candidate is not loaded dispatch proof.",
+    "Same-descriptor before/after SHA256 and stat/path identity checks; output must be absent and partial failure evidence is preserved.",
+    "No original execution/loading, backend, subprocess, network, save data, system settings, commit or push."
+  ],
+  "expected_instructions": [
+    "0x18002a9a2: MOV RAX, qword ptr [RCX]",
+    "0x18002a9a5: MOV RDI, RCX",
+    "0x18002a9a8: CALL qword ptr [RAX + 0x60]",
+    "0x18002aa55: MOV RAX, qword ptr [RDI]",
+    "0x18002aa67: MOV RCX, RDI",
+    "0x18002aa70: CALL qword ptr [RAX + 0x370]",
+    "0x18002aa93: MOVUPS XMM12, xmmword ptr [RAX + 0x1a8]",
+    "0x18002aa9b: MOVSD XMM1, qword ptr [RAX + 0x1b8]"
+  ]
+}

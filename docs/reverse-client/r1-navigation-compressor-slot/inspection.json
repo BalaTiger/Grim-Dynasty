@@ -1,0 +1,82 @@
+{
+  "started_utc": "2026-10-22T18:34:11.276Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_size": 4485632,
+  "script_sha256": "7b6e71312c6c600c84115c0798bb4fc1a92fd306d114d5cf5bc642255060f949",
+  "proofs": [
+    {
+      "file": "docs/reverse-client/r1-navigation-implementation-constructor/05-NavigationImplementationConstructor-procedure_assembly.json",
+      "sha256": "1a016f11388e78a316b9b3552f88bd3d7c4d7ace4c518f6c95ed9f48ea884571",
+      "procedure": "0x18010a530"
+    },
+    {
+      "file": "docs/reverse-client/r1-tile-cache-and-decompression/08-TileCacheDecompression-0x180263e40-procedure_assembly.json",
+      "sha256": "18157f29003ef2256c96704243a47c073c0c1e2a83d767a8ca96208f6b577023",
+      "procedure": "0x180263e40"
+    },
+    {
+      "file": "docs/reverse-client/r1-tile-cache-and-decompression/11-TileCacheDecompression-0x18026cc50-procedure_assembly.json",
+      "sha256": "8cb8a0337ce9e902badcb6d180701f494c2e07c42116decf995aaaccf16d7197",
+      "procedure": "0x18026cc50"
+    }
+  ],
+  "metadata_bytes": 688,
+  "data_bytes": 12,
+  "code_bytes": 0,
+  "hash_bytes": 8971264,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "vtable_rva": "0x340a00",
+      "vtable_va": "0x180340a00",
+      "slot_offset": "0x10",
+      "rva": "0x340a10",
+      "va": "0x180340a10",
+      "file_offset": 3406352,
+      "bytes": 8,
+      "section": ".rdata",
+      "raw_hex": "2098108001000000",
+      "target_va": "0x180109820",
+      "target_body_read": false,
+      "role_evidence": "26CC50 parameter2 receiver virtual call at 26CD77",
+      "target_executable_verified": true,
+      "target_rva": "0x109820",
+      "target_section": ".text",
+      "target_file_offset": 1084448
+    }
+  ],
+  "constants": [
+    {
+      "rva": "0x34badc",
+      "va": "0x18034badc",
+      "file_offset": 3451612,
+      "bytes": 4,
+      "section": ".rdata",
+      "raw_hex": "0000003f",
+      "uint32_hex": "0x3f000000",
+      "float32": 0.5,
+      "float32_text": "0.5",
+      "evidence_instruction": "0x18010a884: ADDSS XMM1, dword ptr [0x18034badc]",
+      "loaded_value_observed": false
+    }
+  ],
+  "failures": [],
+  "scope": "Bounded PE headers/section metadata (at most 4096 bytes) and exactly 12 data bytes: compressor slot RVA 0x340a10 (8 bytes) and constructor ADDSS constant RVA 0x34badc (4 bytes). Whole-file streams are only before/after SHA256; no code, adjacent slot, RTTI or other original file is read.",
+  "limitations": [
+    "This resolves the fixed on-disk slot vptr340A00+10 motivated by 10A530, 263E40 and 26CC50. It does not execute or prove the target decoder algorithm.",
+    "Executable-section membership is metadata, not proof of function boundaries, full ABI or decompression correctness.",
+    "No loaded vptr mutation, live receiver identity or successful native construction is observed.",
+    "The 34BADC float is a disk observation bound to 10A884; no loaded constant or valid runtime configuration is assumed.",
+    "Node path checks do not expose every Windows reparse tag. The separately reviewed Windows Attributes precheck remains required; this script does not bypass it.",
+    "Before/after hash and stat equality is not an atomic filesystem snapshot."
+  ],
+  "proofs_verified": true,
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T18:34:11.285Z",
+  "status": "passed"
+}

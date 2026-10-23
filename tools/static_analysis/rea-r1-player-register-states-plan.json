@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "purpose": "Fixed ControllerPlayer::RegisterStates body and direct relationships, selected by AddState caller evidence and exact PE export identity. Trace native state allocation and vtable publication; no unrelated controller bodies.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-game-add-state/07-AddState-0x180125730-procedure_callers.json",
+      "sha256": "c62826910919e92c45d46e8732e3be811e8c9c77ab9d2bfd40cf50f89281843c",
+      "address": "0x18015e440",
+      "source_kind": "Resolved direct AddState caller"
+    },
+    {
+      "file": "docs/reverse-client/r1-registration-caller-metadata/inspection.json",
+      "sha256": "756eb2144748740fda843b49ff5e013432dbf6cd7172b8eed02ec3d2940d248e",
+      "address": "0x18015e440",
+      "source_kind": "Exact export ?RegisterStates@ControllerPlayer@GAME@@MEAAXXZ"
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 9,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees",
+    "procedure_callers"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "provider_id": "ghidra",
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      },
+      "label": "02-Game-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Game-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18015e440"
+      },
+      "label": "04-PlayerRegisterStates-0x18015e440-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18015e440"
+      },
+      "label": "05-PlayerRegisterStates-0x18015e440-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18015e440"
+      },
+      "label": "06-PlayerRegisterStates-0x18015e440-procedure_callees"
+    },
+    {
+      "tool": "procedure_callers",
+      "args": {
+        "procedure": "0x18015e440"
+      },
+      "label": "07-PlayerRegisterStates-0x18015e440-procedure_callers"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "08-Game-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "09-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "execution_requirements": [
+    "Only this separately reviewed fixed Game batch; exact original hash and existing Game target/ownership/descriptor/image/heap and cleanup guards. No original execution, save/cloud data or security changes.",
+    "Only pseudocode, assembly and resolved direct callees/callers at 18015E440. Retain partial/unknown relationship coverage and empty arrays. No automatic expansion or retry.",
+    "Retain unchanged 384M heap, 5GiB physical and commit launch gates, 2GiB stop gates, 330000ms provider and 600000ms outer deadlines. Prior observed peaks are not a later bound.",
+    "Pin the preceding AddState summary and require successful close, process exit, empty Job and exited sampler. Preserve all old outputs."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "game-mouse-first-calibration-384m-v1",
+    "calibration_only": false,
+    "measured_game_peak_available": true,
+    "budget_source": "unchanged-provisional-Game-budget-with-prior-trial-observation",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "task_allowance_gib": 3,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "no_system_settings_change": true,
+    "scope": "One fixed ControllerPlayer registration batch; prior Game measurements do not bound this batch.",
+    "legacy_budget_fields": "The reused game-mouse-first-calibration-384m-v1 budget object retains its original calibrationOnly/measuredGamePeakAvailable labels. Those immutable labels describe budget provenance, not the current observation inventory; use this plan and prior_game_trial_observation for current evidence."
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "previous_sha256": "f06ef3bb91be422afa3e1eef639243be2b711c4f701da462767649e34851b0c1",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_sha256": "6d07a2a1e29565930ebd091f070128aeb6a59feaafd8e8fcdce01bb7b4a743a9",
+    "validation_file": ".tooling/r0-owned-job-terminal-candidate-20261022-attempt2/test-result.json",
+    "validation_sha256": "1ad80a494a359d16012698a0ffde723308ebe8e3d6bd06d488dd156e22a305d2",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 36,
+    "scenario_groups": 8,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "production_normalization": "Candidate header and namespace removed; isolated label removed from comment. Algorithm otherwise unchanged.",
+    "limitations": "Missing image is accepted only with positive same-handle exit evidence, never for live roles or counters. The limit is per Probe or QueryMembers operation, not a whole sampler-cycle latency guarantee. Fault tests are not an R0 reproduction or proof of root cause."
+  },
+  "prior_engine_mouse_core": {
+    "summary_file": "docs/reverse-client/r1-engine-mouse-core/summary.json",
+    "summary_sha256": "4d26ffeb36f6c1bc0e8b8faf0a77c7f601ef08b5ce31a6a2aa2ca56c2449ba77",
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true
+  },
+  "prior_game_trial_observation": {
+    "summary_file": "docs/reverse-client/r1-game-mouse-calibration/summary.json",
+    "summary_sha256": "1397b49afa2556c97b2c1ea5ab9807a92c1a1306cd98262d10e697a2ed4d571e",
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "completed_plan_calls": 8,
+    "sampled_tree_private_commit_peak_bytes": 993013760,
+    "sampled_with_controller_and_sampler_private_peak_bytes": 1175207936,
+    "limitations": "One previous Game query trial with discrete sampling; no guarantee for this different fixed batch and no permission to reduce the existing resource gates."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-game-add-state/summary.json",
+    "summary_sha256": "d10ea3d9dc183deaf812261ea8199564e8171edab5b2da9a6d69e5a7f4e9e03e",
+    "required_status": "passed",
+    "completed_plan_calls": 9,
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "scope": "Most recent AddState body batch cleanup."
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false,
+    "scope": "Existing startup absolute deadline and per-request outer deadline; not a whole-batch runtime guarantee."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "schema": "grim-dynasty.saved-mainmenu-ground-type.v1",
+  "observed_utc": "2026-10-23T03:56:05.5815704Z",
+  "status": "verified-saved-member-datum",
+  "source": {
+    "path": "docs/reverse-client/r1-mainmenu-complete-member/mainmenu.map.bin",
+    "bytes": 1091357,
+    "sha256_before": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+    "sha256_after": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+    "same_readonly_stream": true,
+    "share_mode": "Read",
+    "stat_stable": true,
+    "source_closed": true
+  },
+  "extent": {
+    "level_member_offset": 263292,
+    "level_bytes": 828065,
+    "level_version": 15,
+    "chunk_id": 6,
+    "payload_member_offset": 273260,
+    "payload_bytes": 149073,
+    "observed_member_offset": 273260,
+    "observed_bytes": 4,
+    "raw_hex": "02000000",
+    "uint32_le": 2
+  },
+  "evidence": [
+    {
+      "kind": "level_chunk_extent",
+      "path": "docs/reverse-client/r1-mainmenu-complete-member/level-chunk-observation.json",
+      "sha256": "558a9ac7959da4e64394c4195623e4576b6b081c8978f0869d18744d4d52e6d3"
+    },
+    {
+      "kind": "native_assembly",
+      "path": "docs/reverse-client/r1-level-load-and-navjob-candidates/05-LevelLoadNavJobCandidate-0x18012c770-procedure_assembly.json",
+      "sha256": "edbe0f2ba35b41bfb9c412aae4ec3e61a45ef7c29ec74b569801c4b6797a07f5"
+    },
+    {
+      "kind": "native_pseudocode",
+      "path": "docs/reverse-client/r1-level-load-and-navjob-candidates/04-LevelLoadNavJobCandidate-0x18012c770-procedure_pseudo_code.json",
+      "sha256": "1fb73796fac9b7ca65059c5bedf226dd077ae59c640656dc6474ec12b1f374a5"
+    }
+  ],
+  "native_branch": {
+    "module": "Engine.dll",
+    "procedure": "0x18012c770",
+    "version_gate": "12C97B/12C97F: version >= 11 reads type DWORD at12C985",
+    "type": 2,
+    "allocation_bytes": 432,
+    "allocation_site": "0x18012ca42",
+    "constructor_callsite": "0x18012ca57",
+    "constructor_target": "0x1801dda90",
+    "constructor_argument2": "Level+08 Region pointer",
+    "publication_site": "0x18012ca5d",
+    "publication_field": "Level+30",
+    "vptr_read": "0x18012ca61",
+    "load_callsite": "0x18012ca70",
+    "load_vslot": "0x88",
+    "load_arguments": "constructed object, live BinaryReader, signed-byte level version",
+    "load_result_gate": "AL at12CA77; zero branches12CBAB to deletion/reset/failure",
+    "class_name": null,
+    "saved_pseudocode_name": "FUN_1801dda90",
+    "vtable_address": null,
+    "loader_target": null
+  },
+  "next_bounded_query": {
+    "module": "Engine.dll",
+    "procedure": "0x1801dda90",
+    "tools": [
+      "procedure_pseudo_code",
+      "procedure_assembly",
+      "procedure_callees"
+    ],
+    "purpose": "Determine the observed type2 constructor and its actual vptr before binding only slot+88; do not guess a terrain class or loader address",
+    "executed": false
+  },
+  "limits": {
+    "new_original_reads": 0,
+    "backends_started": 0,
+    "native_code_executed": false,
+    "implementation_changed": false,
+    "semantic_bytes_read": 4,
+    "hash_bytes_read": 2182714,
+    "other_chunk_types_inspected": false
+  },
+  "caveats": [
+    "Only the saved mainmenu type2 discriminator is established; no Level.Load, ground decode, water/object collision or floor success is claimed.",
+    "Saved caller pseudocode does not name the type2 class. A filename-only inventory found no1DDA90/terrain-named evidence; other filenames were not searched by contents.",
+    "Navigation vertex Y remains separate from native floor intersection."
+  ]
+}

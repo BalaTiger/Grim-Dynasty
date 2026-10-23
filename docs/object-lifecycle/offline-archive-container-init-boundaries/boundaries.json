@@ -1,0 +1,121 @@
+{
+  "status": "fixed-archive-container-init-boundaries-assessed",
+  "started_utc": "2026-10-20T11:37:01.247Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "working_copy": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll",
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-archive-init/0x18027f9c0.bin",
+      "sha256": "397bc83d6d9849d3e1417350b79af00a66447d4be65568d9a0b4ff16d96199e0",
+      "maxBytes": 347
+    },
+    {
+      "path": "docs/object-lifecycle/offline-archive-init/27f9c0-instructions.json",
+      "sha256": "f97ddfc381822f9c76040c2243c8c25b943eed737f3ea6f5565117187a2f1995",
+      "maxBytes": 65536
+    },
+    {
+      "path": "docs/object-lifecycle/offline-archive-init/inspection.json",
+      "sha256": "1c523cfa4b1d6c68e28fef23bac2b8397d9a0dc9352b2f006d8053d25a5a728b",
+      "maxBytes": 65536
+    }
+  ],
+  "saved_caller_code_bytes_checked": 347,
+  "calls_verified": [
+    {
+      "address": "0x18027f9f3",
+      "target_va": "0x18005d860",
+      "context": "A+48 record-ID index"
+    },
+    {
+      "address": "0x18027fa08",
+      "target_va": "0x18003c740",
+      "context": "C=A+88 string index"
+    },
+    {
+      "address": "0x18027fa3e",
+      "target_va": "0x18005d860",
+      "context": "A+108 second container; business role unproven"
+    }
+  ],
+  "targets": [
+    {
+      "rva": 247616,
+      "exact": true,
+      "role": "string-index-constructor",
+      "rva_hex": "0x3c740",
+      "boundary": {
+        "begin_rva": 247616,
+        "end_rva": 247730,
+        "unwind_rva": 3579732,
+        "index": 1537,
+        "bytes": 114
+      },
+      "index_reads": 13
+    },
+    {
+      "rva": 383072,
+      "exact": true,
+      "role": "record-index-and-second-container-constructor",
+      "rva_hex": "0x5d860",
+      "boundary": {
+        "begin_rva": 383072,
+        "end_rva": 383186,
+        "unwind_rva": 3592928,
+        "index": 2028,
+        "bytes": 114
+      },
+      "index_reads": 12
+    }
+  ],
+  "code_bytes_read": 0,
+  "dumpbin_started": false,
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "callee_bodies_followed": 0,
+  "metadata_bytes": 988,
+  "metadata_byte_limit": 32768,
+  "hash_chunk_bytes": 65536,
+  "copy_sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "hash_scope": "Streaming full-file SHA256 before and after; the zero-code-read claim excludes hashing",
+  "boundary_scope": "Exactly two fixed direct-call targets; unwind entries do not prove logical completeness",
+  "original_sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "original_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "copy_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_evidence_after": [
+    {
+      "path": "docs/object-lifecycle/offline-archive-init/0x18027f9c0.bin",
+      "sha256": "397bc83d6d9849d3e1417350b79af00a66447d4be65568d9a0b4ff16d96199e0"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-archive-init/27f9c0-instructions.json",
+      "sha256": "f97ddfc381822f9c76040c2243c8c25b943eed737f3ea6f5565117187a2f1995"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-archive-init/inspection.json",
+      "sha256": "1c523cfa4b1d6c68e28fef23bac2b8397d9a0dc9352b2f006d8053d25a5a728b"
+    }
+  ],
+  "original_hash_matches": true,
+  "copy_hash_matches": true,
+  "failures": [],
+  "finished_utc": "2026-10-20T11:37:01.257Z",
+  "controller_resource_usage": {
+    "userCPUTime": 78000,
+    "systemCPUTime": 15000,
+    "maxRSS": 41628,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 10944,
+    "swappedOut": 0,
+    "fsRead": 327,
+    "fsWrite": 0,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

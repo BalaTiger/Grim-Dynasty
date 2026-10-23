@@ -1,0 +1,15 @@
+{
+  "purpose": "Read the single disk float32 consumed by266DD0 link interval quantization, without inferring loaded values",
+  "script": "tools/static_analysis/read_r1_mesh_link_quantization.mjs",
+  "script_sha256": "461fdd342640a2c55a2b7e0d7be1e25a8e2ef8a60c933a30058c56434ad07528",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "proof": "docs/reverse-client/r1-mesh-links-and-triangulation-leaf/14-MeshLinksTriangulationLeaf-0x180266dd0-procedure_assembly.json",
+  "proof_sha256": "4bb83e4133ea102c407de8c1e91ba057b818b4d04bff793d8f2ea1b1a941c341",
+  "instruction": "0x180266e6d: MOVSS XMM8, dword ptr [0x18034bd0c]",
+  "semantic_rva": "34BD0C",
+  "semantic_bytes": 4,
+  "maximum_metadata_bytes": 4096,
+  "output": "docs/reverse-client/r1-mesh-link-quantization/inspection.json",
+  "guards": ["Fixed target/output/proof; refusal to overwrite; regular nonredirected path and same-descriptor before/after hash/stat", "External Windows Attributes ancestor precheck required", "Whole-file streams only for before/after hash; no code or adjacent data read", "No subprocess, backend, game execution, saves/cloud or security change"]
+}

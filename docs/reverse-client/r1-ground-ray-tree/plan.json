@@ -1,0 +1,450 @@
+{
+  "schema_version": 1,
+  "purpose": "Seven bounded Engine ground geometry dependencies: ray/AABB helper03D780, tree constructor11A600, block insertion1CFDF0, and four exact disk-slot targets1DE880/1D1330/00CE80/1D12F0. Obtain actual production/consumption contracts; do not expand graphics, materials or CRT branches.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-ground-floor-geometry/05-GroundFloorGeometry-0x1801d0100-procedure_assembly.json",
+      "sha256": "e6208532b42d939df7051d4547f1cd65dbfa24b4c262d7a7450f1ed0313a5b50",
+      "addresses": [
+        "0x18003d780"
+      ],
+      "source_kind": "1D0158 RCX=RBX+10,1D015C RDX=RBP,1D015F CALL03D780. Second1D0215 CALL usesstack bounds atRSP+40;subsequentCOMISS usesreturnedXMM0. Actual ray/bounds semantics awaitbody."
+    },
+    {
+      "file": "docs/reverse-client/r1-ground-floor-geometry/06-GroundFloorGeometry-0x1801d0100-procedure_callees.json",
+      "sha256": "ce59c996bbd2527f446ae0a5031e052260351fad7b28e8fab7bc3d53c169d3a5",
+      "addresses": [
+        "0x18003d780"
+      ],
+      "source_kind": "Saved directcallees include03D780 and recursive1D0100;do not requery1D0100."
+    },
+    {
+      "file": "docs/reverse-client/r1-ground-blocks-and-node-destroy/14-GroundBlocksNodeDestroy-0x1801ce910-procedure_assembly.json",
+      "sha256": "c409e0f20684d60e076ed27861ebeece894cfdcc37808c4eb4c4b32a05f98dcf",
+      "addresses": [
+        "0x18011a600",
+        "0x1801cfdf0"
+      ],
+      "source_kind": "1CEAF6 R8=&stack90,1CEAFE RDX=&stack98,1CEB06 RCX=allocation,1CEB09 CALL11A600 thenreturnstoredGround+20.1CEB26 blockindex*E0,1CEB2D addGround+38,1CEB31 RCX=[tree+10],1CEB35 CALL1CFDF0,thenINC tree+8."
+    },
+    {
+      "file": "docs/reverse-client/r1-ground-blocks-and-node-destroy/15-GroundBlocksNodeDestroy-0x1801ce910-procedure_callees.json",
+      "sha256": "c70e5fed2ce180e18f93fffa62a64ff97acfe7ba49267939f4aea3f92c89a451",
+      "addresses": [
+        "0x18011a600",
+        "0x1801cfdf0"
+      ],
+      "source_kind": "Saved directcallee set confirmsboth;noallocator/material expansion."
+    },
+    {
+      "file": "docs/reverse-client/r1-ground-geometry-bindings/inspection.json",
+      "sha256": "8be1f21796126e33fae05d412b4690b8d7cf5618bda89593d4f6021230621d17",
+      "addresses": [
+        "0x1801de880",
+        "0x1801d1330",
+        "0x18000ce80",
+        "0x1801d12f0"
+      ],
+      "source_kind": "Passed fixed52B data binding with stable/closed Engine source:343C60 raw80e81d8001000000 ->1DE880;343908 raw30131d8001000000 ->1D1330;343910 raw80ce008001000000 ->00CE80;343940 rawf0121d8001000000 ->1D12F0. Exact callers1D1064,1D0193,1D0147,1CEA5B are pinned in the report. Executable-address candidates do not prove loaded dispatch, function boundary or return semantics."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 26,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Fixed seven addresses03D780,11A600,1CFDF0,1DE880,1D1330,00CE80,1D12F0 only:21 body queries plus5 lifecycle=26 calls. Backend execution remains separately approved and serialized after root builds.",
+    "No exact named saved bodies found for00CE80 or the three other new slot targets in reverse-client/object-lifecycle/condition-evaluator filename inventory; nearby ground/floor inventory found no three direct-helper bodies. Do not treat old00CE70 bytes or another folded function as00CE80 body.",
+    "Pin latest actual ground-floor-geometry14/14 passed summary with normal cleanup and unchanged Engine hash. Preserve all previous results and draft.",
+    "Preserve384M Engine profile,base4.25GiB budget plus strict5GiB physical/commit launch floor,2GiB stop,ownership/identity/mutex and monitor/sampler/recovery provenance guards.",
+    "Scope is actual floor ray/geometry production and consumption. No graphics cleanup, material-loading tree, CRT recursion or new original-file reading outside normal approved analysis.",
+    "Keep unknown loaded vptr changes, runtime state and unsupported geometry explicit. No default empty mesh, navigationY floor substitute or nativeLoad lifecycle success claim."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18003d780"
+      },
+      "label": "04-GroundRayTree-0x18003d780-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18003d780"
+      },
+      "label": "05-GroundRayTree-0x18003d780-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18003d780"
+      },
+      "label": "06-GroundRayTree-0x18003d780-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18011a600"
+      },
+      "label": "07-GroundRayTree-0x18011a600-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18011a600"
+      },
+      "label": "08-GroundRayTree-0x18011a600-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18011a600"
+      },
+      "label": "09-GroundRayTree-0x18011a600-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1801cfdf0"
+      },
+      "label": "10-GroundRayTree-0x1801cfdf0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1801cfdf0"
+      },
+      "label": "11-GroundRayTree-0x1801cfdf0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1801cfdf0"
+      },
+      "label": "12-GroundRayTree-0x1801cfdf0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1801de880"
+      },
+      "label": "13-GroundRayTree-0x1801de880-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1801de880"
+      },
+      "label": "14-GroundRayTree-0x1801de880-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1801de880"
+      },
+      "label": "15-GroundRayTree-0x1801de880-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1801d1330"
+      },
+      "label": "16-GroundRayTree-0x1801d1330-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1801d1330"
+      },
+      "label": "17-GroundRayTree-0x1801d1330-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1801d1330"
+      },
+      "label": "18-GroundRayTree-0x1801d1330-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18000ce80"
+      },
+      "label": "19-GroundRayTree-0x18000ce80-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18000ce80"
+      },
+      "label": "20-GroundRayTree-0x18000ce80-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18000ce80"
+      },
+      "label": "21-GroundRayTree-0x18000ce80-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1801d12f0"
+      },
+      "label": "22-GroundRayTree-0x1801d12f0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1801d12f0"
+      },
+      "label": "23-GroundRayTree-0x1801d12f0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1801d12f0"
+      },
+      "label": "24-GroundRayTree-0x1801d12f0-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "25-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "26-final-session"
+    }
+  ],
+  "status": "prepared-fixed-seven-ground-geometry-targets-not-executed",
+  "runner_mode_registered": true,
+  "planned_output": "docs/reverse-client/r1-ground-ray-tree",
+  "evidence_questions": [
+    "What exact ray/bounds arithmetic, returned distance, NaN handling and failure prefix does03D780 implement at both1D0100 calls?",
+    "What root/ownership fields does11A600 establish, and what block insertion contract does1CFDF0 consume before the tree count increments?",
+    "How does1DE880 sample actual loaded terrain, and how do1D1330 and00CE80 gate/produce the ray intersection? Preserve raw state and return widths, not guessed role names.",
+    "What does1D12F0 publish after block construction? Can these contracts connect the verified real member data to floor lookup through a clearly separate own cold data loader?"
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Seven bounded ray/tree and exact ground/block slot targets; no broader native lifecycle.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "previous_sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "serializer_file": "tools/static_analysis/rea_sampler_failure.ps1",
+    "serializer_sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "candidate_file": ".tooling/r1-owned-job-diagnostic-candidate/ReaOwnedJobDiagnosticCandidate.cs",
+    "candidate_sha256": "b52e6ba242277ab864a431433f43efe671bc6c37e73c1fd94d8b0977b7400544",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "serializer_validation_file": ".tooling/r1-owned-job-diagnostic-validation/serializer/result.json",
+    "serializer_validation_sha256": "eb5dc1cd79621686a5b646ba03897cec638674dd1d6894ec69cee1d5ceb04a60",
+    "runner_validation_file": ".tooling/r1-owned-job-diagnostic-validation/runner-result.json",
+    "runner_validation_sha256": "1ff5539479a0ba058bb7e3b4e6692293a07515e48d226c56f5b6667857c4bb29",
+    "deployment_file": ".tooling/r1-owned-job-diagnostic-deploy/deployment.json",
+    "deployment_sha256": "ef9be6d39c736f99fe4dd365b1ed08f6849f4280eacc698fdc9b4b75d4977dbf",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 49,
+    "scenario_groups": 10,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "serializer_assertions": 39,
+    "production_normalization": "Remove two candidate-only header lines and namespace suffix; serializer identical to tested candidate",
+    "limitations": "Diagnostic observation only. Native permissions,100ms shared wait budget,admission and fail-closed rules are unchanged. Isolated fault tests do not reproduce or establish the21:48 failure root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-ground-floor-geometry/summary.json",
+    "summary_sha256": "f0ad572426d34f1f5b21a848dbdee54020a1db3747a78cbdc259e26ec896663c",
+    "required_status": "passed",
+    "expected_plan_calls": 14,
+    "completed_plan_calls": 14,
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "observed": true,
+    "refresh_required_before_registration": false,
+    "scope": "Latest actual Engine ground-floor-geometry14/14 passed with all normal cleanup and stable Engine hash; this26-call batch remains unexecuted."
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  },
+  "diagnostic_monitor_review": {
+    "status": "passed-and-pinned",
+    "diagnostics_only_intended": true,
+    "approved_source_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "production_monitor_must_not_be_changed_by_this_preparation": true,
+    "root_cause_proven": false,
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false
+  },
+  "sampler_observation_deployment": {
+    "status": "passed-additive-serialization-deployed",
+    "previous_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "evidence": [
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/deployment.json",
+        "sha256": "e978a7fbb0256233a2a5bbdacec662ebcbe808c1c227d20ef216dce8cf3d0db9"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/measure_job_process_memory.before.ps1",
+        "sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/measure_job_process_memory.ps1",
+        "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test_member_identity_serialization.ps1",
+        "sha256": "3afa73f7130a87959e38e76ba313f715bd0e4448e146a0417b3163b55ac84ae2"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test-result.json",
+        "sha256": "812f576f55ce8989638accf2a668a6b1b19e0d23e2869328be63ba7822c3062d"
+      }
+    ],
+    "only_added_field": "membership_queries.after_counters_member_identities",
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false,
+    "resource_limits_changed": false,
+    "tests_rerun": false
+  },
+  "recovery_requirement": {
+    "status": "confirmed-retained-after-Codex-restart",
+    "recovery_result_file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+    "recovery_result_sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829",
+    "evidence": [
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+        "sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-inventory.json",
+        "sha256": "e9baee1d751ebe2dbc329ceb068f25fc33ee96d3474e77bfd0a84a6978ca3dcf"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-move.json",
+        "sha256": "34967759d2622ffe3f46942681014a903ebf626f7f9557a0633f0b8c49beb272"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-after-move.json",
+        "sha256": "b2500ac78ffab31fc94c6e19a6db7c3287401bbf40a6b3e7055b5bf4e1a0c8e8"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before-move.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-after.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-final.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/historical-identities.json",
+        "sha256": "98c290f49b3b071a4127529aa21c7bbf816a6b59596f9be210adc0fecd302d45"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/classification-test-result.json",
+        "sha256": "0158c21bfa6fa46d87656030888cce9e8853b18086547599a6ce668527d80554"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/retain_interrupted_runtime_post_restart.ps1",
+        "sha256": "0769a1fbcf8c44b12a09fe35a31823a6a75eee2d24494814d1ae4334d15b32a9"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/post_restart_classification.ps1",
+        "sha256": "c5fb0a7b207f5c6e0fdd4d55b624aef69df4619c758034c59ca1a5645cf534f2"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/test_post_restart_classification.ps1",
+        "sha256": "bb88bbf79eb8c61b023d6a7d1468b40af09d4007433a3f111c832235e89fe611"
+      }
+    ],
+    "require_source_runtime_absent_and_exact_retained_directory": true,
+    "require_equal_content_manifests_and_zero_deleted_files": true,
+    "require_normal_fresh_launch_identity_resource_mutex_guards": true,
+    "old_terminal_flags_must_remain_unconfirmed": true,
+    "single_owner_job_termination_is_inference": true
+  },
+  "planned_mode": "--r1-ground-ray-tree",
+  "pending_exact_binding": false
+}

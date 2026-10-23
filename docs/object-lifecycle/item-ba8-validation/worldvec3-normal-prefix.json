@@ -1,0 +1,60 @@
+{
+  "schema": "worldvec3-normal-prefix-offline-review-v1",
+  "created_utc": "2026-10-21T07:50:50.7699526Z",
+  "status": "normal-entry-closed-from-saved-evidence",
+  "original_new_reads": 0,
+  "new_dumpbin_calls": 0,
+  "retained_failed_report": {
+    "path": "docs\\object-lifecycle\\offline-worldvec3-constructor\\inspection.json",
+    "sha256": "f9bd0aa503ff1c7d5f3388662cab6eccb1a5267419db4b51bbc4cd66f5851b2f"
+  },
+  "sources": [
+    {
+      "path": "docs\\object-lifecycle\\offline-worldvec3-constructor\\228ab0-candidate.bin",
+      "sha256": "c21e5be4a0e6a717e2ce4fe8986c46810e49e140f0d6c416fe93adb4d95b4a7d"
+    },
+    {
+      "path": "docs\\object-lifecycle\\offline-worldvec3-constructor\\228ab0-dumpbin.txt",
+      "sha256": "cffd222dc90e8c18fb53c6e4abb355ec0a5b93f7808116408ea80e5def355abe"
+    }
+  ],
+  "normal_prefix": {
+    "end_exclusive": "0x228abb",
+    "branches": 0,
+    "raw_hex": "48c70100000000488bc1c3",
+    "return_identity": "original this",
+    "bytes": 11,
+    "begin_rva": "0x228ab0",
+    "padding_bytes_excluded": 5,
+    "calls": 0,
+    "instructions": [
+      {
+        "bytes": "48c70100000000",
+        "instruction": "mov qword ptr [rcx],0",
+        "address": "0x180228ab0"
+      },
+      {
+        "bytes": "488bc1",
+        "instruction": "mov rax,rcx",
+        "address": "0x180228ab7"
+      },
+      {
+        "bytes": "c3",
+        "instruction": "ret",
+        "address": "0x180228aba"
+      }
+    ],
+    "input_memory_reads": 0,
+    "written_bytes": 8,
+    "object_stores": 1
+  },
+  "excluded": {
+    "start_rva": "0x228ac0",
+    "end_exclusive": "0x228ae0",
+    "reason": "Unreachable neighboring linear code, last instruction truncated; no interpretation or model reuse"
+  },
+  "native_allocation_size_known": false,
+  "exception_semantics_known": false,
+  "loaded_binding_observed": false,
+  "next": "Implement same-state caller20 stores and two known-body first-QWORD constructors, minimum captured Item extent BC8"
+}

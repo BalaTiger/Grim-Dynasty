@@ -1,0 +1,17 @@
+*** Begin Patch
+*** Update File: C:\Users\zhuzi\Documents\Grim-Dynasty\src\reverse_client_actions\WorldFloorContracts.cs
+@@
+   static uint Bits(float v){return BitConverter.ToUInt32(BitConverter.GetBytes(v),0);}
++  // Reinterpret an opaque MOV between the existing uint/float typed views.
++  // The catch covers only Field.Read knowledge, never query/arithmetic failure.
++  static void CopyFloatBits(Field<float> to,Field<uint> from){uint bits;try{bits=from.Read(0);}catch(MissingContract){to.Forget();return;}to.Write(Float(bits));}
+@@
+-   float x=Scalar(position.D8,0x221deb,i),z=Scalar(position.D10,0x221df2,i),y=Scalar(position.DC,0x221df9,i);
+-   y=Finite(F(y+Scalar(c.Operands.RayYOffset34BC00,0x221e00,i)),i.At);ray.Origin00.Z8.Write(z);
+-   float infinity=Infinity(c,0x221e15,i);ray.Origin00.X0.Write(x);float directionY=Scalar(c.Operands.RayDirectionY34BDF4,0x221e22,i);
+-   At(i,0x221e45);ray.Origin00.Y4.Write(y);At(i,0x221e4a);ray.Direction0C.X0.Write(0);ray.Direction0C.Y4.Write(directionY);At(i,0x221e4f);ray.Direction0C.Z8.Write(0);
++   At(i,0x221deb);var x=position.D8.Snapshot();At(i,0x221df2);var z=position.D10.Snapshot();At(i,0x221df9);var capturedY=position.DC.Snapshot();
++   float y=Finite(F(Scalar(capturedY,0x221e00,i)+Scalar(c.Operands.RayYOffset34BC00,0x221e00,i)),i.At);CopyFloatBits(ray.Origin00.Z8,z);
++   float infinity=Infinity(c,0x221e15,i);CopyFloatBits(ray.Origin00.X0,x);At(i,0x221e22);var directionY=c.Operands.RayDirectionY34BDF4.Snapshot();
++   At(i,0x221e45);ray.Origin00.Y4.Write(y);At(i,0x221e4a);ray.Direction0C.X0.Write(0);CopyFloatBits(ray.Direction0C.Y4,directionY);At(i,0x221e4f);ray.Direction0C.Z8.Write(0);
+*** End Patch

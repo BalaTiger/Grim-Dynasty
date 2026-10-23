@@ -1,0 +1,288 @@
+{
+  "schema": "grim-dynasty.fixed-game-rotation-math-imports.v1",
+  "started_utc": "2026-10-23T05:05:58.356Z",
+  "script_sha256": "1f113b39279b25c192392a1fea841fa86e5e486fd7a145e4d29869833841a079",
+  "plan_sha256": "f6c73ee2d1fd758570cc285ee26e25ae39d6d93d24c1106b882218760c60f6e8",
+  "source_pins": [
+    {
+      "key": "rotate_assembly",
+      "path": "docs/reverse-client/r1-game-callback-remaining-retry-1/11-GameCallbackRemaining-0x18005e160-procedure_assembly.json",
+      "sha256": "722a7bbea67a6242d0e06bc8db2dc6614b02a25ac872ec7c1bd046cfa9060a49"
+    },
+    {
+      "key": "axis_assembly",
+      "path": "docs/reverse-client/r1-game-movement-math/05-GameMovementMath-0x180591a10-procedure_assembly.json",
+      "sha256": "9af598bbe5f1c1996d7b89885d69318ff94bd74ba26e219f4efecc1a33eeb4f5"
+    },
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "inventory_source",
+      "path": "docs/phase-1/boundary-audit/boundary_inventory.py",
+      "sha256": "354e00aeefbdfbc1beefa3de4f2c8c93635a0cb9ad824329f0011454f47ce224"
+    }
+  ],
+  "code_bytes": 18,
+  "code_operations": 3,
+  "metadata_bytes": 121,
+  "metadata_operations": 14,
+  "new_PE_header_bytes": 0,
+  "new_descriptor_bytes": 20,
+  "new_OFT_bytes": 24,
+  "target_body_bytes": 0,
+  "original_loaded_or_executed": false,
+  "imported_functions_executed": false,
+  "crt_files_opened": false,
+  "api_set_resolved": false,
+  "backend_started": false,
+  "subprocesses": 0,
+  "whole_table_scanned": false,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "reads": [
+        {
+          "kind": "fixed-FF25-thunk-candidate",
+          "rva": "0x5dc3f2",
+          "file_offset": 6141938,
+          "bytes": 6,
+          "raw_hex": "ff25f0f40200"
+        },
+        {
+          "kind": "fixed-FF25-thunk-candidate",
+          "rva": "0x5dc392",
+          "file_offset": 6141842,
+          "bytes": 6,
+          "raw_hex": "ff2538f50200"
+        },
+        {
+          "kind": "fixed-FF25-thunk-candidate",
+          "rva": "0x5dc40a",
+          "file_offset": 6141962,
+          "bytes": 6,
+          "raw_hex": "ff25f8f40200"
+        },
+        {
+          "kind": "fixed-math-import-descriptor",
+          "rva": "0xa42a44",
+          "file_offset": 10752068,
+          "bytes": 20,
+          "raw_hex": "6053a40000000000000000001c7ba500a0b86000"
+        },
+        {
+          "kind": "fixed-exact-DLL-name",
+          "rva": "0xa57b1c",
+          "file_offset": 10838300,
+          "bytes": 31,
+          "raw_hex": "6170692d6d732d77696e2d6372742d6d6174682d6c312d312d302e646c6c00"
+        },
+        {
+          "kind": "fixed-selected-OFT",
+          "rva": "0xa453a8",
+          "file_offset": 10762664,
+          "bytes": 8,
+          "raw_hex": "1c7ea50000000000"
+        },
+        {
+          "kind": "fixed-selected-IAT",
+          "rva": "0x60b8e8",
+          "file_offset": 6332136,
+          "bytes": 8,
+          "raw_hex": "1c7ea50000000000"
+        },
+        {
+          "kind": "fixed-import-hint",
+          "rva": "0xa57e1c",
+          "file_offset": 10839068,
+          "bytes": 2,
+          "raw_hex": "4b00"
+        },
+        {
+          "kind": "fixed-exact-import-name",
+          "rva": "0xa57e1e",
+          "file_offset": 10839070,
+          "bytes": 6,
+          "raw_hex": "61636f736600"
+        },
+        {
+          "kind": "fixed-selected-OFT",
+          "rva": "0xa45390",
+          "file_offset": 10762640,
+          "bytes": 8,
+          "raw_hex": "fc78a50000000000"
+        },
+        {
+          "kind": "fixed-selected-IAT",
+          "rva": "0x60b8d0",
+          "file_offset": 6332112,
+          "bytes": 8,
+          "raw_hex": "fc78a50000000000"
+        },
+        {
+          "kind": "fixed-import-hint",
+          "rva": "0xa578fc",
+          "file_offset": 10837756,
+          "bytes": 2,
+          "raw_hex": "9100"
+        },
+        {
+          "kind": "fixed-exact-import-name",
+          "rva": "0xa578fe",
+          "file_offset": 10837758,
+          "bytes": 5,
+          "raw_hex": "636f736600"
+        },
+        {
+          "kind": "fixed-selected-OFT",
+          "rva": "0xa453c8",
+          "file_offset": 10762696,
+          "bytes": 8,
+          "raw_hex": "3e7ea50000000000"
+        },
+        {
+          "kind": "fixed-selected-IAT",
+          "rva": "0x60b908",
+          "file_offset": 6332168,
+          "bytes": 8,
+          "raw_hex": "3e7ea50000000000"
+        },
+        {
+          "kind": "fixed-import-hint",
+          "rva": "0xa57e3e",
+          "file_offset": 10839102,
+          "bytes": 2,
+          "raw_hex": "1301"
+        },
+        {
+          "kind": "fixed-exact-import-name",
+          "rva": "0xa57e40",
+          "file_offset": 10839104,
+          "bytes": 5,
+          "raw_hex": "73696e6600"
+        }
+      ],
+      "hash_bytes": 22771712,
+      "closed": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "stable": true
+    }
+  ],
+  "thunks": [
+    {
+      "rva": "0x5dc3f2",
+      "bytes": 6,
+      "raw_hex": "ff25f0f40200",
+      "source_key": "rotate_assembly",
+      "instruction": "0x18005e334: CALL 0x1805dc3f2",
+      "opcode_verified": true,
+      "iat_rva": "0x60b8e8",
+      "displacement": 193776
+    },
+    {
+      "rva": "0x5dc392",
+      "bytes": 6,
+      "raw_hex": "ff2538f50200",
+      "source_key": "axis_assembly",
+      "instruction": "0x180591a30: CALL 0x1805dc392",
+      "opcode_verified": true,
+      "iat_rva": "0x60b8d0",
+      "displacement": 193848
+    },
+    {
+      "rva": "0x5dc40a",
+      "bytes": 6,
+      "raw_hex": "ff25f8f40200",
+      "source_key": "axis_assembly",
+      "instruction": "0x180591a3b: CALL 0x1805dc40a",
+      "opcode_verified": true,
+      "iat_rva": "0x60b908",
+      "displacement": 193784
+    }
+  ],
+  "bindings": [
+    {
+      "thunk_rva": "0x5dc3f2",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "descriptor_index": 13,
+      "index": 9,
+      "symbol": "acosf",
+      "hint": 75,
+      "iat_rva": "0x60b8e8",
+      "lookup_rva": "0xa453a8",
+      "hint_name_rva": "0xa57e1c",
+      "classification": "ExactOrdinaryApiSetNamedImport",
+      "loaded_iat_read": false,
+      "host_dll_resolved": false,
+      "target_body_read": false,
+      "numeric_contract_verified": false
+    },
+    {
+      "thunk_rva": "0x5dc392",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "descriptor_index": 13,
+      "index": 6,
+      "symbol": "cosf",
+      "hint": 145,
+      "iat_rva": "0x60b8d0",
+      "lookup_rva": "0xa45390",
+      "hint_name_rva": "0xa578fc",
+      "classification": "ExactOrdinaryApiSetNamedImport",
+      "loaded_iat_read": false,
+      "host_dll_resolved": false,
+      "target_body_read": false,
+      "numeric_contract_verified": false
+    },
+    {
+      "thunk_rva": "0x5dc40a",
+      "dll": "api-ms-win-crt-math-l1-1-0.dll",
+      "descriptor_index": 13,
+      "index": 13,
+      "symbol": "sinf",
+      "hint": 275,
+      "iat_rva": "0x60b908",
+      "lookup_rva": "0xa453c8",
+      "hint_name_rva": "0xa57e3e",
+      "classification": "ExactOrdinaryApiSetNamedImport",
+      "loaded_iat_read": false,
+      "host_dll_resolved": false,
+      "target_body_read": false,
+      "numeric_contract_verified": false
+    }
+  ],
+  "disk_bindings_complete": true,
+  "unsupported": [],
+  "failures": [],
+  "limitations": [
+    "Fixed18B FF25 candidates plus at most121B import metadata. No original or imported function is executed.",
+    "The API-set DLL contract name is not the actual host CRT DLL. Host resolution/version/function implementation and floating-point behavior remain unverified.",
+    "Disk import relationships do not prove loaded IATs, callable ABI, numeric accuracy, exception/errno behavior, rounding modes, signed-zero/NaN payload behavior or native runtime compatibility.",
+    "Whole-file hash streams are identity checks separate from scoped payload budgets, not atomic snapshots.",
+    "Node path checks cannot identify every Windows reparse tag; separate Attributes preflight remains required."
+  ],
+  "proofs_verified": true,
+  "descriptor": {
+    "index": 13,
+    "rva": "0xa42a44",
+    "original_first_thunk_rva": "0xa45360",
+    "first_thunk_rva": "0x60b8a0",
+    "name_rva": "0xa57b1c",
+    "dll": "api-ms-win-crt-math-l1-1-0.dll"
+  },
+  "finished_utc": "2026-10-23T05:05:58.379Z",
+  "status": "passed"
+}

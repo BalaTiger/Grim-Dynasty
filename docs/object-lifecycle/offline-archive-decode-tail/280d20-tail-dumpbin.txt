@@ -1,0 +1,50 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-cache-node\Engine.readonly.dll
+
+File Type: DLL
+
+  0000000180280D4F: 48 89 78 F8        mov         qword ptr [rax-8],rdi
+  0000000180280D53: 48 85 C9           test        rcx,rcx
+  0000000180280D56: 74 10              je          0000000180280D68
+  0000000180280D58: E8 9B BB 05 00     call        00000001802DC8F8
+  0000000180280D5D: 48 C7 83 88 01 00  mov         qword ptr [rbx+0000000000000188h],0
+                    00 00 00 00 00
+  0000000180280D68: 8D 04 76           lea         eax,[rsi+rsi*2]
+  0000000180280D6B: C7 83 90 01 00 00  mov         dword ptr [rbx+0000000000000190h],0
+                    00 00 00 00
+  0000000180280D75: BF 00 04 00 00     mov         edi,400h
+  0000000180280D7A: 3B C7              cmp         eax,edi
+  0000000180280D7C: 0F 43 F8           cmovae      edi,eax
+  0000000180280D7F: F7 C7 FF 03 00 00  test        edi,3FFh
+  0000000180280D85: 74 0C              je          0000000180280D93
+  0000000180280D87: 81 E7 00 FC FF FF  and         edi,0FFFFFC00h
+  0000000180280D8D: 81 C7 00 04 00 00  add         edi,400h
+  0000000180280D93: 48 83 BB 88 01 00  cmp         qword ptr [rbx+0000000000000188h],0
+                    00 00
+  0000000180280D9B: 75 1E              jne         0000000180280DBB
+  0000000180280D9D: 8B CF              mov         ecx,edi
+  0000000180280D9F: E8 5C BB 05 00     call        00000001802DC900
+  0000000180280DA4: 48 89 83 88 01 00  mov         qword ptr [rbx+0000000000000188h],rax
+                    00
+  0000000180280DAB: 89 BB 90 01 00 00  mov         dword ptr [rbx+0000000000000190h],edi
+  0000000180280DB1: C7 83 94 01 00 00  mov         dword ptr [rbx+0000000000000194h],0
+                    00 00 00 00
+  0000000180280DBB: 48 8B BC 24 A0 00  mov         rdi,qword ptr [rsp+00000000000000A0h]
+                    00 00
+  0000000180280DC3: 48 8B 93 88 01 00  mov         rdx,qword ptr [rbx+0000000000000188h]
+                    00
+  0000000180280DCA: 44 8B C6           mov         r8d,esi
+  0000000180280DCD: 48 8B CD           mov         rcx,rbp
+  0000000180280DD0: E8 4B 7F FF FF     call        0000000180278D20
+  0000000180280DD5: 48 8B B4 24 C0 00  mov         rsi,qword ptr [rsp+00000000000000C0h]
+                    00 00
+  0000000180280DDD: 48 8B AC 24 B8 00  mov         rbp,qword ptr [rsp+00000000000000B8h]
+                    00 00
+  0000000180280DE5: 48 8B 9C 24 B0 00  mov         rbx,qword ptr [rsp+00000000000000B0h]
+                    00 00
+  0000000180280DED: 85 C0              test        eax,eax
+  0000000180280DEF: 79 23              jns         0000000180280E14
+
+  Summary
+
+      301000 .text

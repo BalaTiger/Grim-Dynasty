@@ -1,0 +1,36 @@
+﻿{
+    "schema":  "grim-dynasty-m3-catalog-probe-build-v1",
+    "created_utc":  "2026-10-22T04:50:27.0781767Z",
+    "compiler":  "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\csc.exe",
+    "compiler_sha256":  "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00",
+    "sources":  [
+                    {
+                        "sha256":  "821dfbfe3695482b0da88b5dc8a948600b6c98c4015c1ae978dbd23b1105be24",
+                        "path":  "src/resource_codec/Lz4Block.cs"
+                    },
+                    {
+                        "sha256":  "f414cdecdaa58ba7d24cd7a8d6384f98874fc4a267fa3512e3b80bfb634b82a3",
+                        "path":  "src/resource_codec/ResourceContainers.cs"
+                    },
+                    {
+                        "sha256":  "f515d18c4b5f6e53c9307f2fd06e2d5f766e6f2a62c417b8dd1f314a9438b614",
+                        "path":  "tools/static_analysis/M3CatalogProbe.cs"
+                    }
+                ],
+    "exe_sha256":  "830364e7b4fa3cba3350120a9095111582e20cb750037b9c633e211693dbe9f1",
+    "input":  "D:\\Steam\\steamapps\\common\\Grim Dawn\\database\\database.arz",
+    "input_expected_bytes":  58529720,
+    "input_expected_sha256":  "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603",
+    "report":  "docs/m3-evidence/m3-content-slice/content-slice.json",
+    "execution_status":  "Collected",
+    "slice_mode":  true,
+    "record_body_budget":  2,
+    "arguments":  [
+                      "-slice"
+                  ],
+    "previous_probe_source_sha256":  "dacd25fa81ce85f0a2b2192e8b6432b5a585e6e8177b0950cadebeb53fba31c4",
+    "preserved_index_evidence":  "docs/m3-evidence/content-candidates.json",
+    "scope":  "One fixed helper execution. Default: index only, Monster/ArmorProtective. Slice: Monster name contains zombie and item ArmorProtective_Chest, at most 8 each; decode first actual name from each nonempty sorted group (maximum 2 records, each at most 8MiB packed/unpacked). No recursive references, texture extraction, game process/DLL, player saves, tests, GUI, installation or security changes. Original SHA256 uses 64KiB blocks before/after.",
+    "report_sha256":  "3e5fe5ce265fa2367685d36531fd6bde2ebbbfc5af0b9da0fcbd9f60739a804d",
+    "completed_utc":  "2026-10-22T04:50:27.6919026Z"
+}

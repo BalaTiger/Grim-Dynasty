@@ -1,0 +1,53 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-cache-node\Engine.readonly.dll
+
+File Type: DLL
+
+  000000018002D950: 48 89 5C 24 08     mov         qword ptr [rsp+8],rbx
+  000000018002D955: 57                 push        rdi
+  000000018002D956: 48 83 EC 20        sub         rsp,20h
+  000000018002D95A: 48 8B 41 08        mov         rax,qword ptr [rcx+8]
+  000000018002D95E: 48 8B FA           mov         rdi,rdx
+  000000018002D961: 48 8B D9           mov         rbx,rcx
+  000000018002D964: 48 3B D0           cmp         rdx,rax
+  000000018002D967: 73 43              jae         000000018002D9AC
+  000000018002D969: 48 8B 09           mov         rcx,qword ptr [rcx]
+  000000018002D96C: 48 3B CA           cmp         rcx,rdx
+  000000018002D96F: 77 3B              ja          000000018002D9AC
+  000000018002D971: 48 2B F9           sub         rdi,rcx
+  000000018002D974: 48 C1 FF 02        sar         rdi,2
+  000000018002D978: 48 3B 43 10        cmp         rax,qword ptr [rbx+10h]
+  000000018002D97C: 75 0D              jne         000000018002D98B
+  000000018002D97E: BA 01 00 00 00     mov         edx,1
+  000000018002D983: 48 8B CB           mov         rcx,rbx
+  000000018002D986: E8 B5 04 00 00     call        000000018002DE40
+  000000018002D98B: 48 8B 53 08        mov         rdx,qword ptr [rbx+8]
+  000000018002D98F: 48 85 D2           test        rdx,rdx
+  000000018002D992: 74 38              je          000000018002D9CC
+  000000018002D994: 48 8B 03           mov         rax,qword ptr [rbx]
+  000000018002D997: 8B 0C B8           mov         ecx,dword ptr [rax+rdi*4]
+  000000018002D99A: 89 0A              mov         dword ptr [rdx],ecx
+  000000018002D99C: 48 83 43 08 04     add         qword ptr [rbx+8],4
+  000000018002D9A1: 48 8B 5C 24 30     mov         rbx,qword ptr [rsp+30h]
+  000000018002D9A6: 48 83 C4 20        add         rsp,20h
+  000000018002D9AA: 5F                 pop         rdi
+  000000018002D9AB: C3                 ret
+  000000018002D9AC: 48 3B 43 10        cmp         rax,qword ptr [rbx+10h]
+  000000018002D9B0: 75 0D              jne         000000018002D9BF
+  000000018002D9B2: BA 01 00 00 00     mov         edx,1
+  000000018002D9B7: 48 8B CB           mov         rcx,rbx
+  000000018002D9BA: E8 81 04 00 00     call        000000018002DE40
+  000000018002D9BF: 48 8B 4B 08        mov         rcx,qword ptr [rbx+8]
+  000000018002D9C3: 48 85 C9           test        rcx,rcx
+  000000018002D9C6: 74 04              je          000000018002D9CC
+  000000018002D9C8: 8B 07              mov         eax,dword ptr [rdi]
+  000000018002D9CA: 89 01              mov         dword ptr [rcx],eax
+  000000018002D9CC: 48 83 43 08 04     add         qword ptr [rbx+8],4
+  000000018002D9D1: 48 8B 5C 24 30     mov         rbx,qword ptr [rsp+30h]
+  000000018002D9D6: 48 83 C4 20        add         rsp,20h
+  000000018002D9DA: 5F                 pop         rdi
+  000000018002D9DB: C3                 ret
+
+  Summary
+
+      301000 .text

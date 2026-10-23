@@ -1,0 +1,307 @@
+{
+  "schema": "grim-dynasty-m3-fixed-export-targets-v1",
+  "started_utc": "2026-10-22T04:21:08.162Z",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "output_relative": "docs/m3-evidence/export-targets.json",
+  "limits": {
+    "source_bytes": 67108864,
+    "hash_chunk_bytes": 65536,
+    "metadata_bytes": 2097152,
+    "metadata_operations": 16384,
+    "single_read_bytes": 4096,
+    "header_end": 65536,
+    "sections": 96,
+    "exports": 1000000,
+    "names_cached": 1024,
+    "name_bytes": 1024,
+    "pdata_bytes": 2097152,
+    "search_steps": 32,
+    "candidates_per_prefix": 2,
+    "candidates_per_category": 8,
+    "report_bytes": 262144
+  },
+  "queries": {
+    "equipment": [
+      "?AutoInsertItem@EquipmentCtrl@GAME@@",
+      "?InsertItem@EquipmentCtrl@GAME@@",
+      "?EquipItem@EquipmentCtrl@GAME@@",
+      "?UnequipItem@EquipmentCtrl@GAME@@",
+      "?RemoveItem@EquipmentCtrl@GAME@@"
+    ],
+    "trade": [
+      "?BuyItem@",
+      "?SellItem@"
+    ],
+    "character_damage_death": [
+      "?TakeDamage@Character@GAME@@",
+      "?ApplyDamage@Character@GAME@@",
+      "?ReceiveDamage@Character@GAME@@",
+      "?Die@Character@GAME@@",
+      "?Death@Character@GAME@@",
+      "?OnDeath@Character@GAME@@"
+    ]
+  },
+  "target_open_mode": "r",
+  "target_loaded_or_executed": false,
+  "code_bytes_interpreted": 0,
+  "backend_started": false,
+  "whole_export_name_table_scanned": false,
+  "whole_pdata_table_scanned": false,
+  "metadata_bytes": 13474,
+  "metadata_operations": 566,
+  "metadata_by_kind": {
+    "header": 328,
+    "sections": 360,
+    "export-directory": 40,
+    "export-name-pointers": 568,
+    "export-name-ascii": 11680,
+    "export-ordinals": 6,
+    "export-addresses": 12,
+    "pdata-selected-search": 480
+  },
+  "categories": {
+    "equipment": {
+      "status": "NamedCandidatesOnly",
+      "searches": [
+        {
+          "prefix": "?AutoInsertItem@EquipmentCtrl@GAME@@",
+          "matching_name_range": [
+            8963,
+            8964
+          ],
+          "matches": 1,
+          "emitted": 1,
+          "status": "NamedExportsLocated",
+          "omitted_due_to_fixed_limits": 0
+        },
+        {
+          "prefix": "?InsertItem@EquipmentCtrl@GAME@@",
+          "matching_name_range": [
+            17820,
+            17820
+          ],
+          "matches": 0,
+          "emitted": 0,
+          "status": "UnknownNoMatchingExport",
+          "omitted_due_to_fixed_limits": 0
+        },
+        {
+          "prefix": "?EquipItem@EquipmentCtrl@GAME@@",
+          "matching_name_range": [
+            11539,
+            11539
+          ],
+          "matches": 0,
+          "emitted": 0,
+          "status": "UnknownNoMatchingExport",
+          "omitted_due_to_fixed_limits": 0
+        },
+        {
+          "prefix": "?UnequipItem@EquipmentCtrl@GAME@@",
+          "matching_name_range": [
+            24153,
+            24153
+          ],
+          "matches": 0,
+          "emitted": 0,
+          "status": "UnknownNoMatchingExport",
+          "omitted_due_to_fixed_limits": 0
+        },
+        {
+          "prefix": "?RemoveItem@EquipmentCtrl@GAME@@",
+          "matching_name_range": [
+            21486,
+            21487
+          ],
+          "matches": 1,
+          "emitted": 1,
+          "status": "NamedExportsLocated",
+          "omitted_due_to_fixed_limits": 0
+        }
+      ],
+      "candidates": [
+        {
+          "decorated_name": "?AutoInsertItem@EquipmentCtrl@GAME@@QEAA_NI@Z",
+          "query_prefix": "?AutoInsertItem@EquipmentCtrl@GAME@@",
+          "name_index": 8963,
+          "ordinal": 8964,
+          "rva": "0x28a5c0",
+          "preferred_va": "0x18028a5c0",
+          "forwarded": false,
+          "pdata": {
+            "status": "ExactEntry",
+            "index": 9355,
+            "begin_rva": "0x28a5c0",
+            "end_rva_exclusive": "0x28aac5",
+            "begin_va": "0x18028a5c0",
+            "end_va_exclusive": "0x18028aac5",
+            "bytes": 1285,
+            "unwind_info_rva": "0x7dea70",
+            "logical_function_complete": false
+          }
+        },
+        {
+          "decorated_name": "?RemoveItem@EquipmentCtrl@GAME@@QEAA_NI@Z",
+          "query_prefix": "?RemoveItem@EquipmentCtrl@GAME@@",
+          "name_index": 21486,
+          "ordinal": 21487,
+          "rva": "0x28aad0",
+          "preferred_va": "0x18028aad0",
+          "forwarded": false,
+          "pdata": {
+            "status": "ExactEntry",
+            "index": 9356,
+            "begin_rva": "0x28aad0",
+            "end_rva_exclusive": "0x28afbb",
+            "begin_va": "0x18028aad0",
+            "end_va_exclusive": "0x18028afbb",
+            "bytes": 1259,
+            "unwind_info_rva": "0x7dea70",
+            "logical_function_complete": false
+          }
+        }
+      ]
+    },
+    "trade": {
+      "status": "UnknownNoMatchingExport",
+      "searches": [
+        {
+          "prefix": "?BuyItem@",
+          "matching_name_range": [
+            9332,
+            9332
+          ],
+          "matches": 0,
+          "emitted": 0,
+          "status": "UnknownNoMatchingExport",
+          "omitted_due_to_fixed_limits": 0
+        },
+        {
+          "prefix": "?SellItem@",
+          "matching_name_range": [
+            22490,
+            22490
+          ],
+          "matches": 0,
+          "emitted": 0,
+          "status": "UnknownNoMatchingExport",
+          "omitted_due_to_fixed_limits": 0
+        }
+      ],
+      "candidates": []
+    },
+    "character_damage_death": {
+      "status": "NamedCandidatesOnly",
+      "searches": [
+        {
+          "prefix": "?TakeDamage@Character@GAME@@",
+          "matching_name_range": [
+            23843,
+            23843
+          ],
+          "matches": 0,
+          "emitted": 0,
+          "status": "UnknownNoMatchingExport",
+          "omitted_due_to_fixed_limits": 0
+        },
+        {
+          "prefix": "?ApplyDamage@Character@GAME@@",
+          "matching_name_range": [
+            8842,
+            8843
+          ],
+          "matches": 1,
+          "emitted": 1,
+          "status": "NamedExportsLocated",
+          "omitted_due_to_fixed_limits": 0
+        },
+        {
+          "prefix": "?ReceiveDamage@Character@GAME@@",
+          "matching_name_range": [
+            21354,
+            21354
+          ],
+          "matches": 0,
+          "emitted": 0,
+          "status": "UnknownNoMatchingExport",
+          "omitted_due_to_fixed_limits": 0
+        },
+        {
+          "prefix": "?Die@Character@GAME@@",
+          "matching_name_range": [
+            11079,
+            11079
+          ],
+          "matches": 0,
+          "emitted": 0,
+          "status": "UnknownNoMatchingExport",
+          "omitted_due_to_fixed_limits": 0
+        },
+        {
+          "prefix": "?Death@Character@GAME@@",
+          "matching_name_range": [
+            10776,
+            10776
+          ],
+          "matches": 0,
+          "emitted": 0,
+          "status": "UnknownNoMatchingExport",
+          "omitted_due_to_fixed_limits": 0
+        },
+        {
+          "prefix": "?OnDeath@Character@GAME@@",
+          "matching_name_range": [
+            19514,
+            19514
+          ],
+          "matches": 0,
+          "emitted": 0,
+          "status": "UnknownNoMatchingExport",
+          "omitted_due_to_fixed_limits": 0
+        }
+      ],
+      "candidates": [
+        {
+          "decorated_name": "?ApplyDamage@Character@GAME@@QEAAXMAEBUPlayStatsDamageType@2@W4CombatAttributeType@2@AEBV?$vector@I@mem@@@Z",
+          "query_prefix": "?ApplyDamage@Character@GAME@@",
+          "name_index": 8842,
+          "ordinal": 8843,
+          "rva": "0x68930",
+          "preferred_va": "0x180068930",
+          "forwarded": false,
+          "pdata": {
+            "status": "ExactEntry",
+            "index": 2669,
+            "begin_rva": "0x68930",
+            "end_rva_exclusive": "0x68983",
+            "begin_va": "0x180068930",
+            "end_va_exclusive": "0x180068983",
+            "bytes": 83,
+            "unwind_info_rva": "0x7df230",
+            "logical_function_complete": false
+          }
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Queries are candidate names, not claims that these exports exist or that behavior has been recovered.",
+    "Only fixed prefixes are searched in the sorted ASCII export-name table; only encountered ordering is checked.",
+    "An unmatched prefix means Unknown, not absence of unexported, differently named or inlined behavior.",
+    "Only containing .pdata entries for selected export RVAs are read. The range is [begin,end), not proof of a complete logical function.",
+    "Missing .pdata entries, interior export aliases and forwarded exports remain explicit unknown boundary cases.",
+    "Full-file SHA256 passes include uninterpreted code bytes. All semantic reads are PE headers, export metadata and .pdata only.",
+    "No damage formula, death-event producer, equipment policy, trade price, rollback, runtime ABI or compatibility is established."
+  ],
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_bytes": 11385856,
+  "named_export_count": 25113,
+  "exception_entry_count": 22293,
+  "preferred_image_base": "0x180000000",
+  "distinct_export_names_read": 142,
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "fingerprint_bytes": 22771712,
+  "finished_utc": "2026-10-22T04:21:08.500Z",
+  "status": "MetadataOnlyCompleted"
+}

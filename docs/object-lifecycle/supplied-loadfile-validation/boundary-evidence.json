@@ -1,0 +1,101 @@
+{
+  "schema": "grim-dynasty-supplied-loadfile-boundary-v1",
+  "utc": "2026-10-20T08:06:02.956Z",
+  "evidence_origin": "Existing project static archives only; no new reads of original or working-copy DLL",
+  "sources": [
+    {
+      "path": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "sha256": "d696e7b2141e5fe9ee6f518555d32a615ab174deabd6f676a15c299be1b7e3b1"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-object-base/11-TableDepot-LoadFile-0x1801c4d20-assembly.json",
+      "sha256": "09c5e996bbe2d23b35ad7de140e77940899602a35a0209bc5f070ee8bbc2b166"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-object-name-assignment/05-Object-name-assignment-0x180023180-assembly.json",
+      "sha256": "366e92084dae96b73957c3e932927417909acbeaa6531888fe1c3bb8efa6110a"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-object-name-growth/05-Object-name-growth-0x180022f70-assembly.json",
+      "sha256": "e9d598f8f6cf8a486d6c0b55247f48dfdacf3103c38814fe9337a133af2b205c"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-container-reserve/08-Container-reserve-0x180023090-assembly.json",
+      "sha256": "722c381af2bea6298e9e7b7c4515194cb73805e01de8142bb88b1e2a7e37905e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-cache-node-inspection/extraction.json",
+      "sha256": "a80331fcc18a851b65bde9bfd01415142de2443df160c557a1847158bd073d2e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-cache-node-inspection/disassembly-summary.json",
+      "sha256": "527c94eabef4304ed1b3ea848a14e2f4d76062f05184c5324df54b47d7c4b439"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-cache-node-inspection/move-import-binding.json",
+      "sha256": "97a1fb517540c8e7bb46b501b7d1e2c122b4408b69ecb4e248d7e10a7ac7ef2a"
+    }
+  ],
+  "original": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provenance": "Previous offline-node extraction matched before/after; not rehashed this phase"
+  },
+  "sequence": [
+    {
+      "address": "0x1801c4d20",
+      "fact": "Existing wrapper gate, full-byte normalization and actual cache lookup reused; hits increment +54 only"
+    },
+    {
+      "address": "0x1801c4e90..0x1801c4e95",
+      "fact": "Stored length zero enters fallback before archive fetch; supplied Binary path refuses it"
+    },
+    {
+      "address": "0x1801c4fb4..0x1801c4fbf",
+      "fact": "Reader data/start, DWORD length and ownership=0; actual fetch remains injected verified input"
+    },
+    {
+      "address": "0x1801c4fc8..0x1801c4fe7",
+      "fact": "Table identity precedes parse; own fresh-storage contract explicitly supplied, not a recovered native base constructor"
+    },
+    {
+      "address": "0x1801c4ff4..0x1801c4ffc",
+      "fact": "Virtual parser call has no bool-result test; next branch tests reader ownership. Own Unsupported is a coverage stop, not native false/fallback"
+    },
+    {
+      "address": "0x1801c504e..0x1801c5075",
+      "fact": "Fresh capacity15/name0, full-source copy with offset0/countMAX, then Table into pair; capacity is 15 or L|15 for this fresh bounded case"
+    },
+    {
+      "address": "0x1801c508b",
+      "fact": "Existing normal-success node construction and name move before caller count/neighbor writes"
+    },
+    {
+      "address": "0x1801c50b5..0x1801c50c1",
+      "fact": "count++, oldHead.previous=candidate, candidate.previous.next=candidate, in this order on the same graph"
+    },
+    {
+      "address": "0x1801c50da",
+      "fact": "Existing IndexNode/maintenance adopts the same arrays; duplicate helper result is ignored by outer caller"
+    },
+    {
+      "address": "0x1801c50e8",
+      "fact": "Moved temporary name now capacity15 skips internal free; no Table Dispose or invented native EH"
+    },
+    {
+      "address": "0x1801c50fc..0x1801c514d",
+      "fact": "LoadCount50++ then converted uint32 elapsed subtraction, wrapping +5C and unsigned max+60; returns new Table (RDI)"
+    }
+  ],
+  "supplied_contract": "Exact normalized full-byte key, complete bounded bytes/window, valid fresh Binary own-storage contract, explicit shared archive name/pool/ID context, converted low32 start/end clock values, stable exclusive inputs and normal native allocation/copy/release contracts",
+  "own_coverage": "Parser tag0/1/2, 2..15 fields, positive counts, <=65536 value words, reader <=1MiB; cache <=4096 nodes/buckets, keys <=64KiB each/1MiB total; bounded existing single-layer growth",
+  "source_ownership": "Supplied bytes/key/pool-array cloned; shared immutable strings and name context identities preserved; parsed table identity reused; own reader disposed; temporary name moved; Table never disposed by publication",
+  "missing": [
+    "Native archive lookup/fetch 0x180280e20",
+    "Complete native base/Binary constructor and fallback semantics",
+    "Native clock API/conversion and malformed-input/OOM/EH ABI",
+    "Concrete item factory, derived Read and complete native object registration"
+  ],
+  "runtime_native_comparison": false,
+  "default_missing_loader": "UnimplementedRecordCacheMissLoader"
+}

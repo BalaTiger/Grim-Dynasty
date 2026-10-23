@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "status": "prepared-not-started",
+  "execution_hold": "Offline preparation only while OutOfWindow builds. No original-binary access or backend launch in this preparation turn.",
+  "kind": "fixed-pe-qword-binding",
+  "purpose": "Bind the candidate LoadTableBinary +0x08 on-disk slot without claiming the returned constructor vptr or parser behavior is proven.",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "pe_machine": "0x8664",
+    "optional_header_magic": "0x20b",
+    "preferred_image_base": "0x180000000"
+  },
+  "address_sources": [
+    {
+      "file": "docs/object-lifecycle/rea-binary-table-constructor/05-LoadTableBinary-constructor-0x18013f300-assembly.json",
+      "sha256": "bb3fa2e3f2bca620f66caca1894932b970d69761f63327e23982f4eea158ccb0",
+      "evidence_id": "ev_b1ad5be04fcc0fbf21d70590d288cbd2145ca6dd127d0be510fe7cd3f850f96f",
+      "vptr_assignment": ["0x18013f326", "0x18013f32d"],
+      "subsequent_unqueried_call": "0x18013f378 -> 0x1800481f0"
+    },
+    {
+      "file": "docs/object-lifecycle/record-interface-discovery/record-interface-exports.json",
+      "sha256": "33d7527e64565cc4e56a31b3665b41e004ad9e53f93739e3a645f205cf0b1603",
+      "decorated_name": "??_7LoadTableBinary@GAME@@6B@",
+      "ordinal": 1254,
+      "vtable_preferred_va": "0x180341fe0",
+      "vtable_file_offset": "0x340fe0"
+    },
+    {
+      "file": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "sha256": "d696e7b2141e5fe9ee6f518555d32a615ab174deabd6f676a15c299be1b7e3b1",
+      "call_site": "0x1801c4ff4",
+      "operand": "returned object vptr + 0x08"
+    }
+  ],
+  "read_scope": {
+    "slot_va": "0x180341fe8",
+    "slot_rva": "0x341fe8",
+    "candidate_file_offset": "0x340fe8",
+    "slot_byte_count": 8,
+    "decode": "unsigned little-endian 64-bit preferred VA",
+    "supporting_reads": ["Same fixed file streamed SHA256 before and after", "Only PE headers and section table needed to validate source and destination mappings"],
+    "hashing_reads_whole_file": true,
+    "new_export_scan": false,
+    "target_function_bytes": 0,
+    "additional_slots": 0,
+    "dereference_target": false,
+    "follow_jumps": false,
+    "target_loaded_or_executed": false,
+    "rea_tool_calls": 0,
+    "backend_launches": 0
+  },
+  "checks_and_stops": [
+    "Use the fixed target only. Keep source access read-only; do not load it as a module or use runtime addresses.",
+    "Stop on source-evidence hash mismatch, target-hash mismatch, PE architecture/image-base mismatch or unavailable access. A new plan never expands authorization or bypasses per-action approval.",
+    "Require the complete 8-byte slot to lie in exactly one file-backed PE section and within SizeOfImage/file bounds; do not read zero-fill virtual tails or assume the old raw offset.",
+    "Recompute the slot file offset. Stop and review if it differs from candidate 0x340fe8; do not continue at an inferred alternate location.",
+    "Reject zero, out-of-image, non-file-backed, ambiguous or non-executable destination mapping. Record the raw qword and reason; do not dereference it or chase thunks.",
+    "Executable section membership establishes only a candidate code address, not a function entry or Deserialize identity.",
+    "Compare a successful candidate against already saved same-image exports if present; do not perform a new export-name scan or use 32-bit symbol hints as identity proof.",
+    "Verify the fixed target hash after reading. Save a new evidence file without overwriting any earlier evidence.",
+    "Do not query the returned address automatically. The post-vptr-write helper's effects still require proof before claiming the actual LoadFile edge."
+  ],
+  "expected_output": {
+    "path": "docs/object-lifecycle/binary-parser-discovery/parser-slot.json",
+    "fields": ["target", "sha256_before", "sha256_after", "source_evidence_hashes", "slot_mapping", "slot_bytes", "candidate_preferred_va", "candidate_mapping", "status", "limitations"],
+    "actual_candidate_preferred_va": null,
+    "actual_load_file_target_proven": false
+  },
+  "runner_prepared": false
+}

@@ -1,0 +1,116 @@
+{
+  "date_utc": "2026-10-21",
+  "phase": "Frozen pre-execution review; no build or test result claimed here",
+  "inventory": {
+    "utc": "2026-10-21T02:28:22.5022007Z",
+    "files": [
+      {
+        "path": "src/task_items/EngineRootRegistration.cs",
+        "bytes": 17586,
+        "sha256": "408e28c7d6fbb0fee2f4a74909b1209700e01f02d10837cb265a168a6a331caf"
+      },
+      {
+        "path": "src/task_items/ClassFactoryDispatch.cs",
+        "bytes": 4302,
+        "sha256": "9da196b70ecc9fc1737e466d3dd952eeac26ccdd635ab8a629b53823cee402ac"
+      },
+      {
+        "path": "src/task_items/EngineRootObservedNames.cs",
+        "bytes": 1032,
+        "sha256": "bca35ac22926af8406b3c03dea18a49dc4c2153b23733e13cc0dd6544a49a903"
+      },
+      {
+        "path": "src/task_items/EngineRootSnapshot.cs",
+        "bytes": 6322,
+        "sha256": "65687ead304949a03d24dcbe07d65197d0104cbb2a6a177a295af94a40166970"
+      },
+      {
+        "path": "src/task_items/EngineRootNameDispatchTests.cs",
+        "bytes": 31628,
+        "sha256": "2114341586f5b6e38d61d1cd30c3975c679d1af2bd1b2ac4015bed9a18442a73"
+      },
+      {
+        "path": "src/task_items/build_engine_root_name_dispatch.ps1",
+        "bytes": 4867,
+        "sha256": "2188042791f4608a4a14998bec81c40463de4b2336eb967084647f59f1554e0a"
+      },
+      {
+        "path": "tools/static_analysis/read_engine_root_names.mjs",
+        "bytes": 13742,
+        "sha256": "7089970401b8787b98c8e0c57980f90061688c638b0be533d85e67c63fea7228"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-engine-root-names/metadata.json",
+        "bytes": 10337,
+        "sha256": "d882b279afe354a7e8912ca3b70afd07d300a1d278b9e268520c98cdc60e5d79"
+      }
+    ],
+    "output_directory_exists": false,
+    "compiler_file_version": "4.8.9221.0 built by: NET481REL1LAST_25H2"
+  },
+  "exact_command": "& 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -NoProfile -NonInteractive -File 'C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\src\\task_items\\build_engine_root_name_dispatch.ps1'",
+  "requested_mechanism": "A separate require_escalated request for this precise new build and fixture; no prior query/build approval is reused.",
+  "compiler": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\csc.exe",
+  "compiler_sha256": "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00",
+  "script_review": {
+    "fixed_workspace": true,
+    "fixed_Windows_PowerShell_5_1_Desktop": true,
+    "no_arguments": true,
+    "rejects_reparse_inputs_outputs_ancestors": true,
+    "rejects_existing_output": true,
+    "compiler_noconfig": true,
+    "language_version": 5,
+    "checked_arithmetic": true,
+    "library_sources": [
+      "src/task_items/EngineRootRegistration.cs",
+      "src/task_items/ClassFactoryDispatch.cs",
+      "src/task_items/EngineRootObservedNames.cs",
+      "src/task_items/EngineRootSnapshot.cs"
+    ],
+    "fixture_source": "src/task_items/EngineRootNameDispatchTests.cs",
+    "fixed_fresh_output": ".tooling/engine-root-name-dispatch-build-20261021",
+    "generated_files": [
+      "GrimDynasty.EngineRootNameDispatch.dll",
+      "EngineRootNameDispatchTests.exe"
+    ],
+    "execution_target": "Only the newly built EngineRootNameDispatchTests.exe",
+    "other_io": "Installed compiler/framework reads and normal compiler temporary files; tests use only small own objects/arrays and Console; no game inputs.",
+    "failure_policy": "Stop and preserve exact output; no automatic retry, alternate host, cleanup or overwrite."
+  },
+  "implementation_review": "Root and independent static review found no blocking issue. The adapter requires exclusive stable own state, executes no callback during capture, and is not a native live graph recovery. Old root registration and dispatcher remain byte-identical.",
+  "fixture_review": {
+    "planned_assertions": 93,
+    "planned_scenario_groups": 9,
+    "executed": false,
+    "maximum_fixture_node_slots": 3,
+    "writer_allocation_byte_ceiling": 64,
+    "writer_semantic_step_limit": 128,
+    "capture_default_limits": {
+      "nodes": 16,
+      "edges": 32,
+      "name_bytes": 256,
+      "depth": 16
+    },
+    "only_new_fixture_main": true,
+    "old_tests_not_run": true
+  },
+  "evidence": {
+    "semantic_original_bytes": 20,
+    "original_sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "original_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "source_handle_closed": true
+  },
+  "security_scope": {
+    "policy_changes": false,
+    "registry_writes": false,
+    "acl_changes": false,
+    "bypass": false,
+    "original_game_or_dll_execution": false,
+    "rea": false,
+    "java": false,
+    "saves": false,
+    "commit_or_push": false
+  },
+  "prior_checkpoint": ".tooling/checkpoints/engine-root-model-complete/manifest.json",
+  "prior_checkpoint_sha256": "cfd7450e550d15cb5ba7ca01c8aff05a2168ffb4b4f89795b449a7ad08ea001b"
+}

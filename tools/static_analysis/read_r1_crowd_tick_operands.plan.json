@@ -1,0 +1,212 @@
+{
+  "schema": "grim-dynasty.fixed-crowd-tick-operands.v1",
+  "script": "tools/static_analysis/read_r1_crowd_tick_operands.mjs",
+  "entrypoint": "inspectCrowdTickOperands(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-crowd-tick-operands/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "source_pins": [
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "tick",
+      "path": "docs/reverse-client/r1-crowd-movement-direct/08-CrowdMovementDirect-0x18025c440-procedure_assembly.json",
+      "sha256": "62da8b3465041af3522b3e36a72e4680485d0c9b2a832ab8b3207ce27bf5b8ae"
+    },
+    {
+      "key": "avoidance",
+      "path": "docs/reverse-client/r1-crowd-motion-branches/20-CrowdMotionBranch-0x18025f250-procedure_assembly.json",
+      "sha256": "4ccf1f9256b2ab72f5367398a2717d6316e22ca769104f96695dccb90cac9b57"
+    },
+    {
+      "key": "score",
+      "path": "docs/reverse-client/r1-crowd-direct-algorithms/11-CrowdDirectAlgorithm-0x18025ef20-procedure_assembly.json",
+      "sha256": "f600da86dd2159b8e4bf691f2f3b8e7b31caf6f360766a445d09ad5595d48bdf"
+    },
+    {
+      "key": "reused",
+      "path": "docs/reverse-client/r1-mesh-connection-constants/inspection.json",
+      "sha256": "e3dab5d3d29a21bbd3c25f71c1bb51831638d0d1414c0be3e5394ba5e5edd0fc"
+    }
+  ],
+  "assembly_proofs": [
+    {
+      "key": "tick",
+      "procedure": "0x18025c440"
+    },
+    {
+      "key": "avoidance",
+      "procedure": "0x18025f250"
+    },
+    {
+      "key": "score",
+      "procedure": "0x18025ef20"
+    }
+  ],
+  "targets": [
+    {
+      "rva": "0x34ba9c",
+      "bytes": 4,
+      "kind": "constant-dword",
+      "key": "avoidance",
+      "instructions": [
+        "0x18025f425: MOVSS XMM14, dword ptr [0x18034ba9c]"
+      ]
+    },
+    {
+      "rva": "0x34bad0",
+      "bytes": 4,
+      "kind": "constant-dword",
+      "key": "avoidance",
+      "instructions": [
+        "0x18025f432: MOVSS XMM15, dword ptr [0x18034bad0]"
+      ]
+    },
+    {
+      "rva": "0x34bb18",
+      "bytes": 4,
+      "kind": "constant-dword",
+      "key": "avoidance",
+      "instructions": [
+        "0x18025f43b: MOVSS XMM8, dword ptr [0x18034bb18]"
+      ]
+    },
+    {
+      "rva": "0x34ba80",
+      "bytes": 4,
+      "kind": "constant-dword",
+      "key": "avoidance",
+      "instructions": [
+        "0x18025f4c1: MULSS XMM9, dword ptr [0x18034ba80]"
+      ]
+    },
+    {
+      "rva": "0x34bb08",
+      "bytes": 4,
+      "kind": "constant-dword",
+      "key": "avoidance",
+      "instructions": [
+        "0x18025f4d4: MULSS XMM6, dword ptr [0x18034bb08]"
+      ]
+    },
+    {
+      "rva": "0x34bc00",
+      "bytes": 4,
+      "kind": "constant-dword",
+      "key": "score",
+      "instructions": [
+        "0x18025ef53: MOVSS XMM12, dword ptr [0x18034bc00]"
+      ]
+    },
+    {
+      "rva": "0x34bde8",
+      "bytes": 4,
+      "kind": "constant-dword",
+      "key": "score",
+      "instructions": [
+        "0x18025efb9: MOVSS XMM14, dword ptr [0x18034bde8]"
+      ]
+    },
+    {
+      "rva": "0x34bab8",
+      "bytes": 4,
+      "kind": "constant-dword",
+      "key": "score",
+      "instructions": [
+        "0x18025f1f2: MULSS XMM6, dword ptr [0x18034bab8]"
+      ]
+    },
+    {
+      "rva": "0x34ba34",
+      "bytes": 4,
+      "kind": "constant-dword",
+      "key": "score",
+      "instructions": [
+        "0x18025f20b: ADDSS XMM6, dword ptr [0x18034ba34]"
+      ]
+    },
+    {
+      "rva": "0x34bc38",
+      "bytes": 4,
+      "kind": "constant-dword",
+      "key": "tick",
+      "instructions": [
+        "0x18025db49: MOVSS XMM9, dword ptr [0x18034bc38]"
+      ]
+    },
+    {
+      "rva": "0x34baac",
+      "bytes": 4,
+      "kind": "constant-dword",
+      "key": "tick",
+      "instructions": [
+        "0x18025db52: MOVSS XMM8, dword ptr [0x18034baac]"
+      ]
+    },
+    {
+      "rva": "0x4228c0",
+      "bytes": 12,
+      "kind": "global-vector",
+      "key": "tick",
+      "instructions": [
+        "0x18025c513: MOVSD XMM0, qword ptr [0x1804228c0]",
+        "0x18025c53b: MOV EAX, dword ptr [0x1804228c8]"
+      ]
+    },
+    {
+      "rva": "0x422980",
+      "bytes": 12,
+      "kind": "global-vector",
+      "key": "tick",
+      "instructions": [
+        "0x18025c631: MOVSD XMM0, qword ptr [0x180422980]",
+        "0x18025c641: MOV EAX, dword ptr [0x180422988]"
+      ]
+    }
+  ],
+  "reused_constants": [
+    {
+      "key": "reused",
+      "rva": "0x34b9e0",
+      "bytes": 4,
+      "raw_hex": "0ad7233c",
+      "uint32_hex": "0x3c23d70a",
+      "consumer_key": "avoidance",
+      "instruction": "0x18025f2fa: MOVSS XMM10, dword ptr [0x18034b9e0]"
+    },
+    {
+      "key": "reused",
+      "rva": "0x34bbd8",
+      "bytes": 4,
+      "raw_hex": "00000040",
+      "uint32_hex": "0x40000000",
+      "consumer_key": "score",
+      "instruction": "0x18025ef79: MOVSS XMM4, dword ptr [0x18034bbd8]"
+    }
+  ],
+  "limits": {
+    "requested_data_bytes": 68,
+    "maximum_new_data_bytes": 68,
+    "maximum_data_operations": 13,
+    "single_read_bytes": 12,
+    "hash_chunk_bytes": 65536,
+    "new_PE_header_bytes": 0,
+    "whole_table_bytes": 0,
+    "target_body_bytes": 0
+  },
+  "requirements": [
+    "Import performs no I/O. Execute only after formal review of exact script/plan hashes and separate Windows Attributes/reparse-tag ancestor preflight.",
+    "Exactly eleven new DWORD operands and two 12B global references. No original code, new PE headers, adjacent data, imports, exports, or 41D488.",
+    "Reuse two pinned observations34B9E0/34BBD8 from the identical Engine SHA; do not reread them.",
+    "Classify each requested range against pinned PE virtual/raw extents after the same-descriptor original hash passes. Fully unbacked virtual ranges produce NoDiskBytes records without any data read or synthesized zero.",
+    "Reject ambiguous, unmapped, executable, mixed disk/BSS, or unreadable ranges. No partial-range substitution or inferred loaded values.",
+    "Before/after whole-file hash streams and descriptor/path stat identity are separate from semantic data reads; they are not an atomic filesystem snapshot.",
+    "Absent output directory required; preserve failures. No DLL load/execution, subprocess, backend, network, saves, settings changes, commit or push."
+  ]
+}

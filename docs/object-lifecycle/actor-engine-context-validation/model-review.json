@@ -1,0 +1,31 @@
+{
+  "schema": "actor-engine-context-model-review-v1",
+  "reviewers": [
+    "root",
+    "verify_handoff"
+  ],
+  "independent_review_report_received": "After successful root build; review itself was static only and did not run tests",
+  "blocking_findings": [],
+  "input_hashes": {
+    "model": "36b309d143847f8b76273c7b9ca4f613135a75bbb42e62f18cf7bb7d6e8a0919",
+    "tests": "c6bfa86ffd824ac5aba9e05c80ef454d1e5279882c354e4c8086da396f36661f",
+    "completion": "78fd9e66aae877d7cac89ac9e8a2a2dc357b7903e89d390d4dd17ccdc74d6cce",
+    "build": "da2c9bcdaa0d8d70b00b5673a523574bd5694748fa4ce3699d7908a04c8c0fb6"
+  },
+  "verified": [
+    "C#5 constructs only, pure own state without native/network/filesystem access",
+    "Five direct allocation/constructor pairs from74D98, not Client pair",
+    "Return identities not inferred from allocation input",
+    "Unknown known-return identity stores null before coverage stop",
+    "Callbacks can change680; final668 uses current field",
+    "Actor source is read only at25D3D after earlier matrix callbacks; old APIs remain unchanged",
+    "Once-only invocation preserves callback exception prefix",
+    "Aux output fields, full Engine initialization, native EH and concurrent mutation outside modeled contract",
+    "Fixed build: six library sources, four compiler calls and three own test executables"
+  ],
+  "new_static_expected_counts": {
+    "assertions": 52,
+    "groups": 9
+  },
+  "actual_execution_record": "run.json"
+}

@@ -1,0 +1,41 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Game.dll
+
+File Type: DLL
+
+  0000000180029BF0: 48 89 5C 24 08     mov         qword ptr [rsp+8],rbx
+  0000000180029BF5: 57                 push        rdi
+  0000000180029BF6: 48 83 EC 20        sub         rsp,20h
+  0000000180029BFA: 33 C0              xor         eax,eax
+  0000000180029BFC: 48 8B FA           mov         rdi,rdx
+  0000000180029BFF: 48 89 01           mov         qword ptr [rcx],rax
+  0000000180029C02: 48 8B D9           mov         rbx,rcx
+  0000000180029C05: 48 89 41 08        mov         qword ptr [rcx+8],rax
+  0000000180029C09: 48 89 41 10        mov         qword ptr [rcx+10h],rax
+  0000000180029C0D: 48 85 D2           test        rdx,rdx
+  0000000180029C10: 74 3E              je          0000000180029C50
+  0000000180029C12: 48 B8 FF FF FF FF  mov         rax,3FFFFFFFFFFFFFFFh
+                    FF FF FF 3F
+  0000000180029C1C: 48 3B D0           cmp         rdx,rax
+  0000000180029C1F: 76 0E              jbe         0000000180029C2F
+  0000000180029C21: 48 8D 0D 48 A1 6A  lea         rcx,[00000001806D3D70h]
+                    00
+  0000000180029C28: FF 15 52 1A 5E 00  call        qword ptr [000000018060B680h]
+  0000000180029C2E: CC                 int         3
+  0000000180029C2F: BA 04 00 00 00     mov         edx,4
+  0000000180029C34: 48 8B CF           mov         rcx,rdi
+  0000000180029C37: E8 94 C6 FE FF     call        00000001800162D0
+  0000000180029C3C: 48 89 03           mov         qword ptr [rbx],rax
+  0000000180029C3F: 48 89 43 08        mov         qword ptr [rbx+8],rax
+  0000000180029C43: 48 8B 03           mov         rax,qword ptr [rbx]
+  0000000180029C46: 48 8D 0C B8        lea         rcx,[rax+rdi*4]
+  0000000180029C4A: B0 01              mov         al,1
+  0000000180029C4C: 48 89 4B 10        mov         qword ptr [rbx+10h],rcx
+  0000000180029C50: 48 8B 5C 24 30     mov         rbx,qword ptr [rsp+30h]
+  0000000180029C55: 48 83 C4 20        add         rsp,20h
+  0000000180029C59: 5F                 pop         rdi
+  0000000180029C5A: C3                 ret
+
+  Summary
+
+      608000 .text

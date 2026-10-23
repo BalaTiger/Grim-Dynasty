@@ -1,0 +1,112 @@
+{
+  "status": "extracted-fixed-functions",
+  "started": "2026-10-20T07:18:47.395Z",
+  "finished": "2026-10-20T07:18:47.411Z",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "original_sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "original_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "readonly_copy": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll",
+  "copy_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "file_bytes": 4485632,
+  "hash_chunk_bytes": 65536,
+  "image_base": "0x180000000",
+  "exception_index": {
+    "rva": "0x424000",
+    "bytes": 146520,
+    "entry_bytes": 12,
+    "access": "bounded binary lookup; unrelated code not read"
+  },
+  "source_evidence": [
+    {
+      "file": "docs/object-lifecycle/rea-record-cache-publication/05-Cache-publication-0x18005deb0-assembly.json",
+      "sha256": "a4fe68eb62328f6715c70fe810645e60d6045720d8ad94ae11a1379260d917c9"
+    },
+    {
+      "file": "docs/object-lifecycle/rea-record-cache-publication/06-Cache-publication-0x18005deb0-direct-callees.json",
+      "sha256": "f2f6f385e085bbe548a16c2d3c4141a26ffe717e12f67b87bfb3dea2f89e5aa7"
+    }
+  ],
+  "prior_checkpoint_verified": 345,
+  "functions": [
+    {
+      "requested_va": "0x18001f170",
+      "end_va_exclusive": "0x18001f1b4",
+      "boundary": {
+        "exact_entry": true,
+        "begin_rva": 127344,
+        "end_rva": 127412,
+        "unwind_rva": 3547264,
+        "index": 963,
+        "index_reads": 10
+      },
+      "mapping": {
+        "file_offset": 124272,
+        "section": ".text"
+      },
+      "length": 68,
+      "raw_file": "0x18001f170.bin",
+      "sha256": "40c972d91141d4926f677925453337e4aa956eb58fc043db43aeed5b5f187bac",
+      "hex_bytes": "48895c2408574883ec20b938000000498bf8488bdae80ed22b004885db7506488bd8488bf84885c07403488918488d48084885c97403488939488b5c24304883c4205fc3",
+      "status": "exact-pdata-body-extracted"
+    },
+    {
+      "requested_va": "0x180022860",
+      "end_va_exclusive": "0x1800228e1",
+      "boundary": {
+        "exact_entry": true,
+        "begin_rva": 141408,
+        "end_rva": 141537,
+        "unwind_rva": 3547264,
+        "index": 1051,
+        "index_reads": 13
+      },
+      "mapping": {
+        "file_offset": 138336,
+        "section": ".text"
+      },
+      "length": 129,
+      "raw_file": "0x180022860.bin",
+      "sha256": "3a5227a5d05dc983e79742ba54eb09c504c9c07d97438b86038e74dfab7c1700",
+      "hex_bytes": "48895c2408574883ec2048837a1810488bda488bf973124c8b42104983c001741aff15a1fe2d00eb124885ff7406488b0248890148c70200000000488b431048894710488b43184889471848c743180f00000048837b181048c74310000000007211488b03c60000488b5c24304883c4205fc3c60300488b5c24304883c4205fc3",
+      "status": "exact-pdata-body-extracted"
+    }
+  ],
+  "caller": {
+    "start_va": "0x18005deb0",
+    "end_va_exclusive": "0x18005df0c",
+    "length": 92,
+    "mapping": {
+      "file_offset": 381616,
+      "section": ".text"
+    },
+    "sha256": "ba9b238fc61e1a01207dd6e34c3c33d84c446c552e8f7854598b966834c9874e",
+    "hex_bytes": "48895c24084889742410574883ec20498bf9e8a912fcff488bf0488d58104885db742648c743180f000000488bd748c7431000000000488bcbc60300e86f49fcff488b4f2048894b20488b5c2430488bc6488b7424384883c4205fc3",
+    "scope": "Previously archived complete 05DEB0 caller only"
+  },
+  "target_loaded_or_executed": false,
+  "backend_launches": 0,
+  "disassembler_launches": 0,
+  "resource_usage": {
+    "userCPUTime": 62000,
+    "systemCPUTime": 62000,
+    "maxRSS": 60284,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 17312,
+    "swappedOut": 0,
+    "fsRead": 948,
+    "fsWrite": 72,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  },
+  "limitations": [
+    "PE runtime-function records supply code ranges but do not establish semantics or exception behavior.",
+    "Only two target bodies and the archived 05DEB0 caller are extracted; no callees are followed.",
+    "Full-file hashing and a read-only local copy are included; the complete DLL copy must not be included in checkpoints."
+  ]
+}

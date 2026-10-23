@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "purpose": "Inspect only Engine 0x18013f510, the normal-return LoadFile miss virtual-call target now bound by the constructor, zero-count helper, and fixed vtable slot. Recover input reads, output writes, control flow and dependencies before proposing any record format or parser implementation.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "sha256": "d696e7b2141e5fe9ee6f518555d32a615ab174deabd6f676a15c299be1b7e3b1",
+      "call_site": "0x1801c4ff4",
+      "form": "[constructed object vptr+8]"
+    },
+    {
+      "file": "docs/object-lifecycle/rea-binary-table-constructor/05-LoadTableBinary-constructor-0x18013f300-assembly.json",
+      "sha256": "bb3fa2e3f2bca620f66caca1894932b970d69761f63327e23982f4eea158ccb0",
+      "vptr_write": "0x18013f32d",
+      "vptr": "0x180341fe0"
+    },
+    {
+      "file": "docs/object-lifecycle/rea-binary-subobject-profile/05-Binary-subobject-init-0x1800481f0-assembly.json",
+      "sha256": "72bc6f31bb56ea665fe88581e822cfa15f4ef6427060cd838ece42d74ca020ee",
+      "condition": "RDX=0; no callee or parent vptr write"
+    },
+    {
+      "file": "docs/object-lifecycle/binary-parser-discovery/parser-slot.json",
+      "sha256": "156f5c8bcb13cf8dd6b6c783d6caebbcc0c234c7e741b0716311a5a1ecda66f8",
+      "slot": "0x180341fe8",
+      "selected_target": "0x18013f510"
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_info",
+    "procedure_callees",
+    "xrefs",
+    "address_name"
+  ],
+  "execution_requirements": [
+    "Offline configuration is authorized; do not launch while OW owns the heavy window. Execution remains a separate step after explicit window handover, within existing authorization and required per-action approval.",
+    "Before execution coordinate the heavy window, verify fresh host resources, fixed Engine SHA256, all source hashes, Rea 6.5.0 and actual MCP schemas.",
+    "Use one owned Rea/Ghidra backend, task-local 384M heap, serialized MCP calls and the exact eight calls below. Preserve ordinary project configuration and CPU settings.",
+    "Use the accepted same-configuration budget: before Rea spawn both physical available and system commit headroom must be at least 4.25 GiB; while running stop the owned backend tree if either falls below 2 GiB, monitoring fails/stalls, or another UE/build/Java workload appears. Do not terminate unrelated processes. This is a 384M Engine engineering budget based on one run, not a universal peak bound; reevaluate expansion.",
+    "Query only 0x18013f510. Do not follow newly discovered callees, inspect the base constructor or other targets in this batch. A non-entry or incomplete target resolution is a stop boundary, not permission to guess another entry.",
+    "Save all responses, limitations and provenance. Do not infer record layout from a presumed deserialize name or getter output offsets.",
+    "Use only required close/session cleanup within the eight-call budget on interruption. Confirm final target closure, process-tree release, runtime cleanup and unchanged original hash before offline work."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18013f510"
+      },
+      "label": "04-Binary-parser-entry-0x18013f510-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18013f510"
+      },
+      "label": "05-Binary-parser-entry-0x18013f510-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18013f510"
+      },
+      "label": "06-Binary-parser-entry-0x18013f510-direct-callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ],
+  "status": "offline-registered-awaiting-window-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "What exact reader/object arguments, byte widths, offsets, endianness and bounds are used?",
+    "Which field writes and reader/buffer ownership effects occur in each bounded normal branch and in what order?",
+    "Which dependencies and base initialization remain necessary before any useful implementation?",
+    "Are the body and call-relationship coverages sufficient, or does the result require a separate bounded follow-up?",
+    "Track reader +0x14 and +0 ownership: the caller tests the byte for freeing and does not check a parser return value; do not predesign a bool success API."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Only this Engine fingerprint, 384M heap, versions and bounded eight-call query; expansion requires reevaluation"
+  }
+}

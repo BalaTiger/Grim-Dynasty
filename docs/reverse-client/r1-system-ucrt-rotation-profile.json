@@ -1,0 +1,98 @@
+{
+  "schema": "grim-dynasty.own-system-ucrt-rotation-profile.v1",
+  "status": "prepared-not-executed",
+  "scope": "New own Windows x64 finite rotation-math platform adapter. Does not replace or relax the old rewards CRT profile, recover CRT internals or validate original-game runtime behavior.",
+  "source": {
+    "path": "C:\\Windows\\System32\\ucrtbase.dll",
+    "bytes": 1399656,
+    "sha256": "dedb7611e1abc1ff3852dcac3d4c93a048d729e25b061973b9969f22698f14ca",
+    "file_version": "10.0.26100.9711 (WinBuild.160101.0800)",
+    "read_only_identity_observed": true,
+    "math_functions_invoked_in_preparation": false,
+    "loaded_image_memory_hash_verified": false,
+    "export_resolution_and_numeric_tests": "pending formal build/test"
+  },
+  "binding_evidence": {
+    "path": "docs/reverse-client/r1-game-rotation-math-imports/inspection.json",
+    "sha256": "1dc150ecf36c3012fbd1665992cac25ca1728a16af93981d83a0d13e1d951b46",
+    "dll_contract": "api-ms-win-crt-math-l1-1-0.dll",
+    "imports": {
+      "acosf": "Game IAT60B8E8",
+      "cosf": "Game IAT60B8D0",
+      "sinf": "Game IAT60B908"
+    },
+    "limitation": "API-set import contract is established. The original game's loaded host DLL, state and numerical outputs are not observed."
+  },
+  "existing_profile": {
+    "path": "src/rewards/SystemCrtMath.cs",
+    "sha256": "eab09ed5a5281c2390988be890d7d0986e2d3fde0b96a7a0b3788d549991aae2",
+    "accepted_old_hash": "3c60056371f82e4744185b6f2fa0c69042b1e78804685944132974dd13f3b6d9",
+    "unchanged": true,
+    "host_diagnostic": "docs/host-migration/ucrt-standalone-diagnostic.json",
+    "host_diagnostic_sha256": "051bc8ddd6e324b9a485ff8f133aadee20a28f5a0ab47f9804b4662b0510d59f"
+  },
+  "contract": {
+    "platform": "Windows x64 process and fixed C:\\Windows\\System32; no alternative source/name/profile fallback",
+    "loader": "Absolute system path plus LOAD_LIBRARY_SEARCH_SYSTEM32 (0x800); no SetDllDirectory, AddDllDirectory, SetDefaultDllDirectories or security-setting changes",
+    "origin": "Fixed file hash/version/size, held read-only file handle without write/delete sharing; actual loaded module path and GetProcAddress owner checked. These checks do not establish a memory-image hash of an already loaded same-path UCRT.",
+    "exports": [
+      "acosf",
+      "cosf",
+      "sinf",
+      "_controlfp_s"
+    ],
+    "signature": "[UnmanagedFunctionPointer(Cdecl)] float(float), explicit R4 input/output; _controlfp_s int(out uint,uint,uint). Windows x64 scalar float uses XMM0.",
+    "inputs": "acosf normal-or-zero finite [-1,1]; cosf/sinf normal-or-zero finite [-4,4] radians. Both signed zeros admitted; subnormals, NaNs, infinities and outside-range values are rejected before math invocation as an own supported-domain boundary.",
+    "floating_control": "Query _controlfp_s(out word,0,0) only; nearest rounding, all exceptions masked, denormals preserved, no ambiguity. Check before/after each math call; never write control.",
+    "outputs": "finite normal-or-zero. Returned System.Single bits are consumed directly, never Math(double) substituted.",
+    "unmodeled": [
+      "errno",
+      "sticky floating exception status",
+      "alternate CPU/CRT math implementations",
+      "NaN payload/exception behavior",
+      "nondefault FP environment",
+      "arbitrary angle range",
+      "cross-host bit identity",
+      "original-game runtime equivalence"
+    ],
+    "test_scope": "11 new own scenarios planned, 33 native float calls, independent known acos angles and 20-term sin/cos Taylor reference on |x|<=4, signed-zero observations, failure gates and disposal; no old test suite."
+  },
+  "official_sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/acos-acosf-acosl?view=msvc-170",
+      "supports": "float acosf(float), finite inverse-cosine domain and exceptional-input behavior"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/cos-cosf-cosl?view=msvc-170",
+      "supports": "float cosf(float), radians and nonfinite inputs"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/sin-sinf-sinl?view=msvc-170",
+      "supports": "float sinf(float), radians and nonfinite inputs"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/controlfp-s?view=msvc-170",
+      "supports": "zero mask queries only; mask constants; x64 SSE2/MXCSR control behavior"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryexw",
+      "supports": "absolute path, SYSTEM32 dependency search flag, redirection caveat"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulehandleexw",
+      "supports": "FROM_ADDRESS ownership and UNCHANGED_REFCOUNT lifetime limitation"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.marshal.getdelegateforfunctionpointer?view=netframework-4.8.1",
+      "supports": "unmanaged function-pointer delegates; calling-convention attribute"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-170",
+      "supports": "prototyped float argument and return in XMM registers"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/floating-point-support?view=msvc-170",
+      "supports": "UCRT math is approximate; CPU and runtime versions can change results"
+    }
+  ]
+}

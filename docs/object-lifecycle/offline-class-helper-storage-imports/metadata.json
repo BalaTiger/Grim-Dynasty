@@ -1,0 +1,350 @@
+{
+  "schema": "grim-dynasty-fixed-class-helper-storage-imports-v1",
+  "started_utc": "2026-10-20T14:08:15.917Z",
+  "status": "fixed-class-helper-storage-imports-resolved",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "expected_file_bytes": 11385856,
+  "script_sha256": "8605cda3a3bcf491ef985fee07095c68d4e26b0ff47a0ed6e744ff8a8709b2e2",
+  "source_evidence": [
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-questitem-boundaries/boundary.json",
+      "sha256": "fa5ae01ef102377d8ec976607622c3aab8d1af23144d8a408e42cf15f3ec4f05"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-game-crt-imports-metadata/metadata.json",
+      "sha256": "675999fee760e0a6b84e881818942b25950d1e4c563f2c6964fd13fa25c4ed2b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-storage-failure/inspection.json",
+      "sha256": "bef2849860977dbbdad1e979051f3e9521983d1b964f3ae10a72720a5f21517e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-throw-thunk/inspection.json",
+      "sha256": "e7579a6faff63557f5a16b92739ea3af4356c799d382e2fd5909d3f234e1eecd"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-storage-failure/5dc374.bin",
+      "sha256": "2e2c427236086b2c39ef1eebe92c3c2850acc1efca6ef872657d9bf9fe5c6ffb"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-storage-failure/5dc36e.bin",
+      "sha256": "0ddd1d83ed64cd02ccd5daf1051c9f46bd7e443da814d2453fb7de62f8720cf8"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-storage-failure/5dc3a4.bin",
+      "sha256": "e97a10c8d9adfa22b9dc9a857264293a8672dcd165e81572905c2882f75689ea"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-throw-thunk/5dc362.bin",
+      "sha256": "b66def74b98ab50b0a8dca95d1db2a95b9b28f16c6aab49d7ef8d5c5057c80b9"
+    }
+  ],
+  "requested": [
+    {
+      "descriptor_index": 14,
+      "thunk_index": 1,
+      "name": "malloc",
+      "caller_thunk_rva": 6144884,
+      "expected_iat_rva": 6338688,
+      "source_index": 3,
+      "code_sha256": "2e2c427236086b2c39ef1eebe92c3c2850acc1efca6ef872657d9bf9fe5c6ffb"
+    },
+    {
+      "descriptor_index": 14,
+      "thunk_index": 2,
+      "name": "free",
+      "caller_thunk_rva": 6144878,
+      "expected_iat_rva": 6338696,
+      "source_index": 3,
+      "code_sha256": "0ddd1d83ed64cd02ccd5daf1051c9f46bd7e443da814d2453fb7de62f8720cf8"
+    },
+    {
+      "descriptor_index": 14,
+      "thunk_index": 3,
+      "name": "_callnewh",
+      "caller_thunk_rva": 6144932,
+      "expected_iat_rva": 6338704,
+      "source_index": 3,
+      "code_sha256": "e97a10c8d9adfa22b9dc9a857264293a8672dcd165e81572905c2882f75689ea"
+    },
+    {
+      "descriptor_index": 5,
+      "thunk_index": 3,
+      "name": "_CxxThrowException",
+      "caller_thunk_rva": 6144866,
+      "expected_iat_rva": 6338480,
+      "source_index": 4,
+      "code_sha256": "b66def74b98ab50b0a8dca95d1db2a95b9b28f16c6aab49d7ef8d5c5057c80b9"
+    }
+  ],
+  "requested_descriptors": [
+    {
+      "index": 14,
+      "module": "api-ms-win-crt-heap-l1-1-0.dll"
+    },
+    {
+      "index": 5,
+      "module": "VCRUNTIME140.dll"
+    }
+  ],
+  "import_directory_reused_from_pinned_evidence": {
+    "rva": "0xa42940",
+    "size": 380
+  },
+  "limits": {
+    "fingerprint_chunk_bytes": 65536,
+    "metadata_read_bytes": 1024,
+    "metadata_single_read_bytes": 64,
+    "metadata_read_operations": 12,
+    "planned_metadata_bytes": 169,
+    "saved_evidence_bytes": 2097152,
+    "report_bytes": 131072
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "code_bytes_read": 0,
+  "iat_payload_bytes_read": 0,
+  "runtime_global_bytes_read": 0,
+  "exception_object_or_type_bytes_read": 0,
+  "other_import_descriptors_read": 0,
+  "other_import_thunks_read": 0,
+  "initializer_table_bytes_read": 0,
+  "backend_started": false,
+  "subprocesses": 0,
+  "metadata_bytes": 169,
+  "metadata_reads": [
+    {
+      "kind": "fixed-import-descriptor-14",
+      "rva": "0xa42a58",
+      "file_offset": 10752088,
+      "requested_bytes": 20,
+      "read_bytes": 20,
+      "raw_bytes": "3853a40000000000000000003c7ba50078b86000"
+    },
+    {
+      "kind": "exact-module-name-14",
+      "rva": "0xa57b3c",
+      "file_offset": 10838332,
+      "requested_bytes": 31,
+      "read_bytes": 31,
+      "raw_bytes": "6170692d6d732d77696e2d6372742d686561702d6c312d312d302e646c6c00"
+    },
+    {
+      "kind": "fixed-oft-14-1",
+      "rva": "0xa45340",
+      "file_offset": 10762560,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_bytes": "d478a50000000000"
+    },
+    {
+      "kind": "exact-hint-name-malloc",
+      "rva": "0xa578d4",
+      "file_offset": 10837716,
+      "requested_bytes": 9,
+      "read_bytes": 9,
+      "raw_bytes": "19006d616c6c6f6300"
+    },
+    {
+      "kind": "fixed-oft-14-2",
+      "rva": "0xa45348",
+      "file_offset": 10762568,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_bytes": "cc78a50000000000"
+    },
+    {
+      "kind": "exact-hint-name-free",
+      "rva": "0xa578cc",
+      "file_offset": 10837708,
+      "requested_bytes": 7,
+      "read_bytes": 7,
+      "raw_bytes": "18006672656500"
+    },
+    {
+      "kind": "fixed-oft-14-3",
+      "rva": "0xa45350",
+      "file_offset": 10762576,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_bytes": "5279a50000000000"
+    },
+    {
+      "kind": "exact-hint-name-_callnewh",
+      "rva": "0xa57952",
+      "file_offset": 10837842,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_bytes": "08005f63616c6c6e65776800"
+    },
+    {
+      "kind": "fixed-import-descriptor-5",
+      "rva": "0xa429a4",
+      "file_offset": 10751908,
+      "requested_bytes": 20,
+      "read_bytes": 20,
+      "raw_bytes": "5852a40000000000000000002277a50098b76000"
+    },
+    {
+      "kind": "exact-module-name-5",
+      "rva": "0xa57722",
+      "file_offset": 10837282,
+      "requested_bytes": 17,
+      "read_bytes": 17,
+      "raw_bytes": "564352554e54494d453134302e646c6c00"
+    },
+    {
+      "kind": "fixed-oft-5-3",
+      "rva": "0xa45270",
+      "file_offset": 10762352,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_bytes": "0c77a50000000000"
+    },
+    {
+      "kind": "exact-hint-name-_CxxThrowException",
+      "rva": "0xa5770c",
+      "file_offset": 10837260,
+      "requested_bytes": 21,
+      "read_bytes": 21,
+      "raw_bytes": "01005f4378785468726f77457863657074696f6e00"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "bytes": 11385856,
+      "chunk_bytes": 65536,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "label": "after",
+      "bytes": 11385856,
+      "chunk_bytes": 65536,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    }
+  ],
+  "descriptors": [
+    {
+      "index": 14,
+      "module": "api-ms-win-crt-heap-l1-1-0.dll",
+      "rva": "0xa42a58",
+      "file_offset": 10752088,
+      "raw_bytes": "3853a40000000000000000003c7ba50078b86000",
+      "original_first_thunk_rva": "0xa45338",
+      "name_rva": "0xa57b3c",
+      "first_thunk_rva": "0x60b878"
+    },
+    {
+      "index": 5,
+      "module": "VCRUNTIME140.dll",
+      "rva": "0xa429a4",
+      "file_offset": 10751908,
+      "raw_bytes": "5852a40000000000000000002277a50098b76000",
+      "original_first_thunk_rva": "0xa45258",
+      "name_rva": "0xa57722",
+      "first_thunk_rva": "0x60b798"
+    }
+  ],
+  "bindings": [
+    {
+      "module": "api-ms-win-crt-heap-l1-1-0.dll",
+      "name": "malloc",
+      "descriptor_index": 14,
+      "thunk_index": 1,
+      "original_thunk_rva": "0xa45340",
+      "original_thunk_file_offset": 10762560,
+      "raw_thunk_bytes": "d478a50000000000",
+      "import_by_name_rva": "0xa578d4",
+      "import_by_name_file_offset": 10837716,
+      "raw_hint_name_bytes": "19006d616c6c6f6300",
+      "hint": 25,
+      "iat_rva": "0x60b880",
+      "preferred_iat_va": "0x18060b880",
+      "iat_file_offset": 6332032,
+      "iat_section": ".rdata",
+      "caller_thunk_va": "0x1805dc374",
+      "iat_payload_bytes_read": 0,
+      "code_bytes_read": 0
+    },
+    {
+      "module": "api-ms-win-crt-heap-l1-1-0.dll",
+      "name": "free",
+      "descriptor_index": 14,
+      "thunk_index": 2,
+      "original_thunk_rva": "0xa45348",
+      "original_thunk_file_offset": 10762568,
+      "raw_thunk_bytes": "cc78a50000000000",
+      "import_by_name_rva": "0xa578cc",
+      "import_by_name_file_offset": 10837708,
+      "raw_hint_name_bytes": "18006672656500",
+      "hint": 24,
+      "iat_rva": "0x60b888",
+      "preferred_iat_va": "0x18060b888",
+      "iat_file_offset": 6332040,
+      "iat_section": ".rdata",
+      "caller_thunk_va": "0x1805dc36e",
+      "iat_payload_bytes_read": 0,
+      "code_bytes_read": 0
+    },
+    {
+      "module": "api-ms-win-crt-heap-l1-1-0.dll",
+      "name": "_callnewh",
+      "descriptor_index": 14,
+      "thunk_index": 3,
+      "original_thunk_rva": "0xa45350",
+      "original_thunk_file_offset": 10762576,
+      "raw_thunk_bytes": "5279a50000000000",
+      "import_by_name_rva": "0xa57952",
+      "import_by_name_file_offset": 10837842,
+      "raw_hint_name_bytes": "08005f63616c6c6e65776800",
+      "hint": 8,
+      "iat_rva": "0x60b890",
+      "preferred_iat_va": "0x18060b890",
+      "iat_file_offset": 6332048,
+      "iat_section": ".rdata",
+      "caller_thunk_va": "0x1805dc3a4",
+      "iat_payload_bytes_read": 0,
+      "code_bytes_read": 0
+    },
+    {
+      "module": "VCRUNTIME140.dll",
+      "name": "_CxxThrowException",
+      "descriptor_index": 5,
+      "thunk_index": 3,
+      "original_thunk_rva": "0xa45270",
+      "original_thunk_file_offset": 10762352,
+      "raw_thunk_bytes": "0c77a50000000000",
+      "import_by_name_rva": "0xa5770c",
+      "import_by_name_file_offset": 10837260,
+      "raw_hint_name_bytes": "01005f4378785468726f77457863657074696f6e00",
+      "hint": 1,
+      "iat_rva": "0x60b7b0",
+      "preferred_iat_va": "0x18060b7b0",
+      "iat_file_offset": 6331824,
+      "iat_section": ".rdata",
+      "caller_thunk_va": "0x1805dc362",
+      "iat_payload_bytes_read": 0,
+      "code_bytes_read": 0
+    }
+  ],
+  "limitations": [
+    "Only descriptors 14/5, their exact DLL names, the four fixed OFT slots and exact hint/name records are read. No descriptor/thunk lists are scanned.",
+    "PE mappings and import-directory location reuse hash-pinned evidence from the same image.",
+    "Archived FF25 bytes supply the required IAT targets; IAT payloads and executable sections are not read.",
+    "Import identity does not recover external implementation, allocator success, new-handler policy, exception type, unwind or cleanup behavior.",
+    "No exception constructor, throw descriptor, callback, cookie, runtime table/global or original DLL code is read or executed.",
+    "Before/after full-file hashes use 64KiB buffers and are outside semantic byte totals.",
+    "O_RDONLY plus same-handle stat/hash checks does not guarantee atomic snapshot or exclusive Windows FileShare.Read."
+  ],
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-20T14:08:15.932Z"
+}

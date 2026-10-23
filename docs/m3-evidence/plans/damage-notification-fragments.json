@@ -1,0 +1,18 @@
+{
+  "schema": "grim-dynasty-m3-bounded-plan-v2",
+  "id": "damage-notification-fragments",
+  "purpose": "Read only the two direct successors proved by 535A8D's saved conditional-branch bytes; runtime fragments are not whole functions.",
+  "source": {"path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll", "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2", "bytes": 11385856, "preferred_base": "0x180000000"},
+  "proof": {"path": "docs/m3-evidence/damage-settlement/direct-535a60.instructions.json", "sha256": "5ef95490451c2d2f6c9f8af30d8eeeec57826c6778c5571d1e86768afc7e405e"},
+  "targets": [
+    {"id": "branch-535acd", "rva": "0x535acd", "caller_address": "0x180535a8d", "caller_bytes": "743e", "reference_kind": "conditional-branch"},
+    {"id": "fallthrough-535a8f", "rva": "0x535a8f", "caller_address": "0x180535a8d", "caller_bytes": "743e", "reference_kind": "conditional-fallthrough"}
+  ],
+  "limits": {"body_bytes_each": 8192, "body_bytes_total": 8192, "metadata_bytes": 16384, "dumpbin_calls": 2, "tool_timeout_ms_each": 10000},
+  "mode": "bodies",
+  "range_policy": "containing-pdata-fragment",
+  "output": "docs/m3-evidence/damage-notification-fragments",
+  "temporary": ".tooling/m3-damage-notification-fragments-temp",
+  "automatic_callee_expansion": false,
+  "execution_requires_separate_review_and_approval": true
+}

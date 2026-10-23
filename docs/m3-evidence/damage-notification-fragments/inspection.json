@@ -1,0 +1,317 @@
+{
+  "schema": "grim-dynasty-m3-bounded-read-v1",
+  "status": "FixedBodiesDecodedReviewRequired",
+  "started_utc": "2026-10-22T04:50:12.042Z",
+  "plan": {
+    "path": "docs/m3-evidence/plans/damage-notification-fragments.json",
+    "sha256": "5ac73609b9a1dc9c8fcd43169984d2ac4d549c86f2ca83f5c6eac6403284de72"
+  },
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "bytes": 11385856,
+    "preferred_base": "0x180000000"
+  },
+  "proof": {
+    "path": "docs/m3-evidence/damage-settlement/direct-535a60.instructions.json",
+    "sha256": "5ef95490451c2d2f6c9f8af30d8eeeec57826c6778c5571d1e86768afc7e405e"
+  },
+  "mode": "bodies",
+  "range_policy": "containing-pdata-fragment",
+  "excluded_proof_range": {
+    "begin_rva": "0x535a60",
+    "end_rva_exclusive": "0x535a8f",
+    "reason": "Pinned saved instruction bytes already read"
+  },
+  "limits": {
+    "body_bytes_each": 8192,
+    "body_bytes_total": 8192,
+    "metadata_bytes": 16384,
+    "dumpbin_calls": 2,
+    "tool_timeout_ms_each": 10000
+  },
+  "fixed_limits": {
+    "plan_bytes": 16384,
+    "proof_bytes": 1048576,
+    "hash_buffer_bytes": 65536,
+    "header_end": 4096,
+    "sections": 16,
+    "metadata_read_bytes": 512,
+    "pdata_bytes": 2097152,
+    "binary_search_steps": 32,
+    "synthetic_each": 16384,
+    "synthetic_total": 24576,
+    "tool_buffer_each": 1048576
+  },
+  "source_open_mode": "r",
+  "source_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "automatic_callee_expansion": false,
+  "metadata_bytes": 1036,
+  "metadata_operations": 41,
+  "body_bytes": 82,
+  "body_read_operations": 2,
+  "dumpbin_calls": 2,
+  "synthetic_bytes": 7168,
+  "export_table_bytes": 0,
+  "global_data_bytes": 0,
+  "unwind_body_bytes": 0,
+  "source_closed": true,
+  "boundaries": [
+    {
+      "id": "branch-535acd",
+      "rva": "0x535acd",
+      "caller_address": "0x180535a8d",
+      "reference_kind": "conditional-branch",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 18491,
+        "begin_rva": "0x535acd",
+        "end_rva_exclusive": "0x535ae1",
+        "bytes": 20,
+        "unwind_info_rva": "0x860e50"
+      }
+    },
+    {
+      "id": "fallthrough-535a8f",
+      "rva": "0x535a8f",
+      "caller_address": "0x180535a8d",
+      "reference_kind": "conditional-fallthrough",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 18490,
+        "begin_rva": "0x535a8f",
+        "end_rva_exclusive": "0x535acd",
+        "bytes": 62,
+        "unwind_info_rva": "0x860e3c"
+      }
+    }
+  ],
+  "bodies": [
+    {
+      "id": "branch-535acd",
+      "reference_ids": [
+        "branch-535acd"
+      ],
+      "begin_rva": "0x535acd",
+      "end_rva_exclusive": "0x535ae1",
+      "bytes": 20,
+      "file_offset": 5459661,
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 18491,
+        "begin_rva": "0x535acd",
+        "end_rva_exclusive": "0x535ae1",
+        "bytes": 20,
+        "unwind_info_rva": "0x860e50"
+      },
+      "sha256": "4bc58b8cc1b2153136f09aceeea01e0b783ec8f4f64cb8b664efde435d8fb140",
+      "synthetic": {
+        "relative_path": ".tooling/m3-damage-notification-fragments-temp/branch-535acd.inspect.dll",
+        "bytes": 3584,
+        "sha256": "4f81b62ef8fb66f077d8bec21b8005fc33d35b074e2f93c739188ec112f7af0a",
+        "never_executed": true
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180535acd,0x180535ae0",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\m3-damage-notification-fragments-temp\\branch-535acd.inspect.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "decoded_rows": 7,
+      "decode_issues": [],
+      "instruction_byte_coverage_verified": true,
+      "code_data_classification": "ReviewRequired",
+      "calls": [],
+      "branches": []
+    },
+    {
+      "id": "fallthrough-535a8f",
+      "reference_ids": [
+        "fallthrough-535a8f"
+      ],
+      "begin_rva": "0x535a8f",
+      "end_rva_exclusive": "0x535acd",
+      "bytes": 62,
+      "file_offset": 5459599,
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 18490,
+        "begin_rva": "0x535a8f",
+        "end_rva_exclusive": "0x535acd",
+        "bytes": 62,
+        "unwind_info_rva": "0x860e3c"
+      },
+      "sha256": "7a6353b55368825c11402df1dbd79dffc068d790d7996d737d7ebf46a8af56e0",
+      "synthetic": {
+        "relative_path": ".tooling/m3-damage-notification-fragments-temp/fallthrough-535a8f.inspect.dll",
+        "bytes": 3584,
+        "sha256": "eb1a92ded7ee768033e31285fae815f2424e06244a86e4faf71a481f1b8bef44",
+        "never_executed": true
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180535a8f,0x180535acc",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\m3-damage-notification-fragments-temp\\fallthrough-535a8f.inspect.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "decoded_rows": 15,
+      "decode_issues": [],
+      "instruction_byte_coverage_verified": true,
+      "code_data_classification": "ReviewRequired",
+      "calls": [
+        {
+          "address": "0x180535ab6",
+          "bytes": "e8c570f6ff",
+          "instruction": "call        000000018049CB80"
+        }
+      ],
+      "branches": [
+        {
+          "address": "0x180535aa6",
+          "bytes": "7413",
+          "instruction": "je          0000000180535ABB"
+        },
+        {
+          "address": "0x180535ac6",
+          "bytes": "75d8",
+          "instruction": "jne         0000000180535AA0"
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "All targets are supplied by a separately reviewed plan and matched against pinned saved direct-call or conditional-branch bytes.",
+    "Binary search reads .pdata records only; no export scan, unwind decoding or callees are followed.",
+    "V1 requires an exact .pdata start. V2 may explicitly permit the containing runtime fragment; this is not a whole source function.",
+    "Known proof bytes are excluded. Duplicate containing fragments are read once; overlap, missing boundaries or budget excess stops all body reads.",
+    "Metadata-only plans never read body bytes or start dumpbin, regardless of reported boundaries.",
+    "Decoder rows are candidates, not proof that all bytes are instructions. Inline data can resemble valid code; all bodies need code/data review.",
+    "All gaps, byte mismatches and invalid/data decodes are retained. These findings never trigger new reads or automatic expansion.",
+    "Full source before/after hashes use 64 KiB chunks without interpreting bytes outside the approved ranges.",
+    "Static evidence does not establish source names, runtime compatibility, exception behavior or a complete damage contract."
+  ],
+  "script_sha256": "428d5ce5204fe7779a006bb8c047dbee6fcf73f1697b0790cd8b51c3c0ff97d7",
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "pe": {
+    "image_base": "0x180000000",
+    "sections": [
+      {
+        "name": ".text",
+        "rva": 4096,
+        "raw_size": 6320640,
+        "raw_offset": 1024,
+        "characteristics": 1610612768
+      },
+      {
+        "name": ".rdata",
+        "rva": 6328320,
+        "raw_size": 4517888,
+        "raw_offset": 6321664,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".data",
+        "rva": 10846208,
+        "raw_size": 56832,
+        "raw_offset": 10839552,
+        "characteristics": 3221225536
+      },
+      {
+        "name": ".pdata",
+        "rva": 10919936,
+        "raw_size": 267776,
+        "raw_offset": 10896384,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".gfids",
+        "rva": 11190272,
+        "raw_size": 512,
+        "raw_offset": 11164160,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".tls",
+        "rva": 11194368,
+        "raw_size": 512,
+        "raw_offset": 11164672,
+        "characteristics": 3221225536
+      },
+      {
+        "name": "_RDATA",
+        "rva": 11198464,
+        "raw_size": 2560,
+        "raw_offset": 11165184,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".rsrc",
+        "rva": 11202560,
+        "raw_size": 512,
+        "raw_offset": 11167744,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".reloc",
+        "rva": 11206656,
+        "raw_size": 217600,
+        "raw_offset": 11168256,
+        "characteristics": 1107296320
+      }
+    ],
+    "pdata_rva": "0xa6a000",
+    "pdata_bytes": 267516
+  },
+  "selected_fragments": [
+    {
+      "id": "branch-535acd",
+      "rva": "0x535acd",
+      "caller_address": "0x180535a8d",
+      "reference_kind": "conditional-branch",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 18491,
+        "begin_rva": "0x535acd",
+        "end_rva_exclusive": "0x535ae1",
+        "bytes": 20,
+        "unwind_info_rva": "0x860e50"
+      },
+      "reference_ids": [
+        "branch-535acd"
+      ]
+    },
+    {
+      "id": "fallthrough-535a8f",
+      "rva": "0x535a8f",
+      "caller_address": "0x180535a8d",
+      "reference_kind": "conditional-fallthrough",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 18490,
+        "begin_rva": "0x535a8f",
+        "end_rva_exclusive": "0x535acd",
+        "bytes": 62,
+        "unwind_info_rva": "0x860e3c"
+      },
+      "reference_ids": [
+        "fallthrough-535a8f"
+      ]
+    }
+  ],
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-22T04:50:12.138Z"
+}

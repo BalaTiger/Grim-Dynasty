@@ -1,0 +1,116 @@
+{
+  "schema": "grim-dynasty-fixed-actor-continuation-constant-v1",
+  "status": "fixed-sixteen-byte-file-constant-read",
+  "started_utc": "2026-10-21T04:27:48.513Z",
+  "script_sha256": "00b0de768bd53380a63fee755aeacc4a3cd4b3fbeeed01ea0b1182b4b1424e10",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-body/0259a0-instructions.json",
+      "sha256": "59f402f428e04e2928bb485e58fa85896ac08db4548bff6fa33444a58fa521a7"
+    }
+  ],
+  "source_instruction": {
+    "address": "0x180025ca2",
+    "bytes": "0f100507673200",
+    "instruction": "movups      xmm0,xmmword ptr [000000018034C3B0h]"
+  },
+  "limits": {
+    "semantic_bytes": 16,
+    "semantic_read_operations": 1,
+    "fingerprint_chunk_bytes": 65536,
+    "saved_proof_bytes_each": 32768,
+    "report_bytes": 32768
+  },
+  "requested": {
+    "rva": "0x34c3b0",
+    "end_rva_exclusive": "0x34c3c0",
+    "preferred_va": "0x18034c3b0",
+    "bytes": 16,
+    "file_offset": 3453872,
+    "section": ".rdata",
+    "section_characteristics": "0x40000040"
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "subprocesses": 0,
+  "dumpbin_started": false,
+  "build_or_test_execution": false,
+  "metadata_bytes": 0,
+  "code_bytes": 0,
+  "data_bytes": 16,
+  "reads": [
+    {
+      "kind": "fixed-data",
+      "rva": "0x34c3b0",
+      "file_offset": 3453872,
+      "requested_bytes": 16,
+      "read_bytes": 16,
+      "raw_hex": "0000803f0000803f0000803f0000803f"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "bytes": 4485632,
+      "chunk_bytes": 65536,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "label": "after",
+      "bytes": 4485632,
+      "chunk_bytes": 65536,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "runtime_value_observed": false,
+  "original_modified": false,
+  "full_target_copy_created": false,
+  "limitations": [
+    "Only the 16 file bytes at RVA [34C3B0,34C3C0) are semantically read; PE sections and the exact MOVUPS operand are reused from hash-pinned project evidence.",
+    "The two unsigned little-endian qwords are raw bit views, not inferred field types, floating-point values or runtime addresses.",
+    "File data and preferred addresses do not establish loaded runtime state or prove that this instruction has executed. No 34BB44 datum, global, import, callee or adjacent bytes are read.",
+    "Two full-file fingerprint passes traverse all bytes without code interpretation using one 64KiB buffer. They are separate from the 16-byte semantic read.",
+    "O_RDONLY and same-handle hash/stat checks do not create an atomic snapshot or enforce an exclusive Windows FileShare.Read contract."
+  ],
+  "stat_before": {
+    "size": 4485632,
+    "dev": 2562469142,
+    "ino": 1970324837085124,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "raw_hex": "0000803f0000803f0000803f0000803f",
+  "little_endian_qwords": [
+    {
+      "byte_offset": 0,
+      "raw_hex": "0000803f0000803f",
+      "unsigned_hex": "0x3f8000003f800000"
+    },
+    {
+      "byte_offset": 8,
+      "raw_hex": "0000803f0000803f",
+      "unsigned_hex": "0x3f8000003f800000"
+    }
+  ],
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stat_after": {
+    "size": 4485632,
+    "dev": 2562469142,
+    "ino": 1970324837085124,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "source_stat_stable": true,
+  "source_hash_preserved": true,
+  "source_handle_closed": true,
+  "finished_utc": "2026-10-21T04:27:48.520Z"
+}

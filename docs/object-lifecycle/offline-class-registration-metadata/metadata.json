@@ -1,0 +1,261 @@
+{
+  "status": "fixed-class-registration-metadata-verified",
+  "started_utc": "2026-10-20T12:39:53.060Z",
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-questitem-boundaries/boundary.json",
+      "sha256": "fa5ae01ef102377d8ec976607622c3aab8d1af23144d8a408e42cf15f3ec4f05"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-questitem-read-dependencies/dependencies.json",
+      "sha256": "34da4f65ac861c51fe2f64dda560543629c3652b1768e920af2213135f58abbc"
+    }
+  ],
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "code_bytes_read": 0,
+  "fixed_data_bytes": 168,
+  "per_dll_read_budget": 4096,
+  "files": [
+    {
+      "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "read_bytes": 224,
+      "reads": [
+        {
+          "rva": "0xa5c8a0",
+          "bytes": 48,
+          "file_offset": 10858144,
+          "role": "exact-exported-Item-classinfo"
+        },
+        {
+          "rva": "0x7a7e58",
+          "bytes": 8,
+          "file_offset": 8021080,
+          "role": "first-classinfo-vtable-slot"
+        },
+        {
+          "rva": "0xa8aa78",
+          "bytes": 12,
+          "file_offset": 11030136,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xa9afc0",
+          "bytes": 12,
+          "file_offset": 11097024,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xaa3264",
+          "bytes": 12,
+          "file_offset": 11130468,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xaa73b0",
+          "bytes": 12,
+          "file_offset": 11147184,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xaa5310",
+          "bytes": 12,
+          "file_offset": 11138832,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xaa42c0",
+          "bytes": 12,
+          "file_offset": 11134656,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xaa4ae8",
+          "bytes": 12,
+          "file_offset": 11136744,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xaa46d4",
+          "bytes": 12,
+          "file_offset": 11135700,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xaa44d0",
+          "bytes": 12,
+          "file_offset": 11135184,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xaa43c8",
+          "bytes": 12,
+          "file_offset": 11134920,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xaa444c",
+          "bytes": 12,
+          "file_offset": 11135052,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xaa4410",
+          "bytes": 12,
+          "file_offset": 11134992,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xaa43ec",
+          "bytes": 12,
+          "file_offset": 11134956,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        },
+        {
+          "rva": "0xaa43e0",
+          "bytes": 12,
+          "file_offset": 11134944,
+          "role": "fixed-classinfo-virtual-target-pdata"
+        }
+      ],
+      "records": [
+        {
+          "name": "Item",
+          "rva": "0xa5c8a0",
+          "decorated_name": "?classInfo@Item@GAME@@1VRTTI_ClassInfo@2@B",
+          "hex": "587e7a80010000000000000000000000000000000000000000000000000000000000000000000000004e108001000000",
+          "qwords": [
+            "0x1807a7e58",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x180104e00"
+          ],
+          "vtable_rva": "0x7a7e58",
+          "vtable_slot0": "0x180591430"
+        }
+      ],
+      "boundaries": [
+        {
+          "role": "QuestItem-classinfo-actual-vtable-slot0",
+          "begin_rva": "0x591430",
+          "end_rva_exclusive": "0x59147c",
+          "begin_va": "0x180591430",
+          "end_va_exclusive": "0x18059147c",
+          "range_bytes": 76,
+          "exception_entry_index": 19881,
+          "exception_entry_rva": "0xaa43ec",
+          "unwind_info_rva": "0x7dea94",
+          "file_offset": "0x590830"
+        }
+      ],
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "status": "fixed-classinfo-metadata-verified",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "source_hash_preserved": true,
+      "source_stat_stable": true
+    },
+    {
+      "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "read_bytes": 112,
+      "reads": [
+        {
+          "rva": "0x41cfc0",
+          "bytes": 48,
+          "file_offset": 4306880,
+          "role": "exact-exported-Actor-classinfo"
+        },
+        {
+          "rva": "0x348830",
+          "bytes": 8,
+          "file_offset": 3438640,
+          "role": "first-classinfo-vtable-slot"
+        },
+        {
+          "rva": "0x41cf00",
+          "bytes": 48,
+          "file_offset": 4306688,
+          "role": "exact-exported-Object-classinfo"
+        },
+        {
+          "rva": "0x348830",
+          "bytes": 8,
+          "file_offset": 3438640,
+          "role": "first-classinfo-vtable-slot"
+        }
+      ],
+      "records": [
+        {
+          "name": "Actor",
+          "rva": "0x41cfc0",
+          "decorated_name": "?classInfo@Actor@GAME@@1VRTTI_ClassInfo@2@B",
+          "hex": "3088348001000000000000000000000030cf418001000000000000000000000000000000000000001098048001000000",
+          "qwords": [
+            "0x180348830",
+            "0x0",
+            "0x18041cf30",
+            "0x0",
+            "0x0",
+            "0x180049810"
+          ],
+          "vtable_rva": "0x348830",
+          "vtable_slot0": "0x180274e30"
+        },
+        {
+          "name": "Object",
+          "rva": "0x41cf00",
+          "decorated_name": "?classInfo@Object@GAME@@1VRTTI_ClassInfo@2@B",
+          "hex": "30883480010000000000000000000000000000000000000000000000000000000000000000000000d0a0048001000000",
+          "qwords": [
+            "0x180348830",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x18004a0d0"
+          ],
+          "vtable_rva": "0x348830",
+          "vtable_slot0": "0x180274e30"
+        }
+      ],
+      "boundaries": [],
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "status": "fixed-classinfo-metadata-verified",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "source_hash_preserved": true,
+      "source_stat_stable": true
+    }
+  ],
+  "failures": [],
+  "scope": "Three exact exported 48-byte records and first 8-byte vtable slots; one observed virtual target boundary only",
+  "limitations": [
+    "On-disk records do not establish runtime registration. No neighboring code candidate is followed.",
+    "Full-file SHA256 passes read all bytes using 64KiB buffers, outside interpreted metadata/data totals."
+  ],
+  "finished_utc": "2026-10-20T12:39:53.081Z",
+  "controller_resource_usage": {
+    "userCPUTime": 46000,
+    "systemCPUTime": 15000,
+    "maxRSS": 42224,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11058,
+    "swappedOut": 0,
+    "fsRead": 510,
+    "fsWrite": 0,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

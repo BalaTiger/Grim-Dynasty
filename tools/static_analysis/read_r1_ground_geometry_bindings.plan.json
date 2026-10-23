@@ -1,0 +1,41 @@
+{
+  "schema": "grim-dynasty.fixed-ground-geometry-bindings.v1",
+  "script": "tools/static_analysis/read_r1_ground_geometry_bindings.mjs",
+  "entrypoint": "inspectGroundGeometryBindings(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-ground-geometry-bindings/inspection.json",
+  "source": {"path":"D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll","bytes":4485632,"sha256":"4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"},
+  "source_pins": [
+    {"key":"engine_pe","path":"docs/object-lifecycle/offline-class-registration-exports/discovery.json","sha256":"0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"},
+    {"key":"ground_constructor","path":"docs/reverse-client/r1-engine-spatial-ground/14-EngineSpatialGround-0x1801dda90-procedure_assembly.json","sha256":"858c4ee47d193164648b7fb068b0dfb2772dc6cd35347055d736d2584388a629"},
+    {"key":"block_constructor","path":"docs/reverse-client/r1-ground-floor-geometry/11-GroundFloorGeometry-0x1801d0e20-procedure_assembly.json","sha256":"45b7816c25261a5cfd6b313cc67031527dfe22416b015723bdd8912e8c2e0b7b"},
+    {"key":"block_bounds","path":"docs/reverse-client/r1-ground-floor-geometry/08-GroundFloorGeometry-0x1801d0fc0-procedure_assembly.json","sha256":"68aa0e88dbeb9f18b6dc5b2d644affe8e8fee7848ac8bb9674e82b7783b2ff07"},
+    {"key":"intersection","path":"docs/reverse-client/r1-ground-floor-geometry/05-GroundFloorGeometry-0x1801d0100-procedure_assembly.json","sha256":"e6208532b42d939df7051d4547f1cd65dbfa24b4c262d7a7450f1ed0313a5b50"},
+    {"key":"construct_blocks","path":"docs/reverse-client/r1-ground-blocks-and-node-destroy/14-GroundBlocksNodeDestroy-0x1801ce910-procedure_assembly.json","sha256":"c409e0f20684d60e076ed27861ebeece894cfdcc37808c4eb4c4b32a05f98dcf"}
+  ],
+  "fixed_slots": [
+    {"key":"terrain_sample","table_rva":"0x343b60","slot_offset":"0x100","rva":"0x343c60","bytes":8,"constructor":"0x1801dda90","callsite":"0x1801d1064"},
+    {"key":"block_intersection","table_rva":"0x3438f8","slot_offset":"0x10","rva":"0x343908","bytes":8,"constructor":"0x1801d0e20","callsite":"0x1801d0193"},
+    {"key":"block_predicate","table_rva":"0x3438f8","slot_offset":"0x18","rva":"0x343910","bytes":8,"constructor":"0x1801d0e20","callsite":"0x1801d0147"},
+    {"key":"block_postconstruct","table_rva":"0x3438f8","slot_offset":"0x48","rva":"0x343940","bytes":8,"constructor":"0x1801d0e20","callsite":"0x1801cea5b"}
+  ],
+  "fixed_constants": [
+    {"key":"bounds_initial_scalar","rva":"0x338458","bytes":4,"instruction":"0x1801d1005: MOVSS XMM7, dword ptr [0x180338458]"},
+    {"key":"bounds_xor_mask","rva":"0x34c450","bytes":16,"instruction":"0x1801d1010: XORPS XMM6, xmmword ptr [0x18034c450]"}
+  ],
+  "assembly_proofs": [
+    {"key":"ground_constructor","procedure":"0x1801dda90","instructions":["0x1801ddaad: MOV RDI, RCX","0x1801ddabe: LEA RAX, [0x180343b60]","0x1801ddac5: MOV qword ptr [RDI], RAX"]},
+    {"key":"block_constructor","procedure":"0x1801d0e20","instructions":["0x1801d0e24: MOV RDX, RCX","0x1801d0e7d: LEA RAX, [0x1803438f8]","0x1801d0ed8: MOV qword ptr [RDX], RAX","0x1801d0edb: LEA RAX, [0x180343978]","0x1801d0ee2: MOV qword ptr [RDX + 0x48], RAX"]},
+    {"key":"block_bounds","procedure":"0x1801d0fc0","instructions":["0x1801d0fde: MOV R14, RDX","0x1801d1005: MOVSS XMM7, dword ptr [0x180338458]","0x1801d1010: XORPS XMM6, xmmword ptr [0x18034c450]","0x1801d1050: MOV RDX, qword ptr [R14]","0x1801d105c: MOV RCX, R14","0x1801d1064: CALL qword ptr [RDX + 0x100]"]},
+    {"key":"intersection","procedure":"0x1801d0100","instructions":["0x1801d0141: MOV RAX, qword ptr [RBX]","0x1801d0144: MOV RCX, RBX","0x1801d0147: CALL qword ptr [RAX + 0x18]","0x1801d015f: CALL 0x18003d780","0x1801d017e: MOV RAX, qword ptr [RBX]","0x1801d0190: MOV RCX, RBX","0x1801d0193: CALL qword ptr [RAX + 0x10]","0x1801d0215: CALL 0x18003d780"]},
+    {"key":"construct_blocks","procedure":"0x1801ce910","instructions":["0x1801ce9af: LEA R9, [0x1801d0e20]","0x1801ce9c1: CALL 0x1802dcc3c","0x1801cea50: CALL 0x1801d0fc0","0x1801cea55: MOV RAX, qword ptr [RBX]","0x1801cea58: MOV RCX, RBX","0x1801cea5b: CALL qword ptr [RAX + 0x48]"]}
+  ],
+  "limits": {"new_data_bytes":52,"data_operations":6,"single_read_bytes":16,"hash_chunk_bytes":65536,"new_PE_header_bytes":0,"whole_table_bytes":0,"target_body_bytes":0},
+  "requirements": [
+    "Import has no I/O; execute only after exact reviewed script/plan and separate Windows Attributes/reparse preflight.",
+    "Only six fixed Engine data reads. Reuse identical-hash cached PE mapping. No code, headers, RTTI, exports, neighboring slots or bodies are newly read.",
+    "3438F8 is the final block primary vptr;343978 written at this+48 is a distinct secondary vptr and is not primary virtual slot48.",
+    "34C450 is explicitly a16B XORPS memory operand here; previous4B MOVSS observation did not establish its upper lanes. Preserve all raw bits.",
+    "Before/after same-descriptor hash/stat/path checks are not an atomic snapshot. Targets are executable-address candidates, not verified functions, loaded dispatch or successful geometry.",
+    "No DLL execution, backend, subprocess, network, saves, installation, security changes, commit or push. Keep existing output and failure evidence."
+  ]
+}

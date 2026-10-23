@@ -1,0 +1,17 @@
+# Conditional damage settlement
+
+`NativeDamageSettlement.Run` is a reusable own implementation of the saved `Game.dll` RVA `068AB0` field-update contract. It borrows one mutable state and one stats reference. It does not allocate native objects, call the original game, choose damage, initialize character attributes, or emit a death event.
+
+Nullable fields mean unobserved. Callers must provide observations for each interface actually reached: gate virtual slot `838`, attribute getter `CF6E0`, and final statistics updater `3FE390`. The model has no default-success callbacks. Stops retain prior field writes and callback mutations; `ResumeInstructionRva` describes the next unmodeled point, not a claim of a native failure or a resume-able native frame.
+
+The supported own arithmetic domain is finite operands/results with explicitly declared stable masked SSE, nearest-even rounding and gradual underflow. Width conversion, signed zero and relevant subnormal cases were checked on this host. Other floating-point modes, native exceptions, concurrent access, arbitrary ABI use and full ApplyDamage remain outside coverage. Synchronous reentry must use the same state/stats; no snapshot or rollback hides it.
+
+The tests' explicit success callbacks are local fixtures only. They are not connected to the playable scene. Actual native attribute/statistics dependencies remain tracked in `docs/m3-evidence/COMBAT-ENTRY-REVIEW.md`.
+
+Validation is included in the headless `tools/build_m3_patrol.ps1` package build: 129 assertions / 11 groups passed in `artifacts/m3-patrol-20261022-01`. M1/M2 suites were not rerun for this module. See the accepted package manifest for the exact compiler and source hashes.
+
+`NativeAttributeGetter` now supplies the finite, nonnegative-base branch of `CF6E0` through `NativeAttributeSettlementBinding.Observe`. It uses an explicitly associated live sparse field view and exact recorded constants; it does not initialize character attributes. It retains the native C/A/B load order, separate float rounding, signed index offsets and the stop before the unresolved negative branch. Snapshot applicability and the numeric environment are explicit conditions. `artifacts/m3-attribute-20261022-01` passed 67 assertions / 6 groups, including independent binary32 oracles and actual settlement-hook integration. The old settlement, scene, M1 and M2 suites were not repeated for these new files.
+
+The conditional component build is `tools/build_m3_attribute.ps1 -Component attribute -PackageDirectory <fresh absolute artifacts path>`. The same reviewed script can build the separately evidenced `statistics` component when its source/tests and result are recorded. These console fixtures open no scene and read no original game files. They are not a new playable scene package.
+
+`NativeDamageStatistics` and its Final binding passed 73 assertions / 8 groups in `artifacts/m3-statistics-20261022-01`. It follows signed double-key comparison, preserves output/node identity, performs both lookups before reading the first amount, and retains the amount store when later maximum observation fails. The second key word remains explicitly nullable. Missing keys stop before allocation/insertion; native container initialization, dynamic changes between the two calls, and full damage/death remain unverified. The source was independently reviewed and no previous suite was rerun for it.

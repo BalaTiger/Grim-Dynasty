@@ -1,0 +1,139 @@
+{
+  "schema": "grim-dynasty-record-cache-publication-prefix-v1",
+  "utc": "2026-10-20T06:29:21.538Z",
+  "status": "bounded-prefix-passed-native-publication-incomplete",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "assertions": {
+    "RegistrationIndex": 183,
+    "RegistrationGrowth": 141,
+    "LoadedObjectRegistration": 47,
+    "ObjectNameAssignment": 37,
+    "ObjectLifecycleCombined": 20,
+    "RecordLoadFile": 42,
+    "RecordTableGetter": 43,
+    "CreatePartialObject": 40,
+    "FinishPartialObject": 43,
+    "BinaryWarmGetter": 65,
+    "BinaryStaleGetter": 33,
+    "BinaryColdGetter": 50,
+    "BinaryPointerGrowth": 36,
+    "BinaryRecordParser": 69,
+    "BinaryMixedRecordParser": 43,
+    "RecordCachePublicationPrefix": 69,
+    "ClassFactoryDispatch": 40,
+    "ItemCondition": 39,
+    "ItemAuto": 11,
+    "ObjectBaseConstructor": 40,
+    "ObjectId": 20,
+    "total": 1111
+  },
+  "scenario_groups": 21,
+  "module_suites": 20,
+  "module_assertions": 1091,
+  "supplemental_objectid_assertions": 20,
+  "new_assertions": 69,
+  "new_scenario_groups": 3,
+  "demo": "passed",
+  "test_summary": "docs/object-lifecycle/cache-prefix-validation/test-summary.json",
+  "test_log": "docs/object-lifecycle/cache-prefix-validation/test-output.txt",
+  "elapsed_seconds": 5.857323399999999,
+  "source_hashes": {
+    "src/task_items/RecordCachePublicationPrefix.cs": "bdade582a0e25b66606b3ae574f1c84f13c2a27d92cfdd006d5d2c3dec06196b",
+    "src/task_items/RecordCachePublicationPrefixTests.cs": "8406ea5163ff3d5ea6277c57a4c0f6f809af238c30337f7649da545ffe56c853",
+    "docs/object-lifecycle/CACHE-PUBLICATION-EVIDENCE.md": "e868c55d3cd6c6f24e29121669ebcff39824a630ec8906051f8a56d9544948ee"
+  },
+  "entry_contract": "Explicit own snapshot after candidate creation/head link/count increment, before02E770; bucket endpoints cover stable old seed only; constructor is not native node creation",
+  "coverage": {
+    "full_unsigned_stored_byte_hash": true,
+    "reverse_duplicate_observation": true,
+    "unique_splice_and_endpoints": true,
+    "count_unchanged": true,
+    "snapshot_isolation": true,
+    "one_advance_only": true
+  },
+  "native_return_node_known": false,
+  "native_inserted_flag_known": false,
+  "native_publication_completed": false,
+  "record_load_miss_connected": false,
+  "stop_addresses": [
+    "0x18002eb40",
+    "0x18002ea80"
+  ],
+  "prior_checkpoint": ".tooling/checkpoints/binary-mixed-complete/manifest.json",
+  "prior_checkpoint_files_verified": 190,
+  "baseline_files": 50,
+  "baseline_changed_before_status_updates": [
+    "src/task_items/build_items.ps1"
+  ],
+  "guard_implementation_changed": false,
+  "query": {
+    "summary": "docs/object-lifecycle/rea-record-cache-publication/summary.json",
+    "release": "docs/object-lifecycle/rea-record-cache-publication/resource-release.json",
+    "plan": "tools/static_analysis/rea-record-cache-publication-plan.json",
+    "plan_sha256": "b8edfd6904516091befee8c69d6111080b5c7f58ad342b6a69d378f5589eb762",
+    "calls": 11,
+    "closed_session": true,
+    "job_empty": true,
+    "all_recorded_identities_exited": 66,
+    "runtime_files": 0,
+    "target": {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    "main_heap": "384M",
+    "profile": {
+      "id": "engine-parser-384m-v1",
+      "heap": "384M",
+      "launchBytes": 4563402752,
+      "stopBytes": 2147483648,
+      "maximumSampleAgeMs": 5000,
+      "staleAfterMs": 15000,
+      "taskAllowanceGiB": 2.25,
+      "systemSpareGiB": 2
+    }
+  },
+  "future_plans": [
+    {
+      "path": "tools/static_analysis/rea-record-cache-maintenance-plan.json",
+      "sha256": "d4f2231584dd5ed268cdddb3eb0ef55b3aa3743840fac669bf187b7712a6dac8",
+      "status": "prepared-not-registered-not-started",
+      "calls": 11,
+      "targets": [
+        "0x18002ea80",
+        "0x18002eb40"
+      ],
+      "source_sha256": "398e58ec9e5fc35f198d6f679242e2201028e026552f75c99a08a6f041dcf867",
+      "call_sites_verified": true,
+      "runner_registered": false,
+      "executed": false
+    },
+    {
+      "path": "tools/static_analysis/rea-record-cache-node-plan.json",
+      "sha256": "48b235048fc20dba98c718d29d6511600833199bc248f9b712b104b9a6e20e44",
+      "status": "prepared-not-registered-not-started",
+      "calls": 11,
+      "targets": [
+        "0x18001f170",
+        "0x180022860"
+      ],
+      "source_sha256": "a4fe68eb62328f6715c70fe810645e60d6045720d8ad94ae11a1379260d917c9",
+      "call_sites_verified": true,
+      "runner_registered": false,
+      "executed": false
+    }
+  ],
+  "remaining": [
+    "02EA80/02EB40 post-prefix body",
+    "01F170/022860 node allocation/link/string transfer",
+    "280E20 archive fetch and ordinary fallback constructor",
+    "Native ClassInfo population, concrete item construction/Read, complete LoadFile and item factory"
+  ],
+  "original_binary_execution": false,
+  "saves_or_cloud_access": false,
+  "installations_this_phase": false,
+  "persistent_permission_changes": false,
+  "commit_or_push": false,
+  "approval_rejection_or_pending_action": false,
+  "checkpoint": ".tooling/checkpoints/cache-prefix-complete/manifest.json"
+}

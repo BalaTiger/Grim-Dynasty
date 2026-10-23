@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-20T08:06:02.957Z",
+  "status": "independent-static-review-complete",
+  "final_source_hashes": {
+    "src/task_items/RecordCache.cs": "1e7aac180bb912c69376bc421033c58b931dba5cabd2398e35d5ffaa4776d3bc",
+    "src/task_items/RecordLoadFile.cs": "d1fc982f371ab6d69103affaf02c83db733cde1a7ce58e9f4ed3a6d3d4a41aa6",
+    "src/task_items/RecordTableGetter.cs": "856da47a74f9bfee9236aa403ee20e4fac7885616ff9c07e79b6a5f38ac17ecb",
+    "src/task_items/RecordCachePublicationAttempt.cs": "c9c064a1a323348f44279f9358e3ef2e51b9a0394992e000c49f1f193b283160",
+    "src/task_items/build_items.ps1": "1e19f8255574df585152cee9ab5f68d64b361a6bfd3c1ba155d97696efbe6a2e",
+    "src/task_items/RecordCacheCallerPublicationAttempt.cs": "383e09d9997430d1aaa31ba0e95e6285aa6bfd0f833623d2aa686b72a727ab72",
+    "src/task_items/SuppliedBinaryRecord.cs": "e5c35b95a998442a1cc32b2cc29639206c79629e366bbbb528e532284a1f55af",
+    "src/task_items/RecordLoadFromSuppliedBinary.cs": "fe185552386207817fe9fe3dfe9f2a7f50fbc649f62bdc64bdec4ab1d7f6c3ca",
+    "src/task_items/RecordCacheCallerPublicationTests.cs": "2ad1ddcb81a6a8170d595b80d61983a2e58d6e5578ff7d9e8ed7d991d7e3971b",
+    "src/task_items/RecordLoadFromSuppliedBinaryTests.cs": "8d5778f81fc80dda83f428121b7e7990a62120457acbe58d3863f248f43df6d3"
+  },
+  "reviews": [
+    {
+      "reviewer": "build_portability",
+      "scope": "Full stored-name/fresh table identity/ownership/caller order/pending guard/tail counters; reviewed before two reporting fixes",
+      "result": "No blocking normal-path issue"
+    },
+    {
+      "reviewer": "verify_handoff",
+      "scope": "Shared caller publication, durable result state and exception boundaries",
+      "findings_fixed": [
+        "Cache-hit final result allocation could erase effect reporting",
+        "Parser returned-result allocation could hide consumed-reader effects"
+      ],
+      "final_review": "Both fixes checked after edits: preallocated wrapper journal and parser in-flight uncertainty; no remaining blocker"
+    },
+    {
+      "reviewer": "locate_game",
+      "scope": "67 assertions/4 scenarios input, parser, shared table, subsequent hits, growth and end-tick stops; own static self-review",
+      "result": "Frozen source compiled and passed in root regression"
+    }
+  ],
+  "fault_exhaustion_injected": false,
+  "review_limit": "Own allocation-failure reporting was statically reviewed; no actual OOM or native exception test was induced"
+}

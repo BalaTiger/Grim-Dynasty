@@ -1,0 +1,86 @@
+{
+  "schema": "item-actor-bridge-preflight-v1",
+  "reviewed_utc": "2026-10-21T06:46:00.4630786Z",
+  "execution_status": "pending_formal_approval",
+  "command": "& 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -NoProfile -NonInteractive -File 'C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\src\\task_items\\build_item_constructor_bridge.ps1'",
+  "compiler": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\csc.exe",
+  "compiler_sha256": "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00",
+  "compiler_invocations": 4,
+  "test_invocations": 3,
+  "new_suite": "ItemConstructorBridgeTests",
+  "affected_regressions": [
+    "ItemConstructor858PrefixTests",
+    "ItemScalarInitializationTests"
+  ],
+  "output_directory": ".tooling/item-constructor-bridge-build-20261021",
+  "output_absent_verified": true,
+  "inputs": [
+    {
+      "relative_path": "src/task_items/ActorConstructorPrefix.cs",
+      "bytes": 5502,
+      "sha256": "c51710c512abe864d16feecd7972a779804d9d0cdc419b117e86ba7e37134b83"
+    },
+    {
+      "relative_path": "src/task_items/ActorConstructorArray.cs",
+      "bytes": 8940,
+      "sha256": "e08ecb7797516f31e453bfb48e85ef146ad6ba2fe44d623548a46fa848f5e66e"
+    },
+    {
+      "relative_path": "src/task_items/ActorConstructorContinuation.cs",
+      "bytes": 7277,
+      "sha256": "5cb82839b6e9245d101dd4991e466316fb958c40dfc0b53bf0119754ce69284c"
+    },
+    {
+      "relative_path": "src/task_items/ActorConstructorCompletion.cs",
+      "bytes": 17748,
+      "sha256": "78fd9e66aae877d7cac89ac9e8a2a2dc357b7903e89d390d4dd17ccdc74d6cce"
+    },
+    {
+      "relative_path": "src/task_items/ActorMatrixInitialization.cs",
+      "bytes": 5705,
+      "sha256": "4f9e51fdbb10b13724c59f05e696f5caeaf87ab3128df46800a3fdb3d0fedfd4"
+    },
+    {
+      "relative_path": "src/task_items/ActorEngineContext.cs",
+      "bytes": 8534,
+      "sha256": "36b309d143847f8b76273c7b9ca4f613135a75bbb42e62f18cf7bb7d6e8a0919"
+    },
+    {
+      "relative_path": "src/task_items/ItemScalarInitialization.cs",
+      "bytes": 5660,
+      "sha256": "894fce891722e9ab1b8829bace48463cb1bbaa639dc173471256309857cc48c0"
+    },
+    {
+      "relative_path": "src/task_items/ItemConstructor858Prefix.cs",
+      "bytes": 4729,
+      "sha256": "d8a1a042e90fc9789692b87d876188a524b99fe0b31de999382ba0fd5a880ab7"
+    },
+    {
+      "relative_path": "src/task_items/ItemConstructorBridge.cs",
+      "bytes": 11794,
+      "sha256": "844379d1e881c5adc681dc6a3925f03c181789be9444e43763737cfd8998487c"
+    },
+    {
+      "relative_path": "src/task_items/ItemConstructorBridgeTests.cs",
+      "bytes": 18575,
+      "sha256": "8d9cbfdd1ee9657c453bc4f788fbd6614031f1183f8d0d41cf1ab5cbe950c3a6"
+    },
+    {
+      "relative_path": "src/task_items/ItemConstructor858PrefixTests.cs",
+      "bytes": 13168,
+      "sha256": "16eab0cdcd30944a15a3e55e8b6bb2e928217185330c6395cff5da28225f671f"
+    },
+    {
+      "relative_path": "src/task_items/ItemScalarInitializationTests.cs",
+      "bytes": 5207,
+      "sha256": "0a7aa7e2cd11502b25aba4cd8c20f964b359a5447acc437b2a0314b6017fe2eb"
+    },
+    {
+      "relative_path": "src/task_items/build_item_constructor_bridge.ps1",
+      "bytes": 7334,
+      "sha256": "c149eedc4a7a98395ecd92b673169b91f8a5d183fe6ffb3180c3ec76d5a1669a"
+    }
+  ],
+  "effects": "One fresh workspace output directory; compile one own managed library and three own fixture EXEs, then run those three. No original DLL loading, installs, network, other scripts, security or environment changes.",
+  "scope": "Conditional Actor-to-Item shared field prefix ends323743. No full native Item/QuestItem compatibility claim."
+}

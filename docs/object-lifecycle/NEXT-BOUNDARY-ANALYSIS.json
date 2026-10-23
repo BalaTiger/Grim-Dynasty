@@ -1,0 +1,92 @@
+{
+  "utc": "2026-10-19T05:41:10.6139027Z",
+  "status": "saved-evidence-analysis-only",
+  "report": "docs/object-lifecycle/NEXT-BOUNDARY-ANALYSIS.md",
+  "report_sha256": "33010c9a0d13bf36cfcdb44856acc0546f3529b18c4f024d6966480e9b269ea4",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "baseline_acceptance": "docs/object-lifecycle/finish-partial-validation/acceptance-finish-partial.json",
+  "baseline_assertions": 746,
+  "baseline_combined_scenarios": 6,
+  "baseline_existing_demos": 1,
+  "baseline_source_and_own_artifact_hashes_verified": 30,
+  "tests_rerun": false,
+  "new_behavior_implemented": false,
+  "build_started": false,
+  "index_started": false,
+  "new_rea_calls": 0,
+  "ghidra_started": false,
+  "original_game_files_read": false,
+  "saves_or_steam_cloud_accessed": false,
+  "commit_or_push": false,
+  "reusable_evidence": [
+    {
+      "path": "docs/object-lifecycle/rea-record-class-getters/08-LoadTableBinary-class-getter-0x18013fb60-assembly.json",
+      "sha256": "5a3f7d6e2db1754cb49ead67c382d0adb0c9407aeda12413c8e82c91a5d1f3e3"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-getter-support/11-LoadTableBinary-name-to-id-0x180283840-assembly.json",
+      "sha256": "b107eb37978d90f0ea5eb7b2be403ec3a189740162f4092b6b931f0e0b133af5"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-getter-support/12-LoadTableBinary-name-to-id-0x180283840-direct-callees.json",
+      "sha256": "af48619c3c941a6d9717f7b20f18c7dbf5b451a165893769ae7727f8daad3d19"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-getter-support/14-LoadTableBinary-id-getter-0x18013fc80-assembly.json",
+      "sha256": "a7aa6501e062ede15f9e9973787ad9b7e9c60f9efa388a97a8ee9bab5eb97edd"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "sha256": "d696e7b2141e5fe9ee6f518555d32a615ab174deabd6f676a15c299be1b7e3b1"
+    },
+    {
+      "path": "docs/object-lifecycle/record-interface-discovery/record-interface-vslots.json",
+      "sha256": "d2b77d66e08c05c83822f9f03d66565e18d016cdca400377853c866c7c3a4b9c"
+    },
+    {
+      "path": "docs/rewards/rea-object-ids/ObjectManager-ID-assembly.json",
+      "sha256": "a36a4b33f36a0fc1498dea88cd897d0cdeb8f997f70dd2327962d4702bc7dc6f"
+    },
+    {
+      "path": "docs/rewards/rea-object-ids/Object-ID-map-find.json",
+      "sha256": "9c9e410f67a094ec498e36368ba063b197fa456e37d82aa3d62467060502f37e"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-native-registration/05-ObjectManager-FinishPartial-order-assembly.json",
+      "sha256": "ff316ad5d46f49d31d39cfdb5c0aedd1d47133b9bfd8d632a47164e8dea07804"
+    }
+  ],
+  "next_without_new_query": "Connect Binary-present pointer hit with unchanged C-string -> numeric field/value lookup -> existing getter/CreatePartial; explicit address, complete bucket snapshots and shared string pool required",
+  "next_true_evidence_gap": {
+    "target_binary": "Engine.dll",
+    "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "procedure": "0x180284160",
+    "call_site": "0x180283915",
+    "branch": "Pointer-cache miss plus successful name lookup returning non-minus-one ID",
+    "requested_tools": [
+      "procedure_pseudo_code",
+      "procedure_assembly",
+      "procedure_callees"
+    ],
+    "analysis_calls": 3,
+    "total_calls_with_existing_session_lifecycle": 8,
+    "execution_state": "not_started",
+    "approval_state": "not_requested",
+    "peak_memory_estimate_gib": null,
+    "memory_reason": "No saved query-specific peak working set; even one function may trigger whole Engine import/analysis"
+  },
+  "later_queries": [
+    "0x18013f300",
+    "0x18005deb0",
+    "0x18002e770",
+    "0x18013c1d0",
+    "0x180280e20",
+    "0x1802dc8f8"
+  ],
+  "parser_target": "Unknown; verify constructor vptr, then vslot+8. 0x180341fe8 is a conditional slot address, not a function target.",
+  "distinct_native_manager_lock_fields": [
+    "0x10",
+    "0x28"
+  ],
+  "allocator_auto_caller_or_destroy_sequence_closed": false
+}

@@ -1,0 +1,301 @@
+{
+  "schema": "grim-dynasty.camera-ground-navigation-handoff-build.v1",
+  "source_review_ready": true,
+  "execution_state": "prepared-not-executed",
+  "compiles": 1,
+  "new_test_entrypoint": "CameraGroundNavigationHandoffTestProgram",
+  "reused_production_method": "MainmenuTilePipeline.BuildExplicitColdTiles",
+  "old_entrypoints_called": false,
+  "expected_scenarios": 3,
+  "expected_assertions": 89,
+  "output": ".tooling/r1-camera-ground-navigation-handoff-validation",
+  "compiler": {
+    "path": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\csc.exe",
+    "sha256": "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00"
+  },
+  "json_assembly": {
+    "path": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\System.Web.Extensions.dll",
+    "sha256": "5e6378edc06f5a61920aaadb2aba839dd3cf302d6192e08aacd4454ba4cff0b3"
+  },
+  "sources": [
+    {
+      "path": "src/reverse_client_actions/CameraGroundNavigationHandoffTests.cs",
+      "bytes": 17475,
+      "sha256": "73c71784e9aab1c35730088cd95e2cea2c326de93ef0105a2fbbe6d5e9d459cc"
+    },
+    {
+      "path": "src/reverse_client_actions/MainmenuTilePipeline.cs",
+      "bytes": 7391,
+      "sha256": "bd76aa516aab1e8be5f88b98e8e4f41e3cbe0a2564a8fd5995404177480733c9"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "GrimDynasty.Actions.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.Actions.dll",
+      "bytes": 22016,
+      "sha256": "3ea34074db9d5a67d7dffb702eb053b703dc3b754d0db442aeadd71247e15c58",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.CameraTarget.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.CameraTarget.dll",
+      "bytes": 14848,
+      "sha256": "d7d4fd499220d92b4ba1335e1cacd6bb62bfa679f53f7588ac02b556175ae3dd",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.CameraWorldRay.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.CameraWorldRay.dll",
+      "bytes": 14848,
+      "sha256": "857e7aa7c6d2d7fc003c30df9a3c9ecd76db0297978d07b861ad7092b4089992",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.EntityMovement.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.EntityMovement.dll",
+      "bytes": 11776,
+      "sha256": "85d848625fce7d5fc580feb04839898bd580a96f0c48308c3aca5b8ab142f84d",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundBlockIntersection.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.GroundBlockIntersection.dll",
+      "bytes": 9216,
+      "sha256": "67c72c5b9fbeffa329a6e4dc2609c8b45ba0656b49d12fed758e5c397e1a70d2",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundGeometry.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.GroundGeometry.dll",
+      "bytes": 12800,
+      "sha256": "b9d70554dddcdc5936731647ec4caaa5b86fc0660f329ab3d044b9b956b7416b",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundMaterialCandidates.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.GroundMaterialCandidates.dll",
+      "bytes": 7680,
+      "sha256": "57363683c84b1cc3d1fae94ee3e6ed7ad24190f6cc3ffc8e83c99454868724fe",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundSpatialTree.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.GroundSpatialTree.dll",
+      "bytes": 22016,
+      "sha256": "06e457c22322efc89111a42f822e01c11929a2c8a2918c7c7b2b945efdfd316d",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundTriangleIntersection.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.GroundTriangleIntersection.dll",
+      "bytes": 16384,
+      "sha256": "ab1260f81b132b5b7db7bdd0dd5b721e9e100fc7d665269c6b562b9d0c551401",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundWater.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.GroundWater.dll",
+      "bytes": 7168,
+      "sha256": "da81c4a1769dc470061293f23d830c817425b476d71b13ebcb4e6b92bb165cbc",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.MoveManager.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.MoveManager.dll",
+      "bytes": 6144,
+      "sha256": "7563b6e32745e79ddc8308d2ea48ca7336050271d8dc8c9ce1e75346a52232da",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationNearest.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.NavigationNearest.dll",
+      "bytes": 35840,
+      "sha256": "75f303c482679df6ba2c8f01aad7759ba9ed322ad6386100525b690cd9b9dfd0",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.PortalTransitions.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.PortalTransitions.dll",
+      "bytes": 22016,
+      "sha256": "35d69c4f8e9cd6d81d5181f19f3d236766cdc3afa376e109d33a7a53e3c9ba07",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.SystemUcrtRotationMath.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.SystemUcrtRotationMath.dll",
+      "bytes": 16896,
+      "sha256": "5910bfb912566a21d67c6d603a3fc67badaad08b4465ed950ab9015196cc6e1a",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.TerrainMaterialCollision.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.TerrainMaterialCollision.dll",
+      "bytes": 21504,
+      "sha256": "7b0a3e8bf53586831ba80dc2301857af74a3869e3cb0c305b7835dafbc0d3b57",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.WorldCoordinates.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.WorldCoordinates.dll",
+      "bytes": 9216,
+      "sha256": "6365ad6a051d6ffbb4009824d98fa899bec89f5933dea383a9a3d98f193e71c7",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.WorldFloor.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.WorldFloor.dll",
+      "bytes": 19456,
+      "sha256": "4532394b7543825752d88c673509f37cc403e4c74cbb5e9e6185200617679cad",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.WorldPublicationPrerequisites.dll",
+      "path": ".tooling/r1-camera-world-ray-validation/GrimDynasty.WorldPublicationPrerequisites.dll",
+      "bytes": 7168,
+      "sha256": "1ef75d179844014d4bd5c12974466eda89a5d3e1b34c3bedb47e37510f2eeb3e",
+      "prior_result": ".tooling/r1-camera-world-ray-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.PathingData.dll",
+      "path": ".tooling/r1-crowd-ready-tick-validation/GrimDynasty.PathingData.dll",
+      "bytes": 6656,
+      "sha256": "4f105f145ccdfb4b17b33b1167f8b700f06f38a4a07f8dc36cdf50f3d12aac4f",
+      "prior_result": ".tooling/r1-crowd-ready-tick-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationLayers.dll",
+      "path": ".tooling/r1-crowd-ready-tick-validation/GrimDynasty.NavigationLayers.dll",
+      "bytes": 15872,
+      "sha256": "80137bab7ceb54a3688655501b2d5c66b59de05d97a9a65edd052e8953e254ee",
+      "prior_result": ".tooling/r1-crowd-ready-tick-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationContours.dll",
+      "path": ".tooling/r1-crowd-ready-tick-validation/GrimDynasty.NavigationContours.dll",
+      "bytes": 12288,
+      "sha256": "c63bacce93c83700d3113ec36ade462a67b48b1030f2e293a39322e149cad263",
+      "prior_result": ".tooling/r1-crowd-ready-tick-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationPolygons.dll",
+      "path": ".tooling/r1-crowd-ready-tick-validation/GrimDynasty.NavigationPolygons.dll",
+      "bytes": 17920,
+      "sha256": "6e33b858bc8073d59beacd7cc0a94d5ad15c24aa6f8f3ac966f2966175fa6856",
+      "prior_result": ".tooling/r1-crowd-ready-tick-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationTileData.dll",
+      "path": ".tooling/r1-crowd-ready-tick-validation/GrimDynasty.NavigationTileData.dll",
+      "bytes": 9728,
+      "sha256": "b0459f94ca130467c2ec7f8c0379700250926c5a8eb8a3e6f617910a3bb02cd9",
+      "prior_result": ".tooling/r1-crowd-ready-tick-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationMeshTiles.dll",
+      "path": ".tooling/r1-crowd-ready-tick-validation/GrimDynasty.NavigationMeshTiles.dll",
+      "bytes": 29696,
+      "sha256": "0b8604244b7681e6f0f5e13a63c93f2f815069bbe74109e974938c94d9ee4d57",
+      "prior_result": ".tooling/r1-crowd-ready-tick-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationCorridor.dll",
+      "path": ".tooling/r1-crowd-ready-tick-validation/GrimDynasty.NavigationCorridor.dll",
+      "bytes": 33280,
+      "sha256": "1afd6850ae3f2fc1c0f13c6562ce6b5749a3ea98d3b2e5792d67234d4c779e33",
+      "prior_result": ".tooling/r1-crowd-ready-tick-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdAdapter.dll",
+      "path": ".tooling/r1-crowd-ready-tick-validation/GrimDynasty.NavigationCrowdAdapter.dll",
+      "bytes": 10752,
+      "sha256": "04215144406cd87357b98bd32911f96281453c4010e4f2f61e1c6997b065b73e",
+      "prior_result": ".tooling/r1-crowd-ready-tick-validation/result.json"
+    }
+  ],
+  "prior_results": [
+    {
+      "path": ".tooling/r1-camera-world-ray-validation/result.json",
+      "sha256": "927e66c82ec1e7c797cee446380922bbfd031ea5355a853515baec6e7775e52d",
+      "expected_status": "passed-new-camera-world-ray-ground-and-affected-rotation-only"
+    },
+    {
+      "path": ".tooling/r1-crowd-ready-tick-validation/result.json",
+      "sha256": "c66bd4047d3aa7c33e34f65d9792b67af2e4ce5231873f06823ad5d362b3efef",
+      "expected_status": "passed-new-bounded-ready-member-prefix-moved-tail-two-frames-only"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/reverse-client/r1-mainmenu-complete-member/mainmenu.map.bin",
+      "bytes": 1091357,
+      "sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-surface-strings/inspection.json",
+      "bytes": 5962,
+      "sha256": "56db24887edb67e188ba5f034d3734c24042e973c70be4c3e833896942b1a75f"
+    },
+    {
+      "path": "tools/static_analysis/read_r1_terrain_surface_strings.mjs",
+      "bytes": 13189,
+      "sha256": "8be08c76e92519ad71b0cb465113b3f2e9813fcfaee9bbc4004d15dd57996e04"
+    },
+    {
+      "path": "docs/reverse-client/r1-mainmenu-pathing-data-probe/inspection.json",
+      "bytes": 30781,
+      "sha256": "3bdb93f6709525b513b43f61b347062f5d6f99a21f2167d5a0b8f11e458dc105"
+    },
+    {
+      "path": "docs/reverse-client/r1-camera-ground-navigation-handoff-review-20261023.json",
+      "bytes": 5279,
+      "sha256": "f143604e388bfd985067efd775c065c5ea3bda520da92d9492e2ff3af41c9366"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-0.json",
+      "bytes": 1306,
+      "sha256": "99174ba1196eae2c109ad46c18fdcbf2e368923d49117739d0496829d3389d93"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-1.json",
+      "bytes": 1492,
+      "sha256": "d3d75935c98d5909f95ce0ca5c330e110dd42f5a4251ec881706c95c00edd4bf"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-2.json",
+      "bytes": 1260,
+      "sha256": "267ec1e9b06cd9c54812eeaee3e0a8a7b7ff7cc9223f42823de48c2a43213895"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-3.json",
+      "bytes": 1494,
+      "sha256": "6512c54802bcd3b6ad1bb83fe86b8b35a5f0e98397245a8347501cece66c7b4b"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-4.json",
+      "bytes": 1423,
+      "sha256": "e829033a0fb91dfb904973a53809b1eda34f41c5369a9b22726637dc4cde98ee"
+    }
+  ],
+  "closure_review": {
+    "camera": "All eighteen managed production DLLs from the passed CameraWorldRay receipt, including the new SystemUcrtRotationMath type provider. Mode1 supplies null math; no system-library profile is opened.",
+    "navigation": "Eight additional DLLs: PathingData, Layers, Contours, Polygons, TileData, MeshTiles, Corridor, CrowdAdapter. Same-named shared assemblies are taken only from the camera closure; their hashes match ready except the intentionally newer camera math provider.",
+    "method_sources": "MainmenuTilePipeline.cs hash is unchanged from tools/build_r1_real_tiles.ps1. It is compiled with the new test source and an explicit /main; its Main is never invoked.",
+    "query_status": "The real sealed adapter uses default NavigationNearestBoundaries. Default Enumerate returns success or partial-success statuses, or throws; no injected native failure or successful query callback exists."
+  },
+  "scope": {
+    "explicit_own_origin0": true,
+    "search_extent_changed": false,
+    "height_offset_added": false,
+    "camera_hit_required": false,
+    "ready_ground_misses_required": 2,
+    "original_read": false,
+    "original_executed": false,
+    "backend_started": false,
+    "native_pick_caller": false,
+    "native_scene_startup": false,
+    "walking_accepted": false,
+    "old_suites_rerun": false
+  },
+  "helper_source_recompiled": true
+}

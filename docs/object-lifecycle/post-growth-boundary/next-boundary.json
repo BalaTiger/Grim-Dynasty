@@ -1,0 +1,148 @@
+{
+  "utc": "2026-10-20T02:06:17.8200840Z",
+  "status": "offline-boundary-prepared",
+  "behavior_code_changed": false,
+  "tests_rerun": false,
+  "new_rea_calls": 0,
+  "backend_started": false,
+  "original_game_files_read": false,
+  "baseline": {
+    "acceptance": "docs/object-lifecycle/binary-growth-validation/acceptance-binary-growth.json",
+    "assertions": 930,
+    "combined_scenarios": 14,
+    "demo": "ItemQuestDemo",
+    "source_artifact_hashes_verified": 82,
+    "verification": "docs/object-lifecycle/post-growth-boundary/baseline-verification.json"
+  },
+  "selected_path": "LoadFile miss -> concrete Binary table construction -> actual parser -> cache publication -> existing Class getter",
+  "next_query": {
+    "image": "Engine.dll",
+    "procedure": "0x18013f300",
+    "confirmed_call_site": "0x1801c4fe2",
+    "caller": "0x1801c4e20",
+    "plan": "tools/static_analysis/rea-binary-table-constructor-plan.json",
+    "analysis_calls": 3,
+    "total_calls": 8,
+    "state": "prepared-not-started",
+    "runner_mode_registered": false,
+    "automatic_expansion": false
+  },
+  "deferred_parser_binding": {
+    "precondition": "Constructor must establish the actual vptr of its returned table",
+    "conditional_vtable": "0x180341fe0",
+    "conditional_slot": "0x180341fe8",
+    "conditional_file_offset": "0x340fe8",
+    "byte_count": 8,
+    "parser_function_address": null,
+    "slot_read_performed": false,
+    "requires_fresh_fixed_hash_and_PE_mapping_check": true,
+    "legacy_32bit_Deserialize_import_is_only_a_name_hint": true
+  },
+  "other_gaps": [
+    {
+      "area": "native factory",
+      "engine_root": "0x18041cf00",
+      "game_item_metadata": "0x180a5c8a0",
+      "callback_offset": "0x28",
+      "missing": "Population writers, actual graph values, callback binding and allocation wrapper"
+    },
+    {
+      "area": "Item Read",
+      "game_item_constructor": "0x180323690",
+      "game_item_primary_vtable": "0x18076a4c0",
+      "candidate_slot": "0x18076a4c8",
+      "read_function_address": null,
+      "missing": "Actual slot target/body and final concrete derived type identity"
+    },
+    {
+      "area": "Item CreateItem bridge",
+      "game_caller": "0x180324120",
+      "game_callee": "0x18012c910",
+      "missing": "Bridge body and actual lifecycle ordering"
+    },
+    {
+      "area": "miss loader continuation",
+      "unqueried_helpers": [
+        "0x18005deb0",
+        "0x18002e770",
+        "0x180280e20",
+        "0x18013c1d0"
+      ],
+      "missing": "Publication ordering/ownership, special archive fetch and diagnostic fallback behavior"
+    }
+  ],
+  "hold": {
+    "reason": "OutOfWindow owns the heavy window; next connected step needs new function evidence",
+    "execution_attempted": false,
+    "approval_requested": false,
+    "denied": false,
+    "uncertain_outcome": false
+  },
+  "sources": [
+    {
+      "path": "docs/object-lifecycle/rea-record-load-dependencies/10-LoadFile-miss-0x1801c4e20-pseudocode.json",
+      "sha256": "7e552f06145e50d4848d47a2c119d823c5d3a3be77abfc1d7b63ff50d750ac6f",
+      "bytes": 33955
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "sha256": "d696e7b2141e5fe9ee6f518555d32a615ab174deabd6f676a15c299be1b7e3b1",
+      "bytes": 40578
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-load-dependencies/12-LoadFile-miss-0x1801c4e20-direct-callees.json",
+      "sha256": "f5d5a5800e99475d033c27437b044ce0068aba4e93b0e68da1756a82700e23a0",
+      "bytes": 12755
+    },
+    {
+      "path": "docs/object-lifecycle/rea-object-base/11-TableDepot-LoadFile-0x1801c4d20-assembly.json",
+      "sha256": "09c5e996bbe2d23b35ad7de140e77940899602a35a0209bc5f070ee8bbc2b166",
+      "bytes": 17485
+    },
+    {
+      "path": "docs/object-lifecycle/record-interface-discovery/record-interface-exports.json",
+      "sha256": "33d7527e64565cc4e56a31b3665b41e004ad9e53f93739e3a645f205cf0b1603",
+      "bytes": 4738
+    },
+    {
+      "path": "docs/object-lifecycle/record-interface-discovery/record-interface-vslots.json",
+      "sha256": "d2b77d66e08c05c83822f9f03d66565e18d016cdca400377853c866c7c3a4b9c",
+      "bytes": 4527
+    },
+    {
+      "path": "docs/object-lifecycle/rea-native-registration/04-ObjectManager-CreatePartial-order-assembly.json",
+      "sha256": "7a32e57757bc0cb2d336cd63ade820108fc1f3babb767c8150db54b5ad277d98",
+      "bytes": 15876
+    },
+    {
+      "path": "docs/object-lifecycle/rea-native-registration/05-ObjectManager-FinishPartial-order-assembly.json",
+      "sha256": "ff316ad5d46f49d31d39cfdb5c0aedd1d47133b9bfd8d632a47164e8dea07804",
+      "bytes": 23400
+    },
+    {
+      "path": "docs/object-lifecycle/rea-native-registration/09-Class-factory-helper-0x180274ec0-assembly.json",
+      "sha256": "bfa5f091e67fe9ee863c639d10d8cdf2424d0f564278baaaa37661d661794790",
+      "bytes": 16567
+    },
+    {
+      "path": "docs/rewards/rea-inventory-add/Inventory-AddItem-order-assembly.json",
+      "sha256": "7a2d5542b0fd3df6f868c2013e5be12626a4e23fe051a3b84955d9298ffe6c5b",
+      "bytes": 53847
+    },
+    {
+      "path": "docs/rewards/rea-inventory-add/Item-constructor-primary-table-assembly.json",
+      "sha256": "7a078d11495b5b7c10a07d7b6309c9d633f8ec39dfc444e5f0decfbd5efe1a3f",
+      "bytes": 39399
+    },
+    {
+      "path": "docs/rewards/rea-item-creation/Item-CreateItem-replica.json",
+      "sha256": "3571942748de195ec4d9d2685cd599051710d05cd8201dca8af5b2f9fce25831",
+      "bytes": 16244
+    },
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7",
+      "bytes": 546640
+    }
+  ]
+}

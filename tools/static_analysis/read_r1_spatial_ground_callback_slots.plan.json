@@ -1,0 +1,146 @@
+{
+  "schema": "grim-dynasty.fixed-spatial-ground-callback-slots.v1",
+  "script": "tools/static_analysis/read_r1_spatial_ground_callback_slots.mjs",
+  "entrypoint": "inspectSpatialGroundCallbackSlots(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-spatial-ground-callback-slots/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "source_pins": [
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "constructor",
+      "path": "docs/reverse-client/r1-engine-spatial-ground/14-EngineSpatialGround-0x1801dda90-procedure_assembly.json",
+      "sha256": "858c4ee47d193164648b7fb068b0dfb2772dc6cd35347055d736d2584388a629"
+    },
+    {
+      "key": "spatial_assembly",
+      "path": "docs/reverse-client/r1-engine-spatial-ground/05-EngineSpatialGround-0x180134500-procedure_assembly.json",
+      "sha256": "6dfe2938844693c4bffecd4c9340076fc0278c28c195bc6f4bfa669eddecf0fb"
+    },
+    {
+      "key": "node_caller",
+      "path": "docs/reverse-client/r1-spatial-ground-direct/08-SpatialGroundDirect-0x18011bbc0-procedure_assembly.json",
+      "sha256": "1f8618dfe1a6c815e9bb5e75f2fb9d87ec273acea425e49c929d1ebe7fa16416"
+    },
+    {
+      "key": "ground_caller",
+      "path": "docs/reverse-client/r1-spatial-ground-direct/11-SpatialGroundDirect-0x1801de090-procedure_assembly.json",
+      "sha256": "280b8fc0515859b8de565e69e9ee40dcb047d76631ca4c9e368d3177faa105ff"
+    },
+    {
+      "key": "loader_binding",
+      "path": "docs/reverse-client/r1-ground-loader-slot/inspection.json",
+      "sha256": "aa504399179a7ff4d570d967544706e8ccc988e88cb34a7f282beb3514700215"
+    }
+  ],
+  "assembly_proofs": [
+    {
+      "key": "constructor",
+      "procedure": "0x1801dda90",
+      "instructions": [
+        "0x1801ddaad: MOV RDI, RCX",
+        "0x1801ddabe: LEA RAX, [0x180343b60]",
+        "0x1801ddac5: MOV qword ptr [RDI], RAX",
+        "0x1801ddac8: LEA RBX, [RDI + 0x68]",
+        "0x1801ddad9: LEA RAX, [0x18033e338]",
+        "0x1801ddae0: MOV qword ptr [RBX], RAX",
+        "0x1801ddbb7: MOV RAX, RDI"
+      ]
+    },
+    {
+      "key": "spatial_assembly",
+      "procedure": "0x180134500",
+      "instructions": [
+        "0x18013465c: CALL 0x1802dc398",
+        "0x180134667: MOV RDX, RAX",
+        "0x180134676: LEA RAX, [0x180340e60]",
+        "0x180134685: MOV qword ptr [RDX], RAX"
+      ]
+    },
+    {
+      "key": "node_caller",
+      "procedure": "0x18011bbc0",
+      "instructions": [
+        "0x18011bbf8: TEST RCX, RCX",
+        "0x18011bbfd: MOV RAX, qword ptr [RCX]",
+        "0x18011bc00: MOV EDX, 0x1",
+        "0x18011bc05: CALL qword ptr [RAX]",
+        "0x18011bc07: MOV qword ptr [RBX], R15"
+      ]
+    },
+    {
+      "key": "ground_caller",
+      "procedure": "0x1801de090",
+      "instructions": [
+        "0x1801de0b4: MOV RDI, RDX",
+        "0x1801de0b7: MOV R14, RCX",
+        "0x1801de0ba: MOV RAX, qword ptr [RCX]",
+        "0x1801de0bd: CALL qword ptr [RAX + 0x68]",
+        "0x1801de2c5: MOV RAX, qword ptr [R14]",
+        "0x1801de2c8: MOV EDX, ESI",
+        "0x1801de2ca: MOV RCX, R14",
+        "0x1801de2cd: CALL qword ptr [RAX + 0x188]"
+      ]
+    }
+  ],
+  "limits": {
+    "new_data_bytes": 24,
+    "data_operations": 3,
+    "single_read_bytes": 8,
+    "hash_chunk_bytes": 65536,
+    "new_PE_header_bytes": 0,
+    "whole_table_bytes": 0,
+    "target_body_bytes": 0
+  },
+  "requirements": [
+    "Import performs no I/O. Execute only after exact approval of frozen script/plan and separate Windows Attributes/reparse-tag preflight.",
+    "Only three Engine data slots:340E60 8B,343BC8 8B,343CE8 8B. No new PE headers,code,RTTI,neighbor slots,imports,exports or constants.",
+    "134500 writes340E60 to allocated node primary vptr;11BBC0 calls matching nonnull child slot0 withEDX=1. This does not prove all runtime child dynamic types.",
+    "1DDA90 writes343B60 to main vptr;33E338 atthis+68 is separate. Existing343BE8 binding selected1DE090,whose entry/per-type calls use+68/+188. Later vptr overwrite/table extent remain unverified.",
+    "Pinned cached PE map requires same-descriptor whole-file source hash match. Before/after hash/stat/path checks are not atomic snapshots.",
+    "Preserve raw bytes and executable-address candidates without guessed names,body,ABI or loaded-state behavior.",
+    "Output directory must be absent;retain failures. No original loading/execution,backend,subprocess,network,saves,security changes,commit or push."
+  ],
+  "fixed_slots": [
+    {
+      "owner": "SpatialNode",
+      "table_rva": "0x340e60",
+      "slot_offset": "0x0",
+      "rva": "0x340e60",
+      "bytes": 8,
+      "callsite": "0x18011bc05",
+      "callsite_role": "Conditional nonnull matching child receiver,EDX=1;target role remains unproved"
+    },
+    {
+      "owner": "GroundPrimary",
+      "table_rva": "0x343b60",
+      "slot_offset": "0x68",
+      "rva": "0x343bc8",
+      "bytes": 8,
+      "callsite": "0x1801de0bd",
+      "callsite_role": "Ground loader entry virtual call before reader consumption;reset semantics remain to be verified"
+    },
+    {
+      "owner": "GroundPrimary",
+      "table_rva": "0x343b60",
+      "slot_offset": "0x188",
+      "rva": "0x343ce8",
+      "bytes": 8,
+      "callsite": "0x1801de2cd",
+      "callsite_role": "Per-type virtual call withEDX=ESI andRCX=R14 after current record processing;body unknown"
+    }
+  ],
+  "direct_call_note": {
+    "procedure": "0x1801de090",
+    "instruction": "0x1801de303: CALL 0x1801ce910",
+    "argument_instruction": "0x1801de300: MOV RCX, R14",
+    "scope": "Recorded from saved assembly only;not read or queried by this reader. Semantic ConstructBlocks name is not established by CALL alone."
+  }
+}

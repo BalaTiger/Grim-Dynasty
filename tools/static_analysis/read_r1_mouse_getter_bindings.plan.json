@@ -1,0 +1,84 @@
+{
+  "schema": "grim-dynasty.fixed-mouse-getter-bindings.v1",
+  "script": "tools/static_analysis/read_r1_mouse_getter_bindings.mjs",
+  "output": "docs/reverse-client/r1-mouse-getter-bindings-retry1/inspection.json",
+  "sources": [
+    {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "bytes": 11385856,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "bytes": 4485632,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "imports": [
+    {
+      "iat_rva": "0x609be8",
+      "index": 381,
+      "symbol": "?GetCoordsUnparented@Entity@GAME@@QEBAAEBVWorldCoords@2@XZ",
+      "caller": "0x180163547: CALL qword ptr [0x180609be8]"
+    },
+    {
+      "iat_rva": "0x609ad8",
+      "index": 347,
+      "symbol": "?GetOptions@Engine@GAME@@QEAAPEAVOptions@2@XZ",
+      "caller": "0x1803ce8e8: CALL qword ptr [0x180609ad8]"
+    },
+    {
+      "iat_rva": "0x60a148",
+      "index": 553,
+      "symbol": "?GetInt@Options@GAME@@QEBAHW4IntName@12@@Z",
+      "caller": "0x1803ce8f6: CALL qword ptr [0x18060a148]"
+    }
+  ],
+  "source_pins": [
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "dispatch",
+      "path": "docs/reverse-client/r1-player-move-dispatch/04-MoveDispatch-0x180163490-procedure_assembly.json",
+      "sha256": "083eade1979ad63423a26e516f3681e1e3b2dc213586d2d6e747f85eddea9e1a"
+    },
+    {
+      "key": "move",
+      "path": "docs/reverse-client/r1-movement-action-path/05-MoveAction-0x1803ce890-procedure_assembly.json",
+      "sha256": "e93a0992a69b1a04b9a552163943fe49ad3a4e2a3c5cf5bcc2e5f6ac00fdffd1"
+    }
+  ],
+  "limits": {
+    "metadata_bytes": 512,
+    "metadata_operations": 24,
+    "single_read_bytes": 128,
+    "hash_chunk_bytes": 65536,
+    "code_bytes": 0,
+    "subprocesses": 0
+  },
+  "requirements": [
+    "Separate exact approval with script and plan hashes; separate Windows Attributes/reparse preflight for originals, script, plan, proof files and output ancestors.",
+    "Only three fixed IAT/OFT slots, exact import hint/name and exact hinted Engine export metadata; no scan or hint fallback, no code, PE headers, pdata or runtime read.",
+    "Index 553 is outside the cached 350-entry nonzero prefix. Its evidence is the pinned full import-name inventory, cached descriptor and current exact OFT/IAT/name; no unseen contiguous prefix is asserted.",
+    "Read-only originals with same-handle before/after SHA256 and stat/path checks. Hash streaming is separate from the metadata budget and is not an atomic snapshot.",
+    "Output must not exist; preserve partial failure evidence. No original loading/execution, backend, subprocess, network, save data or security-setting changes."
+  ]
+}

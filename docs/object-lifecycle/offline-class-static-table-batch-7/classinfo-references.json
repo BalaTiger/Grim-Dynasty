@@ -1,0 +1,27 @@
+{
+  "status": "explicit-address-reference-review-only",
+  "inspection_sha256": "0074c19190c7ef08f13c6897153964ecb6b159d1ab1bb10b1355113cb5987871",
+  "matches": [
+    {
+      "target": "QuestItem",
+      "function": "0x180009e10",
+      "role": "Direct initializer table target at slot 205",
+      "instruction": {
+        "address": "0x180009e23",
+        "bytes": "488b1d3623a500",
+        "instruction": "mov         rbx,qword ptr [0000000180A5C160h]"
+      }
+    },
+    {
+      "target": "QuestItem",
+      "function": "0x180009e10",
+      "role": "Direct initializer table target at slot 205",
+      "instruction": {
+        "address": "0x180009e2a",
+        "bytes": "4889052723a500",
+        "instruction": "mov         qword ptr [0000000180A5C158h],rax"
+      }
+    }
+  ],
+  "limitation": "Text matches identify explicit addresses only. No match does not exclude indirect writes. LEA and loads are not writes; no call effect is assumed."
+}

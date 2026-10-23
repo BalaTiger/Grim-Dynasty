@@ -1,0 +1,165 @@
+{
+  "status": "failed",
+  "started": "2026-10-22T06:00:40.272Z",
+  "finished": "2026-10-22T06:00:57.199Z",
+  "plan_sha256": "93f7aa8b44f0354895307c9bfd9322a49d83d8144dde56f684a57bc88bfd02cc",
+  "request_timeout_ms": 600000,
+  "tool_calls": 4,
+  "completed_plan_calls": 3,
+  "targets_launched": false,
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "close_acknowledged": false,
+  "closed_session_verified": false,
+  "process_exit_confirmed": true,
+  "forced_termination": true,
+  "child_exit_code": 0,
+  "child_signal": null,
+  "stderr_truncated": false,
+  "memory": {
+    "heap_limit": "384M",
+    "required_reserve_gib": 2,
+    "launch_threshold_gib": 4.25,
+    "stop_threshold_gib": 2,
+    "interval_ms": 2000,
+    "samples": 10,
+    "minimum_free_gib": 4.628578186035156,
+    "stop_triggered": true,
+    "calibration_only": false,
+    "owned_profile_budget": {
+      "id": "engine-parser-384m-v1",
+      "heap": "384M",
+      "launchBytes": 4563402752,
+      "stopBytes": 2147483648,
+      "maximumSampleAgeMs": 5000,
+      "staleAfterMs": 15000,
+      "taskAllowanceGiB": 2.25,
+      "systemSpareGiB": 2
+    }
+  },
+  "owned_memory_profile": {
+    "sampler_pid": 33496,
+    "budget": {
+      "id": "engine-parser-384m-v1",
+      "heap": "384M",
+      "launchBytes": 4563402752,
+      "stopBytes": 2147483648,
+      "maximumSampleAgeMs": 5000,
+      "staleAfterMs": 15000,
+      "taskAllowanceGiB": 2.25,
+      "systemSpareGiB": 2
+    },
+    "ownership_policy": "windows-job-v1",
+    "expected_heap_observed": false,
+    "job_empty_confirmed": false,
+    "requested_interval_ms": 1000,
+    "samples": 9,
+    "last_sample_utc": "2026-10-22T06:00:55.1803874Z",
+    "tree_private_commit_peak_bytes": 421253120,
+    "tree_working_set_peak_bytes": 404758528,
+    "with_controller_and_sampler_private_peak_bytes": 606633984,
+    "with_controller_and_sampler_working_set_peak_bytes": 617234432,
+    "minimum_available_physical_bytes": 4959277056,
+    "minimum_commit_headroom_bytes": 20336578560,
+    "largest_receipt_gap_ms": 1672,
+    "counter_read_gap_count": 0,
+    "processes": [
+      {
+        "pid": 5748,
+        "parent_pid": 5192,
+        "name": "node.exe",
+        "role": "controller",
+        "creation_utc": "2026-10-22T06:00:35.9105471Z",
+        "private_commit_sample_peak_bytes": 86728704,
+        "lifetime_commit_peak_observed_bytes": 86728704,
+        "working_set_sample_peak_bytes": 87912448,
+        "lifetime_working_set_peak_observed_bytes": 87912448,
+        "maximum_threads_observed": 14,
+        "java_heap_switches": []
+      },
+      {
+        "pid": 48912,
+        "parent_pid": 5748,
+        "name": "node.exe",
+        "role": "owned_backend_tree",
+        "creation_utc": "2026-10-22T06:00:40.2841863Z",
+        "private_commit_sample_peak_bytes": 421253120,
+        "lifetime_commit_peak_observed_bytes": 421269504,
+        "working_set_sample_peak_bytes": 404758528,
+        "lifetime_working_set_peak_observed_bytes": 404758528,
+        "maximum_threads_observed": 19,
+        "java_heap_switches": []
+      },
+      {
+        "pid": 33496,
+        "parent_pid": 5748,
+        "name": "powershell.exe",
+        "role": "sampler",
+        "creation_utc": "2026-10-22T06:00:40.3694184Z",
+        "private_commit_sample_peak_bytes": 98652160,
+        "lifetime_commit_peak_observed_bytes": 113709056,
+        "working_set_sample_peak_bytes": 124563456,
+        "lifetime_working_set_peak_observed_bytes": 136536064,
+        "maximum_threads_observed": 33,
+        "java_heap_switches": []
+      }
+    ],
+    "failures": [
+      "Memory sampler exited abnormally (1)",
+      "Memory sampler closed without confirmed empty Job",
+      "Explicit Job empty state unconfirmed; monitor close requested owned Job cleanup",
+      "Sampler exit code 1"
+    ],
+    "sampler_exit_confirmed": true,
+    "sampler_exit_code": 1,
+    "sampler_output_drained": true,
+    "limitations": [
+      "Sampled tree sums are not continuous peaks; short-lived processes or the last interval before exit may be missed.",
+      "Working sets may contain shared pages. Sum of per-process lifetime peaks is not simultaneous tree usage.",
+      "Controller and PowerShell sampler overhead are recorded separately and also included in total task peaks."
+    ]
+  },
+  "evidence_redaction": "Credential values are redacted; other parsed tool-response fields are retained.",
+  "records": [
+    {
+      "label": "01-initial-session",
+      "tool": "binary_session",
+      "call_number": 1,
+      "status": "passed",
+      "elapsed_ms": 1100
+    },
+    {
+      "label": "02-Engine-open",
+      "tool": "open_binary",
+      "call_number": 2,
+      "status": "passed",
+      "elapsed_ms": 35
+    },
+    {
+      "label": "03-Engine-session",
+      "tool": "binary_session",
+      "call_number": 3,
+      "status": "passed",
+      "elapsed_ms": 75
+    },
+    {
+      "label": "04-Class-factory-helper-0x180274ec0-pseudocode",
+      "tool": "procedure_pseudo_code",
+      "call_number": 4,
+      "status": "failed",
+      "error": "Rea exited (0)",
+      "elapsed_ms": 235
+    }
+  ],
+  "errors": [
+    "Rea exited (0)",
+    "Final closed-session state not confirmed",
+    "Memory sampler exited abnormally (1)",
+    "Memory sampler closed without confirmed empty Job",
+    "Explicit Job empty state unconfirmed; monitor close requested owned Job cleanup",
+    "Sampler exit code 1"
+  ]
+}

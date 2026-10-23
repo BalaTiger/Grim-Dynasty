@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "purpose": "One new direct Engine registration body25AE20 only, reached by NavManager::AddObject151020 tail jump. Requested vector helper030D20 is deduplicated against already saved same-hash Engine pseudo/assembly and reused; do not repeat that query or expand allocator/CRT dependencies.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-crowd-adapter-registration/14-CrowdAdapterRegistration-0x180151020-procedure_assembly.json",
+      "sha256": "d5cbc4a5441fe3d3324511e9e5713f4f7b16c4bc1ddb1968afe21e8b61baa2f4",
+      "addresses": [
+        "0x18025ae20"
+      ],
+      "source_kind": "151020 reads NavManager+10 then +8, forms entity+38 with null-preserving CMOVZ and tail JMP25AE20 at151039. Query this one new direct body; no registration result inferred."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-adapter-registration/05-CrowdAdapterRegistration-0x180030790-procedure_assembly.json",
+      "sha256": "9e26e1b78df8b4f48d1d9059b097102cb05ff59bf9e5ea35d49633125418d399",
+      "addresses": [
+        "0x180030d20"
+      ],
+      "source_kind": "Reuse only:030868 calls resize030D20 to32 elements before261CB0;0308BC calls it with returned count after nonnegative path status. Existing same-Engine helper body is pinned below, not queried again."
+    },
+    {
+      "file": "docs/object-lifecycle/rea-binary-parser-helpers/04-Parser-helper-0x180030d20-pseudocode.json",
+      "sha256": "f2ea6a519c8f8734c844e008b39e32e434e5ab509977be0435a175e0d2ea6ccd",
+      "addresses": [
+        "0x180030d20"
+      ],
+      "source_kind": "Reused existing nonempty Rea procedure_pseudo_code, Engine digest4c2e...93153. Saved vector resize body, not a new requested procedure."
+    },
+    {
+      "file": "docs/object-lifecycle/rea-binary-parser-helpers/05-Parser-helper-0x180030d20-assembly.json",
+      "sha256": "7b21fc20c1924c155982995e8e3c9357a07a46383e252a5e5b844aff5ba46f7e",
+      "addresses": [
+        "0x180030d20"
+      ],
+      "source_kind": "Reused existing nonempty Rea procedure_assembly from identical Engine. Stride4 shrink moves end only;growth may call02E0F0 then zero new span using2DDB14 and rereads pointers before end update;equal size leaves vector unchanged. No new query or allocator recursion."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Only one new evidence-bound Engine target25AE20 and8 total calls including lifecycle;030D20 existing same-hash body is reused without repeat querying.",
+    "Separate formal approval required for real execution; offline verification never opens originals or starts a backend.",
+    "Preserve384M heap,existing4.25GiB base budget plus stricter5GiB physical-and-commit launch,2GiB stop,ownership/mutex/freshness guards.",
+    "No original execution,save/cloud access,installation,security changes,broad scan or new floor/terrain/CRT expansion.",
+    "Keep actual entity/null identity and registration write/failure prefixes; do not infer full movement success or invent vector initialization."
+  ],
+  "calls": [
+    {
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "tool": "binary_session",
+      "label": "01-initial-session"
+    },
+    {
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "tool": "open_binary",
+      "label": "02-Engine-open"
+    },
+    {
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "tool": "binary_session",
+      "label": "03-Engine-session"
+    },
+    {
+      "args": {
+        "procedure": "0x18025ae20"
+      },
+      "tool": "procedure_pseudo_code",
+      "label": "04-CrowdVectorRegistration-0x18025ae20-procedure_pseudo_code"
+    },
+    {
+      "args": {
+        "procedure": "0x18025ae20"
+      },
+      "tool": "procedure_assembly",
+      "label": "05-CrowdVectorRegistration-0x18025ae20-procedure_assembly"
+    },
+    {
+      "args": {
+        "procedure": "0x18025ae20"
+      },
+      "tool": "procedure_callees",
+      "label": "06-CrowdVectorRegistration-0x18025ae20-procedure_callees"
+    },
+    {
+      "args": {},
+      "tool": "close_binary",
+      "label": "07-Engine-close"
+    },
+    {
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "tool": "binary_session",
+      "label": "08-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "What actual fields and shared identities does25AE20 register from the151020 null-preserving entity+38 argument?",
+    "What are the construction/allocation and failure prefixes; which remaining direct dependencies are truly required?",
+    "Reuse the saved030D20 body for adapter outputvector semantics rather than invent initialization or repeat the query.",
+    "No follow-up query or full registration/movement claim follows automatically from this fixed batch."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "One new fixed Engine registration target with reused vector body; unchanged384M/base4.25GiB budget plus stricter5GiB launch,2GiB stop.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "previous_sha256": "f06ef3bb91be422afa3e1eef639243be2b711c4f701da462767649e34851b0c1",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_sha256": "6d07a2a1e29565930ebd091f070128aeb6a59feaafd8e8fcdce01bb7b4a743a9",
+    "validation_file": ".tooling/r0-owned-job-terminal-candidate-20261022-attempt2/test-result.json",
+    "validation_sha256": "1ad80a494a359d16012698a0ffde723308ebe8e3d6bd06d488dd156e22a305d2",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 36,
+    "scenario_groups": 8,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "production_normalization": "Candidate header and namespace removed; isolated label removed from comment. Algorithm otherwise unchanged.",
+    "limitations": "Missing image is accepted only with positive same-handle exit evidence, never for live roles or counters. The limit is per Probe or QueryMembers operation, not a whole sampler-cycle latency guarantee. Fault tests are not an R0 reproduction or proof of root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-crowd-adapter-registration/summary.json",
+    "summary_sha256": "060b18c52b67cca84ed869e14185c791b779040c4b131cc336929ec4f0d03ac0",
+    "completed_plan_calls": 17,
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  }
+}

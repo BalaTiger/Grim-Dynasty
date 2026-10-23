@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "purpose": "Prove the existing local Rea MCP service and Ghidra backend with an actual bounded static query, then capture pseudocode, assembly and direct callees for only 0x180284200, the observed pointer-cache growth helper. One temporary import, no target execution or automatic expansion.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/object-lifecycle/rea-binary-cold-insert/05-Binary-cold-insert-0x180284160-assembly.json",
+      "evidence_id": "ev_dee00d3f2d7df9abc0b13f9dd8f01fb515188f2424e9028b751c42e8e37407c2",
+      "caller": "0x180284160",
+      "selected_calls": [
+        {
+          "call_site": "0x1802841da",
+          "selected_target": "0x180284200"
+        }
+      ]
+    },
+    {
+      "file": "docs/object-lifecycle/rea-binary-cold-insert/06-Binary-cold-insert-0x180284160-direct-callees.json",
+      "evidence_id": "ev_61c8217641b9ff13021ea5a69eac4264ae0fb33e6af6db43974a4418170b5eb8",
+      "caller": "0x180284160",
+      "selected_callees": [
+        "0x180284200"
+      ]
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_info",
+    "procedure_callees",
+    "xrefs",
+    "address_name"
+  ],
+  "execution_requirements": [
+    "Before dispatch, verify the target SHA256 and actual MCP tools/list schemas against this plan; stop on mismatch.",
+    "The calls array already contains normal-path open, close, and session checks; do not add duplicate lifecycle calls.",
+    "Use only the fixed Engine target and provider. Do not launch or load the target DLL for execution, change target bytes, query saves, or expand the tool allowlist.",
+    "Dispatch sequentially, save each raw result under its unique label, and retain provider evidence and limitations.",
+    "Stop the remaining plan on errors, denial, unavailable provider, unexpected target identity, or unavailable analysis; do not silently substitute another backend or guess callees.",
+    "If stopped while a target is open, perform only necessary close_binary cleanup when permitted, within the total call budget, and record whether closure is confirmed.",
+    "The final session result must confirm no active target; verify the original Engine SHA256 again after closure.",
+    "Calls to newly discovered direct callees are not included in this batch. Review returned addresses and scope before preparing another bounded batch.",
+    "Use one Rea/Ghidra process tree and a 512M Java heap. Require at least 6 GiB free physical memory before launch; sample every 2 seconds and stop the owned process tree below 5 GiB to leave a margin above the requested 4 GiB system reserve. This is sampled monitoring, not an OS memory reservation."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180284200"
+      },
+      "label": "04-Binary-pointer-growth-0x180284200-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180284200"
+      },
+      "label": "05-Binary-pointer-growth-0x180284200-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180284200"
+      },
+      "label": "06-Binary-pointer-growth-0x180284200-direct-callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ]
+}

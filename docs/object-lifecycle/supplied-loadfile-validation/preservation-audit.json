@@ -1,0 +1,36 @@
+{
+  "utc": "2026-10-20T08:06:02.969Z",
+  "status": "passed",
+  "prior_checkpoint": {
+    "path": ".tooling/checkpoints/offline-cache-node-complete/manifest.json",
+    "sha256": "0f5abdab8657cab39d456ab6a871fd8d474c537323d2723b7ff5d11f49c2bf45",
+    "immutable_copies_verified": 376
+  },
+  "before_checkpoint": {
+    "path": ".tooling/checkpoints/supplied-loadfile-before/manifest.json",
+    "sha256": "3c36359a0fda978e603cc12fa887096e4f6d5729fe293a4f8602079f78d24dd0",
+    "immutable_copies_verified": 53
+  },
+  "permitted_existing_changes": [
+    "docs/object-lifecycle/LIFECYCLE-PROGRESS.md",
+    "docs/object-lifecycle/PARSER-QUERY-READINESS.md",
+    "docs/object-lifecycle/POST-PARSER-DEPENDENCIES.md",
+    "src/task_items/RecordCache.cs",
+    "src/task_items/RecordCachePublicationAttempt.cs",
+    "src/task_items/RecordLoadFile.cs",
+    "src/task_items/RecordTableGetter.cs",
+    "src/task_items/build_items.ps1"
+  ],
+  "other_prior_current_files_unchanged": true,
+  "new_behavior_and_tests": [
+    "src/task_items/RecordCacheCallerPublicationAttempt.cs",
+    "src/task_items/SuppliedBinaryRecord.cs",
+    "src/task_items/RecordLoadFromSuppliedBinary.cs",
+    "src/task_items/RecordCacheCallerPublicationTests.cs",
+    "src/task_items/RecordLoadFromSuppliedBinaryTests.cs"
+  ],
+  "prior_failed_metadata_and_query_records_preserved": true,
+  "original_node_implementation_sha256": "fd4314d6c596faf2aad8de747cc30a37797223c2d7e7f98997fe3e7b96ebf027",
+  "original_node_tests_sha256": "ce8889c64012cefa5e427b2e663336665c28d6fc26059dbc68ab8c311f67c991",
+  "original_dll_or_copy_read_this_phase": false
+}

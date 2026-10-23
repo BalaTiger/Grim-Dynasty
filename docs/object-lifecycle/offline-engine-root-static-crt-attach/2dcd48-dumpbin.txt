@@ -1,0 +1,90 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Engine.dll
+
+File Type: DLL
+
+  00000001802DCD48: 48 89 5C 24 08     mov         qword ptr [rsp+8],rbx
+  00000001802DCD4D: 48 89 74 24 10     mov         qword ptr [rsp+10h],rsi
+  00000001802DCD52: 48 89 7C 24 20     mov         qword ptr [rsp+20h],rdi
+  00000001802DCD57: 41 56              push        r14
+  00000001802DCD59: 48 83 EC 20        sub         rsp,20h
+  00000001802DCD5D: 48 8B F2           mov         rsi,rdx
+  00000001802DCD60: 4C 8B F1           mov         r14,rcx
+  00000001802DCD63: 33 C9              xor         ecx,ecx
+  00000001802DCD65: E8 22 F9 FF FF     call        00000001802DC68C
+  00000001802DCD6A: 84 C0              test        al,al
+  00000001802DCD6C: 75 07              jne         00000001802DCD75
+  00000001802DCD6E: 33 C0              xor         eax,eax
+  00000001802DCD70: E9 E8 00 00 00     jmp         00000001802DCE5D
+  00000001802DCD75: E8 A2 F7 FF FF     call        00000001802DC51C
+  00000001802DCD7A: 8A D8              mov         bl,al
+  00000001802DCD7C: 88 44 24 40        mov         byte ptr [rsp+40h],al
+  00000001802DCD80: 40 B7 01           mov         dil,1
+  00000001802DCD83: 83 3D B6 3F 14 00  cmp         dword ptr [0000000180420D40h],0
+                    00
+  00000001802DCD8A: 74 0A              je          00000001802DCD96
+  00000001802DCD8C: B9 07 00 00 00     mov         ecx,7
+  00000001802DCD91: E8 5E 0A 00 00     call        00000001802DD7F4
+  00000001802DCD96: C7 05 A0 3F 14 00  mov         dword ptr [0000000180420D40h],1
+                    01 00 00 00
+  00000001802DCDA0: E8 E7 F7 FF FF     call        00000001802DC58C
+  00000001802DCDA5: 84 C0              test        al,al
+  00000001802DCDA7: 74 67              je          00000001802DCE10
+  00000001802DCDA9: E8 9E 0C 00 00     call        00000001802DDA4C
+  00000001802DCDAE: 48 8D 0D E3 0C 00  lea         rcx,[00000001802DDA98h]
+                    00
+  00000001802DCDB5: E8 26 FB FF FF     call        00000001802DC8E0
+  00000001802DCDBA: E8 4D 0C 00 00     call        00000001802DDA0C
+  00000001802DCDBF: 48 8D 0D 56 0C 00  lea         rcx,[00000001802DDA1Ch]
+                    00
+  00000001802DCDC6: E8 15 FB FF FF     call        00000001802DC8E0
+  00000001802DCDCB: E8 58 0C 00 00     call        00000001802DDA28
+  00000001802DCDD0: 48 8D 15 B1 63 02  lea         rdx,[0000000180303188h]
+                    00
+  00000001802DCDD7: 48 8D 0D 9A 63 02  lea         rcx,[0000000180303178h]
+                    00
+  00000001802DCDDE: E8 D3 0D 00 00     call        00000001802DDBB6
+  00000001802DCDE3: 85 C0              test        eax,eax
+  00000001802DCDE5: 75 29              jne         00000001802DCE10
+  00000001802DCDE7: E8 6C F7 FF FF     call        00000001802DC558
+  00000001802DCDEC: 84 C0              test        al,al
+  00000001802DCDEE: 74 20              je          00000001802DCE10
+  00000001802DCDF0: 48 8D 15 79 63 02  lea         rdx,[0000000180303170h]
+                    00
+  00000001802DCDF7: 48 8D 0D 4A 5F 02  lea         rcx,[0000000180302D48h]
+                    00
+  00000001802DCDFE: E8 AD 0D 00 00     call        00000001802DDBB0
+  00000001802DCE03: C7 05 33 3F 14 00  mov         dword ptr [0000000180420D40h],2
+                    02 00 00 00
+  00000001802DCE0D: 40 32 FF           xor         dil,dil
+  00000001802DCE10: 8A CB              mov         cl,bl
+  00000001802DCE12: E8 29 FA FF FF     call        00000001802DC840
+  00000001802DCE17: 40 84 FF           test        dil,dil
+  00000001802DCE1A: 0F 85 4E FF FF FF  jne         00000001802DCD6E
+  00000001802DCE20: E8 1F 0C 00 00     call        00000001802DDA44
+  00000001802DCE25: 48 8B D8           mov         rbx,rax
+  00000001802DCE28: 48 83 38 00        cmp         qword ptr [rax],0
+  00000001802DCE2C: 74 24              je          00000001802DCE52
+  00000001802DCE2E: 48 8B C8           mov         rcx,rax
+  00000001802DCE31: E8 6E F9 FF FF     call        00000001802DC7A4
+  00000001802DCE36: 84 C0              test        al,al
+  00000001802DCE38: 74 18              je          00000001802DCE52
+  00000001802DCE3A: 48 8B 1B           mov         rbx,qword ptr [rbx]
+  00000001802DCE3D: 48 8B CB           mov         rcx,rbx
+  00000001802DCE40: E8 7B 06 00 00     call        00000001802DD4C0
+  00000001802DCE45: 4C 8B C6           mov         r8,rsi
+  00000001802DCE48: BA 02 00 00 00     mov         edx,2
+  00000001802DCE4D: 49 8B CE           mov         rcx,r14
+  00000001802DCE50: FF D3              call        rbx
+  00000001802DCE52: FF 05 78 3F 14 00  inc         dword ptr [0000000180420DD0h]
+  00000001802DCE58: B8 01 00 00 00     mov         eax,1
+  00000001802DCE5D: 48 8B 5C 24 30     mov         rbx,qword ptr [rsp+30h]
+  00000001802DCE62: 48 8B 74 24 38     mov         rsi,qword ptr [rsp+38h]
+  00000001802DCE67: 48 8B 7C 24 48     mov         rdi,qword ptr [rsp+48h]
+  00000001802DCE6C: 48 83 C4 20        add         rsp,20h
+  00000001802DCE70: 41 5E              pop         r14
+  00000001802DCE72: C3                 ret
+
+  Summary
+
+      301000 .text

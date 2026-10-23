@@ -1,0 +1,34 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Game.dll
+
+File Type: DLL
+
+  00000001805DAF68: 48 83 EC 28        sub         rsp,28h
+  00000001805DAF6C: 85 D2              test        edx,edx
+  00000001805DAF6E: 74 39              je          00000001805DAFA9
+  00000001805DAF70: 83 EA 01           sub         edx,1
+  00000001805DAF73: 74 28              je          00000001805DAF9D
+  00000001805DAF75: 83 EA 01           sub         edx,1
+  00000001805DAF78: 74 16              je          00000001805DAF90
+  00000001805DAF7A: 83 FA 01           cmp         edx,1
+  00000001805DAF7D: 74 0A              je          00000001805DAF89
+  00000001805DAF7F: B8 01 00 00 00     mov         eax,1
+  00000001805DAF84: 48 83 C4 28        add         rsp,28h
+  00000001805DAF88: C3                 ret
+  00000001805DAF89: E8 16 FC FF FF     call        00000001805DABA4
+  00000001805DAF8E: EB 05              jmp         00000001805DAF95
+  00000001805DAF90: E8 E7 FB FF FF     call        00000001805DAB7C
+  00000001805DAF95: 0F B6 C0           movzx       eax,al
+  00000001805DAF98: 48 83 C4 28        add         rsp,28h
+  00000001805DAF9C: C3                 ret
+  00000001805DAF9D: 49 8B D0           mov         rdx,r8
+  00000001805DAFA0: 48 83 C4 28        add         rsp,28h
+  00000001805DAFA4: E9 0F 00 00 00     jmp         00000001805DAFB8
+  00000001805DAFA9: 4D 85 C0           test        r8,r8
+  00000001805DAFAC: 0F 95 C1           setne       cl
+  00000001805DAFAF: 48 83 C4 28        add         rsp,28h
+  00000001805DAFB3: E9 2C 01 00 00     jmp         00000001805DB0E4
+
+  Summary
+
+      608000 .text

@@ -1,0 +1,75 @@
+{
+  "started": "2026-10-20T04:18:34.114Z",
+  "finished": "2026-10-20T04:18:34.133Z",
+  "status": "candidate-slot-bound",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_evidence_hashes": [
+    {
+      "path": "docs/object-lifecycle/rea-binary-table-constructor/05-LoadTableBinary-constructor-0x18013f300-assembly.json",
+      "sha256": "bb3fa2e3f2bca620f66caca1894932b970d69761f63327e23982f4eea158ccb0"
+    },
+    {
+      "path": "docs/object-lifecycle/record-interface-discovery/record-interface-exports.json",
+      "sha256": "33d7527e64565cc4e56a31b3665b41e004ad9e53f93739e3a645f205cf0b1603"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "sha256": "d696e7b2141e5fe9ee6f518555d32a615ab174deabd6f676a15c299be1b7e3b1"
+    }
+  ],
+  "plan_sha256": "bccfcd24228c0461a21e6e1ee88dcf5d4f28197dc3bdea3721bbf5651d933f6e",
+  "preferred_image_base": "0x180000000",
+  "file_bytes": 4485632,
+  "slot_va": "0x180341fe8",
+  "slot_mapping": {
+    "rva": "0x341fe8",
+    "file_offset": "0x340fe8",
+    "section": ".rdata",
+    "section_rva": "0x302000",
+    "section_raw_size": 1140736,
+    "section_characteristics": "0x40000040",
+    "executable": false
+  },
+  "slot_bytes": "10f5138001000000",
+  "candidate_preferred_va": "0x18013f510",
+  "candidate_mapping": {
+    "rva": "0x13f510",
+    "file_offset": "0x13e910",
+    "section": ".text",
+    "section_rva": "0x1000",
+    "section_raw_size": 3148800,
+    "section_characteristics": "0x60000020",
+    "executable": true
+  },
+  "matching_saved_exports": [],
+  "actual_load_file_target_proven": false,
+  "target_function_bytes": 0,
+  "target_loaded_or_executed": false,
+  "backend_launches": 0,
+  "hash_chunk_bytes": 65536,
+  "process_resource_usage": {
+    "userCPUTime": 15000,
+    "systemCPUTime": 31000,
+    "maxRSS": 41096,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 10824,
+    "swappedOut": 0,
+    "fsRead": 149,
+    "fsWrite": 0,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  },
+  "limitations": [
+    "Preferred on-disk address only; section membership does not establish a function entry or Deserialize identity.",
+    "The post-vptr-write helper remains unanalysed; returned vptr preservation is not proven.",
+    "Only the fixed slot is decoded. File-wide hashing and PE metadata reads are included; no candidate code bytes, other slots or new export scan were read."
+  ]
+}

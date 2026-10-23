@@ -1,0 +1,85 @@
+{
+  "schema": "actor-engine-context-evidence-review-v1",
+  "review": "Root full reader review; independent build_portability decoded/cached instruction review",
+  "reader_tool_chunk": "3029e0",
+  "reader_attempts": 1,
+  "source_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "semantic_code_bytes": 248,
+  "semantic_read_operations": 5,
+  "decoded_instructions": 51,
+  "dumpbin_invocations": 5,
+  "new_metadata_bytes": 0,
+  "new_data_bytes": 0,
+  "source_hash_preserved": true,
+  "source_stat_stable": true,
+  "source_closed": true,
+  "tool_hash_preserved": true,
+  "coverage": true,
+  "global_slot_binding": "Cached Initialize outgoing READ references bind421428 to ?gEngine@GAME@@3PEAVEngine@1@EA; no new EAT lookup",
+  "published_global_writer": "Unknown: neither selected Engine body writes the slot; saved host callsites not located",
+  "field_sources": [
+    "Ctor72C26/72C34/72C3B zero668/678/680 on existing valid object",
+    "74DAC Server ctor return RAX ->74DB2 field678",
+    "74DCD Stub ctor return RAX ->74DD3 field680",
+    "After three auxiliary constructors,74E3D reload680 ->74E44 field668"
+  ],
+  "projection_interval": "74D98..74E4B exclusive, five pairs; read window74D77 also contains Client pair deliberately outside model",
+  "limitations": [
+    "Own field subset, no full Engine constructor/Initialize",
+    "Callback assumptions only for these three fields; auxiliary fields690/698/6A0 are not projected",
+    "No native callee execution or body follow, no loaded-runtime observation",
+    "Disjoint ctor byte windows rely on cached full body for intervening flow",
+    "Own synchronized sampling contract, no native thread safety claim"
+  ],
+  "warning_review": {
+    "file": "src/task_items/ActorSynchronizationInitializationTests.cs",
+    "warning": "CS0675",
+    "line": 139,
+    "analysis": "Loop i is0..63; (ulong)i and (ulong)(uint)i equal throughout; cookie low6 bits zero. No sign extension difference in this domain.",
+    "source_changed": false,
+    "suite_rerun": false
+  },
+  "hash_pins": [
+    {
+      "path": "tools/static_analysis/read_actor_engine_context.mjs",
+      "bytes": 19064,
+      "sha256": "d0af3d449d378efdac5bb2d3574c7f3a41ca98d47d0ea5c082c3f1aef889adc2"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-engine-context/inspection.json",
+      "bytes": 16015,
+      "sha256": "179363e0e9f9e549a99eca8383e97c02a190bae8d501f3dc3cbe7c95f37e9b55"
+    },
+    {
+      "path": "docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json",
+      "bytes": 107401,
+      "sha256": "ab597744f4a4cf617c6227fe7a50100e5b03733aa48dda43a730f65509bdca26"
+    },
+    {
+      "path": "docs/phase-1/round-4/initialization-locations.json",
+      "bytes": 5771,
+      "sha256": "bdc0e1838162463d18fce89dfea20fe6baf073d889db757e62c59ae3ed8faf1e"
+    },
+    {
+      "path": "docs/phase-1/round-4/call-sequence.json",
+      "bytes": 6092,
+      "sha256": "4273e2201f4d01ded0ec626c50296d3a03f18df7f58d7ad453bbff6ca3eb4021"
+    },
+    {
+      "path": "docs/phase-1/round-4/main-entry-metadata.json",
+      "bytes": 1402,
+      "sha256": "4034da4f096be9ab29293c35363e8779d1b03e6ec33b384b190e2fd7b6432013"
+    },
+    {
+      "path": "docs/phase-1/round-4/INITIALIZATION-GO-NOGO.md",
+      "bytes": 11480,
+      "sha256": "2db81d99ac1c9d242ad419420a620ce8d28b30f3dfa27243f1bc05e611186b41"
+    },
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "bytes": 546640,
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    }
+  ]
+}

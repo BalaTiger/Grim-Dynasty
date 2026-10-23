@@ -1,0 +1,518 @@
+{
+  "schema": "grim-dynasty-fixed-item-subobjects-boundary-v1",
+  "status": "gap-without-exact-begin",
+  "started_utc": "2026-10-21T06:26:20.920Z",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "expected_bytes": 11385856,
+  "requested_rva": "0x410e0",
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-item-factory-dependency-boundaries/metadata.json",
+      "sha256": "59265ca3af388f48af8da9a66bee439949fa8cfeca5fe1cc40a066998ad46d29"
+    },
+    {
+      "path": "docs/rewards/rea-inventory-add/Item-constructor-primary-table-assembly.json",
+      "sha256": "7a078d11495b5b7c10a07d7b6309c9d633f8ec39dfc444e5f0decfbd5efe1a3f"
+    }
+  ],
+  "caller_evidence_id": "ev_dc74728b755b7c7439ee4b8d39c086823605e9c076f29830caff716706ea11ee",
+  "caller_instructions": [
+    "0x1803236e8: LEA RCX, [RDI + 0x538]",
+    "0x1803236ef: CALL 0x1800410e0",
+    "0x1803236f5: LEA RCX, [RDI + 0x6c8]",
+    "0x1803236fc: CALL 0x1800410e0"
+  ],
+  "pe": {
+    "pe_file_offset": 272,
+    "image_base": "0x180000000",
+    "image_size": 11427840,
+    "sections": [
+      {
+        "name": ".text",
+        "rva": 4096,
+        "raw_size": 6320640,
+        "raw_offset": 1024,
+        "characteristics": 1610612768
+      },
+      {
+        "name": ".rdata",
+        "rva": 6328320,
+        "raw_size": 4517888,
+        "raw_offset": 6321664,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".data",
+        "rva": 10846208,
+        "raw_size": 56832,
+        "raw_offset": 10839552,
+        "characteristics": 3221225536
+      },
+      {
+        "name": ".pdata",
+        "rva": 10919936,
+        "raw_size": 267776,
+        "raw_offset": 10896384,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".gfids",
+        "rva": 11190272,
+        "raw_size": 512,
+        "raw_offset": 11164160,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".tls",
+        "rva": 11194368,
+        "raw_size": 512,
+        "raw_offset": 11164672,
+        "characteristics": 3221225536
+      },
+      {
+        "name": "_RDATA",
+        "rva": 11198464,
+        "raw_size": 2560,
+        "raw_offset": 11165184,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".rsrc",
+        "rva": 11202560,
+        "raw_size": 512,
+        "raw_offset": 11167744,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".reloc",
+        "rva": 11206656,
+        "raw_size": 217600,
+        "raw_offset": 11168256,
+        "characteristics": 1107296320
+      }
+    ],
+    "exception_rva": "0xa6a000",
+    "exception_file_offset": 10896384,
+    "exception_bytes": 267516,
+    "entry_count": 22293
+  },
+  "limits": {
+    "metadata_bytes": 512,
+    "metadata_read_operations": 40,
+    "metadata_single_read_bytes": 12,
+    "search_steps": 32,
+    "fingerprint_chunk_bytes": 65536,
+    "proof_bytes_each": 262144,
+    "report_bytes": 131072
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "child_process_started": false,
+  "backend_started": false,
+  "code_bytes_read": 0,
+  "unwind_body_bytes_read": 0,
+  "new_header_bytes_read": 0,
+  "target_copy_created": false,
+  "whole_exception_table_scanned": false,
+  "metadata_bytes": 144,
+  "metadata_read_operations": 12,
+  "metadata_reads": [
+    {
+      "index": 1393,
+      "file_offset": 10913100,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "90c00100acc1010040fb7d00"
+    },
+    {
+      "index": 2090,
+      "file_offset": 10921464,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "60fa03000bfb030070ea7d00"
+    },
+    {
+      "index": 2438,
+      "file_offset": 10925640,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "50460500484e050010707e00"
+    },
+    {
+      "index": 2264,
+      "file_offset": 10923552,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "e07a04006d7b040030587e00"
+    },
+    {
+      "index": 2177,
+      "file_offset": 10922508,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "f01d04003c1e040024ec7d00"
+    },
+    {
+      "index": 2134,
+      "file_offset": 10921992,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "520c04005c0c0400444a7e00"
+    },
+    {
+      "index": 2156,
+      "file_offset": 10922256,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "a01304001214040094ea7d00"
+    },
+    {
+      "index": 2145,
+      "file_offset": 10922124,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "c00f0400f40f0400b8fa7d00"
+    },
+    {
+      "index": 2151,
+      "file_offset": 10922196,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "401204008d120400dc4b7e00"
+    },
+    {
+      "index": 2148,
+      "file_offset": 10922160,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "55100400bc100400b84b7e00"
+    },
+    {
+      "index": 2150,
+      "file_offset": 10922184,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "001204004012040090007e00"
+    },
+    {
+      "index": 2149,
+      "file_offset": 10922172,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "bc100400c7100400cc4b7e00"
+    }
+  ],
+  "cached_entries_available": 27,
+  "cached_exact_available": false,
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "bytes": 11385856,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "bytes": 11385856,
+      "chunk_bytes": 65536
+    }
+  ],
+  "probes": [
+    {
+      "index": 11146,
+      "entry_rva": "0xa8aa78",
+      "file_offset": 11030136,
+      "begin": 3151344,
+      "end": 3151402,
+      "unwind": 8254000,
+      "begin_rva": "0x3015f0",
+      "end_rva_exclusive": "0x30162a",
+      "unwind_rva": "0x7df230",
+      "raw_hex": "f01530002a16300030f27d00",
+      "provenance": "cached-source-0"
+    },
+    {
+      "index": 5573,
+      "entry_rva": "0xa7a53c",
+      "file_offset": 10963260,
+      "begin": 1212452,
+      "end": 1212673,
+      "unwind": 8389432,
+      "begin_rva": "0x128024",
+      "end_rva_exclusive": "0x128101",
+      "unwind_rva": "0x800338",
+      "raw_hex": "248012000181120038038000",
+      "provenance": "cached-source-0"
+    },
+    {
+      "index": 2786,
+      "entry_rva": "0xa72298",
+      "file_offset": 10929816,
+      "begin": 445280,
+      "end": 445341,
+      "unwind": 8252052,
+      "begin_rva": "0x6cb60",
+      "end_rva_exclusive": "0x6cb9d",
+      "unwind_rva": "0x7dea94",
+      "raw_hex": "60cb06009dcb060094ea7d00",
+      "provenance": "cached-source-0"
+    },
+    {
+      "index": 1393,
+      "entry_rva": "0xa6e14c",
+      "file_offset": 10913100,
+      "begin": 114832,
+      "end": 115116,
+      "unwind": 8256320,
+      "begin_rva": "0x1c090",
+      "end_rva_exclusive": "0x1c1ac",
+      "unwind_rva": "0x7dfb40",
+      "raw_hex": "90c00100acc1010040fb7d00",
+      "provenance": "new-read"
+    },
+    {
+      "index": 2090,
+      "entry_rva": "0xa701f8",
+      "file_offset": 10921464,
+      "begin": 260704,
+      "end": 260875,
+      "unwind": 8252016,
+      "begin_rva": "0x3fa60",
+      "end_rva_exclusive": "0x3fb0b",
+      "unwind_rva": "0x7dea70",
+      "raw_hex": "60fa03000bfb030070ea7d00",
+      "provenance": "new-read"
+    },
+    {
+      "index": 2438,
+      "entry_rva": "0xa71248",
+      "file_offset": 10925640,
+      "begin": 345680,
+      "end": 347720,
+      "unwind": 8286224,
+      "begin_rva": "0x54650",
+      "end_rva_exclusive": "0x54e48",
+      "unwind_rva": "0x7e7010",
+      "raw_hex": "50460500484e050010707e00",
+      "provenance": "new-read"
+    },
+    {
+      "index": 2264,
+      "entry_rva": "0xa70a20",
+      "file_offset": 10923552,
+      "begin": 293600,
+      "end": 293741,
+      "unwind": 8280112,
+      "begin_rva": "0x47ae0",
+      "end_rva_exclusive": "0x47b6d",
+      "unwind_rva": "0x7e5830",
+      "raw_hex": "e07a04006d7b040030587e00",
+      "provenance": "new-read"
+    },
+    {
+      "index": 2177,
+      "entry_rva": "0xa7060c",
+      "file_offset": 10922508,
+      "begin": 269808,
+      "end": 269884,
+      "unwind": 8252452,
+      "begin_rva": "0x41df0",
+      "end_rva_exclusive": "0x41e3c",
+      "unwind_rva": "0x7dec24",
+      "raw_hex": "f01d04003c1e040024ec7d00",
+      "provenance": "new-read"
+    },
+    {
+      "index": 2134,
+      "entry_rva": "0xa70408",
+      "file_offset": 10921992,
+      "begin": 265298,
+      "end": 265308,
+      "unwind": 8276548,
+      "begin_rva": "0x40c52",
+      "end_rva_exclusive": "0x40c5c",
+      "unwind_rva": "0x7e4a44",
+      "raw_hex": "520c04005c0c0400444a7e00",
+      "provenance": "new-read"
+    },
+    {
+      "index": 2156,
+      "entry_rva": "0xa70510",
+      "file_offset": 10922256,
+      "begin": 267168,
+      "end": 267282,
+      "unwind": 8252052,
+      "begin_rva": "0x413a0",
+      "end_rva_exclusive": "0x41412",
+      "unwind_rva": "0x7dea94",
+      "raw_hex": "a01304001214040094ea7d00",
+      "provenance": "new-read"
+    },
+    {
+      "index": 2145,
+      "entry_rva": "0xa7048c",
+      "file_offset": 10922124,
+      "begin": 266176,
+      "end": 266228,
+      "unwind": 8256184,
+      "begin_rva": "0x40fc0",
+      "end_rva_exclusive": "0x40ff4",
+      "unwind_rva": "0x7dfab8",
+      "raw_hex": "c00f0400f40f0400b8fa7d00",
+      "provenance": "new-read"
+    },
+    {
+      "index": 2151,
+      "entry_rva": "0xa704d4",
+      "file_offset": 10922196,
+      "begin": 266816,
+      "end": 266893,
+      "unwind": 8276956,
+      "begin_rva": "0x41240",
+      "end_rva_exclusive": "0x4128d",
+      "unwind_rva": "0x7e4bdc",
+      "raw_hex": "401204008d120400dc4b7e00",
+      "provenance": "new-read"
+    },
+    {
+      "index": 2148,
+      "entry_rva": "0xa704b0",
+      "file_offset": 10922160,
+      "begin": 266325,
+      "end": 266428,
+      "unwind": 8276920,
+      "begin_rva": "0x41055",
+      "end_rva_exclusive": "0x410bc",
+      "unwind_rva": "0x7e4bb8",
+      "raw_hex": "55100400bc100400b84b7e00",
+      "provenance": "new-read"
+    },
+    {
+      "index": 2150,
+      "entry_rva": "0xa704c8",
+      "file_offset": 10922184,
+      "begin": 266752,
+      "end": 266816,
+      "unwind": 8257680,
+      "begin_rva": "0x41200",
+      "end_rva_exclusive": "0x41240",
+      "unwind_rva": "0x7e0090",
+      "raw_hex": "001204004012040090007e00",
+      "provenance": "new-read"
+    },
+    {
+      "index": 2149,
+      "entry_rva": "0xa704bc",
+      "file_offset": 10922172,
+      "begin": 266428,
+      "end": 266439,
+      "unwind": 8276940,
+      "begin_rva": "0x410bc",
+      "end_rva_exclusive": "0x410c7",
+      "unwind_rva": "0x7e4bcc",
+      "raw_hex": "bc100400c7100400cc4b7e00",
+      "provenance": "new-read"
+    }
+  ],
+  "search_steps": 15,
+  "exact_boundary": null,
+  "limitations": [
+    "Only Game RVA0410E0 is selected by two saved Item constructor calls. Existing same-identity PE and raw .pdata entries are reused; no new header read.",
+    "Binary search has at most32 steps. Only a missing lower-bound/current entry and one necessary predecessor may supplement the search; no extra successor or neighboring body is selected.",
+    "A missing exact begin is reported as containing/gap/before-first/after-last, never as permission to choose nearby code. No .pdata unwind payload or function code is read.",
+    "Two same-handle64KiB streaming fingerprints are separate from metadata budgets. Stable file stats/hash are not an atomic snapshot or proof of runtime state."
+  ],
+  "stat_before": {
+    "size": 11385856,
+    "dev": 2562469142,
+    "ino": 1970324837085125,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "lookup_method": "bounded-lower-bound",
+  "lower_bound_index": 2150,
+  "lower_bound_entry": {
+    "index": 2150,
+    "entry_rva": "0xa704c8",
+    "file_offset": 10922184,
+    "begin": 266752,
+    "end": 266816,
+    "unwind": 8257680,
+    "begin_rva": "0x41200",
+    "end_rva_exclusive": "0x41240",
+    "unwind_rva": "0x7e0090",
+    "raw_hex": "001204004012040090007e00",
+    "provenance": "new-read"
+  },
+  "previous_entry": {
+    "index": 2149,
+    "entry_rva": "0xa704bc",
+    "file_offset": 10922172,
+    "begin": 266428,
+    "end": 266439,
+    "unwind": 8276940,
+    "begin_rva": "0x410bc",
+    "end_rva_exclusive": "0x410c7",
+    "unwind_rva": "0x7e4bcc",
+    "raw_hex": "bc100400c7100400cc4b7e00",
+    "provenance": "new-read"
+  },
+  "selected_code_range": null,
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "stat_after": {
+    "size": 11385856,
+    "dev": 2562469142,
+    "ino": 1970324837085125,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "source_stat_stable": true,
+  "source_handle_closed": true,
+  "source_hash_preserved": true,
+  "reused_entries": [
+    {
+      "index": 2786,
+      "entry_rva": "0xa72298",
+      "file_offset": 10929816,
+      "begin": 445280,
+      "end": 445341,
+      "unwind": 8252052,
+      "begin_rva": "0x6cb60",
+      "end_rva_exclusive": "0x6cb9d",
+      "unwind_rva": "0x7dea94",
+      "raw_hex": "60cb06009dcb060094ea7d00",
+      "provenance": "cached-source-0"
+    },
+    {
+      "index": 5573,
+      "entry_rva": "0xa7a53c",
+      "file_offset": 10963260,
+      "begin": 1212452,
+      "end": 1212673,
+      "unwind": 8389432,
+      "begin_rva": "0x128024",
+      "end_rva_exclusive": "0x128101",
+      "unwind_rva": "0x800338",
+      "raw_hex": "248012000181120038038000",
+      "provenance": "cached-source-0"
+    },
+    {
+      "index": 11146,
+      "entry_rva": "0xa8aa78",
+      "file_offset": 11030136,
+      "begin": 3151344,
+      "end": 3151402,
+      "unwind": 8254000,
+      "begin_rva": "0x3015f0",
+      "end_rva_exclusive": "0x30162a",
+      "unwind_rva": "0x7df230",
+      "raw_hex": "f01530002a16300030f27d00",
+      "provenance": "cached-source-0"
+    }
+  ],
+  "failures": [],
+  "finished_utc": "2026-10-21T06:26:20.942Z"
+}

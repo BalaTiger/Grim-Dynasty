@@ -1,0 +1,245 @@
+{
+  "schema": "grim-dynasty.fixed-ground-geometry-bindings.v1",
+  "started_utc": "2026-10-23T04:56:57.723Z",
+  "script_sha256": "98de8d17e3793a2e87c04cda880ff9cb8799eed5260a616db2cf053a3233a299",
+  "plan_sha256": "8780067c605fb50e7b8df743600d9ec8b6fd91834684202029d9e6fb94e3655a",
+  "source_pins": [
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "ground_constructor",
+      "path": "docs/reverse-client/r1-engine-spatial-ground/14-EngineSpatialGround-0x1801dda90-procedure_assembly.json",
+      "sha256": "858c4ee47d193164648b7fb068b0dfb2772dc6cd35347055d736d2584388a629"
+    },
+    {
+      "key": "block_constructor",
+      "path": "docs/reverse-client/r1-ground-floor-geometry/11-GroundFloorGeometry-0x1801d0e20-procedure_assembly.json",
+      "sha256": "45b7816c25261a5cfd6b313cc67031527dfe22416b015723bdd8912e8c2e0b7b"
+    },
+    {
+      "key": "block_bounds",
+      "path": "docs/reverse-client/r1-ground-floor-geometry/08-GroundFloorGeometry-0x1801d0fc0-procedure_assembly.json",
+      "sha256": "68aa0e88dbeb9f18b6dc5b2d644affe8e8fee7848ac8bb9674e82b7783b2ff07"
+    },
+    {
+      "key": "intersection",
+      "path": "docs/reverse-client/r1-ground-floor-geometry/05-GroundFloorGeometry-0x1801d0100-procedure_assembly.json",
+      "sha256": "e6208532b42d939df7051d4547f1cd65dbfa24b4c262d7a7450f1ed0313a5b50"
+    },
+    {
+      "key": "construct_blocks",
+      "path": "docs/reverse-client/r1-ground-blocks-and-node-destroy/14-GroundBlocksNodeDestroy-0x1801ce910-procedure_assembly.json",
+      "sha256": "c409e0f20684d60e076ed27861ebeece894cfdcc37808c4eb4c4b32a05f98dcf"
+    }
+  ],
+  "code_bytes": 0,
+  "metadata_bytes": 0,
+  "data_bytes": 52,
+  "data_operations": 6,
+  "new_PE_header_bytes": 0,
+  "whole_table_bytes": 0,
+  "target_body_bytes": 0,
+  "original_loaded_or_executed": false,
+  "subprocesses": 0,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "reads": [
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x343c60",
+          "file_offset": 3419232,
+          "section": ".rdata",
+          "bytes": 8,
+          "raw_hex": "80e81d8001000000"
+        },
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x343908",
+          "file_offset": 3418376,
+          "section": ".rdata",
+          "bytes": 8,
+          "raw_hex": "30131d8001000000"
+        },
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x343910",
+          "file_offset": 3418384,
+          "section": ".rdata",
+          "bytes": 8,
+          "raw_hex": "80ce008001000000"
+        },
+        {
+          "kind": "fixed-primary-vtable-slot",
+          "rva": "0x343940",
+          "file_offset": 3418432,
+          "section": ".rdata",
+          "bytes": 8,
+          "raw_hex": "f0121d8001000000"
+        },
+        {
+          "kind": "fixed-dword-MOVSS-operand",
+          "rva": "0x338458",
+          "file_offset": 3372120,
+          "section": ".rdata",
+          "bytes": 4,
+          "raw_hex": "0000807f"
+        },
+        {
+          "kind": "fixed-xmmword-XORPS-operand",
+          "rva": "0x34c450",
+          "file_offset": 3454032,
+          "section": ".rdata",
+          "bytes": 16,
+          "raw_hex": "00000080000000800000008000000080"
+        }
+      ],
+      "hash_bytes": 8971264,
+      "closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "stable": true
+    }
+  ],
+  "values": [
+    {
+      "key": "terrain_sample",
+      "table_rva": "0x343b60",
+      "slot_offset": "0x100",
+      "rva": "0x343c60",
+      "bytes": 8,
+      "constructor": "0x1801dda90",
+      "callsite": "0x1801d1064",
+      "kind": "fixed-primary-vtable-slot",
+      "file_offset": 3419232,
+      "section": ".rdata",
+      "raw_hex": "80e81d8001000000",
+      "target_va": "0x1801de880",
+      "candidate_rva": "0x1de880",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false,
+      "table_extent_verified": false,
+      "subsequent_overwrites_excluded": false,
+      "candidate_code_section": ".text"
+    },
+    {
+      "key": "block_intersection",
+      "table_rva": "0x3438f8",
+      "slot_offset": "0x10",
+      "rva": "0x343908",
+      "bytes": 8,
+      "constructor": "0x1801d0e20",
+      "callsite": "0x1801d0193",
+      "kind": "fixed-primary-vtable-slot",
+      "file_offset": 3418376,
+      "section": ".rdata",
+      "raw_hex": "30131d8001000000",
+      "target_va": "0x1801d1330",
+      "candidate_rva": "0x1d1330",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false,
+      "table_extent_verified": false,
+      "subsequent_overwrites_excluded": false,
+      "candidate_code_section": ".text"
+    },
+    {
+      "key": "block_predicate",
+      "table_rva": "0x3438f8",
+      "slot_offset": "0x18",
+      "rva": "0x343910",
+      "bytes": 8,
+      "constructor": "0x1801d0e20",
+      "callsite": "0x1801d0147",
+      "kind": "fixed-primary-vtable-slot",
+      "file_offset": 3418384,
+      "section": ".rdata",
+      "raw_hex": "80ce008001000000",
+      "target_va": "0x18000ce80",
+      "candidate_rva": "0xce80",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false,
+      "table_extent_verified": false,
+      "subsequent_overwrites_excluded": false,
+      "candidate_code_section": ".text"
+    },
+    {
+      "key": "block_postconstruct",
+      "table_rva": "0x3438f8",
+      "slot_offset": "0x48",
+      "rva": "0x343940",
+      "bytes": 8,
+      "constructor": "0x1801d0e20",
+      "callsite": "0x1801cea5b",
+      "kind": "fixed-primary-vtable-slot",
+      "file_offset": 3418432,
+      "section": ".rdata",
+      "raw_hex": "f0121d8001000000",
+      "target_va": "0x1801d12f0",
+      "candidate_rva": "0x1d12f0",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false,
+      "table_extent_verified": false,
+      "subsequent_overwrites_excluded": false,
+      "candidate_code_section": ".text"
+    }
+  ],
+  "constants": [
+    {
+      "key": "bounds_initial_scalar",
+      "rva": "0x338458",
+      "bytes": 4,
+      "instruction": "0x1801d1005: MOVSS XMM7, dword ptr [0x180338458]",
+      "kind": "fixed-dword-MOVSS-operand",
+      "file_offset": 3372120,
+      "section": ".rdata",
+      "raw_hex": "0000807f",
+      "uint32_lanes_hex": [
+        "0x7f800000"
+      ],
+      "reused": false,
+      "loaded_value_observed": false
+    },
+    {
+      "key": "bounds_xor_mask",
+      "rva": "0x34c450",
+      "bytes": 16,
+      "instruction": "0x1801d1010: XORPS XMM6, xmmword ptr [0x18034c450]",
+      "kind": "fixed-xmmword-XORPS-operand",
+      "file_offset": 3454032,
+      "section": ".rdata",
+      "raw_hex": "00000080000000800000008000000080",
+      "uint32_lanes_hex": [
+        "0x80000000",
+        "0x80000000",
+        "0x80000000",
+        "0x80000000"
+      ],
+      "reused": false,
+      "loaded_value_observed": false
+    }
+  ],
+  "disk_observations_complete": true,
+  "unsupported": [],
+  "failures": [],
+  "limitations": [
+    "Four primary-table disk address candidates only; table extent,later overwrites,loaded dispatch,ABI and geometry behavior remain unverified.",
+    "The entire16B mask is observed because1D1010 uses an xmmword memory operand; preserve all lanes,do not assume upper lanes from earlier4B evidence.",
+    "Whole-file hash streams are separate from52B semantic reads. Before/after checks are not atomic snapshots.",
+    "Node path checks do not identify every Windows reparse tag; separate Attributes preflight remains required."
+  ],
+  "proofs_verified": true,
+  "finished_utc": "2026-10-23T04:56:57.737Z",
+  "status": "passed"
+}

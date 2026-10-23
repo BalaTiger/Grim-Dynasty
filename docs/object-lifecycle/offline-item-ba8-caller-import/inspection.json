@@ -1,0 +1,114 @@
+{
+  "schema": "item-ba8-caller-and-import-v1",
+  "status": "fixed-caller-and-engine-import-verified",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "sources": [
+    [
+      "docs/rewards/rea-inventory-add/Item-constructor-primary-table-assembly.json",
+      "7a078d11495b5b7c10a07d7b6309c9d633f8ec39dfc444e5f0decfbd5efe1a3f"
+    ],
+    [
+      "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    ],
+    [
+      "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    ]
+  ],
+  "limits": {
+    "code_bytes": 173,
+    "metadata_bytes": 37,
+    "read_operations": 3,
+    "dumpbin_calls": 1,
+    "tiny_pe_bytes": 3072,
+    "hash_buffer": 65536
+  },
+  "cached_binding": {
+    "descriptor": {
+      "rva": "0xa4297c",
+      "file_offset": 10751868,
+      "bytes": "c02aa4000000000000000000a66aa50000906000"
+    },
+    "lookup_index": 228,
+    "lookup_raw": "3287a40000000000",
+    "dll": {
+      "rva": "0xa56aa6",
+      "file_offset": 10834086,
+      "bytes": "456e67696e652e646c6c00",
+      "text": "Engine.dll"
+    }
+  },
+  "reads": [
+    {
+      "rva": "0x323811",
+      "file_offset": 3288081,
+      "bytes": 173,
+      "kind": "caller",
+      "hex": "9089af200b000066c787240b00000000c687260b0000004889af280b00004889af300b00004889af380b000066c787400b0000010189af440b00004889af480b00004889af500b00004889af580b000066c787600b00000100c687620b0000004889af700b00004889af780b00004889af800b000066c787880b000000004889af900b0000c687980b0000004889afa00b0000488d8fa80b0000ff156f5e2e00488d8fc00b0000ff15625e2e00"
+    },
+    {
+      "rva": "0x609720",
+      "file_offset": 6323488,
+      "bytes": 8,
+      "kind": "iat",
+      "hex": "3287a40000000000"
+    },
+    {
+      "rva": "0xa48732",
+      "file_offset": 10775858,
+      "bytes": 29,
+      "kind": "hint-and-name",
+      "hex": "35023f3f30576f726c64566563334047414d4540405145414140585a00"
+    }
+  ],
+  "original_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "callees_followed": 0,
+  "failures": [],
+  "script_sha256": "0e0dee379fa34286acb6ac6d8c6af50df5222daf608fc50afd9e1c15f9462943",
+  "tool_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "binding": {
+    "iat_rva": "0x609720",
+    "dll": "Engine.dll",
+    "symbol": "??0WorldVec3@GAME@@QEAA@XZ",
+    "hint": 565,
+    "hint_name_rva": "0xa48732"
+  },
+  "synthetic": {
+    "bytes": 3072,
+    "sha256": "9eb13a21fb666cd107ae3b85456abffd79540b83698467b5f2b120b61d5246c4",
+    "never_executed": true
+  },
+  "command_arguments": [
+    "/NOLOGO",
+    "/NOPDB",
+    "/ERRORREPORT:NONE",
+    "/DISASM:BYTES",
+    "/RANGE:0x180323811,0x1803238bd",
+    "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-item-ba8-caller-import-temp\\323811-caller.inspect.dll"
+  ],
+  "tool_exit": 0,
+  "calls": [
+    {
+      "address": "0x1803238ab",
+      "bytes": "ff156f5e2e00",
+      "instruction": "call        qword ptr [0000000180609720h]"
+    },
+    {
+      "address": "0x1803238b8",
+      "bytes": "ff15625e2e00",
+      "instruction": "call        qword ptr [0000000180609720h]"
+    }
+  ],
+  "instructions": 25,
+  "byte_coverage_verified": true,
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "source_closed": true,
+  "tool_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-21T07:38:31.110Z"
+}

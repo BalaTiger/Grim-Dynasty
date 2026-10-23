@@ -1,0 +1,118 @@
+{
+  "utc": "2026-10-20T05:07:43.231Z",
+  "status": "stopped-awaiting-strict-startup-attribution-and-java-role-fix",
+  "blocked_action": "procedure_pseudo_code for Engine.dll 0x18013F510, fixed-plan call 4",
+  "target_original_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "planned_calls": 8,
+  "sent_calls": 4,
+  "completed_calls": 3,
+  "parser_evidence_received": false,
+  "unknown_process": {
+    "pid": 24988,
+    "parent_pid": 23716,
+    "name": "java.exe",
+    "ownership": "unknown",
+    "creation_identity_retained": false,
+    "command_role_retained": false
+  },
+  "explanation": "A short-lived helper/intermediate parent is plausible from launcher source, but cannot establish ownership of this historical PID.",
+  "launch_configuration": {
+    "heap": "384M",
+    "launch_both_gib": 4.25,
+    "stop_either_below_gib": 2,
+    "main_heap_observed": false
+  },
+  "guard_stop_reason": "Unattributed Java; neither resource counter was below the stop threshold.",
+  "minimum_sampled_physical_gib": 11.239559173583984,
+  "minimum_sampled_commit_headroom_gib": 23.580101013183594,
+  "installed_member_identity_query_available": false,
+  "required_before_retry": [
+    "Strict descendant identity evidence survives short-lived intermediate parents and rejects PID reuse, unrelated same-path Java and missing evidence.",
+    "Only after ownership is proven, distinguish fixed launch helpers from the main analysis JVM; count all owned process memory and preserve main Xmx384M validation.",
+    "Independently test attribution and role cases absent from the historical 27-test suite.",
+    "Reconfirm heavy-window handover and fresh dual-resource counters; use a new evidence directory and the same bounded target plan."
+  ],
+  "retry_attempted": false,
+  "production_and_guard_code_changed_since_attempt": false,
+  "permission_denied": false,
+  "approval_pending": false,
+  "normal_mcp_close_confirmed": false,
+  "owned_backend_exit_confirmed": true,
+  "runtime_cleanup_confirmed": true,
+  "current_runtime_files": 0,
+  "behavior_tests_rerun": false,
+  "sources": [
+    {
+      "path": ".tooling/rea/node_modules/rea-agents/dist/ghidra/GhidraLauncher.js",
+      "lines": [
+        150,
+        193
+      ],
+      "claim": "Java launch inspection precedes Windows batch launch.",
+      "sha256": "739676ebc64bd7b23ed1bc4a9395d596efe7bf8080eb67af1ff3e00d86609a67"
+    },
+    {
+      "path": ".tooling/rea/node_modules/rea-agents/dist/ghidra/GhidraJavaLaunch.js",
+      "lines": [
+        74,
+        120
+      ],
+      "claim": "LaunchSupport envvars/vmargs helper invocations do not receive the main JVM heap argument here.",
+      "sha256": "9b267c37f14faeb1cb3f01afe81fd29e445684cfef86af2150e3f56e2115ff95"
+    },
+    {
+      "path": ".tooling/ghidra/ghidra_12.1.4_PUBLIC/support/launch.bat",
+      "lines": [
+        133,
+        189
+      ],
+      "claim": "Version and LaunchSupport probes occur before MAXMEM is added for the main launch.",
+      "sha256": "4b3c3a6a9b0301752e9911ec3baa616b4ca8ad20361f9e0e07f57684ceb89434"
+    },
+    {
+      "path": "tools/static_analysis/measure_owned_process_memory.ps1",
+      "lines": [
+        46,
+        57
+      ],
+      "claim": "Descendant admission requires a matching known parent in the same CIM snapshot.",
+      "sha256": "133e68ab06b0d7d26c9b09200a1b2bb93b340b180f148a0b0a9465705efb144a"
+    },
+    {
+      "path": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "lines": [
+        60,
+        64
+      ],
+      "claim": "Current heap guard requires every observed owned Java process to carry the fixed Xmx switch.",
+      "sha256": "922677e65362e724db0a021df0c5db528f974552208d05082ce80cebf7e7db12"
+    },
+    {
+      "path": ".tooling/rea/node_modules/rea-agents/dist/windows/WindowsOwnedProcess.js",
+      "lines": [
+        5,
+        28
+      ],
+      "claim": "Exposed launch/poll schemas have leader identity and active count, not member PID/creation identities.",
+      "sha256": "56293bd6b31314a9d0e2eba3a509659a7fae5e1ec0c686246df17db62a72e00b"
+    },
+    {
+      "path": ".tooling/rea/node_modules/rea-agents/native/windows/README.md",
+      "lines": [
+        50,
+        62
+      ],
+      "claim": "Job is unnamed and non-inherited; documented completion data is memory-limit notification and peak bytes.",
+      "sha256": "9fb9ea01414af69859c47055eb78ddea3bfd3aa87cb87f476cac28c26cb870d7"
+    },
+    {
+      "path": ".tooling/rea/node_modules/rea-agents/dist/process/ProcessOwnershipObservation.js",
+      "lines": [
+        181,
+        184
+      ],
+      "claim": "Generic Windows process observation returns an empty list.",
+      "sha256": "12a6434adfaa42e865a883966d7296c52ae80ecf5dd2f5f45379cc148cfe35a5"
+    }
+  ]
+}

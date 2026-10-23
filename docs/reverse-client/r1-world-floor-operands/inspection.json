@@ -1,0 +1,134 @@
+{
+  "schema": "grim-dynasty.fixed-world-floor-operands.v1",
+  "started_utc": "2026-10-23T06:55:14.382Z",
+  "script_sha256": "dae5e4e911f3ad67817236300f301932a6acee892c8cc3761b678749d6733e28",
+  "plan_sha256": "41c93b68ec677d44cf55c0532f24617bae9b0d0134ee065e9646981691061697",
+  "source_pins": [
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "world_floor",
+      "path": "docs/reverse-client/r1-movement-floor-core/11-MovementFloorCore-0x180221da0-procedure_assembly.json",
+      "sha256": "0b1444a11090ae60d9f508b8342bdb43d1f7a6961a21b3dce7b7ae40166c9472"
+    },
+    {
+      "key": "nearest_constant",
+      "path": "docs/reverse-client/r1-navigation-nearest-constants/inspection.json",
+      "sha256": "02c4ec5592fdac55c1bf652b1eabdab326232c59150942f8222cd2da652d14e1"
+    }
+  ],
+  "code_bytes": 0,
+  "metadata_bytes": 0,
+  "data_bytes": 12,
+  "data_operations": 3,
+  "new_PE_header_bytes": 0,
+  "whole_table_bytes": 0,
+  "target_body_bytes": 0,
+  "original_loaded_or_executed": false,
+  "subprocesses": 0,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "target_open_mode": "O_RDONLY",
+      "reads": [
+        {
+          "rva": "0x34bc00",
+          "file_offset": 3451904,
+          "section": ".rdata",
+          "bytes": 4,
+          "raw_hex": "00002040"
+        },
+        {
+          "rva": "0x34bdf4",
+          "file_offset": 3452404,
+          "section": ".rdata",
+          "bytes": 4,
+          "raw_hex": "000080bf"
+        },
+        {
+          "rva": "0x34bc8c",
+          "file_offset": 3452044,
+          "section": ".rdata",
+          "bytes": 4,
+          "raw_hex": "00008041"
+        }
+      ],
+      "hash_bytes": 8971264,
+      "closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "stable": true
+    }
+  ],
+  "constants": [
+    {
+      "key": "ray_origin_y_addend",
+      "rva": "0x34bc00",
+      "bytes": 4,
+      "instruction": "0x180221e00: ADDSS XMM2, dword ptr [0x18034bc00]",
+      "file_offset": 3451904,
+      "section": ".rdata",
+      "raw_hex": "00002040",
+      "uint32_hex": "0x40200000",
+      "reused": false,
+      "loaded_value_observed": false
+    },
+    {
+      "key": "ray_direction_y",
+      "rva": "0x34bdf4",
+      "bytes": 4,
+      "instruction": "0x180221e22: MOVSS XMM1, dword ptr [0x18034bdf4]",
+      "file_offset": 3452404,
+      "section": ".rdata",
+      "raw_hex": "000080bf",
+      "uint32_hex": "0xbf800000",
+      "reused": false,
+      "loaded_value_observed": false
+    },
+    {
+      "key": "neighbor_bounds_margin",
+      "rva": "0x34bc8c",
+      "bytes": 4,
+      "instruction": "0x180221f82: MOVSS XMM9, dword ptr [0x18034bc8c]",
+      "file_offset": 3452044,
+      "section": ".rdata",
+      "raw_hex": "00008041",
+      "uint32_hex": "0x41800000",
+      "reused": false,
+      "loaded_value_observed": false
+    }
+  ],
+  "reused_constants": [
+    {
+      "key": "neighbor_absolute_mask_low_lane",
+      "source_pin": "nearest_constant",
+      "rva": "0x34c410",
+      "bytes": 4,
+      "instruction": "0x180221f70: MOVSS XMM8, dword ptr [0x18034c410]",
+      "uses": [
+        "0x18022203a: ANDPS XMM1, XMM8",
+        "0x18022205c: ANDPS XMM2, XMM8"
+      ],
+      "raw_hex": "ffffff7f",
+      "uint32_hex": "0x7fffffff",
+      "reused": true,
+      "new_data_bytes": 0,
+      "loaded_value_observed": false
+    }
+  ],
+  "disk_observations_complete": true,
+  "failures": [],
+  "limitations": [
+    "Three DWORD disk operands only; loaded values, floating environment and complete World floor behavior remain unverified.",
+    "34C410 is reused from pinned evidence; no new read and no inference about upper SIMD lanes.",
+    "Whole-file hash streams are separate from12B semantic reads. Before/after checks are not atomic snapshots.",
+    "Node lstat/realpath checks do not identify every Windows reparse tag/attribute; separate Attributes preflight remains required."
+  ],
+  "proofs_verified": true,
+  "finished_utc": "2026-10-23T06:55:14.392Z",
+  "status": "passed"
+}

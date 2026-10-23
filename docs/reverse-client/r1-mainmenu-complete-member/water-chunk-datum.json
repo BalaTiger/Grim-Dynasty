@@ -1,0 +1,83 @@
+{
+  "status": "saved-byte-fact-and-uncompiled-own-contract-draft",
+  "source": {
+    "path": "docs/reverse-client/r1-mainmenu-complete-member/mainmenu.map.bin",
+    "bytes": 1091357,
+    "sha256_before": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+    "sha256_after": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+    "read_offset": 422341,
+    "read_bytes": 24,
+    "source_closed": true,
+    "raw_hex": "a9cbedfe0200000000000000000000000000000000000000"
+  },
+  "header": {
+    "magic": "0xFEEDCBA9",
+    "version": 2,
+    "type_count": 0,
+    "layer_count_A0": 0,
+    "path_count_A4": 0,
+    "wave_count_A8": 0
+  },
+  "evidence": [
+    {
+      "path": "docs/reverse-client/r1-ground-resources-and-water/08-GroundResourcesWater-0x18012c590-procedure_assembly.json",
+      "sha256": "cd9359266f1c151487a7101ac17cd53a74996effb41c8c57f113b93cc31f3ce9"
+    },
+    {
+      "path": "docs/reverse-client/r1-ground-resources-and-water/11-GroundResourcesWater-0x1801f81e0-procedure_assembly.json",
+      "sha256": "34090b3017b93bc02a360aab379ad9d86fc5686af1447698a4673b9c56074c80"
+    },
+    {
+      "path": "docs/reverse-client/r1-ground-resources-and-water/14-GroundResourcesWater-0x1801f9bd0-procedure_assembly.json",
+      "sha256": "68c98ac82656608a3785037e5fb01188244545f76aea931e41abb02bf808a83b"
+    }
+  ],
+  "load_contract": {
+    "prerequisites": "1F8212 reads10B0 then1F8220 reads10B8. Known-null returnsAL0 without reader access; Unknown remains Unsupported. Neither pointer is dereferenced on the selected empty path.",
+    "stores": "Read/advance each DWORD;1F82BB writesA0,1F82D0 writesA4,1F82EA writesA8. Four real zero counts bypass all resource,allocation,release/free paths;1F898C returnsAL1.",
+    "invalid_magic_or_version": "Reader has consumed4/8bytes respectively before unresolved gEngine logging; own model stops instead of faking rejection/success."
+  },
+  "intersection_contract": {
+    "writes": "1F9BF1 Distance00=0x7F800000;1F9BF9 Position04.X/Y=+0;1F9C00 Position04.Z=+0;Material10 untouched in supported paths.",
+    "reads": "surface0 returnsAL0 before state;otherwise reads liveA0 at1F9C2C thenA4 at1F9CD1. WaveA8 is never read. Empty path does not consume Ray data or maximum-distance arithmetic.",
+    "result": "1F9D87 COMISS(+Inf,Distance);1F9D98 SETA givesfalse after empty initialization. Nonempty water remains Unsupported, not a fabricated miss.",
+    "selector_semantics": "Parameter3 is PhysicsSurface enum, not an established bitmask. Nonempty native paths skip a WaterType when its1B8 value equals this selector; selected floor caller passes7."
+  },
+  "initialization_gap": {
+    "native_new_water_not_implemented": true,
+    "constructor": {
+      "callsite": "12C63F",
+      "target": "1F6A90",
+      "allocation_bytes": "0x1D40",
+      "region_argument": "Level+8"
+    },
+    "publish": "12C645 stores returned Water atLevel+40 BEFORE Initialize",
+    "initialize": {
+      "callsite": "12C663",
+      "target": "1F6E80",
+      "arguments": "Water, Terrain.Dimension60-1, Terrain.Dimension64-1, Level30Terrain, Level38Grid on terrain branch"
+    },
+    "bodies_found_by_filename": false,
+    "own_test_prerequisites": "Explicit two opaque nonnull identities only. No claim of valid native pointees, constructor or initialization. Production state starts Unknown."
+  },
+  "draft": {
+    "source": "src/reverse_client_actions/GroundWaterContracts.cs",
+    "source_sha256": "5ae3a19a8f96b862f6eeecbc102e25b2b774aebc14be1bbda8349681b8534744",
+    "tests": "src/reverse_client_actions/GroundWaterTests.cs",
+    "tests_sha256": "e26eaeb5a16366af7539da77dfcabce02a0bb407e7331ccb5256f6e803a06cb2",
+    "planned_scenarios": 20,
+    "compiled": false,
+    "tests_executed": false,
+    "build_script_prepared": false,
+    "dependencies": "Existing Actions/MoveManager/GroundGeometry/GroundTriangleIntersection/GroundBlockIntersection type closure. No frozen sources changed."
+  },
+  "execution": {
+    "original_read": false,
+    "original_executed": false,
+    "backend_started": false,
+    "build_started": false,
+    "tests_run": false,
+    "gameplay_accepted": false
+  },
+  "next": "Root static review; after UE resource window, independently approved compilation/testing if desired. Exact native initialization targets1F6A90/1F6E80 remain pending; no new Rea plan prepared."
+}

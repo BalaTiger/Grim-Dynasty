@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "purpose": "Fixed publication candidate and three indispensable contour leaf bodies only. Close the direct NavManager Update call and existing contour traversal/simplification dependencies without querying polygon helpers,CRT,threads or recursive branches.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-nav-update-and-contours/05-NavUpdateContours-0x180151180-procedure_assembly.json",
+      "sha256": "682af326b2d7d28bbee4e1bf86da30f0405e110cfec2ecd8becaca180a88434a",
+      "addresses": [
+        "0x18010d990"
+      ],
+      "source_kind": "1511D7 loads NavManager+8;1511DB directly CALLs10D990. This is the immediate implementation-update candidate,not yet proof of impl7690-to-mesh8 publication. Separate1511EA call25B6D0 is excluded."
+    },
+    {
+      "file": "docs/reverse-client/r1-nav-update-and-contours/06-NavUpdateContours-0x180151180-procedure_callees.json",
+      "sha256": "4aa61f48b810ea97e4b188b9f0a52558b89cfbbffe210bbac7119bedb5ac92e4",
+      "addresses": [
+        "0x18010d990"
+      ],
+      "source_kind": "Resolved direct callee corroborates10D990 entry only."
+    },
+    {
+      "file": "docs/reverse-client/r1-nav-update-and-contours/08-NavUpdateContours-0x180269590-procedure_assembly.json",
+      "sha256": "d47f1e7b61345b4fd31a551d5a002d20ccf256e07b8fab70b093f517ecc36919",
+      "addresses": [
+        "0x1802694e0",
+        "0x1802693f0"
+      ],
+      "source_kind": "269590 directly CALLs2694E0 at269601 and26964B for the direction neighbor value,and2693F0 at2696AB for vertex append whose AL false returns failure. Direction constants34BEE0/34C480 are separate unresolved raw-data proof,not silently supplied by this plan."
+    },
+    {
+      "file": "docs/reverse-client/r1-nav-update-and-contours/09-NavUpdateContours-0x180269590-procedure_callees.json",
+      "sha256": "af4274565b56ceb49711a240ff22eca6d79be35dad175ac3b70ac33e82f2e19d",
+      "addresses": [
+        "0x1802694e0",
+        "0x1802693f0"
+      ],
+      "source_kind": "The only two resolved direct callees of269590; no recursive targets."
+    },
+    {
+      "file": "docs/reverse-client/r1-nav-update-and-contours/11-NavUpdateContours-0x180269850-procedure_assembly.json",
+      "sha256": "50cd306b64a860eb7363d76b6be53a1539bd8a48d8a4cc23a6ca3ce25695b92d",
+      "addresses": [
+        "0x180269780"
+      ],
+      "source_kind": "269A79 directly CALLs269780 with six integer coordinate values;269A7E COMISS observes returned XMM0. Exact distance/error arithmetic remains unknown until this body is read."
+    },
+    {
+      "file": "docs/reverse-client/r1-nav-update-and-contours/12-NavUpdateContours-0x180269850-procedure_callees.json",
+      "sha256": "025c417cb06269aad88b02f0483cf3cee75936c1f7ff3d5da13b0952c17c7b86",
+      "addresses": [
+        "0x180269780"
+      ],
+      "source_kind": "269780 is the sole resolved direct callee of269850."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 17,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Only four fixed Engine targets,seventeen calls including five lifecycle calls; no automatic recursion.",
+    "Preserve384M heap,5GiB physical-and-commit launch floor,2GiB stop,ownership/mutex and freshness checks.",
+    "Pin completed nav-update-and-contours17/17 cleanup and six direct-call evidence files.",
+    "Read the actual publication candidate and indispensable contour contracts. Preserve ownership,unknown states,aliasing,exact widths,floating comparisons and failure prefixes.",
+    "No polygon helper,extra vtable/constant read,CRT/thread expansion,original execution,saves/cloud or security changes."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18010d990"
+      },
+      "label": "04-NavPublicationContourLeaf-0x18010d990-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18010d990"
+      },
+      "label": "05-NavPublicationContourLeaf-0x18010d990-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18010d990"
+      },
+      "label": "06-NavPublicationContourLeaf-0x18010d990-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1802694e0"
+      },
+      "label": "07-NavPublicationContourLeaf-0x1802694e0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1802694e0"
+      },
+      "label": "08-NavPublicationContourLeaf-0x1802694e0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1802694e0"
+      },
+      "label": "09-NavPublicationContourLeaf-0x1802694e0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1802693f0"
+      },
+      "label": "10-NavPublicationContourLeaf-0x1802693f0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1802693f0"
+      },
+      "label": "11-NavPublicationContourLeaf-0x1802693f0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1802693f0"
+      },
+      "label": "12-NavPublicationContourLeaf-0x1802693f0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180269780"
+      },
+      "label": "13-NavPublicationContourLeaf-0x180269780-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180269780"
+      },
+      "label": "14-NavPublicationContourLeaf-0x180269780-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180269780"
+      },
+      "label": "15-NavPublicationContourLeaf-0x180269780-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "16-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "17-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "10D990: Does the exact implementation-update body consume impl7690 staging and publish into mesh8? Identify real ownership,status and direct target; do not count it closed merely from its caller.",
+    "2694E0: What exact directional neighbor,portal,connection and bounds semantics produce the contour edge value?",
+    "2693F0: What append,coalescing,capacity and failure contract preserves contour bytes and partial state?",
+    "269780: What exact single-precision distance/error operations and exceptional-value comparisons are used by contour simplification?"
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Four fixed publication-candidate/contour-leaf bodies only; unchanged Engine384M/base4.25GiB budget with stricter5GiB physical-and-commit launch floor,2GiB stop.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "previous_sha256": "f06ef3bb91be422afa3e1eef639243be2b711c4f701da462767649e34851b0c1",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_sha256": "6d07a2a1e29565930ebd091f070128aeb6a59feaafd8e8fcdce01bb7b4a743a9",
+    "validation_file": ".tooling/r0-owned-job-terminal-candidate-20261022-attempt2/test-result.json",
+    "validation_sha256": "1ad80a494a359d16012698a0ffde723308ebe8e3d6bd06d488dd156e22a305d2",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 36,
+    "scenario_groups": 8,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "production_normalization": "Candidate header and namespace removed; isolated label removed from comment. Algorithm otherwise unchanged.",
+    "limitations": "Missing image is accepted only with positive same-handle exit evidence, never for live roles or counters. The limit is per Probe or QueryMembers operation, not a whole sampler-cycle latency guarantee. Fault tests are not an R0 reproduction or proof of root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-nav-update-and-contours/summary.json",
+    "summary_sha256": "afbfe90acd588d8c388e810c006a8233375cb955b6891bcafdbc89d5d6c0d9c5",
+    "completed_plan_calls": 17,
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  }
+}

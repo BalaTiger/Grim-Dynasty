@@ -1,0 +1,134 @@
+{
+  "utc": "2026-10-19T03:58:08.2858291Z",
+  "status": "object-name-assignment-passed",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "static_batches": [
+    {
+      "directory": "rea-object-name-assignment",
+      "calls": 8,
+      "analysis_calls": 3,
+      "plan_sha256": "8cfd4de2e4baa7debf90aa5a5bfc9a5c765266ee431af4bd5286f3fc9618012a",
+      "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "closed_session_verified": true,
+      "child_exit_code": 0
+    },
+    {
+      "directory": "rea-object-name-growth",
+      "calls": 8,
+      "analysis_calls": 3,
+      "plan_sha256": "a8b9f4d66387fb58b4c1ead7037a9e9f6f43a3829b52b1b006bb3b5c36f96294",
+      "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "closed_session_verified": true,
+      "child_exit_code": 0
+    }
+  ],
+  "static_call_total": 16,
+  "assertions": {
+    "ObjectNameAssignment": 37,
+    "ObjectBaseConstructor": 40,
+    "RegistrationIndex": 183,
+    "RegistrationGrowth": 141,
+    "LoadedObjectRegistration": 47,
+    "ClassFactoryDispatch": 40,
+    "ItemCondition": 39,
+    "ItemAuto": 11,
+    "ObjectId": 20,
+    "total": 558
+  },
+  "existing_scenarios": [
+    "ItemQuestDemo"
+  ],
+  "own_build_directory": ".tooling/object-name-build",
+  "source_and_binary_manifest": [
+    {
+      "path": "src/task_items/ObjectNameAssignment.cs",
+      "sha256": "55d0c434931a62ec1f3504e22abf4301e7b9d5d3493fae3c57a29f3beddc8a3d"
+    },
+    {
+      "path": "src/task_items/ObjectNameString.cs",
+      "sha256": "dd9910120e90971d63e190596dd9dc925d2cc41dfb29337fbea55a5aca2f06e6"
+    },
+    {
+      "path": "src/task_items/ObjectNameAssignmentTests.cs",
+      "sha256": "45875c51dce6c3b828a20129937bf002b9787886869973a5d63381e63ae25da5"
+    },
+    {
+      "path": "src/task_items/ObjectBaseConstructor.cs",
+      "sha256": "863810dbeb3c7ebc8304879c0d2484f48997a1592be2fe7cf8d7e2db97edce94"
+    },
+    {
+      "path": "src/task_items/ObjectBaseConstructorTests.cs",
+      "sha256": "34d3a9a4173054393bdcc71b9c0eff5eec899c48792b92ddb068b59571275a96"
+    },
+    {
+      "path": "src/task_items/build_items.ps1",
+      "sha256": "da7fa95348c4d59cd2a11fa93bb2a19728074032d58462e24e9e9ce4921db7e2"
+    },
+    {
+      "path": "src/task_items/LoadedObjectRegistration.cs",
+      "sha256": "f73afc1a1d09974f66a1b06101ced3bffa5f6d47d9960c25709aea19441c3c1a"
+    },
+    {
+      "path": "src/task_items/RegistrationIndex.cs",
+      "sha256": "66b32306c7945f3f4678a48f3f54ce6dcd0889571f9f13bb4c151b0ab7087bed"
+    },
+    {
+      "path": "tools/static_analysis/rea_native_registration.mjs",
+      "sha256": "30263ab3f3261b7e3e97d9f28029549696a8da0017d5a5db00dbccf81cf69d3b"
+    },
+    {
+      "path": "tools/static_analysis/rea-object-name-assignment-plan.json",
+      "sha256": "8cfd4de2e4baa7debf90aa5a5bfc9a5c765266ee431af4bd5286f3fc9618012a"
+    },
+    {
+      "path": "tools/static_analysis/rea-object-name-growth-plan.json",
+      "sha256": "a8b9f4d66387fb58b4c1ead7037a9e9f6f43a3829b52b1b006bb3b5c36f96294"
+    },
+    {
+      "path": ".tooling/object-name-build/GrimDynasty.TaskItems.dll",
+      "sha256": "2c043398c9dbe26f85430e51ea026a4de407d65c77ae26fb142e1b3d8d4880c1"
+    },
+    {
+      "path": ".tooling/object-name-build/ObjectNameAssignmentTests.exe",
+      "sha256": "e7abf78133c2babf087b8a349c4a8da2a1fb04607718c0f0379ff71a41f41952"
+    },
+    {
+      "path": ".tooling/object-name-build/ObjectBaseConstructorTests.exe",
+      "sha256": "7387c36abd8ee03245385e8bbb03da6191c5afaa1a8e3f385d0807a71d3c7da1"
+    },
+    {
+      "path": ".tooling/object-name-build/ObjectIdTests.exe",
+      "sha256": "e3de4a934210185e4f45eca061cccd04a01fbc94fbd146388f26997a163e7341"
+    }
+  ],
+  "scope": "SetObjectName fixed helper call (position=0,count=UINT64_MAX), outer self-alias, normal successful assignment/reserve/copy/release over valid disjoint logical byte strings and exclusive access",
+  "maximum_name_bytes": 65536,
+  "maximum_capacity_budget": 131072,
+  "maximum_growth_capacity_from_covered_constructor": 98302,
+  "growth_formula": "rounded=request|15; choose old+floor(old/2) only if floor(old/2)>floor(rounded/3), otherwise rounded; bounded nonoverflow domain",
+  "hash": "Full stored length, signed byte extension, FNV32 modulo 2^32; embedded NUL participates",
+  "constructor_untouched_fields_preserved": true,
+  "id_written_by_setter": false,
+  "name_identity_preserved": true,
+  "native_pointer_padding_allocator_or_exception_equivalence_claimed": false,
+  "budget_rejection": "Before own state mutation; not a native failure or rollback prediction",
+  "generic_substring_helper_complete": false,
+  "concrete_read_implemented": false,
+  "table_loading_implemented": false,
+  "existing_registered_index_auto_rekeyed": false,
+  "integration": "Same Fields feeds the existing LoadedObjectRegistration; known table and explicit own callback still required",
+  "old_registration_and_allocator_sources_changed": false,
+  "original_binary_hashes_unchanged": 13,
+  "full_offline_acceptance": "Not rerun; unchanged UCRT fingerprint gate and whitelist",
+  "project_configuration_sha256": "7aeed98559ed397816f78ae53356cf65477c6479aba1ece58b5dcb50b83c09df",
+  "native_factory_complete": false,
+  "native_registration_complete": false,
+  "persistent_mcp_connection_claimed": false,
+  "approvals": "Both requested fixed batches allowed; none denied, pending or uncertain",
+  "target_executed": false,
+  "saves_or_steam_cloud_accessed": false,
+  "host_reloaded_or_restarted": false,
+  "global_configuration_changed": false,
+  "additional_software_installed": false,
+  "commit_or_push": false
+}

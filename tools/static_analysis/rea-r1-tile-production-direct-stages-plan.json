@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "purpose": "One fixed batch for the actual mainmenu PTHD path: two cold-start obstacle-container helpers, compressed-tile outRef formation, the exactly bound compressor body and four direct layer-to-final-mesh stages. Eight targets only; no automatic recursion or substitution of format parsing for completed mesh production.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-tile-cache-and-decompression/05-TileCacheDecompression-0x180263b20-procedure_assembly.json",
+      "sha256": "dd7764ba84fac362a2285cf456fbf5b52538ed62b92e06be1e52f0054376d1ba",
+      "addresses": [
+        "0x1802660f0"
+      ],
+      "source_kind": "263B20 directly CALLs2660F0 at263B4D with RCX=this+70 before subsequent cache field initialization."
+    },
+    {
+      "file": "docs/reverse-client/r1-tile-cache-and-decompression/06-TileCacheDecompression-0x180263b20-procedure_callees.json",
+      "sha256": "ea29668127d79c3d08e578fcfc41998b34db55b8495be00eb12e5ae7821e2f33",
+      "addresses": [
+        "0x1802660f0"
+      ],
+      "source_kind": "Resolved direct callee2660F0; cold-start container only,no CRT expansion."
+    },
+    {
+      "file": "docs/reverse-client/r1-tile-cache-and-decompression/08-TileCacheDecompression-0x180263e40-procedure_assembly.json",
+      "sha256": "18157f29003ef2256c96704243a47c073c0c1e2a83d767a8ca96208f6b577023",
+      "addresses": [
+        "0x180266010"
+      ],
+      "source_kind": "263E40 directly CALLs266010 at263E8A with RCX=this+70 and EDX=R13D after copying cache parameters."
+    },
+    {
+      "file": "docs/reverse-client/r1-tile-cache-and-decompression/09-TileCacheDecompression-0x180263e40-procedure_callees.json",
+      "sha256": "65c0cf6efbf79128e68377f4863f8010349a69b6a308ef919aaac8fc5da3fe81",
+      "addresses": [
+        "0x180266010"
+      ],
+      "source_kind": "Resolved direct callee266010 corroborates cold-start obstacle-container initialization; no recursive helpers."
+    },
+    {
+      "file": "docs/reverse-client/r1-map-directory-and-path-tiles/08-MapDirectoryPathTiles-0x180264200-procedure_assembly.json",
+      "sha256": "4d8d6517a06c41f1e3bd923d5ff9453e8b4b969cea78e2a749731d9afbf5d612",
+      "addresses": [
+        "0x1802641c0"
+      ],
+      "source_kind": "264200 CALLs2641C0 at264305 only when outRef is nonnull; writes EAX to outRef at26430A then returns status40000000."
+    },
+    {
+      "file": "docs/reverse-client/r1-map-directory-and-path-tiles/09-MapDirectoryPathTiles-0x180264200-procedure_callees.json",
+      "sha256": "a258380db951460450203765637a3e49a3d8c7ca1ca2c26aff2ee1406df15668",
+      "addresses": [
+        "0x1802641c0"
+      ],
+      "source_kind": "Resolved direct callee2641C0 corroborates compressed-tile reference formation."
+    },
+    {
+      "file": "docs/reverse-client/r1-map-region-and-tile-product/11-MapRegionTileProduct-0x1802658d0-procedure_assembly.json",
+      "sha256": "79c2cb14c5c36792b795caab09dab675827cbc80416de203d2785927e3ffdabe",
+      "addresses": [
+        "0x180268cf0",
+        "0x180269d70",
+        "0x18026bd40",
+        "0x18026e3f0"
+      ],
+      "source_kind": "2658D0 CALLs268CF0 at265ACD,269D70 at265B20,26BD40 at265B75,and26E3F0 at265CF4. First three return status checked at bit31; final bool must succeed before final pointer write265D04. These direct production stages cannot be replaced with fixture callbacks."
+    },
+    {
+      "file": "docs/reverse-client/r1-map-region-and-tile-product/12-MapRegionTileProduct-0x1802658d0-procedure_callees.json",
+      "sha256": "38272d30fa4a13edd06d9aeadd83bba1be348ee390a18675efb0170f051a9ea1",
+      "addresses": [
+        "0x180268cf0",
+        "0x180269d70",
+        "0x18026bd40",
+        "0x18026e3f0"
+      ],
+      "source_kind": "Resolved direct callees for four layer-to-final-mesh stages. No generic allocator,thread or unrelated branch queries."
+    },
+    {
+      "file": "docs/reverse-client/r1-navigation-compressor-slot/inspection.json",
+      "sha256": "191e63e5cc34d9b1abf1326426827a27041743913768a3159e73af3dc62126de",
+      "addresses": [
+        "0x180109820"
+      ],
+      "source_kind": "Fixed8B read at Engine340A10 (vptr340A00+10) gives exact VA180109820,raw2098108001000000. Binding links the object written by10A530 to 26CC50 parameter2 receiver virtual call26CD77. Report passed,source closed and both original hashes stable. Adjacent34BADC constant was read separately in same fixed12B inspection; no codec behavior inferred from address or constant."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 29,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Only eight fixed Engine targets,twenty-nine calls including five lifecycle calls; no automatic recursion.",
+    "Preserve384M heap,5GiB physical-and-commit launch floor,2GiB stop,ownership/mutex and freshness checks.",
+    "Pin completed tile-cache-and-decompression14/14 cleanup,eight direct-call evidence files and exact compressor slot binding.",
+    "Read actual cold-container,outRef,compressor and layer-to-final-mesh contracts for the real mainmenu path. Preserve status,unknown fields,aliasing and failure prefixes; no guessed codec or fixture replacement for production.",
+    "No extra vtable reads,recursive CRT or thread/queue queries,original execution,saves/cloud or security changes."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180109820"
+      },
+      "label": "04-TileProductionDirect-0x180109820-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180109820"
+      },
+      "label": "05-TileProductionDirect-0x180109820-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180109820"
+      },
+      "label": "06-TileProductionDirect-0x180109820-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1802660f0"
+      },
+      "label": "07-TileProductionDirect-0x1802660f0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1802660f0"
+      },
+      "label": "08-TileProductionDirect-0x1802660f0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1802660f0"
+      },
+      "label": "09-TileProductionDirect-0x1802660f0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180266010"
+      },
+      "label": "10-TileProductionDirect-0x180266010-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180266010"
+      },
+      "label": "11-TileProductionDirect-0x180266010-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180266010"
+      },
+      "label": "12-TileProductionDirect-0x180266010-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1802641c0"
+      },
+      "label": "13-TileProductionDirect-0x1802641c0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1802641c0"
+      },
+      "label": "14-TileProductionDirect-0x1802641c0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1802641c0"
+      },
+      "label": "15-TileProductionDirect-0x1802641c0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180268cf0"
+      },
+      "label": "16-TileProductionDirect-0x180268cf0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180268cf0"
+      },
+      "label": "17-TileProductionDirect-0x180268cf0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180268cf0"
+      },
+      "label": "18-TileProductionDirect-0x180268cf0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180269d70"
+      },
+      "label": "19-TileProductionDirect-0x180269d70-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180269d70"
+      },
+      "label": "20-TileProductionDirect-0x180269d70-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180269d70"
+      },
+      "label": "21-TileProductionDirect-0x180269d70-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18026bd40"
+      },
+      "label": "22-TileProductionDirect-0x18026bd40-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18026bd40"
+      },
+      "label": "23-TileProductionDirect-0x18026bd40-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18026bd40"
+      },
+      "label": "24-TileProductionDirect-0x18026bd40-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18026e3f0"
+      },
+      "label": "25-TileProductionDirect-0x18026e3f0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18026e3f0"
+      },
+      "label": "26-TileProductionDirect-0x18026e3f0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18026e3f0"
+      },
+      "label": "27-TileProductionDirect-0x18026e3f0-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "28-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "29-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "2660F0/266010: What exact cold container initialization and capacity/state contracts are required by tile-cache construction?",
+    "2641C0: How is the returned compressed-tile reference formed,with which field widths and identity assumptions?",
+    "Bound compressor: What real decoding operations,limits and failure contract does the actual vtable target implement? No algorithm inferred merely from compressed bytes.",
+    "268CF0/269D70/26BD40/26E3F0: What are the sequential layer-to-final-mesh data contracts,outputs,ownership and failure prefixes? Preserve any new unknown direct dependency instead of silently bypassing a stage."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Eight fixed actual PTHD production dependencies only; unchanged Engine384M/base4.25GiB budget with stricter5GiB physical-and-commit launch floor,2GiB stop.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "previous_sha256": "f06ef3bb91be422afa3e1eef639243be2b711c4f701da462767649e34851b0c1",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_sha256": "6d07a2a1e29565930ebd091f070128aeb6a59feaafd8e8fcdce01bb7b4a743a9",
+    "validation_file": ".tooling/r0-owned-job-terminal-candidate-20261022-attempt2/test-result.json",
+    "validation_sha256": "1ad80a494a359d16012698a0ffde723308ebe8e3d6bd06d488dd156e22a305d2",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 36,
+    "scenario_groups": 8,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "production_normalization": "Candidate header and namespace removed; isolated label removed from comment. Algorithm otherwise unchanged.",
+    "limitations": "Missing image is accepted only with positive same-handle exit evidence, never for live roles or counters. The limit is per Probe or QueryMembers operation, not a whole sampler-cycle latency guarantee. Fault tests are not an R0 reproduction or proof of root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-tile-cache-and-decompression/summary.json",
+    "summary_sha256": "480fedc413fe013696c49be63371a1097c11d41045adcabc13cce3a68583b83b",
+    "completed_plan_calls": 14,
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  }
+}
+

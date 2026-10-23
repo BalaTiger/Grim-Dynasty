@@ -1,0 +1,108 @@
+{
+  "schema": "grim-dynasty-binary-mixed-parser-acceptance-v1",
+  "utc": "2026-10-20T06:12:22.214Z",
+  "status": "bounded-fresh-mixed-tag012-parser-passed",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "assertions": {
+    "RegistrationIndex": 183,
+    "RegistrationGrowth": 141,
+    "LoadedObjectRegistration": 47,
+    "ObjectNameAssignment": 37,
+    "ObjectLifecycleCombined": 20,
+    "RecordLoadFile": 42,
+    "RecordTableGetter": 43,
+    "CreatePartialObject": 40,
+    "FinishPartialObject": 43,
+    "BinaryWarmGetter": 65,
+    "BinaryStaleGetter": 33,
+    "BinaryColdGetter": 50,
+    "BinaryPointerGrowth": 36,
+    "BinaryRecordParser": 69,
+    "BinaryMixedRecordParser": 43,
+    "ClassFactoryDispatch": 40,
+    "ItemCondition": 39,
+    "ItemAuto": 11,
+    "ObjectBaseConstructor": 40,
+    "ObjectId": 20,
+    "total": 1042
+  },
+  "combined_scenarios": 18,
+  "new_assertions": 43,
+  "new_combined_scenarios": 2,
+  "existing_scenarios": [
+    "ItemQuestDemo"
+  ],
+  "module_suites": 19,
+  "module_assertions": 1022,
+  "supplemental_objectid_assertions": 20,
+  "test_summary": "docs/object-lifecycle/binary-mixed-validation/test-summary.json",
+  "test_log": "docs/object-lifecycle/binary-mixed-validation/test-output.txt",
+  "elapsed_seconds": 5.8171154,
+  "source_hashes": {
+    "src/task_items/BinaryRecordParser.cs": "483eb53476c1cee5e1d1032a74e8d74ba322acbfd73620326b02b6152f81d251",
+    "src/task_items/BinaryRecordParserTests.cs": "09619b3b518ecab259f1c8f151d2dd55881ce2df670c0b1e4d371d5a89da661f",
+    "src/task_items/BinaryMixedRecordParserTests.cs": "91205838c00169784216d415dd011387b47f9fa54be2f2aa13cff9a4e22dcb65"
+  },
+  "baseline_files": 46,
+  "unchanged_baseline_files_before_status_updates": 43,
+  "changed_baseline_files": [
+    "src/task_items/BinaryRecordParser.cs",
+    "src/task_items/BinaryRecordParserTests.cs",
+    "src/task_items/build_items.ps1"
+  ],
+  "old_69_suite_change": "Replaced unsupported-tag negative examples0/1 with65534/65535; all other assertions unchanged",
+  "coverage": {
+    "fresh": true,
+    "tags": [
+      0,
+      1,
+      2
+    ],
+    "minimum_fields": 2,
+    "maximum_fields": 15,
+    "positive_counts": true,
+    "maximum_total_words": 65536,
+    "maximum_reader_bytes": 1048576,
+    "separate_typed_offsets": true,
+    "raw_bits_preserved": true,
+    "legacy_tag2_signed_view": true,
+    "cross_type_duplicate_prepend": true,
+    "shared_archive_inputs_explicit": true
+  },
+  "native_allocation_success_contract": true,
+  "native_type01_numeric_meaning_claimed": false,
+  "native_error_equivalence_claimed": false,
+  "read_only_evidence_review": true,
+  "backend_calls": 0,
+  "original_files_read_this_stage": false,
+  "prior_original_fingerprint": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "verified_utc": "2026-10-20T05:56:51.9211576Z",
+    "recomputed_this_stage": false
+  },
+  "dependency_report": "docs/object-lifecycle/POST-PARSER-DEPENDENCIES.md",
+  "factory_read_report": "docs/object-lifecycle/post-parser-boundary/factory-read-boundary.json",
+  "next_query": {
+    "plan": "tools/static_analysis/rea-record-cache-publication-plan.json",
+    "sha256": "b8edfd6904516091befee8c69d6111080b5c7f58ad342b6a69d378f5589eb762",
+    "calls": 11,
+    "targets": [
+      "0x18005deb0",
+      "0x18002e770"
+    ],
+    "registered_at_checkpoint": false,
+    "started_at_checkpoint": false,
+    "parent_window_release_received": true,
+    "fresh_resource_preflight_and_per_action_approval_still_required": true
+  },
+  "remaining": [
+    "Tag3 bit-vector allocation",
+    "Out-of-domain field counts, zero counts, repeat deserialize, malformed/native EH",
+    "Complete archive LoadFile miss and publication",
+    "Native base ctor, ClassInfo population, concrete constructors and Read, complete item factory"
+  ],
+  "no_commit_or_push": true,
+  "persistent_permission_changes": false,
+  "checkpoint": ".tooling/checkpoints/binary-mixed-complete/manifest.json"
+}

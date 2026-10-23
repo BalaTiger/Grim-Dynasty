@@ -1,0 +1,44 @@
+{
+  "schema": "grim-dynasty-m3-direct-record-plan-v1",
+  "input": {
+    "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\database\\database.arz",
+    "bytes": 58529720,
+    "sha256": "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603"
+  },
+  "tool": {
+    "path": "artifacts/m1-offline-20261022-03/gd-offline.exe",
+    "sha256": "c4a84feb1bedbaa9b08598ff2cdd01ab0aeaa0bf7a57bbfbcf937faa38ba508b"
+  },
+  "proof": {
+    "path": "docs/m3-evidence/m3-content-slice/content-slice.json",
+    "schema": "grim-dynasty-m3-content-slice-v1",
+    "sha256": "3e5fe5ce265fa2367685d36531fd6bde2ebbbfc5af0b9da0fcbd9f60739a804d"
+  },
+  "output_directory": "docs/m3-evidence/content-formulas",
+  "max_records": 2,
+  "recursive": false,
+  "records": [
+    {
+      "record_name": "records/creatures/enemies/bios/bio_zombie_01.dbr",
+      "output_file": "bio-zombie.json",
+      "source": {
+        "record_name": "records/creatures/enemies/boss&quest/waveevent_burrwitchrift_zombie_a01.dbr",
+        "class": "Monster",
+        "body_sha256": "5b23632773c4a461ef96c220b8bc6344092feea34382dff9d261ac00284d8766",
+        "field": "characterAttributeEquations",
+        "value": "records/creatures/enemies/bios/bio_zombie_01.dbr"
+      }
+    },
+    {
+      "record_name": "records/game/itemcostformulas.dbr",
+      "output_file": "item-cost-formulas.json",
+      "source": {
+        "record_name": "records/items/crafting/crafting_randomtorso_caster.dbr",
+        "class": "ArmorProtective_Chest",
+        "body_sha256": "53872786bc6039de0c930585e32b603591d8b36ed0588b58cf05d9de711df9ee",
+        "field": "itemCostName",
+        "value": "records/game/itemcostformulas.dbr"
+      }
+    }
+  ]
+}

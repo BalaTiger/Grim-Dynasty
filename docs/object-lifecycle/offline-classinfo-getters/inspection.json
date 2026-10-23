@@ -1,0 +1,96 @@
+{
+  "status": "fixed-classinfo-getter-entries-verified",
+  "started_utc": "2026-10-20T12:44:58.470Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-class-registration-getter-boundaries/boundaries.json",
+      "sha256": "3fe20de3382e33e69ca512d9f54fb22a01ff3e85ea53b6789aa1a116f6622531"
+    }
+  ],
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "code_byte_limit": 16,
+  "code_bytes": 16,
+  "metadata_recheck_byte_limit": 0,
+  "metadata_bytes": 0,
+  "fragments": [
+    {
+      "role": "exported-QuestItem-GetRTTIClassInfo-entry",
+      "start_va": "0x180051810",
+      "end_va_exclusive": "0x180051818",
+      "code_bytes": 8,
+      "code_sha256": "e720bf57095735b6324f89ebff991c5012f87d5b276126ebcf0fef141c86ac36",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180051810,0x180051817",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_elapsed_ms": 33,
+      "tool_exit": 0,
+      "tool_error": null,
+      "instructions": 2,
+      "byte_coverage_verified": true,
+      "terminal_ret_observed": true
+    },
+    {
+      "role": "exported-Item-GetRTTIClassInfo-entry",
+      "start_va": "0x180029a50",
+      "end_va_exclusive": "0x180029a58",
+      "code_bytes": 8,
+      "code_sha256": "fc6a2ff9dc086e3b2e72d1d4a1b5a0d1749e986d081f05cc4cadeed321184fa8",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180029a50,0x180029a57",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_elapsed_ms": 32,
+      "tool_exit": 0,
+      "tool_error": null,
+      "instructions": 2,
+      "byte_coverage_verified": true,
+      "terminal_ret_observed": true
+    }
+  ],
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "original_modified": false,
+  "full_target_copy_created": false,
+  "dumpbin_input": "Original file read directly; no DLL loading or new whole-file copy",
+  "scope": "Two exact export entries, eight bytes each; require terminal RET inside range; no neighboring functions",
+  "hash_scope": "64KiB streaming full-file SHA256 before and after; separate from code/metadata byte totals",
+  "dumpbin_io_scope": "RANGE limits output; internal dumpbin metadata I/O is not instrumented",
+  "original_sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "original_stat_stable": true,
+  "original_hash_matches": true,
+  "tool_hash_matches": true,
+  "failures": [],
+  "finished_utc": "2026-10-20T12:44:58.553Z",
+  "controller_resource_usage": {
+    "userCPUTime": 31000,
+    "systemCPUTime": 31000,
+    "maxRSS": 42068,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11086,
+    "swappedOut": 0,
+    "fsRead": 366,
+    "fsWrite": 6,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

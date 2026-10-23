@@ -1,0 +1,189 @@
+{
+  "schema": "grim-dynasty-single-official-record-evidence-v1",
+  "utc": "2026-10-20T10:13:45.436Z",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "status": "official-single-record-decoding-confirmed-current-native-behavior-parser-and-full-chain-rejected",
+  "official_archive_exists": true,
+  "archive": "D:\\Steam\\steamapps\\common\\Grim Dawn\\database\\database.arz",
+  "archive_bytes": 58529720,
+  "archive_sha256": "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603",
+  "archive_format": {
+    "marker": 2,
+    "version": 3
+  },
+  "game_build_version": "not determined; not encoded by the ARZ version field",
+  "last_write_utc": "2026-10-08T22:59:22.3189555Z",
+  "header": {
+    "marker": 2,
+    "version": 3,
+    "record_table_offset": 53208441,
+    "record_table_bytes": 1342625,
+    "record_count": 34180,
+    "string_table_offset": 54551066,
+    "string_table_bytes": 3978638,
+    "string_count": 82999,
+    "pool_payload_bytes": 3646638,
+    "header_hex": "0200030079e52b03a17c1400848500001a6240038eb53c00"
+  },
+  "actual_evidence": {
+    "raw_reader": {
+      "status": "accepted",
+      "record_name_original_id": 6883,
+      "record_class": "QuestItem",
+      "data_offset": 42034543,
+      "packed_bytes": 323,
+      "body_bytes": 456,
+      "packed_bytes_consumed": 323,
+      "profile": "ObservedEngineOutputSize",
+      "timestamp_low": 2465250124,
+      "timestamp_high": 31232430,
+      "body_sha256": "5cbd10f21b424b0bec879fe101e77772fe42965ac363a5503c46907a62d91c7f",
+      "original_pool_count": 82999,
+      "original_string_table_bytes": 3978638
+    },
+    "decoder_comparison": {
+      "status": "byte-identical",
+      "input_bounded_sha256": "5cbd10f21b424b0bec879fe101e77772fe42965ac363a5503c46907a62d91c7f",
+      "output_size_profile_sha256": "5cbd10f21b424b0bec879fe101e77772fe42965ac363a5503c46907a62d91c7f",
+      "packed_sha256": "d532c7583a8fa02523e67e2b69efec1b0b48bd1652294fa2f76648af03906e58",
+      "comparison_scope": "two existing own decoder implementations; no native decoder oracle"
+    },
+    "source_constructor": {
+      "status": "rejected",
+      "exception": "System.ArgumentOutOfRangeException",
+      "parameter": "readLimits",
+      "message": "ARZ source exceeds supplied-parser coverage budgets\r\n参数名: readLimits",
+      "actual_string_count": 82999,
+      "source_maximum_strings": 4096,
+      "actual_pool_payload_bytes": 3646638,
+      "source_maximum_pool_bytes": 2097152
+    },
+    "reader_under_existing_chain_limits": {
+      "status": "rejected",
+      "reason": "ArzRawStringCountBudget"
+    },
+    "existing_parser": {
+      "status": "Unsupported",
+      "reason": "BinaryRecordTagOutsideCoveredDomain",
+      "initial_position": 0,
+      "final_position": 0,
+      "first_pass_end": null,
+      "completed_fields": 0,
+      "domain_rejected": true,
+      "reader_consumed": false,
+      "may_have_effects": false,
+      "gate_acquired": true,
+      "gate_released": true,
+      "pool_supplied": false
+    },
+    "first_parser_block": {
+      "ordinal": 4,
+      "body_offset": 48,
+      "tag": 3,
+      "element_count": 1,
+      "key_original_id": 916,
+      "raw_uint32_words": [
+        0
+      ],
+      "field_name": "allowTransparency"
+    },
+    "wire_observer": {
+      "status": "complete-structural-observation",
+      "field_count": 38,
+      "tag_counts": [
+        8,
+        11,
+        12,
+        7
+      ],
+      "total_words": 38,
+      "final_cursor": 456,
+      "referenced_original_strings": 49,
+      "original_id_min": 1,
+      "original_id_max": 48634,
+      "duplicates": 0,
+      "class_observation": {
+        "ordinal": 1,
+        "body_offset": 12,
+        "tag": 2,
+        "element_count": 1,
+        "key_original_id": 13,
+        "raw_uint32_words": [
+          28355
+        ],
+        "value_name": "QuestItem"
+      }
+    },
+    "raw_body_matches_historical_scrap_body_hash": true
+  },
+  "feasibility_only": [
+    "Raw reader metadata plus selected-record upper array charge fits its existing configurable 8MiB working budget; this is not a whole-CLR cap.",
+    "The actual first parser rejection is tag3 at field 5. Even with that behavior recovered, the unchanged 38-field body exceeds the current 15-field parser domain.",
+    "Complete source/warm pool compatibility would require evidence-supported handling of 82999 strings and 3646638 payload bytes; parser limits were not raised.",
+    "Generated initial import source count 82999 exceeds its 65536 own source-entry domain; this was identified from code/header, not executed with a full-table copy.",
+    "The two own decoder implementations agreeing is not a native-game oracle or proof for other records/archives."
+  ],
+  "memory_preflight": {
+    "raw_metadata_array_bytes": 5985283,
+    "upper_array_charge_for_selected_small_record": 6247466,
+    "raw_reader_working_budget": 8388608,
+    "max_selected_packed_bytes": 65536,
+    "max_selected_body_bytes": 65536,
+    "additional_hash_buffer_bytes": 65536,
+    "not_a_clr_or_process_peak_bound": true
+  },
+  "completed_probe_peak_working_set_bytes": 31006720,
+  "peak_measurement_scope": "The own probe process only, not compiler/controller/process-tree peak.",
+  "compile_and_probe_seconds": 0.6758785,
+  "probe_attempts": 2,
+  "first_stop": {
+    "reason": {
+      "stage": "source-construction-guard",
+      "type": "System.ArgumentNullException",
+      "message": "值不能为 null。\r\n参数名: knownNameIds"
+    },
+    "format_bytes_before_stop": 28,
+    "selected_payload_read": false,
+    "preserved_source": "docs/object-lifecycle/official-record-probe/probe-source-stopped.cs",
+    "fix": "Supply a valid empty own name-ID snapshot only to reach the constructor coverage guard."
+  },
+  "no_new_synthetic_assertions": true,
+  "previous_behavior_regression": {
+    "assertions": 1847,
+    "scenario_groups": 52,
+    "rerun": false
+  },
+  "production_code_and_limits_unchanged": true,
+  "source_and_assembly_hashes": {
+    "tools/static_analysis/ProbeOfficialArzRecord.cs": "ade40fc41ca2c4b07f419483ab378ffa2be9dacc60ed33c80f548057bc6c1e5a",
+    ".tooling/run-official-record-probe.ps1": "22a11a2738241cac2bd9aa8e2bd512fd0b435ba57946f54871a6df4833a8f975",
+    ".tooling/run-official-record-probe-retry1.ps1": "449cd42f0ca3af900571289e0e93a51ab8a19a5056ccf951d17075ac60f59d1d",
+    ".tooling/archive-string-map-build/GrimDynasty.Resources.dll": "4dce032d9b9d292649c32e37be60f96e1be18d3d201259d196b55e2917e5b5cf",
+    ".tooling/archive-string-map-build/GrimDynasty.TaskItems.dll": "b1f6aebb7eb4fec3b4b8784066de957cf60458d155609e1e751d447360077316",
+    "src/resource_codec/ArzRawRecordReader.cs": "96dfa7b0f8b9949bde050228a7b2e2b5d4a627d51de104e03e9ae14fcdb5db55",
+    "src/task_items/ArzRecordBinarySource.cs": "61740fd6fd9444989c6cdce9dddbe8bb5b313c8cf1fbb4fbeb72daa160e4f75e",
+    "src/task_items/BinaryRecordParser.cs": "483eb53476c1cee5e1d1032a74e8d74ba322acbfd73620326b02b6152f81d251",
+    "src/task_items/BinaryWarmTable.cs": "ec2816f959467d118dbbaee5314b65641d4183c0686e43f02578ef0bc6603ed9",
+    "src/resource_codec/ArchiveStringImport.cs": "ac9a190a7568fc6b166052beb9a3e1c4d3031f6d2da4a6bd51333ff607b79d03"
+  },
+  "raw_probe": "docs/object-lifecycle/official-record-probe-retry1/probe.json",
+  "read_scope": "docs/object-lifecycle/official-record-probe-retry1/read-scope.json",
+  "source_sample_location_required": false,
+  "full_load_chain_compatibility_proven": false,
+  "original_game_code_executed": false,
+  "rea_or_java_started": false,
+  "installations_or_permission_expansion": false,
+  "saves_or_cloud_access": false,
+  "commit_or_push": false,
+  "permission_denial": false,
+  "pending_approval": false,
+  "uncertain_action": false,
+  "remaining": [
+    "Native tag3 parser behavior",
+    "Larger native field-index initialization and field counts",
+    "Complete original string-pool/name context and archive initialization/selector handling",
+    "Compatibility of complete LoadFile/factory/Read and records beyond this single sample"
+  ],
+  "prior_checkpoint": ".tooling/checkpoints/archive-string-map-complete/manifest.json",
+  "checkpoint": ".tooling/checkpoints/official-record-probe-complete/manifest.json"
+}

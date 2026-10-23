@@ -1,0 +1,95 @@
+{
+  "started_utc": "2026-10-22T08:20:05.673Z",
+  "source_proof_sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7",
+  "script_sha256": "a72c1b61f622691c0d17e9d44189b64b5d983bfec93f545c0d8e870eca05fc47",
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "originals_loaded_or_executed": false,
+  "modules": [
+    {
+      "source": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Grim Dawn.exe",
+      "expected_sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+      "metadata_bytes": 2300,
+      "reads": 73,
+      "targets": [
+        {
+          "kind": "exact-import-iat-slot",
+          "symbol": "?HandleActionFromMouse@ControllerPlayer@GAME@@QEAA_N_N000AEBVWorldVec3@2@AEAIPEA_N@Z",
+          "source_index": 295,
+          "lookup_rva": "0x3890e8",
+          "iat_rva": "0x2d78a0",
+          "preferred_va": "0x1402d78a0",
+          "disk_iat_value": "0x3a1c18",
+          "caller_unknown": true
+        }
+      ],
+      "sha256_before": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+      "image_base": "0x140000000",
+      "sha256_after": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+      "stable": true,
+      "closed": true
+    },
+    {
+      "source": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "metadata_bytes": 2998,
+      "reads": 132,
+      "targets": [
+        {
+          "kind": "bounded-export-prefix",
+          "prefix": "??0ControllerPlayer@GAME@@",
+          "hits": [
+            {
+              "name": "??0ControllerPlayer@GAME@@QEAA@AEBV01@@Z",
+              "rva": "0x51ad0",
+              "preferred_va": "0x180051ad0",
+              "section": ".text",
+              "executable": true,
+              "boundary": {
+                "begin_rva": "0x51ad0",
+                "end_rva_exclusive": "0x51c9e",
+                "exact_start": true,
+                "unwind_rva": "0x7e68a0"
+              }
+            },
+            {
+              "name": "??0ControllerPlayer@GAME@@QEAA@XZ",
+              "rva": "0x15d5a0",
+              "preferred_va": "0x18015d5a0",
+              "section": ".text",
+              "executable": true,
+              "boundary": {
+                "begin_rva": "0x15d5a0",
+                "end_rva_exclusive": "0x15d76c",
+                "exact_start": true,
+                "unwind_rva": "0x807bc8"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "bounded-export-prefix",
+          "prefix": "??_7ControllerPlayer@GAME@@",
+          "hits": [
+            {
+              "name": "??_7ControllerPlayer@GAME@@6B@",
+              "rva": "0x6e0350",
+              "preferred_va": "0x1806e0350",
+              "section": ".rdata",
+              "executable": false,
+              "boundary": null
+            }
+          ]
+        }
+      ],
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "image_base": "0x180000000",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "stable": true,
+      "closed": true
+    }
+  ],
+  "failures": [],
+  "finished_utc": "2026-10-22T08:20:05.705Z",
+  "status": "passed"
+}

@@ -1,0 +1,15 @@
+{
+  "purpose": "Read two disk float32 operands of the recovered266760 edge matching function",
+  "script": "tools/static_analysis/read_r1_mesh_connection_constants.mjs",
+  "script_sha256": "366b069f91c34ee18f8b9be7667388b60182692781b516b0481a70f456ce1758",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "proof": "docs/reverse-client/r1-triangulation-and-tile-connection/11-TriangulationTileConnection-0x180266760-procedure_assembly.json",
+  "proof_sha256": "3dc70d0847894488b3f6bacf7ae25708e8635d3d77179922cf5667212c507894",
+  "semantic_rvas": ["34B9E0", "34BBD8"],
+  "semantic_bytes": 8,
+  "maximum_metadata_bytes": 4096,
+  "output": "docs/reverse-client/r1-mesh-connection-constants/inspection.json",
+  "reused": "34C410 low DWORD already read in r1-navigation-nearest-constants; no upper-lane result is consumed by the scalar matching path",
+  "guards": ["Fixed target/output/proof; refusal to overwrite; regular nonredirected path and same-descriptor before/after hash/stat", "External Windows Attributes ancestor precheck required", "Whole-file streams only for before/after hash; no code or adjacent data read", "No subprocess, backend, game execution, saves/cloud or security change"]
+}

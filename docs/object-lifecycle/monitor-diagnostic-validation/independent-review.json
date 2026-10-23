@@ -1,0 +1,45 @@
+{
+  "utc": "2026-10-20T07:09:04.028Z",
+  "status": "passed-diagnostic-enhancement-only",
+  "reviewers": [
+    "verify_handoff: native/PowerShell code and actual logs/hashes",
+    "build_portability: native implementation and fixture static review",
+    "root: independent saved evidence, code, scripts and execution"
+  ],
+  "findings": [],
+  "reviewed_hashes": {
+    "tools/static_analysis/ReaOwnedJob.cs": "f06ef3bb91be422afa3e1eef639243be2b711c4f701da462767649e34851b0c1",
+    "tools/static_analysis/measure_job_process_memory.ps1": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "tools/static_analysis/rea_sampler_failure.ps1": "fd43462fe384b002bcc78fbf13563b0ad22e017b8298e4720a4af6ddda27369c",
+    "tools/static_analysis/test_sampler_failure.ps1": "9693ed2f0ad4b6e974ee4275cafe2bd5e075cd45fa1d26e2af233a9fb768a08e",
+    "tools/static_analysis/rea_job_memory_profile.test.mjs": "c4e02845392cafa7714be168f25ce34903f94c9fff63e57d6d46b71ff95e3f20",
+    "tools/static_analysis/test_owned_job_diagnostics.ps1": "8db818b7ad41e2f7afd628065abdcfa6c7a41cdbddbec96470bf449ead5a1b3f",
+    "tools/static_analysis/OwnedJobDiagnosticFixture.cs": "734acb67adac25f0faa146b4e5835ded697767dd503bfea2217e1f4493fd66af"
+  },
+  "corrected_during_review": [
+    "Broken stderr must not prevent sidecar or replace first failure",
+    "Counter and post-query control phase markers must describe the actual failing stage"
+  ],
+  "current_checks": {
+    "native_diagnostics": 296,
+    "owned_job_regression": 115,
+    "projection_v2": 30,
+    "controller_mock_cases": 79,
+    "unreleased_gate_integration": "passed"
+  },
+  "before_copies_verified": 14,
+  "prior_checkpoint_copies_verified": 290,
+  "changed_before_status_updates": [
+    "tools/static_analysis/ReaOwnedJob.cs",
+    "tools/static_analysis/measure_job_process_memory.ps1",
+    "tools/static_analysis/rea_job_memory_profile.test.mjs"
+  ],
+  "native_faults": "Only fixed namespace-renamed test copies; no production hook or real-fault reproduction claim",
+  "real_short_lived_observations": {
+    "normal": 16,
+    "exited": 8,
+    "open_process_87": 0
+  },
+  "root_cause_proven": false,
+  "node_query_must_remain_paused": true
+}

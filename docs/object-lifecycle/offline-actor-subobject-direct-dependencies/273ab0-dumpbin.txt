@@ -1,0 +1,41 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Engine.dll
+
+File Type: DLL
+
+  0000000180273AB0: 48 83 EC 38        sub         rsp,38h
+  0000000180273AB4: 65 48 8B 04 25 58  mov         rax,qword ptr gs:[0000000000000058h]
+                    00 00 00
+  0000000180273ABD: 8B 0D 11 D3 1A 00  mov         ecx,dword ptr [0000000180420DD4h]
+  0000000180273AC3: BA 04 00 00 00     mov         edx,4
+  0000000180273AC8: 48 8B 0C C8        mov         rcx,qword ptr [rax+rcx*8]
+  0000000180273ACC: 8B 04 0A           mov         eax,dword ptr [rdx+rcx]
+  0000000180273ACF: 39 05 B3 04 1B 00  cmp         dword ptr [0000000180423F88h],eax
+  0000000180273AD5: 7F 0C              jg          0000000180273AE3
+  0000000180273AD7: 48 8D 05 B2 99 1A  lea         rax,[000000018041D490h]
+                    00
+  0000000180273ADE: 48 83 C4 38        add         rsp,38h
+  0000000180273AE2: C3                 ret
+  0000000180273AE3: 48 8D 0D 9E 04 1B  lea         rcx,[0000000180423F88h]
+                    00
+  0000000180273AEA: E8 F1 8F 06 00     call        00000001802DCAE0
+  0000000180273AEF: 83 3D 92 04 1B 00  cmp         dword ptr [0000000180423F88h],0FFFFFFFFh
+                    FF
+  0000000180273AF6: 75 DF              jne         0000000180273AD7
+  0000000180273AF8: 0F 57 C9           xorps       xmm1,xmm1
+  0000000180273AFB: C7 44 24 28 00 00  mov         dword ptr [rsp+28h],0
+                    00 00
+  0000000180273B03: 8B 44 24 28        mov         eax,dword ptr [rsp+28h]
+  0000000180273B07: 48 8D 0D 7A 04 1B  lea         rcx,[0000000180423F88h]
+                    00
+  0000000180273B0E: 0F 28 C1           movaps      xmm0,xmm1
+  0000000180273B11: 89 05 A5 99 1A 00  mov         dword ptr [000000018041D4BCh],eax
+  0000000180273B17: 0F 14 C1           unpcklps    xmm0,xmm1
+  0000000180273B1A: F2 0F 11 05 92 99  movsd       mmword ptr [000000018041D4B4h],xmm0
+                    1A 00
+  0000000180273B22: E8 59 8F 06 00     call        00000001802DCA80
+  0000000180273B27: EB AE              jmp         0000000180273AD7
+
+  Summary
+
+      301000 .text

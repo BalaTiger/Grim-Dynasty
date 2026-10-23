@@ -1,0 +1,23 @@
+{
+  "status": "pending-not-registered-not-executed",
+  "purpose": "Locate incoming references to the one verified EXE IAT slot for ControllerPlayer::HandleActionFromMouse. A Game-only analysis cannot establish this cross-module caller.",
+  "proof_file": "docs/reverse-client/r1-mouse-link-metadata/inspection.json",
+  "proof_sha256": "7eed75fd5b47b6a0699dd382c5a29eaea306f4b1856962c57c55351355e265cc",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Grim Dawn.exe",
+    "sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4"
+  },
+  "query": {"tool": "xrefs", "args": {"address": "0x1402d78a0"}},
+  "limits": {
+    "analysis_query_count": 1,
+    "automatic_expansion": false,
+    "original_execution": false,
+    "saves_access": false,
+    "game_only_xrefs_are_not_exe_caller_proof": true
+  },
+  "prerequisites": [
+    "Review a separately fixed EXE target identity and Java import profile before execution; existing Game profile must not be reused for this different binary.",
+    "Use the same resource, ownership, hash and cleanup safeguards; do not lower the existing gate or infer EXE peak memory from Game samples.",
+    "Treat raw xrefs as untyped addresses, not proven instructions or callers. Resolve only returned locations in a subsequent bounded plan if required."
+  ]
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "address": "0x180140420",
+    "bytes": "4c8b99b8000000",
+    "instruction": "mov         r11,qword ptr [rcx+00000000000000B8h]"
+  },
+  {
+    "address": "0x180140427",
+    "bytes": "4c8bd1",
+    "instruction": "mov         r10,rcx"
+  },
+  {
+    "address": "0x18014042a",
+    "bytes": "4c63ca",
+    "instruction": "movsxd      r9,edx"
+  },
+  {
+    "address": "0x18014042d",
+    "bytes": "4d85db",
+    "instruction": "test        r11,r11"
+  },
+  {
+    "address": "0x180140430",
+    "bytes": "742f",
+    "instruction": "je          0000000180140461"
+  },
+  {
+    "address": "0x180140432",
+    "bytes": "418b82a8000000",
+    "instruction": "mov         eax,dword ptr [r10+00000000000000A8h]"
+  },
+  {
+    "address": "0x180140439",
+    "bytes": "498bd1",
+    "instruction": "mov         rdx,r9"
+  },
+  {
+    "address": "0x18014043c",
+    "bytes": "8b89a0000000",
+    "instruction": "mov         ecx,dword ptr [rcx+00000000000000A0h]"
+  },
+  {
+    "address": "0x180140442",
+    "bytes": "48d3ea",
+    "instruction": "shr         rdx,cl"
+  },
+  {
+    "address": "0x180140445",
+    "bytes": "8bd2",
+    "instruction": "mov         edx,edx"
+  },
+  {
+    "address": "0x180140447",
+    "bytes": "4823d0",
+    "instruction": "and         rdx,rax"
+  },
+  {
+    "address": "0x18014044a",
+    "bytes": "498b04d3",
+    "instruction": "mov         rax,qword ptr [r11+rdx*8]"
+  },
+  {
+    "address": "0x18014044e",
+    "bytes": "4885c0",
+    "instruction": "test        rax,rax"
+  },
+  {
+    "address": "0x180140451",
+    "bytes": "740e",
+    "instruction": "je          0000000180140461"
+  },
+  {
+    "address": "0x180140453",
+    "bytes": "4c3908",
+    "instruction": "cmp         qword ptr [rax],r9"
+  },
+  {
+    "address": "0x180140456",
+    "bytes": "740d",
+    "instruction": "je          0000000180140465"
+  },
+  {
+    "address": "0x180140458",
+    "bytes": "488b4010",
+    "instruction": "mov         rax,qword ptr [rax+10h]"
+  },
+  {
+    "address": "0x18014045c",
+    "bytes": "4885c0",
+    "instruction": "test        rax,rax"
+  },
+  {
+    "address": "0x18014045f",
+    "bytes": "75f2",
+    "instruction": "jne         0000000180140453"
+  },
+  {
+    "address": "0x180140461",
+    "bytes": "0f28c3",
+    "instruction": "movaps      xmm0,xmm3"
+  },
+  {
+    "address": "0x180140464",
+    "bytes": "c3",
+    "instruction": "ret"
+  },
+  {
+    "address": "0x180140465",
+    "bytes": "4885c0",
+    "instruction": "test        rax,rax"
+  },
+  {
+    "address": "0x180140468",
+    "bytes": "74f7",
+    "instruction": "je          0000000180140461"
+  },
+  {
+    "address": "0x18014046a",
+    "bytes": "488b4808",
+    "instruction": "mov         rcx,qword ptr [rax+8]"
+  },
+  {
+    "address": "0x18014046e",
+    "bytes": "833901",
+    "instruction": "cmp         dword ptr [rcx],1"
+  },
+  {
+    "address": "0x180140471",
+    "bytes": "75ee",
+    "instruction": "jne         0000000180140461"
+  },
+  {
+    "address": "0x180140473",
+    "bytes": "8b4108",
+    "instruction": "mov         eax,dword ptr [rcx+8]"
+  },
+  {
+    "address": "0x180140476",
+    "bytes": "443bc0",
+    "instruction": "cmp         r8d,eax"
+  },
+  {
+    "address": "0x180140479",
+    "bytes": "7204",
+    "instruction": "jb          000000018014047F"
+  },
+  {
+    "address": "0x18014047b",
+    "bytes": "448d40ff",
+    "instruction": "lea         r8d,[rax-1]"
+  },
+  {
+    "address": "0x18014047f",
+    "bytes": "8b4904",
+    "instruction": "mov         ecx,dword ptr [rcx+4]"
+  },
+  {
+    "address": "0x180140482",
+    "bytes": "498b4248",
+    "instruction": "mov         rax,qword ptr [r10+48h]"
+  },
+  {
+    "address": "0x180140486",
+    "bytes": "4103c8",
+    "instruction": "add         ecx,r8d"
+  },
+  {
+    "address": "0x180140489",
+    "bytes": "f30f100488",
+    "instruction": "movss       xmm0,dword ptr [rax+rcx*4]"
+  },
+  {
+    "address": "0x18014048e",
+    "bytes": "c3",
+    "instruction": "ret"
+  },
+  {
+    "address": "0x18014048f",
+    "bytes": "cc",
+    "instruction": "int         3"
+  }
+]

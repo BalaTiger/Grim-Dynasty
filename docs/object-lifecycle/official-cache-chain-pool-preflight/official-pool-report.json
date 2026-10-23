@@ -1,0 +1,124 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-20T11:12:31.510Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/database/database.arz",
+  "expected_source_sha256": "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603",
+  "expected_source_bytes": 58529720,
+  "expected_string_table": {
+    "offset": 54551066,
+    "bytes": 3978638,
+    "count": 82999,
+    "payload_bytes": 3646638
+  },
+  "source_open_flags": "O_RDONLY; Node fs API does not expose .NET FileShare.Read exclusivity",
+  "stability_contract": "Source is assumed stable; same-handle fstat and before/after fixed SHA detect observed changes, not every possible transient concurrent mutation",
+  "full_file_hash": {
+    "chunk_bytes": 65536,
+    "reads_all_file_bytes": true
+  },
+  "semantic_reads": "Only 24-byte ARZ header and exact string-table region; full-file hashing separately traverses all bytes",
+  "record_table_read_or_decoded": false,
+  "record_payload_extracted_or_decompressed": false,
+  "source_modified": false,
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "official_archive_check_executed": true,
+  "limits": {
+    "max_strings": 82999,
+    "max_string_table_bytes": 3978638,
+    "max_payload_bytes": 3646638,
+    "max_explicit_array_payload_bytes": 4974626,
+    "explicit_arrays_plus_hash_buffer_header_count_bytes": 5040190,
+    "process_memory_cap_claimed": false,
+    "allocation_notes": "Excludes Node/runtime/crypto/Buffer-object overhead, report objects and caller retention; heap sort uses no auxiliary array"
+  },
+  "annotation_scope": "ID13 Class and ID28355 QuestItem are pool annotations only; no record body or key/value association is inferred",
+  "size_before": 58529720,
+  "source_hash_before": {
+    "sha256": "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603",
+    "bytes": 58529720
+  },
+  "header": {
+    "bytes_hex": "0200030079e52b03a17c1400848500001a6240038eb53c00",
+    "marker": 2,
+    "version": 3,
+    "record_table_offset_header_only": 53208441,
+    "record_table_size_header_only": 1342625,
+    "record_count_header_only": 34180,
+    "string_table_offset": 54551066,
+    "string_table_bytes": 3978638
+  },
+  "pool": {
+    "string_count": 82999,
+    "string_table_bytes": 3978638,
+    "payload_bytes": 3646638,
+    "string_table_sha256": "657ecaace92c1f1b9863f04776d504167fcebceeaba15db660e18af2d5e13af0",
+    "unique_value_count": 82999,
+    "duplicate_group_count": 0,
+    "duplicate_excess_entries": 0,
+    "entries_in_duplicate_groups": 0,
+    "duplicate_examples": [],
+    "duplicate_examples_limit": 8,
+    "duplicate_ids_per_example_limit": 8,
+    "empty_count": 1,
+    "empty_ids_sample": [
+      82687
+    ],
+    "max_string_bytes": 259,
+    "max_string_id": 60364,
+    "source_ids_preserved_under_fresh_exact_byte_import": true,
+    "empty_postcondition_would_append": false,
+    "original_id_policy": "Offsets and lengths remain indexed by original ID; only a separate Uint32 ID permutation is sorted",
+    "comparison": "Full raw bytes, case-sensitive, NUL preserved, unsigned-byte lexicographic; original-ID tie break",
+    "interpretation": "ID preservation refers only to fresh first-occurrence exact-byte deduplication; it does not establish native archive/context/cache compatibility",
+    "array_payload_bytes": {
+      "wire": 3978638,
+      "offsets": 331996,
+      "lengths": 331996,
+      "sorted_ids": 331996,
+      "total": 4974626
+    },
+    "sort_algorithm": "In-place heapsort; no array workspace; bounded duplicate examples only"
+  },
+  "pool_annotations": [
+    {
+      "original_id": 13,
+      "expected_ascii": "Class",
+      "stored_length": 5,
+      "exact_bytes_match": true,
+      "observed_bytes_prefix_hex": "436c617373"
+    },
+    {
+      "original_id": 28355,
+      "expected_ascii": "QuestItem",
+      "stored_length": 9,
+      "exact_bytes_match": true,
+      "observed_bytes_prefix_hex": "51756573744974656d"
+    }
+  ],
+  "size_after": 58529720,
+  "source_hash_after": {
+    "sha256": "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603",
+    "bytes": 58529720
+  },
+  "source_preserved": true,
+  "finished_utc": "2026-10-20T11:12:31.641Z",
+  "controller_resource_usage": {
+    "userCPUTime": 109000,
+    "systemCPUTime": 140000,
+    "maxRSS": 51320,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 14120,
+    "swappedOut": 0,
+    "fsRead": 1794,
+    "fsWrite": 0,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

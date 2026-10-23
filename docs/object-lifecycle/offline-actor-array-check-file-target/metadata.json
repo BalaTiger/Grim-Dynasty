@@ -1,0 +1,87 @@
+{
+  "schema": "grim-dynasty-actor-array-check-file-target-byte-v1",
+  "started_utc": "2026-10-21T04:12:14.707Z",
+  "status": "non-c3-file-entry-unknown-stopped",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-array-check-slot/metadata.json",
+      "sha256": "0104909b53b3c083ecceb817c1b3048f101f8021ffbcd51fcb438ebd408d56d7"
+    }
+  ],
+  "target_rva": "0xce70",
+  "target_preferred_va": "0x18000ce70",
+  "file_offset": 49776,
+  "limits": {
+    "code_bytes": 1,
+    "metadata_bytes": 0,
+    "fingerprint_chunk_bytes": 65536
+  },
+  "code_bytes": 1,
+  "metadata_bytes": 0,
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    }
+  ],
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "subprocesses": 0,
+  "dumpbin_invoked": false,
+  "build_or_test_execution": false,
+  "original_modified": false,
+  "permission_change": false,
+  "full_target_copy_created": false,
+  "runtime_slot_value_observed": false,
+  "loader_rebinding_observed": false,
+  "limitations": [
+    "The only semantic read is the file-image initializer target CE70 first byte. No neighbors, tables, imports, .pdata or additional code are read.",
+    "C3 directly encodes near RET in x64; any other byte leaves behavior unknown and stops without expansion.",
+    "A file-entry RET observation does not establish the loaded guard target, runtime validation, exception behavior or that the caller can skip its guard.",
+    "The file target is never executed. Fingerprints are separate from the one-byte scope; before/after hash/stat checks are not an atomic snapshot."
+  ],
+  "script_sha256": "5c39f2fc537dbf47982f79ffc0c385d256e9dc4777040f4bba2a7073d33fe4a5",
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "raw_hex": "c2",
+  "file_entry_ret_observed": false,
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "source_handle_closed": true,
+  "source_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T04:12:14.715Z",
+  "controller_resource_usage": {
+    "userCPUTime": 31000,
+    "systemCPUTime": 0,
+    "maxRSS": 41236,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 10849,
+    "swappedOut": 0,
+    "fsRead": 144,
+    "fsWrite": 1,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

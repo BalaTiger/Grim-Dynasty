@@ -1,0 +1,63 @@
+{
+  "status": "PreparedNotExecuted",
+  "script": "tools/static_analysis/read_r1_navigation_compressor_slot.mjs",
+  "script_bytes": 11933,
+  "script_sha256": "7b6e71312c6c600c84115c0798bb4fc1a92fd306d114d5cf5bc642255060f949",
+  "entry_function": "inspectNavigationCompressorSlot",
+  "invocation_javascript": "const m = await import('./tools/static_analysis/read_r1_navigation_compressor_slot.mjs'); m.inspectNavigationCompressorSlot();",
+  "explicit_invocation_required": true,
+  "import_has_file_io": false,
+  "approval": "Parent must perform normal formal execution approval. Source preparation is not execution authorization. No request to change security settings or ownership checks.",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "size": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "mode": "read only, one file descriptor",
+    "whole_file_hash_passes": 2,
+    "hash_stream_buffer_bytes": 65536,
+    "hash_bytes_on_success": 8971264,
+    "pe_metadata_bytes_max": 4096,
+    "pe_metadata_single_read_bytes_max": 512,
+    "fixed_data_reads": [
+      { "rva": "0x340a10", "bytes": 8, "purpose": "vptr340A00 + 0x10 compressor slot; output pointer and verify executable on-disk target section only" },
+      { "rva": "0x34badc", "bytes": 4, "purpose": "10A884 ADDSS source constant; output exact bits and float32 disk value" }
+    ],
+    "data_bytes_on_success": 12,
+    "target_body_bytes": 0,
+    "original_executed": false
+  },
+  "workspace_inputs": [
+    {
+      "path": "docs/reverse-client/r1-navigation-implementation-constructor/05-NavigationImplementationConstructor-procedure_assembly.json",
+      "sha256": "1a016f11388e78a316b9b3552f88bd3d7c4d7ace4c518f6c95ed9f48ea884571",
+      "procedure": "0x18010a530"
+    },
+    {
+      "path": "docs/reverse-client/r1-tile-cache-and-decompression/08-TileCacheDecompression-0x180263e40-procedure_assembly.json",
+      "sha256": "18157f29003ef2256c96704243a47c073c0c1e2a83d767a8ca96208f6b577023",
+      "procedure": "0x180263e40"
+    },
+    {
+      "path": "docs/reverse-client/r1-tile-cache-and-decompression/11-TileCacheDecompression-0x18026cc50-procedure_assembly.json",
+      "sha256": "8cb8a0337ce9e902badcb6d180701f494c2e07c42116decf995aaaccf16d7197",
+      "procedure": "0x18026cc50"
+    }
+  ],
+  "output": {
+    "new_directory": "docs/reverse-client/r1-navigation-compressor-slot",
+    "files": ["inspection.json"],
+    "reject_existing_directory": true,
+    "write_mode": "wx",
+    "failure_policy": "Keep created directory and failure report; never remove evidence or retry within the reader. Refusal before a safe output directory exists is surfaced as an exception."
+  },
+  "guards": [
+    "Fixed Windows workspace and script name; no command-line path parameters.",
+    "Source and proof files must be regular, single-link files with nonzero inode; ancestor lstat and native realpath checks.",
+    "Parent must ensure the required Windows Attributes/reparse checks on source and path chain; Node cannot expose every reparse tag.",
+    "Proof hashes and Ghidra subject, digest, original path, operation, procedure and exact relevant assembly lines must match before original source is opened.",
+    "Original preopen stat, opened descriptor stat, descriptor final stat and final source path stat must agree; same descriptor is hashed before and after.",
+    "Section mapping must be unique and file backed; slot/constant sections readable and nonexecutable; pointer target executable with file backing.",
+    "No target function body, adjacent slot, RTTI, other original file, save data, subprocess or backend."
+  ],
+  "interpretation": "An executable address is a precise disk-slot binding, not verified decoder semantics, live object identity or native runtime compatibility. Constant observation is also on-disk only."
+}

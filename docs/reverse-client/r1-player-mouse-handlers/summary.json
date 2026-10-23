@@ -1,0 +1,224 @@
+{
+  "status": "failed",
+  "started": "2026-10-22T10:12:32.908Z",
+  "finished": "2026-10-22T10:13:13.351Z",
+  "plan_sha256": "e82a31c3a7f13ecb304dedf83318c60ace5c18efbbefc3f7a24032231cdd7f41",
+  "request_timeout_ms": 600000,
+  "tool_calls": 4,
+  "completed_plan_calls": 3,
+  "targets_launched": false,
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+  },
+  "close_acknowledged": false,
+  "closed_session_verified": false,
+  "process_exit_confirmed": true,
+  "forced_termination": true,
+  "child_exit_code": 92,
+  "child_signal": null,
+  "stderr_truncated": false,
+  "memory": {
+    "heap_limit": "384M",
+    "required_reserve_gib": 2,
+    "launch_threshold_gib": 5,
+    "stop_threshold_gib": 2,
+    "interval_ms": 2000,
+    "samples": 21,
+    "minimum_free_gib": 7.99371337890625,
+    "stop_triggered": true,
+    "calibration_only": false,
+    "calibration_source": "unchanged-provisional-Game-budget-with-prior-trial-observation",
+    "measured_game_peak_available": true,
+    "prior_game_trial_observation": {
+      "summary_file": "docs/reverse-client/r1-game-mouse-calibration/summary.json",
+      "summary_sha256": "1397b49afa2556c97b2c1ea5ab9807a92c1a1306cd98262d10e697a2ed4d571e",
+      "required_status": "passed",
+      "closed_session_verified": true,
+      "process_exit_confirmed": true,
+      "job_empty_confirmed": true,
+      "sampler_exit_confirmed": true,
+      "completed_plan_calls": 8,
+      "sampled_tree_private_commit_peak_bytes": 993013760,
+      "sampled_with_controller_and_sampler_private_peak_bytes": 1175207936,
+      "limitations": "One previous Game query trial with discrete sampling; no guarantee for this different fixed batch and no permission to reduce the existing resource gates."
+    },
+    "legacy_budget_fields": "The reused game-mouse-first-calibration-384m-v1 budget object retains its original calibrationOnly/measuredGamePeakAvailable labels. Those immutable labels describe budget provenance, not the current observation inventory; use this plan and prior_game_trial_observation for current evidence.",
+    "owned_profile_budget": {
+      "id": "game-mouse-first-calibration-384m-v1",
+      "heap": "384M",
+      "launchBytes": 5368709120,
+      "stopBytes": 2147483648,
+      "maximumSampleAgeMs": 5000,
+      "staleAfterMs": 15000,
+      "taskAllowanceGiB": 3,
+      "systemSpareGiB": 2,
+      "calibrationOnly": true,
+      "measuredGamePeakAvailable": false
+    }
+  },
+  "owned_memory_profile": {
+    "sampler_pid": 27268,
+    "budget": {
+      "id": "game-mouse-first-calibration-384m-v1",
+      "heap": "384M",
+      "launchBytes": 5368709120,
+      "stopBytes": 2147483648,
+      "maximumSampleAgeMs": 5000,
+      "staleAfterMs": 15000,
+      "taskAllowanceGiB": 3,
+      "systemSpareGiB": 2,
+      "calibrationOnly": true,
+      "measuredGamePeakAvailable": false
+    },
+    "ownership_policy": "windows-job-v1",
+    "expected_heap_observed": true,
+    "job_empty_confirmed": true,
+    "requested_interval_ms": 1000,
+    "samples": 26,
+    "last_sample_utc": "2026-10-22T10:13:12.8397578Z",
+    "tree_private_commit_peak_bytes": 929574912,
+    "tree_working_set_peak_bytes": 846606336,
+    "with_controller_and_sampler_private_peak_bytes": 1188421632,
+    "with_controller_and_sampler_working_set_peak_bytes": 1110638592,
+    "minimum_available_physical_bytes": 8594837504,
+    "minimum_commit_headroom_bytes": 21729951744,
+    "largest_receipt_gap_ms": 1636,
+    "counter_read_gap_count": 0,
+    "processes": [
+      {
+        "pid": 22640,
+        "parent_pid": 21372,
+        "name": "node.exe",
+        "role": "controller",
+        "creation_utc": "2026-10-22T10:12:32.1624111Z",
+        "private_commit_sample_peak_bytes": 143835136,
+        "lifetime_commit_peak_observed_bytes": 152535040,
+        "working_set_sample_peak_bytes": 160350208,
+        "lifetime_working_set_peak_observed_bytes": 163049472,
+        "maximum_threads_observed": 15,
+        "java_heap_switches": []
+      },
+      {
+        "pid": 31868,
+        "parent_pid": 22640,
+        "name": "node.exe",
+        "role": "owned_backend_tree",
+        "creation_utc": "2026-10-22T10:12:32.9113863Z",
+        "private_commit_sample_peak_bytes": 428576768,
+        "lifetime_commit_peak_observed_bytes": 447602688,
+        "working_set_sample_peak_bytes": 412078080,
+        "lifetime_working_set_peak_observed_bytes": 424591360,
+        "maximum_threads_observed": 20,
+        "java_heap_switches": []
+      },
+      {
+        "pid": 27268,
+        "parent_pid": 22640,
+        "name": "powershell.exe",
+        "role": "sampler",
+        "creation_utc": "2026-10-22T10:12:32.9511883Z",
+        "private_commit_sample_peak_bytes": 167505920,
+        "lifetime_commit_peak_observed_bytes": 167571456,
+        "working_set_sample_peak_bytes": 192000000,
+        "lifetime_working_set_peak_observed_bytes": 192090112,
+        "maximum_threads_observed": 35,
+        "java_heap_switches": []
+      },
+      {
+        "pid": 31292,
+        "parent_pid": 31868,
+        "name": "cmd.exe",
+        "role": "owned_backend_tree",
+        "creation_utc": "2026-10-22T10:12:35.9125164Z",
+        "private_commit_sample_peak_bytes": 10936320,
+        "lifetime_commit_peak_observed_bytes": 11141120,
+        "working_set_sample_peak_bytes": 12505088,
+        "lifetime_working_set_peak_observed_bytes": 12677120,
+        "maximum_threads_observed": 6,
+        "java_heap_switches": []
+      },
+      {
+        "pid": 31024,
+        "parent_pid": 31292,
+        "name": "conhost.exe",
+        "role": "owned_backend_tree",
+        "creation_utc": "2026-10-22T10:12:35.9203158Z",
+        "private_commit_sample_peak_bytes": 1265664,
+        "lifetime_commit_peak_observed_bytes": 1265664,
+        "working_set_sample_peak_bytes": 7737344,
+        "lifetime_working_set_peak_observed_bytes": 7737344,
+        "maximum_threads_observed": 3,
+        "java_heap_switches": []
+      },
+      {
+        "pid": 29072,
+        "parent_pid": 31292,
+        "name": "java.exe",
+        "role": "owned_backend_tree",
+        "creation_utc": "2026-10-22T10:12:36.3021235Z",
+        "private_commit_sample_peak_bytes": 595365888,
+        "lifetime_commit_peak_observed_bytes": 602603520,
+        "working_set_sample_peak_bytes": 575315968,
+        "lifetime_working_set_peak_observed_bytes": 583815168,
+        "maximum_threads_observed": 42,
+        "java_heap_switches": [
+          "-Xmx384M"
+        ],
+        "validated_java_role": "analyze-headless"
+      }
+    ],
+    "failures": [
+      "Owned memory monitoring: Another UE/build/Java process is active"
+    ],
+    "job_stop_requested": true,
+    "sampler_exit_confirmed": true,
+    "sampler_exit_code": 0,
+    "sampler_output_drained": true,
+    "limitations": [
+      "Sampled tree sums are not continuous peaks; short-lived processes or the last interval before exit may be missed.",
+      "Working sets may contain shared pages. Sum of per-process lifetime peaks is not simultaneous tree usage.",
+      "Controller and PowerShell sampler overhead are recorded separately and also included in total task peaks."
+    ]
+  },
+  "evidence_redaction": "Credential values are redacted; other parsed tool-response fields are retained.",
+  "records": [
+    {
+      "label": "01-initial-session",
+      "tool": "binary_session",
+      "call_number": 1,
+      "status": "passed",
+      "elapsed_ms": 401
+    },
+    {
+      "label": "02-Game-open",
+      "tool": "open_binary",
+      "call_number": 2,
+      "status": "passed",
+      "elapsed_ms": 17
+    },
+    {
+      "label": "03-Game-session",
+      "tool": "binary_session",
+      "call_number": 3,
+      "status": "passed",
+      "elapsed_ms": 30
+    },
+    {
+      "label": "04-PlayerMouse-0x180161d00-procedure_pseudo_code",
+      "tool": "procedure_pseudo_code",
+      "call_number": 4,
+      "status": "failed",
+      "error": "Owned memory monitoring: Another UE/build/Java process is active",
+      "elapsed_ms": 36087
+    }
+  ],
+  "errors": [
+    "Owned memory monitoring: Another UE/build/Java process is active",
+    "Rea required forced termination; normal process cleanup was not confirmed",
+    "Abnormal Rea exit: code=92, signal=null",
+    "Final closed-session state not confirmed",
+    "Owned memory monitoring: Another UE/build/Java process is active"
+  ]
+}

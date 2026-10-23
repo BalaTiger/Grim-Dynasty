@@ -1,0 +1,56 @@
+{
+  "schema": "grim-dynasty-terrain-material-binding-prepared-v1",
+  "status": "prepared-not-executed",
+  "purpose": "Prepare two bounded evidence reads for real terrain material identity, without expanding the native object factory or renderer.",
+  "root_review_and_formal_execution_approval_required": true,
+  "original_reads_performed_in_preparation": false,
+  "build_or_runtime_tests_performed": false,
+  "backend_started": false,
+  "actions": [
+    {
+      "id": "A",
+      "script": "tools/static_analysis/read_r1_terrain_type_exports.mjs",
+      "script_sha256": "6ba0cb282b98502553b89a523cb3c30d6b1a800986512ad0b99bed54fb2e973e",
+      "plan": "tools/static_analysis/r1-terrain-type-exports-plan.json",
+      "plan_sha256": "a42ae4d65d8e4bec77f656981953013f79e394b2e2bf35b846c35fc3b4bf8a67",
+      "command": "& 'D:\\NodeJS\\node.exe' 'C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\tools\\static_analysis\\read_r1_terrain_type_exports.mjs'",
+      "output": "docs/reverse-client/r1-terrain-type-exports/discovery.json",
+      "syntax_check": "Node --check completed with exit 0; module body not executed.",
+      "scope": "Two exact TerrainType constructor/Load prefixes, at most four selected export candidates, bounded export and pdata binary search, one 8-byte exception-directory read. At most 16 KiB new metadata and 1024 read operations; no code-body interpretation.",
+      "source": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "bytes": 4485632,
+        "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+      },
+      "protection": "Fixed new output; pinned project proof and source; one O_RDONLY source handle, two 64 KiB-buffer SHA256 passes, same-handle stat/hash stability, redirected ancestors rejected, failure preserved. O_RDONLY is not claimed to provide Windows shared-read locking or atomicity."
+    },
+    {
+      "id": "B",
+      "script": "tools/static_analysis/read_r1_terrain_records.ps1",
+      "script_sha256": "c62c8234cbb1ec7b1dcfedcd858f10005f0a517677a7350f99cd0c5bcdc4e888",
+      "plan": "tools/static_analysis/r1-terrain-records-plan.json",
+      "plan_sha256": "c2dbdadce283a0f6d87dae990e8978ab1961f63a465780843c4329c04b5a2084",
+      "command": "& 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -NoProfile -File 'C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\tools\\static_analysis\\read_r1_terrain_records.ps1'",
+      "output": "docs/reverse-client/r1-terrain-records/manifest.json",
+      "syntax_check": "PowerShell Parser.ParseFile completed with 0 errors; script not executed.",
+      "scope": "Exactly five terrain names and offsets from pinned saved mainmenu-ground layout, using the accepted own M1 inspect-record command. One known base ARZ, no recursive references or DLC fallback.",
+      "source": {
+        "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\database\\database.arz",
+        "bytes": 58529720,
+        "sha256": "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603"
+      },
+      "tool": {
+        "path": "artifacts/m1-offline-20261022-03/gd-offline.exe",
+        "sha256": "c4a84feb1bedbaa9b08598ff2cdd01ab0aeaa0bf7a57bbfbcf937faa38ba508b"
+      },
+      "protection": "Read-only FileShare.Read source/tool handles held across the five calls; each hashed before/after whole batch, 64 KiB buffers; reparse ancestors rejected, fixed fresh output, exact returned failure output preserved. A missing record stops the batch and remains unknown."
+    }
+  ],
+  "interpretation_boundaries": [
+    "Export names and containing unwind ranges locate candidates; they do not prove native constructor/Load behavior or a complete logical function.",
+    "Decoded base-database records alone do not establish DLC merge order, native allocation, class registration, runtime material identity, FC value or ABI compatibility.",
+    "Terrain material +FC is a copied DWORD in the already evidenced Block path. Unknown bits may propagate once a real material object/view is established; this plan does not invent that identity.",
+    "No game DLL loading, original game or Rea/Java execution, compiler, saves/cloud access, security changes, deletion, commit or push."
+  ],
+  "remaining_action": "Root reviews both frozen scripts and pins, then requests and executes the two precise actions serially through the normal approval mechanism. Neither action has been requested, denied, or launched by this preparation task."
+}

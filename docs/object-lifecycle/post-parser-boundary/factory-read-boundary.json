@@ -1,0 +1,138 @@
+{
+  "utc": "2026-10-20T06:12:22.213Z",
+  "status": "offline-dependency-review-complete",
+  "original_files_read": false,
+  "backend_started": false,
+  "known": [
+    "Engine root preferred VA 0x18041cf00 feeds 0x180274ec0; metadata+0x28 tail callback",
+    "FinishPartial releases manager gate before object dynamic vslot+8",
+    "Game Item ctor writes primary vptr 0x18076a4c0; +8 slot is at0x18076a4c8",
+    "Item::classInfo0x180a5c8a0 is a type-check anchor, not proven factory population",
+    "CreateItem0x180324120 pseudocode calls0x18012c910 then SetItemReplicaInfo and+0x3f0"
+  ],
+  "missing": [
+    "root/children population and actual callback bindings",
+    "allocation-wrapper to concrete constructor identity",
+    "Game0x18076a4c8 slot bytes and target body; actual derived vptrs",
+    "Game0x18012c910 body and instruction-level callsite",
+    "concrete Read behavior; base RET cannot substitute"
+  ],
+  "implemented_native_factory_or_read": false,
+  "sources": [
+    {
+      "role": "Engine root and factory call",
+      "path": "docs/object-lifecycle/rea-native-registration/04-ObjectManager-CreatePartial-order-assembly.json",
+      "sha256": "7a32e57757bc0cb2d336cd63ade820108fc1f3babb767c8150db54b5ad277d98",
+      "evidence_id": "ev_5685a6f351382b23dc14bd60345168e3962bab9b962c92becd0bc5a90bab521d",
+      "excerpts": [
+        "0x18017e1b2: LEA RCX, [0x18041cf00]",
+        "0x18017e1b9: MOV RDI, RAX",
+        "0x18017e1bc: CALL 0x180274ec0"
+      ]
+    },
+    {
+      "role": "ClassInfo callback and layout",
+      "path": "docs/object-lifecycle/rea-native-registration/09-Class-factory-helper-0x180274ec0-assembly.json",
+      "sha256": "bfa5f091e67fe9ee863c639d10d8cdf2424d0f564278baaaa37661d661794790",
+      "evidence_id": "ev_9a2d2b7151f8d4fa70667f4f982d4dc9e3bca50cfa6168989daab735c2724b53",
+      "excerpts": [
+        "0x180274ec0: MOV qword ptr [RSP + 0x10], RBX",
+        "0x180274ec5: MOV qword ptr [RSP + 0x18], RBP",
+        "0x180274eca: PUSH RSI",
+        "0x180274ecb: SUB RSP, 0x20",
+        "0x180274ecf: MOV RSI, RCX",
+        "0x180274ed2: XOR EBX, EBX",
+        "0x180274ed4: MOV RCX, qword ptr [RCX + 0x8]",
+        "0x180274ed8: MOV RBP, RDX",
+        "0x180274edb: SUB RCX, RDX",
+        "0x180274ede: MOV RAX, RDX",
+        "0x180274ee1: MOVZX R9D, byte ptr [RAX]",
+        "0x180274ee5: MOVZX R8D, byte ptr [RAX + RCX*0x1]",
+        "0x180274eea: SUB R9D, R8D",
+        "0x180274eed: JNZ 0x180274ef7",
+        "0x180274eef: INC RAX",
+        "0x180274ef2: TEST R8D, R8D",
+        "0x180274ef5: JNZ 0x180274ee1",
+        "0x180274ef7: TEST R9D, R9D",
+        "0x180274efa: JNZ 0x180274f12",
+        "0x180274efc: MOV RAX, qword ptr [RSI + 0x28]",
+        "0x180274f00: MOV RBX, qword ptr [RSP + 0x38]",
+        "0x180274f05: MOV RBP, qword ptr [RSP + 0x40]",
+        "0x180274f0a: ADD RSP, 0x20",
+        "0x180274f0e: POP RSI",
+        "0x180274f0f: JMP RAX",
+        "0x180274f2b: CALL 0x180274ec0"
+      ]
+    },
+    {
+      "role": "Unlock then dynamic Read",
+      "path": "docs/object-lifecycle/rea-native-registration/05-ObjectManager-FinishPartial-order-assembly.json",
+      "sha256": "ff316ad5d46f49d31d39cfdb5c0aedd1d47133b9bfd8d632a47164e8dea07804",
+      "evidence_id": "ev_866e78d4d3d3d3a12206e39924ca20389433f0c4fc86690cc3209edbf74e973b",
+      "excerpts": [
+        "0x18017e303: JZ 0x18017e38f",
+        "0x18017e372: CALL 0x1801356f0",
+        "0x18017e377: MOV RCX, qword ptr [RBP + 0x28]",
+        "0x18017e37b: CALL qword ptr [0x180302330]",
+        "0x18017e381: MOV RAX, qword ptr [RDI]",
+        "0x18017e384: MOV RDX, R14",
+        "0x18017e387: MOV RCX, RDI",
+        "0x18017e38a: CALL qword ptr [RAX + 0x8]",
+        "0x18017e38d: JMP 0x18017e3b5",
+        "0x18017e38f: CMP qword ptr [RBX + 0x18], 0x10"
+      ]
+    },
+    {
+      "role": "Game Item primary vptr",
+      "path": "docs/rewards/rea-inventory-add/Item-constructor-primary-table-assembly.json",
+      "sha256": "7a078d11495b5b7c10a07d7b6309c9d633f8ec39dfc444e5f0decfbd5efe1a3f",
+      "evidence_id": "ev_dc74728b755b7c7439ee4b8d39c086823605e9c076f29830caff716706ea11ee",
+      "excerpts": [
+        "0x1803236b0: MOV RDI, RCX",
+        "0x1803236b3: CALL qword ptr [0x180609700]",
+        "0x1803236b9: NOP",
+        "0x1803236ba: LEA RAX, [0x18076a4c0]",
+        "0x1803236c1: MOV qword ptr [RDI], RAX",
+        "0x1803236c4: LEA RAX, [0x1806d5b18]",
+        "0x1803236cb: MOV qword ptr [RDI + 0x30], RAX",
+        "0x1803236cf: LEA RAX, [0x18079f408]"
+      ]
+    },
+    {
+      "role": "Game Item metadata type check only",
+      "path": "docs/rewards/rea-inventory-add/Inventory-AddItem-order-assembly.json",
+      "sha256": "7a2d5542b0fd3df6f868c2013e5be12626a4e23fe051a3b84955d9298ffe6c5b",
+      "evidence_id": "ev_f9f773fce955302c09914c17c9c954b566c86b946713a83d4338bfcaf67ab170",
+      "excerpts": [
+        "0x18031ed71: JZ 0x18031edaf",
+        "0x18031ed73: MOV RAX, qword ptr [RAX]",
+        "0x18031ed76: MOV RCX, RDI",
+        "0x18031ed79: CALL qword ptr [RAX]",
+        "0x18031ed7b: LEA RDX, [0x180a5c8a0]",
+        "0x18031ed82: CMP RAX, RDX",
+        "0x18031ed85: JZ 0x18031ed9e",
+        "0x18031ed87: MOV RCX, qword ptr [RAX + 0x10]",
+        "0x18031ed8b: TEST RCX, RCX",
+        "0x18031ed8e: JZ 0x18031edaf",
+        "0x18031ed90: CMP RCX, RDX",
+        "0x18031ed93: JZ 0x18031ed9e",
+        "0x18031ed95: CALL 0x180591480",
+        "0x18031ed9a: TEST AL, AL",
+        "0x18031ed9c: JZ 0x18031edaf",
+        "0x18031ed9e: MOV RAX, qword ptr [RDI]"
+      ]
+    },
+    {
+      "role": "Game Item creation bridge pseudocode only",
+      "path": "docs/rewards/rea-item-creation/Item-CreateItem-replica.json",
+      "sha256": "3571942748de195ec4d9d2685cd599051710d05cd8201dca8af5b2f9fce25831",
+      "evidence_id": "ev_c6036870972542ed5dc24b855aa73ec082de1c7fd18175f108983f262801a0a9",
+      "excerpts": [
+        "                    /* 0x324120  10498  ?CreateItem@Item@GAME@@SAPEAV12@AEBUItemReplicaInfo@2@@Z */",
+        "  this = (Item *)FUN_18012c910(pOVar1,&local_30,*(undefined4 *)param_1);",
+        "    SetItemReplicaInfo(this,param_1);",
+        "    (**(code **)(*(longlong *)this + 0x3f0))(this);"
+      ]
+    }
+  ]
+}

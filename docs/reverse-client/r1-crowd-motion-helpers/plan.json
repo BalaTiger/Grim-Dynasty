@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "purpose": "Six fixed direct Engine helpers:25E900,25EA00,25EB90,25BF40 plus034CF0 actual member append and058190 actual first-group vector growth. Recover movement index/neighbor/borrowed waypoint and registration storage semantics without replacing them with generic List.Add or assumed preallocation. No recursive allocation/CRT expansion.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-crowd-movement-direct/08-CrowdMovementDirect-0x18025c440-procedure_assembly.json",
+      "sha256": "62da8b3465041af3522b3e36a72e4680485d0c9b2a832ab8b3207ce27bf5b8ae",
+      "addresses": [
+        "0x18025e900",
+        "0x18025ea00",
+        "0x18025eb90",
+        "0x18025bf40"
+      ],
+      "source_kind": "Direct saved assembly:25C50E CALL25E900 with group+58 and observed agent count;25C8D2 CALL25EA00 with group+58 and agent;25CBB8 and25DBF8 CALL25EB90 with actual neighboring-agent output buffers;25CBC4,25CC78 and25E0B6 CALL25BF40 with agent+E8. Query exactly these four bodies; do not infer helper implementation from role labels."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-movement-direct/09-CrowdMovementDirect-0x18025c440-procedure_callees.json",
+      "sha256": "5ea9c5537137b93d6d8637fa2874f6dba169a751aadebc162839a2d915973e24",
+      "addresses": [
+        "0x18025e900",
+        "0x18025ea00",
+        "0x18025eb90",
+        "0x18025bf40"
+      ],
+      "source_kind": "Same fingerprint25C440 direct callee evidence includes all four exact addresses. No unobserved recursive targets."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-agent-group-registration/11-CrowdAgentGroupRegistration-0x18025c340-procedure_assembly.json",
+      "sha256": "0bd06f432452784a1164fc01358ab63645162a83f7d08998f41567e745b568fb",
+      "addresses": [
+        "0x180034cf0"
+      ],
+      "source_kind": "25C355 RCX=group+28;25C35D writes agent index before25C35F RDX=&borrowed local agent pointer and25C364 CALL034CF0. This is actual membership publication; do not substitute List.Add or erase failure prefixes."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-agent-group-registration/08-CrowdAgentGroupRegistration-0x18025a250-procedure_assembly.json",
+      "sha256": "c99cc6804a210776df2057c3daa3c2ffee9b4255ea042e67d8c145f761edfda6",
+      "addresses": [
+        "0x180058190"
+      ],
+      "source_kind": "Both capacity-equality branches directly CALL058190 at25A490 and25A4B3,RCX=RBX=manager+10 vector. First-group production cannot be claimed by bypassing this growth or inventing its allocator behavior."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 23,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Only six evidence-bound Engine targets and23 total calls including lifecycle; no automatic recursion. This supersedes the unexecuted17-call preparation preserved separately. Scoped reverse-client body filename inventory had no target hits.",
+    "Separate formal approval required for real execution; offline verification never opens originals or starts a backend.",
+    "Preserve384M heap,existing4.25GiB base budget plus stricter5GiB physical-and-commit launch,2GiB stop,ownership/mutex/freshness guards.",
+    "No original execution,save/cloud access,installation,security changes,broad scan or generic allocation/CRT expansion.",
+    "Keep actual group/agent/query identity,neighbor order,borrowed waypoint lifetime and registration storage failure prefixes. Do not clear flags,substitute empty neighbors,List.Add or assumed preallocation to claim motion or first-group publication."
+  ],
+  "calls": [
+    {
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "tool": "binary_session",
+      "label": "01-initial-session"
+    },
+    {
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "tool": "open_binary",
+      "label": "02-Engine-open"
+    },
+    {
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "tool": "binary_session",
+      "label": "03-Engine-session"
+    },
+    {
+      "args": {
+        "procedure": "0x18025e900"
+      },
+      "tool": "procedure_pseudo_code",
+      "label": "04-CrowdMotionHelper-0x18025e900-procedure_pseudo_code"
+    },
+    {
+      "args": {
+        "procedure": "0x18025e900"
+      },
+      "tool": "procedure_assembly",
+      "label": "05-CrowdMotionHelper-0x18025e900-procedure_assembly"
+    },
+    {
+      "args": {
+        "procedure": "0x18025e900"
+      },
+      "tool": "procedure_callees",
+      "label": "06-CrowdMotionHelper-0x18025e900-procedure_callees"
+    },
+    {
+      "args": {
+        "procedure": "0x18025ea00"
+      },
+      "tool": "procedure_pseudo_code",
+      "label": "07-CrowdMotionHelper-0x18025ea00-procedure_pseudo_code"
+    },
+    {
+      "args": {
+        "procedure": "0x18025ea00"
+      },
+      "tool": "procedure_assembly",
+      "label": "08-CrowdMotionHelper-0x18025ea00-procedure_assembly"
+    },
+    {
+      "args": {
+        "procedure": "0x18025ea00"
+      },
+      "tool": "procedure_callees",
+      "label": "09-CrowdMotionHelper-0x18025ea00-procedure_callees"
+    },
+    {
+      "args": {
+        "procedure": "0x18025eb90"
+      },
+      "tool": "procedure_pseudo_code",
+      "label": "10-CrowdMotionHelper-0x18025eb90-procedure_pseudo_code"
+    },
+    {
+      "args": {
+        "procedure": "0x18025eb90"
+      },
+      "tool": "procedure_assembly",
+      "label": "11-CrowdMotionHelper-0x18025eb90-procedure_assembly"
+    },
+    {
+      "args": {
+        "procedure": "0x18025eb90"
+      },
+      "tool": "procedure_callees",
+      "label": "12-CrowdMotionHelper-0x18025eb90-procedure_callees"
+    },
+    {
+      "args": {
+        "procedure": "0x18025bf40"
+      },
+      "tool": "procedure_pseudo_code",
+      "label": "13-CrowdMotionHelper-0x18025bf40-procedure_pseudo_code"
+    },
+    {
+      "args": {
+        "procedure": "0x18025bf40"
+      },
+      "tool": "procedure_assembly",
+      "label": "14-CrowdMotionHelper-0x18025bf40-procedure_assembly"
+    },
+    {
+      "args": {
+        "procedure": "0x18025bf40"
+      },
+      "tool": "procedure_callees",
+      "label": "15-CrowdMotionHelper-0x18025bf40-procedure_callees"
+    },
+    {
+      "args": {
+        "procedure": "0x180034cf0"
+      },
+      "tool": "procedure_pseudo_code",
+      "label": "16-CrowdMotionHelper-0x180034cf0-procedure_pseudo_code"
+    },
+    {
+      "args": {
+        "procedure": "0x180034cf0"
+      },
+      "tool": "procedure_assembly",
+      "label": "17-CrowdMotionHelper-0x180034cf0-procedure_assembly"
+    },
+    {
+      "args": {
+        "procedure": "0x180034cf0"
+      },
+      "tool": "procedure_callees",
+      "label": "18-CrowdMotionHelper-0x180034cf0-procedure_callees"
+    },
+    {
+      "args": {
+        "procedure": "0x180058190"
+      },
+      "tool": "procedure_pseudo_code",
+      "label": "19-CrowdMotionHelper-0x180058190-procedure_pseudo_code"
+    },
+    {
+      "args": {
+        "procedure": "0x180058190"
+      },
+      "tool": "procedure_assembly",
+      "label": "20-CrowdMotionHelper-0x180058190-procedure_assembly"
+    },
+    {
+      "args": {
+        "procedure": "0x180058190"
+      },
+      "tool": "procedure_callees",
+      "label": "21-CrowdMotionHelper-0x180058190-procedure_callees"
+    },
+    {
+      "args": {},
+      "tool": "close_binary",
+      "label": "22-Engine-close"
+    },
+    {
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "tool": "binary_session",
+      "label": "23-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "What exact fields,capacity rules and failure prefixes does25E900 use to reset the real spatial index?",
+    "How does25EA00 insert the supplied agent and preserve identity/order?",
+    "How does25EB90 enumerate and filter actual neighbors,including self identity,mask/height and output mutation order? A single-agent case must still execute its real logic.",
+    "What exact borrowed point/address does25BF40 return,with which empty/lifetime conditions?",
+    "What are034CF0 member append and058190 group-vector growth mutation/allocation contracts and failure prefixes? The caller already writes the agent index before member append.",
+    "Which direct movement or registration contracts remain unsupported after these six bodies? No automatic recursive query is authorized."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "One fixed six-target Engine motion helpers and actual registration storage batch; unchanged384M/base4.25GiB budget plus stricter5GiB launch,2GiB stop.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "previous_sha256": "f06ef3bb91be422afa3e1eef639243be2b711c4f701da462767649e34851b0c1",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_sha256": "6d07a2a1e29565930ebd091f070128aeb6a59feaafd8e8fcdce01bb7b4a743a9",
+    "validation_file": ".tooling/r0-owned-job-terminal-candidate-20261022-attempt2/test-result.json",
+    "validation_sha256": "1ad80a494a359d16012698a0ffde723308ebe8e3d6bd06d488dd156e22a305d2",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 36,
+    "scenario_groups": 8,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "production_normalization": "Candidate header and namespace removed; isolated label removed from comment. Algorithm otherwise unchanged.",
+    "limitations": "Missing image is accepted only with positive same-handle exit evidence, never for live roles or counters. The limit is per Probe or QueryMembers operation, not a whole sampler-cycle latency guarantee. Fault tests are not an R0 reproduction or proof of root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-crowd-agent-group-registration/summary.json",
+    "summary_sha256": "eb627b52177b8e9b2b804f9383a9dfc6ad3e179aa8129be8b125fb319eae6f20",
+    "completed_plan_calls": 14,
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  }
+}

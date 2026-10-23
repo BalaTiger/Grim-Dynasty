@@ -1,0 +1,65 @@
+{
+  "schema": "grim-dynasty-fixed-actor-interface-slots-plan-v1",
+  "status": "prepared-not-executed",
+  "script": "tools/static_analysis/read_r1_actor_movement_interface_slots.mjs",
+  "script_sha256": "2c1767277789c8292c9fd23ce0ec62fa2a06704908634ac06c1903299e91328e",
+  "entry_function": "inspectActorMovementInterfaceSlots",
+  "output": "docs/reverse-client/r1-actor-movement-interface-slots/inspection.json",
+  "original": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "open_mode": "read-only",
+    "image_base": "0x180000000"
+  },
+  "table_rva": "0x33f078",
+  "targets": [
+    {"slot_offset": "0x0", "rva": "0x33f078", "bytes": 8},
+    {"slot_offset": "0x10", "rva": "0x33f088", "bytes": 8},
+    {"slot_offset": "0x18", "rva": "0x33f090", "bytes": 8},
+    {"slot_offset": "0x28", "rva": "0x33f0a0", "bytes": 8}
+  ],
+  "budgets": {
+    "data_bytes": 32,
+    "pe_metadata_bytes_max": 4096,
+    "fingerprint_passes": 2,
+    "fingerprint_bytes_per_pass": 4485632,
+    "fingerprint_buffer_bytes": 65536,
+    "code_bytes": 0,
+    "subprocesses": 0
+  },
+  "proofs": [
+    {"path": "docs/object-lifecycle/offline-actor-constructor-body/0259a0-instructions.json", "sha256": "59f402f428e04e2928bb485e58fa85896ac08db4548bff6fa33444a58fa521a7"},
+    {"path": "docs/object-lifecycle/offline-actor-constructor-body/inspection.json", "sha256": "2cc7daf8bf08ed9040dd447c0ff183fc3ff7a86afaa71eaa41672d22a7be541d"},
+    {"path": "docs/object-lifecycle/offline-actor-base-dependency/07d020-instructions.json", "sha256": "64d3237ddb1279a40f12c471d45a9fd02e9b9b043ed00aa52be6730dcf7b4671"},
+    {"path": "docs/object-lifecycle/offline-actor-base-dependency/inspection.json", "sha256": "cdbd4ea50af88e8230242625ee267b0325f3162d4ce27db0799a09c0ad9b0fdb"},
+    {"path": "docs/reverse-client/r1-crowd-adapter-registration/14-CrowdAdapterRegistration-0x180151020-procedure_assembly.json", "sha256": "d5cbc4a5441fe3d3324511e9e5713f4f7b16c4bc1ddb1968afe21e8b61baa2f4"},
+    {"path": "docs/reverse-client/r1-crowd-vector-registration/05-CrowdVectorRegistration-0x18025ae20-procedure_assembly.json", "sha256": "213066b1cabd9009592b49353325fc676f83d3927c79d6fbcac26706e41f6862"},
+    {"path": "docs/reverse-client/r1-crowd-agent-group-registration/05-CrowdAgentGroupRegistration-0x18025e6c0-procedure_assembly.json", "sha256": "f8b74af8241717927edf965cbc2ecedd3233f7e127a0e2b90a35a8142e542dd6"}
+  ],
+  "guards": [
+    "Require exact workspace, script name, input size and SHA256; pin and verify all saved proof files before opening original.",
+    "Check normal ancestors, real paths, regular files and single hard links; root execution precheck must additionally reject Windows ReparsePoint attributes.",
+    "Reject an existing output directory; never replace a previous inspection.",
+    "Require PE64 AMD64, fixed image base, bounded header/section reads and a unique readable nonexecutable file-backed section for each of the four exact reads.",
+    "Read through one read-only descriptor; compare before/after SHA256 and descriptor/path stats, then close the descriptor even on failure.",
+    "Do not read skipped slots08/20, function bodies, other original files, player saves or Steam cloud; do not execute the original, start a backend, install or alter security settings."
+  ],
+  "claim_boundary": {
+    "actor_base_constructor_vptr_static_evidence": true,
+    "entity38_to_agent8_argument_static_evidence": true,
+    "game_player_derived_vptr_verified": false,
+    "runtime_dynamic_dispatch_verified": false,
+    "full_vtable_extent_verified": false,
+    "slot_semantics_verified": false,
+    "function_boundaries_verified": false,
+    "loaded_values_observed": false
+  },
+  "limitations": [
+    "Old dumpbin instruction evidence is supplemental static evidence, not Rea decompilation.",
+    "Only Actor-base constructor candidates are requested. Later derived writes may replace the vptr at Entity+38.",
+    "Executable-section classification does not establish a function boundary or callable implementation.",
+    "Before/after same-descriptor hashes are not an atomic filesystem snapshot.",
+    "This plan is not execution approval. Root must review and formally run the fixed reader; no reader invocation is performed during preparation."
+  ]
+}

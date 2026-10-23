@@ -1,0 +1,24 @@
+{
+  "schema": "grim-dynasty.fixed-terrain-surface-strings.v1",
+  "source": {"path":"D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll","bytes":4485632,"sha256":"4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"},
+  "output": "docs/reverse-client/r1-terrain-surface-strings/inspection.json",
+  "limits": {"data_bytes":23,"read_operations":6,"single_read_bytes":4,"hash_chunk_bytes":65536,"new_header_bytes":0,"code_bytes":0},
+  "pins": [
+    {"key":"pe","path":"docs/object-lifecycle/offline-class-registration-exports/discovery.json","sha256":"0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"},
+    {"key":"assembly","path":"docs/reverse-client/r1-terrain-type-material/05-TerrainTypeMaterial-0x1801e1940-procedure_assembly.json","sha256":"6c4e417d3b9c908a716eb680ad7ca8f3cf0b1c3e53f847ba891950ccee8730e5"},
+    {"key":"pseudo","path":"docs/reverse-client/r1-terrain-type-material/04-TerrainTypeMaterial-0x1801e1940-procedure_pseudo_code.json","sha256":"26f717082e3030352ffe34277406c1132c45662d0867b707c27df55375579038"}
+  ],
+  "fixed_reads": [
+    {"rva":"0x3244cc","bytes":4,"surface_fc":2,"reference":"0x1801e1dc6: LEA RDX, [0x1803244cc]","write":"0x1801e1ddb: MOV dword ptr [RDI + 0xfc], 0x2"},
+    {"rva":"0x3244d4","bytes":4,"surface_fc":3,"reference":"0x1801e1e03: LEA RDX, [0x1803244d4]","write":"0x1801e1e1e: MOV dword ptr [RDI + 0xfc], R8D"},
+    {"rva":"0x3244dc","bytes":4,"surface_fc":4,"reference":"0x1801e1e43: LEA RDX, [0x1803244dc]","write":"0x1801e1e58: MOV dword ptr [RDI + 0xfc], R13D"},
+    {"rva":"0x32446c","bytes":4,"surface_fc":6,"reference":"0x1801e1eb9: LEA RDX, [0x18032446c]","write":"0x1801e1ece: MOV dword ptr [RDI + 0xfc], 0x6"},
+    {"rva":"0x32447c","bytes":4,"surface_fc":9,"reference":"0x1801e1f38: LEA RDX, [0x18032447c]","write":"0x1801e1f4d: MOV dword ptr [RDI + 0xfc], 0x9"},
+    {"rva":"0x3225dc","bytes":3,"surface_fc":10,"reference":"0x1801e1f7c: LEA RDX, [0x1803225dc]","write":"0x1801e1f92: MOV dword ptr [RDI + 0xfc], 0xa"}
+  ],
+  "known_from_pseudocode": {"Unwalkable":0,"Grass":1,"Stone":5,"Water":7},
+  "comparison": "Exact length plus memcmp over bytes; do not case-fold,normalize,trim,or infer enum from name.",
+  "scope": "Six exact comparison operands only. Do not read adjacent terminators,default308119,headers,code,other strings,textures or any game/user state. Whole-file hash streams fingerprint bytes without interpreting them.",
+  "prepared_only": true,
+  "formal_execution_pending_root": true
+}

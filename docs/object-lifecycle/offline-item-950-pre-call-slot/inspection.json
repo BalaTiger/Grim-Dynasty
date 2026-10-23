@@ -1,0 +1,71 @@
+{
+  "schema": "item-950-pre-call-slot-v1",
+  "status": "failed",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_evidence": [
+    [
+      "docs/object-lifecycle/offline-item-950-pre-call-dependency/inspection.json",
+      "7df390c89f9fb8f52af794d2337106f58f847e4a59b239159bd4e77f3e264709"
+    ],
+    [
+      "docs/object-lifecycle/offline-item-950-pre-call-dependency/5db8b8-entry-prefix.bin",
+      "9debe4e4686e95c47eba81ad5fcea16e98b8dfbd9770b91dbf0b92ce260aaeab"
+    ],
+    [
+      "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    ]
+  ],
+  "limits": {
+    "new_code_bytes": 1,
+    "new_data_bytes": 8,
+    "read_operations": 2,
+    "hash_buffer": 65536,
+    "dumpbin_calls": 1,
+    "tiny_pe_bytes": 3072
+  },
+  "reads": [
+    {
+      "rva": "0x5db8be",
+      "bytes": 1,
+      "requested": 1,
+      "file_offset": 6139070,
+      "kind": "code",
+      "hex": "00"
+    }
+  ],
+  "original_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "target_followed": false,
+  "metadata_bytes": 0,
+  "new_code_bytes": 1,
+  "new_data_bytes": 0,
+  "subprocesses": 1,
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ '48ff25e90103'\n- '48ff25e9010300'\n               ^\n"
+  ],
+  "script_sha256": "81f7a92e1a2b5a2a233ec259de2bba831887a5e0d234eb6ed124501bc940eaff",
+  "tool_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "synthetic": {
+    "bytes": 3072,
+    "sha256": "c6a2363a557af591917acd7b296b411e6a850f3a364b9a5a6252b694fcb3cde9",
+    "never_executed": true
+  },
+  "command_arguments": [
+    "/NOLOGO",
+    "/NOPDB",
+    "/ERRORREPORT:NONE",
+    "/DISASM:BYTES",
+    "/RANGE:0x1805db8b8,0x1805db8be",
+    "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-item-950-pre-call-slot-temp\\5db8b8-complete.inspect.dll"
+  ],
+  "tool_exit": 0,
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "source_closed": true,
+  "tool_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-21T07:23:13.707Z"
+}

@@ -1,0 +1,605 @@
+{
+  "schema": "grim-dynasty-fixed-actor-matrix-initialization-v1",
+  "status": "fixed-actor-matrix-initialization-verified",
+  "started_utc": "2026-10-21T05:11:24.892Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-subobject-direct-dependencies/273ab0-instructions.json",
+      "sha256": "0fc850ae074a5f4f4ea6046d79f0a96f13c731314a34d40af9b6d16e6d58a3b7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-subobject-direct-dependencies/inspection.json",
+      "sha256": "50c454f0f9fa6ffd0d38852903e9850d12f7e1cf82b0b2d3dca4e0fc8b95cb12"
+    }
+  ],
+  "limits": {
+    "code_bytes_each": 4096,
+    "code_bytes_total": 8192,
+    "metadata_bytes": 768,
+    "pdata_entries_each": 32,
+    "pdata_entries_total": 64,
+    "search_steps_each": 32,
+    "data_bytes": 56,
+    "semantic_read_operations": 69,
+    "proof_bytes_each": 32768,
+    "fingerprint_chunk_bytes": 65536,
+    "subprocesses": 2,
+    "tool_timeout_ms_each": 10000,
+    "tool_max_buffer_bytes_each": 196608,
+    "report_bytes": 196608
+  },
+  "requested_targets": [
+    {
+      "rva": "0x2dcae0",
+      "role": "first direct slow-path helper",
+      "evidence": [
+        {
+          "address": "0x180273aea",
+          "bytes": "e8f18f0600",
+          "instruction": "call        00000001802DCAE0"
+        }
+      ]
+    },
+    {
+      "rva": "0x2dca80",
+      "role": "second direct slow-path helper",
+      "evidence": [
+        {
+          "address": "0x180273b22",
+          "bytes": "e8598f0600",
+          "instruction": "call        00000001802DCA80"
+        }
+      ]
+    }
+  ],
+  "requested_data": [
+    {
+      "rva": "0x41d490",
+      "bytes": 48,
+      "role": "returned source span; file observation only",
+      "evidence": {
+        "address": "0x180273ad7",
+        "bytes": "488d05b2991a00",
+        "instruction": "lea         rax,[000000018041D490h]"
+      }
+    },
+    {
+      "rva": "0x423f88",
+      "bytes": 4,
+      "role": "static guard span; file/virtual initial state only",
+      "evidence": {
+        "address": "0x180273acf",
+        "bytes": "3905b3041b00",
+        "instruction": "cmp         dword ptr [0000000180423F88h],eax"
+      }
+    },
+    {
+      "rva": "0x420dd4",
+      "bytes": 4,
+      "role": "TLS index span; file/virtual initial state only",
+      "evidence": {
+        "address": "0x180273abd",
+        "bytes": "8b0d11d31a00",
+        "instruction": "mov         ecx,dword ptr [0000000180420DD4h]"
+      }
+    }
+  ],
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "runtime_value_observed": false,
+  "backend_started": false,
+  "build_or_test_execution": false,
+  "original_modified": false,
+  "full_target_copy_created": false,
+  "permission_change": false,
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "metadata_bytes": 168,
+  "code_bytes": 199,
+  "data_bytes": 48,
+  "virtual_zero_fill_bytes": 8,
+  "reads": [
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4390956,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "b066170000691700c8c13800"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4427592,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "aa022400bf022400b0193a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4445904,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "c0bd2a0032be2a0034b23a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4455060,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "8cfa2e00b0fa2e00d8683600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4450488,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "405e2d00695e2d00d4d23a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4452780,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "a0152e00f1152e0028e43a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4451640,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "a4c72d003dc82d00e4de3a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4452216,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "60e32d00c8e32d00dce23a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4451928,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "34d12d00b3d12d0034e03a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4451784,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "3ccc2d00aacc2d0018df3a00"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4451712,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "28ca2d0050ca2d0078283600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4451748,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "e0ca2d0047cb2d00a0213600"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dcae0",
+      "file_offset": 4451736,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "80ca2d00e0ca2d00a0213600"
+    },
+    {
+      "kind": "code",
+      "owner": "0x2dcae0",
+      "file_offset": 2997984,
+      "requested_bytes": 103,
+      "read_bytes": 103,
+      "raw_hex": "40534883ec20488bd9488d0d98421400ff1532580200833b007511830bffeb34b964000000e89a000000ebea833bff74ef65488b0425580000008b0db442140041b804000000488b14c88b05ecf9130041890410488d0d4d4214004883c4205b48ff25e9570200"
+    },
+    {
+      "kind": "pdata",
+      "owner": "0x2dca80",
+      "file_offset": 4451724,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_hex": "50ca2d0080ca2d00a0213600"
+    },
+    {
+      "kind": "code",
+      "owner": "0x2dca80",
+      "file_offset": 2997888,
+      "requested_bytes": 96,
+      "read_bytes": 96,
+      "raw_hex": "40534883ec20488bd9488d0df8421400ff15925802008b0580fa1300488d0de54214008b152b431400ffc089056bfa1300890365488b04255800000041b9040000004c8b04d08b0550fa130043890401ff155a5802004883c4205be968000000"
+    },
+    {
+      "kind": "data",
+      "owner": "0x41d490",
+      "file_offset": 4308112,
+      "requested_bytes": 48,
+      "read_bytes": 48,
+      "raw_hex": "0000803f0000000000000000000000000000803f0000000000000000000000000000803f000000000000000000000000"
+    }
+  ],
+  "data_results": [
+    {
+      "rva": "0x41d490",
+      "bytes": 48,
+      "role": "returned source span; file observation only",
+      "section": ".data",
+      "section_rva": "0x419000",
+      "section_raw_size": 27136,
+      "section_virtual_size": 44952,
+      "section_characteristics": "0xc0000040",
+      "kind": "file-backed",
+      "file_offset": 4308112,
+      "runtime_observed": false,
+      "raw_hex": "0000803f0000000000000000000000000000803f0000000000000000000000000000803f000000000000000000000000",
+      "file_bytes_read": 48,
+      "little_endian_qwords": [
+        {
+          "byte_offset": 0,
+          "unsigned_hex": "0x3f800000"
+        },
+        {
+          "byte_offset": 8,
+          "unsigned_hex": "0x0"
+        },
+        {
+          "byte_offset": 16,
+          "unsigned_hex": "0x3f800000"
+        },
+        {
+          "byte_offset": 24,
+          "unsigned_hex": "0x0"
+        },
+        {
+          "byte_offset": 32,
+          "unsigned_hex": "0x3f800000"
+        },
+        {
+          "byte_offset": 40,
+          "unsigned_hex": "0x0"
+        }
+      ]
+    },
+    {
+      "rva": "0x423f88",
+      "bytes": 4,
+      "role": "static guard span; file/virtual initial state only",
+      "section": ".data",
+      "section_rva": "0x419000",
+      "section_raw_size": 27136,
+      "section_virtual_size": 44952,
+      "section_characteristics": "0xc0000040",
+      "kind": "virtual-zero-fill",
+      "file_offset": null,
+      "runtime_observed": false,
+      "file_initial_zero_fill_hex": "00000000",
+      "file_bytes_read": 0
+    },
+    {
+      "rva": "0x420dd4",
+      "bytes": 4,
+      "role": "TLS index span; file/virtual initial state only",
+      "section": ".data",
+      "section_rva": "0x419000",
+      "section_raw_size": 27136,
+      "section_virtual_size": 44952,
+      "section_characteristics": "0xc0000040",
+      "kind": "virtual-zero-fill",
+      "file_offset": null,
+      "runtime_observed": false,
+      "file_initial_zero_fill_hex": "00000000",
+      "file_bytes_read": 0
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    }
+  ],
+  "subprocesses": 2,
+  "targets": [
+    {
+      "rva": "0x2dcae0",
+      "role": "first direct slow-path helper",
+      "status": "exact-body-disassembly-verified",
+      "body_read": true,
+      "code_bytes": 103,
+      "byte_coverage_verified": true,
+      "selected_code_range": {
+        "begin": 3001056,
+        "end_exclusive": 3001159
+      },
+      "search_steps": 13,
+      "lower_bound_index": 11171,
+      "lower_bound_entry": {
+        "index": 11171,
+        "begin": 3001056,
+        "end": 3001159,
+        "unwind": 3547552,
+        "raw_hex": "e0ca2d0047cb2d00a0213600"
+      },
+      "classification": "exact",
+      "code_file_offset": 2997984,
+      "code_sha256": "633f4431e8ba010786b9b98d60313dba077bba766669df4b260457516d31187d",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1802dcae0,0x1802dcb46",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll"
+      ],
+      "tool_elapsed_ms": 37,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 24,
+      "instructions_file": "2dcae0-instructions.json",
+      "visited_entry_indices": [
+        6105,
+        9158,
+        10684,
+        11447,
+        11066,
+        11257,
+        11162,
+        11210,
+        11186,
+        11174,
+        11168,
+        11171,
+        11170
+      ],
+      "new_metadata_bytes": 156
+    },
+    {
+      "rva": "0x2dca80",
+      "role": "second direct slow-path helper",
+      "status": "exact-body-disassembly-verified",
+      "body_read": true,
+      "code_bytes": 96,
+      "byte_coverage_verified": true,
+      "selected_code_range": {
+        "begin": 3000960,
+        "end_exclusive": 3001056
+      },
+      "search_steps": 14,
+      "lower_bound_index": 11170,
+      "lower_bound_entry": {
+        "index": 11170,
+        "begin": 3000960,
+        "end": 3001056,
+        "unwind": 3547552,
+        "raw_hex": "80ca2d00e0ca2d00a0213600"
+      },
+      "classification": "exact",
+      "code_file_offset": 2997888,
+      "code_sha256": "5e63987a1de932b350ad3f5f1a155a71b472a3c42d71a5151079bf4bb9518b3d",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1802dca80,0x1802dcadf",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll"
+      ],
+      "tool_elapsed_ms": 30,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 20,
+      "instructions_file": "2dca80-instructions.json",
+      "visited_entry_indices": [
+        6105,
+        9158,
+        10684,
+        11447,
+        11066,
+        11257,
+        11162,
+        11210,
+        11186,
+        11174,
+        11168,
+        11171,
+        11170,
+        11169
+      ],
+      "new_metadata_bytes": 12
+    }
+  ],
+  "limitations": [
+    "Only direct targets 2DCAE0 and 2DCA80 from the hash-pinned 273AB0 body are searched. Exact BeginAddress and <=4096 bytes each / <=8192 bytes total are required for at most two bounded dumpbin calls.",
+    "Each target visits at most 32 .pdata entries including a necessary previous entry for no-exact classification. Shared raw-entry cache bounds new metadata to 64 entries / 768 bytes.",
+    "Missing exact entries record lower-bound and adjacent metadata only; containing/gap never authorizes neighboring code, a guessed prefix, or another target. Other fixed independent targets may continue.",
+    "The data domain is exactly 41D490/48B, 423F88/4B and 420DD4/4B. Wholly virtual-only .data spans are reported from pinned PE metadata as file-initial zero-fill without reading beyond raw data.",
+    "File initial bytes and virtual zero-fill do not establish loaded TLS blocks, thread epochs, guard state, synchronization or source contents. No pointer is dereferenced and no other global or callee is followed.",
+    "Two same-handle full-file fingerprints use 64KiB buffers and are separate from semantic budgets. Hash/stat stability is not an atomic snapshot.",
+    "dumpbin internal PE metadata I/O is not instrumented. Exact byte coverage does not prove complete logical control flow or native EH."
+  ],
+  "script_sha256": "d8ad86e59189954b2a619b003e78d9957af8a726d8b799091e009bf6d8dece8c",
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "stat_before": {
+    "size": 4485632,
+    "dev": 2562469142,
+    "ino": 1970324837085124,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "stat_after": {
+    "size": 4485632,
+    "dev": 2562469142,
+    "ino": 1970324837085124,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "source_handle_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "entries": [
+    {
+      "index": 6105,
+      "begin": 1533616,
+      "end": 1534208,
+      "unwind": 3719624,
+      "raw_hex": "b066170000691700c8c13800"
+    },
+    {
+      "index": 9158,
+      "begin": 2359978,
+      "end": 2359999,
+      "unwind": 3807664,
+      "raw_hex": "aa022400bf022400b0193a00"
+    },
+    {
+      "index": 10684,
+      "begin": 2801088,
+      "end": 2801202,
+      "unwind": 3846708,
+      "raw_hex": "c0bd2a0032be2a0034b23a00"
+    },
+    {
+      "index": 11447,
+      "begin": 3078796,
+      "end": 3078832,
+      "unwind": 3565784,
+      "raw_hex": "8cfa2e00b0fa2e00d8683600"
+    },
+    {
+      "index": 11066,
+      "begin": 2973248,
+      "end": 2973289,
+      "unwind": 3855060,
+      "raw_hex": "405e2d00695e2d00d4d23a00"
+    },
+    {
+      "index": 11257,
+      "begin": 3020192,
+      "end": 3020273,
+      "unwind": 3859496,
+      "raw_hex": "a0152e00f1152e0028e43a00"
+    },
+    {
+      "index": 11162,
+      "begin": 3000228,
+      "end": 3000381,
+      "unwind": 3858148,
+      "raw_hex": "a4c72d003dc82d00e4de3a00"
+    },
+    {
+      "index": 11210,
+      "begin": 3007328,
+      "end": 3007432,
+      "unwind": 3859164,
+      "raw_hex": "60e32d00c8e32d00dce23a00"
+    },
+    {
+      "index": 11186,
+      "begin": 3002676,
+      "end": 3002803,
+      "unwind": 3858484,
+      "raw_hex": "34d12d00b3d12d0034e03a00"
+    },
+    {
+      "index": 11174,
+      "begin": 3001404,
+      "end": 3001514,
+      "unwind": 3858200,
+      "raw_hex": "3ccc2d00aacc2d0018df3a00"
+    },
+    {
+      "index": 11168,
+      "begin": 3000872,
+      "end": 3000912,
+      "unwind": 3549304,
+      "raw_hex": "28ca2d0050ca2d0078283600"
+    },
+    {
+      "index": 11171,
+      "begin": 3001056,
+      "end": 3001159,
+      "unwind": 3547552,
+      "raw_hex": "e0ca2d0047cb2d00a0213600"
+    },
+    {
+      "index": 11170,
+      "begin": 3000960,
+      "end": 3001056,
+      "unwind": 3547552,
+      "raw_hex": "80ca2d00e0ca2d00a0213600"
+    },
+    {
+      "index": 11169,
+      "begin": 3000912,
+      "end": 3000960,
+      "unwind": 3547552,
+      "raw_hex": "50ca2d0080ca2d00a0213600"
+    }
+  ],
+  "source_hash_preserved": true,
+  "tool_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T05:11:25.002Z",
+  "controller_resource_usage": {
+    "userCPUTime": 78000,
+    "systemCPUTime": 46000,
+    "maxRSS": 43740,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11678,
+    "swappedOut": 0,
+    "fsRead": 171,
+    "fsWrite": 6,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

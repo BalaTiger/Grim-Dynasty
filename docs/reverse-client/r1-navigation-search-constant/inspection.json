@@ -1,0 +1,49 @@
+{
+  "started_utc": "2026-10-22T19:55:28.065Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_size": 4485632,
+  "script_sha256": "e19e277ff2745e185cf8d13f2400134e4ceda1d59aa9c2c1b9628be43b0608c6",
+  "proof": {
+    "file": "docs/reverse-client/r1-navigation-core/08-NavigationCore-0x180261cb0-procedure_assembly.json",
+    "sha256": "3660397c5a9de075f7edcd686d5ffde091b4dbb525eb1d8cc5b15fa00f8f66f4",
+    "procedure": "0x180261cb0"
+  },
+  "metadata_bytes": 688,
+  "data_bytes": 4,
+  "hash_bytes": 8971264,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "rva": "0x34bb3c",
+      "va": "0x18034bb3c",
+      "file_offset": 3451708,
+      "bytes": 4,
+      "section": ".rdata",
+      "raw_hex": "77be7f3f",
+      "float32_le": 0.9990000128746033,
+      "uint32_hex": [
+        "0x3f7fbe77"
+      ],
+      "evidence_instruction": "0x180261d95: MOVSS XMM10, dword ptr [0x18034bb3c]",
+      "loaded_value_observed": false
+    }
+  ],
+  "failures": [],
+  "scope": "PE headers/section metadata at most4096B, then exactly4B at RVA34BB3C. Entire-file streams are only before/after SHA256.",
+  "limitations": [
+    "Disk float32 operand bound to261CB0 instruction261D95; no expected value is assumed and no loaded mutable value or navigation success is proved.",
+    "No adjacent data, function body, DLL execution, backend, other original file or saves are accessed.",
+    "Node does not expose every Windows reparse tag; the established external Attributes precheck is still required.",
+    "Same-descriptor before/after hash/stat equality is not an atomic filesystem snapshot."
+  ],
+  "proof_verified": true,
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T19:55:28.074Z",
+  "status": "passed"
+}

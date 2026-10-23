@@ -1,0 +1,51 @@
+{
+  "schema": "grim-dynasty-fixed-navigation-nearest-constants-v1",
+  "started_utc": "2026-10-22T16:40:20.207Z",
+  "proofs": [
+    [
+      "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    ],
+    [
+      "docs/reverse-client/r1-navigation-core/05-NavigationCore-0x1802610f0-procedure_assembly.json",
+      "bc2f9d3a7fdb5ab4dbdfb2e58ef270dbaf9b2dfa7fcd96bc42742b91821c904d"
+    ]
+  ],
+  "script_sha256": "2b691302e12198be968004a3b772d3c66f9ca4bd08dd14312b6a228a6df81321",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "payload_bytes": 4,
+  "payload_limit": 4,
+  "hash_bytes": 8971264,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "target_open_mode": "O_RDONLY",
+  "reads": [
+    {
+      "rva": "0x34c410",
+      "file_offset": 3453968,
+      "section": ".rdata",
+      "bytes": 4,
+      "raw_hex": "ffffff7f",
+      "bits": "0x7fffffff",
+      "evidence_file": "docs/reverse-client/r1-navigation-core/05-NavigationCore-0x1802610f0-procedure_assembly.json",
+      "instruction": "0x1802611c2: MOVSS XMM9, dword ptr [0x18034c410]",
+      "use_instruction": "0x18026123d: ANDPS XMM1, XMM9"
+    }
+  ],
+  "failures": [],
+  "scope": "Only Engine RVA34C410, exactly4bytes, mapped using the pinned existing PE section cache. Whole-file reads only for before/after SHA256. No code, other constants, runtime globals, fallback scans or backend.",
+  "limitations": [
+    "Raw bits describe the pinned disk image only; they do not establish loaded memory, runtime globals or floating environment.",
+    "MOVSS at2611C2 and ANDPS at26123D establish the use, not the constant bits. No ABS/sign-mask value is presumed from pseudocode.",
+    "Before/after hashes and metadata checks do not provide an atomic snapshot.",
+    "No native mesh initialization, nearest search or gameplay compatibility is established."
+  ],
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "closed": true,
+  "finished_utc": "2026-10-22T16:40:20.214Z",
+  "status": "passed"
+}

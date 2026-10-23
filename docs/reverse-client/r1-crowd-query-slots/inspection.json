@@ -1,0 +1,163 @@
+{
+  "started_utc": "2026-10-22T21:04:00.160Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_size": 4485632,
+  "script_sha256": "7f1385be2c0bb53c4329a12f50e7b1c3960ad45c27786a7664f30471303e8b3c",
+  "proofs": [
+    {
+      "file": "docs/reverse-client/r1-crowd-movement-direct/05-CrowdMovementDirect-0x18002f800-procedure_assembly.json",
+      "sha256": "e1889f6e7564b2eb23fa4cedef700eb8ea5693f8e06b30cad2577838ac13240f",
+      "procedure": "0x18002f800",
+      "instructions": [
+        "0x18002f826: MOV RSI, RCX",
+        "0x18002f829: LEA RAX, [0x18033a6c0]",
+        "0x18002f830: MOV qword ptr [RCX], RAX",
+        "0x18002f8c3: MOV RDX, RSI",
+        "0x18002f8c6: MOV RCX, RAX",
+        "0x18002f8c9: CALL 0x18025a880",
+        "0x18002f8cf: MOV qword ptr [RSI + 0x8], RAX"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-query-production/05-CrowdQueryProduction-0x18025a880-procedure_assembly.json",
+      "sha256": "28d78e7f8452eb2dc8c4a5219114c1a751ad1ed9a519b4864f8edeff40f4fa92",
+      "procedure": "0x18025a880",
+      "instructions": [
+        "0x18025a89f: MOV RSI, RDX",
+        "0x18025a8a2: MOV RBX, RCX",
+        "0x18025a9a8: MOV qword ptr [RBX + 0xb8], RSI"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-query-production/08-CrowdQueryProduction-0x18025a4f0-procedure_assembly.json",
+      "sha256": "c29eae5930141c3885b2bfebb1081c2df2f8a0582464a92c610a05d330d4d57b",
+      "procedure": "0x18025a4f0",
+      "instructions": [
+        "0x18025a522: MOV RCX, qword ptr [RSI + 0xb8]",
+        "0x18025a529: MOV RAX, qword ptr [RCX]",
+        "0x18025a53d: CALL qword ptr [RAX]",
+        "0x18025a54b: CALL qword ptr [RAX + 0x18]"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-movement-floor-core/05-MovementFloorCore-0x18025b300-procedure_assembly.json",
+      "sha256": "368967c8253cc4f3b7a186a1f5de8ebdcf7de015843cc12d3b332e7b4ab027f3",
+      "procedure": "0x18025b300",
+      "instructions": [
+        "0x18025b3e2: MOV RCX, qword ptr [RDI + 0xb8]",
+        "0x18025b3f1: MOV RAX, qword ptr [RCX]",
+        "0x18025b3f4: CALL qword ptr [RAX + 0x18]"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-movement-direct/08-CrowdMovementDirect-0x18025c440-procedure_assembly.json",
+      "sha256": "62da8b3465041af3522b3e36a72e4680485d0c9b2a832ab8b3207ce27bf5b8ae",
+      "procedure": "0x18025c440",
+      "instructions": [
+        "0x18025c59f: MOV RCX, qword ptr [R13 + 0x8]",
+        "0x18025c5ae: MOV RAX, qword ptr [RCX]",
+        "0x18025c5b1: CALL qword ptr [RAX + 0x18]",
+        "0x18025c5b8: MOV RCX, qword ptr [R13 + 0x8]",
+        "0x18025c5c9: MOV RAX, qword ptr [RCX]",
+        "0x18025c5cc: CALL qword ptr [RAX + 0x20]"
+      ]
+    }
+  ],
+  "metadata_bytes": 688,
+  "data_bytes": 24,
+  "hash_bytes": 8971264,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "rva": "0x33a6c0",
+      "va": "0x18033a6c0",
+      "file_offset": 3380928,
+      "bytes": 8,
+      "section": ".rdata",
+      "slot_offset": "0x0",
+      "raw_hex": "9007038001000000",
+      "uint64_va": "0x180030790",
+      "candidate_rva": "0x30790",
+      "classification": "ExecutableAddressCandidate",
+      "candidate_code_section": ".text",
+      "function_boundary_verified": false,
+      "manager_binding_verified": true,
+      "manager_binding_kind": "static-constructor-dataflow-only",
+      "update_this8_binding_verified": false,
+      "loaded_value_observed": false
+    },
+    {
+      "rva": "0x33a6d8",
+      "va": "0x18033a6d8",
+      "file_offset": 3380952,
+      "bytes": 8,
+      "section": ".rdata",
+      "slot_offset": "0x18",
+      "raw_hex": "300b038001000000",
+      "uint64_va": "0x180030b30",
+      "candidate_rva": "0x30b30",
+      "classification": "ExecutableAddressCandidate",
+      "candidate_code_section": ".text",
+      "function_boundary_verified": false,
+      "manager_binding_verified": true,
+      "manager_binding_kind": "static-constructor-dataflow-only",
+      "update_this8_binding_verified": false,
+      "loaded_value_observed": false
+    },
+    {
+      "rva": "0x33a6e0",
+      "va": "0x18033a6e0",
+      "file_offset": 3380960,
+      "bytes": 8,
+      "section": ".rdata",
+      "slot_offset": "0x20",
+      "raw_hex": "b00b038001000000",
+      "uint64_va": "0x180030bb0",
+      "candidate_rva": "0x30bb0",
+      "classification": "ExecutableAddressCandidate",
+      "candidate_code_section": ".text",
+      "function_boundary_verified": false,
+      "manager_binding_verified": true,
+      "manager_binding_kind": "static-constructor-dataflow-only",
+      "update_this8_binding_verified": false,
+      "loaded_value_observed": false
+    }
+  ],
+  "failures": [],
+  "vtable": {
+    "rva": "0x33a6c0",
+    "constructor": "0x18002f800",
+    "write_instruction": "0x18002f830: MOV qword ptr [RCX], RAX",
+    "table_extent_verified": false,
+    "manager_b8_binding_verified": true,
+    "update_this8_binding_verified": false,
+    "manager_b8_binding_kind": "static-constructor-dataflow-only",
+    "manager_b8_binding_chain": [
+      "02F826 captures outer RCX in RSI;02F829/02F830 publish vptr33A6C0 at outer+0.",
+      "02F8C3 passes that outer as RDX to25A880 at02F8C9;25A89F captures RDX in RSI and25A8A2 captures manager RCX in RBX.",
+      "25A9A8 stores captured outer RSI into manager[RBX+B8]. This binds that completed construction path only, not later mutable state.",
+      "25A4F0 reads manager+B8 at25A522 and its vptr at25A529, then invokes slot0 at25A53D or slot18 at25A54B.",
+      "25B300 independently reads manager+B8 at25B3E2, its vptr at25B3F1 and slot18 at25B3F4."
+    ]
+  },
+  "scope": "PE headers/section metadata at most4096B, then exactly three QWORDs (24B total) at RVA33A6C0,33A6D8 and33A6E0. Slots08/10 and every other adjacent entry are excluded. Entire-file streams are only before/after SHA256.",
+  "limitations": [
+    "Only disk values at offsets00/18/20 from the constructor-observed vptr33A6C0 are reported; full vtable extent, function semantics and loaded pointer values are not established.",
+    "The02F800 to25A880 argument/publication chain proves manager+B8 retains the outer on that construction path; this is static dataflow, not runtime observation or proof against later writes.",
+    "25C440 independently reads its receiver+8 before slots18/20. That update receiver field is not bound to the outer here and must not be equated with manager+B8 merely from matching slot offsets.",
+    "A value in a file-backed executable section is only an executable-address candidate, not a verified function boundary or callable implementation.",
+    "No adjacent vtable entries, function body, DLL execution, backend, other original file or saves are accessed.",
+    "Node does not expose every Windows reparse tag; the established external Attributes precheck is still required.",
+    "Same-descriptor before/after hash/stat equality is not an atomic filesystem snapshot."
+  ],
+  "proofs_verified": true,
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T21:04:00.171Z",
+  "status": "passed"
+}

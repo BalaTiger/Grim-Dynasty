@@ -1,0 +1,102 @@
+{
+  "utc": "2026-10-23T07:36:51.9456161Z",
+  "status": "frozen-new-real-ground-floor-integration-ready-not-built",
+  "owner": "/root/world_floor_resume",
+  "files": [
+    {
+      "path": "src/reverse_client_actions/RealGroundFloorIntegrationTests.cs",
+      "bytes": 15137,
+      "sha256": "a46395b1565fafb50b6c6586cb5cffb205c2ea74fbe4461a4d93ae1933bcda0a"
+    },
+    {
+      "path": "tools/build_r1_real_ground_floor_integration.ps1",
+      "bytes": 9298,
+      "sha256": "f4f6d6909bdb6a5ab1a2b00a080bb36cfaa9638069b36b8f0bdc4662840b21c4"
+    },
+    {
+      "path": "tools/r1_real_ground_floor_integration_build_fingerprints.json",
+      "bytes": 7406,
+      "sha256": "8889c158b70181b1539ec33dc1a25c6a00dc305f858daa8a2ea79b9601546443"
+    }
+  ],
+  "static_checks": {
+    "checked_pinned_inputs": 28,
+    "compiler_and_json_framework_pins_matched": true,
+    "prior_result_artifacts_matched": true,
+    "shared_dependency_hashes_match_between_floor_and_material": true,
+    "passed_floor_and_material_sources_unchanged": true,
+    "powershell_parser_errors": 0,
+    "independent_public_api_csharp5_and_logic_review": "passed",
+    "scenario_count": 6
+  },
+  "scenario_order": [
+    "Actual saved Ground/5-material/Water hit then Unknown actors13028A; caller unchanged",
+    "Explicit OWN empty actors then Unknown neighbors221F2E; same finite hit and caller unchanged",
+    "Explicit OWN empty neighbors; real saved Ground Core true, same identities, actual triangle height and output UnknownD14",
+    "Existing22C620 wrapper on same scene; fresh temporary, copy real result, UnknownD14",
+    "Withdraw live selected material pointer; actual Block1D1528 stop before Water; restore same MaterialView identity",
+    "Actual external real Ground/Water miss; normalfalse/caller unchanged and source fingerprints unchanged"
+  ],
+  "independent_geometry_oracle": {
+    "saved_member_sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+    "point_x": 64.25,
+    "point_z": 64.75,
+    "input_y": 29.5,
+    "ray_y": 32,
+    "raw_cell_indices": [
+      8320,
+      8321,
+      8449,
+      8450
+    ],
+    "raw_cell_bits": [
+      "41819c63",
+      "41816b17",
+      "41801dd7",
+      "41800932"
+    ],
+    "triangle": "A00 B01 C11",
+    "weights": [
+      0.25,
+      0.5,
+      0.25
+    ],
+    "expected_height": 16.0587477684021,
+    "expected_distance": 15.9412522315979,
+    "bilinear_counterexample": 16.057873368263245,
+    "absolute_error_tolerance": 0.0002,
+    "source": "docs/reverse-client/r1-ground-face-and-unlink/08-GroundFaceUnlink-0x1801cf420-procedure_assembly.json",
+    "not_navigation_height": true
+  },
+  "build": {
+    "script": "tools/build_r1_real_ground_floor_integration.ps1",
+    "output": ".tooling/r1-real-ground-floor-integration-validation",
+    "compile_invocations": 1,
+    "new_test_invocations": 1,
+    "old_test_suites_rerun": 0,
+    "pinned_dlls": 14,
+    "pinned_dll_bytes": 208384,
+    "compiled": false,
+    "executed": false,
+    "expected_memory_behavior": "One short Framework csc invocation plus one small managed test; one saved1.09MB member/one225-block tree shared by all six scenarios. No compiler server or background process. Process peak not measured."
+  },
+  "scope": {
+    "saved_ground_plus_material_adapter_with_explicit_own_scene": true,
+    "actors_neighbors_defaulted_empty": false,
+    "native_scene_startup": false,
+    "native_water_constructor_initialize": false,
+    "game22c690_or_066ee0_fabricated": false,
+    "real_crowd_game_wired": false,
+    "old_movement_wrapper_wired": false,
+    "nav_height_used": false,
+    "original_read": false,
+    "original_executed": false,
+    "new_background_processes": 0,
+    "gameplay_accepted": false
+  },
+  "remaining": [
+    "Parent realtime resource preflight, then one fixed compile/test execution",
+    "No native actor/neighbor load state or native Water constructor/Initialize claim",
+    "Actual Crowd to Game22C690/066EE0 bridge requires direct bodies and remains unwired"
+  ]
+}

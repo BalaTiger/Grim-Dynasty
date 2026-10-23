@@ -1,0 +1,212 @@
+{
+  "schema": "grim-dynasty-actor-array-check-file-slot-v1",
+  "started_utc": "2026-10-21T04:10:50.446Z",
+  "status": "file-slot-matches-load-config-check-field",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-array-check-entry/inspection.json",
+      "sha256": "8ea04fc933acee8b98876f0e99b28d88c3936ff3dde7bff5874d662de051126f"
+    }
+  ],
+  "slot_rva": "0x302d38",
+  "slot_preferred_va": "0x180302d38",
+  "format_reference": "https://learn.microsoft.com/en-us/windows/win32/debug/pe-format",
+  "load_config_pe32plus_check_field_offset": 112,
+  "load_config_pe32plus_guard_flags_offset": 144,
+  "limits": {
+    "slot_bytes": 8,
+    "metadata_bytes": 72,
+    "code_bytes": 0,
+    "fingerprint_chunk_bytes": 65536
+  },
+  "slot_bytes": 8,
+  "metadata_bytes": 72,
+  "code_bytes": 0,
+  "reads": [
+    {
+      "kind": "slot",
+      "field": "fixed slot file initializer",
+      "file_offset": 3153208,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_hex": "70ce008001000000"
+    },
+    {
+      "kind": "metadata",
+      "field": "DOS signature",
+      "file_offset": 0,
+      "requested_bytes": 2,
+      "read_bytes": 2,
+      "raw_hex": "4d5a"
+    },
+    {
+      "kind": "metadata",
+      "field": "e_lfanew",
+      "file_offset": 60,
+      "requested_bytes": 4,
+      "read_bytes": 4,
+      "raw_hex": "20010000"
+    },
+    {
+      "kind": "metadata",
+      "field": "PE signature and COFF header",
+      "file_offset": 288,
+      "requested_bytes": 24,
+      "read_bytes": 24,
+      "raw_hex": "5045000064860900f7f5c76a0000000000000000f0002220"
+    },
+    {
+      "kind": "metadata",
+      "field": "PE32+ magic",
+      "file_offset": 312,
+      "requested_bytes": 2,
+      "read_bytes": 2,
+      "raw_hex": "0b02"
+    },
+    {
+      "kind": "metadata",
+      "field": "ImageBase",
+      "file_offset": 336,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_hex": "0000008001000000"
+    },
+    {
+      "kind": "metadata",
+      "field": "SizeOfImage",
+      "file_offset": 368,
+      "requested_bytes": 4,
+      "read_bytes": 4,
+      "raw_hex": "00004500"
+    },
+    {
+      "kind": "metadata",
+      "field": "NumberOfRvaAndSizes",
+      "file_offset": 420,
+      "requested_bytes": 4,
+      "read_bytes": 4,
+      "raw_hex": "10000000"
+    },
+    {
+      "kind": "metadata",
+      "field": "load-config data-directory",
+      "file_offset": 504,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_hex": "d0d3350094000000"
+    },
+    {
+      "kind": "metadata",
+      "field": "load-config Size",
+      "file_offset": 3523536,
+      "requested_bytes": 4,
+      "read_bytes": 4,
+      "raw_hex": "94000000"
+    },
+    {
+      "kind": "metadata",
+      "field": "GuardCFCheckFunctionPointer",
+      "file_offset": 3523648,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_hex": "382d308001000000"
+    },
+    {
+      "kind": "metadata",
+      "field": "GuardFlags",
+      "file_offset": 3523680,
+      "requested_bytes": 4,
+      "read_bytes": 4,
+      "raw_hex": "00010000"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    }
+  ],
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "subprocesses": 0,
+  "build_or_test_execution": false,
+  "permission_change": false,
+  "original_modified": false,
+  "full_target_copy_created": false,
+  "runtime_slot_value_observed": false,
+  "loader_rebinding_observed": false,
+  "limitations": [
+    "Only the fixed eight-byte slot plus PE header, load-config directory, Size, GuardCFCheckFunctionPointer and GuardFlags fields are read.",
+    "No target code, import descriptor/name/IAT contents, other slot, table, relocation entries, EH or .pdata are read.",
+    "Slot contents are the on-disk image initializer. A matching load-config field designates the slot, but does not establish the loaded slot value or actual loader rebinding.",
+    "A file-image target RVA is arithmetic metadata, not a no-op, CFG enforcement, valid-call or runtime behavior claim.",
+    "If the check field is absent or does not name this slot, this bounded reader stops unresolved rather than widening its search.",
+    "Fingerprints are separate from semantic reads; same-handle before/after hash/stat stability is not an atomic snapshot."
+  ],
+  "script_sha256": "52b7e6cc9b73afb1f8cd64af45d7740eea185b156d10624d73376150cba173b3",
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "slot": {
+    "file_offset": 3153208,
+    "section": ".rdata",
+    "raw_hex": "70ce008001000000",
+    "file_value_va": "0x18000ce70",
+    "target_code_read": false,
+    "file_value_rva": "0xce70",
+    "file_value_sections": [
+      ".text"
+    ]
+  },
+  "load_config": {
+    "directory_entry_file_offset": 504,
+    "rva": "0x35d3d0",
+    "directory_bytes": 148,
+    "check_slot_match": true,
+    "declared_bytes": 148,
+    "check_field": {
+      "relative_offset": 112,
+      "file_offset": 3523648,
+      "declared_slot_va": "0x180302d38"
+    },
+    "guard_flags": "0x100"
+  },
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "source_handle_closed": true,
+  "source_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T04:10:50.455Z",
+  "controller_resource_usage": {
+    "userCPUTime": 31000,
+    "systemCPUTime": 15000,
+    "maxRSS": 41268,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 10879,
+    "swappedOut": 0,
+    "fsRead": 155,
+    "fsWrite": 1,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

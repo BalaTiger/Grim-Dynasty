@@ -1,0 +1,31 @@
+{
+  "schema":"grim-dynasty.fixed-player-movement-interface-slots.v1",
+  "script":"tools/static_analysis/read_r1_player_movement_interface_slots.mjs",
+  "entrypoint":"inspectPlayerMovementInterfaceSlots(reviewedScriptSha256, reviewedPlanSha256)",
+  "source":{"path":"D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll","bytes":11385856,"sha256":"cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"},
+  "output":"docs/reverse-client/r1-player-movement-interface-slots/inspection.json",
+  "targets":[
+    {"owner":"Character","table_rva":"0x6df690","slot_offset":"0x0","rva":"0x6df690","bytes":8},
+    {"owner":"Character","table_rva":"0x6df690","slot_offset":"0x10","rva":"0x6df6a0","bytes":8},
+    {"owner":"Character","table_rva":"0x6df690","slot_offset":"0x18","rva":"0x6df6a8","bytes":8},
+    {"owner":"Character","table_rva":"0x6df690","slot_offset":"0x28","rva":"0x6df6b8","bytes":8},
+    {"owner":"Player","table_rva":"0x787080","slot_offset":"0x0","rva":"0x787080","bytes":8},
+    {"owner":"Player","table_rva":"0x787080","slot_offset":"0x10","rva":"0x787090","bytes":8},
+    {"owner":"Player","table_rva":"0x787080","slot_offset":"0x18","rva":"0x787098","bytes":8},
+    {"owner":"Player","table_rva":"0x787080","slot_offset":"0x28","rva":"0x7870a8","bytes":8}
+  ],
+  "source_pins":[
+    {"path":"docs/reverse-client/r1-game-entity-constructors/05-GameEntityConstructor-0x180052030-procedure_assembly.json","sha256":"34a334ae8f918b20469fb57e7d55af0ffbcfba0d5900c42a4e371192d534f856","procedure":"0x180052030"},
+    {"path":"docs/reverse-client/r1-game-entity-constructors/08-GameEntityConstructor-0x1803cc3f0-procedure_assembly.json","sha256":"d68276f2f2212942eb66cf2180f34f0b527f5b9a48f473b4ac35098b3d479ded","procedure":"0x1803cc3f0"}
+  ],
+  "limits":{"semantic_bytes":64,"metadata_bytes":4096,"metadata_single_read":512,"hash_chunk_bytes":65536,"code_bytes":0},
+  "requirements":[
+    "Separate explicit execution approval; preparing this plan does not read the original.",
+    "External Windows Attributes/reparse-tag checks for source and output ancestors.",
+    "Fixed ordinary single-link Game.dll; same-descriptor SHA256 and identity checks before and after.",
+    "Only offsets00/10/18/28 of the two fixed tables; no adjacent slot or function body.",
+    "New output directory and exclusive writes; preserve failure evidence and never overwrite.",
+    "Constructor writes and Player overwrite are static evidence, not complete constructor or loaded-object semantics.",
+    "No DLL loading, original execution, backend, saves, runtime globals or subprocess."
+  ]
+}

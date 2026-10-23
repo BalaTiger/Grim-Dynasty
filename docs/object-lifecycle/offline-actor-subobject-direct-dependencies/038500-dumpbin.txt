@@ -1,0 +1,51 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Engine.dll
+
+File Type: DLL
+
+  0000000180038500: 48 89 4C 24 08     mov         qword ptr [rsp+8],rcx
+  0000000180038505: 57                 push        rdi
+  0000000180038506: 48 83 EC 40        sub         rsp,40h
+  000000018003850A: 48 C7 44 24 20 FE  mov         qword ptr [rsp+20h],0FFFFFFFFFFFFFFFEh
+                    FF FF FF
+  0000000180038513: 48 89 5C 24 60     mov         qword ptr [rsp+60h],rbx
+  0000000180038518: 48 89 74 24 68     mov         qword ptr [rsp+68h],rsi
+  000000018003851D: 48 8B F9           mov         rdi,rcx
+  0000000180038520: C6 41 18 00        mov         byte ptr [rcx+18h],0
+  0000000180038524: 33 F6              xor         esi,esi
+  0000000180038526: 89 71 1C           mov         dword ptr [rcx+1Ch],esi
+  0000000180038529: 48 89 71 10        mov         qword ptr [rcx+10h],rsi
+  000000018003852D: C7 41 20 00 00 80  mov         dword ptr [rcx+20h],3F800000h
+                    3F
+  0000000180038534: 0F 57 C9           xorps       xmm1,xmm1
+  0000000180038537: 89 74 24 30        mov         dword ptr [rsp+30h],esi
+  000000018003853B: 0F 28 C1           movaps      xmm0,xmm1
+  000000018003853E: 0F 14 C1           unpcklps    xmm0,xmm1
+  0000000180038541: F2 0F 11 41 24     movsd       mmword ptr [rcx+24h],xmm0
+  0000000180038546: 8B C6              mov         eax,esi
+  0000000180038548: 89 41 2C           mov         dword ptr [rcx+2Ch],eax
+  000000018003854B: 48 89 71 30        mov         qword ptr [rcx+30h],rsi
+  000000018003854F: 48 8D 59 38        lea         rbx,[rcx+38h]
+  0000000180038553: 48 89 5C 24 58     mov         qword ptr [rsp+58h],rbx
+  0000000180038558: 48 89 33           mov         qword ptr [rbx],rsi
+  000000018003855B: 48 89 73 08        mov         qword ptr [rbx+8],rsi
+  000000018003855F: 45 33 C0           xor         r8d,r8d
+  0000000180038562: 33 D2              xor         edx,edx
+  0000000180038564: E8 07 6C FE FF     call        000000018001F170
+  0000000180038569: 48 89 03           mov         qword ptr [rbx],rax
+  000000018003856C: 48 89 77 50        mov         qword ptr [rdi+50h],rsi
+  0000000180038570: C7 47 58 F7 01 00  mov         dword ptr [rdi+58h],1F7h
+                    00
+  0000000180038577: 48 89 77 48        mov         qword ptr [rdi+48h],rsi
+  000000018003857B: 48 89 77 08        mov         qword ptr [rdi+8],rsi
+  000000018003857F: 40 88 77 60        mov         byte ptr [rdi+60h],sil
+  0000000180038583: 48 8B C7           mov         rax,rdi
+  0000000180038586: 48 8B 5C 24 60     mov         rbx,qword ptr [rsp+60h]
+  000000018003858B: 48 8B 74 24 68     mov         rsi,qword ptr [rsp+68h]
+  0000000180038590: 48 83 C4 40        add         rsp,40h
+  0000000180038594: 5F                 pop         rdi
+  0000000180038595: C3                 ret
+
+  Summary
+
+      301000 .text

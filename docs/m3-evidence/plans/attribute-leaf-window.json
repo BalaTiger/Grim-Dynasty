@@ -1,0 +1,19 @@
+{
+  "schema": "grim-dynasty-m3-bounded-plan-v3",
+  "id": "attribute-leaf-window",
+  "purpose": "Probe only the first 32 bytes at CF6E0, proven by saved direct E8 caller bytes. A missing .pdata entry is not absence of a function; this window is not a function boundary. No transfer or callee is followed.",
+  "source": {"path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll", "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2", "bytes": 11385856, "preferred_base": "0x180000000"},
+  "proof": {"path": "docs/m3-evidence/damage-settlement/direct-068ab0.instructions.json", "sha256": "29cb0371f9a2cfb9638d3d9d11e0426db5821f6740ecbc32e6dd72d314abc033"},
+  "targets": [
+    {"id": "window-0cf6e0", "rva": "0xcf6e0", "caller_address": "0x180068b60", "caller_bytes": "e87b6b0600", "reference_kind": "direct-call"}
+  ],
+  "limits": {"body_bytes_each": 32, "body_bytes_total": 32, "metadata_bytes": 16384, "dumpbin_calls": 1, "tool_timeout_ms_each": 10000},
+  "mode": "bounded-leaf-window",
+  "range_policy": "fixed-window-not-function",
+  "window_bytes": 32,
+  "target_origin": "saved-direct-call",
+  "output": "docs/m3-evidence/attribute-leaf-window",
+  "temporary": ".tooling/m3-attribute-leaf-window-temp",
+  "automatic_callee_expansion": false,
+  "execution_requires_separate_review_and_approval": true
+}

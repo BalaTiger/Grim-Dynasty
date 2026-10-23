@@ -1,0 +1,136 @@
+{
+    "schema":  "grim-dynasty-m3-window-patch-v1",
+    "status":  "Passed",
+    "completed_utc":  "2026-10-22T04:34:04.9970578Z",
+    "new_model_checks":  0,
+    "reused_model_checks":  22,
+    "new_window_checks":  22,
+    "checks":  [
+                   {
+                       "name":  "smoke_and_actual_reload_reports_exist",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "right_arrow_routed_through_winforms",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "timer_reached_capture_frame",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "position_is_finite",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "arrow_moved_world_position",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "smoke_session_money_is_50",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "smoke_character_identity_present",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "reload_preserves_exact_position_bits",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "reload_preserves_character_identity",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "reload_money_and_empty_journal",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "closing_save_is_second_revision",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "reload_preserves_session_ownership",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "closing_save_exists",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "initial_save_backup_exists",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "save_envelope_and_content",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "saved_bits_equal_actual_reload",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "saved_session_equals_actual_reload",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "saved_session_content_and_empty_commands",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "window_png_is_nonempty",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "png_signature_and_ihdr",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "png_contains_full_form_dimensions",
+                       "status":  "Passed"
+                   },
+                   {
+                       "name":  "capture_includes_frame_above_client",
+                       "status":  "Passed"
+                   }
+               ],
+    "model_source_equivalence":  "All prior sources unchanged except the two permitted window entry sources.",
+    "compile_exit":  0,
+    "compilation_reused":  true,
+    "window_exit":  0,
+    "window_smoke":  {
+                         "character_id":  "bf9053ab22c4459cb75eb3be52f57784",
+                         "client_height":  760,
+                         "client_width":  1100,
+                         "form_height":  799,
+                         "form_width":  1116,
+                         "frames":  28,
+                         "input":  "Right arrow: WinForms preprocessing + window handler + timer",
+                         "money":  50,
+                         "x_bits":  1142487000,
+                         "y_bits":  1150271488
+                     },
+    "actual_reload":  {
+                          "character_id":  "bf9053ab22c4459cb75eb3be52f57784",
+                          "journal_count":  0,
+                          "money":  50,
+                          "revision":  2,
+                          "same_object_identity":  true,
+                          "shared_world_identity":  true,
+                          "x_bits":  1142487000,
+                          "y_bits":  1150271488
+                      },
+    "screenshot":  {
+                       "path":  "validation/window/window.png",
+                       "width":  1116,
+                       "height":  799,
+                       "complete_form":  true
+                   },
+    "closing_save":  {
+                         "path":  "validation/window/runtime-data/saves/scene-smoke.save",
+                         "sha256":  "7e86f1498e7a736fb652e480edb032eef9ca9c6450fb1961a0e42956f07b5139",
+                         "validation":  "Actual unchanged SceneStore.Load in smoke process, followed by read-only report and persisted-field comparisons."
+                     },
+    "scope":  "M3 first visible scene checkpoint window patch only. No new model tests, combat, AI, trade, equipment or original runtime/sample compatibility claims."
+}

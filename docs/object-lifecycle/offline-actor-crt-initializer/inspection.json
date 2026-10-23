@@ -1,0 +1,178 @@
+{
+  "schema": "grim-dynasty-fixed-actor-crt-initializer-v1",
+  "status": "exact-actor-crt-initializer-verified",
+  "started_utc": "2026-10-21T05:40:47.366Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "requested_rva": "0x2dc908",
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-initialization-tables/metadata.json",
+      "sha256": "71d060530810ccd8e1c788f53b7d6e892d779bc85aa7614a6da4108ddf3a8eba"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-helper-entry-prefixes/inspection.json",
+      "sha256": "91073998bfc8ab7f647dfdc4174bf17a979d5ad8153c2658f413bf40e67574a9"
+    }
+  ],
+  "source_slot": {
+    "index": 1,
+    "slot_rva": "0x303180",
+    "file_offset": 3154304,
+    "raw_hex": "08c92d8001000000",
+    "pointer_hex": "0x1802dc908",
+    "is_null": false,
+    "target_followed": false
+  },
+  "boundary": {
+    "index": 11167,
+    "begin": 3000584,
+    "end": 3000870,
+    "unwind": 3549416,
+    "raw_hex": "08c92d0026ca2d00e8283600",
+    "file_offset": 4451700
+  },
+  "cached_boundary_read": {
+    "index": 11167,
+    "rva": "0x444b74",
+    "file_offset": 4451700,
+    "requested_bytes": 12,
+    "read_bytes": 12,
+    "raw_bytes": "08c92d0026ca2d00e8283600"
+  },
+  "boundary_source": {
+    "path": "docs/object-lifecycle/offline-engine-root-static-helper-entry-prefixes/inspection.json",
+    "sha256": "91073998bfc8ab7f647dfdc4174bf17a979d5ad8153c2658f413bf40e67574a9"
+  },
+  "limits": {
+    "new_pdata_entries": 0,
+    "pdata_bytes": 0,
+    "code_bytes": 286,
+    "semantic_bytes": 286,
+    "semantic_read_operations": 1,
+    "fingerprint_chunk_bytes": 65536,
+    "proof_bytes_each": 65536,
+    "synthetic_pe_bytes": 3584,
+    "subprocesses": 1,
+    "timeout_ms": 10000,
+    "max_buffer_bytes": 196608,
+    "report_bytes": 196608
+  },
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "compilation_or_tests": false,
+  "direct_callees_followed": 0,
+  "new_header_bytes_read": 0,
+  "new_data_bytes_read": 0,
+  "new_import_bytes_read": 0,
+  "original_path_given_to_dumpbin": false,
+  "metadata_bytes": 0,
+  "code_bytes": 286,
+  "semantic_reads": [
+    {
+      "kind": "code",
+      "file_offset": 2997512,
+      "requested_bytes": 286,
+      "read_bytes": 286,
+      "raw_hex": "48895c24084889742410574883ec204533c0488d0d67441400baa00f0000e8f5110000488d0d56aa0200ff15a05a0200488bd84885c00f84cc000000488d155daa0200488bc8ff159c590200488d156daa0200488bcb488bf0ff1589590200488d157aaa0200488bcb488bf8ff1576590200488bd84885f6746e4885ff74694885c074644883252444140000488bcee8240b0000488d0d0d441400ffd6488b1574fb1300b9400000008bc283e03f2bc848d3cf4833fa48d3cb4833da48893df543140048891df6431400488d0d4f000000e802ffffff488b5c243033c0488b7424384883c4205fc34533c94533c033c9418d5101ff1596570200488905af4314004885c075c4eb0bb907000000e8da0d0000ccb907000000e8cf0d0000cc"
+    }
+  ],
+  "new_pdata_reads": 0,
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    }
+  ],
+  "subprocesses": 1,
+  "byte_coverage_verified": true,
+  "archive_check": "Preparation found no exact 2dc908 named body in docs and no saved Engine-root instruction-body entry; pointer/call references were not treated as a body.",
+  "limitations": [
+    "Only init_e slot303180 target2DC908 is selected. Successful pinned archival raw .pdata entry11167 proves exact[2DC908,2DCA26),286B; no new .pdata/header read, boundary search, neighboring body or prefix is requested.",
+    "dumpbin opens only an owned single-section synthetic PE containing the exact extracted body and generated zero padding. Original virtual addresses are preserved; only the exact body RANGE is disassembled. This is not an executable reconstruction.",
+    "No unwind payload, other callee, IAT, global or referenced string is followed. No Engine header reread or full target copy is made.",
+    "Two same-handle original hashes and tool before/after hashes use64KiB buffers; fingerprint reads are separate from semantic budgets. Stable stat/hash is not an atomic snapshot."
+  ],
+  "script_sha256": "b34068ac7d3de003339d46f90a0cbcd020997763c2bf8995cbe3e374b01c2e60",
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "stat_before": {
+    "size": 4485632,
+    "ino": 1970324837085124,
+    "dev": 2562469142,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "code_file_offset": 2997512,
+  "code_sha256": "fd09d043d355a8395da6337767b8c797127725f4246a24b414efa94ee03234f6",
+  "synthetic_pe": {
+    "section_rva": "0x2dc000",
+    "section_virtual_bytes": 2598,
+    "section_raw_bytes": 3072,
+    "code_file_offset": 2824,
+    "generated_prefix_bytes": 2312,
+    "generated_tail_bytes": 474,
+    "header_bytes": 512,
+    "image_base": "0x180000000",
+    "entry_point_rva": 0,
+    "imports": 0,
+    "relocations": 0,
+    "never_executed": true,
+    "path": ".tooling/offline-actor-crt-initializer-temp/2dc908.inspect.dll",
+    "bytes": 3584,
+    "sha256": "8d47b0f28678605970b679d9fa5e9a5a85a220364a4aa316ea8b658672fc6641",
+    "sha256_after": "8d47b0f28678605970b679d9fa5e9a5a85a220364a4aa316ea8b658672fc6641"
+  },
+  "command_arguments": [
+    "/NOLOGO",
+    "/NOPDB",
+    "/ERRORREPORT:NONE",
+    "/DISASM:BYTES",
+    "/RANGE:0x1802dc908,0x1802dca25",
+    "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-actor-crt-initializer-temp\\2dc908.inspect.dll"
+  ],
+  "tool_elapsed_ms": 34,
+  "tool_exit": 0,
+  "tool_signal": null,
+  "tool_error": null,
+  "instructions": 70,
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "stat_after": {
+    "size": 4485632,
+    "ino": 1970324837085124,
+    "dev": 2562469142,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "source_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "source_hash_preserved": true,
+  "tool_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T05:40:47.447Z"
+}

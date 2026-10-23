@@ -1,0 +1,155 @@
+{
+  "schema": "grim-dynasty.fixed-mainplayer-connection-slots.v1",
+  "started_utc": "2026-10-23T11:09:19.560Z",
+  "script_sha256": "76b822eb847c132b363faf8dca3a24ccde3e5d5a00b7d566a287fe7c704d4819",
+  "plan_sha256": "509aa92ec2765f6a00bab22c63cc5d9fd81e04d2153ee703578a7736c9eadea9",
+  "source_pins": [
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "constructor",
+      "path": "docs/reverse-client/r1-game-mainplayer-connection-run1/05-GameMainPlayerConnection-0x18030afe0-procedure_assembly.json",
+      "sha256": "1d6152c5fb914318a1fa995da8ea4a1316dd0fb76ad4588fbc207aa58b7ef2a2"
+    },
+    {
+      "key": "constructor_pseudo",
+      "path": "docs/reverse-client/r1-game-mainplayer-connection-run1/04-GameMainPlayerConnection-0x18030afe0-procedure_pseudo_code.json",
+      "sha256": "959162b0b69276a9adda5411196ff906a27766d855ab2e41db21332d4910e33e"
+    },
+    {
+      "key": "constructor_summary",
+      "path": "docs/reverse-client/r1-game-mainplayer-connection-run1/summary.json",
+      "sha256": "226d502f084dc05258efc70416e054dcc761e65e2eb1777392502b76d9fe14e9"
+    },
+    {
+      "key": "main_player",
+      "path": "docs/reverse-client/r1-path-local-dispatch/10-PathLocal-0x1802ebb70-procedure_assembly.json",
+      "sha256": "e0f078a4f8eca837e23e46bc0c560fb919a989d8c1e85ac3584b041d7ba2b1dd"
+    },
+    {
+      "key": "old_publication",
+      "path": "docs/task-kills/ghidra-selected/subscriber-constructor-routes.json",
+      "sha256": "e907b67d57a568784a19f887a3c71883b0f7726a14defee449cf8693422ee165"
+    }
+  ],
+  "limits": {
+    "metadata_bytes": 256,
+    "metadata_operations": 197,
+    "single_read_bytes": 24,
+    "hash_chunk_bytes": 65536,
+    "code_bytes": 0,
+    "new_PE_header_bytes": 0,
+    "whole_table_bytes": 0
+  },
+  "metadata_bytes": 24,
+  "metadata_operations": 3,
+  "code_bytes": 0,
+  "new_PE_header_bytes": 0,
+  "whole_table_bytes": 0,
+  "original_loaded_or_executed": false,
+  "subprocesses": 0,
+  "backend_started": false,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "reads": [
+        {
+          "kind": "exact-main-vtable-slot",
+          "rva": "0x767ca0",
+          "file_offset": 7758496,
+          "section": ".rdata",
+          "bytes": 8,
+          "raw_hex": "b09c088001000000"
+        },
+        {
+          "kind": "exact-main-vtable-slot",
+          "rva": "0x767cb0",
+          "file_offset": 7758512,
+          "section": ".rdata",
+          "bytes": 8,
+          "raw_hex": "e0040d8001000000"
+        },
+        {
+          "kind": "exact-vtable-minus8-locator-pointer",
+          "rva": "0x767c90",
+          "file_offset": 7758480,
+          "section": ".rdata",
+          "bytes": 8,
+          "raw_hex": "40a35d8001000000"
+        }
+      ],
+      "hash_bytes": 22771712,
+      "closed": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "stable": true
+    }
+  ],
+  "values": [
+    {
+      "table_rva": "0x767c98",
+      "offset": "0x8",
+      "rva": "0x767ca0",
+      "bytes": 8,
+      "reason": "Cached GameEngine2C07A0 invokes the4118 object +8 at2C1A4B with address40E0 before4118 is published to40F8; old caller provenance remains weaker than new hash-bound ctor.",
+      "raw_hex": "b09c088001000000",
+      "target_va": "0x180089cb0",
+      "target_rva": "0x89cb0",
+      "classification": "ExecutableAddressCandidate",
+      "function_boundary_verified": false,
+      "target_body_read": false,
+      "loaded_binding_observed": false,
+      "target_section": ".text"
+    },
+    {
+      "table_rva": "0x767c98",
+      "offset": "0x18",
+      "rva": "0x767cb0",
+      "bytes": 8,
+      "reason": "Current-hash-bound GetMainPlayer2EBB70 invokes current40F8 object +18 twice at2EBB83 and2EBB96; no target name inferred.",
+      "raw_hex": "e0040d8001000000",
+      "target_va": "0x1800d04e0",
+      "target_rva": "0xd04e0",
+      "classification": "ExecutableAddressCandidate",
+      "function_boundary_verified": false,
+      "target_body_read": false,
+      "loaded_binding_observed": false,
+      "target_section": ".text"
+    }
+  ],
+  "rtti": {
+    "locator_slot_rva": "0x767c90",
+    "locator_va": "0x1805da340",
+    "locator_rva": "0x5da340",
+    "locator": null,
+    "type_descriptor": null,
+    "raw_type_name": null,
+    "demangled_type_name": null,
+    "class_hierarchy_read": false,
+    "loaded_type_observed": false
+  },
+  "slot_bindings_complete": true,
+  "rtti_name_complete": false,
+  "unsupported": [],
+  "failures": [
+    "AssertionError [ERR_ASSERTION]: Code read refused"
+  ],
+  "limitations": [
+    "Prepare only; separate root review and exact approval with frozen script/plan hashes, plus Windows Attributes/reparse preflight for source and workspace ancestors. Import performs no I/O.",
+    "Exactly two function slots at767CA0 and767CB0 and locator pointer767C90. Follow only that single RTTI pointer to at most24B locator,16B type header,192B NUL-terminated raw name. No other vtable slots, hierarchy/base arrays, target code, pdata, imports, exports, broad strings or new PE headers.",
+    "Reuse cached PE map only after current same-handle Game hash matches pinned identity. Whole-file hashes use64KiB buffers and are separate from256B semantic read budget; checks are not atomic snapshots.",
+    "The Game30AFE0 ctor and2EBB70 reader are current-hash-bound Rea evidence. Old2C07A0 publication cache lacks embedded input hash: its current file hash preserves content only, not a retroactive original binding.",
+    "Constructor establishes a main-vptr candidate. Callee effects, later overwrites, table extents, loaded dispatch, complete construction, ABI and Record+10 production are not validated by these disk bytes.",
+    "Executable section membership labels address candidates only. RTTI is optional, restricted to signature1 with selfRVA match and raw ASCII name; no assumed class identity or demangled behavior. Preserve slot results even if RTTI is Unsupported.",
+    "Output directory must be absent; retain raw partial/failure evidence. No original loading/execution, backend, subprocess, network, save data, security changes, commit or push."
+  ],
+  "old_publication_input_hash_bound": false,
+  "constructor_body_current_hash_bound": true,
+  "proofs_verified": true,
+  "finished_utc": "2026-10-23T11:09:19.582Z",
+  "status": "failed"
+}

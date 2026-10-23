@@ -1,0 +1,38 @@
+{
+  "preflight": {
+    "utc": "2026-10-19T07:13:02.3797842Z",
+    "host_process_query": "Get-Process: java/javaw, UnrealEditor/UnrealEditor-Cmd, ShaderCompileWorker, UnrealBuildTool, AutomationTool, MSBuild, cl, link, dotnet, houdini, hython",
+    "selected_processes": [],
+    "memory_utc": "2026-10-19T07:13:02.419Z",
+    "total_gib": 31.77328872680664,
+    "free_gib": 13.504329681396484
+  },
+  "started": {
+    "utc": "2026-10-19T07:13:14.535Z",
+    "rea_pid": 43888,
+    "free_gib": 13.435302734375
+  },
+  "actual_java_observation": {
+    "utc": "2026-10-19T07:13:41.6953056Z",
+    "source": "Get-CimInstance Win32_Process, filtered to java.exe/javaw.exe; only heap switches emitted from command line",
+    "process_id": 33996,
+    "parent_process_id": 21120,
+    "working_set_gib": 0.591,
+    "heap_switch": "-Xmx512M"
+  },
+  "after_close": {
+    "utc": "2026-10-19T07:16:08.9498910Z",
+    "host_query": "All java/javaw processes and owned Rea PID 43888 / Ghidra PID 33996",
+    "remaining_processes": [],
+    "memory_utc": "2026-10-19T07:16:08.983Z",
+    "free_gib": 13.631999969482422,
+    "runtime_file_inventory": "analysis-runtime/rea recursive file listing was empty",
+    "run_sample_count": 76,
+    "run_minimum_free_gib": 11.859127044677734
+  },
+  "limitations": [
+    "Java heap maximum is not a limit on total Java, native, or Node process memory.",
+    "memory.ndjson samples free physical memory every two seconds. A 5 GiB stop threshold provides a margin above the requested 4 GiB reserve, but is not an OS memory reservation or a continuous measurement.",
+    "Process observations are snapshots, not an inventory continuously monitored for other projects."
+  ]
+}

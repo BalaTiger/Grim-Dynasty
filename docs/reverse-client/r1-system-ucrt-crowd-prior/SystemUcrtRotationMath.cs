@@ -1,0 +1,164 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Text;
+using Microsoft.Win32.SafeHandles;
+
+namespace GrimDynasty.ReverseClient.Actions {
+ // OWN Windows x64 platform profile, not recovery of the game's loaded CRT.
+ // This is intentionally separate from the old rewards SystemCrtMath profile.
+ // Disk hash, actual module path and export ownership are checked separately.
+ // A preloaded same-path image is NOT memory-hashed or proved byte-identical to
+ // the locked disk file. No original runtime numeric equivalence is claimed.
+ // All unmanaged calls below require formal build/test approval before use.
+ public sealed class SystemUcrtRotationMath : IDisposable {
+  public const string Library=@"C:\Windows\System32\ucrtbase.dll";
+  public const string VerifiedSha256="dedb7611e1abc1ff3852dcac3d4c93a048d729e25b061973b9969f22698f14ca";
+  public const string VerifiedFileVersion="10.0.26100.9711 (WinBuild.160101.0800)";
+  public const long VerifiedBytes=1399656;
+  const string Kernel=@"C:\Windows\System32\kernel32.dll";
+  const uint SearchSystem32=0x800,FromAddressUnchangedRefcount=6;
+  const uint RoundMask=0x300,DenormalMask=0x3000000,ExceptionMask=0x8001f,Ambiguous=0x80000000;
+  [DllImport(Kernel,ExactSpelling=true,CharSet=CharSet.Unicode,SetLastError=true)]
+  static extern IntPtr LoadLibraryExW(string file,IntPtr reserved,uint flags);
+  [DllImport(Kernel,ExactSpelling=true,CharSet=CharSet.Ansi,SetLastError=true)]
+  static extern IntPtr GetProcAddress(IntPtr module,string name);
+  [DllImport(Kernel,ExactSpelling=true,CharSet=CharSet.Unicode,SetLastError=true)]
+  static extern uint GetModuleFileNameW(IntPtr module,StringBuilder path,uint capacity);
+  [DllImport(Kernel,ExactSpelling=true,SetLastError=true)]
+  [return:MarshalAs(UnmanagedType.Bool)]
+  static extern bool GetModuleHandleExW(uint flags,IntPtr address,out IntPtr module);
+  [DllImport(Kernel,ExactSpelling=true,SetLastError=true)]
+  [return:MarshalAs(UnmanagedType.Bool)]
+  static extern bool FreeLibrary(IntPtr module);
+  // Real C float(float), not double Math APIs or a user-provided callback.
+  // On Windows x64 the first scalar float argument and result use XMM0.
+  [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+  [return:MarshalAs(UnmanagedType.R4)]delegate float Unary([MarshalAs(UnmanagedType.R4)]float value);
+  [UnmanagedFunctionPointer(CallingConvention.Cdecl)]delegate int QueryControl(out uint current,uint newValue,uint mask);
+  sealed class ModuleHandle:SafeHandleZeroOrMinusOneIsInvalid {
+   internal ModuleHandle(IntPtr value):base(true){SetHandle(value);}
+   protected override bool ReleaseHandle(){return FreeLibrary(handle);}
+  }
+  readonly object gate=new object();
+  readonly FileStream lockedFile;
+  readonly ModuleHandle module;
+  readonly Unary acos,cos,sin;
+  readonly QueryControl control;
+  readonly Dictionary<string,long> exportRvas=new Dictionary<string,long>(StringComparer.Ordinal);
+  bool disposed;long calls;
+  public long NativeMathCalls{get{lock(gate){return calls;}}}
+  public string LoadedPath{get;private set;}
+  public Dictionary<string,long> ExportRvas{get{lock(gate){return new Dictionary<string,long>(exportRvas,StringComparer.Ordinal);}}}
+  public bool IsDisposed{get{lock(gate){return disposed;}}}
+  SystemUcrtRotationMath(FileStream file,ModuleHandle handle){
+   lockedFile=file;module=handle;LoadedPath=ModulePath(handle.DangerousGetHandle(),0);
+   if(!String.Equals(LoadedPath,Library,StringComparison.OrdinalIgnoreCase))throw new MissingContract(0,"Loaded UCRT module path differs from fixed system profile");
+   acos=(Unary)Bind("acosf",typeof(Unary));cos=(Unary)Bind("cosf",typeof(Unary));sin=(Unary)Bind("sinf",typeof(Unary));
+   control=(QueryControl)Bind("_controlfp_s",typeof(QueryControl));
+   Query(0);RequireFingerprint(Digest(lockedFile),0);
+  }
+  static string ModulePath(IntPtr handle,uint at){
+   var path=new StringBuilder(32768);uint count=GetModuleFileNameW(handle,path,(uint)path.Capacity);
+   if(count==0||count>=path.Capacity)throw new MissingContract(at,"Cannot verify loaded system module path");
+   return Path.GetFullPath(path.ToString());
+  }
+  Delegate Bind(string name,Type type){
+   IntPtr address=GetProcAddress(module.DangerousGetHandle(),name);
+   if(address==IntPtr.Zero)throw new MissingContract(0,"Fixed UCRT export unavailable: "+name);
+   IntPtr owner;
+   // This query does not acquire a reference. Only our LoadLibraryEx reference
+   // is released; forwarded exports into another module are outside the profile.
+   if(!GetModuleHandleExW(FromAddressUnchangedRefcount,address,out owner)||owner!=module.DangerousGetHandle())
+    throw new MissingContract(0,"Fixed UCRT export belongs to another or unknown module: "+name);
+   if(!String.Equals(ModulePath(owner,0),Library,StringComparison.OrdinalIgnoreCase))throw new MissingContract(0,"Export owner path mismatch");
+   exportRvas.Add(name,checked(address.ToInt64()-owner.ToInt64()));
+   return Marshal.GetDelegateForFunctionPointer(address,type);
+  }
+  static void PlainAncestors(string path){
+   for(string p=Path.GetFullPath(path);p!=null;p=Path.GetDirectoryName(p)){
+    if((File.GetAttributes(p)&FileAttributes.ReparsePoint)!=0)throw new MissingContract(0,"Redirected system/profile path is unsupported: "+p);
+   }
+  }
+  static string Digest(FileStream file){
+   file.Position=0;using(var sha=SHA256.Create())return BitConverter.ToString(sha.ComputeHash(file)).Replace("-","").ToLowerInvariant();
+  }
+  public static void RequireFingerprint(string observed,uint at){
+   if(!String.Equals(observed,VerifiedSha256,StringComparison.Ordinal))throw new MissingContract(at,"System UCRT fingerprint is outside this own rotation profile");
+  }
+  // Pure checks are exposed for failed-gate tests without changing live FP state.
+  public static void RequireControlProfile(uint word,uint at){
+   if((word&RoundMask)!=0||(word&DenormalMask)!=0||(word&ExceptionMask)!=ExceptionMask||(word&Ambiguous)!=0)
+    throw new MissingContract(at,"Own rotation profile requires nearest rounding, all exceptions masked and preserved denormals");
+  }
+  static bool Ordinary(float value){
+   uint bits=BitConverter.ToUInt32(BitConverter.GetBytes(value),0),magnitude=bits&0x7fffffffu;
+   return magnitude<0x7f800000u&&(magnitude==0||magnitude>=0x00800000u);
+  }
+  public static void RequireAcosInput(float value,uint at){
+   if(!Ordinary(value)||value< -1f||value>1f)throw new MissingContract(at,"Own acosf domain is finite normal-or-zero [-1,1]; no NaN/infinity/subnormal handling");
+  }
+  public static void RequireAngleInput(float value,uint at){
+   if(!Ordinary(value)||value< -4f||value>4f)throw new MissingContract(at,"Own sinf/cosf domain is finite normal-or-zero [-4,4] radians");
+  }
+  public static SystemUcrtRotationMath OpenOwnProfile(){
+   if(System.Environment.OSVersion.Platform!=PlatformID.Win32NT||!System.Environment.Is64BitProcess||IntPtr.Size!=8)
+    throw new MissingContract(0,"Own system UCRT profile requires Windows x64");
+   if(!String.Equals(System.Environment.SystemDirectory,@"C:\Windows\System32",StringComparison.OrdinalIgnoreCase))
+    throw new MissingContract(0,"Unexpected Windows system directory");
+   // Explicitly reject application-local redirection candidates before loading.
+   // No DLL search directories or other process-global settings are modified.
+   string application=Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory);
+   PlainAncestors(application);var entry=Assembly.GetEntryAssembly();
+   if(entry==null||String.IsNullOrEmpty(entry.Location))throw new MissingContract(0,"A regular own executable is required");
+   string redirection=entry.Location+".local";
+   if(File.Exists(redirection)||Directory.Exists(redirection)||File.Exists(Path.Combine(application,"ucrtbase.dll"))||File.Exists(Path.Combine(application,"kernel32.dll")))
+    throw new MissingContract(0,"Application-local system-DLL/redirection candidate is unsupported");
+   FileStream file=null;ModuleHandle handle=null;
+   try{
+    PlainAncestors(Library);
+    var info=new FileInfo(Library);if(info.Length!=VerifiedBytes)throw new MissingContract(0,"System UCRT size changed");
+    if(FileVersionInfo.GetVersionInfo(Library).FileVersion!=VerifiedFileVersion)throw new MissingContract(0,"System UCRT version changed");
+    // Keep a read-only handle without write/delete sharing for this owned
+    // provider's lifetime. No replacement or mutable profile is accepted.
+    file=new FileStream(Library,FileMode.Open,FileAccess.Read,FileShare.Read);
+    RequireFingerprint(Digest(file),0);
+    IntPtr raw=LoadLibraryExW(Library,IntPtr.Zero,SearchSystem32);
+    if(raw==IntPtr.Zero)throw new MissingContract(0,"Fixed system UCRT load failed: "+Marshal.GetLastWin32Error());
+    handle=new ModuleHandle(raw);
+    var ready=new SystemUcrtRotationMath(file,handle);file=null;handle=null;return ready;
+   }catch(Exception error){
+    if(error is MissingContract)throw;
+    if(error is IOException||error is UnauthorizedAccessException||error is DllNotFoundException||error is EntryPointNotFoundException||error is BadImageFormatException||error is System.Security.SecurityException)
+     throw new MissingContract(0,"Own system UCRT profile unavailable: "+error.GetType().Name,error);
+    throw;
+   }finally{if(handle!=null)handle.Dispose();if(file!=null)file.Dispose();}
+  }
+  void Live(uint at){if(disposed||module.IsClosed||module.IsInvalid)throw new MissingContract(at,"Own system UCRT rotation provider is disposed");}
+  uint Query(uint at){
+   uint word;if(control(out word,0,0)!=0)throw new MissingContract(at,"Read-only UCRT floating control query failed");
+   RequireControlProfile(word,at);return word;
+  }
+  public uint CheckControl(uint at){lock(gate){Live(at);return Query(at);}}
+  public string VerifyLockedFingerprint(uint at){lock(gate){Live(at);string actual=Digest(lockedFile);RequireFingerprint(actual,at);return actual;}}
+  float Invoke(Unary function,float value,bool inverse,uint at){
+   lock(gate){
+    Live(at);if(inverse)RequireAcosInput(value,at);else RequireAngleInput(value,at);
+    uint before=Query(at);calls++;float result=function(value);uint after=Query(at);
+    if(before!=after)throw new MissingContract(at,"System math call changed the queried floating control word");
+    if(!Ordinary(result))throw new MissingContract(at,"System math result is outside own finite normal-or-zero output domain");
+    // errno and sticky FP exception flags are not inspected, cleared or restored.
+    // The model neither promises their preservation nor exposes them as success.
+    return result;
+   }
+  }
+  public float Acos(float value,uint at){return Invoke(acos,value,true,at);}
+  public float Cos(float value,uint at){return Invoke(cos,value,false,at);}
+  public float Sin(float value,uint at){return Invoke(sin,value,false,at);}
+  public void Dispose(){lock(gate){if(disposed)return;disposed=true;module.Dispose();lockedFile.Dispose();}}
+ }
+}

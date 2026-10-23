@@ -1,0 +1,69 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-cache-node\Engine.readonly.dll
+
+File Type: DLL
+
+  0000000180280E20: 48 89 5C 24 18     mov         qword ptr [rsp+18h],rbx
+  0000000180280E25: 44 89 4C 24 20     mov         dword ptr [rsp+20h],r9d
+  0000000180280E2A: 56                 push        rsi
+  0000000180280E2B: 41 56              push        r14
+  0000000180280E2D: 41 57              push        r15
+  0000000180280E2F: 48 83 EC 20        sub         rsp,20h
+  0000000180280E33: 48 8B D9           mov         rbx,rcx
+  0000000180280E36: 45 0F B6 D1        movzx       r10d,r9b
+  0000000180280E3A: 48 B9 B3 01 00 00  mov         rcx,100000001B3h
+                    00 01 00 00
+  0000000180280E44: 48 B8 25 23 22 84  mov         rax,0CBF29CE484222325h
+                    E4 9C F2 CB
+  0000000180280E4E: 4C 33 D0           xor         r10,rax
+  0000000180280E51: 4C 8B FA           mov         r15,rdx
+  0000000180280E54: 0F B6 44 24 59     movzx       eax,byte ptr [rsp+59h]
+  0000000180280E59: 4D 8B F0           mov         r14,r8
+  0000000180280E5C: 48 8B 53 60        mov         rdx,qword ptr [rbx+60h]
+  0000000180280E60: 4C 8B 43 50        mov         r8,qword ptr [rbx+50h]
+  0000000180280E64: 4C 0F AF D1        imul        r10,rcx
+  0000000180280E68: 4C 33 D0           xor         r10,rax
+  0000000180280E6B: 0F B6 44 24 5A     movzx       eax,byte ptr [rsp+5Ah]
+  0000000180280E70: 4C 0F AF D1        imul        r10,rcx
+  0000000180280E74: 4C 33 D0           xor         r10,rax
+  0000000180280E77: 0F B6 44 24 5B     movzx       eax,byte ptr [rsp+5Bh]
+  0000000180280E7C: 4C 0F AF D1        imul        r10,rcx
+  0000000180280E80: 4C 33 D0           xor         r10,rax
+  0000000180280E83: 4C 0F AF D1        imul        r10,rcx
+  0000000180280E87: 48 8B 4B 78        mov         rcx,qword ptr [rbx+78h]
+  0000000180280E8B: 49 23 CA           and         rcx,r10
+  0000000180280E8E: 48 8B C1           mov         rax,rcx
+  0000000180280E91: 48 03 C0           add         rax,rax
+  0000000180280E94: 48 03 C9           add         rcx,rcx
+  0000000180280E97: 48 8B 04 C2        mov         rax,qword ptr [rdx+rax*8]
+  0000000180280E9B: 4C 8B 14 CA        mov         r10,qword ptr [rdx+rcx*8]
+  0000000180280E9F: 4C 8D 1C CA        lea         r11,[rdx+rcx*8]
+  0000000180280EA3: 4D 3B D0           cmp         r10,r8
+  0000000180280EA6: 75 05              jne         0000000180280EAD
+  0000000180280EA8: 49 8B C8           mov         rcx,r8
+  0000000180280EAB: EB 07              jmp         0000000180280EB4
+  0000000180280EAD: 49 8B 4B 08        mov         rcx,qword ptr [r11+8]
+  0000000180280EB1: 48 8B 09           mov         rcx,qword ptr [rcx]
+  0000000180280EB4: 48 3B C1           cmp         rax,rcx
+  0000000180280EB7: 74 11              je          0000000180280ECA
+  0000000180280EB9: 44 3B 48 10        cmp         r9d,dword ptr [rax+10h]
+  0000000180280EBD: 74 05              je          0000000180280EC4
+  0000000180280EBF: 48 8B 00           mov         rax,qword ptr [rax]
+  0000000180280EC2: EB DF              jmp         0000000180280EA3
+  0000000180280EC4: 49 0F 45 C0        cmovne      rax,r8
+  0000000180280EC8: EB 03              jmp         0000000180280ECD
+  0000000180280ECA: 49 8B C0           mov         rax,r8
+  0000000180280ECD: 33 F6              xor         esi,esi
+  0000000180280ECF: 49 89 37           mov         qword ptr [r15],rsi
+  0000000180280ED2: 41 89 36           mov         dword ptr [r14],esi
+  0000000180280ED5: 48 3B 43 50        cmp         rax,qword ptr [rbx+50h]
+  0000000180280ED9: 0F 84 52 01 00 00  je          0000000180281031
+  0000000180280EDF: 39 73 28           cmp         dword ptr [rbx+28h],esi
+  0000000180280EE2: 75 0A              jne         0000000180280EEE
+  0000000180280EE4: 48 39 73 20        cmp         qword ptr [rbx+20h],rsi
+  0000000180280EE8: 0F 84 43 01 00 00  je          0000000180281031
+  0000000180280EEE: 48 8B 48 18        mov         rcx,qword ptr [rax+18h]
+
+  Summary
+
+      301000 .text

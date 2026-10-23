@@ -1,0 +1,42 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-cache-node\Engine.readonly.dll
+
+File Type: DLL
+
+  0000000180047EA0: 48 83 EC 18        sub         rsp,18h
+  0000000180047EA4: 0F 10 01           movups      xmm0,xmmword ptr [rcx]
+  0000000180047EA7: 0F 11 04 24        movups      xmmword ptr [rsp],xmm0
+  0000000180047EAB: 4C 8B 4C 24 08     mov         r9,qword ptr [rsp+8]
+  0000000180047EB0: 4D 85 C0           test        r8,r8
+  0000000180047EB3: 79 2D              jns         0000000180047EE2
+  0000000180047EB5: 49 8B C0           mov         rax,r8
+  0000000180047EB8: 48 F7 D8           neg         rax
+  0000000180047EBB: 4C 3B C8           cmp         r9,rax
+  0000000180047EBE: 73 22              jae         0000000180047EE2
+  0000000180047EC0: 48 83 C9 FF        or          rcx,0FFFFFFFFFFFFFFFFh
+  0000000180047EC4: 4D 03 C8           add         r9,r8
+  0000000180047EC7: 49 2B C9           sub         rcx,r9
+  0000000180047ECA: 48 C7 C0 FC FF FF  mov         rax,0FFFFFFFFFFFFFFFCh
+                    FF
+  0000000180047ED1: 48 C1 E9 05        shr         rcx,5
+  0000000180047ED5: 48 C1 E1 02        shl         rcx,2
+  0000000180047ED9: 48 2B C1           sub         rax,rcx
+  0000000180047EDC: 48 01 04 24        add         qword ptr [rsp],rax
+  0000000180047EE0: EB 16              jmp         0000000180047EF8
+  0000000180047EE2: 48 8B 04 24        mov         rax,qword ptr [rsp]
+  0000000180047EE6: 4D 03 C8           add         r9,r8
+  0000000180047EE9: 49 8B C9           mov         rcx,r9
+  0000000180047EEC: 48 C1 E9 05        shr         rcx,5
+  0000000180047EF0: 48 8D 0C 88        lea         rcx,[rax+rcx*4]
+  0000000180047EF4: 48 89 0C 24        mov         qword ptr [rsp],rcx
+  0000000180047EF8: 41 83 E1 1F        and         r9d,1Fh
+  0000000180047EFC: 48 8B C2           mov         rax,rdx
+  0000000180047EFF: 4C 89 4C 24 08     mov         qword ptr [rsp+8],r9
+  0000000180047F04: 0F 10 04 24        movups      xmm0,xmmword ptr [rsp]
+  0000000180047F08: 0F 11 02           movups      xmmword ptr [rdx],xmm0
+  0000000180047F0B: 48 83 C4 18        add         rsp,18h
+  0000000180047F0F: C3                 ret
+
+  Summary
+
+      301000 .text

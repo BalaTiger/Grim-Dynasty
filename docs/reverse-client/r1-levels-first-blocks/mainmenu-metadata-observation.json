@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "status": "saved-sample-observation-only",
+  "source": {
+    "file": "docs/reverse-client/r1-levels-first-blocks/mainmenu-first-part.bin",
+    "sha256": "17a7e728a455cc92afc53228d3832d1a07c3331519f849b2d50d2da565f05180",
+    "saved_bytes": 262144,
+    "original_file_read_this_operation": false,
+    "parsed_byte_range": [0, 1106]
+  },
+  "native_evidence": {
+    "assembly": "docs/reverse-client/r1-map-directory-and-path-tiles/05-MapDirectoryPathTiles-0x180223140-procedure_assembly.json",
+    "sha256": "2a58e950a21b6c07c80f3884a9812c613a1693c711e28ab3fd239f102fa317e0",
+    "metadata_length_read": "2231D8: DWORD header+4",
+    "metadata_stream_call": "2231F3 R8D=length;2231F6 EDX=8;2231FB CALL stream virtual+10",
+    "region_constructor": "223C71 CALL191980; not ABBox-only1916C0",
+    "region_record_order": "six signed DWORDs converted to float ABBox; three IntVec3 DWORDs; four RegionId DWORDs; version-gated strings >=5,>=7,>=8; unconditional name string; two DWORDs"
+  },
+  "header": {"magic": "MAP", "version": 9, "metadata_offset": 8, "metadata_bytes": 1098, "metadata_end_exclusive": 1106},
+  "validation": {
+    "sample_hash_matched": true,
+    "complete_metadata_present": true,
+    "all_chunk_extents_within_metadata": true,
+    "chunk_framing_consumed_exactly_1098_bytes": true,
+    "region_chunk_consumed_exactly": true,
+    "all_region_strings_within_chunk_and_metadata": true,
+    "all_region_string_lengths_at_most_1048576": true,
+    "other_chunk_payloads_semantically_decoded": false,
+    "parser_domain": "Strict bounded observation of this saved version9 sample; bounds rejection is own validation, not a claim about native malformed-input behavior. Other chunks were skipped by their declared payload lengths."
+  },
+  "chunks": [
+    {"id": 27, "header_offset": 8, "payload_offset": 16, "payload_bytes": 4, "end_exclusive": 20},
+    {"id": 17, "header_offset": 20, "payload_offset": 28, "payload_bytes": 8, "end_exclusive": 36},
+    {"id": 24, "header_offset": 36, "payload_offset": 44, "payload_bytes": 903, "end_exclusive": 947},
+    {"id": 1, "header_offset": 947, "payload_offset": 955, "payload_bytes": 115, "end_exclusive": 1070, "region_count": 1},
+    {"id": 25, "header_offset": 1070, "payload_offset": 1078, "payload_bytes": 16, "end_exclusive": 1094},
+    {"id": 16, "header_offset": 1094, "payload_offset": 1102, "payload_bytes": 4, "end_exclusive": 1106}
+  ],
+  "regions": [
+    {
+      "index": 0,
+      "record_start": 959,
+      "record_end_exclusive": 1070,
+      "abbox_signed_dwords_in_file_order": [64, 158, 64, 64, 164, 64],
+      "intvec3_signed_dwords_in_file_order": [0, 0, 0],
+      "region_id_dwords_in_file_order": [660828775, 222841954, 2163678628, 692363226],
+      "strings": [
+        {"index": 0, "length_offset": 1011, "byte_length": 0, "text_observation": ""},
+        {"index": 1, "length_offset": 1015, "byte_length": 0, "text_observation": ""},
+        {"index": 2, "length_offset": 1019, "byte_length": 0, "text_observation": ""},
+        {"index": 3, "length_offset": 1023, "byte_length": 35, "text_observation": "Levels/MainMenu/MainMenuLevel02.lvl", "raw_hex": "4c6576656c732f4d61696e4d656e752f4d61696e4d656e754c6576656c30322e6c766c"}
+      ],
+      "string_encoding_scope": "Observed bytes are ASCII and valid UTF-8; native encoding convention is not established here.",
+      "tail_dword_offsets": [1062, 1066],
+      "tail_dwords_in_file_order": [263292, 828065],
+      "tail_field_mapping": "Unmapped pending independent Region191980 constructor evidence; not yet asserted as Region+98/+9C or a level extent."
+    }
+  ],
+  "limitations": [
+    "No World or Region object was constructed or executed.",
+    "No level payload, geometry, path tiles or mesh publication was decoded or validated.",
+    "The first candidate tail value263292 exceeds the saved prefix size262144; this observation does not make the corresponding level payload available.",
+    "The saved world001 prefix was not parsed because its metadata is incomplete."
+  ]
+}

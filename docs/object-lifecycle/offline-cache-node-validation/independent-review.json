@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-20T07:35:50.698Z",
+  "status": "passed-with-explicit-unrecovered-boundaries",
+  "reviewers": [
+    "locate_game: native normal domain and independent test implementation",
+    "build_portability: fixed import resolver and move semantics",
+    "verify_handoff: raw instruction/caller cross-check, implementation/tests/build and actual metadata/logs",
+    "root: final source/evidence/build/test and baseline review"
+  ],
+  "findings": [],
+  "corrected_during_review": [
+    "Explicit static initializer prevents deferred Empty storage allocation during source reset",
+    "Metadata-only PEReader replaces unavailable ReflectionOnlyLoadFrom; historical failures retained"
+  ],
+  "new_assertions": 51,
+  "new_scenario_groups": 2,
+  "total_assertions": 1260,
+  "total_scenario_groups": 27,
+  "demo": "passed",
+  "reviewed_hashes": {
+    "src/task_items/RecordCacheNodeConstruction.cs": "fd4314d6c596faf2aad8de747cc30a37797223c2d7e7f98997fe3e7b96ebf027",
+    "src/task_items/RecordCacheNodeConstructionTests.cs": "ce8889c64012cefa5e427b2e663336665c28d6fc26059dbc68ab8c311f67c991",
+    "tools/static_analysis/resolve_cache_move_import_offline.mjs": "db03f7084746c62219135a9674f6aa07c3b7077b1fed7974c6e5de17525bf6d3"
+  },
+  "own_assembly_sha256": "04f120ea5966f7ff11f7000f3faa22645ee71aa8e688e00bd86903b5f16bbfd3",
+  "prior_copies_verified": 345,
+  "before_copies_verified": 51,
+  "unchanged_prior_cs_sources": 50,
+  "current_baseline_changes_before_status_updates": [
+    "src/task_items/build_items.ps1"
+  ],
+  "review_execution": "Reviewers read existing evidence and test output; no repeated test or backend execution"
+}

@@ -1,0 +1,113 @@
+{
+  "schema": "grim-dynasty.fixed-engine-crowd-math-imports.v1",
+  "script": "tools/static_analysis/read_r1_engine_crowd_math_imports.mjs",
+  "entrypoint": "inspectEngineCrowdMathImports(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-engine-crowd-math-imports/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "source_pins": [
+    {
+      "key": "avoidance_assembly",
+      "path": "docs/reverse-client/r1-crowd-motion-branches/20-CrowdMotionBranch-0x18025f250-procedure_assembly.json",
+      "sha256": "4ccf1f9256b2ab72f5367398a2717d6316e22ca769104f96695dccb90cac9b57"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-depot-ctor-boundaries/boundary.json",
+      "sha256": "646053e4565e3f08c696ae0e9a16ddb5c2e81ab22ffe046c5057fc41aa64bb15"
+    },
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-load-ticks-imports/tick-import-bindings.json",
+      "sha256": "eb1e49dfe763e207be743b91d03b2b4c066057063da052cb3e1e3a97807aab0e"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "inventory_source",
+      "path": "docs/phase-1/boundary-audit/boundary_inventory.py",
+      "sha256": "354e00aeefbdfbc1beefa3de4f2c8c93635a0cb9ad824329f0011454f47ce224"
+    }
+  ],
+  "descriptor": {
+    "index": 24,
+    "rva": "0x415778",
+    "bytes": 20,
+    "dll": "api-ms-win-crt-math-l1-1-0.dll",
+    "symbols": [
+      "pow",
+      "cos",
+      "exp",
+      "sin",
+      "floor",
+      "atan",
+      "sqrt",
+      "log",
+      "ldexp",
+      "_finite",
+      "asinf",
+      "powf",
+      "cosf",
+      "sinf",
+      "atan2f",
+      "fmodf",
+      "acosf",
+      "tanf"
+    ],
+    "provenance": "Pinned Engine same-image import headers place directory at415598 size540; pinned inventory and its source preserve descriptor/symbol order. Descriptor24 is415778. Newly verify its20 bytes, exact DLL name, selected OFT/IAT/hint/name only; no descriptor scan."
+  },
+  "fixed_thunks": [
+    {
+      "rva": "0x2ddb5c",
+      "bytes": 6,
+      "symbol": "atan2f",
+      "index": 14,
+      "source_key": "avoidance_assembly",
+      "instruction": "0x18025f40c: CALL 0x1802ddb5c"
+    },
+    {
+      "rva": "0x2ddb50",
+      "bytes": 6,
+      "symbol": "cosf",
+      "index": 12,
+      "source_key": "avoidance_assembly",
+      "instruction": "0x18025f483: CALL 0x1802ddb50"
+    },
+    {
+      "rva": "0x2ddb56",
+      "bytes": 6,
+      "symbol": "sinf",
+      "index": 13,
+      "source_key": "avoidance_assembly",
+      "instruction": "0x18025f495: CALL 0x1802ddb56"
+    }
+  ],
+  "limits": {
+    "code_bytes": 18,
+    "code_operations": 3,
+    "metadata_bytes": 122,
+    "metadata_operations": 14,
+    "metadata_single_read": 31,
+    "hash_chunk_bytes": 65536,
+    "new_PE_header_bytes": 0,
+    "new_descriptor_bytes": 20,
+    "new_OFT_bytes": 24,
+    "target_body_bytes": 0
+  },
+  "requirements": [
+    "Module import performs no I/O. Separate formal approval requires exact frozen script and plan SHA256.",
+    "External Windows Attributes/reparse-tag precheck of original, workspace, script/plan, pinned sources and output ancestors is required; no security or permission change.",
+    "Open only fixed Engine.dll read-only, reuse cached PE sections only with before/after same-handle full SHA256 and stat equality.",
+    "Read exactly three fixed6B thunk candidates, accepting only FF25disp32. Opcode mismatch stops explicitly; no alternative decoding or chain.",
+    "Read only fixed descriptor24 and exact DLL string. Derived IAT must match cached symbol index; read exact OFT8B, IAT8B, hint2B and symbol with NUL.",
+    "No original table scan, export lookup, API-set resolution, CRT DLL open/load/execution, imported function execution, backend, subprocess, network or game/save access.",
+    "Import names do not prove runtime ABI/numerical behavior. No atan2 implementation, trig domain expansion or native loading occurs here.",
+    "New output directory refuses overwrite; partial failure or Unsupported is preserved with original hash/stat/close outcomes."
+  ]
+}

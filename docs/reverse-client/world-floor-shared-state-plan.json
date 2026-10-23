@@ -1,0 +1,25 @@
+{
+  "status": "read-only-design-not-implemented-or-tested",
+  "evidence": {
+    "221DA0": ["docs/reverse-client/r1-movement-floor-core/11-MovementFloorCore-0x180221da0-procedure_assembly.json", "0b1444a11090ae60d9f508b8342bdb43d1f7a6961a21b3dce7b7ae40166c9472"],
+    "130270": ["docs/reverse-client/r1-ground-intersection-remaining/23-GroundIntersectionRemaining-0x180130270-procedure_assembly.json", "ed6aed2b2a2c836f905ba3e05d602a4a8982a5d82a7b51394b0cfbd5bffb4c9f"]
+  },
+  "minimum_shared_views": [
+    "WorldFloorContext reuses existing WorldPublicationRegistry.Coordinates and canonical RegionPublicationView/WorldRegion. Add explicit attachment lookup; never clone Critical18, Level68, offsets or bounds.",
+    "One FloorLevelView per existing LevelMovementState.Identity adds Unknown Landscape30, TerrainFallback38, Water40 and live PathableActors54D8/54E0. Existing Level.Spatial10 is the actor spatial index, not the Ground tree; Ready538C is not consumed by221DA0.",
+    "Landscape30.Ground20 points to an explicit ground-owner composition joining the same OwnGroundData, GroundSpatialTree.Root10 and GroundSpatialContext. It must preserve the relationship between these views of one terrain; do not publish unrelated tree/data snapshots as a native-loaded object.",
+    "One RegionFloorView borrows canonical RegionPublicationView and owns the explicitly sourced live Neighbor100/108 vector. Unknown neighbor or actor state cannot be replaced with an empty vector.",
+    "Use existing GroundRay24 and GroundBlockHit20 for real ground/water calls. No injectable query-success callback. Water40 remains Unknown until the bounded water source is established. Fallback38 requires its actual B8 dispatch; no fake null fallback."
+  ],
+  "direct_contract": [
+    "221DBB unavailable returns false before lock/Level/coordinates. EnterCritical18@221DCE; reread lock@221DD4, capture Level68@221DD8; leave@221DDC; only then TEST Level@221DE2. Reuse OwnReentrantRegionLock platform adapter, not GuaranteedGetLevelFalse1943E0, which adds Load/Reset88 effects absent here. Lock is released before queries.",
+    "Ray captures X@221DEB,Z@221DF2,Y@221DF9; adds operand34BC00 toY and uses direction(0,operand34BDF4,0). Raw constant bindings must be established, not inferred solely from pseudocode decimal formatting.",
+    "Only Landscape30 nonnull initializes local hit distanceInf@221E5B/material100@221E60. Ground20 nonnull reads itsRoot10 and calls1D0100(root,ray,hit,7,Inf,null,0)@221E96. Landscape30 null enters fallback38/B8@221EBD. Both null leave hit uninitialized; do not synthesize a miss.",
+    "Water40 TEST@221EC7 is independent of ground hit. Nonnull calls1F9BD0@221EE0; AL true and strictly nearer copies materialDWORD@221EFB before remaining16B@221EFE. Material contents are opaque copy data, not a prerequisite numeric value.",
+    "t>0, includingInf, calls130270(Level,originalRay,t,false)@221F1D. 130270 consumes live54E0-minus54D8 extent@13028A/294; truly established empty returns incomingt@1306BA without ray/callback reads. Nonempty accesses actorbounds44..58, actor+C0@13039B,07F070@1303AB, returnedobject+30@1305F0 and actor+49C. No implementation/default emptiness is asserted. R9 boolean is not visibly consumed by the saved130270 body.",
+    "If currentt>0, live RegionNeighbor100/108 is consumed. Each available neighbor borrowsLevel under its own reread lock, then the vector element is reread@221FD8. DWORD offset differences3C/40/44 use signed conversion; X/Z bounds70/78/7C/84 plus34BC8C filter the transformed ray.130270@222072 returns a value that unconditionally replaces currentt@22207A, not an externalmin.",
+    "t<=0 skips/ends more queries but is not immediatefalse. Final finite-domain decision@2220CA is t<Inf. Success reconstructs XYZ from originalray and finalt, retains originalRegion, copies16B@22212A then8B@22212F. TailDWORD+14 is not initialized in the body and propagatesUnknown. Wrapper22C620 must retain its fresh20Btemporary and final16+8 copy semantics."
+  ],
+  "immediate_implementation_boundary": "Can implement shared attachments, exact lock/borrow early paths, ray construction once constants are bound, and direct Ground query composition without pretending Water/actors/neighbors are available. A valid floor success still requires actual traversed Water, actor and neighbor state. Native original has no observed dereference of World this in221DA0, so do not introduce a receiver-null gate.",
+  "not_performed": ["new native queries", "original file reads", "builds", "tests", "default empty water/actors/neighbors"]
+}

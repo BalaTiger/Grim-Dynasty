@@ -1,0 +1,27 @@
+{
+  "schema": "item-identity-build-result-v1",
+  "formal_execution": "require_escalated",
+  "script": "src/task_items/build_item_constructor_identity.ps1",
+  "script_sha256": "76b7d40d035b4445b9f79efee3308185431a97b1722836d3d73b63b1aec0ed2f",
+  "attempts": 1,
+  "compiler_invocations": 3,
+  "test_invocations": 2,
+  "new_suite": {
+    "assertions": 49,
+    "groups": 7
+  },
+  "old_be0_regression": {
+    "assertions": 66,
+    "groups": 10
+  },
+  "other_old_suites_run": 0,
+  "warnings": 0,
+  "tool_result": {
+    "chunk_id": "a45a20",
+    "wall_time_seconds": 0.997076855,
+    "exit_code": 0,
+    "original_token_count": 290,
+    "output": "NEW SUITE: ItemConstructorIdentityTests (counts reported separately)\r\nPASS GetterReadsOnlyTheDword: 13 assertions\r\nPASS RealChainCopiesExactlyFourBytes: 12 assertions\r\nPASS AnyUnknownSourceByteStops: 10 assertions\r\nPASS SamplesAtRunAndKeepsTheResult: 4 assertions\r\nPASS PriorCallbackAndUnknownDestinationPadding: 3 assertions\r\nPASS PriorFrontiersCannotBeSkipped: 4 assertions\r\nPASS UnknownAttemptDoesNotRetryAfterRepair: 3 assertions\r\nItemConstructorIdentityTests: 49 assertions, 7 groups passed; own conditional prefix only\r\nAFFECTED REGRESSION: ItemConstructorBE0Tests (counts reported separately)\r\nPASS CaptureAndAllocationBounds: 6 assertions\r\nPASS MissingAllocationAndDefaultCheck: 5 assertions\r\nPASS CompleteIndependentOracles: 6 assertions\r\nPASS UnknownPaddingAndLiveViews: 3 assertions\r\nPASS EveryCheckSeesLiveState: 5 assertions\r\nPASS FalseAndNullChecksKeepPrefixes: 9 assertions\r\nPASS ThrowsAndSingleInvocation: 7 assertions\r\nPASS NarrowStateStopsBeforeAllocation: 7 assertions\r\nPASS SuffixOrderAndStops: 15 assertions\r\nPASS InvalidPrerequisites: 3 assertions\r\nItemConstructorBE0Tests: 66 assertions, 10 groups passed; own conditional prefix only\r\n"
+  },
+  "native_runtime_compatibility_verified": false
+}

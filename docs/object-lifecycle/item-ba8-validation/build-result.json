@@ -1,0 +1,40 @@
+{
+  "schema": "item-ba8-build-result-v1",
+  "formal_mechanism": "require_escalated",
+  "approval": "approved",
+  "command": "Windows PowerShell5.1 -NoProfile -NonInteractive -File src/task_items/build_item_constructor_ba8.ps1",
+  "build_attempts": 1,
+  "compiler_invocations": 3,
+  "own_test_invocations": 2,
+  "compiler_warnings": 0,
+  "new_suite": {
+    "name": "ItemConstructorBA8Tests",
+    "assertions": 65,
+    "groups": 8,
+    "passed": true
+  },
+  "affected_regression": {
+    "name": "ItemConstructor950Tests",
+    "assertions": 80,
+    "groups": 9,
+    "passed": true
+  },
+  "old_standalone_suites_not_run": [
+    "ItemConstructorBridgeTests",
+    "ItemConstructor858PrefixTests",
+    "ItemScalarInitializationTests",
+    "ActorConstructorPrefixTests",
+    "ActorConstructorArrayTests",
+    "ActorConstructorContinuationTests",
+    "ActorConstructorCompletionTests",
+    "ActorMatrixInitializationTests",
+    "ActorEngineContextTests"
+  ],
+  "result": {
+    "chunk_id": "71fb18",
+    "wall_time_seconds": 1.034663264,
+    "exit_code": 0,
+    "original_token_count": 282,
+    "output": "NEW SUITE: ItemConstructorBA8Tests (counts reported separately)\r\nPASS CaptureIdentityAndBounds: 8 assertions\r\nPASS FullFootprintAndReturns: 8 assertions\r\nPASS UnknownPaddingRemainsUnknown: 4 assertions\r\nPASS EarlierCallbacksKeepOneState: 4 assertions\r\nPASS EveryCallerWriteIsAtomic: 21 assertions\r\nPASS FirstAndSecondStorageBoundaries: 10 assertions\r\nPASS LeafContractHasNoInventedLayout: 4 assertions\r\nPASS PrerequisitesAndSingleAttempt: 6 assertions\r\nItemConstructorBA8Tests: 65 assertions, 8 groups passed; own conditional prefix only\r\nAFFECTED REGRESSION: ItemConstructor950Tests (counts reported separately)\r\nPASS FactoryIdentityAndBounds: 8 assertions\r\nPASS DefaultUnknownCheck: 5 assertions\r\nPASS CompleteFootprintAndOwnership: 7 assertions\r\nPASS UnknownBytesRemainUnknown: 4 assertions\r\nPASS EachCheckCanStop: 21 assertions\r\nPASS CallbackSeesAndChangesLiveState: 5 assertions\r\nPASS ProjectionStopsInActualOrder: 21 assertions\r\nPASS ExceptionsAndSingleInvocation: 6 assertions\r\nPASS InvalidPriorDoesNotAuthorizeWrites: 3 assertions\r\nItemConstructor950Tests: 80 assertions, 9 groups passed; own conditional prefix only\r\n"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "schema": "grim-dynasty-actor-array-check-fixed-entry-v1",
+  "started_utc": "2026-10-21T04:04:26.387Z",
+  "status": "fixed-eight-byte-interval-verified",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-array-check/inspection.json",
+      "sha256": "08dd49f6992288b2dc6557d05521561d7bdde0a865baa3fb1e3522492488d3e5"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-198-array-helpers/2dcc3c-instructions.json",
+      "sha256": "a8c49acbfc80c793124df217df0aace5fb16786e4aa13ba660739d5751d794c3"
+    }
+  ],
+  "source_call": {
+    "address": "0x1802dcc75",
+    "bytes": "e846080000",
+    "instruction": "call        00000001802DD4C0"
+  },
+  "prior_boundary": {
+    "index": 11194,
+    "begin": 3003592,
+    "end": 3003655,
+    "unwind": 3547552,
+    "raw_hex": "c8d42d0007d52d00a0213600"
+  },
+  "begin_rva": "0x2dd4c0",
+  "end_rva_exclusive": "0x2dd4c8",
+  "interval_kind": "fixed-bounded-interval",
+  "complete_function_claimed": false,
+  "limits": {
+    "code_bytes": 8,
+    "metadata_bytes": 0,
+    "fingerprint_chunk_bytes": 65536
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "build_or_test_execution": false,
+  "original_modified": false,
+  "full_target_copy_created": false,
+  "permission_change": false,
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "metadata_bytes": 0,
+  "code_bytes": 8,
+  "subprocesses": 1,
+  "reads": [
+    {
+      "kind": "fixed-code-interval",
+      "file_offset": 3000512,
+      "requested_bytes": 8,
+      "read_bytes": 8
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632,
+      "chunk_bytes": 65536
+    }
+  ],
+  "indirect_jumps": [
+    {
+      "address": "0x1802dd4c0",
+      "encoding": "48ff2571580200",
+      "slot_rva": "0x302d38",
+      "slot_va": "0x180302d38",
+      "slot_section": ".rdata",
+      "slot_read": false,
+      "target_followed": false
+    }
+  ],
+  "limitations": [
+    "Only [2DD4C0,2DD4C8) is read; no new .pdata, endpoint byte, callee, import-slot contents, global or EH reads.",
+    "RIP-relative indirect-slot addresses may be calculated from observed instruction bytes only; no binding or target behavior is inferred.",
+    "This is an eight-byte interval, not a complete-function claim. Prior non-RET and no-exact-entry reports remain unchanged.",
+    "Full-file fingerprints are separate from the semantic byte budget; dumpbin internal metadata I/O is not instrumented.",
+    "Same-handle before/after hash/stat stability is not an atomic snapshot."
+  ],
+  "script_sha256": "7dbb68ea258146a4b5d6e3d253a77a2bb54c44330fe67fb6aadd940a9b48115d",
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "code_file_offset": 3000512,
+  "code_sha256": "d9cf60474ecf586f8e66a8a128c4e2b83143290da1c3474ec87bd24a4288b86b",
+  "raw_hex": "48ff2571580200cc",
+  "command_arguments": [
+    "/NOLOGO",
+    "/NOPDB",
+    "/ERRORREPORT:NONE",
+    "/DISASM:BYTES",
+    "/RANGE:0x1802dd4c0,0x1802dd4c7",
+    "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll"
+  ],
+  "tool_elapsed_ms": 33,
+  "tool_exit": 0,
+  "tool_signal": null,
+  "tool_error": null,
+  "byte_coverage_verified": true,
+  "instructions": 2,
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_stable": true,
+  "source_handle_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "source_hash_preserved": true,
+  "tool_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T04:04:26.433Z",
+  "controller_resource_usage": {
+    "userCPUTime": 31000,
+    "systemCPUTime": 31000,
+    "maxRSS": 42568,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11239,
+    "swappedOut": 0,
+    "fsRead": 150,
+    "fsWrite": 3,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

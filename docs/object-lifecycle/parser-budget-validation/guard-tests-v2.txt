@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: launch accepts each exact 4.25 GiB boundary
+ok 1 - launch accepts each exact 4.25 GiB boundary
+  ---
+  duration_ms: 2.3181
+  type: 'test'
+  ...
+# Subtest: launch refuses physical one byte below threshold before launch callback
+ok 2 - launch refuses physical one byte below threshold before launch callback
+  ---
+  duration_ms: 0.2886
+  type: 'test'
+  ...
+# Subtest: launch refuses commit one byte below threshold before launch callback
+ok 3 - launch refuses commit one byte below threshold before launch callback
+  ---
+  duration_ms: 0.0804
+  type: 'test'
+  ...
+# Subtest: running permits exact 2 GiB for both counters
+ok 4 - running permits exact 2 GiB for both counters
+  ---
+  duration_ms: 0.0623
+  type: 'test'
+  ...
+# Subtest: bad counters, missing inventory, workload and stale timestamps fail closed
+ok 5 - bad counters, missing inventory, workload and stale timestamps fail closed
+  ---
+  duration_ms: 0.1532
+  type: 'test'
+  ...
+# Subtest: read-only preflight uses fixed script; timeout and malformed responses do not retry
+ok 6 - read-only preflight uses fixed script; timeout and malformed responses do not retry
+  ---
+  duration_ms: 0.3044
+  type: 'test'
+  ...
+# Subtest: replays all 70 saved samples without launching a backend; peaks and heap remain attributable
+ok 7 - replays all 70 saved samples without launching a backend; peaks and heap remain attributable
+  ---
+  duration_ms: 6.288
+  type: 'test'
+  ...
+# Subtest: physical below 2 GiB stops only the supplied backend identity once
+ok 8 - physical below 2 GiB stops only the supplied backend identity once
+  ---
+  duration_ms: 1.3168
+  type: 'test'
+  ...
+# Subtest: commit below 2 GiB stops only the supplied backend identity once
+ok 9 - commit below 2 GiB stops only the supplied backend identity once
+  ---
+  duration_ms: 0.9925
+  type: 'test'
+  ...
+# Subtest: external is latched and prevents healthy final status
+ok 10 - external is latched and prevents healthy final status
+  ---
+  duration_ms: 1.0451
+  type: 'test'
+  ...
+# Subtest: stale is latched and prevents healthy final status
+ok 11 - stale is latched and prevents healthy final status
+  ---
+  duration_ms: 1.1358
+  type: 'test'
+  ...
+# Subtest: root-changed is latched and prevents healthy final status
+ok 12 - root-changed is latched and prevents healthy final status
+  ---
+  duration_ms: 0.9179
+  type: 'test'
+  ...
+# Subtest: missing-root is latched and prevents healthy final status
+ok 13 - missing-root is latched and prevents healthy final status
+  ---
+  duration_ms: 1.2466
+  type: 'test'
+  ...
+# Subtest: bad-count is latched and prevents healthy final status
+ok 14 - bad-count is latched and prevents healthy final status
+  ---
+  duration_ms: 0.9704
+  type: 'test'
+  ...
+# Subtest: heap-mismatch is latched and prevents healthy final status
+ok 15 - heap-mismatch is latched and prevents healthy final status
+  ---
+  duration_ms: 0.92
+  type: 'test'
+  ...
+# Subtest: invalid-json is latched and prevents healthy final status
+ok 16 - invalid-json is latched and prevents healthy final status
+  ---
+  duration_ms: 0.8491
+  type: 'test'
+  ...
+# Subtest: missing or disconnected sampler rejects ready without extra stop calls
+ok 17 - missing or disconnected sampler rejects ready without extra stop calls
+  ---
+  duration_ms: 1.0926
+  type: 'test'
+  ...
+# Subtest: early exit and ended stream are failures
+ok 18 - early exit and ended stream are failures
+  ---
+  duration_ms: 1.6806
+  type: 'test'
+  ...
+# Subtest: normal root-only samples cannot establish the expected Java heap
+ok 19 - normal root-only samples cannot establish the expected Java heap
+  ---
+  duration_ms: 1.7335
+  type: 'test'
+  ...
+# Subtest: exit event before final output does not hide late parse errors or kill by an old PID
+ok 20 - exit event before final output does not hide late parse errors or kill by an old PID
+  ---
+  duration_ms: 1.5035
+  type: 'test'
+  ...
+# Subtest: late malformed counters and incomplete tail are retained
+ok 21 - late malformed counters and incomplete tail are retained
+  ---
+  duration_ms: 1.3052
+  type: 'test'
+  ...
+# Subtest: a sampler refusing to exit is bounded and explicitly uncertain
+ok 22 - a sampler refusing to exit is bounded and explicitly uncertain
+  ---
+  duration_ms: 11.996
+  type: 'test'
+  ...
+# Subtest: finalization still stops a live owned backend on commit
+ok 23 - finalization still stops a live owned backend on commit
+  ---
+  duration_ms: 1.863
+  type: 'test'
+  ...
+# Subtest: finalization still stops a live owned backend on external
+ok 24 - finalization still stops a live owned backend on external
+  ---
+  duration_ms: 1.1295
+  type: 'test'
+  ...
+# Subtest: finalization still stops a live owned backend on invalid-json
+ok 25 - finalization still stops a live owned backend on invalid-json
+  ---
+  duration_ms: 0.9573
+  type: 'test'
+  ...
+# Subtest: finalization still stops a live owned backend on stale-monitor
+ok 26 - finalization still stops a live owned backend on stale-monitor
+  ---
+  duration_ms: 0.9495
+  type: 'test'
+  ...
+# Subtest: after confirmed backend exit, a late budget failure is recorded without another stop
+ok 27 - after confirmed backend exit, a late budget failure is recorded without another stop
+  ---
+  duration_ms: 1.4582
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 109.2303

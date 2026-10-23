@@ -1,0 +1,29 @@
+{
+  "purpose": "Read only the disk float32 operand at Engine34BB3C used by261CB0 instruction261D95; preserve raw bits without assuming the pseudocode candidate value.",
+  "script": "tools/static_analysis/read_r1_navigation_search_constant.mjs",
+  "script_sha256": "e19e277ff2745e185cf8d13f2400134e4ceda1d59aa9c2c1b9628be43b0608c6",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "proof": "docs/reverse-client/r1-navigation-core/08-NavigationCore-0x180261cb0-procedure_assembly.json",
+  "proof_sha256": "3660397c5a9de075f7edcd686d5ffde091b4dbb525eb1d8cc5b15fa00f8f66f4",
+  "semantic_rvas": [
+    "34BB3C"
+  ],
+  "semantic_bytes": 4,
+  "maximum_metadata_bytes": 4096,
+  "output": "docs/reverse-client/r1-navigation-search-constant/inspection.json",
+  "guards": [
+    "Fixed target/output/proof; refusal to overwrite; regular nonredirected path and same-descriptor before/after hash/stat",
+    "External Windows Attributes ancestor precheck required",
+    "Whole-file streams only for before/after hash; no code or adjacent data read",
+    "No subprocess, backend, game execution, saves/cloud or security change"
+  ],
+  "existing_evidence_check": "No34BB3C raw value found in current saved reverse-client constant/quantization inspection directories or object-lifecycle constant/remaining-dependency inspection directories. This is a bounded inventory statement,not an exhaustive whole-repository absence claim.",
+  "template": {
+    "file": "tools/static_analysis/read_r1_mesh_connection_constants.mjs",
+    "sha256": "366b069f91c34ee18f8b9be7667388b60182692781b516b0481a70f456ce1758"
+  },
+  "status": "prepared-not-executed",
+  "expected_value_assumed": false,
+  "pending_batch_review": "Review completed six-target corridor responses for any necessary directly referenced additional operand before separately approving reader execution;no adjacent read is authorized by proximity."
+}

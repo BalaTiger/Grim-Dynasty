@@ -1,0 +1,120 @@
+{
+  "started_utc": "2026-10-20T10:43:26.269Z",
+  "status": "stopped",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "working_copy": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll",
+  "entry_va": "0x1800483a0",
+  "window_end_exclusive": "0x1800484a0",
+  "max_unique_instructions": 64,
+  "max_unique_code_bytes": 128,
+  "prior_chain_verified_code_bytes": 958,
+  "prior_fill_raw_prefix": {
+    "address": "0x1800483a0",
+    "bytes": "48"
+  },
+  "prior_chain_observed_unique_bytes": 959,
+  "chain_code_budget": 4096,
+  "source_evidence": {
+    "path": "docs/object-lifecycle/offline-binary-bits-words-resize/048130-instructions.json",
+    "sha256": "50dc89276276893b8018ac3614d68c25220be5e8f45aeb5312329c72465a1d69",
+    "instruction": "0x1800481bc: CALL 0x1800483a0"
+  },
+  "prior_pdata_failure": {
+    "path": "docs/object-lifecycle/offline-binary-bits-words-fill-boundary/boundary.json",
+    "sha256": "dc7e4c09cfe9adddd5b88c15901d65e0372b5afc3dd9f8ee6e389a1f529a77b4"
+  },
+  "prior_single_point_failure": {
+    "path": "docs/object-lifecycle/offline-binary-bits-fill-instruction-walk/1800483a0-dumpbin.txt",
+    "sha256": "01e164bbbf7d8db3404fca5146fe1c95b4c41a095c5125fa04e942a429934f89"
+  },
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "copy_sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "tool_timeout_ms_per_instruction": 10000,
+  "tool_max_output_bytes": 196608,
+  "code_read_policy": "Exact requested prefix at an established instruction start; advance request length only after a verified incomplete prefix",
+  "hash_scope": "64 KiB streaming full-file SHA256 before and after; no target or CRT execution",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "callee_bodies_followed": 0,
+  "prefix_increment_behavior_verified": true,
+  "unique_verified_instruction_bytes": 0,
+  "unique_instructions": 0,
+  "sum_requested_bytes": 3,
+  "sum_original_prefix_bytes_read": 1,
+  "requests": [
+    {
+      "instruction_start": "0x1800483a0",
+      "requested_length": 1,
+      "range_end_inclusive": "0x1800483a0",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483a0,0x1800483a0",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 0,
+      "elapsed_ms": 32,
+      "exit_code": 0,
+      "prefix_bytes": "48",
+      "original_file_offset": 292768,
+      "prefix_sha256": "44bd7ae60f478fae1061e11a7739f4b94d1daf917982d33b6fc8a01a63f89c21",
+      "unique_function_bytes_after": 1,
+      "unique_function_requested_bytes_after": 1,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483a0",
+      "requested_length": 2,
+      "range_end_inclusive": "0x1800483a1",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483a0,0x1800483a1",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 34,
+      "exit_code": 0
+    }
+  ],
+  "instructions": [],
+  "edges": [],
+  "original_sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "failure": "AssertionError [ERR_ASSERTION]: Prefix request must return exactly one row\n\n2 !== 1\n",
+  "metadata_bytes": 688,
+  "unique_function_observed_bytes": 1,
+  "unique_function_requested_code_bytes": 2,
+  "chain_requested_unique_code_bytes_after": 960,
+  "newly_observed_unique_code_bytes": 0,
+  "chain_observed_unique_code_bytes_after": 959,
+  "original_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "copy_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "original_hash_matches": true,
+  "copy_hash_matches": true,
+  "tool_hash_matches": true,
+  "finished_utc": "2026-10-20T10:43:26.347Z",
+  "controller_resource_usage": {
+    "userCPUTime": 62000,
+    "systemCPUTime": 0,
+    "maxRSS": 42124,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11212,
+    "swappedOut": 0,
+    "fsRead": 312,
+    "fsWrite": 3,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

@@ -1,0 +1,125 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-item-global-load-getters-temp\base-float-13ca00.inspect.dll
+
+File Type: DLL
+
+  000000018013CA00: 48 8B C4           mov         rax,rsp
+  000000018013CA03: 56                 push        rsi
+  000000018013CA04: 57                 push        rdi
+  000000018013CA05: 41 54              push        r12
+  000000018013CA07: 41 56              push        r14
+  000000018013CA09: 41 57              push        r15
+  000000018013CA0B: 48 83 EC 60        sub         rsp,60h
+  000000018013CA0F: 48 C7 40 98 FE FF  mov         qword ptr [rax-68h],0FFFFFFFFFFFFFFFEh
+                    FF FF
+  000000018013CA17: 48 89 58 10        mov         qword ptr [rax+10h],rbx
+  000000018013CA1B: 48 89 68 20        mov         qword ptr [rax+20h],rbp
+  000000018013CA1F: 0F 29 70 C8        movaps      xmmword ptr [rax-38h],xmm6
+  000000018013CA23: 0F 28 F2           movaps      xmm6,xmm2
+  000000018013CA26: 48 8B DA           mov         rbx,rdx
+  000000018013CA29: 48 8B F1           mov         rsi,rcx
+  000000018013CA2C: 48 8D 79 18        lea         rdi,[rcx+18h]
+  000000018013CA30: 48 89 78 08        mov         qword ptr [rax+8],rdi
+  000000018013CA34: 48 8B 4F 10        mov         rcx,qword ptr [rdi+10h]
+  000000018013CA38: FF 15 EA 58 1C 00  call        qword ptr [0000000180302328h]
+  000000018013CA3E: 90                 nop
+  000000018013CA3F: 48 C7 44 24 40 0F  mov         qword ptr [rsp+40h],0Fh
+                    00 00 00
+  000000018013CA48: 48 C7 44 24 38 00  mov         qword ptr [rsp+38h],0
+                    00 00 00
+  000000018013CA51: C6 44 24 28 00     mov         byte ptr [rsp+28h],0
+  000000018013CA56: 80 3B 00           cmp         byte ptr [rbx],0
+  000000018013CA59: 75 05              jne         000000018013CA60
+  000000018013CA5B: 45 33 C0           xor         r8d,r8d
+  000000018013CA5E: EB 0E              jmp         000000018013CA6E
+  000000018013CA60: 49 83 C8 FF        or          r8,0FFFFFFFFFFFFFFFFh
+  000000018013CA64: 49 FF C0           inc         r8
+  000000018013CA67: 42 80 3C 03 00     cmp         byte ptr [rbx+r8],0
+  000000018013CA6C: 75 F6              jne         000000018013CA64
+  000000018013CA6E: 48 8B D3           mov         rdx,rbx
+  000000018013CA71: 48 8D 4C 24 28     lea         rcx,[rsp+28h]
+  000000018013CA76: E8 65 62 EE FF     call        0000000180022CE0
+  000000018013CA7B: 4C 8D 66 08        lea         r12,[rsi+8]
+  000000018013CA7F: 48 8D 54 24 28     lea         rdx,[rsp+28h]
+  000000018013CA84: 49 8B CC           mov         rcx,r12
+  000000018013CA87: E8 34 21 00 00     call        000000018013EBC0
+  000000018013CA8C: 48 8B D8           mov         rbx,rax
+  000000018013CA8F: 49 8B 34 24        mov         rsi,qword ptr [r12]
+  000000018013CA93: 4C 8B 7C 24 40     mov         r15,qword ptr [rsp+40h]
+  000000018013CA98: 48 3B C6           cmp         rax,rsi
+  000000018013CA9B: 74 5B              je          000000018013CAF8
+  000000018013CA9D: 48 8D 50 20        lea         rdx,[rax+20h]
+  000000018013CAA1: 48 8D 6A 10        lea         rbp,[rdx+10h]
+  000000018013CAA5: 48 83 7A 18 10     cmp         qword ptr [rdx+18h],10h
+  000000018013CAAA: 72 03              jb          000000018013CAAF
+  000000018013CAAC: 48 8B 12           mov         rdx,qword ptr [rdx]
+  000000018013CAAF: 48 8D 4C 24 28     lea         rcx,[rsp+28h]
+  000000018013CAB4: 49 83 FF 10        cmp         r15,10h
+  000000018013CAB8: 48 0F 43 4C 24 28  cmovae      rcx,qword ptr [rsp+28h]
+  000000018013CABE: 48 8B 6D 00        mov         rbp,qword ptr [rbp]
+  000000018013CAC2: 4C 8B C5           mov         r8,rbp
+  000000018013CAC5: 4C 8B 74 24 38     mov         r14,qword ptr [rsp+38h]
+  000000018013CACA: 4C 3B F5           cmp         r14,rbp
+  000000018013CACD: 4D 0F 42 C6        cmovb       r8,r14
+  000000018013CAD1: 4D 85 C0           test        r8,r8
+  000000018013CAD4: 74 09              je          000000018013CADF
+  000000018013CAD6: E8 85 15 1B 00     call        00000001802EE060
+  000000018013CADB: 85 C0              test        eax,eax
+  000000018013CADD: 75 12              jne         000000018013CAF1
+  000000018013CADF: 4C 3B F5           cmp         r14,rbp
+  000000018013CAE2: 73 05              jae         000000018013CAE9
+  000000018013CAE4: 83 C8 FF           or          eax,0FFFFFFFFh
+  000000018013CAE7: EB 08              jmp         000000018013CAF1
+  000000018013CAE9: 33 C0              xor         eax,eax
+  000000018013CAEB: 4C 3B F5           cmp         r14,rbp
+  000000018013CAEE: 0F 97 C0           seta        al
+  000000018013CAF1: C1 E8 1F           shr         eax,1Fh
+  000000018013CAF4: 84 C0              test        al,al
+  000000018013CAF6: 74 03              je          000000018013CAFB
+  000000018013CAF8: 48 8B DE           mov         rbx,rsi
+  000000018013CAFB: 49 83 FF 10        cmp         r15,10h
+  000000018013CAFF: 72 14              jb          000000018013CB15
+  000000018013CB01: 49 8D 57 01        lea         rdx,[r15+1]
+  000000018013CB05: 41 B8 01 00 00 00  mov         r8d,1
+  000000018013CB0B: 48 8B 4C 24 28     mov         rcx,qword ptr [rsp+28h]
+  000000018013CB10: E8 7B 65 EE FF     call        0000000180023090
+  000000018013CB15: 48 C7 44 24 40 0F  mov         qword ptr [rsp+40h],0Fh
+                    00 00 00
+  000000018013CB1E: 48 C7 44 24 38 00  mov         qword ptr [rsp+38h],0
+                    00 00 00
+  000000018013CB27: C6 44 24 28 00     mov         byte ptr [rsp+28h],0
+  000000018013CB2C: F3 0F 11 B4 24 A0  movss       dword ptr [rsp+00000000000000A0h],xmm6
+                    00 00 00
+  000000018013CB35: 49 3B 1C 24        cmp         rbx,qword ptr [r12]
+  000000018013CB39: 74 30              je          000000018013CB6B
+  000000018013CB3B: 48 8D 4B 40        lea         rcx,[rbx+40h]
+  000000018013CB3F: 48 83 79 18 10     cmp         qword ptr [rcx+18h],10h
+  000000018013CB44: 72 03              jb          000000018013CB49
+  000000018013CB46: 48 8B 09           mov         rcx,qword ptr [rcx]
+  000000018013CB49: 4C 8D 84 24 A0 00  lea         r8,[rsp+00000000000000A0h]
+                    00 00
+  000000018013CB51: 48 8D 15 DC 94 1D  lea         rdx,[0000000180316034h]
+                    00
+  000000018013CB58: E8 23 12 F1 FF     call        000000018004DD80
+  000000018013CB5D: 83 F8 01           cmp         eax,1
+  000000018013CB60: 75 09              jne         000000018013CB6B
+  000000018013CB62: F3 0F 10 B4 24 A0  movss       xmm6,dword ptr [rsp+00000000000000A0h]
+                    00 00 00
+  000000018013CB6B: 48 8B 4F 10        mov         rcx,qword ptr [rdi+10h]
+  000000018013CB6F: FF 15 BB 57 1C 00  call        qword ptr [0000000180302330h]
+  000000018013CB75: 0F 28 C6           movaps      xmm0,xmm6
+  000000018013CB78: 4C 8D 5C 24 60     lea         r11,[rsp+60h]
+  000000018013CB7D: 49 8B 5B 38        mov         rbx,qword ptr [r11+38h]
+  000000018013CB81: 49 8B 6B 48        mov         rbp,qword ptr [r11+48h]
+  000000018013CB85: 0F 28 74 24 50     movaps      xmm6,xmmword ptr [rsp+50h]
+  000000018013CB8A: 49 8B E3           mov         rsp,r11
+  000000018013CB8D: 41 5F              pop         r15
+  000000018013CB8F: 41 5E              pop         r14
+  000000018013CB91: 41 5C              pop         r12
+  000000018013CB93: 5F                 pop         rdi
+  000000018013CB94: 5E                 pop         rsi
+  000000018013CB95: C3                 ret
+
+  Summary
+
+        1000 .text

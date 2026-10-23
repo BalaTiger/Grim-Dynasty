@@ -1,0 +1,109 @@
+{
+  "schema": "grim-dynasty.fixed-entity-publication-thunks.v1",
+  "script": "tools/static_analysis/read_r1_entity_publication_thunks.mjs",
+  "entrypoint": "inspectEntityPublicationThunks(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-entity-publication-thunks/inspection.json",
+  "sources": {
+    "Game": {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "bytes": 11385856,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    "Engine": {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "bytes": 4485632,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  },
+  "conditional_binding": {
+    "iat_owner": "Only the cached first488 Engine.dll import entries; selected solely by the two exact FF25disp32 thunks and fixed IAT609A40",
+    "iat_base_rva": "0x609000",
+    "lookup_base_rva": "0xa42ac0",
+    "lookup_entries": 488,
+    "lookup_source": "cached350-entry prefix plus cached138-entry continuation",
+    "original_reads": "Exactly two6B Game thunks; at most three unique Game IAT8B/hint2B/exact-name strings and their hinted Engine export pointer4B/exact-name/ordinal2B/EAT4B.",
+    "fallback": "Unsupported on opcode/ownership/hint/name mismatch; no table scan, search, forwarder traversal, thunk chain, other instruction or exported body read."
+  },
+  "source_pins": [
+    {
+      "key": "player_assembly",
+      "path": "docs/reverse-client/r1-game-entity-publication-gates/08-EntityPublicationGate-0x1803d5bc0-procedure_assembly.json",
+      "sha256": "f903c05cdd867c4618bfc6429bba90392c1738579b5b849cc5a55c279eac8033"
+    },
+    {
+      "key": "slots",
+      "path": "docs/reverse-client/r1-level-move-entity-slots/inspection.json",
+      "sha256": "1eac17c7c6d015175f0b149dfa7587e507dab84b87eedfbfcaa90b81d2201690"
+    },
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "key": "oft_tail",
+      "path": "docs/reverse-client/r1-navigation-binding/inspection.json",
+      "sha256": "d0c171ce77a6d67e153a6911fc7c3a17ea4d61e80ab9492f3287384524e14264"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    }
+  ],
+  "limits": {
+    "candidate_bytes": 12,
+    "code_operations": 2,
+    "metadata_bytes": 966,
+    "metadata_operations": 21,
+    "metadata_single_read": 151,
+    "maximum_cached_symbol_chars": 150,
+    "maximum_unique_iats": 3,
+    "hash_chunk_bytes": 65536,
+    "new_PE_header_bytes": 0,
+    "new_OFT_bytes": 0,
+    "target_body_bytes": 0
+  },
+  "requirements": [
+    "Module import performs no filesystem I/O; exact execution requires separate approval with frozen script and plan hashes.",
+    "External Windows Attributes/reparse-tag precheck of both originals and output ancestors is required.",
+    "Reuse pinned cached PE maps only after each current same-descriptor whole-file hash equals its original fingerprint.",
+    "Only Game5D9FF2/5D9F02 six-byte candidates may be read as code; both must be FF25disp32. Opcode mismatch stops explicitly without fallback.",
+    "Derived thunk IATs must be aligned entries in the cached first488 Engine import prefix. Bind exact cached names and current import hint; fixed609A40 must equal saved IsNetworkServer symbol.",
+    "At most three unique IATs, three exact hinted Engine name/ordinal/EAT resolutions; no whole-table scan or binary search.",
+    "Same-descriptor before/after SHA256/stat; new output directory refuses overwrite and preserves partial failure/Unsupported.",
+    "No native loading/execution, backend, subprocess, network, save data, runtime globals, security changes or loaded dispatch/behavior claim."
+  ],
+  "fixed_slots": [
+    {
+      "iat_rva": "0x609a40",
+      "index": 328,
+      "symbol": "?IsNetworkServer@Engine@GAME@@QEAA_NXZ",
+      "calls": [
+        "0x1803d5bce"
+      ]
+    }
+  ],
+  "fixed_thunks": [
+    {
+      "rva": "0x5d9ff2",
+      "bytes": 6,
+      "expected_slot_offset": "0x270"
+    },
+    {
+      "rva": "0x5d9f02",
+      "bytes": 6,
+      "expected_slot_offset": "0xd8"
+    }
+  ]
+}

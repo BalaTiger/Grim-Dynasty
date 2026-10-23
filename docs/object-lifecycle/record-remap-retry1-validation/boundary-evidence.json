@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-20T09:27:55.480Z",
+  "target": "0x180280870",
+  "end_va_exclusive": "0x180280957",
+  "status": "complete-bounded-control-flow",
+  "code_bytes": 231,
+  "instructions": 65,
+  "dumpbin_invocations": 1,
+  "callee_calls": 0,
+  "extra_code_or_constant_reads": 0,
+  "observations": [
+    {
+      "path": "docs/object-lifecycle/offline-record-remap-boundary/boundary.json",
+      "sha256": "717e9c979bec52fbfd7d8d69e106d4141cb040e371509368302592703edba2bf",
+      "status": "metadata-boundary-assessed",
+      "metadata_bytes": 832,
+      "code_bytes": 0,
+      "instructions": 0,
+      "controller_peak_rss_kib": 41112,
+      "original_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "original_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "copy_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-record-remap-body/inspection.json",
+      "sha256": "9593935e6f49e2d57a11219f2ddaff12368e19d357fee1620bba5a5297e12d6a",
+      "status": "fixed-function-disassembly-verified",
+      "metadata_bytes": 832,
+      "code_bytes": 231,
+      "instructions": 65,
+      "controller_peak_rss_kib": 42076,
+      "original_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "original_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "copy_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "interpretation": "In-place field-key and tag-2 value remapping with wrapping uint32 addition and signed map-range checks; no native bool/error return",
+  "hash_scope": "Both inspections stream full-file SHA256 in 64KiB chunks; code byte count excludes hashing and PE metadata",
+  "original_binary_executed": false,
+  "backend_started": false,
+  "peak_process_tree_memory_measured": false
+}

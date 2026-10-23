@@ -1,0 +1,42 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\m3-damage-postprocess-body-temp\direct-3fe390.inspect.dll
+
+File Type: DLL
+
+  00000001803FE390: 48 89 5C 24 08     mov         qword ptr [rsp+8],rbx
+  00000001803FE395: 48 89 74 24 10     mov         qword ptr [rsp+10h],rsi
+  00000001803FE39A: 57                 push        rdi
+  00000001803FE39B: 48 83 EC 50        sub         rsp,50h
+  00000001803FE39F: 48 8B F1           mov         rsi,rcx
+  00000001803FE3A2: 0F 29 74 24 40     movaps      xmmword ptr [rsp+40h],xmm6
+  00000001803FE3A7: 48 81 C1 B8 01 00  add         rcx,1B8h
+                    00
+  00000001803FE3AE: 48 8D 54 24 20     lea         rdx,[rsp+20h]
+  00000001803FE3B3: 49 8B F8           mov         rdi,r8
+  00000001803FE3B6: 0F 28 F1           movaps      xmm6,xmm1
+  00000001803FE3B9: E8 02 57 00 00     call        0000000180403AC0
+  00000001803FE3BE: 4C 8B C7           mov         r8,rdi
+  00000001803FE3C1: 48 8D 54 24 30     lea         rdx,[rsp+30h]
+  00000001803FE3C6: 48 8D 8E B8 01 00  lea         rcx,[rsi+00000000000001B8h]
+                    00
+  00000001803FE3CD: E8 EE 56 00 00     call        0000000180403AC0
+  00000001803FE3D2: 48 8B 44 24 20     mov         rax,qword ptr [rsp+20h]
+  00000001803FE3D7: 0F 28 C6           movaps      xmm0,xmm6
+  00000001803FE3DA: F3 0F 58 40 24     addss       xmm0,dword ptr [rax+24h]
+  00000001803FE3DF: 48 8B 44 24 30     mov         rax,qword ptr [rsp+30h]
+  00000001803FE3E4: F3 0F 11 40 24     movss       dword ptr [rax+24h],xmm0
+  00000001803FE3E9: 83 3F 01           cmp         dword ptr [rdi],1
+  00000001803FE3EC: 75 0B              jne         00000001803FE3F9
+  00000001803FE3EE: 0F 2F 76 74        comiss      xmm6,dword ptr [rsi+74h]
+  00000001803FE3F2: 76 05              jbe         00000001803FE3F9
+  00000001803FE3F4: F3 0F 11 76 74     movss       dword ptr [rsi+74h],xmm6
+  00000001803FE3F9: 48 8B 5C 24 60     mov         rbx,qword ptr [rsp+60h]
+  00000001803FE3FE: 48 8B 74 24 68     mov         rsi,qword ptr [rsp+68h]
+  00000001803FE403: 0F 28 74 24 40     movaps      xmm6,xmmword ptr [rsp+40h]
+  00000001803FE408: 48 83 C4 50        add         rsp,50h
+  00000001803FE40C: 5F                 pop         rdi
+  00000001803FE40D: C3                 ret
+
+  Summary
+
+        1000 .text

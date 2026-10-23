@@ -1,0 +1,34 @@
+{
+  "schema": "grim-dynasty.fixed-crowd-motion-bindings.v1",
+  "script": "tools/static_analysis/read_r1_crowd_motion_bindings.mjs",
+  "entrypoint": "inspectCrowdMotionBindings(reviewedScriptSha256, reviewedPlanSha256)",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "output": "docs/reverse-client/r1-crowd-motion-bindings/inspection.json",
+  "targets": [
+    {"rva":"0x33a6c8","bytes":8,"kind":"vtable-slot","slot_offset":"0x8","consumer":"0x18025caab"},
+    {"rva":"0x33a6d0","bytes":8,"kind":"vtable-slot","slot_offset":"0x10","consumer":"0x18025cb0b"},
+    {"rva":"0x34b9b0","bytes":4,"kind":"float32-bits","consumer":"0x18025c4a1"},
+    {"rva":"0x34b984","bytes":4,"kind":"float32-bits","consumer":"0x18025ce50"},
+    {"rva":"0x34bc64","bytes":4,"kind":"float32-bits","consumer":"0x18025ca4f"},
+    {"rva":"0x34bc70","bytes":4,"kind":"float32-bits","consumer":"0x18025c51f"}
+  ],
+  "source_pins": [
+    {"path":"docs/reverse-client/r1-crowd-movement-direct/05-CrowdMovementDirect-0x18002f800-procedure_assembly.json","sha256":"e1889f6e7564b2eb23fa4cedef700eb8ea5693f8e06b30cad2577838ac13240f","procedure":"0x18002f800"},
+    {"path":"docs/reverse-client/r1-crowd-query-production/05-CrowdQueryProduction-0x18025a880-procedure_assembly.json","sha256":"28d78e7f8452eb2dc8c4a5219114c1a751ad1ed9a519b4864f8edeff40f4fa92","procedure":"0x18025a880"},
+    {"path":"docs/reverse-client/r1-crowd-agent-group-registration/08-CrowdAgentGroupRegistration-0x18025a250-procedure_assembly.json","sha256":"c99cc6804a210776df2057c3daa3c2ffee9b4255ea042e67d8c145f761edfda6","procedure":"0x18025a250"},
+    {"path":"docs/reverse-client/r1-crowd-movement-direct/08-CrowdMovementDirect-0x18025c440-procedure_assembly.json","sha256":"62da8b3465041af3522b3e36a72e4680485d0c9b2a832ab8b3207ce27bf5b8ae","procedure":"0x18025c440"}
+  ],
+  "limits": {"semantic_bytes":32,"metadata_bytes":4096,"metadata_single_read":512,"hash_chunk_bytes":65536,"code_bytes":0},
+  "requirements": [
+    "Separate execution approval; this plan is preparation, not evidence that any original was read.",
+    "External Windows Attributes/reparse-tag precheck for every source and output ancestor.",
+    "Fixed ordinary single-link Engine.dll; same-descriptor SHA256 and identity checks before and after.",
+    "New output directory only; never overwrite, delete or reuse a previous output.",
+    "No code body, adjacent slot, runtime global, saves, backend, DLL loading or subprocess.",
+    "Disk values and static constructor paths do not establish current loaded object or constant state."
+  ]
+}

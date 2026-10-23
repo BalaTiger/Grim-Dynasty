@@ -1,0 +1,132 @@
+{
+  "schema": "grim-dynasty.world-floor-build.v1",
+  "source_review_ready": true,
+  "sources": [
+    {
+      "path": "src/reverse_client_actions/WorldFloorContracts.cs",
+      "sha256": "2c9221fef2528ec32f5dc09718486c7f825c724c58fbb9e57aede982b7fc078f"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldFloorTests.cs",
+      "sha256": "cdad7614c6d877b969b2298c98d620f437ac128eb3cfc42d46c9a34b25c3653f"
+    }
+  ],
+  "prior_results": [
+    {
+      "path": ".tooling/r1-ground-spatial-tree-validation/result.json",
+      "sha256": "0ad251a681a3834a0ea4039ad7c215f6bbeefcf46b5672cc9584a2f801adcc42",
+      "expected_status": "passed-new-ground-spatial-tree-only"
+    },
+    {
+      "path": ".tooling/r1-ground-water-empty-validation/result.json",
+      "sha256": "ae4dd2938b997b79c4168a3478810e9ec7a306a70858efab80726ca77f1c3fed",
+      "expected_status": "passed-new-real-empty-water-with-own-prerequisites-only"
+    },
+    {
+      "path": ".tooling/r1-world-publication-prerequisites-validation/result.json",
+      "sha256": "43da143e7dca57b18fffa4316797c734a809d2a223a91295fb8b95d9a6855c42",
+      "expected_status": "passed-new-world-publication-prerequisites-only"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "GrimDynasty.Actions.dll",
+      "path": ".tooling\\r1-ground-spatial-tree-validation/GrimDynasty.Actions.dll",
+      "sha256": "3ea34074db9d5a67d7dffb702eb053b703dc3b754d0db442aeadd71247e15c58",
+      "prior_result": ".tooling/r1-ground-spatial-tree-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.EntityMovement.dll",
+      "path": ".tooling\\r1-ground-spatial-tree-validation/GrimDynasty.EntityMovement.dll",
+      "sha256": "85d848625fce7d5fc580feb04839898bd580a96f0c48308c3aca5b8ab142f84d",
+      "prior_result": ".tooling/r1-ground-spatial-tree-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundBlockIntersection.dll",
+      "path": ".tooling\\r1-ground-spatial-tree-validation/GrimDynasty.GroundBlockIntersection.dll",
+      "sha256": "67c72c5b9fbeffa329a6e4dc2609c8b45ba0656b49d12fed758e5c397e1a70d2",
+      "prior_result": ".tooling/r1-ground-spatial-tree-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundGeometry.dll",
+      "path": ".tooling\\r1-ground-spatial-tree-validation/GrimDynasty.GroundGeometry.dll",
+      "sha256": "b9d70554dddcdc5936731647ec4caaa5b86fc0660f329ab3d044b9b956b7416b",
+      "prior_result": ".tooling/r1-ground-spatial-tree-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundMaterialCandidates.dll",
+      "path": ".tooling\\r1-ground-spatial-tree-validation/GrimDynasty.GroundMaterialCandidates.dll",
+      "sha256": "57363683c84b1cc3d1fae94ee3e6ed7ad24190f6cc3ffc8e83c99454868724fe",
+      "prior_result": ".tooling/r1-ground-spatial-tree-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundSpatialTree.dll",
+      "path": ".tooling\\r1-ground-spatial-tree-validation/GrimDynasty.GroundSpatialTree.dll",
+      "sha256": "06e457c22322efc89111a42f822e01c11929a2c8a2918c7c7b2b945efdfd316d",
+      "prior_result": ".tooling/r1-ground-spatial-tree-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundTriangleIntersection.dll",
+      "path": ".tooling\\r1-ground-spatial-tree-validation/GrimDynasty.GroundTriangleIntersection.dll",
+      "sha256": "ab1260f81b132b5b7db7bdd0dd5b721e9e100fc7d665269c6b562b9d0c551401",
+      "prior_result": ".tooling/r1-ground-spatial-tree-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.MoveManager.dll",
+      "path": ".tooling\\r1-ground-spatial-tree-validation/GrimDynasty.MoveManager.dll",
+      "sha256": "7563b6e32745e79ddc8308d2ea48ca7336050271d8dc8c9ce1e75346a52232da",
+      "prior_result": ".tooling/r1-ground-spatial-tree-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.NavigationNearest.dll",
+      "path": ".tooling\\r1-ground-spatial-tree-validation/GrimDynasty.NavigationNearest.dll",
+      "sha256": "75f303c482679df6ba2c8f01aad7759ba9ed322ad6386100525b690cd9b9dfd0",
+      "prior_result": ".tooling/r1-ground-spatial-tree-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.WorldCoordinates.dll",
+      "path": ".tooling\\r1-ground-spatial-tree-validation/GrimDynasty.WorldCoordinates.dll",
+      "sha256": "6365ad6a051d6ffbb4009824d98fa899bec89f5933dea383a9a3d98f193e71c7",
+      "prior_result": ".tooling/r1-ground-spatial-tree-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.GroundWater.dll",
+      "path": ".tooling\\r1-ground-water-empty-validation/GrimDynasty.GroundWater.dll",
+      "sha256": "da81c4a1769dc470061293f23d830c817425b476d71b13ebcb4e6b92bb165cbc",
+      "prior_result": ".tooling/r1-ground-water-empty-validation/result.json"
+    },
+    {
+      "name": "GrimDynasty.WorldPublicationPrerequisites.dll",
+      "path": ".tooling\\r1-world-publication-prerequisites-validation/GrimDynasty.WorldPublicationPrerequisites.dll",
+      "sha256": "1ef75d179844014d4bd5c12974466eda89a5d3e1b34c3bedb47e37510f2eeb3e",
+      "prior_result": ".tooling/r1-world-publication-prerequisites-validation/result.json"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/reverse-client/r1-mainmenu-complete-member/mainmenu.map.bin",
+      "sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289"
+    },
+    {
+      "path": "docs/reverse-client/r1-movement-floor-core/11-MovementFloorCore-0x180221da0-procedure_assembly.json",
+      "sha256": "0b1444a11090ae60d9f508b8342bdb43d1f7a6961a21b3dce7b7ae40166c9472"
+    },
+    {
+      "path": "docs/reverse-client/r1-ground-intersection-remaining/23-GroundIntersectionRemaining-0x180130270-procedure_assembly.json",
+      "sha256": "ed6aed2b2a2c836f905ba3e05d602a4a8982a5d82a7b51394b0cfbd5bffb4c9f"
+    },
+    {
+      "path": "docs/reverse-client/r1-navigation-consumer-direct/11-NavigationConsumer-0x18022c620-procedure_assembly.json",
+      "sha256": "194b2fe04c44e56afcdaffca4a5749b81b92a9d03ed1118ef4cf7b779503711c"
+    },
+    {
+      "path": "docs/reverse-client/r1-map-region-and-tile-product/05-MapRegionTileProduct-0x180191980-procedure_assembly.json",
+      "sha256": "9a07b4fb5b76ab6b7d4c2b6450638727449bd124b81c97bc5797d39ee7c16be3"
+    },
+    {
+      "path": "docs/reverse-client/r1-world-floor-operands/inspection.json",
+      "sha256": "c91fef5f5208773247838f1804fd3c2b95420dccdfe691354eb5d6cace299a13"
+    }
+  ],
+  "static_review": "Independent saved-assembly and public-API/CSharp5 review completed; opaque MOV fix reviewed; compile and execution not performed"
+}

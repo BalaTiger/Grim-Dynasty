@@ -1,0 +1,426 @@
+{
+  "schema": "grim-dynasty-fixed-item-950-element-windows-v1",
+  "status": "fixed-item-950-element-windows-decoded-awaiting-manual-control-flow-review",
+  "started_utc": "2026-10-21T07:12:08.384Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "expected_file_bytes": 11385856,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-item-950/428690-exact-instructions.json",
+      "sha256": "4f82c0e268008d01646ad0790c45cb560d042fc7a8ae8dcd94ce50fb48d538a1"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-item-950/inspection.json",
+      "sha256": "1bed51eacf3be0a2b6aff43e5e1ec283310d912599bdd51ca1c259994a5b270b"
+    }
+  ],
+  "limits": {
+    "code_window_bytes": 222,
+    "semantic_read_operations": 3,
+    "metadata_bytes": 0,
+    "data_bytes": 0,
+    "fingerprint_chunk_bytes": 65536,
+    "proof_bytes_each": 262144,
+    "synthetic_pe_bytes_each": 4608,
+    "synthetic_pe_bytes_total": 9728,
+    "subprocesses": 3,
+    "timeout_ms_each": 10000,
+    "max_buffer_bytes_each": 196608,
+    "report_bytes": 196608
+  },
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "cached_pdata_entries": [
+    {
+      "index": 20611,
+      "entry_rva": "0xaa6624",
+      "file_offset": 11143716,
+      "begin": 6139600,
+      "end": 6139710,
+      "unwind": 8848228,
+      "begin_rva": "0x5daed0",
+      "end_rva_exclusive": "0x5daf3e",
+      "unwind_rva": "0x870364",
+      "raw_hex": "d0ae5d003eaf5d0064038700",
+      "provenance": "cached-source-3"
+    },
+    {
+      "index": 1248,
+      "entry_rva": "0xa6da80",
+      "file_offset": 10911360,
+      "begin": 91600,
+      "end": 91680,
+      "unwind": 8252176,
+      "begin_rva": "0x165d0",
+      "end_rva_exclusive": "0x16620",
+      "unwind_rva": "0x7deb10",
+      "raw_hex": "d06501002066010010eb7d00",
+      "provenance": "new-read"
+    }
+  ],
+  "candidate_window_basis": {
+    "requested_rva": "0x16710",
+    "status": "gap-without-exact-begin",
+    "previous_entry": {
+      "index": 1252,
+      "entry_rva": "0xa6dab0",
+      "file_offset": 10911408,
+      "begin": 91866,
+      "end": 91918,
+      "unwind": 8252744,
+      "begin_rva": "0x166da",
+      "end_rva_exclusive": "0x1670e",
+      "unwind_rva": "0x7ded48",
+      "raw_hex": "da6601000e67010048ed7d00",
+      "provenance": "new-read"
+    },
+    "next_entry": {
+      "index": 1253,
+      "entry_rva": "0xa6dabc",
+      "file_offset": 10911420,
+      "begin": 91952,
+      "end": 92088,
+      "unwind": 8252760,
+      "begin_rva": "0x16730",
+      "end_rva_exclusive": "0x167b8",
+      "unwind_rva": "0x7ded58",
+      "raw_hex": "30670100b867010058ed7d00",
+      "provenance": "new-read"
+    },
+    "selected_start_rva": "0x16710",
+    "selected_end_rva_exclusive": "0x16730",
+    "selected_bytes": 32,
+    "exact_function_boundary": false,
+    "authority": "Explicitly selected bounded entry window after gap evidence; not inferred as a whole function from the gap."
+  },
+  "saved_caller_instructions": [
+    {
+      "address": "0x18042869a",
+      "bytes": "33ff",
+      "instruction": "xor         edi,edi"
+    },
+    {
+      "address": "0x18042869c",
+      "bytes": "488d052ddfbeff",
+      "instruction": "lea         rax,[00000001800165D0h]"
+    },
+    {
+      "address": "0x1804286a3",
+      "bytes": "488bd9",
+      "instruction": "mov         rbx,rcx"
+    },
+    {
+      "address": "0x1804286a9",
+      "bytes": "4883c118",
+      "instruction": "add         rcx,18h"
+    },
+    {
+      "address": "0x1804286ad",
+      "bytes": "4889442420",
+      "instruction": "mov         qword ptr [rsp+20h],rax"
+    },
+    {
+      "address": "0x1804286b2",
+      "bytes": "4c8d0d57e0beff",
+      "instruction": "lea         r9,[0000000180016710h]"
+    },
+    {
+      "address": "0x1804286b9",
+      "bytes": "8d5728",
+      "instruction": "lea         edx,[rdi+28h]"
+    },
+    {
+      "address": "0x1804286bc",
+      "bytes": "448d470a",
+      "instruction": "lea         r8d,[rdi+0Ah]"
+    },
+    {
+      "address": "0x1804286c0",
+      "bytes": "e80b281b00",
+      "instruction": "call        00000001805DAED0"
+    }
+  ],
+  "caller_arguments": {
+    "rcx": "this+0x18",
+    "edx": "0x28",
+    "r8d": "0xa",
+    "r9": "0x180016710",
+    "stack_fifth": "0x1800165d0"
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "compilation_or_tests": false,
+  "original_path_given_to_dumpbin": false,
+  "direct_callees_followed": 0,
+  "metadata_bytes": 0,
+  "data_bytes": 0,
+  "code_window_bytes": 222,
+  "semantic_reads": [
+    {
+      "id": "5daed0-exact",
+      "rva": "0x5daed0",
+      "file_offset": 6136528,
+      "requested_bytes": 110,
+      "read_bytes": 110,
+      "raw_hex": "488bc44889581848897020488950104889480857415641574883ec30498bf14d8bf84c8bf2488bf933db488958e08858d8493bdf741f488bcee8aa090000488bcfffd64903fe48897c245048ffc348895c2428ebdcc644242001488b5c2460488b7424684883c430415f415e5fc3"
+    },
+    {
+      "id": "16710-candidate",
+      "rva": "0x16710",
+      "file_offset": 88848,
+      "requested_bytes": 32,
+      "read_bytes": 32,
+      "raw_hex": "48c741180f000000488bc148c7411000000000c60100c3cccccccccccccccccc"
+    },
+    {
+      "id": "165d0-exact",
+      "rva": "0x165d0",
+      "file_offset": 88528,
+      "requested_bytes": 80,
+      "read_bytes": 80,
+      "raw_hex": "40534883ec20488b5118488bd94883fa107211488b0948ffc241b801000000e82c00000048c743180f00000048837b181048c7431000000000720c488b03c600004883c4205bc3c603004883c4205bc3"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "bytes": 11385856,
+      "chunk_bytes": 65536
+    },
+    {
+      "label": "after",
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "bytes": 11385856,
+      "chunk_bytes": 65536
+    }
+  ],
+  "windows": [
+    {
+      "id": "5daed0-exact",
+      "kind": "exact-cached-pdata-range",
+      "begin_rva": "0x5daed0",
+      "end_rva_exclusive": "0x5daf3e",
+      "exact_pdata_boundary": true,
+      "byte_coverage_verified": true,
+      "window_sha256": "032bf3dbc9a52b839b654405c66ef239aabbdf831408164ccb3b38b4d84832fd",
+      "synthetic_pe": {
+        "generated_prefix_bytes": 3792,
+        "generated_tail_bytes": 194,
+        "code_file_offset": 4304,
+        "header_bytes": 512,
+        "entry_point_rva": 0,
+        "imports": 0,
+        "relocations": 0,
+        "never_executed": true,
+        "path": ".tooling/offline-item-950-elements-temp/5daed0-exact.inspect.dll",
+        "bytes": 4608,
+        "sha256": "fd06274f0c7116c54d2ce39118c475ee93c382434da72a001da6c360066233be",
+        "sha256_after": "fd06274f0c7116c54d2ce39118c475ee93c382434da72a001da6c360066233be"
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1805daed0,0x1805daf3d",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-item-950-elements-temp\\5daed0-exact.inspect.dll"
+      ],
+      "tool_elapsed_ms": 37,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 35,
+      "return_instructions_for_manual_review": [
+        {
+          "address": "0x1805daf3d",
+          "bytes": "c3",
+          "instruction": "ret"
+        }
+      ],
+      "call_or_branch_instructions_for_manual_review": [
+        {
+          "address": "0x1805daf04",
+          "bytes": "741f",
+          "instruction": "je          00000001805DAF25"
+        },
+        {
+          "address": "0x1805daf09",
+          "bytes": "e8aa090000",
+          "instruction": "call        00000001805DB8B8"
+        },
+        {
+          "address": "0x1805daf11",
+          "bytes": "ffd6",
+          "instruction": "call        rsi"
+        },
+        {
+          "address": "0x1805daf23",
+          "bytes": "ebdc",
+          "instruction": "jmp         00000001805DAF01"
+        }
+      ]
+    },
+    {
+      "id": "16710-candidate",
+      "kind": "explicitly-selected-candidate-window",
+      "begin_rva": "0x16710",
+      "end_rva_exclusive": "0x16730",
+      "exact_pdata_boundary": false,
+      "byte_coverage_verified": true,
+      "window_sha256": "4f0ef7ebc6d300f4e2fd7bc21fbb3bee302e610b6be44a0f24e5f6fa46b40d30",
+      "synthetic_pe": {
+        "generated_prefix_bytes": 1808,
+        "generated_tail_bytes": 208,
+        "code_file_offset": 2320,
+        "header_bytes": 512,
+        "entry_point_rva": 0,
+        "imports": 0,
+        "relocations": 0,
+        "never_executed": true,
+        "path": ".tooling/offline-item-950-elements-temp/16710-candidate.inspect.dll",
+        "bytes": 2560,
+        "sha256": "478c73d8e01cc25ea6dcd41469b752617908d047b2f164450fd443152f38c3e9",
+        "sha256_after": "478c73d8e01cc25ea6dcd41469b752617908d047b2f164450fd443152f38c3e9"
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180016710,0x18001672f",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-item-950-elements-temp\\16710-candidate.inspect.dll"
+      ],
+      "tool_elapsed_ms": 31,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 14,
+      "return_instructions_for_manual_review": [
+        {
+          "address": "0x180016726",
+          "bytes": "c3",
+          "instruction": "ret"
+        }
+      ],
+      "call_or_branch_instructions_for_manual_review": []
+    },
+    {
+      "id": "165d0-exact",
+      "kind": "exact-cached-pdata-range",
+      "begin_rva": "0x165d0",
+      "end_rva_exclusive": "0x16620",
+      "exact_pdata_boundary": true,
+      "byte_coverage_verified": true,
+      "window_sha256": "ab687389ae70c822819ba737f815ccf05117eb344ef6cccb5680d6e33c21b32c",
+      "synthetic_pe": {
+        "generated_prefix_bytes": 1488,
+        "generated_tail_bytes": 480,
+        "code_file_offset": 2000,
+        "header_bytes": 512,
+        "entry_point_rva": 0,
+        "imports": 0,
+        "relocations": 0,
+        "never_executed": true,
+        "path": ".tooling/offline-item-950-elements-temp/165d0-exact.inspect.dll",
+        "bytes": 2560,
+        "sha256": "833d3c6c3fe7cdb85a7b2fb689fd481a67cfd9f8e1a56272c658926622bd3aba",
+        "sha256_after": "833d3c6c3fe7cdb85a7b2fb689fd481a67cfd9f8e1a56272c658926622bd3aba"
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800165d0,0x18001661f",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-item-950-elements-temp\\165d0-exact.inspect.dll"
+      ],
+      "tool_elapsed_ms": 30,
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "instructions": 23,
+      "return_instructions_for_manual_review": [
+        {
+          "address": "0x180016616",
+          "bytes": "c3",
+          "instruction": "ret"
+        },
+        {
+          "address": "0x18001661f",
+          "bytes": "c3",
+          "instruction": "ret"
+        }
+      ],
+      "call_or_branch_instructions_for_manual_review": [
+        {
+          "address": "0x1800165e1",
+          "bytes": "7211",
+          "instruction": "jb          00000001800165F4"
+        },
+        {
+          "address": "0x1800165ef",
+          "bytes": "e82c000000",
+          "instruction": "call        0000000180016620"
+        },
+        {
+          "address": "0x180016609",
+          "bytes": "720c",
+          "instruction": "jb          0000000180016617"
+        }
+      ]
+    }
+  ],
+  "subprocesses": 3,
+  "synthetic_bytes": 9728,
+  "byte_coverage_verified": true,
+  "exact_function_body_established": false,
+  "manual_control_flow_review_required": true,
+  "limitations": [
+    "5DAED0 and165D0 have exact cached .pdata ranges of110B and80B. These establish selected unwind ranges, not complete logical-function, normal-return or exception behavior.",
+    "16710..16730 is an explicitly selected32B candidate window from the saved callback operand. No exact .pdata begin was found. The gap does not establish a function boundary; first RET, branches and padding require manual review.",
+    "All selected bytes are retained. Decoding coverage alone is not control-flow closure. No direct or indirect referenced target, IAT, data, neighboring function or unwind body is followed.",
+    "No new metadata read. Each dumpbin call receives an owned minimal synthetic PE and only the exact authorized RANGE. Synthetic headers/padding are generated bytes, not copied target metadata; these files are never executed.",
+    "Two same-handle original hashes and tool before/after hashes use64KiB buffers, separate from222B semantic budget. Stable file hash/stats do not establish loaded runtime state."
+  ],
+  "script_sha256": "d32a5380f1ed6f6b9f87c6abff392a05a14c57afc8a8607917d2b0e5d5c887f8",
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "stat_before": {
+    "size": 11385856,
+    "ino": 1970324837085125,
+    "dev": 2562469142,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "instructions": 72,
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "stat_after": {
+    "size": 11385856,
+    "ino": 1970324837085125,
+    "dev": 2562469142,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "source_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "chunk_bytes": 65536
+  },
+  "source_hash_preserved": true,
+  "tool_hash_preserved": true,
+  "failures": [],
+  "finished_utc": "2026-10-21T07:12:08.603Z"
+}

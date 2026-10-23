@@ -1,0 +1,40 @@
+{
+  "schema": "grim-dynasty.terrain-material-collision-prepared.v1",
+  "status": "source-frozen-build-pending-root",
+  "new_files": [
+    {"path":"tools/static_analysis/read_r1_terrain_surface_strings.mjs","sha256":"8be08c76e92519ad71b0cb465113b3f2e9813fcfaee9bbc4004d15dd57996e04"},
+    {"path":"src/reverse_client_actions/TerrainMaterialCollisionAdapter.cs","sha256":"54bbe4f2553da8980363addd331573372e8ea05de15e725d244997d02d5bbad3"},
+    {"path":"src/reverse_client_actions/TerrainMaterialCollisionTests.cs","sha256":"bed69ce8d14d2f5a1bf72b41817410515f1cc9a8830ac3666fd2a9052ea5c2e2"},
+    {"path":"tools/build_r1_terrain_material_collision.ps1","sha256":"a61a4c7c5640e2b123d1eaca1a4daee1b3aa912d4dd74bce9e18f89f0e80e5cb"}
+  ],
+  "actual_reader_result": {
+    "executed_by": "root after approval and Windows Attributes preflight",
+    "path": "docs/reverse-client/r1-terrain-surface-strings/inspection.json",
+    "sha256": "56db24887edb67e188ba5f034d3734c24042e973c70be4c3e833896942b1a75f",
+    "status": "passed",
+    "data_bytes": 23,
+    "read_operations": 6,
+    "new_header_bytes": 0,
+    "code_bytes": 0,
+    "hash_bytes": 8971264,
+    "source_stable": true,
+    "source_closed": true,
+    "actual_operands": {"Dirt":2,"Sand":3,"Snow":4,"Wood":6,"Lava":9,"Mud":10}
+  },
+  "adapter_scope": [
+    "Accept exactly five pinned saved inspect-record JSON outputs, their exact record name bytes, TerrainType class, Class and surfaceType string field types, and saved body hashes.",
+    "Re-encode the same supplied GroundData cells,header,packed bytes,record names,weights and trailer to verify actual saved chunk SHA256 b104e3c16e1111593ae64eca7aa436be270459e4ecfa0ad79bb2c870e6897768; caller-supplied SourceIdentity alone is not trusted.",
+    "One stable and distinct GroundMaterialSurfaceState per actual OwnGroundTypeRecord. BindAll preflights all records and rejects conflicting material identities or modified FC before any publication.",
+    "Only pinned actual reader evidence resolves Dirt. Without that evidence the three Dirt records remain Unsupported. Exact byte length/comparison only; no trim,fold,normalization or native100 default-success fallback.",
+    "Reuse corrected passed Block FC-copy and GroundSpatialTree DLLs. No old source changes or old test entrypoint reruns."
+  ],
+  "prepared_test_scenarios": 8,
+  "static_review": "Reader/receipt/schema,adapter C#4 APIs,source-byte provenance,shared identities and test/build input pins reviewed without running new code.",
+  "build_or_tests_executed_by_this_task": false,
+  "original_read_by_this_task": false,
+  "backend_started": false,
+  "native_load_or_instance_established": false,
+  "world_floor_or_gameplay_accepted": false,
+  "next_root_action": "Review frozen source and run tools/build_r1_terrain_material_collision.ps1 with no arguments from the fixed workspace after root resource coordination and approval. The fresh output is .tooling/r1-terrain-material-collision-validation; require all eight new scenarios and input post-hashes to pass before claiming verified material integration.",
+  "pending_action": {"target":"tools/build_r1_terrain_material_collision.ps1","state":"pending-root-execution","reason":"Delegated preparation-only scope; root owns compiler/test scheduling. No denial or uncertain execution outcome."}
+}

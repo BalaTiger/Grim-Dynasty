@@ -1,0 +1,78 @@
+{
+  "utc": "2026-10-20T02:35:35.1130324Z",
+  "status": "offline-prepared-plan-checks-passed",
+  "execution_started": false,
+  "original_game_read": false,
+  "backend_started": false,
+  "slot_plan_sha256": "bccfcd24228c0461a21e6e1ee88dcf5d4f28197dc3bdea3721bbf5651d933f6e",
+  "helper_plan_sha256": "9921c8afbf1e0515324b2d5b9d8881b032352c135545734b133624c61ad626da",
+  "fixed_call_count": 8,
+  "allowlist_unchanged": true,
+  "runner_mode_registered": false,
+  "runtime_schema_recheck_still_required": true,
+  "validation_note": "The first local check stopped on PowerShell empty-property enumeration for close_binary args; enumeration was corrected. No target or backend access occurred.",
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/rea-binary-table-constructor/05-LoadTableBinary-constructor-0x18013f300-assembly.json",
+      "sha256": "bb3fa2e3f2bca620f66caca1894932b970d69761f63327e23982f4eea158ccb0",
+      "matched": true
+    },
+    {
+      "path": "docs/object-lifecycle/record-interface-discovery/record-interface-exports.json",
+      "sha256": "33d7527e64565cc4e56a31b3665b41e004ad9e53f93739e3a645f205cf0b1603",
+      "matched": true
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "sha256": "d696e7b2141e5fe9ee6f518555d32a615ab174deabd6f676a15c299be1b7e3b1",
+      "matched": true
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-table-constructor/05-LoadTableBinary-constructor-0x18013f300-assembly.json",
+      "sha256": "bb3fa2e3f2bca620f66caca1894932b970d69761f63327e23982f4eea158ccb0",
+      "matched": true
+    }
+  ],
+  "calls": [
+    {
+      "label": "01-initial-session",
+      "tool": "binary_session",
+      "saved_schema_argument_names_checked": true
+    },
+    {
+      "label": "02-Engine-open",
+      "tool": "open_binary",
+      "saved_schema_argument_names_checked": true
+    },
+    {
+      "label": "03-Engine-session",
+      "tool": "binary_session",
+      "saved_schema_argument_names_checked": true
+    },
+    {
+      "label": "04-Binary-subobject-init-0x1800481f0-pseudocode",
+      "tool": "procedure_pseudo_code",
+      "saved_schema_argument_names_checked": true
+    },
+    {
+      "label": "05-Binary-subobject-init-0x1800481f0-assembly",
+      "tool": "procedure_assembly",
+      "saved_schema_argument_names_checked": true
+    },
+    {
+      "label": "06-Binary-subobject-init-0x1800481f0-direct-callees",
+      "tool": "procedure_callees",
+      "saved_schema_argument_names_checked": true
+    },
+    {
+      "label": "07-Engine-close",
+      "tool": "close_binary",
+      "saved_schema_argument_names_checked": true
+    },
+    {
+      "label": "08-final-session",
+      "tool": "binary_session",
+      "saved_schema_argument_names_checked": true
+    }
+  ]
+}

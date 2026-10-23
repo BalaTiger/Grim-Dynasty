@@ -1,0 +1,657 @@
+{
+  "schema": "grim-dynasty-actor-initialization-sources-evidence-review-v1",
+  "status": "archived-evidence-reviewed-with-explicit-frontiers",
+  "reviewed_date": "2026-10-21",
+  "reviewer": "review_string_map",
+  "scope": {
+    "action": "Independent read-only review of four completed archival readers; creation of this JSON only.",
+    "original_read_by_reviewer": false,
+    "readers_executed_by_reviewer": false,
+    "build_or_tests_executed_by_reviewer": false,
+    "production_sources_modified": false,
+    "game_or_library_loaded": false,
+    "metrics_apply_to": "Only the four new archived inspections, excluding reused historical evidence and whole-file fingerprints.",
+    "checkpoint_created": false
+  },
+  "original_identity": {
+    "module": "x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "aggregate": {
+    "code_bytes": 292,
+    "instructions": 71,
+    "metadata_bytes": 144,
+    "metadata_breakdown": {
+      "initializer_and_tls_table": 24,
+      "three_kernel32_import_bindings": 75,
+      "vcruntime_thunk_binding": 45
+    },
+    "literal_bytes_including_terminators": 104,
+    "total_semantic_bytes": 540,
+    "semantic_read_operations": 103,
+    "full_original_hash_passes": 8,
+    "full_original_hash_bytes": 35885056,
+    "fingerprint_chunk_bytes": 65536,
+    "dumpbin_processes": 2,
+    "whole_file_fingerprints_excluded_from_semantic_total": true,
+    "original_code_executions": 0,
+    "iat_payload_bytes": 0,
+    "new_header_bytes": 0,
+    "new_pdata_bytes": 0,
+    "all_four_statuses_successful": true,
+    "all_before_after_original_hashes_match": true,
+    "all_four_source_handles_closed": true,
+    "all_four_source_stats_stable": true,
+    "all_four_current_reader_hashes_match_execution_reports": true,
+    "all_declared_source_evidence_hashes_rechecked": true,
+    "raw_semantic_read_lengths_match_requested_and_recorded_bytes": true,
+    "both_code_instruction_streams_rechecked_against_saved_binary": true,
+    "both_dumpbin_exit_codes_zero_and_stderr_empty": true,
+    "both_dumpbin_tool_before_after_hashes_match": true,
+    "tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "note": "Stable stat and same-handle before/after SHA256 provide preservation evidence, not an atomic snapshot or an exclusive FileShare.Read guarantee."
+  },
+  "inspections": [
+    {
+      "report": "docs/object-lifecycle/offline-actor-initialization-tables/metadata.json",
+      "reader_sha_matches": true,
+      "source_stat_stable": true,
+      "source_hash_preserved": true,
+      "source_closed": true,
+      "failure_count": 0,
+      "status": "fixed-actor-initialization-tables-read",
+      "read_operations": 2,
+      "actual_bytes": 24,
+      "fingerprint_count": 2,
+      "subprocesses": 0,
+      "code_bytes": 0,
+      "metadata_bytes": 24,
+      "literal_bytes": 0,
+      "instructions": 0
+    },
+    {
+      "report": "docs/object-lifecycle/offline-actor-crt-initializer/inspection.json",
+      "reader_sha_matches": true,
+      "source_stat_stable": true,
+      "source_hash_preserved": true,
+      "source_closed": true,
+      "failure_count": 0,
+      "status": "exact-actor-crt-initializer-verified",
+      "read_operations": 1,
+      "actual_bytes": 286,
+      "fingerprint_count": 2,
+      "subprocesses": 1,
+      "code_bytes": 286,
+      "metadata_bytes": 0,
+      "literal_bytes": 0,
+      "instructions": 70
+    },
+    {
+      "report": "docs/object-lifecycle/offline-actor-crt-initializer-metadata/metadata.json",
+      "reader_sha_matches": true,
+      "source_stat_stable": true,
+      "source_hash_preserved": true,
+      "source_closed": true,
+      "failure_count": 0,
+      "status": "fixed-actor-crt-initializer-metadata-read",
+      "read_operations": 97,
+      "actual_bytes": 179,
+      "fingerprint_count": 2,
+      "subprocesses": 0,
+      "code_bytes": 0,
+      "metadata_bytes": 75,
+      "literal_bytes": 104,
+      "instructions": 0
+    },
+    {
+      "report": "docs/object-lifecycle/offline-actor-sync-init-thunk/inspection.json",
+      "reader_sha_matches": true,
+      "source_stat_stable": true,
+      "source_hash_preserved": true,
+      "source_closed": true,
+      "failure_count": 0,
+      "status": "bounded-actor-sync-init-thunk-and-import-verified",
+      "read_operations": 3,
+      "actual_bytes": 51,
+      "fingerprint_count": 2,
+      "subprocesses": 1,
+      "code_bytes": 6,
+      "metadata_bytes": 45,
+      "literal_bytes": 0,
+      "instructions": 1
+    }
+  ],
+  "code_coverage": [
+    {
+      "directory": "docs/object-lifecycle/offline-actor-crt-initializer",
+      "instructions": 70,
+      "bytes": 286,
+      "instructions_match_bin": true,
+      "contiguous": true,
+      "end_va": "0x1802dca26"
+    },
+    {
+      "directory": "docs/object-lifecycle/offline-actor-sync-init-thunk",
+      "instructions": 1,
+      "bytes": 6,
+      "instructions_match_bin": true,
+      "contiguous": true,
+      "end_va": "0x1802ddb26"
+    }
+  ],
+  "boundary_classification": {
+    "initializer": {
+      "source": "docs/object-lifecycle/offline-actor-crt-initializer/inspection.json",
+      "classification": "Exact saved .pdata fragment, with complete contiguous 286B coverage.",
+      "begin_rva": "0x2dc908",
+      "end_rva_exclusive": "0x2dca26",
+      "unwind_rva": "0x3628e8",
+      "cached_entry_index": 11167,
+      "pdata_entry_rva": "0x444b74",
+      "raw_pdata": "08c92d0026ca2d00e8283600",
+      "boundary_proof": "docs/object-lifecycle/offline-engine-root-static-helper-entry-prefixes/inspection.json#metadata_reads[12]",
+      "limitation": "Exact fragment coverage does not recover imported callees, unwind payloads or exception semantics."
+    },
+    "thunk": {
+      "source": "docs/object-lifecycle/offline-actor-sync-init-thunk/inspection.json",
+      "classification": "Explicit bounded six-byte RIP-relative import-thunk recognition; not a recovered .pdata or complete logical-function boundary.",
+      "begin_rva": "0x2ddb20",
+      "end_rva_exclusive": "0x2ddb26",
+      "raw_hex": "ff25d24b0200",
+      "caller_va": "0x1802dc926",
+      "caller_raw_hex": "e8f5110000",
+      "independent_opcode_decode": {
+        "opcode": "FF25",
+        "rip_base_rva": "0x2ddb26",
+        "signed_displacement": 150482,
+        "target_iat_rva": "0x3026f8"
+      },
+      "mismatch_policy": "Stop without code extension, neighbor selection or import-table expansion.",
+      "dumpbin_input": "Owned synthetic PE with these six original bytes and generated padding only; exact six-byte RANGE."
+    }
+  },
+  "entry_and_table_chain": {
+    "scope": "Address-level reachability under observed branch conditions; not proof that every prerequisite succeeds at runtime.",
+    "saved_entry_rva": "0x2dd044",
+    "edges": [
+      {
+        "site": "0x1802dd05b",
+        "fact": "For reason EDX=1, entry calls 2DD93C before tail transfer; this callee is not assigned a cookie-initializer role by this review."
+      },
+      {
+        "site": "0x1802dd07c",
+        "fact": "Tail jump to 2DCEF8."
+      },
+      {
+        "site": "0x1802dcf50",
+        "fact": "For reason 1/2 and nonzero preceding 2DCFF0 result, dispatch calls 2DCCF8; zero result takes an early-return path."
+      },
+      {
+        "site": "0x1802dcd34",
+        "fact": "Reason 1 branch tail-jumps to 2DCD48, passing prior R8 as RDX."
+      },
+      {
+        "site": "0x1802dcdd0",
+        "fact": "On the attach path after its preceding prerequisite calls/branches, RDX is 303188 and RCX is 303178."
+      },
+      {
+        "site": "0x1802dcdde",
+        "fact": "Calls 2DDBB6, whose saved thunk/import binding identifies _initterm_e at IAT302A50."
+      },
+      {
+        "site": "0x1802dcde3",
+        "fact": "Tests _initterm_e EAX; nonzero takes 2DCE10 rather than continuing the succeeding initializer stage."
+      }
+    ],
+    "init_e": {
+      "begin_rva": "0x303178",
+      "end_rva_exclusive": "0x303188",
+      "bytes": 16,
+      "raw_hex": "000000000000000008c92d8001000000",
+      "complete": true,
+      "slots": [
+        {
+          "rva": "0x303178",
+          "value": "0x0"
+        },
+        {
+          "rva": "0x303180",
+          "value": "0x1802dc908"
+        }
+      ]
+    },
+    "tls_callbacks": {
+      "address": "0x180303198",
+      "first_slot_raw_hex": "0000000000000000",
+      "first_slot_null": true,
+      "terminated": true,
+      "bytes_read": 8,
+      "implication": "The file-image TLS callback list is empty at its first terminator; this does not prove that OS TLS allocation/template copying or CRT per-thread setup is absent or complete."
+    },
+    "imported_initterm_e_implementation_executed_or_recovered": false,
+    "other_entry_dependencies_closed": false
+  },
+  "resolved_import_bindings": [
+    {
+      "module": "KERNEL32.dll",
+      "name": "GetModuleHandleW",
+      "descriptor_index": 5,
+      "descriptor_rva": "0x4155fc",
+      "original_first_thunk_rva": "0x415930",
+      "first_thunk_rva": "0x302178",
+      "thunk_index": 76,
+      "original_thunk_rva": "0x415b90",
+      "hint_name_rva": "0x4185aa",
+      "hint": 542,
+      "iat_rva": "0x3023d8"
+    },
+    {
+      "module": "KERNEL32.dll",
+      "name": "GetProcAddress",
+      "descriptor_index": 5,
+      "descriptor_rva": "0x4155fc",
+      "original_first_thunk_rva": "0x415930",
+      "first_thunk_rva": "0x302178",
+      "thunk_index": 47,
+      "original_thunk_rva": "0x415aa8",
+      "hint_name_rva": "0x416b0e",
+      "hint": 588,
+      "iat_rva": "0x3022f0"
+    },
+    {
+      "module": "KERNEL32.dll",
+      "name": "CreateEventW",
+      "descriptor_index": 5,
+      "descriptor_rva": "0x4155fc",
+      "original_first_thunk_rva": "0x415930",
+      "first_thunk_rva": "0x302178",
+      "thunk_index": 4,
+      "original_thunk_rva": "0x415950",
+      "hint_name_rva": "0x4184b6",
+      "hint": 133,
+      "iat_rva": "0x302198"
+    },
+    {
+      "module": "VCRUNTIME140.dll",
+      "name": "__vcrt_InitializeCriticalSectionEx",
+      "descriptor_index": 13,
+      "descriptor_rva": "0x41569c",
+      "original_first_thunk_rva": "0x415eb0",
+      "first_thunk_rva": "0x3026f8",
+      "thunk_index": 0,
+      "original_thunk_rva": "0x415eb0",
+      "hint_name_rva": "0x417d38",
+      "hint": 48,
+      "iat_rva": "0x3026f8",
+      "thunk_rva": "0x2ddb20",
+      "iat_payload_bytes_read": 0
+    }
+  ],
+  "observed_literals": [
+    {
+      "rva": "0x307388",
+      "raw_hex": "6b00650072006e0065006c00330032002e0064006c006c000000",
+      "bytes_read": 26,
+      "ascii": "kernel32.dll",
+      "unit_bytes": 2,
+      "terminated": true
+    },
+    {
+      "rva": "0x3073a8",
+      "raw_hex": "496e697469616c697a65436f6e646974696f6e5661726961626c6500",
+      "bytes_read": 28,
+      "ascii": "InitializeConditionVariable",
+      "unit_bytes": 1,
+      "terminated": true
+    },
+    {
+      "rva": "0x3073c8",
+      "raw_hex": "536c656570436f6e646974696f6e5661726961626c65435300",
+      "bytes_read": 25,
+      "ascii": "SleepConditionVariableCS",
+      "unit_bytes": 1,
+      "terminated": true
+    },
+    {
+      "rva": "0x3073e8",
+      "raw_hex": "57616b65416c6c436f6e646974696f6e5661726961626c6500",
+      "bytes_read": 25,
+      "ascii": "WakeAllConditionVariable",
+      "unit_bytes": 1,
+      "terminated": true
+    }
+  ],
+  "native_initializer_contract": {
+    "input_scope": "2DC908 normal address-level control flow; external calls must actually return normally to reach later effects.",
+    "order": [
+      {
+        "site": "0x1802dc926",
+        "action": "Call 2DDB20 -> VCRUNTIME140.dll!__vcrt_InitializeCriticalSectionEx",
+        "arguments": {
+          "rcx": "0x180420d88",
+          "edx": 4000,
+          "r8d": 0
+        },
+        "return_use": "No test or branch on its result before GetModuleHandleW."
+      },
+      {
+        "site": "0x1802dc932",
+        "action": "GetModuleHandleW",
+        "literal_rva": "0x307388",
+        "literal": "kernel32.dll",
+        "return_use": "Save module in RBX; zero branches to 2DCA10."
+      },
+      {
+        "site": "0x1802dc94e",
+        "action": "GetProcAddress",
+        "literal_rva": "0x3073a8",
+        "literal": "InitializeConditionVariable",
+        "saved_result": "RSI"
+      },
+      {
+        "site": "0x1802dc961",
+        "action": "GetProcAddress",
+        "literal_rva": "0x3073c8",
+        "literal": "SleepConditionVariableCS",
+        "saved_result": "RDI"
+      },
+      {
+        "site": "0x1802dc974",
+        "action": "GetProcAddress",
+        "literal_rva": "0x3073e8",
+        "literal": "WakeAllConditionVariable",
+        "saved_result": "RBX"
+      },
+      {
+        "site": "0x1802dc97d",
+        "action": "Only after all three queries, test first, second, then third result; any zero selects 2DC9F0 event path."
+      }
+    ],
+    "all_three_nonzero_branch": [
+      {
+        "site": "0x1802dc98c",
+        "effect": "QWORD[420DB8] = 0; this prefix remains if a later external check/call does not return normally."
+      },
+      {
+        "site": "0x1802dc997",
+        "effect": "Call 2DD4C0 with RCX = first resolved target; loaded guard behavior is not supplied by the file-image RET observation."
+      },
+      {
+        "site": "0x1802dc9a3",
+        "effect": "Call first resolved target with RCX=&420DB0. Its internal writes are external behavior, not stores recovered from this body."
+      },
+      {
+        "site": "0x1802dc9a5",
+        "effect": "Read full QWORD cookie at 41C520 only after that call returns normally."
+      },
+      {
+        "site": "0x1802dc9c4",
+        "effect": "QWORD[420DC0] = ROL64(second target, cookie & 63) XOR cookie."
+      },
+      {
+        "site": "0x1802dc9cb",
+        "effect": "QWORD[420DC8] = ROL64(third target, cookie & 63) XOR cookie."
+      }
+    ],
+    "encoding": {
+      "exact_instruction_form": "k = cookie & 63; count = (64-k) & 63; ROR64(target,count) XOR cookie.",
+      "equivalent_form": "ROL64(target,k) XOR cookie.",
+      "decode_used_by_saved_wait_and_notify": "ROR64(encoded XOR cookie, cookie & 63).",
+      "full_width": 64,
+      "count_zero_uses_identity_rotation": true,
+      "callback_may_change_cookie_before_late_read": true,
+      "cookie_initialization_proved": false
+    },
+    "any_query_zero_branch": [
+      {
+        "site": "0x1802dc9fc",
+        "effect": "Call CreateEventW with RCX=0, EDX=1, R8D=0, R9D=0."
+      },
+      {
+        "site": "0x1802dca02",
+        "effect": "Store returned full RAX to QWORD[420DB8] before testing for zero."
+      },
+      {
+        "site": "0x1802dca0c",
+        "effect": "Nonzero event branches to registration; zero branches to failure helper path."
+      },
+      {
+        "effect": "This branch does not write 420DC0/420DC8, does not call the resolved InitializeConditionVariable target, and preserves any prior encoded-slot values."
+      }
+    ],
+    "normal_return": {
+      "callback_registration_site": "0x1802dc9d9",
+      "helper": "0x1802dc8e0",
+      "callback_token": "0x1802dca28",
+      "existing_helper_contract": "2DC890 decodes cookie/420D50, selects _crt_atexit or _register_onexit_function, converts external EAX==0 to the original callback pointer and any nonzero EAX to null; 2DC8E0 maps nonnull to 0 and null to -1.",
+      "initializer_ignores_registration_result": true,
+      "eax_zero_site": "0x1802dc9e3",
+      "ret_site": "0x1802dc9ef",
+      "eax": 0,
+      "limitation": "A normal return of 0 is not evidence that exit registration succeeded or that any imported API established a usable native synchronization object."
+    },
+    "failure_paths": [
+      {
+        "condition": "GetModuleHandleW returned zero",
+        "site": "0x1802dca15",
+        "callee": "0x1802dd7f4",
+        "ecx": 7,
+        "next_instruction": "INT3 at 2DCA1A",
+        "normal_failure_return_recovered": false
+      },
+      {
+        "condition": "CreateEventW returned zero, after writing 420DB8=0",
+        "site": "0x1802dca20",
+        "callee": "0x1802dd7f4",
+        "ecx": 7,
+        "next_instruction": "INT3 at 2DCA25",
+        "normal_failure_return_recovered": false
+      }
+    ],
+    "no_rollback_claim": true,
+    "no_epoch_or_matrix_stores_in_this_body": true,
+    "no_thread_state_initialization_claim": true
+  },
+  "remaining_frontiers": [
+    {
+      "subject": "Cookie 41C520 writer and prior ordering",
+      "state": "Not recovered here. Entry's call to 2DD93C alone does not prove its responsibility or normal result. Do not substitute zero/default cookie."
+    },
+    {
+      "subject": "Loaded guard at 2DD4C0 / slot302D38",
+      "state": "Runtime target/check behavior remains external. Archived file initial RET imm16 0 is not permission to skip the loaded guard."
+    },
+    {
+      "subject": "Imported and dynamically resolved API behavior",
+      "state": "Names and exact call sites are bound; actual loader resolution, function-pointer validity, lock/condition-variable/event semantics, failure and exception behavior were not executed or recovered."
+    },
+    {
+      "subject": "TLS loader and per-thread initialization",
+      "state": "Empty file callback list and existing template/epoch observations do not initialize an OS thread. This initializer models module-state writes only; it cannot grant normal lock/wait/notify or valid TLS status."
+    },
+    {
+      "subject": "Cleanup callback 2DCA28",
+      "state": "Registered address only, not executed or read in this batch. Cached exact boundary2DCA28..2DCA50 exists, but cleanup semantics remain open."
+    },
+    {
+      "subject": "Failure helper 2DD7F4",
+      "state": "Both calls and following INT3 are observed; helper implementation/nonlocal behavior remains open. Do not invent a normal failure return."
+    },
+    {
+      "subject": "Actor global slot421428",
+      "state": "Its runtime writer, nonnull object identity and fields668/678 remain outside these four inspections. No runtime-null or usable object inference follows from file-image zero fill."
+    },
+    {
+      "subject": "Complete startup / actor constructor / native factory",
+      "state": "Not claimed. No full CRT startup, actual threading, native object factory, official object loop or native compatibility validation occurred in this review."
+    }
+  ],
+  "hash_pins": [
+    {
+      "path": "tools/static_analysis/read_actor_initialization_tables.mjs",
+      "bytes": 14983,
+      "sha256": "9a0f317b6d503a5657a8621a07bf06455a2704b195a1a0f54185cf31eab31a02"
+    },
+    {
+      "path": "tools/static_analysis/read_actor_crt_initializer.mjs",
+      "bytes": 19362,
+      "sha256": "b34068ac7d3de003339d46f90a0cbcd020997763c2bf8995cbe3e374b01c2e60"
+    },
+    {
+      "path": "tools/static_analysis/read_actor_crt_initializer_metadata.mjs",
+      "bytes": 16593,
+      "sha256": "5db94530f95eda545cc168c05edb276ce2f3a57aad8b0b0d257fc4b808348ea6"
+    },
+    {
+      "path": "tools/static_analysis/read_actor_sync_init_thunk.mjs",
+      "bytes": 19922,
+      "sha256": "0013e4036143a96dac381bb876ef0b31c0310185e6dc5d303afb06e5f2185355"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-initialization-tables/metadata.json",
+      "bytes": 6489,
+      "sha256": "71d060530810ccd8e1c788f53b7d6e892d779bc85aa7614a6da4108ddf3a8eba"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-crt-initializer/inspection.json",
+      "bytes": 7076,
+      "sha256": "c1eb9ae91463cd1b7304dfff290220bfe9e21eb8ccdd947433dd017a5245d9c0"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-crt-initializer-metadata/metadata.json",
+      "bytes": 31528,
+      "sha256": "b907ad2551979f23adfe850e8d856067f88a9bc533f834cc239373447bd79b2b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-sync-init-thunk/inspection.json",
+      "bytes": 7711,
+      "sha256": "1027ef1c191be941bd18bbdce715e041856e1a545e432a5c53f21fc9a615f83c"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-crt-initializer/2dc908.bin",
+      "bytes": 286,
+      "sha256": "fd09d043d355a8395da6337767b8c797127725f4246a24b414efa94ee03234f6"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-crt-initializer/2dc908-instructions.json",
+      "bytes": 7835,
+      "sha256": "cae592eaadda08627d1b0f96f784685ee26532d36996524a6f250c1e10c1bc17"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-crt-initializer/2dc908-dumpbin.txt",
+      "bytes": 5133,
+      "sha256": "1af9d942c0769e0af99fd2d3138a01165701b2c53cfefbfbc9f80fb929fc4666"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-crt-initializer/2dc908-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-sync-init-thunk/2ddb20.bin",
+      "bytes": 6,
+      "sha256": "f3af28c30c1a8257557221af59e2cb50113c8251e794444923b06483673ab870"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-sync-init-thunk/2ddb20-instructions.json",
+      "bytes": 134,
+      "sha256": "73c7bf8b3dd66870f0eff5472c9182011c1b3997df2429f4ccc8221f545c948f"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-sync-init-thunk/2ddb20-dumpbin.txt",
+      "bytes": 254,
+      "sha256": "750408606910519dc412b3bce4837e3be124ed03cbb710c5feb2536ae31d1930"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-sync-init-thunk/2ddb20-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "bytes": 17719,
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-matrix-sync-dependencies/inspection.json",
+      "bytes": 18061,
+      "sha256": "5941d7ab01b2c2bd96957c8eeb369cb033aa79a256a54d371e026e9b870045c3"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-initializer-table/table.json",
+      "bytes": 50923,
+      "sha256": "29d059bdb204e1116c6a856537267152d54848c0fd8fc82fefc43914bbf4fa6e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-attach/2dcd48-instructions.json",
+      "bytes": 8081,
+      "sha256": "4f306451fb2a46246081c0bb65b68280c9f1367d941de8982652a80d4bd82150"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-attach/inspection.json",
+      "bytes": 11044,
+      "sha256": "f4b4a7a8d1fb008f1d7f216b4549dff6d6389c9903609c128a7bc62cff9eaea7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-helper-entry-prefixes/inspection.json",
+      "bytes": 17612,
+      "sha256": "91073998bfc8ab7f647dfdc4174bf17a979d5ad8153c2658f413bf40e67574a9"
+    },
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "bytes": 546640,
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-load-ticks-imports/tick-import-bindings.json",
+      "bytes": 51439,
+      "sha256": "eb1e49dfe763e207be743b91d03b2b4c066057063da052cb3e1e3a97807aab0e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-helper-imports/metadata.json",
+      "bytes": 19179,
+      "sha256": "0b81751351efeaeb5bc8cd5103035887b5ffbd4798d29edf2be50c697f84d369"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-entry/metadata.json",
+      "bytes": 2115,
+      "sha256": "18baa66f8c529be694eecb25ea187f76fb741e52ffd0ba3ce444e24e4c45e631"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-entry/2dd044-instructions.json",
+      "bytes": 1948,
+      "sha256": "96266e40862773e6596915563b42b05af1601939295fb110782c59e88d3d8382"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-dispatch/2dcef8-instructions.json",
+      "bytes": 8970,
+      "sha256": "ee65887bcf5a62f04b07e1e24c659322ffbb05f36b1a33e9f5cd7a1aae893d6d"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-crt-reason/2dccf8-instructions.json",
+      "bytes": 2620,
+      "sha256": "7b719d4e721b060b8cb0ac38dfd498f556b01b87346739c8c3f72fd0254691a8"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-helper-entry-prefixes/2dc8e0-instructions.json",
+      "bytes": 806,
+      "sha256": "91fa08fbe9560888cc994d2038a703de917c405e6c06c0be1fbe04738d12a5c5"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-static-helper-direct-targets/2dc890-instructions.json",
+      "bytes": 2486,
+      "sha256": "4c12d5b4e3644970bc5053a99607652e5b3222be5920c79c181e97d54134981b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-matrix-sync-dependencies/2dcb48-instructions.json",
+      "bytes": 2484,
+      "sha256": "d49cbcc2312102ca3e6fae5601202933c85185aa9a69e3bd2ba8fd0427b3c54b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-matrix-sync-dependencies/2dcba4-instructions.json",
+      "bytes": 4275,
+      "sha256": "348c2f95e7130eb809f19eb57d79f698911effad62c5ddf34134e90641896efc"
+    }
+  ]
+}

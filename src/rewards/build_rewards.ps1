@@ -1,12 +1,12 @@
-param([string]$OutputDirectory='D:\MyGitRepo\Grim-Dynasty\.tooling\rewards-build')
+param([string]$OutputDirectory=(Join-Path $PSScriptRoot '..\..\.tooling\rewards-build'))
 $ErrorActionPreference='Stop'
 $compiler='C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe'
-$root=[IO.Path]::GetFullPath('D:\MyGitRepo\Grim-Dynasty')+[IO.Path]::DirectorySeparatorChar
+$root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..'))+[IO.Path]::DirectorySeparatorChar
 $target=[IO.Path]::GetFullPath($OutputDirectory)
 if (!$target.StartsWith($root,[StringComparison]::OrdinalIgnoreCase)) {throw 'Project output required'}
 New-Item -ItemType Directory -Path $target -Force | Out-Null
-foreach($name in @('Resources','Quests','Conditions','TaskLogic','TokenActions','TaskRuntime','TaskAuto','TaskKills','TaskItems')) {Copy-Item -LiteralPath "D:\MyGitRepo\Grim-Dynasty\.tooling\task-items-build\GrimDynasty.$name.dll" -Destination $target -Force}
-Copy-Item -LiteralPath 'D:\MyGitRepo\Grim-Dynasty\.tooling\task-auto-build\GrimDynasty.TaskAuto.dll' -Destination $target -Force
+foreach($name in @('Resources','Quests','Conditions','TaskLogic','TokenActions','TaskRuntime','TaskAuto','TaskKills','TaskItems')) {Copy-Item -LiteralPath (Join-Path $PSScriptRoot "..\..\.tooling\task-items-build\GrimDynasty.$name.dll") -Destination $target -Force}
+Copy-Item -LiteralPath (Join-Path $PSScriptRoot '..\..\.tooling\task-auto-build\GrimDynasty.TaskAuto.dll') -Destination $target -Force
 $refs=@("/reference:$target\GrimDynasty.Conditions.dll","/reference:$target\GrimDynasty.TaskLogic.dll","/reference:$target\GrimDynasty.TokenActions.dll","/reference:$target\GrimDynasty.TaskRuntime.dll","/reference:$target\GrimDynasty.TaskAuto.dll","/reference:$target\GrimDynasty.TaskKills.dll","/reference:$target\GrimDynasty.TaskItems.dll")
 & $compiler /nologo /codepage:65001 /target:library /checked+ /optimize+ @refs "/out:$target\GrimDynasty.Rewards.dll" "$PSScriptRoot\MoneyRewards.cs" "$PSScriptRoot\PointRewards.cs" "$PSScriptRoot\RewardNames.cs" "$PSScriptRoot\AdjustedCompletion.cs" "$PSScriptRoot\TributeRewards.cs" "$PSScriptRoot\ExperienceRewards.cs" "$PSScriptRoot\ExperienceCompletion.cs" "$PSScriptRoot\LevelProgression.cs" "$PSScriptRoot\CinematicTextQueue.cs" "$PSScriptRoot\ArithmeticEquation.cs" "$PSScriptRoot\SystemCrtMath.cs" "$PSScriptRoot\CrtEquation.cs" "$PSScriptRoot\ExperienceScaling.cs" "$PSScriptRoot\TutorialRules.cs" "$PSScriptRoot\TutorialTaskStart.cs" "$PSScriptRoot\AcceptActions.cs" "$PSScriptRoot\AcceptDefinitionAdapter.cs"
 if ($LASTEXITCODE -ne 0) {throw 'Rewards module compile failed'}
@@ -19,7 +19,7 @@ if ($LASTEXITCODE -ne 0) {throw 'Money tests failed'}
 if ($LASTEXITCODE -ne 0) {throw 'Point tests compile failed'}
 & "$target\PointRewardTests.exe"
 if ($LASTEXITCODE -ne 0) {throw 'Point tests failed'}
-$fixture='D:\MyGitRepo\Grim-Dynasty\src\task_kills\ExampleKillQuest.cs'
+$fixture=(Join-Path $PSScriptRoot '..\..\src\task_kills\ExampleKillQuest.cs')
 & $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ @refs "/out:$target\RewardAutoTests.exe" "$PSScriptRoot\RewardAutoTests.cs" "$PSScriptRoot\ExampleRewardQuest.cs" "$PSScriptRoot\ExampleExperienceQuest.cs" $fixture
 if ($LASTEXITCODE -ne 0) {throw 'Reward auto tests compile failed'}
 & "$target\RewardAutoTests.exe"
@@ -64,23 +64,23 @@ if ($LASTEXITCODE -ne 0) {throw 'Tutorial start tests failed'}
 if ($LASTEXITCODE -ne 0) {throw 'Accept action tests compile failed'}
 & "$target\AcceptTests.exe"
 if ($LASTEXITCODE -ne 0) {throw 'Accept action tests failed'}
-& $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ @refs "/reference:$target\GrimDynasty.Quests.dll" "/reference:$target\GrimDynasty.Resources.dll" "/out:$target\ItemAcceptTests.exe" "$PSScriptRoot\ItemAcceptTests.cs" "$PSScriptRoot\ExampleItemAcceptQuest.cs" "$PSScriptRoot\OwnItemAcceptFixture.cs" "D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs"
+& $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ @refs "/reference:$target\GrimDynasty.Quests.dll" "/reference:$target\GrimDynasty.Resources.dll" "/out:$target\ItemAcceptTests.exe" "$PSScriptRoot\ItemAcceptTests.cs" "$PSScriptRoot\ExampleItemAcceptQuest.cs" "$PSScriptRoot\OwnItemAcceptFixture.cs" (Join-Path $PSScriptRoot "..\..\src\task_items\ExampleItemQuest.cs")
 if ($LASTEXITCODE -ne 0) {throw 'Item-gated accept tests compile failed'}
 & "$target\ItemAcceptTests.exe"
 if ($LASTEXITCODE -ne 0) {throw 'Item-gated accept tests failed'}
-& $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ @refs "/reference:$target\GrimDynasty.Quests.dll" "/reference:$target\GrimDynasty.Resources.dll" "/out:$target\InventoryTakeTests.exe" "$PSScriptRoot\InventoryTakeTests.cs" "$PSScriptRoot\ExampleDeliveryQuest.cs" "$PSScriptRoot\OwnDeliveryFixture.cs" "D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs"
+& $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ @refs "/reference:$target\GrimDynasty.Quests.dll" "/reference:$target\GrimDynasty.Resources.dll" "/out:$target\InventoryTakeTests.exe" "$PSScriptRoot\InventoryTakeTests.cs" "$PSScriptRoot\ExampleDeliveryQuest.cs" "$PSScriptRoot\OwnDeliveryFixture.cs" (Join-Path $PSScriptRoot "..\..\src\task_items\ExampleItemQuest.cs")
 if ($LASTEXITCODE -ne 0) {throw 'Inventory take tests compile failed'}
 & "$target\InventoryTakeTests.exe"
 if ($LASTEXITCODE -ne 0) {throw 'Inventory take tests failed'}
-& $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ @refs "/reference:$target\GrimDynasty.Quests.dll" "/reference:$target\GrimDynasty.Resources.dll" "/out:$target\InventoryTakeNameTests.exe" "$PSScriptRoot\InventoryTakeNameTests.cs" "$PSScriptRoot\ExampleDeliveryQuest.cs" "$PSScriptRoot\OwnDeliveryFixture.cs" "D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs"
+& $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ @refs "/reference:$target\GrimDynasty.Quests.dll" "/reference:$target\GrimDynasty.Resources.dll" "/out:$target\InventoryTakeNameTests.exe" "$PSScriptRoot\InventoryTakeNameTests.cs" "$PSScriptRoot\ExampleDeliveryQuest.cs" "$PSScriptRoot\OwnDeliveryFixture.cs" (Join-Path $PSScriptRoot "..\..\src\task_items\ExampleItemQuest.cs")
 if ($LASTEXITCODE -ne 0) {throw 'Inventory name take tests compile failed'}
 & "$target\InventoryTakeNameTests.exe"
 if ($LASTEXITCODE -ne 0) {throw 'Inventory name take tests failed'}
-& $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ @refs "/reference:$target\GrimDynasty.Quests.dll" "/reference:$target\GrimDynasty.Resources.dll" "/out:$target\FullInventoryTakeTests.exe" "$PSScriptRoot\FullInventoryTakeTests.cs" "$PSScriptRoot\ExampleFullDelivery.cs" "$PSScriptRoot\ExampleDeliveryQuest.cs" "$PSScriptRoot\OwnDeliveryFixture.cs" "D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs"
+& $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ @refs "/reference:$target\GrimDynasty.Quests.dll" "/reference:$target\GrimDynasty.Resources.dll" "/out:$target\FullInventoryTakeTests.exe" "$PSScriptRoot\FullInventoryTakeTests.cs" "$PSScriptRoot\ExampleFullDelivery.cs" "$PSScriptRoot\ExampleDeliveryQuest.cs" "$PSScriptRoot\OwnDeliveryFixture.cs" (Join-Path $PSScriptRoot "..\..\src\task_items\ExampleItemQuest.cs")
 if ($LASTEXITCODE -ne 0) {throw 'Full inventory take tests compile failed'}
 & "$target\FullInventoryTakeTests.exe"
 if ($LASTEXITCODE -ne 0) {throw 'Full inventory take tests failed'}
-& $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ @refs "/reference:$target\GrimDynasty.Quests.dll" "/reference:$target\GrimDynasty.Resources.dll" "/out:$target\InventoryAddTests.exe" "$PSScriptRoot\InventoryAddTests.cs" "$PSScriptRoot\ExampleInventoryCycle.cs" "$PSScriptRoot\OwnInventoryCycleFixture.cs" "$PSScriptRoot\ExampleFullDelivery.cs" "$PSScriptRoot\ExampleDeliveryQuest.cs" "$PSScriptRoot\OwnDeliveryFixture.cs" "D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs"
+& $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ @refs "/reference:$target\GrimDynasty.Quests.dll" "/reference:$target\GrimDynasty.Resources.dll" "/out:$target\InventoryAddTests.exe" "$PSScriptRoot\InventoryAddTests.cs" "$PSScriptRoot\ExampleInventoryCycle.cs" "$PSScriptRoot\OwnInventoryCycleFixture.cs" "$PSScriptRoot\ExampleFullDelivery.cs" "$PSScriptRoot\ExampleDeliveryQuest.cs" "$PSScriptRoot\OwnDeliveryFixture.cs" (Join-Path $PSScriptRoot "..\..\src\task_items\ExampleItemQuest.cs")
 if ($LASTEXITCODE -ne 0) {throw 'Inventory add tests compile failed'}
 & "$target\InventoryAddTests.exe"
 if ($LASTEXITCODE -ne 0) {throw 'Inventory add tests failed'}
@@ -89,7 +89,7 @@ if ($LASTEXITCODE -ne 0) {throw 'Object ID tests compile failed'}
 & "$target\ObjectIdTests.exe"
 if ($LASTEXITCODE -ne 0) {throw 'Object ID tests failed'}
 foreach($program in @('RuntimeIdInventoryDemo','InventoryRoundTripDemo','FullInventoryDeliveryDemo','InventoryDeliveryDemo','ItemAcceptQuestDemo','AcceptQuestDemo','TutorialQuestDemo','RewardQuestDemo','MoneyCatalogProbe','AdjustedQuestDemo','ExperienceQuestDemo','LevelUpQuestDemo','CrtLevelUpQuestDemo','CrtCurveCatalogProbe')) {
- $extraSources=@();if($program -eq 'InventoryRoundTripDemo' -or $program -eq 'RuntimeIdInventoryDemo'){$extraSources=@("$PSScriptRoot\ExampleInventoryCycle.cs","$PSScriptRoot\OwnInventoryCycleFixture.cs","$PSScriptRoot\ExampleFullDelivery.cs","$PSScriptRoot\OwnDeliveryFixture.cs","$PSScriptRoot\ExampleDeliveryQuest.cs","D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs")};if($program -eq 'FullInventoryDeliveryDemo'){$extraSources=@("$PSScriptRoot\ExampleFullDelivery.cs","$PSScriptRoot\OwnDeliveryFixture.cs","$PSScriptRoot\ExampleDeliveryQuest.cs","D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs")};if($program -eq 'InventoryDeliveryDemo'){$extraSources=@("$PSScriptRoot\OwnDeliveryFixture.cs","$PSScriptRoot\ExampleDeliveryQuest.cs","D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs")};if($program -eq 'ItemAcceptQuestDemo'){$extraSources=@("$PSScriptRoot\OwnItemAcceptFixture.cs","$PSScriptRoot\ExampleItemAcceptQuest.cs","D:\MyGitRepo\Grim-Dynasty\src\task_items\ExampleItemQuest.cs")};if($program -eq 'AcceptQuestDemo'){$extraSources=@("$PSScriptRoot\ExampleAcceptQuest.cs","$PSScriptRoot\OwnAcceptQuestFixture.cs")};if($program -eq 'CrtCurveCatalogProbe'){$extraSources=@("$PSScriptRoot\CrtReference.cs")}
+ $extraSources=@();if($program -eq 'InventoryRoundTripDemo' -or $program -eq 'RuntimeIdInventoryDemo'){$extraSources=@("$PSScriptRoot\ExampleInventoryCycle.cs","$PSScriptRoot\OwnInventoryCycleFixture.cs","$PSScriptRoot\ExampleFullDelivery.cs","$PSScriptRoot\OwnDeliveryFixture.cs","$PSScriptRoot\ExampleDeliveryQuest.cs",(Join-Path $PSScriptRoot "..\..\src\task_items\ExampleItemQuest.cs"))};if($program -eq 'FullInventoryDeliveryDemo'){$extraSources=@("$PSScriptRoot\ExampleFullDelivery.cs","$PSScriptRoot\OwnDeliveryFixture.cs","$PSScriptRoot\ExampleDeliveryQuest.cs",(Join-Path $PSScriptRoot "..\..\src\task_items\ExampleItemQuest.cs"))};if($program -eq 'InventoryDeliveryDemo'){$extraSources=@("$PSScriptRoot\OwnDeliveryFixture.cs","$PSScriptRoot\ExampleDeliveryQuest.cs",(Join-Path $PSScriptRoot "..\..\src\task_items\ExampleItemQuest.cs"))};if($program -eq 'ItemAcceptQuestDemo'){$extraSources=@("$PSScriptRoot\OwnItemAcceptFixture.cs","$PSScriptRoot\ExampleItemAcceptQuest.cs",(Join-Path $PSScriptRoot "..\..\src\task_items\ExampleItemQuest.cs"))};if($program -eq 'AcceptQuestDemo'){$extraSources=@("$PSScriptRoot\ExampleAcceptQuest.cs","$PSScriptRoot\OwnAcceptQuestFixture.cs")};if($program -eq 'CrtCurveCatalogProbe'){$extraSources=@("$PSScriptRoot\CrtReference.cs")}
  & $compiler /nologo /codepage:65001 /target:exe /checked+ /optimize+ /reference:System.Web.Extensions.dll @refs "/reference:$target\GrimDynasty.Resources.dll" "/reference:$target\GrimDynasty.Quests.dll" "/out:$target\$program.exe" "$PSScriptRoot\$program.cs" "$PSScriptRoot\ExampleRewardQuest.cs" "$PSScriptRoot\ExampleExperienceQuest.cs" "$PSScriptRoot\ExampleLevelUpQuest.cs" $fixture @extraSources
  if ($LASTEXITCODE -ne 0) {throw 'Reward demo/catalog compile failed'}
 }

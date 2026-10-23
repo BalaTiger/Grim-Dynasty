@@ -1,0 +1,86 @@
+{
+  "code_byte_limit": 268,
+  "prior_inspections": [
+    {
+      "path": "docs/object-lifecycle/offline-class-static-crt-entry/inspection.json",
+      "sha256": "128d84bec2848305b845e7e3206121e685f9fe64b001138f195c0c98e7081e34"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-crt-dispatch/inspection.json",
+      "sha256": "0c62ba0c1b3bce951b89b26e77a6c2461c0581cec506508d9834e30a13a5738f"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-crt-reason/inspection.json",
+      "sha256": "08ded9b6ff52c160c3699f4c369f0c1420151772313f615f39bbff1818f557e7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-crt-attach/inspection.json",
+      "sha256": "fa0c4a5b7a5d1a2ccb3ed3a35d4a2c98a1192d4fc79cafae9c63a28eaa71366c"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-crt-thunks/inspection.json",
+      "sha256": "7a776c85892b5583a068ff2fe9d96935825614f80d12a7706e2648b50488c4c1"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-1/inspection.json",
+      "sha256": "73423183a7accb870c0ad83585b054a58f10a64fb113e7031a23e0bf58b7c11c"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-2/inspection.json",
+      "sha256": "583e2dc27b9d7488aa930cbd8c39057b816cf125f16b3d1d3baf8a844c5feb1b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-3/inspection.json",
+      "sha256": "7fcc79e3767bc6951723f6f1d056b9a1eeec0f7ed38a7950b3ddc6255d2b951b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-4/inspection.json",
+      "sha256": "b792b1858bdeba01dbf1b76e2fd9ead2d8d2576b407dcc5d28203a03829b08fe"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-5/inspection.json",
+      "sha256": "b57d2765888e34551460a301b26c8d282e1e460634163c7f4803c1bf7f97466f"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-6/inspection.json",
+      "sha256": "6aa351777b666c5b4c9ef796d5b674080edbb7eac730aeaa1472c18ffc2a97e7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-7/inspection.json",
+      "sha256": "0074c19190c7ef08f13c6897153964ecb6b159d1ab1bb10b1355113cb5987871"
+    }
+  ],
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-class-init-continuation-boundaries/metadata.json",
+      "sha256": "6ed3a901e0feb50107bf57741bda4d2fbb73e185bc386047847b81e403f091aa"
+    }
+  ],
+  "stage": "writer-continuations",
+  "targets": [
+    {
+      "maximum_bytes": 118,
+      "role": "Same initializer continuation from slot 115",
+      "basis": "fallthrough after INC EAX at 0x180005f27; exact metadata boundary recovered. Continue only this direct table initializer, not callees.",
+      "rva": 24361
+    },
+    {
+      "maximum_bytes": 17,
+      "role": "Same initializer continuation from slot 115",
+      "basis": "JE destination from 0x180005f22 (74 7b); exact metadata boundary recovered. Continue only this direct table initializer, not callees.",
+      "rva": 24479
+    },
+    {
+      "maximum_bytes": 116,
+      "role": "Same initializer continuation from slot 205",
+      "basis": "fallthrough after INC EAX at 0x180009e39; exact metadata boundary recovered. Continue only this direct table initializer, not callees.",
+      "rva": 40507
+    },
+    {
+      "maximum_bytes": 17,
+      "role": "Same initializer continuation from slot 205",
+      "basis": "JE destination from 0x180009e34 (74 79); exact metadata boundary recovered. Continue only this direct table initializer, not callees.",
+      "rva": 40623
+    }
+  ]
+}

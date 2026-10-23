@@ -1,0 +1,214 @@
+{
+  "schema": "grim-dynasty.fixed-ground-intersection-slots.v1",
+  "script": "tools/static_analysis/read_r1_ground_intersection_slots.mjs",
+  "entrypoint": "inspectGroundIntersectionSlots(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-ground-intersection-slots/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "source_pins": [
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "ground_constructor",
+      "path": "docs/reverse-client/r1-engine-spatial-ground/14-EngineSpatialGround-0x1801dda90-procedure_assembly.json",
+      "sha256": "858c4ee47d193164648b7fb068b0dfb2772dc6cd35347055d736d2584388a629"
+    },
+    {
+      "key": "block_constructor",
+      "path": "docs/reverse-client/r1-ground-floor-geometry/11-GroundFloorGeometry-0x1801d0e20-procedure_assembly.json",
+      "sha256": "45b7816c25261a5cfd6b313cc67031527dfe22416b015723bdd8912e8c2e0b7b"
+    },
+    {
+      "key": "intersection",
+      "path": "docs/reverse-client/r1-ground-ray-tree/17-GroundRayTree-0x1801d1330-procedure_assembly.json",
+      "sha256": "d357bf689cb3222286ff59bc8bfa10e72905ef3906e65108095d9aee63bfdae1"
+    },
+    {
+      "key": "postconstruct",
+      "path": "docs/reverse-client/r1-ground-ray-tree/23-GroundRayTree-0x1801d12f0-procedure_assembly.json",
+      "sha256": "9367198fcf07978f6ba927aa80a6dbf351c66a8ac0a3a79bd0c2ad217e544cfc"
+    },
+    {
+      "key": "construct_blocks",
+      "path": "docs/reverse-client/r1-ground-blocks-and-node-destroy/14-GroundBlocksNodeDestroy-0x1801ce910-procedure_assembly.json",
+      "sha256": "c409e0f20684d60e076ed27861ebeece894cfdcc37808c4eb4c4b32a05f98dcf"
+    },
+    {
+      "key": "tree_constructor",
+      "path": "docs/reverse-client/r1-ground-ray-tree/08-GroundRayTree-0x18011a600-procedure_assembly.json",
+      "sha256": "9966a5e96dabc3cca8eacf499afe6bea40330af505a30cdef2f24999d60859ef"
+    }
+  ],
+  "fixed_slots": [
+    {
+      "key": "terrain_slot58",
+      "table_kind": "primary",
+      "table_rva": "0x343b60",
+      "slot_offset": "0x58",
+      "rva": "0x343bb8",
+      "bytes": 8,
+      "constructor": "0x1801dda90",
+      "callsite": "0x1801d13da",
+      "opcode": "CALL",
+      "receiver": "Block+a8"
+    },
+    {
+      "key": "terrain_slotF0",
+      "table_kind": "primary",
+      "table_rva": "0x343b60",
+      "slot_offset": "0xf0",
+      "rva": "0x343c50",
+      "bytes": 8,
+      "constructor": "0x1801dda90",
+      "callsite": "0x1801d14b1",
+      "opcode": "CALL",
+      "receiver": "Block+a8"
+    },
+    {
+      "key": "terrain_slotD8",
+      "table_kind": "primary",
+      "table_rva": "0x343b60",
+      "slot_offset": "0xd8",
+      "rva": "0x343c38",
+      "bytes": 8,
+      "constructor": "0x1801dda90",
+      "callsite": "0x1801d1512",
+      "opcode": "CALL",
+      "receiver": "Block+a8"
+    },
+    {
+      "key": "terrain_slot150",
+      "table_kind": "primary",
+      "table_rva": "0x343b60",
+      "slot_offset": "0x150",
+      "rva": "0x343cb0",
+      "bytes": 8,
+      "constructor": "0x1801dda90",
+      "callsite": "0x1801d130e",
+      "opcode": "CALL",
+      "receiver": "Block+a8"
+    },
+    {
+      "key": "block_secondary_slot10",
+      "table_kind": "secondary",
+      "table_rva": "0x343978",
+      "slot_offset": "0x10",
+      "rva": "0x343988",
+      "bytes": 8,
+      "constructor": "0x1801d0e20",
+      "callsite": "0x1801d1328",
+      "opcode": "JMP",
+      "receiver": "Block address+48, not Block primary slot10"
+    }
+  ],
+  "fixed_constants": [
+    {
+      "key": "tree_interval_multiplier",
+      "rva": "0x34bb5c",
+      "bytes": 4,
+      "instructions": [
+        "0x18011a65a: MULSS XMM1, dword ptr [0x18034bb5c]",
+        "0x18011a662: MULSS XMM8, dword ptr [0x18034bb5c]"
+      ]
+    }
+  ],
+  "assembly_proofs": [
+    {
+      "key": "ground_constructor",
+      "procedure": "0x1801dda90",
+      "instructions": [
+        "0x1801ddaad: MOV RDI, RCX",
+        "0x1801ddabe: LEA RAX, [0x180343b60]",
+        "0x1801ddac5: MOV qword ptr [RDI], RAX"
+      ]
+    },
+    {
+      "key": "block_constructor",
+      "procedure": "0x1801d0e20",
+      "instructions": [
+        "0x1801d0e24: MOV RDX, RCX",
+        "0x1801d0e7d: LEA RAX, [0x1803438f8]",
+        "0x1801d0ed8: MOV qword ptr [RDX], RAX",
+        "0x1801d0edb: LEA RAX, [0x180343978]",
+        "0x1801d0ee2: MOV qword ptr [RDX + 0x48], RAX"
+      ]
+    },
+    {
+      "key": "intersection",
+      "procedure": "0x1801d1330",
+      "instructions": [
+        "0x1801d1348: MOV RDI, RCX",
+        "0x1801d1383: MOV RCX, qword ptr [RDI + 0xa8]",
+        "0x1801d13a5: MOV R11, qword ptr [RCX]",
+        "0x1801d13d7: MOV RDX, R15",
+        "0x1801d13da: CALL qword ptr [R11 + 0x58]",
+        "0x1801d148d: MOV RCX, qword ptr [RDI + 0xa8]",
+        "0x1801d14ab: MOV RAX, qword ptr [RCX]",
+        "0x1801d14b1: CALL qword ptr [RAX + 0xf0]",
+        "0x1801d14fa: MOV RCX, qword ptr [RDI + 0xa8]",
+        "0x1801d150b: MOV RAX, qword ptr [RCX]",
+        "0x1801d1512: CALL qword ptr [RAX + 0xd8]"
+      ]
+    },
+    {
+      "key": "postconstruct",
+      "procedure": "0x1801d12f0",
+      "instructions": [
+        "0x1801d12f6: MOV RBX, RCX",
+        "0x1801d12f9: MOV RCX, qword ptr [RCX + 0xa8]",
+        "0x1801d1300: MOV RAX, qword ptr [RCX]",
+        "0x1801d1303: LEA R8, [RBX + 0x10]",
+        "0x1801d1307: LEA RDX, [RBX + 0xc8]",
+        "0x1801d130e: CALL qword ptr [RAX + 0x150]",
+        "0x1801d1314: MOV RAX, qword ptr [RBX + 0x48]",
+        "0x1801d1318: LEA RCX, [RBX + 0x48]",
+        "0x1801d131c: MOV RDX, qword ptr [RBX + 0xa8]",
+        "0x1801d1328: JMP qword ptr [RAX + 0x10]"
+      ]
+    },
+    {
+      "key": "construct_blocks",
+      "procedure": "0x1801ce910",
+      "instructions": [
+        "0x1801cea2a: MOV qword ptr [RBX + 0xa8], RDI",
+        "0x1801cea4a: MOV RDX, RDI",
+        "0x1801cea4d: MOV RCX, RBX",
+        "0x1801cea50: CALL 0x1801d0fc0",
+        "0x1801cea55: MOV RAX, qword ptr [RBX]",
+        "0x1801cea58: MOV RCX, RBX",
+        "0x1801cea5b: CALL qword ptr [RAX + 0x48]"
+      ]
+    },
+    {
+      "key": "tree_constructor",
+      "procedure": "0x18011a600",
+      "instructions": [
+        "0x18011a65a: MULSS XMM1, dword ptr [0x18034bb5c]",
+        "0x18011a662: MULSS XMM8, dword ptr [0x18034bb5c]"
+      ]
+    }
+  ],
+  "limits": {
+    "new_data_bytes": 44,
+    "data_operations": 6,
+    "single_read_bytes": 8,
+    "hash_chunk_bytes": 65536,
+    "new_PE_header_bytes": 0,
+    "whole_table_bytes": 0,
+    "target_body_bytes": 0
+  },
+  "requirements": [
+    "Import performs no I/O. Execute only after exact frozen script/plan approval and separate Windows Attributes/reparse-tag preflight.",
+    "Exactly six Engine data reads:343BB8,343C50,343C38,343CB0,343988 each8B, and34BB5C4B at two explicit MULSS operands. No code, new PE headers, RTTI, adjacent slots, imports or exports.338458 is already observed in the52B binding report and is not re-read.",
+    "343B60 is the observed ground constructor main vptr. Block+a8 is assigned the ground owner in1CE910 and supplies the receiver for four primary calls. Unknown loaded overwrites and dynamic type remain explicit.",
+    "343978 is written at Block+48 by1D0E20;1D1328 is tailJMP through this secondary table+10 withRCX=Block+48. It is not Block primary slot10 or a directcall to an inferred function.",
+    "Reuse pinned cached PE only after same-descriptor source hash matches. Preserve exact raw bytes and executable-address candidates without claiming names, full table extent, ABI, loaded dispatch or geometry success.",
+    "Output must be absent and failures preserved. Before/after hash/stat/path checks are not an atomic snapshot. No original execution/loading, backend, subprocess, network, save or security change."
+  ]
+}

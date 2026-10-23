@@ -1,0 +1,209 @@
+{
+  "status": "fixed-game-init-fragments-verified",
+  "started_utc": "2026-10-20T14:03:27.209Z",
+  "stage": "helper-storage-bodies",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "plan": {
+    "path": "docs/object-lifecycle/class-static-init-plans/helper-storage-bodies.json",
+    "sha256": "0463e8dbed0609a8891a908b9ed73a32e264add3d7037835e62eab41071805b7"
+  },
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-storage-entries/inspection.json",
+      "sha256": "bd9fe6163afbed04cabcd1ebe908995c9529f0fc057cd18d4ea8b5567ba41a0f"
+    }
+  ],
+  "script_sha256": "a3fb916a2d92977505f743c0d9ac22bf0efa563fb57d3e57635c51f9d5a99590",
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "code_byte_limit": 262,
+  "code_bytes": 66,
+  "prior_code_bytes": 11367,
+  "global_code_byte_limit": 65536,
+  "metadata_byte_limit": 65536,
+  "metadata_bytes": 180,
+  "metadata_reads": [
+    {
+      "index": 11146,
+      "rva": "0xa8aa78",
+      "file_offset": 11030136,
+      "bytes": "f01530002a16300030f27d00"
+    },
+    {
+      "index": 16720,
+      "rva": "0xa9afc0",
+      "file_offset": 11097024,
+      "bytes": "70764a0012774a00c8178500"
+    },
+    {
+      "index": 19507,
+      "rva": "0xaa3264",
+      "file_offset": 11130468,
+      "bytes": "f6c657003fc75700489c8600"
+    },
+    {
+      "index": 20900,
+      "rva": "0xaa73b0",
+      "file_offset": 11147184,
+      "bytes": "a02f5e00bd2f5e0008ee7d00"
+    },
+    {
+      "index": 20204,
+      "rva": "0xaa5310",
+      "file_offset": 11138832,
+      "bytes": "b05d5b00b95e5b00c8e38600"
+    },
+    {
+      "index": 20552,
+      "rva": "0xaa6360",
+      "file_offset": 11143008,
+      "bytes": "fc805d0029815d003c008700"
+    },
+    {
+      "index": 20726,
+      "rva": "0xaa6b88",
+      "file_offset": 11145096,
+      "bytes": "58fd5d0075fd5d0008ee7d00"
+    },
+    {
+      "index": 20639,
+      "rva": "0xaa6774",
+      "file_offset": 11144052,
+      "bytes": "60bc5d00aabc5d0070ea7d00"
+    },
+    {
+      "index": 20596,
+      "rva": "0xaa6570",
+      "file_offset": 11143536,
+      "bytes": "f4aa5d002dab5d0054ec7d00"
+    },
+    {
+      "index": 20574,
+      "rva": "0xaa6468",
+      "file_offset": 11143272,
+      "bytes": "90975d00ba975d00dc018700"
+    },
+    {
+      "index": 20585,
+      "rva": "0xaa64ec",
+      "file_offset": 11143404,
+      "bytes": "58a65d00baa65d00e8028700"
+    },
+    {
+      "index": 20591,
+      "rva": "0xaa6534",
+      "file_offset": 11143476,
+      "bytes": "c0a85d0020a95d0010eb7d00"
+    },
+    {
+      "index": 20588,
+      "rva": "0xaa6510",
+      "file_offset": 11143440,
+      "bytes": "48a75d0066a85d0070ea7d00"
+    },
+    {
+      "index": 20587,
+      "rva": "0xaa6504",
+      "file_offset": 11143428,
+      "bytes": "00a75d002ba75d0010eb7d00"
+    },
+    {
+      "index": 20586,
+      "rva": "0xaa64f8",
+      "file_offset": 11143416,
+      "bytes": "c4a65d0000a75d0010eb7d00"
+    }
+  ],
+  "fragments": [
+    {
+      "role": "Direct allocation callee",
+      "basis": "Saved E9 at5DAF40 targets5DA6C4. Require exact unwind entry, cap256B; no neighboring body fallback.",
+      "start_rva": "0x5da6c4",
+      "end_rva_exclusive": "0x5da700",
+      "range_kind": "exact-unwind-fragment",
+      "start_va": "0x1805da6c4",
+      "end_va_exclusive": "0x1805da700",
+      "code_bytes": 60,
+      "code_sha256": "41efd50caa45170278af717a9d5c5e10f7ed5a1b1eac97719b343176a87122cc",
+      "exact_unwind_entry": {
+        "index": 20586,
+        "begin": 6137540,
+        "end": 6137600,
+        "unwind": 8252176,
+        "entry_rva": 11166968
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1805da6c4,0x1805da6ff",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "instructions": 20,
+      "byte_coverage_verified": true
+    },
+    {
+      "role": "Direct old-storage callee",
+      "basis": "Saved E9 at5DA5DC targets5DA6BC. Read fixed6B entry prefix, no automatic follow.",
+      "start_rva": "0x5da6bc",
+      "end_rva_exclusive": "0x5da6c2",
+      "range_kind": "explicit-fixed-entry-prefix-no-exact-unwind",
+      "start_va": "0x1805da6bc",
+      "end_va_exclusive": "0x1805da6c2",
+      "code_bytes": 6,
+      "code_sha256": "dd463b695383d4e80b2b454dd3563f5aace1442783f457fb1060489e3de11559",
+      "exact_unwind_entry": null,
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1805da6bc,0x1805da6c1",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "instructions": 2,
+      "byte_coverage_verified": true
+    }
+  ],
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "full_target_copy_created": false,
+  "limitations": [
+    "Only explicitly planned targets are followed; no callee, table or neighboring code discovery is automatic.",
+    "Unwind ranges are fragments, not a claim of whole-function or exception-path coverage.",
+    "Full-file fingerprints use 64KiB buffers and are outside semantic byte totals; dumpbin internal metadata I/O is not measured.",
+    "All target bytes are read-only. No DLL initialization, game launch, backend, install or permission change."
+  ],
+  "original_sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_hash_matches": true,
+  "original_stat_stable": true,
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "tool_hash_matches": true,
+  "failures": [],
+  "finished_utc": "2026-10-20T14:03:27.296Z",
+  "controller_resource_usage": {
+    "userCPUTime": 46000,
+    "systemCPUTime": 46000,
+    "maxRSS": 43348,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11506,
+    "swappedOut": 0,
+    "fsRead": 401,
+    "fsWrite": 6,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

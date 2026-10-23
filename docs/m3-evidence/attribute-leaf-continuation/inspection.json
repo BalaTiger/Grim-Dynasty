@@ -1,0 +1,305 @@
+{
+  "schema": "grim-dynasty-m3-bounded-read-v1",
+  "status": "LeafWindowUnknown",
+  "started_utc": "2026-10-22T05:08:13.321Z",
+  "plan": {
+    "path": "docs/m3-evidence/plans/attribute-leaf-continuation.json",
+    "sha256": "6ef02f3e78f7f9f39733c3fbdb311828b550dc67904b4ad6167c9778e1f7e482"
+  },
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "bytes": 11385856,
+    "preferred_base": "0x180000000"
+  },
+  "proof": {
+    "path": "docs/m3-evidence/damage-settlement/direct-068ab0.instructions.json",
+    "sha256": "29cb0371f9a2cfb9638d3d9d11e0426db5821f6740ecbc32e6dd72d314abc033"
+  },
+  "mode": "bounded-leaf-continuation",
+  "range_policy": "fixed-window-not-function",
+  "excluded_proof_range": {
+    "begin_rva": "0x68ab0",
+    "end_rva_exclusive": "0x68b9b",
+    "reason": "Pinned saved instruction bytes already read"
+  },
+  "limits": {
+    "body_bytes_each": 96,
+    "body_bytes_total": 96,
+    "metadata_bytes": 16384,
+    "dumpbin_calls": 1,
+    "tool_timeout_ms_each": 10000,
+    "data_bytes": 4
+  },
+  "fixed_limits": {
+    "plan_bytes": 16384,
+    "proof_bytes": 1048576,
+    "hash_buffer_bytes": 65536,
+    "header_end": 4096,
+    "sections": 16,
+    "metadata_read_bytes": 512,
+    "pdata_bytes": 2097152,
+    "binary_search_steps": 32,
+    "synthetic_each": 16384,
+    "synthetic_total": 24576,
+    "tool_buffer_each": 1048576
+  },
+  "continuation": {
+    "path": "docs/m3-evidence/attribute-leaf-window/window-0cf6e0.decode-candidates.json",
+    "sha256": "ce67534960ca42088a95b4a5fbe207dbf571ed15323fdda7d9355dceb32ee309",
+    "origin_rva": "0xcf6e0",
+    "start_rva": "0xcf700",
+    "saved_prefix_bytes": 32,
+    "new_window_bytes": 96,
+    "total_window_limit": 128
+  },
+  "excluded_saved_ranges": [
+    {
+      "begin_rva": "0x68ab0",
+      "end_rva_exclusive": "0x68b9b",
+      "reason": "Pinned saved instruction bytes already read"
+    },
+    {
+      "begin_rva": "0xcf6e0",
+      "end_rva_exclusive": "0xcf700",
+      "reason": "Pinned saved 32-byte prefix; original bytes must not be reread"
+    }
+  ],
+  "source_open_mode": "r",
+  "source_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "automatic_callee_expansion": false,
+  "metadata_bytes": 1024,
+  "metadata_operations": 40,
+  "body_bytes": 96,
+  "body_read_operations": 1,
+  "dumpbin_calls": 1,
+  "synthetic_bytes": 2560,
+  "export_table_bytes": 0,
+  "global_data_bytes": 4,
+  "unwind_body_bytes": 0,
+  "source_closed": true,
+  "boundaries": [
+    {
+      "id": "continuation-0cf700",
+      "rva": "0xcf6e0",
+      "caller_address": "0x180068b60",
+      "reference_kind": "direct-call",
+      "pdata": {
+        "status": "UnknownNoContainingPdata",
+        "bytes": null
+      },
+      "continuation_pdata": {
+        "status": "UnknownNoContainingPdata",
+        "bytes": null
+      }
+    }
+  ],
+  "bodies": [
+    {
+      "id": "continuation-0cf700",
+      "reference_ids": [
+        "continuation-0cf700"
+      ],
+      "begin_rva": "0xcf700",
+      "end_rva_exclusive": "0xcf760",
+      "bytes": 96,
+      "file_offset": 846592,
+      "pdata": {
+        "status": "UnknownNoContainingPdata",
+        "bytes": null
+      },
+      "bounded_window": {
+        "status": "BoundedWindowNotFunction",
+        "begin_rva": "0xcf700",
+        "end_rva_exclusive": "0xcf760",
+        "bytes": 96,
+        "function_boundary_verified": false
+      },
+      "sha256": "e08147816a9f20be956f153f508a6f6e24976b9ca51f351f6e9c9888ca0b8d94",
+      "synthetic": {
+        "relative_path": ".tooling/m3-attribute-leaf-continuation-temp/continuation-0cf700.inspect.dll",
+        "bytes": 2560,
+        "sha256": "ca2645f1457be01c2b344802810bbb3ab9b57e28d8be917c186e408b77f5f528",
+        "never_executed": true
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800cf700,0x1800cf75f",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\m3-attribute-leaf-continuation-temp\\continuation-0cf700.inspect.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "decoded_rows": 23,
+      "decode_issues": [
+        {
+          "kind": "invalid-or-data-decode",
+          "address": "0x1800cf75c",
+          "detail": ""
+        },
+        {
+          "kind": "invalid-or-data-decode",
+          "address": "0x1800cf75d",
+          "detail": ""
+        },
+        {
+          "kind": "invalid-or-data-decode",
+          "address": "0x1800cf75f",
+          "detail": ""
+        }
+      ],
+      "code_data_classification": "BoundedWindowNotFunction",
+      "leaf_window": {
+        "status": "Unknown",
+        "function_boundary_verified": false,
+        "complete_function_claim": false,
+        "window_begin_rva": "0xcf6e0",
+        "window_end_rva_exclusive": "0xcf760",
+        "return_rva": null,
+        "prefix_bytes": 0,
+        "unclassified_after_ret_bytes": null,
+        "reason": "Transfer or instruction outside conservative leaf classifier: jb",
+        "stop_address": "0x1800cf718",
+        "reused_saved_prefix_bytes": 32,
+        "newly_read_bytes": 96,
+        "cumulative_window_bytes": 128
+      },
+      "window_candidate_byte_coverage_verified": false
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "All targets are supplied by a separately reviewed plan and matched against pinned saved direct-call or conditional-branch bytes.",
+    "Binary search reads .pdata records only; no export scan, unwind decoding or callees are followed.",
+    "V1 requires an exact .pdata start. V2 may explicitly permit the containing runtime fragment; this is not a whole source function.",
+    "Known proof bytes are excluded. Duplicate containing fragments are read once; overlap, missing boundaries or budget excess stops all body reads.",
+    "Metadata-only plans never read body bytes or start dumpbin, regardless of reported boundaries.",
+    "V3 reads one explicit 32-byte E8-target window only when .pdata has no containing entry. The window is not a function boundary.",
+    "V3 never follows transfers. A conservative straight-line prefix through plain C3 ret may be reported; bytes after ret remain unclassified.",
+    "V4 permits one fixed 96-byte continuation after a pinned, contiguous, control-transfer-free 32-byte prefix. Cumulative original window is 128 bytes, with no prefix reread or further continuation.",
+    "An optional V4 four-byte read must be the first saved MOVSS RIP-relative operand in readonly non-executable .rdata; only original bits are recorded.",
+    "Decoder rows are candidates, not proof that all bytes are instructions. Inline data can resemble valid code; all bodies need code/data review.",
+    "All gaps, byte mismatches and invalid/data decodes are retained. These findings never trigger new reads or automatic expansion.",
+    "Full source before/after hashes use 64 KiB chunks without interpreting bytes outside the approved ranges.",
+    "Static evidence does not establish source names, runtime compatibility, exception behavior or a complete damage contract."
+  ],
+  "script_sha256": "8b880d3e4d8e36be12804c907686b2b541070b1bf71be11f386b2de3a0e173b8",
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "pe": {
+    "image_base": "0x180000000",
+    "sections": [
+      {
+        "name": ".text",
+        "rva": 4096,
+        "raw_size": 6320640,
+        "raw_offset": 1024,
+        "characteristics": 1610612768
+      },
+      {
+        "name": ".rdata",
+        "rva": 6328320,
+        "raw_size": 4517888,
+        "raw_offset": 6321664,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".data",
+        "rva": 10846208,
+        "raw_size": 56832,
+        "raw_offset": 10839552,
+        "characteristics": 3221225536
+      },
+      {
+        "name": ".pdata",
+        "rva": 10919936,
+        "raw_size": 267776,
+        "raw_offset": 10896384,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".gfids",
+        "rva": 11190272,
+        "raw_size": 512,
+        "raw_offset": 11164160,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".tls",
+        "rva": 11194368,
+        "raw_size": 512,
+        "raw_offset": 11164672,
+        "characteristics": 3221225536
+      },
+      {
+        "name": "_RDATA",
+        "rva": 11198464,
+        "raw_size": 2560,
+        "raw_offset": 11165184,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".rsrc",
+        "rva": 11202560,
+        "raw_size": 512,
+        "raw_offset": 11167744,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".reloc",
+        "rva": 11206656,
+        "raw_size": 217600,
+        "raw_offset": 11168256,
+        "characteristics": 1107296320
+      }
+    ],
+    "pdata_rva": "0xa6a000",
+    "pdata_bytes": 267516
+  },
+  "selected_fragments": [
+    {
+      "id": "continuation-0cf700",
+      "rva": "0xcf6e0",
+      "caller_address": "0x180068b60",
+      "reference_kind": "direct-call",
+      "pdata": {
+        "status": "UnknownNoContainingPdata",
+        "bytes": null
+      },
+      "continuation_pdata": {
+        "status": "UnknownNoContainingPdata",
+        "bytes": null
+      },
+      "range": {
+        "status": "BoundedWindowNotFunction",
+        "begin_rva": "0xcf700",
+        "end_rva_exclusive": "0xcf760",
+        "bytes": 96,
+        "function_boundary_verified": false
+      },
+      "reference_ids": [
+        "continuation-0cf700"
+      ]
+    }
+  ],
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "constant_read": {
+    "rva": "0x7a8054",
+    "bytes": 4,
+    "source_address": "0x1800cf6e0",
+    "source_bytes": "f30f10056c896d00",
+    "expected_section": ".rdata",
+    "file_offset": 8021588,
+    "hex_bytes": "0000803f",
+    "uint32_le": "0x3f800000",
+    "sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c",
+    "interpreted_as_instructions": false
+  },
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-22T05:08:13.378Z"
+}

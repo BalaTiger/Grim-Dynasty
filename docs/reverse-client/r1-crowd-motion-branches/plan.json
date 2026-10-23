@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "purpose": "Eight fixed Engine motion dependencies,now required by the actual Character/Player interface flag producers. Preserve non80 and80,400 multipoint and4 avoidance contracts without choosing artificial flags or empty neighbors. Inspect only these body/assembly/direct-callee targets; do not expand returned callees or claim the loaded runtime movement chain is complete.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-crowd-movement-direct/08-CrowdMovementDirect-0x18025c440-procedure_assembly.json",
+      "sha256": "62da8b3465041af3522b3e36a72e4680485d0c9b2a832ab8b3207ce27bf5b8ae",
+      "addresses": [
+        "0x180030c60",
+        "0x18025ba90",
+        "0x18025be90",
+        "0x18025f250",
+        "0x18025c080",
+        "0x18025bcf0"
+      ],
+      "source_kind": "Saved25C440 direct instructions:25CA77 tests agent+44 bit80;25CB45 CALL030C60 on non80 branch;25CABD CALL25BA90 after group-query+8 success;25E185 CALL25BE90 after group-query+18.25CAC2 tests400,then25CAFA CALL25C080,25CB0B group-query+10,25CB19 CALL25BCF0 on success;25CC87 also CALL25C080 for next-point steering.25D2AE CALL25F250 is the selected avoidance dependency. These are direct address sources,not inferred complete algorithm contracts."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-movement-direct/09-CrowdMovementDirect-0x18025c440-procedure_callees.json",
+      "sha256": "5ea9c5537137b93d6d8637fa2874f6dba169a751aadebc162839a2d915973e24",
+      "addresses": [
+        "0x180030c60",
+        "0x18025ba90",
+        "0x18025be90",
+        "0x18025f250",
+        "0x18025c080",
+        "0x18025bcf0"
+      ],
+      "source_kind": "Saved25C440 direct-callee inventory explicitly contains all six selected direct functions. The two group-query virtual candidates have separate exact slot evidence. No recursive expansion."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-bindings/inspection.json",
+      "sha256": "cefbf931ba37144e6400be0d7a0c3c894f9a82828c19723d78be440a729334d3",
+      "addresses": [
+        "0x180030900",
+        "0x1800309f0"
+      ],
+      "source_kind": "ExactEngine33A6C8(slot+8)raw0009038001000000=>030900,consumer25CAAB;33A6D0(slot+10)rawf009038001000000=>0309F0,consumer25CB0B. Constructor02F800 publishes33A6C0,25A880 stores outer to manager+B8,25A250 passes that to group+8. These are group query slots,not agent+8 callbacks. Table extent,loaded values and candidate function boundaries remain unverified."
+    },
+    {
+      "file": "docs/reverse-client/r1-game-movement-interface/05-GameMovementInterface-0x180066c20-procedure_assembly.json",
+      "sha256": "1613fb9d39f0fdc7967e5fba6ab7a3cd0f0a6468d04e32cfe4565e8ae7a316fe",
+      "addresses": [],
+      "source_kind": "Context only,not an Engine address source: Character066C20 at066C9F writes dword[R9 output+34]=481 and conditionally ORs20 at066D3D. In the saved registration caller R9 points at agent+10,so the field is agent+44. It proves relevant producer flags conditionally on this callback completing,not final loaded object identity."
+    },
+    {
+      "file": "docs/reverse-client/r1-game-movement-interface/08-GameMovementInterface-0x1803e8200-procedure_assembly.json",
+      "sha256": "c7c4ed2917b5bd9b572c7ca6c5713e97c2f2718ccff1585f6c1085e7d57c1dc3",
+      "addresses": [],
+      "source_kind": "Context only: Player3E8200 saves R9 in RBX,calls Character066C20 at3E8209,then ORs dword[RBX+34] with80000044 at3E820E. Combined static normal return flags are800004C5 plus conditional20;80,400 and4 cannot be cleared to choose a simple branch. This does not prove all later runtime flag mutations."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 29,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Exactly eight fixed Engine targets and29calls including lifecycle. Scoped JSON filename inventory in docs/reverse-client and docs/object-lifecycle found no saved full-body filename for these eight targets; this was not a full-content or binary scan.",
+    "Use actual Character481 and Player OR80000044 static callback outputs as evidence for80/400/4 dependencies. Do not force flags,empty neighbors,preallocation or callback substitutes to report movement success; preserve conditional20 and unknown later runtime mutations.",
+    "Only saved25C440 direct targets plus concretely bound group-query slots. Group query+8/+10 must not be mislabeled as Player entity callbacks. No expansion into returned callees,CRT or unrelated systems.",
+    "Preserve Engine384M/base4.25GiB with additional strict5GiB physical-and-commit launch,2GiB stop,identity/mutex/freshness and exact diagnostic monitor/serializer/test/deployment pins. Older modes retain their original pins.",
+    "Require preceding actual Game interface20/20summary185bc461ac2ffef387a1d894582188cc18ff71d6523986b23d5325a0090df553 with complete normal session/process/job/sampler cleanup and stable Game hashes.",
+    "Originals read-only with hashes,no original execution,saves/cloud access,security changes,installation or automatic retry/recursive query.",
+    "Unknown body,ABI,state producer or newly discovered dependency remains explicit. Formal approval and fresh resource/ownership checks are still required for execution; this preparation runs only one offline verification."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180030c60"
+      },
+      "label": "04-CrowdMotionBranch-0x180030c60-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180030c60"
+      },
+      "label": "05-CrowdMotionBranch-0x180030c60-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180030c60"
+      },
+      "label": "06-CrowdMotionBranch-0x180030c60-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180030900"
+      },
+      "label": "07-CrowdMotionBranch-0x180030900-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180030900"
+      },
+      "label": "08-CrowdMotionBranch-0x180030900-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180030900"
+      },
+      "label": "09-CrowdMotionBranch-0x180030900-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18025ba90"
+      },
+      "label": "10-CrowdMotionBranch-0x18025ba90-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18025ba90"
+      },
+      "label": "11-CrowdMotionBranch-0x18025ba90-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18025ba90"
+      },
+      "label": "12-CrowdMotionBranch-0x18025ba90-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18025be90"
+      },
+      "label": "13-CrowdMotionBranch-0x18025be90-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18025be90"
+      },
+      "label": "14-CrowdMotionBranch-0x18025be90-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18025be90"
+      },
+      "label": "15-CrowdMotionBranch-0x18025be90-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1800309f0"
+      },
+      "label": "16-CrowdMotionBranch-0x1800309f0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1800309f0"
+      },
+      "label": "17-CrowdMotionBranch-0x1800309f0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1800309f0"
+      },
+      "label": "18-CrowdMotionBranch-0x1800309f0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18025f250"
+      },
+      "label": "19-CrowdMotionBranch-0x18025f250-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18025f250"
+      },
+      "label": "20-CrowdMotionBranch-0x18025f250-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18025f250"
+      },
+      "label": "21-CrowdMotionBranch-0x18025f250-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18025c080"
+      },
+      "label": "22-CrowdMotionBranch-0x18025c080-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18025c080"
+      },
+      "label": "23-CrowdMotionBranch-0x18025c080-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18025c080"
+      },
+      "label": "24-CrowdMotionBranch-0x18025c080-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18025bcf0"
+      },
+      "label": "25-CrowdMotionBranch-0x18025bcf0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18025bcf0"
+      },
+      "label": "26-CrowdMotionBranch-0x18025bcf0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18025bcf0"
+      },
+      "label": "27-CrowdMotionBranch-0x18025bcf0-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "28-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "29-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "What exact030C60 vector resize/write order and failure prefix occur on non80 paths? Preserve this branch without assuming it is the actual Player default.",
+    "What do bound group-query+8 target030900 and+10 target0309F0 consume,borrow and publish? Distinguish them from entity callbacks and preserve partial state.",
+    "How do25BA90 and25BE90 update path cursor/ref/ownership/status following real query outputs?",
+    "How do25C080 and25BCF0 provide and consume the multipoint data under the actual400 branch? Include25CC87 reuse and alias/write order; do not truncate to one point by assumption.",
+    "What is the direct25F250 avoidance contract,including actual flags4,neighbors,output writes,NaN/status and failure prefixes? New required callees remain an explicit next gap,not an automatic query.",
+    "Which of these contracts can attach to the shared real crowd state and which still depend on unproved producers? Do not claim observed loaded Player movement or a playable program from static evidence."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Eight fixed actual motion dependencies;384M/base4.25GiB plus strict5GiB launch,2GiB stop unchanged.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "previous_sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "serializer_file": "tools/static_analysis/rea_sampler_failure.ps1",
+    "serializer_sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_file": ".tooling/r1-owned-job-diagnostic-candidate/ReaOwnedJobDiagnosticCandidate.cs",
+    "candidate_sha256": "b52e6ba242277ab864a431433f43efe671bc6c37e73c1fd94d8b0977b7400544",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "serializer_validation_file": ".tooling/r1-owned-job-diagnostic-validation/serializer/result.json",
+    "serializer_validation_sha256": "eb5dc1cd79621686a5b646ba03897cec638674dd1d6894ec69cee1d5ceb04a60",
+    "runner_validation_file": ".tooling/r1-owned-job-diagnostic-validation/runner-result.json",
+    "runner_validation_sha256": "1ff5539479a0ba058bb7e3b4e6692293a07515e48d226c56f5b6667857c4bb29",
+    "deployment_file": ".tooling/r1-owned-job-diagnostic-deploy/deployment.json",
+    "deployment_sha256": "ef9be6d39c736f99fe4dd365b1ed08f6849f4280eacc698fdc9b4b75d4977dbf",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 49,
+    "scenario_groups": 10,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "serializer_assertions": 39,
+    "production_normalization": "Remove two candidate-only header lines and namespace suffix; serializer identical to tested candidate",
+    "limitations": "Diagnostic observation only. Native permissions,100ms shared wait budget,admission and fail-closed rules are unchanged. Isolated fault tests do not reproduce or establish the21:48 failure root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-game-movement-interface/summary.json",
+    "summary_sha256": "185bc461ac2ffef387a1d894582188cc18ff71d6523986b23d5325a0090df553",
+    "completed_plan_calls": 20,
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "scope": "Actual successful Game movement-interface20/20;all cleanup confirmed and Game before/after hashes stable. The separate earlier failed growth evidence remains unchanged."
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  },
+  "diagnostic_monitor_review": {
+    "status": "passed-and-pinned",
+    "diagnostics_only_intended": true,
+    "approved_source_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "production_monitor_must_not_be_changed_by_this_preparation": true,
+    "root_cause_proven": false,
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false
+  }
+}

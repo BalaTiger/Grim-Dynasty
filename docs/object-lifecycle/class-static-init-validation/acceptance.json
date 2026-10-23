@@ -1,0 +1,126 @@
+{
+  "utc": "2026-10-20T13:49:46.979Z",
+  "status": "static-item-questitem-writers-located-runtime-registry-not-implemented",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "overall_goal_completed": false,
+  "product_changed": false,
+  "tests_rerun": false,
+  "new_assertions": 0,
+  "new_scenario_groups": 0,
+  "prior_validation": {
+    "path": "docs/object-lifecycle/class-registration-retry1-validation/acceptance.json",
+    "assertions": 2282,
+    "scenario_groups": 83
+  },
+  "static_evidence": {
+    "code_bytes": 11241,
+    "instructions": 2599,
+    "dumpbin_calls": 234,
+    "metadata_bytes": 26683,
+    "original_fingerprint_passes": 36,
+    "fingerprint_chunk_bytes": 65536,
+    "table_slots": 440,
+    "distinct_direct_targets": 439,
+    "direct_table_targets_inspected": 224,
+    "original_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "excludes_from_semantic_counts": "Whole-file fingerprint bytes and uninstrumented dumpbin metadata I/O",
+    "reports": [
+      {
+        "path": "docs/object-lifecycle/offline-game-crt-entry-metadata/metadata.json",
+        "sha256": "ccc2b7859049df05a285bc37b49ca2cbeed61959b458c95e33191ab3834a01ac"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-game-crt-imports-metadata/metadata.json",
+        "sha256": "675999fee760e0a6b84e881818942b25950d1e4c563f2c6964fd13fa25c4ed2b"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-game-class-init-table/metadata.json",
+        "sha256": "e347eb6fa9647ca63cfa48fe0deb60320f0d8e3f6921e18269a6ee560a658c8b"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-game-class-init-data/metadata.json",
+        "sha256": "652dc44ea2bc1183cc797bd4b3419a87a6fa5ff3570e216df634273ac204549c"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-init-continuation-boundaries/metadata.json",
+        "sha256": "6ed3a901e0feb50107bf57741bda4d2fbb73e185bc386047847b81e403f091aa"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-crt-entry/inspection.json",
+        "sha256": "128d84bec2848305b845e7e3206121e685f9fe64b001138f195c0c98e7081e34"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-crt-dispatch/inspection.json",
+        "sha256": "0c62ba0c1b3bce951b89b26e77a6c2461c0581cec506508d9834e30a13a5738f"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-crt-reason/inspection.json",
+        "sha256": "08ded9b6ff52c160c3699f4c369f0c1420151772313f615f39bbff1818f557e7"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-crt-attach/inspection.json",
+        "sha256": "fa0c4a5b7a5d1a2ccb3ed3a35d4a2c98a1192d4fc79cafae9c63a28eaa71366c"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-crt-thunks/inspection.json",
+        "sha256": "7a776c85892b5583a068ff2fe9d96935825614f80d12a7706e2648b50488c4c1"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-table-batch-1/inspection.json",
+        "sha256": "73423183a7accb870c0ad83585b054a58f10a64fb113e7031a23e0bf58b7c11c"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-table-batch-2/inspection.json",
+        "sha256": "583e2dc27b9d7488aa930cbd8c39057b816cf125f16b3d1d3baf8a844c5feb1b"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-table-batch-3/inspection.json",
+        "sha256": "7fcc79e3767bc6951723f6f1d056b9a1eeec0f7ed38a7950b3ddc6255d2b951b"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-table-batch-4/inspection.json",
+        "sha256": "b792b1858bdeba01dbf1b76e2fd9ead2d8d2576b407dcc5d28203a03829b08fe"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-table-batch-5/inspection.json",
+        "sha256": "b57d2765888e34551460a301b26c8d282e1e460634163c7f4803c1bf7f97466f"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-table-batch-6/inspection.json",
+        "sha256": "6aa351777b666c5b4c9ef796d5b674080edbb7eac730aeaa1472c18ffc2a97e7"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-table-batch-7/inspection.json",
+        "sha256": "0074c19190c7ef08f13c6897153964ecb6b159d1ab1bb10b1355113cb5987871"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-writer-continuations/inspection.json",
+        "sha256": "5c5498246f2d2b4ed14cb5cb12c0e8238b167c4320c642007e8f7f302756ecbf"
+      }
+    ]
+  },
+  "blockers": [
+    {
+      "action": "Build the actual reachable runtime class registry and validate official Class dispatch",
+      "target": "Engine root class tree, successful initializer effects and dependencies",
+      "status": "evidence-and-implementation-gap",
+      "denied": false,
+      "pending_approval": false,
+      "uncertain_outcome": false,
+      "reason": "The two observed writer functions and static bindings do not establish every earlier initializer, imported allocation/helper outcomes, or the complete root-to-Item runtime graph. See the bounded next steps in CLASS-STATIC-INIT-RESULT.md."
+    }
+  ],
+  "result": "docs/object-lifecycle/CLASS-STATIC-INIT-RESULT.md",
+  "result_sha256": "02448c0a7afdc6a07dba1fdda99cb4092476205e8ac78f2905a1780f447d9353",
+  "restrictions": {
+    "original_game_or_dll_executed": false,
+    "rea_started": false,
+    "java_started": false,
+    "installations": false,
+    "permission_escalation": false,
+    "player_save_or_steam_cloud_access": false,
+    "commit_or_push": false,
+    "new_official_arz_reads": 0
+  },
+  "checkpoint": ".tooling/checkpoints/class-static-init-complete/manifest.json"
+}

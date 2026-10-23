@@ -1,0 +1,117 @@
+{
+  "schema": "grim-dynasty-binary-parser-acceptance-v1",
+  "utc": "2026-10-20T05:59:15.529Z",
+  "status": "bounded-fresh-tag2-parser-passed",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "assertions": {
+    "RegistrationIndex": 183,
+    "RegistrationGrowth": 141,
+    "LoadedObjectRegistration": 47,
+    "ObjectNameAssignment": 37,
+    "ObjectLifecycleCombined": 20,
+    "RecordLoadFile": 42,
+    "RecordTableGetter": 43,
+    "CreatePartialObject": 40,
+    "FinishPartialObject": 43,
+    "BinaryWarmGetter": 65,
+    "BinaryStaleGetter": 33,
+    "BinaryColdGetter": 50,
+    "BinaryPointerGrowth": 36,
+    "BinaryRecordParser": 69,
+    "ClassFactoryDispatch": 40,
+    "ItemCondition": 39,
+    "ItemAuto": 11,
+    "ObjectBaseConstructor": 40,
+    "ObjectId": 20,
+    "total": 999
+  },
+  "combined_scenarios": 16,
+  "new_assertions": 69,
+  "new_combined_scenarios": 2,
+  "existing_scenarios": [
+    "ItemQuestDemo"
+  ],
+  "module_assertions": 979,
+  "module_test_suites": 18,
+  "supplemental_objectid_assertions": 20,
+  "isolated_69_assertions_not_double_counted": true,
+  "own_build_directory": ".tooling/binary-parser-build",
+  "checked_arithmetic": true,
+  "initial_integrated_wrapper_status": "failed-after-all-module-tests-and-demo-passed",
+  "initial_wrapper_failure": "CS2001/CS2008: wrong supplemental source path src/task_items/ObjectIdTests.cs; no behavior test failure",
+  "corrective_action": "Corrected source to src/rewards/ObjectIdTests.cs and added TokenActions reference; only supplemental 20 assertions rerun, passed against fresh module",
+  "test_logs": [
+    "docs/object-lifecycle/parser-implementation-validation/isolated-test-output.txt",
+    "docs/object-lifecycle/parser-implementation-validation/integrated-test-output.txt",
+    "docs/object-lifecycle/parser-implementation-validation/objectid-test-output.txt"
+  ],
+  "source_hashes": {
+    "src/task_items/BinaryRecordParser.cs": "03698272541b54ca02595a11785bfc6b259e2a2b04567eae02a53ba756a8c2d0",
+    "src/task_items/BinaryRecordParserTests.cs": "a637d192782310a2bf5569389a7fce18dc5a2b39e9b77756d21100ccb6949ed4"
+  },
+  "baseline_files": 41,
+  "unchanged_baseline_files": 40,
+  "changed_baseline_files": [
+    "src/task_items/build_items.ps1"
+  ],
+  "scope": {
+    "fresh": true,
+    "tags": [
+      2
+    ],
+    "minimum_fields": 2,
+    "maximum_fields": 15,
+    "positive_element_counts": true,
+    "maximum_values": 65536,
+    "maximum_reader_bytes": 1048576,
+    "actual_two_pass_decode": true,
+    "duplicate_key_prepend": true,
+    "key_uint32_zero_extended": true,
+    "explicit_shared_archive_inputs": true,
+    "native_allocator_success_contract": true,
+    "native_error_equivalence_claimed": false
+  },
+  "helper_batches": [
+    {
+      "name": "rea-binary-parser-helpers",
+      "tool_calls": 11,
+      "completed_plan_calls": 11,
+      "summary": "docs/object-lifecycle/rea-binary-parser-helpers/summary.json",
+      "release": "docs/object-lifecycle/rea-binary-parser-helpers/resource-release.json",
+      "released_utc": "2026-10-20T05:42:40.5234732Z"
+    },
+    {
+      "name": "rea-binary-parser-vector-growth",
+      "tool_calls": 7,
+      "completed_plan_calls": 7,
+      "summary": "docs/object-lifecycle/rea-binary-parser-vector-growth/summary.json",
+      "release": "docs/object-lifecycle/rea-binary-parser-vector-growth/resource-release.json",
+      "released_utc": "2026-10-20T05:47:32.1182412Z"
+    }
+  ],
+  "helper_calls": 18,
+  "new_rea_calls_after_resource_window_release": 0,
+  "original": {
+    "utc": "2026-10-20T05:56:51.9211576Z",
+    "original_path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "original_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "original_sha256_unchanged": true,
+    "active_java_decompile": [],
+    "remaining_runtime_files": 0,
+    "original_executed": false,
+    "save_or_cloud_accessed": false,
+    "persistent_permission_changes": false
+  },
+  "remaining_boundaries": [
+    "Complete LoadFile miss and archive/name population",
+    "Native base constructor 13C1D0",
+    "Tag0/1/3, zero counts, field counts outside 2..15, repeat Deserialize",
+    "Native allocator/OOM/EH/concurrency ABI",
+    "ClassInfo population, concrete constructors/Read, full item factory/native registration"
+  ],
+  "no_commit_or_push": true,
+  "persistent_permission_changes": false,
+  "old_host_894_16_claimed": false,
+  "checkpoint": ".tooling/checkpoints/binary-parser-complete/manifest.json",
+  "evidence_manifest": "docs/object-lifecycle/parser-implementation-validation/evidence-sources.json"
+}

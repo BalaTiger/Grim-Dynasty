@@ -1,0 +1,91 @@
+{
+  "status": "resolved-fixed-normal-import",
+  "utc": "2026-10-20T07:28:10.662Z",
+  "target": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll",
+  "output": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\docs\\object-lifecycle\\offline-cache-node-inspection\\move-import-binding.json",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "hash_chunk_bytes": 65536,
+  "file_bytes": 4485632,
+  "image_base": "0x180000000",
+  "iat_va": "0x180302728",
+  "iat_rva": "0x302728",
+  "source_call_va": "0x180022881",
+  "source_evidence": [
+    "docs/object-lifecycle/offline-cache-node-inspection/022860-instructions.json",
+    "docs/object-lifecycle/record-load-discovery/memcmp-import.json",
+    "docs/object-lifecycle/name-interface-discovery/name-copy-thunk-0x1802ddb0e.json"
+  ],
+  "normal_import": {
+    "dll": "VCRUNTIME140.dll",
+    "name": "memmove",
+    "hint": 61,
+    "descriptor_index": 13,
+    "first_thunk_rva": "0x3026f8",
+    "original_first_thunk_rva": "0x415eb0",
+    "thunk_index": 6,
+    "lookup_value": "0x417c86"
+  },
+  "raw_metadata": {
+    "descriptor": {
+      "rva": "0x41569c",
+      "file_offset": "0x41469c",
+      "bytes": "b05e41000000000000000000947d4100f8263000"
+    },
+    "lookup_prefix_through_target": {
+      "rva": "0x415eb0",
+      "file_offset": "0x414eb0",
+      "bytes": "387d410000000000747d4100000000005e7d4100000000008687410000000000207d410000000000747c410000000000867c410000000000"
+    },
+    "target_lookup": {
+      "rva": "0x415ee0",
+      "file_offset": "0x414ee0",
+      "bytes": "867c410000000000"
+    },
+    "iat": {
+      "rva": "0x302728",
+      "file_offset": "0x301728",
+      "bytes": "867c410000000000"
+    },
+    "hint": {
+      "rva": "0x417c86",
+      "file_offset": "0x416c86",
+      "bytes": "3d00"
+    },
+    "symbol_name_with_nul": {
+      "rva": "0x417c88",
+      "file_offset": "0x416c88",
+      "bytes": "6d656d6d6f766500",
+      "text": "memmove"
+    },
+    "dll_name_with_nul": {
+      "rva": "0x417d94",
+      "file_offset": "0x416d94",
+      "bytes": "564352554e54494d453134302e646c6c00",
+      "text": "VCRUNTIME140.dll"
+    }
+  },
+  "metadata_bytes_read": 947,
+  "headers": {
+    "pe_file_offset": "0x120",
+    "optional_header_file_offset": "0x138",
+    "optional_header_size": 240,
+    "section_table_file_offset": "0x228",
+    "section_count": 9,
+    "import_directory_rva": "0x415598",
+    "import_directory_size": 540
+  },
+  "target_loaded_or_executed": false,
+  "instruction_bytes_interpreted": 0,
+  "backend_launches": 0,
+  "subprocesses": 0,
+  "installations": false,
+  "permission_escalation": false,
+  "limitations": [
+    "Only the previously copied and fingerprinted Engine file is read; full-file passes are 64 KiB streaming hashes.",
+    "Interpretation is limited to required PE headers, descriptor continuity, one lookup prefix and one IAT/name binding.",
+    "No complete import-name list, new instruction body, runtime resolution, delay import or forwarder is inspected.",
+    "The imported symbol establishes static identity; successful copy semantics remain an explicit external contract."
+  ]
+}

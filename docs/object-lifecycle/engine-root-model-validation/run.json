@@ -1,0 +1,168 @@
+{
+  "date_utc": "2026-10-21",
+  "status": "completed",
+  "formal_execution": {
+    "command": "& 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -NoProfile -NonInteractive -File 'C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\src\\task_items\\build_engine_root_registration.ps1'",
+    "mechanism": "require_escalated",
+    "result": {
+      "chunk_id": "aa9628",
+      "wall_time_seconds": 0.673904352,
+      "exit_code": 0,
+      "original_token_count": 11,
+      "output": "PASS: 221 assertions, 11 scenario groups\r\n"
+    }
+  },
+  "preflight": "docs/object-lifecycle/engine-root-model-validation/preflight.json",
+  "reviewed_input_hashes_unchanged": true,
+  "builds": 1,
+  "own_test_executions": 1,
+  "assertions": 221,
+  "scenario_groups": 11,
+  "scenario_breakdown": [
+    {
+      "name": "WriterIdentitiesAndNullParents",
+      "assertions": 27
+    },
+    {
+      "name": "StringResultsAndParentSelection",
+      "assertions": 7
+    },
+    {
+      "name": "CopyPublicationRepeatAndExplicitChain",
+      "assertions": 15
+    },
+    {
+      "name": "AllocationArithmeticGoldens",
+      "assertions": 7
+    },
+    {
+      "name": "AllocationRetryContracts",
+      "assertions": 16
+    },
+    {
+      "name": "AllocationMutationAndPartialCopy",
+      "assertions": 10
+    },
+    {
+      "name": "ThrowWrappersAndUnexpectedReturn",
+      "assertions": 25
+    },
+    {
+      "name": "NonlocalPrefixesAndFreeEffects",
+      "assertions": 15
+    },
+    {
+      "name": "ExitArithmeticParametersAndReturnWidth",
+      "assertions": 54
+    },
+    {
+      "name": "ExplicitUnknownFaultAndResourceOutcomes",
+      "assertions": 14
+    },
+    {
+      "name": "BudgetPublicationPrefixes",
+      "assertions": 31
+    }
+  ],
+  "breakdown_provenance": "Independent manual expansion of new test Need calls; total 221 / 11 also confirmed by actual executable output.",
+  "postbuild_inventory": {
+    "captured_utc": "2026-10-21T02:08:42.7405096Z",
+    "files": [
+      {
+        "path": "src/task_items/EngineRootRegistration.cs",
+        "bytes": 17586,
+        "sha256": "408e28c7d6fbb0fee2f4a74909b1209700e01f02d10837cb265a168a6a331caf"
+      },
+      {
+        "path": "src/task_items/EngineRootRegistrationTests.cs",
+        "bytes": 43323,
+        "sha256": "045330dc7740b3ebe83f88c92e5bb5dd3854ae2c2ae49ff01603fdb8ad658239"
+      },
+      {
+        "path": "src/task_items/build_engine_root_registration.ps1",
+        "bytes": 4346,
+        "sha256": "c38ad69e72d9b41674c5e58c2e0fe50264801243f26e94b562164155a69e4151"
+      },
+      {
+        "path": ".tooling/engine-root-model-build-20261021/GrimDynasty.EngineRootRegistration.dll",
+        "bytes": 18432,
+        "sha256": "8c9e3c43f156bd28b344c4d26251f12bd212a697256292c621ce1d7aca8064b5"
+      },
+      {
+        "path": ".tooling/engine-root-model-build-20261021/EngineRootRegistrationTests.exe",
+        "bytes": 43520,
+        "sha256": "56caf3f1d08e520a8a44fdbadd89ab385f7d6fae64d05c79ed7097c67b72e2ec"
+      },
+      {
+        "path": "src/task_items/ClassRegistrationInitialization.cs",
+        "bytes": 9525,
+        "sha256": "306f9e640877d09ac845fc0799cdac7ab805399ead0cc6c1ac6b99e37873b49f"
+      },
+      {
+        "path": "src/task_items/ClassRegistrationInitializationTests.cs",
+        "bytes": 22236,
+        "sha256": "b154e00aa7b895c3986d6423329924e61584983fcf58cf1ead5749356f84ed84"
+      },
+      {
+        "path": "src/task_items/build_class_registration.ps1",
+        "bytes": 1166,
+        "sha256": "a866d77d7ba3a3a1c193815135f0d3d90fa8547d985c541c3bb08f78d9982dc5"
+      },
+      {
+        "path": "docs/object-lifecycle/ENGINE-ROOT-MODEL-DESIGN-PENDING.md",
+        "bytes": 17365,
+        "sha256": "1b90976c3fa748c4e796f2c1a7f85454388d2593dfd5eee9e1edc90bdc45f00e"
+      }
+    ],
+    "output_files": [
+      {
+        "Name": "EngineRootRegistrationTests.exe",
+        "Length": 43520
+      },
+      {
+        "Name": "GrimDynasty.EngineRootRegistration.dll",
+        "Length": 18432
+      }
+    ],
+    "git_head": "6dfdae419d1c92f7738eefe241937057d83134df"
+  },
+  "preservation": {
+    "prior_product_hashes_unchanged": true,
+    "design_document_unchanged": true,
+    "user_existing_changes": "Preserved; no existing product source/build script was edited by this phase.",
+    "git_commit_created": false,
+    "pushed": false
+  },
+  "validation_scope": {
+    "new_own_fixture_only": true,
+    "old_suites_rerun": false,
+    "full_task_items_build": false,
+    "whole_project_build": false,
+    "game_or_dll_execution": false,
+    "rea_or_java": false,
+    "save_or_cloud_access": false,
+    "security_setting_changes": false,
+    "original_semantic_bytes_read": 0,
+    "original_hash": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "original_hash_provenance": "Pinned in prior static evidence; original binary was not reopened or rehashed in this implementation phase."
+  },
+  "limitations": [
+    "Completed means local modeled flow completed; ReturnValue=-1 remains an exit-registration failure.",
+    "Semantic events, own alias/span guards and resource limits are not recovered native instructions or fault handling.",
+    "Explicit dependencies and input graph are own fixture state. No runtime root scheduler, automatic complete registry, native allocation/EH or loaded CRT behavior is established.",
+    "No cross-module Item/QuestItem integration, factory dispatch/object-load chain or formal native sample compatibility is validated by this standalone module.",
+    "Original save compatibility remains outside scope."
+  ],
+  "next_minimal_evidence_gap": {
+    "target": "The three already-known Engine input string addresses",
+    "rvas": [
+      "309E64",
+      "309AC4",
+      "309AEC"
+    ],
+    "proposed_read_limit": "At most 64 bytes per address, stop at first NUL; retain unknown if truncated or encoding unresolved",
+    "action_taken": false,
+    "scope_limit": "No callback traversal, sibling scan or whole-engine scan included in this proposal"
+  },
+  "pending_or_uncertain_execution": []
+}

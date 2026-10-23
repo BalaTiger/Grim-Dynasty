@@ -1,0 +1,767 @@
+{
+    "status":  "passed",
+    "started_utc":  "2026-10-20T05:32:33.9892697Z",
+    "finished_utc":  "2026-10-20T05:32:42.7590992Z",
+    "powershell_version":  "5.1.26100.9711",
+    "pointer_bytes":  8,
+    "assertions":  115,
+    "records":  [
+                    {
+                        "check":  "Exact fixture hello: control",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.2699911Z"
+                    },
+                    {
+                        "check":  "Exact fixture argv/nonce: control",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.4471538Z"
+                    },
+                    {
+                        "check":  "Fixture direct controller: control",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.4511437Z"
+                    },
+                    {
+                        "check":  "Exact fixture hello: root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.4928822Z"
+                    },
+                    {
+                        "check":  "Exact fixture argv/nonce: root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6026488Z"
+                    },
+                    {
+                        "check":  "Fixture direct controller: root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6026488Z"
+                    },
+                    {
+                        "check":  "Creation mismatch refuses assignment",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6156394Z"
+                    },
+                    {
+                        "expected_error":  "Creation mismatch refuses assignment",
+                        "message":  "使用“3”个参数调用“.ctor”时发生异常:“Root creation identity differs by more than one microsecond.”"
+                    },
+                    {
+                        "check":  "Rejected candidate remains gated/alive",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6166407Z"
+                    },
+                    {
+                        "check":  "Executable mismatch refuses assignment",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6196405Z"
+                    },
+                    {
+                        "expected_error":  "Executable mismatch refuses assignment",
+                        "message":  "使用“3”个参数调用“.ctor”时发生异常:“Root executable identity differs.”"
+                    },
+                    {
+                        "check":  "Job readback has only kill-on-close",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6237780Z"
+                    },
+                    {
+                        "check":  "Root belongs to the specific Job",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6252882Z"
+                    },
+                    {
+                        "check":  "Fixture supervisor stays outside the Job",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6252882Z"
+                    },
+                    {
+                        "check":  "Assigned gated fixture Job initially contains only its root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6290477Z"
+                    },
+                    {
+                        "check":  "Invalid PID probe fails explicitly",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6313727Z"
+                    },
+                    {
+                        "check":  "Invalid PID native cause is retained as Win32 error 87",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6323710Z"
+                    },
+                    {
+                        "probe_exception_shape":  true,
+                        "typed_win32_catch_selected":  true,
+                        "outer_type":  "System.ComponentModel.Win32Exception",
+                        "outer_native_error":  87,
+                        "actual_native_type":  "System.ComponentModel.Win32Exception",
+                        "actual_native_error":  87
+                    },
+                    {
+                        "check":  "Same Node executable and fixture directory do not confer membership",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6335848Z"
+                    },
+                    {
+                        "check":  "Short-lived intermediate parent exited normally",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6859386Z"
+                    },
+                    {
+                        "check":  "Surviving child remains live in Job after intermediate parent exit",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6869356Z"
+                    },
+                    {
+                        "membership_diagnostic":  true,
+                        "expected_leaf_pid":  36176,
+                        "expected_leaf_type":  "System.Diagnostics.Process",
+                        "direct_probe":  {
+                                             "ProcessId":  36176,
+                                             "CreationUtc":  "\/Date(1792474354676)\/",
+                                             "CreationTicks":  639280711546769043,
+                                             "InJob":  true,
+                                             "HasExited":  false,
+                                             "ExecutablePath":  "D:\\NodeJS\\node.exe",
+                                             "ExecutablePathErrorCode":  null,
+                                             "ExecutablePathDiagnostic":  null
+                                         },
+                        "post_query_probe":  {
+                                                 "ProcessId":  36176,
+                                                 "CreationUtc":  "\/Date(1792474354676)\/",
+                                                 "CreationTicks":  639280711546769043,
+                                                 "InJob":  true,
+                                                 "HasExited":  false,
+                                                 "ExecutablePath":  "D:\\NodeJS\\node.exe",
+                                                 "ExecutablePathErrorCode":  null,
+                                                 "ExecutablePathDiagnostic":  null
+                                             },
+                        "native_process_ids":  [
+                                                   36176,
+                                                   42136
+                                               ],
+                        "native_assigned_count":  2,
+                        "active_processes":  2,
+                        "members":  [
+                                        {
+                                            "ProcessId":  36176,
+                                            "CreationUtc":  "\/Date(1792474354676)\/",
+                                            "CreationTicks":  639280711546769043,
+                                            "InJob":  true,
+                                            "HasExited":  false,
+                                            "ExecutablePath":  "D:\\NodeJS\\node.exe",
+                                            "ExecutablePathErrorCode":  null,
+                                            "ExecutablePathDiagnostic":  null
+                                        },
+                                        {
+                                            "ProcessId":  42136,
+                                            "CreationUtc":  "\/Date(1792474354453)\/",
+                                            "CreationTicks":  639280711544530861,
+                                            "InJob":  true,
+                                            "HasExited":  false,
+                                            "ExecutablePath":  "D:\\NodeJS\\node.exe",
+                                            "ExecutablePathErrorCode":  null,
+                                            "ExecutablePathDiagnostic":  null
+                                        }
+                                    ],
+                        "gone_process_ids":  [
+
+                                             ],
+                        "nonmember_process_ids":  [
+
+                                                  ],
+                        "matching_members_count":  1
+                    },
+                    {
+                        "check":  "Child remains live in Job after member enumeration",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6948611Z"
+                    },
+                    {
+                        "check":  "Job enumeration proves child without live parent-chain reconstruction",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.6948611Z"
+                    },
+                    {
+                        "check":  "Live members prevent a successful cleanup report",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.7013146Z"
+                    },
+                    {
+                        "expected_error":  "Live members prevent a successful cleanup report",
+                        "message":  "Owned Job is not empty; cleanup remains unconfirmed."
+                    },
+                    {
+                        "check":  "Root may exit while child survives",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.7053092Z"
+                    },
+                    {
+                        "check":  "Retained exited root probe preserves the exact creation identity",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.7078830Z"
+                    },
+                    {
+                        "check":  "Exited root image is either the expected executable or an explicit exited-process read failure",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.7115597Z"
+                    },
+                    {
+                        "exited_root_diagnostic":  {
+                                                       "ProcessId":  42136,
+                                                       "CreationUtc":  "\/Date(1792474354453)\/",
+                                                       "CreationTicks":  639280711544530861,
+                                                       "InJob":  true,
+                                                       "HasExited":  true,
+                                                       "ExecutablePath":  null,
+                                                       "ExecutablePathErrorCode":  31,
+                                                       "ExecutablePathDiagnostic":  "Image query failed; the same process handle subsequently confirmed exit."
+                                                   },
+                        "image_unavailable_branch_observed":  true,
+                        "note":  "A retained handle pins this already-exited fixture process. A successful image query does not exercise the image-unavailable branch."
+                    },
+                    {
+                        "check":  "Root exit does not prove Job empty",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.7115597Z"
+                    },
+                    {
+                        "check":  "TerminateJob clears surviving child after root exit",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.7160214Z"
+                    },
+                    {
+                        "check":  "TerminateJob preserves unrelated same-directory Node",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.7170189Z"
+                    },
+                    {
+                        "check":  "Disposed Job query fails instead of claiming empty",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.7190324Z"
+                    },
+                    {
+                        "expected_error":  "Disposed Job query fails instead of claiming empty",
+                        "message":  "使用“0”个参数调用“QueryMembers”时发生异常:“无法访问已释放的对象。\r\n对象名:“ReaOwnedJob”。”"
+                    },
+                    {
+                        "check":  "Disposed Job termination fails explicitly",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.7200340Z"
+                    },
+                    {
+                        "expected_error":  "Disposed Job termination fails explicitly",
+                        "message":  "使用“1”个参数调用“Terminate”时发生异常:“无法访问已释放的对象。\r\n对象名:“ReaOwnedJob”。”"
+                    },
+                    {
+                        "check":  "Exact fixture hello: root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.7580480Z"
+                    },
+                    {
+                        "check":  "Exact fixture argv/nonce: root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.8644451Z"
+                    },
+                    {
+                        "check":  "Fixture direct controller: root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.8644451Z"
+                    },
+                    {
+                        "check":  "Job readback has only kill-on-close",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.8656167Z"
+                    },
+                    {
+                        "check":  "Root belongs to the specific Job",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.8656167Z"
+                    },
+                    {
+                        "check":  "Fixture supervisor stays outside the Job",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.8656167Z"
+                    },
+                    {
+                        "check":  "Assigned gated fixture Job initially contains only its root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.8656167Z"
+                    },
+                    {
+                        "check":  "Short-lived intermediate parent exited normally",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.9143930Z"
+                    },
+                    {
+                        "check":  "Last Job handle close terminates root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.9168988Z"
+                    },
+                    {
+                        "check":  "Last Job handle close terminates child",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.9179033Z"
+                    },
+                    {
+                        "check":  "Job close preserves unrelated Node",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.9179033Z"
+                    },
+                    {
+                        "check":  "Exact fixture hello: root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:34.9543661Z"
+                    },
+                    {
+                        "check":  "Exact fixture argv/nonce: root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.0553691Z"
+                    },
+                    {
+                        "check":  "Fixture direct controller: root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.0553691Z"
+                    },
+                    {
+                        "check":  "Job readback has only kill-on-close",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.0568704Z"
+                    },
+                    {
+                        "check":  "Root belongs to the specific Job",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.0568704Z"
+                    },
+                    {
+                        "check":  "Fixture supervisor stays outside the Job",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.0568704Z"
+                    },
+                    {
+                        "check":  "Assigned gated fixture Job initially contains only its root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.0568704Z"
+                    },
+                    {
+                        "check":  "Short-lived intermediate parent exited normally",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.1068971Z"
+                    },
+                    {
+                        "check":  "Exception path still closes only the owned Job",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.1079063Z"
+                    },
+                    {
+                        "expected_error":  "Exception path still closes only the owned Job",
+                        "message":  "Deliberate fixture failure before normal shutdown"
+                    },
+                    {
+                        "check":  "Exception cleanup terminates assigned root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.1296321Z"
+                    },
+                    {
+                        "check":  "Exception cleanup terminates assigned descendant",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.1296321Z"
+                    },
+                    {
+                        "check":  "Exception cleanup leaves unrelated process running",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.1296321Z"
+                    },
+                    {
+                        "check":  "Exact fixture hello: control",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.1667687Z"
+                    },
+                    {
+                        "check":  "Exact fixture argv/nonce: control",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.2512231Z"
+                    },
+                    {
+                        "check":  "Fixture direct controller: control",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.2512231Z"
+                    },
+                    {
+                        "check":  "Exact fixture hello: root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.2887730Z"
+                    },
+                    {
+                        "check":  "Exact fixture argv/nonce: root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.3943172Z"
+                    },
+                    {
+                        "check":  "Fixture direct controller: root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.3943172Z"
+                    },
+                    {
+                        "check":  "Job readback has only kill-on-close",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.3953159Z"
+                    },
+                    {
+                        "check":  "Root belongs to the specific Job",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.3953159Z"
+                    },
+                    {
+                        "check":  "Fixture supervisor stays outside the Job",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.3953159Z"
+                    },
+                    {
+                        "check":  "Assigned gated fixture Job initially contains only its root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.3953159Z"
+                    },
+                    {
+                        "check":  "Short-lived intermediate parent exited normally",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.4446415Z"
+                    },
+                    {
+                        "check":  "Controller creation mismatch refuses watcher",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.4485182Z"
+                    },
+                    {
+                        "expected_error":  "Controller creation mismatch refuses watcher",
+                        "message":  "使用“2”个参数调用“WatchController”时发生异常:“Controller creation identity differs by more than one microsecond.”"
+                    },
+                    {
+                        "check":  "Controller watcher rejects its owned root",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.4658338Z"
+                    },
+                    {
+                        "expected_error":  "Controller watcher rejects its owned root",
+                        "message":  "使用“2”个参数调用“WatchController”时发生异常:“Controller must be separate from the wrapper and sampler.\r\n参数名: processId”"
+                    },
+                    {
+                        "check":  "Watched controller remains outside owned Job",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.4658338Z"
+                    },
+                    {
+                        "check":  "Only the self-created simulated controller was stopped",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.4708499Z"
+                    },
+                    {
+                        "check":  "Native controller watcher terminates root without a CIM sample",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.4741532Z"
+                    },
+                    {
+                        "check":  "Native controller watcher terminates remaining descendants",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.4741532Z"
+                    },
+                    {
+                        "check":  "Controller exit and successful Job termination are reported",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.4751922Z"
+                    },
+                    {
+                        "check":  "Controller-death cleanup preserves unrelated Node",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.4751922Z"
+                    },
+                    {
+                        "check":  "Nested fixture remains gated before outer assignment",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.7308988Z"
+                    },
+                    {
+                        "check":  "Nested fixture outer Job excludes supervisor",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.7308988Z"
+                    },
+                    {
+                        "check":  "Job-list launched child proves inner Job membership",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.8811349Z"
+                    },
+                    {
+                        "check":  "Atomic inner Job-list launch retains inherited outer Job",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.8811349Z"
+                    },
+                    {
+                        "check":  "Outer Job enumeration includes nested child",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.8822426Z"
+                    },
+                    {
+                        "check":  "Outer Job close terminates nested worker",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.9135290Z"
+                    },
+                    {
+                        "check":  "Outer Job close terminates inner Job child",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.9135290Z"
+                    },
+                    {
+                        "check":  "Nested cleanup preserves unrelated Node",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:35.9135290Z"
+                    },
+                    {
+                        "check":  "Empty stdin does not block membership sampling: valid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:36.4200771Z"
+                    },
+                    {
+                        "check":  "Control fixture completes without hidden timeout: valid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:36.4835314Z"
+                    },
+                    {
+                        "check":  "Control Dispose does not join its blocked stdin reader: valid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:36.4848584Z"
+                    },
+                    {
+                        "check":  "Exact stop command terminates assigned child with success state",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:36.4868516Z"
+                    },
+                    {
+                        "check":  "Control worker exits normally: valid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:36.5207317Z"
+                    },
+                    {
+                        "check":  "Control worker reports successful assertions: valid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:36.5207317Z"
+                    },
+                    {
+                        "check":  "Control worker final cleanup leaves no fixture child: valid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:36.5217347Z"
+                    },
+                    {
+                        "check":  "Control cleanup preserves unrelated Node: valid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:36.5217347Z"
+                    },
+                    {
+                        "control_mode":  "valid",
+                        "result":  {
+                                       "event":  "control-result",
+                                       "pid":  48716,
+                                       "rootPid":  34992,
+                                       "stopRequested":  true,
+                                       "failure":  null,
+                                       "childExited":  true,
+                                       "disposeElapsedMs":  1.2653,
+                                       "timedOut":  false
+                                   }
+                    },
+                    {
+                        "check":  "Empty stdin does not block membership sampling: eof",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.0303209Z"
+                    },
+                    {
+                        "check":  "Control fixture completes without hidden timeout: eof",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.1049624Z"
+                    },
+                    {
+                        "check":  "Control Dispose does not join its blocked stdin reader: eof",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.1049624Z"
+                    },
+                    {
+                        "check":  "Control input fails closed: eof",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.1049624Z"
+                    },
+                    {
+                        "check":  "Control worker exits normally: eof",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.1201207Z"
+                    },
+                    {
+                        "check":  "Control worker reports successful assertions: eof",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.1201207Z"
+                    },
+                    {
+                        "check":  "Control worker final cleanup leaves no fixture child: eof",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.1201207Z"
+                    },
+                    {
+                        "check":  "Control cleanup preserves unrelated Node: eof",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.1201207Z"
+                    },
+                    {
+                        "control_mode":  "eof",
+                        "result":  {
+                                       "event":  "control-result",
+                                       "pid":  24056,
+                                       "rootPid":  33056,
+                                       "stopRequested":  false,
+                                       "failure":  "Controller control pipe closed.",
+                                       "childExited":  true,
+                                       "disposeElapsedMs":  1.1899,
+                                       "timedOut":  false
+                                   }
+                    },
+                    {
+                        "check":  "Empty stdin does not block membership sampling: invalid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.6406968Z"
+                    },
+                    {
+                        "check":  "Control fixture completes without hidden timeout: invalid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.6485872Z"
+                    },
+                    {
+                        "check":  "Control Dispose does not join its blocked stdin reader: invalid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.6485872Z"
+                    },
+                    {
+                        "check":  "Control input fails closed: invalid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.6485872Z"
+                    },
+                    {
+                        "check":  "Control worker exits normally: invalid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.6635348Z"
+                    },
+                    {
+                        "check":  "Control worker reports successful assertions: invalid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.6635348Z"
+                    },
+                    {
+                        "check":  "Control worker final cleanup leaves no fixture child: invalid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.6645316Z"
+                    },
+                    {
+                        "check":  "Control cleanup preserves unrelated Node: invalid",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:37.6645316Z"
+                    },
+                    {
+                        "control_mode":  "invalid",
+                        "result":  {
+                                       "event":  "control-result",
+                                       "pid":  28872,
+                                       "rootPid":  35372,
+                                       "stopRequested":  false,
+                                       "failure":  "Invalid control command or run identity.",
+                                       "childExited":  true,
+                                       "disposeElapsedMs":  1.4378,
+                                       "timedOut":  false
+                                   }
+                    },
+                    {
+                        "check":  "Empty stdin does not block membership sampling: dispose",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:38.1706438Z"
+                    },
+                    {
+                        "check":  "Control fixture completes without hidden timeout: dispose",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:42.1850926Z"
+                    },
+                    {
+                        "check":  "Control Dispose does not join its blocked stdin reader: dispose",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:42.1850926Z"
+                    },
+                    {
+                        "check":  "Disposing an idle control reader neither blocks nor silently kills Job",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:42.1850926Z"
+                    },
+                    {
+                        "check":  "Control worker exits normally: dispose",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:42.2214302Z"
+                    },
+                    {
+                        "check":  "Control worker reports successful assertions: dispose",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:42.2214302Z"
+                    },
+                    {
+                        "check":  "Control worker final cleanup leaves no fixture child: dispose",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:42.2214302Z"
+                    },
+                    {
+                        "check":  "Control cleanup preserves unrelated Node: dispose",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:42.2214302Z"
+                    },
+                    {
+                        "control_mode":  "dispose",
+                        "result":  {
+                                       "event":  "control-result",
+                                       "pid":  46364,
+                                       "rootPid":  47008,
+                                       "stopRequested":  false,
+                                       "failure":  null,
+                                       "childExited":  false,
+                                       "disposeElapsedMs":  1.9932,
+                                       "timedOut":  false
+                                   }
+                    },
+                    {
+                        "check":  "Empty stdin does not block membership sampling: owner-crash",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:42.7230159Z"
+                    },
+                    {
+                        "check":  "Self-created Job owner process was forcibly stopped",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:42.7513498Z"
+                    },
+                    {
+                        "check":  "Kernel handle cleanup kills member when its Job owner crashes",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:42.7513498Z"
+                    },
+                    {
+                        "check":  "Job owner crash does not terminate unrelated Node",
+                        "passed":  true,
+                        "utc":  "2026-10-20T05:32:42.7513498Z"
+                    }
+                ],
+    "error":  null,
+    "scope":  "Only project-owned Node/PowerShell/.NET fixtures. No Rea, Java, game binary or game data accessed.",
+    "limitations":  [
+                        "Tests observe real Windows Job behavior on this host; they do not prove every future host Job hierarchy is compatible.",
+                        "Pre-assignment conhost processes are not asserted to belong to the new Job.",
+                        "Production IPC gating and Java role classification are separately tested by the controller suites.",
+                        "No real PID reuse or forced Win32 API failure is manufactured; mismatch/disposed/nonempty error branches are exercised."
+                    ],
+    "source_sha256":  {
+                          "node_fixture":  "6e77f10d6d08c5b155ca5136449468b467462871618431be047aeea44fbf113c",
+                          "test_owned_job":  "375095e8eb23913d366ab26d113487bb038ecba7e46b1376073ecb58227561a8",
+                          "ReaOwnedJob":  "aaa8b1a58c16587457b2b3d015d0209ff9546a11d2c3350fb37b5648a77fee12",
+                          "nested_worker":  "34cab71bc16953b2aab600372ce68b787df6f01c789e5b7f36d1ea0cbc4fb806",
+                          "nested_native":  "d7474802c81405355383b421ce8cb33962c46521e62444a0611633a49aa51eaf",
+                          "control_worker":  "42e467a1f621a1500f1e96c8d804d98d6c668fe8571c25cc980c70c26cec5013"
+                      }
+}

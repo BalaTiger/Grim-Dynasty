@@ -1,0 +1,189 @@
+{
+  "schema": "grim-dynasty-r1-prestart-idle-static-v1",
+  "status": "fixed-windows-decoded-manual-review-required",
+  "started_utc": "2026-10-22T09:08:20.791Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "expected_file_bytes": 11385856,
+  "sources": [
+    {
+      "file": "docs/reverse-client/r1-mouse-link-metadata/prestart-slots.json",
+      "sha256": "2b8efe9713299be4654b26c9010e76c4d719c4271db6ee7f21c5137eaae68822"
+    },
+    {
+      "file": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "file": "docs/reverse-client/r1-idle-entry-metadata/inspection.json",
+      "sha256": "35a9bb7ef7d246ef289e38eded95559558a70a0f98a8490fcf9033d9443391ef"
+    }
+  ],
+  "limits": {
+    "code_bytes": 159,
+    "semantic_reads": 2,
+    "metadata_bytes": 0,
+    "data_bytes": 0,
+    "hash_buffer_bytes": 65536,
+    "proof_bytes_each": 65536,
+    "tiny_pe_bytes_each": 2560,
+    "tiny_pe_bytes_total": 3584,
+    "dumpbin_calls": 2,
+    "timeout_ms": 10000,
+    "output_bytes": 196608,
+    "report_bytes": 65536
+  },
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "windows": [
+    {
+      "id": "01a700",
+      "begin_va": "0x18001a700",
+      "end_va_exclusive": "0x18001a710",
+      "length": 16,
+      "file_offset": 105216,
+      "kind": "explicit-entry-window-no-exact-pdata",
+      "exact_pdata_fragment": false,
+      "code_sha256": "9aa0858555b2f0dcfb2e62c18e238df28fbaf81f25346fcc428385196cd18139",
+      "synthetic_pe": {
+        "file": ".tooling/r1-prestart-idle-static-temp/01a700.inspect.dll",
+        "bytes": 2560,
+        "sha256": "bdc56193f356025b460ce7c12ad25a14af9bb1816239ebd893ca83a430e23819",
+        "entry_point_rva": 0,
+        "imports": 0,
+        "relocations": 0,
+        "never_executed": true,
+        "sha256_after": "bdc56193f356025b460ce7c12ad25a14af9bb1816239ebd893ca83a430e23819"
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x18001a700,0x18001a70f",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\r1-prestart-idle-static-temp\\01a700.inspect.dll"
+      ],
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "window_byte_coverage_verified": true,
+      "prefix_stop_reason": "first-linear-ret",
+      "prefix_bytes": 3
+    },
+    {
+      "id": "125070",
+      "begin_va": "0x180125070",
+      "end_va_exclusive": "0x1801250ff",
+      "length": 143,
+      "file_offset": 1197168,
+      "kind": "exact-cached-pdata-fragment",
+      "exact_pdata_fragment": true,
+      "code_sha256": "0d003db570599505e43fd8492001ab894f3e4b70ae20cd7f34a5b1ce6dd300f9",
+      "synthetic_pe": {
+        "file": ".tooling/r1-prestart-idle-static-temp/125070.inspect.dll",
+        "bytes": 1024,
+        "sha256": "9d46eb37db3b6eed08f0e822a1612b640d89722f8e6ba88ec59ac7838275ddcb",
+        "entry_point_rva": 0,
+        "imports": 0,
+        "relocations": 0,
+        "never_executed": true,
+        "sha256_after": "9d46eb37db3b6eed08f0e822a1612b640d89722f8e6ba88ec59ac7838275ddcb"
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180125070,0x1801250fe",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\r1-prestart-idle-static-temp\\125070.inspect.dll"
+      ],
+      "tool_exit": 0,
+      "tool_signal": null,
+      "tool_error": null,
+      "window_byte_coverage_verified": true,
+      "prefix_stop_reason": "control-transfer-not-followed",
+      "prefix_bytes": 61
+    }
+  ],
+  "original_open_mode": "O_RDONLY",
+  "original_executed": false,
+  "original_given_to_dumpbin": false,
+  "backend_started": false,
+  "code_bytes": 159,
+  "metadata_bytes": 0,
+  "data_bytes": 0,
+  "subprocesses": 2,
+  "synthetic_bytes": 3584,
+  "semantic_reads": [
+    {
+      "id": "01a700",
+      "file_offset": 105216,
+      "requested_bytes": 16,
+      "read_bytes": 16,
+      "raw_hex": "32c0c3cccccccccccccccccccccccccc"
+    },
+    {
+      "id": "125070",
+      "file_offset": 1197168,
+      "requested_bytes": 143,
+      "read_bytes": 143,
+      "raw_hex": "488bc4574883ec7048c740a8feffffff48895808488bd948c740c80f00000033ff488978c0408878b0448d4704488d15c88a5400488d48b0e8b313efff9048897c2448897c2450488d4c2458ff155e464e004c8d442448488d542428488bcbe87cecffff90488b5424404883fa10721148ffc2448d4701488b4c2428e82f15efff488b9c24800000004883c4705fc3"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "phase": "before",
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "bytes": 11385856,
+      "buffer_bytes": 65536
+    },
+    {
+      "phase": "after",
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "bytes": 11385856,
+      "buffer_bytes": 65536
+    }
+  ],
+  "exact_function_body_established": false,
+  "loaded_runtime_behavior_established": false,
+  "failures": [],
+  "limitations": [
+    "Three saved disk vtable slots point to this entry; no exact .pdata boundary was found. The selected 16-byte window is not asserted to be a complete function.",
+    "The decoded prefix stops at the first RET, other control transfer, undecodable row or window end. Remaining bytes are not assigned to this function or classified as padding or a neighbor.",
+    "A straight-line disk RET observation does not establish runtime vtable contents, loaded-code behavior, CFG completeness, side-effect absence or native ABI/exception semantics.",
+    "The second range [125070,1250FF) is exactly the saved 143-byte pdata fragment for the named GoToIdleState export. A name or unwind fragment does not establish its semantics or complete logical function.",
+    "No branch, call, slot, metadata, neighboring bytes or other target is followed. Synthetic headers and padding are generated; only the two fixed windows come from Game.dll."
+  ],
+  "script_sha256": "97078eb8fdf347723e7d33b5ec610d5913a9b2404e6b55e87d21a2c47c35c1fc",
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "buffer_bytes": 65536
+  },
+  "stat_before": {
+    "size": 11385856,
+    "dev": 2562469142,
+    "ino": 1970324837085125,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "stat_after": {
+    "size": 11385856,
+    "dev": 2562469142,
+    "ino": 1970324837085125,
+    "mtime_ms": 1791500362321.0718,
+    "ctime_ms": 1791500395337.1152
+  },
+  "source_stat_stable": true,
+  "source_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "bytes": 23376,
+    "buffer_bytes": 65536
+  },
+  "source_hash_preserved": true,
+  "tool_hash_preserved": true,
+  "finished_utc": "2026-10-22T09:08:21.016Z"
+}

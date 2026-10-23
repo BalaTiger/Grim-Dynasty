@@ -1,0 +1,805 @@
+{
+  "started_utc": "2026-10-20T10:45:10.917Z",
+  "status": "bounded-prefix-cfg-verified",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "working_copy": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll",
+  "entry_va": "0x1800483a0",
+  "window_end_exclusive": "0x1800484a0",
+  "max_unique_instructions": 64,
+  "max_unique_code_bytes": 128,
+  "prior_chain_verified_code_bytes": 958,
+  "prior_fill_raw_prefix": {
+    "address": "0x1800483a0",
+    "bytes": "4885"
+  },
+  "prior_chain_observed_unique_bytes": 960,
+  "chain_code_budget": 4096,
+  "source_evidence": {
+    "path": "docs/object-lifecycle/offline-binary-bits-words-resize/048130-instructions.json",
+    "sha256": "50dc89276276893b8018ac3614d68c25220be5e8f45aeb5312329c72465a1d69",
+    "instruction": "0x1800481bc: CALL 0x1800483a0"
+  },
+  "prior_pdata_failure": {
+    "path": "docs/object-lifecycle/offline-binary-bits-words-fill-boundary/boundary.json",
+    "sha256": "dc7e4c09cfe9adddd5b88c15901d65e0372b5afc3dd9f8ee6e389a1f529a77b4"
+  },
+  "prior_single_point_failure": {
+    "path": "docs/object-lifecycle/offline-binary-bits-fill-instruction-walk/1800483a0-dumpbin.txt",
+    "sha256": "01e164bbbf7d8db3404fca5146fe1c95b4c41a095c5125fa04e942a429934f89"
+  },
+  "prior_split_prefix_failure": {
+    "path": "docs/object-lifecycle/offline-binary-bits-fill-prefix-walk/1800483a0-prefix-2-dumpbin.txt",
+    "sha256": "b2b61a1ad849adcaca4fd920e27f9cb54c455310048439ae30cfc4f6e740b3ad"
+  },
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "copy_sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "tool_timeout_ms_per_instruction": 10000,
+  "tool_max_output_bytes": 196608,
+  "code_read_policy": "Exact requested prefix at an established instruction start; advance request length only after a verified incomplete prefix",
+  "hash_scope": "64 KiB streaming full-file SHA256 before and after; no target or CRT execution",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "callee_bodies_followed": 0,
+  "prefix_increment_behavior_verified": true,
+  "unique_verified_instruction_bytes": 26,
+  "unique_instructions": 10,
+  "sum_requested_bytes": 51,
+  "sum_original_prefix_bytes_read": 51,
+  "requests": [
+    {
+      "instruction_start": "0x1800483a0",
+      "requested_length": 1,
+      "range_end_inclusive": "0x1800483a0",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483a0,0x1800483a0",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 0,
+      "elapsed_ms": 31,
+      "exit_code": 0,
+      "prefix_bytes": "48",
+      "original_file_offset": 292768,
+      "prefix_sha256": "44bd7ae60f478fae1061e11a7739f4b94d1daf917982d33b6fc8a01a63f89c21",
+      "unique_function_bytes_after": 2,
+      "unique_function_requested_bytes_after": 2,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483a0",
+      "requested_length": 2,
+      "range_end_inclusive": "0x1800483a1",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483a0,0x1800483a1",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 0,
+      "elapsed_ms": 33,
+      "exit_code": 0,
+      "prefix_bytes": "4885",
+      "original_file_offset": 292768,
+      "prefix_sha256": "b8ae8aeae4d32970ac4c567bfc2ac5448f521ba7b39a5b1ef6079b3f54c5a4c7",
+      "unique_function_bytes_after": 2,
+      "unique_function_requested_bytes_after": 2,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483a0",
+      "requested_length": 3,
+      "range_end_inclusive": "0x1800483a2",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483a0,0x1800483a2",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "4885d2",
+      "original_file_offset": 292768,
+      "prefix_sha256": "769a0c9612d7def1a662fcf63027a7fca4fcd7abdeeb3c7f4cd8ea5aa7e05d52",
+      "unique_function_bytes_after": 3,
+      "unique_function_requested_bytes_after": 3,
+      "outcome": "complete-instruction"
+    },
+    {
+      "instruction_start": "0x1800483a3",
+      "requested_length": 1,
+      "range_end_inclusive": "0x1800483a3",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483a3,0x1800483a3",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "74",
+      "original_file_offset": 292771,
+      "prefix_sha256": "e3b98a4da31a127d4bde6e43033f66ba274cab0eb7eb1c70ec41402bf6273dd8",
+      "unique_function_bytes_after": 4,
+      "unique_function_requested_bytes_after": 4,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483a3",
+      "requested_length": 2,
+      "range_end_inclusive": "0x1800483a4",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483a3,0x1800483a4",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "7414",
+      "original_file_offset": 292771,
+      "prefix_sha256": "58fa647efa065bcc12c78b62b4f922263aca998530ca6c5a62dde0c79b327afd",
+      "unique_function_bytes_after": 5,
+      "unique_function_requested_bytes_after": 5,
+      "outcome": "complete-instruction"
+    },
+    {
+      "instruction_start": "0x1800483b9",
+      "requested_length": 1,
+      "range_end_inclusive": "0x1800483b9",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483b9,0x1800483b9",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "c3",
+      "original_file_offset": 292793,
+      "prefix_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e",
+      "unique_function_bytes_after": 6,
+      "unique_function_requested_bytes_after": 6,
+      "outcome": "complete-instruction"
+    },
+    {
+      "instruction_start": "0x1800483a5",
+      "requested_length": 1,
+      "range_end_inclusive": "0x1800483a5",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483a5,0x1800483a5",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "48",
+      "original_file_offset": 292773,
+      "prefix_sha256": "44bd7ae60f478fae1061e11a7739f4b94d1daf917982d33b6fc8a01a63f89c21",
+      "unique_function_bytes_after": 7,
+      "unique_function_requested_bytes_after": 7,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483a5",
+      "requested_length": 2,
+      "range_end_inclusive": "0x1800483a6",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483a5,0x1800483a6",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 31,
+      "exit_code": 0,
+      "prefix_bytes": "4885",
+      "original_file_offset": 292773,
+      "prefix_sha256": "b8ae8aeae4d32970ac4c567bfc2ac5448f521ba7b39a5b1ef6079b3f54c5a4c7",
+      "unique_function_bytes_after": 8,
+      "unique_function_requested_bytes_after": 8,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483a5",
+      "requested_length": 3,
+      "range_end_inclusive": "0x1800483a7",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483a5,0x1800483a7",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "4885c9",
+      "original_file_offset": 292773,
+      "prefix_sha256": "1c31ee798a68c636396f73ac9646201424aaa544860de0a57454c10b8f0ee3f4",
+      "unique_function_bytes_after": 9,
+      "unique_function_requested_bytes_after": 9,
+      "outcome": "complete-instruction"
+    },
+    {
+      "instruction_start": "0x1800483a8",
+      "requested_length": 1,
+      "range_end_inclusive": "0x1800483a8",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483a8,0x1800483a8",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 29,
+      "exit_code": 0,
+      "prefix_bytes": "74",
+      "original_file_offset": 292776,
+      "prefix_sha256": "e3b98a4da31a127d4bde6e43033f66ba274cab0eb7eb1c70ec41402bf6273dd8",
+      "unique_function_bytes_after": 10,
+      "unique_function_requested_bytes_after": 10,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483a8",
+      "requested_length": 2,
+      "range_end_inclusive": "0x1800483a9",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483a8,0x1800483a9",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "7405",
+      "original_file_offset": 292776,
+      "prefix_sha256": "58b821595e7051b1409a38f7c48f7b1153019dce5f9e8b78241111e6dd4a67cb",
+      "unique_function_bytes_after": 11,
+      "unique_function_requested_bytes_after": 11,
+      "outcome": "complete-instruction"
+    },
+    {
+      "instruction_start": "0x1800483af",
+      "requested_length": 1,
+      "range_end_inclusive": "0x1800483af",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483af,0x1800483af",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 32,
+      "exit_code": 0,
+      "prefix_bytes": "48",
+      "original_file_offset": 292783,
+      "prefix_sha256": "44bd7ae60f478fae1061e11a7739f4b94d1daf917982d33b6fc8a01a63f89c21",
+      "unique_function_bytes_after": 12,
+      "unique_function_requested_bytes_after": 12,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483af",
+      "requested_length": 2,
+      "range_end_inclusive": "0x1800483b0",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483af,0x1800483b0",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "4883",
+      "original_file_offset": 292783,
+      "prefix_sha256": "07fb485f969ae1f004643c2c08e38bcbf304f93c653f9df8e75c78d7a75b9aaa",
+      "unique_function_bytes_after": 13,
+      "unique_function_requested_bytes_after": 13,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483af",
+      "requested_length": 3,
+      "range_end_inclusive": "0x1800483b1",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483af,0x1800483b1",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 29,
+      "exit_code": 0,
+      "prefix_bytes": "4883c1",
+      "original_file_offset": 292783,
+      "prefix_sha256": "0ecbbe3bf303d1178e9fd35fdf0e715d552fcca63e281279e2eb4b44ffac86b2",
+      "unique_function_bytes_after": 14,
+      "unique_function_requested_bytes_after": 14,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483af",
+      "requested_length": 4,
+      "range_end_inclusive": "0x1800483b2",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483af,0x1800483b2",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 29,
+      "exit_code": 0,
+      "prefix_bytes": "4883c104",
+      "original_file_offset": 292783,
+      "prefix_sha256": "b8d75b19a0c6b790eaf1534cf00d31253410fdd64b78c805905245cfa87cda1b",
+      "unique_function_bytes_after": 15,
+      "unique_function_requested_bytes_after": 15,
+      "outcome": "complete-instruction"
+    },
+    {
+      "instruction_start": "0x1800483aa",
+      "requested_length": 1,
+      "range_end_inclusive": "0x1800483aa",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483aa,0x1800483aa",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 31,
+      "exit_code": 0,
+      "prefix_bytes": "41",
+      "original_file_offset": 292778,
+      "prefix_sha256": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd",
+      "unique_function_bytes_after": 16,
+      "unique_function_requested_bytes_after": 16,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483aa",
+      "requested_length": 2,
+      "range_end_inclusive": "0x1800483ab",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483aa,0x1800483ab",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "418b",
+      "original_file_offset": 292778,
+      "prefix_sha256": "012448e385fa1468fd501be1d76c4681ea57183522e971d31e06e2b944d3a8ae",
+      "unique_function_bytes_after": 17,
+      "unique_function_requested_bytes_after": 17,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483aa",
+      "requested_length": 3,
+      "range_end_inclusive": "0x1800483ac",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483aa,0x1800483ac",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 40,
+      "exit_code": 0,
+      "prefix_bytes": "418b00",
+      "original_file_offset": 292778,
+      "prefix_sha256": "af644317aeb555a0ce42312bd1536fd6bb4c1ee5677eece904f8722337c0ec80",
+      "unique_function_bytes_after": 18,
+      "unique_function_requested_bytes_after": 18,
+      "outcome": "complete-instruction"
+    },
+    {
+      "instruction_start": "0x1800483b3",
+      "requested_length": 1,
+      "range_end_inclusive": "0x1800483b3",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483b3,0x1800483b3",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "48",
+      "original_file_offset": 292787,
+      "prefix_sha256": "44bd7ae60f478fae1061e11a7739f4b94d1daf917982d33b6fc8a01a63f89c21",
+      "unique_function_bytes_after": 19,
+      "unique_function_requested_bytes_after": 19,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483b3",
+      "requested_length": 2,
+      "range_end_inclusive": "0x1800483b4",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483b3,0x1800483b4",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "4883",
+      "original_file_offset": 292787,
+      "prefix_sha256": "07fb485f969ae1f004643c2c08e38bcbf304f93c653f9df8e75c78d7a75b9aaa",
+      "unique_function_bytes_after": 20,
+      "unique_function_requested_bytes_after": 20,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483b3",
+      "requested_length": 3,
+      "range_end_inclusive": "0x1800483b5",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483b3,0x1800483b5",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "4883ea",
+      "original_file_offset": 292787,
+      "prefix_sha256": "0b49e462521c7ed59d6c246505295f001ceebb7d5b871c76d9dc7ad1fb34f297",
+      "unique_function_bytes_after": 21,
+      "unique_function_requested_bytes_after": 21,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483b3",
+      "requested_length": 4,
+      "range_end_inclusive": "0x1800483b6",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483b3,0x1800483b6",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 33,
+      "exit_code": 0,
+      "prefix_bytes": "4883ea01",
+      "original_file_offset": 292787,
+      "prefix_sha256": "8b557c3c0dd9b5a9f62cea461649ba402e229663149e971fef06c69ac33227ed",
+      "unique_function_bytes_after": 22,
+      "unique_function_requested_bytes_after": 22,
+      "outcome": "complete-instruction"
+    },
+    {
+      "instruction_start": "0x1800483ad",
+      "requested_length": 1,
+      "range_end_inclusive": "0x1800483ad",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483ad,0x1800483ad",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 29,
+      "exit_code": 0,
+      "prefix_bytes": "89",
+      "original_file_offset": 292781,
+      "prefix_sha256": "e9b0c031f0493d3fd6b0b668260c79e7efe734bfd4b4115f9d82bc3be609c294",
+      "unique_function_bytes_after": 23,
+      "unique_function_requested_bytes_after": 23,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483ad",
+      "requested_length": 2,
+      "range_end_inclusive": "0x1800483ae",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483ad,0x1800483ae",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "8901",
+      "original_file_offset": 292781,
+      "prefix_sha256": "a52154f6ae9b203b56f6ce53c7f4efd334fad4c468c128869d75d8ebc46ab313",
+      "unique_function_bytes_after": 24,
+      "unique_function_requested_bytes_after": 24,
+      "outcome": "complete-instruction"
+    },
+    {
+      "instruction_start": "0x1800483b7",
+      "requested_length": 1,
+      "range_end_inclusive": "0x1800483b7",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483b7,0x1800483b7",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 31,
+      "exit_code": 0,
+      "prefix_bytes": "75",
+      "original_file_offset": 292791,
+      "prefix_sha256": "0bfe935e70c321c7ca3afc75ce0d0ca2f98b5422e008bb31c00c6d7f1f1c0ad6",
+      "unique_function_bytes_after": 25,
+      "unique_function_requested_bytes_after": 25,
+      "outcome": "incomplete-prefix-without-mnemonic"
+    },
+    {
+      "instruction_start": "0x1800483b7",
+      "requested_length": 2,
+      "range_end_inclusive": "0x1800483b8",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x1800483b7,0x1800483b8",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-cache-node\\Engine.readonly.dll"
+      ],
+      "newly_requested_unique_bytes": 1,
+      "elapsed_ms": 30,
+      "exit_code": 0,
+      "prefix_bytes": "75ec",
+      "original_file_offset": 292791,
+      "prefix_sha256": "437b263352f51d6dc454cc85816e0ab7b8c797936e198534e1790a004efdb56f",
+      "unique_function_bytes_after": 26,
+      "unique_function_requested_bytes_after": 26,
+      "outcome": "complete-instruction"
+    }
+  ],
+  "instructions": [
+    {
+      "address": "0x1800483a0",
+      "bytes": "4885d2",
+      "length": 3,
+      "instruction": "test        rdx,rdx",
+      "file_offset": 292768,
+      "code_sha256": "769a0c9612d7def1a662fcf63027a7fca4fcd7abdeeb3c7f4cd8ea5aa7e05d52"
+    },
+    {
+      "address": "0x1800483a3",
+      "bytes": "7414",
+      "length": 2,
+      "instruction": "je          00000001800483B9",
+      "file_offset": 292771,
+      "code_sha256": "58fa647efa065bcc12c78b62b4f922263aca998530ca6c5a62dde0c79b327afd"
+    },
+    {
+      "address": "0x1800483b9",
+      "bytes": "c3",
+      "length": 1,
+      "instruction": "ret",
+      "file_offset": 292793,
+      "code_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e"
+    },
+    {
+      "address": "0x1800483a5",
+      "bytes": "4885c9",
+      "length": 3,
+      "instruction": "test        rcx,rcx",
+      "file_offset": 292773,
+      "code_sha256": "1c31ee798a68c636396f73ac9646201424aaa544860de0a57454c10b8f0ee3f4"
+    },
+    {
+      "address": "0x1800483a8",
+      "bytes": "7405",
+      "length": 2,
+      "instruction": "je          00000001800483AF",
+      "file_offset": 292776,
+      "code_sha256": "58b821595e7051b1409a38f7c48f7b1153019dce5f9e8b78241111e6dd4a67cb"
+    },
+    {
+      "address": "0x1800483af",
+      "bytes": "4883c104",
+      "length": 4,
+      "instruction": "add         rcx,4",
+      "file_offset": 292783,
+      "code_sha256": "b8d75b19a0c6b790eaf1534cf00d31253410fdd64b78c805905245cfa87cda1b"
+    },
+    {
+      "address": "0x1800483aa",
+      "bytes": "418b00",
+      "length": 3,
+      "instruction": "mov         eax,dword ptr [r8]",
+      "file_offset": 292778,
+      "code_sha256": "af644317aeb555a0ce42312bd1536fd6bb4c1ee5677eece904f8722337c0ec80"
+    },
+    {
+      "address": "0x1800483b3",
+      "bytes": "4883ea01",
+      "length": 4,
+      "instruction": "sub         rdx,1",
+      "file_offset": 292787,
+      "code_sha256": "8b557c3c0dd9b5a9f62cea461649ba402e229663149e971fef06c69ac33227ed"
+    },
+    {
+      "address": "0x1800483ad",
+      "bytes": "8901",
+      "length": 2,
+      "instruction": "mov         dword ptr [rcx],eax",
+      "file_offset": 292781,
+      "code_sha256": "a52154f6ae9b203b56f6ce53c7f4efd334fad4c468c128869d75d8ebc46ab313"
+    },
+    {
+      "address": "0x1800483b7",
+      "bytes": "75ec",
+      "length": 2,
+      "instruction": "jne         00000001800483A5",
+      "file_offset": 292791,
+      "code_sha256": "437b263352f51d6dc454cc85816e0ab7b8c797936e198534e1790a004efdb56f"
+    }
+  ],
+  "edges": [
+    {
+      "from": "0x1800483a0",
+      "to": "0x1800483a3",
+      "kind": "fallthrough"
+    },
+    {
+      "from": "0x1800483a3",
+      "to": "0x1800483b9",
+      "kind": "conditional-taken"
+    },
+    {
+      "from": "0x1800483a3",
+      "to": "0x1800483a5",
+      "kind": "conditional-fallthrough"
+    },
+    {
+      "from": "0x1800483b9",
+      "to": null,
+      "kind": "return"
+    },
+    {
+      "from": "0x1800483a5",
+      "to": "0x1800483a8",
+      "kind": "fallthrough"
+    },
+    {
+      "from": "0x1800483a8",
+      "to": "0x1800483af",
+      "kind": "conditional-taken"
+    },
+    {
+      "from": "0x1800483a8",
+      "to": "0x1800483aa",
+      "kind": "conditional-fallthrough"
+    },
+    {
+      "from": "0x1800483af",
+      "to": "0x1800483b3",
+      "kind": "fallthrough"
+    },
+    {
+      "from": "0x1800483aa",
+      "to": "0x1800483ad",
+      "kind": "fallthrough"
+    },
+    {
+      "from": "0x1800483b3",
+      "to": "0x1800483b7",
+      "kind": "fallthrough"
+    },
+    {
+      "from": "0x1800483ad",
+      "to": "0x1800483af",
+      "kind": "fallthrough"
+    },
+    {
+      "from": "0x1800483b7",
+      "to": "0x1800483a5",
+      "kind": "conditional-taken"
+    },
+    {
+      "from": "0x1800483b7",
+      "to": "0x1800483b9",
+      "kind": "conditional-fallthrough"
+    }
+  ],
+  "original_sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "complete_reachable_cfg_within_fixed_limits": true,
+  "metadata_bytes": 688,
+  "unique_function_observed_bytes": 26,
+  "unique_function_requested_code_bytes": 26,
+  "chain_requested_unique_code_bytes_after": 984,
+  "newly_observed_unique_code_bytes": 24,
+  "chain_observed_unique_code_bytes_after": 984,
+  "original_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "copy_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "original_hash_matches": true,
+  "copy_hash_matches": true,
+  "tool_hash_matches": true,
+  "finished_utc": "2026-10-20T10:45:11.747Z",
+  "controller_resource_usage": {
+    "userCPUTime": 31000,
+    "systemCPUTime": 125000,
+    "maxRSS": 43340,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11630,
+    "swappedOut": 0,
+    "fsRead": 435,
+    "fsWrite": 52,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

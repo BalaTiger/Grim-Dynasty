@@ -1,0 +1,19 @@
+{
+  "stage": "crt-entry",
+  "code_byte_limit": 128,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-engine-root-entry/metadata.json",
+      "sha256": "18baa66f8c529be694eecb25ea187f76fb741e52ffd0ba3ce444e24e4c45e631"
+    }
+  ],
+  "prior_inspections": [],
+  "targets": [
+    {
+      "rva": 3002436,
+      "maximum_bytes": 128,
+      "role": "Engine PE entry for initializer tracing",
+      "basis": "The fixed four-byte PE AddressOfEntryPoint field is 0x2DD044. Require an exact unwind start and stop above128B; no neighboring fallback."
+    }
+  ]
+}

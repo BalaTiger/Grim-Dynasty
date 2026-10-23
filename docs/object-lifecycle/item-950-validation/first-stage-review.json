@@ -1,0 +1,34 @@
+{
+  "schema": "item-950-first-stage-review-v1",
+  "status": "caller-and-direct-wrapper-reviewed-dependencies-still-open",
+  "metadata_tool_chunk": "23232b",
+  "body_tool_chunk": "74916f",
+  "metadata_bytes": 48,
+  "metadata_read_operations": 4,
+  "code_bytes": 300,
+  "decoded_instructions": 61,
+  "dumpbin_invocations": 2,
+  "full_game_hash_passes": 4,
+  "game_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_hashes_preserved": true,
+  "caller": {"begin":"323743","end_exclusive":"323811","bytes":206,"instructions":39,"object_stores":17,"inline_order":"capacity15 then length0 then first byte0; four strings; no payload/padding fill","excludes_nop_at_323811":true},
+  "wrapper": {
+    "begin":"428690","end_exclusive":"4286EE","bytes":94,"instructions":22,
+    "pre_call_store":{"rva":"4286A6","offset":"0","width":8,"value":0},
+    "call":{"rva":"4286C0","target":"5DAED0","rcx":"incoming this+18","edx":"28","r8d":"A","r9_function_token":"180016710","fifth_function_token":"1800165D0","callback_roles":"pending iterator body review"},
+    "post_normal_return_stores":[{"rva":"4286C5","offset":"1A8","width":4,"value":0},{"rva":"4286CE","offset":"1B0","width":8,"value":0},{"rva":"4286D5","offset":"1B8","width":8,"value":0},{"rva":"4286DC","offset":"1C0","width":8,"value":0}],
+    "return_identity":"original incoming this; RAX set at4286CB, RET4286ED",
+    "unknown_call_stop_keeps":"all17 prior caller stores and own Item+950 QWORD0; no four trailing stores or normal return claim"
+  },
+  "source_pins":[
+    {"path":"docs/object-lifecycle/offline-item-950-boundary/metadata.json","sha256":"4912997869c807a8355909643ed677bcb576733c303172814dc0f4bb8cbe0b5f"},
+    {"path":"docs/object-lifecycle/offline-item-950/inspection.json","sha256":"1bed51eacf3be0a2b6aff43e5e1ec283310d912599bdd51ca1c259994a5b270b"},
+    {"path":"docs/object-lifecycle/offline-item-950/428690-exact-instructions.json","sha256":"4f82c0e268008d01646ad0790c45cb560d042fc7a8ae8dcd94ce50fb48d538a1"},
+    {"path":"docs/object-lifecycle/offline-item-950/323743-caller-instructions.json","sha256":"c01e97d024519ea9a9f030e42235119fc94071273dc0fb7a9ee1270d9f622a2d"},
+    {"path":"docs/object-lifecycle/offline-class-helper-boundaries/metadata.json","sha256":"3f5fa9f5d532be7fe4f4624bf56d3fc0ff487a01bdf710c3a9376abe8c536627"}
+  ],
+  "remaining_evidence":"Read independently established5DAED0 boundary110B and establish only16710/165D0 callback boundaries; no whole-library scan or inferred algorithm.",
+  "executed_original":false,
+  "built_or_tested_this_stage":false,
+  "complete_native_abi_claim":false
+}

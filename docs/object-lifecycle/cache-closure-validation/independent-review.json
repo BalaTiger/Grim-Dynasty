@@ -1,0 +1,37 @@
+{
+  "utc": "2026-10-20T06:53:46.206Z",
+  "status": "passed-with-explicit-node-blocker",
+  "reviewers": [
+    "verify_handoff: source/test/build/log/baseline review",
+    "locate_game/verify_load_sources: independent source review",
+    "build_portability: query failure and guard review"
+  ],
+  "findings": [],
+  "assertions": 1209,
+  "scenario_groups": 25,
+  "new_assertions": 98,
+  "new_scenario_groups": 4,
+  "demo": "passed",
+  "reviewed_hashes": {
+    "src/task_items/RecordCachePublicationAttempt.cs": "c3d1d5645176643cc21fe5f6250c304e7cff6cf035c963974819515ad3c9fd8a",
+    "src/task_items/RecordCachePublicationAttemptTests.cs": "665b47d08b3b6d24024c7e69b4f557859984d32a37f2aeb7aebef3e9c9f46ef5",
+    "src/task_items/RecordCachePublicationPrefix.cs": "2a3e7b5362370ee52cf12d3bbcb1eea6dd6de007056df6a301d4583f3d094273",
+    "src/task_items/RecordCachePublicationPrefixTests.cs": "8406ea5163ff3d5ea6277c57a4c0f6f809af238c30337f7649da545ffe56c853",
+    "tools/static_analysis/rea_native_registration.mjs": "a1102a8ce31b66a39f7626e8450b21c4438bfe2776d5ce7d9557fa21539d9bce",
+    "tools/static_analysis/verify_parser_retry_release.ps1": "ab2c96f38e091776689c70613a87124b3eebea231a7a083eebcd96656f21e844",
+    "docs/object-lifecycle/CACHE-MAINTENANCE-EVIDENCE.md": "3d5a8d0c733efabecd47c765b19f472c0c0cd08cac1a7b9652afbdd5c3cba01b",
+    "docs/object-lifecycle/CACHE-NODE-QUERY-FAILURE.md": "6575ec3bb4d81d6cd22430cd4c9b7bd80eba9e47488a20ce6721aacbb8631c57"
+  },
+  "baseline_copies_verified": 61,
+  "unchanged_baseline_before_status_updates": 57,
+  "expected_changed_before_status_updates": [
+    "src/task_items/RecordCachePublicationPrefix.cs",
+    "src/task_items/build_items.ps1",
+    "tools/static_analysis/rea_native_registration.mjs",
+    "tools/static_analysis/verify_parser_retry_release.ps1"
+  ],
+  "prior_checkpoint_copies_verified": 233,
+  "guard_implementation_files_unchanged": 7,
+  "review_execution": "Read-only existing sources, evidence and actual regression output; no test rerun by reviewers",
+  "scope": "Complete bounded normal indexing from supplied already-linked candidate; node creation and complete LoadFile miss remain unsupported"
+}

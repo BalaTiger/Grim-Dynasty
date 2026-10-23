@@ -1,0 +1,61 @@
+{
+  "status": "read-only-native-contract-and-uncompiled-prefix-model",
+  "prior_empty_water20_scenarios": "Preserved; this task did not rerun or change GroundWaterContracts/GroundWaterTests or passed20/86 output.",
+  "evidence": [
+    {
+      "file": "docs/reverse-client/r1-water-initialization/05-WaterInitialization-0x1801f6a90-procedure_assembly.json",
+      "sha256": "a0600e881218ca92a018372b7546eff0eca07c7f2207fb3f3f8c475b217ac5da"
+    },
+    {
+      "file": "docs/reverse-client/r1-water-initialization/08-WaterInitialization-0x1801f6e80-procedure_assembly.json",
+      "sha256": "6e30c2a44942f63bbd3db7862f2e0983210bdfcc9dc626104bdc1defe11afe05"
+    }
+  ],
+  "constructor": {
+    "entry": "1F6A90",
+    "before_subobject": "QWORDzero stores28,30,38,58,60,68,98,40,88,90,thenRegion argument copied to10D0; call203940(this+10D8) at1F6AEC.",
+    "unresolved_subobject": "No203940 body obtained here. It precedes ALL A0/A4/A8 and10B0/10B8 clears. Zero-filling whole Water cannot replace it.",
+    "normal_return_suffix": "Only after203940 returns:1D18QWORD0,1D20DWORD0,1D28/30/38QWORD0;00QWORD0,08QWORD0,10DWORD0;A0QWORD0 clearsA0/A4, A8DWORD0;10B0/10B8/18/20/10C0/10C8/1D10QWORD0;40=self;2DDB14 zeroesB0..10AF4096bytes;returns originalthis at1F6B6E. Suffix is evidenced but not executed or implemented across unknownsubctor."
+  },
+  "initialize": {
+    "entry": "1F6E80",
+    "prefix": "Terrain10C0 MOV1F6EA6 then stackGrid load1F6EAD/store10C8 1F6EB5;global421428 capture1F6EBC/deref+1F8 1F6EC3;TEST1F6ECA.",
+    "no_provider": "Knownnull +1F8 branches to1F702A voidreturn.10B8 and10B0 retain prior knowledge/value; no successful initialization flag is returned.",
+    "device": "Nonnullprovider +58 captured1F6ED3 and COPIED to sameWater10B8 at1F6ED7 BEFORE TEST1F6EDE. Unknown device bits publish Unknown before failing onTEST. Knownnull device branches1F702A;10B0 unchanged.",
+    "non_null_chain": [
+      "1F6EE7 ->1F6BF0(this,width,height,Terrain,Grid) exactcaller register/stackstate;body unclosed",
+      "1F6EF7 ->203210 WaterRenderInterface::Initialize(this+28,live10B8)",
+      "1F6EFC rereads10B8;1F6F03 stores1D00;RenderDevice+150 called1F6F42 with48Bdescriptor and4;return copiedto1D08",
+      "1F6F4F/51 dimensions00/04;unsignedwrap(width+8)/9 at08, (height+8)/9 at0C;10=9.0f",
+      "1F6FF9 ->11A600(center width/2,height/2;extent=max(width,height)/2);1F6FFF publishes10B0",
+      "1F7009 ->1F7150;1F7011 ->1F7300;1F701D ->203FC0(this+10D8);1F7025 ->1F7040"
+    ],
+    "empty_payload_relation": "All nonnull-device dependencies happen insideInitialize BEFORE caller invokesLoad, with no count-dependent bypass in this body. Actual empty24B chunk cannot prove these dependencies absent or successful. A0/A4 remain constructor state untilLoad; do not infer producer-state1F8/58 from diskzeros."
+  },
+  "minimal_next_evidence": {
+    "priority": "203940 embedded ctor is the first direct dependency for normal cold Water construction. A deliberately supplied OWN no-provider/no-device platform state can exercise observedvoidreturn but is not evidence of actual native runtime state. Do not recursively restore entire renderer.",
+    "production_missing": [
+      "Real gEngine+1F8 provider and provider+58 device identities/lifecycle",
+      "For nonnull device:1F6BF0 and203210,RenderDevice slot150 plus required subsequentsetup bodies",
+      "Native successful object/callerpublication before emptyLoad;existingtest OWNnon-null identities remain conditional"
+    ]
+  },
+  "draft": {
+    "source": "src/reverse_client_actions/GroundWaterInitializationPrefixes.cs",
+    "source_sha256": "0fbc429f1e93d92e07f50d9888ee5f27240182bdc1dd04ceab3f1b3c65b33f41",
+    "tests": "src/reverse_client_actions/GroundWaterInitializationPrefixTests.cs",
+    "tests_sha256": "e3580c2ce905be299eb6eaad7b1dd29d29753b0ce2d3cbde184e8e0e086790ee",
+    "planned_scenarios": 9,
+    "scope": "Observed constructor pre203940 stores andInitialize two render-gate returns/failure prefixes only. SameGroundWaterState10B8 cells are used; rawunknownpointerbits copy beforeTEST; neither returnenum is success.",
+    "compiled": false,
+    "tests_executed": false,
+    "build_script_created": false
+  },
+  "execution": {
+    "original_read": false,
+    "backend_started": false,
+    "build_started": false,
+    "tests_rerun": false,
+    "gameplay_accepted": false
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "schema": "grim-dynasty-fixed-game-crt-import-metadata-v1",
+  "started_utc": "2026-10-20T13:07:12.009Z",
+  "status": "fixed-game-crt-imports-resolved",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "expected_file_bytes": 11385856,
+  "script_sha256": "4cb92874c06d7561527667a8075735bd94bde24fbefa8b3f431aff5e4464dd1b",
+  "source_evidence": [
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-questitem-boundaries/boundary.json",
+      "sha256": "fa5ae01ef102377d8ec976607622c3aab8d1af23144d8a408e42cf15f3ec4f05"
+    }
+  ],
+  "descriptor_index": 6,
+  "requested": [
+    {
+      "thunk_index": 4,
+      "name": "_initterm_e",
+      "expected_iat_rva": 6338880
+    },
+    {
+      "thunk_index": 5,
+      "name": "_initterm",
+      "expected_iat_rva": 6338888
+    }
+  ],
+  "expected_module": "api-ms-win-crt-runtime-l1-1-0.dll",
+  "import_directory_field_file_offset": 416,
+  "limits": {
+    "fingerprint_chunk_bytes": 65536,
+    "metadata_read_bytes": 1024,
+    "metadata_single_read_bytes": 64,
+    "metadata_read_operations": 8,
+    "saved_evidence_bytes": 2097152,
+    "report_bytes": 131072
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "code_bytes_read": 0,
+  "code_bytes_interpreted": 0,
+  "iat_payload_bytes_read": 0,
+  "other_import_descriptors_read": 0,
+  "other_import_thunks_read": 0,
+  "initializer_table_bytes_read": 0,
+  "backend_started": false,
+  "subprocesses": 0,
+  "metadata_bytes": 104,
+  "metadata_reads": [
+    {
+      "kind": "normal-import-directory",
+      "rva": null,
+      "file_offset": 416,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_bytes": "4029a4007c010000"
+    },
+    {
+      "kind": "fixed-import-descriptor-6",
+      "rva": "0xa429b8",
+      "file_offset": 10751928,
+      "requested_bytes": 20,
+      "read_bytes": 20,
+      "raw_bytes": "e053a40000000000000000002e7aa50020b96000"
+    },
+    {
+      "kind": "exact-runtime-module-name",
+      "rva": "0xa57a2e",
+      "file_offset": 10838062,
+      "requested_bytes": 34,
+      "read_bytes": 34,
+      "raw_bytes": "6170692d6d732d77696e2d6372742d72756e74696d652d6c312d312d302e646c6c00"
+    },
+    {
+      "kind": "fixed-oft-thunk-4",
+      "rva": "0xa45400",
+      "file_offset": 10762752,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_bytes": "207aa50000000000"
+    },
+    {
+      "kind": "exact-hint-name-_initterm_e",
+      "rva": "0xa57a20",
+      "file_offset": 10838048,
+      "requested_bytes": 14,
+      "read_bytes": 14,
+      "raw_bytes": "37005f696e69747465726d5f6500"
+    },
+    {
+      "kind": "fixed-oft-thunk-5",
+      "rva": "0xa45408",
+      "file_offset": 10762760,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_bytes": "147aa50000000000"
+    },
+    {
+      "kind": "exact-hint-name-_initterm",
+      "rva": "0xa57a14",
+      "file_offset": 10838036,
+      "requested_bytes": 12,
+      "read_bytes": 12,
+      "raw_bytes": "36005f696e69747465726d00"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "bytes": 11385856,
+      "chunk_bytes": 65536,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "label": "after",
+      "bytes": 11385856,
+      "chunk_bytes": 65536,
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    }
+  ],
+  "bindings": [
+    {
+      "module": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "name": "_initterm_e",
+      "descriptor_index": 6,
+      "thunk_index": 4,
+      "original_thunk_rva": "0xa45400",
+      "original_thunk_file_offset": 10762752,
+      "raw_thunk_bytes": "207aa50000000000",
+      "import_by_name_rva": "0xa57a20",
+      "import_by_name_file_offset": 10838048,
+      "raw_hint_name_bytes": "37005f696e69747465726d5f6500",
+      "hint": 55,
+      "iat_rva": "0x60b940",
+      "preferred_iat_va": "0x18060b940",
+      "iat_file_offset": 6332224,
+      "iat_section": ".rdata",
+      "iat_payload_bytes_read": 0,
+      "code_bytes_read": 0
+    },
+    {
+      "module": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "name": "_initterm",
+      "descriptor_index": 6,
+      "thunk_index": 5,
+      "original_thunk_rva": "0xa45408",
+      "original_thunk_file_offset": 10762760,
+      "raw_thunk_bytes": "147aa50000000000",
+      "import_by_name_rva": "0xa57a14",
+      "import_by_name_file_offset": 10838036,
+      "raw_hint_name_bytes": "36005f696e69747465726d00",
+      "hint": 54,
+      "iat_rva": "0x60b948",
+      "preferred_iat_va": "0x18060b948",
+      "iat_file_offset": 6332232,
+      "iat_section": ".rdata",
+      "iat_payload_bytes_read": 0,
+      "code_bytes_read": 0
+    }
+  ],
+  "limitations": [
+    "Only the eight-byte normal import-directory header field, descriptor 6, its exact module name, OFT thunks 4/5 and their exact hint/name records are semantically read.",
+    "Descriptor/thunk indices come from the hash-pinned inventory, whose generator preserved original descriptor/thunk order. No descriptors or thunk lists are scanned.",
+    "PE section mappings are reused from hash-pinned evidence; metadata reads are restricted to file-backed non-executable sections except the fixed optional-header field.",
+    "IAT RVAs are FirstThunk plus eight times the verified thunk index. IAT contents and imported code are not read or executed.",
+    "Name bindings do not establish callers, runtime DLL resolution, initialization-array ranges or registration effects. No CRT range is inferred.",
+    "Whole-file 64KiB hash passes traverse bytes without interpretation. O_RDONLY and same-handle stat/hash checks do not guarantee an atomic snapshot or exclusive Windows FileShare.Read."
+  ],
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "import_directory": {
+    "rva": "0xa42940",
+    "size": 380
+  },
+  "descriptor": {
+    "index": 6,
+    "rva": "0xa429b8",
+    "file_offset": 10751928,
+    "raw_bytes": "e053a40000000000000000002e7aa50020b96000",
+    "original_first_thunk_rva": "0xa453e0",
+    "name_rva": "0xa57a2e",
+    "module_name": "api-ms-win-crt-runtime-l1-1-0.dll",
+    "first_thunk_rva": "0x60b920"
+  },
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-20T13:07:12.024Z"
+}

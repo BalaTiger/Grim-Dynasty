@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "purpose": "Only Engine021300,the actual copy target called at030F15 by the saved stride12 vector reallocation body030EE0. Determine the real source begin/end,destination,element-copy order and failure prefix before integrating normal cold growth. Do not substitute034FE0 memmove semantics or recursively inspect allocators/CRT.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-crowd-point-reallocation/04-CrowdPointReallocation-0x180030ee0-procedure_pseudo_code.json",
+      "sha256": "bac6398001af975890f4d8445ea4ff29b826cf28828a394c5d64fc9a72be0fb1",
+      "addresses": [],
+      "source_kind": "Saved030EE0 caller pseudo-code supplies dataflow context only. It calls021300 before releasing old storage and publishing capacity,end,begin; this does not prove the copy algorithm."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-point-reallocation/05-CrowdPointReallocation-0x180030ee0-procedure_assembly.json",
+      "sha256": "6972725b97a42b5715b5b18ddfb7c092cdcd9cfbfce0f119c8ce10db7c376faa",
+      "addresses": [
+        "0x180021300"
+      ],
+      "source_kind": "Exact030F15 CALL021300.030F08 reads oldEnd intoRDX;030F0C setsR8=allocation returnRAX;030F0F reads oldBegin intoRCX. RSI separately retains the new allocation identity. The callee return is not used before030F1A rereads oldBegin. Only this body is selected."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-point-reallocation/06-CrowdPointReallocation-0x180030ee0-procedure_callees.json",
+      "sha256": "7eb1c636bc26f34f9dd1f6c52fcd53d031dae376acdae34399716311786db09e",
+      "addresses": [
+        "0x180021300"
+      ],
+      "source_kind": "Complete saved030EE0 direct-callee inventory includes021300,022F00,023090. Only021300 is selected; allocator/free targets are not added to this batch."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Exactly021300 and8calls including lifecycle. Parent reports nearest-body-review scoped filename inventory found no existing021300 body; reuse that inventory rather than repeating or broadening it.",
+    "The only selected call is030F15. Do not assume ordinary memmove semantics from034FE0 or expand returned callees/CRT,Game slots or unrelated functions.",
+    "Preserve Engine384M/base4.25GiB plus strict5GiB physical-and-commit launch,2GiB stop,identity/mutex/freshness and exact diagnostic monitor/serializer/test/deployment pins. Older modes remain unchanged.",
+    "Require actual latest Engine point-reallocation8/8 summary5c393e22a3b32c1f7e8feaeedda9dbdf3020405174f7b94159801a8e640b43b1 with all normal cleanup,errors empty and stable Engine hashes.",
+    "Preserve actual oldBegin/oldEnd/newAllocation identities,copy ordering,unknown cells and failure prefixes. No synthesized successful copy or preallocated-only shortcut.",
+    "Only one offline verification during preparation. Root formal approval and fresh live guards are required for execution.",
+    "No original execution,saves/cloud access,security changes,installation or automatic retry. Game6 plan remains unregistered; unknown dependencies are reported,not queried."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180021300"
+      },
+      "label": "04-CrowdPointCopy-0x180021300-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180021300"
+      },
+      "label": "05-CrowdPointCopy-0x180021300-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180021300"
+      },
+      "label": "06-CrowdPointCopy-0x180021300-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "What exact element stride,width,loop direction and read/write sequence does021300 actually implement? Do not inherit another vector copy helper contract.",
+    "How are oldBegin,oldEnd anddestination consumed,including empty range and aliases? Which pointer/lifetime checks are own-model restrictions rather than native validation?",
+    "What is returned and what is modified before a failure? The030EE0 caller ignores the return but rereads the old vector after this call.",
+    "Can this observed copy body close the current normal cold-growth path on shared waypoint storage? Report any remaining direct gap without recursing into CRT or claiming arbitrary native allocation/EH compatibility."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "One fixed actual stride12 copy dependency; unchanged384M/base4.25GiB plus strict5GiB launch and2GiB stop.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "previous_sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "serializer_file": "tools/static_analysis/rea_sampler_failure.ps1",
+    "serializer_sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_file": ".tooling/r1-owned-job-diagnostic-candidate/ReaOwnedJobDiagnosticCandidate.cs",
+    "candidate_sha256": "b52e6ba242277ab864a431433f43efe671bc6c37e73c1fd94d8b0977b7400544",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "serializer_validation_file": ".tooling/r1-owned-job-diagnostic-validation/serializer/result.json",
+    "serializer_validation_sha256": "eb5dc1cd79621686a5b646ba03897cec638674dd1d6894ec69cee1d5ceb04a60",
+    "runner_validation_file": ".tooling/r1-owned-job-diagnostic-validation/runner-result.json",
+    "runner_validation_sha256": "1ff5539479a0ba058bb7e3b4e6692293a07515e48d226c56f5b6667857c4bb29",
+    "deployment_file": ".tooling/r1-owned-job-diagnostic-deploy/deployment.json",
+    "deployment_sha256": "ef9be6d39c736f99fe4dd365b1ed08f6849f4280eacc698fdc9b4b75d4977dbf",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 49,
+    "scenario_groups": 10,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "serializer_assertions": 39,
+    "production_normalization": "Remove two candidate-only header lines and namespace suffix; serializer identical to tested candidate",
+    "limitations": "Diagnostic observation only. Native permissions,100ms shared wait budget,admission and fail-closed rules are unchanged. Isolated fault tests do not reproduce or establish the21:48 failure root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-crowd-point-reallocation/summary.json",
+    "summary_sha256": "5c393e22a3b32c1f7e8feaeedda9dbdf3020405174f7b94159801a8e640b43b1",
+    "completed_plan_calls": 8,
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "scope": "Actual latest Engine point-reallocation8/8 successful batch with all normal cleanup,errors empty and stable Engine hashes."
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  },
+  "diagnostic_monitor_review": {
+    "status": "passed-and-pinned",
+    "diagnostics_only_intended": true,
+    "approved_source_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "production_monitor_must_not_be_changed_by_this_preparation": true,
+    "root_cause_proven": false,
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false
+  }
+}

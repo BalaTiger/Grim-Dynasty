@@ -1,0 +1,131 @@
+{
+  "started_utc": "2026-10-22T11:37:02.276Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "proofs": [
+    {
+      "file": "docs/reverse-client/r1-player-register-states/05-PlayerRegisterStates-0x18015e440-procedure_assembly.json",
+      "sha256": "ec9cee9df16f35c149ae5e756a3813659329a5115c760777843c4b46d188f23d"
+    },
+    {
+      "file": "docs/reverse-client/r1-player-mouse-handlers-retry-1/05-PlayerMouse-0x180161d00-procedure_assembly.json",
+      "sha256": "75db7517f9fb01529af5babe68e16d453e673cc456058d2a7dd1ba0d09b4e7d5"
+    }
+  ],
+  "script_sha256": "e7bf0e1054b150e507bcee2a30d55e2a6f9822f3d93855093ab658aae8bf3738",
+  "metadata_bytes": 2308,
+  "vtable_bytes": 72,
+  "string_bytes": 0,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "states": [
+    {
+      "name": "Startup",
+      "vtable_va": "0x180745390",
+      "slots": [
+        {
+          "slot": "0x260",
+          "entry_rva": "0x7455f0",
+          "raw_hex": "00a7018001000000",
+          "target_va": "0x18001a700",
+          "boundary": null,
+          "target_body_read": false
+        },
+        {
+          "slot": "0x278",
+          "entry_rva": "0x745608",
+          "raw_hex": "00a7018001000000",
+          "target_va": "0x18001a700",
+          "boundary": null,
+          "target_body_read": false
+        },
+        {
+          "slot": "0x280",
+          "entry_rva": "0x745610",
+          "raw_hex": "8058018001000000",
+          "target_va": "0x180015880",
+          "boundary": null,
+          "target_body_read": false
+        }
+      ]
+    },
+    {
+      "name": "Idle",
+      "vtable_va": "0x180744e60",
+      "slots": [
+        {
+          "slot": "0x260",
+          "entry_rva": "0x7450c0",
+          "raw_hex": "d05c168001000000",
+          "target_va": "0x180165cd0",
+          "boundary": null,
+          "target_body_read": false
+        },
+        {
+          "slot": "0x278",
+          "entry_rva": "0x7450d8",
+          "raw_hex": "00a7018001000000",
+          "target_va": "0x18001a700",
+          "boundary": null,
+          "target_body_read": false
+        },
+        {
+          "slot": "0x280",
+          "entry_rva": "0x7450e0",
+          "raw_hex": "b05c168001000000",
+          "target_va": "0x180165cb0",
+          "boundary": null,
+          "target_body_read": false
+        }
+      ]
+    },
+    {
+      "name": "MoveTo",
+      "vtable_va": "0x180744930",
+      "slots": [
+        {
+          "slot": "0x260",
+          "entry_rva": "0x744b90",
+          "raw_hex": "d05c168001000000",
+          "target_va": "0x180165cd0",
+          "boundary": null,
+          "target_body_read": false
+        },
+        {
+          "slot": "0x278",
+          "entry_rva": "0x744ba8",
+          "raw_hex": "00a7018001000000",
+          "target_va": "0x18001a700",
+          "boundary": null,
+          "target_body_read": false
+        },
+        {
+          "slot": "0x280",
+          "entry_rva": "0x744bb0",
+          "raw_hex": "d062168001000000",
+          "target_va": "0x1801662d0",
+          "boundary": {
+            "begin_rva": "0x1662d0",
+            "end_rva_exclusive": "0x1663e6",
+            "exact_start": true,
+            "unwind_rva": "0x7eaa74"
+          },
+          "target_body_read": false
+        }
+      ]
+    }
+  ],
+  "strings": [],
+  "failures": [],
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "limitations": [
+    "Disk metadata, not runtime vptr observation. Registration does not prove activation.",
+    "Three fixed related states, three directly used action slots each; no strings or function bodies followed.",
+    "Unwind fragments are boundary observations, not proof of complete logical function or exception behavior."
+  ],
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T11:37:02.291Z",
+  "status": "passed"
+}

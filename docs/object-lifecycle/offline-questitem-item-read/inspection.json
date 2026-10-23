@@ -1,0 +1,74 @@
+{
+  "status": "fixed-questitem-item-read-disassembly-verified",
+  "started_utc": "2026-10-20T12:15:15.844Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-questitem-read-dependencies/dependencies.json",
+      "sha256": "34da4f65ac861c51fe2f64dda560543629c3652b1768e920af2213135f58abbc"
+    }
+  ],
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "code_byte_limit": 1102,
+  "code_bytes": 1102,
+  "metadata_recheck_byte_limit": 12,
+  "metadata_bytes": 12,
+  "fragments": [
+    {
+      "role": "direct-Item-Read",
+      "start_va": "0x180324c60",
+      "end_va_exclusive": "0x1803250ae",
+      "code_bytes": 1102,
+      "code_sha256": "f19283d7aa028ebbf6ba55c68b1199b35fd2d4eaee7df4c8decf807336bae96e",
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180324c60,0x1803250ad",
+        "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll"
+      ],
+      "tool_elapsed_ms": 32,
+      "tool_exit": 0,
+      "tool_error": null,
+      "instructions": 263,
+      "byte_coverage_verified": true
+    }
+  ],
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "original_modified": false,
+  "full_target_copy_created": false,
+  "dumpbin_input": "Original file read directly; no DLL loading or new whole-file copy",
+  "scope": "One frozen direct base-Read unwind fragment; no automatic continuation, callee or inheritance traversal",
+  "hash_scope": "64KiB streaming full-file SHA256 before and after; separate from code/metadata byte totals",
+  "dumpbin_io_scope": "RANGE limits output; internal dumpbin metadata I/O is not instrumented",
+  "original_sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "original_sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "original_stat_stable": true,
+  "original_hash_matches": true,
+  "tool_hash_matches": true,
+  "failures": [],
+  "finished_utc": "2026-10-20T12:15:15.893Z",
+  "controller_resource_usage": {
+    "userCPUTime": 31000,
+    "systemCPUTime": 15000,
+    "maxRSS": 42944,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 11349,
+    "swappedOut": 0,
+    "fsRead": 371,
+    "fsWrite": 3,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  }
+}

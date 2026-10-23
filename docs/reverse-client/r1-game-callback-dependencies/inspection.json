@@ -1,0 +1,1332 @@
+{
+  "schema": "grim-dynasty.fixed-game-callback-dependencies.v1",
+  "started_utc": "2026-10-22T22:37:50.669Z",
+  "script_sha256": "7acb54d7961b9442a82ee95633ef6668b6c2f2ab76273b92afbbf1946e059d05",
+  "plan_sha256": "fa0609a8f7b1d057456c0d72bb2ffba084e615dabc0bb2df4eb5ddd48dd3ae9c",
+  "source_pins": [
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "oft_tail",
+      "path": "docs/reverse-client/r1-navigation-binding/inspection.json",
+      "sha256": "d0c171ce77a6d67e153a6911fc7c3a17ea4d61e80ab9492f3287384524e14264"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "world_region",
+      "path": "docs/reverse-client/r1-camera-target-bindings/inspection.json",
+      "sha256": "2a64f2baaf6549b24fc2d0e3071c6e91c5ff2b18de3195d990dc32b23026608a"
+    },
+    {
+      "key": "world_ctor",
+      "path": "docs/object-lifecycle/offline-worldvec3-constructor-boundary/metadata.json",
+      "sha256": "030c5dfda0c05127a67e6fb4dd1b77996ff6248f58b0f1a33e3a8f592c467dad"
+    },
+    {
+      "key": "floor",
+      "path": "docs/reverse-client/r1-move-and-floor-bindings/inspection.json",
+      "sha256": "66785d22a81c7f2ee2fc2fd497836b3b56f4a12310f31131f73721ef9a266665"
+    },
+    {
+      "key": "character_ctor",
+      "path": "docs/reverse-client/r1-game-entity-constructors/05-GameEntityConstructor-0x180052030-procedure_assembly.json",
+      "sha256": "34a334ae8f918b20469fb57e7d55af0ffbcfba0d5900c42a4e371192d534f856",
+      "procedure": "0x180052030",
+      "instructions": [
+        "0x180052055: MOV R15, RCX",
+        "0x18005205f: LEA RAX, [0x1806df6d0]",
+        "0x180052066: MOV qword ptr [R15], RAX"
+      ]
+    },
+    {
+      "key": "player_ctor",
+      "path": "docs/reverse-client/r1-game-entity-constructors/08-GameEntityConstructor-0x1803cc3f0-procedure_assembly.json",
+      "sha256": "d68276f2f2212942eb66cf2180f34f0b527f5b9a48f473b4ac35098b3d479ded",
+      "procedure": "0x1803cc3f0",
+      "instructions": [
+        "0x1803cc415: MOV RDI, RCX",
+        "0x1803cc418: CALL 0x180052030",
+        "0x1803cc41e: LEA RAX, [0x180787100]",
+        "0x1803cc425: MOV qword ptr [RDI], RAX"
+      ]
+    },
+    {
+      "key": "created",
+      "path": "docs/reverse-client/r1-game-movement-interface/05-GameMovementInterface-0x180066c20-procedure_assembly.json",
+      "sha256": "1613fb9d39f0fdc7967e5fba6ab7a3cd0f0a6468d04e32cfe4565e8ae7a316fe",
+      "procedure": "0x180066c20",
+      "instructions": [
+        "0x180066c4f: CALL qword ptr [0x180609518]",
+        "0x180066c5a: CALL qword ptr [0x1806094a0]",
+        "0x180066c6f: CALL qword ptr [0x180609d98]",
+        "0x180066cbf: CALL qword ptr [0x180609da0]",
+        "0x180066cce: CALL qword ptr [0x180609d08]",
+        "0x180066d12: CALL qword ptr [RAX + 0x1c8]"
+      ]
+    },
+    {
+      "key": "update",
+      "path": "docs/reverse-client/r1-game-movement-interface/11-GameMovementInterface-0x180066d60-procedure_assembly.json",
+      "sha256": "39c761a562f79f260e94f94b816e38d3fc8d0fe61daad05394c7b493c55b0132",
+      "procedure": "0x180066d60",
+      "instructions": [
+        "0x180066e04: CALL qword ptr [RAX]",
+        "0x180066e4a: CALL qword ptr [RAX + 0x458]",
+        "0x180066e8d: MOV RCX, qword ptr [0x180609050]",
+        "0x180066e97: CALL qword ptr [0x180609db0]",
+        "0x180066ea3: CALL qword ptr [0x180609da8]"
+      ]
+    },
+    {
+      "key": "moved",
+      "path": "docs/reverse-client/r1-game-movement-interface/14-GameMovementInterface-0x180066ee0-procedure_assembly.json",
+      "sha256": "78d9bfaa180ff24e5d0cb8dfa8e77b25298bf92bfca1c4d5c8962a8dd1b3ccce",
+      "procedure": "0x180066ee0",
+      "instructions": [
+        "0x180066f29: CALL qword ptr [0x180609db8]",
+        "0x180066f3b: CALL qword ptr [0x180609720]",
+        "0x180066f45: CALL qword ptr [0x180609530]",
+        "0x180066f55: CALL qword ptr [0x180609dc0]",
+        "0x180066f67: CALL qword ptr [0x180609bb0]",
+        "0x180066fdf: CALL qword ptr [0x180609a48]"
+      ]
+    },
+    {
+      "key": "reached",
+      "path": "docs/reverse-client/r1-game-movement-interface/17-GameMovementInterface-0x180067170-procedure_assembly.json",
+      "sha256": "c9282463916cd02ecc5c95af0010f9cba3fca714678b3e2f0900dfd5c7b1d888",
+      "procedure": "0x180067170",
+      "instructions": [
+        "0x1800671f7: CALL qword ptr [RAX + 0x830]",
+        "0x18006720e: CALL qword ptr [0x180609098]",
+        "0x180067273: JMP qword ptr [0x180609dc8]"
+      ]
+    }
+  ],
+  "metadata_bytes": 1384,
+  "metadata_operations": 88,
+  "data_bytes": 64,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_loaded_or_executed": false,
+  "whole_export_table_scanned": false,
+  "new_OFT_bytes": 0,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "reads": [
+        {
+          "kind": "primary-vtable-exact-slot",
+          "rva": "0x6df6d0",
+          "file_offset": 7199952,
+          "bytes": 8,
+          "raw_hex": "209d018001000000"
+        },
+        {
+          "kind": "primary-vtable-exact-slot",
+          "rva": "0x6df898",
+          "file_offset": 7200408,
+          "bytes": 8,
+          "raw_hex": "8c9f5d8001000000"
+        },
+        {
+          "kind": "primary-vtable-exact-slot",
+          "rva": "0x6dfb28",
+          "file_offset": 7201064,
+          "bytes": 8,
+          "raw_hex": "30b7058001000000"
+        },
+        {
+          "kind": "primary-vtable-exact-slot",
+          "rva": "0x6dff00",
+          "file_offset": 7202048,
+          "bytes": 8,
+          "raw_hex": "30fc058001000000"
+        },
+        {
+          "kind": "primary-vtable-exact-slot",
+          "rva": "0x787100",
+          "file_offset": 7886592,
+          "bytes": 8,
+          "raw_hex": "106d018001000000"
+        },
+        {
+          "kind": "primary-vtable-exact-slot",
+          "rva": "0x7872c8",
+          "file_offset": 7887048,
+          "bytes": 8,
+          "raw_hex": "8c9f5d8001000000"
+        },
+        {
+          "kind": "primary-vtable-exact-slot",
+          "rva": "0x787558",
+          "file_offset": 7887704,
+          "bytes": 8,
+          "raw_hex": "30b7058001000000"
+        },
+        {
+          "kind": "primary-vtable-exact-slot",
+          "rva": "0x787930",
+          "file_offset": 7888688,
+          "bytes": 8,
+          "raw_hex": "30fc058001000000"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609098",
+          "file_offset": 6321816,
+          "bytes": 8,
+          "raw_hex": "6e59a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4596e",
+          "file_offset": 10764142,
+          "bytes": 2,
+          "raw_hex": "0109"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa45970",
+          "file_offset": 10764144,
+          "bytes": 70,
+          "raw_hex": "3f476574403f2453696e676c65746f6e40564f626a6563744d616e616765724047414d4540404047414d4540405341504541564f626a6563744d616e61676572403240585a00"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609518",
+          "file_offset": 6322968,
+          "bytes": 8,
+          "raw_hex": "5e79a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4795e",
+          "file_offset": 10772318,
+          "bytes": 2,
+          "raw_hex": "fc09"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa47960",
+          "file_offset": 10772320,
+          "bytes": 48,
+          "raw_hex": "3f476574436f6f72647340456e746974794047414d454040514542413f4156576f726c64436f6f726473403240585a00"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609530",
+          "file_offset": 6322992,
+          "bytes": 8,
+          "raw_hex": "f679a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa479f6",
+          "file_offset": 10772470,
+          "bytes": 2,
+          "raw_hex": "2f0d"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa479f8",
+          "file_offset": 10772472,
+          "bytes": 44,
+          "raw_hex": "3f476574526567696f6e40456e746974794047414d4540405145424150454156526567696f6e403240585a00"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609a48",
+          "file_offset": 6324296,
+          "bytes": 8,
+          "raw_hex": "fe9ba40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa49bfe",
+          "file_offset": 10781182,
+          "bytes": 2,
+          "raw_hex": "6b04"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa49c00",
+          "file_offset": 10781184,
+          "bytes": 43,
+          "raw_hex": "3f3f47576f726c64566563334047414d454040514542413f41565665633340314041454256303140405a00"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609d08",
+          "file_offset": 6325000,
+          "bytes": 8,
+          "raw_hex": "54b0a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4b054",
+          "file_offset": 10786388,
+          "bytes": 2,
+          "raw_hex": "fb0b"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa4b056",
+          "file_offset": 10786390,
+          "bytes": 42,
+          "raw_hex": "3f4765744d6f74696f6e40456e746974794047414d454040514542414145425656656333403240585a00"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609d98",
+          "file_offset": 6325144,
+          "bytes": 8,
+          "raw_hex": "46b4a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4b446",
+          "file_offset": 10787398,
+          "bytes": 2,
+          "raw_hex": "bd0e"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa4b448",
+          "file_offset": 10787400,
+          "bytes": 51,
+          "raw_hex": "3f476574576f726c64506f736974696f6e40576f726c64566563334047414d454040514542413f415656656333403240585a00"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609da0",
+          "file_offset": 6325152,
+          "bytes": 8,
+          "raw_hex": "7cb4a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4b47c",
+          "file_offset": 10787452,
+          "bytes": 2,
+          "raw_hex": "000b"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa4b47e",
+          "file_offset": 10787454,
+          "bytes": 31,
+          "raw_hex": "3f476574486569676874404163746f724047414d454040514542414d585a00"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609da8",
+          "file_offset": 6325160,
+          "bytes": 8,
+          "raw_hex": "9eb4a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4b49e",
+          "file_offset": 10787486,
+          "bytes": 2,
+          "raw_hex": "900b"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa4b4a0",
+          "file_offset": 10787488,
+          "bytes": 42,
+          "raw_hex": "3f4765744c6173744672616d655570646174656440456e746974794047414d4540405145424149585a00"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609db0",
+          "file_offset": 6325168,
+          "bytes": 8,
+          "raw_hex": "cab4a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4b4ca",
+          "file_offset": 10787530,
+          "bytes": 2,
+          "raw_hex": "b80a"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa4b4cc",
+          "file_offset": 10787532,
+          "bytes": 36,
+          "raw_hex": "3f4765744672616d65436f756e7440456e67696e654047414d4540405145424149585a00"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609db8",
+          "file_offset": 6325176,
+          "bytes": 8,
+          "raw_hex": "f0b4a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4b4f0",
+          "file_offset": 10787568,
+          "bytes": 2,
+          "raw_hex": "b40f"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa4b4f2",
+          "file_offset": 10787570,
+          "bytes": 31,
+          "raw_hex": "3f497347616d6554696d655061757365644047414d45404059415f4e585a00"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609dc0",
+          "file_offset": 6325184,
+          "bytes": 8,
+          "raw_hex": "12b5a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4b512",
+          "file_offset": 10787602,
+          "bytes": 2,
+          "raw_hex": "a514"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa4b514",
+          "file_offset": 10787604,
+          "bytes": 71,
+          "raw_hex": "3f53657446726f6d576f726c64506f736974696f6e40576f726c64566563334047414d454040514541415f4e414542565665633340324050454156526567696f6e403240405a00"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609dc8",
+          "file_offset": 6325192,
+          "bytes": 8,
+          "raw_hex": "5cb5a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4b55c",
+          "file_offset": 10787676,
+          "bytes": 2,
+          "raw_hex": "9c08"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa4b55e",
+          "file_offset": 10787678,
+          "bytes": 42,
+          "raw_hex": "3f457865637574654576656e74486f6f6b40486f6f6b5061636b4047414d454040514542415849405a00"
+        }
+      ],
+      "hash_bytes": 22771712,
+      "closed": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "stable": true
+    },
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "reads": [
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3bb968",
+          "file_offset": 3909992,
+          "bytes": 4,
+          "raw_hex": "a33e4100"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x413ea3",
+          "file_offset": 4271779,
+          "bytes": 32,
+          "raw_hex": "3f67456e67696e654047414d4540403350454156456e67696e65403140454100"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3beb8a",
+          "file_offset": 3922826,
+          "bytes": 2,
+          "raw_hex": "0518"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b573c",
+          "file_offset": 3884860,
+          "bytes": 4,
+          "raw_hex": "28144200"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b7d58",
+          "file_offset": 3894616,
+          "bytes": 4,
+          "raw_hex": "9faf3d00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3daf9f",
+          "file_offset": 4038559,
+          "bytes": 70,
+          "raw_hex": "3f476574403f2453696e676c65746f6e40564f626a6563744d616e616765724047414d4540404047414d4540405341504541564f626a6563744d616e61676572403240585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bcd82",
+          "file_offset": 3915138,
+          "bytes": 2,
+          "raw_hex": "0109"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b1b2c",
+          "file_offset": 3869484,
+          "bytes": 4,
+          "raw_hex": "40c00100"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b8144",
+          "file_offset": 3895620,
+          "bytes": 4,
+          "raw_hex": "d2f03d00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3df0d2",
+          "file_offset": 4055250,
+          "bytes": 48,
+          "raw_hex": "3f476574436f6f72647340456e746974794047414d454040514542413f4156576f726c64436f6f726473403240585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bcf78",
+          "file_offset": 3915640,
+          "bytes": 2,
+          "raw_hex": "fc09"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b1f18",
+          "file_offset": 3870488,
+          "bytes": 4,
+          "raw_hex": "70f00700"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b8e10",
+          "file_offset": 3898896,
+          "bytes": 4,
+          "raw_hex": "55bd3e00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3ebd55",
+          "file_offset": 4107605,
+          "bytes": 44,
+          "raw_hex": "3f476574526567696f6e40456e746974794047414d4540405145424150454156526567696f6e403240585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bd5de",
+          "file_offset": 3917278,
+          "bytes": 2,
+          "raw_hex": "2f0d"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b2be4",
+          "file_offset": 3873764,
+          "bytes": 4,
+          "raw_hex": "30f10700"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b6b00",
+          "file_offset": 3889920,
+          "bytes": 4,
+          "raw_hex": "d1a23c00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3ca2d1",
+          "file_offset": 3969745,
+          "bytes": 43,
+          "raw_hex": "3f3f47576f726c64566563334047414d454040514542413f41565665633340314041454256303140405a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bc456",
+          "file_offset": 3912790,
+          "bytes": 2,
+          "raw_hex": "6b04"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b08d4",
+          "file_offset": 3864788,
+          "bytes": 4,
+          "raw_hex": "40c22200"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b8940",
+          "file_offset": 3897664,
+          "bytes": 4,
+          "raw_hex": "03703e00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3e7003",
+          "file_offset": 4087811,
+          "bytes": 42,
+          "raw_hex": "3f4765744d6f74696f6e40456e746974794047414d454040514542414145425656656333403240585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bd376",
+          "file_offset": 3916662,
+          "bytes": 2,
+          "raw_hex": "fb0b"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b2714",
+          "file_offset": 3872532,
+          "bytes": 4,
+          "raw_hex": "20eb0700"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b9448",
+          "file_offset": 3900488,
+          "bytes": 4,
+          "raw_hex": "93203f00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3f2093",
+          "file_offset": 4133011,
+          "bytes": 51,
+          "raw_hex": "3f476574576f726c64506f736974696f6e40576f726c64566563334047414d454040514542413f415656656333403240585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bd8fa",
+          "file_offset": 3918074,
+          "bytes": 2,
+          "raw_hex": "bd0e"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b321c",
+          "file_offset": 3875356,
+          "bytes": 4,
+          "raw_hex": "a0c12200"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b8554",
+          "file_offset": 3896660,
+          "bytes": 4,
+          "raw_hex": "51343e00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3e3451",
+          "file_offset": 4072529,
+          "bytes": 31,
+          "raw_hex": "3f476574486569676874404163746f724047414d454040514542414d585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bd180",
+          "file_offset": 3916160,
+          "bytes": 2,
+          "raw_hex": "000b"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b2328",
+          "file_offset": 3871528,
+          "bytes": 4,
+          "raw_hex": "60b40200"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b8794",
+          "file_offset": 3897236,
+          "bytes": 4,
+          "raw_hex": "5f553e00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3e555f",
+          "file_offset": 4080991,
+          "bytes": 42,
+          "raw_hex": "3f4765744c6173744672616d655570646174656440456e746974794047414d4540405145424149585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bd2a0",
+          "file_offset": 3916448,
+          "bytes": 2,
+          "raw_hex": "900b"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b2568",
+          "file_offset": 3872104,
+          "bytes": 4,
+          "raw_hex": "c0e70700"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b8434",
+          "file_offset": 3896372,
+          "bytes": 4,
+          "raw_hex": "a5213e00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3e21a5",
+          "file_offset": 4067749,
+          "bytes": 36,
+          "raw_hex": "3f4765744672616d65436f756e7440456e67696e654047414d4540405145424149585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bd0f0",
+          "file_offset": 3916016,
+          "bytes": 2,
+          "raw_hex": "b80a"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b2208",
+          "file_offset": 3871240,
+          "bytes": 4,
+          "raw_hex": "80780700"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b9824",
+          "file_offset": 3901476,
+          "bytes": 4,
+          "raw_hex": "be5a3f00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3f5abe",
+          "file_offset": 4147902,
+          "bytes": 31,
+          "raw_hex": "3f497347616d6554696d655061757365644047414d45404059415f4e585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bdae8",
+          "file_offset": 3918568,
+          "bytes": 2,
+          "raw_hex": "b40f"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b35f8",
+          "file_offset": 3876344,
+          "bytes": 4,
+          "raw_hex": "60971e00"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3babe8",
+          "file_offset": 3906536,
+          "bytes": 4,
+          "raw_hex": "c37e4000"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x407ec3",
+          "file_offset": 4222659,
+          "bytes": 71,
+          "raw_hex": "3f53657446726f6d576f726c64506f736974696f6e40576f726c64566563334047414d454040514541415f4e414542565665633340324050454156526567696f6e403240405a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3be4ca",
+          "file_offset": 3921098,
+          "bytes": 2,
+          "raw_hex": "a514"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b49bc",
+          "file_offset": 3881404,
+          "bytes": 4,
+          "raw_hex": "90c62200"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b7bc4",
+          "file_offset": 3894212,
+          "bytes": 4,
+          "raw_hex": "fb903d00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3d90fb",
+          "file_offset": 4030715,
+          "bytes": 42,
+          "raw_hex": "3f457865637574654576656e74486f6f6b40486f6f6b5061636b4047414d454040514542415849405a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bccb8",
+          "file_offset": 3914936,
+          "bytes": 2,
+          "raw_hex": "9c08"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b1998",
+          "file_offset": 3869080,
+          "bytes": 4,
+          "raw_hex": "10c00e00"
+        }
+      ],
+      "hash_bytes": 8971264,
+      "closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "stable": true
+    }
+  ],
+  "bindings": [
+    {
+      "iat_rva": "0x609050",
+      "index": 10,
+      "symbol": "?gEngine@GAME@@3PEAVEngine@1@EA",
+      "kind": "data",
+      "import_source": "cached-raw-import",
+      "dll": "Engine.dll",
+      "hint": 6149,
+      "lookup_rva": "0xa42b10",
+      "hint_name_rva": "0xa45706"
+    },
+    {
+      "iat_rva": "0x609098",
+      "index": 19,
+      "symbol": "?Get@?$Singleton@VObjectManager@GAME@@@GAME@@SAPEAVObjectManager@2@XZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata",
+      "dll": "Engine.dll",
+      "hint": 2305,
+      "lookup_rva": "0xa42b58",
+      "hint_name_rva": "0xa4596e"
+    },
+    {
+      "iat_rva": "0x609518",
+      "index": 163,
+      "symbol": "?GetCoords@Entity@GAME@@QEBA?AVWorldCoords@2@XZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata",
+      "dll": "Engine.dll",
+      "hint": 2556,
+      "lookup_rva": "0xa42fd8",
+      "hint_name_rva": "0xa4795e"
+    },
+    {
+      "iat_rva": "0x609530",
+      "index": 166,
+      "symbol": "?GetRegion@Entity@GAME@@QEBAPEAVRegion@2@XZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata",
+      "dll": "Engine.dll",
+      "hint": 3375,
+      "lookup_rva": "0xa42ff0",
+      "hint_name_rva": "0xa479f6"
+    },
+    {
+      "iat_rva": "0x609a48",
+      "index": 329,
+      "symbol": "??GWorldVec3@GAME@@QEBA?AVVec3@1@AEBV01@@Z",
+      "kind": "function",
+      "import_source": "exact-new-metadata",
+      "dll": "Engine.dll",
+      "hint": 1131,
+      "lookup_rva": "0xa43508",
+      "hint_name_rva": "0xa49bfe"
+    },
+    {
+      "iat_rva": "0x609d08",
+      "index": 417,
+      "symbol": "?GetMotion@Entity@GAME@@QEBAAEBVVec3@2@XZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata",
+      "dll": "Engine.dll",
+      "hint": 3067,
+      "lookup_rva": "0xa437c8",
+      "hint_name_rva": "0xa4b054"
+    },
+    {
+      "iat_rva": "0x609d98",
+      "index": 435,
+      "symbol": "?GetWorldPosition@WorldVec3@GAME@@QEBA?AVVec3@2@XZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata",
+      "dll": "Engine.dll",
+      "hint": 3773,
+      "lookup_rva": "0xa43858",
+      "hint_name_rva": "0xa4b446"
+    },
+    {
+      "iat_rva": "0x609da0",
+      "index": 436,
+      "symbol": "?GetHeight@Actor@GAME@@QEBAMXZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata",
+      "dll": "Engine.dll",
+      "hint": 2816,
+      "lookup_rva": "0xa43860",
+      "hint_name_rva": "0xa4b47c"
+    },
+    {
+      "iat_rva": "0x609da8",
+      "index": 437,
+      "symbol": "?GetLastFrameUpdated@Entity@GAME@@QEBAIXZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata",
+      "dll": "Engine.dll",
+      "hint": 2960,
+      "lookup_rva": "0xa43868",
+      "hint_name_rva": "0xa4b49e"
+    },
+    {
+      "iat_rva": "0x609db0",
+      "index": 438,
+      "symbol": "?GetFrameCount@Engine@GAME@@QEBAIXZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata",
+      "dll": "Engine.dll",
+      "hint": 2744,
+      "lookup_rva": "0xa43870",
+      "hint_name_rva": "0xa4b4ca"
+    },
+    {
+      "iat_rva": "0x609db8",
+      "index": 439,
+      "symbol": "?IsGameTimePaused@GAME@@YA_NXZ",
+      "kind": "function",
+      "import_source": "exact-new-metadata",
+      "dll": "Engine.dll",
+      "hint": 4020,
+      "lookup_rva": "0xa43878",
+      "hint_name_rva": "0xa4b4f0"
+    },
+    {
+      "iat_rva": "0x609dc0",
+      "index": 440,
+      "symbol": "?SetFromWorldPosition@WorldVec3@GAME@@QEAA_NAEBVVec3@2@PEAVRegion@2@@Z",
+      "kind": "function",
+      "import_source": "exact-new-metadata",
+      "dll": "Engine.dll",
+      "hint": 5285,
+      "lookup_rva": "0xa43880",
+      "hint_name_rva": "0xa4b512"
+    },
+    {
+      "iat_rva": "0x609dc8",
+      "index": 441,
+      "symbol": "?ExecuteEventHook@HookPack@GAME@@QEBAXI@Z",
+      "kind": "function",
+      "import_source": "exact-new-metadata",
+      "dll": "Engine.dll",
+      "hint": 2204,
+      "lookup_rva": "0xa43888",
+      "hint_name_rva": "0xa4b55c"
+    }
+  ],
+  "exports": [
+    {
+      "iat_rva": "0x609050",
+      "symbol": "?gEngine@GAME@@3PEAVEngine@1@EA",
+      "kind": "data",
+      "hint": 6149,
+      "name_rva": "0x413ea3",
+      "ordinal_index": 6149,
+      "ordinal": 6150,
+      "target_rva": "0x421428",
+      "target_va": "0x180421428",
+      "target_section": ".data",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609098",
+      "symbol": "?Get@?$Singleton@VObjectManager@GAME@@@GAME@@SAPEAVObjectManager@2@XZ",
+      "kind": "function",
+      "hint": 2305,
+      "name_rva": "0x3daf9f",
+      "ordinal_index": 2305,
+      "ordinal": 2306,
+      "target_rva": "0x1c040",
+      "target_va": "0x18001c040",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609518",
+      "symbol": "?GetCoords@Entity@GAME@@QEBA?AVWorldCoords@2@XZ",
+      "kind": "function",
+      "hint": 2556,
+      "name_rva": "0x3df0d2",
+      "ordinal_index": 2556,
+      "ordinal": 2557,
+      "target_rva": "0x7f070",
+      "target_va": "0x18007f070",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609530",
+      "symbol": "?GetRegion@Entity@GAME@@QEBAPEAVRegion@2@XZ",
+      "kind": "function",
+      "hint": 3375,
+      "name_rva": "0x3ebd55",
+      "ordinal_index": 3375,
+      "ordinal": 3376,
+      "target_rva": "0x7f130",
+      "target_va": "0x18007f130",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609a48",
+      "symbol": "??GWorldVec3@GAME@@QEBA?AVVec3@1@AEBV01@@Z",
+      "kind": "function",
+      "hint": 1131,
+      "name_rva": "0x3ca2d1",
+      "ordinal_index": 1131,
+      "ordinal": 1132,
+      "target_rva": "0x22c240",
+      "target_va": "0x18022c240",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609d08",
+      "symbol": "?GetMotion@Entity@GAME@@QEBAAEBVVec3@2@XZ",
+      "kind": "function",
+      "hint": 3067,
+      "name_rva": "0x3e7003",
+      "ordinal_index": 3067,
+      "ordinal": 3068,
+      "target_rva": "0x7eb20",
+      "target_va": "0x18007eb20",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609d98",
+      "symbol": "?GetWorldPosition@WorldVec3@GAME@@QEBA?AVVec3@2@XZ",
+      "kind": "function",
+      "hint": 3773,
+      "name_rva": "0x3f2093",
+      "ordinal_index": 3773,
+      "ordinal": 3774,
+      "target_rva": "0x22c1a0",
+      "target_va": "0x18022c1a0",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609da0",
+      "symbol": "?GetHeight@Actor@GAME@@QEBAMXZ",
+      "kind": "function",
+      "hint": 2816,
+      "name_rva": "0x3e3451",
+      "ordinal_index": 2816,
+      "ordinal": 2817,
+      "target_rva": "0x2b460",
+      "target_va": "0x18002b460",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609da8",
+      "symbol": "?GetLastFrameUpdated@Entity@GAME@@QEBAIXZ",
+      "kind": "function",
+      "hint": 2960,
+      "name_rva": "0x3e555f",
+      "ordinal_index": 2960,
+      "ordinal": 2961,
+      "target_rva": "0x7e7c0",
+      "target_va": "0x18007e7c0",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609db0",
+      "symbol": "?GetFrameCount@Engine@GAME@@QEBAIXZ",
+      "kind": "function",
+      "hint": 2744,
+      "name_rva": "0x3e21a5",
+      "ordinal_index": 2744,
+      "ordinal": 2745,
+      "target_rva": "0x77880",
+      "target_va": "0x180077880",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609db8",
+      "symbol": "?IsGameTimePaused@GAME@@YA_NXZ",
+      "kind": "function",
+      "hint": 4020,
+      "name_rva": "0x3f5abe",
+      "ordinal_index": 4020,
+      "ordinal": 4021,
+      "target_rva": "0x1e9760",
+      "target_va": "0x1801e9760",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609dc0",
+      "symbol": "?SetFromWorldPosition@WorldVec3@GAME@@QEAA_NAEBVVec3@2@PEAVRegion@2@@Z",
+      "kind": "function",
+      "hint": 5285,
+      "name_rva": "0x407ec3",
+      "ordinal_index": 5285,
+      "ordinal": 5286,
+      "target_rva": "0x22c690",
+      "target_va": "0x18022c690",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609dc8",
+      "symbol": "?ExecuteEventHook@HookPack@GAME@@QEBAXI@Z",
+      "kind": "function",
+      "hint": 2204,
+      "name_rva": "0x3d90fb",
+      "ordinal_index": 2204,
+      "ordinal": 2205,
+      "target_rva": "0xec010",
+      "target_va": "0x1800ec010",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "code_read": false,
+      "loaded_value_observed": false
+    }
+  ],
+  "reused_bindings": [
+    {
+      "iat_rva": "0x6094a0",
+      "index": 148,
+      "symbol": "?GetRegion@WorldVec3@GAME@@QEBAPEAVRegion@2@XZ",
+      "target_rva": "0x22c0b0",
+      "proof_key": "world_region",
+      "hint": 3387,
+      "target_va": "0x18022c0b0",
+      "reused_without_new_original_read": true,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609720",
+      "index": 228,
+      "symbol": "??0WorldVec3@GAME@@QEAA@XZ",
+      "target_rva": "0x228ab0",
+      "proof_key": "world_ctor",
+      "hint": 565,
+      "target_va": "0x180228ab0",
+      "reused_without_new_original_read": true,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609bb0",
+      "index": 374,
+      "symbol": "?PutOnFloor@WorldVec3@GAME@@QEAA_NXZ",
+      "target_rva": "0x22c620",
+      "proof_key": "floor",
+      "hint": 4612,
+      "target_va": "0x18022c620",
+      "reused_without_new_original_read": true,
+      "loaded_value_observed": false
+    }
+  ],
+  "values": [
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x0",
+      "rva": "0x6df6d0",
+      "bytes": 8,
+      "raw_hex": "209d018001000000",
+      "uint64_va": "0x180019d20",
+      "candidate_rva": "0x19d20",
+      "classification": "ExecutableAddressCandidate",
+      "function_boundary_verified": false,
+      "loaded_value_observed": false
+    },
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x1c8",
+      "rva": "0x6df898",
+      "bytes": 8,
+      "raw_hex": "8c9f5d8001000000",
+      "uint64_va": "0x1805d9f8c",
+      "candidate_rva": "0x5d9f8c",
+      "classification": "ExecutableAddressCandidate",
+      "function_boundary_verified": false,
+      "loaded_value_observed": false
+    },
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x458",
+      "rva": "0x6dfb28",
+      "bytes": 8,
+      "raw_hex": "30b7058001000000",
+      "uint64_va": "0x18005b730",
+      "candidate_rva": "0x5b730",
+      "classification": "ExecutableAddressCandidate",
+      "function_boundary_verified": false,
+      "loaded_value_observed": false
+    },
+    {
+      "owner": "Character",
+      "table_rva": "0x6df6d0",
+      "slot_offset": "0x830",
+      "rva": "0x6dff00",
+      "bytes": 8,
+      "raw_hex": "30fc058001000000",
+      "uint64_va": "0x18005fc30",
+      "candidate_rva": "0x5fc30",
+      "classification": "ExecutableAddressCandidate",
+      "function_boundary_verified": false,
+      "loaded_value_observed": false
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x0",
+      "rva": "0x787100",
+      "bytes": 8,
+      "raw_hex": "106d018001000000",
+      "uint64_va": "0x180016d10",
+      "candidate_rva": "0x16d10",
+      "classification": "ExecutableAddressCandidate",
+      "function_boundary_verified": false,
+      "loaded_value_observed": false
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x1c8",
+      "rva": "0x7872c8",
+      "bytes": 8,
+      "raw_hex": "8c9f5d8001000000",
+      "uint64_va": "0x1805d9f8c",
+      "candidate_rva": "0x5d9f8c",
+      "classification": "ExecutableAddressCandidate",
+      "function_boundary_verified": false,
+      "loaded_value_observed": false
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x458",
+      "rva": "0x787558",
+      "bytes": 8,
+      "raw_hex": "30b7058001000000",
+      "uint64_va": "0x18005b730",
+      "candidate_rva": "0x5b730",
+      "classification": "ExecutableAddressCandidate",
+      "function_boundary_verified": false,
+      "loaded_value_observed": false
+    },
+    {
+      "owner": "Player",
+      "table_rva": "0x787100",
+      "slot_offset": "0x830",
+      "rva": "0x787930",
+      "bytes": 8,
+      "raw_hex": "30fc058001000000",
+      "uint64_va": "0x18005fc30",
+      "candidate_rva": "0x5fc30",
+      "classification": "ExecutableAddressCandidate",
+      "function_boundary_verified": false,
+      "loaded_value_observed": false
+    }
+  ],
+  "failures": [],
+  "primary_tables": {
+    "interface_offset": 0,
+    "constructor_writes_verified": true,
+    "player_overwrite_verified": true,
+    "table_extents_verified": false,
+    "subsequent_callee_writes_excluded": false,
+    "loaded_values_observed": false
+  },
+  "limitations": [
+    "Primary vptrs are constructor-written Character6DF6D0 and Player787100 at full-object+0. These differ from their movement-interface vptrs at+38.",
+    "Constructor call effects and later writes remain unknown. Eight disk slot values do not establish full table extent, callable ABI, complete constructor success or loaded object identity.",
+    "The13 exact exports and3 reused bindings cover the fixed observed movement-interface imports only. No implementation or original runtime compatibility is inferred.",
+    "gEngine is a data-symbol address binding only; no Engine global payload or loaded pointer is read, initialized or presumed zero.",
+    "GetCoords by-value output and GetWorldPosition returned-pointer identity require their actual bodies; metadata does not imply hidden-buffer alias.",
+    "Pinned nonzero OFT continuity is not uniqueness across every import descriptor. Hint mismatch fails without a wider export-name search.",
+    "PE section/file bounds are reused only with exact original SHA256 equality. Whole-file streams are hashes, separate from metadata budgets, not atomic snapshots.",
+    "Node path checks do not identify every Windows reparse tag; external Attributes preflight remains required."
+  ],
+  "proofs_verified": true,
+  "finished_utc": "2026-10-22T22:37:50.704Z",
+  "status": "passed"
+}

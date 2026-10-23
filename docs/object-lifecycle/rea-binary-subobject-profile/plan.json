@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "purpose": "Inspect only Engine 0x1800481f0 called after the Binary vptr write, with RCX=this+0x78, EDX=0 and R8 pointing at the partially zeroed stack local. Establish bounded writes, input read widths, dependencies and normal-return vptr preservation; do not infer a parser protocol.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/object-lifecycle/rea-binary-table-constructor/05-LoadTableBinary-constructor-0x18013f300-assembly.json",
+      "sha256": "bb3fa2e3f2bca620f66caca1894932b970d69761f63327e23982f4eea158ccb0",
+      "evidence_id": "ev_b1ad5be04fcc0fbf21d70590d288cbd2145ca6dd127d0be510fe7cd3f850f96f",
+      "caller": "0x18013f300",
+      "selected_calls": [
+        {
+          "call_site": "0x18013f378",
+          "selected_target": "0x1800481f0"
+        }
+      ]
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_info",
+    "procedure_callees",
+    "xrefs",
+    "address_name"
+  ],
+  "execution_requirements": [
+    "The parent has explicitly handed over the heavy window after the OutOfWindow exit. Confirm fresh host preflight and permit no simultaneous UE/build/other Java backend during this calibration.",
+    "This plan does not expand authorization. Stop at any per-action approval, denial, hash mismatch, unavailable provider or failed preflight; do not switch tools or backend to bypass it.",
+    "Before dispatch verify fixed target SHA256, source-evidence hashes and actual MCP tools/list schemas. Pin Rea 6.5.0 and the existing ghidra provider.",
+    "Keep exactly these eight calls and one owned backend tree, with task-specific 384M Java heap. This first calibration retains the existing 6 GiB launch / 5 GiB physical stop guard only to collect attributable measurements at available headroom, not as an asserted task requirement. Add read-only per-PID private commit, observed lifetime commit peak, working set and system commit sampling; preserve normal 512M project config. Retain at least 5 GiB system commit headroom during this calibration; fail closed on missing/stale sampler data or concurrent UE/build/other Java, stopping only the owned backend tree.",
+    "Archive each response under a unique label and retain limitations; stop the plan on unexpected identity, errors or unavailable analysis.",
+    "If interrupted with a target open, perform only necessary close cleanup within the eight-call budget where permitted, then record closure/exit and fixed target hash.",
+    "The fixed procedure is 0x1800481f0 only. No other callee, caller, parser address, vtable slot, export scan, game binary or runtime target is included.",
+    "Interpret RCX as the subobject at parent+0x78 only for this observed caller. Track negative-offset writes and aliases that could reach parent vptr at helper-relative -0x78.",
+    "The stack local is written as a qword pointer then only low DWORD zeroed. Determine actual reads; do not assume a zero qword, valid R9, or a fifth business argument.",
+    "Direct-callee coverage does not close those callees. If unresolved calls or pointer escapes can affect the parent, keep vptr preservation unknown and prepare a separate bounded follow-up.",
+    "The separate static slot read is not part of these eight calls. Do not launch a parser query after this batch.",
+    "Close normally, verify final session has no target and child exit, then check owned process release and runtime files. Do not leave an idle backend while writing documentation."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1800481f0"
+      },
+      "label": "04-Binary-subobject-init-0x1800481f0-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1800481f0"
+      },
+      "label": "05-Binary-subobject-init-0x1800481f0-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1800481f0"
+      },
+      "label": "06-Binary-subobject-init-0x1800481f0-direct-callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ],
+  "status": "reviewed-profile-batch",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "Which bytes are read from R8, including width and branch use?",
+    "What writes/allocations occur when EDX=0, in what order, and on what normal-success domain?",
+    "Can direct writes, aliases or callees modify parent+0 or earlier initialized fields?",
+    "What final subobject state is known, and which callee or external contracts remain open?"
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "sampling_interval_ms": 1000,
+    "calibration_only_launch_gib": 6,
+    "calibration_only_stop_gib": 5,
+    "sampler": "tools/static_analysis/measure_owned_process_memory.ps1",
+    "no_system_settings_change": true,
+    "calibration_only_commit_headroom_stop_gib": 5
+  }
+}

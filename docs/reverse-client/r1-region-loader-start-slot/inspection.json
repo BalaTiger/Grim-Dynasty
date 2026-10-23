@@ -1,0 +1,56 @@
+{
+  "started_utc": "2026-10-22T17:30:36.695Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "proofs": [
+    {
+      "file": "docs/reverse-client/r1-region-load-entry/05-RegionLoadEntry-0x180196380-procedure_assembly.json",
+      "sha256": "2cd57d6e498d9637de21cb4f3f515750dc59c9fbb3a6b7c6f8f9268b12b6629e",
+      "procedure": "0x180196380"
+    },
+    {
+      "file": "docs/reverse-client/r1-region-load-entry/08-RegionLoadEntry-0x180196790-procedure_assembly.json",
+      "sha256": "9949974e5294df89b51a0d7e16034b8f81304235cb415025042d9cd54f0fd8a5",
+      "procedure": "0x180196790"
+    }
+  ],
+  "script_sha256": "18416d525717db866292e778d0762dc4e553e7f80ab837dfec98b835d94ff4e7",
+  "metadata_bytes": 688,
+  "data_bytes": 8,
+  "code_bytes": 0,
+  "hash_bytes": 8971264,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "vtable_rva": "0x342c70",
+      "vtable_va": "0x180342c70",
+      "slot_offset": "0x0",
+      "rva": "0x342c70",
+      "va": "0x180342c70",
+      "file_offset": 3415152,
+      "bytes": 8,
+      "section": ".rdata",
+      "raw_hex": "d06d198001000000",
+      "target_va": "0x180196dd0",
+      "target_rva": "0x196dd0",
+      "target_section": ".text",
+      "target_body_read": false
+    }
+  ],
+  "failures": [],
+  "scope": "PE headers/section metadata plus exactly 8 data bytes at Engine RVA 0x342c70; whole-file reads only for before/after SHA256. No target body or other table slots.",
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "limitations": [
+    "Constructor evidence directly writes the vtable address; this read resolves only its +0 on-disk slot.",
+    "RegionLoader.Update first-call evidence motivates this slot read. The target body and actual load/producer semantics require separate evidence; no behavior is inferred here.",
+    "Executable-section membership is metadata only, not proof of a function boundary or behavior. No target body is read.",
+    "Loaded vtable mutation, live object identity, completed construction and virtual-call receiver validity remain unobserved.",
+    "Before/after hashes and file metadata checks are not an atomic filesystem snapshot."
+  ],
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T17:30:36.701Z",
+  "status": "passed"
+}

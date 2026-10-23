@@ -1,0 +1,52 @@
+{
+  "started_utc": "2026-10-22T20:00:47.871Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_size": 4485632,
+  "script_sha256": "9e7fee730d56d7f412a2874f99a21e613a6247fc9383d42cc9a5604f6fb9c4e5",
+  "proof": {
+    "file": "docs/reverse-client/r1-corridor-portal-helper/05-CorridorPortalHelper-0x180262f10-procedure_assembly.json",
+    "sha256": "5da7c68648837ff1737fb515dd28e40ae422d89a7ef28f70307b3c5582997682",
+    "procedure": "0x180262f10"
+  },
+  "metadata_bytes": 688,
+  "data_bytes": 4,
+  "hash_bytes": 8971264,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "rva": "0x34b9cc",
+      "va": "0x18034b9cc",
+      "file_offset": 3451340,
+      "bytes": 4,
+      "section": ".rdata",
+      "raw_hex": "8180803b",
+      "float32_le": 0.003921568859368563,
+      "uint32_hex": [
+        "0x3b808081"
+      ],
+      "evidence_instructions": [
+        "0x180263125: MULSS XMM3, dword ptr [0x18034b9cc]",
+        "0x180263134: MULSS XMM4, dword ptr [0x18034b9cc]"
+      ],
+      "loaded_value_observed": false
+    }
+  ],
+  "failures": [],
+  "scope": "PE headers/section metadata at most4096B, then exactly4B at RVA34B9CC. Entire-file streams are only before/after SHA256.",
+  "limitations": [
+    "Disk float32 operand bound to262F10 instructions263125/263134; no expected value is assumed and no loaded mutable value or navigation success is proved.",
+    "No adjacent data, function body, DLL execution, backend, other original file or saves are accessed.",
+    "Node does not expose every Windows reparse tag; the established external Attributes precheck is still required.",
+    "Same-descriptor before/after hash/stat equality is not an atomic filesystem snapshot."
+  ],
+  "proof_verified": true,
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T20:00:47.880Z",
+  "status": "passed"
+}

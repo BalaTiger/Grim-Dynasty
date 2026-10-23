@@ -1,0 +1,310 @@
+{
+  "schema": "grim-dynasty-m3-bounded-read-v1",
+  "status": "FixedBodiesDecodedReviewRequired",
+  "started_utc": "2026-10-22T04:46:19.769Z",
+  "plan": {
+    "path": "docs/m3-evidence/plans/damage-settlement.json",
+    "sha256": "83a03f82a0d854f7ca711768d9081e3ee4dd6dcf5a38ce2356120134c35d7442"
+  },
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "bytes": 11385856,
+    "preferred_base": "0x180000000"
+  },
+  "proof": {
+    "path": "docs/m3-evidence/direct-bodies/direct-11d340.instructions.json",
+    "sha256": "495ea6962c563f9916fefc8a4cd71e0d279e4dc1d06ba1d9f9f63822130d904c"
+  },
+  "limits": {
+    "body_bytes_each": 8192,
+    "body_bytes_total": 8192,
+    "metadata_bytes": 16384,
+    "dumpbin_calls": 2,
+    "tool_timeout_ms_each": 10000
+  },
+  "fixed_limits": {
+    "plan_bytes": 16384,
+    "proof_bytes": 1048576,
+    "hash_buffer_bytes": 65536,
+    "header_end": 4096,
+    "sections": 16,
+    "metadata_read_bytes": 512,
+    "pdata_bytes": 2097152,
+    "binary_search_steps": 32,
+    "synthetic_each": 16384,
+    "synthetic_total": 24576,
+    "tool_buffer_each": 1048576
+  },
+  "source_open_mode": "r",
+  "source_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "automatic_callee_expansion": false,
+  "metadata_bytes": 964,
+  "metadata_operations": 35,
+  "body_bytes": 282,
+  "body_read_operations": 2,
+  "dumpbin_calls": 2,
+  "synthetic_bytes": 7168,
+  "export_table_bytes": 0,
+  "global_data_bytes": 0,
+  "unwind_body_bytes": 0,
+  "source_closed": true,
+  "boundaries": [
+    {
+      "id": "direct-068ab0",
+      "rva": "0x68ab0",
+      "caller_address": "0x18011d496",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 2675,
+        "begin_rva": "0x68ab0",
+        "end_rva_exclusive": "0x68b9b",
+        "bytes": 235,
+        "unwind_info_rva": "0x7e7970"
+      }
+    },
+    {
+      "id": "direct-535a60",
+      "rva": "0x535a60",
+      "caller_address": "0x18011d5a7",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 18489,
+        "begin_rva": "0x535a60",
+        "end_rva_exclusive": "0x535a8f",
+        "bytes": 47,
+        "unwind_info_rva": "0x7ef14c"
+      }
+    }
+  ],
+  "bodies": [
+    {
+      "id": "direct-068ab0",
+      "begin_rva": "0x68ab0",
+      "end_rva_exclusive": "0x68b9b",
+      "bytes": 235,
+      "file_offset": 425648,
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 2675,
+        "begin_rva": "0x68ab0",
+        "end_rva_exclusive": "0x68b9b",
+        "bytes": 235,
+        "unwind_info_rva": "0x7e7970"
+      },
+      "sha256": "a0110b341f61d2a46050d497355282183665f1f180d79f4021aa934860dba78c",
+      "synthetic": {
+        "relative_path": ".tooling/m3-damage-settlement-temp/direct-068ab0.inspect.dll",
+        "bytes": 3584,
+        "sha256": "61f20d2424bebbb8e7678ac3de6c0aee0e9834cd6fe8f4137f4f5b412c5d8e09",
+        "never_executed": true
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180068ab0,0x180068b9a",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\m3-damage-settlement-temp\\direct-068ab0.inspect.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "decoded_rows": 55,
+      "decode_issues": [],
+      "instruction_byte_coverage_verified": true,
+      "code_data_classification": "ReviewRequired",
+      "calls": [
+        {
+          "address": "0x180068ad0",
+          "bytes": "ff9038080000",
+          "instruction": "call        qword ptr [rax+0000000000000838h]"
+        },
+        {
+          "address": "0x180068b60",
+          "bytes": "e87b6b0600",
+          "instruction": "call        00000001800CF6E0"
+        },
+        {
+          "address": "0x180068b86",
+          "bytes": "e805583900",
+          "instruction": "call        00000001803FE390"
+        }
+      ],
+      "branches": [
+        {
+          "address": "0x180068acb",
+          "bytes": "751d",
+          "instruction": "jne         0000000180068AEA"
+        },
+        {
+          "address": "0x180068ad8",
+          "bytes": "0f85ad000000",
+          "instruction": "jne         0000000180068B8B"
+        },
+        {
+          "address": "0x180068ae4",
+          "bytes": "0f85a1000000",
+          "instruction": "jne         0000000180068B8B"
+        },
+        {
+          "address": "0x180068af8",
+          "bytes": "722f",
+          "instruction": "jb          0000000180068B29"
+        },
+        {
+          "address": "0x180068b35",
+          "bytes": "7442",
+          "instruction": "je          0000000180068B79"
+        },
+        {
+          "address": "0x180068b3a",
+          "bytes": "753d",
+          "instruction": "jne         0000000180068B79"
+        },
+        {
+          "address": "0x180068b52",
+          "bytes": "7725",
+          "instruction": "ja          0000000180068B79"
+        },
+        {
+          "address": "0x180068b70",
+          "bytes": "7207",
+          "instruction": "jb          0000000180068B79"
+        }
+      ]
+    },
+    {
+      "id": "direct-535a60",
+      "begin_rva": "0x535a60",
+      "end_rva_exclusive": "0x535a8f",
+      "bytes": 47,
+      "file_offset": 5459552,
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 18489,
+        "begin_rva": "0x535a60",
+        "end_rva_exclusive": "0x535a8f",
+        "bytes": 47,
+        "unwind_info_rva": "0x7ef14c"
+      },
+      "sha256": "aee16962e61ba03aa7b6c8ee32eb42f00dbae244a97b62db5dc34330fde96616",
+      "synthetic": {
+        "relative_path": ".tooling/m3-damage-settlement-temp/direct-535a60.inspect.dll",
+        "bytes": 3584,
+        "sha256": "a3b127b0bfbd5cff2a08b994ae58aed158a53e651fbfe45eb458d51217a9bdf9",
+        "never_executed": true
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180535a60,0x180535a8e",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\m3-damage-settlement-temp\\direct-535a60.inspect.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "decoded_rows": 13,
+      "decode_issues": [],
+      "instruction_byte_coverage_verified": true,
+      "code_data_classification": "ReviewRequired",
+      "calls": [],
+      "branches": [
+        {
+          "address": "0x180535a8d",
+          "bytes": "743e",
+          "instruction": "je          0000000180535ACD"
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "All targets are supplied by a separately reviewed plan and matched against pinned saved direct-call bytes.",
+    "Binary search reads .pdata records only; no export scan, unwind decoding or callees are followed.",
+    "If any target lacks an exact .pdata start or either body budget is exceeded, only boundaries are reported; no bodies/backend are read/run.",
+    "Decoder rows are candidates, not proof that all bytes are instructions. Inline data can resemble valid code; all bodies need code/data review.",
+    "All gaps, byte mismatches and invalid/data decodes are retained. These findings never trigger new reads or automatic expansion.",
+    "Full source before/after hashes use 64 KiB chunks without interpreting bytes outside the approved ranges.",
+    "Static evidence does not establish source names, runtime compatibility, exception behavior or a complete damage contract."
+  ],
+  "script_sha256": "cd102d86ae9556251be6c402aba40fa24b21b9c75023b70372f3799f1e96d7e7",
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "pe": {
+    "image_base": "0x180000000",
+    "sections": [
+      {
+        "name": ".text",
+        "rva": 4096,
+        "raw_size": 6320640,
+        "raw_offset": 1024,
+        "characteristics": 1610612768
+      },
+      {
+        "name": ".rdata",
+        "rva": 6328320,
+        "raw_size": 4517888,
+        "raw_offset": 6321664,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".data",
+        "rva": 10846208,
+        "raw_size": 56832,
+        "raw_offset": 10839552,
+        "characteristics": 3221225536
+      },
+      {
+        "name": ".pdata",
+        "rva": 10919936,
+        "raw_size": 267776,
+        "raw_offset": 10896384,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".gfids",
+        "rva": 11190272,
+        "raw_size": 512,
+        "raw_offset": 11164160,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".tls",
+        "rva": 11194368,
+        "raw_size": 512,
+        "raw_offset": 11164672,
+        "characteristics": 3221225536
+      },
+      {
+        "name": "_RDATA",
+        "rva": 11198464,
+        "raw_size": 2560,
+        "raw_offset": 11165184,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".rsrc",
+        "rva": 11202560,
+        "raw_size": 512,
+        "raw_offset": 11167744,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".reloc",
+        "rva": 11206656,
+        "raw_size": 217600,
+        "raw_offset": 11168256,
+        "characteristics": 1107296320
+      }
+    ],
+    "pdata_rva": "0xa6a000",
+    "pdata_bytes": 267516
+  },
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-22T04:46:19.867Z"
+}

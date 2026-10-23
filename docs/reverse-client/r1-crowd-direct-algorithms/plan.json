@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "purpose": "Three fixed direct Engine algorithm dependencies:030C60 to030E10 point-vector growth,0309F0 to263290 raycast,25F250 to25EF20 avoidance scoring. Read actual pseudo-code,assembly and direct callee inventory only; no recursion,allocator guesses or substitutes for the real motion path.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-load-dependencies/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-branches/04-CrowdMotionBranch-0x180030c60-procedure_pseudo_code.json",
+      "sha256": "782230bab749a0eb03b47da7f828fc896a53b023866854c1245a3bc28089668c",
+      "addresses": [],
+      "source_kind": "Pinned saved caller pseudo-code for ABI/dataflow context only; assembly and direct-callee list independently establish the selected target. No inferred callee implementation."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-branches/05-CrowdMotionBranch-0x180030c60-procedure_assembly.json",
+      "sha256": "929d702f06b6eb02e16291dd110e0c5ba6f780df5f755c2c8f7e2e3ad8a534db",
+      "addresses": [
+        "0x180030e10"
+      ],
+      "source_kind": "Exact saved direct instruction 030CCE CALL030E10; only this target selected, no recursive expansion."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-branches/06-CrowdMotionBranch-0x180030c60-procedure_callees.json",
+      "sha256": "62cb724e7ec9ef16f7afba383ae19c386108ec6b61d0df86f53fe94fe9979ad0",
+      "addresses": [
+        "0x180030e10"
+      ],
+      "source_kind": "Saved direct-callee list independently includes 0x180030e10; other listed callees excluded."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-branches/16-CrowdMotionBranch-0x1800309f0-procedure_pseudo_code.json",
+      "sha256": "f82111271f02a12410ae01a08b24d68743f14f3d2118b8e88511a5091b995e77",
+      "addresses": [],
+      "source_kind": "Pinned saved caller pseudo-code for ABI/dataflow context only; assembly and direct-callee list independently establish the selected target. No inferred callee implementation."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-branches/17-CrowdMotionBranch-0x1800309f0-procedure_assembly.json",
+      "sha256": "42be90fb31c4edaaa251d6223a190977f7e7fa44240181d9f9dba1eb1ca19e62",
+      "addresses": [
+        "0x180263290"
+      ],
+      "source_kind": "Exact saved direct instruction 030ADA CALL263290; only this target selected, no recursive expansion."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-branches/18-CrowdMotionBranch-0x1800309f0-procedure_callees.json",
+      "sha256": "f7c5a3d83fdcdff9da37b479348b2a5b14252252d232f44a33235aa1995633f3",
+      "addresses": [
+        "0x180263290"
+      ],
+      "source_kind": "Saved direct-callee list independently includes 0x180263290; other listed callees excluded."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-branches/19-CrowdMotionBranch-0x18025f250-procedure_pseudo_code.json",
+      "sha256": "0656118f683834fbd2006903535042c163d3920ab3f0fcbe6e8baf391f91fe2d",
+      "addresses": [],
+      "source_kind": "Pinned saved caller pseudo-code for ABI/dataflow context only; assembly and direct-callee list independently establish the selected target. No inferred callee implementation."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-branches/20-CrowdMotionBranch-0x18025f250-procedure_assembly.json",
+      "sha256": "4ccf1f9256b2ab72f5367398a2717d6316e22ca769104f96695dccb90cac9b57",
+      "addresses": [
+        "0x18025ef20"
+      ],
+      "source_kind": "Exact saved direct instruction 25F59D CALL25EF20; only this target selected, no recursive expansion."
+    },
+    {
+      "file": "docs/reverse-client/r1-crowd-motion-branches/21-CrowdMotionBranch-0x18025f250-procedure_callees.json",
+      "sha256": "a47387950631776983b233ef9b896a658fad138ed2148026e9556538ffd6208c",
+      "addresses": [
+        "0x18025ef20"
+      ],
+      "source_kind": "Saved direct-callee list independently includes 0x18025ef20; other listed callees excluded."
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 14,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "execution_requirements": [
+    "Exactly3fixedtargets and14calls including lifecycle. Scoped JSON filenames in docs/reverse-client and docs/object-lifecycle contained no existing target body names; not a binary or broad full-content scan.",
+    "Only030E10/263290/25EF20. Do not query newly returned callees,CRT,allocator trees or unrelated systems. Unknown growth initialization,raycast topology andavoidance semantics remain explicit until actual evidence.",
+    "Preserve Engine384M/base4.25GiB with additional strict5GiB physical-and-commit launch,2GiB stop,identity/mutex/freshness and exact diagnostic monitor/serializer/test/deployment pins. No guard changes.",
+    "Require actual latest Engine getter26/26 summary66ca39735f5e5efb7dee030e27d4b2aff031e6fdaeca2b92711670305a6054d9,all session/process/job/sampler cleanup and Engine before/after hashes verified. The source motion batch remains pinned separately by its actual body evidence.",
+    "The sole runner integrator registers exactly these3targets and performs one offline verification. Backend launch remains subject to root formal approval and fresh guards; no original access or backend is performed during preparation.",
+    "Game callbacks,getters and their already completed results remain separate evidence. Do not query any additional getter orGame primary slot in this fixed algorithm batch.",
+    "Originals read-only with hashes,no originalexecution,saves/cloud,security changes,installation or automaticretry.",
+    "0309F0 rawthreshold34BB38 is handled by the separate fixed data-read evidence; this algorithm batch performs no data reads and introduces no decimal default or implicit native success."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180030e10"
+      },
+      "label": "04-CrowdDirectAlgorithm-0x180030e10-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180030e10"
+      },
+      "label": "05-CrowdDirectAlgorithm-0x180030e10-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180030e10"
+      },
+      "label": "06-CrowdDirectAlgorithm-0x180030e10-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180263290"
+      },
+      "label": "07-CrowdDirectAlgorithm-0x180263290-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180263290"
+      },
+      "label": "08-CrowdDirectAlgorithm-0x180263290-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180263290"
+      },
+      "label": "09-CrowdDirectAlgorithm-0x180263290-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18025ef20"
+      },
+      "label": "10-CrowdDirectAlgorithm-0x18025ef20-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18025ef20"
+      },
+      "label": "11-CrowdDirectAlgorithm-0x18025ef20-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18025ef20"
+      },
+      "label": "12-CrowdDirectAlgorithm-0x18025ef20-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "13-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "14-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "evidence_questions": [
+    "030E10: exact point-vector element width,count/capacity arithmetic,allocation/copy/publication order,unknown fresh cells,aliasing/invalidation andfailure prefix? Stop at any new unproved allocator/helper rather than invent semantics.",
+    "263290: actual raycast ABI/mesh-link traversal/output writes,status/NaN andcapacity behavior required by0309F0? Preserve existing nearest query outputs and actual topology.",
+    "25EF20: exact avoidance candidate scoring,neighbor/obstacle reads,weights,float32 order,ties/NaN andfailure prefix used by25F250? Do not replace with a generic avoidance algorithm."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Three fixed direct Engine algorithms;384M/base4.25GiB plus strict5GiB launch,2GiB stop unchanged. Plan-only preparation,runner not edited.",
+    "additional_launch_floor_gib": 5
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "previous_sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "serializer_file": "tools/static_analysis/rea_sampler_failure.ps1",
+    "serializer_sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "candidate_file": ".tooling/r1-owned-job-diagnostic-candidate/ReaOwnedJobDiagnosticCandidate.cs",
+    "candidate_sha256": "b52e6ba242277ab864a431433f43efe671bc6c37e73c1fd94d8b0977b7400544",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "serializer_validation_file": ".tooling/r1-owned-job-diagnostic-validation/serializer/result.json",
+    "serializer_validation_sha256": "eb5dc1cd79621686a5b646ba03897cec638674dd1d6894ec69cee1d5ceb04a60",
+    "runner_validation_file": ".tooling/r1-owned-job-diagnostic-validation/runner-result.json",
+    "runner_validation_sha256": "1ff5539479a0ba058bb7e3b4e6692293a07515e48d226c56f5b6667857c4bb29",
+    "deployment_file": ".tooling/r1-owned-job-diagnostic-deploy/deployment.json",
+    "deployment_sha256": "ef9be6d39c736f99fe4dd365b1ed08f6849f4280eacc698fdc9b4b75d4977dbf",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 49,
+    "scenario_groups": 10,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "serializer_assertions": 39,
+    "production_normalization": "Remove two candidate-only header lines and namespace suffix; serializer identical to tested candidate",
+    "limitations": "Diagnostic observation only. Native permissions,100ms shared wait budget,admission and fail-closed rules are unchanged. Isolated fault tests do not reproduce or establish the21:48 failure root cause."
+  },
+  "prior_batch_cleanup": {
+    "summary_file": "docs/reverse-client/r1-engine-callback-getters/summary.json",
+    "summary_sha256": "66ca39735f5e5efb7dee030e27d4b2aff031e6fdaeca2b92711670305a6054d9",
+    "completed_plan_calls": 26,
+    "required_status": "passed",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "scope": "Actual latest completed Engine getter26/26 batch,all normal cleanup and stable Engine hashes. Earlier source motion29/29 remains historical evidence,not the latest process-state claim."
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  },
+  "diagnostic_monitor_review": {
+    "status": "passed-and-pinned",
+    "diagnostics_only_intended": true,
+    "approved_source_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "production_monitor_must_not_be_changed_by_this_preparation": true,
+    "root_cause_proven": false,
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false
+  }
+}

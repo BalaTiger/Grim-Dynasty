@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "purpose": "Bounded ReachedGoal dependencies only: Game05FC30 primary slot830 and Game019D40 object lookup. Preserve existing067170/05B730/591480 evidence; no recursive expansion.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 11,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-game-movement-interface/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-game-callback-dependencies/inspection.json",
+      "sha256": "c0f0348d8f0712b35efd22d7ed36282065bfc31c78ee18b0f1d870e036a4afab",
+      "addresses": [
+        "0x18005fc30"
+      ],
+      "source_kind": "Character primary6DF6D0+830 at6DFF00 and Player primary787100+830 at787930 both contain30fc058001000000. Exact disk slot binding only; function extent/body remains unobserved."
+    },
+    {
+      "file": "docs/reverse-client/r1-game-movement-interface/17-GameMovementInterface-0x180067170-procedure_assembly.json",
+      "sha256": "c9282463916cd02ecc5c95af0010f9cba3fca714678b3e2f0900dfd5c7b1d888",
+      "addresses": [
+        "0x18005fc30",
+        "0x180019d40"
+      ],
+      "source_kind": "0671F7 CALL [RAX+830] after repeated primary458 action tests.067219 direct CALL019D40 with RCX from609098 singleton and EDX from interface+1688/full+16C0. No lookup outcome inferred."
+    }
+  ],
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Game-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Game-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18005fc30"
+      },
+      "label": "04-GameReachedGoal-0x18005fc30-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18005fc30"
+      },
+      "label": "05-GameReachedGoal-0x18005fc30-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18005fc30"
+      },
+      "label": "06-GameReachedGoal-0x18005fc30-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180019d40"
+      },
+      "label": "07-GameReachedGoal-0x180019d40-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180019d40"
+      },
+      "label": "08-GameReachedGoal-0x180019d40-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180019d40"
+      },
+      "label": "09-GameReachedGoal-0x180019d40-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "10-Game-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "11-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Preparation only. Root must review/register the fixed mode and perform current resource/mutex/profile/approval gates before execution. No runner, monitor or protection changes are included.",
+    "Exactly the two listed functions with pseudo/assembly/direct-callees and five lifecycle calls. No extra function, address retry, adjacent table read or recursive query.",
+    "Reuse existing Game067170,05B730,591480 bodies and exact import/table bindings; do not reread their bodies.",
+    "Retain normal session close/process and sampler exit evidence and original read-only pre/post hashes. No original execution, saves, cloud, installation or security changes.",
+    "Apply the existing unchanged Game384M resource profile and owned-session protections through the registered runner; this query plan alone does not claim launch readiness."
+  ],
+  "evidence_questions": [
+    "What actual05FC30 writes/calls happen when normal walking action5/6 reaches primary830? Report new direct dependencies without expanding them.",
+    "What actual019D40 object-index fields, key width, lifetime rules and null/result branches are used? An explicit OWN empty manager must execute this body, never return an injected null.",
+    "Which existing canonical Character/MovementManager/controller cells can be borrowed without copying owners or coordinates?"
+  ]
+}

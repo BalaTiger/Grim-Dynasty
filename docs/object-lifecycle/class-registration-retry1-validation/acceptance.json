@@ -1,0 +1,144 @@
+{
+  "utc": "2026-10-20T12:52:32.293Z",
+  "status": "partial-item-scalar-segment-passed-runtime-registration-blocked",
+  "head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "overall_goal_completed": false,
+  "runtime_registration_recovered": false,
+  "official_class_dispatch_verified": false,
+  "own_item_scalar_segment_implemented": true,
+  "complete_item_object_created": false,
+  "assertions": 2282,
+  "scenario_groups": 83,
+  "new_assertions": 18,
+  "new_scenario_groups": 0,
+  "test_summary": "docs/object-lifecycle/class-registration-retry1-validation/test-summary.json",
+  "test_summary_sha256": "c6795b5f414bfa2d8be25ba5d3db1e8bc1fce55349bc9ac1f1c7e3defbdf945f",
+  "initial_compile_failure": {
+    "summary": "docs/object-lifecycle/class-registration-validation/test-summary.json",
+    "error": "CS1513: missing namespace closing brace",
+    "status": "repaired-and-retested-in-new-directory",
+    "product_tests_executed_before_failure": false,
+    "logs_preserved": true
+  },
+  "static_evidence": {
+    "new_code_bytes": 92,
+    "instructions": 25,
+    "dumpbin_calls": 3,
+    "explicit_metadata_and_fixed_data_bytes": 15682,
+    "fixed_data_bytes_included": 168,
+    "full_file_fingerprint_passes": 14,
+    "fingerprint_chunk_bytes": 65536,
+    "excludes_from_semantic_counts": "Full-file fingerprint reads and uninstrumented dumpbin metadata I/O",
+    "game_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "engine_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "original_hashes_preserved": true,
+    "reports": [
+      {
+        "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+        "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58",
+        "status": "fixed-class-registration-export-discovery-completed"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-registration-metadata/metadata.json",
+        "sha256": "54aa510cffe5a281c54e6de4a594f40224585822f0b40cad6c847f8318ef76b7",
+        "status": "fixed-class-registration-metadata-verified"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-classinfo-slot/inspection.json",
+        "sha256": "38a045003583c3d0ac9a68fb80a0ce43285365c8cea33b9c511d6e0f057dad9e",
+        "status": "fixed-classinfo-slot-disassembly-verified"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-registration-getter-boundaries/boundaries.json",
+        "sha256": "3fe20de3382e33e69ca512d9f54fb22a01ff3e85ea53b6789aa1a116f6622531",
+        "status": "class-registration-getter-boundaries-assessed"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-classinfo-getters/inspection.json",
+        "sha256": "ff0361a23abdadee5dd466630f26007794058d9f1abe7a5a0655ba039faf1d75",
+        "status": "fixed-classinfo-getter-entries-verified"
+      }
+    ]
+  },
+  "item_scalar_segment": {
+    "entry": "Game 0x180323714",
+    "next": "Game 0x180323743",
+    "address_span_bytes": 47,
+    "saved_instruction_count": 7,
+    "store_count": 6,
+    "written_storage_bytes": 44,
+    "new_original_bytes_read": 0,
+    "source": "docs/rewards/rea-inventory-add/Item-constructor-primary-table-assembly.json",
+    "source_sha256": "7a078d11495b5b7c10a07d7b6309c9d633f8ec39dfc444e5f0decfbd5efe1a3f",
+    "complete_constructor": false,
+    "untouched": [
+      "+888..88B",
+      "replica stack +6B0",
+      "all unrepresented fields"
+    ],
+    "source_files": [
+      {
+        "path": "src/task_items/ItemScalarInitialization.cs",
+        "sha256": "38d5d1e83a8434f88025e171e70459092d24a605954fa63dbe4d6588b7842e0c"
+      },
+      {
+        "path": "src/task_items/ItemScalarInitializationTests.cs",
+        "sha256": "0a7aa7e2cd11502b25aba4cd8c20f964b359a5447acc437b2a0314b6017fe2eb"
+      }
+    ]
+  },
+  "blockers": [
+    {
+      "action": "Establish actual QuestItem runtime class registration and validate official Class dispatch",
+      "targets": [
+        "Game QuestItem ClassInfo name slot 0x180A5C158",
+        "Item parent/children setup",
+        "Engine root 0x18041CF00 downward child order"
+      ],
+      "reason": "No actual writer/registration call source recovered. Exact getters only return metadata addresses; the virtual slot makes cleanup-shaped helper calls without direct name/children/factory writes. Static C++ names and parent candidates cannot supply runtime children/name registration.",
+      "status": "evidence-and-implementation-gap",
+      "denied": false,
+      "pending_approval": false,
+      "uncertain_outcome": false
+    },
+    {
+      "action": "Create and Read a complete own official item",
+      "targets": [
+        "Item/Actor initialization",
+        "Actor::Load",
+        "graphics/resource services"
+      ],
+      "reason": "One local store segment does not execute prior or following dependencies.",
+      "status": "not-completed",
+      "denied": false,
+      "pending_approval": false,
+      "uncertain_outcome": false
+    }
+  ],
+  "no_native_constructor_invoked": true,
+  "no_fake_complete_object": true,
+  "no_registration_algorithm_invented": true,
+  "new_official_arz_reads": 0,
+  "official_probe_rerun": false,
+  "prior_official_assertions": 123,
+  "remaining_unverified": [
+    "formal sample compatibility",
+    "native clock globals",
+    "general archive lifecycle",
+    "complete item constructor/Read"
+  ],
+  "restrictions": {
+    "original_game_started": false,
+    "rea_started": false,
+    "java_started": false,
+    "installations": false,
+    "permission_escalation": false,
+    "player_save_or_steam_cloud_access": false,
+    "commit_or_push": false
+  },
+  "before_manifest": ".tooling/checkpoints/class-registration-before/manifest.json",
+  "before_manifest_sha256": "97c16d1321ee0bdd5fc1f8b2f3b099de34a78c20329486c266856b6efd75c8d8",
+  "latest_manifest": ".tooling/checkpoints/questitem-evidence-complete/manifest.json",
+  "latest_manifest_sha256": "6746842f24c0275c72d02555e125949b9edf263e6493046a9bb0b1d7dd147f68",
+  "restore_manifest": ".tooling/checkpoints/class-registration-complete/manifest.json"
+}

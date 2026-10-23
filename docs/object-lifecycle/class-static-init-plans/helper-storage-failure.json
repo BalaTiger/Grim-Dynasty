@@ -1,0 +1,119 @@
+{
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-storage-bodies/inspection.json",
+      "sha256": "97e178eafde7660a117f6b146fa4ed9123e8ccf1faca0562c10f858a00398b8c"
+    }
+  ],
+  "stage": "helper-storage-failure",
+  "code_byte_limit": 274,
+  "targets": [
+    {
+      "rva": 6144932,
+      "maximum_bytes": 6,
+      "leaf_bytes": 6,
+      "role": "Allocation failure handler import thunk",
+      "basis": "Direct call5DA6D2; fixed6B prefix."
+    },
+    {
+      "rva": 6144884,
+      "maximum_bytes": 6,
+      "leaf_bytes": 6,
+      "role": "Allocation attempt import thunk",
+      "basis": "Direct call5DA6F0; fixed6B prefix."
+    },
+    {
+      "rva": 6144878,
+      "maximum_bytes": 6,
+      "leaf_bytes": 6,
+      "role": "Release import thunk",
+      "basis": "Direct jump5DA6BC; fixed6B prefix."
+    },
+    {
+      "rva": 6142456,
+      "maximum_bytes": 128,
+      "role": "All-ones request failure target",
+      "basis": "Direct call5DA6E1 after failed allocation and zero handler result; require exact unwind start, cap128B."
+    },
+    {
+      "rva": 6142424,
+      "maximum_bytes": 128,
+      "role": "Other request failure target",
+      "basis": "Direct call5DA6E8 after failed allocation and zero handler result; require exact unwind start, cap128B."
+    }
+  ],
+  "prior_inspections": [
+    {
+      "sha256": "128d84bec2848305b845e7e3206121e685f9fe64b001138f195c0c98e7081e34",
+      "path": "docs/object-lifecycle/offline-class-static-crt-entry/inspection.json"
+    },
+    {
+      "sha256": "0c62ba0c1b3bce951b89b26e77a6c2461c0581cec506508d9834e30a13a5738f",
+      "path": "docs/object-lifecycle/offline-class-static-crt-dispatch/inspection.json"
+    },
+    {
+      "sha256": "08ded9b6ff52c160c3699f4c369f0c1420151772313f615f39bbff1818f557e7",
+      "path": "docs/object-lifecycle/offline-class-static-crt-reason/inspection.json"
+    },
+    {
+      "sha256": "fa0c4a5b7a5d1a2ccb3ed3a35d4a2c98a1192d4fc79cafae9c63a28eaa71366c",
+      "path": "docs/object-lifecycle/offline-class-static-crt-attach/inspection.json"
+    },
+    {
+      "sha256": "7a776c85892b5583a068ff2fe9d96935825614f80d12a7706e2648b50488c4c1",
+      "path": "docs/object-lifecycle/offline-class-static-crt-thunks/inspection.json"
+    },
+    {
+      "sha256": "73423183a7accb870c0ad83585b054a58f10a64fb113e7031a23e0bf58b7c11c",
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-1/inspection.json"
+    },
+    {
+      "sha256": "583e2dc27b9d7488aa930cbd8c39057b816cf125f16b3d1d3baf8a844c5feb1b",
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-2/inspection.json"
+    },
+    {
+      "sha256": "7fcc79e3767bc6951723f6f1d056b9a1eeec0f7ed38a7950b3ddc6255d2b951b",
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-3/inspection.json"
+    },
+    {
+      "sha256": "b792b1858bdeba01dbf1b76e2fd9ead2d8d2576b407dcc5d28203a03829b08fe",
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-4/inspection.json"
+    },
+    {
+      "sha256": "b57d2765888e34551460a301b26c8d282e1e460634163c7f4803c1bf7f97466f",
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-5/inspection.json"
+    },
+    {
+      "sha256": "6aa351777b666c5b4c9ef796d5b674080edbb7eac730aeaa1472c18ffc2a97e7",
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-6/inspection.json"
+    },
+    {
+      "sha256": "0074c19190c7ef08f13c6897153964ecb6b159d1ab1bb10b1355113cb5987871",
+      "path": "docs/object-lifecycle/offline-class-static-table-batch-7/inspection.json"
+    },
+    {
+      "sha256": "5c5498246f2d2b4ed14cb5cb12c0e8238b167c4320c642007e8f7f302756ecbf",
+      "path": "docs/object-lifecycle/offline-class-static-writer-continuations/inspection.json"
+    },
+    {
+      "sha256": "7e36b6a33bb8959236b19f290db2808f456561f15e86f492f0e51181d2dd46f0",
+      "path": "docs/object-lifecycle/offline-class-static-helper-exit-entry/inspection.json"
+    },
+    {
+      "sha256": "cb14e388af4f8526e0c2e90151d87e0f331823d8253ed781212792ffad26d38b",
+      "path": "docs/object-lifecycle/offline-class-static-helper-exit-body/inspection.json"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-exit-thunks/inspection.json",
+      "sha256": "300b74953ddec18733b5df2b2d732d9a89c09660a3dcfb60d99f6c152d811e06"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-storage-entries/inspection.json",
+      "sha256": "bd9fe6163afbed04cabcd1ebe908995c9529f0fc057cd18d4ea8b5567ba41a0f"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-static-helper-storage-bodies/inspection.json",
+      "sha256": "97e178eafde7660a117f6b146fa4ed9123e8ccf1faca0562c10f858a00398b8c"
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "schema": "grim-dynasty-fixed-actor-matrix-lock-imports-v1",
+  "status": "fixed-actor-matrix-lock-imports-resolved",
+  "started_utc": "2026-10-21T05:15:49.421Z",
+  "script_sha256": "8d6f18f79b868b8d03c2a6169842e6cf455c4d7bec298bf5a2057f88f248796d",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-actor-constructor-boundary/metadata.json",
+      "sha256": "39d0980070ec9aceb95974039fd50d2ae64db223d9ce5b84b280693b1f95890b"
+    },
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-load-ticks-imports/tick-import-bindings.json",
+      "sha256": "eb1e49dfe763e207be743b91d03b2b4c066057063da052cb3e1e3a97807aab0e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-matrix-initialization/inspection.json",
+      "sha256": "54d33ae66b7aea0358d7e652db7743725654584f3cdfe2a5010a6ff183e48a7e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-matrix-initialization/2dcae0-instructions.json",
+      "sha256": "80a3ae3ef767ed745a2080c4494c193b4a2fae0f9497d8e3df700f4d0e4d0f0d"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-matrix-initialization/2dca80-instructions.json",
+      "sha256": "50e12e544bce9b0f21de60be8e46f4a1b40d0f895d6edf6e12bce34754a63822"
+    }
+  ],
+  "callers": [
+    {
+      "source": 4,
+      "address": "0x1802dcaf0",
+      "bytes": "ff1532580200",
+      "iat": 3154728
+    },
+    {
+      "source": 4,
+      "address": "0x1802dcb40",
+      "bytes": "48ff25e9570200",
+      "iat": 3154736
+    },
+    {
+      "source": 5,
+      "address": "0x1802dca90",
+      "bytes": "ff1592580200",
+      "iat": 3154728
+    },
+    {
+      "source": 5,
+      "address": "0x1802dcad0",
+      "bytes": "ff155a580200",
+      "iat": 3154736
+    }
+  ],
+  "targets": [
+    {
+      "thunk": 54,
+      "iat": 3154728,
+      "name": "EnterCriticalSection"
+    },
+    {
+      "thunk": 55,
+      "iat": 3154736,
+      "name": "LeaveCriticalSection"
+    }
+  ],
+  "limits": {
+    "metadata_bytes": 62,
+    "metadata_reads": 3,
+    "single_read_bytes": 23,
+    "fingerprint_chunk_bytes": 65536,
+    "saved_proof_bytes_each": 2097152,
+    "report_bytes": 65536
+  },
+  "metadata_bytes": 62,
+  "metadata_reads": [
+    {
+      "kind": "fixed-OFT-54-and-55",
+      "rva": "0x415ae0",
+      "file_offset": 4279008,
+      "requested_bytes": 16,
+      "read_bytes": 16,
+      "raw_bytes": "a26b410000000000ba6b410000000000"
+    },
+    {
+      "kind": "exact-hint-name-54",
+      "rva": "0x416ba2",
+      "file_offset": 4283298,
+      "requested_bytes": 23,
+      "read_bytes": 23,
+      "raw_bytes": "f200456e746572437269746963616c53656374696f6e00"
+    },
+    {
+      "kind": "exact-hint-name-55",
+      "rva": "0x416bba",
+      "file_offset": 4283322,
+      "requested_bytes": 23,
+      "read_bytes": 23,
+      "raw_bytes": "3b034c65617665437269746963616c53656374696f6e00"
+    }
+  ],
+  "bindings": [
+    {
+      "module": "KERNEL32.dll",
+      "name": "EnterCriticalSection",
+      "descriptor_index": 5,
+      "descriptor_rva": "0x4155fc",
+      "original_first_thunk_rva": "0x415930",
+      "first_thunk_rva": "0x302178",
+      "thunk_index": 54,
+      "original_thunk_rva": "0x415ae0",
+      "hint_name_rva": "0x416ba2",
+      "hint": 242,
+      "iat_rva": "0x302328"
+    },
+    {
+      "module": "KERNEL32.dll",
+      "name": "LeaveCriticalSection",
+      "descriptor_index": 5,
+      "descriptor_rva": "0x4155fc",
+      "original_first_thunk_rva": "0x415930",
+      "first_thunk_rva": "0x302178",
+      "thunk_index": 55,
+      "original_thunk_rva": "0x415ae8",
+      "hint_name_rva": "0x416bba",
+      "hint": 827,
+      "iat_rva": "0x302330"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "bytes": 4485632,
+      "chunk_bytes": 65536,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "label": "after",
+      "bytes": 4485632,
+      "chunk_bytes": 65536,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "reused_metadata": {
+    "source": {
+      "path": "docs/object-lifecycle/offline-load-ticks-imports/tick-import-bindings.json",
+      "sha256": "eb1e49dfe763e207be743b91d03b2b4c066057063da052cb3e1e3a97807aab0e"
+    },
+    "descriptor": {
+      "rva": "0x4155fc",
+      "file_offset": 4277756,
+      "bytes": "3059410000000000000000004a6d410078213000"
+    },
+    "module": {
+      "rva": "0x416d4a",
+      "file_offset": 4283722,
+      "bytes": "4b45524e454c33322e646c6c00",
+      "text": "KERNEL32.dll"
+    }
+  },
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "code_bytes_read": 0,
+  "iat_payload_bytes_read": 0,
+  "header_bytes_read": 0,
+  "backend_started": false,
+  "subprocesses": 0,
+  "build_or_tests": false,
+  "permission_change": false,
+  "limitations": [
+    "Only named normal-import identity is established; no DLL resolution, critical-section initialization, synchronization, scheduling or runtime behavior is observed.",
+    "Descriptor5 and its module name are reused from pinned complete raw Engine metadata. Only OFT54/55 and their exact expected hint/names are newly read; no table scan or neighboring target.",
+    "Full-file fingerprints traverse all bytes with a 64KiB buffer separately from semantic metadata reads. Same-handle before/after checks do not provide an atomic snapshot."
+  ],
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_hash_preserved": true,
+  "source_stat_stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-21T05:15:49.429Z"
+}

@@ -1,0 +1,26 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\m3-damage-notification-fragments-temp\fallthrough-535a8f.inspect.dll
+
+File Type: DLL
+
+  0000000180535A8F: 48 89 74 24 50     mov         qword ptr [rsp+50h],rsi
+  0000000180535A94: 48 8B 74 24 70     mov         rsi,qword ptr [rsp+70h]
+  0000000180535A99: 0F 1F 80 00 00 00  nop         dword ptr [rax+0000000000000000h]
+                    00
+  0000000180535AA0: 48 8B 0B           mov         rcx,qword ptr [rbx]
+  0000000180535AA3: 48 85 C9           test        rcx,rcx
+  0000000180535AA6: 74 13              je          0000000180535ABB
+  0000000180535AA8: 4C 8B CD           mov         r9,rbp
+  0000000180535AAB: 48 89 74 24 20     mov         qword ptr [rsp+20h],rsi
+  0000000180535AB0: 45 8B C6           mov         r8d,r14d
+  0000000180535AB3: 49 8B D7           mov         rdx,r15
+  0000000180535AB6: E8 C5 70 F6 FF     call        000000018049CB80
+  0000000180535ABB: 48 83 C3 08        add         rbx,8
+  0000000180535ABF: 48 3B 9F 30 02 00  cmp         rbx,qword ptr [rdi+0000000000000230h]
+                    00
+  0000000180535AC6: 75 D8              jne         0000000180535AA0
+  0000000180535AC8: 48 8B 74 24 50     mov         rsi,qword ptr [rsp+50h]
+
+  Summary
+
+        1000 .text

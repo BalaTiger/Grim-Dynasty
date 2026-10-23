@@ -1,0 +1,25 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\m3-damage-statistics-insertion-temp\direct-403ba0.inspect.dll
+
+File Type: DLL
+
+  0000000180403BA0: 40 53              push        rbx
+  0000000180403BA2: 48 83 EC 20        sub         rsp,20h
+  0000000180403BA6: 49 8B D8           mov         rbx,r8
+  0000000180403BA9: E8 E2 60 C1 FF     call        0000000180019C90
+  0000000180403BAE: 4C 8D 48 1C        lea         r9,[rax+1Ch]
+  0000000180403BB2: 66 C7 40 18 00 00  mov         word ptr [rax+18h],0
+  0000000180403BB8: 4D 85 C9           test        r9,r9
+  0000000180403BBB: 74 11              je          0000000180403BCE
+  0000000180403BBD: 48 8B 0B           mov         rcx,qword ptr [rbx]
+  0000000180403BC0: 48 8B 11           mov         rdx,qword ptr [rcx]
+  0000000180403BC3: 49 89 11           mov         qword ptr [r9],rdx
+  0000000180403BC6: 41 C7 41 08 00 00  mov         dword ptr [r9+8],0
+                    00 00
+  0000000180403BCE: 48 83 C4 20        add         rsp,20h
+  0000000180403BD2: 5B                 pop         rbx
+  0000000180403BD3: C3                 ret
+
+  Summary
+
+        1000 .text

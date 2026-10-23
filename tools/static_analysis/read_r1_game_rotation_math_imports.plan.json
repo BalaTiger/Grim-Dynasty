@@ -1,0 +1,115 @@
+{
+  "schema": "grim-dynasty.fixed-game-rotation-math-imports.v1",
+  "script": "tools/static_analysis/read_r1_game_rotation_math_imports.mjs",
+  "entrypoint": "inspectGameRotationMathImports(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-game-rotation-math-imports/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "bytes": 11385856,
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+  },
+  "source_pins": [
+    {
+      "key": "rotate_assembly",
+      "path": "docs/reverse-client/r1-game-callback-remaining-retry-1/11-GameCallbackRemaining-0x18005e160-procedure_assembly.json",
+      "sha256": "722a7bbea67a6242d0e06bc8db2dc6614b02a25ac872ec7c1bd046cfa9060a49"
+    },
+    {
+      "key": "axis_assembly",
+      "path": "docs/reverse-client/r1-game-movement-math/05-GameMovementMath-0x180591a10-procedure_assembly.json",
+      "sha256": "9af598bbe5f1c1996d7b89885d69318ff94bd74ba26e219f4efecc1a33eeb4f5"
+    },
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "inventory_source",
+      "path": "docs/phase-1/boundary-audit/boundary_inventory.py",
+      "sha256": "354e00aeefbdfbc1beefa3de4f2c8c93635a0cb9ad824329f0011454f47ce224"
+    }
+  ],
+  "descriptor": {
+    "index": 13,
+    "rva": "0xa42a44",
+    "bytes": 20,
+    "dll": "api-ms-win-crt-math-l1-1-0.dll",
+    "symbols": [
+      "_finite",
+      "exp",
+      "pow",
+      "log",
+      "log10f",
+      "logf",
+      "cosf",
+      "log10",
+      "truncf",
+      "acosf",
+      "atan2f",
+      "fmodf",
+      "powf",
+      "sinf",
+      "tanf"
+    ],
+    "provenance": "Pinned inventory emits ordinary import descriptors in original order; pinned prior import read log locates descriptor0 at file10751808, and cached Engine descriptor3 at RVA A4297C verifies base A42940. The selected descriptor13 and its exact DLL name are newly read and verified; no descriptor scan."
+  },
+  "fixed_thunks": [
+    {
+      "rva": "0x5dc3f2",
+      "bytes": 6,
+      "symbol": "acosf",
+      "index": 9,
+      "source_key": "rotate_assembly",
+      "instruction": "0x18005e334: CALL 0x1805dc3f2"
+    },
+    {
+      "rva": "0x5dc392",
+      "bytes": 6,
+      "symbol": "cosf",
+      "index": 6,
+      "source_key": "axis_assembly",
+      "instruction": "0x180591a30: CALL 0x1805dc392"
+    },
+    {
+      "rva": "0x5dc40a",
+      "bytes": 6,
+      "symbol": "sinf",
+      "index": 13,
+      "source_key": "axis_assembly",
+      "instruction": "0x180591a3b: CALL 0x1805dc40a"
+    }
+  ],
+  "limits": {
+    "code_bytes": 18,
+    "code_operations": 3,
+    "metadata_bytes": 121,
+    "metadata_operations": 14,
+    "metadata_single_read": 31,
+    "hash_chunk_bytes": 65536,
+    "new_PE_header_bytes": 0,
+    "new_descriptor_bytes": 20,
+    "new_OFT_bytes": 24,
+    "target_body_bytes": 0
+  },
+  "requirements": [
+    "Module import performs no I/O. Separate formal approval requires exact frozen script and plan SHA256.",
+    "External Windows Attributes/reparse-tag precheck of original, workspace, script/plan, pinned sources and output ancestors is required; no security or permission change.",
+    "Open only the fixed Game.dll read-only, reuse cached PE sections only with before/after same-handle full SHA256 and stat equality.",
+    "Read exactly three fixed6B thunk candidates, accepting only FF25disp32. Opcode mismatch stops explicitly; no alternative instruction decoding or thunk chain.",
+    "Read only the one fixed descriptor13 and exact DLL string. Each derived IAT must match its cached symbol index; read its exact OFT8B, IAT8B, hint2B and exact symbol with NUL.",
+    "No original table scan, export lookup, API-set resolution, CRT DLL open/load/execution, imported function execution, backend, subprocess, network or game/save access.",
+    "No runtime ABI/numerical behavior is inferred from import names. Actual host DLL resolution, CRT version, binary32 exceptional values/rounding and FP environment remain unverified.",
+    "New output directory refuses overwrite; partial failure or Unsupported is preserved with original hash/stat/close outcomes."
+  ]
+}

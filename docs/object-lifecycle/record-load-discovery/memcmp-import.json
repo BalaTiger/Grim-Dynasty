@@ -1,0 +1,31 @@
+{
+  "operation": "Fixed IAT VA normal PE import metadata inspection",
+  "source_evidence": "../rea-record-cache-compare/05-Record-cache-compare-0x1802ee060-assembly.json",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "target_binary_loaded_or_executed": false,
+  "instruction_bytes_inspected": 0,
+  "image_base": "0x180000000",
+  "iat_address": "0x180302710",
+  "iat_rva": "0x302710",
+  "iat_file_offset": "0x301710",
+  "iat_file_value": "0x418786",
+  "status": "resolved_memcmp_normal_import",
+  "normal_import": {
+    "dll": "VCRUNTIME140.dll",
+    "hint": 59,
+    "name": "memcmp",
+    "descriptor_rva": "0x41569c",
+    "first_thunk_rva": "0x3026f8",
+    "original_first_thunk_rva": "0x415eb0",
+    "thunk_index": 3,
+    "lookup_entry_value": "0x418786"
+  },
+  "limitations": [
+    "Static on-disk normal import identity only; the symbol name is read from the PE metadata.",
+    "No thunk/code interpretation, delay-import scan, forwarder following, runtime resolution, or DLL loading.",
+    "No claim about the runtime CRT implementation, invalid memory, exceptions, or out-of-domain inputs."
+  ],
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+}

@@ -1,0 +1,65 @@
+{
+  "schema": "grim-dynasty.own-system-ucrt-crowd-profile.v1",
+  "status": "prepared-not-executed",
+  "scope": "Same fixed System32 UCRT loader as existing rotation adapter. Opt-in sealed SystemUcrtCrowdMath borrowed view lazily binds atan2f from that module; no second loader, injectable success interface, CRT recovery or original-game runtime validation.",
+  "prior": {
+    "result": ".tooling/r1-system-ucrt-rotation-validation-2/result.json",
+    "result_sha256": "ca025983c2731fedf773a0235cfeaa1152e03388c22bed80e716c7b15dab67a1",
+    "scenarios": 11,
+    "assertions": 96,
+    "native_calls": 33,
+    "source_backup": "docs/reverse-client/r1-system-ucrt-crowd-prior/SystemUcrtRotationMath.cs",
+    "source_sha256": "3e1456e9ec9be5349632724c80aa5802dad6b916e36e2220f820ac8cda7de9d0",
+    "legacy_rotation_test_source_unchanged": "24809d601d4241c3a5cb6aa87eef2378c1e0f5472ff7bbb337bb154244a5a233"
+  },
+  "binding": {
+    "path": "docs/reverse-client/r1-engine-crowd-math-imports/inspection.json",
+    "sha256": "f0fa298bf90996afdd7fb04a898a7c037827d3c858b33fb4515c19d8db5e4a02",
+    "atan2f": "2DDB5C -> IAT302A00",
+    "cosf": "2DDB50 -> IAT3029F0",
+    "sinf": "2DDB56 -> IAT3029F8",
+    "note": "Disk API-set relationship only; original loaded CRT host and numeric outputs unobserved."
+  },
+  "contract": {
+    "binary_signature": "cdecl float atan2f(float y,float x), explicit R4; prototyped x64 XMM0=y, XMM1=x, XMM0=result",
+    "crowd_inputs": "atan2 y and x finite normal-or-zero; crowd sin/cos finite normal-or-zero [-4,9] radians. Caller consumes Field Unknown before passing scalars; this is not a replacement for engine caller integration.",
+    "output": "Finite normal-or-zero; unsupported special inputs rejected before call, unsupported outputs stop after real native call.",
+    "rotation_unchanged": "Acos [-1,1], sin/cos [-4,4]. Rotation-only opens still resolve exactly prior4 exports; Crowd adds atan2f on same owner.",
+    "floating_control": "Same _controlfp_s(out word,0,0) query only, default nearest/masked/preserved-denormal contract before/after; no writes.",
+    "module_identity": "Same absolute C:/Windows/System32/ucrtbase.dll; existing file hash/version/size, actual module path and export owner checks. Existing disk identity is not a memory-image hash.",
+    "lifetime": "One sealed Crowd view per owner; no public construction or virtual math injection. Dispose owner invalidates view."
+  },
+  "angle_provenance": {
+    "assembly": "docs/reverse-client/r1-crowd-motion-branches/20-CrowdMotionBranch-0x18025f250-procedure_assembly.json",
+    "assembly_sha256": "4ccf1f9256b2ab72f5367398a2717d6316e22ca769104f96695dccb90cac9b57",
+    "operands": "docs/reverse-client/r1-crowd-tick-operands/inspection.json",
+    "operands_sha256": "a61c64361ffb10912b26e103456f12fc1b26b7434f9d1c17b5dac9c2ee112529",
+    "half_step_bits": "3ee5c8fb",
+    "step_bits": "3f65c8fb",
+    "schedule": "Three rings ESI=0..2, each seven samples. Initial angle=atan2f(Z,X)+(ESI&1)*half; add step after each sample. Float atan result roughly [-pi,pi], maximum sampled angle about8.977. Own [-4,9] boundary covers this selected evidence and is not a native range clamp."
+  },
+  "planned_tests": {
+    "new_scenarios": 11,
+    "new_native_calls": 45,
+    "reference": "Independent elementary/quadrant atan2 values, signed-zero own-profile requirements, 30-term sine/cosine Taylor corpus up to9 radians with4 ULP tolerance; candidate angle schedule from saved bytes; gates, owner/export identity, disposal.",
+    "affected_regression": "Unchanged old11 scenarios/96 assertions/33 calls rerun against revised shared loader because source changed. No old rotation-composition or other suite."
+  },
+  "official_sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/atan-atanf-atanl-atan2-atan2f-atan2l?view=msvc-170",
+      "supports": "float atan2f(float y,float x), radians, quadrants and zero cases"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-170",
+      "supports": "Prototyped float arguments in positional XMM0/XMM1 and result XMM0"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/controlfp-s?view=msvc-170",
+      "supports": "Existing zero-mask read-only FP control query"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/cpp/c-runtime-library/floating-point-support?view=msvc-170",
+      "supports": "Math is approximate and platform dependent; no original runtime or cross-host bit equivalence"
+    }
+  ]
+}

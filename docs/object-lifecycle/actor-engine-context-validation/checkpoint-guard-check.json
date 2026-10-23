@@ -1,0 +1,17 @@
+{
+  "schema": "actor-engine-context-checkpoint-guard-v1",
+  "first_attempt_chunks": ["3c1df8", "9ac9c7"],
+  "first_attempt_exit": 1,
+  "first_attempt_error": "Unexpected prior changes",
+  "cause": "PowerShell comparison used chained -join and -ne in one condition instead of comparing two already joined scalar strings.",
+  "readonly_followup_chunk": "d8a8ef",
+  "actual_changed_prior_paths": [
+    "docs/object-lifecycle/LIFECYCLE-PROGRESS.md",
+    "src/task_items/ActorConstructorCompletion.cs"
+  ],
+  "actual_changes_match_explicit_allowlist": true,
+  "checkpoint_directory_existed_after_failed_guard": false,
+  "copy_started_before_failure": false,
+  "authorization_failure": false,
+  "correction": "Compare actualJoined and allowedJoined scalar values before any output directory creation. No access policy or safety rule changed."
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "item-actor-bridge-model-review-v1",
+  "status": "static-review-no-blocker-found",
+  "root_review": "Full new Bridge model, new fixtures, modified two live views, exact build script, affected old fixture sources and reused Actor Completion/Engine context interfaces read. Static evidence contract and all41 ordered writes checked.",
+  "independent_review": "verify_handoff: no blocking API/fixture/store-order/shared-identity/failure-prefix issue; no execution or modifications by reviewer.",
+  "reviewed_inputs": [
+    {"path":"src/task_items/ItemConstructorBridge.cs","sha256":"844379d1e881c5adc681dc6a3925f03c181789be9444e43763737cfd8998487c"},
+    {"path":"src/task_items/ItemConstructorBridgeTests.cs","sha256":"8d9cbfdd1ee9657c453bc4f788fbd6614031f1183f8d0d41cf1ab5cbe950c3a6"},
+    {"path":"src/task_items/ItemScalarInitialization.cs","sha256":"894fce891722e9ab1b8829bace48463cb1bbaa639dc173471256309857cc48c0"},
+    {"path":"src/task_items/ItemConstructor858Prefix.cs","sha256":"d8a1a042e90fc9789692b87d876188a524b99fe0b31de999382ba0fd5a880ab7"},
+    {"path":"src/task_items/build_item_constructor_bridge.ps1","sha256":"c149eedc4a7a98395ecd92b673169b91f8a5d183fe6ffb3180c3ec76d5a1669a"},
+    {"path":"docs/object-lifecycle/item-actor-bridge-validation/native-contract.json","sha256":"caea03ceee6e2e797e9865e0875246bb1f39bdea7cf6a9727b7fca817314b823"}
+  ],
+  "static_expected_counts_not_execution": {"new_assertions":55,"new_groups":9,"old_858_assertions":36,"old_858_groups":6,"old_scalar_assertions":18,"old_scalar_reported_scenarios":0},
+  "boundary": "Own conditional prefix stops at Game323743. Own projection coverage and identity guards are not native return checks/EH. Native caller ignores Actor and leaf RAX. Old public readonly neighbor fields become get-only properties: source-reading compatibility is tested, no existing binary ABI claim.",
+  "build_requires_separate_formal_approval": true
+}

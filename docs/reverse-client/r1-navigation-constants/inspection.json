@@ -1,0 +1,66 @@
+{
+  "schema": "grim-dynasty-fixed-navigation-constants-v1",
+  "started_utc": "2026-10-22T16:16:17.004Z",
+  "proofs": [
+    [
+      "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    ],
+    [
+      "docs/reverse-client/r1-navigation-single-poly/08-SinglePolyHelper-0x180260ad0-procedure_assembly.json",
+      "35e13949b7dbe28d76f053d1f8c3a2f659616ed7d2ee45ea82e90147dc9b1b72"
+    ],
+    [
+      "docs/reverse-client/r1-navigation-single-poly/14-SinglePolyHelper-0x18025f770-procedure_assembly.json",
+      "aedcccf4309e835930a02a693c43064d4372e6a4d9209beeb6c6baadb3846d48"
+    ]
+  ],
+  "script_sha256": "c90d885fa40c90f4aaa2cdff2dd319861bf124a9a6ba1136af745fea21eece5e",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "payload_bytes": 8,
+  "payload_limit": 8,
+  "hash_bytes": 8971264,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "target_open_mode": "O_RDONLY",
+  "reads": [
+    {
+      "rva": "0x34bdcc",
+      "file_offset": 3452364,
+      "section": ".rdata",
+      "bytes": 4,
+      "raw_hex": "ffff7f7f",
+      "bits": "0x7f7fffff",
+      "float32": 3.4028234663852886e+38,
+      "evidence_file": "docs/reverse-client/r1-navigation-single-poly/08-SinglePolyHelper-0x180260ad0-procedure_assembly.json",
+      "instruction": "0x180260d07: MOVSS XMM0, dword ptr [0x18034bdcc]"
+    },
+    {
+      "rva": "0x34b938",
+      "file_offset": 3451192,
+      "section": ".rdata",
+      "bytes": 4,
+      "raw_hex": "00008031",
+      "bits": "0x31800000",
+      "float32": 3.725290298461914e-9,
+      "evidence_file": "docs/reverse-client/r1-navigation-single-poly/14-SinglePolyHelper-0x18025f770-procedure_assembly.json",
+      "instruction": "0x18025f803: MOVSS XMM0, dword ptr [0x18034b938]"
+    }
+  ],
+  "failures": [],
+  "scope": "Only Engine RVAs34BDCC and34B938, exactly4bytes each, mapped using the pinned existing PE section cache. Whole-file reads only for before/after SHA256. No code, other constants, runtime globals, fallback scans or backend.",
+  "limitations": [
+    "Raw bits describe the pinned disk image only; they do not establish loaded memory, runtime globals or floating environment.",
+    "34B938 is separately observed; no equality with the immediate31800000 written to another global in a different branch is presumed.",
+    "Before/after hashes and metadata checks do not provide an atomic snapshot.",
+    "No native mesh initialization, nearest search or gameplay compatibility is established."
+  ],
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "closed": true,
+  "finished_utc": "2026-10-22T16:16:17.011Z",
+  "status": "passed"
+}

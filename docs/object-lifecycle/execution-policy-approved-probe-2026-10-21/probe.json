@@ -1,0 +1,59 @@
+{
+  "date_utc": "2026-10-21",
+  "scope": "One formally requested read-only policy-list probe, no build",
+  "request": {
+    "tool": "exec_command",
+    "sandbox_permissions": "require_escalated",
+    "command": "& 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' -NoProfile -NonInteractive -Command 'Get-ExecutionPolicy -List'",
+    "working_directory": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty",
+    "justification": "是否批准在沙箱外由同一路径 Windows PowerShell 5.1 只读执行 Get-ExecutionPolicy -List，以核对任务沙箱是否导致策略读取失败？此动作不运行构建，不更改注册表、ACL 或执行策略，也不使用 ExecutionPolicy Bypass。",
+    "prefix_rule": null
+  },
+  "result": {
+    "chunk_id": "d69365",
+    "wall_time_seconds": 0.259541652,
+    "exit_code": 0,
+    "original_token_count": 56,
+    "output": "\r\n        Scope ExecutionPolicy\r\n        ----- ---------------\r\nMachinePolicy       Undefined\r\n   UserPolicy       Undefined\r\n      Process       Undefined\r\n  CurrentUser    RemoteSigned\r\n LocalMachine       Undefined\r\n\r\n\r\n"
+  },
+  "interpretation": {
+    "request_status": "formal request executed successfully",
+    "result_status": "completed",
+    "captured_policy_list": {
+      "MachinePolicy": "Undefined",
+      "UserPolicy": "Undefined",
+      "Process": "Undefined",
+      "CurrentUser": "RemoteSigned",
+      "LocalMachine": "Undefined"
+    },
+    "matches_user_supplied_list": true,
+    "current_comparison": "The same policy-list command at the same Windows PowerShell path failed inside the restricted task environment and succeeded through formal require_escalated execution. This supports an execution-environment restriction affecting the current policy read.",
+    "historical_limit": "This does not reconstruct the damaged original AuthorizationManager error or prove its identical or unique cause.",
+    "authorization_limit": "Permission covers this read-only query only; no build permission was requested or inferred.",
+    "exact_restricting_rule": "not identified by this query",
+    "identity_or_windows_elevation_claim": "Not queried during this single-purpose probe; no claim of administrator elevation.",
+    "review": "Independent agent agrees with the causal and authorization boundaries."
+  },
+  "preserved_context": {
+    "host_comparison": "docs/object-lifecycle/EXECUTION-HOST-COMPARISON-2026-10-21.md",
+    "prior_manifest": ".tooling/checkpoints/execution-host-comparison-2026-10-21/manifest.json",
+    "prior_manifest_sha256": "114910ddf5c738b3b33153feb82512a6d3f2a8dc4ca22ab613ca4d14e9b4a9f7",
+    "pending_design": "docs/object-lifecycle/ENGINE-ROOT-MODEL-DESIGN-PENDING.md"
+  },
+  "next_action_decision": "No repeat of old build in this turn: no new implementation was added. A future necessary build requires a separate precise formal request.",
+  "this_turn_counts": {
+    "formal_readonly_probes": 1,
+    "builds": 0,
+    "tests": 0,
+    "security_changes": 0,
+    "registry_writes": 0,
+    "acl_changes": 0,
+    "execution_policy_changes": 0,
+    "original_binary_reads": 0,
+    "original_binary_executions": 0,
+    "save_accesses": 0,
+    "commits": 0,
+    "pushes": 0
+  },
+  "pending_or_uncertain_execution": []
+}

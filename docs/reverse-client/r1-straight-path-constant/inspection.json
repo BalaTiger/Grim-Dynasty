@@ -1,0 +1,49 @@
+{
+  "started_utc": "2026-10-22T20:18:37.749Z",
+  "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_size": 4485632,
+  "script_sha256": "fb2cfc943e6cc2c11df26567cc541f4f8cb29fd6abe9e3c8b7d4f346ade0408d",
+  "proof": {
+    "file": "docs/reverse-client/r1-navigation-core/11-NavigationCore-0x180262480-procedure_assembly.json",
+    "sha256": "60dd81bd3ffd941308c2407ead408c40bf9b42df47bfc5fa5ae08f042c7055d7",
+    "procedure": "0x180262480"
+  },
+  "metadata_bytes": 688,
+  "data_bytes": 4,
+  "hash_bytes": 8971264,
+  "code_bytes": 0,
+  "subprocesses": 0,
+  "original_executed": false,
+  "values": [
+    {
+      "rva": "0x34b960",
+      "va": "0x18034b960",
+      "file_offset": 3451232,
+      "bytes": 4,
+      "section": ".rdata",
+      "raw_hex": "be378635",
+      "float32_le": 0.0000010000001111620804,
+      "uint32_hex": [
+        "0x358637be"
+      ],
+      "evidence_instruction": "0x18026274a: COMISS XMM2, dword ptr [0x18034b960]",
+      "loaded_value_observed": false
+    }
+  ],
+  "failures": [],
+  "scope": "PE headers/section metadata at most4096B, then exactly4B at RVA34B960. Entire-file streams are only before/after SHA256.",
+  "limitations": [
+    "Disk float32 operand bound to262480 instruction26274A; no expected value is assumed and no loaded mutable value or navigation success is proved.",
+    "No adjacent data, function body, DLL execution, backend, other original file or saves are accessed.",
+    "Node does not expose every Windows reparse tag; the established external Attributes precheck is still required.",
+    "Same-descriptor before/after hash/stat equality is not an atomic filesystem snapshot."
+  ],
+  "proof_verified": true,
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "stable": true,
+  "source_closed": true,
+  "finished_utc": "2026-10-22T20:18:37.758Z",
+  "status": "passed"
+}

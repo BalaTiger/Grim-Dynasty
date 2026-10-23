@@ -1,0 +1,273 @@
+{
+  "schema": "grim-dynasty-r1-resource-handoff-v1",
+  "utc": "2026-10-23T07:05:37.455Z",
+  "status": "paused-at-clean-boundary-for-parent-OW-resource-window",
+  "parent_instruction": "OW approved two minimal UE comparisons; no next Rea/build/test batch until parent release",
+  "approval_denied": false,
+  "pending_executions": [],
+  "pending_unknown_outcomes": [],
+  "own_backend_remaining": "None: completed terminal sessions and pinned session/process/Job/sampler cleanup evidence; no later backend launched",
+  "git_head": "6dfdae419d1c92f7738eefe241937057d83134df",
+  "existing_tracked_modifications_preserved": 12,
+  "commit_or_push": false,
+  "completed_validations": [
+    {
+      "path": ".tooling/r1-ground-block-fc-copy-validation/result.json",
+      "status": "passed-ground-block-fc-copy-regression",
+      "tests": [
+        {
+          "name": "ground-block-fc-copy",
+          "kind": "affected-regression-and-one-new-alias",
+          "scenarios": 9,
+          "assertions": 52,
+          "affected_scenarios": 8,
+          "new_scenarios": 1
+        }
+      ]
+    },
+    {
+      "path": ".tooling/r1-crowd-borrowed-header-validation/result.json",
+      "status": "passed-new-shared-crowd-headers-and-affected-growth-proximity-only",
+      "tests": [
+        {
+          "name": "new-borrowed-header-tests",
+          "kind": "new",
+          "scenarios": 18,
+          "assertions": 117
+        },
+        {
+          "name": "growth-regression",
+          "kind": "affected-regression",
+          "scenarios": 7,
+          "assertions": 88
+        },
+        {
+          "name": "proximity-regression",
+          "kind": "affected-regression",
+          "scenarios": 7,
+          "assertions": 83
+        }
+      ]
+    },
+    {
+      "path": ".tooling/r1-ground-spatial-tree-validation/result.json",
+      "status": "passed-new-ground-spatial-tree-only",
+      "tests": [
+        {
+          "name": "new-ground-spatial-tree",
+          "kind": "new",
+          "scenarios": 7,
+          "assertions": 2430,
+          "real_entries": 225,
+          "real_nodes": 312,
+          "real_max_depth": 6,
+          "real_nonroot_entries": 225,
+          "real_material_unknown_stop": true,
+          "real_external_miss": true,
+          "own_fixture_query_hits": true
+        }
+      ]
+    },
+    {
+      "path": ".tooling/r1-ground-water-empty-validation/result.json",
+      "status": "passed-new-real-empty-water-with-own-prerequisites-only",
+      "tests": [
+        {
+          "name": "real-empty-water-own-prerequisites",
+          "kind": "new",
+          "scenarios": 20,
+          "assertions": 86
+        }
+      ]
+    }
+  ],
+  "completed_rea_batches": [
+    {
+      "path": "docs/reverse-client/r1-water-initialization/summary.json",
+      "completed_plan_calls": 11,
+      "finished_utc": "2026-10-23T06:47:30.487Z",
+      "closed_session_verified": true,
+      "process_exit_confirmed": true,
+      "job_empty_confirmed": true,
+      "sampler_exit_confirmed": true,
+      "original_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-type-material/summary.json",
+      "completed_plan_calls": 9,
+      "finished_utc": "2026-10-23T06:58:14.421Z",
+      "closed_session_verified": true,
+      "process_exit_confirmed": true,
+      "job_empty_confirmed": true,
+      "sampler_exit_confirmed": true,
+      "original_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "new_scenarios": 46,
+  "affected_regression_scenarios": 22,
+  "old_unrelated_suites_rerun": 0,
+  "unbuilt": {
+    "crowd_tick": {
+      "source": "src/reverse_client_actions/NavigationCrowdTickProductionContracts.cs",
+      "tests": "src/reverse_client_actions/NavigationCrowdTickProductionTests.cs",
+      "planned_component_scenarios": 22,
+      "planned_real_saved_resource_scenarios": 1,
+      "build": "tools/build_r1_crowd_tick_production.ps1",
+      "root_build_review": "pending",
+      "compiled": false
+    },
+    "world_floor": {
+      "source": "src/reverse_client_actions/WorldFloorContracts.cs",
+      "tests_created": false,
+      "build_created": false,
+      "compiled": false
+    },
+    "water_prefix": {
+      "source": "src/reverse_client_actions/GroundWaterInitializationPrefixes.cs",
+      "planned_scenarios": 9,
+      "compiled": false
+    },
+    "terrain_material": {
+      "fixed23B_plan": "tools/static_analysis/read_r1_terrain_surface_strings.plan.json",
+      "reader_created": false,
+      "adapter_created": false,
+      "tests_created": false,
+      "executed": false
+    },
+    "game_moved": {
+      "checkpoint": "docs/reverse-client/game-crowd-moved-preparation-paused.json",
+      "new_code_created": false,
+      "rea_plan_created": false
+    }
+  },
+  "resume": [
+    "Wait for parent release, then fresh original5GiB/ownership/mutex checks; no persistent automation.",
+    "Review frozen Crowd build and formally execute only22new+1saved-resource cases; no previous suite replay.",
+    "Complete fixed23B surface-string reader and formal read; implement strict five-real-record MaterialView collision adapter and new Block/Tree integration.",
+    "Complete new WorldFloor tests/build, connect shared state. NativeLevel12B750 is a directly proved cold actor-list source candidate; knownRegion ctor zeroes neighbor list but loaded state is not inferred.",
+    "Engine22C690 SetFromWorldPosition is a newly confirmed missing066EE0 predecessor. Game533410 is its required normal suffix; prepare only those direct queries when needed, do not fabricate callbacks.",
+    "Physical mouse-to-world production and genuine scene presentation remain unfinished; no initially usable reversed game exists."
+  ],
+  "boundaries": {
+    "actual_gameplay_accepted": false,
+    "complete_tick": false,
+    "world_floor_validated": false,
+    "material_runtime_binding": false,
+    "native_water_constructor_initialize_complete": false,
+    "original_game_executed": false,
+    "saves_or_cloud_touched": false,
+    "security_settings_changed": false
+  },
+  "references": [
+    {
+      "path": ".tooling/r1-ground-block-fc-copy-validation/result.json",
+      "bytes": 15235,
+      "sha256": "7163537075c2be8cc649b3d358beabb3d1cd631f943590d017bb82b36db3f8cc"
+    },
+    {
+      "path": ".tooling/r1-crowd-borrowed-header-validation/result.json",
+      "bytes": 27667,
+      "sha256": "5fe4b35bd8ff21fc6a95a905bf86167380f63b8556ae352b4ddfaa4e1935d6e3"
+    },
+    {
+      "path": ".tooling/r1-ground-spatial-tree-validation/result.json",
+      "bytes": 18114,
+      "sha256": "0ad251a681a3834a0ea4039ad7c215f6bbeefcf46b5672cc9584a2f801adcc42"
+    },
+    {
+      "path": ".tooling/r1-ground-water-empty-validation/result.json",
+      "bytes": 15516,
+      "sha256": "ae4dd2938b997b79c4168a3478810e9ec7a306a70858efab80726ca77f1c3fed"
+    },
+    {
+      "path": "docs/reverse-client/r1-water-initialization/summary.json",
+      "bytes": 46748,
+      "sha256": "d8d743a85a277c989d2977a3c7228e2fa0da096b002f3c7e0d53b3be36e175dd"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-type-material/summary.json",
+      "bytes": 46346,
+      "sha256": "52c5d21236f0c854324d3bdd0b467ef5c1512294152d6f98ebac5a3a64b9ba02"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-type-exports/discovery.json",
+      "bytes": 33556,
+      "sha256": "c9fcbf2803b2bdd02bf6d6915c5891c442c7a678546b771ac2e1d798caa8b7ce"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/manifest.json",
+      "bytes": 7963,
+      "sha256": "ec753caa5682a5bbddead3d209212348b2fb7c3f67d471b505072cd6d2a11498"
+    },
+    {
+      "path": "docs/reverse-client/r1-world-floor-operands/inspection.json",
+      "bytes": 4415,
+      "sha256": "c91fef5f5208773247838f1804fd3c2b95420dccdfe691354eb5d6cace299a13"
+    },
+    {
+      "path": "docs/reverse-client/r1-crowd-tick-production-prepared-20261023.json",
+      "bytes": 3258,
+      "sha256": "40366bde69231c043ee19f7d71572c1edf6cb5b01e9ead7942cb4007d2725375"
+    },
+    {
+      "path": "docs/reverse-client/world-floor-prepared-handoff.json",
+      "bytes": 5786,
+      "sha256": "84d9342ad8cf3e4ecf7025777be6d0ab1557624bfdac28e6fc9eabdafa5bd7d5"
+    },
+    {
+      "path": "docs/reverse-client/terrain-material-adapter-preparation-checkpoint.json",
+      "bytes": 3116,
+      "sha256": "1d1620381ffd9984472ed106101f1845c7423291c6f6f5a6b31e9536a7c82804"
+    },
+    {
+      "path": "docs/reverse-client/game-crowd-moved-preparation-paused.json",
+      "bytes": 2647,
+      "sha256": "7245f4ae5a28d891d188d9714f41bf8170550aa3a0a7d17116e7b0ff6f81e8eb"
+    },
+    {
+      "path": "docs/reverse-client/water-initialization-prefix-handoff.json",
+      "bytes": 4360,
+      "sha256": "9c96f3e82885384c0e95f920d433b8734149804a99ecb43b46cccad228460a24"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationCrowdTickProductionContracts.cs",
+      "bytes": 21369,
+      "sha256": "45ff6030dcea6ac9757701ae6ba363764a367bcf533d8b3fcca2407f6334f033"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationCrowdTickProductionTests.cs",
+      "bytes": 19487,
+      "sha256": "3166734452054a717b1ffcc9f888c42bbc5a03a2af4b4907a72f47c5632f0511"
+    },
+    {
+      "path": "tools/build_r1_crowd_tick_production.ps1",
+      "bytes": 9037,
+      "sha256": "663810e976acaa1feb07d11b831852a2d0990924df287d80862554cbe928250d"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldFloorContracts.cs",
+      "bytes": 21968,
+      "sha256": "637ec9998cc3ac9e4422e587cdcbb7dd31a870cf98ef3ea64b7ddceb95381e63"
+    },
+    {
+      "path": "src/reverse_client_actions/GroundWaterInitializationPrefixes.cs",
+      "bytes": 5550,
+      "sha256": "0fbc429f1e93d92e07f50d9888ee5f27240182bdc1dd04ceab3f1b3c65b33f41"
+    },
+    {
+      "path": "src/reverse_client_actions/GroundWaterInitializationPrefixTests.cs",
+      "bytes": 7788,
+      "sha256": "e3580c2ce905be299eb6eaad7b1dd29d29753b0ce2d3cbde184e8e0e086790ee"
+    },
+    {
+      "path": "tools/static_analysis/read_r1_terrain_surface_strings.plan.json",
+      "bytes": 2490,
+      "sha256": "0711e4f382930322564293669b861edb3780f0616f22a95498e442a38a5623a4"
+    },
+    {
+      "path": "tools/static_analysis/rea_native_registration.mjs",
+      "bytes": 245711,
+      "sha256": "711f179b1f60b1dd3bbb01e6dd2bb08396111fef1e8799c0c743c7a9e5ae8440"
+    }
+  ]
+}

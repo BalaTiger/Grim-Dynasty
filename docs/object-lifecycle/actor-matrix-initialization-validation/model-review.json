@@ -1,0 +1,30 @@
+{
+  "schema": "grim-dynasty-actor-matrix-initialization-static-review-v1",
+  "reviewer": "independent local agent verify_handoff",
+  "status": "no-blocker-in-declared-normal-exclusive-domain",
+  "executed": false,
+  "sources": [
+    {
+      "path": "src/task_items/ActorMatrixInitialization.cs",
+      "sha256": "4f9e51fdbb10b13724c59f05e696f5caeaf87ab3128df46800a3fdb3d0fedfd4"
+    },
+    {
+      "path": "src/task_items/ActorConstructorCompletion.cs",
+      "sha256": "3d087a1865b5597f7ad30241cea7b3a06db864a4c5fc1a5bd5650d932e678f62"
+    }
+  ],
+  "checks": [
+    "Signed outer guard<=thread precedes special guard -1 handling.",
+    "Header-existing missing global stops2DCB2A without thread write.",
+    "Cold missing global stops2DCA96 preserving guard=-1 and DWORD+2C then QWORD+24 zero stores.",
+    "Footer unchecked32bit increment: global write, guard write, global reread/thread write under explicit exclusivity.",
+    "Unknown notification stops2DCB48 after publishing epochs; does not report a returned helper.",
+    "Two live state reads occur only at reached matrix calls; warm/cold/header-existing returns counted separately.",
+    "Archived factories use proved file bits; own logical thread is not native OS TLS initialization."
+  ],
+  "remaining": [
+    "Normal exclusive lock/unlock and notification return remain explicit contracts.",
+    "Contention wait, TLS loader callbacks/index, actual native synchronization initialization and encoded callback/handle lifetime remain outside model.",
+    "Loaded guard,421428 runtime writer and field state, native EH and formal sample compatibility remain unverified."
+  ]
+}

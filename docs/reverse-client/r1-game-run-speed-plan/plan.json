@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "purpose": "One exact direct movement dependency only: Game069040 Character::GetRunSpeed receives the live/cached player identity and EDX=0 at16617F..166184 inside166020 OnBegin. Resolve the actual float producer consumed by124340 without substituting a fixture speed or expanding speed/animation branches.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-game-run-speed-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-player-move-entries/11-PlayerMove-0x180166020-procedure_assembly.json",
+      "sha256": "cf3d2ce4685a852c842735cdc992ee301f44bc1ffa9e0f8ec016c439887da305",
+      "addresses": [
+        "0x180069040"
+      ],
+      "source_kind": "Current-hash-bound Rea procedure_assembly166020:166164 reloads state+10;16616D TEST and166172..17B optional actual128530 refill;16617F XOR EDX,EDX;166181 MOV RCX,RAX;166184 directCALL180069040.166192 copies returned XMM0 scalar to stack+28 for1661A6 CALL124340."
+    },
+    {
+      "file": "docs/reverse-client/r1-player-move-entries/10-PlayerMove-0x180166020-procedure_pseudo_code.json",
+      "sha256": "360a47d14f23eddfab0ee14320f2c16815a52dc8a967c55460cee160f10ee960",
+      "addresses": [
+        "0x180069040"
+      ],
+      "source_kind": "Paired Rea pseudo names Character::GetRunSpeed(this_01,false). Name supports interpretation; exact address and argument/register widths come from assembly."
+    },
+    {
+      "file": "docs/reverse-client/r1-player-move-entries/12-PlayerMove-0x180166020-procedure_callees.json",
+      "sha256": "3e0a065a0b116d2bf56c50ea664e747bef64637406ca9b254914625d351964b4",
+      "addresses": [
+        "0x180069040"
+      ],
+      "source_kind": "Direct callee inventory independently includes180069040 under166020; it is not a target body."
+    }
+  ],
+  "saved_body_dedup": {
+    "method": "Read-only inventory of276 existing json/md/txt files <=1MiB directly inside14 named relevant reverse-client evidence directories. Exact069040 address/GetRunSpeed hits were only166020 caller pseudo/asm/callees and state-registration-chain checkpoint/EVIDENCE; no target body found. File-name inventory under reverse-client likewise found only166020 body files. No assertion is made about unrelated directories or larger files.",
+    "directories": [
+      "r1-player-move-entries",
+      "r1-player-move-dispatch",
+      "r1-movement-action-path",
+      "r1-action-executor",
+      "r1-action-support",
+      "r1-player-movement-interface-slots",
+      "r1-move-start",
+      "r1-move-start-dependencies",
+      "r1-move-manager",
+      "r1-game-movement-interface",
+      "r1-same-region-movement",
+      "r1-crowd-movement-direct",
+      "r1-skill-moved-direct",
+      "r1-state-registration-chain"
+    ],
+    "files_read": 276,
+    "addresses": [
+      "0x180069040"
+    ],
+    "matching_target_files": [],
+    "matching_caller_files": [
+      "docs/reverse-client/r1-player-move-entries/10-PlayerMove-0x180166020-procedure_pseudo_code.json",
+      "docs/reverse-client/r1-player-move-entries/11-PlayerMove-0x180166020-procedure_assembly.json",
+      "docs/reverse-client/r1-player-move-entries/12-PlayerMove-0x180166020-procedure_callees.json"
+    ],
+    "colleague_review": "game_moved_integration independently reported no069040 entry among652 saved assembly/pseudo files under reverse-client+object-lifecycle; no original reads. Its166020 component stops at actual run-speed boundary rather than returning a fake speed.",
+    "original_read": false,
+    "backend_started": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Game-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Game-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180069040"
+      },
+      "label": "04-GameRunSpeed-0x180069040-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180069040"
+      },
+      "label": "05-GameRunSpeed-0x180069040-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180069040"
+      },
+      "label": "06-GameRunSpeed-0x180069040-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Game-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Preparation only. Root reviews/registers fixed mode and checks existing current resource/mutex/identity/approval gates before execution. No runner edits or execution in preparation.",
+    "Exactly pseudo/assembly/direct-callees for069040 plus5 lifecycle calls,8 total. No xrefs,callers,searches,table reads,original execution,retries,recursive targets or animation/stat-system expansion.",
+    "Use the same current Game SHA256 and preserve raw responses, before/after original hashes and normal session/process/Job/sampler cleanup.",
+    "Reuse unchanged actual Game384M profile tools/static_analysis/rea-r1-skill-moved-direct-plan.json:5GiB launch,2GiB stop,330000ms startup and existing ownership guards; no timeout or protection changes.",
+    "The immediate required caller domain is EDX=0. Record any other branch in returned whole function evidence but do not automatically implement or query that branch.",
+    "No invented default speed, assumed field value or fixture callback to bypass a missing producer. Unknown class/global/float/return state remains an explicit dependency.",
+    "No game runtime,save/cloud access,installation,security changes,commit or push."
+  ],
+  "evidence_questions": [
+    "What precise fields and widths, flags, direct calls and virtual targets produce returned XMM0 forEDX=0? Preserve read/write order and failure prefix.",
+    "Which of those concrete field identities already exist in the shared MoveCharacter/Character owner, and which need explicit original-backed initialization rather than defaults?",
+    "What are float operation order, NaN/zero/exception and unknown-state boundaries that are actually visible? Do not infer unobserved native behavior.",
+    "Which minimal direct dependency, if any, still blocks166020 passing the real speed to124340? Report it without automatic recursion."
+  ],
+  "preparation_template": {
+    "file": "docs/reverse-client/r1-game-mainplayer-connection-plan/plan.json",
+    "sha256": "de234801052907606224c63aa61311d9dccbdebcadc097febf89e003888cda29"
+  },
+  "runtime_profile_source": {
+    "file": "tools/static_analysis/rea-r1-skill-moved-direct-plan.json",
+    "sha256": "96e164adb4ff4909806229a8a4a7dce460cb134d76de0cc21768e9ea29313677",
+    "changed": false
+  },
+  "runner_change": "None. Parent will freeze/check the active runner separately when registering this plan.",
+  "saved_caller_semantics": {
+    "source": "docs/reverse-client/r1-player-move-entries/11-PlayerMove-0x180166020-procedure_assembly.json",
+    "scope": "166020 caller-side facts only; no069040 field-offset semantics yet established.",
+    "facts": [
+      {
+        "at": "16602C..166048",
+        "fact": "State+8 controller feeds125A00; current data+10..27 copied16+8 into first destination A. GetRegion import6094A0 returns null =>1661AB exit, so no speed call."
+      },
+      {
+        "at": "16605D..166095",
+        "fact": "State+10 cached role is read; null triggers128530 via freshly readstate+8 then stores return tostate+10. GetCoordsUnparented import609BE8 returns24-byte coordinate source copied16+8."
+      },
+      {
+        "at": "16609B..166147",
+        "fact": "Second125A00 and second destination B remain distinct from A. Difference import609A48 supplies direction; write state+20QWORD,+28DWORD,clear+24DWORD; scalar single-precision norm uses squared X/Y/Z, SQRTSS and DIVSS then8+4 writes. Constant7A8054 read is caller evidence, not queried by this plan."
+      },
+      {
+        "at": "16614A..166168",
+        "fact": "Import609720 invoked on temporaryB; returned pointer supplies16+8 bytes copied tostate+30..47. No assumed zero initialization or return identity."
+      },
+      {
+        "at": "166164..166184",
+        "fact": "Cached role state+10 is reread after the constructor call; if null,128530 refills it. RCX is that resulting role, EDX=0, directCALL069040. No success/null fallback is added."
+      },
+      {
+        "at": "166189..1661A6",
+        "fact": "Controller is reread fromstate+8 AFTER GetRunSpeed returns. ReturnedXMM0 stored as scalar32 atstack+28;124340 receives(controller,firstDestinationA,0,0,5,speed). No presumed constant speed."
+      }
+    ],
+    "unknown": [
+      "069040 body and Character fields/globals that determine speed",
+      "Its internal direct/virtual callees and float behavior",
+      "Native initialization/value provenance for any as-yet-unbound speed fields"
+    ]
+  }
+}

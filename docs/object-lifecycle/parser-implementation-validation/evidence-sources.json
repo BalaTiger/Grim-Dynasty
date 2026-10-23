@@ -1,0 +1,241 @@
+{
+  "schema": "grim-dynasty-parser-evidence-sources-v1",
+  "created_utc": "2026-10-20T05:52:52.9172246Z",
+  "status": "evidence-written-implementation-awaiting-unified-acceptance",
+  "source_document": {
+    "path": "docs/object-lifecycle/BINARY-PARSER-EVIDENCE.md",
+    "sha256": "f0fa7fe667afdb606f6b465980650433d68fcf3ded3ceb7552fc49765b37cec9"
+  },
+  "scope": {
+    "field_count_min": 2,
+    "field_count_max": 15,
+    "tags": [
+      2
+    ],
+    "positive_element_counts_only": true,
+    "maximum_int32_values": 65536,
+    "fresh_typed_storage": true,
+    "complete_stable_reader_window": true,
+    "normal_allocation_memory_operation_contract": true,
+    "native_allocator_or_exception_equivalence_claimed": false,
+    "native_rejection_equivalence_claimed": false,
+    "full_loadfile_miss_restored": false,
+    "implementation_tests_run_by_this_evidence_task": false,
+    "original_files_read_by_this_evidence_task": false,
+    "backend_calls_by_this_evidence_task": 0
+  },
+  "completed_query_calls": 18,
+  "batches": [
+    {
+      "batch": "rea-binary-parser-helpers",
+      "status": "passed",
+      "tool_calls": 11,
+      "completed_plan_calls": 11,
+      "started": "2026-10-20T05:40:31.528Z",
+      "finished": "2026-10-20T05:42:03.882Z",
+      "duration_seconds": 92.354,
+      "source_plan_sha256": "4a1bf562bb0875a898b57c0f09a16de1c028e84dfeb8ae69b8ddbb45b04e67a6",
+      "target_sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "target_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "targets_launched": false,
+      "close_acknowledged": true,
+      "closed_session_verified": true,
+      "process_exit_confirmed": true,
+      "forced_termination": false,
+      "child_exit_code": 0,
+      "errors": [],
+      "heap": "384M",
+      "launch_threshold_gib": 4.25,
+      "stop_threshold_gib": 2,
+      "stop_triggered": false,
+      "ownership_policy": "windows-job-v1",
+      "job_empty_confirmed": true,
+      "sampler_exit_code": 0,
+      "resource_release": {
+        "utc": "2026-10-20T05:42:40.5234732Z",
+        "batch": "rea-binary-parser-helpers",
+        "recorded_process_count": 61,
+        "remaining_same_identity_count": 0,
+        "reused_ids": [],
+        "active_analysis_process_count": 0,
+        "removed": [],
+        "remaining_runtime_files": 0
+      }
+    },
+    {
+      "batch": "rea-binary-parser-vector-growth",
+      "status": "passed",
+      "tool_calls": 7,
+      "completed_plan_calls": 7,
+      "started": "2026-10-20T05:45:23.049Z",
+      "finished": "2026-10-20T05:46:56.965Z",
+      "duration_seconds": 93.916,
+      "source_plan_sha256": "f4ff0db29c3ef1eae0df15425f11dac673d04635eb317fb7153e6987d53dbf38",
+      "target_sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "target_sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "targets_launched": false,
+      "close_acknowledged": true,
+      "closed_session_verified": true,
+      "process_exit_confirmed": true,
+      "forced_termination": false,
+      "child_exit_code": 0,
+      "errors": [],
+      "heap": "384M",
+      "launch_threshold_gib": 4.25,
+      "stop_threshold_gib": 2,
+      "stop_triggered": false,
+      "ownership_policy": "windows-job-v1",
+      "job_empty_confirmed": true,
+      "sampler_exit_code": 0,
+      "resource_release": {
+        "utc": "2026-10-20T05:47:32.1182412Z",
+        "batch": "rea-binary-parser-vector-growth",
+        "recorded_process_count": 52,
+        "remaining_same_identity_count": 0,
+        "reused_ids": [],
+        "active_analysis_process_count": 0,
+        "removed": [],
+        "remaining_runtime_files": 0
+      }
+    }
+  ],
+  "source_count": 15,
+  "sources": [
+    {
+      "path": "docs/object-lifecycle/OBJECT-NAME-EVIDENCE.md",
+      "sha256": "59e468e3103273a5593e646c6666a4077b7dcacbab482ddfcc75afab3e815d64",
+      "bytes": 14082,
+      "role": "supporting archived evidence"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-cold-insert/05-Binary-cold-insert-0x180284160-assembly.json",
+      "sha256": "0ef12f91312c6b8a06284d249927b6873bb531c3f3de690f4c7d581e1199ea41",
+      "bytes": 16102,
+      "role": "primary archived static analysis",
+      "evidence_id": "ev_dee00d3f2d7df9abc0b13f9dd8f01fb515188f2424e9028b751c42e8e37407c2",
+      "operation": "procedure_assembly",
+      "procedure": "0x180284160",
+      "subject_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-parser-entry-retry-2/05-Binary-parser-entry-0x18013f510-assembly.json",
+      "sha256": "799736dfda45d5eb59e0d4e45766e43c150f1ece2272f0a3961b551592a8b635",
+      "bytes": 44232,
+      "role": "primary archived static analysis",
+      "evidence_id": "ev_aba7f6db31b8c95da3f075aaa45f9553639da2dc902fa6f3b6d1b207f7a8e909",
+      "operation": "procedure_assembly",
+      "procedure": "0x18013f510",
+      "subject_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-parser-helpers/05-Parser-helper-0x180030d20-assembly.json",
+      "sha256": "7b21fc20c1924c155982995e8e3c9357a07a46383e252a5e5b844aff5ba46f7e",
+      "bytes": 18583,
+      "role": "primary archived static analysis",
+      "evidence_id": "ev_8006e280f0369a7619b02d08f186425c0f273d5801cc2ca9a5cd2a7958416f28",
+      "operation": "procedure_assembly",
+      "procedure": "0x180030d20",
+      "subject_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-parser-helpers/07-Parser-helper-0x1800c69f0-assembly.json",
+      "sha256": "5f977a7cf394c5426a7ef3ec54d0be7d8f646313f4aec2c1a464d54bd32cb6da",
+      "bytes": 24978,
+      "role": "primary archived static analysis",
+      "evidence_id": "ev_c3ceaad56025f087eb678a5f57c4d049a103c641b6bf21ad561e95f6f71817cd",
+      "operation": "procedure_assembly",
+      "procedure": "0x1800c69f0",
+      "subject_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-parser-helpers/09-Parser-helper-0x180284080-assembly.json",
+      "sha256": "9e00cc98d04590c79eff8dbeadce59906abcc6f1923961daf0008cc1dd09a43e",
+      "bytes": 17445,
+      "role": "primary archived static analysis",
+      "evidence_id": "ev_bc3e261e8bfeb413e33f7feadf0e53ccbc9ab5bf141b86556c04f306999df571",
+      "operation": "procedure_assembly",
+      "procedure": "0x180284080",
+      "subject_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-parser-helpers/resource-release.json",
+      "sha256": "cf9d08395e0c7122868cfc23ed8d4ab1f4d0c138fb0975e5871eaf5c2b67ae22",
+      "bytes": 341,
+      "role": "supporting archived evidence"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-parser-helpers/summary.json",
+      "sha256": "733928221ef5b3e0b0c98ca4251cd9a27c40532928023a23e5d4b4057086c00b",
+      "bytes": 46761,
+      "role": "supporting archived evidence"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-parser-vector-growth/05-Parser-vector-growth-0x18002e0f0-assembly.json",
+      "sha256": "5fa7f99800f14c1fc676ccad875d934345e2fc790c1eb9f4c5a013445063e122",
+      "bytes": 14886,
+      "role": "primary archived static analysis",
+      "evidence_id": "ev_6c3a65a19a0a6114200f3209e03a58d8de0f0b1670d6594afc8d53c9ba4c5d32",
+      "operation": "procedure_assembly",
+      "procedure": "0x18002e0f0",
+      "subject_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-parser-vector-growth/resource-release.json",
+      "sha256": "64ad2407e9b919f83bbb327f07fdf37876af406da0ec44f1de9037b253c8fcf9",
+      "bytes": 347,
+      "role": "supporting archived evidence"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-parser-vector-growth/summary.json",
+      "sha256": "a99b505f694ae4f6c8d78cbf0954d53a6858f66c2a193e6306d0ed2d67d6baf4",
+      "bytes": 33475,
+      "role": "supporting archived evidence"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-subobject-profile/05-Binary-subobject-init-0x1800481f0-assembly.json",
+      "sha256": "72bc6f31bb56ea665fe88581e822cfa15f4ef6427060cd838ece42d74ca020ee",
+      "bytes": 15435,
+      "role": "primary archived static analysis",
+      "evidence_id": "ev_64fbbaeeb1b22b11236cb867925d7ca125b3258be2913d9e639dcbcfd431da60",
+      "operation": "procedure_assembly",
+      "procedure": "0x1800481f0",
+      "subject_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-binary-table-constructor/05-LoadTableBinary-constructor-0x18013f300-assembly.json",
+      "sha256": "bb3fa2e3f2bca620f66caca1894932b970d69761f63327e23982f4eea158ccb0",
+      "bytes": 16850,
+      "role": "primary archived static analysis",
+      "evidence_id": "ev_b1ad5be04fcc0fbf21d70590d288cbd2145ca6dd127d0be510fe7cd3f850f96f",
+      "operation": "procedure_assembly",
+      "procedure": "0x18013f300",
+      "subject_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-container-reserve/05-Container-reserve-0x180022f00-assembly.json",
+      "sha256": "b77108a28c7f3488b15c2dd81d208eb31d67fa29a7b21f8b8033acb79fb3ed7b",
+      "bytes": 15893,
+      "role": "primary archived static analysis",
+      "evidence_id": "ev_d798754fa6332fd4aae9fd10191ff688f96ccd71d70babeb8119351a5e605aaf",
+      "operation": "procedure_assembly",
+      "procedure": "0x180022f00",
+      "subject_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-load-dependencies/11-LoadFile-miss-0x1801c4e20-assembly.json",
+      "sha256": "d696e7b2141e5fe9ee6f518555d32a615ab174deabd6f676a15c299be1b7e3b1",
+      "bytes": 40578,
+      "role": "primary archived static analysis",
+      "evidence_id": "ev_23bf6a83dc20e5e716f1454ed05f04ab266b5e67430c35070017de7c68eb1937",
+      "operation": "procedure_assembly",
+      "procedure": "0x1801c4e20",
+      "subject_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "limitations": [
+    "Static-query success is not implementation acceptance.",
+    "Fresh tag2 normal-return domain only; native addresses, allocation failure and exception cleanup are not reconstructed.",
+    "Name cache and archive string pool remain explicit external context.",
+    "Snapshot hashes identify archived source bytes; this task did not re-read the original binary."
+  ]
+}

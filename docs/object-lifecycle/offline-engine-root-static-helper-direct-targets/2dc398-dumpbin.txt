@@ -1,0 +1,29 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Engine.dll
+
+File Type: DLL
+
+  00000001802DC398: 40 53              push        rbx
+  00000001802DC39A: 48 83 EC 20        sub         rsp,20h
+  00000001802DC39E: 48 8B D9           mov         rbx,rcx
+  00000001802DC3A1: EB 21              jmp         00000001802DC3C4
+  00000001802DC3A3: 48 8B CB           mov         rcx,rbx
+  00000001802DC3A6: E8 CF 17 00 00     call        00000001802DDB7A
+  00000001802DC3AB: 85 C0              test        eax,eax
+  00000001802DC3AD: 75 12              jne         00000001802DC3C1
+  00000001802DC3AF: 48 83 FB FF        cmp         rbx,0FFFFFFFFFFFFFFFFh
+  00000001802DC3B3: 75 07              jne         00000001802DC3BC
+  00000001802DC3B5: E8 46 12 00 00     call        00000001802DD600
+  00000001802DC3BA: EB 05              jmp         00000001802DC3C1
+  00000001802DC3BC: E8 1F 12 00 00     call        00000001802DD5E0
+  00000001802DC3C1: 48 8B CB           mov         rcx,rbx
+  00000001802DC3C4: E8 6F 17 00 00     call        00000001802DDB38
+  00000001802DC3C9: 48 85 C0           test        rax,rax
+  00000001802DC3CC: 74 D5              je          00000001802DC3A3
+  00000001802DC3CE: 48 83 C4 20        add         rsp,20h
+  00000001802DC3D2: 5B                 pop         rbx
+  00000001802DC3D3: C3                 ret
+
+  Summary
+
+      301000 .text

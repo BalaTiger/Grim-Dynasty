@@ -1,0 +1,48 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\offline-cache-node\Engine.readonly.dll
+
+File Type: DLL
+
+  000000018002DE40: 48 83 EC 28        sub         rsp,28h
+  000000018002DE44: 4C 8B 51 10        mov         r10,qword ptr [rcx+10h]
+  000000018002DE48: 4C 8B C9           mov         r9,rcx
+  000000018002DE4B: 4C 8B 41 08        mov         r8,qword ptr [rcx+8]
+  000000018002DE4F: 49 8B C2           mov         rax,r10
+  000000018002DE52: 49 2B C0           sub         rax,r8
+  000000018002DE55: 48 C1 F8 02        sar         rax,2
+  000000018002DE59: 48 3B C2           cmp         rax,rdx
+  000000018002DE5C: 73 5F              jae         000000018002DEBD
+  000000018002DE5E: 48 8B 09           mov         rcx,qword ptr [rcx]
+  000000018002DE61: 49 BB FF FF FF FF  mov         r11,3FFFFFFFFFFFFFFFh
+                    FF FF FF 3F
+  000000018002DE6B: 4C 2B C1           sub         r8,rcx
+  000000018002DE6E: 49 8B C3           mov         rax,r11
+  000000018002DE71: 49 C1 F8 02        sar         r8,2
+  000000018002DE75: 49 2B C0           sub         rax,r8
+  000000018002DE78: 48 3B C2           cmp         rax,rdx
+  000000018002DE7B: 73 0E              jae         000000018002DE8B
+  000000018002DE7D: 48 8D 0D DC A5 30  lea         rcx,[0000000180338460h]
+                    00
+  000000018002DE84: FF 15 D6 46 2D 00  call        qword ptr [0000000180302560h]
+  000000018002DE8A: CC                 int         3
+  000000018002DE8B: 4C 2B D1           sub         r10,rcx
+  000000018002DE8E: 49 03 D0           add         rdx,r8
+  000000018002DE91: 49 C1 FA 02        sar         r10,2
+  000000018002DE95: 33 C9              xor         ecx,ecx
+  000000018002DE97: 49 8B C2           mov         rax,r10
+  000000018002DE9A: 48 D1 E8           shr         rax,1
+  000000018002DE9D: 4C 2B D8           sub         r11,rax
+  000000018002DEA0: 49 03 C2           add         rax,r10
+  000000018002DEA3: 4D 3B DA           cmp         r11,r10
+  000000018002DEA6: 48 0F 43 C8        cmovae      rcx,rax
+  000000018002DEAA: 48 3B CA           cmp         rcx,rdx
+  000000018002DEAD: 48 0F 43 D1        cmovae      rdx,rcx
+  000000018002DEB1: 49 8B C9           mov         rcx,r9
+  000000018002DEB4: 48 83 C4 28        add         rsp,28h
+  000000018002DEB8: E9 33 02 00 00     jmp         000000018002E0F0
+  000000018002DEBD: 48 83 C4 28        add         rsp,28h
+  000000018002DEC1: C3                 ret
+
+  Summary
+
+      301000 .text

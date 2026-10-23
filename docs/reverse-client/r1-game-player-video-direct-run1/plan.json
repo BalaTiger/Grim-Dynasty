@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "purpose": "Single direct Player IsAlive dependency only: inspect Game2FA290 IsPlayingVideo called at3CE7D9 after the actual ObjectID import and fresh gGameEngine load. No assumed false video state or further dependency expansion.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-game-player-video-direct-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-game-mouse-direct-dependencies-run1/08-GameMouseDirect-0x1803ce7b0-procedure_assembly.json",
+      "sha256": "3f565be4de52dbea0da4ba7e8fad24b26d060a23ae36f100adf454d2e55171dc",
+      "addresses": [
+        "0x1802fa290"
+      ],
+      "source_kind": "Exact CALL1802FA290 at1803CE7D9 in Player primary+460 IsAlive. RCX freshly loads gGameEngine atA66288 after ObjectID609128 returned; EDX is that returned EAX. Byte24B9 short-circuits first. Target body and video state are not inferred."
+    }
+  ],
+  "saved_body_dedup": {
+    "method": "Exact target address filename inventory under docs/reverse-client and docs/object-lifecycle found no matching target response file. Player3CE7B0 direct callsite is the source, not a target body. No new original read or backend call.",
+    "addresses": [
+      "0x1802fa290"
+    ],
+    "matching_target_files": [],
+    "original_read": false,
+    "backend_started": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Game-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Game-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1802fa290"
+      },
+      "label": "04-GamePlayerVideo-0x1802fa290-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1802fa290"
+      },
+      "label": "05-GamePlayerVideo-0x1802fa290-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1802fa290"
+      },
+      "label": "06-GamePlayerVideo-0x1802fa290-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Game-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Preparation only. Root reviews the fixed registration and current resource/mutex/profile/approval gates before any execution.",
+    "Exactly pseudo/assembly/direct-callees for Game2FA290 plus five lifecycle calls. No callers, xrefs, search, import or table read, retries, or recursive follow-up.",
+    "Keep this frozen query plan separate from the new output directory. Retain source pins and normal session, process, Job and sampler cleanup evidence.",
+    "Reuse unchanged Game384M resource policy,5GiB launch floor,2GiB stop floor,330000ms provider startup and existing owned-session protections. Do not change timeouts or protection code.",
+    "Read-only original pre/post hashing. No original execution, saves, cloud, installation or security changes."
+  ],
+  "evidence_questions": [
+    "What exact reads, branches, object-ID comparisons and raw boolean result does2FA290 perform?",
+    "Which explicit GameEngine/video state is required to implement the Player IsAlive ordinary path without assuming false?",
+    "Report direct unclosed dependencies only. Do not query them in this batch."
+  ],
+  "runner_before_sha256": "c8f6c790697bd3aeca6931179ca46baacb2494e26cc6a18a815aa307e33aef6d"
+}

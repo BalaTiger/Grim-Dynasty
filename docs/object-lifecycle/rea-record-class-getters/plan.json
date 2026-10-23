@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "purpose": "Bounded static evidence for the two exact Engine LoadTable and LoadTableBinary exported-vtable +0x28 getter entries used at the Class interface; no target execution, assumption about the concrete table returned by LoadFile, or automatic calls to newly discovered callees.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/officialToolContracts.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/toolContractHelpers.js",
+    ".tooling/rea/node_modules/rea-agents/dist/contracts/sessionToolContracts.js",
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    "docs/object-lifecycle/rea-record-cache-compare/tool-catalog-selected.json"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/object-lifecycle/record-interface-discovery/record-interface-vslots.json",
+      "sha256": "d2b77d66e08c05c83822f9f03d66565e18d016cdca400377853c866c7c3a4b9c",
+      "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "selected_vtable_slots": [
+        {
+          "class_name": "LoadTable",
+          "export_name": "??_7LoadTable@GAME@@6B@",
+          "vtable_preferred_va": "0x180341f10",
+          "slot_offset": "0x28",
+          "slot_preferred_va": "0x180341f38",
+          "slot_bytes": "b0c6138001000000",
+          "target_preferred_va": "0x18013c6b0"
+        },
+        {
+          "class_name": "LoadTableBinary",
+          "export_name": "??_7LoadTableBinary@GAME@@6B@",
+          "vtable_preferred_va": "0x180341fe0",
+          "slot_offset": "0x28",
+          "slot_preferred_va": "0x180342008",
+          "slot_bytes": "60fb138001000000",
+          "target_preferred_va": "0x18013fb60"
+        }
+      ]
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 11,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_info",
+    "procedure_callees",
+    "xrefs",
+    "address_name"
+  ],
+  "execution_requirements": [
+    "Before dispatch, verify the target SHA256 and actual MCP tools/list schemas against this plan; stop on mismatch.",
+    "The calls array already contains normal-path open, close, and session checks; do not add duplicate lifecycle calls.",
+    "Use only the fixed Engine target and provider. Do not launch or load the target DLL for execution, change target bytes, query saves, or expand the tool allowlist.",
+    "Dispatch sequentially, save each raw result under its unique label, and retain provider evidence and limitations.",
+    "Stop the remaining plan on errors, denial, unavailable provider, unexpected target identity, or unavailable analysis; do not silently substitute another backend or guess callees.",
+    "If stopped while a target is open, perform only necessary close_binary cleanup when permitted, within the total call budget, and record whether closure is confirmed.",
+    "The final session result must confirm no active target; verify the original Engine SHA256 again after closure.",
+    "Calls to newly discovered direct callees are not included in this batch. Review returned addresses and scope before preparing another bounded batch."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18013c6b0"
+      },
+      "label": "04-LoadTable-class-getter-0x18013c6b0-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18013c6b0"
+      },
+      "label": "05-LoadTable-class-getter-0x18013c6b0-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18013c6b0"
+      },
+      "label": "06-LoadTable-class-getter-0x18013c6b0-direct-callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18013fb60"
+      },
+      "label": "07-LoadTableBinary-class-getter-0x18013fb60-pseudocode"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18013fb60"
+      },
+      "label": "08-LoadTableBinary-class-getter-0x18013fb60-assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18013fb60"
+      },
+      "label": "09-LoadTableBinary-class-getter-0x18013fb60-direct-callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "10-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "11-final-session"
+    }
+  ]
+}

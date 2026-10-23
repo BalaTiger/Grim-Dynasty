@@ -1,0 +1,36 @@
+{
+  "schema": "grim-dynasty-m3-bounded-plan-v4",
+  "id": "attribute-leaf-continuation",
+  "purpose": "Read only CF700..CF760 (96 bytes), continuing the saved 32-byte straight-line prefix from the proven CF6E0 direct-call target, and the first saved MOVSS operand at readonly 7A8054 (4 raw bytes). Do not reread the prefix or extend again; no transfer is followed.",
+  "source": {"path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll", "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2", "bytes": 11385856, "preferred_base": "0x180000000"},
+  "proof": {"path": "docs/m3-evidence/damage-settlement/direct-068ab0.instructions.json", "sha256": "29cb0371f9a2cfb9638d3d9d11e0426db5821f6740ecbc32e6dd72d314abc033"},
+  "targets": [
+    {"id": "continuation-0cf700", "rva": "0xcf6e0", "caller_address": "0x180068b60", "caller_bytes": "e87b6b0600", "reference_kind": "direct-call"}
+  ],
+  "limits": {"body_bytes_each": 96, "body_bytes_total": 96, "metadata_bytes": 16384, "dumpbin_calls": 1, "tool_timeout_ms_each": 10000, "data_bytes": 4},
+  "mode": "bounded-leaf-continuation",
+  "range_policy": "fixed-window-not-function",
+  "window_bytes": 96,
+  "target_origin": "saved-direct-call-with-contiguous-prefix",
+  "constant_read": {"rva": "0x7a8054", "bytes": 4, "source_address": "0x1800cf6e0", "source_bytes": "f30f10056c896d00", "expected_section": ".rdata"},
+  "continuation": {
+    "path": "docs/m3-evidence/attribute-leaf-window/window-0cf6e0.decode-candidates.json",
+    "sha256": "ce67534960ca42088a95b4a5fbe207dbf571ed15323fdda7d9355dceb32ee309",
+    "origin_rva": "0xcf6e0",
+    "start_rva": "0xcf700",
+    "prefix_bytes": 32,
+    "total_window_limit": 128,
+    "expected_instructions": [
+      {"address": "0x1800cf6e0", "bytes": "f30f10056c896d00", "mnemonic": "movss"},
+      {"address": "0x1800cf6e8", "bytes": "0f57ed", "mnemonic": "xorps"},
+      {"address": "0x1800cf6eb", "bytes": "4863c2", "mnemonic": "movsxd"},
+      {"address": "0x1800cf6ee", "bytes": "f30f109c81d0010000", "mnemonic": "movss"},
+      {"address": "0x1800cf6f7", "bytes": "f30f102481", "mnemonic": "movss"},
+      {"address": "0x1800cf6fc", "bytes": "f30f58d8", "mnemonic": "addss"}
+    ]
+  },
+  "output": "docs/m3-evidence/attribute-leaf-continuation",
+  "temporary": ".tooling/m3-attribute-leaf-continuation-temp",
+  "automatic_callee_expansion": false,
+  "execution_requires_separate_review_and_approval": true
+}

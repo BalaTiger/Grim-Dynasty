@@ -1,0 +1,83 @@
+{
+  "schema": "grim-dynasty-m3-export-body-proposal-v1",
+  "id": "character-load-entry",
+  "execution_ready": false,
+  "purpose": "Read only the saved Character::Load(LoadTable const&) exact .pdata range to locate direct initial-life, level and bio/formula binding operations. No such binding is assumed from the symbol or DBR strings. Inspect the complete pinned runtime fragment rather than treating an arbitrary 8192-byte prefix as complete.",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "bytes": 11385856,
+    "preferred_base": "0x180000000"
+  },
+  "proof": {
+    "path": "docs/m3-evidence/character-input-targets.json",
+    "sha256": "9dc29a761cdf2b6472a4b24dcdf3c867ec46f78acff8c33713321cff87fd5e6b",
+    "schema": "grim-dynasty-m3-fixed-export-targets-v1",
+    "status": "MetadataOnlyCompleted",
+    "category": "character_input"
+  },
+  "targets": [
+    {
+      "id": "character-load",
+      "reference_kind": "saved-exact-export-entry",
+      "decorated_name": "?Load@Character@GAME@@UEAAXAEBVLoadTable@2@@Z",
+      "rva": "0x54e70",
+      "ordinal": 18591,
+      "name_index": 18590,
+      "forwarded": false,
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 2439,
+        "begin_rva": "0x54e70",
+        "end_rva_exclusive": "0x58440",
+        "bytes": 13776,
+        "unwind_info_rva": "0x7e70d8"
+      }
+    }
+  ],
+  "mode": "single-export-body",
+  "range_policy": "exact-saved-pdata-range",
+  "requested_fixed_limits": {
+    "target_count": 1,
+    "body_bytes_each": 13776,
+    "body_bytes_total": 13776,
+    "body_read_operations": 1,
+    "metadata_bytes": 16384,
+    "hash_buffer_bytes": 65536,
+    "synthetic_bytes_each": 18432,
+    "synthetic_bytes_total": 18432,
+    "dumpbin_calls": 1,
+    "tool_timeout_ms_each": 10000,
+    "tool_buffer_bytes_each": 2097152,
+    "global_data_bytes": 0,
+    "string_data_bytes": 0,
+    "unwind_body_bytes": 0,
+    "callee_body_bytes": 0
+  },
+  "backend": {
+    "path": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "input": "One own synthetic PE containing only the selected 13776 original body bytes plus generated headers and zero padding; original Game.dll is never passed to dumpbin or loaded as a module."
+  },
+  "reader_precondition": {
+    "required": "Separately review a fixed export-proof profile in an existing reader before execution; do not run this proposal through an unsupported plan parser.",
+    "current_bounded_reader_gap": "read_m3_bounded_plan.mjs accepts saved instruction references, not this export-metadata proof, and caps body bytes at 8192 and each synthetic image at 16384. Neither limit may be silently raised for existing profiles.",
+    "current_entry_reader_gap": "m3_read_entry_bodies.mjs is pinned to three earlier exports and does not accept this target or a plan argument.",
+    "scope_of_needed_change": "Enable only this proof-pinned export, exact saved bounds and requested single-target budgets, while preserving old defaults and profile ceilings. This proposal does not implement or authorize that reader change."
+  },
+  "why_this_range": "The newly observed export starts exactly at 054E70 and its one .pdata entry ends at 058440. The caller's LoadTable binding, field reads, stores and branches can occur anywhere inside this range; saved evidence supplies no smaller complete initialization block. Reading its exact 13776 bytes can identify such blocks without guessing a prefix boundary. It does not establish that all logical control flow or exception/cold fragments fit inside this .pdata entry. The synthetic PE bound is 512 header bytes plus 512-aligned (0xE70 leading zero padding + 13776 body bytes), totaling 18432 bytes.",
+  "validation_and_stop_conditions": [
+    "Before body reads, verify the proof hash, exact candidate name/RVA/ordinal/range, original file size/hash, and current matching .pdata boundary.",
+    "Use a fresh output directory and temporary directory; refuse to overwrite existing evidence.",
+    "Preserve selected raw bytes, exact tool invocation and stdout/stderr. Verify contiguous decoded byte coverage against the exact saved range.",
+    "Invalid/data decode, gaps, overflow, timeout, boundary mismatch or out-of-range control-flow dependencies remain explicit incomplete results. Do not extend or truncate and relabel the range as complete.",
+    "Record calls, branches and RIP-relative references as evidence only. Do not follow callees, strings, globals, vtables, imports or exception/cold fragments automatically.",
+    "Verify original SHA256 and tool fingerprint after the bounded operation. Semantic inspection is limited to PE mapping metadata, selected .pdata metadata and this one body; full-file hashing is uninterpreted.",
+    "Limit the human analysis to initial-life/level/bio/formula binding clues and exact unresolved dependencies. No Character subsystem restoration or field-name inference from nearby constants."
+  ],
+  "output": "docs/m3-evidence/character-load-entry",
+  "temporary": ".tooling/m3-character-load-entry-temp",
+  "automatic_callee_expansion": false,
+  "automatic_prefix_expansion": false,
+  "execution_requires_separate_review_and_approval": true
+}

@@ -1,0 +1,388 @@
+{
+  "schema": "item-be0-caller-import-export-v1",
+  "status": "fixed-item-be0-caller-import-and-cached-engine-body-bound",
+  "started_utc": "2026-10-21T08:11:56.289Z",
+  "sources": [
+    {
+      "path": "docs/rewards/rea-inventory-add/Item-constructor-primary-table-assembly.json",
+      "sha256": "7a078d11495b5b7c10a07d7b6309c9d633f8ec39dfc444e5f0decfbd5efe1a3f"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-198-constructor/inspection.json",
+      "sha256": "36958aecbb0e7905f3d002d68b0f77b48230271194935f73724a40cac11bdc54"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-actor-198-constructor/0ebde0-instructions.json",
+      "sha256": "9083e6b9037ded4e5ee7224b5544ac2b9abae3b6a1ecca612e9d7663b8f484ce"
+    }
+  ],
+  "limits": {
+    "game_code_bytes": 176,
+    "engine_code_bytes": 0,
+    "metadata_bytes": 74,
+    "read_operations": 7,
+    "dumpbin_calls": 1,
+    "tiny_pe_bytes": 3072,
+    "hash_buffer": 65536
+  },
+  "original_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "callees_followed": 0,
+  "pdata_reread": false,
+  "reads": [
+    {
+      "module": "Game",
+      "rva": "0x3238be",
+      "file_offset": 3288254,
+      "kind": "caller",
+      "bytes": 176,
+      "hex": "4883ceff89b7d80b0000488d9fe00b000048895c24588d5603488bcbff15a0602e00488d05f1d14400488903c687000c000000c687020c00000066c787040c00000000c687060c00000089b7080c0000488d87100c000048c740180f0000004889681048837818107203488b00c600004889af300c00004889af380c00004889af400c00004889af480c00004889af500c00004889af580c000089af600c0000c687640c000000488bcfff15ba572e00"
+    },
+    {
+      "module": "Game",
+      "rva": "0x609980",
+      "file_offset": 6324096,
+      "kind": "iat",
+      "bytes": 8,
+      "hex": "d896a40000000000"
+    },
+    {
+      "module": "Game",
+      "rva": "0xa496d8",
+      "file_offset": 10779864,
+      "kind": "hint-and-name",
+      "bytes": 29,
+      "hex": "d5003f3f30486f6f6b5061636b4047414d454040514541414049405a00"
+    },
+    {
+      "module": "Engine",
+      "rva": "0x3b5ca8",
+      "file_offset": 3886248,
+      "kind": "fixed-hint-name-pointer",
+      "bytes": 4,
+      "hex": "08103c00"
+    },
+    {
+      "module": "Engine",
+      "rva": "0x3c1008",
+      "file_offset": 3932168,
+      "kind": "fixed-hint-name",
+      "bytes": 27,
+      "hex": "3f3f30486f6f6b5061636b4047414d454040514541414049405a00"
+    },
+    {
+      "module": "Engine",
+      "rva": "0x3bbd2a",
+      "file_offset": 3910954,
+      "kind": "fixed-hint-ordinal",
+      "bytes": 2,
+      "hex": "d500"
+    },
+    {
+      "module": "Engine",
+      "rva": "0x3afa7c",
+      "file_offset": 3861116,
+      "kind": "fixed-export-address",
+      "bytes": 4,
+      "hex": "e0bd0e00"
+    }
+  ],
+  "metadata_bytes": 74,
+  "failures": [],
+  "restrictions": [
+    "Only Game[3238BE,32396E) code; next call323968 is recorded but not followed.",
+    "Game descriptor/OFT/module raw bytes and Engine PE/export metadata are reused from pinned evidence.",
+    "Only Game IAT609980 and hint/nameA496D8, then that exact Engine hint name/ordinal/EAT are new metadata.",
+    "Hint mismatch or target other than EBDE0 stops; no fallback scan, new .pdata, Engine code, unwind or callee reads.",
+    "No complete constructor, loaded IAT behavior, runtime guard, allocation EH or cleanup claim. Full hashes are identity checks, not semantic reads."
+  ],
+  "script_sha256": "73a5d9d2126b3802efb1e90db7251db7cd4d5a700e58ab5e0110f6348fef9b62",
+  "cached_binding": {
+    "descriptor": {
+      "rva": "0xa4297c",
+      "file_offset": 10751868,
+      "bytes": "c02aa4000000000000000000a66aa50000906000"
+    },
+    "lookup_index": 304,
+    "lookup_raw": "d896a40000000000",
+    "dll": {
+      "rva": "0xa56aa6",
+      "file_offset": 10834086,
+      "bytes": "456e67696e652e646c6c00",
+      "text": "Engine.dll"
+    }
+  },
+  "files": [
+    {
+      "name": "Game",
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "size": 11385856,
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "pe": {
+        "pe_header_file_offset": 272,
+        "size_of_headers": 1024,
+        "size_of_image": 11427840,
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 4096,
+            "virtual_size": 6320499,
+            "raw_size": 6320640,
+            "raw_offset": 1024,
+            "characteristics": 1610612768
+          },
+          {
+            "name": ".rdata",
+            "rva": 6328320,
+            "virtual_size": 4517464,
+            "raw_size": 4517888,
+            "raw_offset": 6321664,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".data",
+            "rva": 10846208,
+            "virtual_size": 73456,
+            "raw_size": 56832,
+            "raw_offset": 10839552,
+            "characteristics": 3221225536
+          },
+          {
+            "name": ".pdata",
+            "rva": 10919936,
+            "virtual_size": 267516,
+            "raw_size": 267776,
+            "raw_offset": 10896384,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".gfids",
+            "rva": 11190272,
+            "virtual_size": 60,
+            "raw_size": 512,
+            "raw_offset": 11164160,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".tls",
+            "rva": 11194368,
+            "virtual_size": 9,
+            "raw_size": 512,
+            "raw_offset": 11164672,
+            "characteristics": 3221225536
+          },
+          {
+            "name": "_RDATA",
+            "rva": 11198464,
+            "virtual_size": 2096,
+            "raw_size": 2560,
+            "raw_offset": 11165184,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".rsrc",
+            "rva": 11202560,
+            "virtual_size": 480,
+            "raw_size": 512,
+            "raw_offset": 11167744,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".reloc",
+            "rva": 11206656,
+            "virtual_size": 217548,
+            "raw_size": 217600,
+            "raw_offset": 11168256,
+            "characteristics": 1107296320
+          }
+        ],
+        "export_directory_rva": "0x870640",
+        "export_directory_size": 1909504,
+        "export_directory_file_offset": 8842304,
+        "export_directory_bytes": "0000000008f6c76a0000000062db8a0001000000196200001962000068068700cc8e880030178a00",
+        "ordinal_base": 1,
+        "function_count": 25113,
+        "named_export_count": 25113,
+        "address_table_rva": "0x870668",
+        "name_pointer_table_rva": "0x888ecc",
+        "name_ordinal_table_rva": "0x8a1730"
+      },
+      "source_closed": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "source_stat_stable": true,
+      "source_hash_preserved": true
+    },
+    {
+      "name": "Engine",
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "size": 4485632,
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "pe": {
+        "pe_header_file_offset": 288,
+        "size_of_headers": 1024,
+        "size_of_image": 4521984,
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 4096,
+            "virtual_size": 3148433,
+            "raw_size": 3148800,
+            "raw_offset": 1024,
+            "characteristics": 1610612768
+          },
+          {
+            "name": ".rdata",
+            "rva": 3153920,
+            "virtual_size": 1140696,
+            "raw_size": 1140736,
+            "raw_offset": 3149824,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".data",
+            "rva": 4296704,
+            "virtual_size": 44952,
+            "raw_size": 27136,
+            "raw_offset": 4290560,
+            "characteristics": 3221225536
+          },
+          {
+            "name": ".pdata",
+            "rva": 4341760,
+            "virtual_size": 146520,
+            "raw_size": 146944,
+            "raw_offset": 4317696,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".gfids",
+            "rva": 4489216,
+            "virtual_size": 60,
+            "raw_size": 512,
+            "raw_offset": 4464640,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".tls",
+            "rva": 4493312,
+            "virtual_size": 9,
+            "raw_size": 512,
+            "raw_offset": 4465152,
+            "characteristics": 3221225536
+          },
+          {
+            "name": "_RDATA",
+            "rva": 4497408,
+            "virtual_size": 3120,
+            "raw_size": 3584,
+            "raw_offset": 4465664,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".rsrc",
+            "rva": 4501504,
+            "virtual_size": 480,
+            "raw_size": 512,
+            "raw_offset": 4469248,
+            "characteristics": 1073741888
+          },
+          {
+            "name": ".reloc",
+            "rva": 4505600,
+            "virtual_size": 15700,
+            "raw_size": 15872,
+            "raw_offset": 4469760,
+            "characteristics": 1107296320
+          }
+        ],
+        "export_directory_rva": "0x3af700",
+        "export_directory_size": 417432,
+        "export_directory_file_offset": 3860224,
+        "export_directory_bytes": "00000000d2f5c76a0000000096ec3b00010000008b1800008b18000028f73a0054593b0080bb3b00",
+        "ordinal_base": 1,
+        "function_count": 6283,
+        "named_export_count": 6283,
+        "address_table_rva": "0x3af728",
+        "name_pointer_table_rva": "0x3b5954",
+        "name_ordinal_table_rva": "0x3bbb80"
+      },
+      "source_closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "source_stat_stable": true,
+      "source_hash_preserved": true
+    }
+  ],
+  "reused_engine_body": {
+    "source_index": 3,
+    "instructions_source_index": 4,
+    "boundary": {
+      "index": 4025,
+      "begin": 966112,
+      "end": 966309,
+      "unwind": 3651416,
+      "raw_hex": "e0bd0e00a5be0e0058b73700"
+    },
+    "code_bytes": 197,
+    "instructions": 53,
+    "sha256": "635e221a79268dbc1c5d6f748f90b52cf59d569866ad35498a664f8a5c22a5de",
+    "new_code_bytes": 0
+  },
+  "tool_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "import_binding": {
+    "iat_rva": "0x609980",
+    "dll": "Engine.dll",
+    "symbol": "??0HookPack@GAME@@QEAA@I@Z",
+    "hint": 213,
+    "hint_name_rva": "0xa496d8"
+  },
+  "synthetic": {
+    "bytes": 3072,
+    "sha256": "fbdef44f38dd4cc0f5e2ee1886f9e6028fb454496179e414261aa734d0ca947a",
+    "never_executed": true
+  },
+  "command_arguments": [
+    "/NOLOGO",
+    "/NOPDB",
+    "/ERRORREPORT:NONE",
+    "/DISASM:BYTES",
+    "/RANGE:0x1803238be,0x18032396d",
+    "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\offline-item-be0-import-temp\\3238be-caller.inspect.dll"
+  ],
+  "tool_exit": 0,
+  "calls": [
+    {
+      "address": "0x1803238da",
+      "bytes": "ff15a0602e00",
+      "instruction": "call        qword ptr [0000000180609980h]"
+    },
+    {
+      "address": "0x180323968",
+      "bytes": "ff15ba572e00",
+      "instruction": "call        qword ptr [0000000180609128h]"
+    }
+  ],
+  "instructions": 31,
+  "byte_coverage_verified": true,
+  "export_binding": {
+    "name": "??0HookPack@GAME@@QEAA@I@Z",
+    "index": 213,
+    "name_rva": "0x3c1008",
+    "ordinal_index": 213,
+    "ordinal": 214,
+    "target_rva": "0xebde0",
+    "target_va": "0x1800ebde0"
+  },
+  "tool_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-21T08:11:56.372Z"
+}

@@ -1,0 +1,123 @@
+{
+  "utc": "2026-10-20T04:38:22.760Z",
+  "elapsed_seconds": 103.332,
+  "unit": "bytes unless stated otherwise",
+  "sampled_peaks": {
+    "tree_private_commit": {
+      "bytes": 1004802048,
+      "utc": "2026-10-20T04:34:46.4972625Z",
+      "process_count": 25
+    },
+    "tree_working_set": {
+      "bytes": 1136152576,
+      "utc": "2026-10-20T04:34:46.4972625Z",
+      "process_count": 25
+    },
+    "total_private_commit": {
+      "bytes": 1190436864,
+      "utc": "2026-10-20T04:34:15.3561010Z",
+      "process_count": 7
+    },
+    "total_working_set": {
+      "bytes": 1316192256,
+      "utc": "2026-10-20T04:34:46.4972625Z",
+      "process_count": 27
+    },
+    "controller_and_sampler_private_commit": {
+      "bytes": 250404864,
+      "utc": "2026-10-20T04:34:09.4784196Z",
+      "process_count": 2
+    },
+    "controller_and_sampler_working_set": {
+      "bytes": 287338496,
+      "utc": "2026-10-20T04:34:09.4784196Z",
+      "process_count": 2
+    }
+  },
+  "process_identities": 75,
+  "decompiler_identities_observed": 34,
+  "maximum_simultaneous_decompilers_observed": 10,
+  "maximum_simultaneous_owned_processes_observed": 25,
+  "maximum_simultaneous_owned_threads_observed": 178,
+  "system_min_available_physical_bytes": 11320258560,
+  "system_min_commit_headroom_bytes": 26576474112,
+  "process_lifetime_peak_observations": [
+    {
+      "pid": 40560,
+      "parent_pid": 19728,
+      "name": "node.exe",
+      "role": "controller",
+      "creation_utc": "2026-10-20T04:34:01.7329440Z",
+      "private_commit_sample_peak_bytes": 139935744,
+      "lifetime_commit_peak_observed_bytes": 160690176,
+      "working_set_sample_peak_bytes": 152338432,
+      "lifetime_working_set_peak_observed_bytes": 164409344,
+      "maximum_threads_observed": 15,
+      "java_heap_switches": []
+    },
+    {
+      "pid": 16992,
+      "parent_pid": 40560,
+      "name": "node.exe",
+      "role": "owned_backend_tree",
+      "creation_utc": "2026-10-20T04:34:01.8062360Z",
+      "private_commit_sample_peak_bytes": 440119296,
+      "lifetime_commit_peak_observed_bytes": 445927424,
+      "working_set_sample_peak_bytes": 423628800,
+      "lifetime_working_set_peak_observed_bytes": 424148992,
+      "maximum_threads_observed": 20,
+      "java_heap_switches": []
+    },
+    {
+      "pid": 41624,
+      "parent_pid": 40560,
+      "name": "powershell.exe",
+      "role": "sampler",
+      "creation_utc": "2026-10-20T04:34:01.8142580Z",
+      "private_commit_sample_peak_bytes": 117690368,
+      "lifetime_commit_peak_observed_bytes": 131514368,
+      "working_set_sample_peak_bytes": 142864384,
+      "lifetime_working_set_peak_observed_bytes": 156274688,
+      "maximum_threads_observed": 34,
+      "java_heap_switches": []
+    },
+    {
+      "pid": 42820,
+      "parent_pid": 9820,
+      "name": "java.exe",
+      "role": "owned_backend_tree",
+      "creation_utc": "2026-10-20T04:34:10.4768300Z",
+      "private_commit_sample_peak_bytes": 730263552,
+      "lifetime_commit_peak_observed_bytes": 738717696,
+      "working_set_sample_peak_bytes": 720408576,
+      "lifetime_working_set_peak_observed_bytes": 727715840,
+      "maximum_threads_observed": 75,
+      "java_heap_switches": [
+        "-Xmx384M"
+      ]
+    }
+  ],
+  "proposed_next_same_target_budget": {
+    "status": "proposal_not_applied_or_low_headroom_validated",
+    "task_physical_and_commit_allowance_bytes": 2415919104,
+    "policy_system_spare_bytes": 2147483648,
+    "candidate_launch_available_and_commit_headroom_bytes": 4563402752,
+    "candidate_stop_available_and_commit_headroom_bytes": 2147483648,
+    "rationale": "Round up to the next 0.25 GiB: max(sampled total private commit, sampled total working set) * 1.5 + 0.25 GiB = 2.25 GiB task allowance. The 50 percent and 0.25 GiB margins, plus a separate example 2 GiB system spare, are explicit engineering assumptions, not measured minimum requirements.",
+    "conditions": [
+      "Same Engine fingerprint, Rea/Ghidra versions and 384M heap",
+      "One backend and serialized queries, no concurrent UE/build/other Java",
+      "Live attribution, physical/commit monitoring, and owned-tree shutdown remain enabled",
+      "Reevaluate for another target, larger response/batch, heap/CPU config or unobserved process churn"
+    ],
+    "limitations": [
+      "No deliberately low-headroom run was performed",
+      "Process counters are read sequentially within a scan, not atomically",
+      "Short-lived children and final unsampled intervals can be missed",
+      "Working-set sums include shared pages",
+      "System free decline cannot be attributed wholly to this task",
+      "PeakPagedMemorySize64 observations are not a continuously sampled PrivateMemorySize64 time series or physical disk pagefile usage",
+      "A single successful run does not establish a worst-case bound"
+    ]
+  }
+}

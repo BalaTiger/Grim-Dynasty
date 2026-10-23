@@ -1,0 +1,136 @@
+{
+  "schema": "grim-dynasty-item-name-copy-import-v1",
+  "status": "fixed-copy-thunk-and-import-verified",
+  "started_utc": "2026-10-21T08:53:50.992Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "expected_file_bytes": 11385856,
+  "sources": [
+    [
+      "docs/object-lifecycle/offline-item-name-assign/inspection.json",
+      "5a9167e7cf619e8c07ff33d74fee66e021de32bf6c638e54b67758eb7579c317"
+    ],
+    [
+      "docs/object-lifecycle/offline-item-name-assign/016460-instructions.json",
+      "acf327dda597d7a6eb974fb35ebd9720d79b102d015fafd11585fd122454dfb5"
+    ],
+    [
+      "docs/object-lifecycle/offline-class-helper-storage-imports/metadata.json",
+      "8b8138b7268652cad7c60683ce0b0d7fa366e3903cd0b4b9ade7ca9e3767e9c1"
+    ],
+    [
+      "docs/phase-1/boundary-audit/module-boundaries.json",
+      "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    ]
+  ],
+  "caller": {
+    "address": "0x18001655e",
+    "bytes": "e8e15d5c00",
+    "instruction": "call        00000001805DC344"
+  },
+  "cached_descriptor": {
+    "kind": "fixed-import-descriptor-5",
+    "rva": "0xa429a4",
+    "file_offset": 10751908,
+    "requested_bytes": 20,
+    "read_bytes": 20,
+    "raw_bytes": "5852a40000000000000000002277a50098b76000"
+  },
+  "cached_module": {
+    "kind": "exact-module-name-5",
+    "rva": "0xa57722",
+    "file_offset": 10837282,
+    "requested_bytes": 17,
+    "read_bytes": 17,
+    "raw_bytes": "564352554e54494d453134302e646c6c00"
+  },
+  "allowed_candidates": [
+    {
+      "slot": 6338496,
+      "index": 5,
+      "name": "memcpy"
+    },
+    {
+      "slot": 6338568,
+      "index": 14,
+      "name": "memmove"
+    }
+  ],
+  "limits": {
+    "code_bytes": 6,
+    "metadata_bytes": 138,
+    "semantic_reads": 4,
+    "hash_buffer_bytes": 65536
+  },
+  "reads": [
+    {
+      "kind": "thunk",
+      "rva": "0x5dc344",
+      "file_offset": 6141764,
+      "requested_bytes": 6,
+      "read_bytes": 6,
+      "raw_hex": "ff2576f40200"
+    },
+    {
+      "kind": "ownership-oft-prefix",
+      "rva": "0xa45258",
+      "file_offset": 10762328,
+      "requested_bytes": 48,
+      "read_bytes": 48,
+      "raw_hex": "e676a50000000000c676a50000000000ae76a500000000000c77a500000000008e76a500000000008476a50000000000"
+    },
+    {
+      "kind": "disk-iat",
+      "rva": "0x60b7c0",
+      "file_offset": 6331840,
+      "requested_bytes": 8,
+      "read_bytes": 8,
+      "raw_hex": "8476a50000000000"
+    },
+    {
+      "kind": "exact-hint-name",
+      "rva": "0xa57684",
+      "file_offset": 10837124,
+      "requested_bytes": 9,
+      "read_bytes": 9,
+      "raw_hex": "3c006d656d63707900"
+    }
+  ],
+  "code_bytes": 6,
+  "metadata_bytes": 65,
+  "original_open_mode": "O_RDONLY",
+  "original_loaded_or_executed": false,
+  "callees_followed": 0,
+  "subprocesses": 0,
+  "source_closed": true,
+  "failures": [],
+  "limitations": [
+    "Only exactFF25 decoding is accepted. A different or truncated prefix stops without another code read.",
+    "Only the two independently cached copy-import slots are admitted; a different slot is reported without metadata discovery.",
+    "Descriptor/name cache proves ordinary import ownership. Newly readOFT prefix must have no terminator before the target.",
+    "Import identity is not a loaded implementation observation. Native overlapping-copy, fault, exception or allocator behavior is not executed.",
+    "Same-handle before/after64KiB hashes are identity checks, not an atomic snapshot."
+  ],
+  "script_sha256": "bf91ad80121c15a49aac16c01cad6588e3036f3d248eb4ac3008b8e657c72738",
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "thunk": {
+    "rva": "0x5dc344",
+    "raw_hex": "ff2576f40200",
+    "slot_rva": "0x60b7c0",
+    "instruction": "jmp qword ptr [0x18060b7c0]"
+  },
+  "binding": {
+    "dll": "VCRUNTIME140.dll",
+    "symbol": "memcpy",
+    "hint": 60,
+    "descriptor_index": 5,
+    "thunk_index": 5,
+    "iat_rva": "0x60b7c0",
+    "oft_rva": "0xa45280",
+    "hint_name_rva": "0xa57684"
+  },
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-21T08:53:51.012Z"
+}

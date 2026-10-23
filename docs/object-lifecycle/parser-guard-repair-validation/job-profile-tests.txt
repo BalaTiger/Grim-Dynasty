@@ -1,0 +1,178 @@
+TAP version 13
+# Subtest: owned Job configuration reaches only the injected sampler and clean empty shutdown succeeds
+ok 1 - owned Job configuration reaches only the injected sampler and clean empty shutdown succeeds
+  ---
+  duration_ms: 5.4079
+  type: 'test'
+  ...
+# Subtest: owned version and LaunchSupport helpers have no Xmx yet remain in task memory totals
+ok 2 - owned version and LaunchSupport helpers have no Xmx yet remain in task memory totals
+  ---
+  duration_ms: 1.9355
+  type: 'test'
+  ...
+# Subtest: only an owned exact AnalyzeHeadless command establishes observed main heap
+ok 3 - only an owned exact AnalyzeHeadless command establishes observed main heap
+  ---
+  duration_ms: 1.3433
+  type: 'test'
+  ...
+# Subtest: unknown-owned-java fails closed and sends only this Job's stop command once
+ok 4 - unknown-owned-java fails closed and sends only this Job's stop command once
+  ---
+  duration_ms: 1.4927
+  type: 'test'
+  ...
+# Subtest: wrong-java-executable fails closed and sends only this Job's stop command once
+ok 5 - wrong-java-executable fails closed and sends only this Job's stop command once
+  ---
+  duration_ms: 1.2804
+  type: 'test'
+  ...
+# Subtest: wrong-main-heap fails closed and sends only this Job's stop command once
+ok 6 - wrong-main-heap fails closed and sends only this Job's stop command once
+  ---
+  duration_ms: 1.5774
+  type: 'test'
+  ...
+# Subtest: external-java fails closed and sends only this Job's stop command once
+ok 7 - external-java fails closed and sends only this Job's stop command once
+  ---
+  duration_ms: 53.8833
+  type: 'test'
+  ...
+# Subtest: nonce identity corruption is rejected before a healthy result
+ok 8 - nonce identity corruption is rejected before a healthy result
+  ---
+  duration_ms: 1.177
+  type: 'test'
+  ...
+# Subtest: job-missing identity corruption is rejected before a healthy result
+ok 9 - job-missing identity corruption is rejected before a healthy result
+  ---
+  duration_ms: 1.1994
+  type: 'test'
+  ...
+# Subtest: membership identity corruption is rejected before a healthy result
+ok 10 - membership identity corruption is rejected before a healthy result
+  ---
+  duration_ms: 1.1192
+  type: 'test'
+  ...
+# Subtest: monitor-membership identity corruption is rejected before a healthy result
+ok 11 - monitor-membership identity corruption is rejected before a healthy result
+  ---
+  duration_ms: 0.9389
+  type: 'test'
+  ...
+# Subtest: root-creation identity corruption is rejected before a healthy result
+ok 12 - root-creation identity corruption is rejected before a healthy result
+  ---
+  duration_ms: 1.2535
+  type: 'test'
+  ...
+# Subtest: root-row-reused identity corruption is rejected before a healthy result
+ok 13 - root-row-reused identity corruption is rejected before a healthy result
+  ---
+  duration_ms: 0.9324
+  type: 'test'
+  ...
+# Subtest: root-pid identity corruption is rejected before a healthy result
+ok 14 - root-pid identity corruption is rejected before a healthy result
+  ---
+  duration_ms: 0.8857
+  type: 'test'
+  ...
+# Subtest: empty-disagreement identity corruption is rejected before a healthy result
+ok 15 - empty-disagreement identity corruption is rejected before a healthy result
+  ---
+  duration_ms: 0.8607
+  type: 'test'
+  ...
+# Subtest: after root exit a nonempty Job remains guarded against stale-sampler
+ok 16 - after root exit a nonempty Job remains guarded against stale-sampler
+  ---
+  duration_ms: 1.1052
+  type: 'test'
+  ...
+# Subtest: after root exit a nonempty Job remains guarded against low-memory
+ok 17 - after root exit a nonempty Job remains guarded against low-memory
+  ---
+  duration_ms: 0.9118
+  type: 'test'
+  ...
+# Subtest: after root exit a nonempty Job remains guarded against control-pipe
+ok 18 - after root exit a nonempty Job remains guarded against control-pipe
+  ---
+  duration_ms: 0.9633
+  type: 'test'
+  ...
+# Subtest: a missing initial sampler sample rejects readiness and does not infer process ownership
+ok 19 - a missing initial sampler sample rejects readiness and does not infer process ownership
+  ---
+  duration_ms: 1.1775
+  type: 'test'
+  ...
+# Subtest: sampler exit after root exit with a still nonempty Job records unconfirmed cleanup
+ok 20 - sampler exit after root exit with a still nonempty Job records unconfirmed cleanup
+  ---
+  duration_ms: 1.1884
+  type: 'test'
+  ...
+# Subtest: exit can precede the final empty frame; drain that frame before judging Job cleanup
+ok 21 - exit can precede the final empty frame; drain that frame before judging Job cleanup
+  ---
+  duration_ms: 1.5388
+  type: 'test'
+  ...
+# Subtest: non-atomic member and accounting snapshots retain protection until both are empty
+ok 22 - non-atomic member and accounting snapshots retain protection until both are empty
+  ---
+  duration_ms: 1.1825
+  type: 'test'
+  ...
+# Subtest: an unresponsive sampler records uncertain Job cleanup and kills only its own handle
+ok 23 - an unresponsive sampler records uncertain Job cleanup and kills only its own handle
+  ---
+  duration_ms: 16.8382
+  type: 'test'
+  ...
+# Subtest: confirmed Job empty prevents late parse, budget and stream failures from issuing a stop
+ok 24 - confirmed Job empty prevents late parse, budget and stream failures from issuing a stop
+  ---
+  duration_ms: 1.2319
+  type: 'test'
+  ...
+# Subtest: a malformed final tail is retained after empty Job confirmation without a stop
+ok 25 - a malformed final tail is retained after empty Job confirmation without a stop
+  ---
+  duration_ms: 0.7648
+  type: 'test'
+  ...
+# Subtest: a contradictory nonempty late frame cannot reopen a confirmed empty Job or issue another stop
+ok 26 - a contradictory nonempty late frame cannot reopen a confirmed empty Job or issue another stop
+  ---
+  duration_ms: 0.8817
+  type: 'test'
+  ...
+# Subtest: duplicate PIDs in one counter snapshot are rejected even across different roles
+ok 27 - duplicate PIDs in one counter snapshot are rejected even across different roles
+  ---
+  duration_ms: 0.9961
+  type: 'test'
+  ...
+# Subtest: finalization still rejects a counter root creation conflicting with the pinned root
+ok 28 - finalization still rejects a counter root creation conflicting with the pinned root
+  ---
+  duration_ms: 0.9613
+  type: 'test'
+  ...
+1..28
+# tests 28
+# suites 0
+# pass 28
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 176.8413

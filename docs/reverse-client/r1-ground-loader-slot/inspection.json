@@ -1,0 +1,160 @@
+{
+  "schema": "grim-dynasty.fixed-ground-loader-slot.v1",
+  "started_utc": "2026-10-23T04:21:23.483Z",
+  "script_sha256": "178f12507e00a1ba487feac26500e93c62a67cfee8d83db624142feda63a3dcf",
+  "plan_sha256": "2bf86d19b2f0e539c6ef70aa6a87d09422730031b6210de702c9903b34d8d939",
+  "source_pins": [
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "constructor",
+      "path": "docs/reverse-client/r1-engine-spatial-ground/14-EngineSpatialGround-0x1801dda90-procedure_assembly.json",
+      "sha256": "858c4ee47d193164648b7fb068b0dfb2772dc6cd35347055d736d2584388a629"
+    },
+    {
+      "key": "caller",
+      "path": "docs/reverse-client/r1-level-load-and-navjob-candidates/05-LevelLoadNavJobCandidate-0x18012c770-procedure_assembly.json",
+      "sha256": "edbe0f2ba35b41bfb9c412aae4ec3e61a45ef7c29ec74b569801c4b6797a07f5"
+    },
+    {
+      "key": "spatial_assembly",
+      "path": "docs/reverse-client/r1-engine-spatial-ground/05-EngineSpatialGround-0x180134500-procedure_assembly.json",
+      "sha256": "6dfe2938844693c4bffecd4c9340076fc0278c28c195bc6f4bfa669eddecf0fb"
+    },
+    {
+      "key": "half_constant",
+      "path": "docs/reverse-client/r1-navigation-compressor-slot/inspection.json",
+      "sha256": "191e63e5cc34d9b1abf1326426827a27041743913768a3159e73af3dc62126de"
+    },
+    {
+      "key": "sign_mask",
+      "path": "docs/reverse-client/r1-region-bounds-mask/inspection.json",
+      "sha256": "d3c63d6c8ed7c470da6a01b88146c75cecd8d91abfb654771be1e9961ea0fb75"
+    }
+  ],
+  "code_bytes": 0,
+  "metadata_bytes": 0,
+  "data_bytes": 12,
+  "data_operations": 2,
+  "new_PE_header_bytes": 0,
+  "whole_table_bytes": 0,
+  "target_body_bytes": 0,
+  "original_loaded_or_executed": false,
+  "subprocesses": 0,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "reads": [
+        {
+          "kind": "fixed-main-vtable-slot",
+          "rva": "0x343be8",
+          "file_offset": 3419112,
+          "section": ".rdata",
+          "bytes": 8,
+          "raw_hex": "90e01d8001000000"
+        },
+        {
+          "kind": "fixed-dword-MULSS-operand",
+          "rva": "0x34bad8",
+          "file_offset": 3451608,
+          "section": ".rdata",
+          "bytes": 4,
+          "raw_hex": "c5dcea3e"
+        }
+      ],
+      "hash_bytes": 8971264,
+      "closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "stable": true
+    }
+  ],
+  "values": [
+    {
+      "table_rva": "0x343b60",
+      "slot_offset": "0x88",
+      "rva": "0x343be8",
+      "bytes": 8,
+      "constructor": "0x1801dda90",
+      "callsite": "0x18012ca70",
+      "kind": "fixed-main-vtable-slot",
+      "file_offset": 3419112,
+      "section": ".rdata",
+      "raw_hex": "90e01d8001000000",
+      "target_va": "0x1801de090",
+      "candidate_rva": "0x1de090",
+      "classification": "ExecutableAddressCandidate",
+      "function_name": null,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false,
+      "table_extent_verified": false,
+      "subsequent_overwrites_excluded": false,
+      "candidate_code_section": ".text"
+    }
+  ],
+  "constants": [
+    {
+      "key": "half_constant",
+      "collection": "constants",
+      "rva": "0x34badc",
+      "bytes": 4,
+      "raw_hex": "0000003f",
+      "uint32_hex": "0x3f000000",
+      "instruction": "0x18013459b: MOVSS XMM8, dword ptr [0x18034badc]",
+      "reused": true,
+      "source_pin": {
+        "key": "half_constant",
+        "path": "docs/reverse-client/r1-navigation-compressor-slot/inspection.json",
+        "sha256": "191e63e5cc34d9b1abf1326426827a27041743913768a3159e73af3dc62126de"
+      },
+      "loaded_value_observed": false
+    },
+    {
+      "key": "sign_mask",
+      "collection": "values",
+      "rva": "0x34c450",
+      "bytes": 4,
+      "raw_hex": "00000080",
+      "uint32_hex": "0x80000000",
+      "instruction": "0x18013456f: MOVSS XMM4, dword ptr [0x18034c450]",
+      "reused": true,
+      "source_pin": {
+        "key": "sign_mask",
+        "path": "docs/reverse-client/r1-region-bounds-mask/inspection.json",
+        "sha256": "d3c63d6c8ed7c470da6a01b88146c75cecd8d91abfb654771be1e9961ea0fb75"
+      },
+      "loaded_value_observed": false
+    },
+    {
+      "rva": "0x34bad8",
+      "bytes": 4,
+      "instructions": [
+        "0x18013455c: MULSS XMM1, dword ptr [0x18034bad8]",
+        "0x180134564: MULSS XMM2, dword ptr [0x18034bad8]"
+      ],
+      "kind": "fixed-dword-MULSS-operand",
+      "file_offset": 3451608,
+      "section": ".rdata",
+      "raw_hex": "c5dcea3e",
+      "uint32_hex": "0x3eeadcc5",
+      "reused": false,
+      "loaded_value_observed": false
+    }
+  ],
+  "disk_observations_complete": true,
+  "unsupported": [],
+  "failures": [],
+  "limitations": [
+    "One main-table+88 disk address candidate only; no table extent, later overwrite, loaded dispatch, ABI or ground decoder behavior is proved.",
+    "New constant34BAD8 is a4B MULSS operand; reused34BADC/34C450 are4B observations at the identical source hash, not loaded-state values.",
+    "Whole-file hash streams are distinct from the12B semantic read budget. Before/after checks are not atomic snapshots.",
+    "Node path checks cannot identify every Windows reparse tag; separate Attributes preflight remains required."
+  ],
+  "proofs_verified": true,
+  "finished_utc": "2026-10-23T04:21:23.496Z",
+  "status": "passed"
+}

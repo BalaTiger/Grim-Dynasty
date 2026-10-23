@@ -1,0 +1,113 @@
+
+Dump of file C:\Users\zhuzi\Documents\Grim-Dynasty\.tooling\m3-death-notification-target-temp\direct-49cb80.inspect.dll
+
+File Type: DLL
+
+  000000018049CB80: 48 89 5C 24 08     mov         qword ptr [rsp+8],rbx
+  000000018049CB85: 48 89 6C 24 10     mov         qword ptr [rsp+10h],rbp
+  000000018049CB8A: 48 89 74 24 18     mov         qword ptr [rsp+18h],rsi
+  000000018049CB8F: 57                 push        rdi
+  000000018049CB90: 41 54              push        r12
+  000000018049CB92: 41 55              push        r13
+  000000018049CB94: 41 56              push        r14
+  000000018049CB96: 41 57              push        r15
+  000000018049CB98: 48 83 EC 30        sub         rsp,30h
+  000000018049CB9C: 48 8B 99 40 01 00  mov         rbx,qword ptr [rcx+0000000000000140h]
+                    00
+  000000018049CBA3: 4C 8D 2D C6 DB 5B  lea         r13,[0000000180A5A770h]
+                    00
+  000000018049CBAA: 49 8B E9           mov         rbp,r9
+  000000018049CBAD: 4C 8B A4 24 80 00  mov         r12,qword ptr [rsp+0000000000000080h]
+                    00 00
+  000000018049CBB5: 45 8B F0           mov         r14d,r8d
+  000000018049CBB8: 4C 8B FA           mov         r15,rdx
+  000000018049CBBB: 48 8B F1           mov         rsi,rcx
+  000000018049CBBE: 48 3B 99 48 01 00  cmp         rbx,qword ptr [rcx+0000000000000148h]
+                    00
+  000000018049CBC5: 74 68              je          000000018049CC2F
+  000000018049CBC7: 8B 3B              mov         edi,dword ptr [rbx]
+  000000018049CBC9: FF 15 C9 C4 16 00  call        qword ptr [0000000180609098h]
+  000000018049CBCF: 48 8B C8           mov         rcx,rax
+  000000018049CBD2: 8B D7              mov         edx,edi
+  000000018049CBD4: E8 67 D1 B7 FF     call        0000000180019D40
+  000000018049CBD9: 48 8B F8           mov         rdi,rax
+  000000018049CBDC: 48 85 C0           test        rax,rax
+  000000018049CBDF: 74 41              je          000000018049CC22
+  000000018049CBE1: 48 8B 10           mov         rdx,qword ptr [rax]
+  000000018049CBE4: 48 8B C8           mov         rcx,rax
+  000000018049CBE7: FF 12              call        qword ptr [rdx]
+  000000018049CBE9: 49 3B C5           cmp         rax,r13
+  000000018049CBEC: 74 1A              je          000000018049CC08
+  000000018049CBEE: 48 8B 48 10        mov         rcx,qword ptr [rax+10h]
+  000000018049CBF2: 48 85 C9           test        rcx,rcx
+  000000018049CBF5: 74 2B              je          000000018049CC22
+  000000018049CBF7: 49 3B CD           cmp         rcx,r13
+  000000018049CBFA: 74 0C              je          000000018049CC08
+  000000018049CBFC: 49 8B D5           mov         rdx,r13
+  000000018049CBFF: E8 7C 48 0F 00     call        0000000180591480
+  000000018049CC04: 84 C0              test        al,al
+  000000018049CC06: 74 1A              je          000000018049CC22
+  000000018049CC08: 48 8B 07           mov         rax,qword ptr [rdi]
+  000000018049CC0B: 4C 8B CD           mov         r9,rbp
+  000000018049CC0E: 45 8B C6           mov         r8d,r14d
+  000000018049CC11: 4C 89 64 24 20     mov         qword ptr [rsp+20h],r12
+  000000018049CC16: 49 8B D7           mov         rdx,r15
+  000000018049CC19: 48 8B CF           mov         rcx,rdi
+  000000018049CC1C: FF 90 B8 01 00 00  call        qword ptr [rax+00000000000001B8h]
+  000000018049CC22: 48 83 C3 04        add         rbx,4
+  000000018049CC26: 48 3B 9E 48 01 00  cmp         rbx,qword ptr [rsi+0000000000000148h]
+                    00
+  000000018049CC2D: 75 98              jne         000000018049CBC7
+  000000018049CC2F: 48 8B 9E 58 01 00  mov         rbx,qword ptr [rsi+0000000000000158h]
+                    00
+  000000018049CC36: 48 3B 9E 60 01 00  cmp         rbx,qword ptr [rsi+0000000000000160h]
+                    00
+  000000018049CC3D: 74 69              je          000000018049CCA8
+  000000018049CC3F: 90                 nop
+  000000018049CC40: 8B 3B              mov         edi,dword ptr [rbx]
+  000000018049CC42: FF 15 50 C4 16 00  call        qword ptr [0000000180609098h]
+  000000018049CC48: 48 8B C8           mov         rcx,rax
+  000000018049CC4B: 8B D7              mov         edx,edi
+  000000018049CC4D: E8 EE D0 B7 FF     call        0000000180019D40
+  000000018049CC52: 48 8B F8           mov         rdi,rax
+  000000018049CC55: 48 85 C0           test        rax,rax
+  000000018049CC58: 74 41              je          000000018049CC9B
+  000000018049CC5A: 48 8B 10           mov         rdx,qword ptr [rax]
+  000000018049CC5D: 48 8B C8           mov         rcx,rax
+  000000018049CC60: FF 12              call        qword ptr [rdx]
+  000000018049CC62: 49 3B C5           cmp         rax,r13
+  000000018049CC65: 74 1A              je          000000018049CC81
+  000000018049CC67: 48 8B 48 10        mov         rcx,qword ptr [rax+10h]
+  000000018049CC6B: 48 85 C9           test        rcx,rcx
+  000000018049CC6E: 74 2B              je          000000018049CC9B
+  000000018049CC70: 49 3B CD           cmp         rcx,r13
+  000000018049CC73: 74 0C              je          000000018049CC81
+  000000018049CC75: 49 8B D5           mov         rdx,r13
+  000000018049CC78: E8 03 48 0F 00     call        0000000180591480
+  000000018049CC7D: 84 C0              test        al,al
+  000000018049CC7F: 74 1A              je          000000018049CC9B
+  000000018049CC81: 48 8B 07           mov         rax,qword ptr [rdi]
+  000000018049CC84: 4C 8B CD           mov         r9,rbp
+  000000018049CC87: 45 8B C6           mov         r8d,r14d
+  000000018049CC8A: 4C 89 64 24 20     mov         qword ptr [rsp+20h],r12
+  000000018049CC8F: 49 8B D7           mov         rdx,r15
+  000000018049CC92: 48 8B CF           mov         rcx,rdi
+  000000018049CC95: FF 90 B8 01 00 00  call        qword ptr [rax+00000000000001B8h]
+  000000018049CC9B: 48 83 C3 30        add         rbx,30h
+  000000018049CC9F: 48 3B 9E 60 01 00  cmp         rbx,qword ptr [rsi+0000000000000160h]
+                    00
+  000000018049CCA6: 75 98              jne         000000018049CC40
+  000000018049CCA8: 48 8B 5C 24 60     mov         rbx,qword ptr [rsp+60h]
+  000000018049CCAD: 48 8B 6C 24 68     mov         rbp,qword ptr [rsp+68h]
+  000000018049CCB2: 48 8B 74 24 70     mov         rsi,qword ptr [rsp+70h]
+  000000018049CCB7: 48 83 C4 30        add         rsp,30h
+  000000018049CCBB: 41 5F              pop         r15
+  000000018049CCBD: 41 5E              pop         r14
+  000000018049CCBF: 41 5D              pop         r13
+  000000018049CCC1: 41 5C              pop         r12
+  000000018049CCC3: 5F                 pop         rdi
+  000000018049CCC4: C3                 ret
+
+  Summary
+
+        1000 .text

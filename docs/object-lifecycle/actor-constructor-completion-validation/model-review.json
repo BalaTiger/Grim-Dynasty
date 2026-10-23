@@ -1,0 +1,40 @@
+{
+  "schema": "grim-dynasty-actor-completion-static-model-review-v1",
+  "source": "src/task_items/ActorConstructorCompletion.cs",
+  "sha256": "79c9b29f989d1fb4c0c018d32667ab2012b2f1dec2cf9ffefaae17b68bdb3457",
+  "reviewer": "independent local agent verify_handoff",
+  "status": "no-blocker-in-normal-bounded-domain",
+  "executed": false,
+  "counts": {
+    "subobject_constructor_stores": 108,
+    "sentinel_stores": 2,
+    "actor_tail_stores": 16,
+    "returned_object_backref_stores": 2,
+    "total_actor_stores": 158
+  },
+  "partial_subobject_stores": {
+    "missing_sentinel": 25,
+    "missing_vector": 47,
+    "missing_subobject_unit": 77,
+    "first_matrix_entry": 81,
+    "missing_scale": 84,
+    "second_matrix_entry": 95,
+    "normal_return": 108
+  },
+  "checks": [
+    "Actual BDBE0 normal return identity precedes caller publication.",
+    "Signed epoch comparison; each helper call and each 16-byte source chunk remains separate.",
+    "Incomplete/default-guard prior cannot enter new continuation.",
+    "Missing observations retain earlier state and correct instruction boundary.",
+    "Normal managed execution only; no catch/rollback or native EH equivalence."
+  ],
+  "unverified": [
+    "Loaded guard target and behavior",
+    "TLS path validity and values",
+    "2DCAE0/2DCA80 initialization path",
+    "Actual 41D490 contents at each read",
+    "421428 writer/initializer/lifetime and runtime fields",
+    "Allocator retry/reentry/failure and native EH",
+    "Formal native sample compatibility"
+  ]
+}

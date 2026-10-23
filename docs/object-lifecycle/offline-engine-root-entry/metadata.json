@@ -1,0 +1,61 @@
+{
+  "status": "fixed-engine-entry-field-read",
+  "started_utc": "2026-10-20T14:29:08.128Z",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "expected_file_bytes": 4485632,
+  "source_evidence": [
+    {
+      "path": "docs/object-lifecycle/offline-depot-ctor-boundaries/boundary.json",
+      "sha256": "646053e4565e3f08c696ae0e9a16ddb5c2e81ab22ffe046c5057fc41aa64bb15"
+    }
+  ],
+  "script_sha256": "17a213f021cd76ecc80adb76515d07ad99521cfc77c7bdb78fad71fdf32c0c18",
+  "target_open_mode": "O_RDONLY",
+  "target_loaded_or_executed": false,
+  "backend_started": false,
+  "subprocesses": 0,
+  "metadata_bytes": 4,
+  "code_bytes_read": 0,
+  "refused_build_script_retried": false,
+  "build_or_test_execution": false,
+  "execution_policy_changed": false,
+  "reads": [
+    {
+      "file_offset": 328,
+      "bytes": 4,
+      "raw_bytes": "44d02d00"
+    }
+  ],
+  "fingerprint_passes": [
+    {
+      "label": "before",
+      "bytes": 4485632,
+      "chunk_bytes": 65536,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "label": "after",
+      "bytes": 4485632,
+      "chunk_bytes": 65536,
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "limitations": [
+    "Entry identity is only a starting point; no code or initializer table is followed by this reader.",
+    "Previously read 144-byte optional-header metadata did not retain the entry value; only that missing 4-byte field is read here.",
+    "64KiB full-file fingerprints are separate from interpreted metadata bytes."
+  ],
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "entry": {
+    "rva": "0x2dd044",
+    "preferred_va": "0x1802dd044",
+    "file_offset": 2999364,
+    "section": ".text",
+    "code_bytes_read": 0
+  },
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_hash_preserved": true,
+  "source_stat_stable": true,
+  "finished_utc": "2026-10-20T14:29:08.134Z"
+}

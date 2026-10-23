@@ -1,0 +1,134 @@
+{
+  "schema": "grim-dynasty.fixed-mainplayer-connection-slots.v1",
+  "script": "tools/static_analysis/read_r1_mainplayer_connection_slots.mjs",
+  "entrypoint": "inspectMainPlayerConnectionSlots(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-mainplayer-connection-slots/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "bytes": 11385856,
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+  },
+  "source_pins": [
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "constructor",
+      "path": "docs/reverse-client/r1-game-mainplayer-connection-run1/05-GameMainPlayerConnection-0x18030afe0-procedure_assembly.json",
+      "sha256": "1d6152c5fb914318a1fa995da8ea4a1316dd0fb76ad4588fbc207aa58b7ef2a2"
+    },
+    {
+      "key": "constructor_pseudo",
+      "path": "docs/reverse-client/r1-game-mainplayer-connection-run1/04-GameMainPlayerConnection-0x18030afe0-procedure_pseudo_code.json",
+      "sha256": "959162b0b69276a9adda5411196ff906a27766d855ab2e41db21332d4910e33e"
+    },
+    {
+      "key": "constructor_summary",
+      "path": "docs/reverse-client/r1-game-mainplayer-connection-run1/summary.json",
+      "sha256": "226d502f084dc05258efc70416e054dcc761e65e2eb1777392502b76d9fe14e9"
+    },
+    {
+      "key": "main_player",
+      "path": "docs/reverse-client/r1-path-local-dispatch/10-PathLocal-0x1802ebb70-procedure_assembly.json",
+      "sha256": "e0f078a4f8eca837e23e46bc0c560fb919a989d8c1e85ac3584b041d7ba2b1dd"
+    },
+    {
+      "key": "old_publication",
+      "path": "docs/task-kills/ghidra-selected/subscriber-constructor-routes.json",
+      "sha256": "e907b67d57a568784a19f887a3c71883b0f7726a14defee449cf8693422ee165"
+    }
+  ],
+  "slots": [
+    {
+      "table_rva": "0x767c98",
+      "offset": "0x8",
+      "rva": "0x767ca0",
+      "bytes": 8,
+      "reason": "Cached GameEngine2C07A0 invokes the4118 object +8 at2C1A4B with address40E0 before4118 is published to40F8; old caller provenance remains weaker than new hash-bound ctor."
+    },
+    {
+      "table_rva": "0x767c98",
+      "offset": "0x18",
+      "rva": "0x767cb0",
+      "bytes": 8,
+      "reason": "Current-hash-bound GetMainPlayer2EBB70 invokes current40F8 object +18 twice at2EBB83 and2EBB96; no target name inferred."
+    }
+  ],
+  "rtti": {
+    "locator_slot_rva": "0x767c90",
+    "format": "MS x64 signature1 CompleteObjectLocator only; table[-1] pointer, one24B locator, one16B TypeDescriptor header and raw NUL-terminated ASCII type name. No hierarchy/base arrays or demangling.",
+    "name_bytes_limit": 192,
+    "class_hierarchy_follow": false,
+    "header_pointers_follow": false
+  },
+  "assembly_proofs": [
+    {
+      "key": "constructor",
+      "procedure": "0x18030afe0",
+      "instructions": [
+        "0x18030aff8: MOV RDI, RCX",
+        "0x18030affb: LEA RAX, [0x180767c98]",
+        "0x18030b002: MOV qword ptr [RCX], RAX",
+        "0x18030b035: CALL 0x1803f60e0",
+        "0x18030b03b: MOV qword ptr [RDI + 0x20], RAX",
+        "0x18030b03f: MOV qword ptr [RAX + 0x8], RDI",
+        "0x18030b043: MOV RAX, RDI"
+      ]
+    },
+    {
+      "key": "main_player",
+      "procedure": "0x1802ebb70",
+      "instructions": [
+        "0x1802ebb79: MOV RCX, qword ptr [RCX + 0x40f8]",
+        "0x1802ebb83: CALL qword ptr [RAX + 0x18]",
+        "0x1802ebb86: CMP dword ptr [RAX + 0x10], 0x0",
+        "0x1802ebb8c: MOV RCX, qword ptr [RBX + 0x40f8]",
+        "0x1802ebb96: CALL qword ptr [RAX + 0x18]",
+        "0x1802ebb99: MOV EBX, dword ptr [RAX + 0x10]"
+      ]
+    }
+  ],
+  "cached_publication_instructions": [
+    "1802c19a2: CALL 0x18030afe0",
+    "1802c19a8: MOV qword ptr [RDI + 0x4118],RAX",
+    "1802c1a3a: MOV RCX,qword ptr [RDI + 0x4118]",
+    "1802c1a4b: CALL qword ptr [RAX + 0x8]",
+    "1802c1a5c: MOV RAX,qword ptr [RDI + 0x4118]",
+    "1802c1a63: MOV qword ptr [RDI + 0x40f8],RAX"
+  ],
+  "limits": {
+    "metadata_bytes": 256,
+    "metadata_operations": 197,
+    "single_read_bytes": 24,
+    "hash_chunk_bytes": 65536,
+    "code_bytes": 0,
+    "new_PE_header_bytes": 0,
+    "whole_table_bytes": 0
+  },
+  "saved_metadata_dedup": {
+    "method": "Read-only exact767C90/767C98/767CA0/767CB0 text search in saved docs json/md/txt files at most1MiB found only the new30AFE0 pseudo/assembly references to767C98. No saved actual slot or RTTI bytes found in that inspected domain; larger files and analysis databases were not inspected.",
+    "matching_observation_files": [],
+    "original_read": false,
+    "backend_started": false
+  },
+  "abi_format_reference": {
+    "url": "https://raw.githubusercontent.com/llvm/llvm-project/main/clang/lib/CodeGen/MicrosoftCXXABI.cpp",
+    "functions": [
+      "getTypeDescriptorType",
+      "getCompleteObjectLocatorType",
+      "MSRTTIBuilder::getCompleteObjectLocator"
+    ],
+    "role": "Primary compiler implementation consulted to check optional MS x64 RTTI layout; not evidence of this Game image. Execution makes no network request. Signature1/selfRVA/ranges/rawname must validate or RTTI remains Unsupported."
+  },
+  "requirements": [
+    "Prepare only; separate root review and exact approval with frozen script/plan hashes, plus Windows Attributes/reparse preflight for source and workspace ancestors. Import performs no I/O.",
+    "Exactly two function slots at767CA0 and767CB0 and locator pointer767C90. Follow only that single RTTI pointer to at most24B locator,16B type header,192B NUL-terminated raw name. No other vtable slots, hierarchy/base arrays, target code, pdata, imports, exports, broad strings or new PE headers.",
+    "Reuse cached PE map only after current same-handle Game hash matches pinned identity. Whole-file hashes use64KiB buffers and are separate from256B semantic read budget; checks are not atomic snapshots.",
+    "The Game30AFE0 ctor and2EBB70 reader are current-hash-bound Rea evidence. Old2C07A0 publication cache lacks embedded input hash: its current file hash preserves content only, not a retroactive original binding.",
+    "Constructor establishes a main-vptr candidate. Callee effects, later overwrites, table extents, loaded dispatch, complete construction, ABI and Record+10 production are not validated by these disk bytes.",
+    "Executable section membership labels address candidates only. RTTI is optional, restricted to signature1 with selfRVA match and raw ASCII name; no assumed class identity or demangled behavior. Preserve slot results even if RTTI is Unsupported.",
+    "Output directory must be absent; retain raw partial/failure evidence. No original loading/execution, backend, subprocess, network, save data, security changes, commit or push."
+  ]
+}

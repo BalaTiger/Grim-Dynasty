@@ -1,0 +1,142 @@
+{
+  "schema": "grim-dynasty.fixed-engine-camera-tanf-import.v1",
+  "script": "tools/static_analysis/read_r1_engine_camera_tanf_import.mjs",
+  "entrypoint": "inspectEngineCameraTanfImport(reviewedScriptSha256, reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-engine-camera-tanf-import/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "source_pins": [
+    {
+      "key": "camera_assembly",
+      "path": "docs/reverse-client/r1-engine-mouse-core/05-Camera-GetImagePoint-0x180044a10-procedure_assembly.json",
+      "sha256": "1e4690f5a50aa7a602bda3fc8973a31ac96afbce2e93b88f229b3ea3dcf09f27"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-depot-ctor-boundaries/boundary.json",
+      "sha256": "646053e4565e3f08c696ae0e9a16ddb5c2e81ab22ffe046c5057fc41aa64bb15"
+    },
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-load-ticks-imports/tick-import-bindings.json",
+      "sha256": "eb1e49dfe763e207be743b91d03b2b4c066057063da052cb3e1e3a97807aab0e"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "inventory_source",
+      "path": "docs/phase-1/boundary-audit/boundary_inventory.py",
+      "sha256": "354e00aeefbdfbc1beefa3de4f2c8c93635a0cb9ad824329f0011454f47ce224"
+    },
+    {
+      "key": "prior_math_imports",
+      "path": "docs/reverse-client/r1-engine-crowd-math-imports/inspection.json",
+      "sha256": "f0fa298bf90996afdd7fb04a898a7c037827d3c858b33fb4515c19d8db5e4a02"
+    },
+    {
+      "key": "half_constant",
+      "path": "docs/reverse-client/r1-navigation-compressor-slot/inspection.json",
+      "sha256": "191e63e5cc34d9b1abf1326426827a27041743913768a3159e73af3dc62126de"
+    },
+    {
+      "key": "one_constant",
+      "path": "docs/object-lifecycle/offline-actor-remaining-dependencies/inspection.json",
+      "sha256": "6639fbb457720057edb6ea37834e6f5aa2534593b26020fda7d83044b73325c5"
+    },
+    {
+      "key": "infinity_constant",
+      "path": "docs/reverse-client/r1-ground-geometry-bindings/inspection.json",
+      "sha256": "8be1f21796126e33fae05d412b4690b8d7cf5618bda89593d4f6021230621d17"
+    }
+  ],
+  "descriptor": {
+    "index": 24,
+    "rva": "0x415778",
+    "bytes": 20,
+    "dll": "api-ms-win-crt-math-l1-1-0.dll",
+    "symbols": [
+      "pow",
+      "cos",
+      "exp",
+      "sin",
+      "floor",
+      "atan",
+      "sqrt",
+      "log",
+      "ldexp",
+      "_finite",
+      "asinf",
+      "powf",
+      "cosf",
+      "sinf",
+      "atan2f",
+      "fmodf",
+      "acosf",
+      "tanf"
+    ],
+    "provenance": "Pinned Engine same-image import headers place directory at415598 size540; pinned inventory and its source preserve descriptor/symbol order. Descriptor24 is415778. Newly verify its20 bytes, exact DLL name, selected OFT/IAT/hint/name only; no descriptor scan."
+  },
+  "fixed_thunks": [
+    {
+      "rva": "0x2ee09c",
+      "bytes": 6,
+      "symbol": "tanf",
+      "index": 17,
+      "source_key": "camera_assembly",
+      "instruction": "0x180044a57: CALL 0x1802ee09c"
+    }
+  ],
+  "limits": {
+    "code_bytes": 6,
+    "code_operations": 1,
+    "metadata_bytes": 74,
+    "metadata_operations": 6,
+    "metadata_single_read": 31,
+    "hash_chunk_bytes": 65536,
+    "new_PE_header_bytes": 0,
+    "new_descriptor_bytes": 20,
+    "new_OFT_bytes": 8,
+    "target_body_bytes": 0,
+    "new_constant_bytes": 0
+  },
+  "requirements": [
+    "Module import performs no I/O. Execution is left to the reviewing root with exact frozen script and plan SHA256; this preparation does not run the reader.",
+    "External Windows Attributes/reparse-tag precheck of original, workspace, script/plan, pinned sources and output ancestors is required; no security or permission change.",
+    "Open only fixed Engine.dll read-only, reuse cached PE sections with before/after same-handle full SHA256 and stat equality; no new PE-header reads.",
+    "Read exactly one6B candidate at2EE09C, accepting only FF25disp32. Opcode mismatch stops Unsupported; no alternative decoding or chain.",
+    "Read only fixed descriptor24 and exact DLL string. Derived IAT must equal descriptor FT+17*8; read exact OFT8B, IAT8B, hint2B and tanf plus NUL.",
+    "Reuse pinned34BADC,34BB44,338458 constant bytes from saved same-image evidence; do not reread original constants.",
+    "No original table scan, export lookup, API-set resolution, CRT DLL open/load/execution, imported function execution, backend, subprocess, network or save access.",
+    "Import binding does not prove runtime ABI or numerical behavior. Do not modify the passed UCRT loader or implement an approximate tanf in this reader.",
+    "New output directory refuses overwrite; partial failure or Unsupported retains original hash/stat/close outcomes."
+  ],
+  "reused_constants": [
+    {
+      "source_key": "half_constant",
+      "rva": "0x34badc",
+      "bytes": 4,
+      "raw_hex": "0000003f",
+      "new_original_bytes": 0
+    },
+    {
+      "source_key": "one_constant",
+      "rva": "0x34bb44",
+      "bytes": 4,
+      "raw_hex": "0000803f",
+      "new_original_bytes": 0
+    },
+    {
+      "source_key": "infinity_constant",
+      "rva": "0x338458",
+      "bytes": 4,
+      "raw_hex": "0000807f",
+      "new_original_bytes": 0
+    }
+  ]
+}

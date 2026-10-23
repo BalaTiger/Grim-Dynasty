@@ -1,0 +1,306 @@
+{
+  "schema": "grim-dynasty-item-actor-bridge-native-contract-v1",
+  "status": "archived-static-evidence-manually-reviewed",
+  "review_scope": {
+    "new_original_reads": 0,
+    "executed_target_or_imported_function": false,
+    "executed_build_or_tests": false,
+    "modified_production_source": false,
+    "description": "仅复核已保存的本轮 Game 指令、原始窗口字节、边界报告、旧 caller 与既有 IAT 绑定；此文件不是运行时对照结果。"
+  },
+  "module": {
+    "name": "Game.dll",
+    "original_path_from_evidence": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "file_bytes": 11385856,
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "preferred_image_base": "0x180000000"
+  },
+  "source_pins": [
+    {
+      "id": "prior-pe-and-pdata-cache",
+      "path": "docs/object-lifecycle/offline-item-factory-dependency-boundaries/metadata.json",
+      "sha256": "59265ca3af388f48af8da9a66bee439949fa8cfeca5fe1cc40a066998ad46d29"
+    },
+    {
+      "id": "boundary-reader",
+      "path": "tools/static_analysis/resolve_item_subobjects_boundary.mjs",
+      "sha256": "1c7863ab0a5d6c4d31942537da339228c02bbb1469361fc0a148c54e05639ee4"
+    },
+    {
+      "id": "boundary-report",
+      "path": "docs/object-lifecycle/offline-item-subobjects-boundary/metadata.json",
+      "sha256": "10482b1a15ae10f3b766733b125b719d1ea5aec690c09e22104a491599f2fc68"
+    },
+    {
+      "id": "window-reader",
+      "path": "tools/static_analysis/read_item_subobjects.mjs",
+      "sha256": "e297d5a77288058addaf3afc703c6b2f822c1c4e1988c9d4e08b38fcc691072e"
+    },
+    {
+      "id": "window-inspection",
+      "path": "docs/object-lifecycle/offline-item-subobjects/inspection.json",
+      "sha256": "1131d43b79f141d7a902e3e7ac95b1ffbab082ad9304ea33a48a8f3f9e7c7298"
+    },
+    {
+      "id": "subobject-instructions",
+      "path": "docs/object-lifecycle/offline-item-subobjects/0410e0-candidate-instructions.json",
+      "sha256": "69fe251a5df08f4ffed626cc61fd17b61025a0ac583376e2d62d86f2a06e7e4e"
+    },
+    {
+      "id": "subobject-window-bytes",
+      "path": "docs/object-lifecycle/offline-item-subobjects/0410e0-candidate.bin",
+      "sha256": "b112cda3d4a9547d06d1c29d377a7acf44897fd42a8ba64997afb60cfe728297"
+    },
+    {
+      "id": "caller-instructions",
+      "path": "docs/object-lifecycle/offline-item-subobjects/3236b0-caller-instructions.json",
+      "sha256": "23c88632e88a481bb5956c22afb9ba8c815da8aee55109f3b1fc4bc5494b686d"
+    },
+    {
+      "id": "caller-window-bytes",
+      "path": "docs/object-lifecycle/offline-item-subobjects/3236b0-caller.bin",
+      "sha256": "b484a21a3c89760ad80486ac7e42cc59f728b34c4ec859f05fb005e5f6023b0d"
+    },
+    {
+      "id": "cached-caller-assembly",
+      "path": "docs/rewards/rea-inventory-add/Item-constructor-primary-table-assembly.json",
+      "sha256": "7a078d11495b5b7c10a07d7b6309c9d633f8ec39dfc444e5f0decfbd5efe1a3f",
+      "evidence_id": "ev_dc74728b755b7c7439ee4b8d39c086823605e9c076f29830caff716706ea11ee",
+      "module_digest_matches": true
+    },
+    {
+      "id": "actor-import-binding",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    }
+  ],
+  "archived_acquisition": {
+    "boundary_status": "gap-without-exact-begin",
+    "boundary_new_metadata_bytes": 144,
+    "boundary_new_metadata_read_operations": 12,
+    "boundary_same_handle_before_after_hash_matches": true,
+    "window_status": "fixed-item-subobjects-windows-decoded-awaiting-manual-boundary-review",
+    "window_bytes": 435,
+    "window_decoded_instructions_including_tail_cc": 75,
+    "window_new_metadata_bytes": 0,
+    "window_data_bytes": 0,
+    "window_dumpbin_invocations": 2,
+    "dumpbin_received_only_owned_tiny_pes": true,
+    "dumpbin_sha256_before_and_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+    "original_sha256_before_and_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "original_stat_stable": true,
+    "original_handle_closed": true,
+    "full_window_byte_coverage_verified": true,
+    "failures": []
+  },
+  "pdata_assessment": {
+    "requested_rva": "0x0410e0",
+    "exact_pdata_begin_found": false,
+    "previous": {
+      "index": 2149,
+      "begin_rva": "0x0410bc",
+      "end_rva_exclusive": "0x0410c7",
+      "raw_hex": "bc100400c7100400cc4b7e00"
+    },
+    "next": {
+      "index": 2150,
+      "begin_rva": "0x041200",
+      "end_rva_exclusive": "0x041240",
+      "raw_hex": "001204004012040090007e00"
+    },
+    "interpretation": "边界报告只证明无 exact .pdata entry；随后独立批准从明确 CALL 入口读取最多 288B 的候选窗口。间隙本身不构成函数范围证据，也未读取相邻函数正文。"
+  },
+  "normal_body": {
+    "begin_rva": "0x0410e0",
+    "end_rva_exclusive": "0x0411fd",
+    "bytes": 285,
+    "instructions": 44,
+    "stores": 41,
+    "body_slice": {
+      "source_pin": "subobject-window-bytes",
+      "file_offset": 0,
+      "length": 285,
+      "sha256": "0e14989f97ae968e802022f863a64e32757f9f1a3f56adbf5e4aec05b7e1433d"
+    },
+    "manual_control_flow_conclusion": "从入口到第一个且唯一 RET 的正常路径连续完整。所有中间指令仅 XOR EAX,EAX、直接写 [RCX+offset] 与 MOV RAX,RCX；无 CALL、跳转、条件分支或循环。该结论来自已保存机器码覆盖与指令文本，不来自 .pdata 间隙。",
+    "calls": 0,
+    "branches_before_return": 0,
+    "incoming_memory_value_reads": 0,
+    "parameter_dependency": "RCX 为目标地址；无其它参数寄存器值依赖。RET 仍需要合法调用返回栈。",
+    "zero_definition": {"rva": "0x0410e0", "instruction": "XOR EAX,EAX", "effect": "清 EAX 并零扩展 RAX；AL/EAX/RAX 在其后相应零值写入时均为零。"},
+    "return_identity_definition": {
+      "rva": "0x0411ee",
+      "instruction": "MOV RAX,RCX",
+      "after_store_ordinal": 40,
+      "before_store_ordinal": 41,
+      "effect": "正常返回值与传入 RCX 相同；最后一次 +178 写入使用立即数 1，不再使用已改为对象地址的 RAX。"
+    },
+    "return": {"rva": "0x0411fc", "raw_hex": "c3"},
+    "excluded_tail": {
+      "begin_rva": "0x0411fd",
+      "end_rva_exclusive": "0x041200",
+      "bytes": 3,
+      "raw_hex": "cccccc",
+      "decoded_instructions": 3,
+      "interpretation": "首个 RET 之后的 3 个 INT3 字节；从入口的正常直线路径不会执行，不计入 285B/44 指令。未据此断言任意外部入口行为。"
+    },
+    "max_write_end_exclusive": "0x18c",
+    "nonoverlapping_written_bytes": 231,
+    "value_counts": {"zero_stores": 29, "fifteen_qword_stores": 10, "one_stores": 2},
+    "stores_in_execution_order": [
+      {"ordinal":1,"rva":"0x0410e2","offset":"0x000","width_bytes":4,"value":"0x0"},
+      {"ordinal":2,"rva":"0x0410e4","offset":"0x018","width_bytes":8,"value":"0x0"},
+      {"ordinal":3,"rva":"0x0410e8","offset":"0x020","width_bytes":8,"value":"0xf"},
+      {"ordinal":4,"rva":"0x0410f0","offset":"0x008","width_bytes":1,"value":"0x0"},
+      {"ordinal":5,"rva":"0x0410f3","offset":"0x038","width_bytes":8,"value":"0x0"},
+      {"ordinal":6,"rva":"0x0410f7","offset":"0x040","width_bytes":8,"value":"0xf"},
+      {"ordinal":7,"rva":"0x0410ff","offset":"0x028","width_bytes":1,"value":"0x0"},
+      {"ordinal":8,"rva":"0x041102","offset":"0x058","width_bytes":8,"value":"0x0"},
+      {"ordinal":9,"rva":"0x041106","offset":"0x060","width_bytes":8,"value":"0xf"},
+      {"ordinal":10,"rva":"0x04110e","offset":"0x048","width_bytes":1,"value":"0x0"},
+      {"ordinal":11,"rva":"0x041111","offset":"0x068","width_bytes":4,"value":"0x0"},
+      {"ordinal":12,"rva":"0x041114","offset":"0x080","width_bytes":8,"value":"0x0"},
+      {"ordinal":13,"rva":"0x04111b","offset":"0x088","width_bytes":8,"value":"0xf"},
+      {"ordinal":14,"rva":"0x041126","offset":"0x070","width_bytes":1,"value":"0x0"},
+      {"ordinal":15,"rva":"0x041129","offset":"0x0a0","width_bytes":8,"value":"0x0"},
+      {"ordinal":16,"rva":"0x041130","offset":"0x0a8","width_bytes":8,"value":"0xf"},
+      {"ordinal":17,"rva":"0x04113b","offset":"0x090","width_bytes":1,"value":"0x0"},
+      {"ordinal":18,"rva":"0x041141","offset":"0x0c0","width_bytes":8,"value":"0x0"},
+      {"ordinal":19,"rva":"0x041148","offset":"0x0c8","width_bytes":8,"value":"0xf"},
+      {"ordinal":20,"rva":"0x041153","offset":"0x0b0","width_bytes":1,"value":"0x0"},
+      {"ordinal":21,"rva":"0x041159","offset":"0x0d0","width_bytes":4,"value":"0x0"},
+      {"ordinal":22,"rva":"0x04115f","offset":"0x0e8","width_bytes":8,"value":"0x0"},
+      {"ordinal":23,"rva":"0x041166","offset":"0x0f0","width_bytes":8,"value":"0xf"},
+      {"ordinal":24,"rva":"0x041171","offset":"0x0d8","width_bytes":1,"value":"0x0"},
+      {"ordinal":25,"rva":"0x041177","offset":"0x0f8","width_bytes":8,"value":"0x0"},
+      {"ordinal":26,"rva":"0x04117e","offset":"0x110","width_bytes":8,"value":"0x0"},
+      {"ordinal":27,"rva":"0x041185","offset":"0x118","width_bytes":8,"value":"0xf"},
+      {"ordinal":28,"rva":"0x041190","offset":"0x100","width_bytes":1,"value":"0x0"},
+      {"ordinal":29,"rva":"0x041196","offset":"0x130","width_bytes":8,"value":"0x0"},
+      {"ordinal":30,"rva":"0x04119d","offset":"0x138","width_bytes":8,"value":"0xf"},
+      {"ordinal":31,"rva":"0x0411a8","offset":"0x120","width_bytes":1,"value":"0x0"},
+      {"ordinal":32,"rva":"0x0411ae","offset":"0x150","width_bytes":8,"value":"0x0"},
+      {"ordinal":33,"rva":"0x0411b5","offset":"0x158","width_bytes":8,"value":"0xf"},
+      {"ordinal":34,"rva":"0x0411c0","offset":"0x140","width_bytes":1,"value":"0x0"},
+      {"ordinal":35,"rva":"0x0411c6","offset":"0x160","width_bytes":4,"value":"0x0"},
+      {"ordinal":36,"rva":"0x0411cc","offset":"0x164","width_bytes":1,"value":"0x1"},
+      {"ordinal":37,"rva":"0x0411d3","offset":"0x168","width_bytes":8,"value":"0x0"},
+      {"ordinal":38,"rva":"0x0411da","offset":"0x170","width_bytes":8,"value":"0x0"},
+      {"ordinal":39,"rva":"0x0411e1","offset":"0x180","width_bytes":8,"value":"0x0"},
+      {"ordinal":40,"rva":"0x0411e8","offset":"0x188","width_bytes":4,"value":"0x0"},
+      {"ordinal":41,"rva":"0x0411f1","offset":"0x178","width_bytes":8,"value":"0x1"}
+    ]
+  },
+  "unwritten_regions": {
+    "inline_payload_interpretation": "下列十组为首字节写 NUL、+10h 长度写 0、+18h 容量写 15 的短串布局。每组首字节之后的 15B inline payload 保持原值/未知；不把这些 payload 字节或其它空洞隐式清零。字段名称是自有布局解释，不额外宣称原生 C++ 类型恢复。",
+    "inline_payloads": [
+      {"inline_base":"0x008","nul_offset":"0x008","length_qword":"0x018","capacity_qword":"0x020","unwritten_begin":"0x009","unwritten_end_exclusive":"0x018","unwritten_bytes":15},
+      {"inline_base":"0x028","nul_offset":"0x028","length_qword":"0x038","capacity_qword":"0x040","unwritten_begin":"0x029","unwritten_end_exclusive":"0x038","unwritten_bytes":15},
+      {"inline_base":"0x048","nul_offset":"0x048","length_qword":"0x058","capacity_qword":"0x060","unwritten_begin":"0x049","unwritten_end_exclusive":"0x058","unwritten_bytes":15},
+      {"inline_base":"0x070","nul_offset":"0x070","length_qword":"0x080","capacity_qword":"0x088","unwritten_begin":"0x071","unwritten_end_exclusive":"0x080","unwritten_bytes":15},
+      {"inline_base":"0x090","nul_offset":"0x090","length_qword":"0x0a0","capacity_qword":"0x0a8","unwritten_begin":"0x091","unwritten_end_exclusive":"0x0a0","unwritten_bytes":15},
+      {"inline_base":"0x0b0","nul_offset":"0x0b0","length_qword":"0x0c0","capacity_qword":"0x0c8","unwritten_begin":"0x0b1","unwritten_end_exclusive":"0x0c0","unwritten_bytes":15},
+      {"inline_base":"0x0d8","nul_offset":"0x0d8","length_qword":"0x0e8","capacity_qword":"0x0f0","unwritten_begin":"0x0d9","unwritten_end_exclusive":"0x0e8","unwritten_bytes":15},
+      {"inline_base":"0x100","nul_offset":"0x100","length_qword":"0x110","capacity_qword":"0x118","unwritten_begin":"0x101","unwritten_end_exclusive":"0x110","unwritten_bytes":15},
+      {"inline_base":"0x120","nul_offset":"0x120","length_qword":"0x130","capacity_qword":"0x138","unwritten_begin":"0x121","unwritten_end_exclusive":"0x130","unwritten_bytes":15},
+      {"inline_base":"0x140","nul_offset":"0x140","length_qword":"0x150","capacity_qword":"0x158","unwritten_begin":"0x141","unwritten_end_exclusive":"0x150","unwritten_bytes":15}
+    ],
+    "other_holes_within_write_extent": [
+      {"begin":"0x004","end_exclusive":"0x008","bytes":4},
+      {"begin":"0x06c","end_exclusive":"0x070","bytes":4},
+      {"begin":"0x0d4","end_exclusive":"0x0d8","bytes":4},
+      {"begin":"0x165","end_exclusive":"0x168","bytes":3}
+    ],
+    "unwritten_bytes_within_0_to_18c": 165,
+    "trailing_to_callsite_spacing": {"begin":"0x18c","end_exclusive":"0x190","bytes":4,"written_by_this_helper":false},
+    "spacing_caveat": "190h 是两个 caller 目标地址的差值，不单凭它证明完整原生类型 sizeof。"
+  },
+  "caller": {
+    "begin_rva": "0x3236b0",
+    "end_rva_exclusive": "0x323743",
+    "bytes": 147,
+    "instructions": 28,
+    "matches_cached_caller_addresses_and_semantics": true,
+    "normal_sequence": [
+      {"rva":"0x3236b0","action":"RDI = RCX，保存 Item 对象身份。"},
+      {"rva":"0x3236b3","action":"通过 IAT609700 调用 Engine Actor 构造器；只有正常返回后才进入后续写入。"},
+      {"rva":"0x3236c1","action":"[RDI] = preferred VA18076A4C0。"},
+      {"rva":"0x3236cb","action":"[RDI+30] = preferred VA1806D5B18。"},
+      {"rva":"0x3236d6","action":"[RDI+38] = preferred VA18079F408。"},
+      {"rva":"0x3236e1","action":"[RDI+530] = preferred VA180771F40。"},
+      {"rva":"0x3236e8","action":"RCX = RDI+538。"},
+      {"rva":"0x3236ef","action":"CALL0410E0；其返回值没有被下一条有效指令消费。"},
+      {"rva":"0x3236f5","action":"RCX = RDI+6C8。"},
+      {"rva":"0x3236fc","action":"CALL0410E0；其返回值没有被下一条有效指令消费。"},
+      {"rva":"0x323702","action":"RCX = RDI+858；323709 另将该地址保存到 [RSP+58]。"},
+      {"rva":"0x32370e","action":"CALL1FA340；此文档不重复建立该 helper 的完整合同。"},
+      {"rva":"0x323714","action":"XOR EBP,EBP，随后六次标量写入。"},
+      {"rva":"0x323716","action":"QWORD +870 = 0。"},
+      {"rva":"0x32371d","action":"QWORD +878 = 0。"},
+      {"rva":"0x323724","action":"QWORD +880 = 0。"},
+      {"rva":"0x32372b","action":"QWORD +88C = 1。"},
+      {"rva":"0x323736","action":"QWORD +894 = 0。"},
+      {"rva":"0x32373d","action":"DWORD +89C = 0；窗口至323743前结束。"}
+    ],
+    "actor_import": {
+      "source_pin": "actor-import-binding",
+      "iat_rva": "0x609700",
+      "call_rva": "0x3236b3",
+      "dll": "Engine.dll",
+      "decorated_name": "??0Actor@GAME@@QEAA@XZ",
+      "descriptor_index": 3,
+      "first_thunk_rva": "0x609000",
+      "original_first_thunk_rva": "0xa42ac0",
+      "thunk_index": 224,
+      "hint": 14,
+      "lookup_entry_rva": "0xa431c0",
+      "lookup_entry_raw_hex": "a286a40000000000",
+      "iat_raw_hex": "a286a40000000000",
+      "hint_name_rva": "0xa486a2",
+      "name_with_nul_raw_hex": "3f3f304163746f724047414d4540405145414140585a00",
+      "scope": "磁盘正常导入身份；不读取运行时 IAT 值，不执行 Actor，不把 base 构造依赖替换为无操作。"
+    }
+  },
+  "item_offset_aliases": [
+    {
+      "call_rva": "0x3236ef",
+      "subobject_base": "0x538",
+      "relative_offset": "0x178",
+      "item_offset": "0x6b0",
+      "width_bytes": 8,
+      "value": "0x1",
+      "source_store_ordinal": 41,
+      "conclusion": "此正常 helper 写入使 Item+6B0..6B7 为 little-endian QWORD1；不是先前未恢复来源字段的默认清零。"
+    },
+    {
+      "call_rva": "0x3236fc",
+      "subobject_base": "0x6c8",
+      "relative_offset": "0x188",
+      "item_offset": "0x850",
+      "width_bytes": 4,
+      "value": "0x0",
+      "source_store_ordinal": 40,
+      "unwritten_begin": "0x854",
+      "unwritten_end_exclusive": "0x858",
+      "conclusion": "仅850..853写0；854..857保留原值/未知，不能把850视为已知QWORD0。"
+    },
+    {
+      "call_rva": "0x3236ef",
+      "subobject_base": "0x538",
+      "max_written_end_exclusive": "0x6c4",
+      "unwritten_before_second_subobject": {"begin":"0x6c4","end_exclusive":"0x6c8"}
+    }
+  ],
+  "model_contract": {
+    "normal_domain": "调用者明确提供稳定、独占且足够可写的自有存储，按上述41个不同宽度写入的实际执行顺序更新，并正常返回同一存储身份。未知或已有字节只在实际写集内变为已知；所有其它字节保持。",
+    "allocation_or_string_copy_required_by_this_body": false,
+    "vptr_or_pointer_execution_required_by_this_body": false,
+    "read_before_write_of_target_required": false,
+    "repeat_behavior": "正常域可重复执行相同写集；不会自动清空未写 inline payload/空洞，也不去重或提供 RunOnce 语义。",
+    "integration_boundary": "caller 只能在 Actor 正常完成合同之后接合该局部 Item 路径。此证据不证明整个 Item/QuestItem 工厂、完整 Item 构造、Actor 未恢复依赖或调用者后续控制流。",
+    "own_coverage_guards": "自有存储长度、身份、字节已知性及 Unsupported 等限制属于可验证模型覆盖边界，不是该原生函数的错误返回。",
+    "native_abnormal_behavior": "没有恢复或运行验证访问违例、无效指针、保护页、并发修改、原生异常传播、EH清理或失败回滚。本正文不存在可据以声明这些语义的 native 错误分支；不得把自有失败处理声称为原生异常等价。",
+    "complete_native_constructor_claim": false,
+    "native_execution_or_diff_test_claim": false
+  }
+}

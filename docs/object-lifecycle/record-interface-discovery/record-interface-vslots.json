@@ -1,0 +1,116 @@
+{
+  "operation": "Three fixed exported-vtable slot qwords with bounded raw target bytes",
+  "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "target_binary_loaded_or_executed": false,
+  "disassembly_performed": false,
+  "jumps_followed": false,
+  "preferred_image_base": "0x180000000",
+  "export_evidence_file": "record-interface-exports.json",
+  "export_evidence_sha256": "33d7527e64565cc4e56a31b3665b41e004ad9e53f93739e3a645f205cf0b1603",
+  "slots": [
+    {
+      "class_name": "LoadTable",
+      "scope": "LoadTable exported vtable; concrete returned-table selection remains unproved",
+      "export_name": "??_7LoadTable@GAME@@6B@",
+      "vtable_preferred_va": "0x180341f10",
+      "slot_offset": "0x28",
+      "slot_preferred_va": "0x180341f38",
+      "slot_mapping": {
+        "rva": "0x341f38",
+        "file_offset": "0x340f38",
+        "section": ".rdata",
+        "section_rva": "0x302000",
+        "section_raw_size": 1140736,
+        "section_characteristics": "0x40000040",
+        "executable": false
+      },
+      "slot_bytes": "b0c6138001000000",
+      "target_preferred_va": "0x18013c6b0",
+      "target_mapping": {
+        "rva": "0x13c6b0",
+        "file_offset": "0x13bab0",
+        "section": ".text",
+        "section_rva": "0x1000",
+        "section_raw_size": 3148800,
+        "section_characteristics": "0x60000020",
+        "executable": true
+      },
+      "target_byte_count": 16,
+      "target_bytes": "488bc44c894018565741544156415748",
+      "entry_first_byte_is_c3": false
+    },
+    {
+      "class_name": "LoadTableBinary",
+      "scope": "LoadTableBinary exported vtable; getter behavior and LoadFile selection remain unproved",
+      "export_name": "??_7LoadTableBinary@GAME@@6B@",
+      "vtable_preferred_va": "0x180341fe0",
+      "slot_offset": "0x28",
+      "slot_preferred_va": "0x180342008",
+      "slot_mapping": {
+        "rva": "0x342008",
+        "file_offset": "0x341008",
+        "section": ".rdata",
+        "section_rva": "0x302000",
+        "section_raw_size": 1140736,
+        "section_characteristics": "0x40000040",
+        "executable": false
+      },
+      "slot_bytes": "60fb138001000000",
+      "target_preferred_va": "0x18013fb60",
+      "target_mapping": {
+        "rva": "0x13fb60",
+        "file_offset": "0x13ef60",
+        "section": ".text",
+        "section_rva": "0x1000",
+        "section_raw_size": 3148800,
+        "section_characteristics": "0x60000020",
+        "executable": true
+      },
+      "target_byte_count": 16,
+      "target_bytes": "40574883ec3048c7442420feffffff48",
+      "entry_first_byte_is_c3": false
+    },
+    {
+      "class_name": "Object",
+      "scope": "Object base vtable only; not a concrete derived object Read implementation",
+      "export_name": "??_7Object@GAME@@6B@",
+      "vtable_preferred_va": "0x180339f78",
+      "slot_offset": "0x8",
+      "slot_preferred_va": "0x180339f80",
+      "slot_mapping": {
+        "rva": "0x339f80",
+        "file_offset": "0x338f80",
+        "section": ".rdata",
+        "section_rva": "0x302000",
+        "section_raw_size": 1140736,
+        "section_characteristics": "0x40000040",
+        "executable": false
+      },
+      "slot_bytes": "70ce008001000000",
+      "target_preferred_va": "0x18000ce70",
+      "target_mapping": {
+        "rva": "0xce70",
+        "file_offset": "0xc270",
+        "section": ".text",
+        "section_rva": "0x1000",
+        "section_raw_size": 3148800,
+        "section_characteristics": "0x60000020",
+        "executable": true
+      },
+      "target_byte_count": 16,
+      "target_bytes": "c20000cccccccccccccccccccccccccc",
+      "entry_first_byte_is_c3": false
+    }
+  ],
+  "limitations": [
+    "These are on-disk preferred addresses, not loaded runtime addresses.",
+    "Executable is a PE section characteristic; no target code was executed.",
+    "C3 is reported only as a first-byte observation. Other raw bytes are not decoded and no target is followed.",
+    "A base Object slot does not establish a concrete derived object Read target or its effects.",
+    "Constructor vptr writes, LoadFile concrete table selection, getter behavior and full record reads remain unproved.",
+    "No other vtable slot, binary, save, Steam cloud data or runtime state was read."
+  ],
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+}

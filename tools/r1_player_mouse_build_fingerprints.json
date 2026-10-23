@@ -1,0 +1,92 @@
+{
+  "schema": "grim-dynasty.player-mouse-build.v1",
+  "source_review_ready": true,
+  "static_review": "Two independent instruction-order reviews, followed by opaque pointer/B4 copy and per-call wrapper isolation review. Shared vptr constructor borrows Field<object> directly. Sources and test counts are statically reviewed only; no compilation, test execution or native loading occurred during preparation.",
+  "sources": [
+    {
+      "path": "src/reverse_client_actions/PlayerMouseState.cs",
+      "sha256": "c747f6f75d5bf8ee986017ae0acd8c0caba131dcb3e649184031524179df37ff"
+    },
+    {
+      "path": "src/reverse_client_actions/PlayerMouseContracts.cs",
+      "sha256": "9b07222514d97b028a38800e6ea68b034055fe5ab555c88c28ff6fd6f371a7f5"
+    },
+    {
+      "path": "src/reverse_client_actions/PlayerMouseSkillSelectors.cs",
+      "sha256": "e055ebdf6701636ed61af9445b493e0b06a8978db8534818e1d950980fdbe329"
+    },
+    {
+      "path": "src/reverse_client_actions/PlayerMouseContractsTests.cs",
+      "sha256": "239e876d02efe1293a578e7b8f25271f3a28fd80f2f0fc89a31f6c9e5f128fc8"
+    }
+  ],
+  "prior_result": {
+    "path": ".tooling/r1-world-coordinate-validation/result.json",
+    "sha256": "93644347fd4018108c3b94c09142a24f81141da276a5a38b7f55ac138e6e28ac",
+    "expected_status": "passed-isolated-world-coordinate-contracts-only"
+  },
+  "dependencies": [
+    {
+      "name": "GrimDynasty.Actions.dll",
+      "path": ".tooling/r1-world-coordinate-validation/GrimDynasty.Actions.dll",
+      "sha256": "3ea34074db9d5a67d7dffb702eb053b703dc3b754d0db442aeadd71247e15c58"
+    },
+    {
+      "name": "GrimDynasty.MoveManager.dll",
+      "path": ".tooling/r1-world-coordinate-validation/GrimDynasty.MoveManager.dll",
+      "sha256": "7563b6e32745e79ddc8308d2ea48ca7336050271d8dc8c9ce1e75346a52232da"
+    },
+    {
+      "name": "GrimDynasty.WorldCoordinates.dll",
+      "path": ".tooling/r1-world-coordinate-validation/GrimDynasty.WorldCoordinates.dll",
+      "sha256": "6365ad6a051d6ffbb4009824d98fa899bec89f5933dea383a9a3d98f193e71c7"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/reverse-client/r1-game-mouse-calibration/05-HandleActionFromMouse-0x18015e1f0-procedure_assembly.json",
+      "sha256": "0be6ebe8a4b4039329e9f9571ba428968caca67086f483a4a02e3c39d54dab59"
+    },
+    {
+      "path": "docs/reverse-client/r1-player-mouse-handlers-retry-1/05-PlayerMouse-0x180161d00-procedure_assembly.json",
+      "sha256": "75db7517f9fb01529af5babe68e16d453e673cc456058d2a7dd1ba0d09b4e7d5"
+    },
+    {
+      "path": "docs/reverse-client/r1-player-mouse-handlers-retry-1/08-PlayerMouse-0x180162290-procedure_assembly.json",
+      "sha256": "3a0a629f616ed09e02f78453f31a5cd742f4d3de0435d50201828a299595abf8"
+    },
+    {
+      "path": "docs/reverse-client/r1-player-mouse-handlers-retry-1/11-PlayerMouse-0x1801624b0-procedure_assembly.json",
+      "sha256": "d31d8bc2462c06e86cb873c1ca2d5be5f55e1f5ed7e408d85af00dfc84a0c1d1"
+    },
+    {
+      "path": "docs/reverse-client/r1-player-state-slots/inspection.json",
+      "sha256": "acef5697258ef3f87d6fc98db0ac1881f6fa514c3cfcfe6687a9aec11257e078"
+    },
+    {
+      "path": "docs/reverse-client/r1-player-action-slots/inspection.json",
+      "sha256": "a0b71eb8e5c8d8f913714d4ac87ac135e6964d1161c19f70c6799bbfc363db7f"
+    },
+    {
+      "path": "docs/reverse-client/r1-prestart-idle-static/01a700-dumpbin.txt",
+      "sha256": "5e679f966c21446c29fefb0aa91811d2e93ebcb576adf4d839984950044c1c43"
+    }
+  ],
+  "test_expectations": {
+    "scenarios": 13,
+    "assertions": 157,
+    "entrypoint": "PlayerMouseContractTestProgram",
+    "static_counts_not_execution": true
+  },
+  "excluded": [
+    "All old test executable entrypoints",
+    "Native system library loads",
+    "128530 production resolver",
+    "CanAct460 concrete target",
+    "Options and hot-slot producers",
+    "Movement request construction or submission",
+    "Ground click to Agent integration",
+    "Physical Win32 input and original button mapping"
+  ],
+  "output": ".tooling/r1-player-mouse-validation"
+}

@@ -1,0 +1,67 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\Engine.dll
+
+File Type: DLL
+
+  00000001800EBDE0: 40 56              push        rsi
+  00000001800EBDE2: 57                 push        rdi
+  00000001800EBDE3: 41 56              push        r14
+  00000001800EBDE5: 48 83 EC 40        sub         rsp,40h
+  00000001800EBDE9: 48 C7 44 24 30 FE  mov         qword ptr [rsp+30h],0FFFFFFFFFFFFFFFEh
+                    FF FF FF
+  00000001800EBDF2: 48 89 5C 24 68     mov         qword ptr [rsp+68h],rbx
+  00000001800EBDF7: 48 89 6C 24 78     mov         qword ptr [rsp+78h],rbp
+  00000001800EBDFC: 48 8B D9           mov         rbx,rcx
+  00000001800EBDFF: 48 8D 05 6A DD 24  lea         rax,[0000000180339B70h]
+                    00
+  00000001800EBE06: 48 89 01           mov         qword ptr [rcx],rax
+  00000001800EBE09: 33 FF              xor         edi,edi
+  00000001800EBE0B: 89 79 08           mov         dword ptr [rcx+8],edi
+  00000001800EBE0E: 48 89 79 10        mov         qword ptr [rcx+10h],rdi
+  00000001800EBE12: 89 51 18           mov         dword ptr [rcx+18h],edx
+  00000001800EBE15: 40 88 79 1C        mov         byte ptr [rcx+1Ch],dil
+  00000001800EBE19: 8B EA              mov         ebp,edx
+  00000001800EBE1B: 48 89 6C 24 60     mov         qword ptr [rsp+60h],rbp
+  00000001800EBE20: B8 80 00 00 00     mov         eax,80h
+  00000001800EBE25: 48 F7 E5           mul         rax,rbp
+  00000001800EBE28: 48 8B F0           mov         rsi,rax
+  00000001800EBE2B: 48 C7 C0 FF FF FF  mov         rax,0FFFFFFFFFFFFFFFFh
+                    FF
+  00000001800EBE32: 48 0F 40 F0        cmovo       rsi,rax
+  00000001800EBE36: 48 83 C6 08        add         rsi,8
+  00000001800EBE3A: 48 0F 42 F0        cmovb       rsi,rax
+  00000001800EBE3E: 48 8B CE           mov         rcx,rsi
+  00000001800EBE41: E8 BA 0A 1F 00     call        00000001802DC900
+  00000001800EBE46: 4C 8B F0           mov         r14,rax
+  00000001800EBE49: 48 89 44 24 70     mov         qword ptr [rsp+70h],rax
+  00000001800EBE4E: 48 85 C0           test        rax,rax
+  00000001800EBE51: 74 38              je          00000001800EBE8B
+  00000001800EBE53: 4C 8B C6           mov         r8,rsi
+  00000001800EBE56: 33 D2              xor         edx,edx
+  00000001800EBE58: 48 8B C8           mov         rcx,rax
+  00000001800EBE5B: E8 B4 1C 1F 00     call        00000001802DDB14
+  00000001800EBE60: 49 89 2E           mov         qword ptr [r14],rbp
+  00000001800EBE63: 49 8D 7E 08        lea         rdi,[r14+8]
+  00000001800EBE67: 48 8D 05 92 00 00  lea         rax,[00000001800EBF00h]
+                    00
+  00000001800EBE6E: 48 89 44 24 20     mov         qword ptr [rsp+20h],rax
+  00000001800EBE73: 4C 8D 0D 36 00 00  lea         r9,[00000001800EBEB0h]
+                    00
+  00000001800EBE7A: 44 8B C5           mov         r8d,ebp
+  00000001800EBE7D: BA 80 00 00 00     mov         edx,80h
+  00000001800EBE82: 48 8B CF           mov         rcx,rdi
+  00000001800EBE85: E8 B2 0D 1F 00     call        00000001802DCC3C
+  00000001800EBE8A: 90                 nop
+  00000001800EBE8B: 48 89 7B 10        mov         qword ptr [rbx+10h],rdi
+  00000001800EBE8F: 48 8B C3           mov         rax,rbx
+  00000001800EBE92: 48 8B 5C 24 68     mov         rbx,qword ptr [rsp+68h]
+  00000001800EBE97: 48 8B 6C 24 78     mov         rbp,qword ptr [rsp+78h]
+  00000001800EBE9C: 48 83 C4 40        add         rsp,40h
+  00000001800EBEA0: 41 5E              pop         r14
+  00000001800EBEA2: 5F                 pop         rdi
+  00000001800EBEA3: 5E                 pop         rsi
+  00000001800EBEA4: C3                 ret
+
+  Summary
+
+      301000 .text

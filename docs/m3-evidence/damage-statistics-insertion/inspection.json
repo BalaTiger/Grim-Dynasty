@@ -1,0 +1,622 @@
+{
+  "schema": "grim-dynasty-m3-bounded-read-v1",
+  "status": "FixedBodiesDecodedReviewRequired",
+  "started_utc": "2026-10-22T05:21:09.719Z",
+  "plan": {
+    "path": "docs/m3-evidence/plans/damage-statistics-insertion.json",
+    "sha256": "4a7ea5d48e6ada6e8f02508269654334901f39a408de0c3d6fdce7d4bad255ff"
+  },
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "bytes": 11385856,
+    "preferred_base": "0x180000000"
+  },
+  "proof": {
+    "path": "docs/m3-evidence/damage-statistics-lookup/direct-403ac0.instructions.json",
+    "sha256": "e62a64da70963ff2e2be991ab96b201108ad114747c0b358aa2663d9eb32c768"
+  },
+  "mode": "bodies",
+  "range_policy": "exact-entry",
+  "excluded_proof_range": {
+    "begin_rva": "0x403ac0",
+    "end_rva_exclusive": "0x403b96",
+    "reason": "Pinned saved instruction bytes already read"
+  },
+  "limits": {
+    "body_bytes_each": 8192,
+    "body_bytes_total": 8192,
+    "metadata_bytes": 16384,
+    "dumpbin_calls": 2,
+    "tool_timeout_ms_each": 10000
+  },
+  "fixed_limits": {
+    "plan_bytes": 16384,
+    "proof_bytes": 1048576,
+    "hash_buffer_bytes": 65536,
+    "header_end": 4096,
+    "sections": 16,
+    "metadata_read_bytes": 512,
+    "pdata_bytes": 2097152,
+    "binary_search_steps": 32,
+    "synthetic_each": 16384,
+    "synthetic_total": 24576,
+    "tool_buffer_each": 1048576
+  },
+  "excluded_saved_ranges": [
+    {
+      "begin_rva": "0x403ac0",
+      "end_rva_exclusive": "0x403b96",
+      "reason": "Pinned saved instruction bytes already read"
+    }
+  ],
+  "source_open_mode": "r",
+  "source_loaded_or_executed": false,
+  "original_path_given_to_dumpbin": false,
+  "automatic_callee_expansion": false,
+  "metadata_bytes": 1012,
+  "metadata_operations": 39,
+  "body_bytes": 721,
+  "body_read_operations": 2,
+  "dumpbin_calls": 2,
+  "synthetic_bytes": 8192,
+  "export_table_bytes": 0,
+  "global_data_bytes": 0,
+  "unwind_body_bytes": 0,
+  "source_closed": true,
+  "boundaries": [
+    {
+      "id": "direct-403ba0",
+      "rva": "0x403ba0",
+      "caller_address": "0x180403b59",
+      "reference_kind": "direct-call",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 14836,
+        "begin_rva": "0x403ba0",
+        "end_rva_exclusive": "0x403bd4",
+        "bytes": 52,
+        "unwind_info_rva": "0x7deb10"
+      }
+    },
+    {
+      "id": "direct-403be0",
+      "rva": "0x403be0",
+      "caller_address": "0x180403b72",
+      "reference_kind": "direct-call",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 14837,
+        "begin_rva": "0x403be0",
+        "end_rva_exclusive": "0x403e7d",
+        "bytes": 669,
+        "unwind_info_rva": "0x8456a8"
+      }
+    }
+  ],
+  "bodies": [
+    {
+      "id": "direct-403ba0",
+      "reference_ids": [
+        "direct-403ba0"
+      ],
+      "begin_rva": "0x403ba0",
+      "end_rva_exclusive": "0x403bd4",
+      "bytes": 52,
+      "file_offset": 4206496,
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 14836,
+        "begin_rva": "0x403ba0",
+        "end_rva_exclusive": "0x403bd4",
+        "bytes": 52,
+        "unwind_info_rva": "0x7deb10"
+      },
+      "sha256": "2c4518ce949ad3c99c33c1cab2335a1423c7d9ade58a87627ef39894a6792f69",
+      "synthetic": {
+        "relative_path": ".tooling/m3-damage-statistics-insertion-temp/direct-403ba0.inspect.dll",
+        "bytes": 3584,
+        "sha256": "18263bb9f8460b890dca1d26a4fd9228b87349f51e4d56522e32beacde8537b4",
+        "never_executed": true
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180403ba0,0x180403bd3",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\m3-damage-statistics-insertion-temp\\direct-403ba0.inspect.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "decoded_rows": 15,
+      "decode_issues": [],
+      "instruction_byte_coverage_verified": true,
+      "code_data_classification": "ReviewRequired",
+      "calls": [
+        {
+          "address": "0x180403ba9",
+          "bytes": "e8e260c1ff",
+          "instruction": "call        0000000180019C90"
+        }
+      ],
+      "branches": [
+        {
+          "address": "0x180403bbb",
+          "bytes": "7411",
+          "instruction": "je          0000000180403BCE"
+        }
+      ]
+    },
+    {
+      "id": "direct-403be0",
+      "reference_ids": [
+        "direct-403be0"
+      ],
+      "begin_rva": "0x403be0",
+      "end_rva_exclusive": "0x403e7d",
+      "bytes": 669,
+      "file_offset": 4206560,
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 14837,
+        "begin_rva": "0x403be0",
+        "end_rva_exclusive": "0x403e7d",
+        "bytes": 669,
+        "unwind_info_rva": "0x8456a8"
+      },
+      "sha256": "0c925721e9ecf04e912f4e99a8217c24c1291fb2fa30a0572ae68bab22f42bef",
+      "synthetic": {
+        "relative_path": ".tooling/m3-damage-statistics-insertion-temp/direct-403be0.inspect.dll",
+        "bytes": 4608,
+        "sha256": "2e4a7069a0f42757cff9e4f2a442ff839ea21bccd3eb067ff2befa9313cbfb75",
+        "never_executed": true
+      },
+      "command_arguments": [
+        "/NOLOGO",
+        "/NOPDB",
+        "/ERRORREPORT:NONE",
+        "/DISASM:BYTES",
+        "/RANGE:0x180403be0,0x180403e7c",
+        "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\m3-damage-statistics-insertion-temp\\direct-403be0.inspect.dll"
+      ],
+      "tool_exit": 0,
+      "tool_error": null,
+      "decoded_rows": 186,
+      "decode_issues": [],
+      "instruction_byte_coverage_verified": true,
+      "code_data_classification": "ReviewRequired",
+      "calls": [
+        {
+          "address": "0x180403c17",
+          "bytes": "e8f49dc4ff",
+          "instruction": "call        000000018004DA10"
+        },
+        {
+          "address": "0x180403c61",
+          "bytes": "e8aa9dc4ff",
+          "instruction": "call        000000018004DA10"
+        },
+        {
+          "address": "0x180403ca9",
+          "bytes": "e8629dc4ff",
+          "instruction": "call        000000018004DA10"
+        },
+        {
+          "address": "0x180403def",
+          "bytes": "e88c000000",
+          "instruction": "call        0000000180403E80"
+        },
+        {
+          "address": "0x180403e22",
+          "bytes": "e8e99bc4ff",
+          "instruction": "call        000000018004DA10"
+        },
+        {
+          "address": "0x180403e2f",
+          "bytes": "e8dc9bc4ff",
+          "instruction": "call        000000018004DA10"
+        },
+        {
+          "address": "0x180403e59",
+          "bytes": "e8b29bc4ff",
+          "instruction": "call        000000018004DA10"
+        },
+        {
+          "address": "0x180403e69",
+          "bytes": "e8a29bc4ff",
+          "instruction": "call        000000018004DA10"
+        }
+      ],
+      "branches": [
+        {
+          "address": "0x180403c02",
+          "bytes": "7520",
+          "instruction": "jne         0000000180403C24"
+        },
+        {
+          "address": "0x180403c1f",
+          "bytes": "e94d020000",
+          "instruction": "jmp         0000000180403E71"
+        },
+        {
+          "address": "0x180403c2a",
+          "bytes": "7542",
+          "instruction": "jne         0000000180403C6E"
+        },
+        {
+          "address": "0x180403c35",
+          "bytes": "7c14",
+          "instruction": "jl          0000000180403C4B"
+        },
+        {
+          "address": "0x180403c37",
+          "bytes": "0f8f9a010000",
+          "instruction": "jg          0000000180403DD7"
+        },
+        {
+          "address": "0x180403c45",
+          "bytes": "0f8d8c010000",
+          "instruction": "jge         0000000180403DD7"
+        },
+        {
+          "address": "0x180403c69",
+          "bytes": "e903020000",
+          "instruction": "jmp         0000000180403E71"
+        },
+        {
+          "address": "0x180403c71",
+          "bytes": "7543",
+          "instruction": "jne         0000000180403CB6"
+        },
+        {
+          "address": "0x180403c80",
+          "bytes": "7c14",
+          "instruction": "jl          0000000180403C96"
+        },
+        {
+          "address": "0x180403c82",
+          "bytes": "0f8f4f010000",
+          "instruction": "jg          0000000180403DD7"
+        },
+        {
+          "address": "0x180403c90",
+          "bytes": "0f8d41010000",
+          "instruction": "jge         0000000180403DD7"
+        },
+        {
+          "address": "0x180403cb1",
+          "bytes": "e9bb010000",
+          "instruction": "jmp         0000000180403E71"
+        },
+        {
+          "address": "0x180403cbf",
+          "bytes": "7c14",
+          "instruction": "jl          0000000180403CD5"
+        },
+        {
+          "address": "0x180403cc1",
+          "bytes": "0f8f92000000",
+          "instruction": "jg          0000000180403D59"
+        },
+        {
+          "address": "0x180403ccf",
+          "bytes": "0f8d84000000",
+          "instruction": "jge         0000000180403D59"
+        },
+        {
+          "address": "0x180403cdd",
+          "bytes": "7406",
+          "instruction": "je          0000000180403CE5"
+        },
+        {
+          "address": "0x180403ce3",
+          "bytes": "eb58",
+          "instruction": "jmp         0000000180403D3D"
+        },
+        {
+          "address": "0x180403ced",
+          "bytes": "7520",
+          "instruction": "jne         0000000180403D0F"
+        },
+        {
+          "address": "0x180403cf7",
+          "bytes": "7544",
+          "instruction": "jne         0000000180403D3D"
+        },
+        {
+          "address": "0x180403d0b",
+          "bytes": "74f3",
+          "instruction": "je          0000000180403D00"
+        },
+        {
+          "address": "0x180403d0d",
+          "bytes": "eb2e",
+          "instruction": "jmp         0000000180403D3D"
+        },
+        {
+          "address": "0x180403d17",
+          "bytes": "7519",
+          "instruction": "jne         0000000180403D32"
+        },
+        {
+          "address": "0x180403d23",
+          "bytes": "750d",
+          "instruction": "jne         0000000180403D32"
+        },
+        {
+          "address": "0x180403d30",
+          "bytes": "74ee",
+          "instruction": "je          0000000180403D20"
+        },
+        {
+          "address": "0x180403d43",
+          "bytes": "0f8cf0000000",
+          "instruction": "jl          0000000180403E39"
+        },
+        {
+          "address": "0x180403d49",
+          "bytes": "7f0e",
+          "instruction": "jg          0000000180403D59"
+        },
+        {
+          "address": "0x180403d53",
+          "bytes": "0f8ce0000000",
+          "instruction": "jl          0000000180403E39"
+        },
+        {
+          "address": "0x180403d5f",
+          "bytes": "7c0c",
+          "instruction": "jl          0000000180403D6D"
+        },
+        {
+          "address": "0x180403d61",
+          "bytes": "7f74",
+          "instruction": "jg          0000000180403DD7"
+        },
+        {
+          "address": "0x180403d6b",
+          "bytes": "7d6a",
+          "instruction": "jge         0000000180403DD7"
+        },
+        {
+          "address": "0x180403d75",
+          "bytes": "7547",
+          "instruction": "jne         0000000180403DBE"
+        },
+        {
+          "address": "0x180403d7f",
+          "bytes": "751d",
+          "instruction": "jne         0000000180403D9E"
+        },
+        {
+          "address": "0x180403d8b",
+          "bytes": "7531",
+          "instruction": "jne         0000000180403DBE"
+        },
+        {
+          "address": "0x180403d9a",
+          "bytes": "74f4",
+          "instruction": "je          0000000180403D90"
+        },
+        {
+          "address": "0x180403d9c",
+          "bytes": "eb20",
+          "instruction": "jmp         0000000180403DBE"
+        },
+        {
+          "address": "0x180403da6",
+          "bytes": "7513",
+          "instruction": "jne         0000000180403DBB"
+        },
+        {
+          "address": "0x180403dac",
+          "bytes": "750d",
+          "instruction": "jne         0000000180403DBB"
+        },
+        {
+          "address": "0x180403db9",
+          "bytes": "74ed",
+          "instruction": "je          0000000180403DA8"
+        },
+        {
+          "address": "0x180403dc1",
+          "bytes": "743c",
+          "instruction": "je          0000000180403DFF"
+        },
+        {
+          "address": "0x180403dc9",
+          "bytes": "7c34",
+          "instruction": "jl          0000000180403DFF"
+        },
+        {
+          "address": "0x180403dcb",
+          "bytes": "7f0a",
+          "instruction": "jg          0000000180403DD7"
+        },
+        {
+          "address": "0x180403dd5",
+          "bytes": "7c28",
+          "instruction": "jl          0000000180403DFF"
+        },
+        {
+          "address": "0x180403dfd",
+          "bytes": "eb72",
+          "instruction": "jmp         0000000180403E71"
+        },
+        {
+          "address": "0x180403e1a",
+          "bytes": "7410",
+          "instruction": "je          0000000180403E2C"
+        },
+        {
+          "address": "0x180403e2a",
+          "bytes": "eb45",
+          "instruction": "jmp         0000000180403E71"
+        },
+        {
+          "address": "0x180403e37",
+          "bytes": "eb38",
+          "instruction": "jmp         0000000180403E71"
+        },
+        {
+          "address": "0x180403e54",
+          "bytes": "740d",
+          "instruction": "je          0000000180403E63"
+        },
+        {
+          "address": "0x180403e61",
+          "bytes": "eb0e",
+          "instruction": "jmp         0000000180403E71"
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "All targets are supplied by a separately reviewed plan and matched against pinned saved direct-call or conditional-branch bytes.",
+    "Binary search reads .pdata records only; no export scan, unwind decoding or callees are followed.",
+    "V1 requires an exact .pdata start. V2 may explicitly permit the containing runtime fragment; this is not a whole source function.",
+    "Known proof bytes are excluded. Duplicate containing fragments are read once; overlap, missing boundaries or budget excess stops all body reads.",
+    "Metadata-only plans never read body bytes or start dumpbin, regardless of reported boundaries.",
+    "V3 reads one explicit 32-byte E8-target window only when .pdata has no containing entry. The window is not a function boundary.",
+    "V3 never follows transfers. A conservative straight-line prefix through plain C3 ret may be reported; bytes after ret remain unclassified.",
+    "V4 permits one fixed 96-byte continuation after a pinned, contiguous, control-transfer-free 32-byte prefix. Cumulative original window is 128 bytes, with no prefix reread or further continuation.",
+    "An optional V4 four-byte read must be the first saved MOVSS RIP-relative operand in readonly non-executable .rdata; only original bits are recorded.",
+    "V5 reads exactly two four-byte readonly .rdata operands proved by saved RIP-relative MULSS bytes; it reads no new instructions, .pdata or exports and never starts dumpbin.",
+    "Decoder rows are candidates, not proof that all bytes are instructions. Inline data can resemble valid code; all bodies need code/data review.",
+    "All gaps, byte mismatches and invalid/data decodes are retained. These findings never trigger new reads or automatic expansion.",
+    "Full source before/after hashes use 64 KiB chunks without interpreting bytes outside the approved ranges.",
+    "Static evidence does not establish source names, runtime compatibility, exception behavior or a complete damage contract."
+  ],
+  "script_sha256": "e69c7865f627b2fc435e5a9cb4068cba771aeb1e4d958aaca4e14d689a87ac5e",
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "pe": {
+    "image_base": "0x180000000",
+    "sections": [
+      {
+        "name": ".text",
+        "rva": 4096,
+        "raw_size": 6320640,
+        "raw_offset": 1024,
+        "characteristics": 1610612768
+      },
+      {
+        "name": ".rdata",
+        "rva": 6328320,
+        "raw_size": 4517888,
+        "raw_offset": 6321664,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".data",
+        "rva": 10846208,
+        "raw_size": 56832,
+        "raw_offset": 10839552,
+        "characteristics": 3221225536
+      },
+      {
+        "name": ".pdata",
+        "rva": 10919936,
+        "raw_size": 267776,
+        "raw_offset": 10896384,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".gfids",
+        "rva": 11190272,
+        "raw_size": 512,
+        "raw_offset": 11164160,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".tls",
+        "rva": 11194368,
+        "raw_size": 512,
+        "raw_offset": 11164672,
+        "characteristics": 3221225536
+      },
+      {
+        "name": "_RDATA",
+        "rva": 11198464,
+        "raw_size": 2560,
+        "raw_offset": 11165184,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".rsrc",
+        "rva": 11202560,
+        "raw_size": 512,
+        "raw_offset": 11167744,
+        "characteristics": 1073741888
+      },
+      {
+        "name": ".reloc",
+        "rva": 11206656,
+        "raw_size": 217600,
+        "raw_offset": 11168256,
+        "characteristics": 1107296320
+      }
+    ],
+    "pdata_rva": "0xa6a000",
+    "pdata_bytes": 267516
+  },
+  "selected_fragments": [
+    {
+      "id": "direct-403ba0",
+      "rva": "0x403ba0",
+      "caller_address": "0x180403b59",
+      "reference_kind": "direct-call",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 14836,
+        "begin_rva": "0x403ba0",
+        "end_rva_exclusive": "0x403bd4",
+        "bytes": 52,
+        "unwind_info_rva": "0x7deb10"
+      },
+      "range": {
+        "status": "ExactEntry",
+        "index": 14836,
+        "begin_rva": "0x403ba0",
+        "end_rva_exclusive": "0x403bd4",
+        "bytes": 52,
+        "unwind_info_rva": "0x7deb10"
+      },
+      "reference_ids": [
+        "direct-403ba0"
+      ]
+    },
+    {
+      "id": "direct-403be0",
+      "rva": "0x403be0",
+      "caller_address": "0x180403b72",
+      "reference_kind": "direct-call",
+      "pdata": {
+        "status": "ExactEntry",
+        "index": 14837,
+        "begin_rva": "0x403be0",
+        "end_rva_exclusive": "0x403e7d",
+        "bytes": 669,
+        "unwind_info_rva": "0x8456a8"
+      },
+      "range": {
+        "status": "ExactEntry",
+        "index": 14837,
+        "begin_rva": "0x403be0",
+        "end_rva_exclusive": "0x403e7d",
+        "bytes": 669,
+        "unwind_info_rva": "0x8456a8"
+      },
+      "reference_ids": [
+        "direct-403be0"
+      ]
+    }
+  ],
+  "tool_sha256_before": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "tool_sha256_after": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "source_hash_preserved": true,
+  "finished_utc": "2026-10-22T05:21:09.813Z"
+}

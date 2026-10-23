@@ -1,0 +1,51 @@
+{
+  "utc": "2026-10-20T06:53:46.205Z",
+  "status": "root-cause-unresolved-query-paused",
+  "query_summary": "docs/object-lifecycle/rea-record-cache-node/summary.json",
+  "failure_report": "docs/object-lifecycle/CACHE-NODE-QUERY-FAILURE.md",
+  "failed_action": "procedure_pseudo_code for 0x18001F170, fourth call of the fixed node pair",
+  "issued_calls": 4,
+  "completed_calls": 3,
+  "function_body_obtained": false,
+  "second_target_analysis_requested": false,
+  "sampler_exit_code": 1,
+  "api": "QueryMembers -> QueryFullProcessImageName",
+  "absent_evidence": [
+    "failed PID",
+    "Win32 NativeErrorCode",
+    "exact before/after QueryMembers phase",
+    "same-handle exit state at the underlying failure"
+  ],
+  "known_trigger": "sampler abnormal exit caused the controller memory-stop path; low-memory threshold trigger is not supported by saved samples",
+  "minimum_available_physical_bytes": 13042905088,
+  "minimum_commit_headroom_bytes": 28820926464,
+  "root_cause_proven": false,
+  "behavior_repair_applied": false,
+  "repair_independently_validated": false,
+  "guard_hashes": {
+    "tools/static_analysis/rea_profiled_server.mjs": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be",
+    "tools/static_analysis/rea_owned_memory_profile.mjs": "c00d80d68f03f04ea29831037e3889475c1ae9e88f201745895f353d97a66716",
+    "tools/static_analysis/rea_resource_budget.mjs": "6089d637f629c7f1b4526754c5d1702f99dd71ce170f539b520643f7d75071e0",
+    "tools/static_analysis/rea_java_role.mjs": "33c3ea9388a48f631234accc039dffd516362020de1a60b9ffeb29f97fa4614c",
+    "tools/static_analysis/ReaOwnedJob.cs": "aaa8b1a58c16587457b2b3d015d0209ff9546a11d2c3350fb37b5648a77fee12",
+    "tools/static_analysis/measure_job_process_memory.ps1": "9d9110fc45a403b9cc252d78b6b9fde74ba017d2f6b7ad8fedbf3c0f9c892770",
+    "tools/static_analysis/read_rea_resource_preflight.ps1": "9d61ef613ea1be941b02a47be881a59ae28b9dd90e98dc209248697c984dfff9"
+  },
+  "retry_condition": "A proven in-scope repair, offline/light verification, independent validation and release must precede the one permitted retry",
+  "retry_performed": false,
+  "retry_paused": true,
+  "normal_close_confirmed": false,
+  "job_empty_at_monitor_exit_confirmed": false,
+  "posthoc_release": {
+    "path": "docs/object-lifecycle/rea-record-cache-node/resource-release.json",
+    "utc": "2026-10-20T06:38:40.9199487Z",
+    "recorded_identities_exited": 22,
+    "active_analysis_processes": 0,
+    "runtime_files": 0
+  },
+  "action_denied": false,
+  "action_pending_approval": false,
+  "live_process_outcome_uncertain": false,
+  "independent_review": "build_portability and its independent archive cross-review; root separately inspected saved error and guard source",
+  "next_diagnostic_option": "Preserve failed PID, NativeErrorCode, same-handle identity/exit facts and query phase without weakening fail-closed behavior; not implemented or claimed as root-cause repair"
+}

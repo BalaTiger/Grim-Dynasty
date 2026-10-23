@@ -1,0 +1,119 @@
+{
+  "date_utc": "2026-10-20",
+  "recording_method": "Transcribed from completed read-only tool outputs. This is not a raw stdout capture or a rerun of the denied operation.",
+  "historical_root_cause": "unknown",
+  "historical_action_status": "denied",
+  "historical_operation_retried": false,
+  "original_evidence": {
+    "run_path": "docs/object-lifecycle/class-registration-helpers-validation/targeted-run.json",
+    "run_sha256": "3e2a6f9bf5eede3458691d56af540ca781b6c40ee872a653d682fdb47cf39331",
+    "stderr_path": "docs/object-lifecycle/class-registration-helpers-validation/targeted-tests-stderr.log",
+    "stderr_bytes": 185,
+    "stderr_sha256": "7cfea845efe07e3250aec8115415154ffa192d6f0b5f2d559a96ce5d4897d25f",
+    "stderr_contains_damaged_chinese": true,
+    "stdout_bytes": 0,
+    "exit_code": 1,
+    "started_utc": "2026-10-20T14:17:47.261Z",
+    "finished_utc": "2026-10-20T14:17:47.578Z",
+    "stderr_identifiable_fields": [
+      "AuthorizationManager",
+      "SecurityError",
+      "ParentContainsErrorRecordException",
+      "FullyQualifiedErrorId : UnauthorizedAccess"
+    ]
+  },
+  "current_script": {
+    "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\src\\task_items\\build_class_registration.ps1",
+    "bytes": 1166,
+    "sha256": "a866d77d7ba3a3a1c193815135f0d3d90fa8547d985c541c3bb08f78d9982dc5",
+    "last_write_utc": "2026-10-20T14:16:18.9420723Z",
+    "signature_status": "NotSigned",
+    "signature_type": "None",
+    "signer_subject": null,
+    "signer_thumbprint": null,
+    "streams": [{"name": ":$DATA", "bytes": 1166}],
+    "zone_identifier_present": false
+  },
+  "current_core_host": {
+    "ps_version": "7.6.5",
+    "edition": "Core",
+    "effective_policy": "RemoteSigned",
+    "policy_list": {
+      "MachinePolicy": "Undefined",
+      "UserPolicy": "Undefined",
+      "Process": "Undefined",
+      "CurrentUser": "Undefined",
+      "LocalMachine": "RemoteSigned"
+    },
+    "process_environment_preference": null,
+    "user_environment_preference": null,
+    "machine_environment_preference": null,
+    "all_users_config": {
+      "path": "C:\\Users\\zhuzi\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\powershell.config.json",
+      "exists": true,
+      "Microsoft.PowerShell:ExecutionPolicy": "RemoteSigned",
+      "queried_script_execution_override": null,
+      "queried_use_windows_powershell_policy_setting": null
+    },
+    "current_user_config": {
+      "path": "C:\\Users\\zhuzi\\Documents\\PowerShell\\powershell.config.json",
+      "exists": false
+    }
+  },
+  "windows_powershell_readonly_query": {
+    "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "file_version": "10.0.26100.8875 (WinBuild.160101.0800)",
+    "product_version": "10.0.26100.8875",
+    "mode": "-NoProfile -NonInteractive -Command",
+    "queries": ["Get-ExecutionPolicy", "Get-ExecutionPolicy -List"],
+    "exit_code": 1,
+    "effective_policy": null,
+    "policy_list": null,
+    "result": "Query failed due to registry permission SecurityException; policy values unknown.",
+    "fully_qualified_error_id": "System.Security.SecurityException,Microsoft.PowerShell.Commands.GetExecutionPolicyCommand",
+    "historical_cause_proven": false
+  },
+  "registry_checks": [
+    {"path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShell", "exists": false},
+    {"path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShell", "exists": false},
+    {"path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\PowerShellCore", "exists": false},
+    {"path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\PowerShellCore", "exists": false},
+    {
+      "path": "HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\1\\ShellIds\\Microsoft.PowerShell",
+      "exists": true,
+      "queried_values": ["ExecutionPolicy", "EnableScripts", "UseWindowsPowerShellPolicySetting"],
+      "queried_values_returned": null
+    },
+    {
+      "path": "HKCU:\\SOFTWARE\\Microsoft\\PowerShell\\1\\ShellIds\\Microsoft.PowerShell",
+      "exists": true,
+      "property_read_status": "denied",
+      "property_read_message": "Requested registry access is not allowed.",
+      "property_values": "unknown, not absent",
+      "distinct_acl_query": {
+        "owner_returned": null,
+        "protected_returned": null,
+        "rules_returned": [],
+        "interpretation": "No usable descriptor obtained. This does not establish an absent ACL, an empty ACL, ownership, or a particular deny rule."
+      }
+    }
+  ],
+  "machine_management_source": "unknown; no policy configuration found at the four checked policy paths, but organization management and host isolation are not excluded",
+  "minimum_next_step": "Environment owner identifies read-access restriction for the exact HKCU Windows PowerShell key in the intended host, then obtains effective policy before proposing a specific remedy.",
+  "approval_status": {
+    "readonly_diagnosis": "authorized and completed",
+    "security_or_persistent_changes": "not authorized; no specific change attempted or pending",
+    "build_or_equivalent_execution": "paused under explicit instruction; not retried",
+    "uncertain_execution_outcomes": []
+  },
+  "this_phase_counts": {
+    "builds": 0,
+    "tests": 0,
+    "original_binary_reads": 0,
+    "original_binary_executions": 0,
+    "rea_or_java_starts": 0,
+    "security_changes": 0,
+    "save_or_cloud_accesses": 0,
+    "commits_or_pushes": 0
+  }
+}

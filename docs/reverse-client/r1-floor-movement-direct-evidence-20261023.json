@@ -1,0 +1,59 @@
+{
+  "utc": "2026-10-23T07:47:00.037Z",
+  "status": "three-direct-targets-collected-component-integration-in-progress",
+  "queries": {
+    "engine": {
+      "path": "docs/reverse-client/r1-world-position-and-level-initialization/summary.json",
+      "sha256": "dba34660d80fc2cf496d5025f2e160de946f07908ad9373aa49e5dfe5ea350f8",
+      "session_id": 13588,
+      "completed_plan_calls": 11,
+      "original_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "original_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "closed_session_verified": true,
+      "process_exit_confirmed": true,
+      "job_empty_confirmed": true,
+      "sampler_exit_confirmed": true,
+      "with_controller_and_sampler_working_set_peak_bytes": 1319223296,
+      "with_controller_and_sampler_private_peak_bytes": 1217667072,
+      "sampled_peak_not_hard_cap": true,
+      "samples": 57
+    },
+    "game": {
+      "path": "docs/reverse-client/r1-skill-moved-direct/summary.json",
+      "sha256": "596d4499deb89419964abfd35c52e9df60ee0f6785c4a4d40b9c930f4c773dab",
+      "session_id": 64090,
+      "completed_plan_calls": 8,
+      "original_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "original_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "closed_session_verified": true,
+      "process_exit_confirmed": true,
+      "job_empty_confirmed": true,
+      "sampler_exit_confirmed": true,
+      "with_controller_and_sampler_working_set_peak_bytes": 1319813120,
+      "with_controller_and_sampler_private_peak_bytes": 1219375104,
+      "sampled_peak_not_hard_cap": true,
+      "samples": 117
+    }
+  },
+  "queries_repeated": 0,
+  "original_executed": false,
+  "scope": {
+    "engine22C690": "Writes Region then zeros8/10 before reading vector and integer Region offsets; calls actual Translate. D14 unwritten. New component in preparation.",
+    "engine12B750": "30/38/40 zero before calls;538C and54D8/E0/E8 zero only after specified calls return. Does not establish loaded scene emptiness; no renderer recursion.",
+    "game533410": "Three pointer vectors228/230,258/260,360/368; capture begin then reread end after each virtual1B0. Exact empty case known; nonempty virtual targets unresolved."
+  },
+  "new_validations_so_far": {
+    "scenarios": 58,
+    "assertions": 734,
+    "old_suites_rerun": 0,
+    "result_files": [
+      ".tooling/r1-crowd-tick-production-validation/result.json",
+      ".tooling/r1-world-floor-validation/result.json",
+      ".tooling/r1-terrain-material-collision-validation/result.json",
+      ".tooling/r1-real-ground-floor-integration-validation/result.json"
+    ]
+  },
+  "pending_executions": [],
+  "next": "Finish22C690 and ordinary066EE0+533410 composition on shared state; only targeted new validation. Physical mouse/scene rendering and full native cold load remain unaccepted.",
+  "gameplay_accepted": false
+}
