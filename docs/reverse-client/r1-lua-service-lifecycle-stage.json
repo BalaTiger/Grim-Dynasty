@@ -1,0 +1,103 @@
+{
+  "schema": "grim-dynasty-lua-service-lifecycle-stage-v1",
+  "status": "publisher-and-export-name-proven-real-runtime-creation-not-implemented",
+  "previous_stage": {
+    "file": "docs/reverse-client/r1-goal-engine-sharing-stage.json",
+    "sha256": "1bd3d2fdbf28a83eb56d344acb26877b99afc4c80ac930256be9ef90f3373c46"
+  },
+  "core_contract": {
+    "file": "docs/reverse-client/r1-lua-manager-core-evidence.json",
+    "sha256": "d3fe9a20c13cf01c22b9f964a9084d5cce1d4961f3c7d349f4d2edb00dcfaca5",
+    "bounded_next_evidence_now_completed": "Engine258E50"
+  },
+  "publisher_query": {
+    "file": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1/summary.json",
+    "sha256": "8f00c7243bae2d0725ecc8aa98a40bb7723412f6d78dff8f733de3b874fe93ac",
+    "session": 75445,
+    "exit_code": 0,
+    "started_utc": "2026-11-02T23:18:57.5607999Z",
+    "finished_utc": "2026-11-02T23:20:26.7622812Z",
+    "completed_calls": 8,
+    "tools": ["procedure_pseudo_code", "procedure_assembly", "procedure_callees"],
+    "original_Engine_sha256_before_and_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "original_executed": false
+  },
+  "publisher_sources": [
+    {
+      "file": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1/04-LuaInitializeDependency-0x180258e50-procedure_pseudo_code.json",
+      "sha256": "3bc5be5d0ba79b5e140c063755411958e404768bc6044cdcb5527275dc6ee7d5"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1/05-LuaInitializeDependency-0x180258e50-procedure_assembly.json",
+      "sha256": "b61d98ddad9968e13c7f6c9be8551a98eb4e03e8faccc7913ee461394896a8bf"
+    }
+  ],
+  "actual_native_contract": {
+    "resolved_writer": "258E50: GetProcAddress at2595F7 resolves luaL_newstate;25960D stores returned address into4218F8. This function does not call luaL_newstate.",
+    "loaded_module_requirement": "GetModuleHandleA only; no module load here. Cold path examines up to3 candidate names at3381C0 with16-byte stride, using the first loaded match. Only the first candidate name lua51.dll is identified by this body's symbol; other candidate names are not guessed.",
+    "hot_gate": "422B84 nonzero jumps directly to259B32, returning4217DC!=0 without refreshing module/export state.",
+    "cold_no_module": "Each failed lookup writes421998=null. All3 misses preserve old version4217DC and function slots, then259B2B writes gate1 and returns oldversion!=0. No implicit global zeroing is assumed.",
+    "cold_found_module": "First loaded module is used. Missing exports do not trigger trying the next candidate. Function pointers are published individually, including null; missing required functions zero version while later lookups continue.",
+    "version_detection": "lua_getglobal present selects2; otherwise luaJIT_setmode presence selects3 and absence selects1. Subsequent missing required exports zero version; later version-sensitive branches read that current value.",
+    "partial_failure": "Previously written slots remain. Unvisited version-specific slots retain their previous/Unknown state. Compatibility wrapper addresses may be published despite invalid version and do not prove their dependencies usable.",
+    "final_gate": "After normal completion of the selected path,259B2B writes gate1 irrespective of success, then returns only version!=0. Exceptions/unreturned external calls do not have a claimed completion.",
+    "not_equivalent": "Resolver return,gate1,GetState borrowed identity and manager+58=1 are not interchangeable proofs of a currently live Lua state at Goal."
+  },
+  "existing_module_dependency": {
+    "file": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7",
+    "cached_normal_imports": [
+      "[0].importModules[3]: x64/Grim Dawn.exe -> lua51.dll!lua_newstate",
+      "[1].importModules[1]: x64/Engine.dll -> lua51.dll!lua_newstate",
+      "[2].importModules[0]: x64/Game.dll -> lua51.dll!lua_newstate"
+    ],
+    "limit": "Explains native module dependency, not a current loaded-module observation. lua_newstate is a different symbol from luaL_newstate; this inventory does not establish its export implementation or runtime ABI.",
+    "own_runtime_inventory": "No confirmed Lua implementation/package declaration in tracked source/manifest candidates or src Lua API/runtime symbol search. Evaluator substring matches excluded; not an exhaustive external-machine software inventory."
+  },
+  "delta": {
+    "query_batches": 2,
+    "rea_calls_attempted": 19,
+    "rea_calls_completed": 19,
+    "procedure_body_calls": 9,
+    "lifecycle_calls": 10,
+    "repeated_existing_body_queries": 0,
+    "readonly_metadata_semantic_bytes": 4026,
+    "new_production_source_changes": 0,
+    "new_compiles": 0,
+    "new_test_scenarios": 0,
+    "new_assertions": 0,
+    "old_tests_rerun": 0,
+    "diagnostics_rerun": 0,
+    "prior_5_Goal_source_pins_unchanged": true
+  },
+  "exact_implementation_stop": {
+    "Goal": "Existing actual diagnostic remains atEngine0EBB19. No new execution:22 complete frames,frame23 real target reached andStop/action destruction returned;Work1 remains,Goal/tail not returned.",
+    "LuaManagerInitialize": "0F2E28 now has an evidenced symbolic target luaL_newstate, but no independently supported runtime implementation/binding. No fabricated return pointer or success callback was added.",
+    "following_dependency": "Actual25A030 and later setup/providers remain unimplemented; neither false Client/Server inputs nor cold null bypass the preceding runtime work.",
+    "permission_status": "No denial or pending approval. Current blocker is missing supported runtime/initialization semantics, not memory or permission.",
+    "first_usable_game": false
+  },
+  "next_minimum": [
+    "Use the already evidenced lua51.dll name to locate its metadata/hash/export in the authorized game installation, read-only. Do not load or execute the original Lua DLL.",
+    "Determine a concrete independently rebuildable Lua runtime route and exact ABI/version requirements before adding a production binding. Any needed external installation/license acceptance follows the existing approval boundary; none requested or performed here.",
+    "Reuse all three newly acquired bodies. Only then close25A030 and service startup/lifetime required for Goal, not the entire Lua library.",
+    "After actual Goal/tail succeeds, join existing State3 full-frame prefix/suffix and verify post-stop no-drift using the same request/Agent. Physical mouse target production,scheduler,original scene/UI and actual animation decode/playback remain unaccepted."
+  ],
+  "release": {
+    "file": "docs/reverse-client/r1-lua-service-lifecycle-release.json",
+    "sha256": "dfcf96e0470f5d3dbdb42e1d86675dc521d737c3fd2146ae950c93ca560badbe",
+    "utc": "2026-11-02T23:22:11.7359693Z",
+    "checked_recorded_pids": 68,
+    "current_matching_pids": [],
+    "external_heavy_processes": [],
+    "available_physical_bytes": 14784102400,
+    "commit_headroom_bytes": 30953426944,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "process_exit_confirmed": true,
+    "forced_termination": false,
+    "pending_operations": 0,
+    "historical_missing_job_receipt_stays_unknown": true
+  },
+  "constraints_preserved": ["No original execution or save/cloud access", "No security/ACL/policy change", "5GiB start,2GiB runtime,384M heap and all identity/Job protections unchanged", "No install,commit,push or deploy"]
+}

@@ -1,0 +1,56 @@
+{
+    "schema":  "grim-dynasty-r1-basic-movement-repro-v1",
+    "utc":  "2026-11-05T08:55:49.0169380Z",
+    "status":  "passed-in-scratch-not-yet-frozen",
+    "what":  "The reverse-engineered model performs a recovered click request and Begin, then two bounded production frames, and reports a real trajectory.",
+    "program":  ".tooling/r1-basic-movement-prepared/BasicMovementReproProgram.cs",
+    "driver":  "calls PlayerMoveBeginFrameIntegrationTests.Run() from the same test sources and dependency set as the r1-goal-engine-sharing recipe",
+    "observed":  {
+                     "status":  "passed-same-player-Begin-two-bounded-frames",
+                     "frames":  2,
+                     "assertions":  300,
+                     "begin_returned":  true,
+                     "outer_returned":  true,
+                     "net_horizontal_progress":  true,
+                     "requested_ground_target":  "(64.25, 16.059, 64.75)",
+                     "agent_target":  "(64.25, 19.026, 64.75)",
+                     "initial_distance":  2.828,
+                     "final_distance":  1.942,
+                     "native_math_calls":  49
+                 },
+    "trajectory":  [
+                       {
+                           "frame":  1,
+                           "navigation":  "(62.341, 19.529, 64.034)",
+                           "published":  "(62.341, 16.262, 64.034)",
+                           "ground_y":  16.262,
+                           "before":  2.828,
+                           "after":  2.039,
+                           "decreased":  true
+                       },
+                       {
+                           "frame":  2,
+                           "navigation":  "(62.432, 19.511, 64.068)",
+                           "published":  "(62.432, 16.251, 64.068)",
+                           "ground_y":  16.251,
+                           "before":  2.039,
+                           "after":  1.942,
+                           "decreased":  true
+                       }
+                   ],
+    "what_it_shows":  [
+                          "X/Z advance on each frame toward the requested ground target",
+                          "the published Entity coordinate follows the navigation position, and Y comes from the actual ground hit, not from navigation substitution",
+                          "the distance to the target decreases monotonically across the two frames",
+                          "the run needs no original process: it is entirely the rebuilt model"
+                      ],
+    "what_it_does_not_show":  [
+                                  "arrival at the target (two-frame slice only; final distance 1.942 \u003e 0)",
+                                  "full native Tick",
+                                  "mouse input acquisition",
+                                  "presentation/rendering",
+                                  "behavioural equivalence beyond this slice"
+                              ],
+    "frozen_recipe":  ".tooling/r1-basic-movement-build-prepared (prepared; execution blocked by the 5 GiB gate while the client is running)",
+    "next":  "Free the client process so the 5 GiB gate opens, then run the frozen recipe for an official receipt."
+}

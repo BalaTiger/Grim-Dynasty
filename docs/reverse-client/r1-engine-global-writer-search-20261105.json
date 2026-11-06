@@ -1,0 +1,35 @@
+{
+    "schema":  "grim-dynasty-r1-engine-global-writer-search-v1",
+    "utc":  "2026-11-05T11:35:21.9907357Z",
+    "question":  "Which code writes the Engine global at Engine.dll+0x421428?",
+    "methods_tried":  [
+                          "direct RIP-relative qword stores (REX.W 89 /r with mod=00 rm=101) in Engine.dll .text",
+                          "the same scan in Game.dll .text",
+                          "LEA of the global address (REX.W 8D /r with mod=00 rm=101) in Engine.dll",
+                          "all RIP-relative references in the neighbourhood 0x421400..0x421460 with store opcodes"
+                      ],
+    "results":  {
+                    "direct_stores_engine_dll":  0,
+                    "direct_stores_game_dll":  0,
+                    "lea_of_global":  0,
+                    "references_to_the_global":  2046,
+                    "writers_found_in_neighbourhood":  [
+                                                           "0x4e840 -\u003e 0x4213f0",
+                                                           "0x4e8af/0x4e910 -\u003e 0x4213f8",
+                                                           "0x5e7b0/0x5e864 -\u003e 0x421400",
+                                                           "0x5e7ef/0x5e850 -\u003e 0x421408",
+                                                           "0x5fad1 -\u003e 0x421410",
+                                                           "0x5fdca -\u003e 0x42140c",
+                                                           "0x76ad7 -\u003e 0x421430",
+                                                           "0x76ade -\u003e 0x421438"
+                                                       ]
+                },
+    "structure":  {
+                      "reading":  "0x4213f0, 0x4213f8, 0x421400, 0x421408, 0x421410, 0x421430, 0x421438 and 0x421428 all belong to one block of engine singletons.",
+                      "pairs":  "0x1c080 and 0x5e6a0 are the same lazy-create pattern for two of them: a lock object plus a lazily allocated singleton (0x200 and 0x160 bytes) stored through a null check.",
+                      "teardown":  "0x76a9d..0x76ae5 is the shutdown path: it clears 0x4213c8, 0x4217c8, 0x421430, 0x421438 and the object field at +0x200."
+                  },
+    "conclusion":  "The Engine global is not written by any direct store in either module and its address is never taken by an LEA. It is part of a singleton block whose other members are published by lazy-create helpers, so the Engine member is most likely published through a computed address or a helper that was not covered by these scans.",
+    "not_established":  "the exact instruction that publishes the Engine global",
+    "next":  "Read the lazy-create helper for 0x421408 (0xf6d50) and its 0x160-byte object, and look for a sibling helper that publishes 0x421428 the same way."
+}

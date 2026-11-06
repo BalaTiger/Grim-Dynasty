@@ -1,0 +1,45 @@
+{
+  "status": "read-only-two-targets-completed",
+  "initial": {
+    "utc": "2026-11-03T15:51:30.8570036Z",
+    "available_physical_bytes": 9792065536,
+    "system_commit_bytes": 46051938304,
+    "system_commit_limit_bytes": 59886112768,
+    "external_build_or_java_processes": []
+  },
+  "input": "D:\\Steam\\steamapps\\common\\Grim Dawn\\database\\database.arz",
+  "final": {
+    "utc": "2026-11-03T15:51:33.5320239Z",
+    "available_physical_bytes": 9769238528,
+    "system_commit_bytes": 46066532352,
+    "system_commit_limit_bytes": 59886112768,
+    "external_build_or_java_processes": []
+  },
+  "before": "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603",
+  "after": "9e3532250cdb611a4cc989997c8f97fcec2d6c422063a845e6c43cd538c30603",
+  "pending": 0,
+  "utc": "2026-11-03T15:51:34.0174442Z",
+  "original_loaded": false,
+  "results": [
+    {
+      "exit": 0,
+      "sha256": "9c43456cdb2a5642431ec66b6da545970706d3491c3370aa5dc70089e3a44150",
+      "args": [
+        "--record",
+        "records/ui/objectivewindow/objectivewindow_table.dbr"
+      ],
+      "file": "objectivewindow-table-record.json"
+    },
+    {
+      "exit": 0,
+      "sha256": "ae9fae3e514ef8928d5a729b77fa99a90cb62241f9e6cf804028423729c6bdbc",
+      "args": [
+        "--match",
+        "records/ui/hud/*table*.dbr",
+        "--limit",
+        "80"
+      ],
+      "file": "hud-table-index.json"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+    "schema":  "grim-dynasty-r1-player-model-located-v1",
+    "utc":  "2026-11-06T05:01:59.2860375Z",
+    "status":  "passed-player-model-located-and-verified",
+    "decisive_result":  {
+                            "archive":  "resources/Creatures.arc",
+                            "Archive::OpenRead":  "returned 1",
+                            "Archive::GetNumFiles":  "3341, matching the header field at +0x08",
+                            "file table location":  "Archive+0x40, 64 bytes per entry",
+                            "index of pc/hero_00.msh":  2461,
+                            "entry fields":  "f0=3, offset=399226753, storedLength=111402, rawLength=223717",
+                            "bytes at that offset":  "f0 27 \u0027MSH\u0027 03 00 00 00 00 21 00 00 00 1d 00 00 00 then the string Creatures\\\\PC\\\\Hero_00_Body.mif"
+                        },
+    "why_this_is_the_right_file":  "the embedded path reads Creatures\\PC\\Hero_00_Body.mif, which names the player character body mesh, and pc/hero_00.msh is the name table entry at the same index",
+    "file_entry_layout":  {
+                              "Archive+0x40":  "array of 64-byte entries, indexed by file index",
+                              "entry+0x00":  "u32 = 3",
+                              "entry+0x04":  "u32 data offset in the archive",
+                              "entry+0x08":  "u32 stored length",
+                              "entry+0x0C":  "u32 raw (decoded) length",
+                              "entry+0x20":  "pointer to the name buffer at runtime",
+                              "entry+0x2C":  "name length field (reads 0 in the live dump; the real name buffer is at +0x38)"
+                          },
+    "block_header":  "u16 payloadLength, 3-byte magic MSH/ANM/TEX, u8 version, u32 zero, u32 pathLength, u32 dataLength, then the path string terminated by 0x0D",
+    "method_note":  "The file table in memory, not the on-disk 12-byte block table, is the authoritative index: the on-disk block table is ordered by offset and does not line up with name order, which is why my earlier attempts with it picked the wrong block.",
+    "not_yet":  "the payload after the path is still not decoded; no zlib stream was found in a sample block, so the encoding remains unknown",
+    "next":  "decode File::Read or the routine that fills a File object from an entry, which must invert the payload encoding"
+}

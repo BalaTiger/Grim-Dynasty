@@ -1,0 +1,177 @@
+{
+  "schema": "gd-luajit204-build-stage-v1",
+  "utc": "2026-11-03T02:28:44.2733619Z",
+  "status": "own-runtime-build-and-vm-passed-current-processes-released-launch-empty-proof-missing",
+  "source_preparation": {
+    "file": "docs/reverse-client/r1-luajit204-source-preparation.json",
+    "sha256": "00496ff6db567fd5d4327213be5970bff7b0c67c22c7b7d4bda2f7af2c2d5c2d"
+  },
+  "fixed_commit": "69e5342eb893815b18a1ec84ba74b0e0d1cc9beb",
+  "toolchain": {
+    "msvc_directory": "14.44.35207",
+    "cl_file_version": "19.44.35229.0",
+    "sdk": "10.0.22621.0",
+    "architecture": "x64",
+    "mode": "Unmodified upstream default msvcbuild.bat /MD; explicit process-local PATH,INCLUDE,LIB using installed toolchain",
+    "manifest": ".tooling/r1-luajit204-build-prepared/manifest.json",
+    "manifest_sha256": "a07c2e47a2216e2972493ed6bb576667566e61702f1bc8f17adef31adb2a332f",
+    "upstream_code_patches": 0,
+    "warnings": [
+      "lj_ccallback.c:117 C5287 mixed-enum arithmetic",
+      "lj_ccallback.c:122 C5287 mixed-enum arithmetic"
+    ],
+    "warning_boundary": "Unmodified upstream warnings retained. This minimal VM smoke does not exercise FFI callback code and does not establish that broader ABI."
+  },
+  "validation": {
+    "build_result": ".tooling/luajit204-build-run1/result.json",
+    "build_result_sha256": "5d69a82b064754ff7429eefd614af16042c6801c737de95674330c878ca833d4",
+    "build_exit": 0,
+    "source_files_copied_and_rechecked": 197,
+    "original_baseline_postcheck_failure": null,
+    "native_compiler_invocations": 5,
+    "compile_count_basis": "Four cl calls from verified default upstream batch control flow after expected DLL/LIB/CLI outputs; not independent process-event tracing. Smoke cl is separately recorded.",
+    "guard_helper_AddType_compiles": 1,
+    "runtime_smoke_invocations": 1,
+    "old_gameplay_suites_rerun": 0,
+    "new_Rea_calls": 0,
+    "required_exports": 68,
+    "required_exports_missing": 0,
+    "own_named_exports": 135,
+    "cached_original_named_exports": 135,
+    "full_name_set_missing": [],
+    "full_name_set_extra": [],
+    "full_name_comparison_is_ABI_or_binary_equivalence": false,
+    "source_abi_width_bytes": {
+      "pointer": 8,
+      "lua_Integer": 8,
+      "lua_Number": 8
+    },
+    "actual_vm": {
+      "status": "passed-own-luajit204-vm-lifecycle",
+      "stage": "complete",
+      "win32_error": 0,
+      "loaded": true,
+      "module_path_verified": true,
+      "version_export_present": true,
+      "created": true,
+      "stack_top": 0,
+      "close_calls": 1,
+      "closed": true,
+      "freed": true,
+      "module_absent_after_free": true,
+      "file_handle_released": true,
+      "pointer_bytes": 8,
+      "integer_bytes": 8,
+      "number_bytes": 8,
+      "loaded_original": false,
+      "executed_scripts": false,
+      "gameplay_accepted": false
+    },
+    "generated_sources": [
+      {
+        "path": "host/buildvm_arch.h",
+        "sha256": "ff79fa94486a283e268b69a1257485573498983cb0b2bec82b6967089499972f",
+        "bytes": 102556
+      },
+      {
+        "path": "lj_bcdef.h",
+        "sha256": "28fa53c33491853f2c752538cc0f93aa8e4a7aeaa7357295e192b1ae742b3570",
+        "bytes": 2000
+      },
+      {
+        "path": "lj_ffdef.h",
+        "sha256": "dd01831640d5c38c2bc2d3c93b980b1c84cd8d3a75abd0c19c7d510764839e76",
+        "bytes": 4175
+      },
+      {
+        "path": "lj_libdef.h",
+        "sha256": "ef0707c35f5420ab84171f5ec6d763a4aa03dbb27688e62ddf65e9fe9fe2f662",
+        "bytes": 13017
+      },
+      {
+        "path": "lj_recdef.h",
+        "sha256": "6f5b0fa1098837d9ec08aa6bb52ee07b78097f9532d901f33fc263856faff352",
+        "bytes": 2883
+      },
+      {
+        "path": "jit/vmdef.lua",
+        "sha256": "8eceabb828d7b940d416550b482a2eabf54cd51e95a3178ce509c6fe5a89f323",
+        "bytes": 7007
+      },
+      {
+        "path": "lj_folddef.h",
+        "sha256": "5159593ac715cff51d078f4c082a23bbaf221ad58abf17b5a54441618e1e8129",
+        "bytes": 15842
+      }
+    ],
+    "artifacts": [
+      {
+        "path": "lua_vm_smoke.exe",
+        "bytes": 13312,
+        "sha256": "6c0557bbc8d1275525b0674067ab6d114645cdf920da8b53a0ce655fcb24cef5"
+      },
+      {
+        "path": "source/src/lua51.dll",
+        "bytes": 436736,
+        "sha256": "95a6c84cfda2268d0d52967d6173d0b7c4ab609df06e06cdb1d6442059310010"
+      },
+      {
+        "path": "source/src/lua51.lib",
+        "bytes": 26730,
+        "sha256": "93c872cf3d0e92f9e30cd75c70a4792cbaf033e2a336afd79578edaf2aacdc25"
+      },
+      {
+        "path": "source/src/luajit.exe",
+        "bytes": 154112,
+        "sha256": "781c1bb6cddf399db67101f16753ea26182011e7a8aed376b755293100cd340f"
+      }
+    ]
+  },
+  "execution": {
+    "formal_session": 62808,
+    "formal_exit": 1,
+    "approval_denied": false,
+    "approval_pending": false,
+    "uncertain_command_execution": false,
+    "product_exit": 0,
+    "launch_receipt": ".tooling/r1-luajit204-build-prepared/launch-result.json",
+    "launch_sha256": "0e03977449184f187fff5a8dc12098a07dc0c669306bc505e72ab9efeb21a2f4",
+    "launch_status_preserved": "failed",
+    "worker_exit": 0,
+    "worker_exited": true,
+    "job_disposed": true,
+    "job_empty_observed_before_dispose": false,
+    "cleanup_failure": "System.Management.Automation.RuntimeException: Exact owned Job did not become observably empty",
+    "residual_before_dispose": "Own Job member vctip.exe PID27308;5second grace expired;existing kill-on-Job-close policy applied on disposal",
+    "release": "docs/reverse-client/r1-luajit204-postrelease.json",
+    "release_sha256": "dc1c1923b124c04420224d1876a94f8633b38f4ca798260aed2966d1be2f459b",
+    "current_recorded_pids_absent": true,
+    "current_recorded_identity_count": 6,
+    "external_conflicts": [],
+    "owned_pending_operations": 0,
+    "resource_slot_released": true,
+    "new_heavy_allowed": false,
+    "resource_samples": 15,
+    "minimum_sampled_physical_gib": 9.137405395507812,
+    "minimum_sampled_commit_headroom_gib": 21.16018295288086,
+    "postrelease_utc": "2026-11-03T02:27:08.2890319Z",
+    "postrelease_physical_gib": 9.346160888671875,
+    "postrelease_commit_headroom_gib": 21.452571868896484,
+    "historical_unknown_receipts_preserved": true
+  },
+  "boundaries": {
+    "original_dll_loaded": false,
+    "original_files_read_or_written": false,
+    "system_install_or_security_changed": false,
+    "save_or_cloud_access": false,
+    "production_sources_changed": false,
+    "commit_push_deploy": false,
+    "original_vendor_ABI_or_bytecode_equivalence": false,
+    "engine_service_initialized": false,
+    "Goal_tail_completed": false,
+    "post_stop_no_drift": false,
+    "physical_mouse_original_scene_UI": false,
+    "gameplay_accepted": false
+  },
+  "next": "Independent LuaJIT runtime availability is now proven. Reuse cached0F2E00/258E50/0EBAE0; next actual engine gap is25A030 plus service initialization/publication/lifetime beforeGoal0EBB19. First plan the bounded service adapter and cached direct dependency; no fabricated LuaState or default-null service. Do not replay the failedGoal tail. This stage does not authorize expanding to full Lua library or claim post-stop/mouse/presentation acceptance. Parent coordinates next heavy slot; do not rerun successful source build/VM smoke."
+}

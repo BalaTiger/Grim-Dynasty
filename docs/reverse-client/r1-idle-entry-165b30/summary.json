@@ -1,0 +1,31 @@
+{
+    "schema":  "grim-dynasty-r1-idle-entry-summary-v1",
+    "utc":  "2026-11-05T06:15:04.9649968Z",
+    "function":  "0x165b30",
+    "extent":  "0x165b30-0x165b9b (exact pdata fragment, 107 bytes)",
+    "entry":  "ControllerPlayerStateIdle slot +0x220 (Begin220)",
+    "decoded":  "docs/reverse-client/r1-idle-entry-165b30/inspection.json",
+    "instructions":  26,
+    "control_transfers":  5,
+    "semantics":  {
+                      "owner":  "rbx = [this+8] is the owning controller",
+                      "allocate":  "alloc 0x48 bytes",
+                      "construct":  "call 0x081A40(buffer, dword [rbx+0x30]) builds the action/request from controller+0x30",
+                      "dispatch":  "call 0x127DD0(controller, built) is GameControllerMoveProduction HandleAction127DD0, already modelled",
+                      "timer":  "rcx = [gEngine 0xA66288] + 0x1308; edx = 0x7D0 (2000); call [0x609A98] arms a 2000-unit timer",
+                      "store":  "dword [this+0x20] = returned handle",
+                      "ret":  "plain ret, no tail call"
+                  },
+    "connections":  {
+                        "already_modelled":  "GameControllerMoveProductionContracts.HandleAction127DD0",
+                        "unmodelled":  "0x081A40 (action construction from controller+0x30) and the 0x609A98 timer import",
+                        "gengine_global_used":  "0x180A66288 (Game.dll .data; note this is a DIFFERENT global from the Engine.dll ones)"
+                    },
+    "not_claimed":  [
+                        "that 0x081A40 produces a specific action type",
+                        "timer semantics",
+                        "runtime behaviour",
+                        "that this completes the arrival transition"
+                    ],
+    "next":  "Model 0x081A40 and the 0x609A98 timer arm, then the Idle entry can be executed instead of stopping at 0x123EE0."
+}

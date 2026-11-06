@@ -89,13 +89,15 @@ namespace GrimDynasty.ReverseClient.Actions {
   public readonly NavigationCrowdAdapterBoundaries Adapter;
   // Mutable loaded globals remain unknown. Opaque constructor copies propagate
   // this knowledge; no zero vector is silently supplied.
-  public readonly NavigationPoint3 Global422980=new NavigationPoint3();
+  public readonly NavigationPoint3 Global422980;
   public readonly Field<byte> DisableAgentAssert422B9F=new Field<byte>(),DisableGroupAssert422B90=new Field<byte>(),DisableAllAssert42144A=new Field<byte>();
   public readonly Field<float> Half34BADC=new Field<float>();
   NavigationCrowdGroup lastGroup;
   // Diagnostic actual local allocation only; not a native published field.
   public NavigationCrowdGroup LastGroupAllocation{get{return lastGroup;}}
-  public NavigationCrowdStateBoundaries(NavigationCrowdAdapterBoundaries adapter){Adapter=adapter;}
+  public NavigationCrowdStateBoundaries(NavigationCrowdAdapterBoundaries adapter):this(adapter,new NavigationPoint3()){}
+  // Explicit shared OWN input; the default constructor still leaves every cell unknown.
+  public NavigationCrowdStateBoundaries(NavigationCrowdAdapterBoundaries adapter,NavigationPoint3 global422980){if(global422980==null)throw new ArgumentNullException("global422980");Adapter=adapter;Global422980=global422980;}
   // Exact disk observation r1-navigation-compressor-slot/inspection.json,
   // SHA191e63e5cc34d9b1abf1326426827a27041743913768a3159e73af3dc62126de.
   // This explicit setup does not assert that a loaded operand was observed.

@@ -1,0 +1,95 @@
+{
+  "schema": "grim-dynasty.fixed-move-action-kind-slot.v1",
+  "script": "tools/static_analysis/read_r1_move_action_kind_slot.mjs",
+  "entrypoint": "inspectMoveActionKindSlot(reviewedScriptSha256,reviewedPlanSha256)",
+  "output": "docs/reverse-client/r1-move-action-kind-slot/inspection.json",
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "bytes": 11385856,
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+  },
+  "source_pins": [
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "move_ctor",
+      "path": "docs/reverse-client/r1-movement-action-path/08-MoveAction-0x180082b10-procedure_assembly.json",
+      "sha256": "0e14d2fbc26f938e2f6cb3c63ce058b55e33b35beb05ff20f5832a5319a5fe36"
+    },
+    {
+      "key": "check_action",
+      "path": "docs/reverse-client/r1-action-executor/05-ActionExecutor-0x1801600f0-procedure_assembly.json",
+      "sha256": "f5619e59738ada22a3d545af6e9a0fc5e067b6260caae3553ca00e414c53b50e"
+    },
+    {
+      "key": "move_ctor_summary",
+      "path": "docs/reverse-client/r1-movement-action-path/summary.json",
+      "sha256": "d9bbdea2cfaaf78990fef3aa1728562838832703e180a9136b364a4d38458e93"
+    },
+    {
+      "key": "check_action_summary",
+      "path": "docs/reverse-client/r1-action-executor/summary.json",
+      "sha256": "0c01d23dc6df5dab3b88c034ee89a6d07d1615748f8c30db49be3fb60bcd41f1"
+    }
+  ],
+  "assembly_proofs": [
+    {
+      "key": "move_ctor",
+      "procedure": "0x180082b10",
+      "instructions": [
+        "0x180082b7a: LEA RAX, [0x1806e54c0]",
+        "0x180082b81: MOV qword ptr [R14], RAX"
+      ]
+    },
+    {
+      "key": "check_action",
+      "procedure": "0x1801600f0",
+      "instructions": [
+        "0x180160105: MOV RAX, qword ptr [RDX]",
+        "0x18016010b: MOV RCX, RDX",
+        "0x180160111: CALL qword ptr [RAX + 0x58]",
+        "0x180160117: MOVSXD R14, EAX"
+      ]
+    }
+  ],
+  "slot": {
+    "table_rva": "0x6e54c0",
+    "offset": "0x58",
+    "rva": "0x6e5518",
+    "bytes": 8
+  },
+  "limits": {
+    "semantic_data_bytes": 8,
+    "semantic_read_operations": 1,
+    "code_bytes": 0,
+    "new_pe_header_bytes": 0,
+    "pdata_bytes": 0,
+    "rtti_bytes": 0,
+    "hash_chunk_bytes": 65536
+  },
+  "saved_metadata_dedup": {
+    "files_read": 114,
+    "directories": [
+      "docs/reverse-client/r1-action-executor",
+      "docs/reverse-client/r1-action-support",
+      "docs/reverse-client/r1-local-action-slots",
+      "docs/reverse-client/r1-movement-action-path",
+      "docs/reverse-client/r1-path-local-dispatch",
+      "docs/reverse-client/r1-player-action-slots",
+      "docs/reverse-client/r1-player-move-dispatch"
+    ],
+    "matching_slot_observation_files": [],
+    "scope": "Read-only immediate saved json/md/txt files <=1MiB including plans in these seven related directories; no6E5518 observation found. Existing local-action inspection contains6E5510(+50) and6E5520(+60), not+58. No whole-repository absence claim, original read or backend."
+  },
+  "requirements": [
+    "Preparation only; root separately reviews and approves exact invocation with both hashes and performs Windows Attributes/reparse ancestor preflight. Import has no I/O; input/output paths are fixed, not caller-selected.",
+    "Exactly8 bytes atGame RVA6E5518=6E54C0+58. Verify readable,nonwritable,nonexecutable source section; classify target only by cached same-hash PE map without reading it. No other slot,RTTI/table[-1],strings,code,imports,exports or headers.",
+    "Same source handle before/after full SHA256 with64KiB buffer and stat/path identity checks; these are separate from8B semantic budget,not atomic snapshots. Source read-only and closed in finally; output directory absent,no overwrite.",
+    "082B10's final6E54C0 vptr store and1600F0's incoming-action slot58 call justify the disk slot. Executable membership is only a function candidate; function boundary,body,loaded binding and return semantics remain unverified. Do not infer slot58's result from the constructor's DWORD0C=4.",
+    "Do not follow the target,read neighboring slots or retry a prior refused query. No new Rea registration or backend, and no change to completed constructor sources or tests.",
+    "No subprocess/backend/network/original loading/execution,saves/cloud,installation,security settings,commit,push or deployment."
+  ]
+}

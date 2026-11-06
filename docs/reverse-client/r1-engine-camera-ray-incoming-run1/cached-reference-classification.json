@@ -1,0 +1,59 @@
+{
+  "schema": "gd-cached-pe-reference-classification-v1",
+  "operation": "classify returned addresses using already saved PE metadata and pseudocode",
+  "xref_evidence": {
+    "path": "docs/reverse-client/r1-engine-camera-ray-incoming-run1/04-GetRayThroughImagePoint-0x180229700-xrefs.json",
+    "sha256": "22d058928770b04f907234d12a07882c5de80f5283d121d937a8f47f96269aac",
+    "target": "0x180229700",
+    "sources": ["0x1803b2bb0", "0x18043dc80"]
+  },
+  "pe_source": {
+    "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+    "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58",
+    "selector": "files[target ends with /Engine.dll].pe",
+    "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "classification": [
+    {
+      "source_va": "0x1803b2bb0",
+      "rva": "0x3b2bb0",
+      "section": ".rdata",
+      "section_executable": false,
+      "file_offset": "0x3b1bb0",
+      "structure": "export-address-table entry",
+      "table_start_rva": "0x3af728",
+      "table_end_exclusive_rva": "0x3b5954",
+      "table_entries": 6283,
+      "index": 3362,
+      "ordinal_base": 1,
+      "ordinal": 3363,
+      "matching_saved_export_annotation": "0x229700 3363",
+      "annotation_evidence": "docs/reverse-client/r1-engine-input/07-GetRayThroughImagePoint-0x180229700-procedure_pseudo_code.json",
+      "annotation_sha256": "dd6ccbded5cca87060504ebe406913e34fca3cde3164ad78301787dc03582c15",
+      "code_call_site": false
+    },
+    {
+      "source_va": "0x18043dc80",
+      "rva": "0x43dc80",
+      "section": ".pdata",
+      "section_executable": false,
+      "file_offset": "0x437e80",
+      "section_start_rva": "0x424000",
+      "offset_within_section": "0x19c80",
+      "aligned_12_byte_record_index": 8800,
+      "structure": "exception-directory section location; record contents were not newly read",
+      "code_call_site": false
+    }
+  ],
+  "conclusion": "The two returned references are in non-executable metadata. They do not identify a mouse-coordinate producer, picking caller or UI dispatch function. No new function-body query is justified by these two addresses alone.",
+  "limitations": [
+    "This does not establish absence of cross-module, indirect or runtime consumers.",
+    "No physical-button meanings, pixel normalization or native UI consumption semantics are inferred.",
+    "Existing conditional movement and camera tests remain separate from interactive acceptance."
+  ],
+  "new_original_bytes_read_for_classification": 0,
+  "new_queries_for_classification": 0,
+  "metadata_decoded_as_instructions": false,
+  "new_production_code": false,
+  "new_game_tests": 0
+}

@@ -1,0 +1,184 @@
+{
+    "schema":  "grim-dynasty.fixed-character-action-destructor-binding.v1",
+    "started_utc":  "2026-11-02T20:33:12.7060922Z",
+    "status":  "passed-disk-bindings-only",
+    "script_sha256":  "88d69c96001fb701a37562250f19128bbe69d8ba402c57513b52a3b23bcafbf0",
+    "plan_sha256":  "ffe0e88db5761e797b5090c6c75d7c20ea4f893655fc69bc10cd5b1ed5395159",
+    "pins":  [
+                 {
+                     "id":  "game_pe",
+                     "path":  "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+                     "sha256":  "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+                 },
+                 {
+                     "id":  "engine_pe_exports",
+                     "path":  "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+                     "sha256":  "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+                 },
+                 {
+                     "id":  "game_imports",
+                     "path":  "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+                     "sha256":  "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+                 },
+                 {
+                     "id":  "import_names",
+                     "path":  "docs/phase-1/boundary-audit/module-boundaries.json",
+                     "sha256":  "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+                 },
+                 {
+                     "id":  "navigation_binding",
+                     "path":  "docs/reverse-client/r1-navigation-binding/inspection.json",
+                     "sha256":  "d0c171ce77a6d67e153a6911fc7c3a17ea4d61e80ab9492f3287384524e14264"
+                 },
+                 {
+                     "id":  "caller",
+                     "path":  "docs/reverse-client/r1-move-action-delete-run1/05-MoveActionDelete-0x180088eb0-procedure_assembly.json",
+                     "sha256":  "f5474dd85ed6f3d051c73e95e9943bf9faf4370b9939283b46ff37e21502a16f"
+                 }
+             ],
+    "resource_preflight":  {
+                               "snapshot":  {
+                                                "utc":  "2026-11-02T20:33:12.8782246Z",
+                                                "available_physical_bytes":  14852440064,
+                                                "system_commit_bytes":  29184090112,
+                                                "system_commit_limit_bytes":  59886112768,
+                                                "external_build_or_java_processes":  [
+
+                                                                                     ]
+                                            },
+                               "age_ms":  837.08530000000007
+                           },
+    "original_loaded_or_executed":  false,
+    "backend_started":  false,
+    "child_processes":  0,
+    "header_bytes":  0,
+    "code_bytes":  0,
+    "original_ilt_bytes":  0,
+    "original_thunk_bytes":  0,
+    "old_slot_bytes":  0,
+    "cached_ilt_reused":  true,
+    "cached_ilt_bytes":  8,
+    "cached_ilt_hex":  "c6bca40000000000",
+    "semantic_bytes":  78,
+    "semantic_operations":  6,
+    "reads":  [
+                  {
+                      "raw_hex":  "5402",
+                      "source":  "Game",
+                      "section":  ".rdata",
+                      "rva":  "0xa4bcc6",
+                      "file_offset":  10789574,
+                      "kind":  "CharacterActionDestructor-hint",
+                      "bytes":  2
+                  },
+                  {
+                      "raw_hex":  "3f3f31436861726163746572416374696f6e4047414d4540405545414140585a00",
+                      "source":  "Game",
+                      "section":  ".rdata",
+                      "rva":  "0xa4bcc8",
+                      "file_offset":  10789576,
+                      "kind":  "CharacterActionDestructor-import-name",
+                      "bytes":  33
+                  },
+                  {
+                      "raw_hex":  "d64e3c00",
+                      "source":  "Engine",
+                      "section":  ".rdata",
+                      "rva":  "0x3b62a4",
+                      "file_offset":  3887780,
+                      "kind":  "CharacterActionDestructor-nameptr",
+                      "bytes":  4
+                  },
+                  {
+                      "raw_hex":  "3f3f31436861726163746572416374696f6e4047414d4540405545414140585a00",
+                      "source":  "Engine",
+                      "section":  ".rdata",
+                      "rva":  "0x3c4ed6",
+                      "file_offset":  3948246,
+                      "kind":  "CharacterActionDestructor-exact-name",
+                      "bytes":  33
+                  },
+                  {
+                      "raw_hex":  "5402",
+                      "source":  "Engine",
+                      "section":  ".rdata",
+                      "rva":  "0x3bc028",
+                      "file_offset":  3911720,
+                      "kind":  "CharacterActionDestructor-ordinal",
+                      "bytes":  2
+                  },
+                  {
+                      "raw_hex":  "e0850400",
+                      "source":  "Engine",
+                      "section":  ".rdata",
+                      "rva":  "0x3b0078",
+                      "file_offset":  3862648,
+                      "kind":  "CharacterActionDestructor-eat",
+                      "bytes":  4
+                  }
+              ],
+    "bindings":  [
+                     {
+                         "engine_target_va":  "0x1800485e0",
+                         "id":  "CharacterActionDestructor",
+                         "export_ordinal":  597,
+                         "function_boundary_verified":  false,
+                         "executable_section":  ".text",
+                         "hint":  596,
+                         "hint_name_rva":  "0xa4bcc6",
+                         "ilt_source":  "pinned cached0..349 plus350..487 continuation index475",
+                         "game_ilt_rva":  "0xa43998",
+                         "game_iat_rva":  "0x609ed8",
+                         "contiguous_prefix_refreshed":  false,
+                         "ilt_reread":  false,
+                         "name_rva":  "0x3c4ed6",
+                         "engine_target_rva":  "0x485e0",
+                         "loaded_binding_observed":  false,
+                         "name":  "??1CharacterAction@GAME@@UEAA@XZ",
+                         "eat_index":  596,
+                         "descriptor_and_index_source":  "pinned cached raw descriptor/ownership prefix and ordered symbol inventory",
+                         "target_body_read":  false,
+                         "game_import_name_verified":  true
+                     }
+                 ],
+    "originals":  [
+                      {
+                          "expected_sha256":  "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+                          "source_stat_stable":  true,
+                          "id":  "Game",
+                          "sha256_after":  "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+                          "semantic_operations":  2,
+                          "fingerprint_bytes":  22771712,
+                          "sha256_before":  "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+                          "semantic_bytes":  35,
+                          "path":  "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+                          "source_handle_closed":  true
+                      },
+                      {
+                          "expected_sha256":  "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+                          "source_stat_stable":  true,
+                          "id":  "Engine",
+                          "sha256_after":  "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+                          "semantic_operations":  4,
+                          "fingerprint_bytes":  8971264,
+                          "sha256_before":  "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+                          "semantic_bytes":  43,
+                          "path":  "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+                          "source_handle_closed":  true
+                      }
+                  ],
+    "failures":  [
+
+                 ],
+    "unsupported":  [
+
+                    ],
+    "limitations":  [
+                        "Cached import descriptor and continuous ILT0..349 plus350..487 prove index475; cached8B c6bca40000000000 selects A4BCC6. Cached name is candidate only until actual hint/import-name and exact hinted Engine export match.",
+                        "New reads are exactly78B/6ops; no IAT/ILT/header/slot or function body reread, no full export scan or fallback. Adjacent609ED0 constructor is not treated as destructor alias.",
+                        "Same-handle read-only before/after original SHA256 and fixed fresh output remain. Fixed5GiB physical+commit gate and original external-build/Java/UE inventory apply before original handles open.",
+                        "Game088EB0 actual CALL609ED8 is pinned; destination and native destructor semantics remain unproved until binding/body analysis. No original execution/saves/security changes.",
+                        "Preparation performs no reader,preflight,Node,Rea,build/test or original read. Root review and formal approval required."
+                    ],
+    "finished_utc":  "2026-11-02T20:33:13.8735308Z"
+}

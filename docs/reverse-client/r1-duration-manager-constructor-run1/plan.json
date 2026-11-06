@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "purpose": "One exact ordinary-Player run-speed dependency only: inspect Game2790A0 reached by CombatManager11BAC0 at11BAEF on its receiver+10. Character052030 supplies CombatManager receiver=Character+530, so this subobject is Character+540, whose actual slot10 is consumed by069040. The constructor must establish the subobject vptr before any table or slot target is inferred.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-duration-manager-constructor-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {"file":"docs/condition-evaluator/rea-leaves/tool-catalog.json","sha256":"7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"},
+    {"file":"docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json","sha256":"ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"}
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-game-run-speed-direct-run1/05-RunSpeedDirect-0x18011bac0-procedure_assembly.json",
+      "sha256": "31d641584ba05d12a5cea90df96e9da2a684022a1d749398ac37729860e6f0e2",
+      "addresses": ["0x1802790a0"],
+      "source_kind": "Newly completed same-Game-hash Rea assembly explicitly calls2790A0 on the original CombatManager receiver+10. Its own primary vptr735E78 is a different location and does not prove this subobject's vptr or slot10.",
+      "exact_instructions": [
+        "0x18011bad8: MOV RBX, RCX",
+        "0x18011badb: LEA RAX, [0x180735e78]",
+        "0x18011bae2: MOV qword ptr [RCX], RAX",
+        "0x18011baeb: ADD RCX, 0x10",
+        "0x18011baef: CALL 0x1802790a0"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-game-run-speed-direct-run1/04-RunSpeedDirect-0x18011bac0-procedure_pseudo_code.json",
+      "sha256": "3e4012994091e3d2e9ed94fa1d28ad44f5c10c6ac212a5965eab0396a528873d",
+      "addresses": ["0x1802790a0"],
+      "source_kind": "Paired pseudocode names the receiver+10 call DurationDamageManager::DurationDamageManager. This supports the name only; the exact call instruction above establishes the target. No target-body semantics or initialization defaults are inferred from the name."
+    },
+    {
+      "file": "docs/reverse-client/r1-game-entity-constructors/05-GameEntityConstructor-0x180052030-procedure_assembly.json",
+      "sha256": "34a334ae8f918b20469fb57e7d55af0ffbcfba0d5900c42a4e371192d534f856",
+      "addresses": ["0x1802790a0"],
+      "source_kind": "Existing constructor receiver evidence only:05207F LEA RBP,[R15+530];052086 MOV RCX,RBP;052089 CALL11BAC0. Together with11BAEF this proves the direct called subobject starts at Character+540. This file does not itself call2790A0 or prove its body.",
+      "exact_instructions": [
+        "0x18005207f: LEA RBP, [R15 + 0x530]",
+        "0x180052086: MOV RCX, RBP",
+        "0x180052089: CALL 0x18011bac0"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-game-run-speed-run1/05-GameRunSpeed-0x180069040-procedure_assembly.json",
+      "sha256": "7ba2191d3009c003442e7f4f438ff3298a80371c38c1fb81e3e780ea2718a571",
+      "addresses": ["0x1802790a0"],
+      "source_kind": "Existing use-site evidence for why constructor writes are needed.069040 calls Character+540 slot10 with integer13 after the attribute getter. No new slot target is inferred here; later cap behavior does not authorize skipping this producer.",
+      "exact_instructions": [
+        "0x18006925b: LEA RCX, [RDI + 0x540]",
+        "0x180069262: MOV RAX, qword ptr [RCX]",
+        "0x180069265: MOV EDX, 0x13",
+        "0x18006926a: CALL qword ptr [RAX + 0x10]"
+      ]
+    }
+  ],
+  "completed_evidence_prerequisites": [
+    {
+      "file": "docs/reverse-client/r1-game-run-speed-direct-run1/summary.json",
+      "sha256": "33ebb1337342db9bd799d4c3f86250c89c2b2e14abe5a663fff8919a88539706",
+      "status": "passed",
+      "calls": 14,
+      "target_sha256_before_and_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "session_process_job_sampler_cleanup_confirmed": true,
+      "must_not_repeat": ["0x18011bac0","0x1800687e0","0x1803e5a10"]
+    }
+  ],
+  "saved_body_dedup": {
+    "method": "Read-only recheck of immediate JSON/Markdown/text files no larger than1MiB in the previously bounded eight related evidence directories plus the newly completed three-target batch. Actual pseudo-code/assembly records were checked by structured operation and exact parameters.procedure; callee mentions do not count as bodies.",
+    "files_checked": 157,
+    "procedure_outputs_checked": 32,
+    "directories": [
+      {"directory":"docs/m3-evidence","files":13,"procedure_outputs":0},
+      {"directory":"docs/reverse-client/r1-game-entity-constructors","files":19,"procedure_outputs":4},
+      {"directory":"docs/reverse-client/r1-game-run-speed-run1","files":17,"procedure_outputs":2},
+      {"directory":"docs/reverse-client/r1-player-move-entries","files":22,"procedure_outputs":6},
+      {"directory":"docs/reverse-client/r1-game-movement-interface","files":28,"procedure_outputs":10},
+      {"directory":"docs/reverse-client/r1-game-player-video-direct-run1","files":17,"procedure_outputs":2},
+      {"directory":"docs/reverse-client/r1-player-movement-interface-slots","files":1,"procedure_outputs":0},
+      {"directory":"docs/reverse-client/r1-game-mainplayer-connection-run1","files":17,"procedure_outputs":2},
+      {"directory":"docs/reverse-client/r1-game-run-speed-direct-run1","files":23,"procedure_outputs":6}
+    ],
+    "addresses": ["0x1802790a0"],
+    "matching_target_files": [],
+    "reference_only_files": [
+      "docs/reverse-client/r1-game-run-speed-direct-run1/04-RunSpeedDirect-0x18011bac0-procedure_pseudo_code.json",
+      "docs/reverse-client/r1-game-run-speed-direct-run1/05-RunSpeedDirect-0x18011bac0-procedure_assembly.json",
+      "docs/reverse-client/r1-game-run-speed-direct-run1/06-RunSpeedDirect-0x18011bac0-procedure_callees.json"
+    ],
+    "limitation": "This exact target body was not found in these directories; no whole-repository absence claim or original read was made.",
+    "original_read": false,
+    "backend_started": false
+  },
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-skill-moved-direct-plan.json",
+    "sha256": "96e164adb4ff4909806229a8a4a7dce460cb134d76de0cc21768e9ea29313677",
+    "same_registration_as": "r1-game-run-speed-direct",
+    "reference_plan": "docs/reverse-client/r1-game-run-speed-direct-plan/plan.json",
+    "reference_plan_sha256": "e3880c8dbe3f15223094d4a13325d48ca83c19334c019679e4b5475a24894f44",
+    "validated_runtime": "docs/reverse-client/r1-game-run-speed-direct-run1/runtime-plan.json",
+    "validated_runtime_sha256": "99d562cb0dbca9aafe37aac294021d512d0cb6fcbc3928a5b4cce84da9436f91",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "profile_or_protection_changes_authorized": false,
+    "historical_profile_scope_text_not_current_query_scope": true
+  },
+  "allowed_tools": ["binary_session","open_binary","close_binary","procedure_pseudo_code","procedure_assembly","procedure_callees"],
+  "calls": [
+    {"tool":"binary_session","args":{"expected_package_version":"6.5.0"},"label":"01-initial-session"},
+    {"tool":"open_binary","args":{"path":"D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll","provider_id":"ghidra"},"label":"02-Game-open"},
+    {"tool":"binary_session","args":{"expected_package_version":"6.5.0"},"label":"03-Game-session"},
+    {"tool":"procedure_pseudo_code","args":{"procedure":"0x1802790a0"},"label":"04-DurationManagerConstructor-0x1802790a0-procedure_pseudo_code"},
+    {"tool":"procedure_assembly","args":{"procedure":"0x1802790a0"},"label":"05-DurationManagerConstructor-0x1802790a0-procedure_assembly"},
+    {"tool":"procedure_callees","args":{"procedure":"0x1802790a0"},"label":"06-DurationManagerConstructor-0x1802790a0-procedure_callees"},
+    {"tool":"close_binary","args":{},"label":"07-Game-close"},
+    {"tool":"binary_session","args":{"expected_package_version":"6.5.0"},"label":"08-final-session"}
+  ],
+  "execution_requirements": [
+    "Preparation only. Root separately reviews/registers the exact fixed mode, checks current resources/mutex/identity and obtains normal formal execution approval. This plan neither edits nor runs the launcher.",
+    "Exactly one target2790A0 with pseudo-code,assembly,direct callees plus five lifecycle calls:8 total. No xrefs,callers,searches,table/header/RTTI reads or recursive callee queries.",
+    "Preserve the completed14-call batch and all prior evidence. Do not repeat11BAC0,0687E0,3E5A10,052030,069040 or the787778 disk slot observation.",
+    "No EquipManager2835F0 query or implementation expansion. No422980,absolute-cap database chain,Pet path,full attribute coverage or animation expansion.",
+    "Use unchanged installed Rea6.5.0,Game384M heap,5GiB physical-and-commit launch floor,2GiB stop floor,one backend/one request and existing ownership,Job,monitor,sampler,timeouts,recovery and cleanup safeguards.",
+    "If Rea cannot resolve the exact target or returns a containing/different function, retain the response and mark boundary unknown. Do not guess another target, fill missing data or count an empty body as success.",
+    "Record receiver-relative constructor writes, exact widths, order, direct calls and normal return identity. Do not infer runtime initialization completion, post-load values,exception cleanup or slot10 target before its evidence exists.",
+    "Any returned table address or new callee is evidence for later review only. Do not automatically read that table,invoke that target or extend this frozen batch.",
+    "No original executable loading/execution,save/cloud access,installation,permission/security changes,commit,push or deployment. Original file hashes and normal cleanup must be retained."
+  ],
+  "evidence_questions": [
+    "Which exact vptr value,if any,does2790A0 write at its receiver+0,corresponding to Character+540? What order and direct constructors establish it?",
+    "Which fields consumed by the later slot10 operation are actually initialized,at what widths,and which values remain unknown before and after direct calls? No slot semantics are inferred from the constructor name.",
+    "What exact disk table/target evidence would still be required to resolve06926A(slot10,arg13),without substituting CombatManager735E78 or guessed zero-return behavior?",
+    "Can the observed normal constructor prefix be represented in the existing unique owner state while preserving failure prefixes,or must a precise direct dependency remain Unsupported?"
+  ],
+  "runner_before_sha256": "427081d3e45caa40f97a13281c515e9159a309c085d431b80769d348976fafae",
+  "runner_change": "None. Root must freeze/check the active runner separately before registering this prepared plan."
+}

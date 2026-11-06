@@ -1,0 +1,94 @@
+{
+  "schema": "grim-dynasty-base-user-path-static-stage-v1",
+  "date_utc": "2026-11-04",
+  "status": "bounded-static-step-complete;setter-proven;startup-order-and-data-isolation-unproven",
+  "scope": "Engine SetBaseUserPath RVA0BAC0 body, its returned references, exact EXE import binding and one incoming-reference query. No follow-up executable-section scan.",
+  "conclusion": "SetBaseUserPath assigns one Engine string member. It is not evidence of a startup-before-data-access barrier or an OS data-isolation mechanism; this step does not make original-program execution safe or authorized.",
+  "confirmed": [
+    {
+      "id": "setter",
+      "address": "0x18000bac0",
+      "assembly": "ADD RCX,0x138;CMP RCX,RDX;JZ 0x18000bad8;OR R9,-1;XOR R8D,R8D;JMP 0x180023180;RET",
+      "contract": "Destination is this+0x138. Source aliasing that member returns without assignment; otherwise tail-transfer to the string helper with offset0/countUINT64_MAX. The 25-byte setter itself has no filesystem/Steam/security API call.",
+      "limits": "Helper internals, allocation/exception behavior and all consumers are not newly verified. Ghidra terminal-flow annotation is not proof the helper never returns. Distinct from SetSavePath's this+0x240."
+    },
+    {
+      "id": "constructor-local-initial-value",
+      "source": "docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json",
+      "contract": "Cached ctor072930 has EBP=0 at07295E;072A40..072A5D initializes this+138 to capacity15,length0,NUL. Only local construction writes are established, not global startup ordering."
+    },
+    {
+      "id": "engine-reference-is-data",
+      "returned_reference": "0x1803b4704",
+      "classification": "Export address-table slot, not an instruction caller",
+      "derivation": "Saved export directory: base1,count6283,EAT_RVA3AF728. Ordinal5112 gives3AF728+(5112-1)*4=3B4704 in non-executable.rdata."
+    },
+    {
+      "id": "exe-import-binding",
+      "dll": "Engine.dll",
+      "descriptor_index": 8,
+      "import_index": 528,
+      "iat_va": "0x1402d60e0",
+      "contract": "Exact decorated SetBaseUserPath name, OFT, hint/name and IAT matched in fixed-hash EXE. Reader inspected5264 metadata bytes in21 operations; executable/pdata bytes0; source closed and before/after hashes equal."
+    },
+    {
+      "id": "exe-incoming-result",
+      "operation": "xrefs(0x1402d60e0)",
+      "raw_result": [],
+      "normalized_result": [],
+      "contract": "Successful returned empty reference list from Ghidra12.1.4 via Rea6.5.0. No instruction caller established. This is not absence-of-caller proof and not an unresolved/failed tool outcome."
+    }
+  ],
+  "protection_gaps": [
+    "No verified EXE call site, source string, reachability or order for SetBaseUserPath relative to Steam initialization, file access, DLL initialization or worker threads.",
+    "Existing Game save-root contract independently obtains system Documents then appends My Games/Grim Dawn; its link to Engine+138 is unproven. SetSavePath+240 and cloud flag375EA are separate contracts.",
+    "Existing GetBaseDataPathFromOptions includes FindFirstFileExA: path construction is not universally free of filesystem access. Its actual path and global ordering remain unknown.",
+    "Empty ctor string is not an access-denial mechanism. Later assignment cannot undo earlier reads/writes or govern Steam client/cloud behavior.",
+    "A separate account or independent copy still requires verified file/network/IPC boundaries. No evidence here establishes that virtualization is necessary or that such a non-virtualized boundary already exists."
+  ],
+  "evidence": [
+    {"file":"docs/reverse-client/r1-base-user-path-run1/04-SetBaseUserPath-0x18000bac0-procedure_pseudo_code.json","sha256":"7e0b270e89fcd7c11a577ba0599a8c6c951c231b488ac8d8bf665634a2b553a2"},
+    {"file":"docs/reverse-client/r1-base-user-path-run1/05-SetBaseUserPath-0x18000bac0-procedure_assembly.json","sha256":"ea959dfe7c15e350ea51f3af75fbc9028b91db3c18e006e9518e9dc2513d04a1"},
+    {"file":"docs/reverse-client/r1-base-user-path-run1/06-SetBaseUserPath-0x18000bac0-xrefs.json","sha256":"c949bb33113417eb80e5737bfd0d2dd7a45da02255ec80a4bd4b425c17187ce8"},
+    {"file":"docs/reverse-client/r1-ui-api-engine-exports/inspection.json","sha256":"03f7e5226eecc7b26ed35741a4c6305090099e5fe45a3e031b6a3b4a6714d278"},
+    {"file":"docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json","sha256":"ab597744f4a4cf617c6227fe7a50100e5b03733aa48dda43a730f65509bdca26"},
+    {"file":"docs/reverse-client/r1-base-user-path-exe-iat/inspection.json","sha256":"4a0cb9ccb338f6eee50c5f860e6f8bad600336be3ab6fa954994ffe676105a56"},
+    {"file":"docs/reverse-client/r1-base-user-path-exe-incoming-run1/04-SetBaseUserPathIAT-0x1402d60e0-xrefs.json","sha256":"577a2c2f4c25955ec9e30224c6b6ff9115cfc1390d75d529f7786e1ddbe0757e"},
+    {"file":"docs/reverse-client/r1-save-path-static-recheck-20261104.json","sha256":"0b92bca89bc4ce60d1901391af220dbd8eabc2e344ec1e60e08d133aa2e349db"},
+    {"file":"docs/reverse-client/r1-host-observation-plan-20261104.json","sha256":"d386560a51f1cd7830f6eed2a43c41a854f250f7c4d3601e3b6b30e3e05423fb"},
+    {"file":"docs/reverse-client/r1-base-user-path-release.json","sha256":"f8d3855731c774bdae584b0b9ee59d7afc311a9f6a0b6242f482792477947446"}
+  ],
+  "verification": {
+    "Rea_calls_completed": 14,
+    "analysis_results": 4,
+    "lifecycle_calls": 10,
+    "new_product_compiles": 0,
+    "new_product_tests": 0,
+    "old_tests_or_queries_repeated": 0,
+    "independent_static_review": "Setter/IAT/ctor/EAT classification reviewed; no claim of global startup protection.",
+    "historical_failures_retained": true,
+    "existing_product_source_changed_this_step": false,
+    "active_runner_changed_this_step": false,
+    "original_targets_before_after_hash_match": true,
+    "original_program_executed_or_loaded": false,
+    "real_saves_or_Steam_configuration_accessed": false,
+    "system_settings_changed": false,
+    "commit_push_deploy": false
+  },
+  "execution": {
+    "engine_terminal":78935,"engine_exit":0,
+    "metadata_terminal":77163,"metadata_exit":0,
+    "exe_terminal":99419,"exe_exit":0,
+    "pending_operations":0,"owned_heavy_processes":0,
+    "both_jobs_empty":true,"both_samplers_exited":true,
+    "current_recorded_PID_presence_checks":"Engine42 and EXE28 all absent at releaseUTC; no process terminated during final presence check",
+    "last_monitor_utc":"2026-11-04T02:40:15.7122152Z",
+    "last_physical_available_bytes":9888350208,
+    "last_commit_headroom_bytes":12849586176
+  },
+  "next": {
+    "static_stop":"Do not repeat0BAC0 or1402D60E0, scan adjacent import slots, or treat the empty xref as a reason for unbounded executable scanning. Resume this branch only from a new concrete instruction/object-reference source.",
+    "protection_route":"A path setter cannot currently authorize original startup. Evaluate and, if separately approved, validate a concrete pre-execution OS file/network/IPC boundary with a benign owned probe before requesting original startup/debug observation. No account/software/ACL/network change or original launch performed or approved by this step.",
+    "current_blocker_kind":"Evidence missing; no new permission denial, pending query or uncertain execution outcome."
+  }
+}

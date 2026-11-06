@@ -1,0 +1,30 @@
+{
+    "schema":  "grim-dynasty-r1-device-loaded-v1",
+    "utc":  "2026-11-06T02:20:43.0479912Z",
+    "status":  "passed-renderer-plugin-loaded",
+    "decisive_evidence":  {
+                              "module":  "direct3d11.dll",
+                              "base":  "0x7ffbbb8f0000",
+                              "size":  163840,
+                              "how":  "the host enumerated its own process modules after Engine::Initialize returned and found the renderer plugin loaded"
+                          },
+    "what_this_proves":  [
+                             "GraphicsEngine::CreateDevice executed and resolved the plugin through LoadLibraryA",
+                             "the graphics engine object at Engine+0x1F8 materialised with a populated internal table",
+                             "the whole recovered start-up path runs end to end without a debugger, without attaching to the game and without touching the registry"
+                         ],
+    "supporting_observations":  {
+                                    "engine_global":  "published by the host, then read back by Engine::Initialize",
+                                    "graphics_engine":  "Engine+0x1F8 = 0x1d52abf0, non-null",
+                                    "graphics_engine_fields":  "ge+0x28, +0x30, +0x38, +0x40, +0x48, +0x50, +0x58, +0x90, +0x98, +0xa0, +0xa8, +0xb0, +0xb8, +0xc0, +0x120, +0x128, +0x130, +0x180, +0x188 all hold non-null pointers, and ge+0xc8 holds base+0x339d58 which is the subobject vtable recorded earlier",
+                                    "options":  "Engine+0x3E0 = 0xdeaab0, non-null"
+                                },
+    "boundary":  "The host published the Engine pointer itself. That reproduces the game operation; it is not a recovery of the game\u0027s own publish code.",
+    "not_yet_established":  [
+                                "whether an ID3D11Device exists inside the plugin and is usable",
+                                "whether a swapchain was created",
+                                "whether a frame can be presented",
+                                "whether the remaining subsystems are functional"
+                            ],
+    "next":  "Call CreatePrimarySurface on the device to bind the window and build the swapchain, then attempt BeginFrame and PresentSurface."
+}

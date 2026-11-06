@@ -1,0 +1,17 @@
+{
+    "schema":  "grim-dynasty-r1-hero-uncompressed-v1",
+    "utc":  "2026-11-06T05:31:23.4431987Z",
+    "answer_to_user_question":  {
+                                    "question":  "Is the non-zlib compression used for the player model?",
+                                    "answer":  "No. The player model payload is stored as plain binary data, so the compression question does not block it and can be set aside."
+                                },
+    "evidence":  {
+                     "uncompressed blocks also differ":  "blocks marked C0 FF FF FF, which are the inherent no-compression marker, still have stored != raw (for example 172054 stored against 262144 raw), so the raw field is not a decoded size at all; it is an original-size hint",
+                     "payload is structured":  "at payload offset 20 the dwords decode as floats -0.1374, 2.1203, -0.1814, 0.1348, 2.5372, 0.1388, a run of plausible vertex coordinates rather than compressed entropy",
+                     "extraction result":  "the payload extracts to 111350 bytes with 3501 plausible float triples out of 9277 scanned",
+                     "angle constants in the tail":  "-1.57079, -3.14159 and 0.52359 appear as ASCII-ish tails, i.e. pi/2, pi and pi/6, which indicates rotation or bone transform data"
+                 },
+    "conclusion":  "The stored length is simply the block length on disk. The model can be lifted out directly and used without any decompression step.",
+    "next":  "feed this geometry through the recovered render path: CreateVertexBuffer, CreateVertexDeclaration, RenderPrimitives, together with the internal texture resources, which is what the user asked for.",
+    "file":  ".tooling/arc-extract/hero_00.msh.bin"
+}

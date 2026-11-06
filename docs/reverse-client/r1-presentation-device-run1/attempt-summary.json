@@ -1,0 +1,52 @@
+{
+    "schema":  "grim-dynasty-r1-presentation-device-attempt-v1",
+    "utc":  "2026-11-05T09:37:26.9028573Z",
+    "plan":  "docs/reverse-client/r1-presentation-device-plan/plan.json",
+    "plan_sha256":  "3c615111312e6894a950ca10f52978f3cbe846c13ea7dd1a17512907ef984b47",
+    "target":  {
+                   "path":  "D:/Steam/steamapps/common/Grim Dawn/x64/Direct3D11.dll",
+                   "sha256":  "862a9ef1e67617c29122dc8b8b9c25dbbafe2e518ed98c0bb52b24b37d75ab5b"
+               },
+    "attempts":  [
+                     {
+                         "n":  1,
+                         "command":  "rea decompile \u003cDirect3D11.dll\u003e 0x180005af0 --provider ghidra --format json",
+                         "result":  "execution_failure",
+                         "exit_code":  1
+                     },
+                     {
+                         "n":  2,
+                         "command":  "same, with JAVA_HOME pointed at a plus-free junction",
+                         "result":  "execution_failure",
+                         "exit_code":  1
+                     }
+                 ],
+    "root_cause":  {
+                       "message":  "JDK 21+ (64-bit) could not be found and must be manually chosen / Failed to find a supported JDK",
+                       "secondary":  "java.io.FileNotFoundException: \u003cruntime\u003e\\\\config\\\\ghidra\\\\ghidra_12.1.4_PUBLIC\\\\java_home.save (access denied)",
+                       "chain":  "LaunchSupport could not locate the JDK, tried to persist a choice, was denied, then read from a nonexistent console and threw NullPointerException"
+                   },
+    "ruled_out":  {
+                      "jdk_missing":  "java.exe reports openjdk 21.0.12.1 and rea doctor marks ghidra-java healthy",
+                      "plus_in_path":  "retrying with a junction without \"+\" produced the identical failure",
+                      "temp_writability":  "a probe write to %TEMP%\\\\rea-ghidra-probe succeeded",
+                      "ghidra_install":  "doctor marks ghidra, ghidra-headless, decompiler and installation healthy"
+                  },
+    "interpretation":  "The failure is inside Rea\u0027s own ephemeral-runtime JDK bootstrap, not in the target, the Ghidra install, or the project environment. Previous batches succeeded because they ran through the project owner harness rather than a direct CLI call; that harness supplies its own environment and Job.",
+    "not_claimed":  [
+                        "that Initialize or CreateSwapChain was read",
+                        "any device, swapchain or present behaviour",
+                        "that presentation can be recovered in this session"
+                    ],
+    "next":  "Register the batch mode in the frozen runner and execute it through the owner harness (the path every earlier successful Rea batch used), instead of the direct CLI.",
+    "deeper_diagnosis":  {
+                             "utc":  "2026-11-05T09:55:16.4380698Z",
+                             "jdk_complete":  "bin/java.exe and bin/javaw.exe both present; release file reports JAVA_VERSION=21.0.12.1",
+                             "launcher_env":  "rea projectEnvironment() does set JAVA_HOME to the pinned JDK, so the variable is supplied by the tool itself",
+                             "write_target":  "AppConfig.saveJavaHome writes to \u003cruntime\u003e/config/ghidra/ghidra_12.1.4_PUBLIC/java_home.save, i.e. under APPDATA which rea redirects into its ephemeral runtime",
+                             "denial":  "that write is refused, after which LaunchSupport reads a console, gets null and throws NullPointerException",
+                             "inference":  "The failure is inside rea\u0027s own ephemeral-runtime settings bootstrap: it cannot persist its JDK choice, so it falls back to an interactive prompt that has no console.",
+                             "why_not_fixable_here":  "The runtime directory is created per invocation with private DACLs; the JDK choice cannot be pre-seeded because the path is random, and no documented option redirects that settings file."
+                         },
+    "recommendation":  "Execute this batch only through the project owner harness, which is the path every earlier successful Rea batch used. If it fails there too, the next discriminator is rea\u0027s settings-write denial rather than the target or Ghidra."
+}

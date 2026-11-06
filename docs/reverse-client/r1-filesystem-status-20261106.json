@@ -1,0 +1,26 @@
+{
+    "schema":  "grim-dynasty-r1-fs-status-v1",
+    "utc":  "2026-11-06T04:45:16.7083499Z",
+    "working":  {
+                    "filesystem_construct":  "FileSystem::FileSystem 0x86370 runs on a zeroed buffer and yields a usable object for AddSource",
+                    "add_source":  "AddSource returns 1 for null-name 1,1,0 / null-name 1,0,0 / arc-name 1,1,0 after the delegate slot fix",
+                    "symbol_ids":  {
+                                       "0x84a00":  "FileSourceDirectory::Attach",
+                                       "0x87350":  "FileSystem::DebugLog",
+                                       "0x875e0":  "FileSystem::GetFileList(std::vector\u003cstd::string\u003e\u0026)",
+                                       "0x869d0":  "FileSystem::AddSourceArchive",
+                                       "0x2ddb14":  "a jump thunk (ff 25), not a real function; the call at 0x1800865f7 goes through it"
+                                   }
+                },
+    "not_working":  {
+                        "lookup":  "DoesFileExist(\"pc/hero_00.msh\") is 0 in every configuration tried, including both slash styles and the bare filename",
+                        "getfilelist":  "calling GetFileList with a zeroed 0x40-byte buffer faults before returning, so my assumption about the vector layout (begin,end,cap at 0,8,0x10 with 0x20-byte strings) is not confirmed",
+                        "add_source_archive":  "AddSourceArchive crashes when name=\"Creatures.arc\" and returns 0 when name is null"
+                    },
+    "assessment":  "I have spent many rounds probing FileSystem by trial. Each fix reveals another wrong assumption about a C++ container layout, and the failures no longer teach me much per attempt. The productive next step is not more probing but reading the actual code of DoesFileExist 0x871b0 and AddSource\u0027s scan branch, which will say exactly what state it consults.",
+    "recommended_next":  "decode DoesFileExist 0x871b0 end to end; it is small and will name the container and lookup rule, which settles both why the lookup misses and how the sources are stored.",
+    "not_claimed":  [
+                        "that the archive can be queried",
+                        "that the model can be read"
+                    ]
+}

@@ -1,0 +1,43 @@
+{
+    "schema":  "grim-dynasty-r1-filesystem-archive-v1",
+    "utc":  "2026-11-06T03:21:03.1027074Z",
+    "status":  "partial-addsource-succeeds-named-lookup-fails",
+    "target":  "open resources/Creatures.arc through the original FileSystem and read the initial character model pc/hero_00.msh",
+    "established":  {
+                        "archive":  "resources/Creatures.arc, 462383350 bytes, header magic ARC\\0, version 3, 3341 entries; the entry count matches the official ArchiveTool -list output exactly",
+                        "player_model":  "the archive listing includes pc/hero_00.msh and pc/heroine_00.msh, so the initial character model lives in Creatures.arc",
+                        "filesystem_field":  "Engine+0x358 is the FileSystem: the four AddSource call sites in 0x79d20-0x7a2ac load rcx from [rbx+0x358]",
+                        "partition":  "all four call sites pass Partition = 1 (lea edx,[r9+1])",
+                        "flag_pattern":  "the same sites set [rsp+20]=1, [rsp+28]=1, [rsp+30]=0 and pass name = nullptr",
+                        "fs_object":  "FileSourceArchive is 0x90 bytes; AddSourceArchive news one, runs FileSourceArchive::FileSourceArchive(bool) at 0x83780 then Attach at 0x839a0"
+                    },
+    "host_results":  {
+                         "fs_constructor":  "FileSystem() at 0x86370 produced a live object",
+                         "add_source_directory":  "AddSource(Partition=1, path=\"...\\resources\", name=null, true, true, false) returned 1",
+                         "does_file_exist":  "DoesFileExist(\"pc/hero_00.msh\") returned 0",
+                         "get_file_size":  "GetFileSize(\"pc/hero_00.msh\") returned 0",
+                         "add_source_archive_null_name":  "AddSourceArchive with name=null returned 0",
+                         "add_source_archive_with_name":  "AddSourceArchive with name=\"Creatures.arc\" produced no further output; the host stopped before the next print, so it crashed or hung inside the call"
+                     },
+    "what_this_means":  "Directory mounting succeeds, but the archive is not consulted by a bare name lookup. Either the archive has to be mounted through the exact call shape the game uses, or the lookup path needs the source prefix the game applies.",
+    "not_claimed":  [
+                        "that the model can be read",
+                        "that the archive format is understood",
+                        "any rendering of the model"
+                    ],
+    "next":  [
+                 "decode AddSource 0x86490 fully to see how it turns a directory plus name into an archive source, and what it does with the bool arguments",
+                 "try the exact game shape: AddSource(1, resourcesPath, nullptr, true, true, false) followed by a lookup with a path the game would use",
+                 "consider mounting the whole game root instead of the resources subdirectory"
+             ],
+    "add_source_internals":  {
+                                 "decoded":  "FileSystem::AddSource 0x86490 calls FindFirstFileExA at 0x18008661f with a wildcard built from the name argument, checks for -1 at 0x180086628, and only then calls AddSourceArchive at 0x1800866ec",
+                                 "meaning":  "the directory mount only creates an archive source when the wildcard finds a matching file; passing name=null searches with a default pattern and can bind an unintended archive",
+                                 "observation":  "with name=null AddSource returned 1 yet DoesFileExist(\"pc/hero_00.msh\") was 0, which is consistent with it having mounted a different archive in that folder"
+                             },
+    "later_attempts":  {
+                           "AddSourceArchive(name=null)":  "returned 0",
+                           "AddSourceArchive(name=\"Creatures.arc\")":  "no output after the call, so it crashed or hung inside",
+                           "AddSource(name=\"Creatures.arc\")":  "returned 1 but the following DoesFileExist print never appeared, and the FileSystem object address was 0xe1d630, suspiciously low compared with 0x1d0fade0 in earlier runs"
+                       }
+}

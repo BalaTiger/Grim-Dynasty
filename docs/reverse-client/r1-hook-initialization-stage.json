@@ -1,0 +1,202 @@
+{
+  "schema": "grim-dynasty-hook-initialization-stage-v1",
+  "utc": "2026-11-02T22:42:40.1690786Z",
+  "status": "cold-hook-implemented-tested-real-map-goal-blocked-at-engine-global",
+  "previous_stage": {
+    "file": "docs/reverse-client/r1-registered-player-arrival-stage.json",
+    "sha256": "23d163e866647dfa31cd05d3e00146043e29a4203e27dfdb74fcae980008babe"
+  },
+  "evidence": {
+    "file": "docs/reverse-client/r1-hook-initialize-evidence.json",
+    "sha256": "750f6e5d175246b75a951c293372c8d860d46d4aae9a1c121a7b8d2b671cc077"
+  },
+  "query": {
+    "file": "docs/reverse-client/r1-engine-hook-initialize-run1/summary.json",
+    "sha256": "af61289dfd3ee5514daa4205d44894653122de7c4b3c5b55a98b1bd72fb57e36"
+  },
+  "validation": {
+    "file": ".tooling/r1-hook-initialization-validation/result.json",
+    "sha256": "33015be18e73c714c767da7cc5ddc3fe2c507612b9418322209af0ed6418acc7"
+  },
+  "launch": {
+    "file": ".tooling/r1-hook-initialization-build-prepared/launch-result.json",
+    "sha256": "9ce07e3350dbec43dc05652b20b43e4598a73fdd00128e4f334fd67a0e9e335d"
+  },
+  "release": {
+    "file": "docs/reverse-client/r1-hook-initialization-release.json",
+    "sha256": "582fda5b03c846faaf697f0e256052ffb1a7458dc0b7d9aa0b71828d2520fb68"
+  },
+  "delta": {
+    "new_scenarios": 18,
+    "new_assertions": 285,
+    "affected_regression_scenarios": 6,
+    "affected_regression_assertions": 62,
+    "successful_compiles": 2,
+    "failed_compile_attempts": 0,
+    "tool_helper_compiles": 1,
+    "diagnostics_executed": 1,
+    "diagnostic_checks": 1063,
+    "fixture_setup_checks_excluded": 29,
+    "arrival_scenarios_passed": 0,
+    "old_whole_suites_rerun": 0,
+    "affected_engine_helper_suite_rerun": true,
+    "rea_calls_attempted": 8,
+    "rea_calls_completed": 8,
+    "repeated_body_queries": 0
+  },
+  "source_pins": [
+    {
+      "file": "src/reverse_client_actions/GameReachedGoalEngineContracts.cs",
+      "sha256": "ffbfc46992e489f05d40b10f227abeb8b3ec3ae2c44166286a30ec4784ab6529"
+    },
+    {
+      "file": "src/reverse_client_actions/GameHookInitializationTests.cs",
+      "sha256": "6a6cb5e7d585317622559fe90089a5328c1a79fb2056b4a51f991a872b8bb60c"
+    },
+    {
+      "file": "src/reverse_client_actions/GameReachedGoalEngineTests.cs",
+      "sha256": "6b55ef6fbf20cc6419817fa917b8590b10f47e9e90139b30a2096f2595d34bef"
+    },
+    {
+      "file": "src/reverse_client_actions/PlayerMoveBeginFrameIntegrationTests.cs",
+      "sha256": "3fa579ad4550b415ed091e6282c7d475374123f216079b1d571a881bc3d290c3"
+    },
+    {
+      "file": "tools/static_analysis/rea_native_registration.mjs",
+      "sha256": "57950dbd0f4840c7289adc83ddfcf0404ba414bb4b30afa428d9c23ecd247f64"
+    }
+  ],
+  "actual": {
+    "cold_ctor": "Explicit managed adaptation of EBDE0/EBEB0 count11 stores; no native allocator/guard/fullCharacterinit claim",
+    "initializer": "Engine0EBAE0 real null-root/zero-count/empty-name arms, correct global first dereferences and last flag publication; nonempty Lua lookup0EBB70 Unsupported",
+    "diagnostic": "observed-registered-player-stop-before-unknown-hook-initializer-global",
+    "completed_frames": 22,
+    "attempted_frames": 23,
+    "same_registered_player": true,
+    "single_request_generation": 1,
+    "stop_returned": true,
+    "action_own_release": true,
+    "own_cold_hook_constructor_applied": true,
+    "first_unsupported": "Engine0EBB15",
+    "last_frame": {
+      "Frame": 23,
+      "WorkCount": 1,
+      "NavigationPosition": [
+        64.25,
+        19.025795,
+        64.75
+      ],
+      "PublishedPosition": [
+        64.25,
+        16.0587463,
+        64.75
+      ],
+      "Velocity": [
+        0,
+        0,
+        0
+      ],
+      "GroundY": 16.0587463,
+      "Timer": 0,
+      "TimerBits": 0,
+      "State70": 3,
+      "Reason74": 0,
+      "Generation": 1,
+      "Flags": 2147484869,
+      "ActionState": 1,
+      "Moving": 0,
+      "NeedReplan140": 0,
+      "CurrentActionFlag11": null,
+      "CurrentActionPresent": false,
+      "SteeringSkippedEmptyWaypoint": false,
+      "HorizontalDistance": 0,
+      "PrefixReturned": true,
+      "ContinuationEntered": true,
+      "TailEntered": true,
+      "TailReturned": false,
+      "GroundComputedThisFrame": true,
+      "GoalPrefixWritten": true,
+      "GoalEntered": true,
+      "GoalReturned": false,
+      "WorkCleared": false,
+      "UnsupportedRva": 965397,
+      "PrefixRva": 2476915,
+      "TailRva": 965397,
+      "GoalRva": 965397,
+      "Stage": "frame-23-steering-choice-ground-publication-tail"
+    },
+    "goal_returned": false,
+    "tail_returned": false,
+    "work_cleared": false,
+    "post_stop_frames_verified": 0,
+    "gameplay_accepted": false
+  },
+  "engine_source": {
+    "shared_global_binding": "Current production integration gap: existing WorldEngine global is available but Goal owns a separate unbound view",
+    "native_service": "Cached074C02/074C3F gives conditional cold publication, not lifetime guarantee; no null filled to pass",
+    "native_global_publisher_verified": false
+  },
+  "execution": {
+    "query_session": 57414,
+    "query_exit": 0,
+    "build_session": 99848,
+    "build_exit": 0,
+    "approval_denied": false,
+    "approval_pending": false,
+    "pending_operations": 0,
+    "uncertain_operations": 0,
+    "new_jobs_empty": true,
+    "historical_missing_empty_job_receipt": "UNKNOWN-preserved",
+    "known_pids_absent": 57,
+    "last_sample_utc": "2026-11-02T22:41:23.146137Z",
+    "physical_gib": 13.856990814208984,
+    "commit_headroom_gib": 28.902896881103516,
+    "heavy_slot_released": true
+  },
+  "remaining": [
+    "Goal global canonical shared binding and actual service initialization/later state",
+    "Current Goal/tail still incomplete; Work1 retained",
+    "State3 full prefix/captured operands and suffix not integrated",
+    "Physical mouse, target generation, frame scheduler, original scene/UI, decode/playback and usable game unaccepted"
+  ],
+  "module_correction": "Historical next text incorrectly called0EC010 Game; actual0EC010/0EC01F/0EBAE0 are Engine.dll. Raw history retained.",
+  "next": "First borrow the existing MoveContext.EngineGlobal Field<WorldEngine> into the Goal Engine view with a canonical per-Engine sidecar; do not copy independent globals or default LuaService68/null. Reuse cached0743D0 conditional service publication (074C02/074C3F), explicitly distinguish reached OWN initialization prefix from native initialization and later mutable Lua state. No new Rea target is prepared. Only after that state is established, freshly run the same request through Goal/tail, then connect actual State3 prefix to suffix with captured half/threshold and correct late factor read; never clear Work1 or splice a suffix after the failed frame.",
+  "original_hash_checks": [
+    {
+      "phase": "before",
+      "label": "Game",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "utc": "2026-11-02T22:40:26.0019349Z"
+    },
+    {
+      "phase": "before",
+      "label": "Engine",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "utc": "2026-11-02T22:40:26.0080287Z"
+    },
+    {
+      "phase": "after",
+      "label": "Game",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "utc": "2026-11-02T22:40:34.8531551Z"
+    },
+    {
+      "phase": "after",
+      "label": "Engine",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "utc": "2026-11-02T22:40:34.8589509Z"
+    }
+  ],
+  "original_executed": false,
+  "saves_touched": false,
+  "security_changed": false,
+  "commit_push_deploy": false
+}

@@ -1,0 +1,113 @@
+{
+  "schema": "grim-dynasty-r1-setui-byte-candidate-stage-v1",
+  "utc": "2026-11-04T02:07:01.8826024Z",
+  "status": "single-pass-completed;zero-fixed-operand-candidates;UI-source-still-unresolved",
+  "previous_stage": {
+    "file": "docs/reverse-client/r1-setui-exe-source-stage.json",
+    "sha256": "2831b769d13c71054201b6bacc80c547ae6785098c60e8a2d7597705d1c316c9"
+  },
+  "assessment": {
+    "file": "docs/reverse-client/r1-no-virtualization-options-20261104.json",
+    "sha256": "d45522545312a169390d69a571023e60eda3cfc1bdf2c080568bb2c554969085"
+  },
+  "prepared": {
+    "launcher_sha256": "c7e8f0e33b85b4098e1cd54f0a8c4519522ed9cb3b616f116643341c67cefd00",
+    "plan": ".tooling/r1-setui-exe-candidates-prepared/plan.json",
+    "plan_sha256": "70273691c1cccb9e0d9e6b2b528f35709091e92b220570343ea8a47156107566",
+    "launcher": ".tooling/r1-setui-exe-candidates-prepared/launch.ps1",
+    "reader_sha256": "0480f97061bdd186180e4a0bbbbc01398e31609f500122ebcf42d08920b89f36"
+  },
+  "fixed_operand": "0x1402d7318",
+  "text_bytes": 2963456,
+  "max_candidates": 16,
+  "boundary_verification": "Not applicable: zero candidates. No .pdata read, disassembly or new Rea query was performed.",
+  "new_Rea_queries": 0,
+  "new_game_compiles": 0,
+  "new_game_tests": 0,
+  "original_executed": false,
+  "saves_or_Steam_data_accessed": false,
+  "system_settings_changed": false,
+  "pending_operations": 0,
+  "own_heavy_processes": 0,
+  "independent_review": "passed: fixed target/pins/encoding limits and unchanged admission; no execution by reviewer",
+  "execution": {
+    "resource_checks": [
+      {
+        "phase": "before-byte-candidate-reader",
+        "sample": {
+          "utc": "2026-11-04T02:05:30.4311376Z",
+          "available_physical_bytes": 7810629632,
+          "system_commit_bytes": 46686756864,
+          "system_commit_limit_bytes": 59886112768,
+          "external_build_or_java_processes": []
+        },
+        "age_ms": 1808.1747,
+        "minimum_bytes": 5368709120
+      }
+    ],
+    "approval_denied": false,
+    "actual_start_utc": "2026-11-04T02:05:30.1329074Z",
+    "terminal_session": 27027,
+    "formal_approval_used": true,
+    "launch": {
+      "file": ".tooling/r1-setui-exe-candidates-prepared/launch-result.json",
+      "sha256": "b47387bfd1b2bbc8e6fcbce1303a7b7d675a3c501bb4e5da7e12dbd5699ad769"
+    },
+    "initial_chunk": "8da0c8",
+    "actual_finish_utc": "2026-11-04T02:05:32.4042707Z",
+    "final_chunk": "9f7f0f",
+    "exit": 0,
+    "inspection": {
+      "file": "docs/reverse-client/r1-setui-exe-candidates/inspection.json",
+      "sha256": "c157ab433edd2b2368dba0295bc6b3c47282eab6bb6fbd6dba874937d9ed9c9f"
+    }
+  },
+  "result": {
+    "exclusions": [
+      "Only three byte encodings addressing the exact proven IAT slot are considered in one .text pass. Overlapping bytes or inline data can match; every candidate is unverified.",
+      "A .pdata range containing a candidate start is only a runtime-function metadata hint. It does not establish instruction alignment, complete function ownership, call semantics or an actual caller.",
+      "Other executable sections including .bind, address-size/prefix variants, register-indirect calls, thunk chains and runtime resolution remain unexamined. Zero candidates does not establish absence of callers.",
+      "Full-file before/after hashes use the same readonly descriptor and64KiB chunks, separately from the interpreted .text and bounded .pdata budgets;not an atomic snapshot."
+    ],
+    "boundary_verification_applicable": false,
+    "pdata_bytes": 0,
+    "candidate_count": 0,
+    "UI_object_proven": false,
+    "text_read_passes": 1,
+    "text_bytes_examined": 2963456,
+    "decoded_instruction_bytes": 0,
+    "boundary_status": "No candidate exists to verify; instruction alignment was not established",
+    "LoadTableFile_record_parameters_linked": false,
+    "source_stat_stable": true,
+    "target_sha256_before": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "caller_proven": false,
+    "other_encodings_or_runtime_resolution": "UNKNOWN; not asserted or implemented",
+    "interpretation": "No matches among the three fixed encodings in .text; not proof of absent runtime callers",
+    "source_closed": true,
+    "target_sha256_after": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4"
+  },
+  "validation": {
+    "tool_self_checks_are_not_game_tests": true,
+    "new_game_scenarios": 0,
+    "old_game_suites_rerun": 0,
+    "existing_byte_matcher_synthetic_checks": 8,
+    "failures": []
+  },
+  "cleanup": {
+    "stderr_bytes": 0,
+    "no_external_process_actions": true,
+    "Rea_or_Java_started": false,
+    "new_Job_created": false,
+    "reader_invocation": "Synchronous node invocation returned exit0",
+    "active_Rea_runtime_roots_after": 0,
+    "reader_subprocesses": 0,
+    "pending_operations": 0
+  },
+  "next": {
+    "feasible_next": "Refine the host-native standard-account/restricted-process observation proposal: verify an existing or explicitly approved debugger, legal startup and a provable test-only file/network boundary. A copied EXE or environment-variable redirection alone is insufficient.",
+    "static_branch": "Stop this finite search; do not repeat it, scan adjacent IAT slots or expand into .bind without new sourced evidence.",
+    "virtualization": "No BIOS or restart requirement established; host-native feasibility remains conditional.",
+    "remaining": "Concrete UI object/vtable constructor, original world-Widget registration, physical mouse-coordinate source and actual UI/scene rendering remain unproven.",
+    "dynamic_authorization": "Original game execution, debugger attach, account creation, ACL/network changes or new software are NOT authorized by this static step; report the exact proposed actions before doing them."
+  }
+}

@@ -1,0 +1,26 @@
+{
+    "schema":  "grim-dynasty-r1-engine-global-null-v1",
+    "utc":  "2026-11-05T11:12:47.6903833Z",
+    "status":  "crash-root-cause-identified",
+    "observation":  {
+                        "base":  "0x7ffbaa6c0000",
+                        "engine_global":  "0x0",
+                        "manager_global":  "0x0",
+                        "critical_global":  "0x0",
+                        "loaded":  "Engine.dll only, no engine startup performed"
+                    },
+    "crash_site":  "In CreateDevice(string const\u0026, bool) at 0x90ae0: mov rcx,[0x180421428]; mov rax,[rcx]; call qword ptr [rax+18h]. With a zero global the dereference faults immediately, which matches the 0xC0000005 seen.",
+    "conclusion":  "The device-creation crash was caused by an uninitialised Engine global, not by buffer size, argument order or a wrong export.",
+    "what_this_settles":  [
+                              "the exact fault mechanism",
+                              "that GraphicsEngineSettings and GraphicsEngine themselves construct correctly",
+                              "that the next required step is engine startup, not another call variant"
+                          ],
+    "remaining_requirement":  "Something must construct and publish the Engine object into Engine.dll+0x421428 (and the ObjectManager into +0x4213A0) before CreateDevice can succeed. That is the engine startup path the game performs at launch.",
+    "not_claimed":  [
+                        "that any engine startup entry point is known",
+                        "that a device can be created",
+                        "that a frame can be presented"
+                    ],
+    "next":  "Locate the engine startup routine that writes [0x180421428] (an Engine constructor/caller or an init export) and drive that first."
+}

@@ -1,0 +1,188 @@
+{
+  "schema": "grim-dynasty.fixed-graphics-animation-import-binding.v1",
+  "started_utc": "2026-10-26T13:07:12.6454262Z",
+  "status": "passed-disk-bindings-only",
+  "script_sha256": "d12b8496828bfd2182977740928c778d3f85fde581d8e318487bdc4caf95e05d",
+  "plan_sha256": "167cc83861ea4833a32a14d22af5d8b588fcb34dbed494c5c7ffdfc463e7da35",
+  "pins": [
+    {
+      "id": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "id": "engine_pe_exports",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "id": "game_imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "id": "import_names",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "id": "caller",
+      "path": "docs/reverse-client/r1-animation-entry-bodies-run1/11-AnimationEntryBodies-0x180020910-procedure_assembly.json",
+      "sha256": "5446a7ec9ec2fc1c94d3f0bf070d27acc6611f1db47f7efc940c1cd606454353"
+    }
+  ],
+  "original_loaded_or_executed": false,
+  "backend_started": false,
+  "child_processes": 0,
+  "header_bytes": 0,
+  "code_bytes": 0,
+  "semantic_bytes": 209,
+  "semantic_operations": 9,
+  "reads": [
+    {
+      "raw_hex": "6710",
+      "source": "Game",
+      "bytes": 2,
+      "kind": "LoadAnimation-hint",
+      "file_offset": 10772910,
+      "section": ".rdata",
+      "rva": "0xa47bae"
+    },
+    {
+      "raw_hex": "fd2d3e00",
+      "source": "Engine",
+      "bytes": 4,
+      "kind": "GetGraphicsEngine-nameptr",
+      "file_offset": 3896560,
+      "section": ".rdata",
+      "rva": "0x3b84f0"
+    },
+    {
+      "raw_hex": "3f4765744772617068696373456e67696e6540456e67696e654047414d45404051454241504541564772617068696373456e67696e65403240585a00",
+      "source": "Engine",
+      "bytes": 60,
+      "kind": "GetGraphicsEngine-exact-name",
+      "file_offset": 4070909,
+      "section": ".rdata",
+      "rva": "0x3e2dfd"
+    },
+    {
+      "raw_hex": "e70a",
+      "source": "Engine",
+      "bytes": 2,
+      "kind": "GetGraphicsEngine-ordinal",
+      "file_offset": 3916110,
+      "section": ".rdata",
+      "rva": "0x3bd14e"
+    },
+    {
+      "raw_hex": "20780700",
+      "source": "Engine",
+      "bytes": 4,
+      "kind": "GetGraphicsEngine-eat",
+      "file_offset": 3871428,
+      "section": ".rdata",
+      "rva": "0x3b22c4"
+    },
+    {
+      "raw_hex": "e27c3f00",
+      "source": "Engine",
+      "bytes": 4,
+      "kind": "LoadAnimation-nameptr",
+      "file_offset": 3902192,
+      "section": ".rdata",
+      "rva": "0x3b9af0"
+    },
+    {
+      "raw_hex": "3f4c6f6164416e696d6174696f6e404772617068696373456e67696e654047414d45404051454141504542564772617068696373416e696d403240414542563f2462617369635f737472696e674044553f24636861725f7472616974734044407374644040563f24616c6c6f6361746f724044403240407374644040405a00",
+      "source": "Engine",
+      "bytes": 127,
+      "kind": "LoadAnimation-exact-name",
+      "file_offset": 4156642,
+      "section": ".rdata",
+      "rva": "0x3f7ce2"
+    },
+    {
+      "raw_hex": "6710",
+      "source": "Engine",
+      "bytes": 2,
+      "kind": "LoadAnimation-ordinal",
+      "file_offset": 3918926,
+      "section": ".rdata",
+      "rva": "0x3bdc4e"
+    },
+    {
+      "raw_hex": "201a0900",
+      "source": "Engine",
+      "bytes": 4,
+      "kind": "LoadAnimation-eat",
+      "file_offset": 3877060,
+      "section": ".rdata",
+      "rva": "0x3b38c4"
+    }
+  ],
+  "bindings": [
+    {
+      "function_boundary_verified": false,
+      "engine_target_va": "0x180077820",
+      "name": "?GetGraphicsEngine@Engine@GAME@@QEBAPEAVGraphicsEngine@2@XZ",
+      "engine_target_rva": "0x77820",
+      "executable_section": ".text",
+      "export_ordinal": 2792,
+      "hint": 2791,
+      "game_iat_rva": "0x609440",
+      "id": "GetGraphicsEngine",
+      "loaded_binding_observed": false,
+      "name_rva": "0x3e2dfd",
+      "eat_index": 2791
+    },
+    {
+      "function_boundary_verified": false,
+      "engine_target_va": "0x180091a20",
+      "name": "?LoadAnimation@GraphicsEngine@GAME@@QEAAPEBVGraphicsAnim@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      "engine_target_rva": "0x91a20",
+      "executable_section": ".text",
+      "export_ordinal": 4200,
+      "hint": 4199,
+      "game_iat_rva": "0x609560",
+      "id": "LoadAnimation",
+      "loaded_binding_observed": false,
+      "name_rva": "0x3f7ce2",
+      "eat_index": 4199
+    }
+  ],
+  "originals": [
+    {
+      "semantic_operations": 1,
+      "fingerprint_bytes": 22771712,
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "semantic_bytes": 2,
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "source_handle_closed": true,
+      "id": "Game",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+      "source_stat_stable": true
+    },
+    {
+      "semantic_operations": 8,
+      "fingerprint_bytes": 8971264,
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "semantic_bytes": 207,
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "source_handle_closed": true,
+      "id": "Engine",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+      "source_stat_stable": true
+    }
+  ],
+  "failures": [],
+  "unsupported": [],
+  "limitations": [
+    "Disk export binding only; no loaded runtime, resource ownership, function body, or calling behavior is validated.",
+    "Full before/after SHA256 streams are identity checks separate from the 209 semantic bytes.",
+    "Preparation does not execute this reader. Root review and formal execution approval remain required."
+  ],
+  "finished_utc": "2026-10-26T13:07:13.0414740Z"
+}

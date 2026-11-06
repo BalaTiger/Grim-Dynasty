@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "status": "prepared-not-applied-not-executed",
+  "runner": "tools/static_analysis/rea_native_registration.mjs",
+  "runner_before_sha256": "40ef91825a6142b8a8b7b7f9c19061c9f2b10493fac3d5a1e7bc9cab0eb18a98",
+  "runner_proposed_sha256": "cf90711a3b5de297a263a573bd41b10f40755463232e317fc0c44341c5bcfdf4",
+  "frozen_plan": "docs/reverse-client/r1-move-production-engine-plan/plan.json",
+  "frozen_plan_sha256": "45889ac23ac8b2c5afec54846c9583edc8b066247cc193d3809d6711d2b877bc",
+  "patch": "docs/reverse-client/r1-move-production-engine-plan/runner-registration.patch",
+  "patch_sha256": "4adbf75842fae46ec4d45175224b76b5e9d9f7824fee562909d2ed4e69e415ac",
+  "operations": [
+    {
+      "id": "flags",
+      "expected_count": 1,
+      "from": "const r1EngineMouseGetters = process.argv.length === 3 && (process.argv[2] === '--r1-engine-mouse-getters' || verifyR1EngineMouseGetters);",
+      "to": "const r1EngineMouseGetters = process.argv.length === 3 && (process.argv[2] === '--r1-engine-mouse-getters' || verifyR1EngineMouseGetters);\nconst verifyR1MoveProductionEngine = process.argv.length === 3 && process.argv[2] === '--verify-r1-move-production-engine';\nconst r1MoveProductionEngine = process.argv.length === 3 && (process.argv[2] === '--r1-move-production-engine' || verifyR1MoveProductionEngine);"
+    },
+    {
+      "id": "engine-branch-membership",
+      "expected_count": 7,
+      "from": "r1LevelObjectRecords || r1EngineMouseGetters ||",
+      "to": "r1LevelObjectRecords || r1MoveProductionEngine || r1EngineMouseGetters ||"
+    },
+    {
+      "id": "verify-dispatch",
+      "expected_count": 1,
+      "from": "const verifyParserPlanOnly = ",
+      "to": "const verifyParserPlanOnly = verifyR1MoveProductionEngine || "
+    },
+    {
+      "id": "fixed-batch",
+      "expected_count": 1,
+      "from": "} : r1EngineMouseGetters ? {",
+      "to": "} : r1MoveProductionEngine ? {\n  plan: '../../docs/reverse-client/r1-move-production-engine-plan/plan.json', directory: '../reverse-client/r1-move-production-engine-run1',\n  hash: '45889ac23ac8b2c5afec54846c9583edc8b066247cc193d3809d6711d2b877bc', maxToolCalls: 11, finalSessionLabel: '11-final-session',\n  runtimeProfile: {file:'tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json', sha256:'2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0'},\n} : r1EngineMouseGetters ? {"
+    },
+    {
+      "id": "fixed-addresses",
+      "expected_count": 1,
+      "from": "r1EngineMouseGetters ? ['0x18000bbe0','0x180073660','0x180182d60','0x18022c240']",
+      "to": "r1MoveProductionEngine ? ['0x180008300','0x180078620'] : r1EngineMouseGetters ? ['0x18000bbe0','0x180073660','0x180182d60','0x18022c240']"
+    }
+  ],
+  "hunks": [
+    {
+      "original_line": 31,
+      "proposed_line": 31,
+      "old_lines": 1,
+      "new_lines": 3
+    },
+    {
+      "original_line": 59,
+      "proposed_line": 61,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 258,
+      "proposed_line": 260,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 268,
+      "proposed_line": 270,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 323,
+      "proposed_line": 325,
+      "old_lines": 1,
+      "new_lines": 5
+    },
+    {
+      "original_line": 1040,
+      "proposed_line": 1046,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 1207,
+      "proposed_line": 1213,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 1211,
+      "proposed_line": 1217,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 1247,
+      "proposed_line": 1253,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 1817,
+      "proposed_line": 1823,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 1833,
+      "proposed_line": 1839,
+      "old_lines": 1,
+      "new_lines": 1
+    }
+  ],
+  "changed_scope": "New fixed Engine mode registration only. Existing guard branch memberships gain the new mode; thresholds, assertions, monitor, identity, Job, resource sampling and cleanup implementations are unchanged.",
+  "game_fixed_mode_unchanged": true,
+  "fixed_targets": [
+    "0x180008300",
+    "0x180078620"
+  ],
+  "max_tool_calls": 11,
+  "runtime_profile": {
+    "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+    "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0",
+    "heap": "384M",
+    "launch_floor_gib": 5,
+    "stop_floor_gib": 2
+  },
+  "guard_files_unchanged": [
+    {
+      "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "1ced4f54295e8aaf9529693fcb94f19a41f6e201af22f5fa9d3bda64874dcb7c"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    }
+  ],
+  "backup_plan": {
+    "directory": ".tooling/rea-runner-move-production-engine-registration",
+    "file": "rea_native_registration.before.mjs",
+    "steps": [
+      "After root review only: recheck runner and plan hashes, fixed workspace and non-reparse paths. Refuse existing backup target; create one byte-identical backup and verify baseline SHA before any edit.",
+      "Apply exactly the five replacement operations with expected occurrence counts; preserve all other bytes and mixed line endings; verify proposed SHA.",
+      "Rollback only if the current runner still has the proposed SHA and owned operations have ended: verify baseline backup and restore its bytes. If later edits exist, stop for a reviewed reverse diff; never overwrite them."
+    ],
+    "backup_created": false
+  },
+  "execution": {
+    "runner_modified": false,
+    "verify_invoked": false,
+    "backend_started": false,
+    "build_or_test_invoked": false,
+    "original_read": false,
+    "future_verify_args": [
+      "tools/static_analysis/rea_native_registration.mjs",
+      "--verify-r1-move-production-engine"
+    ],
+    "future_query_args": [
+      "tools/static_analysis/rea_native_registration.mjs",
+      "--r1-move-production-engine"
+    ],
+    "requires_root_review_and_normal_approval": true
+  }
+}

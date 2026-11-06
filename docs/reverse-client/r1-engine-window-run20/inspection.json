@@ -1,0 +1,1437 @@
+{
+  "schema": "grim-dynasty-r1-engine-window-windows-v1",
+  "status": "decoded-planned-windows-manual-review-required",
+  "started_utc": "2026-11-06T01:53:02.327Z",
+  "plan": {
+    "file": ".tooling/r1-engine-window/plan.json",
+    "sha256": "89c5a957d9407ddd49cd04f829af5553815bcb7794795c59e34cb6a5c815e371"
+  },
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "original_executed": false,
+  "original_given_to_dumpbin": false,
+  "subprocesses": 2,
+  "code_bytes": 1024,
+  "windows": [
+    {
+      "id": "gfx-init-90e60",
+      "rva": "0x90e60",
+      "length": 512,
+      "end_exclusive": "0x91060",
+      "code_sha256": "97bcbb453e91f7fa07bf8522f4848be014a67c685dd0afc1031da12459473d2e",
+      "rows": [
+        {
+          "address": "0x180090e60",
+          "bytes": "488bc4",
+          "instruction": "mov         rax,rsp"
+        },
+        {
+          "address": "0x180090e63",
+          "bytes": "55",
+          "instruction": "push        rbp"
+        },
+        {
+          "address": "0x180090e64",
+          "bytes": "4156",
+          "instruction": "push        r14"
+        },
+        {
+          "address": "0x180090e66",
+          "bytes": "4157",
+          "instruction": "push        r15"
+        },
+        {
+          "address": "0x180090e68",
+          "bytes": "488bec",
+          "instruction": "mov         rbp,rsp"
+        },
+        {
+          "address": "0x180090e6b",
+          "bytes": "4881ec80000000",
+          "instruction": "sub         rsp,80h"
+        },
+        {
+          "address": "0x180090e72",
+          "bytes": "48c745a0feffffff",
+          "instruction": "mov         qword ptr [rbp-60h],0FFFFFFFFFFFFFFFEh"
+        },
+        {
+          "address": "0x180090e7a",
+          "bytes": "48895810",
+          "instruction": "mov         qword ptr [rax+10h],rbx"
+        },
+        {
+          "address": "0x180090e7e",
+          "bytes": "48897018",
+          "instruction": "mov         qword ptr [rax+18h],rsi"
+        },
+        {
+          "address": "0x180090e82",
+          "bytes": "48897820",
+          "instruction": "mov         qword ptr [rax+20h],rdi"
+        },
+        {
+          "address": "0x180090e86",
+          "bytes": "4d8bf9",
+          "instruction": "mov         r15,r9"
+        },
+        {
+          "address": "0x180090e89",
+          "bytes": "488bf1",
+          "instruction": "mov         rsi,rcx"
+        },
+        {
+          "address": "0x180090e8c",
+          "bytes": "4533f6",
+          "instruction": "xor         r14d,r14d"
+        },
+        {
+          "address": "0x180090e8f",
+          "bytes": "44897520",
+          "instruction": "mov         dword ptr [rbp+20h],r14d"
+        },
+        {
+          "address": "0x180090e93",
+          "bytes": "0f280526b32b00",
+          "instruction": "movaps      xmm0,xmmword ptr [000000018034C1C0h]"
+        },
+        {
+          "address": "0x180090e9a",
+          "bytes": "0f1145a8",
+          "instruction": "movups      xmmword ptr [rbp-58h],xmm0"
+        },
+        {
+          "address": "0x180090e9e",
+          "bytes": "488b4958",
+          "instruction": "mov         rcx,qword ptr [rcx+58h]"
+        },
+        {
+          "address": "0x180090ea2",
+          "bytes": "488b01",
+          "instruction": "mov         rax,qword ptr [rcx]"
+        },
+        {
+          "address": "0x180090ea5",
+          "bytes": "488d55a8",
+          "instruction": "lea         rdx,[rbp-58h]"
+        },
+        {
+          "address": "0x180090ea9",
+          "bytes": "ff9008010000",
+          "instruction": "call        qword ptr [rax+0000000000000108h]"
+        },
+        {
+          "address": "0x180090eaf",
+          "bytes": "488b4e58",
+          "instruction": "mov         rcx,qword ptr [rsi+58h]"
+        },
+        {
+          "address": "0x180090eb3",
+          "bytes": "488b01",
+          "instruction": "mov         rax,qword ptr [rcx]"
+        },
+        {
+          "address": "0x180090eb6",
+          "bytes": "f30f101586ac2b00",
+          "instruction": "movss       xmm2,dword ptr [000000018034BB44h]"
+        },
+        {
+          "address": "0x180090ebe",
+          "bytes": "418d5601",
+          "instruction": "lea         edx,[r14+1]"
+        },
+        {
+          "address": "0x180090ec2",
+          "bytes": "ff9018010000",
+          "instruction": "call        qword ptr [rax+0000000000000118h]"
+        },
+        {
+          "address": "0x180090ec8",
+          "bytes": "418d4e20",
+          "instruction": "lea         ecx,[r14+20h]"
+        },
+        {
+          "address": "0x180090ecc",
+          "bytes": "e8c7b42400",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x180090ed1",
+          "bytes": "48894520",
+          "instruction": "mov         qword ptr [rbp+20h],rax"
+        },
+        {
+          "address": "0x180090ed5",
+          "bytes": "488b4e58",
+          "instruction": "mov         rcx,qword ptr [rsi+58h]"
+        },
+        {
+          "address": "0x180090ed9",
+          "bytes": "4c897008",
+          "instruction": "mov         qword ptr [rax+8],r14"
+        },
+        {
+          "address": "0x180090edd",
+          "bytes": "4c897010",
+          "instruction": "mov         qword ptr [rax+10h],r14"
+        },
+        {
+          "address": "0x180090ee1",
+          "bytes": "4c897018",
+          "instruction": "mov         qword ptr [rax+18h],r14"
+        },
+        {
+          "address": "0x180090ee5",
+          "bytes": "488908",
+          "instruction": "mov         qword ptr [rax],rcx"
+        },
+        {
+          "address": "0x180090ee8",
+          "bytes": "48894628",
+          "instruction": "mov         qword ptr [rsi+28h],rax"
+        },
+        {
+          "address": "0x180090eec",
+          "bytes": "b9f0000000",
+          "instruction": "mov         ecx,0F0h"
+        },
+        {
+          "address": "0x180090ef1",
+          "bytes": "e8a2b42400",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x180090ef6",
+          "bytes": "488bf8",
+          "instruction": "mov         rdi,rax"
+        },
+        {
+          "address": "0x180090ef9",
+          "bytes": "488945a8",
+          "instruction": "mov         qword ptr [rbp-58h],rax"
+        },
+        {
+          "address": "0x180090efd",
+          "bytes": "48c745d00f000000",
+          "instruction": "mov         qword ptr [rbp-30h],0Fh"
+        },
+        {
+          "address": "0x180090f05",
+          "bytes": "4c8975c8",
+          "instruction": "mov         qword ptr [rbp-38h],r14"
+        },
+        {
+          "address": "0x180090f09",
+          "bytes": "448875b8",
+          "instruction": "mov         byte ptr [rbp-48h],r14b"
+        },
+        {
+          "address": "0x180090f0d",
+          "bytes": "458d4618",
+          "instruction": "lea         r8d,[r14+18h]"
+        },
+        {
+          "address": "0x180090f11",
+          "bytes": "488d1538d02700",
+          "instruction": "lea         rdx,[000000018030DF50h]"
+        },
+        {
+          "address": "0x180090f18",
+          "bytes": "488d4db8",
+          "instruction": "lea         rcx,[rbp-48h]"
+        },
+        {
+          "address": "0x180090f1c",
+          "bytes": "e8bf1df9ff",
+          "instruction": "call        0000000180022CE0"
+        },
+        {
+          "address": "0x180090f21",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x180090f22",
+          "bytes": "c7452001000000",
+          "instruction": "mov         dword ptr [rbp+20h],1"
+        },
+        {
+          "address": "0x180090f29",
+          "bytes": "488b5e28",
+          "instruction": "mov         rbx,qword ptr [rsi+28h]"
+        },
+        {
+          "address": "0x180090f2d",
+          "bytes": "4d8bc7",
+          "instruction": "mov         r8,r15"
+        },
+        {
+          "address": "0x180090f30",
+          "bytes": "488d55b8",
+          "instruction": "lea         rdx,[rbp-48h]"
+        },
+        {
+          "address": "0x180090f34",
+          "bytes": "488bcf",
+          "instruction": "mov         rcx,rdi"
+        },
+        {
+          "address": "0x180090f37",
+          "bytes": "e88499faff",
+          "instruction": "call        000000018003A8C0"
+        },
+        {
+          "address": "0x180090f3c",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x180090f3d",
+          "bytes": "488d05ec2d2b00",
+          "instruction": "lea         rax,[0000000180343D30h]"
+        },
+        {
+          "address": "0x180090f44",
+          "bytes": "488907",
+          "instruction": "mov         qword ptr [rdi],rax"
+        },
+        {
+          "address": "0x180090f47",
+          "bytes": "48899fe8000000",
+          "instruction": "mov         qword ptr [rdi+00000000000000E8h],rbx"
+        },
+        {
+          "address": "0x180090f4e",
+          "bytes": "488bd7",
+          "instruction": "mov         rdx,rdi"
+        },
+        {
+          "address": "0x180090f51",
+          "bytes": "488bcb",
+          "instruction": "mov         rcx,rbx"
+        },
+        {
+          "address": "0x180090f54",
+          "bytes": "e867631000",
+          "instruction": "call        00000001801972C0"
+        },
+        {
+          "address": "0x180090f59",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x180090f5a",
+          "bytes": "488d05cf2d2b00",
+          "instruction": "lea         rax,[0000000180343D30h]"
+        },
+        {
+          "address": "0x180090f61",
+          "bytes": "488907",
+          "instruction": "mov         qword ptr [rdi],rax"
+        },
+        {
+          "address": "0x180090f64",
+          "bytes": "48897e30",
+          "instruction": "mov         qword ptr [rsi+30h],rdi"
+        },
+        {
+          "address": "0x180090f68",
+          "bytes": "488b55d0",
+          "instruction": "mov         rdx,qword ptr [rbp-30h]"
+        },
+        {
+          "address": "0x180090f6c",
+          "bytes": "4883fa10",
+          "instruction": "cmp         rdx,10h"
+        },
+        {
+          "address": "0x180090f70",
+          "bytes": "7210",
+          "instruction": "jb          0000000180090F82"
+        },
+        {
+          "address": "0x180090f72",
+          "bytes": "48ffc2",
+          "instruction": "inc         rdx"
+        },
+        {
+          "address": "0x180090f75",
+          "bytes": "458d4601",
+          "instruction": "lea         r8d,[r14+1]"
+        },
+        {
+          "address": "0x180090f79",
+          "bytes": "488b4db8",
+          "instruction": "mov         rcx,qword ptr [rbp-48h]"
+        },
+        {
+          "address": "0x180090f7d",
+          "bytes": "e80e21f9ff",
+          "instruction": "call        0000000180023090"
+        },
+        {
+          "address": "0x180090f82",
+          "bytes": "b9f0000000",
+          "instruction": "mov         ecx,0F0h"
+        },
+        {
+          "address": "0x180090f87",
+          "bytes": "e80cb42400",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x180090f8c",
+          "bytes": "488bf8",
+          "instruction": "mov         rdi,rax"
+        },
+        {
+          "address": "0x180090f8f",
+          "bytes": "488945a8",
+          "instruction": "mov         qword ptr [rbp-58h],rax"
+        },
+        {
+          "address": "0x180090f93",
+          "bytes": "48c745d00f000000",
+          "instruction": "mov         qword ptr [rbp-30h],0Fh"
+        },
+        {
+          "address": "0x180090f9b",
+          "bytes": "4c8975c8",
+          "instruction": "mov         qword ptr [rbp-38h],r14"
+        },
+        {
+          "address": "0x180090f9f",
+          "bytes": "c645b800",
+          "instruction": "mov         byte ptr [rbp-48h],0"
+        },
+        {
+          "address": "0x180090fa3",
+          "bytes": "41b817000000",
+          "instruction": "mov         r8d,17h"
+        },
+        {
+          "address": "0x180090fa9",
+          "bytes": "488d1548d02700",
+          "instruction": "lea         rdx,[000000018030DFF8h]"
+        },
+        {
+          "address": "0x180090fb0",
+          "bytes": "488d4db8",
+          "instruction": "lea         rcx,[rbp-48h]"
+        },
+        {
+          "address": "0x180090fb4",
+          "bytes": "e8271df9ff",
+          "instruction": "call        0000000180022CE0"
+        },
+        {
+          "address": "0x180090fb9",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x180090fba",
+          "bytes": "c7452002000000",
+          "instruction": "mov         dword ptr [rbp+20h],2"
+        },
+        {
+          "address": "0x180090fc1",
+          "bytes": "488b5e28",
+          "instruction": "mov         rbx,qword ptr [rsi+28h]"
+        },
+        {
+          "address": "0x180090fc5",
+          "bytes": "4d8bc7",
+          "instruction": "mov         r8,r15"
+        },
+        {
+          "address": "0x180090fc8",
+          "bytes": "488d55b8",
+          "instruction": "lea         rdx,[rbp-48h]"
+        },
+        {
+          "address": "0x180090fcc",
+          "bytes": "488bcf",
+          "instruction": "mov         rcx,rdi"
+        },
+        {
+          "address": "0x180090fcf",
+          "bytes": "e8ec98faff",
+          "instruction": "call        000000018003A8C0"
+        },
+        {
+          "address": "0x180090fd4",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x180090fd5",
+          "bytes": "488d05c4c32a00",
+          "instruction": "lea         rax,[000000018033D3A0h]"
+        },
+        {
+          "address": "0x180090fdc",
+          "bytes": "488907",
+          "instruction": "mov         qword ptr [rdi],rax"
+        },
+        {
+          "address": "0x180090fdf",
+          "bytes": "48899fe8000000",
+          "instruction": "mov         qword ptr [rdi+00000000000000E8h],rbx"
+        },
+        {
+          "address": "0x180090fe6",
+          "bytes": "488bd7",
+          "instruction": "mov         rdx,rdi"
+        },
+        {
+          "address": "0x180090fe9",
+          "bytes": "488bcb",
+          "instruction": "mov         rcx,rbx"
+        },
+        {
+          "address": "0x180090fec",
+          "bytes": "e8cf621000",
+          "instruction": "call        00000001801972C0"
+        },
+        {
+          "address": "0x180090ff1",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x180090ff2",
+          "bytes": "488d05a7c32a00",
+          "instruction": "lea         rax,[000000018033D3A0h]"
+        },
+        {
+          "address": "0x180090ff9",
+          "bytes": "488907",
+          "instruction": "mov         qword ptr [rdi],rax"
+        },
+        {
+          "address": "0x180090ffc",
+          "bytes": "48897e38",
+          "instruction": "mov         qword ptr [rsi+38h],rdi"
+        },
+        {
+          "address": "0x180091000",
+          "bytes": "488b55d0",
+          "instruction": "mov         rdx,qword ptr [rbp-30h]"
+        },
+        {
+          "address": "0x180091004",
+          "bytes": "4883fa10",
+          "instruction": "cmp         rdx,10h"
+        },
+        {
+          "address": "0x180091008",
+          "bytes": "7212",
+          "instruction": "jb          000000018009101C"
+        },
+        {
+          "address": "0x18009100a",
+          "bytes": "48ffc2",
+          "instruction": "inc         rdx"
+        },
+        {
+          "address": "0x18009100d",
+          "bytes": "41b801000000",
+          "instruction": "mov         r8d,1"
+        },
+        {
+          "address": "0x180091013",
+          "bytes": "488b4db8",
+          "instruction": "mov         rcx,qword ptr [rbp-48h]"
+        },
+        {
+          "address": "0x180091017",
+          "bytes": "e87420f9ff",
+          "instruction": "call        0000000180023090"
+        },
+        {
+          "address": "0x18009101c",
+          "bytes": "b9f0000000",
+          "instruction": "mov         ecx,0F0h"
+        },
+        {
+          "address": "0x180091021",
+          "bytes": "e872b32400",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x180091026",
+          "bytes": "488bf8",
+          "instruction": "mov         rdi,rax"
+        },
+        {
+          "address": "0x180091029",
+          "bytes": "488945a8",
+          "instruction": "mov         qword ptr [rbp-58h],rax"
+        },
+        {
+          "address": "0x18009102d",
+          "bytes": "48c745d00f000000",
+          "instruction": "mov         qword ptr [rbp-30h],0Fh"
+        },
+        {
+          "address": "0x180091035",
+          "bytes": "4c8975c8",
+          "instruction": "mov         qword ptr [rbp-38h],r14"
+        },
+        {
+          "address": "0x180091039",
+          "bytes": "c645b800",
+          "instruction": "mov         byte ptr [rbp-48h],0"
+        },
+        {
+          "address": "0x18009103d",
+          "bytes": "41b815000000",
+          "instruction": "mov         r8d,15h"
+        },
+        {
+          "address": "0x180091043",
+          "bytes": "488d15c6cf2700",
+          "instruction": "lea         rdx,[000000018030E010h]"
+        },
+        {
+          "address": "0x18009104a",
+          "bytes": "488d4db8",
+          "instruction": "lea         rcx,[rbp-48h]"
+        },
+        {
+          "address": "0x18009104e",
+          "bytes": "e88d1cf9ff",
+          "instruction": "call        0000000180022CE0"
+        },
+        {
+          "address": "0x180091053",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x180091054",
+          "bytes": "c7452004000000",
+          "instruction": "mov         dword ptr [rbp+20h],4"
+        },
+        {
+          "address": "0x18009105b",
+          "bytes": "488b5e28",
+          "instruction": "mov         rbx,qword ptr [rsi+28h]"
+        },
+        {
+          "address": "0x18009105f",
+          "bytes": "4d",
+          "instruction": ""
+        }
+      ],
+      "control_transfers": [
+        {
+          "address": "0x180090ea9",
+          "instruction": "call        qword ptr [rax+0000000000000108h]"
+        },
+        {
+          "address": "0x180090ec2",
+          "instruction": "call        qword ptr [rax+0000000000000118h]"
+        },
+        {
+          "address": "0x180090ecc",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x180090ef1",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x180090f1c",
+          "instruction": "call        0000000180022CE0"
+        },
+        {
+          "address": "0x180090f37",
+          "instruction": "call        000000018003A8C0"
+        },
+        {
+          "address": "0x180090f54",
+          "instruction": "call        00000001801972C0"
+        },
+        {
+          "address": "0x180090f70",
+          "instruction": "jb          0000000180090F82"
+        },
+        {
+          "address": "0x180090f7d",
+          "instruction": "call        0000000180023090"
+        },
+        {
+          "address": "0x180090f87",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x180090fb4",
+          "instruction": "call        0000000180022CE0"
+        },
+        {
+          "address": "0x180090fcf",
+          "instruction": "call        000000018003A8C0"
+        },
+        {
+          "address": "0x180090fec",
+          "instruction": "call        00000001801972C0"
+        },
+        {
+          "address": "0x180091008",
+          "instruction": "jb          000000018009101C"
+        },
+        {
+          "address": "0x180091017",
+          "instruction": "call        0000000180023090"
+        },
+        {
+          "address": "0x180091021",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x18009104e",
+          "instruction": "call        0000000180022CE0"
+        }
+      ]
+    },
+    {
+      "id": "gfx-init2-91060",
+      "rva": "0x91060",
+      "length": 512,
+      "end_exclusive": "0x91260",
+      "code_sha256": "5badbf4e74bc07b9a76a85f099bec700b0557b616247cde43d1c060d60aef4ee",
+      "rows": [
+        {
+          "address": "0x180091060",
+          "bytes": "8bc7",
+          "instruction": "mov         eax,edi"
+        },
+        {
+          "address": "0x180091062",
+          "bytes": "488d55b8",
+          "instruction": "lea         rdx,[rbp-48h]"
+        },
+        {
+          "address": "0x180091066",
+          "bytes": "488bcf",
+          "instruction": "mov         rcx,rdi"
+        },
+        {
+          "address": "0x180091069",
+          "bytes": "e85298faff",
+          "instruction": "call        000000018003A8C0"
+        },
+        {
+          "address": "0x18009106e",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x18009106f",
+          "bytes": "488d05c2e32a00",
+          "instruction": "lea         rax,[000000018033F438h]"
+        },
+        {
+          "address": "0x180091076",
+          "bytes": "488907",
+          "instruction": "mov         qword ptr [rdi],rax"
+        },
+        {
+          "address": "0x180091079",
+          "bytes": "48899fe8000000",
+          "instruction": "mov         qword ptr [rdi+00000000000000E8h],rbx"
+        },
+        {
+          "address": "0x180091080",
+          "bytes": "488bd7",
+          "instruction": "mov         rdx,rdi"
+        },
+        {
+          "address": "0x180091083",
+          "bytes": "488bcb",
+          "instruction": "mov         rcx,rbx"
+        },
+        {
+          "address": "0x180091086",
+          "bytes": "e835621000",
+          "instruction": "call        00000001801972C0"
+        },
+        {
+          "address": "0x18009108b",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x18009108c",
+          "bytes": "48897e40",
+          "instruction": "mov         qword ptr [rsi+40h],rdi"
+        },
+        {
+          "address": "0x180091090",
+          "bytes": "488b55d0",
+          "instruction": "mov         rdx,qword ptr [rbp-30h]"
+        },
+        {
+          "address": "0x180091094",
+          "bytes": "4883fa10",
+          "instruction": "cmp         rdx,10h"
+        },
+        {
+          "address": "0x180091098",
+          "bytes": "7212",
+          "instruction": "jb          00000001800910AC"
+        },
+        {
+          "address": "0x18009109a",
+          "bytes": "48ffc2",
+          "instruction": "inc         rdx"
+        },
+        {
+          "address": "0x18009109d",
+          "bytes": "41b801000000",
+          "instruction": "mov         r8d,1"
+        },
+        {
+          "address": "0x1800910a3",
+          "bytes": "488b4db8",
+          "instruction": "mov         rcx,qword ptr [rbp-48h]"
+        },
+        {
+          "address": "0x1800910a7",
+          "bytes": "e8e41ff9ff",
+          "instruction": "call        0000000180023090"
+        },
+        {
+          "address": "0x1800910ac",
+          "bytes": "b9f0000000",
+          "instruction": "mov         ecx,0F0h"
+        },
+        {
+          "address": "0x1800910b1",
+          "bytes": "e8e2b22400",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x1800910b6",
+          "bytes": "488bf8",
+          "instruction": "mov         rdi,rax"
+        },
+        {
+          "address": "0x1800910b9",
+          "bytes": "488945a8",
+          "instruction": "mov         qword ptr [rbp-58h],rax"
+        },
+        {
+          "address": "0x1800910bd",
+          "bytes": "48c745d00f000000",
+          "instruction": "mov         qword ptr [rbp-30h],0Fh"
+        },
+        {
+          "address": "0x1800910c5",
+          "bytes": "4c8975c8",
+          "instruction": "mov         qword ptr [rbp-38h],r14"
+        },
+        {
+          "address": "0x1800910c9",
+          "bytes": "c645b800",
+          "instruction": "mov         byte ptr [rbp-48h],0"
+        },
+        {
+          "address": "0x1800910cd",
+          "bytes": "41b817000000",
+          "instruction": "mov         r8d,17h"
+        },
+        {
+          "address": "0x1800910d3",
+          "bytes": "488d15eece2700",
+          "instruction": "lea         rdx,[000000018030DFC8h]"
+        },
+        {
+          "address": "0x1800910da",
+          "bytes": "488d4db8",
+          "instruction": "lea         rcx,[rbp-48h]"
+        },
+        {
+          "address": "0x1800910de",
+          "bytes": "e8fd1bf9ff",
+          "instruction": "call        0000000180022CE0"
+        },
+        {
+          "address": "0x1800910e3",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x1800910e4",
+          "bytes": "c7452008000000",
+          "instruction": "mov         dword ptr [rbp+20h],8"
+        },
+        {
+          "address": "0x1800910eb",
+          "bytes": "488b5e28",
+          "instruction": "mov         rbx,qword ptr [rsi+28h]"
+        },
+        {
+          "address": "0x1800910ef",
+          "bytes": "4d8bc7",
+          "instruction": "mov         r8,r15"
+        },
+        {
+          "address": "0x1800910f2",
+          "bytes": "488d55b8",
+          "instruction": "lea         rdx,[rbp-48h]"
+        },
+        {
+          "address": "0x1800910f6",
+          "bytes": "488bcf",
+          "instruction": "mov         rcx,rdi"
+        },
+        {
+          "address": "0x1800910f9",
+          "bytes": "e8c297faff",
+          "instruction": "call        000000018003A8C0"
+        },
+        {
+          "address": "0x1800910fe",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x1800910ff",
+          "bytes": "488d0512e32a00",
+          "instruction": "lea         rax,[000000018033F418h]"
+        },
+        {
+          "address": "0x180091106",
+          "bytes": "488907",
+          "instruction": "mov         qword ptr [rdi],rax"
+        },
+        {
+          "address": "0x180091109",
+          "bytes": "48899fe8000000",
+          "instruction": "mov         qword ptr [rdi+00000000000000E8h],rbx"
+        },
+        {
+          "address": "0x180091110",
+          "bytes": "488bd7",
+          "instruction": "mov         rdx,rdi"
+        },
+        {
+          "address": "0x180091113",
+          "bytes": "488bcb",
+          "instruction": "mov         rcx,rbx"
+        },
+        {
+          "address": "0x180091116",
+          "bytes": "e8a5611000",
+          "instruction": "call        00000001801972C0"
+        },
+        {
+          "address": "0x18009111b",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x18009111c",
+          "bytes": "48897e50",
+          "instruction": "mov         qword ptr [rsi+50h],rdi"
+        },
+        {
+          "address": "0x180091120",
+          "bytes": "488b55d0",
+          "instruction": "mov         rdx,qword ptr [rbp-30h]"
+        },
+        {
+          "address": "0x180091124",
+          "bytes": "4883fa10",
+          "instruction": "cmp         rdx,10h"
+        },
+        {
+          "address": "0x180091128",
+          "bytes": "7212",
+          "instruction": "jb          000000018009113C"
+        },
+        {
+          "address": "0x18009112a",
+          "bytes": "48ffc2",
+          "instruction": "inc         rdx"
+        },
+        {
+          "address": "0x18009112d",
+          "bytes": "41b801000000",
+          "instruction": "mov         r8d,1"
+        },
+        {
+          "address": "0x180091133",
+          "bytes": "488b4db8",
+          "instruction": "mov         rcx,qword ptr [rbp-48h]"
+        },
+        {
+          "address": "0x180091137",
+          "bytes": "e8541ff9ff",
+          "instruction": "call        0000000180023090"
+        },
+        {
+          "address": "0x18009113c",
+          "bytes": "b9f0000000",
+          "instruction": "mov         ecx,0F0h"
+        },
+        {
+          "address": "0x180091141",
+          "bytes": "e852b22400",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x180091146",
+          "bytes": "488bf8",
+          "instruction": "mov         rdi,rax"
+        },
+        {
+          "address": "0x180091149",
+          "bytes": "488945a8",
+          "instruction": "mov         qword ptr [rbp-58h],rax"
+        },
+        {
+          "address": "0x18009114d",
+          "bytes": "48c745d00f000000",
+          "instruction": "mov         qword ptr [rbp-30h],0Fh"
+        },
+        {
+          "address": "0x180091155",
+          "bytes": "4c8975c8",
+          "instruction": "mov         qword ptr [rbp-38h],r14"
+        },
+        {
+          "address": "0x180091159",
+          "bytes": "c645b800",
+          "instruction": "mov         byte ptr [rbp-48h],0"
+        },
+        {
+          "address": "0x18009115d",
+          "bytes": "41b815000000",
+          "instruction": "mov         r8d,15h"
+        },
+        {
+          "address": "0x180091163",
+          "bytes": "488d1576ce2700",
+          "instruction": "lea         rdx,[000000018030DFE0h]"
+        },
+        {
+          "address": "0x18009116a",
+          "bytes": "488d4db8",
+          "instruction": "lea         rcx,[rbp-48h]"
+        },
+        {
+          "address": "0x18009116e",
+          "bytes": "e86d1bf9ff",
+          "instruction": "call        0000000180022CE0"
+        },
+        {
+          "address": "0x180091173",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x180091174",
+          "bytes": "c7452010000000",
+          "instruction": "mov         dword ptr [rbp+20h],10h"
+        },
+        {
+          "address": "0x18009117b",
+          "bytes": "488b5e28",
+          "instruction": "mov         rbx,qword ptr [rsi+28h]"
+        },
+        {
+          "address": "0x18009117f",
+          "bytes": "4d8bc7",
+          "instruction": "mov         r8,r15"
+        },
+        {
+          "address": "0x180091182",
+          "bytes": "488d55b8",
+          "instruction": "lea         rdx,[rbp-48h]"
+        },
+        {
+          "address": "0x180091186",
+          "bytes": "488bcf",
+          "instruction": "mov         rcx,rdi"
+        },
+        {
+          "address": "0x180091189",
+          "bytes": "e83297faff",
+          "instruction": "call        000000018003A8C0"
+        },
+        {
+          "address": "0x18009118e",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x18009118f",
+          "bytes": "488d05c2e22a00",
+          "instruction": "lea         rax,[000000018033F458h]"
+        },
+        {
+          "address": "0x180091196",
+          "bytes": "488907",
+          "instruction": "mov         qword ptr [rdi],rax"
+        },
+        {
+          "address": "0x180091199",
+          "bytes": "48899fe8000000",
+          "instruction": "mov         qword ptr [rdi+00000000000000E8h],rbx"
+        },
+        {
+          "address": "0x1800911a0",
+          "bytes": "488bd7",
+          "instruction": "mov         rdx,rdi"
+        },
+        {
+          "address": "0x1800911a3",
+          "bytes": "488bcb",
+          "instruction": "mov         rcx,rbx"
+        },
+        {
+          "address": "0x1800911a6",
+          "bytes": "e815611000",
+          "instruction": "call        00000001801972C0"
+        },
+        {
+          "address": "0x1800911ab",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x1800911ac",
+          "bytes": "48897e48",
+          "instruction": "mov         qword ptr [rsi+48h],rdi"
+        },
+        {
+          "address": "0x1800911b0",
+          "bytes": "488b55d0",
+          "instruction": "mov         rdx,qword ptr [rbp-30h]"
+        },
+        {
+          "address": "0x1800911b4",
+          "bytes": "4883fa10",
+          "instruction": "cmp         rdx,10h"
+        },
+        {
+          "address": "0x1800911b8",
+          "bytes": "7212",
+          "instruction": "jb          00000001800911CC"
+        },
+        {
+          "address": "0x1800911ba",
+          "bytes": "48ffc2",
+          "instruction": "inc         rdx"
+        },
+        {
+          "address": "0x1800911bd",
+          "bytes": "41b801000000",
+          "instruction": "mov         r8d,1"
+        },
+        {
+          "address": "0x1800911c3",
+          "bytes": "488b4db8",
+          "instruction": "mov         rcx,qword ptr [rbp-48h]"
+        },
+        {
+          "address": "0x1800911c7",
+          "bytes": "e8c41ef9ff",
+          "instruction": "call        0000000180023090"
+        },
+        {
+          "address": "0x1800911cc",
+          "bytes": "b9e8000000",
+          "instruction": "mov         ecx,0E8h"
+        },
+        {
+          "address": "0x1800911d1",
+          "bytes": "e8c2b12400",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x1800911d6",
+          "bytes": "488bd8",
+          "instruction": "mov         rbx,rax"
+        },
+        {
+          "address": "0x1800911d9",
+          "bytes": "488945a8",
+          "instruction": "mov         qword ptr [rbp-58h],rax"
+        },
+        {
+          "address": "0x1800911dd",
+          "bytes": "48c745d00f000000",
+          "instruction": "mov         qword ptr [rbp-30h],0Fh"
+        },
+        {
+          "address": "0x1800911e5",
+          "bytes": "4c8975c8",
+          "instruction": "mov         qword ptr [rbp-38h],r14"
+        },
+        {
+          "address": "0x1800911e9",
+          "bytes": "c645b800",
+          "instruction": "mov         byte ptr [rbp-48h],0"
+        },
+        {
+          "address": "0x1800911ed",
+          "bytes": "41b81a000000",
+          "instruction": "mov         r8d,1Ah"
+        },
+        {
+          "address": "0x1800911f3",
+          "bytes": "488d158ece2700",
+          "instruction": "lea         rdx,[000000018030E088h]"
+        },
+        {
+          "address": "0x1800911fa",
+          "bytes": "488d4db8",
+          "instruction": "lea         rcx,[rbp-48h]"
+        },
+        {
+          "address": "0x1800911fe",
+          "bytes": "e8dd1af9ff",
+          "instruction": "call        0000000180022CE0"
+        },
+        {
+          "address": "0x180091203",
+          "bytes": "90",
+          "instruction": "nop"
+        },
+        {
+          "address": "0x180091204",
+          "bytes": "c7452020000000",
+          "instruction": "mov         dword ptr [rbp+20h],20h"
+        },
+        {
+          "address": "0x18009120b",
+          "bytes": "4d8bc7",
+          "instruction": "mov         r8,r15"
+        },
+        {
+          "address": "0x18009120e",
+          "bytes": "488d55b8",
+          "instruction": "lea         rdx,[rbp-48h]"
+        },
+        {
+          "address": "0x180091212",
+          "bytes": "488bcb",
+          "instruction": "mov         rcx,rbx"
+        },
+        {
+          "address": "0x180091215",
+          "bytes": "e8a696faff",
+          "instruction": "call        000000018003A8C0"
+        },
+        {
+          "address": "0x18009121a",
+          "bytes": "488d0557e22a00",
+          "instruction": "lea         rax,[000000018033F478h]"
+        },
+        {
+          "address": "0x180091221",
+          "bytes": "488903",
+          "instruction": "mov         qword ptr [rbx],rax"
+        },
+        {
+          "address": "0x180091224",
+          "bytes": "48895e20",
+          "instruction": "mov         qword ptr [rsi+20h],rbx"
+        },
+        {
+          "address": "0x180091228",
+          "bytes": "488b55d0",
+          "instruction": "mov         rdx,qword ptr [rbp-30h]"
+        },
+        {
+          "address": "0x18009122c",
+          "bytes": "4883fa10",
+          "instruction": "cmp         rdx,10h"
+        },
+        {
+          "address": "0x180091230",
+          "bytes": "7212",
+          "instruction": "jb          0000000180091244"
+        },
+        {
+          "address": "0x180091232",
+          "bytes": "48ffc2",
+          "instruction": "inc         rdx"
+        },
+        {
+          "address": "0x180091235",
+          "bytes": "41b801000000",
+          "instruction": "mov         r8d,1"
+        },
+        {
+          "address": "0x18009123b",
+          "bytes": "488b4db8",
+          "instruction": "mov         rcx,qword ptr [rbp-48h]"
+        },
+        {
+          "address": "0x18009123f",
+          "bytes": "e84c1ef9ff",
+          "instruction": "call        0000000180023090"
+        },
+        {
+          "address": "0x180091244",
+          "bytes": "48c745d00f000000",
+          "instruction": "mov         qword ptr [rbp-30h],0Fh"
+        },
+        {
+          "address": "0x18009124c",
+          "bytes": "4c8975c8",
+          "instruction": "mov         qword ptr [rbp-38h],r14"
+        },
+        {
+          "address": "0x180091250",
+          "bytes": "c645b800",
+          "instruction": "mov         byte ptr [rbp-48h],0"
+        },
+        {
+          "address": "0x180091254",
+          "bytes": "41b80e000000",
+          "instruction": "mov         r8d,0Eh"
+        },
+        {
+          "address": "0x18009125a",
+          "bytes": "48",
+          "instruction": ""
+        },
+        {
+          "address": "0x18009125b",
+          "bytes": "8d",
+          "instruction": ""
+        },
+        {
+          "address": "0x18009125c",
+          "bytes": "15",
+          "instruction": ""
+        },
+        {
+          "address": "0x18009125d",
+          "bytes": "47",
+          "instruction": ""
+        },
+        {
+          "address": "0x18009125e",
+          "bytes": "ce",
+          "instruction": ""
+        },
+        {
+          "address": "0x18009125f",
+          "bytes": "27",
+          "instruction": ""
+        }
+      ],
+      "control_transfers": [
+        {
+          "address": "0x180091069",
+          "instruction": "call        000000018003A8C0"
+        },
+        {
+          "address": "0x180091086",
+          "instruction": "call        00000001801972C0"
+        },
+        {
+          "address": "0x180091098",
+          "instruction": "jb          00000001800910AC"
+        },
+        {
+          "address": "0x1800910a7",
+          "instruction": "call        0000000180023090"
+        },
+        {
+          "address": "0x1800910b1",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x1800910de",
+          "instruction": "call        0000000180022CE0"
+        },
+        {
+          "address": "0x1800910f9",
+          "instruction": "call        000000018003A8C0"
+        },
+        {
+          "address": "0x180091116",
+          "instruction": "call        00000001801972C0"
+        },
+        {
+          "address": "0x180091128",
+          "instruction": "jb          000000018009113C"
+        },
+        {
+          "address": "0x180091137",
+          "instruction": "call        0000000180023090"
+        },
+        {
+          "address": "0x180091141",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x18009116e",
+          "instruction": "call        0000000180022CE0"
+        },
+        {
+          "address": "0x180091189",
+          "instruction": "call        000000018003A8C0"
+        },
+        {
+          "address": "0x1800911a6",
+          "instruction": "call        00000001801972C0"
+        },
+        {
+          "address": "0x1800911b8",
+          "instruction": "jb          00000001800911CC"
+        },
+        {
+          "address": "0x1800911c7",
+          "instruction": "call        0000000180023090"
+        },
+        {
+          "address": "0x1800911d1",
+          "instruction": "call        00000001802DC398"
+        },
+        {
+          "address": "0x1800911fe",
+          "instruction": "call        0000000180022CE0"
+        },
+        {
+          "address": "0x180091215",
+          "instruction": "call        000000018003A8C0"
+        },
+        {
+          "address": "0x180091230",
+          "instruction": "jb          0000000180091244"
+        },
+        {
+          "address": "0x18009123f",
+          "instruction": "call        0000000180023090"
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "Only the planned fixed windows are decoded; a window is not asserted to be a complete function unless its id says pdata.",
+    "No call target, vtable slot or neighbouring function is followed.",
+    "A disk decode does not establish runtime behaviour."
+  ],
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815"
+  },
+  "source_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815"
+  },
+  "finished_utc": "2026-11-06T01:53:02.393Z"
+}

@@ -1,0 +1,241 @@
+{
+  "schema": "gd-lua-service-initialization-stage-v1",
+  "utc": "2026-11-03T03:34:06.7145743Z",
+  "status": "passed-real-own-vm-service-prefix-stopped-before-callback-publication",
+  "query": {
+    "summary": "docs/reverse-client/r1-engine-lua-core-open-run1/summary.json",
+    "summary_sha256": "e28082d93dcf148757d3fa080ca9e83a940e1d50971fc8e94931c851bf72dadd",
+    "function": "Engine18025A030",
+    "tool_methods": [
+      "procedure_pseudo_code",
+      "procedure_assembly",
+      "procedure_callees"
+    ],
+    "completed_plan_calls": 8,
+    "job_empty_confirmed": true,
+    "query_repeated": false
+  },
+  "native_contract": {
+    "libraries_in_order": [
+      "base",
+      "math",
+      "string",
+      "table",
+      "jit"
+    ],
+    "pcall_arguments": [
+      0,
+      0,
+      0
+    ],
+    "lua_pointer_reloaded": true,
+    "normal_return": "AL=1, upper EAX unspecified",
+    "writes_initialized58": false,
+    "error_handler": "25A150 unknown; stop at actual error call",
+    "next_initialization_stop": "0F2E5A callback publication, remaining initializer not implemented"
+  },
+  "production_sources": [
+    {
+      "path": "src/reverse_client_actions/GameMovementIdentityBridge.cs",
+      "sha256": "9d7b7f7544479dfaa8fad3b414da186aadf323f5fdffd9b33e22ae5964e7fbce"
+    },
+    {
+      "path": "src/reverse_client_actions/GameReachedGoalEngineContracts.cs",
+      "sha256": "acc9d562f9d5a1336458741effeb3c03165c405d1f546731e27662e0c54615cd"
+    },
+    {
+      "path": "src/reverse_client_actions/GameObjectManagerLookupContracts.cs",
+      "sha256": "5daeca8a7df7b5f7f5e2f681902c77486612a654d7bb4eacf3915ce32e055f08"
+    },
+    {
+      "path": "src/reverse_client_actions/GameReachedGoalContracts.cs",
+      "sha256": "0b722b1e302c8df01b5a561ce5620da483feb3cb5672f141cbba157ac1037320"
+    },
+    {
+      "path": "src/reverse_client_actions/OwnLuaJit204Runtime.cs",
+      "sha256": "a47596a3c12b32875ffc65ec69f97adf3e5691f3ace3241f7569a9048e7ef2b3"
+    },
+    {
+      "path": "src/reverse_client_actions/GameLuaServiceInitializationContracts.cs",
+      "sha256": "5ba3dd0c52626965b6b720523dbc9cde8871926f8508e93d087a1496bb47eeae"
+    }
+  ],
+  "validation": {
+    "compiled": true,
+    "executed": true,
+    "product_result": ".tooling/r1-lua-service-init-validation/result.json",
+    "product_sha256": "28a980d7b747bf9adb873a156ebcecbb49b91d74ab37ebb5152afcb4b305ebff",
+    "new_product_compiles": 2,
+    "guard_helper_compiles": 1,
+    "scenarios": 10,
+    "new_scenarios": 9,
+    "selected_older_regressions": 1,
+    "assertions": 133,
+    "new_assertions": 124,
+    "selected_older_assertions": 9,
+    "old_suites_repeated": 0,
+    "actual_result": {
+      "status": "passed-own-lua-service-prefix",
+      "failure": null,
+      "scenarios": 10,
+      "new_scenarios": 9,
+      "selected_older_regressions": 1,
+      "assertions": 133,
+      "new_assertions": 124,
+      "selected_older_assertions": 9,
+      "old_whole_suites_run": 0,
+      "targeted_checks": [
+        {
+          "name": "Fixed module and canonical exports",
+          "scenarios": 1,
+          "assertions": 29
+        },
+        {
+          "name": "Actual five-library effects and balanced stack",
+          "scenarios": 1,
+          "assertions": 20
+        },
+        {
+          "name": "Core leaves unknown ready state unknown",
+          "scenarios": 1,
+          "assertions": 5
+        },
+        {
+          "name": "Same WorldEngine service reaches exact initialization boundary",
+          "scenarios": 1,
+          "assertions": 18
+        },
+        {
+          "name": "Known-null slots skip all service and runtime dereferences",
+          "scenarios": 1,
+          "assertions": 8
+        },
+        {
+          "name": "Unknown binding preserves completed library prefix",
+          "scenarios": 1,
+          "assertions": 10
+        },
+        {
+          "name": "Unknown nonnative null and released Lua fail before native push",
+          "scenarios": 1,
+          "assertions": 7
+        },
+        {
+          "name": "Live Hook component borrows VM and release invalidates its consumer",
+          "scenarios": 1,
+          "assertions": 21
+        },
+        {
+          "name": "Legacy opaque and known-null Hook component arms remain unchanged",
+          "scenarios": 1,
+          "assertions": 9
+        },
+        {
+          "name": "Module release is observed and rejects subsequent calls",
+          "scenarios": 1,
+          "assertions": 6
+        }
+      ],
+      "expected_unsupported": 994906,
+      "initialized_service": false,
+      "goal_tail_returned": false,
+      "stopped_frames_verified": false,
+      "original_executed": false,
+      "native_game_abi_verified": false,
+      "gameplay_accepted": false,
+      "module_unload_observed": true,
+      "active_states": 0,
+      "loaded_path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\luajit204-build-run1\\source\\src\\lua51.dll",
+      "dll_sha256": "95a6c84cfda2268d0d52967d6173d0b7c4ab609df06e06cdb1d6442059310010",
+      "export_rvas": {
+        "luaJIT_version_2_0_4": 162096,
+        "luaL_newstate": 314496,
+        "lua_gettop": 31712,
+        "lua_close": 292368,
+        "lua_pushcclosure": 32992,
+        "lua_pcall": 32800,
+        "lua_getfield": 31280,
+        "lua_type": 36672,
+        "lua_settop": 35696,
+        "luaopen_base": 320736,
+        "luaopen_math": 345088,
+        "luaopen_string": 357856,
+        "luaopen_table": 364544,
+        "luaopen_jit": 343680
+      },
+      "own_runtime_counters": {
+        "newstate": 6,
+        "gettop": 19,
+        "close": 6,
+        "pushcclosure": 16,
+        "pcall_zero": 16,
+        "global_type_observations": 9
+      }
+    },
+    "full_service_initialized": false,
+    "goal_tail_returned": false,
+    "stopped_full_frames_passed": false,
+    "gameplay_accepted": false,
+    "original_hash_checks": [
+      {
+        "phase": "before",
+        "label": "Game",
+        "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+        "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+        "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+        "utc": "2026-11-03T03:32:43.3991971Z"
+      },
+      {
+        "phase": "before",
+        "label": "Engine",
+        "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+        "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+        "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+        "utc": "2026-11-03T03:32:43.4062201Z"
+      },
+      {
+        "phase": "after",
+        "label": "Game",
+        "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+        "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+        "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+        "utc": "2026-11-03T03:32:51.6310635Z"
+      },
+      {
+        "phase": "after",
+        "label": "Engine",
+        "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+        "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+        "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+        "utc": "2026-11-03T03:32:51.6372102Z"
+      }
+    ]
+  },
+  "execution": {
+    "pending_tool": null,
+    "own_heavy_operation_running": false,
+    "formal_session": 17939,
+    "formal_exit": 0,
+    "release": "docs/reverse-client/r1-lua-service-initialization-release.json",
+    "release_sha256": "25ae22c538cd4afff39e7ca393f724164379b3609f76ea9883f92aa5ed751d97",
+    "resources_released": true,
+    "next": "Reuse cached0F2E00 and binder evidence; bound callback publication0F2E5A (0F2D20/0F2D00/259FC0/259D80), registry index422888 and subsequent2568D0/0EF8B0. No default-null or success callback; check cache before any new query. Keep Goal/post-stop unsupported until service lifecycle completes."
+  },
+  "history": {
+    "own_luajit_build_stage": "docs/reverse-client/r1-luajit204-build-stage.json",
+    "historical_vctip_job_empty": "UNKNOWN; prior failed launch receipt preserved",
+    "original_dll_loaded": false,
+    "commit_push_deploy": false
+  },
+  "accepted_capability": "Same borrowed WorldEngine publishes one service; actual OWN LuaJIT creates Lua00, initializes five libraries with actual effects and no ready58 write; closed state rejected by both init and Hook consumer. Explicit OWN cold profile and teardown are not recovered complete native startup/destruction.",
+  "untested": [
+    "25A150 error handler and allocation failure branch not forced",
+    "Remaining callbacks/provider initialization and native exceptions",
+    "Goal frame23 tail and stopped full frames not rerun",
+    "Physical mouse/rendering/originalUI/animationdecode/playback remain unaccepted"
+  ],
+  "test_source": {
+    "path": "src/reverse_client_actions/GameLuaServiceInitializationTests.cs",
+    "sha256": "1ccf9b9e77df2e84d1576aa7352665fad8ea96db6448133fb3fb9beb05bf29d9"
+  }
+}

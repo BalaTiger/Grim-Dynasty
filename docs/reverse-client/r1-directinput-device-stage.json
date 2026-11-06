@@ -1,0 +1,310 @@
+{
+  "schema": 1,
+  "scope": "DirectInput 2C50 constructor and evidence-derived concrete input slots only; no original load/execution",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/directinput.dll",
+    "sha256": "9cc12125db6f7e1a64c8d280d31961e4fa80addfe03aa7f43bff153acc92bcd6",
+    "bytes": 55296
+  },
+  "previous_stage": "docs/reverse-client/r1-directinput-factory-stage.json",
+  "recovery": {
+    "utc": "2026-11-03T12:48:00.5084392Z",
+    "terminal": "59455a",
+    "exit": 0,
+    "previous_recorded_pids": 36,
+    "present": [],
+    "runtime_directories": [
+      "host",
+      "hsperfdata_zhuzi"
+    ],
+    "pending": 0
+  },
+  "cached_consumers": {
+    "setup": "Engine743D0: publishCreateReturn+200 before same-object vslot08(EWindow,0x100,0x100); no returned-object null guard. AL chooses reporting path; no local rollback/early return proved.",
+    "device10": "Now identified concrete Update31A0; see mouse_producer.",
+    "device20_28": "Signed-positive EAX count; hidden output buffer and R8D index passed to28; returnedRAX passed toWidget+10.",
+    "device30_38": "Signed-positive EAX count; hidden output buffer and R8D index passed to38; caller ignoresRAX and passes same local event address toWidget+18.",
+    "device40_48": "Initial count nonzero, subsequent unsigned comparison; slot48(device,EDXindex) returns pointer forWidget+20.",
+    "widget28": "Separate global421798+C8 list, not device slot stream;16byte records.",
+    "live_semantics": "Device/count/widgetarray are live rereads. Same mutable28B MouseEvent reachesWidget18. Client coordinates proved by concrete producer; actual widget interpretation remains unknown.",
+    "source": "docs/reverse-client/r1-engine-process-user-input-run1/05-ProcessUserInput-0x180078df0-procedure_assembly.json",
+    "setup_precision_correction": "Cached074B87 storesR14. InitialR14=0; only prior mutation belongs to error-string path74805/74810 ending74855 in identified exit(-1). Under normal nonreturn exit/import ABI, skipCreate writes0. MutableIAT/abnormal exit return not generalized."
+  },
+  "new_product_compiles": 0,
+  "new_game_tests": 0,
+  "interactive_reversed_client_available": false,
+  "original_loaded_or_executed": false,
+  "real_saves_accessed": false,
+  "execution": {
+    "session": 9404,
+    "initial_chunk": "1b6253",
+    "state": "completed",
+    "offline_verify_chunk": "291d55",
+    "plan_sha256": "f305a32fb73558af95ce8e499f7c1112875295b7bf65a26d6abe1de400ae11ae",
+    "mode": "--r1-directinput-constructor",
+    "repeat_forbidden": true,
+    "terminal_chunk": "d26c62",
+    "exit_code": 0
+  },
+  "constructor": {
+    "pseudo": "docs/reverse-client/r1-directinput-constructor-run1/04-DirectInputConstructor-0x180002c50-procedure_pseudo_code.json",
+    "assembly": "docs/reverse-client/r1-directinput-constructor-run1/05-DirectInputConstructor-0x180002c50-procedure_assembly.json",
+    "normal_return": "2C5A saves entryRCX inRBX;2D32 RAX=RBX then2D53 RET; factory returns original allocation on normal path",
+    "base_call": "2C5D CALL[180009030], recognized InputDevice constructor, exact binding/body still unknown",
+    "vptr": "2C65 LEA180009850;2C6C 64bit write to[RBX] after base call",
+    "zero_qwords": [
+      "10",
+      "18",
+      "20",
+      "2B8",
+      "2C0",
+      "2C8",
+      "2E0",
+      "2E8",
+      "2F0",
+      "318",
+      "320",
+      "328",
+      "58",
+      "308",
+      "310",
+      "2F8",
+      "300"
+    ],
+    "zero_dwords": [
+      "2D0",
+      "2A0",
+      "330"
+    ],
+    "byte_writes": [
+      "9=1",
+      "334=0"
+    ],
+    "system_calls": [
+      "2CD8:action3A,size8,this+28,flags0",
+      "2CF2:action34,size8,this+30,flags0",
+      "2D0C:action32,size18,this+38,flags0"
+    ],
+    "api_return_checked": false,
+    "api_structure_only_known_before_call": "firstDWORD=8/8/18; remaining bytes unknown unless actual API writes observed",
+    "exception_cleanup": "Unknown; all later writes conditional on earlier calls returning",
+    "release": "docs/reverse-client/r1-directinput-constructor-release.json"
+  },
+  "vtable_execution": {
+    "session": 72684,
+    "state": "completed",
+    "initial_chunk": "59f528",
+    "offline_exit": 0,
+    "offline_chunk": "2c2d8d",
+    "plan_sha256": "a6f6f7a686aafd4767c2674b15d6869380a564149e528f20fd368ea40cb95633",
+    "mode": "--r1-directinput-vtable",
+    "repeat_forbidden": true,
+    "terminal_chunk": "f7d457",
+    "exit_code": 0
+  },
+  "vtable": {
+    "source": "docs/reverse-client/r1-directinput-vtable-run1/04-DirectInputVtable-0x180009850-read_bytes.json",
+    "source_sha256": "decf916e6a92c2d293bc8f7d5c37265774d4bd2e098ced144ea6251b9973df54",
+    "address": "0x180009850",
+    "requested_bytes": 80,
+    "returned_bytes": 80,
+    "complete": true,
+    "decoding": "10little-endian uint64 values; analyzed preferred-image bytes, not loaded runtime observations",
+    "slots": {
+      "00": "1800016B0",
+      "08": "180002DD0",
+      "10": "1800031A0",
+      "18": "180003A60",
+      "20": "180003AA0",
+      "28": "1800047B0",
+      "30": "180004810",
+      "38": "180004840",
+      "40": "180004870",
+      "48": "1800048A0"
+    },
+    "selected_next": [
+      "180002DD0",
+      "1800031A0",
+      "180004810",
+      "180004840"
+    ],
+    "slot18_semantics": "Unknown; intervening prefix value only, not queried",
+    "table_extent_verified": false,
+    "runtime_binding_verified": false,
+    "release": "docs/reverse-client/r1-directinput-vtable-release.json"
+  },
+  "tooling_validation": {
+    "tests": 7,
+    "result": ".tooling/r1-directinput-vtable-prepared/bytes-validation-run2.json",
+    "terminal": "75d137",
+    "exit": 0,
+    "game_tests": 0,
+    "old_identity_tests_repeated": 0,
+    "review_change": "Explicit160characterlength added for LF/CRLF edge; same7scenarios rerun only after relevant validator/test change",
+    "first_result_preserved": ".tooling/r1-directinput-vtable-prepared/bytes-validation.json"
+  },
+  "input_core_execution": {
+    "session": 26885,
+    "state": "completed",
+    "initial_chunk": "f500b8",
+    "offline_exit": 0,
+    "offline_chunk": "4dfb3e",
+    "plan_sha256": "2cbd1bdb956770b1e165baff5ed19fe2119afbf6d5ac77ecc21c6aa1deadcbec",
+    "mode": "--r1-directinput-input-core",
+    "repeat_forbidden": true,
+    "terminal_chunk": "b78c02",
+    "exit_code": 0,
+    "summary_sha256": "cce8a592be3b8261f78e4d720e2b389c581d40ff768d8d446996e8bc383500e4",
+    "independent_release_chunk": "4c4d01"
+  },
+  "status": "constructor-and-concrete-mouse-input-contracts-confirmed;all-batches-released;interactive-client-not-yet-available",
+  "new_query_calls": 31,
+  "new_function_bodies": 5,
+  "analysis_calls": 16,
+  "lifecycle_calls": 15,
+  "pending_operations": 0,
+  "current_release": "docs/reverse-client/r1-directinput-input-core-release.json",
+  "setup": {
+    "entry": "0x180002dd0",
+    "slot": "08",
+    "source": "04/05 in r1-directinput-input-core-run1",
+    "arguments": "RCX same device; RDX EWindow; R8D and R9D buffer counts (Engine caller supplies 0x100 each).",
+    "native_prefix": "EWindow vslot+C0 produces hwnd stored+50. Global hook refcount0 selects GetModuleHandleA/SetWindowsHookExA; refcount increments even without checking hook result. No hook was installed in this investigation.",
+    "directinput": "DirectInput8Create(version0x800) and two CreateDevice calls use signed HRESULT tests. Some format/cooperation calls checked, others and Acquire unchecked. Two buffer allocations/publications occur before corresponding SetProperty HRESULT checks.",
+    "success_writes": {
+      "zero_qwords": [
+        "27C",
+        "268"
+      ],
+      "zero_dwords": [
+        "284",
+        "290"
+      ],
+      "zero_bytes": [
+        "278",
+        "9"
+      ],
+      "other": [
+        "QWORD288=00000000428c0000",
+        "DWORD2D4=3f800000",
+        "DWORD2D8=3f800000",
+        "byte8=(GetSystemMetrics(17)!=0)"
+      ]
+    },
+    "success_proof": "2E53 XOR EBP,EBP, no later RBP reassignment before restore.301A clearsQWORD27C,3038 clearsBYTE9,303C clearsQWORD268;3070 AL1;3094 RET after normal cookie check.",
+    "unknowns": "AL1 is not all-API success. GetKeyboardState unchecked. AL0 paths retain earlier writes/refcount/allocation prefixes; no local rollback/free/release proved. EH/COM provenance, exact GUID/data formats and concrete EWindow+ C0 remain unclosed.",
+    "gate": "Constructor+9=1; normal successfulInitialize+9=0; Update tests thisbyte. Failure/later state must not inherit successful gate value."
+  },
+  "mouse_producer": {
+    "entry": "0x1800031a0",
+    "slot": "10",
+    "source": "07/08/09 in r1-directinput-input-core-run1",
+    "gate": "+9 nonzero skips body; active body polls keyboard and mouse device+60/+270, with signed HRESULT handling and acquire retry condition-0x7ff8ffe2.",
+    "buffer_failure": "Mouse GetDeviceData negative or result1 clears buffered count then enters evidenced acquire loop; API false/success is not assumed.",
+    "cursor": "When not iconic, visible, and foreground hwnd matches or latch268 is nonzero: GetCursorPos -> ScreenToClient -> signed32 coordinates+27C/+280. BOOL results not checked. Other gate retains old coordinates. CVTDQ2PS writes float event+4/+8; no normalization/world/nav conversion here.",
+    "modifiers": "selfslot18 queries codes3A,2A/36,38/76,1D/6B to+2D0..3; concrete3A60 remains unqueried.",
+    "queue": "+2B8/+2C0/+2C8 is begin/end/capacity. End resets to begin. MouseEvent size28: type+0,x/y+4/+8,wheel+12,8buttonbytes+16..23,modifiersDWORD+24. ConstructorIAT9050 direct binding/body still unknown.",
+    "events": "Buffered24byte records switch by offset8 wheel orC..13 button; changes emit types11/12(hex) for wheel,1..8 press and9..10(hex) release with latch/swap branches. Tail attempts type0 insertion even with zero records.399C/39D5 null end skips all28B writes;39F1 still advances end by28. Only a valid nonnull output region receives event bytes; reaching tail is not proof of a stored event.",
+    "unusual_branch_proofs": [
+      "3630 and364A settype9 for firstbuttonrelease in both swap branches.",
+      "3745 typeB then374C clearsdevice28D, while3742 retains previous28E in eventbyte18; do not repair inferred intended behavior."
+    ],
+    "copy_precision": "Final type0 append uses interleaved16+8+4 reads/writes, not the snapshot semantics of getter4840. Unknown helper6500 handles full capacity;6230 handles accepted buffered event append. Alias branch retained. No synthetic growth success.",
+    "tail": "3D10 key and3FC0 joystick processing remain required normal-return dependencies; unqueried this stage.",
+    "status": "Static production contract known; no original OS/device execution or physical-input product verification."
+  },
+  "getters": {
+    "count": {
+      "entry": "0x180004810",
+      "slot": "30",
+      "export": "GetNumMouseEvents",
+      "contract": "signed64(end-begin) divided28 towardzero using IMUL/SAR/correction; caller usesEAX. No range/divisibility/header validity guard."
+    },
+    "item": {
+      "entry": "0x180004840",
+      "slot": "38",
+      "export": "GetMouseEvent(int)",
+      "contract": "R8D signextends; offset=index*28; readsbegin only. Source16+8+4 all read before destination16+8+4 writes, thenRAX=originalRDX. No end/index/bounds check or normal out-of-range failure result. Source read failure before any output write; output write failure may leave prefix."
+    }
+  },
+  "propagation": {
+    "chain": [
+      "Engine743D0 Create1241E0 -> plugin17B0 -> constructor2C50 -> vptr9850 -> same-deviceInitialize2DD0",
+      "Engine078DF0 calls Update31A0 -> count4810 -> getter4840 into caller-local28B event",
+      "Engine078F02 passes hiddenoutput and index; ignores getterRAX then forwards same local address to each registeredWidget+18"
+    ],
+    "mutable_semantics": "Registered widget identities come from live Engine+3E8/+3F0 array. Nonzero widgetAL consumes only current event; count/device/bounds reread as cached caller proves. Local event fields read again after callbacks, not immutable snapshot.",
+    "precise_unknown": "Concrete registered Widget+18 override/writer and connection from client coordinates/type codes to Game HandleActionFromMouse/camera ground ray are not identified. BaseDisplayWidget D480 false is not a substitute.",
+    "os_docs": [
+      "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getcursorpos",
+      "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-screentoclient"
+    ]
+  },
+  "next": "Prefer cached concrete Widget registration/vtable writer and MouseEvent constructor binding9050 to connect proven client-coordinate events to existing camera/ground/movement chain; only missing direct targets may be queried. No repeat2C50/2DD0/31A0/4810/4840 or old11factory responses. Keep provider/scheduling/scene/UI and input helper gaps explicit; no fake physicalinput success.",
+  "boundary": {
+    "new_product_implementation": false,
+    "new_product_compiles": 0,
+    "new_game_tests": 0,
+    "old_game_tests_repeated": 0,
+    "tool_tests": 7,
+    "tool_tests_note": "Only strict80byte response helper; rerun once after adding explicit160char check withLF/CRLF negatives. Prior15identity cases not rerun.",
+    "native_runtime_compared": false,
+    "original_loaded_or_executed": false,
+    "real_saves_accessed": false,
+    "commit_push_deploy": false,
+    "interactive_reversed_client_available": false,
+    "active_runner_unchanged": true
+  },
+  "utc": "2026-11-03T13:12:08.7432943Z",
+  "core_evidence": [
+    {
+      "file": "docs/reverse-client/r1-directinput-input-core-run1/04-DirectInputSlot08-0x180002dd0-procedure_pseudo_code.json",
+      "sha256": "7f58bbc8a8d92350c661ffa5a5074c0d5494830a53bf8bce5ecefc6e1c01b728"
+    },
+    {
+      "file": "docs/reverse-client/r1-directinput-input-core-run1/05-DirectInputSlot08-0x180002dd0-procedure_assembly.json",
+      "sha256": "a241eed17133064071b097623790991e077573b1ca6b114486a6e5889e7f776d"
+    },
+    {
+      "file": "docs/reverse-client/r1-directinput-input-core-run1/06-DirectInputSlot08-0x180002dd0-procedure_callees.json",
+      "sha256": "bc3ca133c9f98b80171625ed7f8ffe810c7c0a64bd160b3ae2f659e516708997"
+    },
+    {
+      "file": "docs/reverse-client/r1-directinput-input-core-run1/07-DirectInputSlot10-0x1800031a0-procedure_pseudo_code.json",
+      "sha256": "dfd4e3b8a5c69f5c60618da4c3a22a383ea8b07b83832a50446498e22c8df3d2"
+    },
+    {
+      "file": "docs/reverse-client/r1-directinput-input-core-run1/08-DirectInputSlot10-0x1800031a0-procedure_assembly.json",
+      "sha256": "6b20cda9eab8e140ad388b3ea04325c3785b9c375da3584fff9bfe9ec606669c"
+    },
+    {
+      "file": "docs/reverse-client/r1-directinput-input-core-run1/09-DirectInputSlot10-0x1800031a0-procedure_callees.json",
+      "sha256": "5da92a29424b6ed3fac6b91127d2751923d81b7dc9680b0c97aeb9d54bcee7cc"
+    },
+    {
+      "file": "docs/reverse-client/r1-directinput-input-core-run1/10-DirectInputSlot30-0x180004810-procedure_pseudo_code.json",
+      "sha256": "98539ad9914ae9e9e8ccbfad2546587bf1b607f9b6d6f0b3bff83f0c807b5005"
+    },
+    {
+      "file": "docs/reverse-client/r1-directinput-input-core-run1/11-DirectInputSlot30-0x180004810-procedure_assembly.json",
+      "sha256": "dc34097cd31a15d35fdc727c110e290c9775e58f77a55cfc7e2e1a44fa8f6006"
+    },
+    {
+      "file": "docs/reverse-client/r1-directinput-input-core-run1/12-DirectInputSlot30-0x180004810-procedure_callees.json",
+      "sha256": "49bec11309c81c9a07a8a4cf13980bd078d55879296acf16157fd5abfab66c34"
+    },
+    {
+      "file": "docs/reverse-client/r1-directinput-input-core-run1/13-DirectInputSlot38-0x180004840-procedure_pseudo_code.json",
+      "sha256": "def7b0642ef4310f1e1068f9f982df18647822bdd605e50bfc2f88cbc92c43cb"
+    },
+    {
+      "file": "docs/reverse-client/r1-directinput-input-core-run1/14-DirectInputSlot38-0x180004840-procedure_assembly.json",
+      "sha256": "a209ba7036a56b951daf507ee322ae336441fa2303da03b90671d6fe0cc3b9c6"
+    },
+    {
+      "file": "docs/reverse-client/r1-directinput-input-core-run1/15-DirectInputSlot38-0x180004840-procedure_callees.json",
+      "sha256": "ff2fff9ebfa88cd929288ab98b4bc2bc17890cb0e574e3aafec6ba2504cc1933"
+    }
+  ],
+  "final_independent_review": "Getter snapshot vs Update interleaved copy, signed count/index and unusual button branches confirmed against cached assembly; final type0 null-end branch wording narrowed. No new execution or native query."
+}

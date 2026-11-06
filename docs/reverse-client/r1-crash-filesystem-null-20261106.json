@@ -1,0 +1,32 @@
+{
+    "schema":  "grim-dynasty-r1-crash-filesystem-null-v1",
+    "utc":  "2026-11-06T02:19:06.3746099Z",
+    "stage":  "stage4 - publish then Engine::Initialize",
+    "crash":  {
+                  "code":  "0xC0000005 (access violation)",
+                  "address_rva":  "0x148495",
+                  "function":  "0x1483d0-0x148b98 (1992 bytes)",
+                  "export_name":  "?InitializeLanguage@LocalizationManager@GAME@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z"
+              },
+    "faulting_instructions":  {
+                                  "bytes":  "488b9858030000 488b03",
+                                  "disassembly":  "mov rbx,[rax+0x358] ; mov rax,[rbx]",
+                                  "meaning":  "reads the FileSystem pointer out of the engine and then dereferences it"
+                              },
+    "root_cause":  "I passed FileSystem = nullptr. Engine::Initialize stores it without checking, and LocalizationManager::InitializeLanguage later dereferences it as this+0x358.",
+    "retraction":  "My earlier statement that FileSystem may be null was based on the fact that the 3049-byte Initialize body only writes [this+0x358] and never reads it. That is true of that body, but the subsystems it calls do read it. The conclusion was too narrow and is withdrawn.",
+    "bonus_finding":  "The four trailing std::string parameters belong to LocalizationManager::InitializeLanguage(string const\u0026, string const\u0026, string const\u0026, string const\u0026). They are the four localisation names, not per-subsystem settings.",
+    "what_worked_before_the_crash":  {
+                                         "window":  "WinWindow + Initialize returned 1 and produced a real HWND",
+                                         "settings":  "default constructor produced the direct3d11 name with length 10; an explicit +0x0c value was accepted",
+                                         "engine":  "Engine::Engine produced the expected vtable at base+0x33E2F0",
+                                         "publish":  "global_before=0x0, global_after=\u003cengine pointer\u003e, so the host-side publish itself worked",
+                                         "call":  "Engine::Initialize was entered and ran until the localisation step"
+                                     },
+    "fix_to_try":  "Construct a real FileSystem with FileSystem::FileSystem() at 0x86370 and pass it instead of null.",
+    "not_claimed":  [
+                        "that a FileSystem constructed in isolation is usable",
+                        "that the next crash will not occur",
+                        "any presented frame"
+                    ]
+}

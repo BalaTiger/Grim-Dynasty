@@ -1,0 +1,27 @@
+{
+    "schema":  "grim-dynasty-r1-file-dependencies-v1",
+    "utc":  "2026-11-06T02:01:20.5517100Z",
+    "question":  "What file dependencies does the recovered start-up path have?",
+    "answer":  "One: Direct3D11.dll. The plugin loader resolves it with LoadLibraryA, takes exports with GetProcAddress and releases it with FreeLibrary on failure.",
+    "iat_resolution":  {
+                           "0x3022e8":  "KERNEL32.dll!LoadLibraryA",
+                           "0x3022f0":  "KERNEL32.dll!GetProcAddress",
+                           "0x302340":  "KERNEL32.dll!FreeLibrary",
+                           "0x302268":  "KERNEL32.dll!GetCurrentThread",
+                           "0x302260":  "KERNEL32.dll!SetThreadAffinityMask",
+                           "0x302318":  "KERNEL32.dll!InitializeCriticalSection",
+                           "0x302328":  "KERNEL32.dll!EnterCriticalSection",
+                           "0x302330":  "KERNEL32.dll!LeaveCriticalSection",
+                           "0x302a40":  "api-ms-win-crt-runtime-l1-1-0.dll!_invalid_parameter_noinfo_noreturn (the operator new[] failure path)",
+                           "0x3022b0":  "KERNEL32.dll!UnmapViewOfFile",
+                           "0x3021b8":  "KERNEL32.dll!DisableThreadLibraryCalls"
+                       },
+    "where_the_name_comes_from":  "GraphicsEngineSettings, whose leading std::string defaults to \"direct3d11\" (length 0x0A). The loader is what turns that name into the module.",
+    "implication_for_a_host":  "A host that runs from the game directory, or that makes it the DLL search path, satisfies the only file dependency. No game data files are needed for GraphicsEngine::Initialize, whose six rounds are pure in-memory manager construction.",
+    "not_established":  [
+                            "whether the Direct3D11 device needs shader bytecode that the plugin embeds or fetches",
+                            "whether later Engine::Initialize subsystems open data files",
+                            "the meaning of the four strings and five booleans"
+                        ],
+    "method_note":  "The earlier attempt to resolve these IAT slots returned unknown because I used full virtual addresses instead of RVAs; subtracting the image base gave the correct entries."
+}

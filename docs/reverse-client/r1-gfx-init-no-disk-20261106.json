@@ -1,0 +1,21 @@
+{
+    "schema":  "grim-dynasty-r1-gfx-init-no-disk-v1",
+    "utc":  "2026-11-06T02:00:52.7058914Z",
+    "question":  "Does GraphicsEngine::Initialize (0x90e60) touch the disk in its six repeated rounds, and what are its helpers?",
+    "answer":  "No. Every helper in the six rounds is a pure in-memory operation.",
+    "helpers_resolved":  {
+                             "0x3a8c0":  "BaseResourceManager::BaseResourceManager(std::string const\u0026, ResourceLoader*) - an exported constructor",
+                             "0x1972c0":  "container insert: compares the requested slot against the container end and moves elements; no I/O",
+                             "0x23090":  "operator new[]: divides to detect size overflow, checks the 0x1000 threshold and the 16-byte alignment, then allocates; no I/O",
+                             "0x22ce0":  "std::string::assign on the small-string layout; no I/O",
+                             "0x2dc398":  "operator new (single object)"
+                         },
+    "so_the_six_rounds_are":  "six constructions of BaseResourceManager-derived managers, each given a name string and the ResourceLoader, followed by container insertion. This is resource-manager bookkeeping, not resource loading.",
+    "additional_symbol":  "0x19a830 resolves to ResourceLoader::StartThreads(), which confirms that the int passed to ResourceLoader(int) is a thread count.",
+    "significance":  "Because the six rounds perform no disk access, a host does not have to provide game data for GraphicsEngine::Initialize to complete. Combined with CreateDevice running before it, the whole device plus resource-manager setup is reachable without asset files.",
+    "not_established":  [
+                            "whether the later engine subsystems in Engine::Initialize read data files",
+                            "whether CreateDevice itself needs shader files present",
+                            "the meaning of the four strings and five booleans"
+                        ]
+}

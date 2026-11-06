@@ -1,0 +1,101 @@
+{
+  "schema": "grim-dynasty.fixed-animation-create-slot.v1",
+  "started_utc": "2026-11-02T14:39:49.6928851Z",
+  "status": "passed-disk-bindings-only",
+  "script_sha256": "18250fb054cd3949eea78cade1241ac51cb312f97fc86b4943ceffb40a1b517a",
+  "plan_sha256": "a3382dba215f4ed29c1ea8835e61cfe42d11d25886b29f96f93ae610af029eee",
+  "target": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+  "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_pins": [
+    {
+      "key": "graphics-loader-publication",
+      "path": "docs/reverse-client/r1-graphics-animation-publication-run1/11-GraphicsAnimationPublication-0x180090e60-procedure_assembly.json",
+      "sha256": "90dc01613e49f687756bca1e61f98ad497e34566eae3e99d917903f80a88639a",
+      "procedure": "0x180090e60",
+      "instructions": [
+        "0x180090e89: MOV RSI, RCX",
+        "0x18009121a: LEA RAX, [0x18033f478]",
+        "0x180091221: MOV qword ptr [RBX], RAX",
+        "0x180091224: MOV qword ptr [RSI + 0x20], RBX"
+      ]
+    },
+    {
+      "key": "animation-manager-create-dispatch",
+      "path": "docs/reverse-client/r1-animation-resource-load-run1/05-AnimationResourceLoad-0x18003ac50-procedure_assembly.json",
+      "sha256": "9f3a19af5613727b016f6636ed70b7ee0bae0f4c5ff7deacbd7105da9fbb098b",
+      "procedure": "0x18003ac50",
+      "instructions": [
+        "0x18003ac6b: MOV RSI, RCX",
+        "0x18003ad51: MOV RAX, qword ptr [RSI]",
+        "0x18003ad54: LEA RDX, [RSP + 0x40]",
+        "0x18003ad59: MOV RCX, RSI",
+        "0x18003ad5c: CALL qword ptr [RAX + 0x8]"
+      ]
+    }
+  ],
+  "cached_pe": {
+    "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+    "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58",
+    "selector": "files[target=Engine.dll].pe",
+    "image_size_field": "size_of_image",
+    "image_base_field": "preferred_image_base"
+  },
+  "original_loaded_or_executed": false,
+  "backend_started": false,
+  "child_processes": 0,
+  "code_bytes": 0,
+  "header_bytes": 0,
+  "other_vtable_bytes": 0,
+  "semantic_bytes": 8,
+  "semantic_operations": 1,
+  "fingerprint_bytes": 8971264,
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_stat_before": {
+    "length": 4485632,
+    "last_write_utc_ticks": 639270971623210718,
+    "creation_utc_ticks": 639245331635935173
+  },
+  "source_stat_after": {
+    "length": 4485632,
+    "last_write_utc_ticks": 639270971623210718,
+    "creation_utc_ticks": 639245331635935173
+  },
+  "source_stat_stable": true,
+  "source_handle_closed": true,
+  "reads": [
+    {
+      "owner": "GraphicsEngine20-published-animation-manager",
+      "kind": "animation-resource-create-slot08",
+      "section": ".rdata",
+      "rva": "0x33f480",
+      "bytes": 8,
+      "file_offset": 3400832,
+      "raw_hex": "5046098001000000",
+      "section_flags": "0x40000040"
+    }
+  ],
+  "bindings": [
+    {
+      "kind": "animation-resource-create-slot08",
+      "owner": "GraphicsEngine20-published-animation-manager",
+      "vtable_rva": "0x33f478",
+      "slot": "0x8",
+      "pointer_rva": "0x33f480",
+      "target_va": "0x180094650",
+      "target_rva": "0x94650",
+      "executable_section": ".text",
+      "function_boundary_verified": false,
+      "loaded_binding_observed": false
+    }
+  ],
+  "failures": [],
+  "unsupported": [],
+  "limitations": [
+    "Only the on-disk +8 creation target for the manager vtable published by090E60 and dispatched by03AC50. Later vptr changes and loaded dispatch remain unobserved.",
+    "Executable-section classification is not a recovered function boundary or ABI. No target code is read.",
+    "No resource creation, GraphicsAnim decoding or playback behavior is supplied by pointer binding.",
+    "Two complete same-handle hash streams are identity checks separate from the8 semantic bytes. FileAccess.Read/FileShare.Read denies write/delete sharing; path stat and handle length are checked before/after."
+  ],
+  "finished_utc": "2026-11-02T14:39:49.9099180Z"
+}

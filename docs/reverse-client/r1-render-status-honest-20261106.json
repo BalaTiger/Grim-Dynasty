@@ -1,0 +1,29 @@
+{
+    "schema":  "grim-dynasty-r1-render-status-v1",
+    "utc":  "2026-11-06T05:35:51.9998675Z",
+    "question":  "Can the extracted player model be drawn through the game\u0027s renderer right now?",
+    "answer":  "Not yet. Three separate layers are still missing between the extracted bytes and a drawn character, and each is a project in its own right rather than a few calls.",
+    "what_is_done":  {
+                         "archive":  "mountable via FileSourceArchive::Attach with plain char*, verified Attach=1 and GetNumFiles=3341",
+                         "file_open":  "OpenFile(\"Creatures/pc/hero_00.msh\") returns a live File whose index field reads 2461",
+                         "byte_range":  "exact offset 399226753, stored 111402, raw 223717, cross-checked statically and at runtime",
+                         "payload":  "extracted 111350 bytes to .tooling/arc-extract/hero_00.msh.bin; it is plain binary, not compressed",
+                         "sanity":  "66.7 percent of its dwords decode as plausible floats, and the tail contains pi/2, pi and pi/6, consistent with geometry plus rotation data",
+                         "device":  "D3D11 device verified, swapchain created, and a cleared frame with a visible colour was presented"
+                     },
+    "what_is_missing":  {
+                            "vertex_format":  "the mesh interleaves position, normal and UV with integer fields, so the stride and offsets must be known before any vertex buffer can be built; the longest contiguous float run is only 16 values, which is exactly what an interleaved layout looks like",
+                            "mesh_loader":  "GraphicsMesh, the class that actually holds the vertices, exports no Load, Read or Create routines, so its loading path is internal and not reachable through the export table",
+                            "scene_pipeline":  "drawing a character also needs a render pass, shaders by name, camera matrices and the scene traversal that adds an object to a GraphicsScene"
+                        },
+    "why_guessing_is_not_acceptable":  "Building a vertex buffer from a guessed stride would produce arbitrary triangles. That would look like progress and produce a wrong picture, which contradicts the evidence discipline this project has followed so far.",
+    "honest_next_options":  [
+                                "decode the mesh loader by finding the internal function that references the MSH magic, which yields the true vertex declaration",
+                                "or drive the higher level path: construct an Actor or Character and let the engine load and draw the mesh, which needs the world and scene systems"
+                            ],
+    "not_claimed":  [
+                        "that a character or terrain has been drawn",
+                        "that the vertex format is known",
+                        "that the model can be rendered by any means yet"
+                    ]
+}

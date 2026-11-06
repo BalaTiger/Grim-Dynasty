@@ -1,0 +1,166 @@
+{
+    "schema":  "grim-dynasty-r1-runtime-sampler-selftest-v5",
+    "status":  "passed-plumbing-only",
+    "utc":  "2026-11-05T05:15:49.4283529Z",
+    "script":  "tools/static_analysis/read_r1_runtime_pointers.py",
+    "script_sha256":  "d064c24134c4d99397b4697eca60caff45f08814066adef40334a81cc0860c48",
+    "python":  "C:\\Users\\zhuzi\\.dsh\\dsh-runtimes\\dsh-next-primary-runtime\\dependencies\\python\\python.exe",
+    "access":  "PROCESS_QUERY_LIMITED_INFORMATION|PROCESS_VM_READ",
+    "writes_to_target":  0,
+    "debugger":  false,
+    "breakpoints":  0,
+    "original_launched":  false,
+    "self_test_toolhelp":  {
+                               "status":  "self-test-passed",
+                               "pid":  35696,
+                               "module":  {
+                                              "name":  "python.exe",
+                                              "base":  140699065581568,
+                                              "size":  106496,
+                                              "path":  "C:\\Users\\zhuzi\\.dsh\\dsh-runtimes\\dsh-next-primary-runtime\\dependencies\\python\\python.exe",
+                                              "via":  "toolhelp"
+                                          },
+                               "mz":  "0x5a4d",
+                               "e_lfanew":  "0xf8",
+                               "writes_to_target":  0,
+                               "debugger":  false,
+                               "scope":  "plumbing only; not game evidence"
+                           },
+    "self_test_psapi":  {
+                            "status":  "self-test-passed",
+                            "pid":  64908,
+                            "module":  {
+                                           "name":  "python.exe",
+                                           "base":  140699065581568,
+                                           "size":  106496,
+                                           "path":  "C:\\Users\\zhuzi\\.dsh\\dsh-runtimes\\dsh-next-primary-runtime\\dependencies\\python\\python.exe",
+                                           "via":  "psapi"
+                                       },
+                            "mz":  "0x5a4d",
+                            "e_lfanew":  "0xf8",
+                            "writes_to_target":  0,
+                            "debugger":  false,
+                            "scope":  "plumbing only; not game evidence"
+                        },
+    "spec_validation":  {
+                            "status":  "sampled",
+                            "pid":  47340,
+                            "module":  {
+                                           "name":  "powershell.exe",
+                                           "base":  140701097132032,
+                                           "size":  499712,
+                                           "path":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                                           "via":  "psapi"
+                                       },
+                            "access":  "PROCESS_QUERY_LIMITED_INFORMATION|PROCESS_VM_READ",
+                            "writes_to_target":  0,
+                            "samples":  [
+                                            {
+                                                "index":  0,
+                                                "utc":  "2026-11-05T05:15:48Z",
+                                                "label":  "main-player-object-id",
+                                                "module_base":  "0x7ff786ea0000",
+                                                "gengine_rva":  "0x421428",
+                                                "gengine":  null,
+                                                "chain":  [
+
+                                                          ],
+                                                "chain_result":  null,
+                                                "writes":  0,
+                                                "debugger":  false
+                                            },
+                                            {
+                                                "index":  1,
+                                                "utc":  "2026-11-05T05:15:49Z",
+                                                "label":  "main-player-object-id",
+                                                "module_base":  "0x7ff786ea0000",
+                                                "gengine_rva":  "0x421428",
+                                                "gengine":  null,
+                                                "chain":  [
+
+                                                          ],
+                                                "chain_result":  null,
+                                                "writes":  0,
+                                                "debugger":  false
+                                            },
+                                            {
+                                                "index":  2,
+                                                "utc":  "2026-11-05T05:15:49Z",
+                                                "label":  "main-player-object-id",
+                                                "module_base":  "0x7ff786ea0000",
+                                                "gengine_rva":  "0x421428",
+                                                "gengine":  null,
+                                                "chain":  [
+
+                                                          ],
+                                                "chain_result":  null,
+                                                "writes":  0,
+                                                "debugger":  false
+                                            }
+                                        ]
+                        },
+    "spec_file":  ".tooling/r1-runtime-sampling-20261105/spec.json",
+    "spec_sha256":  "2d7845ed8ceaf47e5168a82378b6d98e7b5965bd93ab465e071c4618f01e07e9",
+    "fixes":  [
+                  "PSAPI handle marshalling used raw ints; now wrapped in c_void_p with explicit argtypes.",
+                  "QueryFullProcessImageNameW had no prototype and faulted; argtypes/restype added.",
+                  "A missing final DWORD read is reported as null instead of being substituted."
+              ],
+    "scope":  "Plumbing and traversal logic only. No process was sampled for game evidence; no original launch; nothing here is evidence about the original game.",
+    "traversal_tests":  {
+                            "script":  "tools/static_analysis/test_runtime_sampler.py",
+                            "script_sha256":  "2730f907e0cd042b4e71ca002f683ce3b38fa9e1f91e89f51997d74d302c5e75",
+                            "exit_code":  0,
+                            "checks":  [
+
+                                       ],
+                            "output":  [
+                                           "PASS  fnv-id0  (0x4d25767f9dce13f5)",
+                                           "PASS  single-found  (obj=43520 trace=found)",
+                                           "PASS  single-result  (found)",
+                                           "PASS  miss  (unreadable-bucket)",
+                                           "PASS  collision-second  (obj=52224 steps=2)",
+                                           "PASS  collision-steps  (2)",
+                                           "PASS  unreadable-mask  (unreadable-manager-field)",
+                                           "PASS  unreadable-bucket  (unreadable-bucket)",
+                                           "PASS  step-limit  (step-limit)",
+                                           "PASS  field-byte  ({\u0027offset\u0027: \u00270x26af\u0027, \u0027width\u0027: 1, \u0027value\u0027: \u00270x01\u0027})",
+                                           "PASS  field-dword  ({\u0027offset\u0027: \u00270x16c0\u0027, \u0027width\u0027: 4, \u0027value\u0027: \u00270xdeadbeef\u0027})",
+                                           "PASS  field-qword  ({\u0027offset\u0027: \u00270x2a0\u0027, \u0027width\u0027: 8, \u0027value\u0027: \u00270x1122334455667788\u0027})",
+                                           "PASS  field-missing-null  ({\u0027offset\u0027: \u00270x9000\u0027, \u0027width\u0027: 8, \u0027value\u0027: None})",
+                                           "PASS  field-bad-width  ({\u0027error\u0027: \u0027unsupported-width\u0027, \u0027width\u0027: 3})",
+                                           "PASS  hop-character  (43520)",
+                                           "PASS  hop-controller-id  (16962)",
+                                           "PASS  hop-controller  (47872 found)",
+                                           "PASS  hop-missing-controller  (unreadable-bucket)",
+                                           "PASS  enumerate-count  (3)",
+                                           "PASS  enumerate-keys  ([1, 2, 3])",
+                                           "PASS  enumerate-objects  ([4352, 8704, 13056])",
+                                           "PASS  enumerate-limit  (2 limit-reached)",
+                                           "PASS  enumerate-empty  (ok)",
+                                           "PASS  enumerate-unreadable  (unreadable-manager-field)",
+                                           "----------------------------------------",
+                                           "0 failure(s)"
+                                       ],
+                            "fnv_reference":  "id 0 -\u003e 0x4d25767f9dce13f5, the same value the C# model tests assert independently",
+                            "coverage":  [
+                                             "found",
+                                             "miss",
+                                             "collision chain order",
+                                             "unreadable manager field",
+                                             "unreadable bucket",
+                                             "cycle step limit",
+                                             "field widths 1/4/8",
+                                             "unreadable field is null",
+                                             "unsupported width rejected",
+                                             "character-\u003econtroller hop",
+                                             "absent controller id is a miss",
+                                             "enumerate count/keys/objects",
+                                             "enumerate entry cap",
+                                             "empty map",
+                                             "unreadable manager during enumerate"
+                                         ]
+                        },
+    "spec_status":  "corrected-module-engine-dll-awaiting-rerun",
+    "spec_v4_changes":  "module corrected to Engine.dll; manager global 0x4213a0 proven from disk arithmetic; enumerate route added so the player can be found without the Engine pointer"
+}

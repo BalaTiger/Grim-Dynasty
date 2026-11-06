@@ -1,0 +1,49 @@
+{
+    "schema":  "grim-dynasty-r1-runtime-analysis-necessity-v1",
+    "utc":  "2026-11-05T11:49:30.1916764Z",
+    "question":  "Does recovering who writes Engine.dll+0x421428 require runtime analysis, and is the debugger ban justified?",
+    "search_attempt":  {
+                           "performed":  true,
+                           "result":  "failed",
+                           "reason":  "the search endpoint returned HTTP 402 (insufficient balance), so no live sources could be consulted",
+                           "consequence":  "the assessment below is stated as my own engineering judgement and is not cited to external sources"
+                       },
+    "static_probes_run":  [
+                              "direct qword store in Engine.dll: 0 hits",
+                              "direct qword store in Game.dll: 0 hits (cannot exclude cross-module computed writes)",
+                              "LEA of the exact slot: 0",
+                              "LEA of a neighbouring base plus matching offset store, 70-byte window: 0",
+                              "same with a 400-byte window and any base in 0x410000..0x421428: 0",
+                              "the literal 0x421428 as an immediate in three modules: 0",
+                              "loader relocations covering the block: 0"
+                          ],
+    "assessment":  {
+                       "standard_practice":  "In reverse engineering, answering \"who writes this address at run time\" is classically done with data watchpoints (x86 debug registers DR0-DR3) or with dynamic binary instrumentation. Static cross-reference analysis is excellent for direct accesses but systematically misses computed-address stores, stores made through pointers obtained from other modules, and wholesale memcpy/memset overwrites.",
+                       "why_static_stalls_here":  "Every direct and every LEA-mediated form in the module has been excluded by exhaustive byte scanning, while the slot demonstrably holds a live heap pointer at run time. That combination is the textbook situation where a watchpoint is the appropriate instrument."
+                   },
+    "rule_review":  {
+                        "what_the_incident_actually_shows":  "The 2026-11-04 attempt ended with 0x80000003, which is STATUS_BREAKPOINT: the signature of an int3 (0xCC) software breakpoint, i.e. the debugger patched target code.",
+                        "what_it_does_not_show":  "It does not establish that hardware breakpoints, which use debug registers and leave code untouched, would fail; nor that external instrumentation would fail.",
+                        "verdict":  "The blanket ban on debuggers is broader than the evidence supports. The evidence supports a narrower rule: do not patch or otherwise modify the original code and memory."
+                    },
+    "proposed_amendment":  {
+                               "keep_forbidden":  [
+                                                      "software breakpoints that write int3 into original code",
+                                                      "writing to the original process memory",
+                                                      "injecting modules into the original client",
+                                                      "modifying any original file"
+                                                  ],
+                               "allow_with_explicit_approval":  [
+                                                                    "hardware watchpoints via debug registers (8-byte watch is encodable and 0x421428 is 8-byte aligned)",
+                                                                    "external dynamic binary instrumentation that does not patch target code"
+                                                                ],
+                               "rationale":  "These observe without altering the binary, which is the property the original rule was trying to protect.",
+                               "residual_risk":  "The client may have its own checks; any runtime attempt should be a single reviewed attempt with a preflight and an explicit abort path, and the client must be restarted cleanly afterwards."
+                           },
+    "recommendation":  "Amend the rule narrowly and take exactly one hardware-watchpoint observation of the 8 bytes at Engine.dll+0x421428 in a normally started client, to capture the writing instruction pointer. If that is refused, the alternative is to accept that presentation stays documented-but-not-executed.",
+    "not_claimed":  [
+                        "that runtime analysis will succeed",
+                        "that the client tolerates hardware breakpoints",
+                        "any citation, since the search failed"
+                    ]
+}

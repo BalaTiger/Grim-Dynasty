@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "status": "prepared-not-applied-not-executed",
+  "runner": "tools/static_analysis/rea_native_registration.mjs",
+  "runner_before_sha256": "9a1107a55c2ae0e0c542d0e57a9ac2a0b083e64ec5f638c6c963813fbbb9a153",
+  "runner_proposed_sha256": "473f1963e9accb0c7a2e33bd6f3aac83e923fdf4e9850647d155e217d0d9ba06",
+  "frozen_plan": "docs/reverse-client/r1-game-associated-plan/plan.json",
+  "frozen_plan_sha256": "747a6ec19bce1beb36c9fbb5e116234d262af62ca3d7cec26de1f58bb7a61e4e",
+  "patch": "docs/reverse-client/r1-game-associated-plan/runner-registration.patch",
+  "patch_sha256": "ed60555677abcf16560a6a8b4b5e4835f1598940336ef065bb10f152e5be65b3",
+  "operations": [
+    {
+      "id": "two-fixed-flags",
+      "expected_count": 1,
+      "from": "const r1MoveActionDispatchLeaves = process.argv.length === 3 && (process.argv[2] === '--r1-move-action-dispatch-leaves' || verifyR1MoveActionDispatchLeaves);",
+      "to": "const r1MoveActionDispatchLeaves = process.argv.length === 3 && (process.argv[2] === '--r1-move-action-dispatch-leaves' || verifyR1MoveActionDispatchLeaves);\nconst verifyR1GameAssociated = process.argv.length === 3 && process.argv[2] === '--verify-r1-game-associated';\nconst r1GameAssociated = process.argv.length === 3 && (process.argv[2] === '--r1-game-associated' || verifyR1GameAssociated);"
+    },
+    {
+      "id": "game-mode-memberships",
+      "expected_count": 5,
+      "from": "r1MoveActionDispatchLeaves ||",
+      "to": "r1GameAssociated || r1MoveActionDispatchLeaves ||"
+    },
+    {
+      "id": "verify-dispatch",
+      "expected_count": 1,
+      "from": "verifyR1MoveActionDispatchLeaves ||",
+      "to": "verifyR1GameAssociated || verifyR1MoveActionDispatchLeaves ||"
+    },
+    {
+      "id": "fixed-batch",
+      "expected_count": 1,
+      "from": "const batch = r1MoveActionDispatchLeaves ? {",
+      "to": "const batch = r1GameAssociated ? {\n  plan: '../../docs/reverse-client/r1-game-associated-plan/plan.json', directory: '../reverse-client/r1-game-associated-run1',\n  hash: '747a6ec19bce1beb36c9fbb5e116234d262af62ca3d7cec26de1f58bb7a61e4e', maxToolCalls: 8, finalSessionLabel: '08-final-session',\n  runtimeProfile: {file:'tools/static_analysis/rea-r1-skill-moved-direct-plan.json', sha256:'96e164adb4ff4909806229a8a4a7dce460cb134d76de0cc21768e9ea29313677'},\n} : r1MoveActionDispatchLeaves ? {"
+    },
+    {
+      "id": "one-target-assertions",
+      "expected_count": 1,
+      "from": "    if (r1MoveActionDispatchLeaves) {",
+      "to": "    if (r1GameAssociated) {\n      const fixed = ['0x180077d60'].flatMap(address => ['procedure_pseudo_code','procedure_assembly','procedure_callees'].map(tool => [tool,address]));\n      assert.equal(canonical(plan.calls.map(item => item.tool)),canonical(['binary_session','open_binary','binary_session',...fixed.map(item => item[0]),'close_binary','binary_session']));\n      assert.equal(canonical(plan.calls.slice(3,6).map(item => [item.tool,item.args.procedure])),canonical(fixed));\n      assert.equal(plan.calls[2].label,'03-Game-session'); assert.equal(plan.calls[6].label,'07-Game-close'); assert.equal(plan.calls[7].label,'08-final-session');\n    } else if (r1MoveActionDispatchLeaves) {"
+    }
+  ],
+  "hunks": [
+    {
+      "original_line": 35,
+      "proposed_line": 35,
+      "old_lines": 1,
+      "new_lines": 3
+    },
+    {
+      "original_line": 63,
+      "proposed_line": 65,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 252,
+      "proposed_line": 254,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 262,
+      "proposed_line": 264,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 295,
+      "proposed_line": 297,
+      "old_lines": 1,
+      "new_lines": 5
+    },
+    {
+      "original_line": 1052,
+      "proposed_line": 1058,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 1241,
+      "proposed_line": 1247,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 1318,
+      "proposed_line": 1324,
+      "old_lines": 1,
+      "new_lines": 1
+    },
+    {
+      "original_line": 1600,
+      "proposed_line": 1606,
+      "old_lines": 1,
+      "new_lines": 6
+    }
+  ],
+  "added_lines": 11,
+  "fixed_target": "0x180077d60",
+  "max_tool_calls": 8,
+  "game_mode": true,
+  "parser_budget_mode_unchanged": true,
+  "guard_files_unchanged": [
+    {
+      "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "1ced4f54295e8aaf9529693fcb94f19a41f6e201af22f5fa9d3bda64874dcb7c"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    }
+  ],
+  "resource_profile": {
+    "file": "tools/static_analysis/rea-r1-skill-moved-direct-plan.json",
+    "sha256": "96e164adb4ff4909806229a8a4a7dce460cb134d76de0cc21768e9ea29313677",
+    "heap": "384M",
+    "launch_gib": 5,
+    "stop_gib": 2,
+    "changed": false
+  },
+  "backup": {
+    "file": ".tooling/r1-game-associated-prepared/rea_native_registration.mjs.before",
+    "sha256": "9a1107a55c2ae0e0c542d0e57a9ac2a0b083e64ec5f638c6c963813fbbb9a153",
+    "created_byte_identical": true,
+    "reverse_replacements_in_memory_sha256": "9a1107a55c2ae0e0c542d0e57a9ac2a0b083e64ec5f638c6c963813fbbb9a153",
+    "rollback_condition": "After root separately approves registration, apply only if current runner still matches beforeSHA and all expected replacement counts match. Restore this backup only when the active runner still matches proposedSHA and no owned operation is pending; if later edits exist, preserve them and review a reverse diff."
+  },
+  "scope": "New Game fixed-mode membership, batch and exact one-target assertion only. Existing target hashes, thresholds, Job/process identity, monitor, mutex, sampling, recovery, cleanup and old target assertion bodies remain unchanged. No parserBudgetMode addition.",
+  "execution": {
+    "runner_modified": false,
+    "verify_invoked": false,
+    "syntax_check_invoked": false,
+    "backend_started": false,
+    "build_or_test_invoked": false,
+    "original_read": false,
+    "future_verify_args": [
+      "tools/static_analysis/rea_native_registration.mjs",
+      "--verify-r1-game-associated"
+    ],
+    "future_query_args": [
+      "tools/static_analysis/rea_native_registration.mjs",
+      "--r1-game-associated"
+    ],
+    "requires_root_review_and_normal_approval": true
+  },
+  "independent_registration_review": "Read-only associated_registration_review confirmed exactly5Game mode memberships, verify registration, existing Game profile and the8-call assertion shape; no protection changes needed."
+}

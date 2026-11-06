@@ -1,0 +1,214 @@
+{
+  "schema": "gd-original-click-async-investigation-v1",
+  "utc": "2026-11-04T13:24:11.0789989Z",
+  "status": "bounded-investigation-complete;original-cause-unknown;original-trace-paused",
+  "original_started": false,
+  "original_data_accessed": false,
+  "steam_or_system_settings_changed": false,
+  "visible_apps_started": false,
+  "product_reconstruction_changed": false,
+  "original_observer_changed": false,
+  "new_native_fixture_compiles": 1,
+  "old_fixture_test": {
+    "native_at_failure": {
+      "utc": "2026-11-04T21:12:10.248388+08:00",
+      "creation_filetime": "134382715291951230",
+      "wait": 258,
+      "exit_code": 0,
+      "exit_code_hex": "0x00000000"
+    },
+    "job_empty": true,
+    "hits": 1,
+    "detach": {
+      "success": true,
+      "error": null,
+      "state": 10
+    },
+    "status": "failed",
+    "job_disposed": true
+  },
+  "controlled_cases": [
+    {
+      "hits": 3,
+      "foreign_stop_rejected": false,
+      "continue_calls": 3,
+      "fixture_exit": 0,
+      "stage": "three-owned-hits-detached-awaiting-parent-second-GO",
+      "native_terminal": false,
+      "detach_calls": 1,
+      "case": "normal",
+      "status": "passed",
+      "detached": true
+    },
+    {
+      "hits": 0,
+      "foreign_stop_rejected": false,
+      "continue_calls": 1,
+      "fixture_exit": 2147483651,
+      "stage": "explicit-exit-code-confirmed-not-exception",
+      "native_terminal": true,
+      "detach_calls": 0,
+      "case": "exitcode",
+      "status": "passed",
+      "detached": false
+    },
+    {
+      "hits": 0,
+      "foreign_stop_rejected": true,
+      "continue_calls": 1,
+      "fixture_exit": 0,
+      "stage": "foreign-stop-rejected-and-owned-fixture-terminated",
+      "native_terminal": true,
+      "detach_calls": 0,
+      "case": "debugbreak",
+      "status": "passed",
+      "detached": false
+    }
+  ],
+  "controlled_owner": {
+    "last_member": "vctip.exe PID3212",
+    "historical_empty_observed": false,
+    "job_disposed": true,
+    "worker_exit": 0,
+    "cleanup_failure": "System.Management.Automation.RuntimeException: Exact owned Job did not become observably empty",
+    "status": "failed",
+    "historical_receipt_unchanged": true,
+    "failure": null
+  },
+  "current_release": {
+    "utc": "2026-11-04T13:22:12.2727392Z",
+    "source": "union of both exact Job samples, worker IDs and every child step PID",
+    "known_pids": [
+      3212,
+      3820,
+      17944,
+      27488,
+      30472,
+      31104,
+      32068,
+      38664,
+      38704,
+      38820,
+      42608,
+      46252,
+      46600,
+      47280,
+      50868,
+      51164,
+      52764,
+      52800,
+      53128,
+      56180,
+      57088,
+      57772,
+      64004,
+      64056,
+      64796
+    ],
+    "remaining": [],
+    "lldb": [],
+    "original_game": [],
+    "physical_gib": 15.613792419433594,
+    "commit_headroom_gib": 25.412059783935547,
+    "processes_modified": false
+  },
+  "artifact": {
+    "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+    "sha256": "8c06864cbde3976bed269aa79492c849ec5cc8efd6365d73f77e8634f7d2f1b8"
+  },
+  "known": [
+    "Async polling captured three exact software breakpoints and subsequently detached with state9; second private GO proved debugger0 and exit0",
+    "Same exit code 0x80000003 can be explicit ExitProcess; cannot diagnose original cause from status alone",
+    "Owned DebugBreak appeared as foreign reason6 and was not Continued or Detached",
+    "Native terminal signaling can lag LLDB exited; one-shot liveness/stopped assertion is insufficient"
+  ],
+  "unknown": [
+    "Original exception address and first/second chance event",
+    "Why original process exited on first nearby click",
+    "Original game compatibility of any revised observer; original observer not changed"
+  ],
+  "next": "Review an observer-only bounded terminal-handle wait and explicit detached/exited branches, retaining foreign-stop refusal. Never port disposable-fixture Kill to original. Keep original launch/attach paused pending a separately reviewed plan; no further tests automatically scheduled.",
+  "evidence": [
+    {
+      "bytes": 6542,
+      "sha256": "f0153b4453b9f026d69c00d1a7b3c6e2c9fca85fc368ca757cac561a7ea050cd",
+      "file": "docs/reverse-client/r1-async-breakpoint-investigation-20261104.md"
+    },
+    {
+      "bytes": 5003,
+      "sha256": "cfdce7783f7fd934b2f7e8475c6f0755fb1320f7c4cb12d33b8819bf5428959f",
+      "file": ".tooling\\lldb-async-investigation-20261104\\poll-result.json"
+    },
+    {
+      "bytes": 1389,
+      "sha256": "aabc823f19ebd57d281d2ff8639ab06cdfab12fba4a989435718f87edff78a70",
+      "file": ".tooling\\lldb-async-investigation-20261104\\poll-events.ndjson"
+    },
+    {
+      "bytes": 12929,
+      "sha256": "8189b33e8bfdb93652d5989a56344c2f05cd3f858b683102eb12c542a7748821",
+      "file": ".tooling\\lldb-async-investigation-20261104\\launch-result.json"
+    },
+    {
+      "bytes": 4606,
+      "sha256": "6c057ccceb2010515c3190c8f03fced3bda928f9b519f7f70cf0f4e0f4dff67b",
+      "file": ".tooling\\lldb-async-controlled-20261104\\normal-result.json"
+    },
+    {
+      "bytes": 3811,
+      "sha256": "1cafb3d71e47d70637d1a206e45b2dd4e6bd028e32705819c7b7b4e5e8a1e932",
+      "file": ".tooling\\lldb-async-controlled-20261104\\exitcode-result.json"
+    },
+    {
+      "bytes": 5395,
+      "sha256": "e49dc54e08b83ab8d212d9513bacec304d1e147e068587faf25ae0403d9ca734",
+      "file": ".tooling\\lldb-async-controlled-20261104\\debugbreak-result.json"
+    },
+    {
+      "bytes": 344,
+      "sha256": "ecbff8d7226b05ed0e1f04aa9ac478c86b638575c3a9f7c64cd69745703f6b42",
+      "file": ".tooling\\lldb-async-controlled-20261104\\normal-fixture.stdout.log"
+    },
+    {
+      "bytes": 209697,
+      "sha256": "af3d67dd5674f17b5f324ed0ce7f290254a880396826896a5ceec8ba14cb048c",
+      "file": ".tooling\\lldb-async-controlled-20261104\\launch-result.json"
+    },
+    {
+      "bytes": 27763,
+      "sha256": "7f349542e6cc186c73df2f2cb99d44e620ad7b30bd5b644bb9867e6f647e9b40",
+      "file": ".tooling\\lldb-async-controlled-20261104\\result.json"
+    },
+    {
+      "bytes": 4235,
+      "sha256": "3acc41b6c60d17c0746bb916271ccf7891d159b4242d9c9c76672d1b5fd13451",
+      "file": ".tooling\\lldb-async-controlled-20261104\\fixture.c"
+    },
+    {
+      "bytes": 18855,
+      "sha256": "fe32f02b2a57f2898f2a117a73c602105767bf166bb20d559cfe3196f262fe83",
+      "file": ".tooling\\lldb-async-controlled-20261104\\probe.py"
+    },
+    {
+      "bytes": 10962,
+      "sha256": "ff0794730786749d06ecdfe1abcc35f420082ac08581313010ab76f65ec3dafa",
+      "file": ".tooling\\lldb-async-controlled-20261104\\gate.mjs"
+    },
+    {
+      "bytes": 4031,
+      "sha256": "9c82153a0969364e6319a56d62dc93e2479075c0699c1fa131ac22887a0df9fa",
+      "file": ".tooling\\lldb-async-controlled-20261104\\manifest.json"
+    },
+    {
+      "bytes": 15205,
+      "sha256": "921d343ee8a1f5ff6209212f3c2b19e31dc3d9527019d60916399f5c0bc5424f",
+      "file": ".tooling\\lldb-async-controlled-20261104\\launch-owned.ps1"
+    },
+    {
+      "bytes": 628,
+      "sha256": "7ca647b6672ffec8e5b856583198b455efda60f023308d5c98723c863f3346fd",
+      "file": ".tooling\\lldb-async-controlled-20261104\\final-union-release-check.json"
+    }
+  ],
+  "pending": 0
+}

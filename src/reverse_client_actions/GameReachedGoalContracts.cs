@@ -28,21 +28,41 @@ namespace GrimDynasty.ReverseClient.Actions {
   public readonly GameObjectManagerLookupInvocation Lookup=new GameObjectManagerLookupInvocation();
   public readonly Field<MovementManager> CapturedMovement=new Field<MovementManager>();
   public readonly Field<uint> CapturedAssociatedId=new Field<uint>();
-  public bool ActionStopReturned,CharacterStopReturned,MovementCleared,SingletonReturned,LookupReturned,HookReturned,Returned;
-  internal void Reset(){Native.At=0;Lookup.Reset();CapturedMovement.Forget();CapturedAssociatedId.Forget();ActionStopReturned=false;CharacterStopReturned=false;MovementCleared=false;SingletonReturned=false;LookupReturned=false;HookReturned=false;Returned=false;}
+  public bool ActionStopReturned,ActionDestructorReturned,CharacterStopReturned,MovementCleared,SingletonReturned,LookupReturned,HookReturned,Returned;
+  internal void Reset(){Native.At=0;Lookup.Reset();CapturedMovement.Forget();CapturedAssociatedId.Forget();ActionStopReturned=false;ActionDestructorReturned=false;CharacterStopReturned=false;MovementCleared=false;SingletonReturned=false;LookupReturned=false;HookReturned=false;Returned=false;}
+ }
+ // Optional explicit connection to the existing navigation and OWN action
+ // lifetime implementations. This lower assembly must not depend on the
+ // constructor/production assemblies which already reference these views.
+ // An unbound connection retains the original Unsupported boundaries.
+ public interface IGameReachedGoalStopProduction {
+  GameReachedGoalContext Context{get;}
+  object Navigation();
+  void StopObject(object navigation,object owner);
+  void Destroy(GameReachedGoalActionView action,uint flags,Invocation invocation);
  }
  public sealed class GameReachedGoalContext {
   public readonly GameMovementIdentityBridge Bridge;
   public readonly GameReachedGoalEngineState Engine;
   public readonly MoveContext Move;
   internal readonly GameReachedGoalMoveBoundaries MoveCalls;
+  public IGameReachedGoalStopProduction StopProduction{get;private set;}
   readonly Dictionary<GameMovementCharacterState,GameReachedGoalHookPackState> hooks=new Dictionary<GameMovementCharacterState,GameReachedGoalHookPackState>();
   readonly Dictionary<ActionRecord,GameReachedGoalActionView> actions=new Dictionary<ActionRecord,GameReachedGoalActionView>();
   public GameReachedGoalContext(GameMovementIdentityBridge bridge,GameReachedGoalEngineState engine,MoveContext move){
    if(bridge==null||engine==null||move==null)throw new ArgumentNullException("reached-goal context");Bridge=bridge;Engine=engine;Move=move;
    // Explicit symbolic identities must agree; no Game/Move field is copied.
    if(!Object.ReferenceEquals(move.CharacterClass.Read(0xa5cba0),bridge.Callbacks.CharacterClass.Read(0xa5cba0)))throw new ArgumentException("Game and Move CharacterClass symbols must denote one identity");
+   // Goal initialization and failure logging borrow the same mutable global
+   // cell as Move. Binding does not consume its value or initialize Engine+68.
+   engine.BorrowEngineGlobal(move.EngineGlobal);
    MoveCalls=new GameReachedGoalMoveBoundaries(this);
+  }
+  public void BindStopProduction(IGameReachedGoalStopProduction production){
+   if(production==null)throw new ArgumentNullException("stop production");
+   if(!Object.ReferenceEquals(production.Context,this))throw new ArgumentException("Stop production must borrow this original Goal context");
+   if(StopProduction!=null&&!Object.ReferenceEquals(StopProduction,production))throw new InvalidOperationException("Goal stop production cannot be rebound");
+   StopProduction=production;
   }
   public void BindHookPack(GameMovementIdentityView view,GameReachedGoalHookPackState pack){
    Bridge.RequireBound(view,0);if(pack==null)throw new ArgumentNullException("pack");GameReachedGoalHookPackState old;
@@ -54,14 +74,16 @@ namespace GrimDynasty.ReverseClient.Actions {
    if(actions.TryGetValue(view.Action,out old)&&!Object.ReferenceEquals(old,view))throw new InvalidOperationException("Action already has another primary view");actions[view.Action]=view;
   }
   internal GameReachedGoalHookPackState Hook(GameMovementIdentityView view,uint at){Bridge.RequireBound(view,at);GameReachedGoalHookPackState pack;if(!hooks.TryGetValue(view.Owner,out pack))throw new MissingContract(at,"Inline full-owner45F0 HookPack lacks explicit shared binding");return pack;}
-  internal Field<object> ActionPrimary(ActionRecord action,uint at){
+  internal GameReachedGoalActionView ActionView(ActionRecord action,uint at){
    GameReachedGoalActionView view;if(action==null||!actions.TryGetValue(action,out view))throw new MissingContract(at,"Action primary view lacks an explicit shared binding");
-   var move=action as MoveActionRecord;if(move==null)throw new MissingContract(at,"This action type has no represented live primary view");move.RequireLive(at);return view.Virtual00;
+   var move=action as MoveActionRecord;if(move==null)throw new MissingContract(at,"This action type has no represented live primary view");move.RequireLive(at);return view;
   }
+  internal Field<object> ActionPrimary(ActionRecord action,uint at){return ActionView(action,at).Virtual00;}
  }
- // These adapters invoke the already recovered Move body and the real OWN
- // ObjectManager hash lookup. Unclosed skill/sound/navigation/lifetime calls
- // retain MoveBoundaries' Unsupported defaults; no success callback is added.
+ // These adapters invoke the already recovered Move and SkillReference bodies
+ // and real OWN ObjectManager hash lookup. Unclosed skill virtuals, sound,
+ // navigation and lifetime calls retain Unsupported unless the explicit
+ // production binding invokes their actual recovered implementations.
  internal sealed class GameReachedGoalMoveBoundaries:MoveBoundaries {
   readonly GameReachedGoalContext owner;
   internal GameReachedGoalMoveBoundaries(GameReachedGoalContext context):base(context.Move){owner=context;}
@@ -74,15 +96,18 @@ namespace GrimDynasty.ReverseClient.Actions {
    return Object.ReferenceEquals(table.Read(0x082f27),GameMovementPrimaryTable.Player)?owner.Bridge.Callbacks.PlayerClass.Read(0x016d10):owner.Bridge.Callbacks.CharacterClass.Read(0x019d20);
   }
   public override byte Derived(ClassRecord parent,ClassRecord expected){return (byte)(GameMovementCallbackContracts.IsDerivedFrom591480(parent,expected,new Invocation())?1:0);}
+  public override uint SkillId(MoveCharacter move,uint reference){return SkillReferenceContracts.GetSkillId531C50(owner.Bridge,move,reference,new Invocation());}
   public override uint State458(MoveCharacter move){return GameMovementCallbackContracts.GetActionState05B730(owner.Bridge.ForMoveCharacter(move,0x05b730).Owner,new Invocation());}
   public override void State450(MoveCharacter move,uint state){GameReachedGoalContracts.SetActionState05B710(owner.Bridge.ForMoveCharacter(move,0x05b710),state,new Invocation());}
+  public override object Navigation(){return owner.StopProduction==null?base.Navigation():owner.StopProduction.Navigation();}
+  public override void StopObject(object navigation,object instance){if(owner.StopProduction==null){base.StopObject(navigation,instance);return;}owner.StopProduction.StopObject(navigation,instance);}
  }
  // Game067170 and05FC30, retaining repeated primary-table reads, the captured
  // Handler identity, and inline full-owner DC0/16C0 aliases supplied by Bridge.
  // Conditional hot arrival requires an explicitly empty current action, a
  // real lookup miss, and initialized inactive event9. An active MoveTo action
  // runs its recovered End body and stops at unresolved real dependencies;
- // action destruction and associated-controller virtuals remain unclosed.
+ // unbound action destruction and associated-controller virtuals remain open.
  public static class GameReachedGoalContracts {
   static T Need<T>(T value,uint at)where T:class{if(value==null)throw new MissingContract(at,"Null own reached-goal view");return value;}
   internal static void Primary(Field<object> bits,uint at){object t=Need(bits,at).Read(at);if(!Object.ReferenceEquals(t,GameMovementPrimaryTable.Character)&&!Object.ReferenceEquals(t,GameMovementPrimaryTable.Player))throw new MissingContract(at,"Unobserved Character/Player primary virtual target");}
@@ -93,7 +118,7 @@ namespace GrimDynasty.ReverseClient.Actions {
    i.At=0x05b720;
   }
   public static void CharacterStop05FC30(GameMovementIdentityView view,GameReachedGoalContext context,GameReachedGoalInvocation c){
-   var i=Need(c,0x05fc3a).Native;c.ActionStopReturned=false;c.CharacterStopReturned=false;
+   var i=Need(c,0x05fc3a).Native;c.ActionStopReturned=false;c.ActionDestructorReturned=false;c.CharacterStopReturned=false;
    i.At=0x05fc3a;Need(context,i.At).Bridge.RequireBound(view,i.At);var handlerBits=view.Move.Handler24C0.Snapshot();
    i.At=0x05fc44;var handler=Need(handlerBits.Read(i.At),i.At);var current=handler.Current08.Snapshot();
    i.At=0x05fc48;var action=current.Read(i.At);
@@ -103,7 +128,12 @@ namespace GrimDynasty.ReverseClient.Actions {
     var move=action as MoveActionRecord;if(move==null)throw new MissingContract(i.At,"MoveTo table requires the same explicit MoveActionRecord view");
     MoveContracts.Stop(move,context.MoveCalls,i);c.ActionStopReturned=true;
     i.At=0x05fc53;var late=handler.Current08.Snapshot();i.At=0x05fc57;action=late.Read(i.At);
-    if(action!=null){i.At=0x05fc5c;var destructor=context.ActionPrimary(action,i.At).Snapshot();i.At=0x05fc64;destructor.Read(i.At);throw new MissingContract(i.At,"Action scalar-deleting destructor slot0 is unbound; flags1 and captured late action are not discarded");}
+    if(action!=null){
+     i.At=0x05fc5c;var lateView=context.ActionView(action,i.At);var destructor=lateView.Virtual00.Snapshot();i.At=0x05fc64;var target=destructor.Read(i.At);
+     if(context.StopProduction==null)throw new MissingContract(i.At,"Action scalar-deleting destructor slot0 is unbound; flags1 and captured late action are not discarded");
+     if(!Object.ReferenceEquals(target,GameReachedGoalActionTable.MoveTo))throw new MissingContract(i.At,"Unbound scalar-deleting destructor slot0 target");
+     context.StopProduction.Destroy(lateView,1,i);c.ActionDestructorReturned=true;
+    }
     i.At=0x05fc66;handler.Current08.Write(null);
    }
    i.At=0x05fc6e;view.Owner.Entity.RequireLive(i.At);var primary=view.Owner.Entity.Virtual00.Snapshot();i.At=0x05fc83;Primary(primary,i.At);

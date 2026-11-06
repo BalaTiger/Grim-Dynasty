@@ -1,0 +1,33 @@
+{
+    "schema":  "grim-dynasty-r1-ifeo-attempt-v1",
+    "utc":  "2026-11-05T12:49:25.7689299Z",
+    "authorised_by":  "user chose IFEO after the rule review",
+    "what_was_done":  {
+                          "wrapper":  ".tooling/r1-watch-present-prepared/ifeo-debugger.cmd",
+                          "registry":  "HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Image File Execution Options\\\\Grim Dawn.exe, value Debugger -\u003e the wrapper",
+                          "intent":  "have the system run the watcher at process creation so the guard is armed before any engine code"
+                      },
+    "outcome":  {
+                    "key_written":  true,
+                    "log_created":  false,
+                    "game_processes":  "one client started and ran normally",
+                    "interpretation":  "The HKCU entry did not take effect for a Steam-initiated launch: the wrapper was never invoked, so no watch was armed."
+                },
+    "cleanup":  {
+                    "key_removed":  true,
+                    "verified_absent":  true,
+                    "hklm_key_never_created":  true,
+                    "game_launches_normally_afterwards":  true
+                },
+    "why_it_matters":  "The remaining way to arm before creation is an HKLM Image File Execution Options entry, which is the conventional location and requires elevation (a UAC prompt).",
+    "alternatives":  [
+                         "HKLM IFEO with elevation, accepting the UAC prompt",
+                         "enable process-creation auditing and identify how Steam launches the client (also a policy change)",
+                         "finish statically: find the initialiser that fills the singleton table before any window exists"
+                     ],
+    "not_claimed":  [
+                        "that IFEO cannot work at all",
+                        "that the writer was captured",
+                        "any change to the shipped client"
+                    ]
+}

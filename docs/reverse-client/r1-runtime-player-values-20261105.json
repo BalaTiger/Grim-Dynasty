@@ -1,0 +1,70 @@
+{
+    "schema":  "grim-dynasty-r1-runtime-player-values-v1",
+    "utc":  "2026-11-05T07:59:59.8353094Z",
+    "pid":  2352,
+    "state":  "client in a loaded level (town)",
+    "method":  "vtable slot0 stub decoded as LEA RAX,[class];RET; the LEA target was compared with the known class records at Game.dll+0xa5cab0 (Player) and +0xa5cba0 (Character)",
+    "player_class_record":  "0x7ffa8483cab0",
+    "player_vtable":  "0x7ffa84567100",
+    "player_objects":  [
+                           {
+                               "object":  "0x22ee167b010",
+                               "key":  "0x50b2",
+                               "gate26af":  0,
+                               "associated_id16c0":  28965,
+                               "dc0":  "0x22f1e77af80"
+                           },
+                           {
+                               "object":  "0x22f02154b20",
+                               "key":  "0x28e7",
+                               "gate26af":  0,
+                               "associated_id16c0":  19116,
+                               "dc0":  "0x22f289a2f30"
+                           }
+                       ],
+    "controller":  [
+                       {
+                           "id":  28965,
+                           "object":  "0x22ec4716920",
+                           "vtable":  "0x7ffa844b4990",
+                           "current_state_2a0":  "0x7ff64f66b868",
+                           "overlay_2e8":  0,
+                           "count_2f0":  7
+                       }
+                   ],
+    "findings":  [
+                     "Character+0x26AF is 0 on both player objects: in a loaded town the move gate is open, so the gate is not what blocks the OWN chain.",
+                     "Controller+0x2F0 is 7 while Controller+0x2E8 (overlay) is 0. The model assumes a non-zero count means the overlay list branch; here the count is non-zero and the overlay is null, so that assumption needs correction rather than a default.",
+                     "Controller+0x2A0 reads 0x7ff64f66b868, which is outside the usual heap range and must be classified (mapped? stack? encoded?) before any state claim."
+                 ],
+    "not_claimed":  [
+                        "that 0x7ff64f66b868 is a state object",
+                        "that the count/overlay relationship is understood",
+                        "movement or presentation behaviour"
+                    ],
+    "state_slot_classification":  {
+                                      "utc":  "2026-11-05T08:04:41.4862931Z",
+                                      "address":  "0x7ff64f66b868",
+                                      "virtual_query":  {
+                                                            "state":  "0x10000 MEM_FREE",
+                                                            "protect":  "0x1 PAGE_NOACCESS",
+                                                            "region":  "0x532f5000",
+                                                            "base":  "0x7ff64f66b000"
+                                                        },
+                                      "reading":  "a qword can still be returned from that address, which is consistent with a stale slot value rather than a live object",
+                                      "interpretation":  "Controller+0x2A0 does not currently hold a mapped state object, while Controller+0x2F0 (count) is 7 and the overlay at +0x2E8 is null.",
+                                      "meaning":  "The model premise \"non-zero count selects the overlay list\" is contradicted in this sample, and \"current state\" is not a resolvable object here. Both need correction, not a default."
+                                  },
+    "engine_globals_stable":  "engine=0x22ee236aeb0 and manager=0x22ee811a290 were re-read from the live modules and are unchanged, so the values above belong to one process instance, not to a stale pid.",
+    "retraction":  {
+                       "utc":  "2026-11-05T08:09:43.0852438Z",
+                       "retracted":  "The earlier statement that Controller+0x2A0 points at MEM_FREE / PAGE_NOACCESS is WRONG.",
+                       "why":  "VirtualQuery returned MEM_FREE even for the controller object whose vtable was read successfully at the same moment. The call itself is faulty (missing prototype / struct layout), so its answers are not usable as memory evidence.",
+                       "evidence":  "ReadProcessMemory succeeds and returns plausible content at 0x22ec4716920 (vtable 0x7ffa844b4990), at 0x22f5ce9c150 (vtable 0x7ffa84524bc8) and at 0x22f1f1508d0.",
+                       "corrected_values":  [
+                                                "player1 controller 0x22ec4716920: +0x2A0 = 0x7ff64f66b868 (vtable 0x7ffa84524bc8), +0x2E8 = 0, +0x2F0 = 7",
+                                                "player2 controller 0x22f23229280: +0x2A0 = 0x22f5ce9c150 (vtable 0x7ffa84524bc8), +0x2E8 = 0x22f1f1508d0, +0x2F0 = 0"
+                                            ],
+                       "note":  "Both controllers report the SAME state vtable 0x7ffa84524bc8, which is a concrete state class identity that can be compared with the disk state tables."
+                   }
+}

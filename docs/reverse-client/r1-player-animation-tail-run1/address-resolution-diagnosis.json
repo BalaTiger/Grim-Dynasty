@@ -1,0 +1,73 @@
+{
+  "schema": "grim-dynasty.player-tail-address-diagnosis.v1",
+  "utc": "2026-11-02T18:03:41.425Z",
+  "status": "saved-evidence-and-local-source-diagnosis-only",
+  "query": "procedure_pseudo_code",
+  "selector": "0x1805da02e",
+  "outer_error_code": "invalid_request",
+  "outer_category": "invalid_input",
+  "remote_code": "not_found",
+  "diagnostics_truncated": false,
+  "exact_remote_message": "File offset 0x1805da02e has no loaded source mapping for the admitted target file; Ghidra image base: 0x180000000. Inspect mappings with rea inspect-native-load-image <path> --provider ghidra --json or MCP inspect_native_load_image.",
+  "package": "rea-agents 6.5.0",
+  "sources": [
+    {
+      "file": "docs/reverse-client/r1-player-animation-tail-run1/07-PlayerAnimationTail-0x1805da02e-procedure_pseudo_code.json",
+      "sha256": "4d2dec1f0920e8eff7e5e77270a13c09e582d07f8e4403acf6534e70c559fc1d"
+    },
+    {
+      "file": ".tooling/rea/node_modules/rea-agents/bridge/ghidra/ReaGhidraBridge.java",
+      "sha256": "db16aed4d16ab94da883843281ef7a8a33a244cd8379bd4013e8dee479c0a105",
+      "lines": [
+        "955-1008: normal-address lookup then numeric source-offset fallback",
+        "2190-2243: resolveProcedure/functionAtOrContaining",
+        "2037-2057: containingProcedure distinguishes not_in_procedure/outside_segments",
+        "1242-1248,1273-1284: exact-address instruction inspection without requiring function",
+        "600-647: loaded-image source/mapping enumeration and hashes"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-player-animation-tail-run1/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c",
+      "scope": "Current saved pseudocode schema explicitly documents numeric fallback."
+    },
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8",
+      "scope": "Saved exact-address diagnostic schemas; no new discovery."
+    }
+  ],
+  "proved": [
+    "Normal analysis-address lookup was attempted first and returned not_found. Only this failure for a numeric 0x selector permits the fallback.",
+    "Fallback interprets the same full number 0x1805da02e as a FILE OFFSET without subtracting image base; the resulting offset has no loaded source mapping.",
+    "285E50 resolved to an analyzed function, so its successful query did not enter fallback.",
+    "Outer invalid_request wraps remote not_found. This response does not show a resource or permission denial."
+  ],
+  "unknown": [
+    "Whether 5DA02E lies inside loaded memory but outside an analyzed function, or outside the Ghidra mapping.",
+    "Whether the exact location is decoded instruction, instruction interior, data or undecodable.",
+    "Native body, boundary and semantics; no ret, safe or no-op conclusion."
+  ],
+  "next_minimum_diagnostic_recommendation": [
+    {
+      "tool": "resolve_containing_procedure",
+      "args": {
+        "address": "0x1805da02e"
+      },
+      "purpose": "Distinguish found/not_in_procedure/outside_segments without file-offset fallback."
+    },
+    {
+      "tool": "inspect_native_instruction",
+      "args": {
+        "address": "0x1805da02e"
+      },
+      "purpose": "If inside memory but no function, inspect only this existing Listing location. One instruction does not establish whole-function semantics."
+    }
+  ],
+  "mapping_vs_body": "inspect_native_load_image measures loaded source/memory mappings, including source/memory hashes; it does not create a function. Reserve it for a mapping inconsistency. For inside-memory unrecognized code, separately reviewed bounded byte/boundary work is relevant. Changing address syntax or substituting a file offset alone cannot establish a missing function.",
+  "execution_boundary": "No next live plan/query prepared. Do not rerun successful 285E50. Current stage ends after root's 26 new + 1 regression validation. Any later diagnostic needs its own reviewed fixed plan and formal approval.",
+  "original_read": false,
+  "backend_started": false,
+  "failed_response_changed": false,
+  "note": "An initial diagnostic-write PowerShell command had a parser error before execution; this JSON is the only new diagnostic artifact."
+}

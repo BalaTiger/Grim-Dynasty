@@ -1,0 +1,42 @@
+{
+  "utc": "2026-11-03T14:10:34.1463905Z",
+  "status": "released-current-pid-reuse-distinguished-by-creation-time",
+  "source_receipt": "docs/reverse-client/r1-widget-input-slots-release.json",
+  "source_receipt_sha256": "f74c2df1b560bc998cbf5c90ac76eb7cc86de8e479f5f6fd4508f9434a98e68f",
+  "supersedes_derived_receipt": "docs/reverse-client/r1-widget-input-slots-release-identity-resolution.json",
+  "supersedes_sha256": "6a43157fc17d2820838fb22ade4bb1da78f4a57cdfb5adb6b1b191e6d1fddb08",
+  "correction": "PowerShell 7 converts JSON timestamps to DateTime; use ToUniversalTime directly without a culture-dependent string roundtrip. Original source and first derived receipt preserved.",
+  "batch_finished_utc": "2026-11-03T14:05:58.4220000Z",
+  "resolved_reused_pids": [
+    {
+      "pid": 13628,
+      "old_name": "conhost.exe",
+      "old_creation_utc": "2026-11-03T14:05:26.4389128Z",
+      "observed_name": "pwsh.exe",
+      "observed_creation_utc": "2026-11-03T14:09:24.6107500Z",
+      "observed_parent_pid": 63444,
+      "conclusion": "different-creation-time;observed-instance-created-after-completed-job"
+    },
+    {
+      "pid": 3128,
+      "old_name": "conhost.exe",
+      "old_creation_utc": "2026-11-03T14:05:27.1134734Z",
+      "observed_name": "conhost.exe",
+      "observed_creation_utc": "2026-11-03T14:09:24.6188720Z",
+      "observed_parent_pid": 13628,
+      "conclusion": "different-creation-time;observed-instance-created-after-completed-job"
+    }
+  ],
+  "all_58_recorded_process_instances_absent": true,
+  "job_empty_confirmed": true,
+  "current_resource": {
+    "utc": "2026-11-03T14:09:25.2310768Z",
+    "available_physical_bytes": 10143363072,
+    "system_commit_bytes": 46393155584,
+    "system_commit_limit_bytes": 59886112768,
+    "external_build_or_java_processes": []
+  },
+  "pending_operations": 0,
+  "processes_terminated": 0,
+  "new_batch_still_requires_fresh_preflight": true
+}

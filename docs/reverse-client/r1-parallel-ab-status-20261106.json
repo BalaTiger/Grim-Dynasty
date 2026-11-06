@@ -1,0 +1,18 @@
+{
+    "schema":  "grim-dynasty-r1-parallel-ab-v1",
+    "utc":  "2026-11-06T05:38:12.4615792Z",
+    "plan":  "Run A to confirm the render pipeline and the mesh unpacking agree, and B because the high-level object path is needed for later reversing regardless.",
+    "A_pipeline_confirmation":  {
+                                    "progress":  "ArchiveFile exposes a Read-style method at vtable slot 2 (0x83230) which takes an offset and a size, compares offset+size against the entry raw length at +0x0C, and sources its buffer from [this+8] then [that+0x10]",
+                                    "finding":  "after OpenFile the buffer at [[file+0x08]+0x10] still does not contain geometry, so the payload is loaded lazily and a Read call must happen before the decoded bytes exist",
+                                    "implication":  "A is close: the read trigger is identified, and calling it should yield the exact bytes the game itself would use, which is what makes A a valid check on my own unpacking"
+                                },
+    "B_object_path":  {
+                          "found":  "Character::Character() at 0x52030 is exported; Actor constructors are not exported",
+                          "requirement":  "constructing a Character requires the world, the object manager and a graphics scene to already exist and be wired, so B starts with driving those subsystems rather than with the model file",
+                          "note":  "this is why B is the right long-term investment: it exercises exactly the subsystems later reversing needs"
+                      },
+    "honest_gap":  "Neither A nor B has yet produced a drawn character. A has the read trigger located; B has only its root constructor located.",
+    "next_A":  "call the slot 2 Read method on the opened File with the full size, then inspect the buffer for geometry, and compare it against my own extracted payload to confirm they agree",
+    "next_B":  "determine what World and ObjectManager initialisation already exists after Engine::Initialize, since Engine+0x50 was previously identified as World50"
+}

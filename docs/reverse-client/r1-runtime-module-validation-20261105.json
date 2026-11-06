@@ -1,0 +1,59 @@
+{
+    "schema":  "grim-dynasty-r1-runtime-module-validation-v1",
+    "utc":  "2026-11-05T07:22:22.3311155Z",
+    "pid":  2352,
+    "state":  "client at main menu (not in a loaded level)",
+    "access":  "PROCESS_QUERY_LIMITED_INFORMATION|PROCESS_VM_READ",
+    "writes_to_target":  0,
+    "debugger":  false,
+    "bases":  {
+                  "Game.dll":  "0x7ffa83de0000",
+                  "Engine.dll":  "0x7ffb7eb50000"
+              },
+    "module_correction_confirmed":  {
+                                        "Engine.dll+0x421428 (engine)":  {
+                                                                             "value":  "0x22ee236aeb0",
+                                                                             "canonical":  true,
+                                                                             "plus_0x50":  "0x22ec43afd60"
+                                                                         },
+                                        "Engine.dll+0x4213a0 (object manager)":  {
+                                                                                     "value":  "0x22ee811a290",
+                                                                                     "canonical":  true
+                                                                                 },
+                                        "Engine.dll+0x421398 (critical)":  {
+                                                                               "value":  "0x22ee9375600",
+                                                                               "canonical":  true
+                                                                           },
+                                        "Game.dll+0x421428 (control)":  {
+                                                                            "value":  "0x200000090bb830d",
+                                                                            "canonical":  false,
+                                                                            "note":  "code bytes, identical to the disk image; this is exactly what the two failed attempts read"
+                                                                        },
+                                        "verdict":  "The module correction is confirmed at runtime: the Engine.dll globals are live pointers while the same RVA in Game.dll is code."
+                                    },
+    "object_manager":  {
+                           "manager":  "0x22ee811a290",
+                           "buckets":  "0x22f46511060",
+                           "mask":  "0xffff",
+                           "sentinel":  "0x22ee95c0870",
+                           "entries_sampled":  40,
+                           "buckets_scanned":  54,
+                           "unreadable":  0
+                       },
+    "main_player_chain":  {
+                              "engine+0x40f8":  "0x8a004d68f0b8da43",
+                              "verdict":  "not a pointer: the GetMainPlayer2EBB70 chain root is NOT Engine+0x40F8 for this engine object. The documented chain therefore does not apply to the Engine global directly, and the enumerate route is the usable one."
+                          },
+    "what_this_establishes":  [
+                                  "the Engine.dll globals are live and readable",
+                                  "the ObjectManager hash table walks cleanly with 0 unreadable buckets across 54 scanned",
+                                  "live object pointers and vtables can be read in this client state"
+                              ],
+    "what_it_does_not_establish":  [
+                                       "that any enumerated object is the player",
+                                       "any character or controller field value",
+                                       "movement, navigation or presentation behaviour",
+                                       "that the same values hold in a loaded level"
+                                   ],
+    "next":  "Enter a loaded level, then enumerate again and identify the player object by class, or read CameraTargetState.Target120 after a ground click."
+}

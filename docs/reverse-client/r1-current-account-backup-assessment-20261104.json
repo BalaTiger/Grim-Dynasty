@@ -1,0 +1,109 @@
+{
+  "schema": "grim-dynasty-current-account-backup-consultation-v1",
+  "date_utc": "2026-11-04",
+  "status": "readonly-consultation-complete;no-backup-or-original-run-authorized-or-performed",
+  "conclusion": "Current-account observation is conditionally feasible with verified versioned backups and explicitly approved sync/startup/restore steps. Backups provide rollback evidence, not an execution sandbox or a guarantee that remote Cloud, achievements or other account state remain unchanged. The first backup must precede starting Steam/game, not merely precede a gameplay click.",
+  "current_authorization": "Only identify save locations, inspect app-specific metadata/logs and assess current sync/startup conditions. The quoted user question is hypothetical, not permission to copy/hash payloads, change settings, run the game/debugger, log in or install software.",
+  "observations": {
+    "documents": {"path":"C:\\Users\\zhuzi\\Documents","method":"Environment.GetFolderPath(MyDocuments,DoNotVerify)","utc":"2026-11-04T03:53:13.3987929Z","receipt":"466e75"},
+    "local_save": {"path":"C:\\Users\\zhuzi\\Documents\\My Games\\Grim Dawn\\save","status":"exact-path-not-found","receipt":"8d4887","limit":"Does not rule out nonstandard, older or other-user locations; no broad search."},
+    "Steam_app_data": {
+      "path":"D:\\Steam\\userdata\\151715872\\219990",
+      "save_path":"D:\\Steam\\userdata\\151715872\\219990\\remote\\save",
+      "cache_path":"D:\\Steam\\userdata\\151715872\\219990\\remotecache.vdf",
+      "utc":"2026-11-04T03:56:01.8817974Z","receipt":"914dce",
+      "bounded_metadata_entries":26,"files_total":17,"bytes_total":360518,
+      "remote_files":16,"remote_bytes":355965,"save_files":16,"save_bytes":355965,
+      "latest_file_write_utc":"2026-11-03T05:34:54.9927485Z",
+      "cache_bytes":4553,"cache_entries":16,
+      "cache_syncstate_counts":{"1":16},"cache_persiststate_counts":{"0":16},
+      "limits":"Cache numeric fields were not treated as a documented current-sync status. Read directory/file metadata and app-specific cache only; no actual save-file payload or hash read. Max5000 entries/depth10; parent and entry reparse checks passed, no links followed."
+    },
+    "settings": {
+      "directory":"C:\\Users\\zhuzi\\Documents\\My Games\\Grim Dawn\\Settings",
+      "options_file":"C:\\Users\\zhuzi\\Documents\\My Games\\Grim Dawn\\Settings\\options.txt",
+      "options_bytes":3962,"cloudSaving":true,"utc":"2026-11-04T03:57:01.8794407Z","receipt":"f23c8e",
+      "method":"Bounded text read; only cloud/steam setting lines emitted. No setting modified.",
+      "Steam_global_or_per_app_Cloud_setting":"UNKNOWN;not read from UI or broad client configuration"
+    },
+    "Steam_log": {
+      "path":"D:\\Steam\\logs\\cloud_log.txt","file_bytes":586549,
+      "metadata_write_utc":"2026-11-04T03:11:09.8248360Z",
+      "bounded_tail_lines":1600,"matching_app219990_lines":349,
+      "last_matching_completion_literal":"[2026-11-03 13:34:54] [AppID 219990] Upload complete, result OK",
+      "following_matching_event":"remotecache.vdf saved for app219990",
+      "system_timezone_observed":"China Standard Time",
+      "limits":"Historical success, not current remote inventory/version/freeze or proof of no pending changes. Literal timestamp retained; machine current zone alone does not prove every historical log's zone. Unrelated apps and character names/remote upload endpoints are omitted from this report.",
+      "receipt":"8d4887"
+    },
+    "current_process_UI": {
+      "latest_process_check_utc":"2026-11-04T03:57:01.9055499Z",
+      "matching_game_Steam_debugger_processes":[],
+      "UI_inventory":"Steam and Grim Dawn reported isRunning=false with no windows; no app launched, selected or clicked.",
+      "UI_tool_limit":"cua.getState returned inventory then emitted a Statsig timeout. Inventory agrees with independent process check; not treated as a successful live Cloud status read. No retry or UI input. CUA completion recorded.",
+      "current_remote_Cloud_state":"UNKNOWN",
+      "current_pending_sync_or_conflict":"UNKNOWN",
+      "other_device_activity":"UNKNOWN"
+    },
+    "installation": {
+      "manifest":"D:\\Steam\\steamapps\\appmanifest_219990.acf",
+      "appid":"219990","name":"Grim Dawn","installdir":"Grim Dawn",
+      "StateFlags_literal":"4","buildid":"25813250","SizeOnDisk_literal_bytes":16848641765,
+      "receipt":"8d4887",
+      "limits":"Whitelisted installation fields only; manifest is not license/login/launch or Cloud-state proof. No LastOwner/login secrets inspected."
+    },
+    "free_storage": {"C_bytes":6858051584,"D_bytes":74237280256,"receipt":"914dce","limits":"Historical sample only; backup/copy admission must remeasure. Full installation copy is much larger than current save data."}
+  },
+  "dependencies_remaining": {
+    "source":"docs/reverse-client/r1-standard-account-feasibility-20261104.json",
+    "verified":"Steam.exe and main game DLLs exist; prior Rea fixed-file identities retained. Current-account scope would remove the need to prove a separate Windows account before this particular experiment.",
+    "unknown":"Usable live-debugger frontend, legal startup behavior of an independent copy, startup writes, full write scope and current licensed/online/offline state. msvsmon/JIT presence is not a functioning frontend. No debugger or original program started to test these.",
+    "not_a_workaround":"No Steam API replacement, appid fabrication, DRM patch, login bypass or elevated target. No BIOS or virtualization requirement established."
+  },
+  "proposed_steps_not_executed": [
+    {
+      "step":1,"title":"Cold baseline before any Steam/game launch",
+      "exact_sources":["D:\\Steam\\userdata\\151715872\\219990","C:\\Users\\zhuzi\\Documents\\My Games\\Grim Dawn\\Settings"],
+      "conditional_source":"If the standard local save directory appears before execution, stop and include it after reviewing the changed scope; current absence is recorded, not created.",
+      "proposed_destination":"D:\\GD-Observation-Backups\\<new-UTC-id>\\baseline-A",
+      "approval":"Read complete save payloads for SHA256 and copy the listed app-specific tree/settings into a new nonsync destination. This is not approved yet; destination and permissions must be checked before creation.",
+      "method":"Reconfirm no game/Steam writes and no other-device play. Reject links/path escapes and existing destination. Record relative path set, length, UTC time, attributes and SHA256. Copy without moving/deleting sources; compare all destination hashes, then source hashes/path set again. Any change/error makes the snapshot incomplete and stops launch. Keep A immutable; do not use mirror/purge modes.",
+      "verify":"Verify a restore into a separate empty verification directory, never into originals. Preserve cache metadata as evidence; do not regard it as a Cloud restore mechanism. Keep backup outside Steam/cloud sync roots and git, and retain the successful manifest. No backup implementation or copy ran in this task."
+    },
+    {
+      "step":2,"title":"Resolve Cloud boundary before experiment",
+      "approval":"Separately authorize exact Steam startup, permitted UI inspection and per-game sync changes; any network blocking/offline transition needs its own explicit reviewed scope. The game-internal cloudSaving flag must not be silently changed.",
+      "method":"Preserve A before reopening Steam, because startup may process synchronization. Inspect actual app Cloud status/settings and any conflict before game launch; do not force sync to make the display look clean. If remote inventory differs, preserve both versions separately and ask which baseline is authoritative. A remote backup, if desired, requires separately approved official authenticated read/download; no login or remote download occurred here.",
+      "stop":"If the requirement is that the remote Cloud must not change at all, first approve and validate a concrete prevention mechanism before Steam startup. A local copy, temporary offline state, old success log or cache syncstate alone does not prove that condition. Do not alter firewall/global network settings automatically.",
+      "restore_rule":"After a verified stable baseline/settings state, create separate baseline-B if needed; never replace A. Other devices must not play/sync during the experiment."
+    },
+    {
+      "step":3,"title":"One bounded observed run",
+      "approval":"Specific same-user debugger installation/run if needed, exact original/copy startup target and one bounded mouse/UI trace. A backup approval alone does not authorize these operations or save writes.",
+      "method":"Use confirmed module paths/hashes and existing SetUI/LoadTableFile observation targets; new test character if approved. Even a new character may change shared stash/settings/global progress, so preserve the complete approved save tree. Stop for unexpected target, conflict, sync, resource or ownership failure. No real-character progression or broad account observation by default.",
+      "limits":"Backup protects captured file bytes only. It cannot automatically roll back achievements, Cloud history, account/server-side effects, uncaptured data or debugger timing effects. Current Rea memory budget is not a measured original-game budget."
+    },
+    {
+      "step":4,"title":"Review local recovery before reconnecting sync",
+      "approval":"Any overwrite/rename of original saves, removal of test-only state and re-enabling Cloud require explicit exact recovery scope. No automatic newest-wins decision or cloud deletion.",
+      "method":"After stopping only owned test processes and confirming writer quiescence, create a separate experiment-after snapshot. Compare A/B/after manifests. Restore the user-selected save/settings version only when approved and rehash it. Cache backup remains evidence; do not blindly replace/delete/remake remotecache.vdf to force sync. Preserve all generations until the user checks the result.",
+      "sync":"Reopen/re-enable networking or Cloud only after local recovery review. If conflict is offered, stop for user choice of upload/download; do not infer from timestamps. Verify resulting sync and user-visible save state afterward under separate run approval."
+    }
+  ],
+  "sources": {
+    "Cloud_sync":"https://partner.steamgames.com/doc/features/cloud",
+    "remote_write_delete_semantics":"https://partner.steamgames.com/doc/api/ISteamRemoteStorage",
+    "community_path_reference_on_developer_forum":"https://forums.crateentertainment.com/t/official-save-locations/50701",
+    "developer_Cloud_setting_backup_warning":"https://forums.crateentertainment.com/t/stuck-at-conclave-of-the-three-on-elite/142507"
+  },
+  "execution_state": {
+    "save_payload_files_read_or_hashed":0,"save_files_copied_moved_deleted_modified":0,
+    "app_specific_cache_log_and_setting_metadata_read":true,
+    "Steam_setting_changes":0,"game_Steam_debugger_launches":0,"logins":0,"installs":0,
+    "new_Rea_calls":0,"builds":0,"tests":0,"new_owned_Job_or_background":false,
+    "pending_operations":0,"filesystem_denials_this_task":0,"denied_read_retries":0,
+    "tool_failures_preserved":"Skill alias unavailable, skill-resource callback unavailable, CUA inventory followed by Statsig timeout; no failed file read bypass or escalation.",
+    "original_or_system_changes":false,"commit_push_deploy":false,
+    "next":"Report conditional feasibility and request no actual execution in this consultation. Minimum future approval must specify backup sources/destination/hash verification, sync plan, debugger/launch target and recovery authority separately."
+  }
+}

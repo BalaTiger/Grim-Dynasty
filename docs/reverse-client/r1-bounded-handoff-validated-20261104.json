@@ -1,0 +1,904 @@
+{
+  "schema": "gd-owned-bounded-handoff-validated-v1",
+  "utc": "2026-11-04T15:25:25.8015589Z",
+  "status": "owned-bounded-readonly-hold-validated;human-takeover-unproven;original-paused",
+  "live_cases_completed": 2,
+  "negative_requests_rejected": 10,
+  "controller_acks": 2,
+  "bounded_holds": 2,
+  "old_suites_replayed": false,
+  "fixture_compiles": 0,
+  "supervision_helper_compiles": 1,
+  "actual_human_takeover_verified": false,
+  "unknown_exception_recovery_verified": false,
+  "no_ack_timeout_live_tested": false,
+  "failure_hold_live_tested": false,
+  "cases": [
+    {
+      "case": "no-hit",
+      "pid": 27380,
+      "status": "completed-observation",
+      "failure": null,
+      "native_identity": {
+        "pid": 27380,
+        "creation_filetime": "134382792262310556",
+        "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe"
+      },
+      "no_hit_window_seconds": 1,
+      "handoff_snapshot": {
+        "utc": "2026-11-04T15:20:27.948881+00:00",
+        "pid": 27380,
+        "creation_filetime": "134382792262310556",
+        "process_unique_id": 1,
+        "state": 6,
+        "stop_id": 1,
+        "native": {
+          "utc": "2026-11-04T15:20:27.948881+00:00",
+          "creation_filetime": "134382792262310556",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "threads_available": false,
+        "threads": [],
+        "breakpoint": {
+          "id": 1,
+          "location_id": 1,
+          "address": "0x7ff61e391020",
+          "hit_count": 0
+        }
+      },
+      "rejected_requests": [
+        {
+          "sequence": 1,
+          "rejection_reason": "nonce-mismatch",
+          "request_sha256": "8299c89b078b42220e0ef25387809fb1ddc8a2aea78af4d04aaa9af2687576fa"
+        },
+        {
+          "sequence": 2,
+          "rejection_reason": "stop-id-mismatch",
+          "request_sha256": "78e59cc847fac18a2b51f0d47557050c76e05112fe6cbdddd3f0c2ce0ac10c15"
+        },
+        {
+          "sequence": 3,
+          "rejection_reason": "action-not-allowed",
+          "request_sha256": "f136367e97b1680ad0b7681acc77ad2b849c7f4f45417c0c4eb8cc565cd22ba4"
+        },
+        {
+          "sequence": 4,
+          "rejection_reason": "action-not-allowed",
+          "request_sha256": "122d88ceb509ebac4774d03d719bb84bb72fb52d6365b02742e352ff7c8c8e54"
+        },
+        {
+          "sequence": 5,
+          "rejection_reason": "action-not-allowed",
+          "request_sha256": "97261dfb32b48cbe49a688774b7433a1c90e8e7ff3a938f03e29ec3ab8f59c73"
+        }
+      ],
+      "controller_ack": {
+        "sequence": 6,
+        "utc": "2026-11-04T15:20:28.618656+00:00",
+        "controller_type": "owned-test-controller",
+        "human_takeover_verified": false
+      },
+      "hold_seconds": 2.047000000020489,
+      "hold_sample_count": 20,
+      "hold_started_utc": "2026-11-04T15:20:28.620660+00:00",
+      "hold_finished_utc": "2026-11-04T15:20:30.677811+00:00",
+      "mutations_during_handoff": {
+        "Stop": 0,
+        "Continue": 0,
+        "Detach": 0,
+        "Kill": 0
+      },
+      "initial_attach_continue_calls": 1,
+      "candidate_rejection": null,
+      "human_takeover_verified": false,
+      "unknown_recovery_verified": false,
+      "no_ack_timeout_live_tested": false,
+      "end_confirmation": {
+        "accepted": true,
+        "sequence": 7,
+        "request_sha256": "6e7cb4deded7d6b9a0c4532c544021fa76cff4e9ecd1db228e45b709844c6658",
+        "request": {
+          "nonce": "002eb52b31a344b980bf7cbdba94f50e",
+          "session": "3eebe453fbaf8aea2113b9e7af97a030",
+          "case": "no-hit",
+          "pid": 27380,
+          "creation_filetime": "134382792262310556",
+          "process_unique_id": 1,
+          "stop_id": 1,
+          "readiness_snapshot_token": "3fa38218f66882c576cfe63689c10098df8059905f9e55462b120cb591f3e5d0",
+          "sequence": 7,
+          "action": "end-owned-test"
+        },
+        "fresh_snapshot": {
+          "utc": "2026-11-04T15:20:30.785874+00:00",
+          "pid": 27380,
+          "creation_filetime": "134382792262310556",
+          "process_unique_id": 1,
+          "state": 6,
+          "stop_id": 1,
+          "native": {
+            "utc": "2026-11-04T15:20:30.785874+00:00",
+            "creation_filetime": "134382792262310556",
+            "wait": 258,
+            "exit_code": 259,
+            "exit_code_hex": "0x00000103"
+          },
+          "threads_available": false,
+          "threads": [],
+          "breakpoint": {
+            "id": 1,
+            "location_id": 1,
+            "address": "0x7ff61e391020",
+            "hit_count": 0
+          }
+        },
+        "end_confirmed_utc": "2026-11-04T15:20:30.785874+00:00"
+      },
+      "owned_cleanup": {
+        "kind": "explicit-end-own-fixture-only",
+        "kill_attempted": true,
+        "cleanup_started_utc": "2026-11-04T15:20:30.786873+00:00",
+        "identity": {
+          "pid": 27380,
+          "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+          "creation_filetime": "134382792262310556",
+          "process_unique_id": 1
+        },
+        "native_before_kill": {
+          "utc": "2026-11-04T15:20:30.789413+00:00",
+          "creation_filetime": "134382792262310556",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "snapshot_before_kill": {
+          "utc": "2026-11-04T15:20:30.789413+00:00",
+          "pid": 27380,
+          "creation_filetime": "134382792262310556",
+          "process_unique_id": 1,
+          "state": 6,
+          "stop_id": 1,
+          "native": {
+            "utc": "2026-11-04T15:20:30.789413+00:00",
+            "creation_filetime": "134382792262310556",
+            "wait": 258,
+            "exit_code": 259,
+            "exit_code_hex": "0x00000103"
+          },
+          "threads_available": false,
+          "threads": [],
+          "breakpoint": {
+            "id": 1,
+            "location_id": 1,
+            "address": "0x7ff61e391020",
+            "hit_count": 0
+          }
+        },
+        "kill_started_utc": "2026-11-04T15:20:30.789413+00:00",
+        "kill_success": true,
+        "kill_error": null,
+        "native_final": {
+          "utc": "2026-11-04T15:20:30.847294+00:00",
+          "creation_filetime": "134382792262310556",
+          "wait": 0,
+          "exit_code": 0,
+          "exit_code_hex": "0x00000000"
+        }
+      },
+      "fixture_exit": 0,
+      "backend_log": {
+        "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-bounded-handoff-20261104-retry1\\no-hit-backend.log",
+        "bytes": 3770,
+        "sha256": "fcfb5f10a5e59531a84692e8b5e05d1863a76c0ac4f7df15818f611b0ace7240"
+      }
+    },
+    {
+      "case": "foreign-stop",
+      "pid": 56636,
+      "status": "completed-observation",
+      "failure": null,
+      "native_identity": {
+        "pid": 56636,
+        "creation_filetime": "134382792319645521",
+        "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe"
+      },
+      "no_hit_window_seconds": null,
+      "handoff_snapshot": {
+        "utc": "2026-11-04T15:20:32.780782+00:00",
+        "pid": 56636,
+        "creation_filetime": "134382792319645521",
+        "process_unique_id": 1,
+        "state": 5,
+        "stop_id": 2,
+        "native": {
+          "utc": "2026-11-04T15:20:32.779679+00:00",
+          "creation_filetime": "134382792319645521",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "threads_available": true,
+        "threads": [
+          {
+            "thread_id": "0x4e48",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e5a24",
+            "description": ""
+          },
+          {
+            "thread_id": "0x5144",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e28a4",
+            "description": ""
+          },
+          {
+            "thread_id": "0xd4f4",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e5a24",
+            "description": ""
+          },
+          {
+            "thread_id": "0xd6ec",
+            "reason": 6,
+            "reason_hex": "0x6",
+            "data_count": 1,
+            "data": [
+              "0xffffffffffffffff"
+            ],
+            "pc": "0x7ffbedb43123",
+            "description": "Exception 0x80000003 encountered at address 0x7ffbedb43122"
+          },
+          {
+            "thread_id": "0xd97c",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e5a24",
+            "description": ""
+          },
+          {
+            "thread_id": "0xee40",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e5a24",
+            "description": ""
+          }
+        ],
+        "breakpoint": {
+          "id": 1,
+          "location_id": 1,
+          "address": "0x7ff61e391020",
+          "hit_count": 0
+        }
+      },
+      "rejected_requests": [
+        {
+          "sequence": 1,
+          "rejection_reason": "nonce-mismatch",
+          "request_sha256": "a77a807cd17459b92c10e9f4fef4303cf10f23fecb971eb38429f77bd341dfb8"
+        },
+        {
+          "sequence": 2,
+          "rejection_reason": "stop-id-mismatch",
+          "request_sha256": "7af448931400085adfce47134fe1f4ab3ef37dc95747720268c6c80956c15a4b"
+        },
+        {
+          "sequence": 3,
+          "rejection_reason": "action-not-allowed",
+          "request_sha256": "9df1ea4d1d1c61f5949525e2ae5d0d3d9a698a7f0476d817a07aff60e4e782e2"
+        },
+        {
+          "sequence": 4,
+          "rejection_reason": "action-not-allowed",
+          "request_sha256": "a1f4e8f7b3840c03ce511ca5bc200945d1820f0b3b6330066be52048a040a813"
+        },
+        {
+          "sequence": 5,
+          "rejection_reason": "action-not-allowed",
+          "request_sha256": "b313674b4ff4325c1b6d411252b579123c90e00f7c792b1d8bc9edec9788b515"
+        }
+      ],
+      "controller_ack": {
+        "sequence": 6,
+        "utc": "2026-11-04T15:20:33.432428+00:00",
+        "controller_type": "owned-test-controller",
+        "human_takeover_verified": false
+      },
+      "hold_seconds": 2.062000000034459,
+      "hold_sample_count": 20,
+      "hold_started_utc": "2026-11-04T15:20:33.435951+00:00",
+      "hold_finished_utc": "2026-11-04T15:20:35.496475+00:00",
+      "mutations_during_handoff": {
+        "Stop": 0,
+        "Continue": 0,
+        "Detach": 0,
+        "Kill": 0
+      },
+      "initial_attach_continue_calls": 1,
+      "candidate_rejection": {
+        "type": "RuntimeError",
+        "message": "Non-owned stop reason; keep original stopped for manual review",
+        "inspection": {
+          "phase": "foreign-before-handoff",
+          "stop_id": 2,
+          "allow_explicit_interrupt": false,
+          "unexpected": [
+            {
+              "thread_id": 55020,
+              "reason": 6,
+              "data_count": 1,
+              "data": [
+                "0xffffffffffffffff"
+              ]
+            }
+          ],
+          "accepted_interrupt_threads": []
+        },
+        "keep_stopped": true
+      },
+      "human_takeover_verified": false,
+      "unknown_recovery_verified": false,
+      "no_ack_timeout_live_tested": false,
+      "end_confirmation": {
+        "accepted": true,
+        "sequence": 7,
+        "request_sha256": "55912bde08b3d06467c2a7966aef7851163148f0edd11773cea64b5c8d578aad",
+        "request": {
+          "nonce": "002eb52b31a344b980bf7cbdba94f50e",
+          "session": "59f6126125e4ec2df2889d44550a4f06",
+          "case": "foreign-stop",
+          "pid": 56636,
+          "creation_filetime": "134382792319645521",
+          "process_unique_id": 1,
+          "stop_id": 2,
+          "readiness_snapshot_token": "9dc3e930b65dba11081be8669bb8ed77b510e96d709bc04155de165978b62f8a",
+          "sequence": 7,
+          "action": "end-owned-test"
+        },
+        "fresh_snapshot": {
+          "utc": "2026-11-04T15:20:35.606399+00:00",
+          "pid": 56636,
+          "creation_filetime": "134382792319645521",
+          "process_unique_id": 1,
+          "state": 5,
+          "stop_id": 2,
+          "native": {
+            "utc": "2026-11-04T15:20:35.606399+00:00",
+            "creation_filetime": "134382792319645521",
+            "wait": 258,
+            "exit_code": 259,
+            "exit_code_hex": "0x00000103"
+          },
+          "threads_available": true,
+          "threads": [
+            {
+              "thread_id": "0x4e48",
+              "reason": 1,
+              "reason_hex": "0x1",
+              "data_count": 0,
+              "data": [],
+              "pc": "0x7ffbf07e5a24",
+              "description": ""
+            },
+            {
+              "thread_id": "0x5144",
+              "reason": 1,
+              "reason_hex": "0x1",
+              "data_count": 0,
+              "data": [],
+              "pc": "0x7ffbf07e28a4",
+              "description": ""
+            },
+            {
+              "thread_id": "0xd4f4",
+              "reason": 1,
+              "reason_hex": "0x1",
+              "data_count": 0,
+              "data": [],
+              "pc": "0x7ffbf07e5a24",
+              "description": ""
+            },
+            {
+              "thread_id": "0xd6ec",
+              "reason": 6,
+              "reason_hex": "0x6",
+              "data_count": 1,
+              "data": [
+                "0xffffffffffffffff"
+              ],
+              "pc": "0x7ffbedb43123",
+              "description": "Exception 0x80000003 encountered at address 0x7ffbedb43122"
+            },
+            {
+              "thread_id": "0xd97c",
+              "reason": 1,
+              "reason_hex": "0x1",
+              "data_count": 0,
+              "data": [],
+              "pc": "0x7ffbf07e5a24",
+              "description": ""
+            },
+            {
+              "thread_id": "0xee40",
+              "reason": 1,
+              "reason_hex": "0x1",
+              "data_count": 0,
+              "data": [],
+              "pc": "0x7ffbf07e5a24",
+              "description": ""
+            }
+          ],
+          "breakpoint": {
+            "id": 1,
+            "location_id": 1,
+            "address": "0x7ff61e391020",
+            "hit_count": 0
+          }
+        },
+        "end_confirmed_utc": "2026-11-04T15:20:35.606399+00:00"
+      },
+      "owned_cleanup": {
+        "kind": "explicit-end-own-fixture-only",
+        "kill_attempted": true,
+        "cleanup_started_utc": "2026-11-04T15:20:35.610928+00:00",
+        "identity": {
+          "pid": 56636,
+          "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+          "creation_filetime": "134382792319645521",
+          "process_unique_id": 1
+        },
+        "native_before_kill": {
+          "utc": "2026-11-04T15:20:35.616998+00:00",
+          "creation_filetime": "134382792319645521",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "snapshot_before_kill": {
+          "utc": "2026-11-04T15:20:35.616998+00:00",
+          "pid": 56636,
+          "creation_filetime": "134382792319645521",
+          "process_unique_id": 1,
+          "state": 5,
+          "stop_id": 2,
+          "native": {
+            "utc": "2026-11-04T15:20:35.616998+00:00",
+            "creation_filetime": "134382792319645521",
+            "wait": 258,
+            "exit_code": 259,
+            "exit_code_hex": "0x00000103"
+          },
+          "threads_available": true,
+          "threads": [
+            {
+              "thread_id": "0x4e48",
+              "reason": 1,
+              "reason_hex": "0x1",
+              "data_count": 0,
+              "data": [],
+              "pc": "0x7ffbf07e5a24",
+              "description": ""
+            },
+            {
+              "thread_id": "0x5144",
+              "reason": 1,
+              "reason_hex": "0x1",
+              "data_count": 0,
+              "data": [],
+              "pc": "0x7ffbf07e28a4",
+              "description": ""
+            },
+            {
+              "thread_id": "0xd4f4",
+              "reason": 1,
+              "reason_hex": "0x1",
+              "data_count": 0,
+              "data": [],
+              "pc": "0x7ffbf07e5a24",
+              "description": ""
+            },
+            {
+              "thread_id": "0xd6ec",
+              "reason": 6,
+              "reason_hex": "0x6",
+              "data_count": 1,
+              "data": [
+                "0xffffffffffffffff"
+              ],
+              "pc": "0x7ffbedb43123",
+              "description": "Exception 0x80000003 encountered at address 0x7ffbedb43122"
+            },
+            {
+              "thread_id": "0xd97c",
+              "reason": 1,
+              "reason_hex": "0x1",
+              "data_count": 0,
+              "data": [],
+              "pc": "0x7ffbf07e5a24",
+              "description": ""
+            },
+            {
+              "thread_id": "0xee40",
+              "reason": 1,
+              "reason_hex": "0x1",
+              "data_count": 0,
+              "data": [],
+              "pc": "0x7ffbf07e5a24",
+              "description": ""
+            }
+          ],
+          "breakpoint": {
+            "id": 1,
+            "location_id": 1,
+            "address": "0x7ff61e391020",
+            "hit_count": 0
+          }
+        },
+        "kill_started_utc": "2026-11-04T15:20:35.616998+00:00",
+        "kill_success": true,
+        "kill_error": null,
+        "native_final": {
+          "utc": "2026-11-04T15:20:35.681835+00:00",
+          "creation_filetime": "134382792319645521",
+          "wait": 0,
+          "exit_code": 0,
+          "exit_code_hex": "0x00000000"
+        }
+      },
+      "fixture_exit": 0,
+      "backend_log": {
+        "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-bounded-handoff-20261104-retry1\\foreign-stop-backend.log",
+        "bytes": 4244,
+        "sha256": "79daef30955c447f5d72e8dbe8974a6b157bfce62c4a79f83d223fd5caed6ac6"
+      }
+    }
+  ],
+  "resource_watch": {
+    "samples": 13,
+    "first_utc": "2026-11-04T14:52:48.7607407Z",
+    "last_utc": "2026-11-04T15:20:03.1230514Z",
+    "stable_samples": [
+      {
+        "utc": "2026-11-04T15:17:55.4903651Z",
+        "available_physical_bytes": 5883322368,
+        "system_commit_bytes": 48974815232,
+        "system_commit_limit_bytes": 59886112768,
+        "external_build_or_java_processes": [],
+        "physical_gib": 5.479270935058594,
+        "commit_headroom_gib": 10.161937713623047,
+        "admission_pass": true,
+        "two_samples_stable": false,
+        "previous_sample_gap_seconds": 127.71909609999999,
+        "tests_started": false,
+        "monitor_kind": "one read-only sample in current task; no timer or scheduled task"
+      },
+      {
+        "utc": "2026-11-04T15:20:03.1230514Z",
+        "available_physical_bytes": 5795995648,
+        "system_commit_bytes": 48905732096,
+        "system_commit_limit_bytes": 59886112768,
+        "external_build_or_java_processes": [],
+        "physical_gib": 5.397941589355469,
+        "commit_headroom_gib": 10.226276397705078,
+        "admission_pass": true,
+        "two_samples_stable": true,
+        "previous_sample_gap_seconds": 127.63268629999999,
+        "tests_started": false,
+        "monitor_kind": "one read-only sample in current task; no timer or scheduled task"
+      }
+    ],
+    "interval_target_seconds": 120,
+    "current_turn_only": true,
+    "persistent_automation_created": false,
+    "orchestration_cell": 180,
+    "orchestration_finished": true
+  },
+  "resources": {
+    "admission_physical_and_commit_gib": 5,
+    "runtime_gib": 2,
+    "owner_sample_count": 10,
+    "min_physical_gib": 5.1559600830078125,
+    "min_commit_gib": 9.979106903076172,
+    "release": {
+      "utc": "2026-11-04T15:21:04.5441787Z",
+      "source": "This batch exact Job samples and child receipts; PID reuse is not ownership",
+      "known_pids": [
+        6936,
+        26000,
+        27380,
+        31960,
+        37472,
+        38340,
+        40984,
+        41884,
+        42348,
+        44812,
+        48872,
+        50276,
+        56528,
+        56636
+      ],
+      "remaining": [],
+      "resource": {
+        "utc": "2026-11-04T15:21:03.9549151Z",
+        "available_physical_bytes": 7702544384,
+        "system_commit_bytes": 48947625984,
+        "system_commit_limit_bytes": 59886112768,
+        "external_build_or_java_processes": []
+      },
+      "owner_status": "completed-owned-bounded-handoff",
+      "job_empty_observed": true,
+      "job_disposed": true,
+      "processes_modified": false,
+      "original_started": false,
+      "pending_tool_sessions": 0
+    }
+  },
+  "execution": {
+    "launcher_session": 48319,
+    "launcher_final_chunk": "881668",
+    "launcher_exit": 0,
+    "release_session": 36375,
+    "release_final_chunk": "c41525",
+    "release_exit": 0,
+    "started_utc": "2026-11-04T15:20:22.1663450Z",
+    "finished_utc": "2026-11-04T15:20:36.1946690Z",
+    "job_empty_observed": true,
+    "job_disposed": true,
+    "job_termination_requested": false,
+    "failure": null,
+    "cleanup_failure": null,
+    "pending_operations": 0,
+    "owned_heavy_processes": 0,
+    "original_started": false,
+    "original_attached": false
+  },
+  "prior_failed_attempt": {
+    "file": ".tooling/lldb-bounded-handoff-20261104/launch-result.json",
+    "sha256": "f97a7aba61add4597b0913d3c9d7686647d7e1b7a5d7516a2fccf629c261d6e2",
+    "preserved": true,
+    "reason": "Before-helper resource gate; no earlier fixture execution",
+    "retry_change": "Output directory and dependent frozen hashes only; normalized equivalence independently reviewed"
+  },
+  "review": {
+    "agent": "/root/terminal_revision_review",
+    "preflight": "Four files normalized-equivalent;15 pins matched;no guard changes",
+    "results": "Confirmed 5 rejections per case, valid ACK,20 hold samples each,stable identity/StopID/PC/state,explicit end before cleanup,no unintended continuation;limitations retained"
+  },
+  "boundaries": [
+    "No-hit was Running; only automation paused.",
+    "Initial attach Continue1 per case; explicit end then own Kill1. Cleanup exit0 is not natural completion.",
+    "Controller ACK is not human takeover; hidden batch lacks verified user frontend.",
+    "Unknown original resume/detach and indefinite no-hit resolution unsupported.",
+    "NoACK,FAILED-hold,controller disappearance/resource-loss paths not live-tested.",
+    "No original/save/Steam/security changes,new software,visible app,commit/push/deploy."
+  ],
+  "archive_preflight_failure": {
+    "chunk": "32c1b3",
+    "cause": "PowerShell filename-list concatenation produced one combined filename; hash lookup failed before stage/checkpoint writes",
+    "confirmed_no_stage_or_checkpoint_change_chunk": "3e3bd9",
+    "remedy": "Explicit suffix loop; only archival read/write repeated, not tests"
+  },
+  "evidence": [
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/probe.py",
+      "sha256": "37de46ab6a48ea13d1205ae72ddea7dd5461b3de10df99abe11b8c1ebeda4d79"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/gate.mjs",
+      "sha256": "ac51d68429c345916a1d827f63fd27974484274a695f9d84b9abf7c9b7d53b73"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/manifest.json",
+      "sha256": "0a0a7b0250e3d5feba59ebd9e7435cf3f5dca1bf4a0b7bd86f9618f2c7e27297"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/launch-owned.ps1",
+      "sha256": "a3bb24cec4a8a8be6df22bded0484a9083019334ba566345e5cec7de1a84592c"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/prepared.json",
+      "sha256": "add7653ad670e15b1e0554b189b109f987bab9f9fed8af7b7893aea5e69ce4cf"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/resource-watch.ndjson",
+      "sha256": "4d162d4597c55d88bf66100bcd322cb0bd8ba2884b2a292911ab9ea9549cc0ad"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/read-resource-once.ps1",
+      "sha256": "e141dc0a8c7b0d4521ff91d58d96e16efc3e258be46aec4c34a9deaa68ecd3d6"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/launch-result.json",
+      "sha256": "5211d3b0d54e2da3ed5136c6ae44d08ebfbb022781c858d95fef7f30feb56de8"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/result.json",
+      "sha256": "2b72519c834f5a215157c586e7fac5ca0754fe2facd49e65c488028213d7c79e"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/release-check.json",
+      "sha256": "d82c3b83780344718aae9c3baffaef582bfb3ddee9c998f541fc1cf426d7c922"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-result.json",
+      "sha256": "207323cbb1c3198e1319e436579526d0c7a2238185bd8465ba6129bd4381dac3"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-backend.log",
+      "sha256": "fcfb5f10a5e59531a84692e8b5e05d1863a76c0ac4f7df15818f611b0ace7240"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-events.ndjson",
+      "sha256": "347afed1f89db2f7ca5de6586911e3f47a6f46527da7a0b86df824a387a7fb20"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-fixture.stdout.log",
+      "sha256": "fd17d41081d5afa19346497efd5e5832652ad4bbefc12af9fe2a13f0c5d0528c"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-fixture.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-handoff.json",
+      "sha256": "07f98dec6ebc834c424c6bf3229eef30f5ffd9ca97068861cdd58d75b3b82a56"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-hold.json",
+      "sha256": "f4d2ba9309aec21d7d5293bd8cca6489331e076d23e6171ad2e288e6859c0079"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-end.json",
+      "sha256": "6e7cb4deded7d6b9a0c4532c544021fa76cff4e9ecd1db228e45b709844c6658"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-request-1.json",
+      "sha256": "8299c89b078b42220e0ef25387809fb1ddc8a2aea78af4d04aaa9af2687576fa"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-ack-1.json",
+      "sha256": "d2674cb1ed88a65d884b8cc2d3cd5fdc3b64fc982e69586886fb315667a4e85d"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-request-2.json",
+      "sha256": "78e59cc847fac18a2b51f0d47557050c76e05112fe6cbdddd3f0c2ce0ac10c15"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-ack-2.json",
+      "sha256": "5a3cdaa1d8dc48bf10220f0ea66841bbaadf91011813064aaa6723e1fbb56000"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-request-3.json",
+      "sha256": "f136367e97b1680ad0b7681acc77ad2b849c7f4f45417c0c4eb8cc565cd22ba4"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-ack-3.json",
+      "sha256": "78bfeab25c37aa97f10905fdf68bb3ae40f1912198c8e1fca1b63aa966e1bfd1"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-request-4.json",
+      "sha256": "122d88ceb509ebac4774d03d719bb84bb72fb52d6365b02742e352ff7c8c8e54"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-ack-4.json",
+      "sha256": "3dfa849154c23436f86321d7490f5fc420eaee98fd58b34af52be4760f2ba0e6"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-request-5.json",
+      "sha256": "97261dfb32b48cbe49a688774b7433a1c90e8e7ff3a938f03e29ec3ab8f59c73"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-ack-5.json",
+      "sha256": "65ca0d67f2938afba1193504351e36cb7c53cf771f86c31503bf161cd3ee952a"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-request-6.json",
+      "sha256": "3b95e4388dbd82f133265707fd0c44f659c4bef835f99d416815bb7855ab1760"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/no-hit-ack-6.json",
+      "sha256": "f7a5694398e432f394d5cc92b9864574cb7e6b2067e1f935c056a08ef5812c51"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-result.json",
+      "sha256": "9bc75c7959a5104ea1bf226abbc64ab0623694d474e9ece5c8fc54b7886ee723"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-backend.log",
+      "sha256": "79daef30955c447f5d72e8dbe8974a6b157bfce62c4a79f83d223fd5caed6ac6"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-events.ndjson",
+      "sha256": "2896cf86c6c6955388fe4b5a3fbe2fc3f74228802645cdcba362734b66829df6"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-fixture.stdout.log",
+      "sha256": "3430c297185a64b6b69992a33b199c0b022cb4904c8dba82131bd717339b1de8"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-fixture.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-handoff.json",
+      "sha256": "243c4e03de8991fb21bf9b724b03ce899fd73f23b4b0a8ced413fe7031c462cf"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-hold.json",
+      "sha256": "b6252610f4ae6dea00e3b97dbd34d597a922a13438c12d37939dc45f6d9aa27f"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-end.json",
+      "sha256": "55912bde08b3d06467c2a7966aef7851163148f0edd11773cea64b5c8d578aad"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-request-1.json",
+      "sha256": "a77a807cd17459b92c10e9f4fef4303cf10f23fecb971eb38429f77bd341dfb8"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-ack-1.json",
+      "sha256": "2bb2f8c2dd36a633245f89d5bd430bad6fc5d95f6764fe5cf578d9b247bf5123"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-request-2.json",
+      "sha256": "7af448931400085adfce47134fe1f4ab3ef37dc95747720268c6c80956c15a4b"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-ack-2.json",
+      "sha256": "dcf24734d9114741e28c29200f868a386f5c9b22d81fb56918a2bd38b44cf89c"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-request-3.json",
+      "sha256": "9df1ea4d1d1c61f5949525e2ae5d0d3d9a698a7f0476d817a07aff60e4e782e2"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-ack-3.json",
+      "sha256": "e3d720fb8eb562418947972dc187d0595326dbbde86ae12d66fa9d9591116dce"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-request-4.json",
+      "sha256": "a1f4e8f7b3840c03ce511ca5bc200945d1820f0b3b6330066be52048a040a813"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-ack-4.json",
+      "sha256": "3dac30bec2b2847cbab3e46cbccca235779f0e97900fac3fb5b3cbf69b7dd9e9"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-request-5.json",
+      "sha256": "b313674b4ff4325c1b6d411252b579123c90e00f7c792b1d8bc9edec9788b515"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-ack-5.json",
+      "sha256": "a82ffdd1146a765f899373dc09e4301cb243a2d7dffa4e6aa9e650abdd2934fa"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-request-6.json",
+      "sha256": "4b9a16dbb27104a70057452a10c4865fa69db2293069624081c2ab55c6963286"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104-retry1/foreign-stop-ack-6.json",
+      "sha256": "a5ae7daaf66d9fe1674c5c53ecc3797458c506a4e5ef858848a2f66da8fa7969"
+    }
+  ],
+  "report": {
+    "file": "docs/reverse-client/r1-bounded-handoff-validated-20261104.md",
+    "sha256": "cb710cf8502abe11663122d8260a90e5f990da9b0a7e924af81dfa4d38c90c5d"
+  },
+  "next": "Keep original tracing paused. Finite requested validation complete; no additional test/original retry scheduled. A real human handoff first needs same-session access and a lifetime/timeout policy, tested on owned objects."
+}

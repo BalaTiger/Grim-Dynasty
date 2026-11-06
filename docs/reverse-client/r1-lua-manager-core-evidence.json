@@ -1,0 +1,91 @@
+{
+  "schema": "grim-dynasty-lua-manager-core-evidence-v1",
+  "status": "actual-Rea-bodies-confirmed-initialization-blocked-before-first-call",
+  "original_target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256_before_and_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "original_executed": false
+  },
+  "binding": {
+    "file": "docs/reverse-client/r1-lua-manager-bindings/inspection.json",
+    "sha256": "841c72e555cd23ba71bb3d7497bec39c26c59a25f1b9fcc72083f6692c903dcd",
+    "metadata_bytes": 4026,
+    "code_bytes": 0,
+    "GetState": "Game IAT60A9B8 -> Engine008310",
+    "Initialize": "Exact named Engine export -> Engine0F2E00"
+  },
+  "query": {
+    "file": "docs/reverse-client/r1-engine-lua-manager-core-run1/summary.json",
+    "sha256": "33d4af8953b43fd56d712bdde11e8bf5ae426cafb1c4c0785ae492c668115aed",
+    "session": 56677,
+    "exit_code": 0,
+    "completed_calls": 11,
+    "body_calls": 6,
+    "lifecycle_calls": 5,
+    "repeated_body_queries": 0,
+    "tools": ["procedure_pseudo_code", "procedure_assembly", "procedure_callees"],
+    "started_utc": "2026-11-02T23:11:22.7917185Z",
+    "finished_utc": "2026-11-02T23:12:53.1773892Z"
+  },
+  "assembly_sources": [
+    {
+      "file": "docs/reverse-client/r1-engine-lua-manager-core-run1/05-LuaManagerGetState-0x180008310-procedure_assembly.json",
+      "sha256": "3b2a1a37dbe206c9c9912c1907012f436ac0a63b72907400822060ca861e62f1"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-manager-core-run1/08-LuaManagerInitialize-0x1800f2e00-procedure_assembly.json",
+      "sha256": "189560d9bffcb960574a4477ef472497a78d9263f4f1fd017b70c2bd0980464a"
+    }
+  ],
+  "native_contracts": {
+    "GetState008310": [
+      "MOV RAX,RCX; RET. Exact borrowed receiver identity, no field read and no initialization.",
+      "Together with cached Game2F3470/2F347D, the subsequent first-QWORD read aliases this service+00. Getter return alone does not establish a live Lua state."
+    ],
+    "Initialize0F2E00": [
+      "0F2E28 CALL [4218F8] is before every service-field write. The actual runtime target is currently unbound.",
+      "Only after that call returns,0F2E2E overwrites service+00 with returned RAX, including null. No preservation of the previous Lua pointer.",
+      "Null RAX branches to0F30FD: MOVZX EAX,BYTE[service+58]. It does not clear58 or unconditionally return false.",
+      "Nonnull RAX writes WORD[service+08]=0101 at0F2E3A, then calls25A030 at0F2E43. False from that call also branches to the current BYTE58 read; no rollback or automatic close is visible.",
+      "Only after all remaining calls/selected branches return normally does0F30F9 write BYTE58=1. Two false input bools still execute all preceding setup and provider callbacks.",
+      "Thus an old58=1 can be returned after a null creation result. Return1 is not sufficient evidence of this invocation's successful Lua creation.",
+      "The body repeatedly reloads service+00 around core calls; provider loop reloads begin40/end48 after callbacks; Client and Server each capture their own Lua pointer. Do not replace these with an entry snapshot."
+    ],
+    "direct_callee_inventory": ["Engine25A030", "Engine2568D0", "Engine0EF8B0"],
+    "indirect_callees_unresolved": true
+  },
+  "implementation_decision": {
+    "production_sources_changed": 0,
+    "new_compiles": 0,
+    "new_tests": 0,
+    "old_tests_rerun": 0,
+    "reason": "First required runtime callback remains unbound. Do not introduce a fake-return adapter, default null service, or claimed successful Initialize solely to cross Goal.",
+    "existing_diagnostic_not_rerun": true,
+    "existing_goal_stop": "Engine0EBB19: service pointer still Unknown;22 complete frames,Goal reached during frame23,Work1 retained,Goal/tail not returned",
+    "first_usable_game": false
+  },
+  "bounded_next_evidence": {
+    "target": "Engine258E50",
+    "source": "docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json",
+    "source_sha256": "ab597744f4a4cf617c6227fe7a50100e5b03733aa48dda43a730f65509bdca26",
+    "instruction": "180074bec CALL 0x180258e50",
+    "reason": "Direct call immediately before the cached Lua service cold allocation/publication slice. Determine whether this function actually publishes4218F8; its role is not inferred from proximity.",
+    "cache_check": "Specified round4/followup,HookInitialize and LuaManagercore caches plus entry filenames contain no258E50 body;4218F8 only found as new0F2E28 reader. No global absence claim.",
+    "recursive_expansion": false
+  },
+  "release": {
+    "file": "docs/reverse-client/r1-lua-manager-core-release.json",
+    "sha256": "80d97abe575eab33b1e0b9713071a63655865afcca04af54c9552b454b71cdb7",
+    "checked_recorded_pids": 66,
+    "all_absent": true,
+    "job_empty_confirmed": true,
+    "sampler_exited": true,
+    "pending_operations": 0,
+    "historical_missing_job_receipt_stays_unknown": true
+  },
+  "remaining_to_real_mouse_loop": [
+    "Evidence-backed service state/lifetime at Goal, then actual Goal/tail return and State3 full subsequent-frame integration",
+    "Physical mouse input and actual hit-coordinate source connected to the same request/frame scheduler",
+    "Original scene/resource/UI presentation and actual animation decode/playback; these are not established by component fixtures"
+  ]
+}

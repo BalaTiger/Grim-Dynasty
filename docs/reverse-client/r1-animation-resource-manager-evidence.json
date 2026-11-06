@@ -1,0 +1,123 @@
+{
+  "schema": "grim-dynasty.animation-resource-manager-integration.v1",
+  "utc": "2026-11-02T16:38:43.7224619Z",
+  "status": "native-static-contracts-and-own-cold-warm-manager-validated",
+  "queries": [
+    {
+      "summary": "docs/reverse-client/r1-animation-manager-insert-run1/summary.json",
+      "sha256": "6e53ded37f59b65564112057a1e584458d4461c636d11b73a81db1f271d038d9",
+      "finished": "2026-11-02T16:04:06.864Z",
+      "calls": 8,
+      "status": "passed",
+      "original_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "original_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "process_exited": true,
+      "job_empty": true,
+      "sampler_exited": true,
+      "peak_combined_working_set_bytes": 1334927360,
+      "counter_read_gaps": 0
+    },
+    {
+      "summary": "docs/reverse-client/r1-animation-insert-helper-run1/summary.json",
+      "sha256": "80ab4061b364eebb4e7caa8a56984c14ff9d1c0f25afbce371882c82a92e3b19",
+      "finished": "2026-11-02T16:13:12.701Z",
+      "calls": 8,
+      "status": "passed",
+      "original_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "original_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "process_exited": true,
+      "job_empty": true,
+      "sampler_exited": true,
+      "peak_combined_working_set_bytes": 1324990464,
+      "counter_read_gaps": 0
+    },
+    {
+      "summary": "docs/reverse-client/r1-animation-node-constructor-run1/summary.json",
+      "sha256": "dadd968beaef8810f1dafe5b48baf178e2d0385096727697ef06394cf989ba77",
+      "finished": "2026-11-02T16:21:47.928Z",
+      "calls": 8,
+      "status": "passed",
+      "original_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "original_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "process_exited": true,
+      "job_empty": true,
+      "sampler_exited": true,
+      "peak_combined_working_set_bytes": 1320075264,
+      "counter_read_gaps": 0
+    }
+  ],
+  "new_native_procedures": [
+    "Engine03C480",
+    "Engine03CA50",
+    "Engine02EF40"
+  ],
+  "repeated_native_procedures": [],
+  "reused_evidence": [
+    "03AC50 LoadResource",
+    "03C8E0 lookup",
+    "27B3C0 name bytes",
+    "03A8C0 manager constructor",
+    "03C740/01B4F0 map initialization",
+    "01F170 node allocation/links",
+    "023180/022F70 string copy",
+    "02EA80 maintenance threshold",
+    "034EC0 pointer vector growth"
+  ],
+  "native_contracts": [
+    "03AC50 warm lookup follows first equal full-byte key, uses shared pair identity; count DWORD increment and idle QWORD decrement wrap independently.",
+    "03AC50 cold: actual094650 constructor then fresh manager+38 copied opaquely into same resource+28.",
+    "03C480 allocates24 bytes, copies16+8 bytes from local pair; original caller initializes only first16 bytes. Tail remains unknown until low DWORD index is written later.",
+    "03CA50 ignores incomingR9, searches bucket backward for duplicate; duplicate retains node and returns false. New node publication precedes maintenance and output publication.",
+    "02EF40 uses01F170, initializes and copies key before writing source+20 pointer to node+30; returns original node identity.",
+    "03C480 ignores insertion boolean, releases local name, writes lowerDWORD index, then appends newly allocated pair to vector even on duplicate."
+  ],
+  "own_platform_adaptation": [
+    "Managed storage, Monitor and containers; no native heap addresses, allocator/EH or real concurrent runtime assertion.",
+    "Explicit already-initialized own manager and byte locale condition; not automatically inferred from installed game.",
+    "Finite eight-bucket normal cache domain, no false success for unimplemented growth."
+  ],
+  "unsupported": [
+    "Actual animation file decoding and channel playback",
+    "Native loader startup/threads and runtime locale observation",
+    "Cache growth integration beyond first8 unique names",
+    "Native allocator failure/unwind, malformed pointer aliases and real concurrency",
+    "Physical mouse to continuous game movement and original scene/UI rendering"
+  ],
+  "new_code_files": [
+    "src/reverse_client_actions/EngineAnimationResourceManager.cs",
+    "src/reverse_client_actions/EngineAnimationResourceManagerTests.cs"
+  ],
+  "validation": {
+    "result": ".tooling/r1-animation-resource-manager-validation/result.json",
+    "sha256": "5b879152c7c00383717413789193ab0321bb76f70137d8d591a1498568f9e2e3",
+    "session": 56267,
+    "exit": 0,
+    "compiles": 1,
+    "scenarios": 19,
+    "assertions": 168,
+    "old_suites_rerun": 0,
+    "unchanged_old_source_pins": 6,
+    "source_files": [
+      {
+        "path": "src/reverse_client_actions/EngineAnimationResourceManager.cs",
+        "sha256": "c33cadefc70ce8049ee8c8e36cf4b813bbf8986dc02c479952d3506a6d5607d9"
+      },
+      {
+        "path": "src/reverse_client_actions/EngineAnimationResourceManagerTests.cs",
+        "sha256": "fb16f68f43a72e6d9d2ce08b4f91522424839ec9448525db32f4fd054ecd8998"
+      }
+    ],
+    "cold_to_warm_same_resource_pair": true,
+    "shared_loader_count_and_failed_prefix": true,
+    "native_runtime_or_gameplay": false
+  },
+  "original_game_executed": false,
+  "save_or_cloud_accessed": false,
+  "security_changed": false,
+  "gameplay_accepted": false,
+  "commit_push_deploy": false,
+  "release": {
+    "file": "docs/reverse-client/r1-animation-resource-manager-release.json",
+    "sha256": "18d0e426825c4b0a84132fd47584c16bc7e7c95725e0c779fae6a3525726199c"
+  }
+}

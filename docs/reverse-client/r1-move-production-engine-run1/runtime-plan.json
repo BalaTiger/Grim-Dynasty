@@ -1,0 +1,467 @@
+{
+  "schema_version": 1,
+  "purpose": "Two exact Engine imports required by the already saved movement action construction/submission path:008300 CharacterAction constructor called at Game082B3E through609ED0, and078620 IsNetworkEnabled called at Game127DEA through609A38. Inspect the exact bodies and direct callees only; no NetworkShim or recursive expansion.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "planned_output": "docs/reverse-client/r1-move-production-engine-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 11,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-move-production-imports/inspection.json",
+      "sha256": "ec6646c086f0126aedc5ec2e35e0e347666731827de176db43edbfbe71a2bccc",
+      "addresses": [
+        "0x180008300",
+        "0x180078620"
+      ],
+      "source_kind": "Passed exact Game disk IAT/hint/name and Engine hinted export name/ordinal/EAT metadata binding. Both original handles closed and hashes before/after unchanged. This establishes exact address candidates, not function boundaries, loaded IAT values or target behavior.",
+      "verified_projection_from_binding_and_export_records": {
+        "status": "passed",
+        "disk_bindings_complete": true,
+        "saved_proofs_verified": true,
+        "metadata_bytes": 188,
+        "code_bytes": 0,
+        "rtti_bytes": 0,
+        "backend_started": false,
+        "original_loaded_or_executed": false,
+        "bindings": [
+          {
+            "iat_rva": "0x609ed0",
+            "symbol": "??0CharacterAction@GAME@@QEAA@I@Z",
+            "target_va": "0x180008300",
+            "function_boundary_verified": false,
+            "loaded_value_observed": false
+          },
+          {
+            "iat_rva": "0x609a38",
+            "symbol": "?IsNetworkEnabled@Engine@GAME@@QEAA_NXZ",
+            "target_va": "0x180078620",
+            "function_boundary_verified": false,
+            "loaded_value_observed": false
+          }
+        ],
+        "game_hash_before_and_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+        "engine_hash_before_and_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+        "both_source_handles_closed": true
+      }
+    },
+    {
+      "file": "docs/reverse-client/r1-movement-action-path/08-MoveAction-0x180082b10-procedure_assembly.json",
+      "sha256": "0e14d2fbc26f938e2f6cb3c63ce058b55e33b35beb05ff20f5832a5319a5fe36",
+      "addresses": [
+        "0x180008300"
+      ],
+      "source_kind": "Saved Game MoveToAction constructor preserves its receiver inR14 and ownerID inEBX, then invokes the bound base constructor before installing the derived vptr. This batch asks for the base body, not a guessed constructor default.",
+      "exact_instructions": [
+        "0x180082b39: MOV EBX, EDX",
+        "0x180082b3b: MOV R14, RCX",
+        "0x180082b3e: CALL qword ptr [0x180609ed0]",
+        "0x180082b45: LEA RAX, [0x1806e5710]",
+        "0x180082b4c: MOV qword ptr [R14], RAX"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-movement-action-path/11-MoveAction-0x180127dd0-procedure_assembly.json",
+      "sha256": "aa00ae9415deb63c506eb1671208e3ac03b2939fe86a42f8fb3dc8f7d202cc63",
+      "addresses": [
+        "0x180078620"
+      ],
+      "source_kind": "Saved Game submission reads the existing Engine import/global indirection and invokes609A38 before testingAL. Offline intent is not evidence for replacing this required query with false.",
+      "exact_instructions": [
+        "0x180127de0: MOV RCX, qword ptr [0x180609050]",
+        "0x180127de7: MOV RCX, qword ptr [RCX]",
+        "0x180127dea: CALL qword ptr [0x180609a38]",
+        "0x180127df0: TEST AL, AL",
+        "0x180127df2: JZ 0x180127e1e"
+      ]
+    }
+  ],
+  "saved_body_dedup": {
+    "status": "completed-no-saved-target-output-found-in-declared-scope",
+    "directories": [
+      "docs/reverse-client",
+      "docs/object-lifecycle"
+    ],
+    "method": "Read-only filename inventory followed by exact procedure-parameter key screening in saved JSON,including the corresponding RVA forms. Procedure body/callee filenames and exact target parameters were considered; a caller/callee text mention alone is not a target body. With no candidate,there was no purported Engine subject/digest match to accept.",
+    "filenames_checked": 5986,
+    "procedure_named_outputs_checked": 956,
+    "json_files_checked_for_exact_procedure_parameter": 3717,
+    "matching_filename_count": 0,
+    "matching_parameter_candidate_count": 0,
+    "addresses": [
+      "0x180008300",
+      "0x180078620"
+    ],
+    "matching_target_files": [],
+    "limitation": "No claim of absence outside these two saved-evidence directory trees. No new native target bytes,loader state or backend were inspected.",
+    "original_read": false,
+    "backend_started": false
+  },
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+    "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0",
+    "same_registration_as": "r1-engine-mouse-getters",
+    "validated_runtime": "docs/reverse-client/r1-engine-mouse-getters-run1/runtime-plan.json",
+    "validated_runtime_sha256": "2afb5d0ac2bf67bed24d62a1adf8c226ea23fe5576a94d881439bbb67532eb79",
+    "budget_id": "engine-parser-384m-v1",
+    "heap": "384M",
+    "base_launch_physical_and_commit_gib": 4.25,
+    "additional_launch_floor_gib": 5,
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "profile_or_protection_changes_authorized": false,
+    "historical_profile_scope_text_not_current_query_scope": true,
+    "cleanup_prerequisites": [
+      {
+        "file": "docs/reverse-client/r1-skill-moved-direct/summary.json",
+        "sha256": "596d4499deb89419964abfd35c52e9df60ee0f6785c4a4d40b9c930f4c773dab",
+        "calls": 8,
+        "target": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+      },
+      {
+        "file": "docs/reverse-client/r1-world-position-and-level-initialization/summary.json",
+        "sha256": "dba34660d80fc2cf496d5025f2e160de946f07908ad9373aa49e5dfe5ea350f8",
+        "calls": 11,
+        "target": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+      }
+    ]
+  },
+  "completed_evidence_prerequisites": [
+    {
+      "file": "docs/reverse-client/r1-engine-mouse-getters-run1/summary.json",
+      "sha256": "fe4068c8a47cbd68e5e90968b803db8d7263e8713304563cc930af9ddcddc1e1",
+      "calls": 17,
+      "status": "passed",
+      "session_process_job_sampler_cleanup_confirmed": true
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-reached-goal-dependencies-run1/summary.json",
+      "sha256": "6d626a6bcef3d81d2436d3bfad65fc5f05779f47f2eaf51fcd0e9a802b870ae6",
+      "calls": 13,
+      "status": "passed",
+      "session_process_job_sampler_cleanup_confirmed": true
+    },
+    {
+      "file": "docs/reverse-client/r1-duration-manager-direct-run1/summary.json",
+      "sha256": "0407ec277aff998faf9c00f772b28ac5bc690c543fc28a1b982dbc103b4cd51e",
+      "calls": 11,
+      "status": "passed",
+      "session_process_job_sampler_cleanup_confirmed": true
+    }
+  ],
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180008300"
+      },
+      "label": "04-EngineMoveProduction-0x180008300-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180008300"
+      },
+      "label": "05-EngineMoveProduction-0x180008300-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180008300"
+      },
+      "label": "06-EngineMoveProduction-0x180008300-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180078620"
+      },
+      "label": "07-EngineMoveProduction-0x180078620-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180078620"
+      },
+      "label": "08-EngineMoveProduction-0x180078620-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180078620"
+      },
+      "label": "09-EngineMoveProduction-0x180078620-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "10-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "11-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Preparation only. Root separately reviews and registers this exact fixed plan,checks real-time resource/mutex/identity/reparse conditions and obtains formal execution approval. No runner or monitor edit/execution is part of this preparation.",
+    "Exactly Engine008300 and078620 pseudo-code/assembly/direct-callee triples plus five lifecycle calls:11 total. No callers,xrefs,search,table scans,RTTI,other target or recursive callee query.",
+    "Use the installed Rea6.5.0 and unchanged Engine384M profile with the additional hard5GiB physical-and-commit launch floor and2GiB stop floor; preserve one backend/one request,Job ownership,identity,monitor,sampler,recovery,timeouts and normal cleanup safeguards.",
+    "Reuse the existing two complete cleanup prerequisites plus the pinned already completed Engine/Duration batches; never rerun them merely to prepare this batch. Historical cleanup does not replace current resource/ownership preflight.",
+    "Both addresses are disk-bound executable candidates until Rea resolves their exact entries. Null,empty,containing or different-function results stay explicit unknowns,with raw responses retained. Do not guess another target or automatically repeat an uncertain call.",
+    "Record exact fields,write widths,argument/return identity and failure order. No assumed default CharacterAction state,network-disabled flag,Engine singleton validity or injected callback success.",
+    "Do not expand NetworkShim,network transport,other action classes,skills,531A30,allocators or new global writers. Newly returned callees are evidence for later review only; this batch ends at its two frozen targets.",
+    "No original executable loading/execution,saves/Steam cloud,installation,permission/security change,commit,push or deployment. Preserve original before/after hashes and session/process/Job/sampler cleanup records."
+  ],
+  "evidence_questions": [
+    "What precise CharacterAction008300 receiver/owner-ID writes,base calls and return identity are needed before the existing MoveToAction082B10 constructor continues?",
+    "What exact Engine078620 state and return width does Game127DEA consume,including required object validity and unknown/failed dependencies?",
+    "Which parts can be composed with the existing shared action/Engine state without inventing fields or claiming actual action submission? Any remaining direct dependency must be reported without expanding this batch."
+  ],
+  "runner_before_sha256": "40ef91825a6142b8a8b7b7f9c19061c9f2b10493fac3d5a1e7bc9cab0eb18a98",
+  "runner_change": "None. Root must separately freeze/check and register the current runner; this plan is not yet registered or executed.",
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Two exact Engine targets22C690 and12B750 only; unchanged Engine384M budget and strict5GiB additional launch floor.",
+    "additional_launch_floor_gib": 5
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "previous_sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "serializer_file": "tools/static_analysis/rea_sampler_failure.ps1",
+    "serializer_sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "candidate_file": ".tooling/r1-owned-job-diagnostic-candidate/ReaOwnedJobDiagnosticCandidate.cs",
+    "candidate_sha256": "b52e6ba242277ab864a431433f43efe671bc6c37e73c1fd94d8b0977b7400544",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "serializer_validation_file": ".tooling/r1-owned-job-diagnostic-validation/serializer/result.json",
+    "serializer_validation_sha256": "eb5dc1cd79621686a5b646ba03897cec638674dd1d6894ec69cee1d5ceb04a60",
+    "runner_validation_file": ".tooling/r1-owned-job-diagnostic-validation/runner-result.json",
+    "runner_validation_sha256": "1ff5539479a0ba058bb7e3b4e6692293a07515e48d226c56f5b6667857c4bb29",
+    "deployment_file": ".tooling/r1-owned-job-diagnostic-deploy/deployment.json",
+    "deployment_sha256": "ef9be6d39c736f99fe4dd365b1ed08f6849f4280eacc698fdc9b4b75d4977dbf",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 49,
+    "scenario_groups": 10,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "serializer_assertions": 39,
+    "production_normalization": "Remove two candidate-only header lines and namespace suffix; serializer identical to tested candidate",
+    "limitations": "Diagnostic observation only. Native permissions,100ms shared wait budget,admission and fail-closed rules are unchanged. Isolated fault tests do not reproduce or establish the21:48 failure root cause."
+  },
+  "diagnostic_monitor_review": {
+    "status": "passed-and-pinned",
+    "diagnostics_only_intended": true,
+    "approved_source_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "production_monitor_must_not_be_changed_by_this_preparation": true,
+    "root_cause_proven": false,
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false
+  },
+  "sampler_observation_deployment": {
+    "status": "passed-additive-serialization-deployed",
+    "previous_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "evidence": [
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/deployment.json",
+        "sha256": "e978a7fbb0256233a2a5bbdacec662ebcbe808c1c227d20ef216dce8cf3d0db9"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/measure_job_process_memory.before.ps1",
+        "sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/measure_job_process_memory.ps1",
+        "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test_member_identity_serialization.ps1",
+        "sha256": "3afa73f7130a87959e38e76ba313f715bd0e4448e146a0417b3163b55ac84ae2"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test-result.json",
+        "sha256": "812f576f55ce8989638accf2a668a6b1b19e0d23e2869328be63ba7822c3062d"
+      }
+    ],
+    "only_added_field": "membership_queries.after_counters_member_identities",
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false,
+    "resource_limits_changed": false,
+    "tests_rerun": false
+  },
+  "recovery_requirement": {
+    "status": "confirmed-retained-after-Codex-restart",
+    "recovery_result_file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+    "recovery_result_sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829",
+    "evidence": [
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+        "sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-inventory.json",
+        "sha256": "e9baee1d751ebe2dbc329ceb068f25fc33ee96d3474e77bfd0a84a6978ca3dcf"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-move.json",
+        "sha256": "34967759d2622ffe3f46942681014a903ebf626f7f9557a0633f0b8c49beb272"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-after-move.json",
+        "sha256": "b2500ac78ffab31fc94c6e19a6db7c3287401bbf40a6b3e7055b5bf4e1a0c8e8"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before-move.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-after.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-final.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/historical-identities.json",
+        "sha256": "98c290f49b3b071a4127529aa21c7bbf816a6b59596f9be210adc0fecd302d45"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/classification-test-result.json",
+        "sha256": "0158c21bfa6fa46d87656030888cce9e8853b18086547599a6ce668527d80554"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/retain_interrupted_runtime_post_restart.ps1",
+        "sha256": "0769a1fbcf8c44b12a09fe35a31823a6a75eee2d24494814d1ae4334d15b32a9"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/post_restart_classification.ps1",
+        "sha256": "c5fb0a7b207f5c6e0fdd4d55b624aef69df4619c758034c59ca1a5645cf534f2"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/test_post_restart_classification.ps1",
+        "sha256": "bb88bbf79eb8c61b023d6a7d1468b40af09d4007433a3f111c832235e89fe611"
+      }
+    ],
+    "require_source_runtime_absent_and_exact_retained_directory": true,
+    "require_equal_content_manifests_and_zero_deleted_files": true,
+    "require_normal_fresh_launch_identity_resource_mutex_guards": true,
+    "old_terminal_flags_must_remain_unconfirmed": true,
+    "single_owner_job_termination_is_inference": true
+  },
+  "runtime_registration": {
+    "query_plan_sha256": "45889ac23ac8b2c5afec54846c9583edc8b066247cc193d3809d6711d2b877bc",
+    "profile": {
+      "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+      "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0"
+    },
+    "metadata_keys": [
+      "memory_profile",
+      "time_limits",
+      "monitor_revision",
+      "diagnostic_monitor_review",
+      "sampler_observation_deployment",
+      "recovery_requirement"
+    ],
+    "cleanup_prerequisites": [
+      {
+        "file": "docs/reverse-client/r1-skill-moved-direct/summary.json",
+        "sha256": "596d4499deb89419964abfd35c52e9df60ee0f6785c4a4d40b9c930f4c773dab",
+        "calls": 8,
+        "target": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+      },
+      {
+        "file": "docs/reverse-client/r1-world-position-and-level-initialization/summary.json",
+        "sha256": "dba34660d80fc2cf496d5025f2e160de946f07908ad9373aa49e5dfe5ea350f8",
+        "calls": 11,
+        "target": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+      }
+    ],
+    "frozen_query_input": "plan.json",
+    "profile_scope_text_is_historical": true,
+    "query_scope_unchanged": true
+  }
+}

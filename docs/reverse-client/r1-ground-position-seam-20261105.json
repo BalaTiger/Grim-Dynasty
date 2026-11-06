@@ -1,0 +1,35 @@
+{
+    "schema":  "grim-dynasty-r1-ground-position-seam-v1",
+    "utc":  "2026-11-05T06:58:17.2979553Z",
+    "question":  "Where does the ground-click world position actually come from, given the intersection contract yields only a distance?",
+    "findings":  {
+                     "intersection":  "WidgetGroundTargetContracts.MainPath2DDC0 / WorldIntersectionContracts.GetIntersection220840 produce Distance00 (and material in the floor path) but leave WorldIntersectionObserved44.Position08 Unknown. Confirmed by assertion (docs/reverse-client/r1-ground-hit-fixture-20261105.json).",
+                     "camera_target":  "CameraTargetContracts.GetTarget(state, output, boundaries, i) reads state.Target120 (the camera inline target) and rewrites it into output at 0x2BE6F8..; it does NOT take a ray or a distance.",
+                     "shared_primitive":  "CameraTargetBoundaries.GetRegion6094A0 is Engine22C0B0, the same Q0 region-token load that PlayerMoveRequestContracts.MoveIdle165CB0 performs on its position argument. Both halves therefore read the region token the same way, which is the natural join."
+                 },
+    "implication":  "The ground position is not produced by the intersection; it lives in CameraTargetState.Target120 and is transformed by GetTarget. Whoever writes Target120 (the pick path or the camera update) is the missing producer, and it is not established here.",
+    "what_would_be_needed":  {
+                                 "write_site":  "the site that stores into CameraTargetState.Target120 after a pick (or the camera update that maintains it)",
+                                 "evidence":  "a saved body showing that store, which this workspace does not currently identify"
+                             },
+    "not_claimed":  [
+                        "that Target120 holds the clicked ground point",
+                        "any ray-plus-distance arithmetic",
+                        "that the position handoff to MoveIdle165CB0 works"
+                    ],
+    "next":  "Locate the writer of CameraTargetState.Target120 from saved bodies; if it is the pick path, the bridge can be completed without a camera fixture.",
+    "static_search_result":  {
+                                 "utc":  "2026-11-05T06:59:13.5658549Z",
+                                 "searches":  [
+                                                  "All 72 stores to [reg+0x120] across saved bodies were enumerated; none is in a camera-related evidence file (41 files checked).",
+                                                  "The body that contains 0x2BE6F8 only READS the camera inline target: LEA RCX,[RDI+0x120] then CALL [0x6094A0] (GetRegion), then MOVUPS from [RDI+0x120]."
+                                              ],
+                                 "conclusion":  "The writer of CameraTargetState.Target120 is not present in the saved camera evidence, and a global xref search is not available from the saved artifacts."
+                             },
+    "cheaper_route":  {
+                          "idea":  "Rather than hunting the static writer, read Target120 at runtime immediately after a ground click.",
+                          "why":  "The sampler is already validated (Toolkit/PSAPI/24 logic checks) and a runtime read needs no new reverse engineering.",
+                          "prerequisite":  "the client running in a loaded level, plus the address of the camera object (or of the state that owns +0x120)",
+                          "status":  "not executed; the client is not running"
+                      }
+}

@@ -1,0 +1,16 @@
+{"utc":"2026-11-03T13:31:34.925Z","state":"starting","wrapper":"C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\tools\\static_analysis\\rea_profiled_server.mjs","plan_sha256":"8ed5dcbdcf24afbfcd383217c3844d331913217a62d3754b6286e2b7e93971fd","target_sha256":"d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4","owned_pid":59164,"memory":{"heap_limit":"384M","required_reserve_gib":2,"launch_threshold_gib":5,"stop_threshold_gib":2,"interval_ms":2000,"samples":1,"minimum_free_gib":9.289241790771484,"stop_triggered":false,"calibration_only":true,"calibration_source":"provisional-first-client-EXE-calibration","measured_client_peak_available":false,"owned_profile_budget":{"id":"client-mouse-first-calibration-384m-v1","heap":"384M","launchBytes":5368709120,"stopBytes":2147483648,"maximumSampleAgeMs":5000,"staleAfterMs":15000,"taskAllowanceGiB":3,"systemSpareGiB":2,"calibrationOnly":true,"measuredClientPeakAvailable":false}}}
+{"utc":"2026-11-03T13:31:36.558Z","state":"owned-memory-monitor-ready","owned_pid":59164,"controller_pid":17540}
+{"utc":"2026-11-03T13:31:37.609Z","state":"request","call":1,"label":"01-initial-session","tool":"binary_session"}
+{"utc":"2026-11-03T13:31:37.976Z","state":"completed","call":1,"label":"01-initial-session"}
+{"utc":"2026-11-03T13:31:37.976Z","state":"request","call":2,"label":"02-Client-open","tool":"open_binary"}
+{"utc":"2026-11-03T13:31:37.991Z","state":"completed","call":2,"label":"02-Client-open"}
+{"utc":"2026-11-03T13:31:37.991Z","state":"request","call":3,"label":"03-Client-session","tool":"binary_session"}
+{"utc":"2026-11-03T13:31:38.022Z","state":"completed","call":3,"label":"03-Client-session"}
+{"utc":"2026-11-03T13:31:38.022Z","state":"request","call":4,"label":"04-AddWidget-exact-name-find_xrefs_to_name","tool":"find_xrefs_to_name"}
+{"utc":"2026-11-03T13:32:08.025Z","state":"waiting","call":4,"label":"04-AddWidget-exact-name-find_xrefs_to_name","elapsed_seconds":30}
+{"utc":"2026-11-03T13:32:36.592Z","state":"failed","call":4,"label":"04-AddWidget-exact-name-find_xrefs_to_name","error":"Evidence provider mismatch\n+ actual - expected\n\n+ 'rea-workflow'\n- 'ghidra'\n"}
+{"utc":"2026-11-03T13:32:36.592Z","state":"request","call":5,"label":"cleanup-close","tool":"close_binary"}
+{"utc":"2026-11-03T13:32:36.930Z","state":"completed","call":5,"label":"cleanup-close"}
+{"utc":"2026-11-03T13:32:36.930Z","state":"request","call":6,"label":"cleanup-session","tool":"binary_session"}
+{"utc":"2026-11-03T13:32:36.960Z","state":"completed","call":6,"label":"cleanup-session"}
+{"utc":"2026-11-03T13:32:37.616Z","state":"failed","tool_calls":6,"completed_plan_calls":3,"closed_session_verified":true}

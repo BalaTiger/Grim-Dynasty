@@ -1,0 +1,571 @@
+{
+  "schema": "gd-owned-stop-differential-stage-v1",
+  "utc": "2026-11-04T14:27:34.9864119Z",
+  "status": "owned-stop-differential-complete;deferred-owned-breakpoint-detach-verified;unknown-exception-recovery-unproven;original-paused",
+  "observations_completed": 3,
+  "old_suites_replayed": false,
+  "native_fixture_compiles": 0,
+  "supervision_helper_compiles": 1,
+  "original_started": false,
+  "original_attached": false,
+  "saves_accessed": false,
+  "steam_or_security_settings_changed": false,
+  "visible_apps_started": false,
+  "new_external_software": false,
+  "production_helper_or_candidate_changed": false,
+  "original_observer_sha256": "b2b44a535726002e71942dd1a43097b14bfe32ffdbd5dc701567b263f5299906",
+  "unknown_exception_auto_continue": false,
+  "unknown_exception_nondestructive_recovery_verified": false,
+  "deferred_owned_breakpoint_recovery_verified": true,
+  "concurrent_stop_exception_race_tested": false,
+  "general_exception_discriminator_verified": false,
+  "original_exit_cause_verified": false,
+  "cases": [
+    {
+      "case": "controlled-stop",
+      "status": "completed-observation",
+      "pid": 44744,
+      "outcome": "unknown",
+      "helper_commands": {
+        "Stop": 1,
+        "Detach": 0,
+        "Continue": 0,
+        "Kill": 0
+      },
+      "post_attach_continue_calls": 1,
+      "stop_id": 2,
+      "exception_or_breakpoint_threads": [
+        {
+          "thread_id": "0x1fb4",
+          "reason": 6,
+          "data": [
+            "0xffffffffffffffff"
+          ],
+          "description": "Exception 0x80000003 encountered at address 0x7ffbf07a3f40",
+          "pc": "0x7ffbf07a3f41",
+          "frames": [
+            {
+              "availability": "available",
+              "pc": "0x7ffbf07a3f41",
+              "module_path": "c:\\windows\\system32\\ntdll.dll",
+              "module_rva": "0x123f41",
+              "module_base": "0x7ffbf0680000"
+            },
+            {
+              "availability": "available",
+              "pc": "0x7ffbf07b648e",
+              "module_path": "c:\\windows\\system32\\ntdll.dll",
+              "module_rva": "0x13648e",
+              "module_base": "0x7ffbf0680000"
+            },
+            {
+              "availability": "available",
+              "pc": "0x7ffbeec2dda7",
+              "module_path": "c:\\windows\\system32\\kernel32.dll",
+              "module_rva": "0x2dda7",
+              "module_base": "0x7ffbeec00000"
+            },
+            {
+              "availability": "available",
+              "pc": "0x7ffbf06fee4c",
+              "module_path": "c:\\windows\\system32\\ntdll.dll",
+              "module_rva": "0x7ee4c",
+              "module_base": "0x7ffbf0680000"
+            }
+          ]
+        }
+      ],
+      "stopped_events": [
+        {
+          "utc": "2026-11-04T14:23:57.980014+00:00",
+          "phase": "helper-terminal-stop-result",
+          "pid": 44744,
+          "unique_id": 1,
+          "event_type": 1,
+          "event_type_hex": "0x1",
+          "data_flavor": "Process::ProcessEventData",
+          "state": 5,
+          "interrupted": true,
+          "restarted": false,
+          "description": "000001AE6E7CAB30 Event: broadcaster = 000001AE6E297A40 (lldb.process), type = 0x00000001 (state-changed), data = { process = 000001AE6E297A20 (pid = 44744), state = stopped}"
+        }
+      ],
+      "listener_errors": [],
+      "listener_unsubscribed": true,
+      "terminal_result": null,
+      "terminal_unknown": {
+        "message": "Terminal verification failed: Non-owned stop reason; keep original stopped for manual review",
+        "evidence": {
+          "outcome": null,
+          "safe_to_close_debugger": false,
+          "native_terminal": false,
+          "detach": null,
+          "stop": {
+            "success": true,
+            "error": null
+          },
+          "terminal": null,
+          "native_last": {
+            "utc": "2026-11-04T14:23:57.981022+00:00",
+            "creation_filetime": "134382758372102111",
+            "wait": 258,
+            "exit_code": 259,
+            "exit_code_hex": "0x00000103"
+          },
+          "foreign_stop": false,
+          "lldb_state": 5,
+          "inspected_stop_id": 2,
+          "check_error": {
+            "type": "RuntimeError",
+            "message": "Non-owned stop reason; keep original stopped for manual review"
+          }
+        }
+      },
+      "owned_cleanup": {
+        "kind": "exact-own-fixture",
+        "kill_attempted": true,
+        "kill_success": true,
+        "native_first": {
+          "utc": "2026-11-04T14:23:57.986865+00:00",
+          "creation_filetime": "134382758372102111",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "identity": {
+          "pid": 44744,
+          "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+          "creation_filetime": "134382758372102111"
+        },
+        "kill_error": null,
+        "native_final": {
+          "utc": "2026-11-04T14:23:58.072725+00:00",
+          "creation_filetime": "134382758372102111",
+          "wait": 0,
+          "exit_code": 0,
+          "exit_code_hex": "0x00000000"
+        }
+      },
+      "fixture_exit": 0,
+      "first_go_sent": false,
+      "second_go_sent": false,
+      "deferred_request_verified": null,
+      "deferred_post_debugger": null,
+      "backend_log": {
+        "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-stop-differential-20261104\\controlled-stop-backend.log",
+        "bytes": 4332,
+        "sha256": "fe4cb2bda0ca136f5c113d72ee79373729a3b56146a5cc5339803cbf52874498"
+      }
+    },
+    {
+      "case": "self-debugbreak",
+      "status": "completed-observation",
+      "pid": 54384,
+      "outcome": "unknown",
+      "helper_commands": {
+        "Stop": 0,
+        "Detach": 0,
+        "Continue": 0,
+        "Kill": 0
+      },
+      "post_attach_continue_calls": 1,
+      "stop_id": 2,
+      "exception_or_breakpoint_threads": [
+        {
+          "thread_id": "0x39e8",
+          "reason": 6,
+          "data": [
+            "0xffffffffffffffff"
+          ],
+          "description": "Exception 0x80000003 encountered at address 0x7ffbedb43122",
+          "pc": "0x7ffbedb43123",
+          "frames": [
+            {
+              "availability": "available",
+              "pc": "0x7ffbedb43123",
+              "module_path": "c:\\windows\\system32\\kernelbase.dll",
+              "module_rva": "0x113123",
+              "module_base": "0x7ffbeda30000"
+            },
+            {
+              "availability": "available",
+              "pc": "0x7ff671da14c6",
+              "module_path": "c:\\users\\zhuzi\\documents\\grim-dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+              "module_rva": "0x14c6",
+              "module_base": "0x7ff671da0000"
+            },
+            {
+              "availability": "available",
+              "pc": "0x7ff671da1908",
+              "module_path": "c:\\users\\zhuzi\\documents\\grim-dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+              "module_rva": "0x1908",
+              "module_base": "0x7ff671da0000"
+            },
+            {
+              "availability": "available",
+              "pc": "0x7ffbeec2dda7",
+              "module_path": "c:\\windows\\system32\\kernel32.dll",
+              "module_rva": "0x2dda7",
+              "module_base": "0x7ffbeec00000"
+            }
+          ]
+        }
+      ],
+      "stopped_events": [
+        {
+          "utc": "2026-11-04T14:23:59.948915+00:00",
+          "phase": "wait",
+          "pid": 54384,
+          "unique_id": 1,
+          "event_type": 1,
+          "event_type_hex": "0x1",
+          "data_flavor": "Process::ProcessEventData",
+          "state": 5,
+          "interrupted": false,
+          "restarted": false,
+          "description": "000002644E633C60 Event: broadcaster = 000002644D6B8870 (lldb.process), type = 0x00000001 (state-changed), data = { process = 000002644D6B8850 (pid = 54384), state = stopped}"
+        }
+      ],
+      "listener_errors": [],
+      "listener_unsubscribed": true,
+      "terminal_result": null,
+      "terminal_unknown": {
+        "message": "Foreign or incompletely inspected live stop retained",
+        "evidence": {
+          "outcome": null,
+          "safe_to_close_debugger": false,
+          "native_terminal": false,
+          "detach": null,
+          "stop": null,
+          "terminal": null,
+          "native_last": {
+            "utc": "2026-11-04T14:23:59.952525+00:00",
+            "creation_filetime": "134382758391877111",
+            "wait": 258,
+            "exit_code": 259,
+            "exit_code_hex": "0x00000103"
+          },
+          "foreign_stop": true,
+          "lldb_state": 5
+        }
+      },
+      "owned_cleanup": {
+        "kind": "exact-own-fixture",
+        "kill_attempted": true,
+        "kill_success": true,
+        "native_first": {
+          "utc": "2026-11-04T14:23:59.956054+00:00",
+          "creation_filetime": "134382758391877111",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "identity": {
+          "pid": 54384,
+          "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+          "creation_filetime": "134382758391877111"
+        },
+        "kill_error": null,
+        "native_final": {
+          "utc": "2026-11-04T14:24:00.011521+00:00",
+          "creation_filetime": "134382758391877111",
+          "wait": 0,
+          "exit_code": 0,
+          "exit_code_hex": "0x00000000"
+        }
+      },
+      "fixture_exit": 0,
+      "first_go_sent": true,
+      "second_go_sent": false,
+      "deferred_request_verified": null,
+      "deferred_post_debugger": null,
+      "backend_log": {
+        "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-stop-differential-20261104\\self-debugbreak-backend.log",
+        "bytes": 4244,
+        "sha256": "dfbe748836675136c79523855215baf9aeca4aec68db68e94b317bfcf179dc35"
+      }
+    },
+    {
+      "case": "deferred-detach",
+      "status": "completed-observation",
+      "pid": 59092,
+      "outcome": "detached",
+      "helper_commands": {
+        "Stop": 0,
+        "Detach": 1,
+        "Continue": 0,
+        "Kill": 0
+      },
+      "post_attach_continue_calls": 1,
+      "stop_id": 2,
+      "exception_or_breakpoint_threads": [
+        {
+          "thread_id": "0x97e4",
+          "reason": 3,
+          "data": [
+            "0x1",
+            "0x1"
+          ],
+          "description": "breakpoint 1.1",
+          "pc": "0x7ff671da1020",
+          "frames": [
+            {
+              "availability": "available",
+              "pc": "0x7ff671da1020",
+              "module_path": "c:\\users\\zhuzi\\documents\\grim-dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+              "module_rva": "0x1020",
+              "module_base": "0x7ff671da0000"
+            },
+            {
+              "availability": "available",
+              "pc": "0x7ff671da150e",
+              "module_path": "c:\\users\\zhuzi\\documents\\grim-dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+              "module_rva": "0x150e",
+              "module_base": "0x7ff671da0000"
+            },
+            {
+              "availability": "available",
+              "pc": "0x7ff671da1908",
+              "module_path": "c:\\users\\zhuzi\\documents\\grim-dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+              "module_rva": "0x1908",
+              "module_base": "0x7ff671da0000"
+            },
+            {
+              "availability": "available",
+              "pc": "0x7ffbeec2dda7",
+              "module_path": "c:\\windows\\system32\\kernel32.dll",
+              "module_rva": "0x2dda7",
+              "module_base": "0x7ffbeec00000"
+            }
+          ]
+        }
+      ],
+      "stopped_events": [
+        {
+          "utc": "2026-11-04T14:24:02.009893+00:00",
+          "phase": "wait",
+          "pid": 59092,
+          "unique_id": 1,
+          "event_type": 1,
+          "event_type_hex": "0x1",
+          "data_flavor": "Process::ProcessEventData",
+          "state": 5,
+          "interrupted": false,
+          "restarted": false,
+          "description": "0000018C44C08C20 Event: broadcaster = 0000018C454B5B50 (lldb.process), type = 0x00000001 (state-changed), data = { process = 0000018C454B5B30 (pid = 59092), state = stopped}"
+        }
+      ],
+      "listener_errors": [],
+      "listener_unsubscribed": true,
+      "terminal_result": {
+        "outcome": "detached",
+        "safe_to_close_debugger": true,
+        "native_terminal": false,
+        "detach": {
+          "success": true,
+          "error": null,
+          "state": 9
+        },
+        "stop": null,
+        "terminal": null,
+        "native_last": {
+          "utc": "2026-11-04T14:24:02.017891+00:00",
+          "creation_filetime": "134382758411501458",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "foreign_stop": false,
+        "lldb_state": 9,
+        "inspected_stop_id": 2,
+        "observed_stop_id": 2,
+        "breakpoint_removal_attempted": true,
+        "breakpoint_removed": true,
+        "phase": "after-detach"
+      },
+      "terminal_unknown": null,
+      "owned_cleanup": {
+        "kind": "deferred-parent-second-GO",
+        "kill_attempted": false
+      },
+      "fixture_exit": 0,
+      "first_go_sent": true,
+      "second_go_sent": true,
+      "deferred_request_verified": {
+        "pending_ack_observed_before_first_go": true,
+        "request_received_before_go": true
+      },
+      "deferred_post_debugger": {
+        "second_go_after_debugger_exit": true,
+        "debugger_present": false,
+        "late_count": 3,
+        "result": 42,
+        "exit_code": 0
+      },
+      "backend_log": {
+        "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-stop-differential-20261104\\deferred-detach-backend.log",
+        "bytes": 4077,
+        "sha256": "94d9230e00ab9aff1483bb5ed61a37834a9d8acb8ac25650fdf6d9d7cd9f4a5d"
+      }
+    }
+  ],
+  "interpretation": [
+    "Stop and self-DebugBreak share reason 6, UINT64_MAX and first-chance 0x80000003; observed thread/stack/interrupted differences are controlled-example evidence, not a general whitelist.",
+    "The first two fixtures were explicitly terminated after strict unknown refusal; their exit 0 is cleanup, not natural completion.",
+    "Deferred-detach: pending running request then exact owned breakpoint, same StopID, one breakpoint removal and one Detach; only after debugger exit second GO, DONE result42 late_count3 debugger0 and natural exit0.",
+    "Probe own_cleanup_pending for deferred is superseded only by the later parent natural-exit/Job-empty/current-release receipts.",
+    "No-hit and foreign-stop paths must remain explicit and unresolved for original use; harness disposable-target killing is not an original recovery policy."
+  ],
+  "resource": {
+    "admission_gib": 5,
+    "runtime_gib": 2,
+    "owner_sample_count": 7,
+    "minimum_physical_gib": 7.902286529541016,
+    "minimum_commit_headroom_gib": 10.453155517578125,
+    "release": {
+      "utc": "2026-11-04T14:24:34.5252686Z",
+      "source": "This batch exact Job samples and child receipts; PID reuse is not ownership",
+      "known_pids": [
+        1484,
+        8176,
+        17632,
+        24020,
+        29788,
+        31424,
+        32880,
+        37156,
+        40368,
+        44436,
+        44744,
+        54384,
+        54604,
+        59092,
+        60596,
+        65488
+      ],
+      "remaining": [],
+      "resource": {
+        "utc": "2026-11-04T14:24:33.9887749Z",
+        "available_physical_bytes": 8721424384,
+        "system_commit_bytes": 48339767296,
+        "system_commit_limit_bytes": 59886112768,
+        "external_build_or_java_processes": []
+      },
+      "owner_status": "completed-owned-stop-differential",
+      "job_empty_observed": true,
+      "job_disposed": true,
+      "processes_modified": false,
+      "original_started": false,
+      "pending_tool_sessions": 0
+    }
+  },
+  "execution": {
+    "launcher_session": 62033,
+    "launcher_final_chunk": "1662a3",
+    "launcher_exit_code": 0,
+    "readonly_session": 67839,
+    "readonly_final_chunk": "63b1ff",
+    "readonly_exit_code": 0,
+    "started_utc": "2026-11-04T14:23:51.8971278Z",
+    "finished_utc": "2026-11-04T14:24:02.3417082Z",
+    "job_empty_observed": true,
+    "job_disposed": true,
+    "job_termination_requested": false,
+    "failure": null,
+    "cleanup_failure": null,
+    "pending_operations": 0,
+    "current_owned_processes": 0
+  },
+  "review": {
+    "reviewer": "/root/terminal_revision_review",
+    "preflight": "No blocking issue; 14 pins and frozen pairing verified",
+    "result": "Read-only independent review confirms 3 observations, no unexpected continuation, exact deferred detach-to-DONE chain and matching backend hashes"
+  },
+  "evidence": [
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/prepared.json",
+      "sha256": "8f630a8aee49671849aeda88328ffcd9e3519f1b7443987af260da961d8e3267"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/manifest.json",
+      "sha256": "c525dd82b3328b7ca306d3a49d33d3d9cfd147da894aa29ded965c66fc482c22"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/launch-owned.ps1",
+      "sha256": "dd34c19adf1e967f38b1f62b8fbf9feee932bc3867421eaab7dd673589bb1201"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/gate.mjs",
+      "sha256": "2b7c02bb3cb2a6ec3733f1546b5b1574c210c41bf48dcf6e541cc3f68eb0802a"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/probe.py",
+      "sha256": "831b1fc2309cad3d70359a4e80e0d3e46c25df5673dcae12fe44ce1c64179a70"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/launch-result.json",
+      "sha256": "9a608488c631e873abb089e87f25806e64360dc3b6d8003103246f5420d55bb9"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/result.json",
+      "sha256": "4b0105ad689ac000e3bedb3fae0b26a03b7834934451aae92a184f871a428fee"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/release-check.json",
+      "sha256": "26593d7ed21ac12225b98f5342d76e33cf2c0d60029884e18173008f377e4c4b"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/controlled-stop-result.json",
+      "sha256": "9c0f54aeb4721643d89145ad9e290d89ea7955bed87984b8609b47f2f66b828a"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/controlled-stop-backend.log",
+      "sha256": "fe4cb2bda0ca136f5c113d72ee79373729a3b56146a5cc5339803cbf52874498"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/controlled-stop-events.ndjson",
+      "sha256": "af753b25a9830092dfd7aa01884474aa38eb658a0b8c4d503e4e0bcab1e82089"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/controlled-stop-fixture.stdout.log",
+      "sha256": "cdcf7e8d7a6b371ae79873da97deb7ced6d24f0fcc23ad14b6a466e59e7a10e8"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/self-debugbreak-result.json",
+      "sha256": "a17e71edb016f5a7568f7c6ed3edf575df3489d285a0915f30160d4168fd0190"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/self-debugbreak-backend.log",
+      "sha256": "dfbe748836675136c79523855215baf9aeca4aec68db68e94b317bfcf179dc35"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/self-debugbreak-events.ndjson",
+      "sha256": "64a229acc10bd57755ac546734a167264720aff42fe13e619e9c76f09c45eef1"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/self-debugbreak-fixture.stdout.log",
+      "sha256": "b9c3a407174cfb4a0d2830f44d2416db564dd1cabe631f30df29a92d82b52ed5"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/deferred-detach-result.json",
+      "sha256": "a45778efddd587de23d538223844756838d153b90dae9d109a83f51f880d57c6"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/deferred-detach-backend.log",
+      "sha256": "94d9230e00ab9aff1483bb5ed61a37834a9d8acb8ac25650fdf6d9d7cd9f4a5d"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/deferred-detach-events.ndjson",
+      "sha256": "55a727efa453d6b7df89d4a887e54d433a39e1f1340b9b2fba95b5fb23e520d2"
+    },
+    {
+      "file": ".tooling/lldb-stop-differential-20261104/deferred-detach-fixture.stdout.log",
+      "sha256": "5026177723893b3ddeb72e08bfb7ad031e56dae22e44078e2c0d7b9b86279642"
+    }
+  ],
+  "report": {
+    "file": "docs/reverse-client/r1-stop-differential-20261104.md",
+    "sha256": "6cd0b4a7bab43ca8ba26f3469a0601463859a146769155461f3eed00e61d387d"
+  },
+  "next": "Keep original paused and candidate inactive. Any future retry design must specify no-hit and foreign-stop handoff; do not auto-continue an unknown exception. No new execution is scheduled by this checkpoint."
+}

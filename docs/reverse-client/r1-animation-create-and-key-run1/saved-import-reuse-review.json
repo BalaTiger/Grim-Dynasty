@@ -1,0 +1,52 @@
+{
+  "schema": "grim-dynasty.saved-import-reuse-review.v1",
+  "status": "saved-evidence-reviewed-no-execution",
+  "scope": "Existing project evidence/source only, while OW owns heavy slot; no original read, Rea, Node, compiler, test, game or memory sampler execution",
+  "import_302BC8": {
+    "receipt": "docs/object-lifecycle/record-load-discovery/tolower-import.json",
+    "receipt_sha256": "adbb67caa6d2d9c6a3c5673eb4a2790a063e7a1e7485bc831af0736ce531428b",
+    "inspection_script_sha256": "0aac48ab097129f1a02421f5746c2613450568cd289204c00139005a744a0b4f",
+    "binary_sha256_before_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "binding": "Engine IAT VA180302BC8/RVA302BC8 -> api-ms-win-crt-string-l1-1-0.dll!tolower",
+    "descriptor_rva": "0x4156ec",
+    "first_thunk_rva": "0x302b90",
+    "original_first_thunk_rva": "0x416348",
+    "index": 7,
+    "lookup_entry_value": "0x417dfa",
+    "limits": "Saved normal-import metadata binding, not current loaded resolution, CRT implementation, locale, character map or signed-high-byte behavior. No need to repeat original IAT read."
+  },
+  "duplicate_query_correction": {
+    "historical_directory": "docs/object-lifecycle/rea-record-load-dependencies",
+    "historical_summary_sha256": "72face55a5a8beb18db2d10092b5c6ac17200f4bd7ffa05715bee9ae6a96d7f2",
+    "historical_finished": "2026-10-19T04:08:30.744Z",
+    "historical_status": "passed",
+    "same_target_sha256": true,
+    "same_normalized_pseudocode": true,
+    "same_normalized_assembly": true,
+    "same_normalized_direct_callees": true,
+    "old_pseudo_sha256": "1df282080619e576f6ab6afbddf48fce2a0481e09dde21d19ddcefe7eb0825f1",
+    "old_assembly_sha256": "8097aba369f485d561765e1bb33eb9b3cc41c404ac6bc1ed87b346f61701d2ef",
+    "old_callees_sha256": "fb46bf603fb71c2ee345198c6070be29f92725eaa057b739141894b11cbb3a03",
+    "nov2_27B3C0_analysis_calls_repeated": 3,
+    "nov2_fixed_batch_total_calls_remains": 11,
+    "cause": "Earlier candidate inventory checked reverse-client filenames but omitted object-lifecycle evidence. These three calls are repeated evidence, not newly recovered behavior.",
+    "prevention": "Before further fixed queries, check project-wide saved evidence filenames and directly referenced prior plans/receipts; reuse existing same-target bodies. Do not reinterpret a missing filename as proof no embedded historical body exists."
+  },
+  "existing_code": {
+    "file": "src/task_items/RecordLoadFile.cs",
+    "current_sha256": "d1fc982f371ab6d69103affaf02c83db733cde1a7ce58e9f4ed3a6d3d4a41aa6",
+    "reusable_rules": "Explicit KnownC precondition for bytes invoking tolower; ASCII A-Z mapping and slash replacement, preserving embedded NUL. Empty/all-backslash strings need no locale. Conservatively Unsupported for all bytes>=128.",
+    "not_drop_in": "Apply prechecks entire local copy before conversion, uses snapshot cache, and releases its OWN Monitor gate in finally. This does not model native partial byte writes, mutable pointer identity, native exception cleanup or animation resource loading.",
+    "tests": "Existing RecordLoadFileTests contains locale/high-byte/NUL/slash vectors. No tests rerun. The Oct19 acceptance pins an older RecordLoadFile.cs hash, so it is not a current-source verification claim.",
+    "next_adapter": "Reuse explicit supported byte rules only when actual state proves the preconditions; do not inject KnownC/default success, use Unicode normalization, or conflate record table and GraphicsAnim identities."
+  },
+  "cache_inventory_only": {
+    "03C8E0": "Already has Rea pseudo/assembly/callees in docs/object-lifecycle/rea-record-load-dependencies/07..09 plus older bounded assembly; reuse before querying again. Body not re-reviewed in this light step.",
+    "03C480": "No address-matching filename found under docs; no new query authorized by this review."
+  },
+  "next_fixed_target": "Engine095EA0 constructor, direct CALL at094682. Candidate preparation only; next execution awaits parent release and formal approval.",
+  "new_builds": 0,
+  "new_tests": 0,
+  "new_heavy_processes": 0,
+  "new_resource_samples": 0
+}

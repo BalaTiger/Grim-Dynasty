@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "purpose": "One fixed Game077D60 Associated helper directly called at082CBE by MoveToAction Begin. Recover exact receiver/argument use, return identity, lookup/filter behavior and failure/null contracts. The current own integration stops earlier at unknownGate26AF082C98; preparing this query does not establish that gate or claim the helper is already reached.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-game-associated-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-move-start/05-MoveStart-0x180082c00-procedure_assembly.json",
+      "sha256": "5694ff6ab9547a98ff95fe607fbc55e19f167aa80b086bb69c6f06758daea971",
+      "addresses": [
+        "0x180077d60"
+      ],
+      "source_kind": "Saved MoveToAction Begin082C00 direct CALL at082CBE, after actual16C0 DWORD capture and Engine ObjectManager result; establishes target candidate and caller argument flow only.",
+      "exact_instructions": [
+        "0x180082ca5: MOV EBX, dword ptr [RDI + 0x16c0]",
+        "0x180082cb3: CALL qword ptr [0x180609098]",
+        "0x180082cb9: MOV RCX, RAX",
+        "0x180082cbc: MOV EDX, EBX",
+        "0x180082cbe: CALL 0x180077d60",
+        "0x180082cc3: TEST RAX, RAX",
+        "0x180082cc6: JZ 0x180082cd5",
+        "0x180082cd1: CALL qword ptr [R8 + 0x60]"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start/06-MoveStart-0x180082c00-procedure_callees.json",
+      "sha256": "486c6f86ced39fc45d7ae4d7453debd269b6447b1a1239e2077307e402dc576e",
+      "addresses": [
+        "0x180077d60"
+      ],
+      "source_kind": "Saved direct-callee response independently lists077D60; no body or lookup algorithm inferred."
+    }
+  ],
+  "saved_body_dedup": {
+    "status": "completed-no-target-named-body-output-found",
+    "directories": [
+      "docs/reverse-client",
+      "docs/object-lifecycle"
+    ],
+    "method": "Read-only filename inventory filtered by77d60, covering fullVA and leading-zeroRVA spellings. No file contents were scanned for unrelated bodies; only the known082C00 assembly/direct-callee outputs were then read.",
+    "addresses": [
+      "0x180077d60"
+    ],
+    "matching_target_files": [],
+    "matching_filename_count": 0,
+    "limitation": "Filename-scoped absence only; arbitrarily named/external bodies are not ruled out. Caller mention is not a decompiled target body.",
+    "original_read": false,
+    "backend_started": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-skill-moved-direct-plan.json",
+    "sha256": "96e164adb4ff4909806229a8a4a7dce460cb134d76de0cc21768e9ea29313677",
+    "same_registration_as": "r1MoveActionDispatchLeaves",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "profile_or_protection_changes_authorized": false,
+    "historical_profile_scope_text_not_current_query_scope": true
+  },
+  "saved_cleanup_context": [
+    {
+      "file": "docs/reverse-client/r1-skill-moved-direct/summary.json",
+      "sha256": "596d4499deb89419964abfd35c52e9df60ee0f6785c4a4d40b9c930f4c773dab",
+      "calls": 8,
+      "target_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "file": "docs/reverse-client/r1-world-position-and-level-initialization/summary.json",
+      "sha256": "dba34660d80fc2cf496d5025f2e160de946f07908ad9373aa49e5dfe5ea350f8",
+      "calls": 11,
+      "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-action-dispatch-leaves-run1/summary.json",
+      "sha256": "c6bdf6cdb0e64fe1266337ddbf702b9321628d6d270ebb3180c06762c6f578d4",
+      "calls": 11,
+      "target_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    }
+  ],
+  "execution_requirements": [
+    "Preparation only. Root separately reviews/applies the frozen registration and obtains formal execution approval; no active runner changes, verify or backend launch during preparation.",
+    "Exactly one pseudo-code/assembly/direct-callee triple at0x180077D60 plus five lifecycle calls:8 total. No xrefs, callers, search, other targets, import/table scans or recursive callees.",
+    "Preserve installedRea6.5.0 and existing Game384M/5GiB launch/2GiB stop profile, Job/identity/mutex/monitor/sampler/timeouts/recovery/cleanup safeguards unchanged. Pinned old cleanup never substitutes for live preflight.",
+    "Return width/identity, lookup type checks and missing-state behavior remain unknown until actual body evidence. Do not substitute the existing generic ObjectManager lookup or invent a null/success result.",
+    "The unknownGate26AF prior stop and later associated-object virtual+60 are out of this fixed query. Do not initialize the gate or follow returned callees automatically.",
+    "Retain raw incomplete/empty/different-entry results as explicit gaps; do not count a non-returning call as complete or blindly retry uncertain work.",
+    "No original execution/loading, save/cloud access, installs, security changes, commit/push/deploy. Preserve original before/after hashes and close/session/process/Job/sampler evidence."
+  ],
+  "evidence_questions": [
+    "Does077D60 use the original ObjectManager receiver and ID captured fromCharacter16C0; what objects or fields does it actually read?",
+    "Which exact identity or null result can return, and what type/filter/lifetime checks precede it?",
+    "What are the direct callee and failure boundaries needed before any own implementation?"
+  ],
+  "runner_before_sha256": "9a1107a55c2ae0e0c542d0e57a9ac2a0b083e64ec5f638c6c963813fbbb9a153",
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Game-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Game-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180077d60"
+      },
+      "label": "04-GameAssociated-0x180077d60-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180077d60"
+      },
+      "label": "05-GameAssociated-0x180077d60-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180077d60"
+      },
+      "label": "06-GameAssociated-0x180077d60-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Game-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ]
+}

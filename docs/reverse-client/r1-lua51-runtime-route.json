@@ -1,0 +1,240 @@
+{
+  "schema": "grim-dynasty-lua51-runtime-route-v1",
+  "status": "own-runtime-built-vm-lifecycle-passed-engine-integration-still-unsupported",
+  "scope": "Official fixed LuaJIT2.0.4 independently built in isolated source copy;ownDLL architecture/export names andactualVM create/gettop/close/unload passed. Original DLL never loaded;engine service/gameplay not integrated.",
+  "previous_stage": {
+    "file": "docs/reverse-client/r1-lua-service-lifecycle-stage.json",
+    "sha256": "57125f4f27b1e80734e75adb090fa07307267ff2aad63edbadeb4c9ed4adae5e"
+  },
+  "original": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/lua51.dll",
+    "bytes": 442368,
+    "sha256_before_and_after": "eb35eb07d437d643a9c5b219b6cfbbe4cf1cd9e153266067c49848240c2349c5",
+    "machine": "AMD64/8664",
+    "pe_format": "PE32+/20B",
+    "resource_directory_rva_and_size": [
+      0,
+      0
+    ],
+    "file_product_version_resource": null,
+    "pe_timestamp_utc": "2017-02-22T21:53:44Z",
+    "timestamp_is_version_proof": false,
+    "embedded_markers": [
+      {
+        "rva": "0x5f258",
+        "text": "Lua 5.1"
+      },
+      {
+        "rva": "0x5ff18",
+        "text": "LuaJIT 2.0.4"
+      }
+    ],
+    "version_export": {
+      "name": "luaJIT_version_2_0_4",
+      "rva": "0x285b0"
+    },
+    "named_exports": 135,
+    "luaL_newstate_rva": "0x4d3f0",
+    "lua_newstate_rva": "0x4d7d0",
+    "luaJIT_setmode_rva": "0x28380",
+    "loader_imports_include": [
+      "VCRUNTIME140.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll"
+    ],
+    "original_loaded_or_executed": false,
+    "exact_upstream_commit_or_vendor_patches_proven": false
+  },
+  "evidence": [
+    {
+      "file": "docs/reverse-client/r1-lua51-metadata/inspection.json",
+      "sha256": "543e7c6d39c9a377dba78dc29b4d27ff64604fadf73209aff9d1835673333f22"
+    },
+    {
+      "file": "docs/reverse-client/r1-lua51-metadata/dumpbin-metadata.txt",
+      "sha256": "35e9ebc8c843ff5b15df552f2e3f342dfa0b9092ab01493d82f778388d02afe2"
+    },
+    {
+      "file": "docs/reverse-client/r1-lua51-metadata/version-markers.json",
+      "sha256": "e8998117c8f876767bc0735fe49fdcd37e461ab671af7a25cfbbf41af85628e2"
+    },
+    {
+      "file": "docs/reverse-client/r1-lua51-metadata/required-exports.json",
+      "sha256": "b5c3692183108be867bf27bac3f23fcaf00b9a167f84cb7b50e438f5ddc646db"
+    }
+  ],
+  "export_conclusion": {
+    "engine_version3_required_names": 68,
+    "present": 68,
+    "missing": [],
+    "lua_getglobal_present": false,
+    "lua_setglobal_present": false,
+    "conditional_native_branch": "If Engine258E50 selects this image and resolution succeeds, its exports support the observed version3 branch. Global wrappers remain Engine258DA0/258DB0, not absent Lua DLL exports.",
+    "not_a_runtime_pass": "No module was loaded, luaL_newstate called, state allocated or script executed. Matching names and version markers do not prove complete ABI, configuration, bytecode compatibility or exact vendor-source identity."
+  },
+  "recommended_upstream_baseline": {
+    "project": "LuaJIT",
+    "release": "2.0.4",
+    "release_commit": "69e5342eb893815b18a1ec84ba74b0e0d1cc9beb",
+    "selection_reason": "Both original version string and versioned export identify2.0.4, while its export set includes the required JIT/ffi/bit functions. Prefer this version as a comparison baseline over unproven substitution of standard Lua5.1 or current LuaJIT2.1.",
+    "tag_ref_verified": false,
+    "tag_limit": "Currentv2.0.4 tag webpage was not available in the official mirror lookup. The RELEASE LuaJIT-2.0.4 commit and its versioned README were verified; use this immutable commit, not a floating branch or assumed tag resolution.",
+    "source_downloaded": true,
+    "archive_sha256": "b672779a8058afd7f904efc477ec497cac700308ccc0c1e3f91f0cc736b8967b",
+    "license": "MIT; preserve the selected commit's COPYRIGHT and included Lua copyright/permission notices with source and binary distributions.",
+    "exact_vendor_equivalence_claimed": false
+  },
+  "official_sources_read": [
+    {
+      "purpose": "Fixed RELEASE LuaJIT-2.0.4 commit",
+      "url": "https://github.com/LuaJIT/LuaJIT/commit/69e5342eb893815b18a1ec84ba74b0e0d1cc9beb"
+    },
+    {
+      "purpose": "Fixed version identity",
+      "url": "https://raw.githubusercontent.com/LuaJIT/LuaJIT/69e5342eb893815b18a1ec84ba74b0e0d1cc9beb/README"
+    },
+    {
+      "purpose": "Exact selected source license",
+      "url": "https://raw.githubusercontent.com/LuaJIT/LuaJIT/69e5342eb893815b18a1ec84ba74b0e0d1cc9beb/COPYRIGHT"
+    },
+    {
+      "purpose": "2.0.4 MSVC/x64 build route",
+      "url": "https://raw.githubusercontent.com/LuaJIT/LuaJIT/69e5342eb893815b18a1ec84ba74b0e0d1cc9beb/doc/install.html"
+    },
+    {
+      "purpose": "Build script execution scope",
+      "url": "https://raw.githubusercontent.com/LuaJIT/LuaJIT/69e5342eb893815b18a1ec84ba74b0e0d1cc9beb/src/msvcbuild.bat"
+    },
+    {
+      "purpose": "Lua5.1 API/ABI compatibility and bytecode limits",
+      "url": "https://luajit.org/extensions.html"
+    },
+    {
+      "purpose": "luaL_newstate public contract, not full game wrapper",
+      "url": "https://www.lua.org/manual/5.1/manual.html#luaL_newstate"
+    }
+  ],
+  "concrete_parent_decision_scope": {
+    "decision_required": false,
+    "reason": "User explicitly approved fixed source acquisition,isolated build,build helper execution and minimal VM create/destroy. Parent limits this turn to preparation while OW holds heavy slot; normal formal action approval still applies.",
+    "phaseA_fetch_and_review_only": [
+      "Obtain official LuaJIT source at exact release commit69e5342eb893815b18a1ec84ba74b0e0d1cc9beb into an isolated workspace .tooling subtree. Record retrieved archive/content SHA256 and origin; preserve COPYRIGHT notices. No executable is run during this phase.",
+      "Review downloaded headers, build script and generated-tool sources before any build. Freeze exact build inputs and commands; compare lua_Number/lua_Integer/types and needed function signatures to the established x64 call sites. Do not claim vendor patches absent."
+    ],
+    "phaseB_separate_formal_build_and_smoke_approval": [
+      "Use only already installed MSVC14.44.35207 x64 tools, inside an isolated writable build copy. No installer, PATH persistence, system DLL replacement or original-directory writes.",
+      "The upstream msvcbuild.bat compiles AND RUNS newly built minilua.exe and buildvm.exe to generate VM/header/object data. Approval must explicitly cover these source-built helper executions, not describe the batch as compilation only.",
+      "Default documented outputs include lua51.dll,lua51.lib,luajit.exe using dynamic CRT/MD. Actual compatibility with this modern local MSVC has not been tested. If build fails, preserve diagnostics; do not install another compiler or silently change VM options.",
+      "Use existing independent Job/identity protections,5GiB admission and2GiB runtime reserve, one serial build. Record outputs and complete owned-process release.",
+      "Only after build review, run a tiny OWN smoke program that loads the OWN-built DLL by exact isolated path and verifies actual luaL_newstate,empty stack and lua_close. Do not load or copy the original DLL, execute original scripts or start the game."
+    ],
+    "not_requested_or_performed": [
+      "Global software installation",
+      "Loading original lua51.dll",
+      "Original game or save access",
+      "Security/ACL/execution-policy changes",
+      "Full Lua library reverse engineering",
+      "Commit,push or deployment"
+    ]
+  },
+  "integration_boundary": {
+    "current_Goal": "StillEngine0EBB19 from last actually executed diagnostic; this metadata work did not rerun it or manufacture a service pointer.",
+    "what_a_real_runtime_would_close": "Provide a real independently built implementation for Engine0F2E28's luaL_newstate call. Genuine return must be written to the same service+00 with correct ownership and failure prefix.",
+    "what_it_would_not_close": "25A030,subsequent library/provider initialization,service lifetime at Goal,full post-stop frames,physical mouse input and scene/UI/animation presentation.",
+    "25A030_cache": "No saved body found in the bounded filename/related-evidence check; exact direct call0F2E43 and callee inventory exist. No query added during this route audit because a runtime choice can be reviewed first.",
+    "unsupported_policy": "A null return,old58,missing runtime,unknown callback or incomplete initialization remains its exact failure/Unsupported. No fixture resolver or fabricated LuaState counts as production.",
+    "first_usable_game": false
+  },
+  "execution": {
+    "metadata_tool": "Already installed Microsoft dumpbin /headers /exports /imports",
+    "metadata_tool_exit": 0,
+    "metadata_stdout_chars": 18178,
+    "bounded_readonly_data_section_bytes": 49152,
+    "code_disassembled_or_executed": false,
+    "hash_streams_separate_from_semantic_reads": true,
+    "dumpbin_internal_read_bytes_instrumented": false,
+    "new_Rea_calls": 0,
+    "new_builds": 5,
+    "new_tests": 1,
+    "new_downloads_or_installs": 1,
+    "pending_operations": 0,
+    "approval_denied": false,
+    "formal_approval_request_pending": false,
+    "new_dependency_operations_attempted": true,
+    "heavy_backend_started": false,
+    "last_preflight_utc": "2026-11-02T23:29:31.1032183Z",
+    "last_preflight_physical_gib": 13.69002914428711,
+    "last_preflight_commit_headroom_gib": 28.766090393066406,
+    "last_preflight_conflicts": [],
+    "user_scope_approval_pending": false
+  },
+  "approval_hold": {
+    "recorded_utc": "2026-11-03T02:28:44.2733619Z",
+    "source": "Trusted top-level parent delegation",
+    "user_reply_received": true,
+    "user_message_id": "Sentinel_935fd7ed74fc8191991d1484d532f0a7",
+    "question_message_id": "Sentinel_78961af70aac8191ac41eacfd9c6db3f",
+    "status": "approved-runtime-and-service-prefix-executed-new-batch-released",
+    "denied": false,
+    "new_dependency_operations_attempted": true,
+    "tool_approval_pending": false,
+    "running_or_pending_tool_operations": 0,
+    "hold_scope": "Current targeted service prefix completed; no pending command. Prior source-build vctip failed release receipt remains unchanged.",
+    "resume_condition": "Reuse cached0F2E00 and binder evidence; bound callback publication0F2E5A (0F2D20/0F2D00/259FC0/259D80), registry index422888 and subsequent2568D0/0EF8B0. No default-null or success callback; check cache before any new query. Keep Goal/post-stop unsupported until service lifecycle completes."
+  },
+  "minimum_abi_and_acceptance_checklist": {
+    "known_abi": [
+      "Original image AMD64 PE32+,64-bit pointer slots; LuaJIT2.0.4 string and versioned export;68/68 branch3 required names found",
+      "Engine0F2E28 calls luaL_newstate with no explicit arguments and stores returned pointer at service+00 only after return",
+      "Failure can retain old BYTE58; a pointer or old return1 is not whole manager success; GetState returns same receiver identity"
+    ],
+    "before_execution": [
+      "Explicit user scope approval received;fixed source197files verified;retain COPYRIGHT. Wait for parent resource release before compile/helper/VM execution.",
+      "Review exact fetched headers for Lua C typedef widths,function/callback signatures and x64 conventions; do not invent marshalling or vendor configuration",
+      "Review and freeze build inputs/scripts: minilua.exe/buildvm.exe execute during build; use existing MSVC only,no new compiler install"
+    ],
+    "minimal_actual_acceptance": [
+      "OWN-built x64 DLL metadata and all68required exports recorded; build hash/origin/license preserved",
+      "Load only exact isolated OWN-built path,never originalDLL; keep module alive until its actual Lua state has been closed",
+      "Actual luaL_newstate yields a real state; actual lua_gettop reports empty stack; actual lua_close runs exactly once; no fabricated pointer or resolver success",
+      "No original scripts,game/save/cloud access; no persistent configuration change",
+      "All own processes/Job exit normally or documented controlled cleanup; fresh5GiB admission/2GiB runtime protections unchanged"
+    ],
+    "failure_stop": [
+      "Do not execute build/helpers/VM before explicit parent OW release,fresh original guards and normal formal approval.",
+      "Any provenance,ABI,resource,identity,build orVM failure preserves diagnostics and stops that action; no default success or automatic alternative software installation"
+    ],
+    "not_accepted_by_smoke": [
+      "Original vendor binary equivalence or bytecode compatibility",
+      "25A030 andremainingLuaManager/provider initialization",
+      "Goal0EBB19,completepost-stopframes,physicalmouseororiginalsceneUI"
+    ],
+    "test_results_now": "Own VM lifecycle and evidenced25A030 five-library effects on shared service passed; fullinitializer stops0F2E5A. Not originalABI equivalence or completeGoal/post-stop acceptance."
+  },
+  "source_preparation": {
+    "file": "docs/reverse-client/r1-luajit204-source-preparation.json",
+    "sha256": "00496ff6db567fd5d4327213be5970bff7b0c67c22c7b7d4bda2f7af2c2d5c2d",
+    "source_directory": ".tooling/luajit-2.0.4-source/src",
+    "built": false,
+    "runtime_created": false,
+    "next": "Wait for parent OW heavy-resource release. Then fresh original5GiB admission/2GiB runtime and identity/Job guards; prepare a separate isolated build copy with exact existing MSVC14.44.35207 x64 commands and formal execution approval. Compile/run upstream minilua and buildvm only within approved scope, verify own DLL architecture/68exports, then minimal own VM create/gettop/close. No original DLL/scripts/game/save access; no25A030 query in this preparation."
+  },
+  "runtime_validation": {
+    "file": "docs/reverse-client/r1-luajit204-build-stage.json",
+    "sha256": "8e189bc251d7f4ddb1517f643d2c88f60ccfeb68e9ebebb76e01d8872a0965e7",
+    "built": true,
+    "runtime_created_and_closed": true,
+    "engine_service_initialized": false,
+    "next": "Reuse cached0F2E00 and binder evidence; bound callback publication0F2E5A (0F2D20/0F2D00/259FC0/259D80), registry index422888 and subsequent2568D0/0EF8B0. No default-null or success callback; check cache before any new query. Keep Goal/post-stop unsupported until service lifecycle completes."
+  },
+  "service_prefix_validation": {
+    "file": "docs/reverse-client/r1-lua-service-initialization-stage.json",
+    "sha256": "43eede4aa58262f3fcab790e0e25b4ad7ea2317100e77e97151e7651490e6574",
+    "completed": true,
+    "compiled": true,
+    "tested": true,
+    "full_service_initialized": false,
+    "goal_tail_returned": false,
+    "next": "Reuse cached0F2E00 and binder evidence; bound callback publication0F2E5A (0F2D20/0F2D00/259FC0/259D80), registry index422888 and subsequent2568D0/0EF8B0. No default-null or success callback; check cache before any new query. Keep Goal/post-stop unsupported until service lifecycle completes.",
+    "pending": false
+  }
+}

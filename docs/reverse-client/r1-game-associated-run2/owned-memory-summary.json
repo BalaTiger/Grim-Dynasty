@@ -1,0 +1,47 @@
+{
+  "sampler_pid": 11072,
+  "budget": {
+    "id": "game-mouse-first-calibration-384m-v1",
+    "heap": "384M",
+    "launchBytes": 5368709120,
+    "stopBytes": 2147483648,
+    "maximumSampleAgeMs": 5000,
+    "staleAfterMs": 15000,
+    "taskAllowanceGiB": 3,
+    "systemSpareGiB": 2,
+    "calibrationOnly": true,
+    "measuredGamePeakAvailable": false
+  },
+  "ownership_policy": "windows-job-v1",
+  "expected_heap_observed": false,
+  "job_empty_confirmed": false,
+  "requested_interval_ms": 1000,
+  "samples": 0,
+  "last_sample_utc": null,
+  "tree_private_commit_peak_bytes": 0,
+  "tree_working_set_peak_bytes": 0,
+  "with_controller_and_sampler_private_peak_bytes": 0,
+  "with_controller_and_sampler_working_set_peak_bytes": 0,
+  "minimum_available_physical_bytes": null,
+  "minimum_commit_headroom_bytes": null,
+  "largest_receipt_gap_ms": 0,
+  "counter_read_gap_count": 0,
+  "processes": [],
+  "failures": [
+    "Memory sampler stdout ended during analysis",
+    "Job control pipe: write EPIPE",
+    "Memory sampler exited abnormally (1)",
+    "Memory sampler closed without confirmed empty Job",
+    "Explicit Job empty state unconfirmed; monitor close requested owned Job cleanup",
+    "Sampler exit code 1"
+  ],
+  "job_stop_requested": true,
+  "sampler_exit_confirmed": true,
+  "sampler_exit_code": 1,
+  "sampler_output_drained": true,
+  "limitations": [
+    "Sampled tree sums are not continuous peaks; short-lived processes or the last interval before exit may be missed.",
+    "Working sets may contain shared pages. Sum of per-process lifetime peaks is not simultaneous tree usage.",
+    "Controller and PowerShell sampler overhead are recorded separately and also included in total task peaks."
+  ]
+}

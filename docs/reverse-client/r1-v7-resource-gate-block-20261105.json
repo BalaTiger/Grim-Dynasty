@@ -1,0 +1,46 @@
+{
+    "schema":  "grim-dynasty-r1-build-gate-block-v1",
+    "utc":  "2026-11-05T06:11:43.9616756Z",
+    "recipe":  ".tooling/r1-controller-active-integration-build-v7-prepared",
+    "recipe_manifest_sha256":  "78232df20d0c00a8295cbafaed9214622b1a8f4ac7caafd5368e9ed9ecd48adb",
+    "launch_receipt":  ".tooling/r1-controller-active-integration-build-v7-prepared/launch-result.json",
+    "outcome":  "failed-before-worker-start",
+    "failure":  "Physical/commit gate failed: before-helper",
+    "observed":  {
+                     "available_physical_bytes":  3402997760,
+                     "required_bytes":  5368709120,
+                     "system_commit_bytes":  44901556224,
+                     "system_commit_limit_bytes":  59886112768,
+                     "external_build_or_java_processes":  1
+                 },
+    "independent_check":  {
+                              "method":  "Microsoft.VisualBasic.Devices.ComputerInfo (no CIM, since CIM is denied in this sandbox)",
+                              "available_physical_gb":  3.56,
+                              "total_physical_gb":  31.77,
+                              "note":  "Heavy user applications were resident; this is an environment condition, not a code defect."
+                          },
+    "consequences":  {
+                         "validation_dir_created":  false,
+                         "worker_started":  false,
+                         "job_created":  false,
+                         "code_produced":  false,
+                         "auto_retry":  false,
+                         "rerun_of_v7_allowed":  false,
+                         "reason_no_rerun":  "launch-owned guards against reusing an existing receipt; any later attempt must be a new frozen v8 with the same sources."
+                     },
+    "unofficial_evidence":  {
+                                "what":  "The v7 scenario passed in a scratch build outside the frozen harness.",
+                                "scenarios":  22,
+                                "assertions":  398,
+                                "label":  "NON-FROZEN / NOT EVIDENCE",
+                                "detail":  "It proves the added assertions hold locally; it is not an official receipt and must never be cited as one."
+                            },
+    "what_the_scenario_established_pending_official_run":  [
+                                                               "SetState passes the registry header read 0x07896F",
+                                                               "Exit runs on the previous state and returns through the shared ret 0",
+                                                               "the payload head is copied into state.Data2A8 (asserted, not assumed)",
+                                                               "the registry node publishes Current2A0 = the idle state (asserted)",
+                                                               "execution stops at 0x123EE0, the new state lifecycle-slot read"
+                                                           ],
+    "next":  "Free at least 5 GiB, then freeze v8 with the same sources and run it once."
+}

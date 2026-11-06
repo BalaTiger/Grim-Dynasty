@@ -1,0 +1,68 @@
+{
+    "schema":  "grim-dynasty-r1-basic-movement-official-receipt",
+    "utc":  "2026-11-05T09:00:28.0966746Z",
+    "recipe":  ".tooling/r1-basic-movement-build-v2-prepared",
+    "manifest_sha256":  "0fcb371980871a76ab9ca857d68b069a69f7eba3f7188f4edb266bd44f190456",
+    "build_sha256":  "17b6eefd701e69c746e29c5b8758b5996ef3a589ce4c09b033fa17e515d1b116",
+    "result":  {
+                   "path":  ".tooling/r1-basic-movement-validation-2/result.json",
+                   "sha256":  "f9f29660c3718c9bfa2fff0951a45e49ec1ec9fd2874b136fc6879533d08d1fd",
+                   "status":  "passed-same-player-Begin-two-bounded-frames",
+                   "frames":  2,
+                   "assertions":  300,
+                   "net_horizontal_progress":  true
+               },
+    "pins":  {
+                 "sources":  12,
+                 "dependencies":  68,
+                 "receipts":  1,
+                 "fixture_resources":  7,
+                 "compiler_sha256":  "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00"
+             },
+    "gate":  "5 GiB physical/commit gate applied before both compile and run",
+    "scope":  {
+                  "writes_to_target":  0,
+                  "debugger_used":  false,
+                  "original_read":  false,
+                  "original_executed":  false
+              },
+    "run":  {
+                "requested_ground_target":  "(64.25, 16.059, 64.75)",
+                "initial_distance":  2.828,
+                "final_distance":  1.942,
+                "native_math_calls":  49,
+                "trajectory":  [
+                                   {
+                                       "frame":  1,
+                                       "navigation":  "(62.341, 19.529, 64.034)",
+                                       "published":  "(62.341, 16.262, 64.034)",
+                                       "ground_y":  "16.262",
+                                       "before_distance":  2.828,
+                                       "after_distance":  2.039,
+                                       "distance_decreased":  true,
+                                       "ground_differs_from_navigation":  true
+                                   },
+                                   {
+                                       "frame":  2,
+                                       "navigation":  "(62.432, 19.511, 64.068)",
+                                       "published":  "(62.432, 16.251, 64.068)",
+                                       "ground_y":  "16.251",
+                                       "before_distance":  2.039,
+                                       "after_distance":  1.942,
+                                       "distance_decreased":  true,
+                                       "ground_differs_from_navigation":  true
+                                   }
+                               ]
+            },
+    "what_it_establishes":  "The rebuilt model performs a recovered click request and Begin, then two bounded production frames in which X/Z advance toward the requested ground target, the published Entity coordinate follows navigation, Y comes from the real ground hit, and the distance decreases monotonically. No original process is involved.",
+    "what_it_does_not_establish":  [
+                                       "arrival (final distance 1.942 \u003e 0)",
+                                       "full native Tick",
+                                       "mouse input acquisition",
+                                       "presentation/rendering",
+                                       "behavioural equivalence beyond this two-frame slice"
+                                   ],
+    "corrections":  {
+                        "v1 failure":  "fixture_resources entries are objects, not strings; the loop treated them as paths and failed. v2 reads $entry.path and additionally verifies each resource sha256."
+                    }
+}

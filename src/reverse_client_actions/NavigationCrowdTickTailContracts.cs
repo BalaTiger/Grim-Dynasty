@@ -8,6 +8,9 @@ namespace GrimDynasty.ReverseClient.Actions {
   readonly List<uint> steps=new List<uint>();
   public bool Entered {get;internal set;}
   public bool GoalPrefixWritten {get;internal set;}
+  public bool GoalEntered {get;internal set;}
+  public bool GoalReturned {get;internal set;}
+  public GameReachedGoalInvocation GoalCall {get;private set;}
   public bool ReferenceQueryReturned {get;internal set;}
   public uint QueriedReference {get;internal set;}
   public byte TrimResult {get;internal set;}
@@ -18,7 +21,7 @@ namespace GrimDynasty.ReverseClient.Actions {
   public bool Returned {get;internal set;}
   public bool FullTick {get{return false;}}
   public uint[] ObservedAddresses {get{return steps.ToArray();}}
-  internal void Reset(){Native.At=0;steps.Clear();Entered=false;GoalPrefixWritten=false;ReferenceQueryReturned=false;QueriedReference=0;TrimResult=0;SpeedWritten=false;MeasuredSpeed=0;StuckPrefixWritten=false;WorkCleared=false;Returned=false;}
+  internal void Reset(){Native.At=0;steps.Clear();Entered=false;GoalPrefixWritten=false;GoalEntered=false;GoalReturned=false;GoalCall=new GameReachedGoalInvocation();ReferenceQueryReturned=false;QueriedReference=0;TrimResult=0;SpeedWritten=false;MeasuredSpeed=0;StuckPrefixWritten=false;WorkCleared=false;Returned=false;}
   internal void At(uint at){Native.At=at;steps.Add(at);}
  }
  // Saved Engine25C440 assembly, r1-crowd-movement-direct/08. This entry
@@ -28,7 +31,8 @@ namespace GrimDynasty.ReverseClient.Actions {
  // Stable typed OWN identities, finite normal/zero binary32, round-to-nearest;
  // no arbitrary aliases, concurrent mutation, native ABI/EH or MXCSR claims.
  // Flag80 calls the existing concrete query and reference trimming bodies.
- // Goal and stuck notifications stop at their actual indirect calls. Packed
+ // Goal can explicitly bind the existing real Game contract; the unbound
+ // overload and stuck notification retain their actual indirect-call stops. Packed
  // DC/E0 uses the existing view's known-whole-word domain for partial writes;
  // an Unknown sibling is an explicit OWN representation limit, not native IO.
  public static class NavigationCrowdTickTailContracts {
@@ -49,7 +53,7 @@ namespace GrimDynasty.ReverseClient.Actions {
    if(x==null||y==null)return x==null&&y==null;
    try{return Object.ReferenceEquals(x.Buffer,y.Buffer)&&x.PointIndex==y.PointIndex;}catch(MissingContract e){throw new MissingContract(at,"Tail waypoint address unresolved at comparison",e);}
   }
-  static void Goal(NavigationCrowdAgent a,NavigationCrowdTickProductionBoundaries b,NavigationCrowdTickTailInvocation c){
+  static void Goal(NavigationCrowdAgent a,NavigationCrowdTickProductionBoundaries b,GameReachedGoalContext goal,NavigationCrowdTickTailInvocation c){
    c.At(0x25e127);var callback=Need(a,c.Native.At).Callback08.Snapshot();
    c.At(0x25e12f);a.State70.Write(4);a.Reason74.Write(0);c.GoalPrefixWritten=true;
    c.At(0x25e13a);var global=Need(b,c.Native.At).Global422980;Need(global,c.Native.At);var x=global.X.Snapshot();var y=global.Y.Snapshot();
@@ -59,7 +63,16 @@ namespace GrimDynasty.ReverseClient.Actions {
    c.At(0x25e15a);var view=callback.Read(c.Native.At) as GameMovementInterfaceView;Need(view,c.Native.At).FullOwner.Entity.RequireLive(c.Native.At);var table=view.Virtual38.Snapshot();
    c.At(0x25e15d);object target=table.Read(c.Native.At);
    if(!Object.ReferenceEquals(target,GameMovementInterfaceTable.Character)&&!Object.ReferenceEquals(target,GameMovementInterfaceTable.Player))throw new MissingContract(c.Native.At,"Unobserved reached-goal slot28 target");
-   throw new MissingContract(c.Native.At,"Reached-goal slot28 binds Game067170; its real action/controller/event body remains unimplemented");
+   if(goal==null)throw new MissingContract(c.Native.At,"Reached-goal slot28 requires explicit binding to the same Game067170 owner/context");
+   var binding=goal.Bridge.ForCallback(view,c.Native.At);
+   if(!Object.ReferenceEquals(binding.Owner.Entity.Identity,binding.Move))throw new MissingContract(c.Native.At,"Bound Goal domain requires the original typed full-Entity MoveCharacter identity");
+   var sounds=GameRunningSoundState.ForOwner(binding.Owner);
+   if(!Object.ReferenceEquals(sounds.Sound2210,binding.Move.Sound2210)||!Object.ReferenceEquals(sounds.Sound2110,binding.Move.Sound2110))throw new MissingContract(c.Native.At,"Goal and Begin sound pointers must borrow the same original cells");
+   // Use the originally captured interface, after every native Goal-prefix
+   // write. No delegate can supply arrival success or replace the live action.
+   c.GoalEntered=true;
+   try{GameReachedGoalContracts.InvokeFromInterface(view,goal,c.GoalCall);c.GoalReturned=true;}
+   catch(MissingContract error){c.GoalCall.Native.At=error.Address;c.At(error.Address);throw;}
   }
   static void Stuck(NavigationCrowdAgent a,NavigationCrowdTickProductionBoundaries b,NavigationCrowdTickTailInvocation c){
    c.At(0x25e229);var callback=Need(a,c.Native.At).Callback08.Snapshot();c.At(0x25e231);a.State70.Write(6);c.At(0x25e23e);a.Reason74.Write(3);c.StuckPrefixWritten=true;
@@ -84,6 +97,9 @@ namespace GrimDynasty.ReverseClient.Actions {
    c.At(0x25e26b);packed.WriteElapsedE0(0,c.Native.At);
   }
   public static void FinishReachedLastWork25E08A(NavigationCrowdGroup group,NavigationCrowdAgent agent,NavigationCrowdPointerDomain<NavigationCrowdAgent> domain,Field<float> capturedSeconds,int capturedTicks,NavigationCrowdTickProductionBoundaries production,NavigationCrowdTickTailInvocation invocation){
+   FinishReachedLastWork25E08A(group,agent,domain,capturedSeconds,capturedTicks,production,invocation,null);
+  }
+  public static void FinishReachedLastWork25E08A(NavigationCrowdGroup group,NavigationCrowdAgent agent,NavigationCrowdPointerDomain<NavigationCrowdAgent> domain,Field<float> capturedSeconds,int capturedTicks,NavigationCrowdTickProductionBoundaries production,NavigationCrowdTickTailInvocation invocation,GameReachedGoalContext goal){
    var c=Need(invocation,0x25e08a);c.Reset();c.Entered=true;
    var tz=Load(agent,agent==null?null:agent.Target78,2,0x25e08a,c);
    var tx=Load(agent,agent.Target78,0,0x25e090,c);var ty=Cell(agent,agent.Target78,1,c.Native.At).Snapshot();
@@ -102,7 +118,7 @@ namespace GrimDynasty.ReverseClient.Actions {
    c.At(0x25e108);float r=Raw(radius,c.Native.At);float threshold=Mul(r,r,c.Native.At,c);distance=Add(distance,dz,0x25e10c,c);
    c.At(0x25e110);bool reached=distance<=threshold;
    if(!reached){hz=Mul(hz,hz,0x25e115,c);hx=Mul(hx,hx,0x25e119,c);float horizontal=Add(hz,hx,0x25e11d,c);c.At(0x25e121);reached=horizontal==0;}
-   if(reached)Goal(agent,production,c);
+   if(reached)Goal(agent,production,goal,c);
    c.At(0x25e165);agent.RequireLive(c.Native.At);if((agent.Flags44.Read(c.Native.At)&0x80)!=0){
     c.At(0x25e16b);var query=Need(group,c.Native.At).Query08.Snapshot();c.At(0x25e176);var adapter=Need(query.Read(c.Native.At),c.Native.At);
     c.At(0x25e179);uint reference=NavigationCrowdAdapterContracts.Project030B30(adapter,agent.Position48,null,Need(production,c.Native.At).Adapter,c.Native);

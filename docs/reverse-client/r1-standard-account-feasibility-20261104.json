@@ -1,0 +1,111 @@
+{
+  "schema": "grim-dynasty-standard-account-readonly-feasibility-v1",
+  "date_utc": "2026-11-04",
+  "status": "assessment-complete;conditional-option;account-and-startup-boundaries-unverified",
+  "conclusion": "A dedicated standard Windows account is a plausible non-virtualized route, not a verified isolation environment. Current task token cannot establish administrative creation rights; local account/service/domain queries were inconclusive. No usable debugger frontend is yet verified. A separate Windows identity does not separate the same Steam user's Cloud data.",
+  "scope": "Read existing repo evidence, current task token, bounded account/policy/service availability queries, exact tool/game binary paths and version metadata, official documentation. No account creation, switching, Steam login, original execution, installation, configuration or security changes.",
+  "local_receipts": [
+    {
+      "chunk":"2594ac","utc":"2026-11-04T02:48:20.3134278Z",
+      "identity":"DESKTOP-9RQJ5OB\\zhuzi","token_admin_enabled":false,"is_system":false,
+      "selected_groups":["S-1-5-32-545"],"process_64bit":true,"reported_os":"Microsoft Windows NT10.0.26200.0",
+      "available_commands":["Get-LocalUser","New-LocalUser","Get-LocalGroupMember","Add-LocalGroupMember","runas.exe","net.exe","query.exe","tsdiscon.exe"],
+      "account_commands_executed_for_mutation":false,
+      "policy":{"target":"HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System:HideFastUserSwitching","result":"Property does not exist; key read succeeded. This does not rule out other policy/logon-right restrictions."},
+      "CIM":{"target":"Win32_ComputerSystem.PartOfDomain/DomainRole","result":"query failed","exception":"Microsoft.Management.Infrastructure.CimException","error_id":"Microsoft.Management.Infrastructure.CimException,Microsoft.Management.Infrastructure.CimCmdlets.GetCimInstanceCommand","meaning":"Provider reported it could not access CIM resources from the client; raw localized display was encoding-damaged. Exact native status not captured. Domain/management state UNKNOWN, not established access-denied or proof of no management.","retry_or_elevation":false}
+    },
+    {
+      "chunk":"dfb542",
+      "checks":[
+        {"action":"Get-LocalGroupMember -SID S-1-5-32-544","target":"local Administrators membership","result":"failed","exception":"System.NullReferenceException","hresult":-2147467261,"message":"Object reference not set to an instance of an object.","consequence":"Whether the interactive user has an administrator account/credential remains UNKNOWN."},
+        {"action":"Get-LocalUser -Name GD_Observe","target":"proposed test account name only","result":"failed","exception":"System.NullReferenceException","hresult":-2147467261,"message":"Object reference not set to an instance of an object.","consequence":"Account name availability UNKNOWN; not proof the account is absent."},
+        {"action":"Get-Service -Name seclogon","result":"NoServiceFoundForGivenName","consequence":"Service not visible to this task query; not proof host service is globally absent."},
+        {"action":"Get-Service -Name TermService","result":"NoServiceFoundForGivenName","consequence":"Service not visible to this task query; actual interactive switching remains untested."}
+      ],
+      "failed_checks_retried":false,
+      "alternative_privileged_route_attempted":false
+    },
+    {
+      "chunk":"d8b264","utc":"2026-11-04T02:49:05.6910397Z",
+      "debugger_present":[
+        {"path":"D:\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Remote Debugger\\x64\\msvsmon.exe","version":"17.14.20325.5805","role":"Remote monitor; no matching usable frontend verified; not started."},
+        {"path":"C:\\Windows\\System32\\vsjitdebugger.exe","version":"17.0.157.0","role":"JIT entry; not evidence of a functioning frontend; not started."}
+      ],
+      "debugger_absent_at_exact_paths":[
+        "D:\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\devenv.exe",
+        "C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x64\\windbg.exe",
+        "C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x64\\cdb.exe",
+        "C:\\Users\\zhuzi\\AppData\\Local\\Microsoft\\WindowsApps\\WinDbgX.exe",
+        "C:\\Users\\zhuzi\\AppData\\Local\\Microsoft\\WindowsApps\\windbg.exe"
+      ],
+      "PATH_debugger_matches":[],
+      "Steam_client":{"path":"D:\\Steam\\steam.exe","bytes":5823128,"version":"11.15.70.27","reparse_point":false,"meaning":"Binary path/version only; not a verified running client, licensed login, active data root or independent test data space."},
+      "game_binary_directory":"D:\\Steam\\steamapps\\common\\Grim Dawn\\x64",
+      "present_game_dependencies":["Grim Dawn.exe","Engine.dll","Game.dll","steam_api64.dll","lua51.dll","FreeImage.dll","zlibwapi.dll","StatReport.dll","CrashReport.dll","directinput.dll"],
+      "limits":"File metadata only. No LoadLibrary, process launch, copied game, resource completeness, transitive loader resolution or startup success tested. No new original-file before/after hash claim; existing fixed identities remain in prior static stage."
+    }
+  ],
+  "reused_evidence": [
+    {"file":"docs/reverse-client/r1-base-user-path-stage.json","sha256":"b6bde11977e42e00ba5ad2509606adf395c925ae001f618a9a81fef3e24ff22f","fact":"SetBaseUserPath only assigns Engine+138; EXE incoming xrefs empty. It cannot establish pre-startup isolation."},
+    {"file":"docs/reverse-client/r1-save-path-static-recheck-20261104.json","sha256":"0b92bca89bc4ce60d1901391af220dbd8eabc2e344ec1e60e08d133aa2e349db","fact":"Game local save-root uses SHGetSpecialFolderPathA CSIDL5/fCreate0 then My Games/Grim Dawn/save; nonzero375EA branch returns relative save/. Neither proves whole-game write scope or Cloud disabled."},
+    {"file":"docs/phase-1/boundary-audit/module-boundaries.json","sha256":"d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7","fact":"EXE/Game/Engine import Steamworks/cloud wrappers, VC/UCRT, filesystem and dynamically loaded libraries. Ordinary Engine imports include SteamInternal_SteamAPI_Init, not SteamAPI_RestartAppIfNecessary; dynamic use unknown."},
+    {"file":"docs/reverse-client/r1-host-observation-plan-20261104.json","sha256":"d386560a51f1cd7830f6eed2a43c41a854f250f7c4d3601e3b6b30e3e05423fb","fact":"Prior exact HKCU App Paths reads were denied; earlier Appx inventory also denied. Neither retried or elevated. Limited tool search does not prove global absence."}
+  ],
+  "ordered_plan_NOT_executed": [
+    {
+      "step":1,"action":"User/admin reviews Settings > Accounts > Other users and proposes local GD_Observe (name not yet verified), then creates a password-protected STANDARD account only if explicitly approved; do not add Administrators/debug privileges.",
+      "approval":"Account/profile creation and any admin consent required; credential entry belongs to user. This assessment does not grant it.",
+      "validation":"Record actual SID, group membership and standard token after first interactive sign-in. Windows account switching is supported generally, but this host's policy and ability remain unverified.",
+      "risk":"Persistent account/profile, focus/session switch and possible agent disconnection. Fast switching retains other user's applications, including possible Steam processes; switching is not their shutdown."
+    },
+    {
+      "step":2,"action":"Before installing/running Steam or game, run an approved harmless owned probe in the new standard session. Query actual Documents with the game's legacy CSIDL5 API and current Known Folder API; inspect test profile path/reparse status only. Confirm test data destination and write/read/delete one synthetic marker confined to it.",
+      "approval":"First test sign-in and execution of a reviewed small probe with test-only writes. No original DLL use.",
+      "validation":"Documents path must belong to approved test storage, not real/redirected shared Documents. Test-only writable directory must be available. Query failure or an unexpected redirect stops; never rewrite environment variables and assume success.",
+      "risk":"This proves only the chosen path and probe behavior; not inability to access all real data."
+    },
+    {
+      "step":3,"action":"Design and review access boundaries before game startup. Use synthetic allowed/denied fixtures with known ACLs. If proof concerning real protected directories is required, request exact metadata-only ACL/reparse review and token access-check scope separately, with no enumeration or content read.",
+      "approval":"Any ACL/launcher/network/IPC configuration needs a separate concrete request; no existing real-save/Steam ACL is to be changed automatically.",
+      "validation":"Synthetic tests alone do not prove real-directory isolation. Real save and Steam data locations/ACLs are currently uninspected; shared-readable D: paths, services and named-pipe IPC remain explicit gaps.",
+      "stop":"If the required no-real-save/no-Steam-data boundary cannot be established, do not run the original program."
+    },
+    {
+      "step":4,"action":"Resolve Steam license and data ownership before authentication or client startup. Prefer an already legitimately licensed independent Steam identity with no real Cloud saves, and a separately verified test client/data environment. Do not launch D:/Steam/steam.exe under the new user and assume a fresh client data space.",
+      "approval":"Specific Steam test environment, client installation if needed, any login/session change and any network rule require prior approval. No login, purchase, license acceptance or Cloud setting modification performed here.",
+      "validation":"Same Steam identity may synchronize the same remote saves despite a new Windows user. Normal initialization requires suitable client/user/privilege/license context according to Steamworks docs; this game's failure/relaunch path is not fully established.",
+      "stop":"If legal startup requires existing real Steam state/cloud access or the wrong installation relaunches, stop. No steam_appid.txt fabrication, API replacement, DRM patch or launcher bypass. Offline mode/Cloud toggle alone is not a no-local-data-access guarantee."
+    },
+    {
+      "step":5,"action":"Use a verified installed x64 debugger frontend or, after exact source/version/package/signature/scope approval, obtain Microsoft WinDbg. Validate same-standard-user attach and bounded address logging against an owned harmless process first.",
+      "approval":"New download/install/run if no existing frontend; scope must account for updater behavior. No kernel debugging, driver, remote-debug service, global JIT registration or admin target launch.",
+      "validation":"Do not substitute msvsmon/JIT entry/Rea static availability for a confirmed usable frontend."
+    },
+    {
+      "step":6,"action":"Only after preceding gates, approve one exact hashed original-game installation-only copy and one same-user bounded debug launch. Verify test EXE/module paths and stop on unexpected startup/data destination; capture only SetUI/LoadTableFile target fields and callers from the existing plan.",
+      "approval":"Game copy target/size/space, original execution and debug observation need separate explicit approval; not included in current readonly task.",
+      "validation":"Copy must include verified resource layout and runtime dependencies, not just x64 DLLs. No real saves/config/cloud cache copied. File observation is supplementary evidence, not pre-access enforcement. Fixed5GiB/2GiB Rea gates are not a measured original-game budget.",
+      "stop":"No guarantee of game compatibility or legal standalone startup until tested within established boundary; original remains prohibited now."
+    }
+  ],
+  "sources": {
+    "account_creation":"https://support.microsoft.com/en-gb/windows/security/identity-signin/manage-user-accounts-in-windows",
+    "account_switching":"https://support.microsoft.com/en-us/accounts-billing/security/user-account-access-in-windows",
+    "known_folder_token":"https://learn.microsoft.com/en-us/windows/win32/api/shlobj_core/nf-shlobj_core-shgetknownfolderpath",
+    "access_control":"https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/access-control",
+    "Steam_initialization":"https://partner.steamgames.com/doc/api/steam_api",
+    "Steam_cloud":"https://partner.steamgames.com/doc/features/cloud",
+    "remote_monitor":"https://learn.microsoft.com/en-us/visualstudio/debugger/remote-debugging?view=vs-2022",
+    "debugger_distribution":"https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/"
+  },
+  "execution_state": {
+    "new_Rea_calls":0,"builds":0,"tests":0,"game_or_debugger_runs":0,"Steam_runs_or_logins":0,
+    "real_save_or_Steam_configuration_content_reads":0,
+    "account_or_system_changes":0,"downloads_or_installs":0,
+    "new_owned_background_or_Job":false,"pending_operations":0,
+    "known_new_approval_denials":0,"failed_queries_retried":0,
+    "historical_denials_preserved":true,"commit_push_deploy":false,
+    "blocker":"Evidence/host-query limitations, debugger unverified and unapproved future mutations; no uncertain execution or pending launch.",
+    "next_recommendation":"First obtain user-side confirmation of administrator availability and account-switch UI, plus whether an independent legally licensed Steam test identity exists. Do not create an account until the Cloud/client-data route is viable; do not request BIOS changes on present evidence."
+  }
+}

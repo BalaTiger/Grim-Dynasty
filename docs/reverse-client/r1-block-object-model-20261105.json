@@ -1,0 +1,27 @@
+{
+    "schema":  "grim-dynasty-r1-block-object-model-v1",
+    "utc":  "2026-11-05T13:33:30.8979785Z",
+    "new_findings":  {
+                         "getter_a":  "0x31280 is an 8-byte function: lea rax,[0x1804213c0]; ret. It is the address-of accessor for an object at 0x4213c0.",
+                         "getter_b":  "0x4dd70 is the same shape: lea rax,[0x1804213e8]; ret. Address-of accessor for an object at 0x4213e8.",
+                         "crt_link_stub":  "0x2dda28 does: call 0x31280; or qword [rax],4; call 0x4dd70; or qword [rax],2; ret. It only sets bits, which is the MSVC pattern for forcing an object to be linked in.",
+                         "consumer":  "0x4dd80 does call 0x4dd70; mov rcx,[rax]; call [0x180302b00], i.e. it takes field 0 of the object at 0x4213e8 and passes it to a printf-family routine."
+                     },
+    "object_model":  {
+                         "0x4213c0":  "an object whose first qword carries a link bit",
+                         "0x4213e8":  "an object whose first field is passed to printf-family code; likely a global text/formatting object",
+                         "0x421428":  "equals 0x4213e8 + 0x40, so it is a FIELD inside that object rather than a standalone engine root global",
+                         "contradiction_to_state":  "0x256f0 dereferences [0x421428] as a root object (mov rax,[0x421428]; mov rdx,[rax+0x1F8]; ... call [rax+8]), so the field at +0x40 holds an engine pointer."
+                     },
+    "gap_identified":  {
+                           "what":  "All previous store scans required the store to address 0x421428 directly, or to be reachable by a LEA whose target lay in the block range with a matching displacement within a 400-byte window.",
+                           "why_it_misses":  "If code obtains the object address from the getter (a function return value) and then stores through it at +0x40, no literal and no LEA appears at the store site.",
+                           "tested":  "Enumerated all callers of 0x4dd70 (only two) and checked both bodies for a store at +0x40. Neither has one."
+                       },
+    "result":  "Negative. The getter-return path does not explain the field either, so the publisher remains unidentified after routes A and B plus this follow-up.",
+    "not_claimed":  [
+                        "that the object at 0x4213e8 is identified by purpose",
+                        "that the field at +0x40 is understood beyond being dereferenced as an engine pointer",
+                        "any runtime behaviour"
+                    ]
+}

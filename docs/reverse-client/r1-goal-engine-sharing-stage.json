@@ -1,0 +1,194 @@
+{
+  "schema": "grim-dynasty-goal-engine-sharing-stage-v1",
+  "utc": "2026-11-02T22:52:02.8157011Z",
+  "status": "shared-engine-integrated-tested-real-map-goal-blocked-at-service",
+  "previous_stage": {
+    "file": "docs/reverse-client/r1-hook-initialization-stage.json",
+    "sha256": "043af1e4a2d95f6a0a2c430e1b06985f355e0d0bfbe5d8d5a2f0d3ac087026f6"
+  },
+  "evidence": {
+    "file": "docs/reverse-client/r1-goal-engine-sharing-evidence.json",
+    "sha256": "a7dae1267d0b9699b4850266a677dab9d373f0622d4569c30391349a8c2ae41f"
+  },
+  "validation": {
+    "file": ".tooling/r1-goal-engine-sharing-validation/result.json",
+    "sha256": "dabfe7a93d59f165ad2ca6245b348719f2c13721ab1ec5e22fe24e7454fa186c"
+  },
+  "launch": {
+    "file": ".tooling/r1-goal-engine-sharing-build-prepared/launch-result.json",
+    "sha256": "7263bfce2b979b84ce26a7feadbe1194a1cf55bdc50adedc5751a9df6f804e1e"
+  },
+  "release": {
+    "file": "docs/reverse-client/r1-goal-engine-sharing-release.json",
+    "sha256": "4366b4183092ba64fafb40737684594831a98dd248c0d36e2f356677d459c9ff"
+  },
+  "delta": {
+    "new_scenarios": 12,
+    "new_assertions": 82,
+    "affected_regression_scenarios": 12,
+    "affected_regression_assertions": 254,
+    "successful_compiles": 2,
+    "failed_compile_attempts": 0,
+    "tool_helper_compiles": 1,
+    "diagnostics_executed": 1,
+    "diagnostic_checks": 1070,
+    "fixture_setup_checks_excluded": 29,
+    "arrival_scenarios_passed": 0,
+    "old_whole_suites_rerun": 0,
+    "affected_engine_helper_suite_rerun": true,
+    "affected_goal_suite_rerun": true,
+    "old_hook18_rerun": false,
+    "rea_calls_attempted": 0,
+    "rea_calls_completed": 0,
+    "repeated_body_queries": 0
+  },
+  "source_pins": [
+    {
+      "file": "src/reverse_client_actions/GameReachedGoalEngineContracts.cs",
+      "sha256": "8cd74aaf20f9518abeb99f66aee8cc2ed5c13c3957bd33664bbda0e472c3e941"
+    },
+    {
+      "file": "src/reverse_client_actions/GameReachedGoalContracts.cs",
+      "sha256": "0b722b1e302c8df01b5a561ce5620da483feb3cb5672f141cbba157ac1037320"
+    },
+    {
+      "file": "src/reverse_client_actions/GameGoalEngineSharingTests.cs",
+      "sha256": "c8ddce20cfb45c79130555b16ced6fa69b5ba7d3f1af5cd475b1cc2ac54ce4f2"
+    },
+    {
+      "file": "src/reverse_client_actions/GameReachedGoalTests.cs",
+      "sha256": "305e9f0c5b2348011751eee3a185d804ccc7b5a39439bf1520befe430c095df6"
+    },
+    {
+      "file": "src/reverse_client_actions/PlayerMoveBeginFrameIntegrationTests.cs",
+      "sha256": "8b9c9139f54db62013e133098f46d214b8a7875f2d90bec9e3905057798df466"
+    }
+  ],
+  "actual": {
+    "binding": "GoalContext automatically borrows MoveContext.EngineGlobal, same mutable global Field and canonical CWT sidecar; no second WorldEngine",
+    "capture": "Original pointer snapshot survives global replacement; fields remain mutable; fresh capture sees replacement; legacy known-value conflict refused",
+    "service": "Unknown Engine+68 remains Unknown; no service/Lua default, no conditional cold value promoted to Goal runtime",
+    "diagnostic": "observed-registered-player-stop-before-unknown-hook-service",
+    "shared_engine_binding_verified": true,
+    "completed_frames": 22,
+    "attempted_frames": 23,
+    "single_request_generation": 1,
+    "stop_returned": true,
+    "own_action_released": true,
+    "first_unsupported": "Engine0EBB19",
+    "last_frame": {
+      "Frame": 23,
+      "WorkCount": 1,
+      "NavigationPosition": [
+        64.25,
+        19.025795,
+        64.75
+      ],
+      "PublishedPosition": [
+        64.25,
+        16.0587463,
+        64.75
+      ],
+      "Velocity": [
+        0,
+        0,
+        0
+      ],
+      "GroundY": 16.0587463,
+      "Timer": 0,
+      "TimerBits": 0,
+      "State70": 3,
+      "Reason74": 0,
+      "Generation": 1,
+      "Flags": 2147484869,
+      "ActionState": 1,
+      "Moving": 0,
+      "NeedReplan140": 0,
+      "CurrentActionFlag11": null,
+      "CurrentActionPresent": false,
+      "SteeringSkippedEmptyWaypoint": false,
+      "HorizontalDistance": 0,
+      "PrefixReturned": true,
+      "ContinuationEntered": true,
+      "TailEntered": true,
+      "TailReturned": false,
+      "GroundComputedThisFrame": true,
+      "GoalPrefixWritten": true,
+      "GoalEntered": true,
+      "GoalReturned": false,
+      "WorkCleared": false,
+      "UnsupportedRva": 965401,
+      "PrefixRva": 2476915,
+      "TailRva": 965401,
+      "GoalRva": 965401,
+      "Stage": "frame-23-steering-choice-ground-publication-tail"
+    },
+    "initialized_flag_not_published": true,
+    "goal_returned": false,
+    "tail_returned": false,
+    "work_cleared": false,
+    "post_stop_frames_verified": 0,
+    "gameplay_accepted": false
+  },
+  "execution": {
+    "build_session": 72086,
+    "build_exit": 0,
+    "approval_denied": false,
+    "approval_pending": false,
+    "pending_operations": 0,
+    "uncertain_operations": 0,
+    "new_job_empty": true,
+    "new_job_disposed": true,
+    "historical_missing_empty_job_receipt": "UNKNOWN-preserved",
+    "known_pids_absent": 5,
+    "last_sample_utc": "2026-11-02T22:51:06.2158886Z",
+    "physical_gib": 13.808162689208984,
+    "commit_headroom_gib": 28.856670379638672,
+    "heavy_slot_released": true
+  },
+  "remaining": [
+    "Actual Engine+68 service initialization/later lifetime before Goal",
+    "Current Goal/tail incomplete; Work1 retained",
+    "State3 full prefix/captured operands and suffix not integrated",
+    "Physical mouse, frame scheduling, original scene/UI, decode/playback and usable game unaccepted"
+  ],
+  "next": "The original MoveContext.EngineGlobal is now borrowed automatically by GoalContext; do not redo this binding or0EBAE0. Next narrow gap is the actual Engine+68 service publication/lifetime at Goal. Reuse cached0743D0 reached publication, but cold074C02 Lua00=0 is conditional and does not establish the later state. Inspect existing direct service initialization/getter/writer evidence before any fresh fixed query; no null default or copied Engine. Only after service state is independently established, freshly run the same request through Goal/tail and verify real Work cleanup plus State3 prefix/suffix post-stop frames. Current failed frame is not resumable by clearing Work or replaying Goal.",
+  "original_hash_checks": [
+    {
+      "phase": "before",
+      "label": "Game",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "utc": "2026-11-02T22:49:45.2476484Z"
+    },
+    {
+      "phase": "before",
+      "label": "Engine",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "utc": "2026-11-02T22:49:45.2548249Z"
+    },
+    {
+      "phase": "after",
+      "label": "Game",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "utc": "2026-11-02T22:49:54.1784289Z"
+    },
+    {
+      "phase": "after",
+      "label": "Engine",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "utc": "2026-11-02T22:49:54.184446Z"
+    }
+  ],
+  "original_executed": false,
+  "saves_touched": false,
+  "security_changed": false,
+  "commit_push_deploy": false
+}

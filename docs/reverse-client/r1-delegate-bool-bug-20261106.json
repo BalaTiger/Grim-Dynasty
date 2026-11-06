@@ -1,0 +1,20 @@
+{
+    "schema":  "grim-dynasty-r1-delegate-bool-bug-v1",
+    "utc":  "2026-11-06T04:32:37.6474787Z",
+    "root_cause_found":  "The repeated crashes inside FileSystem::AddSource were caused by my own C# delegate declaration, not by the object state.",
+    "explanation":  {
+                        "wrong":  "declaring the three trailing bool parameters as byte in the delegate",
+                        "why":  "on x64 every stack argument occupies a full 8-byte slot; packing them as single bytes misaligned every following stack argument, so AddSource read a wrong FileSystem state pointer and faulted",
+                        "fixed":  "declaring them as IntPtr so each occupies one full slot",
+                        "result":  "after the change AddSource returns 1 for all three configurations tried (null-name 1,1,0; null-name 1,0,0; arc-name 1,1,0) and the process finishes normally instead of crashing"
+                    },
+    "consequence":  "This invalidates my earlier conclusion that FileSystem was incompletely initialised. A default-constructed FileSystem is apparently usable for AddSource; the fault was in how I called it.",
+    "still_open":  {
+                       "lookup":  "DoesFileExist(\"pc/hero_00.msh\") is still 0 after successful AddSource calls, which is expected because AddSource mounted the resources directory rather than an archive inside it",
+                       "add_source_archive":  "AddSourceArchive with name=null returns 0; with name=\"Creatures.arc\" the process dies before the next print, so that call still needs a correct argument shape"
+                   },
+    "next":  [
+                 "determine the exact third argument AddSourceArchive expects, by reading how AddSource builds the string it passes at 0x1800866ec",
+                 "consider mounting the game root rather than the resources subdirectory, since the archive lookup may be relative to a partition root"
+             ]
+}

@@ -1,0 +1,64 @@
+{
+    "schema":  "grim-dynasty-r1-runtime-moveto-confirmed",
+    "utc":  "2026-11-05T08:35:36.2586441Z",
+    "clock_local":  "16:31:25.056 -\u003e 16:35:25.057 watch window; the click happened at about 16:31:26",
+    "pid":  2352,
+    "method":  "~1 kHz read-only polling of Controller+0x2A0 on the local player controller 0x22f23229280; on every change the state object vtable was read in the SAME iteration and converted to an RVA with the live Game.dll base 0x7ffa83de0000",
+    "player_controller":  "0x22f23229280",
+    "state_sequence":  [
+                           {
+                               "clock":  "16:31:25.056",
+                               "state_object":  "0x22f5ce9bc10",
+                               "vtable":  "0x7ffa84524e60",
+                               "rva":  "0x744e60",
+                               "name":  "Idle",
+                               "slot70":  "0x15880",
+                               "count":  0
+                           },
+                           {
+                               "clock":  "16:31:26.370",
+                               "state_object":  "0x22f5ce9c150",
+                               "vtable":  "0x7ffa84524bc8",
+                               "rva":  "0x744bc8",
+                               "name":  "LongIdle",
+                               "slot70":  "0x15880",
+                               "count":  0
+                           },
+                           {
+                               "clock":  "16:31:27.154",
+                               "state_object":  "0x22f45ee2a80",
+                               "vtable":  "0x7ffa84524930",
+                               "rva":  "0x744930",
+                               "name":  "MoveTo",
+                               "slot70":  "0x1663f0",
+                               "count":  0
+                           },
+                           {
+                               "clock":  "16:31:29.304",
+                               "state_object":  "0x22f5ce9bc10",
+                               "vtable":  "0x7ffa84524e60",
+                               "rva":  "0x744e60",
+                               "name":  "Idle",
+                               "slot70":  "0x15880",
+                               "count":  0
+                           }
+                       ],
+    "why_decisive":  "This is the first runtime observation that ties a real ground click to the MoveTo state and, through it, to the real +0x70 body 0x1663F0. Every RVA matches the disk state map exactly; the neighbouring Idle 0x744e60 and LongIdle 0x744bc8 are distinct.",
+    "alignment_with_model":  {
+                                 "Count2F0":  "0 throughout, so the click took the cold (non-overlay) branch",
+                                 "overlay2e8":  "unchanged (0x22f1f1508d0); the click did not touch it",
+                                 "slot70 during MoveTo":  "0x1663F0, the body decoded as SetState(\"Idle\", zeroed head)",
+                                 "consistency":  "The arrival transition modelled in v9 (SetState to Idle) matches the observed return to Idle about 2.15 s later."
+                             },
+    "still_unknown":  [
+                          "what triggered the return to Idle at 16:31:29 (the EndOfPathReached timer or the action completing)",
+                          "the ground position Target120",
+                          "whether a longer move changes the sequence",
+                          "presentation behaviour"
+                      ],
+    "not_claimed":  [
+                        "that the character actually moved",
+                        "that the +0x70 body executed in this sample",
+                        "that the timer caused the return"
+                    ]
+}

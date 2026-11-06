@@ -1,0 +1,60 @@
+{
+  "schema": "grim-dynasty.animation-name-growth-evidence.v1",
+  "utc": "2026-11-02T17:25:20.8493771Z",
+  "status": "passed-animation-long-name-components-only",
+  "game_query_summary": "docs/reverse-client/r1-game-animation-name-growth-run1/summary.json",
+  "game_query_summary_sha256": "ffbb48f4c41311117e3f4da908200542c72eb86dd4609202ca5915e82a2a8404",
+  "query_calls": 8,
+  "newly_queried_procedure": "Game180016340",
+  "repeated_queries": 0,
+  "source_target_sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_target_sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "native_contract": [
+    "Game016460164FB calls016340 with this,newCount,oldLength",
+    "Fresh capacity15,oldLength0,count16..65536 gives capacity=count|15 and allocation capacity+1",
+    "Old copy and old heap release skipped in this exact fresh branch",
+    "16414cap15 ->1641Clen0 ->16433inlineByte0 ->16436heapIdentity ->16439roundedCapacity ->1643Dlen0 ->1644BheapByte0 ->16458RET",
+    "Caller1655E copies new bytes,16568 publishes length,16576 writes terminatingNUL",
+    "020910 heap cleanup occurs at209C3 before resource TEST209C8 and entry publication"
+  ],
+  "platform_adapter": "Self-owned normal managed allocation/logical temporary lifetime for native162D0/16620; retained diagnostic byte observations. Not a recovered native allocator, pointer ABI, allocation failure, exception cleanup or real decoder/play.",
+  "validation": ".tooling/r1-animation-long-name-validation/result.json",
+  "validation_sha256": "c63425e75186893ea8f067013402815177a3553cf5898a4dd2e1aa94e9dfd0e5",
+  "new_scenarios": 7,
+  "new_assertions": 178,
+  "affected_old_scenarios": 1,
+  "affected_old_assertions": 10,
+  "old_whole_suites_rerun": 0,
+  "compiles": 1,
+  "source_pins": [
+    {
+      "path": "src/reverse_client_actions/EngineGraphicsResourceConstruction.cs",
+      "sha256": "8487d9578e5724f75cc42feb6f556db2d11b014d46462ef503ba0f373bbd22e7"
+    },
+    {
+      "path": "src/reverse_client_actions/EngineAnimationResourceManager.cs",
+      "sha256": "c33cadefc70ce8049ee8c8e36cf4b813bbf8986dc02c479952d3506a6d5607d9"
+    },
+    {
+      "path": "src/reverse_client_actions/GameAnimationResourceBinding.cs",
+      "sha256": "cead81be2dfbf293a885dd9953b222711af180be49087e930fcf52f678fe3041"
+    },
+    {
+      "path": "src/reverse_client_actions/GameAnimationResourceBindingTests.cs",
+      "sha256": "b8e1488befba89e8832b2bc49f67f7d81c7b8ba521bc070ecadd0bc5ed7c8440"
+    },
+    {
+      "path": "src/reverse_client_actions/GameAnimationLongNameTests.cs",
+      "sha256": "23867739527d82987c281402636491fe4ad0e56487dd168e53a4daa40f6607d8"
+    }
+  ],
+  "build_manifest": ".tooling/r1-animation-long-name-build-prepared/manifest.json",
+  "build_manifest_sha256": "87587b14ecc25d820fadd369d30290c20f8457aaf0dfd69f4e60e6fee2be8857",
+  "support_boundary": "Game016340 fresh temporary only: prior capacity15,length0,requested16..65536,rounded capacity=count|15,exact normal publication order. Explicit OWN managed allocation/logical lifetime adapts162D0/16620 without claiming native allocator/failure/EH. Caller016460 then copies new bytes and count;020910 releases temporary before pointer test/publication. Existing shared manager identities and eight-key/ninth-publication boundary preserved. One compile of five sources; seven new long-name scenarios plus only one affected15/16 boundary regression; old22/19/20 whole suites not rerun. No decoder/play/native runtime/gameplay acceptance.",
+  "prior_binding_stage": "docs/reverse-client/r1-animation-caller-binding-evidence.json",
+  "release": "docs/reverse-client/r1-animation-long-name-release.json",
+  "release_sha256": "3acf2c412470aa291e61be6465962f4bd0da5927a49754d077a0c882ba7dd601",
+  "query_peak_including_sampler_working_set_bytes": 1324257280,
+  "query_counter_gaps": 0,
+  "gameplay_accepted": false
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "gd-click-ui-recovery-v1",
+  "stage": "20261104T1224Z",
+  "resource_check": {
+    "utc": "2026-11-04T12:32:18.7099330Z",
+    "physicalGiB": 16.240215301513672,
+    "commitGiB": 23.70660400390625,
+    "pid": 38316,
+    "creation_filetime": "134382473153235939",
+    "conflicts": [],
+    "lldb": [],
+    "task_gates": [],
+    "unreadable_identity": [],
+    "tool_chunk": "7ec551",
+    "exit_code": 0
+  },
+  "backup": {
+    "file": "docs/reverse-client/r1-click-backup-recheck-20261104T122116Z.json",
+    "sha256": "1f34e301e655417df5f84e57fc50f9fd22e2beddaf4ce3a9cb7b40f5f2747efe",
+    "verified_utc": "2026-11-04T12:21:17Z",
+    "sets": 2,
+    "files_each": 19,
+    "bytes_each": 365166,
+    "all_hashes_match": true,
+    "original_data_not_read_or_modified": true
+  },
+  "ui": {
+    "game_window_id": 922840,
+    "game_binding": "gdWindowNow",
+    "game_state": "Screenshot confirms existing main menu, selected coldbreath level75, veteran difficulty/main campaign; Start not clicked",
+    "steam_window_id": 17564954,
+    "steam_binding_result": "window is minimized; call activate_window, refresh with get_window, then retry get_window_state",
+    "steam_current_cloud": "unverified",
+    "steam_current_offline": "unverified",
+    "supported_restore_api_found": false,
+    "normal_window_switch_attempt": "One Control_L+Alt_L+Tab on bound game, then fresh AX and window inventory; no targetable switcher returned; not repeated",
+    "new_visible_app_launched": false,
+    "cua_completion_summary": "核实游戏与窗口阻塞"
+  },
+  "actual": {
+    "game_restart": false,
+    "observer_start": false,
+    "debugger_attach": false,
+    "world_entered": false,
+    "click_trace_hits": 0,
+    "character_or_settings_changed": false,
+    "save_restore": false,
+    "pending_execution": 0
+  },
+  "next": "Steam state confirmation already supplied; do not ask it again. Stop before observer attachment because foreground cannot be reliably established. Parent coordinates user to send readiness first, then restore existing game and keep it foreground without another chat reply. After handoff, game-only observation and fresh background resource/identity guard; hidden attempt7 only, no other windows, no restart/settings/character changes.",
+  "foreground_constraint": {
+    "source": "User via parent",
+    "statement": "Any other foreground window minimizes the original game",
+    "new_ui_actions_after_instruction": 0,
+    "no_other_window_switch_during_trace": true,
+    "previous_next": "User restores only the existing Steam window and leaves Steam foreground for cloud/offline verification. Existing game binding is retained for later restoration; do not restart either. Then fresh stable resources/identity guards before new bounded observer receipt; attempt7 unprepared.",
+    "steam_verification": "Do not bring Steam foreground; need user confirmation of current offline and per-gameCloud-off states before attach",
+    "observation_route": "Existing hidden LLDB only; no RiderGUI or new visible application"
+  },
+  "prepared_observer": {
+    "file": ".tooling/gd-click-observation-20261104/launch-trace-attempt7.ps1",
+    "sha256": "bf8de67a1a7383c33004f49d4e3d0cee20abc9233b4938fd39d81be235b45e95",
+    "manifest_sha256": "84aa098629a0ed8502627dea28959f9e326d973c13657c39fb0b98d84b85f041",
+    "old_manifest_archive": ".tooling/gd-click-observation-20261104/manifest-attempt6.json",
+    "only_code_change": "owner-result-attempt6.json to owner-result-attempt7.json",
+    "original_and_tool_pins_verified": true,
+    "executed": false,
+    "visible_process_launch": false
+  },
+  "user_steam_state_confirmation": {
+    "source": "Latest trusted parent transcript",
+    "user_answer": "没有",
+    "meaning": "No re-enabling Steam online mode or GrimDawn Steam Cloud",
+    "requires_repeat_question": false
+  },
+  "foreground_recheck_1232": {
+    "actions": [
+      "Existing gdWindowNow.pressKey Shift only to same game; getAXState unavailable and screenshot returned narrow strip",
+      "Fresh cua.getApp for exact existing game window922840 returned minimized error"
+    ],
+    "other_window_switches": 0,
+    "new_programs_started": 0,
+    "reported_error": "window is minimized; call activate_window, refresh with get_window, then retry get_window_state",
+    "cause_of_minimization": "Not established; no claim the user or tool caused it",
+    "result": "Cannot reliably establish/keep original foreground with current supported binding",
+    "cua_completion_summary": "确认游戏仍最小化",
+    "observer7_executed": false,
+    "pending_execution": 0
+  }
+}

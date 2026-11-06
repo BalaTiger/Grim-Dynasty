@@ -1,0 +1,61 @@
+{
+  "schema": "grim-dynasty-approved-cold-backup-attempt-v1",
+  "date_utc": "2026-11-04",
+  "status": "stopped-before-copy;Steam-processes-detected;no-backup-created",
+  "authorization": "User approved copying and SHA256-verifying app219990 and Settings, with backup-only restore rehearsal. Explicit condition: stop if Steam/game runs, paths change, permissions fail or consistency cannot be guaranteed. No Steam/game launch, sync changes, source overwrite/delete or system changes authorized.",
+  "prepared": {
+    "plan":".tooling/r1-gd-save-backup-20261104/plan.json",
+    "plan_sha256":"fd7c49318b53d7a1bd22d3104b55740681b7cd7b7e04659a05f3012e4ffe0264",
+    "script":".tooling/r1-gd-save-backup-20261104/backup.ps1",
+    "script_sha256":"200fa9df50300716be9bd1e7f40e26529e8876da7cb451c8ebb6c32a6baee438",
+    "source1":"D:\\Steam\\userdata\\151715872\\219990",
+    "source2":"C:\\Users\\zhuzi\\Documents\\My Games\\Grim Dawn\\Settings",
+    "metadata_files":19,"metadata_bytes":365166,
+    "planned_destination":"D:\\GD-Observation-Backups\\20261104T040419Z",
+    "independent_review":"No static blocker; Windows PowerShell5.1 parser0errors. Review does not establish runtime success.",
+    "preparation_failure_retained":"eab130: Measure-Object on OrderedDictionary returned null; a69528 isolated the calculation error and verified actual source counts unchanged. Corrected to PSCustomObject before freezing plan. No preparation/backup directory existed at that failed calculation."
+  },
+  "execution": {
+    "formal_tool_action":"Windows PowerShell5.1 -NoProfile -File fixed backup.ps1 via require_escalated",
+    "tool_chunk":"e709d7","exit_code":1,
+    "started_utc":"2026-11-04T04:08:08.9233335Z",
+    "stopped_utc":"2026-11-04T04:08:09.0784123Z",
+    "first_writer_check_utc":"2026-11-04T04:08:09.0641975Z",
+    "observed_processes":[
+      {"pid":42420,"name":"steam"},
+      {"pid":38472,"name":"steamservice"},
+      {"pid":5248,"name":"steamwebhelper"},
+      {"pid":9656,"name":"steamwebhelper"},
+      {"pid":22644,"name":"steamwebhelper"},
+      {"pid":25436,"name":"steamwebhelper"},
+      {"pid":36516,"name":"steamwebhelper"},
+      {"pid":41028,"name":"steamwebhelper"},
+      {"pid":42884,"name":"steamwebhelper"}
+    ],
+    "failure":"Steam/game process detected; no continuation or termination",
+    "classification":"Own runtime protection stop, NOT approval rejection. Known completed invocation; not pending or uncertain.",
+    "earlier_empty_process_snapshots":"Lightweight snapshots at04:01/04:03 showed no match. Cannot distinguish later startup from task-host visibility difference on present evidence; formal current guard result takes precedence, no empty snapshot reused.",
+    "receipt":".tooling/r1-gd-save-backup-20261104/result.json",
+    "receipt_sha256":"a4061f1caa3584b8380e3d593a7fde41b26027a08910affe0d0fb172eed499b2",
+    "result_check_chunk":"a627cf"
+  },
+  "actual_results": {
+    "backup_directory_exists":false,"backup_parent_exists":false,
+    "backup_files":0,"restore_rehearsal_files":0,
+    "save_payloads_opened_by_backup_script":0,
+    "payload_SHA256_or_restore_checks_completed":0,
+    "source_unchanged_by_hash_verified":false,
+    "source_handles_closed":true,
+    "source_writes_overwrites_deletes":0,"settings_changes":0,
+    "game_Steam_debugger_launches":0,"external_processes_stopped":0,
+    "pending_operations":0,"new_owned_background_or_Job":false,
+    "original_changes_preserved":true,"commit_push_deploy":false
+  },
+  "readonly_followup": {
+    "source":"docs/reverse-client/r1-current-account-backup-assessment-20261104.json",
+    "Cloud":"Current remote/sync-queue/conflict state remains UNKNOWN. Steam is now positively observed running; cannot assume app data quiescence or reuse the earlier historical upload success as current proof.",
+    "debugger":"No usable live frontend has been verified; previously found msvsmon/JIT entries alone are insufficient. No new debugger lookup, install or runtime attempted after backup stop.",
+    "permissions":"Backup authorization does not include changing Cloud settings, starting/closing Steam, original-game launch, installing a debugger or restoring over real data."
+  },
+  "resume": "Stop and report as requested. User may exit Steam normally and confirm. Before any later attempt, recheck current processes in the actual execution context and source path/metadata; preserve this failed receipt, use a new reviewed plan/receipt and fresh destination only when the user/parent resumes. Do not kill Steam processes, relax the guard, retry automatically, or claim a backup exists."
+}

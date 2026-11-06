@@ -1,0 +1,44 @@
+{
+    "schema":  "grim-dynasty-r1-click-to-move-bridge-design-v1",
+    "utc":  "2026-11-05T06:21:42.1661857Z",
+    "status":  "designed-not-implemented; fixtures confirmed non-reusable",
+    "why":  "R1 needs the link that no existing test covers: the widget ground pick and the move request are proven separately, never composed.",
+    "left_half":  {
+                      "api":  "WidgetGroundTargetContracts.MainPath2DDC0(ray, output, move, world, infinity30953C, invocation)",
+                      "evidence":  "docs/reverse-client/r1-world-intersection*/ .. 0x2DDC0..0x2E1FD loaded capture",
+                      "produces":  "WorldIntersectionObserved44 with Distance00 (world hit) and the shared World identity check",
+                      "stops":  "0x2DE47 when the distance equals the +Inf sentinel (real world miss needs camera/frustum/portal fallback)",
+                      "existing_test":  "WorldIntersectionTests (Scene fixture: Ray, Output, World, Move)"
+                  },
+    "right_half":  {
+                       "api":  "PlayerMoveRequestContracts.MoveIdle165CB0(state, first, ignoredSecond, position, context, invocation)",
+                       "identity":  "ControllerPlayerStateIdle::RequestMoveAction, the same 0x165CB0 that sits at slot 0x198 of the Idle table and at Begin220 of the Startup table",
+                       "existing_fixture":  "PlayerMoveRequestTests.Fixture (PlayerMoveRequestContext, lookup, bridge, precheck, nav search, world floor)"
+                   },
+    "bridge":  {
+                   "handoff":  "the world hit position from the pick becomes the Field\u003cWorldPosition24\u003e argument of MoveIdle165CB0",
+                   "constraint":  "both halves must borrow the same MoveContext.EngineGlobal and the same Engine.World50 identity; two independent fixtures cannot be mixed",
+                   "why_blocked_today":  "the two halves live in different frozen recipes (this recipe compiles 3 test sources; WorldIntersectionTests and PlayerMoveRequestTests are not among them)",
+                   "required_new_recipe":  "a v9 recipe whose test set is {WorldIntersectionTests, PlayerMoveRequestTests, the new bridge test} plus the existing production libraries"
+               },
+    "checks_the_bridge_must_assert":  [
+                                          "the pick yields an ordered (non-NaN) distance and a shared world identity, not the miss sentinel",
+                                          "the position handed to MoveIdle165CB0 is the exact object produced by the pick, not a copy or a re-derived value",
+                                          "the move request stops at a documented address, never at a fabricated success",
+                                          "Gate26AF and World50 remain Unsupported unless explicitly published by the test"
+                                      ],
+    "not_claimed":  [
+                        "that the composed path works",
+                        "that movement occurs",
+                        "any runtime value"
+                    ],
+    "next":  "Freeze a v9 recipe that compiles the bridge test with both fixtures, then implement the handoff and record the first composed stop address.",
+    "implementability_check":  {
+                                   "checked_utc":  "2026-11-05T06:22:27.3614814Z",
+                                   "world_intersection_scene":  "WorldIntersectionTestProgram.Scene is an internal sealed class and its helpers (Check/Case/Stops) are private static: not reusable from another file.",
+                                   "move_request_fixture":  "PlayerMoveRequestTests.Fixture is public, but its constructor wires that program\u0027s own lookup/bridge/nav-search/world-floor; it cannot accept a foreign world view.",
+                                   "multiple_mains":  "Both test programs declare their own Main; compiling them together is possible only with an explicit /main, which does not solve the fixture accessibility above.",
+                                   "conclusion":  "The bridge needs its own minimal scene (engine global + World50 + a world view with floor/regions + a move request context). It is not a merge of the two existing fixtures.",
+                                   "work_estimate":  "New test file plus a v9 recipe whose test set is that file alone; the supporting production libraries are already pinned."
+                               }
+}

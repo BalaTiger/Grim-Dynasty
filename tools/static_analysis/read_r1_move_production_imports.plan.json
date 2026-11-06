@@ -1,0 +1,37 @@
+{
+  "schema": "grim-dynasty.fixed-move-production-imports.v1",
+  "script": "tools/static_analysis/read_r1_move_production_imports.mjs",
+  "entrypoint": "inspectMoveProductionImports(reviewedScriptSha256,reviewedPlanSha256)",
+  "status": "prepared-not-executed",
+  "output": "docs/reverse-client/r1-move-production-imports/inspection.json",
+  "sources": {
+    "Game": {"path":"D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll","bytes":11385856,"sha256":"cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"},
+    "Engine": {"path":"D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll","bytes":4485632,"sha256":"4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"}
+  },
+  "bindings": [
+    {"iat_rva":"0x609ed0","index":474,"symbol":"??0CharacterAction@GAME@@QEAA@I@Z","source_key":"action_constructor","procedure":"0x180082b10","instruction":"0x180082b3e: CALL qword ptr [0x180609ed0]"},
+    {"iat_rva":"0x609a38","index":327,"symbol":"?IsNetworkEnabled@Engine@GAME@@QEAA_NXZ","source_key":"action_submission","procedure":"0x180127dd0","instruction":"0x180127dea: CALL qword ptr [0x180609a38]"}
+  ],
+  "symbol_provenance": "Expected names come from the pinned same-Game-hash saved Engine import inventory at indices474 and327, not pseudocode guesses. They remain unconfirmed exact bindings until original IAT/hint/name and Engine hinted name/ordinal/EAT observations all agree. No Engine target RVA is presumed.",
+  "source_pins": [
+    {"key":"imports","path":"docs/object-lifecycle/offline-questitem-imports/import-bindings.json","sha256":"94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"},
+    {"key":"game_pe","path":"docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json","sha256":"227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"},
+    {"key":"engine_pe","path":"docs/object-lifecycle/offline-class-registration-exports/discovery.json","sha256":"0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"},
+    {"key":"oft_tail","path":"docs/reverse-client/r1-navigation-binding/inspection.json","sha256":"d0c171ce77a6d67e153a6911fc7c3a17ea4d61e80ab9492f3287384524e14264"},
+    {"key":"inventory","path":"docs/phase-1/boundary-audit/module-boundaries.json","sha256":"d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"},
+    {"key":"action_constructor","path":"docs/reverse-client/r1-movement-action-path/08-MoveAction-0x180082b10-procedure_assembly.json","sha256":"0e14d2fbc26f938e2f6cb3c63ce058b55e33b35beb05ff20f5832a5319a5fe36"},
+    {"key":"action_submission","path":"docs/reverse-client/r1-movement-action-path/11-MoveAction-0x180127dd0-procedure_assembly.json","sha256":"aa00ae9415deb63c506eb1671208e3ac03b2939fe86a42f8fb3dc8f7d202cc63"},
+    {"key":"action_summary","path":"docs/reverse-client/r1-movement-action-path/summary.json","sha256":"d9bbdea2cfaaf78990fef3aa1728562838832703e180a9136b364a4d38458e93"}
+  ],
+  "limits": {"metadata_bytes":188,"metadata_operations":14,"metadata_single_read":40,"new_IAT_bytes":16,"new_OFT_bytes":0,"new_PE_header_bytes":0,"new_descriptor_bytes":0,"code_bytes":0,"rtti_bytes":0,"hash_chunk_bytes":65536},
+  "requirements": [
+    "Preparation only: module import performs no filesystem I/O. Root reviews frozen script/plan, checks external Windows Attributes/reparse tags, and requests separate exact execution approval before invoking exported inspect function.",
+    "Fixed two Game IATs only. Reuse same-hash nonzero OFT prefix0..349 plus350..487 tail; both selected entries lie in the already saved range. No new OFT/header/descriptor/table scans.",
+    "Each binding reads original IAT8B, hint2B, exact import name including NUL, then Engine hinted export name pointer4B, exact name including NUL, ordinal2B and EAT4B. Total14 reads/188 metadata bytes; no target function payload.",
+    "Hint/name mismatch, ordinal import, forwarder or non-executable target stops without search/fallback or reading neighbors. Cached section classification is not proof of function boundaries or callable runtime ABI.",
+    "Only fixed Game.dll and Engine.dll are opened read-only. Verify complete SHA256, file identity/stat and normal paths before and after using the same open descriptor, and close even on failure. Whole-file hash streams are separate identity checks, not semantic byte scans or atomic snapshots.",
+    "New isolated output directory; no overwrite, no deletion. Preserve partial failure and source-hash/close state.",
+    "No original loading/execution, Rea/backend, child processes, network, saves/cloud, installation, security setting change, commit/push/deploy.",
+    "Do not repeat WorldVec609720 observations or expand to unrelated imports/exports, RTTI, code or neighboring data."
+  ]
+}

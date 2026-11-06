@@ -1,0 +1,493 @@
+
+Dump of file D:\Steam\steamapps\common\Grim Dawn\x64\lua51.dll
+
+PE signature found
+
+File Type: DLL
+
+FILE HEADER VALUES
+            8664 machine (x64)
+               6 number of sections
+        58AE0868 time date stamp Thu Feb 23 05:53:44 2017
+               0 file pointer to symbol table
+               0 number of symbols
+              F0 size of optional header
+            2022 characteristics
+                   Executable
+                   Application can handle large (>2GB) addresses
+                   DLL
+
+OPTIONAL HEADER VALUES
+             20B magic # (PE32+)
+           14.00 linker version
+           59E00 size of code
+           12400 size of initialized data
+               0 size of uninitialized data
+           5A3C4 entry point (000000018005A3C4)
+            1000 base of code
+       180000000 image base (0000000180000000 to 000000018006FFFF)
+            1000 section alignment
+             200 file alignment
+            6.00 operating system version
+            0.00 image version
+            6.00 subsystem version
+               0 Win32 version
+           70000 size of image
+             400 size of headers
+               0 checksum
+               2 subsystem (Windows GUI)
+             160 DLL characteristics
+                   High Entropy Virtual Addresses
+                   Dynamic base
+                   NX compatible
+          100000 size of stack reserve
+            1000 size of stack commit
+          100000 size of heap reserve
+            1000 size of heap commit
+               0 loader flags
+              10 number of directories
+           65600 [     CAC] RVA [size] of Export Directory
+           662AC [      F0] RVA [size] of Import Directory
+               0 [       0] RVA [size] of Resource Directory
+           68000 [    5208] RVA [size] of Exception Directory
+               0 [       0] RVA [size] of Certificates Directory
+           6F000 [     464] RVA [size] of Base Relocation Directory
+           60730 [      1C] RVA [size] of Debug Directory
+               0 [       0] RVA [size] of Architecture Directory
+               0 [       0] RVA [size] of Global Pointer Directory
+               0 [       0] RVA [size] of Thread Storage Directory
+           60750 [      94] RVA [size] of Load Configuration Directory
+               0 [       0] RVA [size] of Bound Import Directory
+           5B000 [     388] RVA [size] of Import Address Table Directory
+               0 [       0] RVA [size] of Delay Import Directory
+               0 [       0] RVA [size] of COM Descriptor Directory
+               0 [       0] RVA [size] of Reserved Directory
+
+
+SECTION HEADER #1
+   .text name
+   59C23 virtual size
+    1000 virtual address (0000000180001000 to 000000018005AC22)
+   59E00 size of raw data
+     400 file pointer to raw data (00000400 to 0005A1FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+60000020 flags
+         Code
+         Execute Read
+
+SECTION HEADER #2
+  .rdata name
+    BE90 virtual size
+   5B000 virtual address (000000018005B000 to 0000000180066E8F)
+    C000 size of raw data
+   5A200 file pointer to raw data (0005A200 to 000661FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+  Debug Directories
+
+        Time Type        Size      RVA  Pointer
+    -------- ------- -------- -------- --------
+    58AE0868 coffgrp      250 000607F4    5F9F4
+
+  Section contains the following exports for lua51.dll
+
+    00000000 characteristics
+    58AE0868 time date stamp Thu Feb 23 05:53:44 2017
+        0.00 version
+           1 ordinal base
+         135 number of functions
+         135 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00028380 luaJIT_setmode
+          2    1 000285B0 luaJIT_version_2_0_4
+          3    2 0004CB40 luaL_addlstring
+          4    3 0004CBE0 luaL_addstring
+          5    4 0004CC00 luaL_addvalue
+          6    5 00029400 luaL_argerror
+          7    6 0004CCC0 luaL_buffinit
+          8    7 00006B30 luaL_callmeta
+          9    8 00006BA0 luaL_checkany
+         10    9 00006BE0 luaL_checkinteger
+         11    A 00006C60 luaL_checklstring
+         12    B 00006D00 luaL_checknumber
+         13    C 00006D70 luaL_checkoption
+         14    D 00006E90 luaL_checkstack
+         15    E 00006EF0 luaL_checktype
+         16    F 00006F70 luaL_checkudata
+         17   10 00029410 luaL_error
+         18   11 0004CCE0 luaL_execresult
+         19   12 0004CDB0 luaL_fileresult
+         20   13 0004CE70 luaL_findtable
+         21   14 00007000 luaL_getmetafield
+         22   15 0004CFA0 luaL_gsub
+         23   16 000313C0 luaL_loadbuffer
+         24   17 000313E0 luaL_loadbufferx
+         25   18 00031480 luaL_loadfile
+         26   19 00031490 luaL_loadfilex
+         27   1A 00031660 luaL_loadstring
+         28   1B 00007080 luaL_newmetatable
+         29   1C 0004D3F0 luaL_newstate
+         30   1D 0004D430 luaL_openlib
+         31   1E 00051EC0 luaL_openlibs
+         32   1F 00007150 luaL_optinteger
+         33   20 000071E0 luaL_optlstring
+         34   21 000072B0 luaL_optnumber
+         35   22 0004D5D0 luaL_prepbuffer
+         36   23 0004D630 luaL_pushresult
+         37   24 0004D680 luaL_ref
+         38   25 0004D740 luaL_register
+         39   26 00027470 luaL_traceback
+         40   27 00029440 luaL_typerror
+         41   28 0004D750 luaL_unref
+         42   29 00029450 luaL_where
+         43   2A 00029490 lua_atpanic
+         44   2B 00007330 lua_call
+         45   2C 00007350 lua_checkstack
+         46   2D 00047DB0 lua_close
+         47   2E 000073B0 lua_concat
+         48   2F 00007490 lua_cpcall
+         49   30 000074E0 lua_createtable
+         50   31 00031690 lua_dump
+         51   32 00007570 lua_equal
+         52   33 000294B0 lua_error
+         53   34 00007680 lua_gc
+         54   35 00007830 lua_getallocf
+         55   36 00007850 lua_getfenv
+         56   37 000078E0 lua_getfield
+         57   38 000285C0 lua_gethook
+         58   39 000285D0 lua_gethookcount
+         59   3A 000285E0 lua_gethookmask
+         60   3B 00027880 lua_getinfo
+         61   3C 00027890 lua_getlocal
+         62   3D 00007990 lua_getmetatable
+         63   3E 00027930 lua_getstack
+         64   3F 00007A30 lua_gettable
+         65   40 00007A90 lua_gettop
+         66   41 00007AA0 lua_getupvalue
+         67   42 00007B10 lua_insert
+         68   43 00007B70 lua_iscfunction
+         69   44 00007BA0 lua_isnumber
+         70   45 00007BE0 lua_isstring
+         71   46 00007C10 lua_isuserdata
+         72   47 00007C40 lua_lessthan
+         73   48 000316E0 lua_load
+         74   49 00031700 lua_loadx
+         75   4A 0004D7D0 lua_newstate
+         76   4B 00007CF0 lua_newthread
+         77   4C 00007D50 lua_newuserdata
+         78   4D 00007DF0 lua_next
+         79   4E 00007E50 lua_objlen
+         80   4F 00007EC0 lua_pcall
+         81   50 00007F50 lua_pushboolean
+         82   51 00007F80 lua_pushcclosure
+         83   52 00008030 lua_pushfstring
+         84   53 00008080 lua_pushinteger
+         85   54 000080B0 lua_pushlightuserdata
+         86   55 00008100 lua_pushlstring
+         87   56 00008170 lua_pushnil
+         88   57 00008190 lua_pushnumber
+         89   58 000081D0 lua_pushstring
+         90   59 00008260 lua_pushthread
+         91   5A 000082A0 lua_pushvalue
+         92   5B 000082E0 lua_pushvfstring
+         93   5C 00008330 lua_rawequal
+         94   5D 00008380 lua_rawget
+         95   5E 000083C0 lua_rawgeti
+         96   5F 00008430 lua_rawset
+         97   60 000084A0 lua_rawseti
+         98   61 00008520 lua_remove
+         99   62 00008580 lua_replace
+        100   63 00008650 lua_resume
+        101   64 000086D0 lua_setallocf
+        102   65 000086E0 lua_setfenv
+        103   66 00008760 lua_setfield
+        104   67 000285F0 lua_sethook
+        105   68 000279A0 lua_setlocal
+        106   69 00008810 lua_setmetatable
+        107   6A 00008950 lua_settable
+        108   6B 000089C0 lua_settop
+        109   6C 00008A60 lua_setupvalue
+        110   6D 00008AF0 lua_status
+        111   6E 00008B00 lua_toboolean
+        112   6F 00008B20 lua_tocfunction
+        113   70 00008B50 lua_tointeger
+        114   71 00008BA0 lua_tolstring
+        115   72 00008C50 lua_tonumber
+        116   73 00008CA0 lua_topointer
+        117   74 00008D10 lua_tothread
+        118   75 00008D30 lua_touserdata
+        119   76 00008D80 lua_type
+        120   77 00008DF0 lua_typename
+        121   78 00008E10 lua_upvalueid
+        122   79 00008E40 lua_upvaluejoin
+        123   7A 00008EB0 lua_xmove
+        124   7B 00008F40 lua_yield
+        125   7C 0004EBE0 luaopen_base
+        126   7D 0004EED0 luaopen_bit
+        127   7E 0004FE40 luaopen_debug
+        128   7F 00051D80 luaopen_ffi
+        129   80 00053240 luaopen_io
+        130   81 000547E0 luaopen_jit
+        131   82 00054CE0 luaopen_math
+        132   83 00055740 luaopen_os
+        133   84 00056510 luaopen_package
+        134   85 00057F70 luaopen_string
+        135   86 00059A90 luaopen_table
+
+  Section contains the following imports:
+
+    KERNEL32.dll
+             18005B000 Import Address Table
+             1800663A0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         25F GetLastError
+                         52E SetLastError
+                         5C5 VirtualFree
+                         5CA VirtualQuery
+                         273 GetModuleHandleA
+                         2AD GetProcAddress
+                         5C2 VirtualAlloc
+                         5C8 VirtualProtect
+                         1AC FreeLibrary
+                         274 GetModuleHandleExA
+                         3B7 LoadLibraryA
+                         1A7 FormatMessageA
+                         4CF RtlUnwindEx
+                         457 RaiseException
+                         271 GetModuleFileNameA
+                         4C2 RtlCaptureContext
+                         4C9 RtlLookupFunctionEntry
+                         4D0 RtlVirtualUnwind
+                         5A9 UnhandledExceptionFilter
+                         569 SetUnhandledExceptionFilter
+                         218 GetCurrentProcess
+                         587 TerminateProcess
+                         37E IsProcessorFeaturePresent
+                         441 QueryPerformanceCounter
+                         219 GetCurrentProcessId
+                         21D GetCurrentThreadId
+                         2E8 GetSystemTimeAsFileTime
+                         11E DisableThreadLibraryCalls
+                         361 InitializeSListHead
+                         377 IsDebuggerPresent
+
+    VCRUNTIME140.dll
+             18005B0F8 Import Address Table
+             180066498 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          3C memcpy
+                          3E memset
+                          3D memmove
+                          12 __DestructExceptionObject
+                          3B memcmp
+                          40 strchr
+                          42 strstr
+                          41 strrchr
+                          3A memchr
+                           8 __C_specific_handler
+                          25 __std_type_info_destroy_list
+
+    api-ms-win-crt-runtime-l1-1-0.dll
+             18005B1D0 Import Address Table
+             180066570 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          1E _crt_atexit
+                          22 _execute_onexit_table
+                          64 strerror
+                          3C _register_onexit_function
+                          16 _cexit
+                          34 _initialize_onexit_table
+                          33 _initialize_narrow_environment
+                          18 _configure_narrow_argv
+                          3F _seh_filter_dll
+                          37 _initterm_e
+                          36 _initterm
+                          21 _errno
+                          66 system
+                          55 exit
+
+    api-ms-win-crt-stdio-l1-1-0.dll
+             18005B248 Import Address Table
+             1800665E8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          9D ungetc
+                           3 __stdio_common_vfprintf
+                           6 __stdio_common_vfscanf
+                           0 __acrt_iob_func
+                          99 tmpfile
+                          98 setvbuf
+                           2 __p__fmode
+                          74 fclose
+                          76 ferror
+                          4D _popen
+                          7D fopen
+                          7F fputc
+                          77 fflush
+                          9B tmpnam
+                          8A fwrite
+                          4B _pclose
+                          8B getc
+                          83 fread
+                          33 _ftelli64
+                          2F _fseeki64
+                          72 clearerr
+                          7A fgets
+                          92 putchar
+                          80 fputs
+                           D __stdio_common_vsprintf
+                          75 feof
+
+    api-ms-win-crt-string-l1-1-0.dll
+             18005B320 Import Address Table
+             1800666C0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          8B strlen
+                          8F strncpy
+                          8E strncmp
+                          92 strpbrk
+
+    api-ms-win-crt-math-l1-1-0.dll
+             18005B1A0 Import Address Table
+             180066540 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          BE floor
+                         11A tanh
+                          92 cosh
+                          D0 ldexp
+                         114 sinh
+
+    api-ms-win-crt-convert-l1-1-0.dll
+             18005B158 Import Address Table
+             1800664F8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          64 strtoul
+
+    api-ms-win-crt-time-l1-1-0.dll
+             18005B348 Import Address Table
+             1800666E8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          46 strftime
+                          28 _mktime64
+                          1F _gmtime64
+                          11 _difftime64
+                          45 clock
+                          23 _localtime64
+                          30 _time64
+
+    api-ms-win-crt-filesystem-l1-1-0.dll
+             18005B178 Import Address Table
+             180066518 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          40 rename
+                          3F remove
+
+    api-ms-win-crt-environment-l1-1-0.dll
+             18005B168 Import Address Table
+             180066508 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          10 getenv
+
+    api-ms-win-crt-locale-l1-1-0.dll
+             18005B190 Import Address Table
+             180066530 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          13 setlocale
+
+SECTION HEADER #3
+   .data name
+     800 virtual size
+   67000 virtual address (0000000180067000 to 00000001800677FF)
+     200 size of raw data
+   66200 file pointer to raw data (00066200 to 000663FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+SECTION HEADER #4
+  .pdata name
+    5208 virtual size
+   68000 virtual address (0000000180068000 to 000000018006D207)
+    5400 size of raw data
+   66400 file pointer to raw data (00066400 to 0006B7FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #5
+  .gfids name
+      10 virtual size
+   6E000 virtual address (000000018006E000 to 000000018006E00F)
+     200 size of raw data
+   6B800 file pointer to raw data (0006B800 to 0006B9FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #6
+  .reloc name
+     464 virtual size
+   6F000 virtual address (000000018006F000 to 000000018006F463)
+     600 size of raw data
+   6BA00 file pointer to raw data (0006BA00 to 0006BFFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+42000040 flags
+         Initialized Data
+         Discardable
+         Read Only
+
+  Summary
+
+        1000 .data
+        1000 .gfids
+        6000 .pdata
+        C000 .rdata
+        1000 .reloc
+       5A000 .text

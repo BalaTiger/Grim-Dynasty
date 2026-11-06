@@ -1,0 +1,238 @@
+{
+  "schema": "gd-existing-lldb-own-fixture-audit-v1",
+  "utc": "2026-11-04T05:28:45.5977426Z",
+  "status": "own-attach-and-controlled-start-verified;outer-marker-parser-failed-preserved",
+  "scope": "Existing official-installation CLI; two owned harmless native fixtures only",
+  "formal_execution_approved": true,
+  "administrator_token_used": false,
+  "version": "lldb version 9.0.0 (JetBrains IDE bundle; x86_64; rider-lldb-9; build 367)",
+  "debugger": "D:\\JetBrains Rider 2025.3.1\\plugins\\cidr-debugger\\bin\\lldb\\win\\x64\\bin\\lldb.exe",
+  "debugger_sha256": "6ab4db316e6b5fec62672957034a38156b066fc793bc4282f6e2828740b7f3b1",
+  "native_compiles": 2,
+  "helper_compiles": 2,
+  "attach": {
+    "status": "passed",
+    "started_utc": "2026-11-04T13:25:54.407609+08:00",
+    "stage": "exited",
+    "failure": null,
+    "original_executed": false,
+    "early_capture_proven": false,
+    "scope": "late attach to owned waiting fixture only",
+    "pid": 40448,
+    "nonce": "e60efeaaaa7e4a1cb512b1c3a58d7bd6",
+    "expected_address": "0x7ff75c0d1020",
+    "attach_error": {
+      "code": 0,
+      "text": null,
+      "success": true
+    },
+    "breakpoint_id": 1,
+    "location_id": 1,
+    "actual_pc": "0x7ff75c0d1020",
+    "hit_count": 1,
+    "thread_id": 41528,
+    "final_state": 10,
+    "exit_status": 0,
+    "exit_description": null,
+    "verified_contract": "owned-late-attach-address-breakpoint",
+    "finished_utc": "2026-11-04T13:25:54.512828+08:00"
+  },
+  "controlled_start": {
+    "status": "passed",
+    "stage": "exited",
+    "started_utc": "2026-11-04T13:25:55.634887+08:00",
+    "failure": null,
+    "original_executed": false,
+    "original_early_capture_proven": false,
+    "scope": "WinMain first-call fixture only; no TLS/pre-loader claim",
+    "stops": [
+      {
+        "name": "early-probe",
+        "breakpoint_id": 1,
+        "actual_pc": "0x7ff66e821040",
+        "hit_count": 1,
+        "counter": 0,
+        "counter_address": "0x7ff66e83ac20"
+      },
+      {
+        "name": "end-probe",
+        "breakpoint_id": 2,
+        "actual_pc": "0x7ff66e821060",
+        "hit_count": 1,
+        "counter": 1,
+        "counter_address": "0x7ff66e83ac20"
+      }
+    ],
+    "launch_flags": 22,
+    "disable_aslr": false,
+    "disable_stdio": true,
+    "launch_error": {
+      "code": 0,
+      "text": null,
+      "success": true
+    },
+    "pid": 18036,
+    "initial_stop": {
+      "state": 5,
+      "reason": 6,
+      "pc": "0x7ffbf07a26ca",
+      "counter": 0,
+      "counter_address": "0x7ff66e83ac20"
+    },
+    "final_state": 10,
+    "exit_status": 0,
+    "exit_description": null,
+    "verified_contract": "owned-controlled-launch-first-call",
+    "finished_utc": "2026-11-04T13:25:55.713551+08:00"
+  },
+  "outer_failure": {
+    "worker_exit": 1,
+    "launcher_exit": 1,
+    "raw_status_preserved": "failed",
+    "reason": "Bare success-line regex rejected actual (lldb) prompt prefix",
+    "actual_line": "(lldb) GD_LAUNCH_PASSED",
+    "tests_rerun": 0,
+    "original_receipts_changed": false,
+    "future_fix": "Accept only optional exact (lldb) prompt prefix while still requiring detailed same-run receipt, hit and exit checks; do not rerun successful fixtures solely to turn wrapper green"
+  },
+  "resources": {
+    "admission_bytes": 5368709120,
+    "runtime_bytes": 2147483648,
+    "last_release": {
+      "utc": "2026-11-04T05:27:21.2597676Z",
+      "tool_chunk": "ce1e38",
+      "checked_ids": [
+        18036,
+        25616,
+        31420,
+        31660,
+        38164,
+        40448,
+        41760,
+        42012,
+        42428,
+        42616,
+        43560,
+        50564,
+        50904,
+        54096,
+        55904,
+        56696,
+        58316,
+        58748,
+        60068,
+        61296,
+        61776,
+        63440,
+        63564
+      ],
+      "current_matches": [],
+      "resource_sample": {
+        "utc": "2026-11-04T05:27:20.6752711Z",
+        "available_physical_bytes": 8493277184,
+        "system_commit_bytes": 50112598016,
+        "system_commit_limit_bytes": 59886112768,
+        "external_build_or_java_processes": []
+      },
+      "observation_only": true,
+      "terminated_processes": 0
+    },
+    "minimum_sampled_physical_bytes": 8450543616.0,
+    "minimum_sampled_commit_headroom_bytes": 9773465600.0,
+    "continuous_peak_claimed": false
+  },
+  "job": {
+    "empty_utc": "2026-11-04T05:25:55.7418108Z",
+    "empty_observed": true,
+    "disposed": true,
+    "termination_requested": true,
+    "native_terminated_count": 0,
+    "cleanup_failure": null,
+    "pending": 0
+  },
+  "frozen_inputs_verified": 13,
+  "artifacts": [
+    {
+      "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-cli-breakpoints-20261104\\attach-fixture.exe",
+      "sha256": "6c25c0f8a721f16fb9039bf0f323e38180e978ded5d2909b7123f145bef781bf"
+    },
+    {
+      "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-cli-breakpoints-20261104\\launch-fixture.exe",
+      "sha256": "3c8aa1eb608c4fc288affb3fa6116b6046ba6ea8dfe2227f5d79bf0659216971"
+    }
+  ],
+  "original_game_or_dll_executed": false,
+  "Steam_launched": false,
+  "Rider_GUI_launched": false,
+  "Rider_endpoint_changed": false,
+  "save_or_cloud_data_accessed": false,
+  "system_settings_changed": false,
+  "production_sources_modified": false,
+  "original_fixture_source_unchanged_sha256": "fa5e2e3c8c6b0fc1574b8b7beef97df546737daa6b734c7b57fd56d3ecc30804",
+  "gameplay_accepted": false,
+  "limitations": [
+    "Self-owned target only; no original-game attach/start verified",
+    "Initial controlled stop was in ntdll, not proof of PE entry or before TLS/loader initialization",
+    "Original game startup, Steam/cloud protection and interaction capture remain separate approval and evidence boundaries",
+    "Rider GUI endpoint occupancy and ETW association remain unresolved and unmodified"
+  ],
+  "next": "Tooling experiment complete. Preserve failures and successful raw evidence. No automatic original-game start; parent may now plan exact bounded original-observation/data-protection scope without depending on Rider GUI repair.",
+  "evidence": [
+    {
+      "file": ".tooling/lldb-cli-version-20261104/result.json",
+      "sha256": "6c788d7b7de3c9ac3eaa40aaae54633934f6f5fb11c8db6c4eb6b33c6d343290"
+    },
+    {
+      "file": ".tooling/lldb-cli-version-20261104/launch-result.json",
+      "sha256": "ecb9062eafbd0e3986bed338ad4e53ff294ef5780c622516e69b23edc2b286bf"
+    },
+    {
+      "file": ".tooling/lldb-cli-version-20261104/version.stdout.log",
+      "sha256": "a5a4584686c6107eb0042adc4ad809f70d7c8b4b08ef9f650a29033961f00566"
+    },
+    {
+      "file": ".tooling/lldb-cli-breakpoints-20261104/result.json",
+      "sha256": "fcabf1b17958f492b1e11947eda1db4f8166c51d2c6c521118b26d83a700d856"
+    },
+    {
+      "file": ".tooling/lldb-cli-breakpoints-20261104/launch-result.json",
+      "sha256": "43eb653bc7bf3bc18e62a656c1bcbd5acb127e69a065648480e5c0d768e36f1b"
+    },
+    {
+      "file": ".tooling/lldb-cli-breakpoints-20261104/attach-result.json",
+      "sha256": "98228e49f677c08059d238ba68b0a6b20db1f2bc60dd000f80c217a1287a1d0c"
+    },
+    {
+      "file": ".tooling/lldb-cli-breakpoints-20261104/launch-result-test.json",
+      "sha256": "451905ba9c56b609397398db92a349e1a4e0b4107318656b4c829cbaf1f3a680"
+    },
+    {
+      "file": ".tooling/lldb-cli-breakpoints-20261104/attach-fixture.stdout.log",
+      "sha256": "0cd666fad124241f5024747e81b483ce0ecec43b265df42fafd3a0d9cf2d8660"
+    },
+    {
+      "file": ".tooling/lldb-cli-breakpoints-20261104/attach-debugger.stdout.log",
+      "sha256": "567619bfbfb8719ae6f3065cf97673a25895d914c046a8a2d3d8471f75bad555"
+    },
+    {
+      "file": ".tooling/lldb-cli-breakpoints-20261104/controlled-launch-debugger.stdout.log",
+      "sha256": "37ba224fd809322656c507c2711644edd268b1fd646c50743283d0b6c37bc2c8"
+    },
+    {
+      "file": ".tooling/lldb-cli-breakpoints-20261104/current-release.json",
+      "sha256": "aa1a166da801cbb0362d175f3ab6cc6393c058f821c2517070e1d7dee9876450"
+    },
+    {
+      "file": ".tooling/lldb-cli-breakpoints-20261104/manifest.json",
+      "sha256": "ba3ae4c2be1fc9814a6943e68529f79947a6cbf31a74396edad28accde7bc053"
+    },
+    {
+      "file": ".tooling/lldb-cli-breakpoints-20261104/gate.mjs",
+      "sha256": "3570e51e2d2438fdec6d5a44b361ca0865f304517bd6ed937acf131190d4ee16"
+    },
+    {
+      "file": ".tooling/lldb-cli-breakpoints-20261104/launch-owned.ps1",
+      "sha256": "ed3684ce877021c5109f812fd9f0c0aa9c101f7dfbc0d9e9e8fa07bb08e93992"
+    }
+  ]
+}

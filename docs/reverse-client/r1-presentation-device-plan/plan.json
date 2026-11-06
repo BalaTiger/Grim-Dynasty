@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "purpose": "Two exact Direct3D11.dll exports of GAME::Direct3DDevice11: Initialize (0x180005AF0) and CreateSwapChain (0x180003F70). Pseudo code and assembly only; no callees, xrefs, search or recursive following.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-presentation-device-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Direct3D11.dll",
+    "sha256": "862a9ef1e67617c29122dc8b8b9c25dbbafe2e518ed98c0bb52b24b37d75ab5b",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 9,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-presentation-module-discovery-20261105.json",
+      "sha256": "1908b4551ccbc1db16003d2caa6bee2b3c454b60a6400ac65feeb8ab6f87c887",
+      "addresses": ["0x180005af0", "0x180003f70"],
+      "source_kind": "Export table of the shipped Direct3D11.dll: ?Initialize@Direct3DDevice11@GAME@@UEAA_NXZ and ?CreateSwapChain@Direct3DDevice11@GAME@@AEAAXAEBURenderDeviceSettings@2@@Z. Export names are the contract; bodies are unread."
+    }
+  ],
+  "allowed_tools": ["binary_session", "open_binary", "close_binary", "procedure_pseudo_code", "procedure_assembly"],
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-skill-moved-direct-plan.json",
+    "sha256": "96e164adb4ff4909806229a8a4a7dce460cb134d76de0cc21768e9ea29313677",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "base_provider_startup_ms": 330000,
+    "effective_provider_startup_ms": 480000,
+    "outer_request_ms": 600000,
+    "override_only_for_this_batch": true,
+    "formal_execution_approval_required": true
+  },
+  "calls": [
+    {"order": 1, "tool": "binary_session", "purpose": "start one provider session for Direct3D11.dll"},
+    {"order": 2, "tool": "open_binary", "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Direct3D11.dll", "purpose": "open the pinned module"},
+    {"order": 3, "tool": "procedure_pseudo_code", "procedure": "0x180005af0", "purpose": "Initialize body"},
+    {"order": 4, "tool": "procedure_assembly", "procedure": "0x180005af0", "purpose": "Initialize instructions"},
+    {"order": 5, "tool": "procedure_pseudo_code", "procedure": "0x180003f70", "purpose": "CreateSwapChain body"},
+    {"order": 6, "tool": "procedure_assembly", "procedure": "0x180003f70", "purpose": "CreateSwapChain instructions"},
+    {"order": 7, "tool": "close_binary", "purpose": "close the module"},
+    {"order": 8, "tool": "binary_session_close", "purpose": "end the session"},
+    {"order": 9, "tool": "final_session", "purpose": "final session record"}
+  ],
+  "boundary": "Static evidence only: exact export bodies of one shipped plugin. No device is created, no frame is presented, no original execution, no writes. Presentation recovery is not claimed.",
+  "pending": [
+    "register the runner mode and its batch descriptor (target path Direct3D11.dll, plan hash, output directory) so this frozen plan can be executed exactly once under the owned Job and resource gates"
+  ]
+}

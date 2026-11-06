@@ -1,0 +1,64 @@
+{
+  "schema":"grim-dynasty-verified-cold-backup-stage-v1",
+  "status":"backup-and-copy-only-restore-verification-passed;originals-unchanged",
+  "started_utc":"2026-11-04T04:14:30.795348Z",
+  "finished_utc":"2026-11-04T04:14:32.7601298Z",
+  "authorization":"User approved backup/checks and, after the first protected stop, explicitly confirmed Steam exit. Original startup, sync/system settings changes and overwrite restoration remain outside this approval.",
+  "destination":"D:\\GD-Observation-Backups\\20261104T041306Z",
+  "backup":"D:\\GD-Observation-Backups\\20261104T041306Z\\baseline-A",
+  "restore_verification":"D:\\GD-Observation-Backups\\20261104T041306Z\\restore-verification",
+  "manifest":"D:\\GD-Observation-Backups\\20261104T041306Z\\manifest.json",
+  "manifest_sha256":"2a0737134cda63831bcd82693c7fe8eb4c7aca32370fc41ed8173baefb96256c",
+  "sources":[
+    {"path":"D:\\Steam\\userdata\\151715872\\219990","backup_subdirectory":"steam-219990","files":17,"bytes":360518,"includes":"16 remote/save files and app-specific remotecache.vdf; cache retained as evidence, not a verified Cloud rollback mechanism."},
+    {"path":"C:\\Users\\zhuzi\\Documents\\My Games\\Grim Dawn\\Settings","backup_subdirectory":"settings","files":2,"bytes":4648}
+  ],
+  "verification":{
+    "original_files":19,"original_bytes":365166,
+    "backup_files_passed":19,"restore_files_passed":19,
+    "per_file_equality":"source-before SHA256 == baseline SHA256 == restore-verification SHA256 == source-after SHA256",
+    "equalities_passed":19,
+    "source_path_set_size_write_time_attributes_unchanged":true,
+    "source_payload_unchanged_verified":true,
+    "source_handles_closed":true,
+    "source_access":"Read-only handles with write/delete sharing denied for the short backup transaction; no source payload writes.",
+    "restore_source":"baseline-A only; restore-verification was a new empty directory, not an original save location",
+    "no_link_following":true,"no_overwrite_or_delete":true,
+    "writer_service_checks":41,
+    "first_check_utc":"2026-11-04T04:14:30.9164493Z",
+    "last_check_utc":"2026-11-04T04:14:32.7433553Z",
+    "Steam_game_processes_all_checks":[],
+    "Steam_Client_Service_all_checks":"Stopped",
+    "meaning":"Complete file-byte backup and copy-only restoration checks, not original-game load acceptance or a remote Cloud snapshot. Does not claim ACL, alternate-stream or all account-state restoration."
+  },
+  "evidence":[
+    {"file":".tooling/r1-gd-save-backup-retry1-20261104/plan.json","sha256":"705309940c1da6f8e39025575d0c44baeaa952054427fb387774c3cff54d8d1a"},
+    {"file":".tooling/r1-gd-save-backup-retry1-20261104/backup.ps1","sha256":"5b3ec8fd77bd951dc502304c14fa923f065312d5e74daa4c11a3dd25e8c0bd13"},
+    {"file":".tooling/r1-gd-save-backup-retry1-20261104/result.json","sha256":"a28fe1baa5bdc75fc2d98572c0872f21e6095947b52aa2fdc08f9ce037002972"},
+    {"file":".tooling/r1-gd-save-backup-20261104/result.json","sha256":"a4061f1caa3584b8380e3d593a7fde41b26027a08910affe0d0fb172eed499b2","role":"Historical Steam-running stop, zero copied files. Preserved unchanged, not reclassified as passed."}
+  ],
+  "tool_receipts":{
+    "formal_readonly_precheck":"944ee2;04:12:06UTC;no Steam/game process;Steam service Stopped",
+    "terminal_session":10598,"initial_chunk":"2160cd","final_chunk":"55ebd0","exit_code":0,
+    "manifest_and_receipt_check":"c62594",
+    "readonly_Cloud_followup":"2584b9",
+    "preparation_date_comparison_note":"Root PowerShell7 auto-converted JSON ISO dates to DateTime; raw string comparison reported differences. UTC-tick comparison fa08b8 verified zero actual metadata changes. WinPS5.1 execution read the frozen ISO strings correctly; no backup failure or source change resulted."
+  },
+  "readonly_followup":{
+    "game_cloudSaving_in_verified_backup":true,
+    "latest_app_upload_success_log_literal":"2026-11-03 13:34:54;Upload complete,result OK",
+    "log_check_utc":"2026-11-04T04:15:54.4857382Z",
+    "Steam_global_per_app_Cloud_UI_flags":"UNKNOWN;Steam not opened",
+    "remote_inventory_conflicts_other_devices":"UNKNOWN;local backup cannot freeze remote state",
+    "debugger_check_utc":"2026-11-04T04:15:09.1959537Z",
+    "debugger_result":"No frontend on checked PATH or exact BuildTools-devenv, SDK10-x64-windbg/cdb and user-WinDbgX alias paths. Not global absence proof; previous msvsmon/JIT presence is not a usable frontend. Denied historical AppPaths/Appx queries not retried.",
+    "next":"Keep backup generations unchanged. Before any original observation, specify and approve exact sync prevention/startup scope and a verified debugger frontend. Reopening Steam itself may process sync; if zero remote changes is required, establish prevention before startup. Do not change the game Cloud flag, blindly restore remotecache, or choose newest-wins on conflicts. Original launch, install/login, sync changes and overwrite restore were not executed or authorized here.",
+    "assessment_reference":"docs/reverse-client/r1-current-account-backup-assessment-20261104.json"
+  },
+  "execution_state":{
+    "pending_operations":0,"owned_background_or_Job":false,
+    "Steam_game_debugger_launches":0,"services_or_external_processes_modified":0,
+    "original_save_settings_changes":0,"original_deletions":0,
+    "new_Rea_calls":0,"product_builds_or_tests":0,"commit_push_deploy":false
+  }
+}

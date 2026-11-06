@@ -1,0 +1,39 @@
+{
+    "schema":  "grim-dynasty-r1-presentation-module-discovery-v1",
+    "utc":  "2026-11-05T09:18:57.9287253Z",
+    "finding":  "Rendering is a plugin module, not part of Game.dll or Engine.dll.",
+    "evidence_static":  {
+                            "game_dll_imports":  "18 DLLs, no D3D11/DXGI entry",
+                            "engine_dll_imports":  "26 DLLs, no D3D11/DXGI entry",
+                            "game_folder_renderer":  "Direct3D11.dll, 141312 bytes, plus Direct3D.dll, DirectInput.dll, DS8Sound.dll, Widget.dll",
+                            "module_hash":  "862a9ef1e67617c29122dc8b8b9c25dbbafe2e518ed98c0bb52b24b37d75ab5b"
+                        },
+    "exports":  {
+                    "total":  164,
+                    "class":  "GAME::Direct3DDevice11 : RenderDevice, WindowEventHandler",
+                    "??0Direct3DDevice11 constructor":  "0x4780",
+                    "Initialize":  "0x5af0",
+                    "CreateSwapChain":  "0x3f70",
+                    "CreatePrimarySurface(EWindow*, RenderDeviceSettings)":  "0x6480",
+                    "CreateSecondarySurface":  "0x71b0",
+                    "BeginFrame":  "0x7b90",
+                    "EndFrame":  "0x6470",
+                    "PresentSurface(RenderSurface*)":  "0x7c40",
+                    "ReadFrameBuffer":  "0xa810",
+                    "vtable WindowEventHandler":  "0x17580"
+                },
+    "why_it_matters":  "The presentation stack has a small, explicit interface: a 141 KB plugin exporting a documented RenderDevice subclass. That makes it a far better reversal target than the multi-megabyte engine, and the export table itself is the contract to recover against.",
+    "next_reversal_steps":  [
+                                "Read Initialize (0x5af0) and CreateSwapChain (0x3f70) with Rea: device, swapchain and window binding.",
+                                "Read CreatePrimarySurface (0x6480) to learn how an EWindow becomes the back buffer.",
+                                "Read BeginFrame (0x7b90) / EndFrame (0x6470) / PresentSurface (0x7c40) for the per-frame present contract.",
+                                "Recover the RenderDevice vtable order so a rebuilt device can be substituted behind the same interface.",
+                                "Only then can a host present recovered frames; nothing of this is claimed yet."
+                            ],
+    "not_claimed":  [
+                        "that any of these bodies has been read",
+                        "that a device can be created",
+                        "that a frame can be presented",
+                        "any GUI recovery"
+                    ]
+}

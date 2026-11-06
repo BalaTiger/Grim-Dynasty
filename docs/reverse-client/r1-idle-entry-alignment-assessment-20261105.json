@@ -1,0 +1,16 @@
+{
+    "schema":  "grim-dynasty-r1-idle-entry-alignment-assessment-v1",
+    "utc":  "2026-11-05T06:35:40.7244101Z",
+    "status":  "assessed; feasible; not implemented",
+    "question":  "Can the decoded Idle entry 0x165B30 be wired to the already modelled dispatch?",
+    "findings":  {
+                     "dispatch_signature":  "GameControllerMoveProductionContracts.HandleAction127DD0(Controller controller, MoveActionRecord action, GameControllerMoveProductionContext context, GameControllerHandleActionInvocation invocation)",
+                     "fixture_support":  "GameControllerMoveProductionTests.Fixture already exposes a GameControllerMoveProductionContext (member Context), so a test can call the real dispatch without new production sources.",
+                     "action_shape":  "0x081A40 fills a plain struct: +0x00 vtable, +0x08 id from controller+0x30, +0x0C 0-\u003e1, +0x10 0x0100-\u003e1, +0x14 float 1000.0, +0x18 byte 0, +0x20 WorldVec3. MoveActionRecord is the model-side counterpart.",
+                     "blocker_inside_call":  "HandleAction127DD0 reads the engine network flag first (0x078620) and then the action side table; with the current fixture it stops at its own documented boundary (0x082C98 once the local branch is taken).",
+                     "timer":  "The 2000 ms timer arm (IAT 0x609A98) is unmodelled and sits AFTER the dispatch call, so it is not reached before the documented stop."
+                 },
+    "what_wiring_would_add":  "It would move the arrival transition one call deeper: from \"stops at the Idle entry read 0x123EE0\" to \"constructs the action and enters the real dispatch\". It would NOT establish movement, because the dispatch itself stops at the runtime gate 0x082C98.",
+    "cost":  "A new production contract (or an addition inside an already compiled source, to keep the frozen source count at 24) plus one test scenario plus a new frozen recipe. The recipe count assertions in build.ps1 accept 24 production sources only, so the addition must go inside an existing compiled file.",
+    "recommendation":  "Defer until either (a) v9 runs and gives an official receipt, or (b) a runtime sample settles 0x26AF/0x50 — both would make the extra call more informative than it is today."
+}

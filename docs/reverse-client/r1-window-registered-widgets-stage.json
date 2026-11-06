@@ -1,0 +1,486 @@
+{
+  "schema": 1,
+  "utc": "2026-11-03T14:36:32.2973052Z",
+  "status": "bounded-widget-and-window-stage-complete;world-input-and-rendering-remain-unresolved",
+  "prior_stage": "docs/reverse-client/r1-widget-bridge-stage.json",
+  "recovery": {
+    "prior_terminal_session": 19138,
+    "prior_terminal_exit": 0,
+    "release": "docs/reverse-client/r1-widget-name-reference-complete-release.json",
+    "prior_recorded_pids_absent": 34,
+    "pending_before_new_query": 0,
+    "historical_release_not_current_admission": true
+  },
+  "scope": "Four concretely registered Engine objects and their exact primary slot18;only199220->1996C0 direct handler;two exact imported WinWindow constructor/Initialize entries;separate cached rendering inventory. No runtime or other UI/engine traversal.",
+  "initializer": {
+    "file": "docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json",
+    "sha256": "ab597744f4a4cf617c6227fe7a50100e5b03733aa48dda43a730f65509bdca26",
+    "start": "0x1800743d0",
+    "end": "0x180074fb8",
+    "boundary": "saved PE RuntimeFunction",
+    "window_provenance": "74402 MOV R15,RDX saves original EWindow argument",
+    "gate": "74CA5 TEST R15,R15;74CA8 JZ74D77 skips all four if null",
+    "no_original_function_execution": true
+  },
+  "objects": [
+    {
+      "constructor": "0x1801975c0",
+      "allocation_bytes": 296,
+      "call_site": "0x180074ccb",
+      "publish": "74CD1 Engine+420=RAX",
+      "register": "74CD8 RCX=Engine+3E8;74CDF RDX=RAX;74CE2 CALL05F080",
+      "extra_gate": "74CAE CMP byte Engine+292,0;74CB5 JNZ74CE7",
+      "vtable_base": "0x180342c78",
+      "slot18_address": "0x180342c90",
+      "slot18_target": "0x180199220",
+      "slot18_evidence": {
+        "sha256": "2eb928f7369e68e14e472322bb61c648a6b103dbecf925ae5dfa359e93613618",
+        "file": "docs/reverse-client/r1-widget-input-slots-run1/04-WidgetVslot18-0x180342c90-read_bytes.json"
+      }
+    },
+    {
+      "constructor": "0x18018e3c0",
+      "allocation_bytes": 11544,
+      "call_site": "0x180074cfb",
+      "publish": "74D01 Engine+418=RAX",
+      "register": "74D08 RDX=RAX;74D0B RCX=Engine+3E8;74D12 CALL05F080",
+      "vtable_base": "0x180342928",
+      "slot18_address": "0x180342940",
+      "slot18_target": "0x18000d480",
+      "slot18_evidence": {
+        "sha256": "df026729383345592facb92c49e9bc4fdb487397d4dc7eaa27fdddf5040ecf98",
+        "file": "docs/reverse-client/r1-widget-input-slots-run1/05-WidgetVslot18-0x180342940-read_bytes.json"
+      }
+    },
+    {
+      "constructor": "0x1801bb650",
+      "allocation_bytes": 56,
+      "call_site": "0x180074d2b",
+      "publish": "74D31 Engine+410=RAX",
+      "register": "74D38 RDX=RAX;74D3B RCX=Engine+3E8;74D42 CALL05F080",
+      "vtable_base": "0x1803433c8",
+      "slot18_address": "0x1803433e0",
+      "slot18_target": "0x18000d480",
+      "slot18_evidence": {
+        "sha256": "d58f7a334846369715bcad245389a63bd1ea2c95d092d63bcca561974d7c97d1",
+        "file": "docs/reverse-client/r1-widget-input-slots-run1/06-WidgetVslot18-0x1803433e0-read_bytes.json"
+      }
+    },
+    {
+      "constructor": "0x180161dd0",
+      "allocation_bytes": 16256,
+      "call_site": "0x180074d5b",
+      "publish": "74D61 Engine+428=RAX",
+      "register": "74D68 RDX=RAX;74D6B RCX=Engine+3E8;74D72 CALL05F080",
+      "vtable_base": "0x180342510",
+      "slot18_address": "0x180342528",
+      "slot18_target": "0x18000d480",
+      "slot18_evidence": {
+        "sha256": "23e3638d42c61a688d5c4be3f5da05b4cfd094ce8fbc6bf03c33fb78c6f5e9cf",
+        "file": "docs/reverse-client/r1-widget-input-slots-run1/07-WidgetVslot18-0x180342528-read_bytes.json"
+      }
+    }
+  ],
+  "same_list_evidence": [
+    {
+      "file": "docs/reverse-client/r1-engine-process-user-input-run1/08-AddActivity-0x18005f080-procedure_assembly.json",
+      "sha256": "1401104b8c73685ec68f09b0c6d6e735e8bf0f5cfc85d907b1e1ef2569f3df28",
+      "contract": "RDX preserved and appended as pointer into RCX list; shared address exports AddActivity/AddWidget/Register, aliases do not identify concrete class; failure/null-end prefix retained"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-process-user-input-run1/05-ProcessUserInput-0x180078df0-procedure_assembly.json",
+      "sha256": "0685ed5e61678fc2dc500b2130dd39f945af0f610611f7e464a5cbf4c29cc2b8",
+      "contract": "078F07/0E reads Engine+3E8/+3F0;078F30 loads objectRCX;078F34 loads vptr;078F3C calls slot18 with same eventRDX"
+    }
+  ],
+  "main_window_boundary": {
+    "imports": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "imports_sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7",
+    "known": "Exact EXE imports resolve to Engine217710/2179B0;real Rea ctor/Initialize bodies now saved. Same-this CreateWindow lpParam and+8publication proven statically;actualEXEcaller/instance and EWindowC0 target unknown. No original window execution.",
+    "entry_metadata": "docs/phase-1/round-4/main-entry-metadata.json",
+    "entry_metadata_sha256": "4034da4f096be9ab29293c35363e8779d1b03e6ec33b384b190e2fd7b6432013",
+    "not_followed": "EXE entry448310 in.bind is not proven WinMain; no wrapper/bypass investigation",
+    "initial_known_preserved": "WinWindow Initialize import, CreateWindowExA/RegisterClassA imports only; no observed main-window body"
+  },
+  "unknown": [
+    "Production EXE/Game world-interaction Widget instance and registration/vptr writes",
+    "Client-float pixel to image-coordinate conversion, camera hit and actual world-move request link",
+    "Actual EWindow instance/current vptr, C0 handle getter and58/50 success calls",
+    "Ordinary WindowProc binding/reentrancy and HWND lifetime;CreateWindow result is not runtime observation",
+    "Original scene texture pixels,visible meshes/animation,UI layout and presentation",
+    "Original runtime state beyond conditional constructor prefix;no dynamic compatibility comparison"
+  ],
+  "new_rea_calls": 45,
+  "new_product_compiles": 0,
+  "new_game_tests": 0,
+  "original_executed": false,
+  "saves_accessed": false,
+  "pending_operations": 0,
+  "next": "Continue from actual WinWindow primaryvptr33F4C0 only: deduplicate and read exact C0/58/50 slots if needed for handle/init bridge; conditional on actual instance/vptr. Locate production EXE/Game window/worldWidget registration from concrete call/write references. Do not extend horizontal-drag helper or interpret base getter/OS window as real game UI.",
+  "cached_input_window_binding": {
+    "caller": "Engine743D0 same saved body",
+    "gate": "74B2E Engine292==0 and74B37 R15(EWindow)!=null",
+    "create_publish": "74B3C CALL1241E0;74B41 Engine200=RAX",
+    "actual_arguments": "74B4B R9D=100h;74B51 R8D=R9D;74B54 RDX=R15;74B57 RCX=createdInput;74B5A virtual08 call",
+    "pseudo_limit": "Saved pseudo shows only one100h argument; assembly establishes both R8D and R9D100h. Do not infer ABI solely from pseudo.",
+    "input_body": "docs/reverse-client/r1-directinput-input-core-run1/05-DirectInputSlot08-0x180002dd0-procedure_assembly.json",
+    "input_sha256": "a241eed17133064071b097623790991e077573b1ca6b114486a6e5889e7f776d",
+    "window_slot": "2DE8 load EWindow vptr;2DEE RCX=samewindow;2DF7 call+0C0;2DFD Input+50=returnedRAX",
+    "native_window_slot_target_known": false,
+    "new_query": false,
+    "new_game_test": false
+  },
+  "display_direct_candidates": {
+    "source_pins": [
+      {
+        "file": "docs/reverse-client/r1-graphics-animation-publication-run1/11-GraphicsAnimationPublication-0x180090e60-procedure_assembly.json",
+        "sha256": "90dc01613e49f687756bca1e61f98ad497e34566eae3e99d917903f80a88639a"
+      },
+      {
+        "file": "docs/reverse-client/r1-terrain-type-material/04-TerrainTypeMaterial-0x1801e1940-procedure_pseudo_code.json",
+        "sha256": "26f717082e3030352ffe34277406c1132c45662d0867b707c27df55375579038"
+      }
+    ],
+    "texture": {
+      "proven": "EXE/Game imports exact GraphicsEngine LoadTexture; TerrainType1E1940 reads TextureFileName1/BumpMapFileName1 into+100/+120",
+      "symbol": "?LoadTexture@GraphicsEngine@GAME@@QEAAPEBVGraphicsTexture@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      "rva_unknown": true,
+      "manager": "090F3D/090F5A vptr343D30;090F64 publishes GraphicsEngine+30",
+      "real_paths": [
+        "terrain textures/earth/rockgranite.tex",
+        "terrain textures/earth/rockgranite_nml.tex"
+      ],
+      "pixels_decoded": false
+    },
+    "mesh": {
+      "proven": "TerrainType1E1940 nonempty clutterMesh branch uses GraphicsEngine+48 manager slot10",
+      "manager": "09118F vptr33F458;0911AC publishes GraphicsEngine+48",
+      "slot_data_address": "0x18033f468",
+      "slot_is_function_entry": false,
+      "target_unknown": true,
+      "actual_scene_record": "records/level art/terrain/cliff_slate_20x20_01.dbr",
+      "mesh_file_path_unproven": true
+    },
+    "font": {
+      "proven": "09127B GraphicsEngine+40 manager virtual10 with fonts/jura.fnt;091283 result->GraphicsEngine+A8; nullmanager branch preserved",
+      "layout_reader_proven": false
+    },
+    "new_original_reads": 0,
+    "new_tests": 0,
+    "new_queries": 0
+  },
+  "constructor_execution": {
+    "state": "completed",
+    "session": 13484,
+    "initial_chunk": "9c8e38",
+    "offline_session": 95273,
+    "offline_final_chunk": "693151",
+    "offline_exit": 0,
+    "plan": ".tooling/r1-widget-constructors-prepared/plan.json",
+    "plan_sha256": "365660735a86c63bb714ccc4e8acab8c21347611fcb78152dea1221575ae1269",
+    "runner_sha256": "fa1fa7327092e01282731e37ab32c9efca42af3f6427e4fbf4af2447d860ba32",
+    "launch_sha256": "c7144183010d71177921873e3a06a454053985990fff23ef1f355dfa5afdcdf6",
+    "expected_calls": 13,
+    "output": "docs/reverse-client/r1-engine-widget-constructors-run1",
+    "repeat_forbidden": true,
+    "independent_review_passed": true,
+    "terminal_chunk": "515920",
+    "exit_code": 0,
+    "completed_calls": 13,
+    "summary_sha256": "a45b77cf459a173eaa874e5ebab18bf51f7e76cbc00225706a3ec9e4e5db29d7"
+  },
+  "release": {
+    "status": "released-recorded-pids-absent",
+    "sha256": "0a395f1ec2066085371328a8bd4e10b7ec100670a753e469f0cf36c0bb6317c4",
+    "file": "docs/reverse-client/r1-winwindow-initialization-release.json"
+  },
+  "current_resource": {
+    "utc": "2026-11-03T14:34:17.8230679Z",
+    "available_physical_bytes": 9940418560,
+    "system_commit_bytes": 46322106368,
+    "system_commit_limit_bytes": 59886112768,
+    "external_build_or_java_processes": []
+  },
+  "slots_tooling_validation": {
+    "result": ".tooling/r1-widget-input-slots-prepared/slots-validation.json",
+    "sha256": "a08b474b9005ee57938e2995261a98e9039e730d3811f89d1469c0a835a08450",
+    "session": 83805,
+    "terminal_chunk": "be48ad",
+    "exit_code": 0,
+    "cases": 4,
+    "game_tests": 0,
+    "old_tests_repeated": 0
+  },
+  "constructor_review": {
+    "normal_returns_original_rcx": true,
+    "original_primary_vptr_writes_each": 1,
+    "subobject_vptrs_do_not_replace_primary": true,
+    "primary_publish_precedes_calls": true,
+    "callee_failure_and_exception_cleanup_proven": false,
+    "role_names_not_inferred": true,
+    "independent_review_passed": true,
+    "return_sites": [
+      "197656",
+      "18E4FD",
+      "1BB6AA",
+      "161F05"
+    ]
+  },
+  "slot_execution": {
+    "state": "completed-passed",
+    "session": 48945,
+    "initial_chunk": "374fa8",
+    "offline_chunk": "17cae1",
+    "offline_exit": 0,
+    "plan": ".tooling/r1-widget-input-slots-prepared/plan.json",
+    "plan_sha256": "d6d72d68fa1685387d58d5524bc526d1e45a0d258874b0bc5918627a6d102851",
+    "runner_sha256": "d88a03748a68ef090692af543fc114543046719c1d6040695770269a5c7155e9",
+    "launch_sha256": "eb5c389a1ab3d958e230d80fe8ef63433d211cf896838e1c91341480f0fdf6e5",
+    "expected_calls": 9,
+    "semantic_bytes": 32,
+    "output": "docs/reverse-client/r1-widget-input-slots-run1",
+    "repeat_forbidden": true,
+    "independent_review_passed": true,
+    "final_chunk": "bdefa3",
+    "exit": 0,
+    "actual_calls": 9,
+    "summary_sha256": "b22726eb3118ddade22ef5531ecb1b05ab48c6ee67f012a40573f7b5725f33d3"
+  },
+  "default_handler": {
+    "cached_file": "docs/reverse-client/r1-engine-mouse-core/14-DisplayWidget-HandleMouseEvent-0x18000d480-procedure_assembly.json",
+    "target": "0x18000d480",
+    "meaning": "XOR AL,AL;RET",
+    "requeried": false
+  },
+  "handler_execution": {
+    "state": "completed-passed",
+    "session": 81578,
+    "initial_chunk": "2d4221",
+    "offline_chunk": "ba3e1d",
+    "offline_exit": 0,
+    "plan": ".tooling/r1-widget-active-input-prepared/plan.json",
+    "plan_sha256": "8a91482ec525e279786eadbf20b1cb75c68f5f0e4339057a6c92894ba32dec16",
+    "runner_sha256": "0da94930fa876cccbe5fb43bc599ab539cbb49cfc3b329b72f3d347533b4de9c",
+    "launch_sha256": "9948126b1eaf041b443542a4b4b3a6fe039fd23b5e3f76acd8789f279d89f5e4",
+    "expected_calls": 7,
+    "output": "docs/reverse-client/r1-widget-active-input-run1",
+    "independent_review_passed": true,
+    "repeat_forbidden": true,
+    "actual_calls": 7,
+    "exit": 0,
+    "summary_sha256": "face3fd3f4f59d292b20c17d00978008b19ebca39fe1dd452623dac0fba0b6c3",
+    "final_chunk": "0eccf4"
+  },
+  "handler_contract": {
+    "source": "docs/reverse-client/r1-widget-active-input-run1/05-WidgetPrimarySlot18-0x180199220-procedure_assembly.json",
+    "sha256": "1b0b7def8a67d00ed37b8c364d59d21d47284dc6dec1351380e925e744326d60",
+    "gate": "199226 CMP byte[this+8],0;19922D JZ false",
+    "false_return": "199252 XOR AL,AL;only low byte is a valid bool contract",
+    "call": "199236 CALL1996C0: RCX same original object,RDX same event,R8=this+100",
+    "normal_suffix": "19923B preserves AL;19923F/245 copy DWORD[this+114] into DWORD[this+10];199248 zeroextends helper byte",
+    "failure_prefix": "No +10 post-call copy when helper does not return normally; helper mutations and exceptional behavior still unknown",
+    "cold_constructor": "1975C0 writes byte+8=0; later activation writer/current runtime flag unknown",
+    "not_proved": [
+      "pixel normalization",
+      "ground picking",
+      "movement dispatch",
+      "concrete UI role",
+      "runtime activation"
+    ],
+    "independent_review": "passed;AL is a byte not normalized bool;post-return DWORD copy occurs even when AL=0;original alias identities and failure-prefix preserved"
+  },
+  "event_handler_execution": {
+    "state": "completed-passed",
+    "session": 35108,
+    "initial_chunk": "783e40",
+    "offline_chunk": "bbfdf4",
+    "offline_exit": 0,
+    "plan": ".tooling/r1-widget-event-handler-prepared/plan.json",
+    "plan_sha256": "c9a88a3e0ce20c6610808bd482a34cabbfa55b841246348c2461136d961aa92d",
+    "runner_sha256": "a80ed04e391430edb55b33e2d3d50f8a049fa95f4d931625541e03bcaefd6138",
+    "launch_sha256": "f0c7ef79524ac60794cbdbb4d57aa518e1db0ed8617f77d8aec5e7bc9b729139",
+    "expected_calls": 7,
+    "output": "docs/reverse-client/r1-widget-event-handler-run1",
+    "independent_review_passed": true,
+    "repeat_forbidden": true,
+    "exit": 0,
+    "summary_sha256": "087cb5af9f2027b0886cfef67f0e2a14027cd86f370cf04486ca897c7d36ee64",
+    "final_chunk": "964281",
+    "actual_calls": 7
+  },
+  "event_handler_contract": {
+    "source": "docs/reverse-client/r1-widget-event-handler-run1/05-WidgetDirectHelper-0x1801996c0-procedure_assembly.json",
+    "sha256": "a7ecf4ec50f008fb63ae0a29092d1ac31272151acbac33f0254f3d7f3d7e3018",
+    "pseudo": "docs/reverse-client/r1-widget-event-handler-run1/04-WidgetDirectHelper-0x1801996c0-procedure_pseudo_code.json",
+    "pseudo_sha256": "61ddcf681d8c1fe28a870e2f14d8edce00d0ce33ae85edb88c6db735c71eee3b",
+    "independent_review_passed": true,
+    "interpretation": "Local horizontal slider-like dragging by observed arithmetic; original class identity still unnamed",
+    "calls": 0,
+    "state": "R8=this+100;DWORD+0 left,+4 top,+8 width,+C height,+14 value,+18 max;BYTE+10 dragging (functional roles inferred from operations)",
+    "entry_math": "max!=0: offset=low32((width-15)*value)/max unsigned;max0:offset0. Sub/multiply/boundary adds wrap32.",
+    "event1": "Float event+4 x in [left+offset,left+offset+15],event+8 y in [top,top+height) -> BYTE dragging1,AL1;elseAL0",
+    "event9": "dragging!=0 -> BYTE0,AL1;elseAL0",
+    "event0": "dragging!=0 consumes; if unsigned width>15 compute float32 (x-left)*max/(width-15),CVTTSS2SI signed32 then negative0/unsigned-min(max),DWORD value write; width<=15 does not write value",
+    "coordinate_encoding": "MOVSS reads original float bits; pseudocode uint pointer does not justify uint-to-float conversion",
+    "exceptions": "MXCSR-dependent COMISS and float conversion exceptions remain; no invented finite-value defaults",
+    "native_nonmovement_scope": "No camera/ground/navigation/movement calls; no world coordinates produced. Do not repurpose this handler as clicking-to-move.",
+    "writes": [
+      "19974F BYTE state+10=1",
+      "199762 BYTE state+10=0",
+      "1997BE DWORD state+14=value"
+    ],
+    "not_implemented_in_game": true
+  },
+  "main_window_metadata_prepared": {
+    "status": "executed-passed-metadata-only",
+    "actual_import_indices": [
+      545,
+      549
+    ],
+    "source": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "source_sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7",
+    "plan": ".tooling/r1-winwindow-entry-exports-prepared/plan.json",
+    "plan_sha256": "fdaf589f00f0de67f304a64fb8f37c90d427df7bc0cfd224c122b3d973402350",
+    "reader_sha256": "9391f5b86a5c70f9e44136bfe54f17ad79712f09c07244ef37de68d86dafe7bd",
+    "launch_sha256": "600df815fed58221dd1b7b0436f419d71329727794f92faff41a0fa2f7a7fffc",
+    "maximum_semantic_metadata_bytes": 32768,
+    "code_bytes": 0,
+    "pdata_bytes": 0,
+    "new_backend": false,
+    "inspection": "docs/reverse-client/r1-winwindow-entry-exports/inspection.json",
+    "new_tests": 0,
+    "exact_entries": [
+      {
+        "name": "??0WinWindow@GAME@@QEAA@XZ",
+        "status": "NamedExportAddressCandidate",
+        "binary_search_steps": 12,
+        "name_index": 547,
+        "ordinal": 548,
+        "rva": "0x217710",
+        "preferred_va": "0x180217710",
+        "forwarded": false,
+        "target_payload_bytes_read": 0,
+        "runtime_binding_verified": false,
+        "section": ".text",
+        "section_executable": true
+      },
+      {
+        "name": "?Initialize@WinWindow@GAME@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHHPEBXW4Style@EWindow@2@PEAUHWND__@@@Z",
+        "status": "NamedExportAddressCandidate",
+        "binary_search_steps": 13,
+        "name_index": 3926,
+        "ordinal": 3927,
+        "rva": "0x2179b0",
+        "preferred_va": "0x1802179b0",
+        "forwarded": false,
+        "target_payload_bytes_read": 0,
+        "runtime_binding_verified": false,
+        "section": ".text",
+        "section_executable": true
+      }
+    ],
+    "original_hash_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "subprocesses": 0,
+    "source_stat_stable": true,
+    "source_closed": true,
+    "inspection_sha256": "55d77d9a4f31bc2825d748c45ef792ad7500467571240e58e0577314d73b17af",
+    "final_chunk": "0dc1b1",
+    "new_Rea_calls": 0,
+    "original_hash_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "exit": 0,
+    "actual_semantic_metadata_bytes": 2476,
+    "session": 29858
+  },
+  "window_execution": {
+    "state": "completed-passed",
+    "session": 86075,
+    "initial_chunk": "3c99a5",
+    "offline_chunk": "4138b5",
+    "offline_exit": 0,
+    "plan": ".tooling/r1-winwindow-initialization-prepared/plan.json",
+    "plan_sha256": "5a3de83b37fbfd328dac2bf3a5d157993843bc3e1af3b7d9df60b4ca38c7e5a1",
+    "runner_sha256": "28863e4dc55d49c96f824c00ea5d653e55d3c98f8423f7e5556d56480583f276",
+    "launch_sha256": "a2199b0d1694d52f95ec6c141bd53175517e4b76ea80aef00a44a8ba213565e7",
+    "expected_calls": 9,
+    "output": "docs/reverse-client/r1-winwindow-initialization-run1",
+    "independent_review_passed": true,
+    "repeat_forbidden": true,
+    "final_chunk": "d4440c",
+    "exit": 0,
+    "summary_sha256": "9524cc1a86e76323ddfa3f38ef1e293a020a0cfc41f3d26b4eaba04231f83a8d",
+    "actual_calls": 9
+  },
+  "window_contract": {
+    "constructor": "0x180217710",
+    "initializer": "0x1802179b0",
+    "constructor_asm": "docs/reverse-client/r1-winwindow-initialization-run1/05-WinWindowConstructor-0x180217710-procedure_assembly.json",
+    "constructor_asm_sha256": "6f6af392940b216dc21cc561089fe16e369a645d24c321114215d190f6d49b7e",
+    "initializer_asm": "docs/reverse-client/r1-winwindow-initialization-run1/07-WinWindowInitialize-0x1802179b0-procedure_assembly.json",
+    "initializer_asm_sha256": "cabdf2b2f8245329abbac932b06ec00237b4ca78023302cfe2ef3b14e41aa8c4",
+    "independent_review_passed": true,
+    "primary_vptr": "217732 writes18033F4C0;normal constructor returns original RCX/RBX",
+    "constructor_writes": "QWORD+20/+8/+34=0;DWORD+3C=0;BYTE+28/+40=0;allocate18h then zero3QWORD and publish pointer+18",
+    "constructor_not_written": [
+      "+10 parent handle",
+      "+2C/+30 origin",
+      "padding"
+    ],
+    "old_window": "If+8 nonnull callCloseWindow;re-read+8 thenDestroyWindow;ignore both returns;clear+8 after normal calls",
+    "parameter_order": "DWORD+34,+38,+2C,+30,+3C;QWORD+10",
+    "style4": "GetClientRect(parent,uninitialized localRECT);return ignored then copy4DWORD;failure output is unknown,never defaultzero",
+    "callback_choices": "style3/4 ->218210;other style values ->218090;registered as WNDPROC only,not analyzed",
+    "unchecked_api_returns": [
+      "CloseWindow",
+      "DestroyWindow",
+      "GetClientRect",
+      "RegisterClassA",
+      "AdjustWindowRectEx",
+      "SetForegroundWindow"
+    ],
+    "same_identity": "217B8C passes originalRBX as CreateWindowExA lpParam;217BC4 publishes returnedHWND to same object+8 after call",
+    "create_failure": "Null returnedHWND remains+8=0 and returnsfalse;earlier fields and disposal persist,no rollback",
+    "success_tail": "Test original CreateWindow return;read currentvptr->slot58;re-read current+8 to SetForegroundWindow;re-read currentvptr->slot50(DL1);thenAL1 regardless of later currentHWND contents",
+    "not_proven": [
+      "actualEXEinstance passed to EngineInitialize/DirectInput",
+      "WndProc binding/reentrancy/lifetime",
+      "concrete+C0 getter",
+      "vslot58/50 bodies",
+      "runtime creation/interaction"
+    ],
+    "base_slot_addresses": {
+      "slotC0": "0x18033f580",
+      "slot50": "0x18033f510",
+      "slot58": "0x18033f518"
+    },
+    "slot_addresses_are_data_not_function_entries": true,
+    "product_implementation_added": false
+  },
+  "stage_delta": {
+    "interactive_client_available": false,
+    "static_export_semantic_bytes": 2476,
+    "old_game_suites_rerun": 0,
+    "no_repeated_returned_query": true,
+    "new_original_bodies": 8,
+    "Rea_calls": 45,
+    "new_game_scenarios": 0,
+    "original_runtime_comparison": false,
+    "static_export_metadata_reads": 1,
+    "new_tooling_cases": 4,
+    "analysis_calls": 20,
+    "lifecycle_calls": 25,
+    "new_product_compiles": 0
+  },
+  "historical_pid_reuse_resolution": {
+    "corrected": "docs/reverse-client/r1-widget-input-slots-release-identity-resolution-v2.json",
+    "note": "Typed JSON DateTime conversion corrected without replacing first receipt;different creation times distinguish recycled PIDs;followup independently empty. No process terminated.",
+    "raw": "docs/reverse-client/r1-widget-input-slots-release.json",
+    "followup_empty": "docs/reverse-client/r1-widget-input-slots-current-release.json",
+    "first_derived_preserved": "docs/reverse-client/r1-widget-input-slots-release-identity-resolution.json"
+  },
+  "initial_unknown_preserved": [
+    "Actual constructor returned identity/vtable writes",
+    "Concrete slot18 handlers and mouse semantics",
+    "Pixel-to-image conversion, camera hit and world-move request connection",
+    "Original scene/UI presentation"
+  ]
+}

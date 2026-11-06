@@ -1,0 +1,107 @@
+{
+  "schema": "gd-rider-startup-audit-v1",
+  "date_utc": "2026-11-04",
+  "status": "stopped-by-user;readonly-audit-complete;native-debugger-test-not-run",
+  "latest_instruction": "Stop repeated Rider launches/error pages. Do not close user windows. Inspect existing logs/commands/process evidence only. No visible application launch until parent explicitly notifies the user.",
+  "common_launch": {
+    "program": "D:\\JetBrains Rider 2025.3.1\\bin\\rider64.exe",
+    "arguments": "dontReopenProjects",
+    "working_directory": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\rider-native-probe-20261104",
+    "host": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "admin_token": false,
+    "approval": "Each launch used formal require_escalated execution review. This was external-sandbox execution, not a UAC/admin launch.",
+    "security_settings_changed": false
+  },
+  "attempts": [
+    {
+      "pid": 30892,
+      "creation_utc": "2026-11-04T04:35:55.4811750Z",
+      "receipt": ".tooling/rider-native-probe-20261104/rider-launch.json",
+      "script": ".tooling/rider-native-probe-20261104/rider-launch.ps1",
+      "mode": "Start-Process WindowStyle Hidden; no stdout/stderr redirection; immediate launch receipt without lifetime wait",
+      "observation": "User subsequently confirmed the first window opened normally and they manually closed it because its task purpose was unclear. Agent did not capture an interactive debugger window.",
+      "log_evidence": "Existing idea.log records IDE startup, backend exit by request with code 0 and IDE shutdown at local log time 12:36:18. These are not a captured root process exit code.",
+      "root_exit_code": null,
+      "reason": "User manual close is established by trusted parent history; do not attribute this exit to the owner shell."
+    },
+    {
+      "pid": 63124,
+      "creation_utc": "2026-11-04T04:39:56.6066556Z",
+      "receipt": ".tooling/rider-native-probe-20261104/rider-session.json",
+      "mode": "WindowStyle Normal; stdout/stderr redirection; owner remains alive with bounded lifetime and memory monitoring",
+      "stderr": ".tooling/rider-native-probe-20261104/rider-session.stderr.log",
+      "root_exit_code": null,
+      "outcome": "Bootstrap failed. Supervisor status exited and failure null do not mean IDE startup succeeded; root exit code was not captured reliably.",
+      "close_requested_by_supervisor": false
+    },
+    {
+      "pid": 36432,
+      "creation_utc": "2026-11-04T04:41:58.9651874Z",
+      "receipt": ".tooling/rider-native-probe-20261104/rider-user-retry.json",
+      "receipt_sha256": "f23dab2cdff7673f50e1c38a68d267271efa0d3f6c77a00592b7d048f67f6abf",
+      "authorization": "Parent relayed that user manually closed first Rider and explicitly allowed another attempt after notification. Current related-process check succeeded empty before this one retry.",
+      "mode": "Same Normal/redirection/owner-monitor route as second; separate receipt names, cached Process handle for exit-code observation",
+      "stderr": ".tooling/rider-native-probe-20261104/rider-user-retry.stderr.log",
+      "root_exit_code": 3,
+      "finished_utc": "2026-11-04T04:43:47.5727343Z",
+      "outcome": "Same startup failure repeated; no more launch attempts permitted or planned.",
+      "close_requested_by_supervisor": false
+    }
+  ],
+  "failure_evidence": {
+    "identical_stderr_sha256_both_attempts": "424f44cde3d872b7144a9a2ef88c8c5608877826321cb768f1521c3b7fbf5447",
+    "target": "C:\\Users\\zhuzi\\AppData\\Local\\JetBrains\\Rider2025.3\\.port",
+    "exception": "java.nio.file.FileSystemException",
+    "localized_message": "System cannot access the file; CP936 decoding recovers the Chinese words, final punctuation remains encoding-damaged. Raw logs are retained unchanged.",
+    "stack": "DirectoryLock.lockOrActivate -> Files.deleteIfExists -> WindowsFileSystemProvider.implDelete",
+    "suppressed": ["UnixDomainSockets bind: Invalid argument", "UnixDomainSockets connect: Invalid argument", "NoSuchFileException for AppData\\Roaming\\JetBrains\\Rider2025.3\\.lock"],
+    "port_readonly_metadata": {
+      "length": 0,
+      "attributes_numeric": 1056,
+      "attributes_meaning": "Archive plus ReparsePoint; not established to be an ordinary zero-byte file",
+      "LinkType": null,
+      "creation_utc": "2026-11-04T04:35:57.4122217Z",
+      "last_write_utc": "2026-11-04T04:35:57.4122217Z",
+      "metadata_chunk": "e90f0c"
+    },
+    "known": "Failure is in IDE bootstrap directory/socket locking, before any verified native attachment. File timestamp associates .port creation with first launch.",
+    "unknown": "The underlying Windows error code, reparse tag, ACL/token or other lock cause was not established. Temporal association does not prove manual closing corrupted anything. Changed visibility/redirection/owner-wait route is documented, but causation has not been isolated. Do not assert an install, BIOS, license or memory problem from this evidence."
+  },
+  "resource_evidence": {
+    "third_start_sample_utc": "2026-11-04T04:41:58.3373623Z",
+    "third_start_physical_bytes": 8276279296,
+    "third_start_commit_headroom_bytes": 9561128960,
+    "matched_external_conflicts": 0,
+    "runtime_samples": 20,
+    "runtime_min_physical_GiB": 7.4188232421875,
+    "runtime_min_commit_headroom_GiB": 8.550167083740234,
+    "sampled_max_Rider_working_set_MiB": 202.46484375,
+    "limits": "Sampled root working set, not all descendant allocation or a continuous peak. Observed samples never crossed 2 GiB physical/commit protection; no evidence that low memory caused this failure."
+  },
+  "fixture": {
+    "source": ".tooling/rider-native-probe-20261104/fixture.c",
+    "sha256": "fa5e2e3c8c6b0fc1574b8b7beef97df546737daa6b734c7b57fd56d3ecc30804",
+    "design": ".tooling/rider-native-probe-20261104/fixture-design.json",
+    "state": "Prepared and source-reviewed only; not compiled or run",
+    "purpose": "early_probe once before READY; print PID/function addresses/counts; private stdin GO triggers late_probe; check result/counts and exit. Bounded stdin wait, with external supervision still required while debugger suspends all threads.",
+    "tests": {"native_attach":"NOT RUN","address_breakpoint":"NOT RUN","normal_debuggee_exit":"NOT RUN","early_start_capture":"NOT RUN"},
+    "early_boundary": "Late attached breakpoint success would not prove capture of already-executed early code; artificial waiting is not evidence for original-game early startup capture."
+  },
+  "cleanup": {
+    "record": ".tooling/rider-native-probe-20261104/release.json",
+    "sha256": "bbc5614104b2834499f063ced73a21f8427ff66437371603f0a76698ed7dc9f4",
+    "utc": "2026-11-04T04:44:43.5929774Z",
+    "query_succeeded": true,
+    "known_pids_direct_children_and_Rider_installation_processes": [],
+    "pending_sessions": 0,
+    "new_owned_Jobs": 0,
+    "closure_attempt": "First normal-close request stopped before action because a DateTime reparse lost fractional precision. Read-only check proved exact path and identical ticks 639293641189651874; no relaxation was made. The later authorized cleanup found PID absent, action none. No user window or external process was closed or killed.",
+    "close_receipt": ".tooling/rider-native-probe-20261104/rider-user-retry-close.json"
+  },
+  "other_attempt_records": [
+    "One exec request selected an unsupported shell binary path and failed at tool validation before any process creation; corrected to the environment-supported powershell wrapper.",
+    "One read-only process-query wrapper expanded PowerShell variables prematurely and emitted errors. It produced no valid process evidence; its own terminal ended. A corrected formally reviewed read-only query succeeded. No game/save or mutation was involved."
+  ],
+  "next_boundary": "Remain stopped. Existing logs identify the failing operation but not its root cause. No deletion/rename of .port, profile relocation, settings or permissions change, installation, third-party tool workaround or further visible launch. Parent must first decide the permitted read-only diagnosis/repair and notify the user before any future visible start.",
+  "preserved": "Original game, Steam and saves were not started/accessed by this probe. No explicit application/account/security/network setting changes were made; Rider performed its ordinary log/cache/profile writes during authorized startup. Historical failures and backup evidence remain intact. No commit/push/deploy."
+}

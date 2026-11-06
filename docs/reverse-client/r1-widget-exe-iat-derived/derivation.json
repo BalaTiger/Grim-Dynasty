@@ -1,0 +1,87 @@
+{
+  "schema": "grim-dynasty-widget-iat-cache-derivation-v1",
+  "status": "derived-cache-only-no-new-original-read",
+  "utc": "2026-11-03T12:24:28.0155480Z",
+  "proofs": [
+    {
+      "path": "docs/reverse-client/r1-provider-exe-iat/inspection.json",
+      "sha256": "4ef253f3155c548641a4f7f0f2cccd56fe1e24a7603ad10088c0e7d05260d8fc"
+    },
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "path": "docs/phase-1/boundary-audit/boundary_inventory.py",
+      "sha256": "354e00aeefbdfbc1beefa3de4f2c8c93635a0cb9ad824329f0011454f47ce224"
+    }
+  ],
+  "target": {
+    "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Grim Dawn.exe",
+    "sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "bytes": 4687944
+  },
+  "source_original_sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+  "fresh_original_hash_check": false,
+  "descriptor": {
+    "index": 8,
+    "rva": "0x3866f0",
+    "raw_hex": "a86838000000000000000000b0e2390060502d00",
+    "original_first_thunk_rva": "0x3868a8",
+    "first_thunk_rva": "0x2d5060",
+    "image_base": "0x140000000",
+    "machine": "0x8664",
+    "optional_magic": "0x20b"
+  },
+  "inventory_order_proof": "boundary_inventory.py iterates descriptor i and thunk k in native order; ordinal imports append one symbol and are not removed; complete importModules stored without filtering. Named-category examples are not used.",
+  "formula": "IAT RVA = FirstThunk + zero_based_import_index * 8; preferred IAT VA = cached ImageBase + IAT RVA",
+  "bindings": [
+    {
+      "symbol": "?AddWidget@Engine@GAME@@QEAAXPEAVDisplayWidget@2@@Z",
+      "index_zero_based": 195,
+      "thunk_width": 8,
+      "descriptor_index": 8,
+      "lookup_rva": "0x386ec0",
+      "iat_rva": "0x2d5678",
+      "preferred_iat_va": "0x1402d5678",
+      "iat_file_offset": "0x2d4278",
+      "section": ".rdata",
+      "source": "derived-from-hash-matched-cached-descriptor-and-complete-ordered-import-inventory",
+      "selected_thunk_bytes_independently_read": false,
+      "disk_iat_value": "UNKNOWN-not-present-in-cached-raw-reads",
+      "hint_name_rva": "UNKNOWN-not-present-in-cached-raw-reads",
+      "runtime_binding_verified": false,
+      "direct_callers": "UNKNOWN",
+      "callee_behavior": "UNKNOWN"
+    },
+    {
+      "symbol": "??0DisplayWidget@GAME@@QEAA@XZ",
+      "index_zero_based": 337,
+      "thunk_width": 8,
+      "descriptor_index": 8,
+      "lookup_rva": "0x387330",
+      "iat_rva": "0x2d5ae8",
+      "preferred_iat_va": "0x1402d5ae8",
+      "iat_file_offset": "0x2d46e8",
+      "section": ".rdata",
+      "source": "derived-from-hash-matched-cached-descriptor-and-complete-ordered-import-inventory",
+      "selected_thunk_bytes_independently_read": false,
+      "disk_iat_value": "UNKNOWN-not-present-in-cached-raw-reads",
+      "hint_name_rva": "UNKNOWN-not-present-in-cached-raw-reads",
+      "runtime_binding_verified": false,
+      "direct_callers": "UNKNOWN",
+      "callee_behavior": "UNKNOWN"
+    }
+  ],
+  "new_metadata_reader_prepared": false,
+  "new_original_bytes_read": 0,
+  "code_read_or_scanned": false,
+  "bind_read_or_unpacked": false,
+  "backend_started": false,
+  "automatic_xref_or_followup": false,
+  "limitations": [
+    "This is a cached static layout derivation for the recorded SHA256, not a fresh disk or live runtime observation.",
+    "OFT/IAT raw cache only reaches provider index150; the two selected slot values, hint/name RVAs, bound pointers, callers, object identity and behavior are not claimed.",
+    "Complete symbol ordering plus recorded descriptor establishes slot addresses; new original metadata lookup is unnecessary for address calculation alone."
+  ]
+}

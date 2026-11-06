@@ -1,0 +1,33 @@
+{
+    "schema":  "grim-dynasty-r1-parameter-classes-v1",
+    "utc":  "2026-11-06T01:57:12.2736301Z",
+    "filesystem":  {
+                       "exported":  true,
+                       "constructor":  "FileSystem::FileSystem() at 0x86370",
+                       "destructor":  "FileSystem::~FileSystem() at 0x863c0",
+                       "methods":  [
+                                       "OpenFile 0x86ce0",
+                                       "OpenFileWithCheck 0x86e60",
+                                       "OpenFullFilePath 0x86fe0",
+                                       "OpenFileStream 0x87450"
+                                   ],
+                       "finding":  "A host can construct a real FileSystem itself if one is needed, rather than passing null."
+                   },
+    "resource_loader":  {
+                            "exported":  true,
+                            "constructor":  "ResourceLoader::ResourceLoader(int) at 0x199e60",
+                            "destructor":  "ResourceLoader::~ResourceLoader() at 0x19a0a0",
+                            "object_size":  "0xE0 bytes (the immediate before operator new at 0x1800748d9)",
+                            "other_method":  "CreateMarker 0x19b240",
+                            "built_internally":  true,
+                            "construction_site":  "0x1800748ef inside Engine::Initialize, result stored to Engine+0x210 at 0x1800748f5",
+                            "int_argument":  "thread or worker count, computed as: start from settings[+0x0C], clamp the lower bound to 1 using the bool argument (lea eax,[rdi-1]; cmp; cmovg), then take the smaller of that and the settings value (cmp ecx,ebx; cmovl ebx,ecx)",
+                            "follow_up_call":  "0x18007490d calls 0x19a830 right after storing the loader, before the next allocation"
+                        },
+    "consequence_for_host":  "The host does not need to build a ResourceLoader; Engine::Initialize does it. If a FileSystem is needed, the host can build a real one with the exported constructor instead of passing null.",
+    "not_established":  [
+                            "what settings[+0x0C] represents",
+                            "what 0x19a830 does to the new loader",
+                            "whether ResourceLoader construction touches disk"
+                        ]
+}

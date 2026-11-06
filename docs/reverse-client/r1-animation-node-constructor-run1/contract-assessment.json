@@ -1,0 +1,59 @@
+{
+  "schema": "grim-dynasty.animation-node-constructor-contract.v1",
+  "utc": "2026-11-02T16:25:59.2740943Z",
+  "status": "saved-native-evidence-assessment-only",
+  "procedure": "0x18002ef40",
+  "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "evidence": [
+    {
+      "file": "docs/reverse-client/r1-animation-node-constructor-run1/04-AnimationNodeConstructor-0x18002ef40-procedure_pseudo_code.json",
+      "sha256": "b1e13d44925527e909a335c516c549aa7c0cbc56356399b75603d45cfee3c0f3"
+    },
+    {
+      "file": "docs/reverse-client/r1-animation-node-constructor-run1/05-AnimationNodeConstructor-0x18002ef40-procedure_assembly.json",
+      "sha256": "eef05362d63b63b9e7e91547fe09054de54637da5ac0c7beb8954f30b6876069"
+    },
+    {
+      "file": "docs/reverse-client/r1-animation-node-constructor-run1/06-AnimationNodeConstructor-0x18002ef40-procedure_callees.json",
+      "sha256": "d23209cd6e45b153d78d17dd15737d71d115a5c194b8cd9157c7d3187a38cf50"
+    },
+    {
+      "file": "docs/reverse-client/r1-animation-node-constructor-run1/summary.json",
+      "sha256": "dadd968beaef8810f1dafe5b48baf178e2d0385096727697ef06394cf989ba77"
+    }
+  ],
+  "reused_evidence": [
+    {
+      "file": "docs/object-lifecycle/offline-cache-node-inspection/01f170-instructions.json",
+      "sha256": "d6ee428d3e56c754b9ba28c127c75f98ec382a55ccd2453d3d88e3a1e6b0c0e1",
+      "kind": "Saved dumpbin/static supplement, not a new Rea call; concatenated instruction bytes match saved exact-function extraction."
+    },
+    {
+      "file": "docs/object-lifecycle/offline-cache-node-inspection/extraction.json",
+      "sha256": "a80331fcc18a851b65bde9bfd01415142de2443df160c557a1847158bd073d2e",
+      "kind": "Saved same-Engine before/after hash and exact68-byte01F170 boundary witness."
+    },
+    {
+      "file": "docs/object-lifecycle/rea-object-name-assignment/05-Object-name-assignment-0x180023180-assembly.json",
+      "sha256": "366e92084dae96b73957c3e932927417909acbeaa6531888fe1c3bb8efa6110a",
+      "kind": "Existing Rea complete name-copy body; reuse declared disjoint complete-byte normal domain."
+    }
+  ],
+  "contract": [
+    "02EF5D saves incomingR9 key/payload identity inRSI.02EF60 calls01F170 with incomingRDX/R8 unchanged.01F17A overwritesECX with0x38 before using it: incomingRCX is not a map dependency.",
+    "01F170 requests0x38 bytes. Normal nonnull allocation gets node.next=RDX and node.prev=R8; if incomingRDX is null, both are replaced with the allocated node identity. Link initialization is local to the new node and does not publish it into the existing list.",
+    "02EF65 preserves the exact allocated node inRDI. node+10 is initialized as an empty string in capacity/length/first-byte order at02EF80/02EF88/02EF9F, then023180 copies from saved sourceRSI with offset0/countUINT64_MAX.",
+    "Only after023180 returns does02EFB4 loadsource+20 and02EFB8 copy thatQWORD to node+30. This is a late opaque payload copy; preserve unknown or known-null bits/identity instead of inventingnull or requiring a dereferenced object.",
+    "02EFBC returns exactRDI node identity. This closes the normal node identity/links required by03CA50: publication still occurs in the caller, after its length-limit check.",
+    "If name copying cannot proceed, the node allocation, next/prev and empty-string prefix already exist; payload+30 is still unwritten and caller map count/list/buckets are not yet published. Do not fabricate rollback or early payload capture.",
+    "The raw node+10 null test is an address-arithmetic guard, not an allocation-null success check.01F170 null-allocation behavior also is not a clean returned-null contract. OWN normal allocation admits valid storage; failures stay explicit."
+  ],
+  "next_review": "Review author-stable manager implementation/tests for24-byte control copy,opaque+14 tail,late node payload capture,exact list/bucket ordering and ninth-insertion maintenance failure prefix. No new query/plan.",
+  "execution": {
+    "new_query": false,
+    "original_read": false,
+    "original_executed": false,
+    "source_files_modified": false,
+    "build_or_test_performed": false
+  }
+}

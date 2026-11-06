@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "purpose": "Only Engine217940 pseudo-code/assembly and WinWindow primary vtable+60 (18033F520) exact8 bytes, directly referenced by cached218090 and217710. No target behind the slot is guessed; no followup, callees or screensaver branch.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "runner_patch_deferred": true,
+  "batch_kind": "engine-window-activation-close",
+  "planned_output": "docs/reverse-client/r1-window-activation-close-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+    "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0",
+    "same_registration_as": "r1-move-world-distance",
+    "budget_id": "engine-parser-384m-v1",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "parallel_mcp_requests": 1,
+    "one_backend": true,
+    "profile_or_protection_changes_authorized": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "read_bytes"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "label": "04-WindowActivation-0x180217940-procedure_pseudo_code",
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180217940"
+      }
+    },
+    {
+      "label": "05-WindowActivation-0x180217940-procedure_assembly",
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180217940"
+      }
+    },
+    {
+      "label": "06-WindowCloseSlot-0x18033f520-read_bytes",
+      "tool": "read_bytes",
+      "args": {
+        "address": "0x18033f520",
+        "length": 8
+      }
+    },
+    {
+      "label": "07-Engine-close",
+      "tool": "close_binary",
+      "args": {}
+    },
+    {
+      "label": "08-final-session",
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      }
+    }
+  ],
+  "unchanged_guard_pins": [
+    {
+      "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "c6968067faa5b180556feaaf5e5aa62750e0ae0aa7bf031c5d1ceef990ae1f64"
+    },
+    {
+      "file": "tools/static_analysis/measure_job_process_memory.ps1",
+      "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_sampler_failure.ps1",
+      "sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/rea_java_role.mjs",
+      "sha256": "00e612e2113690baf53e87900f67b8f8003f47aa3b9a3968932a17dd779f1f22"
+    },
+    {
+      "file": "tools/static_analysis/rea_project_environment.mjs",
+      "sha256": "3808055da161a942867474e13edea86710d2981bda0ccf4ed5d385df5e794f88"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-winwindow-callbacks-run1/05-WinWindowCallback-0x180218090-procedure_assembly.json",
+      "sha256": "900c25b5f49ee441e900981741ddaa3b6127ccfa74b10349b8f7556450ff5612",
+      "operation": "procedure_assembly",
+      "procedure": "0x180218090",
+      "required_instructions": [
+        "0x18021810d: CALL qword ptr [RAX + 0x60]",
+        "0x180218130: CALL 0x180217940"
+      ]
+    },
+    {
+      "file": "docs/reverse-client/r1-winwindow-initialization-run1/05-WinWindowConstructor-0x180217710-procedure_assembly.json",
+      "sha256": "6f6af392940b216dc21cc561089fe16e369a645d24c321114215d190f6d49b7e",
+      "operation": "procedure_assembly",
+      "procedure": "0x180217710",
+      "required_instructions": [
+        "0x18021772b: LEA RAX, [0x18033f4c0]",
+        "0x180217732: MOV qword ptr [RCX], RAX",
+        "0x18021776a: MOV RAX, RBX"
+      ]
+    }
+  ],
+  "predecessor": {
+    "summary": "docs/reverse-client/r1-winwindow-callbacks-run1/summary.json",
+    "summary_sha256": "791b453a722703712ce5f6187524bbb50446bb1b0c7f322e89ff7df06eab26dc",
+    "release": "docs/reverse-client/r1-winwindow-callbacks-run1/owned-memory-summary.json",
+    "release_sha256": "7dd53acf9494b15afe515cc1075f1b603126af53016d4bea80fda38ef782e5b1",
+    "completed_calls": 9,
+    "current_release": "docs/reverse-client/r1-winwindow-callbacks-release.json",
+    "current_release_sha256": "e21279c3176850fdcd33f53da31d77599017e285624cab811a10011f2ec0fdf1",
+    "historical_release_only": true,
+    "fresh_current_checks_required": true
+  },
+  "cache_dedup": {
+    "status": "independent-finite-cache-review-complete",
+    "scope": "Parent finite cached-address review: no217940 body or33F520 slot response. Existing callback/constructor reused; no new cache scan or analysis-ready investigation.",
+    "targets": [
+      "0x180217940",
+      "0x18033f520"
+    ],
+    "cached_bodies": [],
+    "reused_not_queried": [
+      "Engine218090 callback assembly",
+      "Engine217710 constructor assembly",
+      "validated8-byte response contract"
+    ],
+    "excluded_this_batch": [
+      "callees",
+      "other slots",
+      "screensaver branch",
+      "slot target body before evidence",
+      "original execution",
+      "automatic followup"
+    ],
+    "absence_is_limited_cache_observation": true
+  },
+  "preparation_baseline": {
+    "runner": ".tooling/r1-winwindow-callbacks-prepared/runner-candidate.mjs",
+    "runner_sha256": "8fb39961593218c95085f9bc0b753e41a5939ae8366c1adbbd9ada29172d4f9e",
+    "active_runner_modified": false,
+    "active_runner_sha256": "48cd6b79827cdc05af126b5fd4e723a171a446db2758b1640420f027ef077309",
+    "isolated_candidate_path": ".tooling/r1-window-activation-close-prepared/runner-candidate.mjs"
+  },
+  "execution_requirements": [
+    "Exactly217940 pseudo+assembly, read_bytes18033F520 length8, and5lifecycle=8calls. No followup.",
+    "Originalcallback exact CALL217940 and CALLvslot60, constructor primaryvptr33F4C0. Close target and activation semantics remain unknown until returned evidence.",
+    "Saved release is provenance only; fresh admission and runtime checks unchanged.",
+    "All8originalEngineguards/384M/freshphysical+commit5GiB/2GiBruntime/mutex/identity/ownedJob/cleanup unchanged. Active runner/original files unchanged. Parent alone executes after review."
+  ],
+  "read_bytes_contract": {
+    "addresses": [
+      "0x18033f520"
+    ],
+    "length": 8,
+    "total_bytes": 8,
+    "complete_required": true,
+    "hex_format": "lowercase-contiguous-16-characters",
+    "provider_analyzed_memory_including_loader_fixups": true,
+    "runtime_verified": false,
+    "schema_pins": [
+      {
+        "file": ".tooling/rea/node_modules/rea-agents/dist/ghidra/GhidraInventoryValues.js",
+        "sha256": "e58d20f6ef3579f52de970793f9af43ccdc2fec89caa25d9bed2e4f2e0e8582d"
+      },
+      {
+        "file": ".tooling/rea/node_modules/rea-agents/dist/mcp/toolOutputSchemaGroups-ColvNZ1r.js",
+        "sha256": "b17141226701b3723e734c0d62eb895fde8ef55e5f76ca66e29d5fc2615a5ae5"
+      },
+      {
+        "file": ".tooling/rea/node_modules/rea-agents/dist/domain/evidence.js",
+        "sha256": "f992d93eaf228bf8d7c6bc3bf566f4ff4554b53299f35cd7ff29e3b18a78dcff"
+      }
+    ],
+    "reused_contract": {
+      "file": ".tooling/r1-widget-input-slots-prepared/read-bytes-contract.mjs",
+      "sha256": "c5a3eccf8436226246d3460cfd9e121d966ad45a9bdb937c148b1e927a116a64"
+    },
+    "validator": {
+      "sha256": "577602f25c14ae66530d5676e5fc6bcb814e9ed2121eacf7ce0009f7a9a70e98",
+      "file": ".tooling/r1-window-activation-close-prepared/read-bytes-contract.mjs"
+    },
+    "prepared_test_cases": 0,
+    "test_executed": false,
+    "validation": {
+      "result": {
+        "sha256": "a08b474b9005ee57938e2995261a98e9039e730d3811f89d1469c0a835a08450",
+        "file": ".tooling/r1-widget-input-slots-prepared/slots-validation.json"
+      },
+      "tap": {
+        "sha256": "d8740d2f1da2e265bb108c8c87949d7f5c69f1d5af4dd0cf0358de6269bba7f0",
+        "file": ".tooling/r1-widget-input-slots-prepared/slots-validation.tap"
+      },
+      "launcher": {
+        "sha256": "8e78be62daf507650a057d1cadeaa824fed54a24c4a47f3e485462403f6e5526",
+        "file": ".tooling/r1-widget-input-slots-prepared/validate-slots.ps1"
+      },
+      "passed_tests": 4,
+      "game_tests": 0,
+      "old_suites_rerun": false,
+      "fresh_admission_required": true
+    },
+    "reused_test": {
+      "sha256": "645be29b1308b96a6fa32b2a4a67b4d93e5ad81ad6645bda63d0f3f1ff95dfbd",
+      "file": ".tooling/r1-widget-input-slots-prepared/read-bytes-contract.test.mjs"
+    },
+    "validation_scope": "Historical four-slot contract tests only; address-list-only adaptation statically reviewed. No test run in this stage."
+  }
+}

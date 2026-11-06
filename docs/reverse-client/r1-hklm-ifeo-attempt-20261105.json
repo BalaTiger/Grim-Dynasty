@@ -1,0 +1,28 @@
+{
+    "schema":  "grim-dynasty-r1-hklm-ifeo-attempt-v1",
+    "utc":  "2026-11-05T12:56:49.4482614Z",
+    "authorised_by":  "user approved testing HKLM IFEO with elevation, while noting elevation may not be available",
+    "attempt":  {
+                    "target":  "HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Image File Execution Options\\\\Grim Dawn.exe",
+                    "value":  "Debugger -\u003e .tooling/r1-watch-present-prepared/ifeo-debugger.cmd",
+                    "elevated":  "false",
+                    "result":  "access denied"
+                },
+    "cleanup":  {
+                    "hklm_key_absent":  true,
+                    "hkcu_key_absent":  true,
+                    "game_runs_normally":  true
+                },
+    "conclusion":  "HKLM IFEO cannot be written from this non-elevated session, so arming a watchpoint before the first instruction remains out of reach with the current tooling.",
+    "why_recorded":  "The HKCU attempt had already failed to fire, and this records that the conventional HKLM route is blocked by permissions rather than by technique. Together they close the IFEO option without leaving system changes behind.",
+    "remaining_options":  [
+                              "elevate a shell (requires the user to accept a UAC prompt) and repeat exactly this write",
+                              "use a hypervisor- or DBI-class start-up trace",
+                              "accept the boundary and keep presentation decoded but not executed"
+                          ],
+    "not_claimed":  [
+                        "that IFEO would succeed under elevation",
+                        "that the writer is identified",
+                        "any change left in the system"
+                    ]
+}

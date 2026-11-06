@@ -1,0 +1,28 @@
+{
+    "schema":  "grim-dynasty-r1-plugin-name-labels-v1",
+    "utc":  "2026-11-05T10:40:09.6951718Z",
+    "plugin_name":  {
+                        "value":  "direct3d11",
+                        "engine_rva":  "0x30dee0",
+                        "note":  "Adjacent string at 0x30dec0 is \"direct3d\", and 0x30def0 - the success-path log format seen in the 0x90ae0 helper - sits immediately after, which cross-checks the location."
+                    },
+    "perf_labels":  {
+                        "0x184f8":  "Direct3DDevice11::PresentSurface",
+                        "note":  "This is the descriptor that PresentSurface loads with lea rdx,[0x1800184F8] before acquiring the critical section; it is a profiling/event label, not geometry."
+                    },
+    "other_strings":  {
+                          "0x314a00":  "directinput.dll",
+                          "0x31de20":  "Direct3D",
+                          "0x17bc3 (Direct3D11.dll)":  "D3D11 renderer!"
+                      },
+    "what_this_establishes":  [
+                                  "the renderer plugin name the engine looks up is the literal \"direct3d11\"",
+                                  "the descriptor passed to the present lock is a profiling label naming PresentSurface, not data"
+                              ],
+    "not_established":  [
+                            "how 0x197020 maps this name to the shipped Direct3D11.dll",
+                            "the rest of GraphicsEngineSettings",
+                            "any executed device"
+                        ],
+    "next":  "Confirm that 0x197020 resolves \"direct3d11\" to Direct3D11.dll, and finish the GraphicsEngineSettings layout by locating its constructor."
+}

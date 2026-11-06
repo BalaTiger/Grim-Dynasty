@@ -1,0 +1,473 @@
+{
+  "schema": "gd-input-ui-source-stage-v1",
+  "utc": "2026-11-03T12:45:22.5159255Z",
+  "status": "fixed-identity-tested;two-factory-bodies-recovered;released-at-unknown-constructor",
+  "previous_stage": "docs/reverse-client/r1-exe-provider-stage.json",
+  "recovery": {
+    "failed_action": "Read cached module-boundaries.json and filter EXE Engine imports",
+    "failure": "CreateProcess: exec-server transport disconnected; failed to resume exec-server session: recovery timed out after 25s",
+    "failed_before_process_creation": true,
+    "approval_denied": false,
+    "connection_check": "e4a6d3",
+    "connection_restored_utc": "2026-11-03T11:50:30.2220182Z",
+    "read_only_recovery_session": 45941,
+    "read_only_recovery_exit": 0,
+    "read_only_recovery_result": "06c439",
+    "previous_recorded_pid_count": 52,
+    "present_pids": [],
+    "uncertain_operations": 0,
+    "no_original_query_or_build_repeated": true
+  },
+  "cached_import_source": {
+    "file": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7",
+    "consumer": "x64/Grim Dawn.exe",
+    "import_module": "Engine.dll",
+    "coverage": "Saved consumer imports are present; category export examples are truncated and are not a full export inventory."
+  },
+  "fixed_exact_export_candidates": [
+    "?AddWidget@Engine@GAME@@QEAAXPEAVDisplayWidget@2@@Z",
+    "?RemoveWidget@Engine@GAME@@QEAAXPEAVDisplayWidget@2@@Z",
+    "??0DisplayWidget@GAME@@QEAA@XZ",
+    "??0MouseEvent@InputDevice@GAME@@QEAA@XZ",
+    "?Update@Engine@GAME@@QEAAXPEBVSphere@2@PEBVWorldFrustum@2@_N1@Z"
+  ],
+  "interface_only_prefix_hypotheses": [
+    "??0LuaProvider@GAME@@",
+    "??_7LuaProvider@GAME@@"
+  ],
+  "provider_prefix_boundary": "Only interface metadata hypotheses grounded in the known RegisterProvider parameter type. Neither existence nor a concrete derived runtime provider is assumed. No invented GameLuaProvider class.",
+  "planned_limits": {
+    "modules": 1,
+    "metadata_bytes": 32768,
+    "distinct_export_names": 160,
+    "name_bytes": 1024,
+    "binary_search_steps": 32,
+    "matches_per_prefix": 4,
+    "code_bytes": 0,
+    "pdata_bytes": 0,
+    "vtable_slot_bytes": 0,
+    "whole_export_scan": false,
+    "automatic_followup": false,
+    "on_limit": "Preserve failure/partial evidence; do not raise budget or expand search."
+  },
+  "current_resource": {
+    "utc": "2026-11-03T12:43:15.7664583Z",
+    "available_physical_bytes": 9425006592,
+    "system_commit_bytes": 47122354176,
+    "system_commit_limit_bytes": 59886112768,
+    "external_build_or_java_processes": []
+  },
+  "pending_operations": 0,
+  "owned_heavy_processes": 0,
+  "metadata_reader_executed": true,
+  "new_Rea_queries": 46,
+  "new_product_compiles": 0,
+  "new_game_tests": 0,
+  "interactive_client_available": false,
+  "original_executed": false,
+  "real_saves_accessed": false,
+  "commit_push_deploy": false,
+  "metadata_result": {
+    "session_id": 99470,
+    "terminal_chunk": "4d541c",
+    "exit_code": 0,
+    "receipt": ".tooling/r1-engine-entry-exports-prepared/launch-result.json",
+    "inspection": "docs/reverse-client/r1-engine-entry-exports/inspection.json",
+    "inspection_sha256": "91c2d176c8c29a3cf9c434f5a876cf5bf02acd6ba2269567603f576b70d5ca46",
+    "metadata_bytes": 4910,
+    "exact_targets": [
+      {
+        "name": "?AddWidget@Engine@GAME@@QEAAXPEAVDisplayWidget@2@@Z",
+        "status": "NamedExportAddressCandidate",
+        "binary_search_steps": 12,
+        "name_index": 1515,
+        "ordinal": 1516,
+        "rva": "0x781b0",
+        "preferred_va": "0x1800781b0",
+        "forwarded": false,
+        "target_payload_bytes_read": 0,
+        "runtime_binding_verified": false,
+        "section": ".text",
+        "section_executable": true
+      },
+      {
+        "name": "?RemoveWidget@Engine@GAME@@QEAAXPEAVDisplayWidget@2@@Z",
+        "status": "NamedExportAddressCandidate",
+        "binary_search_steps": 13,
+        "name_index": 4814,
+        "ordinal": 4815,
+        "rva": "0x781c0",
+        "preferred_va": "0x1800781c0",
+        "forwarded": false,
+        "target_payload_bytes_read": 0,
+        "runtime_binding_verified": false,
+        "section": ".text",
+        "section_executable": true
+      },
+      {
+        "name": "??0DisplayWidget@GAME@@QEAA@XZ",
+        "status": "NamedExportAddressCandidate",
+        "binary_search_steps": 13,
+        "name_index": 110,
+        "ordinal": 111,
+        "rva": "0x5f000",
+        "preferred_va": "0x18005f000",
+        "forwarded": false,
+        "target_payload_bytes_read": 0,
+        "runtime_binding_verified": false,
+        "section": ".text",
+        "section_executable": true
+      },
+      {
+        "name": "??0MouseEvent@InputDevice@GAME@@QEAA@XZ",
+        "status": "NamedExportAddressCandidate",
+        "binary_search_steps": 12,
+        "name_index": 279,
+        "ordinal": 280,
+        "rva": "0x8310",
+        "preferred_va": "0x180008310",
+        "forwarded": false,
+        "target_payload_bytes_read": 0,
+        "runtime_binding_verified": false,
+        "section": ".text",
+        "section_executable": true
+      },
+      {
+        "name": "?Update@Engine@GAME@@QEAAXPEBVSphere@2@PEBVWorldFrustum@2@_N1@Z",
+        "status": "NamedExportAddressCandidate",
+        "binary_search_steps": 13,
+        "name_index": 5899,
+        "ordinal": 5900,
+        "rva": "0x752f0",
+        "preferred_va": "0x1800752f0",
+        "forwarded": false,
+        "target_payload_bytes_read": 0,
+        "runtime_binding_verified": false,
+        "section": ".text",
+        "section_executable": true
+      }
+    ],
+    "prefix_searches": [
+      {
+        "prefix": "??0LuaProvider@GAME@@",
+        "status": "UnknownNoPrefixExport",
+        "candidates": [],
+        "indices": [],
+        "first_index": 276,
+        "binary_search_steps": 12,
+        "terminator_index": 276
+      },
+      {
+        "prefix": "??_7LuaProvider@GAME@@",
+        "status": "UnknownNoPrefixExport",
+        "candidates": [],
+        "indices": [],
+        "first_index": 1255,
+        "binary_search_steps": 12,
+        "terminator_index": 1255
+      }
+    ],
+    "game_tests": 0,
+    "analysis_selfchecks": 6,
+    "original_hash_unchanged": true,
+    "backend_started": false
+  },
+  "cached_input_device_creation": {
+    "file": "docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json",
+    "sha256": "ab597744f4a4cf617c6227fe7a50100e5b03733aa48dda43a730f65509bdca26",
+    "source_kind": "Previously saved bounded Ghidra static evidence; not new Rea or runtime observation",
+    "engine_initialize": "0x1800743d0",
+    "instructions": 666,
+    "ret": "0x180074fb8",
+    "call": "0x180074b3c -> 0x1801241e0 InputDevice::Create",
+    "publish": "0x180074b41 writes returned identity to Engine+0x200 before vslot+8",
+    "initialize_slot": "0x180074b5a calls same object slot+8 with EWindow, 0x100, 0x100; AL controls logging",
+    "conditions": "Cached074B87 storesR14. InitialR14=0; only prior mutation belongs to error-string path74805/74810 ending74855 in identified exit(-1). Under normal nonreturn exit/import ABI, skipCreate writes0. MutableIAT/abnormal exit return not generalized.",
+    "null_guard": "No local null guard on Create return before vtable read",
+    "cold_ctor": "0x180072aec writes Engine+0x200 zero",
+    "physical_event_dispatch_known": false,
+    "runtime_compared": false,
+    "query_repeated": false,
+    "provenance": "docs/phase-1/round-4/call-sequence.json",
+    "provenance_sha256": "4273e2201f4d01ded0ec626c50296d3a03f18df7f58d7ad453bbff6ca3eb4021",
+    "historical_conditions_summary": "Engine+0x292 zero and EWindow nonnull; otherwise Engine+0x200 zero",
+    "normal_path_r14_review": "Reused bounded-v2 cached assembly/outgoingReferences; identifiedPTR_exit_180302a30 at74855; no new native read/query."
+  },
+  "provider_cached_followup": {
+    "concrete_object_writer_found": false,
+    "next_direct_provider_target": null,
+    "engine": "round-4 Engine Initialize: 074C23/27/2B cold list zero; 074C3F publishes service, not concrete provider",
+    "game": "round-4 Game startup36B257->2C07A0/36B25F->A66288/36B26A->2D7230 has no demonstrated provider relation",
+    "script": "Cached0EF8B0 registers script helper closures, not LuaProvider",
+    "entry_metadata": "EXE448310 in.bind only; no new read or expansion authorized from this fact",
+    "no_empty_runtime_assumed": true
+  },
+  "integration_evidence_needed": [
+    "Physical event to b1..b4/objectID and UI interception",
+    "Pixel to camera image coordinate and viewport/camera timing",
+    "Input/camera/pick/request/Agent frame order; Initialize is not polling"
+  ],
+  "input_dispatch_batch": {
+    "directory": ".tooling/r1-input-dispatch-prepared",
+    "plan_sha256": "8937ff3cbc5abdc1d93414b163a42d4d634f60343758dec228cb7da3c4c8372d",
+    "runner_sha256": "562d638534acb546fd521a8f905f8e65f52df7ce5df6b4ec6522878a6b4acc36",
+    "launch_sha256": "2ab1af7085a6a8353b48629dce4d2004ed7b89b7ac8bfe9637b2138f33e98db9",
+    "output": "docs/reverse-client/r1-engine-input-dispatch-run1",
+    "targets": [
+      "0x1801241e0",
+      "0x1800752f0",
+      "0x1800781b0",
+      "0x18005f000"
+    ],
+    "planned_calls": 17,
+    "offline_verification_chunk": "7f9b23",
+    "offline_exit": 0,
+    "actual_started": true,
+    "pending_session": null,
+    "original_runtime_executed": false,
+    "launch_chunk": "862c09",
+    "approval_denied": false,
+    "result": {
+      "exit": 0,
+      "chunk": "37445a",
+      "calls_completed": 17,
+      "summary": "docs/reverse-client/r1-engine-input-dispatch-run1/summary.json",
+      "summary_sha256": "af97cb22a76fa64bb2399355e3969866682c727529ed6fc2605da482380df4c1",
+      "release": "docs/reverse-client/r1-input-dispatch-release.json",
+      "release_sha256": "5400320d6ba320cb0508af3c8b3865710940cb3f251ea47c2d71e9e73e6a96e6",
+      "job_empty": true,
+      "recorded_pids_absent": 44,
+      "original_hash_unchanged": true
+    }
+  },
+  "new_original_contracts": {
+    "input_factory": "1241E0 LoadLibraryA directinput.dll; successful module lookup stores CreateInputDevice421430 and DestroyInputDevice421438; failed load retains prior globals. Both current function pointers nonnull -> tailcall create; otherwise returns null. No original DLL loaded by task.",
+    "engine_update": "752F0 normal tail: UnloadUnreferencedResources079C30 then same Engine RCX and tail JMP078DF0 ProcessUserInput after frame restoration; not evidence of UI event meaning",
+    "widget_registration": "781B0 adds3E8 to Engine RCX and tail JMP05F080 AddActivity with same Widget RDX",
+    "widget_constructor": "5F000 shared default/copy/move alias writes base vtable33DBA0 at+0 and returns this; no extra fields initialized, no derived override identified",
+    "two_next_targets": [
+      "0x180078df0",
+      "0x18005f080"
+    ],
+    "physical_input_still_unresolved": true,
+    "concrete_widget_override_still_unknown": true,
+    "provider_still_unknown": true
+  },
+  "process_user_input_batch": {
+    "plan": ".tooling/r1-process-user-input-prepared/plan.json",
+    "plan_sha256": "a00028cfa6042fc3f977029625539722c6b6015979f860a257e97f20975c41f5",
+    "runner_sha256": "d4ee15849621460bb5f816fa23c2bf461533075f13bb87282ccc6ec39f5497dd",
+    "launch_sha256": "7e86b0d11ee8d0ce28a284a6f92276a23bdb438f457aa9c45809c06977059524",
+    "offline_chunk": "b053ed",
+    "offline_exit": 0,
+    "pending_session": null,
+    "launch_chunk": "7f382a",
+    "planned_calls": 11,
+    "approval_denied": false,
+    "output": "docs/reverse-client/r1-engine-process-user-input-run1",
+    "result": {
+      "exit": 0,
+      "terminal_chunk": "f57fba",
+      "calls_completed": 11,
+      "summary": "docs/reverse-client/r1-engine-process-user-input-run1/summary.json",
+      "summary_sha256": "078a9ee34f109737073a12966a0f378a41e493598663921d664109eeecadfff3",
+      "release": "docs/reverse-client/r1-process-user-input-release.json",
+      "release_sha256": "b3282bf825f66b01deecbfe30beebd2207efbb880e2aed315bdbaa7d46484e75",
+      "recorded_pids_absent": 48,
+      "job_empty": true,
+      "original_hash_unchanged": true
+    }
+  },
+  "dispatch_contract": {
+    "pseudo": "docs/reverse-client/r1-engine-process-user-input-run1/04-ProcessUserInput-0x180078df0-procedure_pseudo_code.json",
+    "pseudo_sha256": "ac586b59b9f39e247c33f19f3c9a3f9da4a28a13ea2094581bd1277afc466aed",
+    "assembly": "docs/reverse-client/r1-engine-process-user-input-run1/05-ProcessUserInput-0x180078df0-procedure_assembly.json",
+    "assembly_sha256": "0685ed5e61678fc2dc500b2130dd39f945af0f610611f7e464a5cbf4c29cc2b8",
+    "entry": "0x180078df0",
+    "null_device": "Engine+200 null returns before side effects",
+    "device_poll_slot": "0x10",
+    "streams": [
+      {
+        "event_identity": "Getter RAX return passed to widget",
+        "item_slot": "28",
+        "widget_slot": "10",
+        "comparison": "signed positive and signed index<count",
+        "count_slot": "20"
+      },
+      {
+        "event_identity": "same mutable stack object, fields +0/+4/+8 observed",
+        "item_slot": "38",
+        "widget_slot": "18",
+        "comparison": "signed positive and signed index<count",
+        "count_slot": "30"
+      },
+      {
+        "event_identity": "Getter RAX return passed to widget",
+        "item_slot": "48",
+        "widget_slot": "20",
+        "comparison": "initial nonzero, unsigned index<count",
+        "count_slot": "40"
+      }
+    ],
+    "widget_list": "Engine+3E8 begin,+3F0 end; 8-byte identities, forward index",
+    "callback_rule": "AL nonzero stops current event propagation only. On zero reload live begin/end; each next event count/device reloaded. No snapshot, no default false for unknown widgets.",
+    "coordinate_activity": "After slot18 callbacks, type+0==0 tests float+4/+8 against422D78/422D7C via UCOMISS/JNZ/JZ; not C# NaN inequality. Write both globals only on selected ordered-not-equal branch; event field mutations are visible.",
+    "tail": "421798 lazy construct1C2260 if null, then borrowed+C8 list records16B ->widget28; service constructor/list semantics not yet established",
+    "timestamp": "07910D MOVSS global4217AC; CVTTSS2SI; store32-bit Engine+C1C only when activity or nonempty tail-list. Conversion exceptional/unknown inputs must not be silently normalized.",
+    "not_proven": [
+      "Physical event meanings and button/viewport encoding",
+      "Concrete device vtable bindings",
+      "Concrete widget overrides and UI assets",
+      "Tail service/list initialization and full native tick",
+      "Interactive rendering or native runtime comparison"
+    ]
+  },
+  "widget_append_contract": {
+    "entry": "05F080",
+    "assembly": "docs/reverse-client/r1-engine-process-user-input-run1/08-AddActivity-0x18005f080-procedure_assembly.json",
+    "sha256": "1401104b8c73685ec68f09b0c6d6e735e8bf0f5cfc85d907b1e1ef2569f3df28",
+    "observed": "Appends pointer at end, advances8; no dedup/null-value filter. Full vector invokes cached058190. Preserve alias handling, allocation failure prefix and end==null branch; not a native UI priority policy."
+  },
+  "directinput_candidate": {
+    "source_tool_chunk": "178ab0",
+    "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\directinput.dll",
+    "bytes": 55296,
+    "sha256": "9cc12125db6f7e1a64c8d280d31961e4fa80addfe03aa7f43bff153acc92bcd6",
+    "file_executed": false,
+    "runtime_binding_observed": false,
+    "export_addresses_known": true,
+    "next": "Prepared fixed metadata-only exact names CreateInputDevice and DestroyInputDevice; no backend",
+    "metadata_pending_session": null,
+    "metadata_launch_chunk": "16a241",
+    "result": {
+      "exit": 0,
+      "terminal_chunk": "7bc2c6",
+      "file": "docs/reverse-client/r1-directinput-exports/inspection.json",
+      "sha256": "2e983d54e595b4404d02d90ab0be0f0e627c91c491c19e19afd3340c1d0f4fde",
+      "metadata_bytes": 873,
+      "exports": [
+        {
+          "name": "CreateInputDevice",
+          "status": "NamedExportAddressCandidate",
+          "binary_search_steps": 5,
+          "name_index": 32,
+          "ordinal": 33,
+          "rva": "0x17b0",
+          "preferred_va": "0x1800017b0",
+          "forwarded": false,
+          "target_payload_bytes_read": 0,
+          "runtime_binding_verified": false,
+          "section": ".text",
+          "section_executable": true
+        },
+        {
+          "name": "DestroyInputDevice",
+          "status": "NamedExportAddressCandidate",
+          "binary_search_steps": 5,
+          "name_index": 33,
+          "ordinal": 34,
+          "rva": "0x17d0",
+          "preferred_va": "0x1800017d0",
+          "forwarded": false,
+          "target_payload_bytes_read": 0,
+          "runtime_binding_verified": false,
+          "section": ".text",
+          "section_executable": true
+        }
+      ],
+      "dll_loaded": false,
+      "backend_started": false
+    }
+  },
+  "current_directinput_rea_blocker": {
+    "kind": "Missing direct constructor/vtable semantics",
+    "state": "Unqueried; not denied; no pending execution",
+    "target": "directinput.dll RVA2C50 and its same-object vtable publication",
+    "reason": "Create wrapper tailcalls2C50; wrapper alone does not establish returned object, slots, event production or failure/cleanup",
+    "scope_this_batch": "17B0/17D0 only, stop at unknown as instructed",
+    "no_fake_device_or_success": true,
+    "separate_widget_provider_and_rendering_gaps_remain": true
+  },
+  "widget_incoming": {
+    "derivation": "docs/reverse-client/r1-widget-exe-iat-derived/derivation.json",
+    "derivation_sha256": "9d7b916bd380706bebf297ddecbe7b07c003f215e0c28cc63a20c556efa9f3fb",
+    "plan": ".tooling/r1-widget-exe-incoming-prepared/plan.json",
+    "plan_sha256": "45f67c8b5a61a8c4f9f109cb13a6966d83a31794adec4ae5bda39cf1a91bfe31",
+    "runner_sha256": "0435abcbd0c1b68b179b9b295fdca4350f4daccf4d44820ec9395932dbaca9d4",
+    "launch_sha256": "cac8c664c06f18af7060a615a5b2ba180878efd441e20cdab4fcbea4fa0ac44a",
+    "offline_chunk": "c9cbef",
+    "offline_exit": 0,
+    "pending_session": null,
+    "launch_chunk": "dec4f9",
+    "expected_calls": 7,
+    "output": "docs/reverse-client/r1-widget-exe-incoming-run1",
+    "approval_denied": false,
+    "result": {
+      "exit": 0,
+      "calls_completed": 7,
+      "summary": "docs/reverse-client/r1-widget-exe-incoming-run1/summary.json",
+      "summary_sha256": "39d29b733bad8ee467efd26654599c554159d54547cd27e39c5127e1cbbf2502",
+      "add_widget_xrefs": [],
+      "ctor_xrefs": [],
+      "result_hashes": [
+        "f3be4ad91a2249a7bba314516f8de8283c948d10fe483b69fb4ecbdb6699b468",
+        "04c878cf48e063409feba326fda32a636fa6fd41acb2fbaafed212a2cb6d3ff3"
+      ],
+      "concrete_widget_not_found": true,
+      "empty_does_not_prove_runtime_absence": true,
+      "no_bind_read_or_unpack": true,
+      "release": "docs/reverse-client/r1-widget-exe-incoming-release.json",
+      "release_sha256": "e2acf989734590ae19bf5af115729e95bcc537cc9ac605e040391cbd4c89e96a",
+      "recorded_pids_absent": 26,
+      "job_empty": true
+    }
+  },
+  "call_count_definition": "46 actual Rea calls in input-source stage =26 semantic queries (8 functions x3 methods +2 xrefs) +20 lifecycle; all new fixed batches, no old queries repeated",
+  "final_boundary": {
+    "new_product_implementation": false,
+    "new_product_compiles": 0,
+    "new_game_tests": 0,
+    "old_tests_rerun": 0,
+    "new_interactive_program": false,
+    "native_runtime_compared": false,
+    "original_or_saves_executed": false,
+    "active_runner_unchanged": true,
+    "active_runner_sha256": "48cd6b79827cdc05af126b5fd4e723a171a446db2758b1640420f027ef077309",
+    "next_direct_device_step": "Prefer cached concrete Widget registration/vtable writer and MouseEvent constructor binding9050 to connect proven client-coordinate events to existing camera/ground/movement chain; only missing direct targets may be queried. No repeat2C50/2DD0/31A0/4810/4840 or old11factory responses. Keep provider/scheduling/scene/UI and input helper gaps explicit; no fake physicalinput success.",
+    "widget_next": "Need an evidence-backed concrete registered widget writer/override; do not repeat these empty xrefs or substitute base D480 false",
+    "functional_gap": "Native physical-event producer now identified; independent implementation/platform initialization and concreteWidget mapping -> same-state frame scheduling -> original scene/UI presentation remain.",
+    "profile_action_attempted": true,
+    "profile_action_denied": false,
+    "all_issued_operations_complete": true,
+    "profile_action_completed": true
+  },
+  "historical_directinput_profile_blocker": {
+    "kind": "Existing identity guard target profile does not support this new module",
+    "action": "Read-only Rea pseudo/assembly/callees for directinput.dll CreateInputDevice1800017B0 and DestroyInputDevice1800017D0",
+    "state": "Not attempted; not denied; no pending operation",
+    "source": "tools/static_analysis/rea_java_role.mjs:35 resolveJavaTargetProfile only engine/game/client; rea_owned_memory_profile.mjs validates its fixed module and snapshot",
+    "required_scope": "Explicitly review a separate pinned directinput identity profile: sha9cc12125db6f7e1a64c8d280d31961e4fa80addfe03aa7f43bff153acc92bcd6 and snapshot target-9cc12125db6f.dll",
+    "changes_applied": false,
+    "original_guards_unchanged": true,
+    "engine_identity_not_reused": true,
+    "unaffected_work": "Cached EXE widget IAT source tracking within existing client profile",
+    "resource_threshold_change_needed": false
+  },
+  "directinput_factory": {
+    "file": "docs/reverse-client/r1-directinput-factory-stage.json",
+    "sha256": "4a82889f2b71c0dad97ec91fc1cd2e8b35a7f74bcd3c13e374323f9f179678e9",
+    "identity_profile_verified": true,
+    "new_calls": 11,
+    "game_tests": 0,
+    "released": true
+  },
+  "directinput_device_followup": {
+    "file": "docs/reverse-client/r1-directinput-device-stage.json",
+    "sha256": "adb72b01a86c3f00064f7b5ce8c8460ed1ae29525342ee731a573801b1d1ef66",
+    "status": "constructor-and-concrete-mouse-input-contracts-confirmed;all-batches-released;interactive-client-not-yet-available",
+    "new_calls": 31,
+    "new_bodies": 5,
+    "game_tests": 0
+  }
+}

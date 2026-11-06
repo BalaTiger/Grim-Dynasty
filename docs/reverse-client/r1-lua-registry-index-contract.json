@@ -1,0 +1,96 @@
+{
+  "schema": "gd-lua-registry-index-contract-v1",
+  "utc": "2026-11-03T04:45:21.7637961Z",
+  "status": "bounded-instruction-dataflow-confirmed-native-initialization-order-unknown",
+  "evidence": [
+    {
+      "file": "docs/reverse-client/r1-lua-registry-selection-run2/04-RegistryProducer-0x180007ff0-inspect_native_instruction.json",
+      "sha256": "9283aaad2dd99db51313993897ba7d2816a9ecab1afb6ff4a8cb000730375634"
+    },
+    {
+      "file": "docs/reverse-client/r1-lua-registry-selection-run2/05-RegistryProducer-0x180007ff7-inspect_native_instruction.json",
+      "sha256": "965de868950445c676f4c4369e05e5a482ced4324407b25eae201ae8c2b203f1"
+    },
+    {
+      "file": "docs/reverse-client/r1-lua-registry-selection-run2/06-RegistryProducer-0x180007ffc-inspect_native_instruction.json",
+      "sha256": "5fdcba47e6d187b444e6ffd8433319450440ab5fb85d5c9b8b9b4cad4a07b6ed"
+    },
+    {
+      "file": "docs/reverse-client/r1-lua-registry-selection-run1/04-RegistrySelection-0x180008001-inspect_native_instruction.json",
+      "sha256": "398b5de56f2bdde56646d678ac53e29288e49d6c0c50e22c3f159f33ab5f030a"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-writer-log-run1/04-RegistryWriter-0x180008004-inspect_native_instruction.json",
+      "sha256": "3bbbb3d503ce1fda53f4ecf56c22c2d83a328941419996c6676b9c94a6b21e90"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1/05-LuaInitializeDependency-0x180258e50-procedure_assembly.json",
+      "sha256": "b61d98ddad9968e13c7f6c9be8551a98eb4e03e8faccc7913ee461394896a8bf"
+    }
+  ],
+  "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sequence": [
+    {
+      "rva": "007FF0",
+      "length": 7,
+      "bytes": "833de597410002",
+      "operation": "CMP DWORD [4217DC],2; capture flags from current version word"
+    },
+    {
+      "rva": "007FF7",
+      "length": 5,
+      "bytes": "b8d8b9f0ff",
+      "operation": "MOV EAX,0xFFF0B9D8 (-1001000); flags unchanged"
+    },
+    {
+      "rva": "007FFC",
+      "length": 5,
+      "bytes": "b9f0d8ffff",
+      "operation": "MOV ECX,0xFFFFD8F0 (-10000); flags unchanged"
+    },
+    {
+      "rva": "008001",
+      "length": 3,
+      "bytes": "0f45c1",
+      "operation": "CMOVNZ EAX,ECX using earlier comparison"
+    },
+    {
+      "rva": "008004",
+      "length": 6,
+      "bytes": "89057ea84100",
+      "operation": "MOV DWORD [422888],EAX"
+    }
+  ],
+  "conditional_result": "If execution traverses this observed straight-line slice: captured4217DC ==2 writes32-bit -1001000; otherwise writes32-bit -10000. This is not a default index or proof of a ready VM.",
+  "version_writer": {
+    "entry": "258E50",
+    "non_null_lua_getglobal": "258EEC writes2",
+    "missing_lua_getglobal": "258F08 writes3 if luaJIT_setmode nonnull, else1",
+    "required_export_failure": "May subsequently write0, including258F3C/259428/259B1B",
+    "gate": "259B2B sets initialization gate;259B32 tests current classification nonzero",
+    "order_relative_to_registry_slice": "UNKNOWN"
+  },
+  "incoming_reference": {
+    "source_rva": "303148",
+    "target_rva": "007FF0",
+    "type": "DATA",
+    "provenance": "Ghidra Reference Manager",
+    "slot_read": false,
+    "initializer_table_identity_and_order": "UNKNOWN; no broad table scan"
+  },
+  "function_owner": null,
+  "function_entry_proven": false,
+  "native_service_ready": false,
+  "callback_publication_implemented": false,
+  "runtime_game_compatibility": false,
+  "read_scope": {
+    "new_raw_code_bytes": 64,
+    "new_instruction_queries": 5,
+    "decoded_queries": 4,
+    "nonboundary_queries": 1,
+    "unrelated_queries": 0,
+    "existing_writer_and_binder_reused": true,
+    "original_loaded": false
+  },
+  "next": "Use this confirmed conditional index contract with the same service/runtime binding. Retain callback pointer lifetime/native Lua unwind boundary, liveEngine/vslot logger, LuaGlue/Script initialization and native publication ordering gaps. Exact303148 slot only if ordering is required; no scan."
+}

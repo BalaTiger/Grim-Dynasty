@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "purpose": "Resolve only Engine027410 GetAnimationSpeedMultiplier called through Game609BF0 by05F870. Obtain pseudo-code, assembly and direct-callee inventory; no recursive dependency query or behavior inference from exported name.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-engine-animation-speed-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-animation-speed-import/inspection.json",
+      "sha256": "8934b141d4fcaa6b6cc95664a6f0641cf149b09d18beb0d0f1be5d7fc4f4efa2",
+      "addresses": [
+        "0x180027410"
+      ],
+      "source_kind": "Passed exact disk Game609BF0 import and Engine hinted export binding;70semantic bytes/6reads, both original handles closed and hashes stable. Loaded IAT, target body and callable ABI remain unverified."
+    }
+  ],
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+    "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0",
+    "same_registration_as": "r1-move-world-distance",
+    "budget_id": "engine-parser-384m-v1",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "parallel_mcp_requests": 1,
+    "one_backend": true,
+    "profile_or_protection_changes_authorized": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180027410"
+      },
+      "label": "04-EngineAnimationSpeed-0x180027410-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180027410"
+      },
+      "label": "05-EngineAnimationSpeed-0x180027410-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180027410"
+      },
+      "label": "06-EngineAnimationSpeed-0x180027410-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Preparation only; root review then pure syntax/new-mode offline verification, followed by separately approved exact live execution. Fresh output required; no automatic retry.",
+    "Exactly one Engine027410 pseudo/assembly/direct-callees triple plus5lifecycle calls,8total. No Game query, callers/xrefs/search/recursive targets.",
+    "Use the established Engine default sampler/profiled wrapper pairing with current shared ReaOwnedJob and unchanged target-specific Java profile. No Game target or Game samplerIdentity.",
+    "Preserve effective physical+commit>=5GiB launch,384M heap,2GiB stop,330000ms provider startup/600000ms request,mutex,nonce,parent/time,Job membership/controller watchdog,unknown identity rejection and cleanup. No monitor selector changes.",
+    "Engine existing default verifies root Node/wrapper/nonce and controller parent/time/native-watch identity; it does not contain the extra Game-specific controller argv mode allowlist. No check is removed or weakened.",
+    "Retain raw responses and original Engine before/after hashes. Empty/different/containing-function response stays unresolved. Do not change addresses or retry uncertain outcome automatically.",
+    "No game execution/saves/Steam cloud/security/install/commit/push/deploy. Current Game modes remain unchanged and no old tests are rerun."
+  ],
+  "runner_before_sha256": "f0fca77b7703caae38f0de085ec650437e3f14e9cccf894e8840e5e842d025f7",
+  "unchanged_guard_pins": [
+    {
+      "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "c6968067faa5b180556feaaf5e5aa62750e0ae0aa7bf031c5d1ceef990ae1f64"
+    },
+    {
+      "file": "tools/static_analysis/measure_job_process_memory.ps1",
+      "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_sampler_failure.ps1",
+      "sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/rea_java_role.mjs",
+      "sha256": "00e612e2113690baf53e87900f67b8f8003f47aa3b9a3968932a17dd779f1f22"
+    },
+    {
+      "file": "tools/static_analysis/rea_project_environment.mjs",
+      "sha256": "3808055da161a942867474e13edea86710d2981bda0ccf4ed5d385df5e794f88"
+    }
+  ],
+  "prior_engine_query": {
+    "file": "docs/reverse-client/r1-move-world-distance-run1/summary.json",
+    "sha256": "d50cc0ca743cfe5c52640617a06ad0e22bc01d415d3f800c833274c3521f4899",
+    "calls": 8
+  }
+}

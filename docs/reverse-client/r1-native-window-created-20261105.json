@@ -1,0 +1,35 @@
+{
+    "schema":  "grim-dynasty-r1-native-window-created-v1",
+    "utc":  "2026-11-05T10:53:09.3906044Z",
+    "status":  "passed-real-window-created",
+    "what":  "The shipped Engine.dll created a real window in our own process through GAME::WinWindow::Initialize.",
+    "observed":  {
+                     "initialize_address":  "0x7ffb75f279b0",
+                     "initialize_expected":  "base + 0x2179b0",
+                     "returned":  1,
+                     "hwnd":  "0xd806ec",
+                     "is_window":  true,
+                     "client_size":  "130x100",
+                     "handle_field":  "this+0x08",
+                     "handle_field_note":  "The object stored the handle at +0x08, not at +0x10 as the static reading of the parent-Window argument suggested; +0x10 stayed 0 because no parent was supplied."
+                 },
+    "discrepancy":  {
+                        "fact":  "Calling Initialize with 800x600 produced a 130x100 client area.",
+                        "meaning":  "The four integer arguments are not simply width/height as first assumed, or the Style value 1 constrains the size.",
+                        "consequence":  "The exact argument semantics still need confirmation; this is recorded rather than smoothed over."
+                    },
+    "why_it_matters":  "Window creation is the first stage of the presentation path, and it now runs with original code: the export resolves, Initialize returns true, and the OS confirms a real window handle.",
+    "safety":  {
+                   "original_process_used":  false,
+                   "touches_original_files":  false,
+                   "debugger":  false,
+                   "saves_or_network":  false
+               },
+    "boundary":  "A window exists. No device, no swapchain and no presented frame exist yet, and the window was destroyed with the process.",
+    "next":  "Construct GraphicsEngine and call GraphicsEngine::CreateDevice(EWindow*, GraphicsEngineSettings\u0026) so the engine loads direct3d11 and creates the device.",
+    "artifacts":  {
+                      "program":  ".tooling/r1-native-present-prepared/NativeWindowCreateProbe.cs",
+                      "binary_sha256":  "28f7568efd5d3f3f2916d3ca3091b60a1c3ac16e7127aeed2de9be8698e96ea8",
+                      "source_sha256":  "856c714eb5e813241ad86e181d64330fc06867257cae1ee6c075e29eea611e1f"
+                  }
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "grim-dynasty.lua-publication-following-contracts.v1",
+  "status": "bounded-static-review-only",
+  "saved_utc": "2026-11-03T03:52:21.1538005Z",
+  "scope": "Previously returned Engine2568D0 and Engine0EF8B0 bodies and their cached0F2E00 caller. No new reverse query, build, runtime or production-code edit.",
+  "original_engine_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "evidence": [
+    {"id":"glue-pseudo","path":"docs/reverse-client/r1-engine-lua-publication-run1/10-LuaPublicationDirect-0x1802568d0-procedure_pseudo_code.json","sha256":"424cee3ce91716d8381950684e194d576fcee10ea372ad2b9d9421276e319de9"},
+    {"id":"glue-assembly","path":"docs/reverse-client/r1-engine-lua-publication-run1/11-LuaPublicationDirect-0x1802568d0-procedure_assembly.json","sha256":"6d146c88e86f64a2b49424906c8d741d402c029abfd88ee7070fbf6fed79d060"},
+    {"id":"glue-callees","path":"docs/reverse-client/r1-engine-lua-publication-run1/12-LuaPublicationDirect-0x1802568d0-procedure_callees.json","sha256":"2bd41e5bc54f1d3366c2cccd87fc4ff218252bddff3e253d27afc06317d487de"},
+    {"id":"script-pseudo","path":"docs/reverse-client/r1-engine-lua-publication-run1/13-LuaPublicationDirect-0x1800ef8b0-procedure_pseudo_code.json","sha256":"f89c2e42bbb66c0c00ca9ccf32991ba81a7d4197919397e4449e8fadf9fbfb78"},
+    {"id":"script-assembly","path":"docs/reverse-client/r1-engine-lua-publication-run1/14-LuaPublicationDirect-0x1800ef8b0-procedure_assembly.json","sha256":"d1d88dc7f7140c4c86d87710cc03dc726bd99f0ecf7ac770f2202118d2face6d"},
+    {"id":"script-callees","path":"docs/reverse-client/r1-engine-lua-publication-run1/15-LuaPublicationDirect-0x1800ef8b0-procedure_callees.json","sha256":"bb1802d481cea59942086cf568a4a12c45ec84e9d449d62f05daeccee59e9bd6"},
+    {"id":"caller-assembly","path":"docs/reverse-client/r1-engine-lua-manager-core-run1/08-LuaManagerInitialize-0x1800f2e00-procedure_assembly.json","sha256":"189560d9bffcb960574a4477ef472497a78d9263f4f1fd017b70c2bd0980464a"}
+  ],
+  "engine_2568d0": {
+    "input": "The caller reloads service+00 at0F2ECF and passes that Lua identity.2568FD captures it in RBX for this function.",
+    "normal_sequence": [
+      {"at":"256905..25695A","operation":"Create table; push bytes at3456F4 and set field version at index-2; publish __luaglue; publish the same bytes as __luaglue_version. Version bytes remain unknown in this review."},
+      {"at":"256960..257574","operation":"Construct11 script records, each0x50 bytes, including member name, chunk name, publish flag and owned source string. This is real setup, not an empty registration list."},
+      {"at":"257595","operation":"Call255F70 to prepare each source buffer. Its transformation contract is not proved here; a plain-copy substitute is not justified."},
+      {"at":"2575AC","operation":"Call slot421888 with captured Lua, prepared buffer, prepared length and the record's chunk name. Branch on the actual returned status."},
+      {"at":"2575C5","operation":"After successful load, call slot421870 with arguments0/results0/errorFunction0. Branch on the actual returned status."},
+      {"at":"2575D3..25760B","operation":"If record+30 is nonzero after successful pcall, get __luaglue, get its record-name field at stack index-1, publish that name globally and pop the remaining table with settop(-2)."},
+      {"at":"257612..257625","operation":"Free the prepared temporary buffer, increment record index and stride0x50; continue while index<11."},
+      {"at":"257648","operation":"Store __luaglue at registry key-1 using the current422888 index."},
+      {"at":"257656..25766B","operation":"Create a table and store at registry key-2."},
+      {"at":"257679..2576B6","operation":"Create a table; push C closure256150 with0 upvalues; set field whose literal is at3479B8; store table at registry key-3."},
+      {"at":"2576C4..257701","operation":"Create a table; push C closure2561A0 with0 upvalues; set the same3479B8 field; store table at registry key-4."},
+      {"at":"257707..257729","operation":"Read current4217D8 bit0. If set, call257CB0 before setting BL=1. A disk-zero or cold-zero flag does not establish this late branch."},
+      {"at":"257780..25779A","operation":"Destroy11 records via2DC3D4 with destructor2577C0 and stride0x50; return zero-extended BL."}
+    ],
+    "failure_prefixes": [
+      {"trigger":"load status nonzero at2575B7","path":"25772D reads stack top. Only top>0 and isstring(-1)!=0 lead to tolstring(-1),255BC0(&41D218,message),then settop(-2). Other arms retain the observed stack."},
+      {"trigger":"pcall status nonzero at2575CD","path":"Directly enters257774; no error-stack clear is observed before temporary-buffer free."},
+      {"trigger":"Either handled failure reaches257774","path":"Free prepared temporary buffer at257779, set BL=0 at25777E, destroy the11 local records and return EAX=0 at25779A. Prior Lua publications are not rolled back."}
+    ],
+    "caller_ignores_return": {"at":"0F2ED2..0F2EDA","evidence":"caller-assembly","operation":"After CALL2568D0, caller sets RCX=service and CALL0EF8B0 without testing AL/EAX. A returned0 is not by itself whole LuaManager initialization failure or rollback."},
+    "embedded_sources": {
+      "ordered_names": ["dump","dumpr","dumpex","readonly","igetter","isetter","tgetter","tsetter","instance","derive","class"],
+      "dumpex": {"source_rva":"3458C0","source_length":"0x82B","copy_bytes_including_nul":"0x82C","reference_at":"256BEB","pseudo_marker":"TRUNCATED STRING LITERAL","complete_bytes_observed_in_this_review":false},
+      "boundary":"The displayed dumpex text must not be treated as complete source or repaired by guessing. Other displayed literals were not byte-for-byte extracted or executed by this review.255F70 input transformation remains independently unknown."
+    },
+    "direct_callee_inventory": ["255BC0","255F70","257CB0","2DC3D4","2DC8F8","2DC900"],
+    "additional_address_taken_dependencies": ["256150","2561A0","2577C0"]
+  },
+  "engine_0ef8b0": {
+    "normal_sequence": [
+      {"at":"0EF8C4","operation":"Capture service+00 once into RBX and the local wrapper. Later helper calls do not cause this function to reload service+00."},
+      {"at":"0EF8CC..0EF8D4","operation":"Set local wrapper state0 and reference-2; these are local construction stores, not service initialization flags."},
+      {"at":"0EF8E4","operation":"Create a Lua table using captured Lua and0 array/hash sizing."},
+      {"at":"0EF8EA..0EF8FF","operation":"Read current422888; call421850, retain returned reference in EDI/local+0C, set local wrapper state2."},
+      {"at":"0EF913","operation":"Call0EFAD0 with the local wrapper and literal Script at310B04."},
+      {"at":"0EF924","operation":"Call0EFCA0 with the same wrapper and Script literal."},
+      {"at":"0EF935","operation":"Call0EFE80 with the same wrapper and Script literal."},
+      {"at":"0EF93D","operation":"Read current4217DC after all three helpers; branch on equality2."},
+      {"at":"0EF951..0EF98F","operation":"Version2 branch obtains the globals table via rawgeti(-1001000,2), pushes Script and the referenced table, assigns at-3, then pops the globals table."},
+      {"at":"0EF997..0EF9BE","operation":"Other-version branch pushes Script and the referenced table, then settable(-10002)."},
+      {"at":"0EF9C5..0EF9D1","operation":"Reload current422888 and unref the original EDI reference against captured Lua."}
+    ],
+    "unclosed_helpers": ["0EFAD0","0EFCA0","0EFE80"],
+    "first_helper_boundary":"0EF913 ->0EFAD0",
+    "boundary":"Publishing an empty Script table or assuming all three helpers succeed is unsupported. This function does not write service+00 or service+58. No cleanup-on-exception contract was established."
+  },
+  "live_and_cold_boundary": {
+    "captured":"2568D0 captures its Lua argument;0EF8B0 captures service+00 once at entry. Use those exact identities through each function.",
+    "live":"422888 is reread at individual registry operations.0EF8B0 reads4217DC after helpers;2568D0 reads4217D8 bit0 after script execution and registry publication.",
+    "unknown_in_reviewed_evidence":"No422888 writer/value,3456F4 version bytes,3479B8 callback-table key,255F70 body or three Script-helper bodies was established by this bounded review. Later separately acquired leaf evidence may close individual items; cold service fields or disk bytes alone do not establish live lifecycle state."
+  },
+  "minimal_followup": [
+    "After the preceding callback-publication contract is closed, resolve exact3456F4 version bytes and255F70 source transformation; then obtain the bounded3458C0 complete0x82C-byte literal rather than invent its truncated tail.",
+    "Keep256150/2561A0 and3479B8 field identity explicit before claiming all registry publications equivalent.",
+    "For0EF8B0, first resolve0EFAD0 at0EF913; preserve its shared local reference identity and failure prefix before subsequent helpers.",
+    "Only independently verified portions may be implemented. Do not convert this static review into initialization,Goal-tail or stopped-frame acceptance."
+  ],
+  "execution": {"new_queries":0,"builds":0,"tests":0,"original_loaded":false,"original_modified":false,"production_modified":false,"checkpoint_modified":false,"goal_frame_passed":false,"post_stop_frames_passed":false},
+  "recovery_note":"The earlier environment-unavailable hash attempt did not execute and created no file. After environment restoration, existing evidence hashes were read and this new report was saved; no successful query or test was repeated."
+}

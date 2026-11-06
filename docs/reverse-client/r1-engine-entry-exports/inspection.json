@@ -1,0 +1,1754 @@
+{
+  "schema": "grim-dynasty-fixed-engine-entry-exports-v1",
+  "started_utc": "2026-11-03T11:58:26.049Z",
+  "status": "passed-metadata-only",
+  "target": {
+    "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "reader_sha256": "3eaa18a2dba7188297b971390de23cff945ce205b0295c9f30b38c9f22159e6f",
+  "plan_sha256": "d51156f50fa21acd5368d26a728af5d1fe5e6a594dd6aecf4d26cba481a8194c",
+  "proofs": [
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "path": "docs/reverse-client/r1-engine-lua-provider-registration-run1/04-RegisterProvider-procedure_pseudo_code.json",
+      "sha256": "47aa744a917c8377bf352866851445d9fcad21a66effd7b8262ee2e4080071d4"
+    },
+    {
+      "path": "docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json",
+      "sha256": "ab597744f4a4cf617c6227fe7a50100e5b03733aa48dda43a730f65509bdca26"
+    }
+  ],
+  "limits": {
+    "metadata_bytes": 32768,
+    "metadata_operations": 4096,
+    "single_read_bytes": 512,
+    "names": 160,
+    "name_bytes": 1024,
+    "ascii_chunk_bytes": 32,
+    "binary_search_steps": 32,
+    "matches_per_prefix": 4,
+    "header_end": 4096,
+    "section_count": 16,
+    "hash_chunk_bytes": 65536,
+    "report_bytes": 262144
+  },
+  "analysis_tool_self_test": {
+    "status": "passed-analysis-prefix-search",
+    "cases": 6,
+    "original_bytes_read": 0,
+    "game_tests": false
+  },
+  "metadata_bytes": 4910,
+  "metadata_operations": 209,
+  "metadata_by_kind": {
+    "dos-header": 64,
+    "coff-header": 24,
+    "optional-header-export-prefix": 120,
+    "section-header": 360,
+    "export-directory": 40,
+    "name-pointer": 240,
+    "export-name": 4032,
+    "selected-ordinal": 10,
+    "selected-address": 20
+  },
+  "reads": [
+    {
+      "kind": "dos-header",
+      "file_offset": 0,
+      "bytes": 64,
+      "raw_hex": "4d5a90000300000004000000ffff0000b80000000000000040000000000000000000000000000000000000000000000000000000000000000000000020010000"
+    },
+    {
+      "kind": "coff-header",
+      "file_offset": 288,
+      "bytes": 24,
+      "raw_hex": "5045000064860900f7f5c76a0000000000000000f0002220"
+    },
+    {
+      "kind": "optional-header-export-prefix",
+      "file_offset": 312,
+      "bytes": 120,
+      "raw_hex": "0b020e00000c300000a814000000000044d02d00001000000000008001000000001000000002000005000200000000000500020000000000000045000004000000000000020060010000100000000000001000000000000000001000000000000010000000000000000000001000000000f73a00985e0600"
+    },
+    {
+      "kind": "section-header",
+      "file_offset": 552,
+      "bytes": 40,
+      "raw_hex": "2e74657874000000910a300000100000000c30000004000000000000000000000000000020000060"
+    },
+    {
+      "kind": "section-header",
+      "file_offset": 592,
+      "bytes": 40,
+      "raw_hex": "2e72646174610000d867110000203000006811000010300000000000000000000000000040000040"
+    },
+    {
+      "kind": "section-header",
+      "file_offset": 632,
+      "bytes": 40,
+      "raw_hex": "2e6461746100000098af000000904100006a000000784100000000000000000000000000400000c0"
+    },
+    {
+      "kind": "section-header",
+      "file_offset": 672,
+      "bytes": 40,
+      "raw_hex": "2e70646174610000583c020000404200003e020000e2410000000000000000000000000040000040"
+    },
+    {
+      "kind": "section-header",
+      "file_offset": 712,
+      "bytes": 40,
+      "raw_hex": "2e676669647300003c00000000804400000200000020440000000000000000000000000040000040"
+    },
+    {
+      "kind": "section-header",
+      "file_offset": 752,
+      "bytes": 40,
+      "raw_hex": "2e746c730000000009000000009044000002000000224400000000000000000000000000400000c0"
+    },
+    {
+      "kind": "section-header",
+      "file_offset": 792,
+      "bytes": 40,
+      "raw_hex": "5f52444154410000300c000000a04400000e00000024440000000000000000000000000040000040"
+    },
+    {
+      "kind": "section-header",
+      "file_offset": 832,
+      "bytes": 40,
+      "raw_hex": "2e72737263000000e001000000b04400000200000032440000000000000000000000000040000040"
+    },
+    {
+      "kind": "section-header",
+      "file_offset": 872,
+      "bytes": 40,
+      "raw_hex": "2e72656c6f630000543d000000c04400003e00000034440000000000000000000000000040000042"
+    },
+    {
+      "kind": "export-directory",
+      "file_offset": 3860224,
+      "bytes": 40,
+      "raw_hex": "00000000d2f5c76a0000000096ec3b00010000008b1800008b18000028f73a0054593b0080bb3b00"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3897960,
+      "bytes": 4,
+      "raw_hex": "67803e00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4092007,
+      "bytes": 32,
+      "raw_hex": "3f4765744e756d4c6576656c734c6f6164696e6740576f726c644047414d4540"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4092039,
+      "bytes": 32,
+      "raw_hex": "405145424149585a003f4765744e756d4c69676874536574757073404461794e"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3891676,
+      "bytes": 4,
+      "raw_hex": "e3f53c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3991011,
+      "bytes": 32,
+      "raw_hex": "3f42696c6c626f61726450756e6374756174696f6e40456e746974794047414d"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3991043,
+      "bytes": 32,
+      "raw_hex": "4540405545414158585a003f42696e6172795265616440437572766544617461"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3888536,
+      "bytes": 4,
+      "raw_hex": "6b663c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3954283,
+      "bytes": 32,
+      "raw_hex": "3f3f31536f756e64456e746974794047414d4540405545414140585a003f3f31"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3890108,
+      "bytes": 4,
+      "raw_hex": "21a93c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3971361,
+      "bytes": 32,
+      "raw_hex": "3f3f5f37446973706c61795769646765744047414d454040364240003f3f5f37"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3890892,
+      "bytes": 4,
+      "raw_hex": "59c23c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3977817,
+      "bytes": 32,
+      "raw_hex": "3f416374697661746540456e746974794047414d45404051454141585f4e405a"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3977849,
+      "bytes": 32,
+      "raw_hex": "003f41637469766174654048776e6457696e646f774047414d45404055454141"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3891284,
+      "bytes": 4,
+      "raw_hex": "efdc3c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3984623,
+      "bytes": 32,
+      "raw_hex": "3f4164645374617469737469635465787440456e67696e654047414d45404051"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3984655,
+      "bytes": 32,
+      "raw_hex": "45414158504542445a5a003f41646453746174697374696354657874404a756b"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3891480,
+      "bytes": 4,
+      "raw_hex": "7aea3c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3988090,
+      "bytes": 32,
+      "raw_hex": "3f416e696d6174696f6e43616c6c6261636b404163746f724047414d4540404d"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3988122,
+      "bytes": 32,
+      "raw_hex": "4541415f4e414542564e616d65403240405a003f416e79404950564e6574776f"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3891384,
+      "bytes": 4,
+      "raw_hex": "32e43c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3986482,
+      "bytes": 32,
+      "raw_hex": "3f416464546f5363656e6540547261696c4566666563744047414d4540405545"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3986514,
+      "bytes": 32,
+      "raw_hex": "4141584145415647726170686963735363656e65403240504542564672757374"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3986546,
+      "bytes": 32,
+      "raw_hex": "756d403240405a003f416464546f5363656e654057617465724047414d454040"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3891432,
+      "bytes": 4,
+      "raw_hex": "88e73c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3987336,
+      "bytes": 32,
+      "raw_hex": "3f41646457617465724c617965724057617465724047414d4540405145414150"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3987368,
+      "bytes": 32,
+      "raw_hex": "45415657617465724c61796572403240504542444d405a003f41646457617465"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3891456,
+      "bytes": 4,
+      "raw_hex": "11e93c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3987729,
+      "bytes": 32,
+      "raw_hex": "3f41646457696467657440456e67696e654047414d4540405145414158504541"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3987761,
+      "bytes": 32,
+      "raw_hex": "56446973706c6179576964676574403240405a003f41646457696e6440477261"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3891444,
+      "bytes": 4,
+      "raw_hex": "4ce83c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3987532,
+      "bytes": 32,
+      "raw_hex": "3f4164645761746572547970655265666572656e636540576174657254797065"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3987564,
+      "bytes": 32,
+      "raw_hex": "4d616e616765724047414d454040414541415841454255576174657254797065"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3987596,
+      "bytes": 32,
+      "raw_hex": "52656640313240405a003f416464576176655365744057617465724047414d45"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3891452,
+      "bytes": 4,
+      "raw_hex": "dce83c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3987676,
+      "bytes": 32,
+      "raw_hex": "3f41646457696467657440446973706c61794047414d45404051454141585045"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3987708,
+      "bytes": 32,
+      "raw_hex": "4156446973706c6179576964676574403240405a003f41646457696467657440"
+    },
+    {
+      "kind": "selected-ordinal",
+      "file_offset": 3913558,
+      "bytes": 2,
+      "raw_hex": "eb05"
+    },
+    {
+      "kind": "selected-address",
+      "file_offset": 3866324,
+      "bytes": 4,
+      "raw_hex": "b0810700"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3904244,
+      "bytes": 4,
+      "raw_hex": "f2eb3f00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4185074,
+      "bytes": 32,
+      "raw_hex": "3f5265676973746572466f7255706461746573404c75614d616e616765724047"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4185106,
+      "bytes": 32,
+      "raw_hex": "414d454040514541415849414542563f2462617369635f737472696e67404455"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4185138,
+      "bytes": 32,
+      "raw_hex": "3f24636861725f7472616974734044407374644040563f24616c6c6f6361746f"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4185170,
+      "bytes": 32,
+      "raw_hex": "72404440324040737464404048405a003f52656769737465724964404f626a65"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3907388,
+      "bytes": 4,
+      "raw_hex": "94ac4000"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4234388,
+      "bytes": 32,
+      "raw_hex": "3f53657452656e646572696e674047726170686963735363656e654047414d45"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4234420,
+      "bytes": 32,
+      "raw_hex": "40405145414158585a003f5365745265706c69636174696f6e526573756c7440"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3905816,
+      "bytes": 4,
+      "raw_hex": "6f594000"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4213103,
+      "bytes": 32,
+      "raw_hex": "3f5365744261636b67726f756e644d6f64654047726170686963734d5452656e"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4213135,
+      "bytes": 32,
+      "raw_hex": "64657265724047414d454040514541415857344261636b67726f756e644d6f64"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4213167,
+      "bytes": 32,
+      "raw_hex": "654031324041454256436f6c6f7240324031405a003f5365744261636b67726f"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3905032,
+      "bytes": 4,
+      "raw_hex": "e6234000"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4199398,
+      "bytes": 32,
+      "raw_hex": "3f52656e646572536861646f774047726170686963734d5452656e6465726572"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4199430,
+      "bytes": 32,
+      "raw_hex": "4047414d4540404945414158504542554c69676874456e747279403240414541"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4199462,
+      "bytes": 32,
+      "raw_hex": "5647726170686963735363656e65403240405a003f52656e646572536861646f"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3904640,
+      "bytes": 4,
+      "raw_hex": "c5014000"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4190661,
+      "bytes": 32,
+      "raw_hex": "3f52656d6f766557617465724c617965724057617465724047414d4540405145"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4190693,
+      "bytes": 32,
+      "raw_hex": "4141584145415045415657617465724c61796572403240405a003f52656d6f76"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3904836,
+      "bytes": 4,
+      "raw_hex": "cb114000"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4194763,
+      "bytes": 32,
+      "raw_hex": "3f52656e6465724465666572726564506f696e744c6967687440477261706869"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4194795,
+      "bytes": 32,
+      "raw_hex": "6373446566657272656452656e64657265724047414d45404041454141494145"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4194827,
+      "bytes": 32,
+      "raw_hex": "425647726170686963735363656e65403240414542554c69676874456e747279"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4194859,
+      "bytes": 32,
+      "raw_hex": "403240405a003f52656e64657244657074684047726170686963734d5452656e"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3904740,
+      "bytes": 4,
+      "raw_hex": "1f094000"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4192543,
+      "bytes": 32,
+      "raw_hex": "3f52656e646572426c656e64656446616365734047726170686963734d657368"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4192575,
+      "bytes": 32,
+      "raw_hex": "4047414d45404051454241585045415652656e64657244657669636540324050"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4192607,
+      "bytes": 32,
+      "raw_hex": "454256477261706869637353686164657232403240405a003f52656e64657242"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3904692,
+      "bytes": 4,
+      "raw_hex": "33054000"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4191539,
+      "bytes": 32,
+      "raw_hex": "3f52656e646572405069654f6d617469634047414d4540405145424158414541"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4191571,
+      "bytes": 32,
+      "raw_hex": "56477261706869637343616e76617340324041454256566563324032404d405a"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4191603,
+      "bytes": 32,
+      "raw_hex": "003f52656e64657240506f7274616c4047414d45404051454241584145415647"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3904668,
+      "bytes": 4,
+      "raw_hex": "88034000"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4191112,
+      "bytes": 32,
+      "raw_hex": "3f52656e64657240456e67696e654047414d4540405145414158585a003f5265"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3904656,
+      "bytes": 4,
+      "raw_hex": "a3024000"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4190883,
+      "bytes": 32,
+      "raw_hex": "3f52656e616d65576174657254797065405761746572547970654d616e616765"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4190915,
+      "bytes": 32,
+      "raw_hex": "724047414d454040514541415f4e414542563f2462617369635f737472696e67"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4190947,
+      "bytes": 32,
+      "raw_hex": "4044553f24636861725f7472616974734044407374644040563f24616c6c6f63"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4190979,
+      "bytes": 32,
+      "raw_hex": "61746f72404440324040737464404030405a003f52656e64657240426f61744f"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3904648,
+      "bytes": 4,
+      "raw_hex": "34024000"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4190772,
+      "bytes": 32,
+      "raw_hex": "3f52656d6f766557696467657440446973706c61794047414d45404051454141"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4190804,
+      "bytes": 32,
+      "raw_hex": "5850454156446973706c6179576964676574403240405a003f52656d6f766557"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3904652,
+      "bytes": 4,
+      "raw_hex": "6c024000"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4190828,
+      "bytes": 32,
+      "raw_hex": "3f52656d6f766557696467657440456e67696e654047414d4540405145414158"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4190860,
+      "bytes": 32,
+      "raw_hex": "50454156446973706c6179576964676574403240405a003f52656e616d655761"
+    },
+    {
+      "kind": "selected-ordinal",
+      "file_offset": 3920156,
+      "bytes": 2,
+      "raw_hex": "ce12"
+    },
+    {
+      "kind": "selected-address",
+      "file_offset": 3879520,
+      "bytes": 4,
+      "raw_hex": "c0810700"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3886964,
+      "bytes": 4,
+      "raw_hex": "762d3c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3939702,
+      "bytes": 32,
+      "raw_hex": "3f3f3052656e6465725665727465784275666665724047414d45404051454141"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3939734,
+      "bytes": 32,
+      "raw_hex": "40585a003f3f3052656e6465725665727465784465636c61726174696f6e4047"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3886180,
+      "bytes": 4,
+      "raw_hex": "f70c3c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3931383,
+      "bytes": 32,
+      "raw_hex": "3f3f304772617068696373536861646572324047414d45404051454141405045"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3931415,
+      "bytes": 32,
+      "raw_hex": "4156426173655265736f757263654d616e61676572403140414542563f246261"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3931447,
+      "bytes": 32,
+      "raw_hex": "7369635f737472696e674044553f24636861725f747261697473404440737464"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3931479,
+      "bytes": 32,
+      "raw_hex": "4040563f24616c6c6f6361746f724044403240407374644040405a003f3f3047"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3885788,
+      "bytes": 4,
+      "raw_hex": "affc3b00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3927215,
+      "bytes": 32,
+      "raw_hex": "3f3f3044657461696c4d617046696c74657246756e6374696f6e4047414d4540"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3927247,
+      "bytes": 32,
+      "raw_hex": "40514541414041454256303140405a003f3f3044657461696c4d617046696c74"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3885984,
+      "bytes": 4,
+      "raw_hex": "68033c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3928936,
+      "bytes": 32,
+      "raw_hex": "3f3f30466f6e745374796c654047414d45404051454141404145425530314040"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3928968,
+      "bytes": 32,
+      "raw_hex": "5a003f3f30466f6e745374796c654047414d4540405145414140585a003f3f30"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3885888,
+      "bytes": 4,
+      "raw_hex": "78003c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3928184,
+      "bytes": 32,
+      "raw_hex": "3f3f30456e67696e654047414d4540405145414140585a003f3f30456e746974"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3885840,
+      "bytes": 4,
+      "raw_hex": "89fe3b00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3927689,
+      "bytes": 32,
+      "raw_hex": "3f3f30456469746f7246696c7465724047414d4540404145414140585a003f3f"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3885816,
+      "bytes": 4,
+      "raw_hex": "acfd3b00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3927468,
+      "bytes": 32,
+      "raw_hex": "3f3f30446973636f6e6e656374436c69656e745061636b65744047414d454040"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3927500,
+      "bytes": 32,
+      "raw_hex": "514541414041454256303140405a003f3f30446973636f6e6e656374436c6965"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3885828,
+      "bytes": 4,
+      "raw_hex": "1cfe3b00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3927580,
+      "bytes": 32,
+      "raw_hex": "3f3f30446973706c61795769646765744047414d454040514541414024245145"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3927612,
+      "bytes": 32,
+      "raw_hex": "4156303140405a003f3f30446973706c61795769646765744047414d45404051"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3885836,
+      "bytes": 4,
+      "raw_hex": "6afe3b00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3927658,
+      "bytes": 32,
+      "raw_hex": "3f3f30446973706c61795769646765744047414d4540405145414140585a003f"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3885832,
+      "bytes": 4,
+      "raw_hex": "44fe3b00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3927620,
+      "bytes": 32,
+      "raw_hex": "3f3f30446973706c61795769646765744047414d454040514541414041454256"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3927652,
+      "bytes": 32,
+      "raw_hex": "303140405a003f3f30446973706c61795769646765744047414d454040514541"
+    },
+    {
+      "kind": "selected-ordinal",
+      "file_offset": 3910748,
+      "bytes": 2,
+      "raw_hex": "6e00"
+    },
+    {
+      "kind": "selected-address",
+      "file_offset": 3860704,
+      "bytes": 4,
+      "raw_hex": "00f00500"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3886572,
+      "bytes": 4,
+      "raw_hex": "3b1d3c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3935547,
+      "bytes": 32,
+      "raw_hex": "3f3f304e65745061636b65744865616465724047414d45404051454141404145"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3935579,
+      "bytes": 32,
+      "raw_hex": "4256303140405a003f3f304e65745061636b65744865616465724047414d4540"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3886376,
+      "bytes": 4,
+      "raw_hex": "d9153c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3933657,
+      "bytes": 32,
+      "raw_hex": "3f3f30496e7374616e636547726f75704047414d454040514541414041454256"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3933689,
+      "bytes": 32,
+      "raw_hex": "3f2462617369635f737472696e674044553f24636861725f7472616974734044"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3933721,
+      "bytes": 32,
+      "raw_hex": "407374644040563f24616c6c6f6361746f724044403240407374644040405a00"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3886476,
+      "bytes": 4,
+      "raw_hex": "af193c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3934639,
+      "bytes": 32,
+      "raw_hex": "3f3f304c696e6b4d5455546573745061636b65744047414d4540405145414140"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3934671,
+      "bytes": 32,
+      "raw_hex": "41454256303140405a003f3f304c696e6b4d5455546573745061636b65744047"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3886524,
+      "bytes": 4,
+      "raw_hex": "741b3c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3935092,
+      "bytes": 32,
+      "raw_hex": "3f3f304e616d65536563746f72446174614047414d4540405145414140414542"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3935124,
+      "bytes": 32,
+      "raw_hex": "55303140405a003f3f304e616d65536563746f72446174614047414d45404051"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3886500,
+      "bytes": 4,
+      "raw_hex": "9f1a3c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3934879,
+      "bytes": 32,
+      "raw_hex": "3f3f304d61704368756e6b43616c6c6261636b4047414d454040514541414041"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3934911,
+      "bytes": 32,
+      "raw_hex": "454256303140405a003f3f304d61704368756e6b43616c6c6261636b4047414d"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3886512,
+      "bytes": 4,
+      "raw_hex": "0d1b3c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3934989,
+      "bytes": 32,
+      "raw_hex": "3f3f304d6f7573654576656e7440496e7075744465766963654047414d454040"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3935021,
+      "bytes": 32,
+      "raw_hex": "5145414140585a003f3f304e616d654047414d4540405145414140585a003f3f"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3886508,
+      "bytes": 4,
+      "raw_hex": "eb1a3c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3934955,
+      "bytes": 32,
+      "raw_hex": "3f3f304d656d6f72794d617070656446696c654047414d454040514541414058"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3934987,
+      "bytes": 32,
+      "raw_hex": "5a003f3f304d6f7573654576656e7440496e7075744465766963654047414d45"
+    },
+    {
+      "kind": "selected-ordinal",
+      "file_offset": 3911086,
+      "bytes": 2,
+      "raw_hex": "1701"
+    },
+    {
+      "kind": "selected-address",
+      "file_offset": 3861380,
+      "bytes": 4,
+      "raw_hex": "10830000"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3908960,
+      "bytes": 4,
+      "raw_hex": "110a4100"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4258321,
+      "bytes": 32,
+      "raw_hex": "3f55706461746540436c69656e74436f6e6e656374696f6e4d616e6167657240"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4258353,
+      "bytes": 32,
+      "raw_hex": "47414d454040554541415848405a003f55706461746540436f6c6f7250756c73"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3909744,
+      "bytes": 4,
+      "raw_hex": "6d314100"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4268397,
+      "bytes": 32,
+      "raw_hex": "3f5772697465436c696d6174654461746140536563746f72446174614d616e61"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4268429,
+      "bytes": 32,
+      "raw_hex": "6765724047414d45404041454241584145415642696e61727957726974657240"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4268461,
+      "bytes": 32,
+      "raw_hex": "3240405a003f577269746544616d6167654461746140536563746f7244617461"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3909352,
+      "bytes": 4,
+      "raw_hex": "e61b4100"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4262886,
+      "bytes": 32,
+      "raw_hex": "3f5570646174654f626a656374496e5370616365405465727261696e42617365"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4262918,
+      "bytes": 32,
+      "raw_hex": "4047414d4540404945414158504541565465727261696e4f626a656374403240"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4262950,
+      "bytes": 32,
+      "raw_hex": "405a003f5570646174654f626a65637473405465727261696e42617365404741"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3909156,
+      "bytes": 4,
+      "raw_hex": "fd114100"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4260349,
+      "bytes": 32,
+      "raw_hex": "3f55706461746540576561746865724d616e616765724047414d454040514541"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4260381,
+      "bytes": 32,
+      "raw_hex": "415841454256576f726c645665633340324048405a003f55706461746540576f"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3909060,
+      "bytes": 4,
+      "raw_hex": "800e4100"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4259456,
+      "bytes": 32,
+      "raw_hex": "3f55706461746540526567696f6e4c6f616465724047414d4540405145414158"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4259488,
+      "bytes": 32,
+      "raw_hex": "48405a003f557064617465405265736f757263654c6f616465724047414d4540"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3909012,
+      "bytes": 4,
+      "raw_hex": "9c0c4100"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4258972,
+      "bytes": 32,
+      "raw_hex": "3f5570646174654047726964426173654047414d454040554541415851454256"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4259004,
+      "bytes": 32,
+      "raw_hex": "4672757374756d4032404948405a003f5570646174654047726964526567696f"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3908988,
+      "bytes": 4,
+      "raw_hex": "450b4100"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4258629,
+      "bytes": 32,
+      "raw_hex": "3f55706461746540456d69747465724047414d45404051454141584145425657"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4258661,
+      "bytes": 32,
+      "raw_hex": "6f726c64436f6f726473403240414541564142426f7840324050454256456d69"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4258693,
+      "bytes": 32,
+      "raw_hex": "7474657244617461403240504542563f24766563746f724055456d6974746572"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4258725,
+      "bytes": 32,
+      "raw_hex": "426f6e654047414d454040406d656d4040405a003f55706461746540456e6769"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3909000,
+      "bytes": 4,
+      "raw_hex": "170c4100"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4258839,
+      "bytes": 32,
+      "raw_hex": "3f55706461746540474d49456666656374496365794047414d45404055454141"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4258871,
+      "bytes": 32,
+      "raw_hex": "5848405a003f557064617465404772617068696373456e67696e654047414d45"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3908996,
+      "bytes": 4,
+      "raw_hex": "f90b4100"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4258809,
+      "bytes": 32,
+      "raw_hex": "3f55706461746540456e746974794047414d454040514541415848405a003f55"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3908992,
+      "bytes": 4,
+      "raw_hex": "b90b4100"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4258745,
+      "bytes": 32,
+      "raw_hex": "3f55706461746540456e67696e654047414d4540405145414158504542565370"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 4258777,
+      "bytes": 32,
+      "raw_hex": "6865726540324050454256576f726c644672757374756d4032405f4e31405a00"
+    },
+    {
+      "kind": "selected-ordinal",
+      "file_offset": 3922326,
+      "bytes": 2,
+      "raw_hex": "0b17"
+    },
+    {
+      "kind": "selected-address",
+      "file_offset": 3883860,
+      "bytes": 4,
+      "raw_hex": "f0520700"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3886488,
+      "bytes": 4,
+      "raw_hex": "171a3c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3934743,
+      "bytes": 32,
+      "raw_hex": "3f3f304c6f61645461626c6542696e6172794047414d45404051454141405045"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3934775,
+      "bytes": 32,
+      "raw_hex": "4156446174616261736541726368697665403140405a003f3f304c6f63616c69"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3886496,
+      "bytes": 4,
+      "raw_hex": "731a3c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3934835,
+      "bytes": 32,
+      "raw_hex": "3f3f304c6f63616c697a6174696f6e4d616e616765724047414d454040514541"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3934867,
+      "bytes": 32,
+      "raw_hex": "414041454256303140405a003f3f304d61704368756e6b43616c6c6261636b40"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3890500,
+      "bytes": 4,
+      "raw_hex": "0ab53c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3974410,
+      "bytes": 32,
+      "raw_hex": "3f3f5f375068797369637353797374656d324047414d454040364240003f3f5f"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3890304,
+      "bytes": 4,
+      "raw_hex": "04af3c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3972868,
+      "bytes": 32,
+      "raw_hex": "3f3f5f37494750445665727465784275696c6465724047414d45404036424000"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3890404,
+      "bytes": 4,
+      "raw_hex": "36b23c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3973686,
+      "bytes": 32,
+      "raw_hex": "3f3f5f374c6f61645461626c654047414d454040364240003f3f5f374c6f6164"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3890452,
+      "bytes": 4,
+      "raw_hex": "a6b33c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3974054,
+      "bytes": 32,
+      "raw_hex": "3f3f5f374e6574776f726b5368696d4047414d454040364240003f3f5f374e65"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3890428,
+      "bytes": 4,
+      "raw_hex": "e2b23c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3973858,
+      "bytes": 32,
+      "raw_hex": "3f3f5f374e6574776f726b416464726573734047414d454040364240003f3f5f"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3890416,
+      "bytes": 4,
+      "raw_hex": "8eb23c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3973774,
+      "bytes": 32,
+      "raw_hex": "3f3f5f374d61704368756e6b43616c6c6261636b4047414d454040364240003f"
+    },
+    {
+      "kind": "name-pointer",
+      "file_offset": 3890412,
+      "bytes": 4,
+      "raw_hex": "6cb23c00"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3973740,
+      "bytes": 32,
+      "raw_hex": "3f3f5f374c6f63616c697a6174696f6e4d616e616765724047414d4540403642"
+    },
+    {
+      "kind": "export-name",
+      "file_offset": 3973772,
+      "bytes": 32,
+      "raw_hex": "40003f3f5f374d61704368756e6b43616c6c6261636b4047414d454040364240"
+    }
+  ],
+  "encountered_names": [
+    {
+      "index": 98,
+      "name": "??0DetailMapFilterFunction@GAME@@QEAA@AEBV01@@Z"
+    },
+    {
+      "index": 105,
+      "name": "??0DisconnectClientPacket@GAME@@QEAA@AEBV01@@Z"
+    },
+    {
+      "index": 108,
+      "name": "??0DisplayWidget@GAME@@QEAA@$$QEAV01@@Z"
+    },
+    {
+      "index": 109,
+      "name": "??0DisplayWidget@GAME@@QEAA@AEBV01@@Z"
+    },
+    {
+      "index": 110,
+      "name": "??0DisplayWidget@GAME@@QEAA@XZ"
+    },
+    {
+      "index": 111,
+      "name": "??0EditorFilter@GAME@@AEAA@XZ"
+    },
+    {
+      "index": 123,
+      "name": "??0Engine@GAME@@QEAA@XZ"
+    },
+    {
+      "index": 147,
+      "name": "??0FontStyle@GAME@@QEAA@AEBU01@@Z"
+    },
+    {
+      "index": 196,
+      "name": "??0GraphicsShader2@GAME@@QEAA@PEAVBaseResourceManager@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+    },
+    {
+      "index": 245,
+      "name": "??0InstanceGroup@GAME@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+    },
+    {
+      "index": 270,
+      "name": "??0LinkMTUTestPacket@GAME@@QEAA@AEBV01@@Z"
+    },
+    {
+      "index": 273,
+      "name": "??0LoadTableBinary@GAME@@QEAA@PEAVDatabaseArchive@1@@Z"
+    },
+    {
+      "index": 275,
+      "name": "??0LocalizationManager@GAME@@QEAA@AEBV01@@Z"
+    },
+    {
+      "index": 276,
+      "name": "??0MapChunkCallback@GAME@@QEAA@AEBV01@@Z"
+    },
+    {
+      "index": 278,
+      "name": "??0MemoryMappedFile@GAME@@QEAA@XZ"
+    },
+    {
+      "index": 279,
+      "name": "??0MouseEvent@InputDevice@GAME@@QEAA@XZ"
+    },
+    {
+      "index": 282,
+      "name": "??0NameSectorData@GAME@@QEAA@AEBU01@@Z"
+    },
+    {
+      "index": 294,
+      "name": "??0NetPacketHeader@GAME@@QEAA@AEBV01@@Z"
+    },
+    {
+      "index": 392,
+      "name": "??0RenderVertexBuffer@GAME@@QEAA@XZ"
+    },
+    {
+      "index": 785,
+      "name": "??1SoundEntity@GAME@@UEAA@XZ"
+    },
+    {
+      "index": 1178,
+      "name": "??_7DisplayWidget@GAME@@6B@"
+    },
+    {
+      "index": 1227,
+      "name": "??_7IGPDVertexBuilder@GAME@@6B@"
+    },
+    {
+      "index": 1252,
+      "name": "??_7LoadTable@GAME@@6B@"
+    },
+    {
+      "index": 1254,
+      "name": "??_7LocalizationManager@GAME@@6B@"
+    },
+    {
+      "index": 1255,
+      "name": "??_7MapChunkCallback@GAME@@6B@"
+    },
+    {
+      "index": 1258,
+      "name": "??_7NetworkAddress@GAME@@6B@"
+    },
+    {
+      "index": 1264,
+      "name": "??_7NetworkShim@GAME@@6B@"
+    },
+    {
+      "index": 1276,
+      "name": "??_7PhysicsSystem2@GAME@@6B@"
+    },
+    {
+      "index": 1374,
+      "name": "?Activate@Entity@GAME@@QEAAX_N@Z"
+    },
+    {
+      "index": 1472,
+      "name": "?AddStatisticText@Engine@GAME@@QEAAXPEBDZZ"
+    },
+    {
+      "index": 1497,
+      "name": "?AddToScene@TrailEffect@GAME@@UEAAXAEAVGraphicsScene@2@PEBVFrustum@2@@Z"
+    },
+    {
+      "index": 1509,
+      "name": "?AddWaterLayer@Water@GAME@@QEAAPEAVWaterLayer@2@PEBDM@Z"
+    },
+    {
+      "index": 1512,
+      "name": "?AddWaterTypeReference@WaterTypeManager@GAME@@AEAAXAEBUWaterTypeRef@12@@Z"
+    },
+    {
+      "index": 1514,
+      "name": "?AddWidget@Display@GAME@@QEAAXPEAVDisplayWidget@2@@Z"
+    },
+    {
+      "index": 1515,
+      "name": "?AddWidget@Engine@GAME@@QEAAXPEAVDisplayWidget@2@@Z"
+    },
+    {
+      "index": 1521,
+      "name": "?AnimationCallback@Actor@GAME@@MEAA_NAEBVName@2@@Z"
+    },
+    {
+      "index": 1570,
+      "name": "?BillboardPunctuation@Entity@GAME@@UEAAXXZ"
+    },
+    {
+      "index": 3141,
+      "name": "?GetNumLevelsLoading@World@GAME@@QEBAIXZ"
+    },
+    {
+      "index": 4712,
+      "name": "?RegisterForUpdates@LuaManager@GAME@@QEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z"
+    },
+    {
+      "index": 4811,
+      "name": "?RemoveWaterLayer@Water@GAME@@QEAAXAEAPEAVWaterLayer@2@@Z"
+    },
+    {
+      "index": 4813,
+      "name": "?RemoveWidget@Display@GAME@@QEAAXPEAVDisplayWidget@2@@Z"
+    },
+    {
+      "index": 4814,
+      "name": "?RemoveWidget@Engine@GAME@@QEAAXPEAVDisplayWidget@2@@Z"
+    },
+    {
+      "index": 4815,
+      "name": "?RenameWaterType@WaterTypeManager@GAME@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z"
+    },
+    {
+      "index": 4818,
+      "name": "?Render@Engine@GAME@@QEAAXXZ"
+    },
+    {
+      "index": 4824,
+      "name": "?Render@PieOmatic@GAME@@QEBAXAEAVGraphicsCanvas@2@AEBVVec2@2@M@Z"
+    },
+    {
+      "index": 4836,
+      "name": "?RenderBlendedFaces@GraphicsMesh@GAME@@QEBAXPEAVRenderDevice@2@PEBVGraphicsShader2@2@@Z"
+    },
+    {
+      "index": 4860,
+      "name": "?RenderDeferredPointLight@GraphicsDeferredRenderer@GAME@@AEAAIAEBVGraphicsScene@2@AEBULightEntry@2@@Z"
+    },
+    {
+      "index": 4909,
+      "name": "?RenderShadow@GraphicsMTRenderer@GAME@@IEAAXPEBULightEntry@2@AEAVGraphicsScene@2@@Z"
+    },
+    {
+      "index": 5105,
+      "name": "?SetBackgroundMode@GraphicsMTRenderer@GAME@@QEAAXW4BackgroundMode@12@AEBVColor@2@1@Z"
+    },
+    {
+      "index": 5498,
+      "name": "?SetRendering@GraphicsScene@GAME@@QEAAXXZ"
+    },
+    {
+      "index": 5891,
+      "name": "?Update@ClientConnectionManager@GAME@@UEAAXH@Z"
+    },
+    {
+      "index": 5898,
+      "name": "?Update@Emitter@GAME@@QEAAXAEBVWorldCoords@2@AEAVABBox@2@PEBVEmitterData@2@PEBV?$vector@UEmitterBone@GAME@@@mem@@@Z"
+    },
+    {
+      "index": 5899,
+      "name": "?Update@Engine@GAME@@QEAAXPEBVSphere@2@PEBVWorldFrustum@2@_N1@Z"
+    },
+    {
+      "index": 5900,
+      "name": "?Update@Entity@GAME@@QEAAXH@Z"
+    },
+    {
+      "index": 5901,
+      "name": "?Update@GMIEffectIcey@GAME@@UEAAXH@Z"
+    },
+    {
+      "index": 5904,
+      "name": "?Update@GridBase@GAME@@UEAAXQEBVFrustum@2@IH@Z"
+    },
+    {
+      "index": 5916,
+      "name": "?Update@RegionLoader@GAME@@QEAAXH@Z"
+    },
+    {
+      "index": 5940,
+      "name": "?Update@WeatherManager@GAME@@QEAAXAEBVWorldVec3@2@H@Z"
+    },
+    {
+      "index": 5989,
+      "name": "?UpdateObjectInSpace@TerrainBase@GAME@@IEAAXPEAVTerrainObject@2@@Z"
+    },
+    {
+      "index": 6087,
+      "name": "?WriteClimateData@SectorDataManager@GAME@@AEBAXAEAVBinaryWriter@2@@Z"
+    }
+  ],
+  "exact_targets": [
+    {
+      "name": "?AddWidget@Engine@GAME@@QEAAXPEAVDisplayWidget@2@@Z",
+      "status": "NamedExportAddressCandidate",
+      "binary_search_steps": 12,
+      "name_index": 1515,
+      "ordinal": 1516,
+      "rva": "0x781b0",
+      "preferred_va": "0x1800781b0",
+      "forwarded": false,
+      "target_payload_bytes_read": 0,
+      "runtime_binding_verified": false,
+      "section": ".text",
+      "section_executable": true
+    },
+    {
+      "name": "?RemoveWidget@Engine@GAME@@QEAAXPEAVDisplayWidget@2@@Z",
+      "status": "NamedExportAddressCandidate",
+      "binary_search_steps": 13,
+      "name_index": 4814,
+      "ordinal": 4815,
+      "rva": "0x781c0",
+      "preferred_va": "0x1800781c0",
+      "forwarded": false,
+      "target_payload_bytes_read": 0,
+      "runtime_binding_verified": false,
+      "section": ".text",
+      "section_executable": true
+    },
+    {
+      "name": "??0DisplayWidget@GAME@@QEAA@XZ",
+      "status": "NamedExportAddressCandidate",
+      "binary_search_steps": 13,
+      "name_index": 110,
+      "ordinal": 111,
+      "rva": "0x5f000",
+      "preferred_va": "0x18005f000",
+      "forwarded": false,
+      "target_payload_bytes_read": 0,
+      "runtime_binding_verified": false,
+      "section": ".text",
+      "section_executable": true
+    },
+    {
+      "name": "??0MouseEvent@InputDevice@GAME@@QEAA@XZ",
+      "status": "NamedExportAddressCandidate",
+      "binary_search_steps": 12,
+      "name_index": 279,
+      "ordinal": 280,
+      "rva": "0x8310",
+      "preferred_va": "0x180008310",
+      "forwarded": false,
+      "target_payload_bytes_read": 0,
+      "runtime_binding_verified": false,
+      "section": ".text",
+      "section_executable": true
+    },
+    {
+      "name": "?Update@Engine@GAME@@QEAAXPEBVSphere@2@PEBVWorldFrustum@2@_N1@Z",
+      "status": "NamedExportAddressCandidate",
+      "binary_search_steps": 13,
+      "name_index": 5899,
+      "ordinal": 5900,
+      "rva": "0x752f0",
+      "preferred_va": "0x1800752f0",
+      "forwarded": false,
+      "target_payload_bytes_read": 0,
+      "runtime_binding_verified": false,
+      "section": ".text",
+      "section_executable": true
+    }
+  ],
+  "prefix_searches": [
+    {
+      "prefix": "??0LuaProvider@GAME@@",
+      "status": "UnknownNoPrefixExport",
+      "candidates": [],
+      "indices": [],
+      "first_index": 276,
+      "binary_search_steps": 12,
+      "terminator_index": 276
+    },
+    {
+      "prefix": "??_7LuaProvider@GAME@@",
+      "status": "UnknownNoPrefixExport",
+      "candidates": [],
+      "indices": [],
+      "first_index": 1255,
+      "binary_search_steps": 12,
+      "terminator_index": 1255
+    }
+  ],
+  "source_stat_stable": true,
+  "source_closed": true,
+  "failures": [],
+  "code_bytes": 0,
+  "pdata_bytes": 0,
+  "vtable_payload_bytes": 0,
+  "subprocesses": 0,
+  "backend_started": false,
+  "original_loaded_or_executed": false,
+  "whole_export_table_scanned": false,
+  "automatic_followup": false,
+  "limitations": [
+    "Exact names are saved EXE imports. Export addresses are candidates, not verified function/ABI/behavior or live bindings.",
+    "LuaProvider prefixes describe an interface type only. No match stays Unknown; a match does not establish any concrete provider or active runtime object.",
+    "Only encountered export-name ordering is checked. UnknownNoMatch does not prove absence of unexported or runtime-resolved functions.",
+    "No code/.pdata/vtable payload/forwarder target is read. Address sections are classified from existing PE header records only.",
+    "32KiB is a hard combined metadata ceiling and may stop before7lookups finish. No automatic budget increase or whole-table fallback.",
+    "Full-file same-descriptor hashes use64KiB chunks separately from semantic metadata reads; stat/hash checks do not guarantee an atomic snapshot."
+  ],
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "image_base": "0x180000000",
+  "sections": [
+    {
+      "name": ".text",
+      "rva": 4096,
+      "virtual_size": 3148433,
+      "raw_size": 3148800,
+      "raw_offset": 1024,
+      "flags": 1610612768
+    },
+    {
+      "name": ".rdata",
+      "rva": 3153920,
+      "virtual_size": 1140696,
+      "raw_size": 1140736,
+      "raw_offset": 3149824,
+      "flags": 1073741888
+    },
+    {
+      "name": ".data",
+      "rva": 4296704,
+      "virtual_size": 44952,
+      "raw_size": 27136,
+      "raw_offset": 4290560,
+      "flags": 3221225536
+    },
+    {
+      "name": ".pdata",
+      "rva": 4341760,
+      "virtual_size": 146520,
+      "raw_size": 146944,
+      "raw_offset": 4317696,
+      "flags": 1073741888
+    },
+    {
+      "name": ".gfids",
+      "rva": 4489216,
+      "virtual_size": 60,
+      "raw_size": 512,
+      "raw_offset": 4464640,
+      "flags": 1073741888
+    },
+    {
+      "name": ".tls",
+      "rva": 4493312,
+      "virtual_size": 9,
+      "raw_size": 512,
+      "raw_offset": 4465152,
+      "flags": 3221225536
+    },
+    {
+      "name": "_RDATA",
+      "rva": 4497408,
+      "virtual_size": 3120,
+      "raw_size": 3584,
+      "raw_offset": 4465664,
+      "flags": 1073741888
+    },
+    {
+      "name": ".rsrc",
+      "rva": 4501504,
+      "virtual_size": 480,
+      "raw_size": 512,
+      "raw_offset": 4469248,
+      "flags": 1073741888
+    },
+    {
+      "name": ".reloc",
+      "rva": 4505600,
+      "virtual_size": 15700,
+      "raw_size": 15872,
+      "raw_offset": 4469760,
+      "flags": 1107296320
+    }
+  ],
+  "export_directory": {
+    "rva": "0x3af700",
+    "bytes": 417432,
+    "functions": 6283,
+    "names": 6283,
+    "ordinal_base": 1
+  },
+  "distinct_names_read": 60,
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "finished_utc": "2026-11-03T11:58:26.059Z"
+}

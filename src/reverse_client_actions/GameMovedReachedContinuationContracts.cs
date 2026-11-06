@@ -21,9 +21,20 @@ namespace GrimDynasty.ReverseClient.Actions {
   static T Need<T>(T value,uint at)where T:class{if(value==null)throw new MissingContract(at,"Null reached callback composition dependency");return value;}
   public static void ProduceAndInvokeReachedCallback(NavigationCrowdGroup group,NavigationCrowdAgent agent,NavigationCrowdPointerDomain<NavigationCrowdAgent> domain,
    Field<float> maximumRadius,Field<float> neighborFactor,Field<float> seconds,int capturedTicks,NavigationCrowdTickProductionBoundaries production,GameMovedContext context,GameMovedReachedContinuationInvocation invocation){
-   var c=Need(invocation,0x25cb73);c.Producer.At=0;c.Moved.Reset();c.KnownCallbackBoundaryReached=false;c.CallbackReturned=false;
+   ProduceAndInvoke(group,agent,domain,maximumRadius,neighborFactor,seconds,capturedTicks,production,context,invocation,false);
+  }
+  public static void ProduceAndInvokeReachedCallback25CF79(NavigationCrowdGroup group,NavigationCrowdAgent agent,NavigationCrowdPointerDomain<NavigationCrowdAgent> domain,
+   Field<float> seconds,int capturedTicks,NavigationCrowdTickProductionBoundaries production,GameMovedContext context,GameMovedReachedContinuationInvocation invocation){
+   ProduceAndInvoke(group,agent,domain,null,null,seconds,capturedTicks,production,context,invocation,true);
+  }
+  static void ProduceAndInvoke(NavigationCrowdGroup group,NavigationCrowdAgent agent,NavigationCrowdPointerDomain<NavigationCrowdAgent> domain,
+   Field<float> maximumRadius,Field<float> neighborFactor,Field<float> seconds,int capturedTicks,NavigationCrowdTickProductionBoundaries production,GameMovedContext context,GameMovedReachedContinuationInvocation invocation,bool skippedEmptySteering){
+   var c=Need(invocation,skippedEmptySteering?0x25cf79u:0x25cb73u);c.Producer.At=0;c.Moved.Reset();c.KnownCallbackBoundaryReached=false;c.CallbackReturned=false;
    bool exactBoundary=false;
-   try{NavigationCrowdTickProductionContracts.ProduceReachedSingleWork25CB73(group,agent,domain,maximumRadius,neighborFactor,seconds,production,c.Producer);}
+   try{
+    if(skippedEmptySteering)NavigationCrowdTickProductionContracts.ProduceReachedSingleWork25CF79(group,agent,domain,seconds,production,c.Producer);
+    else NavigationCrowdTickProductionContracts.ProduceReachedSingleWork25CB73(group,agent,domain,maximumRadius,neighborFactor,seconds,production,c.Producer);
+   }
    catch(MissingContract error){
     if(error.Address!=0x25e087||c.Producer.At!=0x25e087||!String.Equals(error.Message,FrozenBoundary,StringComparison.Ordinal))throw;
     exactBoundary=true;

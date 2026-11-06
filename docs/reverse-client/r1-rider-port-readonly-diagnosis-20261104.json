@@ -1,0 +1,64 @@
+{
+  "schema": "gd-rider-port-readonly-diagnosis-v1",
+  "date_utc": "2026-11-04",
+  "status": "AF_UNIX-tag-confirmed;reparse-data-query-error-1920;no-recovery-performed",
+  "target": "C:\\Users\\zhuzi\\AppData\\Local\\JetBrains\\Rider2025.3\\.port",
+  "metadata": {
+    "api": "FindFirstFileW, WIN32_FIND_DATA.dwReserved0; directory-entry enumeration only, followed by FindClose",
+    "utc": "2026-11-04T04:50:18.3091299Z",
+    "tool_chunk": "6de599",
+    "exit_code": 0,
+    "attributes": "0x00000420",
+    "reparse_tag": "0x80000023",
+    "type": "IO_REPARSE_TAG_AF_UNIX",
+    "size": 0,
+    "name_surrogate": false,
+    "PowerShell_LinkType": null,
+    "PowerShell_Target": null,
+    "creation_and_last_write_utc": "2026-11-04T04:35:57.4122217Z",
+    "meaning": "A local Unix-domain socket filesystem endpoint. This tag is not a symbolic-link/junction target and Microsoft defines no public reparse-data structure for it. Target=null does not establish a broken link. The endpoint path is .port itself; peer PID/listener ownership is not recovered from this metadata.",
+    "method_boundary": "Same ordinary tool permissions; small in-process Add-Type helper called only FindFirstFileW and FindClose. Did not open/follow the target, connect a socket, change security, or request elevated access. This was metadata inspection, not fixture/game compilation or execution."
+  },
+  "data_query": {
+    "command": "C:\\Windows\\System32\\fsutil.exe reparsepoint query C:\\Users\\zhuzi\\AppData\\Local\\JetBrains\\Rider2025.3\\.port",
+    "utc": "2026-11-04T04:49:36.2531221Z",
+    "tool_chunk": "5ff8c5",
+    "exit_code": 1,
+    "Win32_error": 1920,
+    "error_name": "ERROR_CANT_ACCESS_FILE",
+    "meaning": "The file cannot be accessed by the system.",
+    "outcome": "No reparse payload retrieved. Did not retry or elevate this operation. Metadata enumeration was a separate officially documented read-only directory query.",
+    "limit": "1920 is not ERROR_ACCESS_DENIED=5 and by itself does not prove an ACL problem. Rider logs previously showed a matching localized access message but did not expose its numeric Win32 code; do not retroactively label their native return code as measured."
+  },
+  "official_findings": [
+    "Microsoft identifies 0x80000023 as AF_UNIX and says this tag has no defined data structure.",
+    "Microsoft documents AF_UNIX pathname bind creating a custom NTFS reparse point, and removal of the old socket file before binding the same path again. This explains why ordinary endpoint cleanup can be part of startup; it does not authorize cleanup now or prove deletion will succeed here.",
+    "JetBrains SUPPORT-A-4102 is an official DirectoryLock recovery article; indexed text discusses stuck IDE processes and residual lock/port/token files. Its full body and the matching installed-version DirectoryLock source were not retrievable. Its CannotActivateException/BindException scenario is not established equivalent to this machine's FileSystemException/1920. No unverified recipe is promoted as guaranteed recovery."
+  ],
+  "conclusion": "The concrete failing operation is Rider bootstrap socket/lock cleanup. The artifact is an AF_UNIX endpoint, not an ordinary corrupt empty file or a path redirect. Its presence after the first run and the user's manual close are temporally related only; no evidence assigns fault to the user. Windows access error root cause, exact effect of startup context and whether ordinary deletion would work remain unknown.",
+  "conditional_recovery_plan_not_executed": [
+    "Preserve current logs, tag, timestamps and failed receipts. Do not copy a socket node as if it were ordinary backup data.",
+    "Before any change, freshly verify that no Rider instance/backends use the relevant installation/profile, and recheck this exact path's AF_UNIX tag and recorded identity. Do not close unknown/user processes.",
+    "Potential minimum repair: obtain explicit approval for one ordinary-user removal attempt of this exact socket entry only, then verify absence. No recursion, parent-directory cleanup, .lock/token deletion, ACL/policy change, fsutil reparsepoint delete, ownership takeover or privilege escalation. If the operation fails, stop and preserve its exact error. This is a proposed application of Microsoft's endpoint lifecycle guidance, not a tested fix.",
+    "A subsequent single Rider launch is a distinct visible operation: parent must notify user first and approval must include it. Use the recorded executable/arguments and preserve the initial launch context as closely as practical; capture process/result without silently changing runtime/profile/security options. No Steam/game or native fixture start until IDE readiness is established.",
+    "If the socket cannot be safely handled under approved ordinary permissions, stop. A support request containing the bounded logs, tag and error requires separate permission to transmit; no automatic upload. Reboot, cache/profile relocation, new runtime, software installation or security changes are not established necessary and are not proposed as automatic fallbacks."
+  ],
+  "approval_required": ["Any socket entry deletion/rename or other change", "Any further visible program launch, after parent notification", "Any diagnostic material transmission", "Any additional action outside the approved ordinary-user scope"],
+  "sources": {
+    "metadata_query": "https://learn.microsoft.com/en-us/windows/win32/fileio/reparse-point-tags",
+    "tag_definition": "https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/c8e77b37-3909-4fe6-a4ea-2b9d423b1ee4",
+    "socket_lifecycle": "https://devblogs.microsoft.com/commandline/af_unix-comes-to-windows/",
+    "error_definition": "https://learn.microsoft.com/en-us/windows/win32/debug/system-error-codes--1700-3999-",
+    "fsutil_query_vs_delete": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/fsutil-reparsepoint",
+    "JetBrains_article_limited_access": "https://youtrack.jetbrains.com/articles/SUPPORT-A-4102/IDE-fails-to-start-DirectoryLock-CannotActivateException-with-suppressed-BindException"
+  },
+  "execution": {
+    "new_visible_launches": 0,
+    "fixture_compiles_or_runs": 0,
+    "files_or_locks_changed_outside_project_reports": 0,
+    "account_security_or_settings_changes": 0,
+    "pending_tools": 0,
+    "new_Jobs_or_backgrounds": 0,
+    "last_known_related_process_release": "2026-11-04T04:44:43.5929774Z, .tooling/rider-native-probe-20261104/release.json; historical, not substituted for a future pre-change check"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "schema": "grim-dynasty-r1-no-virtualization-assessment-v1",
+  "date_utc": "2026-11-04",
+  "status": "read-only-assessment-complete;no-original-execution-authorized-or-performed",
+  "conclusion": "A VM and BIOS changes are not established prerequisites. One bounded static alternative remains; native Windows dynamic observation is technically possible in principle but no currently verified host setup satisfies the no-real-save/no-Steam-data boundary.",
+  "evidence": {
+    "stage": "docs/reverse-client/r1-setui-exe-source-stage.json",
+    "stage_sha256": "2831b769d13c71054201b6bacc80c547ae6785098c60e8a2d7597705d1c316c9",
+    "setui_iat": "0x1402d7318",
+    "target_sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "latest_xrefs": "docs/reverse-client/r1-setui-exe-incoming-retry1/04-SetUIIAT-0x1402d7318-xrefs.json",
+    "latest_xrefs_sha256": "c87d90a04f39c199f9a157f2a3d24d4610c8b7e3fc6a82c7fd4535976fcb74db",
+    "latest_result": "Completed exact Ghidra incoming-reference list is empty, not proof of absent callers.",
+    "historical_record_correction": "The old stage nested dynamic_fallback.static_caller_search_result describes the first failed batch. It is superseded by that same stage's successful retry_execution and incoming_result; the failed receipt remains unchanged.",
+    "object_and_record_connection": "Game SetUI/GetUI share field +0x19b0; Engine ObjectManager::LoadTableFile forwards this+0x170 to TableDepot. Neither establishes the concrete EXE UI object or actual HUD record argument."
+  },
+  "read_only_inventory": {
+    "sample_utc": "2026-11-04T01:57:54.0898057Z",
+    "host": "DESKTOP-9RQJ5OB",
+    "os_reported": "Microsoft Windows NT 10.0.26200.0",
+    "tools": [
+      {"name": "Rea", "version": "6.5.0", "verification": "Installed package metadata and previous successful static receipts; backend not started today."},
+      {"name": "Ghidra", "version": "12.1.4", "verification": "Installed project directory and previous successful static receipts; not started today."},
+      {"name": "dumpbin", "path": "D:\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\dumpbin.exe", "file_version": "14.44.35229.0", "verification": "Existing toolchain manifest plus current file metadata; not executed."}
+    ],
+    "not_found_on_PATH": ["windbg.exe", "cdb.exe", "x64dbg.exe", "x32dbg.exe", "procmon.exe", "procmon64.exe"],
+    "known_SDK_debugger_paths_present": false,
+    "inventory_limit": "Bounded PATH and known SDK locations only. Store/custom-path debugger availability is UNKNOWN, not proven absent; previous Appx access denial was not retried. No all-drive search or account inventory.",
+    "cached_Rea_runtime_debug_operation_name_matches": [],
+    "Rea_limit": "The captured session capability names did not advertise debug/attach/breakpoint/runtime-memory operations; static Rea availability is not proof of a usable live debugger.",
+    "previous_task_recorded_PIDs_currently_present": [],
+    "new_heavy_processes_started": 0,
+    "resource_admission": "No new heavy operation planned or admitted in this assessment; historical memory readings are not reused as admission."
+  },
+  "options": [
+    {
+      "option": "Bounded static SetUI operand candidates",
+      "priority": 1,
+      "feasibility": "Available with existing project tools; no virtualization or original program execution.",
+      "algorithm_source": ".tooling/r1-provider-exe-candidates-prepared/inspect.mjs",
+      "metadata_source": "docs/reverse-client/r1-setui-exe-iat/inspection.json",
+      "scope": "One pass of the fixed-hash EXE .text section (2963456 bytes) for FF15, FF25 and REX.W MOV RIP-relative operands resolving exactly to 0x1402d7318. At most 16 candidates; only then bounded .pdata lookup and actual instruction/function-boundary verification.",
+      "not_duplicate": "Previously inspected same-algorithm results target 0x1402d78a0 and 0x1402d5510. No corresponding SetUI byte-candidate result was found in the reviewed records.",
+      "limits": "Byte hits and .pdata coverage are candidates, not decoded calls. Zero hits does not exclude other encodings, register-indirect dispatch or runtime resolution. Do not expand to adjacent IAT slots, .bind processing or whole-client disassembly.",
+      "next": "Prepare the narrow parameterization from existing code, review scope and test only changed candidate handling, then formal execution approval with original gates. Rea only for a supported actual candidate. No step executed in this assessment."
+    },
+    {
+      "option": "Copied installation under current user",
+      "priority": 4,
+      "feasibility": "Copying files does not isolate execution. Not acceptable by itself under current save/Steam-data boundary.",
+      "limits": "Known Folder lookup may still return the logged-in user's profile; copied binaries can still use shared Steam services, registry and cloud APIs. Environment variables, an empty working directory, offline mode or a process Job alone do not establish confinement.",
+      "approval": "Original startup remains prohibited. Do not create a runnable copy or launch merely to discover its writes. No verified native save-directory override was established; third-party editor savedir commands are not game launch switches."
+    },
+    {
+      "option": "Separate local standard user plus independently writable copy",
+      "priority": 2,
+      "feasibility": "Conditional host-native option without CPU virtualization. A separate profile can separate per-user paths, but is not a complete sandbox.",
+      "limits": "Existing shared-folder ACLs, machine-wide services, network and Steam IPC remain relevant. A new Windows user does not establish isolation of the same Steam account's cloud state. Actual license/startup dependencies and storage requirements are unknown.",
+      "approval": "A dedicated nonadministrator account/profile, any folder/ACL or network-rule changes, debugger acquisition if needed, and one precise original startup/debug session require explicit prior approval. No changes to existing user's permissions or Steam configuration are proposed automatically.",
+      "precondition": "First validate the prospective account/session and access design using self-owned harmless probes and synthetic files, not real saves. If original startup needs existing Steam data or authentication outside the approved test scope, stop; no DRM workaround."
+    },
+    {
+      "option": "Restricted token or AppContainer-based host launcher",
+      "priority": 3,
+      "feasibility": "Windows access-control mechanisms do not require a guest OS. A restricted derivative of the caller's own token may avoid an assignment privilege requirement, but local launch rights and game compatibility are not verified.",
+      "limits": "Merely removing privileges or using a write-only restricted token does not prove no reads of real saves. A restricted token retains the same user identity; Known Folders are not automatically redirected. File/registry/network/desktop/handle-inheritance boundaries all need explicit design. AppContainer is still process isolation, not an already available ready-made game sandbox.",
+      "approval": "Any new launcher execution, application profile/capability grants or ACL setup must be reviewed before use. Start with only synthetic probes if approved. Do not modify real save ACLs or global security policy; no bypass flags, admin launch or network capability expansion to force success."
+    },
+    {
+      "option": "User-mode debugger observation",
+      "priority": 2,
+      "feasibility": "Does not inherently require a VM or BIOS change. It is an observation mechanism to combine with a proven host access boundary, not isolation itself.",
+      "limits": "Live memory access still requires appropriate process rights. Noninvasive debugging can suspend threads/read state but cannot perform normal execution-control commands, so it cannot alone capture future SetUI/LoadTableFile call events. Starting a target from an elevated debugger could elevate the target; this is excluded. Breakpoints also perturb timing and can alter process memory/register state.",
+      "minimum_capture_if_separately_approved": "Same-identity nonadministrator target only: fixed module hashes/ASLR bases, SetUI RCX/RDX and return address, UI object's vptr, LoadTableFile string argument and caller. Prefer bounded hardware execution breakpoints where supported; no DLL injection, patching executable files, full dumps or unrelated memory capture.",
+      "approval": "Exact debugger/source/version if missing and original copied-game execution/attachment require prior approval. No debugger or target was launched in this assessment."
+    }
+  ],
+  "recommendation": {
+    "now": "Finish the single bounded static alternative before asking the user to change BIOS or create an execution environment.",
+    "if_static_still_empty": "Offer one concrete host-native test-account/debugger plan only after specifying startup licensing, access/network boundary and test-only writable paths. Lack of current proof is not proof that a VM is mandatory.",
+    "when_virtualization_might_help": "If host-native confinement cannot both preserve the strict no-real-save/no-Steam-data boundary and support legal startup/graphics, a separate physical test system or VM may be preferable. Virtualization still does not automatically solve licensing/GPU compatibility; no BIOS or reboot request is warranted now."
+  },
+  "official_sources": [
+    {"url": "https://learn.microsoft.com/en-us/windows/win32/api/shlobj_core/nf-shlobj_core-shgetknownfolderpath", "supports": "Known Folder paths are associated with the user token; copying the executable does not select a new user profile."},
+    {"url": "https://partner.steamgames.com/doc/features/cloud", "supports": "Steam Client and Auto-Cloud/API storage synchronize game files; independent executable location alone does not isolate cloud state."},
+    {"url": "https://learn.microsoft.com/en-us/windows/win32/secauthz/restricted-tokens", "supports": "Restricted-token access checks and limited privilege exemption; separate desktop warning."},
+    {"url": "https://learn.microsoft.com/en-us/windows/win32/secauthz/appcontainer-isolation", "supports": "AppContainer controls file/registry/network/process resources; compatibility is a separate unverified issue."},
+    {"url": "https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects", "supports": "Jobs group/account/limit processes; process security restrictions are separate."},
+    {"url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-", "supports": "Noninvasive observation suspends threads and does not offer normal execution control."},
+    {"url": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-a-user-mode-process-using-windbg", "supports": "User-mode attach/spawn; spawned targets inherit debugger permissions and may use debug heap."},
+    {"url": "https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights", "supports": "Process inspection requires the corresponding access rights; do not assume all-access or elevate after denial."}
+  ],
+  "actions_this_assessment": {
+    "original_game_or_DLL_execution": false,
+    "new_Rea_queries": 0,
+    "builds_or_tests": 0,
+    "original_game_bytes_read": false,
+    "real_save_or_Steam_data_access": false,
+    "software_download_or_install": false,
+    "account_ACL_network_security_or_BIOS_changes": false,
+    "pending_operations": 0,
+    "denied_operations_this_turn": 0,
+    "historical_failures_preserved": true,
+    "source_code_changes": false
+  }
+}

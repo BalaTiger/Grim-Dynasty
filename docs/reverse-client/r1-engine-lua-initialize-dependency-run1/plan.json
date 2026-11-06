@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "purpose": "Only Engine258E50 directly called by cached Engine0743D0 at074BEC before LuaService allocation/publication. Determine whether it publishes4218F8 read by indirect CALL at0F2E28; writer role is unknown. No recursive Lua expansion.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json",
+      "sha256": "ab597744f4a4cf617c6227fe7a50100e5b03733aa48dda43a730f65509bdca26",
+      "addresses": [
+        "0x180258e50"
+      ],
+      "record_index": 2,
+      "procedure": "1800743d0",
+      "instructions": [
+        "180074bec CALL 0x180258e50",
+        "180074bf1 MOV ECX,0x78",
+        "180074bf6 CALL 0x1802dc398"
+      ],
+      "source_kind": "Cached actual Engine Initialize direct call before service allocation, not evidence that258E50 is a4218F8 writer"
+    }
+  ],
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+    "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0",
+    "same_registration_as": "r1-move-world-distance",
+    "budget_id": "engine-parser-384m-v1",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "parallel_mcp_requests": 1,
+    "one_backend": true,
+    "profile_or_protection_changes_authorized": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180258e50"
+      },
+      "label": "04-LuaInitializeDependency-0x180258e50-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180258e50"
+      },
+      "label": "05-LuaInitializeDependency-0x180258e50-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180258e50"
+      },
+      "label": "06-LuaInitializeDependency-0x180258e50-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Inactive candidate only. Root reviews target-only diff and baseline, formally approves staticverification/apply/launch. Reuse existing EngineAnimationSpeed mode/protected backend;8calls only258E50. Reuse008310/0F2E00/0EBAE0 results; do not recursively query Lua.",
+    "Retain384M heap,5GiB physical/commit admission,2GiB runtime stop,all8guards,nonce/Job/parent/time/identity/mutex and fresh output. Fresh current resource and identity checks remain mandatory.",
+    "Historical failedJob terminal states remain UNKNOWN; current independent Job must have complete release receipt. Do not retry old denied name reads or adopt pre-gate process observations.",
+    "No recursive callee/Lua expansion, original execution, saves, security changes, commit/push/deploy. One serial backend only. Test the proposed4218F8 writer relationship from actual body; never assert it from order/name."
+  ],
+  "unchanged_guard_pins": [
+    {
+      "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "c6968067faa5b180556feaaf5e5aa62750e0ae0aa7bf031c5d1ceef990ae1f64"
+    },
+    {
+      "file": "tools/static_analysis/measure_job_process_memory.ps1",
+      "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_sampler_failure.ps1",
+      "sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/rea_java_role.mjs",
+      "sha256": "00e612e2113690baf53e87900f67b8f8003f47aa3b9a3968932a17dd779f1f22"
+    },
+    {
+      "file": "tools/static_analysis/rea_project_environment.mjs",
+      "sha256": "3808055da161a942867474e13edea86710d2981bda0ccf4ed5d385df5e794f88"
+    }
+  ],
+  "prior_engine_query": {
+    "file": "docs/reverse-client/r1-engine-lua-manager-core-run1/summary.json",
+    "sha256": "33d4af8953b43fd56d712bdde11e8bf5ae426cafb1c4c0785ae492c668115aed",
+    "calls": 11
+  },
+  "batch_kind": "engine-lua-initialize-single-direct-dependency-258e50",
+  "runner_patch_deferred": false,
+  "reused_existing_bodies": [
+    {
+      "file": "docs/reverse-client/r1-engine-lua-manager-core-run1/07-LuaManagerInitialize-0x1800f2e00-procedure_pseudo_code.json",
+      "sha256": "f0178bba6c20f67ab1350fac14c3d06cb9d08bb8b18a462b432b9a17ef2e6126",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x1800f2e00"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-manager-core-run1/08-LuaManagerInitialize-0x1800f2e00-procedure_assembly.json",
+      "sha256": "189560d9bffcb960574a4477ef472497a78d9263f4f1fd017b70c2bd0980464a",
+      "operation": "procedure_assembly",
+      "procedure": "0x1800f2e00"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-manager-core-run1/09-LuaManagerInitialize-0x1800f2e00-procedure_callees.json",
+      "sha256": "1689c8a4b76528b3f29ef28bce86de40f2fb114998757723ed7634552b6a1855",
+      "operation": "procedure_callees",
+      "procedure": "0x1800f2e00"
+    }
+  ],
+  "supporting_cached_evidence": [
+    {
+      "file": "docs/reverse-client/r1-lua-manager-bindings/inspection.json",
+      "sha256": "841c72e555cd23ba71bb3d7497bec39c26c59a25f1b9fcc72083f6692c903dcd",
+      "source_kind": "Exact disk bindings for already retrieved GetState and Initialize, not new258E50 body"
+    }
+  ],
+  "prior_engine_release": {
+    "file": "docs/reverse-client/r1-engine-lua-manager-core-run1/owned-memory-summary.json",
+    "sha256": "7c377ea79196055b97547c74e8cd9c7d692e42c6b2a272aca42ccf2892b29850"
+  },
+  "cache_dedup": {
+    "status": "parent-agent-exact-dedup-complete",
+    "targets": [
+      "0x180258e50"
+    ],
+    "matching_engine_bodies_found": 0,
+    "found_only": "Cached direct call/FUN symbol;4218F8 seen only in0F2E28 indirect CALL",
+    "writer_found": false,
+    "no_global_absence_claim": true
+  },
+  "prior_current_release": {
+    "file": "docs/reverse-client/r1-lua-manager-core-release.json",
+    "sha256": "80d97abe575eab33b1e0b9713071a63655865afcca04af54c9552b454b71cdb7",
+    "fresh_launch_checks_still_required": true
+  }
+}

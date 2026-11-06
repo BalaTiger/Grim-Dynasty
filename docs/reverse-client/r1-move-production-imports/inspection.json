@@ -1,0 +1,245 @@
+{
+  "schema": "grim-dynasty.fixed-move-production-imports.v1",
+  "started_utc": "2026-10-26T03:27:48.591Z",
+  "script_sha256": "652714ce4d0c15f27955916baa9a79a7ccb812337eb14c23d2bd9817c8abe410",
+  "plan_sha256": "697129927d073ac7e062d113cd027e0bac6f23ba0afce49ac025110e57082ea8",
+  "source_pins": [
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "oft_tail",
+      "path": "docs/reverse-client/r1-navigation-binding/inspection.json",
+      "sha256": "d0c171ce77a6d67e153a6911fc7c3a17ea4d61e80ab9492f3287384524e14264"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "action_constructor",
+      "path": "docs/reverse-client/r1-movement-action-path/08-MoveAction-0x180082b10-procedure_assembly.json",
+      "sha256": "0e14d2fbc26f938e2f6cb3c63ce058b55e33b35beb05ff20f5832a5319a5fe36"
+    },
+    {
+      "key": "action_submission",
+      "path": "docs/reverse-client/r1-movement-action-path/11-MoveAction-0x180127dd0-procedure_assembly.json",
+      "sha256": "aa00ae9415deb63c506eb1671208e3ac03b2939fe86a42f8fb3dc8f7d202cc63"
+    },
+    {
+      "key": "action_summary",
+      "path": "docs/reverse-client/r1-movement-action-path/summary.json",
+      "sha256": "d9bbdea2cfaaf78990fef3aa1728562838832703e180a9136b364a4d38458e93"
+    }
+  ],
+  "metadata_bytes": 188,
+  "metadata_operations": 14,
+  "new_IAT_bytes": 16,
+  "new_OFT_bytes": 0,
+  "new_PE_header_bytes": 0,
+  "new_descriptor_bytes": 0,
+  "code_bytes": 0,
+  "rtti_bytes": 0,
+  "original_loaded_or_executed": false,
+  "backend_started": false,
+  "subprocesses": 0,
+  "whole_table_scanned": false,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "reads": [
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609ed0",
+          "file_offset": 6325456,
+          "bytes": 8,
+          "raw_hex": "a2bca40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4bca2",
+          "file_offset": 10789538,
+          "bytes": 2,
+          "raw_hex": "3300"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa4bca4",
+          "file_offset": 10789540,
+          "bytes": 34,
+          "raw_hex": "3f3f30436861726163746572416374696f6e4047414d454040514541414049405a00"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609a38",
+          "file_offset": 6324280,
+          "bytes": 8,
+          "raw_hex": "aa9ba40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa49baa",
+          "file_offset": 10781098,
+          "bytes": 2,
+          "raw_hex": "da0f"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa49bac",
+          "file_offset": 10781100,
+          "bytes": 40,
+          "raw_hex": "3f49734e6574776f726b456e61626c656440456e67696e654047414d454040514541415f4e585a00"
+        }
+      ],
+      "hash_bytes": 22771712,
+      "closed": true,
+      "stable": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "reads": [
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b5a20",
+          "file_offset": 3885600,
+          "bytes": 4,
+          "raw_hex": "eff43b00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3bf4ef",
+          "file_offset": 3925231,
+          "bytes": 34,
+          "raw_hex": "3f3f30436861726163746572416374696f6e4047414d454040514541414049405a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bbbe6",
+          "file_offset": 3910630,
+          "bytes": 2,
+          "raw_hex": "3300"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3af7f4",
+          "file_offset": 3860468,
+          "bytes": 4,
+          "raw_hex": "00830000"
+        },
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b98bc",
+          "file_offset": 3901628,
+          "bytes": 4,
+          "raw_hex": "6d613f00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3f616d",
+          "file_offset": 4149613,
+          "bytes": 40,
+          "raw_hex": "3f49734e6574776f726b456e61626c656440456e67696e654047414d454040514541415f4e585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bdb34",
+          "file_offset": 3918644,
+          "bytes": 2,
+          "raw_hex": "da0f"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b3690",
+          "file_offset": 3876496,
+          "bytes": 4,
+          "raw_hex": "20860700"
+        }
+      ],
+      "hash_bytes": 8971264,
+      "closed": true,
+      "stable": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "bindings": [
+    {
+      "iat_rva": "0x609ed0",
+      "index": 474,
+      "dll": "Engine.dll",
+      "symbol": "??0CharacterAction@GAME@@QEAA@I@Z",
+      "hint": 51,
+      "lookup_rva": "0xa43990",
+      "hint_name_rva": "0xa4bca2",
+      "loaded_IAT_observed": false
+    },
+    {
+      "iat_rva": "0x609a38",
+      "index": 327,
+      "dll": "Engine.dll",
+      "symbol": "?IsNetworkEnabled@Engine@GAME@@QEAA_NXZ",
+      "hint": 4058,
+      "lookup_rva": "0xa434f8",
+      "hint_name_rva": "0xa49baa",
+      "loaded_IAT_observed": false
+    }
+  ],
+  "exports": [
+    {
+      "iat_rva": "0x609ed0",
+      "symbol": "??0CharacterAction@GAME@@QEAA@I@Z",
+      "hint": 51,
+      "ordinal_index": 51,
+      "ordinal": 52,
+      "target_rva": "0x8300",
+      "target_va": "0x180008300",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false
+    },
+    {
+      "iat_rva": "0x609a38",
+      "symbol": "?IsNetworkEnabled@Engine@GAME@@QEAA_NXZ",
+      "hint": 4058,
+      "ordinal_index": 4058,
+      "ordinal": 4059,
+      "target_rva": "0x78620",
+      "target_va": "0x180078620",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false
+    }
+  ],
+  "unsupported": [],
+  "failures": [],
+  "disk_bindings_complete": true,
+  "limitations": [
+    "Two disk import/export bindings only; loaded IATs, exact function boundaries, target implementations and callable ABI remain unverified.",
+    "Cached same-image metadata supplies section/header/OFT continuity. No original header/OFT/descriptor/body/RTTI bytes are newly interpreted.",
+    "Complete hash streams are identity checks separate from188 semantic metadata bytes, not atomic snapshots.",
+    "Node path checks do not recognize every Windows reparse tag. Separate Windows Attributes/reparse preflight is required before this function is authorized."
+  ],
+  "saved_proofs_verified": true,
+  "cached_OFT_entries": 488,
+  "finished_utc": "2026-10-26T03:27:48.669Z",
+  "status": "passed"
+}

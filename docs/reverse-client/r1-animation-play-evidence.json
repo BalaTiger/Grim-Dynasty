@@ -1,0 +1,104 @@
+{
+  "schema": "grim-dynasty.animation-play-evidence.v1",
+  "updated_utc": "2026-11-02T18:05:41.0237729Z",
+  "status": "compiled-and-targeted-tests-passed-tail-explicitly-unsupported",
+  "binding": "docs/reverse-client/r1-player-animation-import-binding/inspection.json",
+  "binding_sha256": "6784ea2c86c5038ed727e353ab9246609cd7a0f8b9527c12e87e3709e6798ef9",
+  "confirmed_bindings": {
+    "Game60A628": "Engine0385B0",
+    "Player787100_slot2C0": "Game5DA02E",
+    "Game609D20": "Engine0C24E0"
+  },
+  "engine_query": {
+    "job_empty": true,
+    "sha256": "b19be1ebf827f219553f95399e243cebe4259862c732e68d879780b8bc65e7b5",
+    "calls": 11,
+    "minimum_commit_headroom_bytes": 29843247104,
+    "working_set_peak_including_controller_sampler_bytes": 1341169664,
+    "summary": "docs/reverse-client/r1-engine-animation-channel-run1/summary.json",
+    "exit": 0,
+    "sampler_exited": true,
+    "session": 97704,
+    "minimum_physical_bytes": 14006288384
+  },
+  "actual_semantics": [
+    "GetAnimChannel computes mesh+110+signed(index)*68 without dereferencing channel or validating index",
+    "Channel+20 aliases existing mesh+130 Speed130, same Field identity in implementation",
+    "No-old-resource path publishes seven stores; zero blend first clears DWORD34 along existing queue; no resource decode performed here",
+    "Non-null prior resource reaches01F3D0 node helper before Count/link mutations and097980 release; implementation explicitly stops there",
+    "Player024DE0->020840->3E2900 publishes same resource to same channel; existing027410 speed getter reads this exact shared Speed130 cell",
+    "Later285E50 enters actual hand-state body and stops at285E67->284720; Pending and earlier channel writes survive, no default unarmed or full Player return",
+    "5DA02E function body remains absent: diagnose exact-address function membership before any further decompile; never requery285E50"
+  ],
+  "player_query": {
+    "pending": false,
+    "targets": [
+      "285E50",
+      "5DA02E"
+    ],
+    "directory": "docs/reverse-client/r1-player-animation-tail-run1",
+    "session": 51949,
+    "outcome": "285E50 body succeeded;5DA02E pseudo failed invalid_request/not_found;6planned successes+1error+2cleanup;Job/sampler released",
+    "summary_sha256": "906d518b23a9cd8795bad4547c9d57aae144511fd9ada0fc973f3fc19185eea3"
+  },
+  "code_written": true,
+  "compiled": true,
+  "tests_run": 27,
+  "source_pins": [
+    {
+      "file": "src/reverse_client_actions/GameAnimationPlayContracts.cs",
+      "sha256": "acb883d567b2d961fd930894b16cc6862e03ceb0d9b43c83dbe8544bfa8a57e4"
+    },
+    {
+      "file": "src/reverse_client_actions/EngineAnimationChannelContracts.cs",
+      "sha256": "c70d4c9362f3f109f5237e962ca736ff29d5c5b86758d69361c968f005e4d154"
+    },
+    {
+      "file": "src/reverse_client_actions/GameMoveAnimationProductionContracts.cs",
+      "sha256": "e13c57e2ce11ab2fb382f4cf160299d3c660d38118d4f4323ab2db93130552a5"
+    },
+    {
+      "file": "src/reverse_client_actions/GameControllerMoveProductionContracts.cs",
+      "sha256": "ae9a4bb42b0edb5c9d2882b26d167b1406056bf7b2f365a7eb5596ba5e80c52d"
+    },
+    {
+      "file": "src/reverse_client_actions/GameAnimationPlayTests.cs",
+      "sha256": "23ca390ca53f89da05f4478a9679f0129ee07ffaa5db1d51eb40230996767947"
+    },
+    {
+      "file": "src/reverse_client_actions/EngineAnimationChannelTests.cs",
+      "sha256": "94f2d46cb4f3565f26dca720c2c3807e0870692abd5ceb5e6a212f058b0b5bae"
+    }
+  ],
+  "support_boundary": "Declared stable OWN typed state/index0/finite FP/pending outside17..49. No invented native constructors, cold channel defaults, decoded animation, frame advancement, physical mouse or rendered client. Original files read-only; saves untouched.",
+  "next": "Bounded diagnostic resolve_containing_procedure(5DA02E), optional inspect_native_instruction same address, and saved-evidence reuse for284720/284670. Separately needed first-channel initialization/old-animation01F3D0+097980/resource decode/frame rendering. No new query launched this stage after failure.",
+  "diagnostic": {
+    "file": "docs/reverse-client/r1-player-animation-tail-run1/address-resolution-diagnosis.json",
+    "cause": "Normal analyzed-address lookup not_found then numeric file-offset fallback. Inside mapping vs no analyzed function still unknown. No approval denial or pending operation.",
+    "sha256": "491fc8fb7e5f1398670ee9d64efe33db8c6e3f4710c0993e07ef9cc3590595e3"
+  },
+  "validation": {
+    "production_sha256": "e63f5b37ca5b8353184b78fe245b0fd6d65c271df089e5a0c928058c35925592",
+    "compiles": 2,
+    "production_dll": ".tooling/r1-animation-play-validation/GrimDynasty.ControllerMoveProduction.dll",
+    "old_whole_suites_rerun": 0,
+    "result": ".tooling/r1-animation-play-validation/result.json",
+    "test_exe": ".tooling/r1-animation-play-validation/GameAnimationPlayTests.exe",
+    "sha256": "da43cd3ea11e83fbd521982604e66b10bb3b68af72fba0383796417fa0c092f9",
+    "regression_assertions": 58,
+    "new_scenarios": 26,
+    "exit": 0,
+    "affected_regressions": 1,
+    "test_exe_sha256": "71f6829c484bd11ff39fd9eb6b3ebf4361960476e853cf32822e045b214164af",
+    "fixture_setup_checks_excluded": 20,
+    "session": 34207,
+    "new_assertions": 405
+  },
+  "release": {
+    "pending": 0,
+    "file": "docs/reverse-client/r1-animation-play-release.json",
+    "own_heavy_processes": 0,
+    "sha256": "2ea64b273110271c9c59a632974556f587fd8a6bc3441242a1de1e2348ab77a3",
+    "utc": "2026-11-02T18:03:20.2920211Z"
+  }
+}

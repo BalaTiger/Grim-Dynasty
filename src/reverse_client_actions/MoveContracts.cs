@@ -33,7 +33,10 @@ namespace GrimDynasty.ReverseClient.Actions {
    if(role.Gate26AF.Read(0x082c98)!=0){FailStart(a,b,i);return;}
    uint associatedId=role.AssociatedId16C0.Read(0x082ca5);
    i.At=0x082cb3;manager=b.ObjectManager();i.At=0x082cbe;object associated=b.Associated(manager,associatedId);
-   if(associated!=null){a.RequireLive(0x082cce);uint flags=a.Flags78.Read(0x082cce);i.At=0x082cd1;b.Associated60(associated,flags);}
+   if(associated!=null){
+    i.At=0x082cc8;var primary=Need(b.CaptureAssociatedPrimary(associated,i.At),i.At).Snapshot();
+    a.RequireLive(0x082cce);i.At=0x082cce;var flags=a.Flags78.Snapshot();i.At=0x082cd1;b.Associated60Captured(associated,primary,flags,i);
+   }
    i.At=0x082cdd;coords=b.Coords(role,buffer);
    a.RequireLive(0x082ce6);
    WorldEngine engine=Need(b.Context.EngineGlobal.Read(0x082cf1),0x082cf4);
@@ -78,10 +81,10 @@ namespace GrimDynasty.ReverseClient.Actions {
    if(manager.Registered6C.Read(flagAt)!=0){i.At=singletonAt;object nav=b.Navigation();object owner=manager.Owner00.Read(ownerAt);i.At=stopAt;b.StopObject(nav,owner);}
    manager.Moving38.Write(0);
   }
-  static void NotifyAssociated(MoveCharacter role,MoveBoundaries b,Invocation i,uint getAt,uint idAt,uint lookupAt,uint callAt){
+  static void NotifyAssociated(MoveCharacter role,MoveBoundaries b,Invocation i,uint getAt,uint idAt,uint lookupAt,uint primaryAt,uint callAt){
    i.At=getAt;object manager=b.ObjectManager();uint id=role.AssociatedId16C0.Read(idAt);
    i.At=lookupAt;object associated=b.Associated(manager,id);
-   if(associated!=null){i.At=callAt;b.Associated80(associated);}
+   if(associated!=null){i.At=primaryAt;var primary=Need(b.CaptureAssociatedPrimary(associated,i.At),i.At).Snapshot();i.At=callAt;b.Associated80Captured(associated,primary,i);}
   }
   public static void Move(MoveCharacter role,WorldPosition destination,float unusedScalar,uint animation,float speed,MoveBoundaries b,Invocation i){
    // 05F870 overwrites XMM2 before reading it. Do not use unusedScalar as radius.
@@ -92,24 +95,25 @@ namespace GrimDynasty.ReverseClient.Actions {
    MovementManager movement=role.MovementDC0.Read(0x05f8b9);i.At=0x05f8c0;
    if(b.AlreadyThere(movement,destination,tolerance)!=0){
     InlineStop(role.MovementDC0.Read(0x05f8c9),b,i,0x05f8d0,0x05f8d6,0x05f8dc,0x05f8e2);
-    NotifyAssociated(role,b,i,0x05f8ec,0x05f8f2,0x05f8fb,0x05f91e);return;
+    NotifyAssociated(role,b,i,0x05f8ec,0x05f8f2,0x05f8fb,0x05f909,0x05f91e);return;
    }
    movement=role.MovementDC0.Read(0x05f925);i.At=0x05f92f;
    if(b.MoveManager(movement,destination)!=0){
-    i.At=0x05f9fb;AnimationSet set=Need(b.Animations(role),0x05fa05);uint oldAnimation=set.Kind08.Read(0x05fa05);
-    i.At=0x05fa08;float oldSpeed=b.AnimationSpeed(role,0);i.At=0x05fa17;uint state=b.State458(role);
+    i.At=0x05f9fb;var capturedSet=Need(b.AnimationsCaptured(role),0x05fa05).Snapshot();
+    i.At=0x05fa05;AnimationSet set=Need(capturedSet.Read(i.At),i.At);var capturedKind=set.Kind08.Snapshot();
+    i.At=0x05fa08;var capturedSpeed=Need(b.AnimationSpeedCaptured(role,0),i.At).Snapshot();i.At=0x05fa17;uint state=b.State458(role);
     // UCOMISS/JZ accepts equal OR unordered; not ordinary float equality.
-    if(state==5&&oldAnimation==animation&&(oldSpeed==speed||Single.IsNaN(oldSpeed)||Single.IsNaN(speed)))return;
-    i.At=0x05fa3f;b.State450(role,5);i.At=0x05fa48;set=b.Animations(role);
+    if(state==5){i.At=0x05fa2b;uint oldAnimation=capturedKind.Read(i.At);if(oldAnimation==animation){i.At=0x05fa2f;float oldSpeed=capturedSpeed.Read(i.At);if(oldSpeed==speed||Single.IsNaN(oldSpeed)||Single.IsNaN(speed))return;}}
+    i.At=0x05fa3f;b.State450(role,5);i.At=0x05fa48;capturedSet=Need(b.AnimationsCaptured(role),i.At).Snapshot();
     object name=b.Context.NoNameImport609568.Read(0x05fa4d);i.At=0x05fa70;
-    if(b.Play(set,role,animation,name,speed,1,0)==0){movement=role.MovementDC0.Read(0x05fa79);i.At=0x05fa80;b.StopManager(movement);i.At=0x05fa90;b.State450(role,1);}return;
+    if(b.PlayCaptured(capturedSet,role,animation,name,speed,1,0)==0){movement=role.MovementDC0.Read(0x05fa79);i.At=0x05fa80;b.StopManager(movement);i.At=0x05fa90;b.State450(role,1);}return;
    }
    movement=Need(role.MovementDC0.Read(0x05f93c),0x05f943);i.At=0x05f947;region=b.Region(movement.Position20);
    if(region!=null){
     movement=Need(role.MovementDC0.Read(0x05f952),0x05f961);tolerance=b.Context.AlreadyThereConstant7A7FD8.Read(0x05f959);i.At=0x05f965;
     if(b.AlreadyThere(movement,movement.Position20,tolerance)!=0){
      i.At=0x05f971;if(b.IsMoving(role)!=0){Handler handler=Need(role.Handler24C0.Read(0x05f97a),0x05f981);Executor.Stop(handler,b,i);i.At=0x05f991;b.State450(role,1);}
-     NotifyAssociated(role,b,i,0x05f997,0x05f99d,0x05f9a6,0x05f9c9);return;
+     NotifyAssociated(role,b,i,0x05f997,0x05f99d,0x05f9a6,0x05f9b4,0x05f9c9);return;
     }
    }
    i.At=0x05f9e9;b.StopMoving(role,1,1);

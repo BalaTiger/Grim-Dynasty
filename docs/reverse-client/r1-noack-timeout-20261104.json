@@ -1,0 +1,763 @@
+{
+  "schema": "gd-owned-noack-timeout-validated-v1",
+  "utc": "2026-11-04T15:47:04.8716032Z",
+  "status": "owned-noack-timeout-hold-validated;unknown-recovery-and-human-takeover-unverified;original-paused",
+  "live_cases_completed": 2,
+  "no_ack_timeout_live_tested": true,
+  "specific_timeout_failure_hold_live_tested": true,
+  "all_unexpected_failure_paths_tested": false,
+  "unknown_exception_nondestructive_recovery_verified": false,
+  "actual_human_takeover_verified": false,
+  "original_executed": false,
+  "visible_windows_started": false,
+  "saves_or_steam_accessed": false,
+  "old_suites_replayed": false,
+  "fixture_compiles": 0,
+  "supervision_helper_compiles": 2,
+  "cases": [
+    {
+      "case": "no-hit",
+      "status": "completed-owned-noack-negative",
+      "identity": {
+        "pid": 59232,
+        "creation_filetime": "134382806133377605",
+        "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe"
+      },
+      "debugger_identity": {
+        "pid": 47560,
+        "creation_filetime": "134382806138036250",
+        "path": "D:\\JetBrains Rider 2025.3.1\\plugins\\cidr-debugger\\bin\\lldb\\win\\x64\\bin\\lldb.exe"
+      },
+      "timeout_cause": {
+        "type": "NoAckTimeout",
+        "request_path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-noack-timeout-20261104\\no-hit\\no-hit-request-1.json",
+        "request_missing": true,
+        "ack_count": 0,
+        "end_accepted": false,
+        "deadline_seconds": 5,
+        "elapsed_seconds": 5.015999999945052,
+        "wait_started_utc": "2026-11-04T15:43:35.052989+00:00",
+        "timeout_utc": "2026-11-04T15:43:40.066178+00:00"
+      },
+      "expected_timeout_traceback": "Traceback (most recent call last):\n  File \"C:/Users/zhuzi/Documents/Grim-Dynasty/.tooling/lldb-noack-timeout-20261104/no-hit/probe.py\", line 259, in main\n    wait_request_one()\n  File \"C:/Users/zhuzi/Documents/Grim-Dynasty/.tooling/lldb-noack-timeout-20261104/no-hit/probe.py\", line 195, in wait_request_one\n    raise NoAckTimeout(cause)\n__lldb_noack_probe__.NoAckTimeout: First request was absent for the fixed five-second interval\n",
+      "hold_seconds": 2.062999999965541,
+      "hold_samples": 18,
+      "baseline": {
+        "utc": "2026-11-04T15:43:35.051008+00:00",
+        "pid": 59232,
+        "creation_filetime": "134382806133377605",
+        "process_unique_id": 1,
+        "state": 6,
+        "stop_id": 1,
+        "native": {
+          "utc": "2026-11-04T15:43:35.051008+00:00",
+          "creation_filetime": "134382806133377605",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "native_handle_key": "0xa8",
+        "native_handle_retained": true,
+        "threads_available": false,
+        "threads": [],
+        "breakpoint": {
+          "id": 1,
+          "location_id": 1,
+          "address": "0x7ff61e391020",
+          "hit_count": 0
+        }
+      },
+      "hold_after": {
+        "utc": "2026-11-04T15:43:42.141818+00:00",
+        "pid": 59232,
+        "creation_filetime": "134382806133377605",
+        "process_unique_id": 1,
+        "state": 6,
+        "stop_id": 1,
+        "native": {
+          "utc": "2026-11-04T15:43:42.141818+00:00",
+          "creation_filetime": "134382806133377605",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "native_handle_key": "0xa8",
+        "native_handle_retained": true,
+        "threads_available": false,
+        "threads": [],
+        "breakpoint": {
+          "id": 1,
+          "location_id": 1,
+          "address": "0x7ff61e391020",
+          "hit_count": 0
+        },
+        "request_missing": true,
+        "ack_count": 0,
+        "end_accepted": false
+      },
+      "request_files_published": 0,
+      "ack_count": 0,
+      "end_accepted": false,
+      "initial_attach_continue_calls": 1,
+      "subsequent_mutating_commands": {
+        "Stop": 0,
+        "Continue": 0,
+        "Detach": 0,
+        "Kill": 0
+      },
+      "owner_verified_utc": "2026-11-04T15:43:42.9777082Z",
+      "owner_finished_utc": "2026-11-04T15:43:43.0432695Z",
+      "held_identity_proofs": [
+        {
+          "ProcessId": 59232,
+          "CreationUtc": "/Date(1793807013337)/",
+          "CreationTicks": 639294038133377605,
+          "InJob": true,
+          "HasExited": false,
+          "ExecutablePath": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+          "ExecutablePathErrorCode": null,
+          "ExecutablePathDiagnostic": null
+        },
+        {
+          "ProcessId": 47560,
+          "CreationUtc": "/Date(1793807013803)/",
+          "CreationTicks": 639294038138036250,
+          "InJob": true,
+          "HasExited": false,
+          "ExecutablePath": "D:\\JetBrains Rider 2025.3.1\\plugins\\cidr-debugger\\bin\\lldb\\win\\x64\\bin\\lldb.exe",
+          "ExecutablePathErrorCode": null,
+          "ExecutablePathDiagnostic": null
+        }
+      ],
+      "worker_exit": 88,
+      "job_empty": true,
+      "job_disposed": true,
+      "termination_requested": true,
+      "termination_reason": "Explicit expected-negative disposable Job cleanup",
+      "cleanup_boundary": "Both exact owned identities proven alive before ACK while gate retained fixture stdin; exit88 may close stdin. Subsequent own Job termination is destructive test cleanup, not recovery.",
+      "unknown_exception_recovery_verified": false,
+      "human_takeover_verified": false
+    },
+    {
+      "case": "foreign-stop",
+      "status": "completed-owned-noack-negative",
+      "identity": {
+        "pid": 35976,
+        "creation_filetime": "134382806579127473",
+        "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe"
+      },
+      "debugger_identity": {
+        "pid": 63028,
+        "creation_filetime": "134382806583952511",
+        "path": "D:\\JetBrains Rider 2025.3.1\\plugins\\cidr-debugger\\bin\\lldb\\win\\x64\\bin\\lldb.exe"
+      },
+      "timeout_cause": {
+        "type": "NoAckTimeout",
+        "request_path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-noack-timeout-20261104\\foreign-stop\\foreign-stop-request-1.json",
+        "request_missing": true,
+        "ack_count": 0,
+        "end_accepted": false,
+        "deadline_seconds": 5,
+        "elapsed_seconds": 5.032000000006519,
+        "wait_started_utc": "2026-11-04T15:44:18.986005+00:00",
+        "timeout_utc": "2026-11-04T15:44:24.007451+00:00"
+      },
+      "expected_timeout_traceback": "Traceback (most recent call last):\n  File \"C:/Users/zhuzi/Documents/Grim-Dynasty/.tooling/lldb-noack-timeout-20261104/foreign-stop/probe.py\", line 259, in main\n    wait_request_one()\n  File \"C:/Users/zhuzi/Documents/Grim-Dynasty/.tooling/lldb-noack-timeout-20261104/foreign-stop/probe.py\", line 195, in wait_request_one\n    raise NoAckTimeout(cause)\n__lldb_noack_probe__.NoAckTimeout: First request was absent for the fixed five-second interval\n",
+      "hold_seconds": 2.031000000075437,
+      "hold_samples": 18,
+      "baseline": {
+        "utc": "2026-11-04T15:44:18.982767+00:00",
+        "pid": 35976,
+        "creation_filetime": "134382806579127473",
+        "process_unique_id": 1,
+        "state": 5,
+        "stop_id": 2,
+        "native": {
+          "utc": "2026-11-04T15:44:18.982767+00:00",
+          "creation_filetime": "134382806579127473",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "native_handle_key": "0x364",
+        "native_handle_retained": true,
+        "threads_available": true,
+        "threads": [
+          {
+            "thread_id": "0x78d4",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e5a24",
+            "description": ""
+          },
+          {
+            "thread_id": "0x7ac0",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e5a24",
+            "description": ""
+          },
+          {
+            "thread_id": "0x87e8",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e28a4",
+            "description": ""
+          },
+          {
+            "thread_id": "0xa950",
+            "reason": 6,
+            "reason_hex": "0x6",
+            "data_count": 1,
+            "data": [
+              "0xffffffffffffffff"
+            ],
+            "pc": "0x7ffbedb43123",
+            "description": "Exception 0x80000003 encountered at address 0x7ffbedb43122"
+          },
+          {
+            "thread_id": "0xda54",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e5a24",
+            "description": ""
+          },
+          {
+            "thread_id": "0xf24c",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e5a24",
+            "description": ""
+          }
+        ],
+        "breakpoint": {
+          "id": 1,
+          "location_id": 1,
+          "address": "0x7ff61e391020",
+          "hit_count": 0
+        }
+      },
+      "hold_after": {
+        "utc": "2026-11-04T15:44:26.042042+00:00",
+        "pid": 35976,
+        "creation_filetime": "134382806579127473",
+        "process_unique_id": 1,
+        "state": 5,
+        "stop_id": 2,
+        "native": {
+          "utc": "2026-11-04T15:44:26.041025+00:00",
+          "creation_filetime": "134382806579127473",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "native_handle_key": "0x364",
+        "native_handle_retained": true,
+        "threads_available": true,
+        "threads": [
+          {
+            "thread_id": "0x78d4",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e5a24",
+            "description": ""
+          },
+          {
+            "thread_id": "0x7ac0",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e5a24",
+            "description": ""
+          },
+          {
+            "thread_id": "0x87e8",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e28a4",
+            "description": ""
+          },
+          {
+            "thread_id": "0xa950",
+            "reason": 6,
+            "reason_hex": "0x6",
+            "data_count": 1,
+            "data": [
+              "0xffffffffffffffff"
+            ],
+            "pc": "0x7ffbedb43123",
+            "description": "Exception 0x80000003 encountered at address 0x7ffbedb43122"
+          },
+          {
+            "thread_id": "0xda54",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e5a24",
+            "description": ""
+          },
+          {
+            "thread_id": "0xf24c",
+            "reason": 1,
+            "reason_hex": "0x1",
+            "data_count": 0,
+            "data": [],
+            "pc": "0x7ffbf07e5a24",
+            "description": ""
+          }
+        ],
+        "breakpoint": {
+          "id": 1,
+          "location_id": 1,
+          "address": "0x7ff61e391020",
+          "hit_count": 0
+        },
+        "request_missing": true,
+        "ack_count": 0,
+        "end_accepted": false
+      },
+      "request_files_published": 0,
+      "ack_count": 0,
+      "end_accepted": false,
+      "initial_attach_continue_calls": 1,
+      "subsequent_mutating_commands": {
+        "Stop": 0,
+        "Continue": 0,
+        "Detach": 0,
+        "Kill": 0
+      },
+      "owner_verified_utc": "2026-11-04T15:44:27.5603232Z",
+      "owner_finished_utc": "2026-11-04T15:44:27.6827496Z",
+      "held_identity_proofs": [
+        {
+          "ProcessId": 35976,
+          "CreationUtc": "/Date(1793807057912)/",
+          "CreationTicks": 639294038579127473,
+          "InJob": true,
+          "HasExited": false,
+          "ExecutablePath": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+          "ExecutablePathErrorCode": null,
+          "ExecutablePathDiagnostic": null
+        },
+        {
+          "ProcessId": 63028,
+          "CreationUtc": "/Date(1793807058395)/",
+          "CreationTicks": 639294038583952511,
+          "InJob": true,
+          "HasExited": false,
+          "ExecutablePath": "D:\\JetBrains Rider 2025.3.1\\plugins\\cidr-debugger\\bin\\lldb\\win\\x64\\bin\\lldb.exe",
+          "ExecutablePathErrorCode": null,
+          "ExecutablePathDiagnostic": null
+        }
+      ],
+      "worker_exit": 88,
+      "job_empty": true,
+      "job_disposed": true,
+      "termination_requested": true,
+      "termination_reason": "Explicit expected-negative disposable Job cleanup",
+      "cleanup_boundary": "Both exact owned identities proven alive before ACK while gate retained fixture stdin; exit88 may close stdin. Subsequent own Job termination is destructive test cleanup, not recovery.",
+      "unknown_exception_recovery_verified": false,
+      "human_takeover_verified": false
+    }
+  ],
+  "owner_resource_samples": 20,
+  "minimum_physical_bytes": 16215764992.0,
+  "minimum_commit_headroom_bytes": 26543648768.0,
+  "startup_minimum_bytes": 5368709120,
+  "runtime_minimum_bytes": 2147483648,
+  "formal_execution": {
+    "no-hit": {
+      "session": 79377,
+      "final_chunk": "459dcd",
+      "exit_code": 0
+    },
+    "foreign-stop": {
+      "session": 27705,
+      "final_chunk": "98c2cd",
+      "exit_code": 0
+    },
+    "independent_release": {
+      "session": 6892,
+      "final_chunk": "b6b112",
+      "exit_code": 0
+    }
+  },
+  "independent_release": {
+    "schema": "gd-owned-noack-independent-release-v1",
+    "utc": "2026-11-04T15:45:10.4648623Z",
+    "known_owned_pids": [
+      8016,
+      13180,
+      13800,
+      35764,
+      35976,
+      45232,
+      47560,
+      50820,
+      52816,
+      52944,
+      53308,
+      53512,
+      59232,
+      63028
+    ],
+    "known_pid_matches": [],
+    "debugger_fixture_or_original_processes": [],
+    "sample": {
+      "utc": "2026-11-04T15:45:09.9302950Z",
+      "available_physical_bytes": 16475877376,
+      "system_commit_bytes": 33074089984,
+      "system_commit_limit_bytes": 59886112768,
+      "external_build_or_java_processes": []
+    },
+    "original_executed": false
+  },
+  "source_and_result_review": "terminal_revision_review: exact pairings and all16pins per case verified; raw immutable timestamps; no target recovery claim",
+  "pending_operations": 0,
+  "owned_jobs_released": true,
+  "remaining_blocker": "No proven unknown-exception disposition-preserving Continue/Detach API or same-session user command handoff. Historical original exit cause remains unknown. Not a denied action; unimplemented/unverified capability.",
+  "next": "Keep original paused. Before real human takeover, design and test same-session access and evidence-bound explicit disposition on owned objects. Notify user before any visible UI; do not schedule original retry.",
+  "evidence": [
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-backend.log",
+      "sha256": "cb089dfe76e08fc400a2b621d8c01c3c4b35dbd4081afdbcb13b52de7fa8eba5",
+      "bytes": 3517
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-backend.snapshot.log",
+      "sha256": "cb089dfe76e08fc400a2b621d8c01c3c4b35dbd4081afdbcb13b52de7fa8eba5",
+      "bytes": 3517
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-config.json",
+      "sha256": "18cd28dd4156667140fdbe723d409100fa7a7b72868ce209b98bed639bf33ceb",
+      "bytes": 487
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-debugger-identity.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-debugger-identity.stdout.log",
+      "sha256": "42d58b017c4d56591b79754e420797cca2a11916c3e2cb05190ccc4053cd063f",
+      "bytes": 154
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-debugger.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-debugger.stdout.log",
+      "sha256": "eef746ca543af19b96ecfc05de15a354a9f0d209c61ed83a879d53c03caf5c88",
+      "bytes": 1666
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-events.ndjson",
+      "sha256": "ab42595e07820dcedfd4568e73c4a490f8ae53783dc7b595a59233fdc5574696",
+      "bytes": 29542
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-fixture.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-fixture.stdout.log",
+      "sha256": "49ffef4cb0b0d274f105a7e510a4808a3f195e1f877b5ccd6bdf3f2e93ef340e",
+      "bytes": 251
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-handoff.json",
+      "sha256": "5e8f2129c293809f2f8f2133e8d9f2d859c45f3a4faf69ea2b9deaf12ad32c34",
+      "bytes": 2938
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-held-result.snapshot.json",
+      "sha256": "dda800b6c7cab29fd9ab0d88e89b88cacbd4a36723fad9c5967f64c8ef047ed2",
+      "bytes": 56938
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-hold.json",
+      "sha256": "4a02a07922909aef59bc366250a0f16624e3d1356c2e50810779302a2bbc08b5",
+      "bytes": 49052
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-identity.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-identity.stdout.log",
+      "sha256": "812a0bc04bfc176d172fd58f8ca960bd3d0eb36e96fd24de4c2e116ff2454cc2",
+      "bytes": 162
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-result.json",
+      "sha256": "dda800b6c7cab29fd9ab0d88e89b88cacbd4a36723fad9c5967f64c8ef047ed2",
+      "bytes": 56938
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/foreign-stop-timeout.json",
+      "sha256": "9552d6c9ad82844d500a789f8c77df7c8d6ebe5f2df68c5fd23b303f0e6858b6",
+      "bytes": 3424
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/gate.mjs",
+      "sha256": "53004be7b3cb782bbcb807c8ac4c9b4b1d19017ff0ca0b80569dd48e942958e2",
+      "bytes": 27241
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/launch-owned.ps1",
+      "sha256": "a3a28b9659f117e31ac0260a052aac116cb0f7649bd9c7f2bf4c09d642358ea6",
+      "bytes": 20246
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/launch-result.json",
+      "sha256": "ff739281a5600d98a0e533ab50862430054a130c6835162fc35903e484ab460c",
+      "bytes": 66954
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/manifest.json",
+      "sha256": "735be673d9ebc1ca84b1643443f070f4ce58448fa8f3b7ab946ab1796c6a90cd",
+      "bytes": 3900
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/owner-ack-observed.json",
+      "sha256": "e2a52c716b5d74b86f212e8569b6c5c365deda7a4825f418c2c3601af907f28a",
+      "bytes": 508
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/owner-cleanup-ack.json",
+      "sha256": "2b62035183efdf2567ecbaaed0dced419941c412fb6c42b0bf3fd5ecbcd99944",
+      "bytes": 1909
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/owner-cleanup-ready.json",
+      "sha256": "12862f034319ae3a660382541933d46e51a5f0ae4e2ea9d02911fdba44d4cb74",
+      "bytes": 791
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/probe.py",
+      "sha256": "4bb8b646c6096a4d9379db65caf14220f0da9e088774b4a4f657b46dcf0dff1a",
+      "bytes": 20338
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/resources-foreign-stop.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/resources-foreign-stop.stdout.log",
+      "sha256": "fc80deadac0a40769faa3a04082a0a2421bad25693ff6cbec56b93369fa0383e",
+      "bytes": 191
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/result.json",
+      "sha256": "5d85d0731c01254cb245835869163a75ba2b2315ce414bb43f471067a8cacb47",
+      "bytes": 146202
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/worker.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/foreign-stop/worker.stdout.log",
+      "sha256": "bebd41d793a1dd708d8487cc5e7825d4d13ccc1e8b3ebb96b948294fea73f178",
+      "bytes": 1126
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/independent-release.json",
+      "sha256": "3f22d04f8e454d01c10103aae07f1f8e33eb38c0f965e6446598f7d208bba605",
+      "bytes": 1275
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/gate.mjs",
+      "sha256": "9e2f02e6a323cc67c87c130e4886f34fad596a49c170c422648cc27bd57884f0",
+      "bytes": 27229
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/launch-owned.ps1",
+      "sha256": "d59c1a35df5480a6ea4c95b6ebfeb632970b535335bcf3a610b1f846047d2a87",
+      "bytes": 20222
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/launch-result.json",
+      "sha256": "31f22072335bc49c0036e370f0d2832bab3a6c5e3a3ce318aba49320c2cbd881",
+      "bytes": 64899
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/manifest.json",
+      "sha256": "347185e3a4e9df0f4b6e10fc4a25f89928f9d2971b4b975c6002768e5203938d",
+      "bytes": 3876
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-backend.log",
+      "sha256": "04e876183ae8e07facd0d0f911365ccfe29c6b78a0da904872da3ad6ea534565",
+      "bytes": 3460
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-backend.snapshot.log",
+      "sha256": "1ef5d06f683bc7ee95a82efba9e12774ec623d4cb3a288c6ff65ab8f78dac130",
+      "bytes": 3085
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-config.json",
+      "sha256": "dfa76a5a1ce44308d65d9b5ac3e4694b9cb87f2b1fbc683dfd3d9d6b22b4a632",
+      "bytes": 487
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-debugger-identity.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-debugger-identity.stdout.log",
+      "sha256": "911998e161154a937e84d9ec9c9555b6da9ffcfda08702d9a74fcdecc611d35b",
+      "bytes": 154
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-debugger.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-debugger.stdout.log",
+      "sha256": "4968a93f349b8d4752c7417f8ea3f35912b33fa7e1b8c0683be7d8667acdfbc3",
+      "bytes": 1291
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-events.ndjson",
+      "sha256": "d4abbf25cfef6e6dd87b02e23a49fddff8b380adc131087ba2f684247401ee03",
+      "bytes": 12392
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-fixture.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-fixture.stdout.log",
+      "sha256": "42cbf81cc14a106483dae5558cf7ba80603ff0241f4280b5ef24907a4d346236",
+      "bytes": 140
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-handoff.json",
+      "sha256": "dd3c45703bf55b845b792c36e3f7cf75c791143935387cf811f0795a3d783395",
+      "bytes": 1064
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-held-result.snapshot.json",
+      "sha256": "4e9bbe162f1d3b5bf925c28f1f8a1e199de5c17e17a29406391745dd454fbf2a",
+      "bytes": 21652
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-hold.json",
+      "sha256": "ebec782ff033b5562559c4559f5541a9e8ddab5d65629e83dae2094365e2e493",
+      "bytes": 17414
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-identity.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-identity.stdout.log",
+      "sha256": "ec73709d35aa5d215ba591a5f43f8400f23f25935aab2fae46bd8be1e608b606",
+      "bytes": 162
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-result.json",
+      "sha256": "4e9bbe162f1d3b5bf925c28f1f8a1e199de5c17e17a29406391745dd454fbf2a",
+      "bytes": 21652
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/no-hit-timeout.json",
+      "sha256": "d1f81f7b39e578390ca1eba833c3648493eb0492c2eaaeb2b2b582455cb7b956",
+      "bytes": 2029
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/owner-ack-observed.json",
+      "sha256": "03476ab6ecd602eb3e799b01ee57951260aef725bcc856b3b0d8f1be47d6e0cf",
+      "bytes": 502
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/owner-cleanup-ack.json",
+      "sha256": "49d2791c8377e8df164a762525b50d1f16d75ae6a49cf0ac06bf17a9bd52c8b2",
+      "bytes": 1903
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/owner-cleanup-ready.json",
+      "sha256": "1b27521f8f5e0503aa8ccc33120e51332aa78d3f9c734e4e9f6cde292eecc7c1",
+      "bytes": 779
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/probe.py",
+      "sha256": "2c4662f6135d1735aef8dfd5eec9d9d2ffef39d1ed5dfaed42e813131d5867b5",
+      "bytes": 20332
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/resources-no-hit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/resources-no-hit.stdout.log",
+      "sha256": "68858e27cdc73fd7c7ab129188b5fefa8f5c49e0a906cf47ecb905390135be3d",
+      "bytes": 191
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/result.json",
+      "sha256": "7be0262ebe38dff5d59d7ec38fc02fbaa5507332246bce4b20305337d21e916d",
+      "bytes": 58758
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/worker.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/no-hit/worker.stdout.log",
+      "sha256": "1b6b9933dca37a8aa621a1fa2219d8a90507ebf88f32e64df4b014e613e54d1f",
+      "bytes": 1084
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/owner-ready-function.txt",
+      "sha256": "a32900e43408caaf3c71f49a06657d2ac7335dbf18c702e67e14c24fbcdc17c9",
+      "bytes": 4039
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/preparation-resource.json",
+      "sha256": "e95d156d9b15dd90d0908b258e13b625b8e73f1c6f3800142565063eeeea6202",
+      "bytes": 365
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/prepared.json",
+      "sha256": "8e13c8830332c99609f3d511572d598d4a800597e38f9a433dedc362179a23c2",
+      "bytes": 1809
+    },
+    {
+      "file": ".tooling/lldb-noack-timeout-20261104/stable-admission.json",
+      "sha256": "eedd850a62b5e6d7ed0597f3f732a562e2c447375b0eb47eefcef0f23f26a7ae",
+      "bytes": 539
+    }
+  ]
+}

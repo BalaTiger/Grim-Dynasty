@@ -1,0 +1,27 @@
+{
+    "schema":  "grim-dynasty-r1-model-bytes-v1",
+    "utc":  "2026-11-06T05:24:18.6102112Z",
+    "status":  "passed-archive-mount-and-file-open",
+    "decisive_results":  {
+                             "FileSourceArchive::Attach(fullArchivePath, \"Creatures.arc\")":  "1",
+                             "GetArchive":  "returned a live Archive",
+                             "GetNumFiles":  "3341",
+                             "OpenFile path that works":  "\"Creatures/pc/hero_00.msh\" - the prefix must be the archive name without its extension, matching how Attach was called",
+                             "OpenFile result":  "a live File object whose +0x18 field equals 0x99D = 2461, the index of pc/hero_00.msh",
+                             "entry read back":  "off=399226753 stored=111402 raw=223717, matching my independent static parse exactly"
+                         },
+    "why_earlier_attempts_failed":  {
+                                        "std_string":  "AddSourceArchive returned 0 because I passed a std::string built by hand; passing plain NUL-terminated char* to Attach succeeds",
+                                        "path_prefix":  "the lookup strips a prefix derived from the name given to Attach, so the path must be written as Creatures/... rather than pc/...",
+                                        "authority":  "the in-memory table at Archive+0x40 (64 bytes per entry, name order) is authoritative; the on-disk 12-byte block table is offset-ordered and does not line up with name order"
+                                    },
+    "payload_observation":  {
+                                "header":  "f0 27 \"MSH\" 03 00 00 00 00 then pathLength=33 and dataLength=29 then the string Creatures\\\\PC\\\\Hero_00_Body.mif followed by 0D and three NULs",
+                                "payload_start":  51,
+                                "first_bytes":  "08 00 00 00 01 32 00 F0 25 00 00 00 0A 00 00 00 18 00 00 00 8C B6 0C BE",
+                                "significance":  "the value 8C B6 0C BE is the float -0.1373, so the payload holds binary geometry directly rather than a zlib stream; a full scan of the block found no zlib header at all",
+                                "open_question":  "stored (111402) is smaller than raw (223717), so some form of size reduction exists, but it is not zlib and remains unidentified"
+                            },
+    "reached":  "I can now mount the real archive, open the initial character model file through the game own code, and confirm its exact byte range. The remaining gap is the encoding that turns 111402 stored bytes into 223717 bytes.",
+    "next":  "either identify the compression used inside the block, or drive the game code that fills the File buffer so the decoding happens there"
+}

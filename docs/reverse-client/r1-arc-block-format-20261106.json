@@ -1,0 +1,31 @@
+{
+    "schema":  "grim-dynasty-r1-arc-block-format-v1",
+    "utc":  "2026-11-06T04:08:51.7339742Z",
+    "solid":  {
+                  "name_table_offset":  462085686,
+                  "name_table_length":  150660,
+                  "name_count":  3341,
+                  "name_extension_counts":  {
+                                                "anm":  1776,
+                                                "tex":  1053,
+                                                "msh":  512
+                                            },
+                  "player_model":  "pc/hero_00.msh at name index 2461",
+                  "block_header_format":  "each stored block begins with one marker byte, then a three-byte ASCII magic, then a u16 version. Observed magics: MSH, ANM, TEX.",
+                  "uncompressed_marker":  "a block whose first two bytes are C0 FF carries a 0xFFFFFFC0 length field and stores payload uncompressed",
+                  "block_fields":  "entry triples read as {u32 offset, u32 stored_size, u32 unpacked_size}; multiple entries share the 0x40000 (262144) unpacked size, which is the block granularity"
+              },
+    "contradiction":  {
+                          "fact":  "if the entry table were a file table in name order, its magic distribution would mirror the name extension counts",
+                          "measured":  "entries by magic are roughly 1189 ANM, 572 TEX, 86 MSH, 111 raw and many unrecognised, which does not mirror 1776/1053/512",
+                          "also":  "3207 of 3341 positions mismatch when assuming name order",
+                          "conclusion":  "either the entry table is not a file table but a block table, or the assumed table start 462045594 is wrong and the reads are misaligned"
+                      },
+    "not_established":  [
+                            "the true start of the entry table",
+                            "whether entries are blocks or files",
+                            "the mapping between name index and entry index",
+                            "how to decode a .msh payload"
+                        ],
+    "boundary":  "I can enumerate all 3341 names and read the block header format, but I cannot yet resolve pc/hero_00.msh to its bytes."
+}

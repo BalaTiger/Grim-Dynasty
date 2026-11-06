@@ -1,0 +1,668 @@
+{
+  "schema": "grim-dynasty-fixed-lua-manager-bindings-v1",
+  "started_utc": "2026-11-02T23:03:38.146Z",
+  "script_sha256": "60ff961903d1a9db502dcc687cd79ad52bb3b3efb33f74a3318ca64357753c2f",
+  "plan": {
+    "path": "docs/reverse-client/r1-lua-manager-bindings-plan/plan.json",
+    "sha256": "5d881b6d40747917963443c950eb3aba734adeb78185f25dc6f51d326963f692"
+  },
+  "proofs": [
+    {
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "path": "docs/reverse-client/r1-navigation-binding/inspection.json",
+      "sha256": "d0c171ce77a6d67e153a6911fc7c3a17ea4d61e80ab9492f3287384524e14264"
+    },
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "path": "docs/phase-1/round-4/initialization-locations.json",
+      "sha256": "bdc0e1838162463d18fce89dfea20fe6baf073d889db757e62c59ae3ed8faf1e"
+    },
+    {
+      "path": "docs/phase-1/round-4/Game-function-evidence-bounded-v2.json",
+      "sha256": "1e8421fc6b83004fd39259ca19ba97faa7df520cf49200572cecd8a2bb80c502"
+    }
+  ],
+  "symbols": [
+    "?GetState@LuaManager@GAME@@QEAAAEAVLuaState@LUAGLUE@@XZ",
+    "?Initialize@LuaManager@GAME@@QEAA_N_N0@Z"
+  ],
+  "limits": {
+    "metadata_bytes": 12288,
+    "metadata_operations": 512,
+    "binary_search_steps": 13,
+    "distinct_export_names": 14,
+    "ascii_bytes_per_name": 512,
+    "ascii_chunk_bytes": 32,
+    "hash_chunk_bytes": 65536,
+    "report_bytes": 262144
+  },
+  "metadata_bytes": 4026,
+  "metadata_operations": 58,
+  "code_bytes": 0,
+  "pdata_bytes": 0,
+  "exe_bytes": 0,
+  "subprocesses": 0,
+  "original_loaded_or_executed": false,
+  "whole_export_table_scanned": false,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "reads": [
+        {
+          "kind": "OFT-nonzero-continuation-488-through823",
+          "rva": "0xa43a00",
+          "file_offset": 10756096,
+          "bytes": 2688,
+          "raw_hex": "bebfa40000000000f0bfa400000000003cc0a4000000000070c0a40000000000a4c0a40000000000dac0a4000000000010c1a4000000000068c1a4000000000090c1a40000000000d8c1a4000000000008c2a4000000000030c2a4000000000050c2a4000000000080c2a400000000009ac2a40000000000c8c2a40000000000fcc2a4000000000030c3a4000000000062c3a4000000000082c3a400000000009cc3a40000000000b6c3a40000000000e2c3a4000000000026c4a4000000000050c4a40000000000aac4a40000000000ccc4a4000000000002c5a400000000002cc5a400000000004ac5a400000000006ac5a4000000000096c5a400000000003ec6a400000000009cc6a40000000000cac6a400000000000ec7a400000000007cc7a40000000000aac7a40000000000fcc7a4000000000036c8a4000000000084c8a40000000000b6c8a40000000000dcc8a4000000000022c9a4000000000056c9a4000000000088c9a40000000000d4c9a400000000000acaa4000000000034caa4000000000060caa400000000008ccaa40000000000b0caa400000000002ecba4000000000056cba40000000000b2cba40000000000decba4000000000018cca4000000000040cca400000000009ecca40000000000c6cca4000000000000cda4000000000032cda4000000000056cda4000000000086cda40000000000b0cda400000000002ccea400000000005acea400000000009ecea40000000000cccea40000000000fccea4000000000026cfa400000000004ecfa4000000000080cfa40000000000b2cfa400000000001ed0a4000000000062d0a40000000000a0d0a40000000000c8d0a40000000000f8d0a4000000000066d1a40000000000ded1a400000000002ad2a400000000009ad2a40000000000c2d2a40000000000e6d2a400000000000ad3a4000000000046d3a4000000000084d3a40000000000c2d3a4000000000002d4a400000000002cd4a4000000000058d4a40000000000b0d4a40000000000e4d4a4000000000026d5a4000000000054d5a4000000000080d5a40000000000bcd5a40000000000ead5a4000000000016d6a4000000000048d6a4000000000070d6a4000000000092d6a40000000000bed6a4000000000004d7a4000000000078d7a40000000000b8d7a40000000000fad7a400000000002cd8a400000000007cd8a40000000000a6d8a40000000000e6d8a4000000000020d9a400000000005ed9a4000000000092d9a40000000000c8d9a40000000000fcd9a4000000000046daa4000000000080daa40000000000cadaa4000000000004dba400000000004edba4000000000088dba40000000000bedba4000000000002dca4000000000048dca400000000006cdca4000000000096dca40000000000c8dca4000000000012dda4000000000066dda40000000000b8dda40000000000f6dda4000000000036dea4000000000074dea40000000000a0dea40000000000d4dea40000000000f0dea400000000000cdfa400000000004cdfa4000000000086dfa40000000000aadfa40000000000dedfa4000000000066e0a40000000000b4e0a4000000000030e1a4000000000066e1a4000000000090e1a40000000000cae1a4000000000024e2a4000000000048e2a40000000000c4e2a40000000000eae2a4000000000028e3a40000000000aee3a40000000000fae3a4000000000070e4a40000000000a6e4a400000000002ce5a400000000005ce5a4000000000086e5a40000000000dee5a4000000000022e6a400000000005ce6a4000000000086e6a40000000000bae6a4000000000024e7a400000000004ce7a4000000000070e7a400000000009ee7a40000000000c2e7a40000000000e0e7a400000000000ae8a4000000000032e8a4000000000064e8a400000000008ee8a40000000000bae8a40000000000e6e8a4000000000004e9a4000000000028e9a4000000000058e9a4000000000084e9a40000000000aee9a40000000000d4e9a400000000001ceaa400000000005ceaa40000000000b4eaa40000000000e8eaa4000000000028eba4000000000048eba400000000009ceba40000000000caeba4000000000000eca4000000000032eca400000000005aeca40000000000a4eca40000000000d4eca400000000002eeda4000000000054eda400000000007eeda40000000000b0eda40000000000e6eda400000000001aeea4000000000050eea4000000000084eea40000000000aceea40000000000d2eea4000000000024efa4000000000066efa40000000000beefa4000000000008f0a4000000000072f0a40000000000bcf0a40000000000eef0a4000000000034f1a4000000000066f1a4000000000098f1a400000000000af2a400000000001469a500000000007ef2a40000000000baf2a40000000000f4f2a4000000000036f3a4000000000092f3a40000000000d0f3a40000000000fcf3a400000000004af4a400000000007ef4a400000000009ef4a40000000000bef4a40000000000faf4a4000000000032f5a4000000000062f5a4000000000090f5a40000000000bcf5a40000000000f4f5a4000000000028f6a4000000000072f6a40000000000a8f6a40000000000d4f6a4000000000002f7a4000000000040f7a400000000009af7a40000000000d6f7a40000000000faf7a4000000000032f8a400000000005ef8a400000000008ef8a40000000000c2f8a400000000000af9a4000000000032f9a400000000005ef9a400000000008af9a40000000000f0f9a4000000000058faa4000000000000fba4000000000028fba4000000000058fba4000000000098fba4000000000000fca400000000004afca4000000000070fca40000000000d6fca400000000000efda4000000000046fda400000000007afda40000000000f2fda4000000000038fea4000000000072fea40000000000aefea40000000000e0fea4000000000024ffa400000000006cffa40000000000b4ffa40000000000dcffa400000000001000a500000000008a00a50000000000c000a50000000000ea00a500000000001a01a500000000005801a500000000008801a50000000000b401a50000000000e401a500000000002002a500000000004a02a500000000007802a50000000000a402a500000000003203a500000000005403a500000000007803a50000000000a003a50000000000ca03a50000000000ea03a500000000003404a500000000005e04a500000000008804a50000000000b604a50000000000e804a500000000002c05a500000000005405a50000000000c805a500000000000006a500000000002a06a500000000006a06a500000000008c06a50000000000b406a50000000000e206a500000000001207a500000000003c07a50000000000b407a50000000000e007a500000000004e08a50000000000ba08a50000000000e008a500000000000009a500000000002809a500000000005009a500000000008c09a50000000000cc09a50000000000420aa50000000000aa0aa500000000000c0ba50000000000700ba50000000000e00ba50000000000600ca500000000009c0ca50000000000d60ca50000000000320da50000000000640da50000000000e40da500000000003a0ea50000000000620ea50000000000920ea50000000000c60ea50000000000f20ea50000000000"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x60a9b8",
+          "file_offset": 6328248,
+          "bytes": 8,
+          "raw_hex": "f20ea50000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa50ef2",
+          "file_offset": 10810610,
+          "bytes": 2,
+          "raw_hex": "db0d"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa50ef4",
+          "file_offset": 10810612,
+          "bytes": 56,
+          "raw_hex": "3f4765745374617465404c75614d616e616765724047414d45404051454141414541564c75615374617465404c5541474c55454040585a00"
+        }
+      ],
+      "closed": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "stable": true
+    },
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "reads": [
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3b90c0",
+          "file_offset": 3899584,
+          "bytes": 4,
+          "raw_hex": "a0eb3e00"
+        },
+        {
+          "kind": "exact-hinted-export-name",
+          "rva": "0x3eeba0",
+          "file_offset": 4119456,
+          "bytes": 56,
+          "raw_hex": "3f4765745374617465404c75614d616e616765724047414d45404051454141414541564c75615374617465404c5541474c55454040585a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bd736",
+          "file_offset": 3917622,
+          "bytes": 2,
+          "raw_hex": "db0d"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b2e94",
+          "file_offset": 3874452,
+          "bytes": 4,
+          "raw_hex": "10830000"
+        },
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3b8a68",
+          "file_offset": 3897960,
+          "bytes": 4,
+          "raw_hex": "67803e00"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3e8067",
+          "file_offset": 4092007,
+          "bytes": 32,
+          "raw_hex": "3f4765744e756d4c6576656c734c6f6164696e6740576f726c644047414d4540"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3e8087",
+          "file_offset": 4092039,
+          "bytes": 32,
+          "raw_hex": "405145424149585a003f4765744e756d4c69676874536574757073404461794e"
+        },
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3ba2f4",
+          "file_offset": 3904244,
+          "bytes": 4,
+          "raw_hex": "f2eb3f00"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3febf2",
+          "file_offset": 4185074,
+          "bytes": 32,
+          "raw_hex": "3f5265676973746572466f7255706461746573404c75614d616e616765724047"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3fec12",
+          "file_offset": 4185106,
+          "bytes": 32,
+          "raw_hex": "414d454040514541415849414542563f2462617369635f737472696e67404455"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3fec32",
+          "file_offset": 4185138,
+          "bytes": 32,
+          "raw_hex": "3f24636861725f7472616974734044407374644040563f24616c6c6f6361746f"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3fec52",
+          "file_offset": 4185170,
+          "bytes": 32,
+          "raw_hex": "72404440324040737464404048405a003f52656769737465724964404f626a65"
+        },
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3b96ac",
+          "file_offset": 3901100,
+          "bytes": 4,
+          "raw_hex": "47463f00"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f4647",
+          "file_offset": 4142663,
+          "bytes": 32,
+          "raw_hex": "3f496e697469616c697a654057696e57696e646f774047414d45404055454141"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f4667",
+          "file_offset": 4142695,
+          "bytes": 32,
+          "raw_hex": "5f4e414542563f2462617369635f737472696e674044553f24636861725f7472"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f4687",
+          "file_offset": 4142727,
+          "bytes": 32,
+          "raw_hex": "616974734044407374644040563f24616c6c6f6361746f724044403240407374"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f46a7",
+          "file_offset": 4142759,
+          "bytes": 32,
+          "raw_hex": "644040484848485045425857345374796c65404557696e646f77403240504541"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f46c7",
+          "file_offset": 4142791,
+          "bytes": 32,
+          "raw_hex": "5548574e445f5f4040405a003f496e697469616c697a6540576f726c64467275"
+        },
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3b9088",
+          "file_offset": 3899528,
+          "bytes": 4,
+          "raw_hex": "43e73e00"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3ee743",
+          "file_offset": 4118339,
+          "bytes": 32,
+          "raw_hex": "3f47657453706563546578747572654047726170686963734d657368496e7374"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3ee763",
+          "file_offset": 4118371,
+          "bytes": 32,
+          "raw_hex": "616e63654047414d454040514541415045425647726170686963735465787475"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3ee783",
+          "file_offset": 4118403,
+          "bytes": 32,
+          "raw_hex": "726540324049405a003f47657453706563546578747572654047726170686963"
+        },
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3b9398",
+          "file_offset": 3900312,
+          "bytes": 4,
+          "raw_hex": "e7173f00"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f17e7",
+          "file_offset": 4130791,
+          "bytes": 32,
+          "raw_hex": "3f476574566964656f4d656d6f727955736167654047726170686963734d6573"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f1807",
+          "file_offset": 4130823,
+          "bytes": 32,
+          "raw_hex": "684047414d4540405545424149585a003f476574566964656f4d656d6f727955"
+        },
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3b9520",
+          "file_offset": 3900704,
+          "bytes": 4,
+          "raw_hex": "0e2e3f00"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f2e0e",
+          "file_offset": 4136462,
+          "bytes": 32,
+          "raw_hex": "3f4861734469616c6f67466f724c616e6775616765404c6f63616c697a617469"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f2e2e",
+          "file_offset": 4136494,
+          "bytes": 32,
+          "raw_hex": "6f6e4d616e616765724047414d454040514542415f4e585a003f486173446f6e"
+        },
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3b95e4",
+          "file_offset": 3900900,
+          "bytes": 4,
+          "raw_hex": "c8373f00"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f37c8",
+          "file_offset": 4138952,
+          "bytes": 32,
+          "raw_hex": "3f496e697440496e7465726e616c506172616d4047414d454040514541415858"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f37e8",
+          "file_offset": 4138984,
+          "bytes": 32,
+          "raw_hex": "5a003f496e6974405269676964426f64794465736372697074696f6e4047414d"
+        },
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3b9648",
+          "file_offset": 3901000,
+          "bytes": 4,
+          "raw_hex": "c43e3f00"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f3ec4",
+          "file_offset": 4140740,
+          "bytes": 32,
+          "raw_hex": "3f496e697469616c697a654047726170686963734d6573684047414d45404055"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f3ee4",
+          "file_offset": 4140772,
+          "bytes": 32,
+          "raw_hex": "4541413f415734496e6974526573756c74405265736f75726365403240414542"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f3f04",
+          "file_offset": 4140804,
+          "bytes": 32,
+          "raw_hex": "563f2462617369635f737472696e674044553f24636861725f74726169747340"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f3f24",
+          "file_offset": 4140836,
+          "bytes": 32,
+          "raw_hex": "44407374644040563f24616c6c6f6361746f7240444032404073746440405045"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f3f44",
+          "file_offset": 4140868,
+          "bytes": 32,
+          "raw_hex": "425848405a003f496e697469616c697a65404772617068696373536861646572"
+        },
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3b9678",
+          "file_offset": 3901048,
+          "bytes": 4,
+          "raw_hex": "b1423f00"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f42b1",
+          "file_offset": 4141745,
+          "bytes": 32,
+          "raw_hex": "3f496e697469616c697a6540526f7574657253657276696365734047414d4540"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f42d1",
+          "file_offset": 4141777,
+          "bytes": 32,
+          "raw_hex": "4051454141585f4e405a003f496e697469616c697a6540536563746f724c6179"
+        },
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3b9660",
+          "file_offset": 3901024,
+          "bytes": 4,
+          "raw_hex": "52413f00"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f4152",
+          "file_offset": 4141394,
+          "bytes": 32,
+          "raw_hex": "3f496e697469616c697a6540496d6167655265736f757263654047414d454040"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f4172",
+          "file_offset": 4141426,
+          "bytes": 32,
+          "raw_hex": "554541413f415734496e6974526573756c74405265736f757263654032404145"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f4192",
+          "file_offset": 4141458,
+          "bytes": 32,
+          "raw_hex": "42563f2462617369635f737472696e674044553f24636861725f747261697473"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f41b2",
+          "file_offset": 4141490,
+          "bytes": 32,
+          "raw_hex": "4044407374644040563f24616c6c6f6361746f72404440324040737464404050"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f41d2",
+          "file_offset": 4141522,
+          "bytes": 32,
+          "raw_hex": "45425848405a003f496e697469616c697a65404c75614d616e61676572404741"
+        },
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3b966c",
+          "file_offset": 3901036,
+          "bytes": 4,
+          "raw_hex": "28423f00"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f4228",
+          "file_offset": 4141608,
+          "bytes": 32,
+          "raw_hex": "3f496e697469616c697a654050687973696373456e67696e65324047414d4540"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f4248",
+          "file_offset": 4141640,
+          "bytes": 32,
+          "raw_hex": "40514541415f4e585a003f496e697469616c697a6540506879736963734d6573"
+        },
+        {
+          "kind": "selected-export-name-pointer",
+          "rva": "0x3b9664",
+          "file_offset": 3901028,
+          "bytes": 4,
+          "raw_hex": "d9413f00"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f41d9",
+          "file_offset": 4141529,
+          "bytes": 32,
+          "raw_hex": "3f496e697469616c697a65404c75614d616e616765724047414d454040514541"
+        },
+        {
+          "kind": "bounded-binary-export-name",
+          "rva": "0x3f41f9",
+          "file_offset": 4141561,
+          "bytes": 32,
+          "raw_hex": "415f4e5f4e30405a003f496e697469616c697a65404e61764d616e6167657240"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bda08",
+          "file_offset": 3918344,
+          "bytes": 2,
+          "raw_hex": "440f"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b3438",
+          "file_offset": 3875896,
+          "bytes": 4,
+          "raw_hex": "002e0f00"
+        }
+      ],
+      "closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "stable": true
+    }
+  ],
+  "bindings": [
+    {
+      "dll": "Engine.dll",
+      "iat_rva": "0x60a9b8",
+      "lookup_index": 823,
+      "lookup_rva": "0xa44478",
+      "hint_name_rva": "0xa50ef2",
+      "hint": 3547,
+      "symbol": "?GetState@LuaManager@GAME@@QEAAAEAVLuaState@LUAGLUE@@XZ"
+    }
+  ],
+  "exports": [
+    {
+      "iat_rva": "0x60a9b8",
+      "symbol": "?GetState@LuaManager@GAME@@QEAAAEAVLuaState@LUAGLUE@@XZ",
+      "name_index": 3547,
+      "name_rva": "0x3eeba0",
+      "ordinal_index": 3547,
+      "ordinal": 3548,
+      "target_rva": "0x8310",
+      "target_va": "0x180008310",
+      "code_read": false
+    },
+    {
+      "iat_rva": null,
+      "symbol": "?Initialize@LuaManager@GAME@@QEAA_N_N0@Z",
+      "name_index": 3908,
+      "name_rva": "0x3f41d9",
+      "ordinal_index": 3908,
+      "ordinal": 3909,
+      "target_rva": "0xf2e00",
+      "target_va": "0x1800f2e00",
+      "code_read": false
+    }
+  ],
+  "searches": [
+    {
+      "symbol": "?Initialize@LuaManager@GAME@@QEAA_N_N0@Z",
+      "method": "exact-name binary search",
+      "steps": 12,
+      "probes": [
+        {
+          "index": 3141,
+          "name": "?GetNumLevelsLoading@World@GAME@@QEBAIXZ"
+        },
+        {
+          "index": 4712,
+          "name": "?RegisterForUpdates@LuaManager@GAME@@QEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z"
+        },
+        {
+          "index": 3926,
+          "name": "?Initialize@WinWindow@GAME@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHHPEBXW4Style@EWindow@2@PEAUHWND__@@@Z"
+        },
+        {
+          "index": 3533,
+          "name": "?GetSpecTexture@GraphicsMeshInstance@GAME@@QEAAPEBVGraphicsTexture@2@I@Z"
+        },
+        {
+          "index": 3729,
+          "name": "?GetVideoMemoryUsage@GraphicsMesh@GAME@@UEBAIXZ"
+        },
+        {
+          "index": 3827,
+          "name": "?HasDialogForLanguage@LocalizationManager@GAME@@QEBA_NXZ"
+        },
+        {
+          "index": 3876,
+          "name": "?Init@InternalParam@GAME@@QEAAXXZ"
+        },
+        {
+          "index": 3901,
+          "name": "?Initialize@GraphicsMesh@GAME@@UEAA?AW4InitResult@Resource@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBXH@Z"
+        },
+        {
+          "index": 3913,
+          "name": "?Initialize@RouterServices@GAME@@QEAAX_N@Z"
+        },
+        {
+          "index": 3907,
+          "name": "?Initialize@ImageResource@GAME@@UEAA?AW4InitResult@Resource@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBXH@Z"
+        },
+        {
+          "index": 3910,
+          "name": "?Initialize@PhysicsEngine2@GAME@@QEAA_NXZ"
+        },
+        {
+          "index": 3908,
+          "name": "?Initialize@LuaManager@GAME@@QEAA_N_N0@Z"
+        }
+      ],
+      "matched": true
+    }
+  ],
+  "encountered_names": [
+    {
+      "index": 3547,
+      "name_rva": "0x3eeba0",
+      "name": "?GetState@LuaManager@GAME@@QEAAAEAVLuaState@LUAGLUE@@XZ"
+    },
+    {
+      "index": 3141,
+      "name_rva": "0x3e8067",
+      "name": "?GetNumLevelsLoading@World@GAME@@QEBAIXZ"
+    },
+    {
+      "index": 4712,
+      "name_rva": "0x3febf2",
+      "name": "?RegisterForUpdates@LuaManager@GAME@@QEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z"
+    },
+    {
+      "index": 3926,
+      "name_rva": "0x3f4647",
+      "name": "?Initialize@WinWindow@GAME@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHHPEBXW4Style@EWindow@2@PEAUHWND__@@@Z"
+    },
+    {
+      "index": 3533,
+      "name_rva": "0x3ee743",
+      "name": "?GetSpecTexture@GraphicsMeshInstance@GAME@@QEAAPEBVGraphicsTexture@2@I@Z"
+    },
+    {
+      "index": 3729,
+      "name_rva": "0x3f17e7",
+      "name": "?GetVideoMemoryUsage@GraphicsMesh@GAME@@UEBAIXZ"
+    },
+    {
+      "index": 3827,
+      "name_rva": "0x3f2e0e",
+      "name": "?HasDialogForLanguage@LocalizationManager@GAME@@QEBA_NXZ"
+    },
+    {
+      "index": 3876,
+      "name_rva": "0x3f37c8",
+      "name": "?Init@InternalParam@GAME@@QEAAXXZ"
+    },
+    {
+      "index": 3901,
+      "name_rva": "0x3f3ec4",
+      "name": "?Initialize@GraphicsMesh@GAME@@UEAA?AW4InitResult@Resource@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBXH@Z"
+    },
+    {
+      "index": 3913,
+      "name_rva": "0x3f42b1",
+      "name": "?Initialize@RouterServices@GAME@@QEAAX_N@Z"
+    },
+    {
+      "index": 3907,
+      "name_rva": "0x3f4152",
+      "name": "?Initialize@ImageResource@GAME@@UEAA?AW4InitResult@Resource@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBXH@Z"
+    },
+    {
+      "index": 3910,
+      "name_rva": "0x3f4228",
+      "name": "?Initialize@PhysicsEngine2@GAME@@QEAA_NXZ"
+    },
+    {
+      "index": 3908,
+      "name_rva": "0x3f41d9",
+      "name": "?Initialize@LuaManager@GAME@@QEAA_N_N0@Z"
+    }
+  ],
+  "failures": [],
+  "cached_descriptor": {
+    "index": 4,
+    "raw": {
+      "rva": "0xa4297c",
+      "file_offset": 10751868,
+      "bytes": "c02aa4000000000000000000a66aa50000906000"
+    },
+    "nonzero_prefix_entries": 488
+  },
+  "limitations": [
+    "Only Game OFT488..823, exact IAT60A9B8/import name, its hinted Engine export, and one exact Initialize export binary search. No table sweep, code, pdata, EXE or fallback.",
+    "Sorted ASCII export names are assumed; only encountered ordering is checked. A missing exact name remains a failed bounded lookup, not absence of unexported functionality.",
+    "Disk bindings only. No loaded IAT/global/service state, Lua lifecycle, ABI or function behavior is established.",
+    "Before/after same-descriptor SHA256 streams original files in64KiB buffers without interpreting code, separate from semantic metadata budget. Hashes are not atomic snapshots.",
+    "Node guards do not identify every Windows reparse tag; the existing external Attributes preflight remains required."
+  ],
+  "finished_utc": "2026-11-02T23:03:38.168Z",
+  "status": "passed"
+}

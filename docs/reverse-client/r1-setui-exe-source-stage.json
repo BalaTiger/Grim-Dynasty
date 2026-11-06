@@ -1,0 +1,172 @@
+{
+  "schema": "grim-dynasty-r1-setui-exe-source-v1",
+  "utc": "2026-11-03T17:18:36.9251890Z",
+  "status": "SetUI-IAT-proven;exact-Ghidra-incoming-list-empty;object-and-record-link-unknown",
+  "previous_stage": {
+    "sha256": "8836df9473c6122266b8f3b26e0b8d046673d99d00641826e4d5bd5b8260be86",
+    "file": "docs/reverse-client/r1-ui-api-source-stage.json"
+  },
+  "metadata": {
+    "file": "docs/reverse-client/r1-setui-exe-iat/inspection.json",
+    "launch_sha256": "167c16603e956a83346733a2421f4ab0d83011e845d59e1629602a54e060f69d",
+    "session": 16810,
+    "operations": 19,
+    "binding": {
+      "dll": "Game.dll",
+      "symbol": "?SetUI@GameEngine@GAME@@QEAAXPEAVGameUIInterface@2@@Z",
+      "descriptor_index": 9,
+      "descriptor_rva": "0x386704",
+      "import_index": 118,
+      "lookup_rva": "0x388b60",
+      "iat_rva": "0x2d7318",
+      "iat_va": "0x1402d7318",
+      "hint_name_rva": "0x39f24c",
+      "hint": 23241,
+      "disk_iat_value": "0x39f24c"
+    },
+    "exit": 0,
+    "bytes": 1953,
+    "launch": ".tooling/r1-setui-exe-iat-prepared/launch-result.json",
+    "final_chunk": "ccdf76",
+    "after": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "before": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "sha256": "d390a3393b724c6656e709b644683b43cecd15d8a6f412600bfbf9b5c1872c2b"
+  },
+  "scope": "Only exact EXE SetUI import and actual caller/object if demonstrated. No adjacent-slot search or automatic expansion.",
+  "new_Rea_calls": 10,
+  "new_game_tests": 0,
+  "new_product_compiles": 0,
+  "old_suites_rerun": 0,
+  "pending_operations": 0,
+  "owned_heavy_processes": 0,
+  "original_executed": false,
+  "saves_accessed": false,
+  "concrete_UI_object_proven": false,
+  "LoadTableFile_record_argument_linked": false,
+  "interactive_client_available": false,
+  "next": "Evidence stop: no instruction caller to identify RCX/RDX/UI concrete object, so cannot associate LoadTableFile record arguments. Do not search adjacent empty imports. Dynamic comparison remains planning-only until existing isolated guest+observer+legal offline start are verified and original execution is specifically authorized.",
+  "execution": {
+    "plan_sha256": "73a7b1c71e2bcf1d1e72850bf331be106b30a134fec56b8418be23435d8410bb",
+    "launcher_sha256": "926d411dcde5d1dd3310c137fd1e35d6118deffca482dff5c11e199c155ddae7",
+    "plan": ".tooling/r1-setui-exe-incoming-prepared/plan.json",
+    "only_pin_delta_verified_chunk": "1b6efd",
+    "offline_actual_plan_sha256": "73a7b1c71e2bcf1d1e72850bf331be106b30a134fec56b8418be23435d8410bb",
+    "offline_chunk": "0dc5a9",
+    "repeat_until_checked": false,
+    "output": "docs/reverse-client/r1-setui-exe-incoming-run1",
+    "outcome": "failed",
+    "initial_chunk": "1370fb",
+    "expected_calls": 6,
+    "session": 69470,
+    "runner_sha256": "ca174ceb505edefa1a7dc38841b1edd73a436b330b0304c1814da341c7490cc4",
+    "offline_exit": 0,
+    "final_chunk": "ee7796",
+    "exit": 1,
+    "summary": {
+      "sha256": "9aa5178a896025e9bfc5c574ab297f7bcb91df0fb78a0a0f848416c1d033d80a",
+      "file": "docs/reverse-client/r1-setui-exe-incoming-run1/summary.json"
+    },
+    "release": {
+      "sha256": "bb364c19b80a52813d6dcfc33b724d5aae02ab63585909b352f1eb3f0d40e1af",
+      "file": "docs/reverse-client/r1-setui-exe-incoming-run1-release.json"
+    },
+    "failure": "Owned memory monitoring: Resource sample timestamp is invalid or stale"
+  },
+  "completed_Rea_calls": 9,
+  "new_analysis_responses": 1,
+  "monitor_diagnosis": {
+    "guard": "rea_resource_budget.mjs:39-40",
+    "controller_stop_utc": "2026-11-03T17:07:28.889Z",
+    "root_cause": "UNKNOWN; per-sample receive/check times absent",
+    "rejects": "nonfinite age, age < -1000ms, or age > 5000ms",
+    "exact_error": "Owned memory monitoring: Resource sample timestamp is invalid or stale",
+    "retry_limit": 1,
+    "not_low_memory_proof": true,
+    "minimum_physical_bytes": 7581134848,
+    "proven_trigger_sample": false,
+    "sample26_utc": "2026-11-03T17:07:31.2328361Z",
+    "stop_if_repeated_failure": true,
+    "shared_guard_changes": 0,
+    "candidate_age_ms": -2343,
+    "minimum_commit_headroom_bytes": 12059992064
+  },
+  "runtime_preservation": {
+    "terminal_session": 61826,
+    "content_manifest_equal": true,
+    "sha256": "1597bcf56407d1b27c6b13360864d552704c7ea7ec111ad20eb0883671c3bc58",
+    "deleted_files": 0,
+    "bytes": 30634991,
+    "exit": 0,
+    "file": ".tooling/r1-setui-runtime-recovery/runtime-quarantine-result.json",
+    "final_chunk": "2fc09c",
+    "files": 42
+  },
+  "dynamic_fallback": {
+    "ready_isolated_environment_proven": false,
+    "ready_observer_proven": false,
+    "new_OS_privilege_route": "Conditional only: a previously provisioned isolated guest and observer plus legal offline startup must be verified; none currently confirmed. Original execution still needs specific authorization.",
+    "original_execution_authorized": false,
+    "plan": "docs/reverse-client/r1-ui-dynamic-observation-plan.json",
+    "sha256": "5f9a878273ae4e4e823f52d033e9348226d872b6c2414d49fe8427bd5654f445",
+    "static_caller_search_result": "UNKNOWN; query did not return, not empty",
+    "actions_performed": []
+  },
+  "retry_execution": {
+    "plan_sha256": "24c6233245116a6fa015c9f6f896942a7adb27901aedcb3e218bcf3d38b1c833",
+    "plan": ".tooling/r1-setui-exe-incoming-retry1-prepared/plan.json",
+    "initial_chunk": "92ab67",
+    "outcome": "passed",
+    "expected_calls": 6,
+    "output": "docs/reverse-client/r1-setui-exe-incoming-retry1",
+    "offline_exit": 0,
+    "session": 7622,
+    "offline_chunk": "b0f667",
+    "runner_sha256": "b2d06f72047ccdb8388b4d49f4981514785ae824f330258bc4dbb79fc377fd8a",
+    "repeat_until_checked": false,
+    "launch_sha256": "272eeeea20bbd62c22b4452f3c5752ae23c023df9ef1c4a9d5e30e7be17b0ede",
+    "final_chunk": "23c37c",
+    "exit": 0,
+    "summary": {
+      "sha256": "7fea11c1b26a843a5705be6bb8c76fc1a02e87f9efe96478465ea046b3a357ed",
+      "file": "docs/reverse-client/r1-setui-exe-incoming-retry1/summary.json"
+    },
+    "release": {
+      "sha256": "e0660ab4b76f8e6de24d0479771e2f481239c7e45c9c00e0b02219054b0e1580",
+      "file": "docs/reverse-client/r1-setui-exe-incoming-retry1-release.json"
+    }
+  },
+  "incoming_result": {
+    "target_sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "evidence_id": "ev_6a563f2b0cef5f4cb20ccbaaa340ebc1f8465f5e1c5bfaa80fcc921287c72dea",
+    "raw_result": [],
+    "original_executed": false,
+    "address": "0x1402d7318",
+    "meaning": "No exact reference reported by this Ghidra analysis; not proof of no callers or no runtime use",
+    "operation": "xrefs",
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "file": "docs/reverse-client/r1-setui-exe-incoming-retry1/04-SetUIIAT-0x1402d7318-xrefs.json",
+    "sha256": "c87d90a04f39c199f9a157f2a3d24d4610c8b7e3fc6a82c7fd4535976fcb74db",
+    "normalized_result": []
+  },
+  "current_resource": {
+    "utc": "2026-11-03T17:17:43.3947246Z",
+    "tool_chunk": "5c2df3",
+    "external_build_or_java_processes": [],
+    "system_commit_bytes": 46530281472,
+    "available_physical_bytes": 8872464384,
+    "system_commit_limit_bytes": 59886112768
+  },
+  "closed_session_verified": true,
+  "retry_error_recurred": false,
+  "monitor_root_cause_still_unknown": true,
+  "remaining": [
+    "SetUI actual instruction caller and passed GameUIInterface identity/vtable/constructor",
+    "Link confirmed UI object to LoadTableFile exact record argument and HUD resource consumer",
+    "World Widget +18 / Engine+3E8 registration and physical mouse-to-ground coordinate source",
+    "Original-scene/model/texture/UI rendering and actual interactive acceptance"
+  ]
+}

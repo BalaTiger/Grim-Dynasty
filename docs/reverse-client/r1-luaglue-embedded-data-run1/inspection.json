@@ -1,0 +1,1274 @@
+{
+  "schema": "gd-luaglue-embedded-data-v1",
+  "status": "passed-fixed-raw-data-extraction",
+  "started_utc": "2026-11-03T05:30:25.236Z",
+  "script_sha256": "f9d50b2f34e4393cd88be97f4f1a3aa4b3a3ff038c641a1c8ef034f81582dab6",
+  "plan": {
+    "path": "docs/reverse-client/r1-luaglue-record-plan.json",
+    "sha256": "b28ad52c400c450a99c1bcbf631a11e65ebd3aec63caae12e08256c9a2d1f54c"
+  },
+  "pe_proof": {
+    "path": "docs/object-lifecycle/offline-depot-ctor-boundaries/boundary.json",
+    "sha256": "646053e4565e3f08c696ae0e9a16ddb5c2e81ab22ffe046c5057fc41aa64bb15"
+  },
+  "binder_proof": {
+    "path": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1/05-LuaInitializeDependency-0x180258e50-procedure_assembly.json",
+    "sha256": "b61d98ddad9968e13c7f6c9be8551a98eb4e03e8faccc7913ee461394896a8bf"
+  },
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "bytes": 4485632,
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "limits": {
+    "records": 11,
+    "exact_ranges": 33,
+    "exact_bytes": 8345,
+    "bounded_strings": 2,
+    "bytes_per_bounded_string_including_nul": 32,
+    "data_bytes": 8409,
+    "data_operations": 97,
+    "hash_chunk_bytes": 65536,
+    "hash_passes": 2,
+    "code_bytes": 16,
+    "code_operations": 1,
+    "new_header_bytes": 0,
+    "report_bytes": 262144,
+    "proof_bytes_each": 2097152
+  },
+  "declared_ranges": [
+    {
+      "id": "00-dump-source",
+      "record": 0,
+      "kind": "source",
+      "rva": "0x346100",
+      "address": 3432704,
+      "file_offset": 3428608,
+      "maximum_bytes": 107,
+      "declared_content_bytes": 106,
+      "mode": "exact-copy-span",
+      "expected_ascii": null
+    },
+    {
+      "id": "00-dump-name",
+      "record": 0,
+      "kind": "name",
+      "rva": "0x3457f8",
+      "address": 3430392,
+      "file_offset": 3426296,
+      "maximum_bytes": 5,
+      "declared_content_bytes": 4,
+      "mode": "exact-copy-span",
+      "expected_ascii": "dump"
+    },
+    {
+      "id": "00-dump-chunk",
+      "record": 0,
+      "kind": "chunk",
+      "rva": "0x346170",
+      "address": 3432816,
+      "file_offset": 3428720,
+      "maximum_bytes": 13,
+      "declared_content_bytes": 12,
+      "mode": "exact-copy-span",
+      "expected_ascii": "luaglue-dump"
+    },
+    {
+      "id": "01-dumpr-source",
+      "record": 1,
+      "kind": "source",
+      "rva": "0x345840",
+      "address": 3430464,
+      "file_offset": 3426368,
+      "maximum_bytes": 119,
+      "declared_content_bytes": 118,
+      "mode": "exact-copy-span",
+      "expected_ascii": null
+    },
+    {
+      "id": "01-dumpr-name",
+      "record": 1,
+      "kind": "name",
+      "rva": "0x346190",
+      "address": 3432848,
+      "file_offset": 3428752,
+      "maximum_bytes": 6,
+      "declared_content_bytes": 5,
+      "mode": "exact-copy-span",
+      "expected_ascii": "dumpr"
+    },
+    {
+      "id": "01-dumpr-chunk",
+      "record": 1,
+      "kind": "chunk",
+      "rva": "0x346180",
+      "address": 3432832,
+      "file_offset": 3428736,
+      "maximum_bytes": 14,
+      "declared_content_bytes": 13,
+      "mode": "exact-copy-span",
+      "expected_ascii": "luaglue-dumpr"
+    },
+    {
+      "id": "02-dumpex-source",
+      "record": 2,
+      "kind": "source",
+      "rva": "0x3458c0",
+      "address": 3430592,
+      "file_offset": 3426496,
+      "maximum_bytes": 2092,
+      "declared_content_bytes": 2091,
+      "mode": "exact-copy-span",
+      "expected_ascii": null
+    },
+    {
+      "id": "02-dumpex-name",
+      "record": 2,
+      "kind": "name",
+      "rva": "0x345830",
+      "address": 3430448,
+      "file_offset": 3426352,
+      "maximum_bytes": 7,
+      "declared_content_bytes": 6,
+      "mode": "exact-copy-span",
+      "expected_ascii": "dumpex"
+    },
+    {
+      "id": "02-dumpex-chunk",
+      "record": 2,
+      "kind": "chunk",
+      "rva": "0x3460f0",
+      "address": 3432688,
+      "file_offset": 3428592,
+      "maximum_bytes": 15,
+      "declared_content_bytes": 14,
+      "mode": "exact-copy-span",
+      "expected_ascii": "luaglue-dumpex"
+    },
+    {
+      "id": "03-readonly-source",
+      "record": 3,
+      "kind": "source",
+      "rva": "0x346630",
+      "address": 3434032,
+      "file_offset": 3429936,
+      "maximum_bytes": 204,
+      "declared_content_bytes": 203,
+      "mode": "exact-copy-span",
+      "expected_ascii": null
+    },
+    {
+      "id": "03-readonly-name",
+      "record": 3,
+      "kind": "name",
+      "rva": "0x346618",
+      "address": 3434008,
+      "file_offset": 3429912,
+      "maximum_bytes": 9,
+      "declared_content_bytes": 8,
+      "mode": "exact-copy-span",
+      "expected_ascii": "readonly"
+    },
+    {
+      "id": "03-readonly-chunk",
+      "record": 3,
+      "kind": "chunk",
+      "rva": "0x346600",
+      "address": 3433984,
+      "file_offset": 3429888,
+      "maximum_bytes": 17,
+      "declared_content_bytes": 16,
+      "mode": "exact-copy-span",
+      "expected_ascii": "luaglue-readonly"
+    },
+    {
+      "id": "04-igetter-source",
+      "record": 4,
+      "kind": "source",
+      "rva": "0x3461a0",
+      "address": 3432864,
+      "file_offset": 3428768,
+      "maximum_bytes": 1077,
+      "declared_content_bytes": 1076,
+      "mode": "exact-copy-span",
+      "expected_ascii": null
+    },
+    {
+      "id": "04-igetter-name",
+      "record": 4,
+      "kind": "name",
+      "rva": "0x346628",
+      "address": 3434024,
+      "file_offset": 3429928,
+      "maximum_bytes": 8,
+      "declared_content_bytes": 7,
+      "mode": "exact-copy-span",
+      "expected_ascii": "igetter"
+    },
+    {
+      "id": "04-igetter-chunk",
+      "record": 4,
+      "kind": "chunk",
+      "rva": "0x3465d8",
+      "address": 3433944,
+      "file_offset": 3429848,
+      "maximum_bytes": 16,
+      "declared_content_bytes": 15,
+      "mode": "exact-copy-span",
+      "expected_ascii": "luaglue-igetter"
+    },
+    {
+      "id": "05-isetter-source",
+      "record": 5,
+      "kind": "source",
+      "rva": "0x346990",
+      "address": 3434896,
+      "file_offset": 3430800,
+      "maximum_bytes": 978,
+      "declared_content_bytes": 977,
+      "mode": "exact-copy-span",
+      "expected_ascii": null
+    },
+    {
+      "id": "05-isetter-name",
+      "record": 5,
+      "kind": "name",
+      "rva": "0x3465f8",
+      "address": 3433976,
+      "file_offset": 3429880,
+      "maximum_bytes": 8,
+      "declared_content_bytes": 7,
+      "mode": "exact-copy-span",
+      "expected_ascii": "isetter"
+    },
+    {
+      "id": "05-isetter-chunk",
+      "record": 5,
+      "kind": "chunk",
+      "rva": "0x3465e8",
+      "address": 3433960,
+      "file_offset": 3429864,
+      "maximum_bytes": 16,
+      "declared_content_bytes": 15,
+      "mode": "exact-copy-span",
+      "expected_ascii": "luaglue-isetter"
+    },
+    {
+      "id": "06-tgetter-source",
+      "record": 6,
+      "kind": "source",
+      "rva": "0x346d70",
+      "address": 3435888,
+      "file_offset": 3431792,
+      "maximum_bytes": 515,
+      "declared_content_bytes": 514,
+      "mode": "exact-copy-span",
+      "expected_ascii": null
+    },
+    {
+      "id": "06-tgetter-name",
+      "record": 6,
+      "kind": "name",
+      "rva": "0x346988",
+      "address": 3434888,
+      "file_offset": 3430792,
+      "maximum_bytes": 8,
+      "declared_content_bytes": 7,
+      "mode": "exact-copy-span",
+      "expected_ascii": "tgetter"
+    },
+    {
+      "id": "06-tgetter-chunk",
+      "record": 6,
+      "kind": "chunk",
+      "rva": "0x346f78",
+      "address": 3436408,
+      "file_offset": 3432312,
+      "maximum_bytes": 16,
+      "declared_content_bytes": 15,
+      "mode": "exact-copy-span",
+      "expected_ascii": "luaglue-tgetter"
+    },
+    {
+      "id": "07-tsetter-source",
+      "record": 7,
+      "kind": "source",
+      "rva": "0x346730",
+      "address": 3434288,
+      "file_offset": 3430192,
+      "maximum_bytes": 593,
+      "declared_content_bytes": 592,
+      "mode": "exact-copy-span",
+      "expected_ascii": null
+    },
+    {
+      "id": "07-tsetter-name",
+      "record": 7,
+      "kind": "name",
+      "rva": "0x346710",
+      "address": 3434256,
+      "file_offset": 3430160,
+      "maximum_bytes": 8,
+      "declared_content_bytes": 7,
+      "mode": "exact-copy-span",
+      "expected_ascii": "tsetter"
+    },
+    {
+      "id": "07-tsetter-chunk",
+      "record": 7,
+      "kind": "chunk",
+      "rva": "0x346700",
+      "address": 3434240,
+      "file_offset": 3430144,
+      "maximum_bytes": 16,
+      "declared_content_bytes": 15,
+      "mode": "exact-copy-span",
+      "expected_ascii": "luaglue-tsetter"
+    },
+    {
+      "id": "08-instance-source",
+      "record": 8,
+      "kind": "source",
+      "rva": "0x347580",
+      "address": 3437952,
+      "file_offset": 3433856,
+      "maximum_bytes": 921,
+      "declared_content_bytes": 920,
+      "mode": "exact-copy-span",
+      "expected_ascii": null
+    },
+    {
+      "id": "08-instance-name",
+      "record": 8,
+      "kind": "name",
+      "rva": "0x346718",
+      "address": 3434264,
+      "file_offset": 3430168,
+      "maximum_bytes": 9,
+      "declared_content_bytes": 8,
+      "mode": "exact-copy-span",
+      "expected_ascii": "instance"
+    },
+    {
+      "id": "08-instance-chunk",
+      "record": 8,
+      "kind": "chunk",
+      "rva": "0x347920",
+      "address": 3438880,
+      "file_offset": 3434784,
+      "maximum_bytes": 17,
+      "declared_content_bytes": 16,
+      "mode": "exact-copy-span",
+      "expected_ascii": "luaglue-instance"
+    },
+    {
+      "id": "09-derive-source",
+      "record": 9,
+      "kind": "source",
+      "rva": "0x346f90",
+      "address": 3436432,
+      "file_offset": 3432336,
+      "maximum_bytes": 383,
+      "declared_content_bytes": 382,
+      "mode": "exact-copy-span",
+      "expected_ascii": null
+    },
+    {
+      "id": "09-derive-name",
+      "record": 9,
+      "kind": "name",
+      "rva": "0x347948",
+      "address": 3438920,
+      "file_offset": 3434824,
+      "maximum_bytes": 7,
+      "declared_content_bytes": 6,
+      "mode": "exact-copy-span",
+      "expected_ascii": "derive"
+    },
+    {
+      "id": "09-derive-chunk",
+      "record": 9,
+      "kind": "chunk",
+      "rva": "0x347938",
+      "address": 3438904,
+      "file_offset": 3434808,
+      "maximum_bytes": 15,
+      "declared_content_bytes": 14,
+      "mode": "exact-copy-span",
+      "expected_ascii": "luaglue-derive"
+    },
+    {
+      "id": "10-class-source",
+      "record": 10,
+      "kind": "source",
+      "rva": "0x347110",
+      "address": 3436816,
+      "file_offset": 3432720,
+      "maximum_bytes": 1106,
+      "declared_content_bytes": 1105,
+      "mode": "exact-copy-span",
+      "expected_ascii": null
+    },
+    {
+      "id": "10-class-name",
+      "record": 10,
+      "kind": "name",
+      "rva": "0x346f88",
+      "address": 3436424,
+      "file_offset": 3432328,
+      "maximum_bytes": 6,
+      "declared_content_bytes": 5,
+      "mode": "exact-copy-span",
+      "expected_ascii": "class"
+    },
+    {
+      "id": "10-class-chunk",
+      "record": 10,
+      "kind": "chunk",
+      "rva": "0x347568",
+      "address": 3437928,
+      "file_offset": 3433832,
+      "maximum_bytes": 14,
+      "declared_content_bytes": 13,
+      "mode": "exact-copy-span",
+      "expected_ascii": "luaglue-class"
+    },
+    {
+      "id": "version",
+      "record": null,
+      "kind": "version",
+      "rva": "0x3456f4",
+      "address": 3430132,
+      "file_offset": 3426036,
+      "maximum_bytes": 32,
+      "mode": "bytewise-until-first-nul"
+    },
+    {
+      "id": "registry-key",
+      "record": null,
+      "kind": "registry-key",
+      "rva": "0x3479b8",
+      "address": 3439032,
+      "file_offset": 3434936,
+      "maximum_bytes": 32,
+      "mode": "bytewise-until-first-nul"
+    },
+    {
+      "id": "getglobal-258da0-raw",
+      "record": null,
+      "kind": "supplemental-code",
+      "rva": "0x258da0",
+      "address": 2461088,
+      "file_offset": 2458016,
+      "maximum_bytes": 16,
+      "mode": "exact-raw-no-decode",
+      "basis": {
+        "path": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1/05-LuaInitializeDependency-0x180258e50-procedure_assembly.json",
+        "sha256": "b61d98ddad9968e13c7f6c9be8551a98eb4e03e8faccc7913ee461394896a8bf"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "pseudo",
+      "path": "docs/reverse-client/r1-engine-lua-publication-run1/10-LuaPublicationDirect-0x1802568d0-procedure_pseudo_code.json",
+      "sha256": "424cee3ce91716d8381950684e194d576fcee10ea372ad2b9d9421276e319de9",
+      "selector": "result.structuredContent.raw_result.value"
+    },
+    {
+      "id": "assembly",
+      "path": "docs/reverse-client/r1-engine-lua-publication-run1/11-LuaPublicationDirect-0x1802568d0-procedure_assembly.json",
+      "sha256": "6d146c88e86f64a2b49424906c8d741d402c029abfd88ee7070fbf6fed79d060",
+      "selector": "result.structuredContent.raw_result.value"
+    },
+    {
+      "id": "caller",
+      "path": "docs/reverse-client/r1-engine-lua-manager-core-run1/08-LuaManagerInitialize-0x1800f2e00-procedure_assembly.json",
+      "sha256": "189560d9bffcb960574a4477ef472497a78d9263f4f1fd017b70c2bd0980464a",
+      "selector": "result.structuredContent.raw_result.value"
+    }
+  ],
+  "data_bytes": 8355,
+  "data_operations": 43,
+  "code_bytes": 16,
+  "code_operations": 1,
+  "fingerprint_ranges": [
+    {
+      "file_offset": 0,
+      "bytes": 4485632,
+      "purpose": "fingerprint-only",
+      "bytes_read": 4485632
+    },
+    {
+      "file_offset": 0,
+      "bytes": 4485632,
+      "purpose": "fingerprint-only",
+      "bytes_read": 4485632
+    }
+  ],
+  "reads": [
+    {
+      "id": "00-dump-source",
+      "rva": "0x346100",
+      "file_offset": 3428608,
+      "requested_bytes": 107,
+      "bytes_read": 107
+    },
+    {
+      "id": "00-dump-name",
+      "rva": "0x3457f8",
+      "file_offset": 3426296,
+      "requested_bytes": 5,
+      "bytes_read": 5
+    },
+    {
+      "id": "00-dump-chunk",
+      "rva": "0x346170",
+      "file_offset": 3428720,
+      "requested_bytes": 13,
+      "bytes_read": 13
+    },
+    {
+      "id": "01-dumpr-source",
+      "rva": "0x345840",
+      "file_offset": 3426368,
+      "requested_bytes": 119,
+      "bytes_read": 119
+    },
+    {
+      "id": "01-dumpr-name",
+      "rva": "0x346190",
+      "file_offset": 3428752,
+      "requested_bytes": 6,
+      "bytes_read": 6
+    },
+    {
+      "id": "01-dumpr-chunk",
+      "rva": "0x346180",
+      "file_offset": 3428736,
+      "requested_bytes": 14,
+      "bytes_read": 14
+    },
+    {
+      "id": "02-dumpex-source",
+      "rva": "0x3458c0",
+      "file_offset": 3426496,
+      "requested_bytes": 2092,
+      "bytes_read": 2092
+    },
+    {
+      "id": "02-dumpex-name",
+      "rva": "0x345830",
+      "file_offset": 3426352,
+      "requested_bytes": 7,
+      "bytes_read": 7
+    },
+    {
+      "id": "02-dumpex-chunk",
+      "rva": "0x3460f0",
+      "file_offset": 3428592,
+      "requested_bytes": 15,
+      "bytes_read": 15
+    },
+    {
+      "id": "03-readonly-source",
+      "rva": "0x346630",
+      "file_offset": 3429936,
+      "requested_bytes": 204,
+      "bytes_read": 204
+    },
+    {
+      "id": "03-readonly-name",
+      "rva": "0x346618",
+      "file_offset": 3429912,
+      "requested_bytes": 9,
+      "bytes_read": 9
+    },
+    {
+      "id": "03-readonly-chunk",
+      "rva": "0x346600",
+      "file_offset": 3429888,
+      "requested_bytes": 17,
+      "bytes_read": 17
+    },
+    {
+      "id": "04-igetter-source",
+      "rva": "0x3461a0",
+      "file_offset": 3428768,
+      "requested_bytes": 1077,
+      "bytes_read": 1077
+    },
+    {
+      "id": "04-igetter-name",
+      "rva": "0x346628",
+      "file_offset": 3429928,
+      "requested_bytes": 8,
+      "bytes_read": 8
+    },
+    {
+      "id": "04-igetter-chunk",
+      "rva": "0x3465d8",
+      "file_offset": 3429848,
+      "requested_bytes": 16,
+      "bytes_read": 16
+    },
+    {
+      "id": "05-isetter-source",
+      "rva": "0x346990",
+      "file_offset": 3430800,
+      "requested_bytes": 978,
+      "bytes_read": 978
+    },
+    {
+      "id": "05-isetter-name",
+      "rva": "0x3465f8",
+      "file_offset": 3429880,
+      "requested_bytes": 8,
+      "bytes_read": 8
+    },
+    {
+      "id": "05-isetter-chunk",
+      "rva": "0x3465e8",
+      "file_offset": 3429864,
+      "requested_bytes": 16,
+      "bytes_read": 16
+    },
+    {
+      "id": "06-tgetter-source",
+      "rva": "0x346d70",
+      "file_offset": 3431792,
+      "requested_bytes": 515,
+      "bytes_read": 515
+    },
+    {
+      "id": "06-tgetter-name",
+      "rva": "0x346988",
+      "file_offset": 3430792,
+      "requested_bytes": 8,
+      "bytes_read": 8
+    },
+    {
+      "id": "06-tgetter-chunk",
+      "rva": "0x346f78",
+      "file_offset": 3432312,
+      "requested_bytes": 16,
+      "bytes_read": 16
+    },
+    {
+      "id": "07-tsetter-source",
+      "rva": "0x346730",
+      "file_offset": 3430192,
+      "requested_bytes": 593,
+      "bytes_read": 593
+    },
+    {
+      "id": "07-tsetter-name",
+      "rva": "0x346710",
+      "file_offset": 3430160,
+      "requested_bytes": 8,
+      "bytes_read": 8
+    },
+    {
+      "id": "07-tsetter-chunk",
+      "rva": "0x346700",
+      "file_offset": 3430144,
+      "requested_bytes": 16,
+      "bytes_read": 16
+    },
+    {
+      "id": "08-instance-source",
+      "rva": "0x347580",
+      "file_offset": 3433856,
+      "requested_bytes": 921,
+      "bytes_read": 921
+    },
+    {
+      "id": "08-instance-name",
+      "rva": "0x346718",
+      "file_offset": 3430168,
+      "requested_bytes": 9,
+      "bytes_read": 9
+    },
+    {
+      "id": "08-instance-chunk",
+      "rva": "0x347920",
+      "file_offset": 3434784,
+      "requested_bytes": 17,
+      "bytes_read": 17
+    },
+    {
+      "id": "09-derive-source",
+      "rva": "0x346f90",
+      "file_offset": 3432336,
+      "requested_bytes": 383,
+      "bytes_read": 383
+    },
+    {
+      "id": "09-derive-name",
+      "rva": "0x347948",
+      "file_offset": 3434824,
+      "requested_bytes": 7,
+      "bytes_read": 7
+    },
+    {
+      "id": "09-derive-chunk",
+      "rva": "0x347938",
+      "file_offset": 3434808,
+      "requested_bytes": 15,
+      "bytes_read": 15
+    },
+    {
+      "id": "10-class-source",
+      "rva": "0x347110",
+      "file_offset": 3432720,
+      "requested_bytes": 1106,
+      "bytes_read": 1106
+    },
+    {
+      "id": "10-class-name",
+      "rva": "0x346f88",
+      "file_offset": 3432328,
+      "requested_bytes": 6,
+      "bytes_read": 6
+    },
+    {
+      "id": "10-class-chunk",
+      "rva": "0x347568",
+      "file_offset": 3433832,
+      "requested_bytes": 14,
+      "bytes_read": 14
+    },
+    {
+      "id": "version",
+      "rva": "0x3456f4",
+      "file_offset": 3426036,
+      "requested_bytes": 1,
+      "bytes_read": 1
+    },
+    {
+      "id": "version",
+      "rva": "0x3456f5",
+      "file_offset": 3426037,
+      "requested_bytes": 1,
+      "bytes_read": 1
+    },
+    {
+      "id": "version",
+      "rva": "0x3456f6",
+      "file_offset": 3426038,
+      "requested_bytes": 1,
+      "bytes_read": 1
+    },
+    {
+      "id": "version",
+      "rva": "0x3456f7",
+      "file_offset": 3426039,
+      "requested_bytes": 1,
+      "bytes_read": 1
+    },
+    {
+      "id": "version",
+      "rva": "0x3456f8",
+      "file_offset": 3426040,
+      "requested_bytes": 1,
+      "bytes_read": 1
+    },
+    {
+      "id": "registry-key",
+      "rva": "0x3479b8",
+      "file_offset": 3434936,
+      "requested_bytes": 1,
+      "bytes_read": 1
+    },
+    {
+      "id": "registry-key",
+      "rva": "0x3479b9",
+      "file_offset": 3434937,
+      "requested_bytes": 1,
+      "bytes_read": 1
+    },
+    {
+      "id": "registry-key",
+      "rva": "0x3479ba",
+      "file_offset": 3434938,
+      "requested_bytes": 1,
+      "bytes_read": 1
+    },
+    {
+      "id": "registry-key",
+      "rva": "0x3479bb",
+      "file_offset": 3434939,
+      "requested_bytes": 1,
+      "bytes_read": 1
+    },
+    {
+      "id": "registry-key",
+      "rva": "0x3479bc",
+      "file_offset": 3434940,
+      "requested_bytes": 1,
+      "bytes_read": 1
+    },
+    {
+      "id": "getglobal-258da0-raw",
+      "rva": "0x258da0",
+      "file_offset": 2458016,
+      "requested_bytes": 16,
+      "bytes_read": 16
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "00-dump-source",
+      "file": "00-dump-source.bin",
+      "rva": "0x346100",
+      "file_offset": 3428608,
+      "bytes": 107,
+      "sha256": "9735d32a762b30f6857752db952a75835e2b393a26187dc43420fac8897ea41a",
+      "first_nul_offset": 106,
+      "content_bytes_without_terminator": 106,
+      "encoding": "UNINTERPRETED",
+      "validated": true
+    },
+    {
+      "id": "00-dump-name",
+      "file": "00-dump-name.bin",
+      "rva": "0x3457f8",
+      "file_offset": 3426296,
+      "bytes": 5,
+      "sha256": "702bc64473a198545299f5e080c289505993edfd20e4f7f80d146f0c31e76d08",
+      "first_nul_offset": 4,
+      "content_bytes_without_terminator": 4,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "00-dump-chunk",
+      "file": "00-dump-chunk.bin",
+      "rva": "0x346170",
+      "file_offset": 3428720,
+      "bytes": 13,
+      "sha256": "8b2d1b3fbfaf49ac5c3f6b4e78d8cd461b27262a386b0b24e95f6ecc2a42854a",
+      "first_nul_offset": 12,
+      "content_bytes_without_terminator": 12,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "01-dumpr-source",
+      "file": "01-dumpr-source.bin",
+      "rva": "0x345840",
+      "file_offset": 3426368,
+      "bytes": 119,
+      "sha256": "80535d461888ef5fdbf59f1fea8e3937e7d7bd0711188237e63d577a42d40aa4",
+      "first_nul_offset": 118,
+      "content_bytes_without_terminator": 118,
+      "encoding": "UNINTERPRETED",
+      "validated": true
+    },
+    {
+      "id": "01-dumpr-name",
+      "file": "01-dumpr-name.bin",
+      "rva": "0x346190",
+      "file_offset": 3428752,
+      "bytes": 6,
+      "sha256": "aeb58c02be9ef599623588270b6a270f454efb75adb179d40268f0f168c0c0b3",
+      "first_nul_offset": 5,
+      "content_bytes_without_terminator": 5,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "01-dumpr-chunk",
+      "file": "01-dumpr-chunk.bin",
+      "rva": "0x346180",
+      "file_offset": 3428736,
+      "bytes": 14,
+      "sha256": "b6e07f6640f56f013ac1f5157d0ed8f951203d4d3445447282f839c0439d5833",
+      "first_nul_offset": 13,
+      "content_bytes_without_terminator": 13,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "02-dumpex-source",
+      "file": "02-dumpex-source.bin",
+      "rva": "0x3458c0",
+      "file_offset": 3426496,
+      "bytes": 2092,
+      "sha256": "40d77df1899d487e581527ae5cb0d15a69c3632c56389f97d665b8588e4962c1",
+      "first_nul_offset": 2091,
+      "content_bytes_without_terminator": 2091,
+      "encoding": "UNINTERPRETED",
+      "validated": true
+    },
+    {
+      "id": "02-dumpex-name",
+      "file": "02-dumpex-name.bin",
+      "rva": "0x345830",
+      "file_offset": 3426352,
+      "bytes": 7,
+      "sha256": "d1df78a3498e96bff2e095c590fdae86ec3d07f433c6bc24045954b25a02bfe7",
+      "first_nul_offset": 6,
+      "content_bytes_without_terminator": 6,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "02-dumpex-chunk",
+      "file": "02-dumpex-chunk.bin",
+      "rva": "0x3460f0",
+      "file_offset": 3428592,
+      "bytes": 15,
+      "sha256": "8513f113176640ce727d77ef3218d86f28c6e2171332d00bb81e2f091c5e874d",
+      "first_nul_offset": 14,
+      "content_bytes_without_terminator": 14,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "03-readonly-source",
+      "file": "03-readonly-source.bin",
+      "rva": "0x346630",
+      "file_offset": 3429936,
+      "bytes": 204,
+      "sha256": "371f254de944385c06b8a259bb6ad0e6727f2d1302e801d7bdc881258e75e22f",
+      "first_nul_offset": 203,
+      "content_bytes_without_terminator": 203,
+      "encoding": "UNINTERPRETED",
+      "validated": true
+    },
+    {
+      "id": "03-readonly-name",
+      "file": "03-readonly-name.bin",
+      "rva": "0x346618",
+      "file_offset": 3429912,
+      "bytes": 9,
+      "sha256": "d268e6aa67cf81c0cfee14bd663b366a04ff829b69594a50fc126276b058f6a2",
+      "first_nul_offset": 8,
+      "content_bytes_without_terminator": 8,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "03-readonly-chunk",
+      "file": "03-readonly-chunk.bin",
+      "rva": "0x346600",
+      "file_offset": 3429888,
+      "bytes": 17,
+      "sha256": "3caed9ec0e6d54165bf5986a9393ebc10847ac84e09fa71b7e60548d7d939cec",
+      "first_nul_offset": 16,
+      "content_bytes_without_terminator": 16,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "04-igetter-source",
+      "file": "04-igetter-source.bin",
+      "rva": "0x3461a0",
+      "file_offset": 3428768,
+      "bytes": 1077,
+      "sha256": "69387615657220526975d62c6a0e98ce37d0c127d279635aae80d2d1aaa7798d",
+      "first_nul_offset": 1076,
+      "content_bytes_without_terminator": 1076,
+      "encoding": "UNINTERPRETED",
+      "validated": true
+    },
+    {
+      "id": "04-igetter-name",
+      "file": "04-igetter-name.bin",
+      "rva": "0x346628",
+      "file_offset": 3429928,
+      "bytes": 8,
+      "sha256": "1e81b25c84ab029f0247a1afa6f088d68eb4997fadb86853d259eaf0dbfca7d6",
+      "first_nul_offset": 7,
+      "content_bytes_without_terminator": 7,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "04-igetter-chunk",
+      "file": "04-igetter-chunk.bin",
+      "rva": "0x3465d8",
+      "file_offset": 3429848,
+      "bytes": 16,
+      "sha256": "8b140fdc115ec7885499d7cca7dc24be7b9f6d40e95bc9c3194cc02bbadeea47",
+      "first_nul_offset": 15,
+      "content_bytes_without_terminator": 15,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "05-isetter-source",
+      "file": "05-isetter-source.bin",
+      "rva": "0x346990",
+      "file_offset": 3430800,
+      "bytes": 978,
+      "sha256": "4d6c80c4e2553473ab64530947b69c56bf3f49b51b12eba45639a4ba4d710a4f",
+      "first_nul_offset": 977,
+      "content_bytes_without_terminator": 977,
+      "encoding": "UNINTERPRETED",
+      "validated": true
+    },
+    {
+      "id": "05-isetter-name",
+      "file": "05-isetter-name.bin",
+      "rva": "0x3465f8",
+      "file_offset": 3429880,
+      "bytes": 8,
+      "sha256": "f8d2f7485a8d41b7bdbe3c77ac35fad4f96fb82f67ecaa7ed7aaaa6a025ac3e6",
+      "first_nul_offset": 7,
+      "content_bytes_without_terminator": 7,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "05-isetter-chunk",
+      "file": "05-isetter-chunk.bin",
+      "rva": "0x3465e8",
+      "file_offset": 3429864,
+      "bytes": 16,
+      "sha256": "d56a641b87e64b66dabc282bb71e9d8aef6fe6d71cea7686a3165f5cf390d272",
+      "first_nul_offset": 15,
+      "content_bytes_without_terminator": 15,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "06-tgetter-source",
+      "file": "06-tgetter-source.bin",
+      "rva": "0x346d70",
+      "file_offset": 3431792,
+      "bytes": 515,
+      "sha256": "f88a26d6212db3ad0c4600af9b7d2d7f38a3d97ea52f2b2c07f69bb9ceea5160",
+      "first_nul_offset": 514,
+      "content_bytes_without_terminator": 514,
+      "encoding": "UNINTERPRETED",
+      "validated": true
+    },
+    {
+      "id": "06-tgetter-name",
+      "file": "06-tgetter-name.bin",
+      "rva": "0x346988",
+      "file_offset": 3430792,
+      "bytes": 8,
+      "sha256": "6cd634d13de0a27bc96ff140465c5d84142c91f50620e753c9ee94f211f4f238",
+      "first_nul_offset": 7,
+      "content_bytes_without_terminator": 7,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "06-tgetter-chunk",
+      "file": "06-tgetter-chunk.bin",
+      "rva": "0x346f78",
+      "file_offset": 3432312,
+      "bytes": 16,
+      "sha256": "097f693942719698083491c04afa375bc7debd1bf72f58e05e7aac05ed3ec0f6",
+      "first_nul_offset": 15,
+      "content_bytes_without_terminator": 15,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "07-tsetter-source",
+      "file": "07-tsetter-source.bin",
+      "rva": "0x346730",
+      "file_offset": 3430192,
+      "bytes": 593,
+      "sha256": "c12b095987d2749349d6b86e2c6bde41534b68d3df920d2d96ed4c812d4a9b9d",
+      "first_nul_offset": 592,
+      "content_bytes_without_terminator": 592,
+      "encoding": "UNINTERPRETED",
+      "validated": true
+    },
+    {
+      "id": "07-tsetter-name",
+      "file": "07-tsetter-name.bin",
+      "rva": "0x346710",
+      "file_offset": 3430160,
+      "bytes": 8,
+      "sha256": "6215794726f4a8837e414625bf6ed04c939e2c4a9b4ed7ea6bf93aa5572476e6",
+      "first_nul_offset": 7,
+      "content_bytes_without_terminator": 7,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "07-tsetter-chunk",
+      "file": "07-tsetter-chunk.bin",
+      "rva": "0x346700",
+      "file_offset": 3430144,
+      "bytes": 16,
+      "sha256": "463004498e3ff427e6d9aa9a80dd384b68386af6a22188655fb6c91161373e2b",
+      "first_nul_offset": 15,
+      "content_bytes_without_terminator": 15,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "08-instance-source",
+      "file": "08-instance-source.bin",
+      "rva": "0x347580",
+      "file_offset": 3433856,
+      "bytes": 921,
+      "sha256": "c8279414bcf07665f12606a8fb347e7e4d7f519c5d6877365c2a45079b9e3f66",
+      "first_nul_offset": 920,
+      "content_bytes_without_terminator": 920,
+      "encoding": "UNINTERPRETED",
+      "validated": true
+    },
+    {
+      "id": "08-instance-name",
+      "file": "08-instance-name.bin",
+      "rva": "0x346718",
+      "file_offset": 3430168,
+      "bytes": 9,
+      "sha256": "d753c59256b4d21bf7c3871f2646f98c201532b98179a2369434e4f66638e730",
+      "first_nul_offset": 8,
+      "content_bytes_without_terminator": 8,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "08-instance-chunk",
+      "file": "08-instance-chunk.bin",
+      "rva": "0x347920",
+      "file_offset": 3434784,
+      "bytes": 17,
+      "sha256": "27250f6aca1ac56fb3cc2060c4a36c20d862f2a8d89c618e4dede47e8cc763d9",
+      "first_nul_offset": 16,
+      "content_bytes_without_terminator": 16,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "09-derive-source",
+      "file": "09-derive-source.bin",
+      "rva": "0x346f90",
+      "file_offset": 3432336,
+      "bytes": 383,
+      "sha256": "c1e7d10f9182e765ecf0986d726cdc0530dd470d2629702cfd93e085abdfa487",
+      "first_nul_offset": 382,
+      "content_bytes_without_terminator": 382,
+      "encoding": "UNINTERPRETED",
+      "validated": true
+    },
+    {
+      "id": "09-derive-name",
+      "file": "09-derive-name.bin",
+      "rva": "0x347948",
+      "file_offset": 3434824,
+      "bytes": 7,
+      "sha256": "9c0d8c938d94ecccf0c251d561a0fa6b91068eb35e86039bfcf19d94a0d88620",
+      "first_nul_offset": 6,
+      "content_bytes_without_terminator": 6,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "09-derive-chunk",
+      "file": "09-derive-chunk.bin",
+      "rva": "0x347938",
+      "file_offset": 3434808,
+      "bytes": 15,
+      "sha256": "adc9e3998887bb984f0d35bafcbf4a79a19990e822c75021b6d201641c444b80",
+      "first_nul_offset": 14,
+      "content_bytes_without_terminator": 14,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "10-class-source",
+      "file": "10-class-source.bin",
+      "rva": "0x347110",
+      "file_offset": 3432720,
+      "bytes": 1106,
+      "sha256": "9126772f6e299282e73c7e00859e7ae030c1e6a798d6ba44f2d65a82e6d0efb1",
+      "first_nul_offset": 1105,
+      "content_bytes_without_terminator": 1105,
+      "encoding": "UNINTERPRETED",
+      "validated": true
+    },
+    {
+      "id": "10-class-name",
+      "file": "10-class-name.bin",
+      "rva": "0x346f88",
+      "file_offset": 3432328,
+      "bytes": 6,
+      "sha256": "ac29f1a6000f3a79fef892ab36fe5c9596147e552f455748bc122c4e6975d463",
+      "first_nul_offset": 5,
+      "content_bytes_without_terminator": 5,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "10-class-chunk",
+      "file": "10-class-chunk.bin",
+      "rva": "0x347568",
+      "file_offset": 3433832,
+      "bytes": 14,
+      "sha256": "3f96163c749332cdc861342abd09933051b9d498efb075292bd88000569b6e59",
+      "first_nul_offset": 13,
+      "content_bytes_without_terminator": 13,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "version",
+      "file": "version.bin",
+      "rva": "0x3456f4",
+      "file_offset": 3426036,
+      "bytes": 5,
+      "sha256": "081b30cf6bf5ff34b6894ae23191840ca371ab45392b5c8725d8d7218a04762f",
+      "first_nul_offset": 4,
+      "content_bytes_without_terminator": 4,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "registry-key",
+      "file": "registry-key.bin",
+      "rva": "0x3479b8",
+      "file_offset": 3434936,
+      "bytes": 5,
+      "sha256": "6b3cc554d45a56ed43995cc307f4481a80680a993cd06b4ecfef70986c17997e",
+      "first_nul_offset": 4,
+      "content_bytes_without_terminator": 4,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    },
+    {
+      "id": "getglobal-258da0-raw",
+      "file": "getglobal-258da0-raw.bin",
+      "rva": "0x258da0",
+      "file_offset": 2458016,
+      "bytes": 16,
+      "sha256": "970ddbbc3ac61108cbad509e75e7279f9e73b1d7df282dba2d5e347acabda13a",
+      "first_nul_offset": null,
+      "content_bytes_without_terminator": null,
+      "encoding": "RAW_BYTES",
+      "validated": true
+    }
+  ],
+  "source_closed": true,
+  "source_stable": true,
+  "semantic_data_complete": true,
+  "original_loaded_or_executed": false,
+  "subprocesses": 0,
+  "source_text_encoding": "UNINTERPRETED_RAW_BYTES",
+  "source_transformation_255F70": "UNKNOWN",
+  "runtime_compatibility_verified": false,
+  "failures": [],
+  "limitations": [
+    "Only33 exact source/name/chunk copy spans and2 fixed32B maximum C strings. Bounded strings stop at their first NUL; a missing terminator fails without extension.",
+    "One separately authorized16B raw code supplement at258DA0 follows the cached conditional binder target. It is not decoded here and proves neither the loaded421880 value nor a full function boundary.258DB0 is not read.",
+    "Raw data artifacts include the terminator. Declared source copy length does not establish255F70 output or luaL_loadbuffer input length.",
+    "No source decoding, normalization, repair, script execution or functional/ABI compatibility claim. Cached names are compared as ASCII bytes only.",
+    "Before/after whole-file SHA256 passes use the same read-only descriptor and64KiB buffers; fingerprints are outside semantic data totals and are not an atomic snapshot.",
+    "PE mapping is reused from pinned local evidence for the same file hash. No new header, other code, neighboring string, directory or export-table reads.",
+    "Caller must complete the established Windows Attributes reparse preflight; Node cannot identify every Windows reparse tag."
+  ],
+  "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "finished_utc": "2026-11-03T05:30:25.259Z"
+}

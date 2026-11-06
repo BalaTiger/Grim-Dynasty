@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "purpose": "One bounded body query of name-identified AnimationSet candidates024080,024D30,024D80: constructor,PreLoad,AddAnimation. Names establish only candidate addresses; do not infer initialization,ownership or failure semantics before the actual body responses.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-animation-set-production-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 14,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-animation-set-names-run1/04-AnimationSet-literal-name-search.json",
+      "sha256": "bdb3b9aa9c4f280d0b853ca3fa7eb2c577dfb3be14192ae5a9afb8c59eb34f53",
+      "addresses": [
+        "0x180024080",
+        "0x180024d30",
+        "0x180024d80"
+      ],
+      "selected_names": [
+        "GAME::AnimationSet::AnimationSet",
+        "GAME::AnimationSet::PreLoad",
+        "GAME::AnimationSet::AddAnimation"
+      ],
+      "source_kind": "Actual fixed literal search metadata identifies these three exact address/name pairs only. Behavior,signatures,constructor writes and entry publication remain unproven. Alternate56DF20 constructor is explicitly outside this batch."
+    }
+  ],
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-skill-moved-direct-plan.json",
+    "sha256": "96e164adb4ff4909806229a8a4a7dce460cb134d76de0cc21768e9ea29313677",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "base_provider_startup_ms": 330000,
+    "effective_provider_startup_ms": 480000,
+    "outer_request_ms": 600000,
+    "override_only_for_this_batch": true,
+    "formal_execution_approval_required": true
+  },
+  "startup_override": {
+    "environment_variable": "REA_GHIDRA_STARTUP_TIMEOUT_MS",
+    "value": "480000",
+    "previous_provider_startup_ms": 330000,
+    "provider_startup_ms": 480000,
+    "outer_request_ms": 600000,
+    "wrapper": {
+      "file": "tools/static_analysis/rea_game_associated_retry_server.mjs",
+      "sha256": "d905d29ce91cf0934717b59ab2b1a69482c40b2380f01a94377aeb4a0c4501b8"
+    },
+    "maximum_new_attempts": 1,
+    "mode": "--r1-game-animation-set-production",
+    "formal_execution_approval_required": true
+  },
+  "unchanged_guard_pins": [
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    },
+    {
+      "file": "tools/static_analysis/rea_project_environment.mjs",
+      "sha256": "3808055da161a942867474e13edea86710d2981bda0ccf4ed5d385df5e794f88"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    }
+  ],
+  "prior_failed_startup": {
+    "summary": {
+      "file": "docs/reverse-client/r1-game-associated-run1/summary.json",
+      "sha256": "68f9a7cc029420a3d11aececfeb4b31798f9a6b3719872863efbf3d4bd0501f9"
+    },
+    "response": {
+      "file": "docs/reverse-client/r1-game-associated-run1/04-GameAssociated-0x180077d60-procedure_pseudo_code.json",
+      "sha256": "cb040fa585c31c0c97f484992fe5f9cbf94f219b4f10e8032b535e743aa4d59d"
+    },
+    "cleanup_close": {
+      "file": "docs/reverse-client/r1-game-associated-run1/cleanup-close.json",
+      "sha256": "c7cb37c4dab1d993c1ef70357208b285828ccbe9143872a2b6a1a4d8b194960e"
+    },
+    "cleanup_session": {
+      "file": "docs/reverse-client/r1-game-associated-run1/cleanup-session.json",
+      "sha256": "20a8378ae07a4b1fd2fe4d636fb2fdbf7336d02da6192bcd7d7cad38b49524cf"
+    },
+    "expected_cleanup": {
+      "status": "failed",
+      "completed_plan_calls": 3,
+      "tool_calls": 6,
+      "close_acknowledged": true,
+      "closed_session_verified": true,
+      "process_exit_confirmed": true,
+      "forced_termination": false,
+      "child_exit_code": 0,
+      "child_signal": null,
+      "memory_stop_triggered": false,
+      "expected_heap_observed": true,
+      "job_empty_confirmed": true,
+      "sampler_exit_confirmed": true,
+      "sampler_exit_code": 0,
+      "sampler_output_drained": true,
+      "monitor_failures": [],
+      "target_sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "target_sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    "error_code": "provider_timeout",
+    "error_category": "timeout",
+    "operation": "procedure_pseudo_code",
+    "timeout_ms": 330000,
+    "failure_message": "Ghidra startup deadline elapsed",
+    "successful_target_bodies": 0
+  },
+  "execution_requirements": [
+    "Inactive preparation only during OW heavy-resource handoff. Root reviews,then formally approves only affected pure argv/syntax/offline checks before separate live approval after resource release.",
+    "Exactly024080/024D30/024D80 each pseudo-code,assembly,direct callees plus5lifecycle calls:14total,one fixed attempt.",
+    "No056DF20 alternate constructor,024DE0 or05AE40 requery; no search,callers,xrefs,recursive target or widened address on empty/containing/different function output.",
+    "Names are only candidate addresses; do not claim initialization or native compatibility until actual body evidence supports it.",
+    "Same repaired Game profile and gated wrapper. Exact absolute runner plus --r1-game-animation-set-production; four closed accepted modes only.",
+    "Keep384M heap,5GiB physical+commit launch,2GiB stop,480000ms startup/600000ms outer timeout,one backend,mutex/identity/Job/unknown-owner fail-closed and normal cleanup.",
+    "Original read-only hash checks at live query; no game execution,saves,security,installation,commit/push/deploy. Preserve all prior outputs and Engine leaf build scripts."
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Game-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Game-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180024080"
+      },
+      "label": "04-AnimationSetProduction-0x180024080-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180024080"
+      },
+      "label": "05-AnimationSetProduction-0x180024080-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180024080"
+      },
+      "label": "06-AnimationSetProduction-0x180024080-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180024d30"
+      },
+      "label": "07-AnimationSetProduction-0x180024d30-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180024d30"
+      },
+      "label": "08-AnimationSetProduction-0x180024d30-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180024d30"
+      },
+      "label": "09-AnimationSetProduction-0x180024d30-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180024d80"
+      },
+      "label": "10-AnimationSetProduction-0x180024d80-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180024d80"
+      },
+      "label": "11-AnimationSetProduction-0x180024d80-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180024d80"
+      },
+      "label": "12-AnimationSetProduction-0x180024d80-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "13-Game-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "14-final-session"
+    }
+  ],
+  "identity_repair": {
+    "sampler_identity": "game-associated-identity-repair",
+    "controller_runner": "C:/Users/zhuzi/Documents/Grim-Dynasty/tools/static_analysis/rea_native_registration.mjs",
+    "controller_mode": "--r1-game-animation-set-production",
+    "effective_guard_pins": [
+      {
+        "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+        "sha256": "c6968067faa5b180556feaaf5e5aa62750e0ae0aa7bf031c5d1ceef990ae1f64"
+      },
+      {
+        "file": "tools/static_analysis/measure_game_associated_repair_memory.ps1",
+        "sha256": "dcc18bc620104666512b1683bb549b0e22cf7cf36a3f6718429510de6f1b8ab0"
+      },
+      {
+        "file": ".tooling/r1-game-associated-identity-repair-validation/result.json",
+        "sha256": "346578005bcf7ebc4a965de7a22104bf4bfd64801b67bfd552396746dd7b66aa"
+      }
+    ],
+    "previous_active_profile_sha256": "1ced4f54295e8aaf9529693fcb94f19a41f6e201af22f5fa9d3bda64874dcb7c",
+    "original_sampler": {
+      "file": "tools/static_analysis/measure_job_process_memory.ps1",
+      "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+    },
+    "prior_failure_pins": [
+      {
+        "file": "docs/reverse-client/r1-game-associated-run2/summary.json",
+        "sha256": "c2a444e1a66ba0a00b7d2234beb62d29627e20f38dc68f4ffa3e003b0eef2140"
+      },
+      {
+        "file": "docs/reverse-client/r1-game-associated-run2/owned-memory-sampler-stderr.txt",
+        "sha256": "05fad7ba8ed9305b9a59d084fb9d7840a93a0ce4f9e1267e41ddcf24c5014249"
+      },
+      {
+        "file": "docs/reverse-client/r1-game-associated-run2/owned-memory.ndjson.failure.json",
+        "sha256": "63493a0e69e0f846f9cca63958c20d6fff7b6aa76647041131e8970e70fbc153"
+      }
+    ],
+    "prior_failure_stage": "pre-Job wrapper argv mismatch; 0 MCP calls, no released backend",
+    "prior_close_and_job_empty_are_false": true,
+    "isolated_validation": {
+      "status": "passed-isolated-identity-repair-candidates",
+      "scenarios": 30,
+      "assertions": 74,
+      "live_admission_verified": false
+    },
+    "historical_monitor_metadata_is_not_effective_sampler_identity": true,
+    "live_requirements": [
+      "Current resources/mutex and prior cleanup must be verified; OW slot must be released before live backend.",
+      "Actual native argv,CIM,parent/time,nonce,Job membership and first sample pass before release.",
+      "New10-case pure argv test covers changed mode admission only; no test is executed or backend/function evidence claimed by preparation."
+    ]
+  },
+  "prior_successful_repaired_monitor": {
+    "file": "docs/reverse-client/r1-animation-set-names-run1/summary.json",
+    "sha256": "905e116dec518316bea94ae79c8dda958dced8a98007ce45627b7d7f177c51e7",
+    "calls": 6,
+    "target_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+  },
+  "identity_guard_update": {
+    "status": "prepared-not-executed",
+    "test_file": ".tooling/r1-animation-set-production-prepared/test_identity_guard.ps1",
+    "test_sha256": "8751a4157c7e124b513126493c667be0988b3ab1417bcee905e9446d57e0dab3",
+    "expected_scenarios": 10,
+    "expected_assertions": 20,
+    "only_change": "Add one exact mode to existing closed allowlist; all absolute runner/Node/argc/wrapper/nonce/parent/time/Job checks unchanged."
+  }
+}

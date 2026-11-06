@@ -1,0 +1,17 @@
+{
+    "schema":  "grim-dynasty-r1-arc-header-v1",
+    "utc":  "2026-11-06T04:16:15.9832720Z",
+    "solid_new":  {
+                      "empty_archive":  "resources/menu.arc is exactly 2048 bytes and contains only the magic, version 3, four zero fields and a single 0x08 at offset 25, everything else zero",
+                      "header_size":  "2048 bytes, confirmed by the empty archive and by Creatures.arc having its first block exactly at 2048",
+                      "data_start":  "2048",
+                      "first_block":  "at 2048 the bytes are f5 12 4d 53 48 03 00 followed by two 32-bit values 0x26 and 0x22 and then the original game path string Creatures\\\\Anomali... truncated in my read",
+                      "block_carries_path":  "each block embeds the original game path, which is a strong identifier for locating a specific asset"
+                  },
+    "unresolved":  {
+                       "length_encoding":  "treating the leading two bytes as a little-endian u16 gives 4853 and walking by that lands on a non-block; treating them as a varint gives 2421 and also lands on a non-block",
+                       "scan_evidence":  "searching for the MSH 03 00 pattern found occurrences at 2049, 8755, 15297, 23613, 29938 then jumps, with gaps 6706, 6542, 8316, 6325, 1375473, 3091612, so the pattern alone does not mark real boundaries",
+                       "implication":  "either the block length includes a table-driven stride, or blocks are addressed by the index rather than walked sequentially"
+                   },
+    "boundary":  "I can describe the header, the name table and a block header, but I cannot yet walk the block stream or resolve pc/hero_00.msh to bytes."
+}

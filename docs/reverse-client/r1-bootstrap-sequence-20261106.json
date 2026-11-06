@@ -1,0 +1,40 @@
+{
+    "schema":  "grim-dynasty-r1-bootstrap-sequence-v1",
+    "utc":  "2026-11-06T01:52:07.0286617Z",
+    "question":  "Does Engine::Initialize already include device creation, and what is the exact object chain?",
+    "answer":  "Yes. Engine::Initialize allocates and constructs a GraphicsEngine and then calls GraphicsEngine::CreateDevice(window, settings) on it, testing the returned bool.",
+    "sequence":  {
+                     "mov ecx, 0x1C0":  "GraphicsEngine object size is 448 bytes",
+                     "call 0x2dc398":  "operator new(0x1C0)",
+                     "call 0x90730":  "GraphicsEngine::GraphicsEngine()",
+                     "mov [rsi+0x1F8], rax":  "the new GraphicsEngine is stored at Engine+0x1F8",
+                     "mov r8, r12 / mov rdx, r15 / mov rcx, rax":  "arguments: settings, EWindow*, this",
+                     "call 0x90ba0":  "GraphicsEngine::CreateDevice(EWindow*, GraphicsEngineSettings const\u0026)",
+                     "test al, al / jne 0x7485c":  "success path continues; failure path calls 0x143900 (log object) and 0x146040 (format the message)"
+                 },
+    "evidence_chain_closed":  {
+                                  "earlier":  "0x256f0 reads mov rax,[0x180421428]; mov rdx,[rax+0x1F8]; mov rcx,[rdx+0xC0]; call [rax+8]",
+                                  "now":  "Engine::Initialize stores the GraphicsEngine at Engine+0x1F8",
+                                  "conclusion":  "0x421428 therefore holds the Engine object, and Engine+0x1F8 holds the GraphicsEngine. The two facts were derived independently and agree."
+                              },
+    "why_the_publisher_never_mattered":  "Device creation is inside Engine::Initialize, so a host that constructs an Engine with the original constructor and calls the original Initialize gets a real GraphicsEngine and a real device without needing to know which code wrote the global.",
+    "host_contract":  {
+                          "step1":  "WinWindow::WinWindow() at 0x217710, then WinWindow::Initialize at 0x2179b0 to obtain a real EWindow",
+                          "step2":  "GraphicsEngineSettings::GraphicsEngineSettings() at 0x906e0 (defaults to the direct3d11 plugin name, length 10)",
+                          "step3":  "Engine::Engine() at 0x72930 on a caller buffer. The constructor writes only up to +0x198, but Engine::Initialize writes and reads as far as +0xC27, so the buffer must be at least 0xC28 bytes.",
+                          "step4":  "Engine::Initialize at 0x743d0 with arguments (EWindow*, settings const\u0026, bool, FileSystem*, std::string const\u0026, bool, string, string, string, string, bool)",
+                          "step5":  "after success the engine global used by other engine code is the Engine object itself; a host must publish its own pointer there because the game side publisher is not identified"
+                      },
+    "not_yet_established":  [
+                                "the meaning of the four trailing std::string arguments and the three booleans",
+                                "whether FileSystem may be null",
+                                "the minimum Engine object size for certain (only the +0x358 write is observed so far)",
+                                "whether Engine::Initialize requires any earlier subsystem to exist"
+                            ],
+    "object_sizes":  {
+                         "engine_min":  "0xC28 bytes (highest offset touched by Initialize is 0xC27)",
+                         "graphics_engine":  "0x1C0 bytes (the value passed to operator new immediately before the GraphicsEngine constructor)",
+                         "win_window":  "at least 0x48 bytes based on the fields its constructor and Initialize write"
+                     },
+    "subsystem_fields_written_by_initialize":  "Initialize populates many later fields of the Engine object, including +0x3D8, +0x410, +0x418, +0x428, +0x50, +0x668, +0x670, +0x678, +0x688, +0x690, +0x698 and +0x6A0, which is consistent with it standing up a large set of subsystems rather than a single device."
+}

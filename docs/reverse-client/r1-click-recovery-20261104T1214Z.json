@@ -1,0 +1,52 @@
+{
+  "schema": "gd-click-observation-recovery-v1",
+  "source": "User reports memory released; one formal retry of same read-only sampler",
+  "sample": {
+    "utc": "2026-11-04T12:14:30.3658893Z",
+    "physicalGiB": 17.106922149658203,
+    "commitGiB": 24.084915161132812,
+    "pid": 38316,
+    "creation_filetime": "134382473153235939",
+    "conflicts": [],
+    "tool_chunk": "829b37",
+    "exit_code": 0
+  },
+  "approval": {
+    "previous_denial_preserved": "docs/reverse-client/r1-click-monitor-safety-stop-20261104T0838Z.json",
+    "same_read_only_action_formally_approved_and_completed": true,
+    "repeated_retries": 0,
+    "no_workaround": true
+  },
+  "window_check": {
+    "Steam": {
+      "window_id": 17564954,
+      "title": "Steam",
+      "app": "D:\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+      "binding_result": "window is minimized; call activate_window, refresh with get_window, then retry get_window_state"
+    },
+    "GrimDawn": {
+      "window_id": 922840,
+      "title": "Grim Dawn",
+      "app": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Grim Dawn.exe",
+      "binding_result": "window is minimized; call activate_window, refresh with get_window, then retry get_window_state"
+    },
+    "current_cua_api": "No documented activate_window method; no guessed or alternate UI automation attempted",
+    "old_repl_binding": "Old steamMainRecovered binding absent; selected exact existing window IDs from fresh inventory",
+    "steam_cloud_current": "not reverified",
+    "steam_offline_current": "not reverified",
+    "game_current_scene": "not observed",
+    "cua_completion_summary": "确认窗口最小化"
+  },
+  "actual_actions": {
+    "new_visible_programs": 0,
+    "new_game_launches": 0,
+    "new_observer_starts": 0,
+    "debugger_attaches": 0,
+    "click_hits": 0,
+    "settings_or_save_changes": 0,
+    "external_process_terminations": 0,
+    "pending_execution": 0,
+    "background_monitor_running": false
+  },
+  "next": "User restores existing Steam and Grim Dawn windows from taskbar, leaving game foreground. Do not restart. Bind existing game first, verify Steam game Cloud off/offline, confirm resource stability and process identity, then prepare new receipt-bound observer attempt under original5GiB/2GiB protections. Preserve six earlier receipts; attempt7 has not been prepared."
+}

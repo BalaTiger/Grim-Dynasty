@@ -1,0 +1,47 @@
+{
+    "schema":  "grim-dynasty-r1-runtime-inworld-sample-v1",
+    "utc":  "2026-11-05T07:25:58.9271878Z",
+    "pid":  2352,
+    "state":  "client in a loaded level (town), confirmed by the user",
+    "access":  "PROCESS_QUERY_LIMITED_INFORMATION|PROCESS_VM_READ",
+    "writes_to_target":  0,
+    "debugger":  false,
+    "breakpoints":  0,
+    "engine":  "0x22ee236aeb0",
+    "world50":  "0x22ec43afd60",
+    "manager":  "0x22ee811a290",
+    "manager_fields":  {
+                           "buckets":  "0x22f46511060",
+                           "mask":  "0xffff",
+                           "sentinel":  "0x22ee95c0870"
+                       },
+    "map_enumeration":  {
+                            "objects":  53324,
+                            "distinct_vtables":  198,
+                            "unreadable":  0,
+                            "artifact":  ".tooling/r1-runtime-sampling-20261105/map-inworld.json"
+                        },
+    "engine_chain":  {
+                         "engine+0x40f8":  "0x8a004d68f0b8da43",
+                         "verdict":  "still not a pointer in a loaded level, so GetMainPlayer2EBB70 does not start at Engine+0x40F8 for this engine object"
+                     },
+    "player_search":  {
+                          "method":  "probed 218 objects whose vtable has \u003c=6 instances for a small controller id at +0x16C0 and a byte at +0x26AF",
+                          "result":  "no candidate looked like a Character: controller ids were 0, huge, or clearly API pointers",
+                          "artifact":  ".tooling/r1-runtime-sampling-20261105/player-candidates.json",
+                          "verdict":  "player object not identified in this round"
+                      },
+    "what_is_now_established":  [
+                                    "the Engine and ObjectManager globals are live and readable in a loaded level",
+                                    "World50 is readable at Engine+0x50",
+                                    "the object map walks cleanly with 0 unreadable buckets across 65536 buckets and 53324 entries",
+                                    "live object pointers and vtables are obtainable"
+                                ],
+    "not_established":  [
+                            "which object is the player",
+                            "any Character field value such as +0x26AF or +0x16C0",
+                            "any controller state cell",
+                            "movement or presentation behaviour"
+                        ],
+    "next":  "Identify the player by class rather than by guessing: resolve the class record through a vtable slot0 or filter by Character-only fields, then read +0x26AF and +0x16C0 on that object."
+}

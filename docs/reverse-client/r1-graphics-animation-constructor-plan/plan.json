@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "purpose": "Fixed Engine095EA0 constructor called by actual creation slot094650. Retrieve its pseudo-code, assembly and direct callees once to establish resource initialization and failure boundaries; do not infer ABI or recursively expand dependencies.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-graphics-animation-constructor-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-animation-create-and-key-run1/05-AnimationCreateAndKey-0x180094650-procedure_assembly.json",
+      "sha256": "95f6704caa89f243789ab758f143ec470c36450dcc0a2900bf790fa5a449374f",
+      "addresses": [
+        "0x180095ea0"
+      ],
+      "source_kind": "Actual Rea094650 assembly saves its incoming RCX/RDX, requests0x1A0 bytes, then calls095EA0 with allocation result inRCX, saved incomingRCX inRDX and saved incomingRDX inR8. Constructor body, object validity and failure semantics remain unknown.",
+      "procedure": "0x180094650",
+      "instructions": [
+        "0x180094664: MOV RBX, RDX",
+        "0x180094667: MOV RDI, RCX",
+        "0x18009466a: MOV ECX, 0x1a0",
+        "0x18009466f: CALL 0x1802dc398",
+        "0x180094674: MOV qword ptr [RSP + 0x50], RAX",
+        "0x180094679: MOV R8, RBX",
+        "0x18009467c: MOV RDX, RDI",
+        "0x18009467f: MOV RCX, RAX",
+        "0x180094682: CALL 0x180095ea0"
+      ]
+    }
+  ],
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+    "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0",
+    "same_registration_as": "r1-move-world-distance",
+    "budget_id": "engine-parser-384m-v1",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "parallel_mcp_requests": 1,
+    "one_backend": true,
+    "profile_or_protection_changes_authorized": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180095ea0"
+      },
+      "label": "04-GraphicsAnimationConstructor-0x180095ea0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180095ea0"
+      },
+      "label": "05-GraphicsAnimationConstructor-0x180095ea0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180095ea0"
+      },
+      "label": "06-GraphicsAnimationConstructor-0x180095ea0-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Inactive candidate from active runner0bebaa8d1bc7986916ba6817cea0314fae3963658d337da29e77ee59eb5b1a7e. Root reviews diff, baseline/source/guard hashes and obtains separate formal offline/live approvals. No execution, sampling or original read during preparation.",
+    "Reuse --r1-engine-animation-speed with fresh plan/output.095EA0 only, pseudo-code/assembly/direct callees plus five lifecycle calls,8 total. No search/xrefs/callers, automatic callee expansion or automatic retry.27B3C0/302BC8 are excluded; existing evidence must be reused.",
+    "Preserve Engine default sampler/wrapper,384M heap,effective5GiB physical/commit launch,2GiB stop,330000ms provider startup/600000ms request. All nonce/parent/time/Job/mutex/watchdog/identity protections, absolute launcher paths and Sample-Utc fix unchanged.",
+    "Require fresh output/receipt and prior11-call create/key summary with normal close/process/Job/sampler and original hashes. Its counter_read_gap_count1 records an ownership-confirmed member exiting; do not require a zero gap or reinterpret the sample gap as unverified identity.",
+    "No original execution/writes, saves/cloud, security changes, installation or commit/push/deployment. Constructor initialization, resource format and loaded dispatch remain unknown; nonnull allocation or a pointer-returning thunk alone does not prove loading/animation success."
+  ],
+  "unchanged_guard_pins": [
+    {
+      "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "c6968067faa5b180556feaaf5e5aa62750e0ae0aa7bf031c5d1ceef990ae1f64"
+    },
+    {
+      "file": "tools/static_analysis/measure_job_process_memory.ps1",
+      "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_sampler_failure.ps1",
+      "sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/rea_java_role.mjs",
+      "sha256": "00e612e2113690baf53e87900f67b8f8003f47aa3b9a3968932a17dd779f1f22"
+    },
+    {
+      "file": "tools/static_analysis/rea_project_environment.mjs",
+      "sha256": "3808055da161a942867474e13edea86710d2981bda0ccf4ed5d385df5e794f88"
+    }
+  ],
+  "prior_engine_query": {
+    "file": "docs/reverse-client/r1-animation-create-and-key-run1/summary.json",
+    "sha256": "5031a7623fbe00e13d5b827696c9af1df275f4707d4ff6cdfa56a1413a447cd2",
+    "calls": 11
+  },
+  "batch_kind": "engine-graphics-animation-constructor-one-direct-target",
+  "runner_patch_deferred": false
+}

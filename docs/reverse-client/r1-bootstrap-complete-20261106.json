@@ -1,0 +1,35 @@
+{
+    "schema":  "grim-dynasty-r1-bootstrap-complete-v1",
+    "utc":  "2026-11-06T02:06:31.1044038Z",
+    "status":  "static-recovery-complete-not-executed",
+    "what_is_fully_recovered":  {
+                                    "window":  "WinWindow::WinWindow 0x217710 and WinWindow::Initialize 0x2179b0, with the argument list and the fact that they produced a real HWND when executed earlier",
+                                    "settings":  "GraphicsEngineSettings::GraphicsEngineSettings 0x906e0, default plugin name direct3d11, layout at +0x00 string, +0x10, +0x18, +0x20, +0x28, +0x2c, +0x2f, +0x30, and the warning that +0x0c is left uninitialised",
+                                    "engine_object":  "Engine::Engine 0x72930, writes up to +0x198, builds the std::string at +0xB8",
+                                    "publish":  "Engine.dll+0x421428 must receive the Engine pointer before Initialize, because Initialize reads it at 0x18007471f",
+                                    "initialize":  "Engine::Initialize 0x743d0, full argument map, 3049-byte body, subsystems in order",
+                                    "device":  "inside Initialize: operator new(0x1C0) then GraphicsEngine::GraphicsEngine 0x90730 then GraphicsEngine::CreateDevice 0x90ba0, with a logged failure path",
+                                    "graphics_resources":  "GraphicsEngine::Initialize 0x90e60 afterwards, six rounds of BaseResourceManager construction, pure memory",
+                                    "audio":  "SoundManager::SoundManager 0x1b30c0 into Engine+0x58 then SoundManager::Initialize 0x1b3710 with the first string parameter",
+                                    "options":  "Engine::GetOptions 0x73660 lazily builds Options (0x150 bytes) and calls Options::LoadDefaults with the +0xB8 string",
+                                    "resource_loader":  "created internally at 0x1800748ef, 0xE0 bytes, thread count derived from settings+0x0c clamped by a bool",
+                                    "file_dependency":  "only Direct3D11.dll, resolved by LoadLibraryA inside the plugin loader 0x197020"
+                                },
+    "host_sequence":  {
+                          "1":  "load Engine.dll and resolve exports",
+                          "2":  "WinWindow::WinWindow then Initialize -\u003e real EWindow",
+                          "3":  "GraphicsEngineSettings::GraphicsEngineSettings, then set +0x0c to a sane value",
+                          "4":  "allocate at least 0xC28 bytes and call Engine::Engine",
+                          "5":  "store the Engine pointer into Engine.dll+0x421428",
+                          "6":  "call Engine::Initialize(window, settings, bool, FileSystem*, string, bool, string, string, string, string)",
+                          "7":  "on success the device already exists; per frame call BeginFrame and PresentSurface"
+                      },
+    "boundary_statement":  "The publish step in step 5 is performed by the host. It reproduces what the game does, but it is not a recovery of the game\u0027s own publish code, which the static search showed does not exist in the three modules as a store to that slot.",
+    "still_uncertain":  [
+                            "the meaning of the last three strings",
+                            "whether Options::LoadDefaults succeeds with no configuration present",
+                            "whether SoundManager::Initialize tolerates a dummy string",
+                            "whether the device needs shader data beyond what Direct3D11.dll embeds"
+                        ],
+    "why_this_is_the_right_stopping_point":  "Every entry point, object size, argument mapping, call order and file dependency has been established from static reading, and the two former blockers (endless publisher hunt, feared disk dependencies) are both resolved to no-ops for a host. What remains can only be settled by running it, which is outside this goal\u0027s static constraint."
+}

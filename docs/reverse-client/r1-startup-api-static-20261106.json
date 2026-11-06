@@ -1,0 +1,41 @@
+{
+    "schema":  "grim-dynasty-r1-startup-api-static-v1",
+    "utc":  "2026-11-06T01:49:59.0897842Z",
+    "question":  "Can the rest of the engine start-up bootstrap be recovered with static analysis only, without resolving who publishes Engine.dll+0x421428?",
+    "answer":  "Yes. The whole start-up surface is exported with full MSVC decorated names, so the sequence is callable directly; the unidentified publisher only affects who sets one global, and a host can set it itself after constructing the object with the original constructor.",
+    "exported_startup_surface":  {
+                                     "Engine::Engine()":  "0x72930",
+                                     "Engine::Initialize(EWindow*, GraphicsEngineSettings const\u0026, bool, FileSystem*, std::string const\u0026, bool, string, string, string, string, bool)":  "0x743d0 (function range 0x743d0-0x74fb9, 3049 bytes)",
+                                     "Engine::~Engine()":  "0x73050",
+                                     "GraphicsEngine::Initialize(EWindow*, GraphicsEngineSettings const\u0026, ResourceLoader*)":  "0x90e60",
+                                     "GraphicsEngine::CreateDevice(EWindow*, GraphicsEngineSettings const\u0026)":  "0x90ba0",
+                                     "GraphicsEngine::CreateDevice(std::string const\u0026, bool)":  "0x90ae0",
+                                     "GraphicsEngineSettings::GraphicsEngineSettings()":  "0x906e0",
+                                     "WinWindow::WinWindow()":  "0x217710",
+                                     "WinWindow::Initialize(string const\u0026, int,int,int,int, void const*, Style, HWND__*)":  "0x2179b0"
+                                 },
+    "negative_that_no_longer_blocks":  {
+                                           "fact":  "Engine::Engine() contains no reference to 0x421428 at all (its 5 RIP-relative references are its own vtables 0x33e2f0, 0x33d398, 0x348880 and 0x339d60).",
+                                           "fact2":  "Engine::Initialize contains three references to 0x421428 and all three are loads, never stores.",
+                                           "consequence":  "The publisher is not part of the exported start-up API, which is exactly why static scanning never found a store. It does not prevent calling the start-up API."
+                                       },
+    "implied_bootstrap_sequence":  [
+                                       "WinWindow::WinWindow() then WinWindow::Initialize(...) to obtain a real EWindow",
+                                       "GraphicsEngineSettings::GraphicsEngineSettings() (defaults to the direct3d11 plugin name)",
+                                       "construct the Engine object with Engine::Engine(), then call Engine::Initialize(window, settings, ...) with the recovered arguments",
+                                       "the Engine owns a GraphicsEngine; create the device through GraphicsEngine::CreateDevice, which loads the plugin and registers the device through engine vtable slot 0x18",
+                                       "CreatePrimarySurface binds the window at this+0x10 and builds the swapchain",
+                                       "per frame: BeginFrame, submit, PresentSurface (DXGI slot 0x40)"
+                                   ],
+    "remaining_static_work":  [
+                                  "the body of Engine::Initialize (3049 bytes) to recover the argument meanings and the order it initialises subsystems",
+                                  "the FileSystem and ResourceLoader arguments, which are separate classes and may have their own exports",
+                                  "whether Engine::Initialize already performs device creation or leaves it to a later call"
+                              ],
+    "honest_boundary":  "In a host process we would set the engine global ourselves after constructing the object with the original constructor. That is the same operation the game performs, but it is the host publishing the pointer, not a recovery of the game\u0027s own publish step. This must be stated whenever the result is described.",
+    "not_claimed":  [
+                        "that the bootstrap has been executed",
+                        "that Engine::Initialize can be called successfully yet",
+                        "that the game\u0027s publish step is understood"
+                    ]
+}

@@ -1,0 +1,26 @@
+{
+    "schema":  "grim-dynasty-r1-publish-prerequisite-v1",
+    "utc":  "2026-11-06T02:02:31.4298936Z",
+    "correction":  "I had described publishing the engine global as something the host does afterwards. The body shows it is a prerequisite: Engine::Initialize itself reads that global partway through.",
+    "evidence":  {
+                     "0x18007471f":  "mov rcx,[0x180421428] - Initialize reads the engine global from inside its own body",
+                     "0x180074726":  "call 0x180073660 - obtains an object from that global",
+                     "0x18007472b to 0x180074735":  "Options::GetString is invoked on it, producing a string at [rbp-0x20]",
+                     "0x18007473b to 0x180074754":  "that string is then passed into a call through [rax] before the GraphicsEngine allocation, so the value is consumed early"
+                 },
+    "consequence":  "A host must store its Engine object pointer into Engine.dll+0x421428 before calling Engine::Initialize, otherwise the function dereferences null at 0x18007471f.",
+    "why_this_matters":  "This also means the game cannot be starting the engine in the order I assumed. The game must publish the pointer first and call Initialize afterwards, which is consistent with a factory or accessor pattern rather than with Initialize publishing itself.",
+    "revised_host_sequence":  [
+                                  "load Engine.dll and resolve the exports",
+                                  "construct WinWindow and call Initialize to obtain a real EWindow",
+                                  "construct GraphicsEngineSettings",
+                                  "allocate the Engine buffer (at least 0xC28 bytes) and call Engine::Engine()",
+                                  "store the Engine pointer into Engine.dll+0x421428 - this is the publish step and it must happen before the next step",
+                                  "call Engine::Initialize(window, settings, bool, FileSystem*, string, bool, string, string, string, string)"
+                              ],
+    "not_established":  [
+                            "what 0x180073660 returns and whether it tolerates a partially initialised Engine",
+                            "whether Options::GetString succeeds when no Options object exists",
+                            "whether the string it produces must name a real file"
+                        ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "grim-dynasty-save-path-static-recheck-v1",
+  "utc": "2026-11-04T02:21:22.8813937Z",
+  "status": "bounded-cache-recheck-complete;path-sources-and-local-order-established;global-startup-order-unresolved",
+  "purpose": "核对已定位路径getter/setter、初始化局部顺序，以及设置路径前可能的Steam或原数据访问；评估无虚拟化观察方案，不启动原版。",
+  "method": "复用2026-10-18保存的有界Ghidra反编译/指令/常量与PE导出证据。汇编优先于不准确的伪代码签名。没有新Rea或Ghidra调用，没有重新读原二进制或真实路径，没有新增实现/测试。",
+  "sources": [
+    {"file": "docs/phase-1/boundary-audit/six-function-byte-probes.json", "sha256": "4e961964cc883ce149cad429605246b9c008c6d52db38b31abfeac3a948fda13"},
+    {"file": "docs/phase-1/round-2/Engine-function-evidence-bounded-v2.json", "sha256": "059f0e8483e3479a5ee4a17324cf9cb7eb8da7217c1efebed02afa7a0188e59b"},
+    {"file": "docs/phase-1/round-2/Game-function-evidence.json", "sha256": "5ad500d11943c95ff47cf4e306f01f3d0b0112341b9219c5944906d0913129f6"},
+    {"file": "docs/phase-1/round-2/resolved-constants-and-thunk.json", "sha256": "dfb4ef61031a93bf6a1a23c359f3bd2ad1f8803eb60b0cf05fff4ea139c328ec"},
+    {"file": "docs/phase-1/round-3/Game-function-evidence-bounded-v2.json", "sha256": "16c60f37131658d72788338ec532cddf01aab87f787c4a0a2ac24efe59a3a83e"},
+    {"file": "docs/phase-1/round-3/verification-summary.json", "sha256": "e10c71635108dcab30a1e663b761acf3e0342f1e30d3ac90d3f6aea060cfa724"},
+    {"file": "docs/phase-1/round-3/state-displacement-candidates.json", "sha256": "3207d6fc82f96c14076ca794b62d29f7058ac170485b44f569cdce5aa13a450d"},
+    {"file": "docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json", "sha256": "ab597744f4a4cf617c6227fe7a50100e5b03733aa48dda43a730f65509bdca26"},
+    {"file": "docs/phase-1/round-4/Game-function-evidence-bounded-v2.json", "sha256": "1e8421fc6b83004fd39259ca19ba97faa7df520cf49200572cecd8a2bb80c502"},
+    {"file": "docs/phase-1/round-4/initialization-locations.json", "sha256": "bdc0e1838162463d18fce89dfea20fe6baf073d889db757e62c59ae3ed8faf1e"}
+  ],
+  "confirmed": [
+    {
+      "target": "Engine::GetSavePath RVA073900 / SetSavePath RVA0738E0",
+      "evidence": "six-function-byte-probes root record GetSavePath; round-2 Engine root record start1800738e0.instructions",
+      "contract": "getter完整8字节为LEA RAX,[RCX+240];RET。setter完整25字节：ADD RCX,240;CMP RCX,RDX;同址RET，否则R9=-1,R8=0,JMP023180。它设置当前Engine对象的字符串字段，不是进程范围的路径拦截。",
+      "limits": "不能把Ghidra尾跳展开误当setter自身全部指令；字符串分配/异常边界不在此重新证明。getter本体没有文件或Steam调用，不能推广到调用者或全程序。"
+    },
+    {
+      "target": "Engine constructor RVA072930",
+      "evidence": "round-4 Engine root record start180072930.instructions",
+      "contract": "07295E清零EBP；072B16–072B33将同一对象+240初始化为capacity15、length0、首字节0的空字符串。",
+      "limits": "只证明这次构造局部写入。不能由空初值断定稍后SetSavePath何时调用，或此前没有其他模块/服务访问用户数据。"
+    },
+    {
+      "target": "Game GetRootSavePath2C7F50 ->593560; GetBaseFolder2E3100; GetUserSaveDataFolder2E3270",
+      "evidence": "round-2 Game root records and resolved constants; round-3 Game record start180593560",
+      "contract": "593560在593589调用SHGetSpecialFolderPathA(0,buffer,5,0)；成功非空后继续，否则5935BC重试一次。构造字符串并将斜杠/规范为反斜杠。GetRootSavePath再加字面\\My Games\\Grim Dawn；GetBaseFolder再加\\；GetUserSaveDataFolder的本地分支最后加save\\。",
+      "local_expression": "[系统Documents]\\My Games\\Grim Dawn\\save\\",
+      "independence": "该已证调用链直接查询系统Documents，未从Engine+240 getter取基础目录；不能仅设置Engine::SetSavePath就声称覆盖此Game路径。",
+      "failure": "第二次SHGetSpecialFolderPathA返回后未见检查EAX，便从buffer读首字节/扫描NUL。不能伪造可靠的空路径fallback或安全失败语义；没有实际触发。",
+      "ABI": "Windows API四参数；伪代码第五参数是类型恢复误差，按RCX/RDX/R8D/R9D实际指令解释。",
+      "limits": "CSIDL5是Documents，fCreate0不请求创建该目录，不代表API不查询系统配置。未解析本机Documents位置，未枚举/读写真实存档。上述函数局部没有直接Steam调用，但其调用前后行为未知。"
+    },
+    {
+      "target": "Game SetCloudStorage2EF740 / GetUserSaveDataFolder2E3270",
+      "evidence": "round-3 record start1802ef740; round-2 record start1802e3270",
+      "contract": "setter是MOV byte[RCX+375EA],DL;RET。getter在2E32B2检查同一字节：零时先取GetBaseFolder，非零跳过；两分支最终均在2E32FE追加5字节save\\。非零分支仅生成相对键save\\。",
+      "limits": "相对键不证明Windows当前目录或Steam userdata中的具体位置。setter不建立Steam会话、不禁用Cloud同步、不证明初值或设置时机；不能拿置零作隔离措施。"
+    },
+    {
+      "target": "Engine GetBaseDataPathFromOptions73700",
+      "evidence": "round-2 Engine record start180073700.instructions/outgoingReferences/pseudocode",
+      "contract": "先GetOptions及GetString(enum1)，对非空字符串处理尾部分隔符；在073839经IAT302248调用FindFirstFileExA，再根据结果处理输出，最后返回。",
+      "implication": "路径生成/选项处理过程本身已经可能访问文件系统元数据，不能按getter名称假定无IO。",
+      "limits": "这不是已证真实存档读取：enum1实际字符串来源、首次调用时机以及与SetSavePath/Steam初始化的相对顺序均未知。未调用这个函数或Windows文件查询。"
+    },
+    {
+      "target": "Game InitializeObjects36B240",
+      "evidence": "round-4 Game record start18036b240.instructions/outgoingReferences",
+      "contract": "36B244经60B578调用GetCurrentThreadId；分配0x37868字节，36B257调用GameEngine ctor2C07A0；36B25F将返回对象写到gGameEngine A66288；36B26A尾跳GameEngine Initialize2D7230。",
+      "limits": "只证明该函数内部的构造→全局发布→Initialize顺序。未证明它与Engine路径setter、Steam初始化和首次存档访问的跨模块顺序。"
+    }
+  ],
+  "unresolved": [
+    "SetBaseUserPath0BAC0、GetSharedSavePath2C7FB0、GetUserSettingsFolder2E31D0在所查缓存中只有导出元数据，没有可用完整正文；不推测字段/重定向范围。查重范围为相关文件名、早期round2/3/4集中证据及206个reverse-client summary索引，不宣称全仓库绝无证据。",
+    "GameEngine ctor2C07A0只有5127字节边界和未核对齐候选：位移2C1607上下文C6 87 EA 75 03 00 00。若从2C1605对齐为写零，仍缺指令边界、RDI=this、可达性和后续覆盖证明，不能宣布Cloud默认关闭。",
+    "未取得EXE调用Engine::SetSavePath/SetBaseUserPath、Game路径getter或SetCloudStorage的可证初始化调用链。导入表排序不是调用顺序。此前空SetUI扫描也不能回答这些调用。",
+    "Engine Initialize743D0已存正文含Options、数据库、资源线程等调用，但本次该记录直接引用中未匹配Steam/SetSavePath/SetBaseUserPath/GetBaseDataPath；零直接匹配不排除callee、DLL初始化、外部调用或线程路径。",
+    "Steam初始化、首次本地/Cloud读写是否早于路径setter或预设SetUI断点，目前未证实也未排除；不能把未见调用当作不会访问。",
+    "已证API/字符串合同不覆盖所有settings/keymap/log/dump/shared-save路径、异常/关闭及原始Windows/Steam启动依赖。"
+  ],
+  "effect_on_nonvirtualized_plan": {
+    "stronger_fact": "独立账户的Documents身份现在有原版汇编支持，而非仅依据公开存档位置；必须验证测试账户实际Known Folder/配置边界。",
+    "rejected_shortcuts": "改工作目录、环境变量或调用SetSavePath/SetCloudStorage都不是已证全程序隔离方案；路径函数可以查询系统目录或文件元数据。",
+    "startup_decision": "原数据访问边界必须在进程/DLL开始执行前已成立，不能靠运行后改字段或在UI断点停住补救。仍不授权创建账户、修改ACL/网络、安装工具或运行原版。",
+    "next_finite_scope": "若继续静态核查，优先仅补SetBaseUserPath0BAC0正文及其有证据调用者，或核GameEngine ctor中375EA写入的准确指令/数据流；不重查此次已证函数，不把字节候选升级为原生默认状态，不展开整套启动/Steam系统。",
+    "BIOS": "未出现必须启用CPU虚拟化或重启的证据；缺口是启动顺序和数据访问边界，而非已证硬件限制。"
+  },
+  "official_API_references": [
+    "https://learn.microsoft.com/en-us/windows/win32/api/shlobj_core/nf-shlobj_core-shgetspecialfolderpatha",
+    "https://learn.microsoft.com/en-us/windows/win32/shell/csidl",
+    "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-findfirstfileexa"
+  ],
+  "execution": {"new_queries": 0, "builds": 0, "tests": 0, "target_runs": 0, "new_background_or_Job": false, "pending": 0, "new_denials": 0, "source_code_changed": false, "original_files_and_saves_accessed": false, "checkpoint_only_changes": true, "historical_evidence_and_failures_preserved": true},
+  "original_hash_status": "本轮只读取已保存证据及其哈希；原Engine/Game身份沿用原取证文件记录，不宣称本轮重新测量原DLL。",
+  "archive_validation_note": "首次归档校验误期望7个confirmed分组，实际为6组；在任何hash链更新前退出。已按6组更正校验，不是游戏测试失败或权限拒绝；原工具失败记录保留。"
+}

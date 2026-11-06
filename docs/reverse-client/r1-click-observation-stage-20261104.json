@@ -1,0 +1,234 @@
+{
+  "schema": "gd-click-observation-stage-v1",
+  "utc": "2026-11-04T06:33:18.1904208Z",
+  "status": "original-x64-launched;no-debugger-attach;window-minimized-tool-binding-blocked",
+  "authorization": {
+    "parent_thread": "01a18c54-7983-7072-b0a9-46235c79400e",
+    "scope": "Original click-movement and necessary menu entry only; parent notified user before startup; Steam offline and app Cloud disabled; normal local writes accepted",
+    "no_character_or_settings_change": true,
+    "no_automatic_restore_or_cloud_reenable": true
+  },
+  "original": {
+    "launch_route": "Steam existing selected Play option; no launch preference change",
+    "launch_click_utc_approx": "2026-11-04T06:28Z",
+    "pid": 38316,
+    "executable": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\grim dawn.exe",
+    "window_id": 922840,
+    "still_running_at": "2026-11-04T06:32:09.9706135Z",
+    "debugger_started": false,
+    "attach_attempts": 0,
+    "captured_hits": 0,
+    "entered_character_or_world": false,
+    "gameplay_verified": false,
+    "normal_exit_completed": false,
+    "reason_left_running": "CUA cannot bind minimized window; did not kill or duplicate-launch",
+    "original_binary_hashes": [
+      {
+        "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Grim Dawn.exe",
+        "expected_sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+        "actual_sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+        "matches": true
+      },
+      {
+        "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+        "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+        "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+        "matches": true
+      },
+      {
+        "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+        "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+        "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+        "matches": true
+      }
+    ],
+    "original_local_data_changes": "unknown; no postlaunch save reads or automatic restore"
+  },
+  "cloud": {
+    "Steam_mode": "offline; observed bottom bar and AX",
+    "app_Cloud": "off; visually verified immediately before launch",
+    "ingame_option": "unchanged",
+    "initial_online_sync": "accepted risk; occurrence unknown"
+  },
+  "backup": {
+    "file": "docs/reverse-client/r1-click-launch-backup-recheck-20261104.json",
+    "sha256": "0257c44ec1d26898df7957add3a7cdf42eec1f6b3a95e8dc183f6eea6e6f7668",
+    "files_each": 19,
+    "copies": 2,
+    "source_or_remote_equality_verified": false
+  },
+  "own_detach_test": {
+    "result": ".tooling/lldb-cli-detach-20261104/result.json",
+    "sha256": "bec3fa5042b84a0f14db5a7240e5ac0b9e97825fc9990b6b7765d9edb66f1b90",
+    "status": "passed-own-cli-detach",
+    "one_new_detach_test": true,
+    "native_fixture_compiles": 0,
+    "guard_helper_compiles": 1,
+    "BP_removed": true,
+    "SBProcess_Detach_state": 9,
+    "debugger_exit": 0,
+    "fixture_after_debugger_exit": "GO/DONE debugger=0 result42 exit0",
+    "job_empty": true,
+    "job_disposed": true,
+    "termination_requested": false,
+    "original_crash_survival_proven": false
+  },
+  "observer_prepared": {
+    "files": [
+      {
+        "file": ".tooling\\gd-click-observation-20261104\\launch-trace.ps1",
+        "bytes": 11749,
+        "sha256": "e2355fe06a7d9502b9579c5e7c761294fea75f6c3d3a398d7d99bfd204d514c4",
+        "executed": false
+      },
+      {
+        "file": ".tooling\\gd-click-observation-20261104\\trace_probe.py",
+        "bytes": 24868,
+        "sha256": "b2b44a535726002e71942dd1a43097b14bfe32ffdbd5dc701567b263f5299906",
+        "executed": false
+      },
+      {
+        "file": ".tooling\\gd-click-observation-20261104\\gate.mjs",
+        "bytes": 10622,
+        "sha256": "d6a8a307cc3a207fa5a488f8e81ca9459ea54ce008552e998cb98257dbf14f22",
+        "executed": false
+      },
+      {
+        "file": ".tooling\\gd-click-observation-20261104\\NativeObservationJob.cs",
+        "bytes": 29544,
+        "sha256": "1f0ccb7ef0169fe41ef1e41b5ce523e91f7a3976a0ae2bb4ec2c4871b45457df",
+        "executed": false
+      }
+    ],
+    "manifest_created": false,
+    "original_observer_compiled": false,
+    "original_observer_run": false,
+    "bounds": "Game RVA15E1F0 only; up to16hits/600s/12stackframes",
+    "job": "New ordinary Job flags0, no kill-on-close, no termination API; original remains outside Job",
+    "cleanup": "Delete owned breakpoint and confirmed Detach; unknown stop/exception holds, no forced teardown",
+    "remaining": "Fresh resource gates, restore window using supported control/user, precise current PID+FILETIME manifest, formal execution approval and actual helper Job proof before release",
+    "residual": "Debugger crash original survival not established; no absolute safety claim"
+  },
+  "blockers": [
+    {
+      "action": "Bind/restore existing original game window922840",
+      "outcome": "tool capability failure before UI operation",
+      "error": "window is minimized; call activate_window, refresh with get_window, then retry get_window_state",
+      "supported_api_issue": "Current public CUA API exposes no activate_window; no shell/UI workaround used",
+      "attempts": "getApp twice; normal Win+Tab/Escape/Alt+Tab did not resolve; no duplicate game startup"
+    },
+    {
+      "action": "Launch original observation LLDB",
+      "outcome": "not attempted",
+      "reason": "06:29commit4.625GiB below5GiB; latest06:32commit5.019GiB narrowly passes, UI remains blocked; new sample mandatory",
+      "approval_denied": false
+    }
+  ],
+  "resources": {
+    "receipt": ".tooling/gd-click-observation-20261104/current-readonly.json",
+    "sha256": "6a164a9f7b43dc86a4d61cebd637caf40933a1e0b40d5535059d5e4a6ae41402",
+    "sample": {
+      "utc": "2026-11-04T06:32:09.9706135Z",
+      "game_processes": [
+        {
+          "ProcessId": 38316,
+          "ParentProcessId": 60616,
+          "Name": "Grim Dawn.exe",
+          "ExecutablePath": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\grim dawn.exe",
+          "CreationDate": "2026-11-04T06:28:35.323Z"
+        }
+      ],
+      "Steam_processes": [
+        {
+          "ProcessId": 60616,
+          "ParentProcessId": 50880,
+          "Name": "steam.exe",
+          "ExecutablePath": "D:\\Steam\\steam.exe",
+          "CreationDate": "2026-11-04T05:49:22.267Z"
+        },
+        {
+          "ProcessId": 43516,
+          "ParentProcessId": 60616,
+          "Name": "steamwebhelper.exe",
+          "ExecutablePath": "D:\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+          "CreationDate": "2026-11-04T05:49:22.861Z"
+        },
+        {
+          "ProcessId": 3324,
+          "ParentProcessId": 1744,
+          "Name": "steamservice.exe",
+          "ExecutablePath": null,
+          "CreationDate": "2026-11-04T05:49:23.027Z"
+        },
+        {
+          "ProcessId": 56392,
+          "ParentProcessId": 43516,
+          "Name": "steamwebhelper.exe",
+          "ExecutablePath": "D:\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+          "CreationDate": "2026-11-04T05:49:23.124Z"
+        },
+        {
+          "ProcessId": 49312,
+          "ParentProcessId": 43516,
+          "Name": "steamwebhelper.exe",
+          "ExecutablePath": "D:\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+          "CreationDate": "2026-11-04T05:49:23.308Z"
+        },
+        {
+          "ProcessId": 47840,
+          "ParentProcessId": 43516,
+          "Name": "steamwebhelper.exe",
+          "ExecutablePath": "D:\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+          "CreationDate": "2026-11-04T05:49:23.871Z"
+        },
+        {
+          "ProcessId": 49700,
+          "ParentProcessId": 43516,
+          "Name": "steamwebhelper.exe",
+          "ExecutablePath": "D:\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+          "CreationDate": "2026-11-04T05:49:23.916Z"
+        },
+        {
+          "ProcessId": 17596,
+          "ParentProcessId": 43516,
+          "Name": "steamwebhelper.exe",
+          "ExecutablePath": "D:\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+          "CreationDate": "2026-11-04T05:49:24.123Z"
+        },
+        {
+          "ProcessId": 17692,
+          "ParentProcessId": 43516,
+          "Name": "steamwebhelper.exe",
+          "ExecutablePath": "D:\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+          "CreationDate": "2026-11-04T05:49:33.513Z"
+        },
+        {
+          "ProcessId": 55824,
+          "ParentProcessId": 43516,
+          "Name": "steamwebhelper.exe",
+          "ExecutablePath": "D:\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+          "CreationDate": "2026-11-04T05:54:55.413Z"
+        },
+        {
+          "ProcessId": 63788,
+          "ParentProcessId": 43516,
+          "Name": "steamwebhelper.exe",
+          "ExecutablePath": "D:\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+          "CreationDate": "2026-11-04T05:56:58.21Z"
+        }
+      ],
+      "available_physical_bytes": 6233042944,
+      "commit_headroom_bytes": 5389639680,
+      "external_build_or_java_processes": [],
+      "observation_only": true
+    },
+    "original_still_running": true,
+    "current_lldb_count": 0,
+    "owned_worker47116_absent": true,
+    "old_job_terminal_empty_proof_utc": "2026-11-04T06:12:32.0204406Z",
+    "new_observation_Job_created": false,
+    "pending_tool_operations": 0,
+    "resource_slot_fully_released": false
+  },
+  "next": "Restore the already-running game window, not launch another instance. Recheck original process identity and fresh5GiB physical+commit/2GiB runtime guards; if insufficient remain before attach. Finish fixed observer manifest and exact formal approval; collect bounded click-to-move evidence, then confirmed detach and normal game exit. Do not change character, settings, original data or Steam Cloud. No old tests/Rea queries need rerun."
+}

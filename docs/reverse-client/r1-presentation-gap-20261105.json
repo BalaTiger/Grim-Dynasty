@@ -1,0 +1,31 @@
+{
+    "schema":  "grim-dynasty-r1-presentation-gap-v1",
+    "utc":  "2026-11-05T09:12:40.0432486Z",
+    "constraint":  "The user requires presentation itself (including the GUI) to be recovered from the original, not re-implemented as a self-made window. Early WinForms/GDI/WASD/HUD prototypes are explicitly not recovered work per the project document.",
+    "consequence":  "A self-built WinForms/GDI host must NOT be presented as a human-testable reverse-engineered client. It would be exactly the \"original-looking substitute\" the project forbids.",
+    "inventory":  {
+                      "present":  {
+                                      "camera math contracts":  "CameraTargetContracts, WorldCameraImageContracts, SystemUcrtRotationMath (recovered, with frozen receipts)",
+                                      "input device evidence":  "docs/reverse-client/r1-directinput-device-stage.json (DirectInput device stage)",
+                                      "UI export enumeration":  "docs/reverse-client/r1-ui-api-engine-exports, r1-ui-api-game-exports, r1-setui-exe-* (export tables and call sites)",
+                                      "graphics animation publication":  "docs/reverse-client/r1-graphics-animation-publication-run1"
+                                  },
+                      "absent":  {
+                                     "window creation":  "no recovered CreateWindow/swapchain/device setup evidence",
+                                     "D3D11 device and swapchain":  "only 8 files in the whole repo mention d3d11/dxgi/Present, and none recovers the device or present loop",
+                                     "frame present and vsync":  "absent",
+                                     "camera -\u003e screen projection loop":  "input math exists, the render-time projection and viewport publication do not",
+                                     "UI drawing and text":  "export tables exist, the draw path and font handling do not"
+                                 }
+                  },
+    "why_this_matters":  "Without the present path there is no frame to look at, so no human test is possible; and a self-made frame would invalidate the reverse-engineering claim.",
+    "next_reversal_sequence":  [
+                                   "Locate the engine device/swapchain creation (Engine.dll) and record the exact call sequence with Rea, as was done for the camera and navigation paths.",
+                                   "Recover window creation and message pump ownership, so the recovered host can own its own window rather than borrowing a test harness.",
+                                   "Recover the per-frame present call and the viewport/camera publication that feeds it.",
+                                   "Recover the UI draw path (at minimum text and simple quads) for the parts R1 needs.",
+                                   "Only then assemble a host that renders \"recovered\" frames; until then, no human-testable build exists."
+                               ],
+    "status":  "gap-identified; no human-testable build yet",
+    "not_done":  "No self-made GUI was built and none will be presented as recovered."
+}

@@ -1,0 +1,31 @@
+{
+    "schema":  "grim-dynasty-r1-presentation-recovery-boundary-v1",
+    "utc":  "2026-11-05T11:41:25.9667364Z",
+    "question":  "Can a testable click-to-move build be assembled from what is currently recovered?",
+    "answer":  "Not yet, and the remaining gap is engine startup rather than any single missing function.",
+    "what_is_recovered":  {
+                              "movement":  "recovered contracts drive a click request, path search and bounded frames with monotonic progress toward the target; verified by a frozen receipt (2 frames / 300 assertions) and by a live observation on the original client",
+                              "window":  "the shipped WinWindow constructor and Initialize execute in our own process and produced a real HWND",
+                              "engine_object":  "GraphicsEngine and GraphicsEngineSettings construct correctly with relocated vtables; the settings default to the direct3d11 plugin name",
+                              "present_contract":  "PresentSurface issues IDXGISwapChain::Present through vtable slot 0x40 under the object lock",
+                              "renderer_module":  "Direct3D11.dll identified, 164 exports enumerated, RenderDevice vtable (40 slots) and the device constructor decoded"
+                          },
+    "the_blocker":  {
+                        "fact":  "Engine.dll+0x421428 is null in a process that merely loads the module, and CreateDevice dereferences it unconditionally.",
+                        "searches":  "no direct store to it exists in Engine.dll or Game.dll, no LEA takes its address, and it is absent from the relocation table",
+                        "static_neighbourhood":  "the surrounding slots are a table of pointer-like values, and neighbouring singletons are published by lazy-create helpers and cleared by a shutdown path at 0x76a9d",
+                        "interpretation":  "the global is published by engine startup code that has not been located, not by a simple assignment we can mirror"
+                    },
+    "why_it_matters":  "Standing up the real engine startup would be re-implementing the game bootstrap. Substituting a hand-made engine object would violate the requirement that presentation come from the reverse-engineered code.",
+    "options":  {
+                    "a":  "keep recovering the engine startup path: locate _initterm initialisers and the publisher of 0x421428 (static, offline, no approval needed)",
+                    "b":  "scope the first testable build to movement plus the recovered window, with presentation explicitly marked as not yet recovered",
+                    "c":  "use the original Game.dll startup as the host (running the shipped client) and instrument only the recovered contracts"
+                },
+    "recommendation":  "Option a is the honest continuation and needs no approval; option b would not satisfy the stated requirement that presentation be recovered; option c crosses into hosting the original binary, which needs an explicit decision.",
+    "not_claimed":  [
+                        "that a device can be created",
+                        "that a frame can be presented",
+                        "that a testable click-to-move build exists"
+                    ]
+}

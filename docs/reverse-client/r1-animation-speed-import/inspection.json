@@ -1,0 +1,168 @@
+{
+  "schema": "grim-dynasty.fixed-animation-speed-import.v1",
+  "started_utc": "2026-10-26T07:14:48.421Z",
+  "script_sha256": "9d78996f0011376a3f522ebe914c862cdcf9eec95915b257d483803521d79553",
+  "plan_sha256": "f666dda3eb612de998c25d455be7f8d940c439f69f6bb54eadb09428ba679c11",
+  "source_pins": [
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "move_start",
+      "path": "docs/reverse-client/r1-move-start-dependencies/05-MoveDependency-0x18005f870-procedure_assembly.json",
+      "sha256": "9e4e921f209d02922dff53ae248eaca7c8642472b5d5107ac000ccb1bb6f7463"
+    },
+    {
+      "key": "start_summary",
+      "path": "docs/reverse-client/r1-move-start-dependencies/summary.json",
+      "sha256": "123ce9f5ac00996934eaa5316de665da8e735e20df7fecd0479ca5dd1e2389ca"
+    },
+    {
+      "key": "start_callees",
+      "path": "docs/reverse-client/r1-move-start-dependencies/06-MoveDependency-0x18005f870-procedure_callees.json",
+      "sha256": "5e7bc9e16fd66af7cd5f96265d3800d4a9644d891f0659b51951031b0461224f"
+    }
+  ],
+  "metadata_bytes": 70,
+  "metadata_operations": 6,
+  "new_IAT_bytes": 0,
+  "new_OFT_bytes": 8,
+  "new_hint_bytes": 2,
+  "new_PE_header_bytes": 0,
+  "new_descriptor_bytes": 0,
+  "code_bytes": 0,
+  "rtti_bytes": 0,
+  "original_loaded_or_executed": false,
+  "backend_started": false,
+  "subprocesses": 0,
+  "whole_table_scanned": false,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "reads": [
+        {
+          "kind": "exact-OFT-slot-for-hint",
+          "rva": "0xa436b0",
+          "file_offset": 10755248,
+          "bytes": 8,
+          "raw_hex": "76a7a40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa4a776",
+          "file_offset": 10784118,
+          "bytes": 2,
+          "raw_hex": "2709"
+        }
+      ],
+      "hash_bytes": 22771712,
+      "closed": true,
+      "stable": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "reads": [
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b7df0",
+          "file_offset": 3894768,
+          "bytes": 4,
+          "raw_hex": "01b93d00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3db901",
+          "file_offset": 4040961,
+          "bytes": 50,
+          "raw_hex": "3f476574416e696d6174696f6e53706565644d756c7469706c696572404163746f724047414d454040514542414d48405a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bcdce",
+          "file_offset": 3915214,
+          "bytes": 2,
+          "raw_hex": "2709"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b1bc4",
+          "file_offset": 3869636,
+          "bytes": 4,
+          "raw_hex": "10740200"
+        }
+      ],
+      "hash_bytes": 8971264,
+      "closed": true,
+      "stable": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "bindings": [
+    {
+      "iat_rva": "0x609bf0",
+      "index": 382,
+      "dll": "Engine.dll",
+      "symbol": "?GetAnimationSpeedMultiplier@Actor@GAME@@QEBAMH@Z",
+      "hint": 2343,
+      "lookup_rva": "0xa436b0",
+      "hint_name_rva": "0xa4a776",
+      "binding_source": "Saved complete same-image ordinary-import inventory index382 plus saved descriptor FirstThunk609000; Game reads below obtain only missing export hint",
+      "current_IAT_read": false,
+      "current_import_name_read": false,
+      "loaded_IAT_observed": false
+    }
+  ],
+  "exports": [
+    {
+      "iat_rva": "0x609bf0",
+      "symbol": "?GetAnimationSpeedMultiplier@Actor@GAME@@QEBAMH@Z",
+      "hint": 2343,
+      "ordinal_index": 2343,
+      "ordinal": 2344,
+      "target_rva": "0x27410",
+      "target_va": "0x180027410",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false
+    }
+  ],
+  "unsupported": [],
+  "failures": [],
+  "disk_bindings_complete": true,
+  "limitations": [
+    "One disk import/export binding only; loaded IAT, function boundaries, target body and callable ABI remain unverified.",
+    "Import name and slot identity reuse saved complete same-image inventory plus descriptor. Game reads only missing OFT/hint metadata, not IAT/descriptor/import-name bytes.",
+    "Only the one hinted export name is checked; mismatch stops without search/fallback or other candidates.",
+    "Complete same-handle hash streams are identity checks separate from bounded semantic metadata reads, not atomic snapshots.",
+    "Node path checks do not recognize every Windows reparse tag. Separate Windows Attributes/reparse preflight is required before this function is authorized."
+  ],
+  "saved_proofs_verified": true,
+  "cached_OFT_entries": 350,
+  "selected_OFT_cached": false,
+  "import_binding_source": "Saved complete same-image ordinary-import inventory index382 plus saved descriptor FirstThunk609000; Game reads below obtain only missing export hint",
+  "finished_utc": "2026-10-26T07:14:48.471Z",
+  "status": "passed"
+}

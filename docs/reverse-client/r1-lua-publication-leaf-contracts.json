@@ -1,0 +1,95 @@
+{
+  "schema": "gd-lua-publication-leaf-contracts-v1",
+  "status": "partial-static-evidence-no-new-implementation",
+  "rea_summary": "docs/reverse-client/r1-engine-lua-publication-run1/summary.json",
+  "bounded_dump_result": ".tooling/lua-publication-leaves-run1/result.json",
+  "bounded_dump_status_preserved": "failed",
+  "validated_spans": [
+    "0F2D00..0F2D3F",
+    "258DB0..258DCF"
+  ],
+  "invalid_span": "008000..00800F: start lies inside an instruction;008004 boundary was not reproduced. No semantics accepted from this span.",
+  "print_leaf": {
+    "entry": "0F2D00",
+    "steps": [
+      "Read Engine421428 at0F2D00",
+      "Move input borrowed message pointer into R8 at0F2D07",
+      "Set EDX=3 at0F2D0A",
+      "Pass captured Engine in RCX at0F2D0F",
+      "Read that Engine's vtable at0F2D12",
+      "Tail jump to vtable+18 at0F2D15"
+    ],
+    "null_guard": false,
+    "does_not_read_lua_state": true
+  },
+  "panic_leaf": {
+    "entry": "0F2D20",
+    "steps": [
+      "Read Engine421428 at0F2D20",
+      "Move input borrowed message pointer into R8 at0F2D27",
+      "Set EDX=4 at0F2D2A",
+      "Pass captured Engine in RCX at0F2D2F",
+      "Read that Engine's vtable at0F2D32",
+      "Tail jump to vtable+18 at0F2D35"
+    ],
+    "null_guard": false,
+    "does_not_read_lua_state": true
+  },
+  "setglobal_adapter": {
+    "entry": "258DB0",
+    "steps": [
+      "Move name RDX into R8",
+      "Set EDX=-10002",
+      "Tail jump to4219D0, independently bound to lua_setfield"
+    ],
+    "lua_identity_rcx_preserved": true,
+    "registry_index_not_inferred_from_this_global_index": true
+  },
+  "writer_boundary": {
+    "exact_reference": "008004 writes422888",
+    "metadata_result": ".tooling/lua-registry-writer-boundary-run1/result.json",
+    "metadata_bytes": 168,
+    "containing_pdata_entry": false,
+    "meaning": "No unwind-table owner was found; no preceding entry guessed. Need exact analyzed instruction/containing-procedure evidence.",
+    "exact_instruction": {
+      "evidence": "docs/reverse-client/r1-engine-lua-writer-log-run1/04-RegistryWriter-0x180008004-inspect_native_instruction.json",
+      "bytes": "89057ea84100",
+      "text": "MOV dword ptr [0x180422888],EAX",
+      "eax_source": "UNKNOWN",
+      "provider_containing_procedure": "not_in_procedure",
+      "nonretryable_navigation": "prev_address unsupported by ghidra; not retried"
+    }
+  },
+  "base_engine_slot": {
+    "evidence": "docs/reverse-client/r1-lua-base-log-slot.json",
+    "constructor": "072930",
+    "table_store": "072954..07295B ->33E2F0",
+    "slot": "33E308",
+    "target": "077050",
+    "current_421428_dynamic_type_proven": false,
+    "meaning": "Proves the base-constructor table payload only; does not choose a runtime Engine table by default.",
+    "body": {
+      "pseudo": "docs/reverse-client/r1-engine-lua-base-log-run1/04-BaseEngineLog-0x180077050-procedure_pseudo_code.json",
+      "assembly": "docs/reverse-client/r1-engine-lua-base-log-run1/05-BaseEngineLog-0x180077050-procedure_assembly.json",
+      "resolved_name": "GAME::Engine::Log(LogPriority,char const*,...)const",
+      "normal": "031280 returns formatting options pointer; __stdio_common_vsprintf(options|1,buffer,0x400,message,locale0,varargs); then0771E0(Engine,priority,current421418,buffer)",
+      "format_status_ignored": true,
+      "message_is_format_string": true,
+      "still_unknown": [
+        "031280 runtime options",
+        "InternalLog0771E0 contract",
+        "runtime Engine dynamic vtable identity"
+      ],
+      "runtime_or_callback_success_claimed": false
+    }
+  },
+  "followup_contracts": "docs/reverse-client/r1-lua-publication-following-contracts.json",
+  "original_hash": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "original_hashes_before_after_match": true,
+  "original_loaded": false,
+  "new_compiles": 0,
+  "new_tests": 0,
+  "service_publication_implemented": false,
+  "goal_tail_returned": false,
+  "gameplay_accepted": false
+}

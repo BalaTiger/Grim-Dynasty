@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "purpose": "Only Engine0EBAE0 directly called at0EC02A when HookPack byte1C is zero. Reuse cached0EC010 three Rea outputs and0EBDE0 constructor static evidence; obtain actual pseudo,assembly,directcallees for0EBAE0. No recursive or Lua expansion.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-engine-hook-initialize-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-engine-reached-goal-dependencies-run1/08-EngineReachedGoal-0x1800ec010-procedure_assembly.json",
+      "sha256": "6fa64ccf8b31ac322ad02337fdefe33b7b9b808e99e0fbe9424e9d43cf8a591f",
+      "addresses": [
+        "0x1800ebae0"
+      ],
+      "procedure": "0x1800ec010",
+      "instructions": [
+        "0x1800ec01f: CMP byte ptr [RCX + 0x1c], 0x0",
+        "0x1800ec028: JNZ 0x1800ec02f",
+        "0x1800ec02a: CALL 0x1800ebae0"
+      ],
+      "source_kind": "Actual same-hash Engine Hook entry assembly proves zero-byte conditional direct call; initializer semantics remain unproven."
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-reached-goal-dependencies-run1/09-EngineReachedGoal-0x1800ec010-procedure_callees.json",
+      "sha256": "32b56726f0a0984e48d6a8811c59956565219e0b556de84e6320eb9f34c731e7",
+      "addresses": [
+        "0x1800ebae0"
+      ],
+      "procedure": "0x1800ec010",
+      "source_kind": "Resolved direct callee inventory supports exact0EBAE0; partial inventory does not recover other indirect callees."
+    }
+  ],
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+    "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0",
+    "same_registration_as": "r1-move-world-distance",
+    "budget_id": "engine-parser-384m-v1",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "parallel_mcp_requests": 1,
+    "one_backend": true,
+    "profile_or_protection_changes_authorized": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1800ebae0"
+      },
+      "label": "04-HookInitialize-0x1800ebae0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1800ebae0"
+      },
+      "label": "05-HookInitialize-0x1800ebae0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1800ebae0"
+      },
+      "label": "06-HookInitialize-0x1800ebae0-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Inactive candidate only. Root reviews exact diff and baseline, formally approves static verification and launch. Reuse existing EngineAnimationSpeed mode/protected backend;8calls only0EBAE0. No repeated0EC010 or0EBDE0 query.",
+    "Retain384M heap,5GiB physical/commit admission,2GiB runtime stop,all8guards,nonce/Job/parent/time/identity/mutex and fresh output. Fresh current resource and identity checks remain mandatory.",
+    "Historical failedJob terminal states remain UNKNOWN; current independent Job must have complete release receipt. Do not retry old denied name reads or adopt pre-gate process observations.",
+    "No recursive callee/Lua expansion, original execution, saves, security changes, commit/push/deploy. One serial backend only."
+  ],
+  "unchanged_guard_pins": [
+    {
+      "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "c6968067faa5b180556feaaf5e5aa62750e0ae0aa7bf031c5d1ceef990ae1f64"
+    },
+    {
+      "file": "tools/static_analysis/measure_job_process_memory.ps1",
+      "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_sampler_failure.ps1",
+      "sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/rea_java_role.mjs",
+      "sha256": "00e612e2113690baf53e87900f67b8f8003f47aa3b9a3968932a17dd779f1f22"
+    },
+    {
+      "file": "tools/static_analysis/rea_project_environment.mjs",
+      "sha256": "3808055da161a942867474e13edea86710d2981bda0ccf4ed5d385df5e794f88"
+    }
+  ],
+  "prior_engine_query": {
+    "file": "docs/reverse-client/r1-registration-node-growth-run1/summary.json",
+    "sha256": "252f70f8ded62aec1fb5b2dc4f65d05f70a6123f51a674f9f83e213238241e8d",
+    "calls": 8
+  },
+  "batch_kind": "engine-hook-initialize-single-direct-target-reuse-hook-constructor-cache",
+  "runner_patch_deferred": false,
+  "reused_existing_bodies": [
+    {
+      "file": "docs/reverse-client/r1-engine-reached-goal-dependencies-run1/07-EngineReachedGoal-0x1800ec010-procedure_pseudo_code.json",
+      "sha256": "d6be75ba97eb21848fade6f1b52c61e7c32a28f636a53d36a06464d884c4737d",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x1800ec010"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-reached-goal-dependencies-run1/08-EngineReachedGoal-0x1800ec010-procedure_assembly.json",
+      "sha256": "6fa64ccf8b31ac322ad02337fdefe33b7b9b808e99e0fbe9424e9d43cf8a591f",
+      "operation": "procedure_assembly",
+      "procedure": "0x1800ec010"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-reached-goal-dependencies-run1/09-EngineReachedGoal-0x1800ec010-procedure_callees.json",
+      "sha256": "32b56726f0a0984e48d6a8811c59956565219e0b556de84e6320eb9f34c731e7",
+      "operation": "procedure_callees",
+      "procedure": "0x1800ec010"
+    }
+  ],
+  "supporting_cached_evidence": [
+    {
+      "file": "docs/object-lifecycle/offline-actor-198-constructor/0ebde0-instructions.json",
+      "sha256": "9083e6b9037ded4e5ee7224b5544ac2b9abae3b6a1ecca612e9d7663b8f484ce",
+      "source_kind": "Existing bounded static dumpbin decoding; not a Rea response"
+    },
+    {
+      "file": "docs/object-lifecycle/offline-actor-198-constructor/inspection.json",
+      "sha256": "36958aecbb0e7905f3d002d68b0f77b48230271194935f73724a40cac11bdc54",
+      "source_kind": "Existing original Engine hash-before/after and fixed function-boundary receipt"
+    },
+    {
+      "file": "docs/reverse-client/r1-game-entity-constructors/05-GameEntityConstructor-0x180052030-procedure_assembly.json",
+      "sha256": "34a334ae8f918b20469fb57e7d55af0ffbcfba0d5900c42a4e371192d534f856",
+      "source_kind": "Cached Rea Game Character ctor HookPack this+45F0, count11 and609980 call"
+    },
+    {
+      "file": "docs/object-lifecycle/offline-item-be0-import/inspection.json",
+      "sha256": "1392ed5594df6499211ce2c0910abf7a5f8fba7501aa1b38361acfdfd21822e5",
+      "source_kind": "Cached static Game609980 toEngine0EBDE0 exact import binding"
+    }
+  ]
+}

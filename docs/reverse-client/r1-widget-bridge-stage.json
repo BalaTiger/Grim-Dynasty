@@ -1,0 +1,297 @@
+{
+    "schema":  1,
+    "status":  "bounded-widget-lookups-complete;concrete-override-unresolved;all-batches-released",
+    "scope":  "Concrete Widget+18 writer and mouse-\u003ecamera/ground/movement connection; existing scene/UI inventory only",
+    "previous_stage":  "docs/reverse-client/r1-directinput-device-stage.json",
+    "recovery":  {
+                     "terminal":  "9225c4",
+                     "utc":  "2026-11-03T13:17:22.6416236Z",
+                     "prior_job_empty":  true,
+                     "prior_sampler_exited":  true,
+                     "prior_recorded_pids":  30,
+                     "old_pid_reused":  {
+                                            "pid":  65188,
+                                            "old_name":  "decompile.exe",
+                                            "old_creation_utc":  "2026-11-03T13:03:27.6202086Z",
+                                            "new_name":  "sppsvc.exe",
+                                            "new_creation_utc":  "2026-11-03T13:17:13.230227Z",
+                                            "action":  "none; different creation time/name, not an owned continuation"
+                                        },
+                     "pending_before_launch":  0
+                 },
+    "reused":  {
+                   "producer":  "DirectInput31A0 emits observed28B MouseEvent; successful2DD0 clears update gate. No original device call or hook installed.",
+                   "dispatch":  "Engine078DF0 -\u003e concreteGetNumMouseEvents4810/GetMouseEvent4840 -\u003e same mutable local address to registeredWidget+18, AL consumed per event, live reads.",
+                   "constructor":  "Engine05F000 writes vptr18033DBA0; no concrete derived widget proved.",
+                   "append":  "Engine0781B0 preserves input object and calls05F080(this+3E8).",
+                   "cache_dedup":  "Existing target bodies reused; no procedure_callers cache for either. Existing EXE two IAT xrefs returned[] and are not repeated. Game.dll complete saved imports have noWidget entries; EXE imports alone do not identify runtime objects."
+               },
+    "execution":  {
+                      "state":  "completed",
+                      "session":  55724,
+                      "initial_chunk":  "70cf7b",
+                      "offline_chunk":  "c5157e",
+                      "offline_exit":  0,
+                      "plan":  ".tooling/r1-widget-writer-callers-prepared/plan.json",
+                      "plan_sha256":  "24f8d19f77d02d9bf9f87deb0fa6299a565fa949c6ed9a845558083ed9e68f91",
+                      "runner_sha256":  "8cabee79130396eac3be33ed6ba26e09db17516bb80528d7e58ad2156b6cff42",
+                      "launch_sha256":  "23f5b974af1dc633839f146b6d6c162a8d335b80a6fdbd040fc4ecd0806d9f68",
+                      "expected_calls":  7,
+                      "targets":  [
+                                      "0x1800781b0",
+                                      "0x18005f000"
+                                  ],
+                      "method":  "procedure_callers",
+                      "output":  "docs/reverse-client/r1-widget-writer-callers-run1",
+                      "repeat_forbidden":  true,
+                      "terminal_chunk":  "da9ea9",
+                      "exit_code":  0,
+                      "summary_sha256":  "c6bf2da8aa8cb70fb5aa8293b6ec080018500debed8a8263d0a1fb0a58e66637"
+                  },
+    "display_inventory":  {
+                              "resource_members":  "ResourceContainers ArcArchive.ReadMember and ArzArchive can provide raw bytes/DBR fields; not texture or visible mesh decode.",
+                              "true_data":  "mainmenu.map data:129x129 ground,9NAV tiles,88object records/58names,material paths. Object record parser reports actor_created=false.",
+                              "navigation_not_rendering":  "MainmenuMeshPipeline is explicitly navigation geometry. No native-equivalent scene draw submission follows from pathfinding.",
+                              "graphics":  "EngineGraphicsResourceConstruction/Create094650, EngineAnimationResourceManager/Load03AC50 and EngineAnimationChannelContracts/PlayAnimation0385B0 model identities/cache/channel writes. No texture pixels, visible scene/character mesh or animation pose decoding/display.",
+                              "frame":  "Existing CameraWorldRayContracts.GetRay229700 and same-state Player/Agent movement are reusable conditionally. Tests own scheduling and initial parameters; no actual window/present/input-driven session.",
+                              "ui":  "No concrete Widget override, layout/font/image HUD renderer or state binding implemented on reverse-client route. Prior WinForms/WASD excluded.",
+                              "minimal_parallel_gap":  [
+                                                           "One real Ground material .tex and visible character mesh decoding/source-to-camera draw contract plus own platform window/submission.",
+                                                           "Concrete widget client-coordinate/type interpretation -\u003e evidencedcamera/groundhit -\u003e samestate movement request; one session scheduler/presentation reads publishedPlayer position."
+                                                       ],
+                              "not_started":  "No new rendering implementation, platform dependency installation, original runtime observation or product test this stage.",
+                              "source_pins":  [
+                                                  {
+                                                      "file":  "src/resource_codec/ResourceContainers.cs",
+                                                      "sha256":  "f414cdecdaa58ba7d24cd7a8d6384f98874fc4a267fa3512e3b80bfb634b82a3"
+                                                  },
+                                                  {
+                                                      "file":  "src/reverse_client_actions/MainmenuMeshPipeline.cs",
+                                                      "sha256":  "3ff9f87cd4dca7d8f8876a212c5f25e84f2741865fc9e1dc71299d0fed942455"
+                                                  },
+                                                  {
+                                                      "file":  "src/reverse_client_actions/MainmenuTilePipeline.cs",
+                                                      "sha256":  "bd76aa516aab1e8be5f88b98e8e4f41e3cbe0a2564a8fd5995404177480733c9"
+                                                  },
+                                                  {
+                                                      "file":  "src/reverse_client_actions/EngineGraphicsResourceConstruction.cs",
+                                                      "sha256":  "8487d9578e5724f75cc42feb6f556db2d11b014d46462ef503ba0f373bbd22e7"
+                                                  },
+                                                  {
+                                                      "file":  "src/reverse_client_actions/EngineAnimationResourceManager.cs",
+                                                      "sha256":  "c33cadefc70ce8049ee8c8e36cf4b813bbf8986dc02c479952d3506a6d5607d9"
+                                                  },
+                                                  {
+                                                      "file":  "src/reverse_client_actions/EngineAnimationChannelContracts.cs",
+                                                      "sha256":  "c70d4c9362f3f109f5237e962ca736ff29d5c5b86758d69361c968f005e4d154"
+                                                  },
+                                                  {
+                                                      "file":  "src/reverse_client_actions/CameraWorldRayContracts.cs",
+                                                      "sha256":  "b60a5e3ded12d641af19fce4a25aa148f1e2950cdb15910fc6a24d23c8dd13fc"
+                                                  },
+                                                  {
+                                                      "file":  "src/reverse_client_actions/PlayerMoveBeginFrameIntegrationTests.cs",
+                                                      "sha256":  "af2a18126a7509d3c7068b5991c27c358961300bec684fe1ede40c1e3993ab9e"
+                                                  },
+                                                  {
+                                                      "file":  "docs/reverse-client/r1-mainmenu-level-object-records/inspection.json",
+                                                      "sha256":  "bd6604ccf1155b8808d7ec5bd6fc2e163a0f571326d91cdafd10f9b0ff6d6356"
+                                                  },
+                                                  {
+                                                      "file":  "docs/reverse-client/r1-terrain-records/terrain-0.json",
+                                                      "sha256":  "99174ba1196eae2c109ad46c18fdcbf2e368923d49117739d0496829d3389d93"
+                                                  }
+                                              ]
+                          },
+    "pending_operations":  0,
+    "new_Rea_calls":  19,
+    "new_product_compiles":  0,
+    "new_game_tests":  0,
+    "interactive_client_available":  false,
+    "original_loaded_or_executed":  false,
+    "real_saves_accessed":  false,
+    "commit_push_deploy":  false,
+    "utc":  "2026-11-03T13:47:58.8707561Z",
+    "direct_callers":  [
+                           {
+                               "file":  "docs/reverse-client/r1-widget-writer-callers-run1/04-AddWidget-0x1800781b0-procedure_callers.json",
+                               "sha256":  "2a392c298e510e32b6da617049b6a9de05a5270761879d2698460aaed9b9c91a",
+                               "result":  [
+
+                                          ]
+                           },
+                           {
+                               "file":  "docs/reverse-client/r1-widget-writer-callers-run1/05-DisplayWidgetCtor-0x18005f000-procedure_callers.json",
+                               "sha256":  "f9f75ee6d252de0c1735040582608eb967d42e87f3cac0806dc23aa3a1fdca5d",
+                               "result":  [
+
+                                          ]
+                           }
+                       ],
+    "direct_callers_meaning":  "Both static direct-callers results empty. Does not prove no indirect, cross-module, runtime or callback caller. No concreteWidget18 recovered.",
+    "release":  "docs/reverse-client/r1-widget-name-reference-complete-release.json",
+    "current_resource":  {
+                             "utc":  "2026-11-03T13:46:36.651673Z",
+                             "available_physical_bytes":  10265640960,
+                             "system_commit_bytes":  46279700480,
+                             "system_commit_limit_bytes":  59886112768,
+                             "external_build_or_java_processes":  [
+
+                                                                  ]
+                         },
+    "camera_input_boundary":  {
+                                  "source":  "docs/reverse-client/r1-engine-mouse-core/05-Camera-GetImagePoint-0x180044a10-procedure_assembly.json",
+                                  "source_sha256":  "1e4690f5a50aa7a602bda3fc8973a31ac96afbce2e93b88f229b3ea3dcf09f27",
+                                  "ray_source":  "docs/reverse-client/r1-engine-input/08-GetRayThroughImagePoint-0x180229700-procedure_assembly.json",
+                                  "ray_sha256":  "4e70b6429b52f378c9decc3362e30bc018597fcff55bee0ac8e37df1da9c227e",
+                                  "mode0":  "44A89 divides viewportWidth/Height; inputu/v only doubled and subtracted from1. Coefficients(W/H)*tan(Fov/2)*(1-2u),tan(Fov/2)*(1-2v). No pixel coordinate divide.",
+                                  "mode1":  "(1-2u)*cameraWidth/2 and(1-2v)*cameraHeight/2; viewport not read.",
+                                  "ray":  "229788/22978B forwards originalviewport/input pointers,229796 calls044A10; no intervening normalization.",
+                                  "fixture_limit":  "u=v=0.5 zeros lateral coefficients only; not evidence for physical mouse protocol.",
+                                  "unknown":  "Actual widget conversion, viewport origin/size/DPI/clipping and caller timing missing. Never substitute x/W,y/H or rawclientfloat without source evidence.",
+                                  "new_query_or_test":  false
+                              },
+    "next":  "Do not repeat these four lookups. Need an actual concrete Widget vtable writer/caller or another explicit code reference before choosing the next fixed function query. Independently bound one known terrain material and visible character resource decode/draw path; no original launch, broad scan, guessed coordinate transform or substitute UI.",
+    "name_execution":  {
+                           "state":  "failed-own-provider-validator-after-response",
+                           "session":  36268,
+                           "initial_chunk":  "e418da",
+                           "offline_chunk":  "1fdeb2",
+                           "offline_exit":  0,
+                           "plan":  ".tooling/r1-widget-name-reference-prepared/plan.json",
+                           "plan_sha256":  "8ed5dcbdcf24afbfcd383217c3844d331913217a62d3754b6286e2b7e93971fd",
+                           "runner_sha256":  "ea16dcbb45f703c4bda2219063256d1f2618bbcf56253cd4c2d919af3a356475",
+                           "launch_sha256":  "c6010193247d314fd1318a42970ead995ce6106e82f6b400b90a97181f7b1d72",
+                           "expected_calls":  7,
+                           "method":  "find_xrefs_to_name",
+                           "output":  "docs/reverse-client/r1-widget-name-reference-run1",
+                           "repeat_forbidden":  true,
+                           "exit_code":  1,
+                           "terminal_chunk":  "8cdf81",
+                           "tool_calls":  6,
+                           "completed_plan_calls":  3,
+                           "second_name_issued":  false,
+                           "summary_sha256":  "fc407f6cfd5a871a46f10e6e4b87170a0516662a8470dbd6633c872bbca5fbd2",
+                           "first_raw_response":  "docs/reverse-client/r1-widget-name-reference-run1/04-AddWidget-exact-name-find_xrefs_to_name.json",
+                           "first_raw_sha256":  "6d2f48779b09c97bed7b9b5974c28f6f3aee98b1c14bdffde9b4374bb8486c84",
+                           "raw_result_observed":  "Verified offline: exact AddWidget decorated name unresolved/name_not_found. rea-workflow1 envelope with full Ghidra upstream matching saved open session. Do not resend.",
+                           "failure":  "Ownrunner expected providerghidra for composed find_xrefs_to_name; raw result isrea-workflow1. Not approval denial or target identity mismatch.",
+                           "approval_denied":  false
+                       },
+    "tooling_validation":  {
+                               "result":  ".tooling/r1-widget-name-reference-prepared/name-validation.json",
+                               "sha256":  "0c3043b075a942da486419638d4d18650ce436b3d98cc928bd00e3ccb36996a9",
+                               "terminal":  "520014",
+                               "exit":  0,
+                               "cases":  6,
+                               "game_tests":  0,
+                               "old_tests_repeated":  0
+                           },
+    "workflow_validation":  {
+                                "result":  ".tooling/r1-widget-name-reference-complete-prepared/workflow-validation.json",
+                                "sha256":  "a8815414c9888d9220e2243594e58893fd783688e483fbd14edd10d4f489b6bc",
+                                "session":  16036,
+                                "initial_chunk":  "16450e",
+                                "terminal_chunk":  "a02275",
+                                "exit_code":  0,
+                                "cases":  5,
+                                "game_tests":  0,
+                                "old_tests_repeated":  0,
+                                "purpose":  "Revalidate saved response and reject mismatched workflow/upstream; no backend"
+                            },
+    "independent_cached_widget_review":  {
+                                             "result":  "No concrete derived Widget vtable or Slot18 pointer in already-inspected bounded cache. Next function address remains unknown.",
+                                             "proven":  "Base ctor writes18033DBA0; registration forwards object;078F3C dynamic call.",
+                                             "not_inferred":  "Empty callers/unresolved names do not prove absent object or use of base handler.",
+                                             "new_queries":  0,
+                                             "new_tests":  0
+                                         },
+    "workflow_source_contract":  {
+                                     "provider":  "rea-workflow1",
+                                     "upstream":  "full analysis profile equals actual Ghidra open session",
+                                     "source_files":  [
+                                                          {
+                                                              "file":  ".tooling/rea/node_modules/rea-agents/dist/mcp/main-kBXHZ8S5.js",
+                                                              "sha256":  "12a70d8ab2a57de0cc71d794e38470031bfbdde855ba4a435e0ac0613f2fe82e",
+                                                              "scope":  "50350-50367 exact name match after internal list_names;50632-50638 composed evidence"
+                                                          },
+                                                          {
+                                                              "file":  ".tooling/rea/node_modules/rea-agents/dist/mcp/WorkflowEvidence-umWrB_wm.js",
+                                                              "sha256":  "9ab1c4b1604bf69aab409785b7d75846fb0c87f8baf57c43ab74bcb6ae774f03",
+                                                              "scope":  "31-42 workflow provider and wrapped upstream"
+                                                          },
+                                                          {
+                                                              "file":  ".tooling/rea/node_modules/rea-agents/dist/mcp/InterfaceBuilderDecodeBudget-5F2AkxJT.js",
+                                                              "sha256":  "dd022eb911f11eed479115b58db0a9088a95528c1e13dae48ce99d9006258982",
+                                                              "scope":  "104-110 exact provider constant"
+                                                          }
+                                                      ],
+                                     "internal_behavior":  "Current-module analysis name inventory then exact string match; no explicit extra list_names call or code/function scan added.",
+                                     "historical_failure_preserved":  true
+                                 },
+    "constructor_execution":  {
+                                  "state":  "completed-unresolved-name",
+                                  "session":  19138,
+                                  "initial_chunk":  "0dd566",
+                                  "offline_chunk":  "53e5c5",
+                                  "offline_exit":  0,
+                                  "plan":  ".tooling/r1-widget-name-reference-complete-prepared/plan.json",
+                                  "plan_sha256":  "8a46b4e5fa344c795c68e26af879f3806cdb23b92e66c67a8c520de9e297632c",
+                                  "runner_sha256":  "31f3599af05551494e584523cefbbf0483ba590dc153d042a02a05763972158d",
+                                  "launch_sha256":  "34d8dde55541eb958cc4e2cd22ad5e002c69748d0fc6f527378f5345e306673a",
+                                  "expected_calls":  6,
+                                  "method":  "find_xrefs_to_name",
+                                  "name":  "??0DisplayWidget@GAME@@QEAA@XZ",
+                                  "output":  "docs/reverse-client/r1-widget-name-reference-complete-run1",
+                                  "repeat_forbidden":  true,
+                                  "independent_static_review_passed":  true,
+                                  "terminal_chunk":  "0c8284",
+                                  "exit_code":  0,
+                                  "tool_calls":  6,
+                                  "completed_plan_calls":  6,
+                                  "summary_sha256":  "78313d1a7f87f3b2a240454431cfd2a761f0db08fcd19f13181182d6f953f8e2",
+                                  "raw_response":  "docs/reverse-client/r1-widget-name-reference-complete-run1/04-DisplayWidgetCtor-exact-name-find_xrefs_to_name.json",
+                                  "raw_sha256":  "0861131eac44f31094df4030c2b3a20f5113b41c255be4066e3cb102ba78998c",
+                                  "normalized_result":  {
+                                                            "status":  "unresolved",
+                                                            "name":  "??0DisplayWidget@GAME@@QEAA@XZ",
+                                                            "reason":  "name_not_found"
+                                                        },
+                                  "approval_denied":  false
+                              },
+    "original_hashes_this_stage":  [
+                                       {
+                                           "path":  "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+                                           "sha256_before":  "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+                                           "sha256_after":  "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+                                       },
+                                       {
+                                           "path":  "D:/Steam/steamapps/common/Grim Dawn/x64/Grim Dawn.exe",
+                                           "sha256_before":  "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+                                           "sha256_after":  "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4"
+                                       }
+                                   ],
+    "bounded_query_outcome":  "Two Engine direct-callers arrays empty; both exact EXE imported names unresolved/name_not_found. No concrete Widget18 pointer/caller proved. No inference that objects are absent or base handler is used.",
+    "stage_counts":  {
+                         "rea_calls":  19,
+                         "semantic_calls":  4,
+                         "lifecycle_calls":  15,
+                         "returned_semantic_responses":  4,
+                         "new_function_bodies":  0,
+                         "new_tooling_cases":  11,
+                         "game_tests":  0,
+                         "product_compiles":  0,
+                         "repeated_queries":  0,
+                         "old_game_suites_rerun":  0
+                     },
+    "current_blocker":  {
+                            "kind":  "missing-original-behavior-evidence",
+                            "exact_action":  "Connect real client-coordinate MouseEvent through concrete Widget18 to camera/ground and original movement request",
+                            "target":  "Concrete registered Widget object/vtable and pixel-to-image conversion",
+                            "reason":  "No actual override or coordinate-converting caller located in bounded cached evidence and four new lookup results",
+                            "approval_denied":  false,
+                            "pending_execution":  false,
+                            "uncertain_execution":  false,
+                            "semantic_identity_unknown":  true
+                        }
+}

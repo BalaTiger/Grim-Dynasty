@@ -1,0 +1,505 @@
+{
+  "schema": "gd-reverse-client-availability-v1",
+  "utc": "2026-11-04T02:07:01.8826024Z",
+  "interactive_reversed_client_available": false,
+  "original_game_dynamic_comparison_performed": false,
+  "availability_answer": "No interactive reversed client is available. This stage proves original HUD resource links and static EXE pointer targets, not native UI loading or playable mouse movement.",
+  "evidence_layers": [
+    {
+      "kind": "original-static",
+      "scope": "Saved Rea pseudocode, assembly and hashed original resource bytes support bounded movement, navigation, terrain, stop, script and provider contracts.",
+      "not_proven": "Original loaded runtime behavior, complete native initialization, interactive client operation.",
+      "evidence": [
+        "docs/reverse-client/r1-state-registration-chain/checkpoint.json",
+        "docs/reverse-client/r1-engine-lua-provider-registration-run1/summary.json"
+      ]
+    },
+    {
+      "kind": "own-implementation-tested-against-extracted-static-contracts",
+      "scope": "Conditional same Player/Agent one-request arrival at frame 23 and three stopped frames; actual independently built Lua VM and scripts, provider identity/list and failure-prefix checks.",
+      "not_proven": "These tests are not original-game dynamic comparisons and do not prove mouse input, full native tick, animation decode/playback or original scene/UI presentation.",
+      "evidence": [
+        ".tooling/r1-own-lua-stop-frames-validation/result.json",
+        ".tooling/r1-provider-validation/result.json"
+      ]
+    },
+    {
+      "kind": "explicit-fixture-conditions",
+      "scope": "OWN cold-start fields, conditional global/service/descriptor values and known-empty provider fixture.",
+      "not_proven": "These are not native startup defaults. A known-empty fixture does not establish that the original runtime provider list is empty. ServiceInitialized58 remains 0/unfinished.",
+      "evidence": [
+        "src/reverse_client_actions/PlayerMoveBeginStoppedFramesTests.cs",
+        "docs/reverse-client/r1-provider-initialization-stage.json"
+      ]
+    },
+    {
+      "kind": "unknown-not-substituted",
+      "scope": "Concrete provider object, vtable Virtual00 and lifecycle/publication; complete service initialization; physical mouse and target-coordinate integration; same-state continuous scheduling and scene/UI resource presentation.",
+      "behavior": "Retain explicit Unsupported/unfinished state. No fabricated provider, null-default bypass, WASD replacement or invented UI path."
+    }
+  ],
+  "actual_console_artifact": {
+    "path": ".tooling/r1-own-lua-stop-frames-validation/OwnLuaStoppedFramesTests.exe",
+    "sha256": "39904669b6162927829a579dd8a17bd9fcad6200f1791f9997af78e972efa863",
+    "result": ".tooling/r1-own-lua-stop-frames-validation/result.json",
+    "result_sha256": "80637c25898285e30d0eea3ffb681b72164575a712a000df9c5701742f5eb9e6",
+    "role": "Automatic conditional diagnostic; no user-controlled scene",
+    "goal_frame": 23,
+    "completed_stopped_frames": 3,
+    "no_drift_verified_conditionally": true,
+    "physical_mouse": false,
+    "full_native_tick": false,
+    "native_playback": false,
+    "gameplay": false,
+    "rerun_for_this_audit": false
+  },
+  "preserved_rejected_route": {
+    "path": "artifacts/m3-patrol-20261022-01/gd-scene.exe",
+    "sha256": "a801a839c2d41244ce549c23a51516f2e66eae90f75459cd46cc65fe28a67d4b",
+    "classification": "Own experimental WinForms/GDI+ and WASD/arrows prototype, not recovered original client",
+    "status": "Preserved; stopped route; not offered as current mouse acceptance build",
+    "launched_in_this_stage": false,
+    "files_deleted": false,
+    "route_evidence": "docs/REVERSE-CLIENT-MILESTONES.md"
+  },
+  "new_provider_evidence": {
+    "stage": "docs/reverse-client/r1-exe-provider-stage.json",
+    "iat": "0x1402d5510",
+    "symbol": "?RegisterProvider@LuaManager@GAME@@QEAAXPEAVLuaProvider@2@@Z",
+    "rea_xrefs": [],
+    "candidate_result": "docs/reverse-client/r1-provider-exe-candidates/inspection.json",
+    "candidate_result_sha256": "e800d76f6a80101ca4c6222b76b67f5bb2d7b7a93afbf026ab46bce74f04b576",
+    "byte_candidates": 0,
+    "text_bytes_examined": 2963456,
+    "text_passes": 1,
+    "other_sections_examined": false,
+    "analysis_helper_self_checks": 8,
+    "new_game_tests": 0,
+    "conclusion": "No direct caller/provider recovered in the bounded methods used. Empty results do not prove absence of runtime registration. No other concrete cached caller/writer was found in the scoped evidence review.",
+    "original_exe_sha256_before_and_after": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "engine_direct_callers": [],
+    "engine_direct_callers_result": "docs/reverse-client/r1-engine-lua-provider-callers-run1/04-RegisterProvider-0x1800f3190-procedure_callers.json"
+  },
+  "minimum_acceptance_path": [
+    "Identify any native initialization dependencies actually needed for the same-state mouse movement path; keep unknown provider and service flags explicit until supported.",
+    "Connect physical mouse selection, evidenced camera/ground hit and movement request to the same Player/Agent state without keyboard replacement or fixture injection masquerading as input.",
+    "Drive the evidenced movement/arrival/stop path using real frame scheduling and original resource/UI semantics; report unsupported paths instead of success.",
+    "Deliver an isolated executable which displays a real scene and accepts repeated user mouse targets, with evidence-to-code mapping and limitations; pause for user acceptance at that point."
+  ],
+  "current_blocker_kind": "Evidence gap: exact SetUI xrefs and finite3-encoding .text candidates are both empty; no actual UI caller/object/record argument. No dynamic execution permission.",
+  "current_pending_operations": 0,
+  "current_owned_heavy_processes": 0,
+  "historical_failures_preserved": true,
+  "original_executed": false,
+  "real_saves_accessed": false,
+  "commit_push_deploy": false,
+  "integration_inventory": {
+    "reviewed_utc": "2026-11-03T14:23:39.6198004Z",
+    "native_input_producer": {
+      "game_entry": "0x18015e1f0",
+      "exe_iat": "0x1402d78a0",
+      "pixel_normalization_known": false,
+      "button_bytes_known": true,
+      "prior_exact_iat_searches_empty": true,
+      "fixture_outer_args": [
+        1,
+        1,
+        0
+      ],
+      "native_poller_entry": "Engine078DF0 polls fixed-identity DirectInput31A0; MouseEvent28 client float x/y, byte buttons and modifiers ->4810/4840->same mutable event to live Widget18. Static only; native window/device lifecycle and concrete Widget interpretation remain unknown."
+    },
+    "camera_ground": {
+      "camera_entry": "Engine0x229700",
+      "image_entry": "Engine0x044a10",
+      "target_getter": "Game0x2be6e0",
+      "ground_query": "Engine0x1d0100",
+      "current_glue": "src/reverse_client_actions/CameraGroundNavigationHandoffTests.cs",
+      "fixture_image_point": [
+        0.5,
+        0.5
+      ],
+      "camera_repositioned_for_target": true,
+      "native_pick_caller_known": false,
+      "pixel_to_image_mapping_known": false,
+      "camera_does_normalize_client_pixels": false,
+      "mapping_evidence": {
+        "source": "docs/reverse-client/r1-engine-mouse-core/05-Camera-GetImagePoint-0x180044a10-procedure_assembly.json",
+        "source_sha256": "1e4690f5a50aa7a602bda3fc8973a31ac96afbce2e93b88f229b3ea3dcf09f27",
+        "ray_source": "docs/reverse-client/r1-engine-input/08-GetRayThroughImagePoint-0x180229700-procedure_assembly.json",
+        "ray_sha256": "4e70b6429b52f378c9decc3362e30bc018597fcff55bee0ac8e37df1da9c227e",
+        "mode0": "44A89 divides viewportWidth/Height; inputu/v only doubled and subtracted from1. Coefficients(W/H)*tan(Fov/2)*(1-2u),tan(Fov/2)*(1-2v). No pixel coordinate divide.",
+        "mode1": "(1-2u)*cameraWidth/2 and(1-2v)*cameraHeight/2; viewport not read.",
+        "ray": "229788/22978B forwards originalviewport/input pointers,229796 calls044A10; no intervening normalization.",
+        "fixture_limit": "u=v=0.5 zeros lateral coefficients only; not evidence for physical mouse protocol.",
+        "unknown": "Actual widget conversion, viewport origin/size/DPI/clipping and caller timing missing. Never substitute x/W,y/H or rawclientfloat without source evidence.",
+        "new_query_or_test": false
+      }
+    },
+    "shared_movement": {
+      "current_ground_start": [
+        62.25,
+        16.5022278,
+        62.75
+      ],
+      "ground_target": [
+        64.25,
+        16.0587463,
+        64.75
+      ],
+      "nav_target_y": 19.025795,
+      "goal_frame": 23,
+      "stopped_frames": 3,
+      "own_scheduler": true,
+      "single_member_empty_neighbors": true,
+      "mouse_request_sent_in_fixture_constructor": true,
+      "physical_event_driven": false
+    },
+    "scene_data": {
+      "member": "docs/reverse-client/r1-mainmenu-complete-member/mainmenu.map.bin",
+      "sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+      "bytes": 1091357,
+      "ground_offset": 273260,
+      "ground_bytes": 149073,
+      "ground_grid": [
+        129,
+        129
+      ],
+      "nav_tiles": 9,
+      "object_records": 88,
+      "unique_record_names": 58,
+      "object_evidence": "docs/reverse-client/r1-mainmenu-level-object-records/inspection.json",
+      "material_evidence": "docs/reverse-client/r1-terrain-records/terrain-0.json",
+      "texture_names_known": true,
+      "texture_pixels_decoded": false,
+      "object_mesh_decoded": false,
+      "gpu_submission_verified": false
+    },
+    "ui": {
+      "observed_default_entry": "Engine0x00d480",
+      "instructions": "XOR AL, AL; RET",
+      "evidence": "docs/reverse-client/r1-engine-mouse-core/14-DisplayWidget-HandleMouseEvent-0x18000d480-procedure_assembly.json",
+      "sha256": "45ef30e5fd82cb9b9ed9c845255f457d8fc1848374592ddaaac15aa4c69c306c",
+      "actual_widget_dispatch_known": true,
+      "layout_resources_recovered": false,
+      "false_means_unconsumed_proven": true,
+      "unknown_widgets_defaulted_false": false,
+      "dispatch_scope": "Engine078DF0 same-event dynamic list;4actual Initialize-registered objects and their primaryvslot18 proved. 3slots00D480;1975C0 object has199220->1996C0 local horizontal dragging. Concrete world-interaction widget still unknown."
+    },
+    "production_extraction_boundary": "Existing test bootstrap cannot be relabeled native initialization. Explicit OWN session/graphics platform interfaces may be separated, but this alone does not recover physical input, scene materials, UI dispatch or native startup.",
+    "presentation_boundary": {
+      "resource_members": "ResourceContainers ArcArchive.ReadMember and ArzArchive can provide raw bytes/DBR fields; not texture or visible mesh decode.",
+      "true_data": "mainmenu.map data:129x129 ground,9NAV tiles,88object records/58names,material paths. Object record parser reports actor_created=false.",
+      "navigation_not_rendering": "MainmenuMeshPipeline is explicitly navigation geometry. No native-equivalent scene draw submission follows from pathfinding.",
+      "graphics": "EngineGraphicsResourceConstruction/Create094650, EngineAnimationResourceManager/Load03AC50 and EngineAnimationChannelContracts/PlayAnimation0385B0 model identities/cache/channel writes. No texture pixels, visible scene/character mesh or animation pose decoding/display.",
+      "frame": "Existing CameraWorldRayContracts.GetRay229700 and same-state Player/Agent movement are reusable conditionally. Tests own scheduling and initial parameters; no actual window/present/input-driven session.",
+      "ui": "One concrete registered object input handler is now recovered (local drag state, not implemented); native game/world Widget, UI layout/font/image HUD renderer and state binding still missing. Prior WASD/WinForms excluded.",
+      "minimal_parallel_gap": [
+        "One real Ground material .tex and visible character mesh decoding/source-to-camera draw contract plus own platform window/submission.",
+        "Concrete widget client-coordinate/type interpretation -> evidencedcamera/groundhit -> samestate movement request; one session scheduler/presentation reads publishedPlayer position."
+      ],
+      "not_started": "No new rendering implementation, platform dependency installation, original runtime observation or product test this stage.",
+      "source_pins": [
+        {
+          "file": "src/resource_codec/ResourceContainers.cs",
+          "sha256": "f414cdecdaa58ba7d24cd7a8d6384f98874fc4a267fa3512e3b80bfb634b82a3"
+        },
+        {
+          "file": "src/reverse_client_actions/MainmenuMeshPipeline.cs",
+          "sha256": "3ff9f87cd4dca7d8f8876a212c5f25e84f2741865fc9e1dc71299d0fed942455"
+        },
+        {
+          "file": "src/reverse_client_actions/MainmenuTilePipeline.cs",
+          "sha256": "bd76aa516aab1e8be5f88b98e8e4f41e3cbe0a2564a8fd5995404177480733c9"
+        },
+        {
+          "file": "src/reverse_client_actions/EngineGraphicsResourceConstruction.cs",
+          "sha256": "8487d9578e5724f75cc42feb6f556db2d11b014d46462ef503ba0f373bbd22e7"
+        },
+        {
+          "file": "src/reverse_client_actions/EngineAnimationResourceManager.cs",
+          "sha256": "c33cadefc70ce8049ee8c8e36cf4b813bbf8986dc02c479952d3506a6d5607d9"
+        },
+        {
+          "file": "src/reverse_client_actions/EngineAnimationChannelContracts.cs",
+          "sha256": "c70d4c9362f3f109f5237e962ca736ff29d5c5b86758d69361c968f005e4d154"
+        },
+        {
+          "file": "src/reverse_client_actions/CameraWorldRayContracts.cs",
+          "sha256": "b60a5e3ded12d641af19fce4a25aa148f1e2950cdb15910fc6a24d23c8dd13fc"
+        },
+        {
+          "file": "src/reverse_client_actions/PlayerMoveBeginFrameIntegrationTests.cs",
+          "sha256": "af2a18126a7509d3c7068b5991c27c358961300bec684fe1ede40c1e3993ab9e"
+        },
+        {
+          "file": "docs/reverse-client/r1-mainmenu-level-object-records/inspection.json",
+          "sha256": "bd6604ccf1155b8808d7ec5bd6fc2e163a0f571326d91cdafd10f9b0ff6d6356"
+        },
+        {
+          "file": "docs/reverse-client/r1-terrain-records/terrain-0.json",
+          "sha256": "99174ba1196eae2c109ad46c18fdcbf2e368923d49117739d0496829d3389d93"
+        }
+      ],
+      "bounded_rendering_candidates": {
+        "source_pins": [
+          {
+            "file": "docs/reverse-client/r1-graphics-animation-publication-run1/11-GraphicsAnimationPublication-0x180090e60-procedure_assembly.json",
+            "sha256": "90dc01613e49f687756bca1e61f98ad497e34566eae3e99d917903f80a88639a"
+          },
+          {
+            "file": "docs/reverse-client/r1-terrain-type-material/04-TerrainTypeMaterial-0x1801e1940-procedure_pseudo_code.json",
+            "sha256": "26f717082e3030352ffe34277406c1132c45662d0867b707c27df55375579038"
+          }
+        ],
+        "texture": {
+          "proven": "EXE/Game imports exact GraphicsEngine LoadTexture; TerrainType1E1940 reads TextureFileName1/BumpMapFileName1 into+100/+120",
+          "symbol": "?LoadTexture@GraphicsEngine@GAME@@QEAAPEBVGraphicsTexture@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+          "rva_unknown": true,
+          "manager": "090F3D/090F5A vptr343D30;090F64 publishes GraphicsEngine+30",
+          "real_paths": [
+            "terrain textures/earth/rockgranite.tex",
+            "terrain textures/earth/rockgranite_nml.tex"
+          ],
+          "pixels_decoded": false
+        },
+        "mesh": {
+          "proven": "TerrainType1E1940 nonempty clutterMesh branch uses GraphicsEngine+48 manager slot10",
+          "manager": "09118F vptr33F458;0911AC publishes GraphicsEngine+48",
+          "slot_data_address": "0x18033f468",
+          "slot_is_function_entry": false,
+          "target_unknown": true,
+          "actual_scene_record": "records/level art/terrain/cliff_slate_20x20_01.dbr",
+          "mesh_file_path_unproven": true
+        },
+        "font": {
+          "proven": "09127B GraphicsEngine+40 manager virtual10 with fonts/jura.fnt;091283 result->GraphicsEngine+A8; nullmanager branch preserved",
+          "layout_reader_proven": false
+        },
+        "new_original_reads": 0,
+        "new_tests": 0,
+        "new_queries": 0
+      }
+    }
+  },
+  "next_incoming_query": {
+    "dynamic_plan": "docs/reverse-client/r1-ui-dynamic-observation-plan.json",
+    "requires_fresh_original_gates": true,
+    "scope": "Do not repeat the successful fixed queries or expand adjacent data/IATs. Need a source-backed instruction consumer / actual worldWidget writer; current provider xrefs give none. The separately saved isolated original-observation proposal requires exact authorization and environment/tool feasibility review before execution.",
+    "resource_slot_released": true,
+    "status": "none-prepared;bounded-static-stage-complete",
+    "dynamic_plan_sha256": "5f9a878273ae4e4e823f52d033e9348226d872b6c2414d49fe8427bd5654f445"
+  },
+  "stage_outcome": "single-pass-completed;zero-fixed-operand-candidates;UI-source-still-unresolved",
+  "input_ui_source_stage": {
+    "file": "docs/reverse-client/r1-input-ui-source-stage.json",
+    "sha256": "33f51b9d6146460904760b92b41211da590a441451670a59de03967029891a27",
+    "status": "fixed-identity-tested;two-factory-bodies-recovered;released-at-unknown-constructor",
+    "metadata_result": "docs/reverse-client/r1-engine-entry-exports/inspection.json",
+    "input_creation": "Followup confirms normal original allocation return, constructor2C50/vptr9850, Initialize2DD0 and Update31A0 mouse event production -> getters4810/4840 -> Widget18; no original runtime comparison.",
+    "prefix_result": "No exported LuaProvider constructor/vtable prefix; concrete provider remains unknown",
+    "new_product_tests": 0,
+    "new_rea_calls": 46
+  },
+  "directinput_factory": {
+    "file": "docs/reverse-client/r1-directinput-factory-stage.json",
+    "sha256": "4a82889f2b71c0dad97ec91fc1cd2e8b35a7f74bcd3c13e374323f9f179678e9",
+    "result": "two static wrappers recovered; concrete device unknown"
+  },
+  "directinput_device": {
+    "file": "docs/reverse-client/r1-directinput-device-stage.json",
+    "sha256": "adb72b01a86c3f00064f7b5ce8c8460ed1ae29525342ee731a573801b1d1ef66",
+    "status": "constructor-and-concrete-mouse-input-contracts-confirmed;all-batches-released;interactive-client-not-yet-available"
+  },
+  "historical_factory_stage_outcome": {
+    "new_original_function_bodies": 8,
+    "approval_denied": false,
+    "lifecycle_calls": 20,
+    "new_bounded_analysis_queries": 26,
+    "uncertain_operations": 0,
+    "new_game_tests": 0,
+    "new_product_compiles": 0,
+    "new_reversed_interactive_executable": false,
+    "note": "Independent fixed DirectInput identity tested15/15; true Create17B0/Destroy17D0 bodies recovered. Create tailcalls unqueried2C50, no returned-identity/physical-event guarantee. Concrete EXE widget still unknown. No product compile/game test or interactive reversed executable.",
+    "previous_tests_rerun": false
+  },
+  "widget_bridge": {
+    "file": "docs/reverse-client/r1-widget-bridge-stage.json",
+    "sha256": "d817756ec56761c19971b8adfeda9ccb138cf991cb7862a45ab2fd64e745724e",
+    "status": "bounded-widget-lookups-complete;concrete-override-unresolved;all-batches-released"
+  },
+  "historical_directinput_stage_outcome": {
+    "stage": "docs/reverse-client/r1-directinput-device-stage.json",
+    "new_original_function_bodies": 5,
+    "new_bounded_analysis_queries": 16,
+    "lifecycle_calls": 15,
+    "approval_denied": false,
+    "uncertain_operations": 0,
+    "new_game_tests": 0,
+    "new_product_compiles": 0,
+    "new_reversed_interactive_executable": false,
+    "previous_game_tests_rerun": false,
+    "tooling_cases": 7,
+    "note": "Actual client-coordinate mouse event producer and same-event Widget18 propagation proved statically. No interactive product or runtime input test."
+  },
+  "historical_widget_bridge_stage_outcome": {
+    "stage": "docs/reverse-client/r1-widget-bridge-stage.json",
+    "new_original_function_bodies": 0,
+    "new_bounded_analysis_queries": 4,
+    "lifecycle_calls": 15,
+    "tooling_cases": 11,
+    "new_game_tests": 0,
+    "new_product_compiles": 0,
+    "new_reversed_interactive_executable": false,
+    "approval_denied": false,
+    "uncertain_operations": 0,
+    "prior_failed_batch_preserved": true,
+    "note": "Two empty callers and two unresolved exact names; workflow mismatch corrected in isolated tooling and saved first response verified offline. No duplicate lookup."
+  },
+  "window_registered_widgets": {
+    "file": "docs/reverse-client/r1-window-registered-widgets-stage.json",
+    "world_movement_handler_found": false,
+    "new_actual_nondefault_target": "Engine199220",
+    "sha256": "2a56ce7170e8ae85bc05eb8525751b8578003a558518105d79e7e024c96170be",
+    "direct_helper": "Engine1996C0",
+    "default_handler_used_as_substitute": false
+  },
+  "window_initialization": {
+    "input_handle_bridge_complete": false,
+    "own_window_created": false,
+    "entries": [
+      "0x180217710",
+      "0x1802179b0"
+    ],
+    "stage": "docs/reverse-client/r1-window-registered-widgets-stage.json",
+    "original_window_created": false,
+    "stage_sha256": "2a56ce7170e8ae85bc05eb8525751b8578003a558518105d79e7e024c96170be",
+    "remaining": [
+      "ActualEXEwindowcreationcaller/productionstyle andworldWidget registration/+18caller",
+      "Activation container registrar,concrete object identities andtheir+18 implementations; no proven identity withEngine+3E8 Widget list",
+      "Window message-loop shutdown/lifetime beyondPostQuitMessage and+40byte; userdata publication success",
+      "Clientpixel-to-cameraimageconversion andsameControllerPlayer mouse-actioncaller",
+      "Texture/model/UIlayout/visible-scenedraw"
+    ],
+    "handle_stage": "docs/reverse-client/r1-window-handle-bridge-stage.json",
+    "slot_targets": [
+      "025730:+8HWND getter",
+      "217F40:Center,unknownvirtual90",
+      "0EC510:ShowWindow tailjump"
+    ],
+    "actual_instance_verified": false,
+    "handle_stage_sha256": "74d24f345146a09d451ccc0d3d2db09a2ada0e38e0abb0728d4435ad28f3a550",
+    "conditional_static_C0_bridge_confirmed": true,
+    "callbacks_contain_world_movement": false,
+    "callback_targets": [
+      "218090 ordinaryWindowProc",
+      "218210 ScreenSaverWindowProc"
+    ],
+    "userdata_publication_success_observed": false,
+    "conditional_create_message_pointer_path_confirmed": true,
+    "activation_close_contracts": {
+      "runtime_verified": false,
+      "activation": "217940",
+      "source_stage": "docs/reverse-client/r1-window-handle-bridge-stage.json",
+      "close": "218070"
+    }
+  },
+  "historical_window_registered_stage_outcome": {
+    "approval_denied": false,
+    "tooling_cases": 4,
+    "new_reversed_interactive_executable": false,
+    "lifecycle_calls": 25,
+    "prior_failed_batches_preserved": true,
+    "new_game_tests": 0,
+    "uncertain_operations": 0,
+    "new_bounded_analysis_queries": 20,
+    "stage": "docs/reverse-client/r1-window-registered-widgets-stage.json",
+    "note": "Concrete registered4object/input-slot chain and local horizontal-drag semantics recovered;WinWindow ctor/Initialize original same-object handle publication/failureprefix recovered. No worldWidget/mouse-to-image/input-driven rendering implementation or runtime acceptance.",
+    "new_original_function_bodies": 8,
+    "new_product_compiles": 0
+  },
+  "current_resource": {
+    "utc": "2026-11-04T02:05:30.4311376Z",
+    "available_physical_bytes": 7810629632,
+    "system_commit_bytes": 46686756864,
+    "system_commit_limit_bytes": 59886112768,
+    "external_build_or_java_processes": []
+  },
+  "ui_resource_source_stage": {
+    "file": "docs/reverse-client/r1-ui-resource-source-stage.json",
+    "interactive_available": false,
+    "real_data_link": "BothHUD mastertable fields referenceexactobjectivewindow DBR",
+    "native_consumer_unknown": true,
+    "sha256": "3f721b427c330a063dc5704379ca35b8dd6ce01bd19807f5e9d6afe58d4c919f",
+    "native_consumer_known": false,
+    "actual_EXE_string_addresses": 4,
+    "readonly_data_references": 2,
+    "static_pointer_values": [
+      "0x1402f3f60",
+      "0x1402f3f38"
+    ]
+  },
+  "execution_now": {
+    "last_terminal_session": 27027,
+    "new_Rea_Job_created": false,
+    "stage": {
+      "file": "docs/reverse-client/r1-setui-byte-candidate-stage.json",
+      "sha256": "3ea7cfa48aa1c0ee0b506836d79769e226e112ee1baf7adc99c47731e1306cb6"
+    },
+    "resource_released": true,
+    "last_exit": 0,
+    "status": "single-pass-completed;zero-fixed-operand-candidates;UI-source-still-unresolved",
+    "pending_operations": 0,
+    "owned_heavy_processes": 0
+  },
+  "historical_window_handle_bridge_stage_outcome": {
+    "stage": "docs/reverse-client/r1-window-handle-bridge-stage.json",
+    "stage_sha256": "74d24f345146a09d451ccc0d3d2db09a2ada0e38e0abb0728d4435ad28f3a550",
+    "delta": {
+      "new_game_scenarios": 0,
+      "slot_bytes": 32,
+      "new_original_function_bodies": 7,
+      "new_tooling_cases": 0,
+      "original_runtime_comparison": false,
+      "new_Rea_calls": 55,
+      "old_tests_rerun": 0,
+      "lifecycle_calls": 35,
+      "interactive_client_available": false,
+      "new_product_compiles": 0,
+      "analysis_calls": 20
+    },
+    "latest_turn_delta": {
+      "slot_bytes": 8,
+      "Rea_calls": 15,
+      "actual_function_bodies": 2,
+      "original_files_changed": false,
+      "new_game_tests": 0,
+      "lifecycle_calls": 10,
+      "old_tests_rerun": 0,
+      "empty_xref_results": 0,
+      "new_product_compiles": 0,
+      "original_runtime_observation": false,
+      "approval_denied": false,
+      "offline_verifier_passes": 2,
+      "uncertain_operations": 0,
+      "completed_analysis_calls": 5,
+      "offline_verifier_failures": 1
+    },
+    "release": "docs/reverse-client/r1-window-close-body-release.json",
+    "release_sha256": "2026812055dfa73856e26cb090babc17e19e02b790ac8eac9ce280babedb840b",
+    "pending_operations": 0,
+    "approval_denied": false,
+    "note": "Activationlive-listnotification andClosequitrequest/byteflag nativecontracts recovered. No actualworldWidgetidentity/pixelmapping/visibleclient. No productcompile/gamevalidation thisturn."
+  },
+  "ui_api_source_stage": {
+    "sha256": "8836df9473c6122266b8f3b26e0b8d046673d99d00641826e4d5bd5b8260be86",
+    "file": "docs/reverse-client/r1-ui-api-source-stage.json"
+  },
+  "setui_exe_source_stage": {
+    "sha256": "2831b769d13c71054201b6bacc80c547ae6785098c60e8a2d7597705d1c316c9",
+    "file": "docs/reverse-client/r1-setui-exe-source-stage.json"
+  },
+  "setui_byte_candidate_stage": {
+    "file": "docs/reverse-client/r1-setui-byte-candidate-stage.json",
+    "sha256": "3ea7cfa48aa1c0ee0b506836d79769e226e112ee1baf7adc99c47731e1306cb6"
+  }
+}

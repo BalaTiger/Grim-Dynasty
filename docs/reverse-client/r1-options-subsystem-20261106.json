@@ -1,0 +1,26 @@
+{
+    "schema":  "grim-dynasty-r1-options-subsystem-v1",
+    "utc":  "2026-11-06T02:06:07.3506821Z",
+    "risk_resolved":  "Whether the host must create an Options object before Initialize, and whether reading the engine global early is safe.",
+    "answer":  "Neither is a problem. Options is created lazily by Engine::GetOptions, and that accessor only needs the two early fields +0xB8 and +0xD8, both written by Engine::Engine().",
+    "symbols":  {
+                    "0x73660":  "Engine::GetOptions() - lazy accessor",
+                    "0x1808d0":  "Options::Options() - object size 0x150 (336 bytes)",
+                    "0x182140":  "Options::LoadDefaults(std::string const\u0026) - called with Engine+0xB8",
+                    "0x1821b0":  "unnamed, called with Engine+0xD8 after LoadDefaults"
+                },
+    "lazy_pattern":  {
+                         "test":  "cmp qword ptr [rcx+0x3E0], 0",
+                         "create":  "when empty: operator new(0x150), Options::Options(), then store to [this+0x3E0]",
+                         "then":  "LoadDefaults with lea rdx,[this+0xB8], followed by a call taking lea rdx,[this+0xD8]",
+                         "meaning":  "Engine+0x3E0 caches the Options object; Engine+0xB8 is a std::string the constructor builds"
+                     },
+    "constructor_confirmation":  "Engine::Engine() contains lea with displacement 0xB8 at 0x729c0, which is the string construction on that field, so the string is valid as soon as the constructor returns.",
+    "why_the_order_is_safe":  "Publishing the Engine pointer before calling Initialize is safe: the only Engine state that Initialize touches before it finishes is the constructor-initialised prefix, and the subsystems it needs are created on demand.",
+    "remaining_risk":  "Whether Options::LoadDefaults succeeds without game data files, since it loads defaults for a settings object.",
+    "not_established":  [
+                            "what Options::LoadDefaults reads",
+                            "what 0x1821b0 does with +0xD8",
+                            "whether the loader tolerates a missing defaults source"
+                        ]
+}

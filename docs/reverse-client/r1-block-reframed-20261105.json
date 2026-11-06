@@ -1,0 +1,32 @@
+{
+    "schema":  "grim-dynasty-r1-block-reframed-v1",
+    "utc":  "2026-11-05T13:30:36.6318422Z",
+    "method":  "Route B: scanned every RIP-relative LEA in Engine.dll whose target falls in 0x4213c0..0x421490, regardless of what follows the LEA.",
+    "lea_hits":  {
+                     "0x31280 -\u003e 0x4213c0":  "address taken",
+                     "0x4dd70 -\u003e 0x4213e8":  "address taken",
+                     "0x18c535 -\u003e 0x421450":  "inside function 0x18c520-0x18c541",
+                     "0x18c75e -\u003e 0x421480":  "inside function 0x18c720-0x18c787",
+                     "0x18c9d8 -\u003e 0x421450":  "inside function 0x18c950-0x18ca56"
+                 },
+    "decisive_evidence":  {
+                              "accessor":  "0x18c520 tests [0x180421588]; when it is zero it returns lea rax,[0x180421450], i.e. the address of a structure at 0x421450.",
+                              "array_walk":  "0x18c720 clears 0x421458/0x421460/0x421468/0x421470, then compares a count at [0x180421580] and walks pointers starting at 0x421480 in 8-byte steps, calling 0x18c4c0 per element.",
+                              "registrar":  "0x18c950 checks that [0x180421450] is non-zero, builds a string and calls 0x18ca90 with rcx = 0x421450."
+                          },
+    "correction":  "I previously treated 0x4213f0, 0x421400, 0x421408, 0x421428, 0x421430 and 0x421438 as members of one singleton block, because they are adjacent and adjacent slots are written by different lazy-create helpers. The LEA evidence shows the region is instead a plain C++ structure belonging to one subsystem, with a count field and a pointer array inside it. The earlier grouping was an inference from adjacency, not from evidence, and it was wrong.",
+    "consequence":  "The question \"who writes Engine.dll+0x421428\" was framed against the wrong model. The right question is \"who constructs or assigns this subsystem structure\", which is answerable by xref on the accessor 0x18c520 and on the registrar 0x18c950 rather than by hunting for a store to a global.",
+    "next":  "Find the callers of 0x18c520 and 0x18c950, and the code that fills the array at 0x421480, to recover the subsystem lifecycle.",
+    "not_claimed":  [
+                        "that the subsystem is identified by name",
+                        "that 0x421428 is understood in this new model",
+                        "any runtime behaviour"
+                    ],
+    "later_correction":  {
+                             "utc":  "2026-11-05T13:31:31.4780205Z",
+                             "what":  "I suspected 0x421428 might not be the engine root after all, because 0x18c520/0x18c950 turned out to belong to a different structure at 0x421450.",
+                             "why_that_suspicion_is_withdrawn":  "Reading an actual consumer settles it: 0x256f0 does mov rax,[0x180421428]; mov rdx,[rax+0x1F8]; mov rcx,[rdx+0xC0]; call [rax+8], which dereferences the slot as a root object and dispatches a virtual slot. 0x90ae0 does the same shape (mov rcx,[0x180421428]; mov rax,[rcx]; call [rax+0x18]).",
+                             "verdict":  "0x421428 is an engine root object pointer, as originally established. The earlier doubt was caused by mistaking adjacency for membership, twice in opposite directions.",
+                             "lesson":  "Adjacency in .data proves nothing. Membership must be established from code that uses a slot, not from neighbouring offsets."
+                         }
+}

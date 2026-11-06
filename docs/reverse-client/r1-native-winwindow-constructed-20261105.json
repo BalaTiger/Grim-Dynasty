@@ -1,0 +1,32 @@
+{
+    "schema":  "grim-dynasty-r1-native-winwindow-constructed-v1",
+    "utc":  "2026-11-05T10:49:24.6362757Z",
+    "status":  "passed-constructed-original-winwindow",
+    "what":  "The shipped Engine.dll was loaded into a fresh process and its exported GAME::WinWindow constructor was called on an OWN buffer. The object came back with the module-relocated vtable.",
+    "observed":  {
+                     "engine_base":  "0x7ffb75d10000",
+                     "ctor_address":  "0x7ffb75f27710",
+                     "ctor_expected":  "base + 0x217710",
+                     "vtable_written":  "0x7ffb7604f4c0",
+                     "vtable_expected":  "base + 0x33F4C0",
+                     "child_object":  "0xb2e8f0",
+                     "child_nonzero":  true,
+                     "match":  true
+                 },
+    "why_it_matters":  "Until now every presentation fact was read from disk. This is the first time original presentation code executed under our control, and it confirms the export name, the calling convention (this-call with a caller-provided buffer) and the vtable relocation all behave as the static reading predicted.",
+    "safety":  {
+                   "creates_window":  false,
+                   "creates_device":  false,
+                   "touches_original_files":  false,
+                   "debugger":  false,
+                   "writes_to_target":  false
+               },
+    "boundary":  "Only the constructor ran. No window, no device, no swapchain and no frame exist yet; the child allocation is the constructor\u0027s own 0x18-byte subobject.",
+    "next":  "Call WinWindow::Initialize 0x2179b0 with a constructed std::string title and geometry to create a real HWND.",
+    "artifacts":  {
+                      "program":  ".tooling/r1-native-present-prepared/NativeWindowProbe.cs",
+                      "binary":  ".tooling/r1-native-present-prepared/bin/NativeWindowProbe.exe",
+                      "binary_sha256":  "0d999f7e65b7fe0df66d7459f97384b5624ca9dda9ef0f57f2be59dd0092557a",
+                      "source_sha256":  "978e77b3b3ebef10d837565205559124fb318cc2d9ea94783207b94bb790ca65"
+                  }
+}

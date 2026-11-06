@@ -1,0 +1,106 @@
+{
+  "schema": "grim-dynasty.fixed-duration-manager-slot.v1",
+  "started_utc": "2026-10-26T02:47:35.566Z",
+  "script_sha256": "9e158ea2f08fc6332c302a3aefb642f626f150170a975ce437d0a32d911b641e",
+  "plan_sha256": "3d221a653f311007e18c19d4e931bb3aea79afff75b31187444fd039b248e95d",
+  "source_pins": [
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "duration_ctor",
+      "path": "docs/reverse-client/r1-duration-manager-constructor-run1/05-DurationManagerConstructor-0x1802790a0-procedure_assembly.json",
+      "sha256": "72c6a14b51e176245b3782bc852378f2b6222cfab38dbb00a8bfd41622d56de9"
+    },
+    {
+      "key": "combat_ctor",
+      "path": "docs/reverse-client/r1-game-run-speed-direct-run1/05-RunSpeedDirect-0x18011bac0-procedure_assembly.json",
+      "sha256": "31d641584ba05d12a5cea90df96e9da2a684022a1d749398ac37729860e6f0e2"
+    },
+    {
+      "key": "character_ctor",
+      "path": "docs/reverse-client/r1-game-entity-constructors/05-GameEntityConstructor-0x180052030-procedure_assembly.json",
+      "sha256": "34a334ae8f918b20469fb57e7d55af0ffbcfba0d5900c42a4e371192d534f856"
+    },
+    {
+      "key": "run_speed",
+      "path": "docs/reverse-client/r1-game-run-speed-run1/05-GameRunSpeed-0x180069040-procedure_assembly.json",
+      "sha256": "7ba2191d3009c003442e7f4f438ff3298a80371c38c1fb81e3e780ea2718a571"
+    },
+    {
+      "key": "duration_ctor_summary",
+      "path": "docs/reverse-client/r1-duration-manager-constructor-run1/summary.json",
+      "sha256": "e0d0a6535e7b26b046dc8b3fd7801028deee89931ba03d354d3b7de9b9497a1c"
+    }
+  ],
+  "limits": {
+    "semantic_data_bytes": 8,
+    "semantic_read_operations": 1,
+    "code_bytes": 0,
+    "new_pe_header_bytes": 0,
+    "pdata_bytes": 0,
+    "rtti_bytes": 0,
+    "hash_chunk_bytes": 65536
+  },
+  "semantic_data_bytes": 8,
+  "semantic_read_operations": 1,
+  "code_bytes": 0,
+  "new_pe_header_bytes": 0,
+  "pdata_bytes": 0,
+  "rtti_bytes": 0,
+  "rtti_established": false,
+  "original_loaded_or_executed": false,
+  "subprocesses": 0,
+  "backend_started": false,
+  "source": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+    "bytes": 11385856,
+    "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+  },
+  "hash_bytes": 22771712,
+  "reads": [
+    {
+      "rva": "0x75ef10",
+      "bytes": 8,
+      "section": ".rdata",
+      "file_offset": 7722256,
+      "raw_hex": "109d278001000000"
+    }
+  ],
+  "values": [
+    {
+      "table_rva": "0x75ef00",
+      "offset": "0x10",
+      "rva": "0x75ef10",
+      "bytes": 8,
+      "raw_hex": "109d278001000000",
+      "target_va": "0x180279d10",
+      "target_body_read": false,
+      "function_boundary_verified": false,
+      "loaded_binding_observed": false,
+      "target_rva": "0x279d10",
+      "target_section": ".text",
+      "classification": "ExecutableAddressCandidate"
+    }
+  ],
+  "source_closed": true,
+  "slot_binding_complete": true,
+  "failures": [],
+  "limitations": [
+    "Preparation only; root separately reviews and approves exact invocation with both hashes and performs Windows Attributes/reparse ancestor preflight. Import has no I/O; input/output paths are fixed, not caller-selected.",
+    "Exactly8 bytes atGame RVA75EF10=75EF00+10. Verify readable,nonwritable,nonexecutable source section; classify target only by cached same-hash PE map without reading it. No other slot,RTTI/table[-1],strings,code,imports,exports or headers.",
+    "Same source handle before/after full SHA256 with64KiB buffer and stat/path identity checks; these are separate from8B semantic budget,not atomic snapshots. Source read-only and closed in finally; output directory absent,no overwrite.",
+    "The new2790A0 vptr store,11BAC0 receiver+10,Character052030 receiver+530 and actual06926A use justify the disk slot. Target executable membership is only a function candidate; loaded vptr,complete constructor,post-load field values and successful call remain unverified.",
+    "Do not read019520,EquipManager,database paths,422980 or any new callee. Do not repeat completed Rea queries or the earlier787778 slot. Prior optionalRTTI refusal is neither retried nor altered; noRTTI is attempted or claimed.",
+    "No subprocess/backend/network/original loading/execution,saves/cloud,installation,security settings,commit,push or deployment."
+  ],
+  "proofs_verified": true,
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_hash_preserved": true,
+  "source_stat_stable": true,
+  "finished_utc": "2026-10-26T02:47:35.586Z",
+  "status": "passed"
+}

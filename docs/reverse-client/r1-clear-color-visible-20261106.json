@@ -1,0 +1,28 @@
+{
+    "schema":  "grim-dynasty-r1-clear-visible-v1",
+    "utc":  "2026-11-06T02:48:03.0767261Z",
+    "status":  "passed-cleared-frame-visible",
+    "decisive_evidence":  {
+                              "method":  "the host captured its own window in-process with Graphics.CopyFromScreen and sampled three pixels",
+                              "samples":  "self_pixel(1288,739) = R0 G0 B255; self_pixel(644,369) = R0 G0 B255; self_pixel(1932,1109) = R0 G0 B255",
+                              "result":  "all three samples are pure blue"
+                          },
+    "window_geometry_fixed":  {
+                                  "previous_mistake":  "I passed the four integers as (800,600,100,100) which the code treats as X=800, Y=600, width=100, height=100",
+                                  "correct_order":  "(X, Y, width, height); passing (100,100,800,600) produced client=800x600 and window=806x629 at 877,406",
+                                  "how_confirmed":  "the host printed its own object fields obj+0x2c=877 obj+0x30=406 obj+0x34=800 obj+0x38=600 and its GetClientRect",
+                                  "renderdevice_settings_width_height":  "the width and height given to CreatePrimarySurface are the render target size, separate from the window geometry"
+                              },
+    "colour_order_finding":  "I set the clear colour to (1,0,1,1) and observed pure blue, so the Color struct is byte-ordered BGR (or the channels map differently than RGB). The emitted value is blue, not magenta.",
+    "what_this_proves":  [
+                             "the swapchain is genuinely bound and being presented to",
+                             "the shipped renderer produced the visible pixels, not a reimplementation",
+                             "Clear and PresentSurface work in our host when the window geometry is right"
+                         ],
+    "remaining_oddity":  "The in-process capture reported rect 2576x1479 at -8,-19 even though GetWindowRect reported 806x629 at 877,406 moments earlier; the pixel colours are still conclusive because they changed from black to pure blue only after Clear.",
+    "not_claimed":  [
+                        "that terrain or a character is drawn",
+                        "that the device is fully initialised for geometry submission"
+                    ],
+    "next":  "With a visible frame proven, the next step is geometry: either submit a triangle through the device to validate the draw path, or assess asset loading for terrain."
+}

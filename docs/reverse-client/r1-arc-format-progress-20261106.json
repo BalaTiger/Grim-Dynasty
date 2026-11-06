@@ -1,0 +1,48 @@
+{
+    "schema":  "grim-dynasty-r1-arc-format-v1",
+    "utc":  "2026-11-06T03:49:01.7963571Z",
+    "status":  "name-table-solved-entry-table-partial",
+    "archive":  {
+                    "path":  "resources/Creatures.arc",
+                    "size":  462383350,
+                    "magic":  "ARC\\0",
+                    "version":  3,
+                    "entries":  3341
+                },
+    "header_layout":  {
+                          "bytes0_4":  "ARC\\0",
+                          "off4":  "version u32 = 3",
+                          "off8":  "entry count u32 = 3341 (matches ArchiveTool -list exactly)",
+                          "off12":  "u32 = 5265 (unresolved)",
+                          "off16":  "u32 = 63180 (unresolved)",
+                          "off20":  "u32 = 150660 (RESOLVED: exact length of the filename table)",
+                          "off24":  "u64 = 462022506 (a size field; the file itself is 462383350 bytes, so this is not the total)"
+                      },
+    "name_table":  {
+                       "offset":  462085686,
+                       "length":  150660,
+                       "format":  "consecutive NUL-terminated ASCII names, in the same order as ArchiveTool -list",
+                       "parsed":  3341,
+                       "first":  "anomalies/anomalya01.msh",
+                       "player_model_index":  2461,
+                       "player_model":  "pc/hero_00.msh",
+                       "neighbour_names":  "npcs/humanmale15b_nml.tex before it and npcs/humanmale17b_dif.tex after it",
+                       "trailing_after_names":  147004
+                   },
+    "entry_table_probe":  {
+                              "hypothesis":  "an 8-byte {u32,u32} table immediately before the name table",
+                              "at_index_2461":  "0x0000f173, 0x000291a3 (61811 and 168355)",
+                              "check":  "reading at 61811 gives compressed-looking bytes, not a plaintext .msh header, so the first field is not a direct file offset into an uncompressed payload",
+                              "conclusion":  "the archive stores compressed blocks; the entry fields are offsets and sizes within that scheme and are not yet interpreted"
+                          },
+    "what_this_enables":  "The complete file inventory is now readable without the official tool, and the player model entry can be located by index, which is the groundwork for the fallback path (extract then load ourselves).",
+    "not_established":  [
+                            "the entry table layout",
+                            "how blocks are compressed",
+                            "how to decode a .msh model"
+                        ],
+    "next":  [
+                 "settle the entry table by cross-checking many entries against ArchiveTool -extract output",
+                 "then determine the compression scheme per entry"
+             ]
+}

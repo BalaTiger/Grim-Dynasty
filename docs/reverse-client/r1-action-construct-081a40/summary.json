@@ -1,0 +1,37 @@
+{
+    "schema":  "grim-dynasty-r1-action-construct-summary-v1",
+    "utc":  "2026-11-05T06:20:47.6799542Z",
+    "function":  "0x81a40",
+    "role":  "Action object construction called by the Idle state entry 0x165B30",
+    "decoded":  "docs/reverse-client/r1-action-construct-081a40/inspection.json",
+    "instructions_used":  22,
+    "layout":  {
+                   "this+0x00":  "vtable 0x1806E5710 transient, finally 0x1806E5688",
+                   "this+0x08":  "dword id = controller+0x30 (argument edx)",
+                   "this+0x0c":  "dword 0 then 1 (final)",
+                   "this+0x10":  "word 0x0100 then byte 1 (final)",
+                   "this+0x14":  "float 1000.0 (0x437A0000)",
+                   "this+0x18":  "byte 0",
+                   "this+0x20":  "WorldVec3 constructed through IAT 0x609720"
+               },
+    "returns":  "rax = this",
+    "adjacent_function":  {
+                              "address":  "0x81ac0",
+                              "behaviour":  "reads [rcx+8] id, gets the ObjectManager through IAT 0x609098, looks the id up via 0x019D40, then compares the class pointer with 0xA5CBA0 (Character)",
+                              "note":  "decoded in the same window; not executed"
+                          },
+    "connections":  {
+                        "already_modelled":  "GameControllerMoveProductionContracts.HandleAction127DD0 receives this action from the Idle entry",
+                        "unknown_remaining":  [
+                                                  "exact class identity behind vtable 0x1806E5688",
+                                                  "CharacterAction virtual body used by 127DD0",
+                                                  "the 0x609A98 timer arm"
+                                              ]
+                    },
+    "not_claimed":  [
+                        "that this is a specific named class",
+                        "that the constructed action is submitted successfully",
+                        "any runtime behaviour"
+                    ],
+    "next":  "Model the constructed action fields and the Character class check, then the Idle entry can hand it to the already modelled 127DD0 instead of stopping at 0x123EE0."
+}

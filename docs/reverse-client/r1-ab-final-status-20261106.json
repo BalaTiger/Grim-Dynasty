@@ -1,0 +1,27 @@
+{
+    "schema":  "grim-dynasty-r1-ab-final-v1",
+    "utc":  "2026-11-06T05:38:49.2126941Z",
+    "summary":  "Both paths are started and neither has drawn a character. This records exactly what holds and what does not.",
+    "A_confirms":  {
+                       "device and swapchain":  "verified: vtable matches Direct3D11.dll+0x175E8, CreatePrimarySurface returns a surface, BeginFrame returns 1, Clear plus PresentSurface shows a pure colour that reproduces",
+                       "archive layer":  "verified: Attach returns 1, GetNumFiles is 3341, OpenFile on Creatures/pc/hero_00.msh returns a File whose index reads 2461",
+                       "byte range":  "verified twice, statically and at runtime: offset 399226753, stored 111402, raw 223717",
+                       "payload":  "extracted 111350 bytes of plain binary, 66.7 percent plausible floats, tail holds pi/2, pi and pi/6"
+                   },
+    "A_blocked_on":  {
+                         "read_trigger":  "I called the ArchiveFile vtable slot 2 with (0, 223717); it returned without fault but [[file+8]+0x10] still did not contain geometry, so slot 2 is probably a position or bounds routine rather than the read that materialises the payload",
+                         "vertex_format":  "still unknown, and this is the real blocker for A"
+                     },
+    "B_started":  {
+                      "found":  "Character::Character() at 0x52030 is exported; Actor constructors are not",
+                      "prerequisite":  "a Character needs the world, the object manager and a graphics scene to exist first, so B begins by driving those rather than by loading a model"
+                  },
+    "why_i_stopped_trying_variants":  "Each further blind attempt at a vtable slot or a buffer offset has a low chance of being the right one and a real chance of producing a plausible looking but wrong result. The next productive step is reading the mesh loader statically, not more probing.",
+    "recommended":  "decode the internal mesh loader: search Game.dll for the routine that consumes a block whose magic is MSH, which yields the vertex declaration directly. That single piece unblocks both A and B.",
+    "not_claimed":  [
+                        "any drawn character",
+                        "any drawn terrain",
+                        "a known vertex format",
+                        "a working payload read"
+                    ]
+}

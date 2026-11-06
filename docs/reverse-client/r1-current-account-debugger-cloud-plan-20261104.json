@@ -1,0 +1,116 @@
+{
+  "schema": "gd-current-account-readonly-observation-plan-v1",
+  "date_utc": "2026-11-04T04:24:19.0533569Z",
+  "status": "readonly-assessment-complete;Rider-native-attach-candidate-installed;startup-and-Cloud-execution-not-authorized",
+  "scope": "Read-only installed-tool metadata, existing project evidence and official public documentation. No original saves or Steam configuration read in this assessment; no debugger, Steam, game, Rea, build or test launched.",
+  "backup_completed_previously": {
+    "report": "docs/reverse-client/r1-save-backup-complete-20261104.json",
+    "report_sha256": "7dfba83b5a5ba8b95e474ff1180e3ea14b3963981f1a76c5d24faea6f4b002b5",
+    "root": "D:\\GD-Observation-Backups\\20261104T041306Z",
+    "files": 19,
+    "bytes": 365166,
+    "verified": "Source-before, baseline-A, restore-verification and source-after SHA256 matched for all 19 files. Originals were not restored over or changed.",
+    "limit": "Local recovery baseline only; not a remote Cloud snapshot, zero-write guarantee, cleared sync queue or authorization to start Steam/game. No backup/test repeated this assessment."
+  },
+  "installed_debugger_inventory": {
+    "rider": {
+      "executable": "D:\\JetBrains Rider 2025.3.1\\bin\\rider64.exe",
+      "executable_bytes": 1497448,
+      "version": "2025.3.1",
+      "build": "253.29346.144",
+      "metadata": "D:\\JetBrains Rider 2025.3.1\\product-info.json",
+      "observed_plugins": ["cidr-debugger", "cidr-parallelStacks", "rider-cpp", "UnrealLink"],
+      "lldb_directory": "D:\\JetBrains Rider 2025.3.1\\plugins\\cidr-debugger\\bin\\lldb\\win\\x64",
+      "evidence_chunks": ["1c6acb", "8feb2b", "6ac5d2", "effa76"],
+      "official_documented_capabilities": "Rider 2025.3 CLI supports attach-to-process native PID, using LLDB; solution is optional for external processes without source. Disassembly opens for an attached process without debug information; instruction stepping, address breakpoints and register-based address expressions are documented.",
+      "important_limit": "Native Executable run configuration explicitly does not debug non-.NET code. Native attach support is not proof of direct debugger-controlled startup of an arbitrary native EXE, first-instruction capture or full register-panel support.",
+      "not_verified_here": ["License/session readiness", "Plugin enabled state", "Native backend actually loads", "Target attach permissions", "Address breakpoint hits", "Debugger detach behavior", "Capture of one-time early initialization before attachment"]
+    },
+    "visual_studio": {
+      "product": "Microsoft.VisualStudio.Product.BuildTools",
+      "installation": "D:\\Microsoft Visual Studio\\2022\\BuildTools",
+      "installation_version": "17.14.37710.0",
+      "vswhere_isComplete": "1",
+      "vswhere_isLaunchable": "1",
+      "meaning": "Installer inventory reports BuildTools, not the Visual Studio IDE. isLaunchable is an installer flag, not proof of a graphical debugger frontend.",
+      "known_components": ["C:\\Windows\\System32\\vsjitdebugger.exe", "D:\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Remote Debugger\\x64\\msvsmon.exe"],
+      "component_limit": "JIT launcher and remote monitor presence do not establish an installed working local frontend; neither was launched."
+    },
+    "bounded_absence_only": "Previously checked standard WinDbg/CDB paths and PATH names were absent. Standard per-user and Program Files VS Code paths were absent now. This is not an exhaustive machine-wide absence claim.",
+    "access_boundary": "Earlier HKCU App Paths and Appx inventory access failures were not retried or elevated. No protected WindowsApps scan, security change, installation or debugger execution."
+  },
+  "steamless_startup": {
+    "current_executable": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Grim Dawn.exe",
+    "historical_fixed_sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "hash_scope": "Existing static-analysis identity, not a newly measured hash in this assessment.",
+    "existing_evidence": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "evidence_sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7",
+    "imports": "Engine ordinary imports include steam_api64.dll SteamInternal_SteamAPI_Init, callbacks and shutdown. No ordinary import named SteamAPI_Init or SteamAPI_RestartAppIfNecessary was recorded; dynamic/transitive paths remain unknown.",
+    "conclusion": "Current Steam build running without any Steam client is UNVERIFIED, not established impossible. Crate officially supports offline single-player, giving Steam offline mode as an example. Valve offline mode still runs games through Steam. Crate describes GOG as a separate DRM-free distribution, not a capability or license supplied by the current Steam files.",
+    "limits": "No launch experiment, replacement Steam API, appid fabrication, DRM change, copied-game startup claim or login bypass. No BIOS/virtualization requirement established."
+  },
+  "cloud_protection": {
+    "steam_per_game_official": "With permission to open Steam: Library > Grim Dawn > Properties > General > disable Cloud synchronization. This can precede game startup, but requires client startup. Use the per-game setting to avoid changing other games.",
+    "steam_startup_gap": "Opening the client before the toggle is verified may process pending synchronization. Existing backup and historical successful upload log do not prove current remote state or eliminate this gap.",
+    "offline_official": "Steam offline mode defers synchronization until online again; it does not freeze remote data permanently. Cached login/offline readiness for this machine is unknown. Do not invent a command-line offline switch or force initial online synchronization.",
+    "game_setting": "Game Cloud Saving is a separate option. Earlier authorized evidence recorded cloudSaving=true; it was not reread here. Crate developer guidance discusses the in-game toggle and backing up before changing it. No verified official pre-first-start options.txt editing procedure was established.",
+    "game_setting_limit": "An in-game toggle necessarily occurs after some game startup. Switching it can change the active save location; no automatic character copying/migration is proposed. It is not proof that startup did not touch original data.",
+    "remote_unknowns": ["Current remote contents", "Pending uploads/downloads", "Per-game and global toggle state", "Changes on another device", "Conflict resolution direction"],
+    "restore_limit": "Do not overwrite originals or edit/delete remotecache.vdf to force Cloud rollback. Restoring local files or later reenabling Cloud needs a separate reviewed plan and explicit consent. Backups do not undo achievements, server state or writes outside the backed-up paths."
+  },
+  "proposed_sequence_not_executed": [
+    {
+      "step": 1,
+      "action": "Authorize starting the installed Rider and a small self-owned native diagnostic fixture, under existing resource/identity protection, to verify native attachment, instruction/address observation and safe detach without Steam or game.",
+      "scope": "Project-isolated diagnostic only; no new software installation, license acceptance/payment, original DLL load or system setting change.",
+      "stop": "Stop if licensing, missing components, permissions or debugger behavior require actions outside that scope. Do not assume attach can capture one-time startup writers.",
+      "status": "Not run; current task is read-only."
+    },
+    {
+      "step": 2,
+      "action": "Obtain explicit consent for Steam startup and the Grim Dawn-only Cloud toggle. Decide before startup whether the user accepts possible pending sync, or requires a separately approved temporary network disconnection and offline readiness check.",
+      "scope": "No network/firewall change is authorized now. Network disconnection could also break the remote execution channel and may require user handling. Do not launch if zero remote change is required but not enforceable.",
+      "stop": "Login, update, license request, sync conflict or uncertain protection state stops the experiment; do not select upload/download automatically.",
+      "status": "Not run; current remote state unknown."
+    },
+    {
+      "step": 3,
+      "action": "Only after protections and debugger readiness are demonstrated, seek consent for bounded original-game startup/attachment and one menu/scene mouse observation, including the possible local Settings/save writes caused by normal startup. If changing in-game Cloud Saving or creating a disposable test character, approve those explicitly first.",
+      "scope": "Maximum 10 minutes / 16 relevant breakpoint hits as the prior proposed bound; current-process identity and ASLR module base must be verified. Observe only the confirmed UI publication / mouse chain and tightly scoped parameters. No memory patching of behavior, forced returns, broad dumps, data migration or original-file change.",
+      "limit": "Debugger address breakpoints may instrument process memory and pause/change timing; this is not a zero-effect observation. An attach-only route may miss Game SetUI / other initial registration. Solve that timing requirement before claiming those writers captured.",
+      "status": "Not authorized or executed."
+    },
+    {
+      "step": 4,
+      "action": "After an authorized observation, exit normally, confirm owned debug session and target state, preserve a separate post-run evidence snapshot if authorized, compare with baseline, then separately agree any restoration and Cloud reenable/reconnect sequence.",
+      "stop": "No automatic original restore, Cloud reenabling or conflict resolution.",
+      "status": "Future plan only."
+    }
+  ],
+  "official_sources": {
+    "rider_attach": "https://www.jetbrains.com/help/rider/2025.3/Working_with_the_IDE_Features_from_Command_Line.html",
+    "rider_disassembly": "https://www.jetbrains.com/help/rider/2025.3/Disassembly_View.html",
+    "rider_native_run_limit": "https://www.jetbrains.com/help/rider/2025.3/List_of_run_debug_configurations.html",
+    "crate_offline": "https://www.grimdawn.com/guide/game-settings/game-modes/",
+    "crate_distribution": "https://www.grimdawn.com/guide/about/faq/",
+    "valve_offline": "https://help.steampowered.com/en/faqs/view/0E18-319B-E34B-B2C8",
+    "valve_cloud_toggle_conflicts": "https://help.steampowered.com/en/faqs/view/68D2-35AB-09A9-7678",
+    "valve_cloud_timing": "https://partner.steamgames.com/doc/features/cloud",
+    "crate_cloud_backup_guidance": "https://forums.crateentertainment.com/t/stuck-at-conclave-of-the-three-on-elite/142507/11"
+  },
+  "execution_record": {
+    "inventory_json_parse_failure": "7a3773: vswhere full JSON output could not be parsed at description; terminated before later inventory statements. No permission denial or mutation. New bounded vswhere -property reads succeeded in 1c6acb.",
+    "transport_failure": "A later independent read-only inventory call failed before process creation with exec-server transport disconnected. No mutation was submitted. 42cea4 UTC-only probe succeeded at 2026-11-04T04:23:40.8840536Z; bounded metadata read 6ac5d2 then succeeded.",
+    "new_Rea_calls": 0,
+    "new_builds": 0,
+    "new_tests": 0,
+    "new_owned_Jobs": 0,
+    "new_persistent_monitors": 0,
+    "pending_operations": 0,
+    "owned_heavy_processes_started": 0,
+    "settings_changed": false,
+    "original_save_access_this_assessment": false,
+    "game_or_Steam_started": false,
+    "resource_slot": "Not occupied; read-only short commands returned. No global process-absence assertion from a stale sample."
+  }
+}

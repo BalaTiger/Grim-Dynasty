@@ -1,0 +1,67 @@
+{
+  "schema": "gd-jetbrains-etw-readonly-identity-v1",
+  "status": "service-identity-established;report-only;no-removal-or-start",
+  "sample_utc": "2026-11-04T05:00:53.6900069Z",
+  "method": "Non-administrator, formally approved read-only Win32_Process basic metadata plus Win32_Service PID mapping. No process image handle query or alternative access to a rejected handle.",
+  "query_receipts": {"launch":"c1481a","session":47428,"completion":"f41b2d","exit_code":0},
+  "process": {
+    "pid": 4624,
+    "parent_pid": 1744,
+    "name": "JetBrains.Etw.Collector.Host.exe",
+    "creation_as_returned": "2026-10-29T19:06:43.77775+08:00",
+    "creation_utc": "2026-10-29T11:06:43.7777500Z",
+    "parent_name": "services.exe",
+    "parent_creation_as_returned": "2026-10-29T19:06:43.090055+08:00"
+  },
+  "service": {
+    "name": "JetBrainsEtwHost.16",
+    "display_name": "JetBrains ETW Host Service v16.44.0 (x64)",
+    "state": "Running",
+    "status": "OK",
+    "start_mode": "Auto",
+    "configured_account": "LocalSystem",
+    "process_id": 4624,
+    "configured_executable": "C:\\Program Files\\JetBrains\\ETW Host\\16\\JetBrains.Etw.Collector.Host.exe"
+  },
+  "configured_file_readonly_validation": {
+    "sample_utc": "2026-11-04T05:01:23.1801418Z",
+    "tool_chunk": "7b4516",
+    "length": 1030544,
+    "attributes": "Archive",
+    "company": "JetBrains s.r.o",
+    "product": "JetBrains ETW Collector",
+    "file_and_product_version": "16.44.0.0",
+    "signature_status": "Valid",
+    "signer": "JetBrains s.r.o., Prague, CZ",
+    "sha256": "b0ed108a34f19f0475037859355676e9e1fa371869aa0cc43c23cd1bb8448096",
+    "executed": false,
+    "limit": "Validates the file named by SCM configuration. Actual loaded process image was not opened or hashed; do not equate configured path/disk signature with a direct process-memory identity proof."
+  },
+  "official_documentation": {
+    "purpose": "ETW Host is a Windows event collection service used by dotTrace Timeline profiling and JetBrains dynamic program analysis. It can be installed independently and auto-start with Windows; Rider/ReSharper/dotTrace/SelfAPI can use it.",
+    "lifetime": "Its existence after a Rider window closes does not by itself indicate a leftover Rider child process.",
+    "sources": [
+      "https://www.jetbrains.com/help/profiler/Profiling_Guidelines__Advanced_Profiling_Using_dotTrace_API.html",
+      "https://blog.jetbrains.com/dotnet/2021/10/18/etw-host-service-installation-changes-in-2021-3/",
+      "https://www.jetbrains.com/help/resharper/Dynamic_Program_Analysis.html"
+    ]
+  },
+  "conclusion": "PID 4624 is mapped by SCM to the pre-existing automatic ETW service, with services.exe as parent and a creation time days before this Rider test. It is not a child created by our Rider launches. The previous guard correctly stopped while this candidate was unclassified; this read-only task now identifies it as a shared service, not evidence of a live Rider IDE session.",
+  "remaining_unknowns": [
+    "Current clients of the ETW service",
+    "Whether the service has any open handle/reference to the particular Rider .port node",
+    "Underlying cause of .port access error 1920",
+    "Rider native attach, address breakpoint, debuggee normal exit and startup-early capture remain untested"
+  ],
+  "unchanged_and_stop": {
+    "service_or_process_stopped": false,
+    "port_deleted_or_changed": false,
+    "guard_relaxed_or_edited": false,
+    "visible_program_started": false,
+    "Steam_game_or_save_access": false,
+    "account_security_or_service_setting_changed": false,
+    "pending_operations": 0,
+    "new_Jobs_or_backgrounds": 0,
+    "next": "Report only per parent instruction. Do not automatically stop the service, remove the socket, change the guard or start Rider. Any later change requires a separately scoped decision and fresh checks; visible startup requires prior parent notification."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "status": "resource-manager-publication-and-load-control-flow-proven; animation-creation-unclosed",
+  "summary_sha256": "d872c0bde3d68d32c461cdfb4a86c44222e7f3d8b48e3c02db0797915278c730",
+  "original_sha256_before_and_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "assembly_sha256": "9f3a19af5613727b016f6636ed70b7ee0bae0f4c5ff7deacbd7105da9fbb098b",
+  "pseudo_sha256": "8fc3d11a2cc3403a6a7e45e7575b61ad730214041f687e6de0a0d54500cf80e3",
+  "chain": "Engine+1F8 -> GraphicsEngine+20 independent AnimationResourceManager -> constructor-observed vtable33F478+10 =04EC20 -> direct JMP03AC50. No loaded-vtable observation or original execution.",
+  "earlier_evidence": {
+    "publication_summary": "docs/reverse-client/r1-graphics-animation-publication-run1/summary.json",
+    "publication_summary_sha256": "8c5f60310cae0a601271baa158079c2b6308face5cf7653ceee6fbdef0471b4a",
+    "slot_inspection": "docs/reverse-client/r1-animation-resource-slot/inspection.json",
+    "slot_sha256": "531708ea2f98cc64f98756c5f974ae6aa5667bcc3a0c99d59bf47742ba909efe",
+    "core_summary": "docs/reverse-client/r1-animation-resource-core-run1/summary.json",
+    "core_summary_sha256": "75a1f0797d8290e7fd581ff460663993e755f27b42570db2475b4d238036e21d",
+    "thunk_assembly_sha256": "d682853d772f908c524bac4432d103f92c1718c2ed471ff56c1e10e5a5a72c2f",
+    "base_ctor_assembly_sha256": "b9c88ae9084e9efa58da172d53ebf458a039d4b97c7501deff32b0fe86984862"
+  },
+  "base_ctor_03A8C0": {
+    "order": ["basevptr33C8F8; name at+8 cap15/len0/firstBYTE0", "03A926 CALL03C740(this+40)", "QWORDzero+80/+88/+90/+98/+A0;03A959 CALL01F120 withEDX/R8D0 but no freshRCX;03A95E publishactualRAX at+98", "two syncobjects at+B0/+C8: vptrs, inner+C0/+D8zero, alloc28, publishallocation thenInitializeCriticalSection", "ifnamesource != this+8,03A9DF copy023180(destination,source,0,UINT64_MAX)", "03A9E4 +38QWORD originalResourceLoader;03A9E8 +A8BYTE1;03A9EF +30DWORD0;03A9F3 +28QWORD03200000;03A9FB +34DWORD5000;03AA02 +E0DWORD0;03AA09 +E4DWORD5", "03AA13 returnoriginalthis"],
+    "limits": "No explicit failure return. Unknown/nonreturn stops before laterwrites. Partial writes precede failure; exception unwind not recovered. Do not infervalidemptycontainers from zeros or assign an invented RCX to01F120."
+  },
+  "load_03AC50": {
+    "common_prefix": "03AC7D EnterCriticalSection(manager+C0);03ACAA copyoriginalstring tolocal;03ACB5 CALL27B3C0(local);03ACC8 CALL03C8E0(manager+40,outnode,local);03ACD2 compareactualnodewithmanager+48 sentinel.",
+    "cold_miss": ["03AD48 writes localQWORD1, including upperDWORD0", "03AD51 capturescurrentmanager vptr;03AD5C callsactualvslot+8(manager,processedlocalstring)", "03AD5F capturesresourceRAX inRBX;03AD62 publisheslocalresource pointer", "03AD67 freshly readsmanager+38 aftervirtualreturn;03AD6B writesresource+28 QWORD withsameResourceLoader identity; no nullcheck", "03AD7C CALL03C480(manager,localkey,localpair{QWORD1,resourcepointer})"],
+    "warm_hit": "Readpair=node+30. OnlycountDWORD==0 searchesmanager+98 linkedlist by exactpairpointer atlistnode+10. If found,03AD1E/28 patchlinks,03AD2C DECmanager+A0 QWORD,thenfree node03AD33. 03AD38 rereadpair;03AD3C INCcountDWORD;03AD3E rereadpair again and03AD42 captureresource+8. Preserve wrapping32-bit increment and nativepointeridentities, not value-based equality.",
+    "return": "Aftercoldorwarm path, optionallyfree localstring at03AD9B;resetlocalstring;03ADBB LeaveCriticalSection(manager+C0);03ADC1 returncapturedresourceRBX. This is no evidence of completed file decoding or animationplay.",
+    "failure_prefix": "Unknown/stringchange/cache/creation failure must stopatactualcall. Nullcoldcreation isnot a normalnullreturn: nextresource+28write dereferencesit. Changesbeforelaterfailure remain executedprefix; normalunlock/return mustnotbe fabricated, and unwindcleanup remainsunknown.",
+    "unknown_key_semantics": "27B3C0 has not been read. Do not assume lowercase, slash normalization, encoding or name-equivalence rules. 03C8E0/03C480 comparison/insertion behavior unclosed."
+  },
+  "next_minimal_evidence": ["Read only8B atEngine33F480 (33F478+8), derived fromactual03AD5C factorydispatch; obtainthatprecisefactorybody", "27B3C0 processed-key contract", "03C8E0/03C480 lookup/insertion onlyasneededforcoldresourcepath; do not expandallgraphicsmanagers orCRTlockimplementation"],
+  "execution": {"session":77028,"exit":0,"calls":8,"finished":"2026-10-26T14:28:25.42Z","closed":true,"process_exit":true,"job_empty":true,"sampler_exit":true,"forced":false,"counter_gaps":0,"peak_combined_working_set_bytes":1309691904,"minimum_physical_bytes":9255960576,"minimum_commit_headroom_bytes":19238719488},
+  "turn_validation": {"three_serial_batches_completed":true,"new_production_code":false,"new_compiles":0,"new_tests":0,"old_suites_rerun":0,"original_hashes_preserved":true,"first_usable_game":false},
+  "remaining_gameplay": "ActualGraphicsAnim creation/decoding and Player channel-play dependencies remain unclosed. Physicalmouse/continuousmovement/sceneacceptance not achieved bytheseevidencebatches."
+}

@@ -1,0 +1,22 @@
+{
+    "schema":  "grim-dynasty-r1-publisher-final-negative-v1",
+    "utc":  "2026-11-05T13:36:23.2406805Z",
+    "claim":  "Static analysis is exhausted for the question \"which code publishes the field at Engine.dll+0x421428\", and the answer within the three shipped modules is: none is visible.",
+    "every_way_to_obtain_the_address":  {
+                                            "RIP-relative LEA into 0x4213c0..0x421490":  "5 hits; two are the getter bodies themselves (0x31280, 0x4dd70), three belong to a different structure at 0x421450, none constructs or writes a field of the object at 0x4213e8",
+                                            "address-of getters (broadened to any destination register, ret within 12 bytes)":  "384 getters in the module; only two reach this region, and their combined callers number two, neither storing at any offset",
+                                            "absolute 64-bit immediate (mov r64, imm64)":  "0 in Engine.dll, Game.dll and Direct3D11.dll",
+                                            "absolute 32-bit immediate":  "0 real hits; the two Game.dll matches were call rel32 displacements",
+                                            "base-plus-offset construction using the block bases":  "0 functions take a LEA of 0x4213c0 or 0x4213e8 and then store at the matching displacement (0x68 or 0x40)",
+                                            "direct stores of every encoding into the whole range":  "45 stores exist into 0x4213c0..0x421500, but they cover 0x4213c4/​c8/​cc/​d0/​d8/​e0/​f0/​f8/​400/​408/​40c/​410/​430/​438/​43c/​440/​458/​468 and never 0x421428",
+                                            "relocation and static-initialiser tables":  "7691 DIR64 entries, 552 runs, 51 function-pointer tables, 5362 entry functions scanned; 347 entries reference the region but none stores the slot"
+                                        },
+    "the_five_untouched_slots":  "0x4213c0, 0x4213e8, 0x421418, 0x421420 and 0x421428 never receive a direct store, while every other slot in the region does. The last three are consecutive at 0x4213e8 + 0x30/+0x38/+0x40.",
+    "interpretation":  "The object at 0x4213e8 is never constructed and never written field-by-field in the static image, yet at run time its +0x40 field holds a live heap pointer. The publish therefore happens through a mechanism that leaves no address-carrying instruction in these three modules.",
+    "not_claimed":  [
+                        "that the write does not happen",
+                        "that a fourth module is responsible",
+                        "that the client cannot be observed at start-up"
+                    ],
+    "boundary_statement":  "Both approved routes are complete. Route A and route B, plus four follow-up hypotheses (getter indirection, cross-module writes, immediate forms, and alternative base plus displacement) are all negative. This is recorded as the boundary the objective asked for."
+}

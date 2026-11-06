@@ -1,0 +1,163 @@
+{
+  "schema": "grim-dynasty.fixed-player-synced-animation-import-binding.v1",
+  "started_utc": "2026-11-02T18:18:46.5312860Z",
+  "status": "passed-disk-bindings-only",
+  "script_sha256": "01d8cd5d084d9f61d98008868c4cee9250fa397130961b3dff1ff69f4aa19c44",
+  "plan_sha256": "bc48ce29439987ba1374d882e617368489a08dbfcf3af7aca279cd4441e0cbb9",
+  "pins": [
+    {
+      "id": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "id": "engine_pe_exports",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "id": "game_imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "id": "import_names",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "id": "tail_thunk",
+      "path": "docs/reverse-client/r1-player-animation-tail-thunk/inspection.json",
+      "sha256": "00fc6fa1e3b6312a03f91503370fffc714137fcced0f1ce790a5e632cb70d53c"
+    }
+  ],
+  "original_loaded_or_executed": false,
+  "backend_started": false,
+  "child_processes": 0,
+  "header_bytes": 0,
+  "code_bytes": 0,
+  "original_ilt_bytes": 0,
+  "original_thunk_bytes": 0,
+  "old_slot_bytes": 0,
+  "cached_ilt_reused": true,
+  "cached_ilt_bytes": 8,
+  "cached_ilt_hex": "666ba40000000000",
+  "semantic_bytes": 200,
+  "semantic_operations": 6,
+  "reads": [
+    {
+      "raw_hex": "8111",
+      "kind": "PlaySyncedAnimation-hint",
+      "bytes": 2,
+      "rva": "0xa46b66",
+      "source": "Game",
+      "section": ".rdata",
+      "file_offset": 10768742
+    },
+    {
+      "raw_hex": "3f506c617953796e636564416e696d6174696f6e40456e746974794047414d45404055454141585734416e696d6174696f6e5365745f54797065403240573445717569704d616e616765725f48616e6453746174654032405f4e48405a00",
+      "kind": "PlaySyncedAnimation-import-name",
+      "bytes": 94,
+      "rva": "0xa46b68",
+      "source": "Game",
+      "section": ".rdata",
+      "file_offset": 10768744
+    },
+    {
+      "raw_hex": "b5bd3f00",
+      "kind": "PlaySyncedAnimation-nameptr",
+      "bytes": 4,
+      "rva": "0x3b9f58",
+      "source": "Engine",
+      "section": ".rdata",
+      "file_offset": 3903320
+    },
+    {
+      "raw_hex": "3f506c617953796e636564416e696d6174696f6e40456e746974794047414d45404055454141585734416e696d6174696f6e5365745f54797065403240573445717569704d616e616765725f48616e6453746174654032405f4e48405a00",
+      "kind": "PlaySyncedAnimation-exact-name",
+      "bytes": 94,
+      "rva": "0x3fbdb5",
+      "source": "Engine",
+      "section": ".rdata",
+      "file_offset": 4173237
+    },
+    {
+      "raw_hex": "8111",
+      "kind": "PlaySyncedAnimation-ordinal",
+      "bytes": 2,
+      "rva": "0x3bde82",
+      "source": "Engine",
+      "section": ".rdata",
+      "file_offset": 3919490
+    },
+    {
+      "raw_hex": "90f40700",
+      "kind": "PlaySyncedAnimation-eat",
+      "bytes": 4,
+      "rva": "0x3b3d2c",
+      "source": "Engine",
+      "section": ".rdata",
+      "file_offset": 3878188
+    }
+  ],
+  "bindings": [
+    {
+      "id": "PlaySyncedAnimation",
+      "hint": 4481,
+      "export_ordinal": 4482,
+      "hint_name_rva": "0xa46b66",
+      "descriptor_and_index_source": "pinned cached raw descriptor/ownership prefix and ordered symbol inventory",
+      "game_ilt_rva": "0xa42e18",
+      "ilt_reread": false,
+      "eat_index": 4481,
+      "function_boundary_verified": false,
+      "target_body_read": false,
+      "game_import_name_verified": true,
+      "executable_section": ".text",
+      "name_rva": "0x3fbdb5",
+      "engine_target_rva": "0x7f490",
+      "engine_target_va": "0x18007f490",
+      "name": "?PlaySyncedAnimation@Entity@GAME@@UEAAXW4AnimationSet_Type@2@W4EquipManager_HandState@2@_NH@Z",
+      "ilt_source": "pinned cached137-entry ownership prefix index107",
+      "game_iat_rva": "0x609358",
+      "contiguous_prefix_refreshed": false,
+      "loaded_binding_observed": false
+    }
+  ],
+  "originals": [
+    {
+      "semantic_bytes": 96,
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+      "source_handle_closed": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "id": "Game",
+      "semantic_operations": 2,
+      "source_stat_stable": true,
+      "fingerprint_bytes": 22771712
+    },
+    {
+      "semantic_bytes": 104,
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+      "source_handle_closed": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "id": "Engine",
+      "semantic_operations": 4,
+      "source_stat_stable": true,
+      "fingerprint_bytes": 8971264
+    }
+  ],
+  "failures": [],
+  "unsupported": [],
+  "limitations": [
+    "The one ILT eight-byte value is reused from the pinned137-entry cached prefix at index107; descriptor/index/target fingerprint must agree. No original ILT, six-byte thunk or old slots are reread.",
+    "Cached symbol is only an expected candidate until the actual94-byte Game import string and the94-byte hinted Engine export string each match including NUL. Hint/name/ordinal/EAT mismatch or forwarder stops without fallback/table search.",
+    "Disk export target only; no loaded runtime binding, original execution, semantic ABI claim, function body or source mapping claim.",
+    "Two originals are held read-only with before/after SHA256 in64KiB chunks;31,742,976 fingerprint bytes are separate from200 semantic bytes.",
+    "Root reviews script+plan and provides exact ReviewedScriptSha256 under normal formal approval. Preparation performs no original file I/O, Rea, build or sampling."
+  ],
+  "finished_utc": "2026-11-02T18:18:46.7689552Z"
+}

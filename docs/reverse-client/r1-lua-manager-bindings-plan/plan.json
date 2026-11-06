@@ -1,0 +1,93 @@
+{
+  "schema": "grim-dynasty-fixed-lua-manager-bindings-plan-v1",
+  "status": "prepared-not-executed",
+  "reader": "tools/static_analysis/read_r1_lua_manager_bindings.mjs",
+  "entry": "inspectLuaManagerBindings",
+  "output": "docs/reverse-client/r1-lua-manager-bindings/inspection.json",
+  "targets": [
+    {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "bytes": 11385856
+    },
+    {
+      "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "bytes": 4485632
+    }
+  ],
+  "symbols": [
+    "?GetState@LuaManager@GAME@@QEAAAEAVLuaState@LUAGLUE@@XZ",
+    "?Initialize@LuaManager@GAME@@QEAA_N_N0@Z"
+  ],
+  "import": {
+    "iat_rva": "0x60a9b8",
+    "index": 823,
+    "oft_rva": "0xa42ac0",
+    "cached_nonzero_entries": 488,
+    "new_continuation_first": 488,
+    "new_continuation_last": 823,
+    "new_continuation_bytes": 2688
+  },
+  "limits": {
+    "metadata_bytes": 12288,
+    "metadata_operations": 512,
+    "binary_search_steps": 13,
+    "distinct_export_names": 14,
+    "ascii_bytes_per_name": 512,
+    "ascii_chunk_bytes": 32,
+    "hash_chunk_bytes": 65536,
+    "report_bytes": 262144
+  },
+  "proofs": [
+    {
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "path": "docs/reverse-client/r1-navigation-binding/inspection.json",
+      "sha256": "d0c171ce77a6d67e153a6911fc7c3a17ea4d61e80ab9492f3287384524e14264"
+    },
+    {
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "path": "docs/phase-1/round-4/initialization-locations.json",
+      "sha256": "bdc0e1838162463d18fce89dfea20fe6baf073d889db757e62c59ae3ed8faf1e"
+    },
+    {
+      "path": "docs/phase-1/round-4/Game-function-evidence-bounded-v2.json",
+      "sha256": "1e8421fc6b83004fd39259ca19ba97faa7df520cf49200572cecd8a2bb80c502"
+    }
+  ],
+  "parser_bases": [
+    {
+      "path": "tools/static_analysis/read_r1_add_object_binding.mjs",
+      "sha256": "64c53357870de408a3805f29be33f548d76c500a8df9c090280edfcb3c64e089",
+      "reuse": "O_RDONLY; cached PE maps; exact import/hinted export; streamed before/after fingerprints; stable handle/path; fresh failure receipt"
+    },
+    {
+      "path": "tools/static_analysis/discover_class_registration_exports.mjs",
+      "sha256": "d8743fd79d083e82d980839d1b47992dc86afce5715623657db7b1638397dc99",
+      "reuse": "Bounded ASCII name reads and encountered-order check; one exact export-name binary search only"
+    }
+  ],
+  "executable_reads": 0,
+  "pdata_reads": 0,
+  "exe_reads": 0,
+  "backend_started": false,
+  "original_loaded_or_executed": false,
+  "automatic_expansion": false,
+  "external_preflight": "Normal Windows Get-Item Attributes check for every fixed input/output ancestor remains required; normal resource/current-process gates unchanged",
+  "limits_reason": "Game continuation2688B plus exact slot/hint/name; one exact hinted export; at most13 binary probes with512B name cap,4B name pointers and two6B ordinal/EAT pairs.12KiB total semantic cap; no table/payload scan. Full-file hash streams separately use64KiB.",
+  "cache_boundary": "Initialization-locations provides exact imported Initialize name only, not EXEslot or export index; EXE will not be read. Cached Game2F3450 proves60A9B8 caller. No state/ABI/initialization success inferred from names."
+}

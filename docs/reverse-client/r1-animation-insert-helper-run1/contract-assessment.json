@@ -1,0 +1,55 @@
+{
+  "schema": "grim-dynasty.animation-insert-helper-contract.v1",
+  "utc": "2026-11-02T16:19:50.1493626Z",
+  "status": "saved-native-evidence-assessment-only",
+  "procedure": "0x18003ca50",
+  "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "evidence": [
+    {
+      "file": "docs/reverse-client/r1-animation-insert-helper-run1/04-AnimationInsertHelper-0x18003ca50-procedure_pseudo_code.json",
+      "sha256": "bd689217940b8c910c4844bc208afcb00a92d55ed0cd266eb60631eeb6e40b85"
+    },
+    {
+      "file": "docs/reverse-client/r1-animation-insert-helper-run1/05-AnimationInsertHelper-0x18003ca50-procedure_assembly.json",
+      "sha256": "8f92e0086cbede2825941d1a030e5da349f08c4ba36ad6924c91346c53a8cf9d"
+    },
+    {
+      "file": "docs/reverse-client/r1-animation-insert-helper-run1/06-AnimationInsertHelper-0x18003ca50-procedure_callees.json",
+      "sha256": "6880b244abfe0c61614f8c2bee46a9f04ef77b1d57088870d6127dfbf489f944"
+    },
+    {
+      "file": "docs/reverse-client/r1-animation-insert-helper-run1/summary.json",
+      "sha256": "80ab4061b364eebb4e7caa8a56984c14ff9d1c0f25afbce371882c82a92e3b19"
+    }
+  ],
+  "contract": [
+    "IncomingR9 low allocation-pointer byte is never consumed:03CA82 overwritesR9 with input string capacity before any read.03CB6C later setsR9 to the key/payload address for02EF40; these are distinct values.",
+    "Read input byte length at+10 and SSO capacity at+18. Hash exact length bytes using64-bit FNV-1a(offsetCBF29CE484222325,prime100000001B3,modulo2^64). No case/encoding normalization here. Bucket offset=(hash&map.mask30)<<4.",
+    "Search traverses the selected bucket backward via node+8. Equality requires bytewise equal min(lengths) through existing2EE060 and equal full lengths. Duplicate path writes output+0 existing node(QWORD),output+8 false(BYTE),returns the exact output pointer; it does not modify the node/control or zero output+9..+15.",
+    "Miss path reads map.sentinel08 and its first node, then03CB76 calls02EF40 withRDX=first,R8=first.prev,R9=input key/payload. Immediate prefix does not establishRCX as map. Node fields/ownership require02EF40 evidence.",
+    "Node creation occurs before the length-limit check.03CB7E..03CB90 checks unsigned(limit-map.count10)>=1 with limit0492492492492491; the observed equality failure is not a general inferred>=limit guard. Failure/unwind ownership is not established.",
+    "On normal node creation/limit pass: increment map.count10, link node and possibly splice list entries, then update bucket boundary pointers in the actual empty/boundary/interior branches. These writes precede02EA80 maintenance at03CC3D.",
+    "Only after02EA80 returns does the insertion path write output+0 fromRDI (captured post-link sentinel.next),output+8 true(BYTE),and return the exact output pointer. Do not replace this identity with the allocation return without proving node links.",
+    "02EF40/length error/link dereferences/02EA80 can stop after different prefixes. In particular maintenance may fail after list/bucket publication while output pair is still unwritten. No transaction rollback or successful publication adapter is supplied."
+  ],
+  "reuse": [
+    {
+      "file": "docs/object-lifecycle/rea-record-cache-maintenance/05-Cache-helper-0x18002ea80-assembly.json",
+      "sha256": "ccb9240a89f420481fd7ea4cff2ab29f443a2a216fe8b8f0b819a3c62a2ba0b1",
+      "kind": "Actual same-Engine body; reuse existing load-factor/maintenance contract. Its COMISS/JBE branch skips growth on<= or unordered, subject to floating-point environment."
+    },
+    {
+      "file": "docs/object-lifecycle/rea-record-cache-compare/05-Record-cache-compare-0x1802ee060-assembly.json",
+      "sha256": "626c6d2295f6614850500f4c1b4299a97a08fa8dd2e9f80210c3cc985d03c9f2",
+      "kind": "Actual same-Engine thunk JMP[302710]; reuse existing compare/import evidence rather than requery."
+    }
+  ],
+  "remaining": "02EF40 is the sole new node-construction body absent in the bounded inventory; cold publication cannot yet be implemented through invented node initialization.",
+  "execution": {
+    "new_query": false,
+    "original_read": false,
+    "original_executed": false,
+    "source_files_modified": false,
+    "implementation_or_test_performed": false
+  }
+}

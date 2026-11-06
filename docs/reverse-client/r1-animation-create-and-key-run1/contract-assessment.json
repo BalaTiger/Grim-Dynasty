@@ -1,0 +1,61 @@
+{
+  "schema": "grim-dynasty.animation-create-key-contract.v1",
+  "status": "factory-dispatch-and-byte-transform-proven; graphics-animation-construction-unclosed",
+  "summary_sha256": "5031a7623fbe00e13d5b827696c9af1df275f4707d4ff6cdfa56a1413a447cd2",
+  "original_sha256_before_and_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "source_hashes": {
+    "094650_pseudo": "25bc5599c1d7b95c9137eda1632e1406ac91511e876a591f81814189d44a8c11",
+    "094650_assembly": "95f6704caa89f243789ab758f143ec470c36450dcc0a2900bf790fa5a449374f",
+    "27b3c0_pseudo": "70d4bd64d67df38f056bae17dc5fd3898802716993ac380925d4cba01df22607",
+    "27b3c0_assembly": "9d84dd4effeb06010ec298c1e3b0536e13ddf29d614550bf2a75f03cea9dba1e"
+  },
+  "factory_094650": {
+    "extent": "Actual Rea assembly 180094650..180094692, supplied by constructor-published vtable33F478+8 disk binding",
+    "order": [
+      "094664 captures original key RDX in RBX;094667 captures original manager RCX in RDI",
+      "09466A ECX=0x1A0;09466F CALL2DC398 (operator_new label in pseudo)",
+      "094679 R8=original key;09467C RDX=original manager;09467F RCX=allocation RAX",
+      "094682 CALL095EA0 (GraphicsAnim constructor label in pseudo)",
+      "094687..094692 restores stack/callee-saved registers without writing RAX; returns actual post-constructor RAX"
+    ],
+    "return_identity": "Constructor RAX must be established from095EA0; do not substitute allocation identity or interpret pseudo void as no native result",
+    "failure": "No allocation null check, no explicit success flag and no post-constructor validation in this body. Unknown allocation/constructor behavior stops before normal return. Exception cleanup remains unclosed.",
+    "not_proven": ["095EA0 initialization and return identity", "resource bytes/decoding", "load completion", "animation playback", "runtime vtable replacement"]
+  },
+  "key_27B3C0": {
+    "storage": "Existing std::string-like mutable view: QWORD length+10, QWORD capacity+18; capacity unsigned<16 selects inline object storage, otherwise pointer+0. Capacity and storage are reselected each iteration.",
+    "loop": "Initial length0 returns without reading capacity/data/import. Index begins0; INC ESI then MOV EDI at27B447/449 wraps at32 bits and zero-extends; compare against freshly read64-bit unsigned length+10 at27B44B. Do not silently convert to an arbitrary-length host loop.",
+    "backslash": "Byte5C uses direct BYTE2F write at27B443, no imported lowercasing call.",
+    "other_bytes": "MOVSX byte intoECX; call IAT302BC8 (Rea pseudo names tolower) at27B418/42A; store returned AL at27B41E/430. Heap destination pointer is captured before the call; do not reread a callback-mutated pointer for the current write.",
+    "nul_encoding": "Iterates declared length, not NUL termination. Embedded and trailing NUL inside length are passed to import and retained unless its actual return differs. No trimming, UTF8 decoding, Unicode case fold, length write or allocation appears in this function.",
+    "failure_prefix": "Earlier byte writes remain on later failure; import nonreturn means no current-byte write or following iteration. Locale/import behavior and native lifetime/aliasing are not established by this body.",
+    "unsupported": ["unverified current CRT locale or high-byte signed-char behavior", "invalid length/storage and index-wrap nontermination", "native concurrent mutations and string lifetime", "full ResourceUtil.Key substitution"]
+  },
+  "production_connection": {
+    "known": "03AC50 copies source string, calls27B3C0, looks up cache, then cold branch dispatches094650; after returned resource it rereads manager+38 and writes resource+28. A factory return is not file decode/play success.",
+    "integration_point": "Future supported Play/PlayCaptured override in GameControllerMoveProductionContracts must preserve existing Bridge/Character/Actor identity and MissingContract prefix. AnimationSet currently has only Kind08; it is not the factory resource.",
+    "next_minimum": "Read actual095EA0 constructor and its direct callees only; reuse saved resource loader/control-flow evidence. Bind302BC8 from saved import evidence before any lowercasing adapter. Cache03C8E0/03C480 only if required for this same resource path.",
+    "remaining": "Animation resource decode/publication and Player channel-play still unclosed; physical mouse to continuous movement and original scene/UI not accepted. No usable reversed game yet."
+  },
+  "execution": {
+    "session": 87649,
+    "exit": 0,
+    "calls": 11,
+    "finished_utc": "2026-11-02T14:55:13.149Z",
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "forced_termination": false,
+    "peak_combined_working_set_bytes": 1346609152,
+    "minimum_physical_bytes": 14574137344,
+    "minimum_commit_headroom_bytes": 28791394304,
+    "counter_read_gap_count": 1,
+    "counter_gap": "14:53:30.3013523Z PID31152: Previously proved member exited before counters completed; no live member identity missing. Sampling does not establish continuous peaks.",
+    "new_production_source_changes": 0,
+    "new_compiles": 0,
+    "new_tests": 0,
+    "old_suites_rerun": 0,
+    "original_executed": false
+  }
+}

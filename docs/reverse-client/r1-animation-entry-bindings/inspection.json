@@ -1,0 +1,486 @@
+{
+  "schema": "grim-dynasty.fixed-animation-entry-data.v1",
+  "started_utc": "2026-10-26T12:41:04.4086417Z",
+  "status": "passed-disk-bindings-only",
+  "script_sha256": "81b784904727a1889916512aca5539d6acdc73a7b0bcad2b5b5f6bc936a0fac7",
+  "plan_sha256": "962ce678c847b29d71d1a862fdd2c52afe1e2ec5adb8f26b83eb4f682d2f82a2",
+  "target": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_pins": [
+    {
+      "sha256": "1ff40cb2e36c15911d4f3c85867397d2802ba1c69150d20222feb3f44df46876",
+      "key": "ctor",
+      "procedure": "0x180024080",
+      "instructions": [
+        "0x1800240b3: LEA R15, [0x1806d4d48]",
+        "0x180024375: LEA RCX, [RDX + 0x4f8]",
+        "0x18002437c: MOV qword ptr [RCX], R15",
+        "0x1800248e6: CALL qword ptr [RAX + 0x60]"
+      ],
+      "path": "docs/reverse-client/r1-animation-set-production-run3/05-AnimationSetProduction-0x180024080-procedure_assembly.json"
+    },
+    {
+      "sha256": "0fae165458d8df45140538376ac38eeefd35ed42e677e3b718a65e6babb596e8",
+      "key": "preload",
+      "procedure": "0x180024d30",
+      "instructions": [
+        "0x180024d3f: LEA RDI, [0x180616470]",
+        "0x180024d46: MOV ESI, 0x34",
+        "0x180024d53: MOV EDX, dword ptr [RDI]",
+        "0x180024d58: CALL qword ptr [RAX + 0x38]"
+      ],
+      "path": "docs/reverse-client/r1-animation-set-production-run3/08-AnimationSetProduction-0x180024d30-procedure_assembly.json"
+    },
+    {
+      "sha256": "85f8d9341c0a15586fe42f4964f8b6832416cf4924a2c1c27c0786475f28a2fc",
+      "key": "add",
+      "procedure": "0x180024d80",
+      "instructions": [
+        "0x180024daf: JMP qword ptr [R8 + 0x28]"
+      ],
+      "path": "docs/reverse-client/r1-animation-set-production-run3/11-AnimationSetProduction-0x180024d80-procedure_assembly.json"
+    },
+    {
+      "sha256": "7ca09cd715b3a23534d3079f423255a88795624f635482a4105e7ba4b692c230",
+      "key": "play",
+      "procedure": "0x180024de0",
+      "instructions": [
+        "0x180024e23: CALL qword ptr [R9 + 0x8]"
+      ],
+      "path": "docs/reverse-client/r1-game-waypoint-animation-run1/08-WaypointAnimation-0x180024de0-procedure_assembly.json"
+    }
+  ],
+  "cached_pe": {
+    "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+    "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+  },
+  "original_loaded_or_executed": false,
+  "backend_started": false,
+  "child_processes": 0,
+  "code_bytes": 0,
+  "header_bytes": 0,
+  "other_vtable_bytes": 0,
+  "semantic_bytes": 240,
+  "semantic_operations": 5,
+  "fingerprint_bytes": 22771712,
+  "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_stat_stable": true,
+  "source_handle_closed": true,
+  "reads": [
+    {
+      "bytes": 8,
+      "kind": "play-slot08",
+      "file_offset": 7156560,
+      "section": ".rdata",
+      "rva": "0x6d4d50",
+      "raw_hex": "4008028001000000",
+      "section_flags": "0x40000040"
+    },
+    {
+      "bytes": 8,
+      "kind": "add-slot28",
+      "file_offset": 7156592,
+      "section": ".rdata",
+      "rva": "0x6d4d70",
+      "raw_hex": "1009028001000000",
+      "section_flags": "0x40000040"
+    },
+    {
+      "bytes": 8,
+      "kind": "preload-slot38",
+      "file_offset": 7156608,
+      "section": ".rdata",
+      "rva": "0x6d4d80",
+      "raw_hex": "500a028001000000",
+      "section_flags": "0x40000040"
+    },
+    {
+      "bytes": 8,
+      "kind": "ctor-slot60",
+      "file_offset": 7156648,
+      "section": ".rdata",
+      "rva": "0x6d4da8",
+      "raw_hex": "100b028001000000",
+      "section_flags": "0x40000040"
+    },
+    {
+      "bytes": 208,
+      "kind": "preload-parameters",
+      "file_offset": 6376048,
+      "section": ".rdata",
+      "rva": "0x616470",
+      "raw_hex": "01000000010000000100000001000000000000000100000001000000010000000000000000000000000000000000000000000000010000000000000000000000000000000100000000000000010000000100000000000000000000000000000000000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000",
+      "section_flags": "0x40000040"
+    }
+  ],
+  "bindings": [
+    {
+      "kind": "play-slot08",
+      "vtable_rva": "0x6d4d48",
+      "slot": "0x8",
+      "pointer_rva": "0x6d4d50",
+      "target_va": "0x180020840",
+      "target_rva": "0x20840",
+      "executable_section": ".text",
+      "function_boundary_verified": false,
+      "loaded_binding_observed": false
+    },
+    {
+      "kind": "add-slot28",
+      "vtable_rva": "0x6d4d48",
+      "slot": "0x28",
+      "pointer_rva": "0x6d4d70",
+      "target_va": "0x180020910",
+      "target_rva": "0x20910",
+      "executable_section": ".text",
+      "function_boundary_verified": false,
+      "loaded_binding_observed": false
+    },
+    {
+      "kind": "preload-slot38",
+      "vtable_rva": "0x6d4d48",
+      "slot": "0x38",
+      "pointer_rva": "0x6d4d80",
+      "target_va": "0x180020a50",
+      "target_rva": "0x20a50",
+      "executable_section": ".text",
+      "function_boundary_verified": false,
+      "loaded_binding_observed": false
+    },
+    {
+      "kind": "ctor-slot60",
+      "vtable_rva": "0x6d4d48",
+      "slot": "0x60",
+      "pointer_rva": "0x6d4da8",
+      "target_va": "0x180020b10",
+      "target_rva": "0x20b10",
+      "executable_section": ".text",
+      "function_boundary_verified": false,
+      "loaded_binding_observed": false
+    }
+  ],
+  "preload_words": [
+    {
+      "u32": 1,
+      "rva": "0x616470",
+      "hex": "0x1",
+      "index": 0
+    },
+    {
+      "u32": 1,
+      "rva": "0x616474",
+      "hex": "0x1",
+      "index": 1
+    },
+    {
+      "u32": 1,
+      "rva": "0x616478",
+      "hex": "0x1",
+      "index": 2
+    },
+    {
+      "u32": 1,
+      "rva": "0x61647c",
+      "hex": "0x1",
+      "index": 3
+    },
+    {
+      "u32": 0,
+      "rva": "0x616480",
+      "hex": "0x0",
+      "index": 4
+    },
+    {
+      "u32": 1,
+      "rva": "0x616484",
+      "hex": "0x1",
+      "index": 5
+    },
+    {
+      "u32": 1,
+      "rva": "0x616488",
+      "hex": "0x1",
+      "index": 6
+    },
+    {
+      "u32": 1,
+      "rva": "0x61648c",
+      "hex": "0x1",
+      "index": 7
+    },
+    {
+      "u32": 0,
+      "rva": "0x616490",
+      "hex": "0x0",
+      "index": 8
+    },
+    {
+      "u32": 0,
+      "rva": "0x616494",
+      "hex": "0x0",
+      "index": 9
+    },
+    {
+      "u32": 0,
+      "rva": "0x616498",
+      "hex": "0x0",
+      "index": 10
+    },
+    {
+      "u32": 0,
+      "rva": "0x61649c",
+      "hex": "0x0",
+      "index": 11
+    },
+    {
+      "u32": 0,
+      "rva": "0x6164a0",
+      "hex": "0x0",
+      "index": 12
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164a4",
+      "hex": "0x1",
+      "index": 13
+    },
+    {
+      "u32": 0,
+      "rva": "0x6164a8",
+      "hex": "0x0",
+      "index": 14
+    },
+    {
+      "u32": 0,
+      "rva": "0x6164ac",
+      "hex": "0x0",
+      "index": 15
+    },
+    {
+      "u32": 0,
+      "rva": "0x6164b0",
+      "hex": "0x0",
+      "index": 16
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164b4",
+      "hex": "0x1",
+      "index": 17
+    },
+    {
+      "u32": 0,
+      "rva": "0x6164b8",
+      "hex": "0x0",
+      "index": 18
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164bc",
+      "hex": "0x1",
+      "index": 19
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164c0",
+      "hex": "0x1",
+      "index": 20
+    },
+    {
+      "u32": 0,
+      "rva": "0x6164c4",
+      "hex": "0x0",
+      "index": 21
+    },
+    {
+      "u32": 0,
+      "rva": "0x6164c8",
+      "hex": "0x0",
+      "index": 22
+    },
+    {
+      "u32": 0,
+      "rva": "0x6164cc",
+      "hex": "0x0",
+      "index": 23
+    },
+    {
+      "u32": 0,
+      "rva": "0x6164d0",
+      "hex": "0x0",
+      "index": 24
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164d4",
+      "hex": "0x1",
+      "index": 25
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164d8",
+      "hex": "0x1",
+      "index": 26
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164dc",
+      "hex": "0x1",
+      "index": 27
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164e0",
+      "hex": "0x1",
+      "index": 28
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164e4",
+      "hex": "0x1",
+      "index": 29
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164e8",
+      "hex": "0x1",
+      "index": 30
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164ec",
+      "hex": "0x1",
+      "index": 31
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164f0",
+      "hex": "0x1",
+      "index": 32
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164f4",
+      "hex": "0x1",
+      "index": 33
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164f8",
+      "hex": "0x1",
+      "index": 34
+    },
+    {
+      "u32": 1,
+      "rva": "0x6164fc",
+      "hex": "0x1",
+      "index": 35
+    },
+    {
+      "u32": 1,
+      "rva": "0x616500",
+      "hex": "0x1",
+      "index": 36
+    },
+    {
+      "u32": 1,
+      "rva": "0x616504",
+      "hex": "0x1",
+      "index": 37
+    },
+    {
+      "u32": 1,
+      "rva": "0x616508",
+      "hex": "0x1",
+      "index": 38
+    },
+    {
+      "u32": 1,
+      "rva": "0x61650c",
+      "hex": "0x1",
+      "index": 39
+    },
+    {
+      "u32": 1,
+      "rva": "0x616510",
+      "hex": "0x1",
+      "index": 40
+    },
+    {
+      "u32": 1,
+      "rva": "0x616514",
+      "hex": "0x1",
+      "index": 41
+    },
+    {
+      "u32": 1,
+      "rva": "0x616518",
+      "hex": "0x1",
+      "index": 42
+    },
+    {
+      "u32": 1,
+      "rva": "0x61651c",
+      "hex": "0x1",
+      "index": 43
+    },
+    {
+      "u32": 1,
+      "rva": "0x616520",
+      "hex": "0x1",
+      "index": 44
+    },
+    {
+      "u32": 1,
+      "rva": "0x616524",
+      "hex": "0x1",
+      "index": 45
+    },
+    {
+      "u32": 1,
+      "rva": "0x616528",
+      "hex": "0x1",
+      "index": 46
+    },
+    {
+      "u32": 1,
+      "rva": "0x61652c",
+      "hex": "0x1",
+      "index": 47
+    },
+    {
+      "u32": 1,
+      "rva": "0x616530",
+      "hex": "0x1",
+      "index": 48
+    },
+    {
+      "u32": 1,
+      "rva": "0x616534",
+      "hex": "0x1",
+      "index": 49
+    },
+    {
+      "u32": 1,
+      "rva": "0x616538",
+      "hex": "0x1",
+      "index": 50
+    },
+    {
+      "u32": 1,
+      "rva": "0x61653c",
+      "hex": "0x1",
+      "index": 51
+    }
+  ],
+  "failures": [],
+  "unsupported": [],
+  "limitations": [
+    "Only on-disk targets and raw32-bit words; loaded vtables/table values, entry state, resource publication and behavior are unobserved.",
+    "Executable-section classification is not a recovered function boundary or ABI. No target code is read.",
+    "PreLoad table values do not establish that any of its52entry objects are initialized.",
+    "Two complete same-handle hash streams are identity checks separate from the240semantic bytes. The original is opened FileAccess.Read/FileShare.Read, with no write or delete sharing."
+  ],
+  "finished_utc": "2026-10-26T12:41:04.5966458Z"
+}

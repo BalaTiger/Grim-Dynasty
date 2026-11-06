@@ -1,0 +1,55 @@
+{
+  "schema": "grim-dynasty.animation-manager-insert-contract.v1",
+  "utc": "2026-11-02T16:08:44.3349210Z",
+  "status": "saved-native-evidence-assessment-only",
+  "procedure": "0x18003c480",
+  "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "evidence": [
+    {
+      "file": "docs/reverse-client/r1-animation-manager-insert-run1/04-AnimationManagerInsert-0x18003c480-procedure_pseudo_code.json",
+      "sha256": "9eec409bed5c3e5cde3d3d6b12ff784626462f96fecb901c8f14d61a470f857c"
+    },
+    {
+      "file": "docs/reverse-client/r1-animation-manager-insert-run1/05-AnimationManagerInsert-0x18003c480-procedure_assembly.json",
+      "sha256": "022153a694ea830fee637e73185a541c35570f8b52cc940abbf747b23fd6f999"
+    },
+    {
+      "file": "docs/reverse-client/r1-animation-manager-insert-run1/06-AnimationManagerInsert-0x18003c480-procedure_callees.json",
+      "sha256": "e28ce90a3154983563581025d707d25909e897ca8e0fa59280608993a49ad8bb"
+    },
+    {
+      "file": "docs/reverse-client/r1-animation-manager-insert-run1/summary.json",
+      "sha256": "6e53ded37f59b65564112057a1e584458d4461c636d11b73a81db1f271d038d9"
+    }
+  ],
+  "ordered_native_contract": [
+    "03C4AA requests0x18 bytes, then03C4B2..03C4BD copies source24 bytes in16+8 order. MOVSD is a64-bit copy, not a floating-point conversion. Caller initializes only the first16 source bytes; do not zero the unestablished tail.",
+    "03C4C7..03C4ED initializes a temporary string and calls existing023180 with offset0/countUINT64_MAX.03C4F2 publishes the allocated control pointer adjacent to this temporary string.",
+    "03C50B calls03CA50 with RCX=manager+40,RDX=stack result+28,R8=temporary string+38 (adjacent control pointer at+58),R9D=zero-extended low byte of the allocated control-pointer value saved at+70. R9D is not established as a boolean flag.",
+    "03CA50 return value and temporary output are not inspected by03C480. A normal return leads first to temporary-string heap destruction when capacity>=16; insertion success/duplicates/ownership remain a03CA50 dependency.",
+    "After03CA50 and temporary cleanup,03C536..03C541 computes((end-begin) arithmetic-shift-right3) and writes only EAX to control+10. Bytes+14..+17 retain the copied opaque tail; this write precedes vector growth or append.",
+    "The alias branch tests whether the local control-pointer slot address lies in[vector.begin,vector.end). It saves its old element index; after optional034EC0 growth it rereads that element from the new begin. The disjoint branch appends the allocated control pointer directly.",
+    "Both branches call existing034EC0(vector,1) only when end==capacityEnd. They skip the element store if the reloaded end is null, but still execute ADD end,8 at03C5B2. This is observed branch behavior, not a valid-success guarantee for missing storage.",
+    "No explicit success return or rollback exists here. Failures in copy/map insertion/temp cleanup/vector growth retain their already executed prefix; map publication may precede a later vector failure."
+  ],
+  "reuse": {
+    "string_copy": "docs/object-lifecycle/rea-object-name-assignment/05-Object-name-assignment-0x180023180-assembly.json",
+    "vector_growth": "docs/reverse-client/r1-crowd-vector-growth-retry-1/05-CrowdVectorGrowth-0x180034ec0-procedure_assembly.json",
+    "next_direct_unknown": "0x18003ca50",
+    "do_not_requery": [
+      "0x180023180",
+      "0x180034ec0",
+      "0x180095ea0",
+      "0x180199970",
+      "0x18027b3c0"
+    ]
+  },
+  "own_domain": "A future OWN model may explicitly admit disjoint local/pointer-vector storage; the native alias branch remains documented. No fabricated address bits, key ordering, map success, or rollback.",
+  "execution": {
+    "new_query": false,
+    "original_read": false,
+    "original_executed": false,
+    "source_files_modified": false,
+    "implementation_or_test_performed": false
+  }
+}

@@ -1,0 +1,365 @@
+{
+  "schema": "gd-lua-callback-publication-stage-v1",
+  "utc": "2026-11-03T05:21:30.3145971Z",
+  "status": "passed-own-callback-prefix-currently-released-launch-cleanup-failure-preserved",
+  "evidence": [
+    {
+      "sha256": "189560d9bffcb960574a4477ef472497a78d9263f4f1fd017b70c2bd0980464a",
+      "file": "docs/reverse-client/r1-engine-lua-manager-core-run1/08-LuaManagerInitialize-0x1800f2e00-procedure_assembly.json"
+    },
+    {
+      "sha256": "6886f645fb0814da317558828618bdaf10b5524a1c0bb36f43f4c2029053098f",
+      "file": "docs/reverse-client/r1-engine-lua-publication-run1/05-LuaPublicationDirect-0x180259fc0-procedure_assembly.json"
+    },
+    {
+      "sha256": "7831a0cad548c23ea9bc29ac100773ebe6fb9faf5f6e4490d76162d6a51e122c",
+      "file": "docs/reverse-client/r1-engine-lua-publication-run1/08-LuaPublicationDirect-0x180259d80-procedure_assembly.json"
+    },
+    {
+      "sha256": "8bc9bdf780d399af41ccba1b5e63cd91af1c3b347fc354008570e4b73d9c87ff",
+      "file": "docs/reverse-client/r1-lua-registry-index-contract.json"
+    },
+    {
+      "sha256": "aa452dc95ac036cd57d8af3204e4787bf1ecbf65cb2e54d85674a75173bab2fa",
+      "file": "docs/reverse-client/r1-own-lua-stop-frame-stage.json"
+    }
+  ],
+  "scope": "Same service/real OWN LuaJIT state; actual0F2E5A..0F2EC9 callback publication.0F2ED2 LuaGlue remains Unsupported;Initialized58 not written.",
+  "native_adaptation": "Native cpcall owns Lua unwind; managed POD resolver/logger catches exceptions and returns status before native raises Lua error. This does not prove original EH/stack rollback.",
+  "ownership": "StateHandle roots callback/bridge until actual lua_close return; service Lua00 replacement does not discard old state; no in-flight callback close or native API reentry",
+  "live_reads": "Service Lua00 reread at every observed publication step;registry reread at0F2E67/0F2E9D;Engine identity read only when logging is actually invoked",
+  "unknowns": [
+    "Native binder/registry startup order",
+    "Dynamic Engine logger target/behavior",
+    "Zero/allnull tostring print buffer is not known initialized",
+    "Full LuaGlue/Script/native initializer",
+    "Physical mouse/scene/game acceptance"
+  ],
+  "implementation_sources": [
+    "src/reverse_client_actions/native/own_luajit204_bridge.h",
+    "src/reverse_client_actions/native/own_luajit204_bridge.c",
+    "src/reverse_client_actions/OwnLuaCallbackBridge.cs",
+    "src/reverse_client_actions/OwnLuaJit204Runtime.cs",
+    "src/reverse_client_actions/GameLuaServiceInitializationContracts.cs",
+    "src/reverse_client_actions/GameLuaCallbackPublicationTests.cs"
+  ],
+  "build_preparation": ".tooling/r1-lua-callback-build-prepared/preparation.json",
+  "new_Rea_calls": 0,
+  "new_compiles": 3,
+  "new_tests": 8,
+  "pending_tool_operations": 0,
+  "heavy_processes_started": true,
+  "prepared_sources_compiled": true,
+  "approval_denied": false,
+  "approval_pending": false,
+  "original_loaded": false,
+  "saves_accessed": false,
+  "native_service_initialized": false,
+  "gameplay_accepted": false,
+  "next": "Reuse cached2568D0 body. Confirm3456F4 version bytes and257595->255F70 source preparation, then exact11embedded records (dumpex cached text truncated). Preserve0F2ED2 Unsupported until proven; Initialized58 only at0F30F9 after real continuation. No old query/test rerun.",
+  "launch_attempts": [
+    {
+      "job_created": false,
+      "path": ".tooling/r1-lua-callback-build-prepared/launch-result.json",
+      "sha256": "fe67a197ccc442799dd64f66aa75bb4fd5196543ecdbf84f96138d45c5f5c587",
+      "worker_started": false,
+      "uncertain": false,
+      "exit_code": 1,
+      "reason": "Launcher originalPrepared pointed to callback directory while retaining previous stop-frame baseline hashes; mismatch fails closed before resource probe or helper",
+      "helper_compiles": 0,
+      "denied": false,
+      "pending": false,
+      "preserved": true,
+      "product_compiles": 0
+    },
+    {
+      "worker_exit": 0,
+      "formal_session": 41059,
+      "path": ".tooling/r1-lua-callback-launch-retry1/launch-result.json",
+      "status": "failed",
+      "exit_code": 1,
+      "meaning": "5-second empty-Job observation expired; existing KILL_ON_JOB_CLOSE disposal applied. Do not rewrite historical failed status.",
+      "job_empty_observed": false,
+      "last_owned_member": {
+        "pid": 49364,
+        "creation_ticks": 639292799205717511,
+        "in_job": true,
+        "name": "vctip.exe"
+      },
+      "cleanup_failure": "System.Management.Automation.RuntimeException: Exact owned Job did not become observably empty",
+      "uncertain_execution": false,
+      "sha256": "a69ec8d889721346a993ad7d0e58b36855ae74a52ec356e2f00fe7bcb53f43fd",
+      "denied": false,
+      "worker_started": true,
+      "job_disposed": true,
+      "failure": null,
+      "product_compiles": 3,
+      "helper_compiles": 1,
+      "pending": false
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": ".tooling/r1-lua-callback-build-prepared/manifest.json",
+      "sha256": "d7fdd32e04055e7c5fc6dc88bc43b6d0917f2ebe6cb22939cd32cbec35d7fe46"
+    },
+    {
+      "path": ".tooling/r1-lua-callback-build-prepared/build.ps1",
+      "sha256": "f2f582fd37a964170b720e80743271911adfbe07e5e9c2e13b082a65df255d09"
+    },
+    {
+      "path": ".tooling/r1-lua-callback-build-prepared/gate.mjs",
+      "sha256": "7ccc2e2660a19385c82978a93686d93a5cc30534643b94b3d36d81ab6a2596ab"
+    },
+    {
+      "path": ".tooling/r1-lua-callback-build-prepared/launch-owned.ps1",
+      "sha256": "c9f6f3fb9321b7b44e3ca79f6eb3a81914639d4c8f333387f83a4ce7527d121d"
+    }
+  ],
+  "current_execution": {
+    "launch_result": ".tooling/r1-lua-callback-launch-retry1/launch-result.json",
+    "sha256": "3afedc09dcc6685277ac4256b163f64eba10deba08860e879a898076b911e928",
+    "session_id": 41059,
+    "result": ".tooling/r1-lua-callback-validation/result.json",
+    "state": "completed-product-passed-formal-exit1-cleanup-failure-preserved-current-pids-absent",
+    "do_not_repeat": true,
+    "entry": ".tooling/r1-lua-callback-launch-retry1/launch-owned.ps1",
+    "formal_exit": 1,
+    "worker_exit": 0,
+    "pending": false,
+    "uncertain": false
+  },
+  "heavy_processes_currently_running": false,
+  "new_assertions": 288,
+  "selected_older_regressions": 1,
+  "selected_older_assertions": 10,
+  "old_whole_suites_rerun": 0,
+  "guard_helper_compiles": 1,
+  "result": {
+    "older_assertions": 10,
+    "sha256": "78bef272c65212033bf3bc002a3d22c4e3285fd84c1d47bbdf6c9f18e66b340d",
+    "compiler_steps": 3,
+    "scenarios": 9,
+    "targeted_checks": [
+      {
+        "name": "Actual publication and byte-exact OWN callback consumption",
+        "assertions": 76
+      },
+      {
+        "name": "Reinitializing the same service preserves the overwritten live VM",
+        "assertions": 41
+      },
+      {
+        "name": "State ownership retains native callbacks and OWN sink across GC",
+        "assertions": 12
+      },
+      {
+        "name": "Closed binding rejects reuse and module cannot unload with live states",
+        "assertions": 28
+      },
+      {
+        "name": "Callback reentry cannot close its state or dispose its runtime",
+        "assertions": 19
+      },
+      {
+        "name": "Real tostring Lua error remains inside the native protected boundary",
+        "assertions": 21
+      },
+      {
+        "name": "Zero and all-nil print keep uninitialized output explicitly unsupported",
+        "assertions": 34
+      },
+      {
+        "name": "Unknown registry Engine and native logger preserve exact failure boundaries",
+        "assertions": 57
+      },
+      {
+        "name": "Selected regression: legacy four-argument initializer keeps its old boundary",
+        "assertions": 10
+      }
+    ],
+    "older_regressions": 1,
+    "total_assertions": 298,
+    "new_scenarios": 8,
+    "file": ".tooling/r1-lua-callback-validation/result.json",
+    "new_assertions": 288,
+    "status": "passed-own-lua-callback-publication-prefix",
+    "finished_utc": "2026-11-03T05:18:48.9479909Z"
+  },
+  "native_bridge": {
+    "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\r1-lua-callback-validation\\own_luajit204_bridge.dll",
+    "sha256": "e6d0ac51c2c37c3b37702b97011bc76b2d72d392475cc678ac04eec95d6c20ff",
+    "bytes": 22016,
+    "exports": [
+      "gd_lj204_attach",
+      "gd_lj204_begin_close",
+      "gd_lj204_complete_close",
+      "gd_lj204_execute_fixture",
+      "gd_lj204_publish_prefix"
+    ],
+    "imports": [
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "KERNEL32.dll",
+      "VCRUNTIME140.dll"
+    ],
+    "static_lua_import": false,
+    "metadata_sha256": "d91b95303185be93609da2152c0eff3f897ae18127c2e242ea400d207e1e28c2",
+    "identity_source": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\r1-lua-callback-validation\\OwnLuaCallbackBridgeBuildIdentity.cs",
+    "identity_source_sha256": "fdb21ad19f8299ded1075b06905ba404e7ce0a4fc170f4fde5a94a455ae4456e",
+    "generated_from_actual_artifact": true
+  },
+  "source_pins": [
+    {
+      "path": "src/reverse_client_actions/GameMovementIdentityBridge.cs",
+      "sha256": "9d7b7f7544479dfaa8fad3b414da186aadf323f5fdffd9b33e22ae5964e7fbce"
+    },
+    {
+      "path": "src/reverse_client_actions/GameReachedGoalEngineContracts.cs",
+      "sha256": "acc9d562f9d5a1336458741effeb3c03165c405d1f546731e27662e0c54615cd"
+    },
+    {
+      "path": "src/reverse_client_actions/GameObjectManagerLookupContracts.cs",
+      "sha256": "5daeca8a7df7b5f7f5e2f681902c77486612a654d7bb4eacf3915ce32e055f08"
+    },
+    {
+      "path": "src/reverse_client_actions/GameReachedGoalContracts.cs",
+      "sha256": "0b722b1e302c8df01b5a561ce5620da483feb3cb5672f141cbba157ac1037320"
+    },
+    {
+      "path": "src/reverse_client_actions/OwnLuaJit204Runtime.cs",
+      "sha256": "fbbae959f733ce172ab3cfabc86374cbf0eea3595b278bf2b31365131eb32fed"
+    },
+    {
+      "path": "src/reverse_client_actions/GameLuaServiceInitializationContracts.cs",
+      "sha256": "1775168303f9387ac7721e91c628b2169d5557fe0884c5467534ea0f5b9a9508"
+    },
+    {
+      "path": "src/reverse_client_actions/OwnLuaCallbackBridge.cs",
+      "sha256": "b9ec826f19ff2a64963165708e159b4a2c91f41904f1ca803b041c22bb93dc44"
+    },
+    {
+      "path": "src/reverse_client_actions/GameLuaCallbackPublicationTests.cs",
+      "sha256": "3010885f56b3d601c26560fea620c738c59aeed4b5e902e4de55c32efa9babba"
+    },
+    {
+      "path": ".tooling/r1-lua-callback-build-prepared/OwnLuaCallbackValidationProgram.cs",
+      "sha256": "be8b6f60d6fe9ca34946cdd17d600b1c4958a42a0620090877c5751c255b5e53"
+    },
+    {
+      "path": "src/reverse_client_actions/native/own_luajit204_bridge.c",
+      "sha256": "b0853e5de341693fdaa6ca16abd4d681b62ccc624266748bd50fc0ca72c5b8b7"
+    },
+    {
+      "path": "src/reverse_client_actions/native/own_luajit204_bridge.h",
+      "sha256": "7ca9ee5bdb1c65b94c8d01251424ea3bed4e6b659c0ba16c87da97ab3a2e68ab"
+    }
+  ],
+  "generated_libraries": [
+    {
+      "name": "GrimDynasty.GameReachedGoal.dll",
+      "sha256": "89c5ce8dd3ddc2f9e080f922d6515927fb6e806a4c2aae4bf8fb4506a94b0744",
+      "identity": "GrimDynasty.GameReachedGoal, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    }
+  ],
+  "original_hash_checks": [
+    {
+      "phase": "before",
+      "label": "Game",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "utc": "2026-11-03T05:18:35.5220773Z"
+    },
+    {
+      "phase": "before",
+      "label": "Engine",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "utc": "2026-11-03T05:18:35.5281068Z"
+    },
+    {
+      "phase": "after",
+      "label": "Game",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "utc": "2026-11-03T05:18:48.8426121Z"
+    },
+    {
+      "phase": "after",
+      "label": "Engine",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "utc": "2026-11-03T05:18:48.8485017Z"
+    }
+  ],
+  "release": {
+    "current_pids_absent": true,
+    "sha256": "9a1275bb35972e611b7047d21850f323bf6510299c40437a73608a0d1153b524",
+    "pending": 0,
+    "formal_readonly_session": 40143,
+    "physical_bytes": 10000171008,
+    "current_conflicts": 0,
+    "resource_slot_released": true,
+    "formal_exit": 0,
+    "historical_empty_job_not_observed": true,
+    "file": "docs/reverse-client/r1-lua-callback-release.json",
+    "commit_headroom_bytes": 18172350464,
+    "utc": "2026-11-03T05:20:02.0890605Z"
+  },
+  "resource_protection": {
+    "runtime_floor_bytes": 2147483648,
+    "minimum_launcher_commit_headroom_bytes": 17969606656.0,
+    "start_physical_and_commit_bytes": 5368709120,
+    "every_product_step_rechecked": true,
+    "launcher_sample_count": 13,
+    "identity_guard_unchanged": true,
+    "minimum_launcher_physical_bytes": 9823490048.0
+  },
+  "scope_verified": [
+    "Same service creates real OWN LuaJIT states and seven observed native publication operations through0F2EC9; new entry stops0F2ED2",
+    "Old state remains alive after service Lua00 replacement; old callbacks consume their original L while republishing rereads Service.Lua00 and fails5A",
+    "State handle holds native module/delegates/context through GC and actual close; closed/reentrant calls rejected before native API entry",
+    "Actual tostring Lua error and managed sink failure return after native cpcall; no managed lua_CFunction or Lua unwind across managed callback",
+    "Byte-oriented print/NUL/leading spaces/growth and protected panic only; zero/allnil uninitialized buffer remains Unsupported"
+  ],
+  "limits": [
+    "Initialized58 never written; known prior value preserved, unknown remains unknown",
+    "Native initialization startup ordering remains unproved; OWN export-based selector is explicit adaptation",
+    "Engine logger behavior remains Unsupported; test sink is explicit OWN fixture adapter",
+    "Only protected panic wrapper; fatal panic, close-time user callbacks, coroutines, original C++ EH not validated",
+    "Prior3stoppedframes were not rerun or upgraded to native-initialized/frame/game acceptance",
+    "Physical mouse/frame scheduling/scene/UI and native animation decode/playback remain incomplete"
+  ],
+  "next_direct_gap": {
+    "new_queries_this_review": 0,
+    "entry": "0F2ED2 ->2568D0",
+    "evidence": {
+      "file": "docs/reverse-client/r1-lua-publication-following-contracts.json",
+      "sha256": "11c37dfde83037dfd10ded40ac07dfa34a5c5d037dee0a5cc471e37e84cd48fb"
+    },
+    "reuse_body": true,
+    "first_unknowns": [
+      "3456F4 actual version bytes",
+      "257595 ->255F70 source preparation transform"
+    ],
+    "embedded_records": 11,
+    "later_boundaries": [
+      "256150/2561A0/3479B8 registry -1..-4",
+      "4217D8 runtime branch",
+      "0EF913 ->0EFAD0 Script initialization",
+      "service+40/+48 provider iteration and real Client/Server publication branches"
+    ],
+    "dumpex": {
+      "address": "3458C0",
+      "copy_including_nul_bytes": 2092,
+      "source_bytes": 2091,
+      "cached_pseudocode_truncated": true
+    },
+    "callee_return_warning": "Caller does not test2568D0 return; return0 does not justify new overall-failure or success semantics",
+    "initialized58_write_only": "0F30F9 reached through actual prior sequence"
+  }
+}

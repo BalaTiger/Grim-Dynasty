@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "status": "prepared-not-applied-not-executed",
+  "runner": "tools/static_analysis/rea_native_registration.mjs",
+  "runner_before_sha256": "473f1963e9accb0c7a2e33bd6f3aac83e923fdf4e9850647d155e217d0d9ba06",
+  "runner_proposed_sha256": "f3b7283694cf41844ebd001b34a7c6436f54f2d81c543ea5c624f484f2f408be",
+  "frozen_plan": "docs/reverse-client/r1-move-world-distance-plan/plan.json",
+  "frozen_plan_sha256": "9823b315c827f24477f0898cd9d77872492007d4396f36ec4d10089d08ae3edb",
+  "patch": "docs/reverse-client/r1-move-world-distance-plan/runner-registration.patch",
+  "patch_sha256": "6d0126765d24a4abf78d7b003a83ae53c57712635a6a78172f36f75030b6f14b",
+  "operations": [
+    {
+      "expected_count": 1,
+      "to": "const r1MoveProductionEngine = process.argv.length === 3 && (process.argv[2] === '--r1-move-production-engine' || verifyR1MoveProductionEngine);\nconst verifyR1MoveWorldDistance = process.argv.length === 3 && process.argv[2] === '--verify-r1-move-world-distance';\nconst r1MoveWorldDistance = process.argv.length === 3 && (process.argv[2] === '--r1-move-world-distance' || verifyR1MoveWorldDistance);",
+      "from": "const r1MoveProductionEngine = process.argv.length === 3 && (process.argv[2] === '--r1-move-production-engine' || verifyR1MoveProductionEngine);",
+      "id": "flags"
+    },
+    {
+      "expected_count": 7,
+      "to": "r1MoveWorldDistance || r1MoveProductionEngine ||",
+      "from": "r1MoveProductionEngine ||",
+      "id": "engine-mode-memberships"
+    },
+    {
+      "expected_count": 1,
+      "to": "verifyR1MoveWorldDistance || verifyR1MoveProductionEngine ||",
+      "from": "verifyR1MoveProductionEngine ||",
+      "id": "verify-dispatch"
+    },
+    {
+      "expected_count": 1,
+      "to": "} : r1MoveWorldDistance ? {\n  plan: '../../docs/reverse-client/r1-move-world-distance-plan/plan.json', directory: '../reverse-client/r1-move-world-distance-run1',\n  hash: '9823b315c827f24477f0898cd9d77872492007d4396f36ec4d10089d08ae3edb', maxToolCalls: 8, finalSessionLabel: '08-final-session',\n  runtimeProfile: {file:'tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json', sha256:'2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0'},\n} : r1MoveProductionEngine ? {",
+      "from": "} : r1MoveProductionEngine ? {",
+      "id": "fixed-batch"
+    },
+    {
+      "expected_count": 1,
+      "to": "r1MoveWorldDistance ? ['0x180224770'] : r1MoveProductionEngine ? ['0x180008300','0x180078620']",
+      "from": "r1MoveProductionEngine ? ['0x180008300','0x180078620']",
+      "id": "fixed-address"
+    }
+  ],
+  "hunks": [
+    {
+      "original_line": 33,
+      "proposed_line": 33,
+      "new_lines": 3,
+      "old_lines": 1
+    },
+    {
+      "original_line": 65,
+      "proposed_line": 67,
+      "new_lines": 1,
+      "old_lines": 1
+    },
+    {
+      "original_line": 264,
+      "proposed_line": 266,
+      "new_lines": 1,
+      "old_lines": 1
+    },
+    {
+      "original_line": 274,
+      "proposed_line": 276,
+      "new_lines": 1,
+      "old_lines": 1
+    },
+    {
+      "original_line": 337,
+      "proposed_line": 339,
+      "new_lines": 5,
+      "old_lines": 1
+    },
+    {
+      "original_line": 1058,
+      "proposed_line": 1064,
+      "new_lines": 1,
+      "old_lines": 1
+    },
+    {
+      "original_line": 1225,
+      "proposed_line": 1231,
+      "new_lines": 1,
+      "old_lines": 1
+    },
+    {
+      "original_line": 1229,
+      "proposed_line": 1235,
+      "new_lines": 1,
+      "old_lines": 1
+    },
+    {
+      "original_line": 1265,
+      "proposed_line": 1271,
+      "new_lines": 1,
+      "old_lines": 1
+    },
+    {
+      "original_line": 1845,
+      "proposed_line": 1851,
+      "new_lines": 1,
+      "old_lines": 1
+    },
+    {
+      "original_line": 1861,
+      "proposed_line": 1867,
+      "new_lines": 1,
+      "old_lines": 1
+    }
+  ],
+  "added_lines": 6,
+  "fixed_targets": [
+    "0x180224770"
+  ],
+  "max_tool_calls": 8,
+  "game_fixed_mode_unchanged": true,
+  "resource_profile": {
+    "changed": false,
+    "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0",
+    "heap": "384M",
+    "stop_physical_or_commit_gib": 2,
+    "launch_physical_and_commit_gib": 5,
+    "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json"
+  },
+  "guard_files_unchanged": [
+    {
+      "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "1ced4f54295e8aaf9529693fcb94f19a41f6e201af22f5fa9d3bda64874dcb7c"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    }
+  ],
+  "reverse_replacements_in_memory_sha256": "473f1963e9accb0c7a2e33bd6f3aac83e923fdf4e9850647d155e217d0d9ba06",
+  "backup_plan": "After active Game batch cleanup and root approval only: recheck beforeSHA, create one no-overwrite byte-identical backup, then apply exactly the counted replacements preserving other bytes/line endings. Roll back only if current runner still equals proposedSHA and no operation is pending; later edits require a reviewed reverse diff.",
+  "patch_note": "Review diff uses LF; exact operations and before/proposed hashes are authoritative for mixed-line-ending preservation. No candidate runner file was created.",
+  "independent_review": "Read-only reviewer confirmed seven Engine memberships, fixed-address/batch/verify shape and unchanged Engine resource/ownership guard path.",
+  "execution": {
+    "verify_invoked": false,
+    "future_verify_args": [
+      "tools/static_analysis/rea_native_registration.mjs",
+      "--verify-r1-move-world-distance"
+    ],
+    "future_query_args": [
+      "tools/static_analysis/rea_native_registration.mjs",
+      "--r1-move-world-distance"
+    ],
+    "backend_started": false,
+    "original_read": false,
+    "runner_modified": false,
+    "requires_safe_boundary_root_review_and_normal_approval": true
+  }
+}

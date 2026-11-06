@@ -1,0 +1,171 @@
+{
+  "schema": "gd-lua-registry-closure-contract-v1",
+  "status": "two-callback-bodies-and-import-identities-evidenced-dynamic-slot0-targets-unknown",
+  "saved_utc": "2026-11-03T06:06:08.890Z",
+  "target": {
+    "module": "Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "evidence": [
+    {
+      "id": "gc150-pseudo",
+      "path": "docs/reverse-client/r1-engine-luaglue-gc-run1/04-LuaGlueGcCallback-0x180256150-procedure_pseudo_code.json",
+      "sha256": "c734b6a67b5c51b08a2c2e0f161d5b6fc941b11a66f8c9649bcd3bd94c4937fb"
+    },
+    {
+      "id": "gc150-assembly",
+      "path": "docs/reverse-client/r1-engine-luaglue-gc-run1/05-LuaGlueGcCallback-0x180256150-procedure_assembly.json",
+      "sha256": "f8a208b2859006b748024634349c5c4901b9f4045049ec5b33301ffae872c8a7"
+    },
+    {
+      "id": "gc1a0-pseudo",
+      "path": "docs/reverse-client/r1-engine-luaglue-gc-run1/07-LuaGlueGcCallback-0x1802561a0-procedure_pseudo_code.json",
+      "sha256": "94fe9109edb678a5c8789dd9577a6922e8be13b3f6e1c0852ac24c22aa7080cf"
+    },
+    {
+      "id": "gc1a0-assembly",
+      "path": "docs/reverse-client/r1-engine-luaglue-gc-run1/08-LuaGlueGcCallback-0x1802561a0-procedure_assembly.json",
+      "sha256": "5894c491045f5ccc554b6291e1bed7e2109c2873959660e6a2c43202f7e7a9c8"
+    },
+    {
+      "id": "binding-pseudo",
+      "path": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1/04-LuaInitializeDependency-0x180258e50-procedure_pseudo_code.json",
+      "sha256": "3bc5be5d0ba79b5e140c063755411958e404768bc6044cdcb5527275dc6ee7d5"
+    },
+    {
+      "id": "binding-assembly",
+      "path": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1/05-LuaInitializeDependency-0x180258e50-procedure_assembly.json",
+      "sha256": "b61d98ddad9968e13c7f6c9be8551a98eb4e03e8faccc7913ee461394896a8bf"
+    },
+    {
+      "id": "free-review",
+      "path": "docs/object-lifecycle/ENGINE-ROOT-HELPERS-INDEPENDENT-REVIEW.md",
+      "sha256": "b50ee0eee34bdeff591717d14d1fb37fd0bab7632ee9c5d85831be9c4f15eabd"
+    },
+    {
+      "id": "free-import",
+      "path": "docs/object-lifecycle/offline-engine-root-helper-imports/metadata.json",
+      "sha256": "0b81751351efeaeb5bc8cd5103035887b5ffbd4798d29edf2be50c697f84d369"
+    }
+  ],
+  "api_identity": {
+    "slot_421A48": {
+      "symbol": "lua_touserdata",
+      "name_rva": "347CA8",
+      "name_load_rva": "2590BD",
+      "getprocaddress_rva": "2590DE",
+      "slot_store_rva": "2590F4",
+      "null_resolution": "2590F1/FB/FE conditionally zero current version when actual result is null; a resolved symbol is not proof of a currently live state."
+    },
+    "free_2DC8F8": {
+      "chain": [
+        "2DC8F8",
+        "2DC390",
+        "2DDB3E",
+        "IAT302970"
+      ],
+      "import": "api-ms-win-crt-heap-l1-1-0.dll!free",
+      "boundary": "Cached jump chain and exact import binding reused. Wrappers add no destructor, argument transform, null guard, field clearing or boolean normalization. External runtime heap behavior is not reimplemented/proved by these jumps."
+    }
+  },
+  "callback_256150": {
+    "input": "L inRCX; EDX=-1 at256156; call lua_touserdata at256159. Returned U captured inRDI at25615F.",
+    "sequence": [
+      {
+        "at": "256162",
+        "operation": "Read qword U+18 as initial node. There is no null check on U before this dereference."
+      },
+      {
+        "at": "256166..256169",
+        "operation": "Null node skips the virtual-call loop; it does not skip final free."
+      },
+      {
+        "at": "256170..25617C",
+        "operation": "Read node.vtable at256170, set32-bit EDX=1 at256173, capture qword node+20 as next inRBX at256178, then call previously-read vtable slot0 with RCX=node."
+      },
+      {
+        "at": "25617F..256185",
+        "operation": "Continue using captured next, not a post-call reload from the possibly destroyed current node. Nonnull next loops."
+      },
+      {
+        "at": "25618C..25618F",
+        "operation": "After all node calls returned, reread qword U+00 and pass that current pointer to the existing free chain."
+      },
+      {
+        "at": "256194..25619B",
+        "operation": "Return EAX=0 only on normal completion. No writes clear U+00, U+18 or node links."
+      }
+    ],
+    "unknowns": [
+      "Dynamic node type and actual vtable slot0 target",
+      "Whether slot0 destroys/frees which object or changes U/next",
+      "Node/next lifetime, cycles and exception cleanup",
+      "Free operand allocation ownership and repeated-invocation safety"
+    ],
+    "failure_prefix": "A nonreturning slot0 prevents later nodes and final free. Free failure/nonreturn prevents EAX0. Earlier side effects are not rolled back; no native checked-null or Lua-error path is established."
+  },
+  "callback_2561A0": {
+    "input": "L inRCX; EDX=-1 at2561A4; call lua_touserdata at2561A7.",
+    "sequence": [
+      {
+        "at": "2561AD",
+        "operation": "Read qword U+00 as object; no null check on U."
+      },
+      {
+        "at": "2561B0..2561B3",
+        "operation": "Null object skips virtual dispatch."
+      },
+      {
+        "at": "2561B5..2561BD",
+        "operation": "Read object.vtable; set32-bit EDX=1; call slot0 with RCX=object."
+      },
+      {
+        "at": "2561BF..2561C5",
+        "operation": "Return EAX=0 on normal completion. No separate free and no pointer clearing."
+      }
+    ],
+    "unknowns": [
+      "Concrete object type/slot0 function and ownership semantics",
+      "Native exception/lifetime behavior on invalid userdata or object"
+    ],
+    "failure_prefix": "If virtual call does not return, normal EAX0 is not established. Do not add an extra free or treat flag1 as proof of a specific deleting destructor."
+  },
+  "bounded_own_api": {
+    "supported_candidate": "True owned Lua userdata with tracked provenance/size:256150 needs at least0x20 readable bytes;2561A0 at least8. Empty list/null object arms can be implemented directly.256150 still performs the actual final free on a known-null or independently owned matching-allocator payload.",
+    "ownership": "Never free Lua's userdata storage itself merely because U was returned by lua_touserdata; original free operand is the qword stored at U+00. A raw pointer is not proof of matching allocator ownership.",
+    "guard_boundary": "Reject unknown/null/undersized/foreign userdata or unproved nonnull objects before unsafe dereference/dispatch. These are explicit OWN safety/Unsupported boundaries, not checks claimed to exist in native code.",
+    "virtual_calls": "No arbitrary address calls or no-op callbacks may substitute for unknown slot0 behavior. Registering function identities does not prove nonempty object destruction.",
+    "lua_result": "Original normal integer0 means zero Lua results; it is not evidence that all dynamic object types were supported.",
+    "captured_vm": "Registry continuation must reuse original binding/context L captured for2568D0, without rereading service.Lua00. It must not infer eligibility from externally mutable managed result fields alone."
+  },
+  "registry_continuation": [
+    {
+      "at": "257635/25763F/257648",
+      "operation": "Get current __luaglue, reread422888, store registry[-1]."
+    },
+    {
+      "at": "257656/257662/25766B",
+      "operation": "Create empty table, reread422888, store registry[-2]."
+    },
+    {
+      "at": "257679..2576B6",
+      "operation": "Create table; zero-upvalue256150 closure; set__gc at2576A1; reread422888 at2576AD; store registry[-3]."
+    },
+    {
+      "at": "2576C4..257701",
+      "operation": "Create table; zero-upvalue2561A0 closure; set__gc at2576EC; reread422888 at2576F8; store registry[-4]."
+    }
+  ],
+  "stop": {
+    "rva": "257707",
+    "reason": "Next native operation reads live4217D8 bit0; only zero skips257CB0. No default-zero selection, native return success or Initialized58 write is claimed."
+  },
+  "activity": {
+    "new_queries": 0,
+    "new_original_reads": 0,
+    "production_edits": 0,
+    "builds": 0,
+    "tests": 0
+  }
+}
+

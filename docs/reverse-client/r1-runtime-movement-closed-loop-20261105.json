@@ -1,0 +1,52 @@
+{
+    "schema":  "grim-dynasty-r1-runtime-movement-closed-loop",
+    "utc":  "2026-11-05T08:46:49.4440448Z",
+    "clock_local":  "watch 16:42:38.704 -\u003e 16:46:38.708; the click was at about 16:44:16",
+    "user_confirmation":  "The user reports a click-move at 16:44 and states the in-game coordinates visibly changed.",
+    "pid":  2352,
+    "player":  "0x22f02154b20",
+    "controller":  "0x22f23229280",
+    "coords":  "Player+0xD8 (Entity.CoordsD8): Q0 region pointer, then three floats at +0xE0/+0xE4/+0xE8",
+    "method":  "~500 Hz read-only polling of Controller+0x2A0 and of the player coordinate floats in the same iteration",
+    "observation":  [
+                        {
+                            "clock":  "16:42:38.705",
+                            "state":  "Idle",
+                            "position":  "(120.641, 33.086, 17.381)"
+                        },
+                        {
+                            "clock":  "16:44:16.068",
+                            "state":  "MoveTo",
+                            "position":  "(120.641, 33.086, 17.381)"
+                        },
+                        {
+                            "clock":  "16:44:16.114",
+                            "state":  "MoveTo",
+                            "position":  "(120.613, 33.088, 17.408)",
+                            "note":  "first sampled displacement, delta 0.014"
+                        },
+                        {
+                            "clock":  "16:44:17.217",
+                            "state":  "Idle",
+                            "position":  "(115.192, 33.472, 24.887)"
+                        }
+                    ],
+    "net_displacement":  {
+                             "from":  "(120.641, 33.086, 17.381)",
+                             "to":  "(115.192, 33.472, 24.887)",
+                             "approx_units":  9.3
+                         },
+    "what_this_closes":  "A real ground click enters MoveTo, the character coordinate actually changes, and the controller returns to Idle. This is the first end-to-end runtime evidence for the click-to-move segment of R1.",
+    "what_it_does_not_close":  [
+                                   "the exact ground target coordinate (CameraTargetState.Target120)",
+                                   "whether the +0x70 body 0x1663F0 executed this time",
+                                   "the trigger for the return to Idle (timer vs completion)",
+                                   "presentation/rendering behaviour",
+                                   "that the OWN model reproduces this autonomously"
+                               ],
+    "not_claimed":  [
+                        "that our rebuilt client moved",
+                        "that movement is behaviour-equivalent",
+                        "that navigation/pathfinding was recovered"
+                    ]
+}

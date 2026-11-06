@@ -1,0 +1,41 @@
+{
+  "status": "two-wrapper-bodies-verified; animation-loader-production-unclosed",
+  "summary_sha256": "ef4bc451b87f76ac67e4155c2aab8e076f3525d63690c0d0cf2938514bfd577a",
+  "original_sha256_before_and_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "actual_tools": ["procedure_pseudo_code", "procedure_assembly", "procedure_callees"],
+  "get_graphics_engine_077820": {
+    "assembly_sha256": "1d8314799e92dde067b4ada19698424bea5ce4432694a5a6d769faeeaed6c438",
+    "instructions": ["077820 MOV RAX,[RCX+1F8]", "077827 RET"],
+    "contract": "Read and return the pointer cell of the same valid Engine. Snapshot preserves Unknown or known-null; no dereference of returned GraphicsEngine, numeric test or default object here."
+  },
+  "load_animation_091A20": {
+    "assembly_sha256": "65387a6c19e40f0c33f5579c5707405f45a9c01942ab5e8a5264a8f5f6572737",
+    "order": ["091A20 read GraphicsEngine+20 intoRCX", "091A24 test interface pointer", "known-null:091A30 XOR EAX,EAX;091A32 RET", "nonnull:091A29 read interfacevptr;091A2C tailJMP [RAX+10]"],
+    "string_identity": "RDX is unchanged throughout: the exact original std::string reference is forwarded to interface+10. Pseudocode's zero-argument call is incomplete.",
+    "return": "Return the tail target's raw GraphicsAnim pointer result, not a boolean or fabricated resource. Unknown target/fault/nonreturn cannot be converted to normalnull or an Unknown-success result.",
+    "known_null_domain": "Null interface returns null without reading the string; it does not mean an animation resource was loaded."
+  },
+  "integration": {
+    "owner": "Reuse existing EntityMovementRegistry/EntityEngineState identity and a shared1F8cell; GraphicsEngine is a borrowed view, not a parallelEngine/gEngine.",
+    "not_implemented": "No new production wrapper or fake successful adapter was added merely to move Unsupported.",
+    "required_next_evidence": ["Publication source of Engine+1F8", "Publication source of GraphicsEngine+20", "Concrete loader-interface vtable and its+10 target"],
+    "other_Player_direct_gaps": ["GetAnimChannel609D20", "AnimChannel.PlayAnimation60A628", "Game285E50", "Player primary+2C0 tail target"],
+    "new_production_compiles": 0,
+    "new_tests": 0,
+    "old_suites_rerun": 0,
+    "native_resource_loading_or_game_acceptance": false
+  },
+  "execution": {
+    "session_id": 59171,
+    "exit_code": 0,
+    "completed_calls": 11,
+    "finished_utc": "2026-10-26T13:48:13.41Z",
+    "normal_close_process_job_sampler": true,
+    "forced_termination": false,
+    "counter_gaps": 0,
+    "sampled_task_peak_working_set_bytes": 1309085696,
+    "minimum_physical_bytes": 6257352704,
+    "minimum_commit_headroom_bytes": 10559680512,
+    "next_heavy_operation_started": false
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "status": "native-body-evidence-assessed; production-resource-and-actor-play-unclosed",
+  "summary_sha256": "c6b5bb556daed03d0a3776eccd29c6f103581558cb13c019faf792f03560a349",
+  "target_sha256_before_and_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "real_tools": ["procedure_pseudo_code", "procedure_assembly", "procedure_callees"],
+  "bodies": ["023AC0", "020B10", "020910", "020840"],
+  "closed_process_job_sampler": true,
+  "source_assembly_sha256": {
+    "023AC0": "9247f8b74d85aaffda0bc4d0a630b8976ecc90569ba7727fb563d9b96d9a561a",
+    "020B10": "a6298397d825718da0ab7e32e7e452a9817fd5e4c53f36b22407ac70515969fe",
+    "020910": "5446a7ec9ec2fc1c94d3f0bf070d27acc6611f1db47f7efc940c1cd606454353",
+    "020840": "64c384f4348510dbc70bf8074b55abd2c116499d5f28feba6586900f4a643104"
+  },
+  "constructor_helper_023AC0": {
+    "allocation": "023AC4 ECX=48; 023AC9 calls5DA6C4; returned allocation identity stays in RAX through RET023AF8 despite pseudocode void",
+    "writes": "00/08/10 QWORD self pointers with literal address tests, then18 WORD0101; remaining allocation bytes are not written here",
+    "failure": "Do not model null allocation as a clean nullable return: RAX=0 skips only00, then attempts address8 store023ADF. Allocation exception and cleanup remain separate."
+  },
+  "entry_setter_020B10": {
+    "effect": "MOVSS [RCX+18],XMM1; exactly32 bits, thenRET. No callees.",
+    "ctor_use": "Outer024080 passesfloat0 only to its inline4F8 entry at0248E6. Do not generalize that call to ordinary slot5 or all entries."
+  },
+  "add_020910": {
+    "short_circuit": "First string.length+10==0, then entry.Anim+10!=0; either returnsAL1 without resource load or scale writes.",
+    "string": "Choose inline or heap using capacity<16; scan to NUL; construct local through016460. Input fifthchar pointer is not consumed by this implementation.",
+    "loader": "609050 gEngine pointer indirection; 609440 GetGraphicsEngine;609560 LoadAnimation. These import targets require exact cached binding before body queries.",
+    "publication": "Save returned resource; destroy heap local string through016620 before testing resource for null. Null returnsAL0. Nonnull publishes10 QWORD,1C FLOAT32,20 FLOAT32 in that order, thenAL1.",
+    "boundary": "Return1 is not proof a new resource was loaded. Existing resource retains original scales. Resource ownership/release/loading and exceptional local cleanup are not recovered here."
+  },
+  "play_020840": {
+    "prefix": "020854 stores input fifth-argument byte at28;020857 stores input sixth-argument DWORD at24; derive normalized OR flag;020867 loads Anim QWORD10. No gameplay name for either flag is asserted.",
+    "null": "Known nullAnim returnsAL0; prior byte/DWORD writes remain. UnknownAnim is not known-null.",
+    "nonnull_order": "020870 CVTTSS2SI(+18 float);020875 capture Actor primaryvptr;02087A MULSS(inputspeed,+1C);02088C call captured+2F8.",
+    "call_arguments": "originalActor, index0, borrowedAnim, (fifthByte!=0||sixthDword!=0), FLOAT32product, convertedINT32",
+    "return": "Only after target normal return,020893 setsAL1 without examining target return; target success semantics remain unknown. Name is not consumed by this entry.",
+    "unclosed": "Actor+2F8 true target/body, realGraphicsAnim, float exceptional environment and native lifecycle. No injected callback or fake successful playback."
+  },
+  "subsequent_disk_bindings": {
+    "player_actor_slot": {"inspection":"docs/reverse-client/r1-animation-actor-play-bindings/inspection.json","sha256":"4f8633b38d9033c6f9e0d8bff34991d48f362095a81da7b14722bb5fa77e48b5","semantic_bytes":16,"Character":"Game5DA046","Player":"Game3E2900","loaded_dispatch_observed":false},
+    "graphics_imports": {"inspection":"docs/reverse-client/r1-graphics-animation-import-binding/inspection.json","sha256":"825f9af4daaec9973ab2a1bab353839e5a536b2726e5aa6bf18d2830c8bfe479","semantic_bytes":209,"GetGraphicsEngine":"Engine077820","LoadAnimation":"Engine091A20","exact_names_matched":true,"loaded_dispatch_observed":false},
+    "next_body_scope": ["Game3E2900 only for Player override", "Engine077820 and Engine091A20"],
+    "native_bodies_not_yet_queried": true
+  },
+  "no_name_consumption": {
+    "move_source": "docs/reverse-client/r1-move-start-dependencies/05-MoveDependency-0x18005f870-procedure_assembly.json",
+    "move_sha256": "9e4e921f209d02922dff53ae248eaca7c8642472b5d5107ac000ccb1bb6f7463",
+    "set_play_source": "docs/reverse-client/r1-game-waypoint-animation-run1/08-WaypointAnimation-0x180024de0-procedure_assembly.json",
+    "set_play_sha256": "7ca09cd715b3a23534d3079f423255a88795624f635482a4105e7ba4b692c230",
+    "move_path": "05FA4D MOV R9,[Game609568] reads import pointer, not Name contents.024DED/024E0A forward pointer;020840 does not dereference it. Preserve this import read; an exact export-symbol identity can be established separately from unknown NameDWORD contents.",
+    "ctor_difference": "024368 dereferences actual Name storage and02436A only copiesDWORD toSet4F0. A valid shared storage view can preserve Unknown through Snapshot/CopyFrom; it must overwrite priorzero. Unknown/null/invalid address still stops at dereference.",
+    "no_name_export_identity_binding_added": false,
+    "no_dummy_name_or_default_value": true
+  },
+  "integration": {
+    "existing_owner": "Reuse original AnimationSet Kind08, Character2578/2600/2608, Bridge Entity/Actor and original borrowed mesh Speed130",
+    "minimal_next": "Bind Character/Player primary+2F8 and exact LoadAnimation import; close actual calls before production Play adapter",
+    "new_model_compiles": 0,
+    "new_model_tests": 0,
+    "previous16scenario_suite_rerun": false,
+    "native_game_acceptance": false
+  }
+}

@@ -1,0 +1,944 @@
+{
+  "schema": "grim-dynasty.fixed-waypoint-production-build.v1",
+  "preparation_status": "frozen-not-executed",
+  "compiles": 2,
+  "waypoint_scenarios": 8,
+  "prior_fixture_setup_checks_excluded": 20,
+  "production_sources": [
+    "src/reverse_client_actions/GameControllerMoveProductionContracts.cs",
+    "src/reverse_client_actions/GameAssociatedLookupContracts.cs",
+    "src/reverse_client_actions/GameWaypointProductionContracts.cs"
+  ],
+  "test_sources": [
+    "src/reverse_client_actions/PlayerMoveRequestTests.cs",
+    "src/reverse_client_actions/GameControllerMoveProductionTests.cs",
+    "src/reverse_client_actions/GameControllerMoveProductionIntegrationTests.cs",
+    "src/reverse_client_actions/GameWaypointProductionIntegrationTests.cs",
+    "src/reverse_client_actions/GameWaypointValidationProgram.cs"
+  ],
+  "sources": [
+    {
+      "path": "src/reverse_client_actions/GameControllerMoveProductionContracts.cs",
+      "bytes": 26810,
+      "sha256": "ddda78735b5d64adf1c41b6e0e0c45960ec50d9512bccf56a220a8b043d31095"
+    },
+    {
+      "path": "src/reverse_client_actions/GameAssociatedLookupContracts.cs",
+      "bytes": 4322,
+      "sha256": "c8a2e06d1286d97bd4e0c85a50531a2b7b4ff5f67649c2a159689ebaed88dea8"
+    },
+    {
+      "path": "src/reverse_client_actions/GameWaypointProductionContracts.cs",
+      "bytes": 15875,
+      "sha256": "b80ccd788b7d9831ec6320a8dc7863bc1c021602f0588bd5ebd484ec03c5224b"
+    },
+    {
+      "path": "src/reverse_client_actions/PlayerMoveRequestTests.cs",
+      "bytes": 35675,
+      "sha256": "edeefe79810979c526ef33a69709b7e5fc1343ef421a5505a999255a11c5f387"
+    },
+    {
+      "path": "src/reverse_client_actions/GameControllerMoveProductionTests.cs",
+      "bytes": 29772,
+      "sha256": "7b23413571db544018d19aaae3952c631261916284c8835a79291897f2e8dc36"
+    },
+    {
+      "path": "src/reverse_client_actions/GameControllerMoveProductionIntegrationTests.cs",
+      "bytes": 21042,
+      "sha256": "6c3dae66bc1971a71f0a162bb9cb25c746004af640260f2fae9cb79b85e82419"
+    },
+    {
+      "path": "src/reverse_client_actions/GameWaypointProductionIntegrationTests.cs",
+      "bytes": 22138,
+      "sha256": "61fccf821667f4b9750afb92f45b9486eb8ae84afd716381943993d85a97d2d4"
+    },
+    {
+      "path": "src/reverse_client_actions/GameWaypointValidationProgram.cs",
+      "bytes": 1609,
+      "sha256": "d96642980fe8c83da8f6aceb129b9d624a240c4e336db04afae8704996297537"
+    }
+  ],
+  "assemblies": [
+    {
+      "name": "GrimDynasty.EntityMovement.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.EntityMovement.dll",
+      "bytes": 11776,
+      "sha256": "85d848625fce7d5fc580feb04839898bd580a96f0c48308c3aca5b8ab142f84d",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.GroundBlockIntersection.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.GroundBlockIntersection.dll",
+      "bytes": 9216,
+      "sha256": "67c72c5b9fbeffa329a6e4dc2609c8b45ba0656b49d12fed758e5c397e1a70d2",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.GroundGeometry.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.GroundGeometry.dll",
+      "bytes": 12800,
+      "sha256": "b9d70554dddcdc5936731647ec4caaa5b86fc0660f329ab3d044b9b956b7416b",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.GroundMaterialCandidates.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.GroundMaterialCandidates.dll",
+      "bytes": 7680,
+      "sha256": "57363683c84b1cc3d1fae94ee3e6ed7ad24190f6cc3ffc8e83c99454868724fe",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.GroundSpatialTree.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.GroundSpatialTree.dll",
+      "bytes": 22016,
+      "sha256": "06e457c22322efc89111a42f822e01c11929a2c8a2918c7c7b2b945efdfd316d",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.GroundTriangleIntersection.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.GroundTriangleIntersection.dll",
+      "bytes": 16384,
+      "sha256": "ab1260f81b132b5b7db7bdd0dd5b721e9e100fc7d665269c6b562b9d0c551401",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.GroundWater.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.GroundWater.dll",
+      "bytes": 7168,
+      "sha256": "da81c4a1769dc470061293f23d830c817425b476d71b13ebcb4e6b92bb165cbc",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.MoveManager.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.MoveManager.dll",
+      "bytes": 6144,
+      "sha256": "7563b6e32745e79ddc8308d2ea48ca7336050271d8dc8c9ce1e75346a52232da",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.NavigationContours.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.NavigationContours.dll",
+      "bytes": 12288,
+      "sha256": "c63bacce93c83700d3113ec36ade462a67b48b1030f2e293a39322e149cad263",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.NavigationCorridor.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.NavigationCorridor.dll",
+      "bytes": 33280,
+      "sha256": "1afd6850ae3f2fc1c0f13c6562ce6b5749a3ea98d3b2e5792d67234d4c779e33",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.NavigationLayers.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.NavigationLayers.dll",
+      "bytes": 15872,
+      "sha256": "80137bab7ceb54a3688655501b2d5c66b59de05d97a9a65edd052e8953e254ee",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.NavigationMeshTiles.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.NavigationMeshTiles.dll",
+      "bytes": 29696,
+      "sha256": "0b8604244b7681e6f0f5e13a63c93f2f815069bbe74109e974938c94d9ee4d57",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.NavigationNearest.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.NavigationNearest.dll",
+      "bytes": 35840,
+      "sha256": "75f303c482679df6ba2c8f01aad7759ba9ed322ad6386100525b690cd9b9dfd0",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.NavigationPolygons.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.NavigationPolygons.dll",
+      "bytes": 17920,
+      "sha256": "6e33b858bc8073d59beacd7cc0a94d5ad15c24aa6f8f3ac966f2966175fa6856",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.NavigationSearchWrapper.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.NavigationSearchWrapper.dll",
+      "bytes": 14336,
+      "sha256": "23d355e4f4a8c7fa7f66838838af9c6772c0a172ce6fb59fe8f57f23bd8df28c",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.NavigationTileData.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.NavigationTileData.dll",
+      "bytes": 9728,
+      "sha256": "b0459f94ca130467c2ec7f8c0379700250926c5a8eb8a3e6f617910a3bb02cd9",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.PathingData.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.PathingData.dll",
+      "bytes": 6656,
+      "sha256": "4f105f145ccdfb4b17b33b1167f8b700f06f38a4a07f8dc36cdf50f3d12aac4f",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.TerrainMaterialCollision.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.TerrainMaterialCollision.dll",
+      "bytes": 21504,
+      "sha256": "7b0a3e8bf53586831ba80dc2301857af74a3869e3cb0c305b7835dafbc0d3b57",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.WorldCoordinates.dll",
+      "path": ".tooling/r1-move-action-construction-validation/GrimDynasty.WorldCoordinates.dll",
+      "bytes": 9216,
+      "sha256": "796566bdf812c09296539a8f3c3a9c7c50482c9440a82c03573e4e03b74a1acf",
+      "receipt": ".tooling/r1-move-action-construction-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.WorldFloor.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.WorldFloor.dll",
+      "bytes": 19456,
+      "sha256": "4532394b7543825752d88c673509f37cc403e4c74cbb5e9e6185200617679cad",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.WorldPublicationPrerequisites.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.WorldPublicationPrerequisites.dll",
+      "bytes": 7168,
+      "sha256": "1ef75d179844014d4bd5c12974466eda89a5d3e1b34c3bedb47e37510f2eeb3e",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "NavigationSearchWrapperTests.exe",
+      "path": ".tooling/r1-run-speed-integration-validation/NavigationSearchWrapperTests.exe",
+      "bytes": 48640,
+      "sha256": "d7f1c56ee534db07adaca8085654412a68146809b04a9725d15d7c9075fe8f3c",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed type reference only; original executable entrypoint never invoked"
+    },
+    {
+      "name": "GrimDynasty.GameMovementCallbacks.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.GameMovementCallbacks.dll",
+      "bytes": 13312,
+      "sha256": "21aa8443153c7a06575f25c32b4f7ef53d73b8d20c0cdc8ccda11c532ee0f5ed",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.GameReachedGoal.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.GameReachedGoal.dll",
+      "bytes": 22016,
+      "sha256": "e552a5952f658366b507f9b7d57e096c1aca93808adad109ba3a887e60554971",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.GameMoved.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.GameMoved.dll",
+      "bytes": 15872,
+      "sha256": "eb47edce8ecb3d495ea1263eefee90e19c8d17bf828213e34359af560f4e59ec",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.PortalTransitions.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.PortalTransitions.dll",
+      "bytes": 22016,
+      "sha256": "35d69c4f8e9cd6d81d5181f19f3d236766cdc3afa376e109d33a7a53e3c9ba07",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.PlayerMouse.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.PlayerMouse.dll",
+      "bytes": 27648,
+      "sha256": "fd3ab8c501e3282ca5939b5c356e0ab91319097d6c63b951309cad3b445905c0",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.PlayerMousePlayerLookup.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.PlayerMousePlayerLookup.dll",
+      "bytes": 7680,
+      "sha256": "4a93cba8493c2ab3c56780160bf2730f148720eef019174669f54b0634968ee5",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.PlayerHotSlotDisplayed.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.PlayerHotSlotDisplayed.dll",
+      "bytes": 8192,
+      "sha256": "9b9bf0dbfef39d56d57fc53bb33f6dbf8f18951078defc65776360415aab1758",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.SkillReference.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.SkillReference.dll",
+      "bytes": 8704,
+      "sha256": "a024139871d3132d3ca76d70239ce9701e4012f54af50380bab7e5c12098dde7",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.PlayerAlive.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.PlayerAlive.dll",
+      "bytes": 10240,
+      "sha256": "4af6d3cc8018728b276dabf829e600309bc96e07836f690b935ec5f94b600890",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.GamePathPrecheck.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.GamePathPrecheck.dll",
+      "bytes": 15360,
+      "sha256": "90410bfbbd53fc36c255d3c8fedbed911bead68f485654f2078a7f39ae6de5dc",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.EngineMouseGetter.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.EngineMouseGetter.dll",
+      "bytes": 7168,
+      "sha256": "a3f76147336c16a794ee744b89a153077e0001d53f3b66cdb9044826941a87b6",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.GameMainPlayer.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.GameMainPlayer.dll",
+      "bytes": 9216,
+      "sha256": "f320f2aef56610e039d0dd584571366ac3d877dc681974255dac175e934b8df1",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "NativeAttributeGetterChecks.exe",
+      "path": ".tooling/r1-run-speed-integration-validation/NativeAttributeGetterChecks.exe",
+      "bytes": 33792,
+      "sha256": "cc263b114b1c26766fd2b07f0121af954543ef03aecd314446a926489008fe99",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed type reference only; original executable entrypoint never invoked"
+    },
+    {
+      "name": "GrimDynasty.PlayerRunSpeedCap.dll",
+      "path": ".tooling/r1-run-speed-integration-validation/GrimDynasty.PlayerRunSpeedCap.dll",
+      "bytes": 8704,
+      "sha256": "841ddb0c73327112b4143f7a5bb98d19d58d2efed5f47c4629b3dc6317a747be",
+      "receipt": ".tooling/r1-run-speed-integration-validation/result.json",
+      "usage": "Managed reference in isolated build"
+    },
+    {
+      "name": "GrimDynasty.MoveActionConstruction.dll",
+      "path": ".tooling/r1-move-action-construction-validation/GrimDynasty.MoveActionConstruction.dll",
+      "bytes": 8704,
+      "sha256": "e1f739ce96ef4e69fb18e8aa1b3de3a1c94669d7b8f6086cd55b1bc7671ffcad",
+      "receipt": ".tooling/r1-move-action-construction-validation/result.json",
+      "usage": "New direct production/test type dependency; no old test entrypoint"
+    },
+    {
+      "name": "GrimDynasty.SkillReferenceNumber.dll",
+      "path": ".tooling/r1-skill-reference-number-validation/GrimDynasty.SkillReferenceNumber.dll",
+      "bytes": 8192,
+      "sha256": "c8b43ac0e0437bb26f4c0a28be58a6039483c54b5c61b294f9a26135e4ec848a",
+      "receipt": ".tooling/r1-skill-reference-number-validation/result.json",
+      "usage": "New direct production/test type dependency; no old test entrypoint"
+    },
+    {
+      "name": "GrimDynasty.ControllerAiLookup.dll",
+      "path": ".tooling/r1-controller-ai-lookup-validation/GrimDynasty.ControllerAiLookup.dll",
+      "bytes": 6656,
+      "sha256": "9f07873d7dfb341e8e572fe36601511ba72f27c5ab75d0312fe7c04fa4a417ce",
+      "receipt": ".tooling/r1-controller-ai-lookup-validation/result.json",
+      "usage": "New direct production/test type dependency; no old test entrypoint"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdState.dll",
+      "path": ".tooling/r1-move-action-construction-validation/GrimDynasty.NavigationCrowdState.dll",
+      "bytes": 26624,
+      "sha256": "064f74a1649af7301276fc510fd1793ef5250660b25ba39a8ee69b5258d50198",
+      "receipt": ".tooling/r1-move-action-construction-validation/result.json",
+      "usage": "New direct production/test type dependency; no old test entrypoint"
+    },
+    {
+      "name": "GrimDynasty.Actions.dll",
+      "path": ".tooling/r1-controller-move-production-validation/GrimDynasty.Actions.dll",
+      "bytes": 23552,
+      "sha256": "2a58d78272c2ee0f41f96e4450f09309031b9e04b1497812dc92449b66ba8ae6",
+      "receipt": ".tooling/r1-controller-move-production-validation/result.json",
+      "usage": "Reuse passed managed artifact; no old executable entrypoint"
+    },
+    {
+      "name": "GrimDynasty.PlayerMoveRequest.dll",
+      "path": ".tooling/r1-controller-move-production-validation/GrimDynasty.PlayerMoveRequest.dll",
+      "bytes": 54784,
+      "sha256": "10d236158b479f5f9f0374075781d89c489721964c5f3bb0c335fcf7e28f2d8e",
+      "receipt": ".tooling/r1-controller-move-production-validation/result.json",
+      "usage": "Reuse passed managed artifact; no old executable entrypoint"
+    },
+    {
+      "name": "GrimDynasty.WorldDistance.dll",
+      "path": ".tooling/r1-world-distance-validation/GrimDynasty.WorldDistance.dll",
+      "bytes": 6656,
+      "sha256": "1d6bc0de37558203a2c95ed38304e87f36a1dbf6220a9bb7b62e9aeb3c3a66ba",
+      "receipt": ".tooling/r1-world-distance-validation/result.json",
+      "usage": "Reuse passed managed artifact; no old executable entrypoint"
+    },
+    {
+      "name": "GrimDynasty.NavigationMoveObject.dll",
+      "path": ".tooling/r1-move-object-validation/GrimDynasty.NavigationMoveObject.dll",
+      "bytes": 16896,
+      "sha256": "5417f770b3e339602893c68b3c59618ebfb43871161bb3d677d2eb5a114800ef",
+      "receipt": ".tooling/r1-move-object-validation/result.json",
+      "usage": "Existing recovered direct dependency; reused unchanged in current explicit managed composition"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdAdapter.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationCrowdAdapter.dll",
+      "bytes": 10752,
+      "sha256": "04215144406cd87357b98bd32911f96281453c4010e4f2f61e1c6997b065b73e",
+      "receipt": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json",
+      "usage": "Existing recovered direct dependency; reused unchanged in current explicit managed composition"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdPath.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.NavigationCrowdPath.dll",
+      "bytes": 17920,
+      "sha256": "afcb8e815f9c15d406f9512087b097ab822cf7eaea23a767124d5e173837a0b4",
+      "receipt": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json",
+      "usage": "Existing recovered direct dependency; reused unchanged in current explicit managed composition"
+    },
+    {
+      "name": "GrimDynasty.WorldPositionInitialization.dll",
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.WorldPositionInitialization.dll",
+      "bytes": 5632,
+      "sha256": "1188bb599cf306775e6a5d3c56a55345e8327333f9ede838ec3a434292cbf931",
+      "receipt": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json",
+      "usage": "Existing recovered direct dependency; reused unchanged in current explicit managed composition"
+    }
+  ],
+  "prerequisites": [
+    {
+      "path": ".tooling/r1-run-speed-integration-validation/result.json",
+      "bytes": 61602,
+      "sha256": "5ba33d54dc856760ab97f099c22ce213b3c1205f6b50b8669dfc9ca2a41994f1",
+      "status": "passed-new-run-speed-integration-plus-affected-state-regression"
+    },
+    {
+      "path": ".tooling/r1-move-action-construction-validation/result.json",
+      "bytes": 30744,
+      "sha256": "0cc05ecab15af8ca8b422c32ccdfc3f6c2cb539596cf283dcf235647bd504040",
+      "status": "passed-move-action-construction-and-word-bridge-only"
+    },
+    {
+      "path": ".tooling/r1-skill-reference-number-validation/result.json",
+      "bytes": 18843,
+      "sha256": "be9576d5076649566ec73c6ecb61be4d1ae41e790a92c64b7554c93b73f1f1c9",
+      "status": "passed-new-skill-reference-number-only"
+    },
+    {
+      "path": ".tooling/r1-controller-ai-lookup-validation/result.json",
+      "bytes": 21700,
+      "sha256": "866fa9a959821afa4839811fce76aa01d4f1714fa10b37b2f0585ab55c7add13",
+      "status": "passed-new-controller-ai-lookup-only"
+    },
+    {
+      "path": ".tooling/r1-player-alive-validation/result.json",
+      "bytes": 32710,
+      "sha256": "ba28b93f31aeffc335128f1b42f6ba291640264b6ab23817de0003f10b6b566e",
+      "status": "passed-new-player-alive-null-video-mouse-prefix-only"
+    },
+    {
+      "path": ".tooling/r1-entity-movement-validation/result.json",
+      "bytes": 10181,
+      "sha256": "8f3ef00be0d94da17f6d3ec4ae79081a0c562e9492a9e4c6f6d0ae6c49a77fff",
+      "status": "passed-new-entity-getter-contracts-only"
+    },
+    {
+      "path": ".tooling/r1-controller-move-production-validation/result.json",
+      "bytes": 85249,
+      "sha256": "10bcb0b41e4754d89179fe7730617ad7c8de8ae1cd7aa1cf5bfd7c8f393637cc",
+      "status": "passed-controller-move-production-prefix-and-saved-map-integration-only"
+    },
+    {
+      "path": ".tooling/r1-world-distance-validation/result.json",
+      "bytes": 11908,
+      "sha256": "ff5e107478031fec30c32591afbca355bd72ee08ff5c57c30fe53f437da2390b",
+      "status": "passed-new-world-distance-components-only"
+    },
+    {
+      "path": ".tooling/r1-move-object-validation/result.json",
+      "bytes": 25897,
+      "sha256": "1788c04715e0a5dcd4c8c53370bf7e104264e8efbf829d7112945ef6027d0e3d",
+      "status": "passed-new-move-object-request-and-shared-state-only"
+    },
+    {
+      "path": ".tooling/r1-game-moved-saved-dependency-repair-validation/result.json",
+      "bytes": 78335,
+      "sha256": "1d785208662928bb59fedbee1d660b4e011950bb45221ea63a80d7c75b7b13e9",
+      "status": "passed-new-real-crowd-game-moved-after-managed-dependency-repair"
+    },
+    {
+      "path": ".tooling/r1-move-begin-integration-validation-retry1/result.json",
+      "bytes": 68299,
+      "sha256": "cd9495c15ed4078a58e33bb498d345c8ecb70df296d3c82dbde2d3593f5efb2f",
+      "status": "passed-associated-and-shared-begin-integration-prefix-only"
+    }
+  ],
+  "prior_artifacts_preserved": [
+    {
+      "path": ".tooling/r1-controller-move-production-validation/GrimDynasty.ControllerMoveProduction.dll",
+      "bytes": 18432,
+      "sha256": "6a94e369adfa8b1c26dd3ff83d3824469c4116d965ad7d81c95629ec04d26bec"
+    },
+    {
+      "path": ".tooling/r1-controller-move-production-validation/ControllerMoveProductionTests.exe",
+      "bytes": 107520,
+      "sha256": "6a97e835869e70e778e77d248771d23ea8e4479ad1b4f1da460f88fcba1a3098"
+    },
+    {
+      "path": ".tooling/r1-move-begin-integration-validation/GrimDynasty.ControllerMoveProduction.dll",
+      "bytes": 25600,
+      "sha256": "3737de04c31caf3e70b33d357360b7d85739bc75b5b52bdc4672f58c1976079a"
+    },
+    {
+      "path": ".tooling/r1-move-begin-integration-validation/GameMoveBeginTests.exe",
+      "bytes": 140800,
+      "sha256": "dcbec87782854e1826707585aea7d07f374681bd0eb90476c26cf71f8029a67c"
+    },
+    {
+      "path": ".tooling/r1-move-begin-integration-validation/result.json",
+      "bytes": 71091,
+      "sha256": "8aa54d7a71ea87c350f3e4f9b93e82e5e633e2c349a70707d4a1575097dba615"
+    },
+    {
+      "path": ".tooling/r1-move-begin-integration-validation-retry1/GrimDynasty.ControllerMoveProduction.dll",
+      "bytes": 25600,
+      "sha256": "3737de04c31caf3e70b33d357360b7d85739bc75b5b52bdc4672f58c1976079a"
+    },
+    {
+      "path": ".tooling/r1-move-begin-integration-validation-retry1/GameMoveBeginTests.exe",
+      "bytes": 140800,
+      "sha256": "1b77e1c92e5f4e9f6c1708cf88710dc97b0de95c1d516ea383fe45afdb0f8f63"
+    }
+  ],
+  "fixture_resources": [
+    {
+      "path": "docs/reverse-client/r1-mainmenu-complete-member/mainmenu.map.bin",
+      "bytes": 1091357,
+      "sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-0.json",
+      "bytes": 1306,
+      "sha256": "99174ba1196eae2c109ad46c18fdcbf2e368923d49117739d0496829d3389d93"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-1.json",
+      "bytes": 1492,
+      "sha256": "d3d75935c98d5909f95ce0ca5c330e110dd42f5a4251ec881706c95c00edd4bf"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-2.json",
+      "bytes": 1260,
+      "sha256": "267ec1e9b06cd9c54812eeaee3e0a8a7b7ff7cc9223f42823de48c2a43213895"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-3.json",
+      "bytes": 1494,
+      "sha256": "6512c54802bcd3b6ad1bb83fe86b8b35a5f0e98397245a8347501cece66c7b4b"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-records/terrain-4.json",
+      "bytes": 1423,
+      "sha256": "e829033a0fb91dfb904973a53809b1eda34f41c5369a9b22726637dc4cde98ee"
+    },
+    {
+      "path": "docs/reverse-client/r1-terrain-surface-strings/inspection.json",
+      "bytes": 5962,
+      "sha256": "56db24887edb67e188ba5f034d3734c24042e973c70be4c3e833896942b1a75f"
+    }
+  ],
+  "fixture_scope": "Current saved NavigationSearchWrapper.Scene and GameControllerMoveProductionIntegrationTests.Composition constructors only; no old suite Run or UCRT/tick fixture.20setupchecks excluded.",
+  "entrypoint": "GameWaypointValidationProgram",
+  "output": ".tooling/r1-waypoint-production-validation",
+  "production_name": "GrimDynasty.ControllerMoveProduction.dll",
+  "test_name": "GameWaypointTests.exe",
+  "old_suites_to_run": [],
+  "old_executable_entrypoints_to_invoke": [],
+  "dependency_inventory_source": {
+    "path": "tools/r1_move_object_replan_ground_build_fingerprints.json",
+    "bytes": 28359,
+    "sha256": "b8f0f6050f3c2b568e1e534408bd02cef5e684172f1ababa3ced8ab8ff947695"
+  },
+  "dependency_selections": [
+    {
+      "name": "GrimDynasty.Actions.dll",
+      "selected_sha256": "2a58d78272c2ee0f41f96e4450f09309031b9e04b1497812dc92449b66ba8ae6",
+      "selected_path": ".tooling/r1-controller-move-production-validation/GrimDynasty.Actions.dll",
+      "historical_move_object_closure_sha256": "3ea34074db9d5a67d7dffb702eb053b703dc3b754d0db442aeadd71247e15c58",
+      "historical_path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.Actions.dll",
+      "equal_hash": false,
+      "decision": "Root explicitly selected current passed Begin closure after read-only source review; no silent old-DLL replacement",
+      "review_basis": "Optional UInt64FieldWords mode and explicit Unknown checks; old scalar branch retained",
+      "validation_boundary": "This new targeted composition will exercise the unchanged MoveObject DLL with the selected current dependencies. It does not establish all old callers or full ABI/native compatibility."
+    },
+    {
+      "name": "GrimDynasty.WorldCoordinates.dll",
+      "selected_sha256": "796566bdf812c09296539a8f3c3a9c7c50482c9440a82c03573e4e03b74a1acf",
+      "selected_path": ".tooling/r1-move-action-construction-validation/GrimDynasty.WorldCoordinates.dll",
+      "historical_move_object_closure_sha256": "6365ad6a051d6ffbb4009824d98fa899bec89f5933dea383a9a3d98f193e71c7",
+      "historical_path": ".tooling/r1-game-moved-saved-dependency-repair-validation/GrimDynasty.WorldCoordinates.dll",
+      "equal_hash": false,
+      "decision": "Root explicitly selected current passed Begin closure after read-only source review; no silent old-DLL replacement",
+      "review_basis": "Added borrowed-field constructors; existing data representation and ordinary access preserved",
+      "validation_boundary": "This new targeted composition will exercise the unchanged MoveObject DLL with the selected current dependencies. It does not establish all old callers or full ABI/native compatibility."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/reverse-client/r1-move-production-imports/inspection.json",
+      "bytes": 8136,
+      "sha256": "ec6646c086f0126aedc5ec2e35e0e347666731827de176db43edbfbe71a2bccc"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-callback-dependencies/inspection.json",
+      "bytes": 41045,
+      "sha256": "c0f0348d8f0712b35efd22d7ed36282065bfc31c78ee18b0f1d870e036a4afab"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-mouse-act-slots/inspection.json",
+      "bytes": 4547,
+      "sha256": "87f3a349c35683ed734385e1d12c3358446bc42433d1b22eb59cbb182b4c51e0"
+    },
+    {
+      "path": "docs/reverse-client/r1-engine-camera-target/05-Target-0x18022c0b0-procedure_assembly.json",
+      "bytes": 9842,
+      "sha256": "a685be3df2b7f13663425ced1c6b5700fb7633b0f8a7794565fc1f05505af58f"
+    },
+    {
+      "path": "docs/reverse-client/r1-player-move-dispatch/06-MoveDispatch-0x180124340-procedure_pseudo_code.json",
+      "bytes": 17062,
+      "sha256": "c2e9030564356be2501841be28d0eff61a7e8df92085b8b476a91b660be040ab"
+    },
+    {
+      "path": "docs/reverse-client/r1-player-move-dispatch/07-MoveDispatch-0x180124340-procedure_assembly.json",
+      "bytes": 17985,
+      "sha256": "9395fa49694c6962fe6df877cfb11e75ef6b02c03ed4f27fa1585d258a061c81"
+    },
+    {
+      "path": "docs/reverse-client/r1-movement-action-path/10-MoveAction-0x180127dd0-procedure_pseudo_code.json",
+      "bytes": 14707,
+      "sha256": "85ecda1213c2e0b9ca93213a9cefa22dfef8b4737eecf4d1fbea53b5999c5480"
+    },
+    {
+      "path": "docs/reverse-client/r1-movement-action-path/11-MoveAction-0x180127dd0-procedure_assembly.json",
+      "bytes": 14602,
+      "sha256": "aa00ae9415deb63c506eb1671208e3ac03b2939fe86a42f8fb3dc8f7d202cc63"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-production-engine-run1/07-EngineMoveProduction-0x180078620-procedure_pseudo_code.json",
+      "bytes": 11055,
+      "sha256": "25abb337cc4ddaee809520c571f6cdf15df8b3935ae15265b0edf1f0a4c68eec"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-production-engine-run1/08-EngineMoveProduction-0x180078620-procedure_assembly.json",
+      "bytes": 9879,
+      "sha256": "f521055d469f4fde829a03246325019b8e3407f0b077b864c533476385f5dbe0"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-action-dispatch-leaves-run1/04-MoveActionDispatch-0x180024ff0-procedure_pseudo_code.json",
+      "bytes": 12479,
+      "sha256": "f034e04fcbd5187fe698349e42b6c246b6b5b3c50516e66622fa6c02faf69094"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-action-dispatch-leaves-run1/05-MoveActionDispatch-0x180024ff0-procedure_assembly.json",
+      "bytes": 9854,
+      "sha256": "946f3f188168ef6298b804050849323ab65fcdd6c8aa5cc45e0e2a571b810238"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-action-dispatch-leaves-run1/07-MoveActionDispatch-0x180081860-procedure_pseudo_code.json",
+      "bytes": 11447,
+      "sha256": "e3153e08f3a06768139fcd0e7d8654cc37664e64ed30a33584534a3e5c5bbd5e"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-action-dispatch-leaves-run1/08-MoveActionDispatch-0x180081860-procedure_assembly.json",
+      "bytes": 9863,
+      "sha256": "6b158ad481d6e9861bf29633a310b37b88f17d0730f1ff288aa7f0ea77c7d3c8"
+    },
+    {
+      "path": "docs/reverse-client/r1-engine-callback-getters/05-EngineCallbackGetter-0x18007f070-procedure_assembly.json",
+      "bytes": 15760,
+      "sha256": "4126bd7841f918fa85a6ff5a254d28bb90e95fa56f4777e05204252ab0346733"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-associated-run3/04-GameAssociated-0x180077d60-procedure_pseudo_code.json",
+      "bytes": 12775,
+      "sha256": "3efa2aa4d5ae32203749fe5531bd4639cda075d0ee8d0cf475d2ede63d2cba3a"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-associated-run3/05-GameAssociated-0x180077d60-procedure_assembly.json",
+      "bytes": 12834,
+      "sha256": "46ef9acd82ccce2bfb29e1d68ad496a9a124236f00a351571c878ec2a3bc316f"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-associated-run3/06-GameAssociated-0x180077d60-procedure_callees.json",
+      "bytes": 11351,
+      "sha256": "b690ad867e2d252760da6063e7671a438044ca5697fc01a6b785dedf7820d63d"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-start/05-MoveStart-0x180082c00-procedure_assembly.json",
+      "bytes": 30149,
+      "sha256": "5694ff6ab9547a98ff95fe607fbc55e19f167aa80b086bb69c6f06758daea971"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-entity-constructors/05-GameEntityConstructor-0x180052030-procedure_assembly.json",
+      "bytes": 128236,
+      "sha256": "34a334ae8f918b20469fb57e7d55af0ffbcfba0d5900c42a4e371192d534f856"
+    }
+  ],
+  "rea_completed": [
+    {
+      "path": "docs/reverse-client/r1-move-action-dispatch-leaves-run1/summary.json",
+      "bytes": 40233,
+      "sha256": "c6bdf6cdb0e64fe1266337ddbf702b9321628d6d270ebb3180c06762c6f578d4",
+      "calls": 11,
+      "target_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-production-engine-run1/summary.json",
+      "bytes": 45800,
+      "sha256": "e7a25b947c3871b8bd9993f807f43d2fe22c32ea65fddad110526040084df72d",
+      "calls": 11,
+      "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    },
+    {
+      "path": "docs/reverse-client/r1-movement-action-path/summary.json",
+      "bytes": 56956,
+      "sha256": "d9bbdea2cfaaf78990fef3aa1728562838832703e180a9136b364a4d38458e93",
+      "calls": 18,
+      "target_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "path": "docs/reverse-client/r1-player-move-dispatch/summary.json",
+      "bytes": 40052,
+      "sha256": "6ddab1690d46a3e654b644b79b9a70febf5da083739827365da275e4a372b261",
+      "calls": 11,
+      "target_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-associated-run3/summary.json",
+      "bytes": 38694,
+      "sha256": "141fb8446b8f4d9120462b293aa41ead0e80301ff4414c266815c49f62731796",
+      "calls": 8,
+      "target_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-world-distance-run1/summary.json",
+      "bytes": 36486,
+      "sha256": "d50cc0ca743cfe5c52640617a06ad0e22bc01d415d3f800c833274c3521f4899",
+      "calls": 8,
+      "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "unchanged_dependency_sources": [
+    {
+      "path": "src/reverse_client_actions/PlayerAliveContracts.cs",
+      "bytes": 10831,
+      "sha256": "1f7738be76415c564aeafbb4f9ee63922470a85cb6afec339dc9053b019b9ba0"
+    },
+    {
+      "path": "src/reverse_client_actions/EntityMovementContracts.cs",
+      "bytes": 14432,
+      "sha256": "74b2f2348f36562208616df81af2b6dcc56e6fdd5a144b6b3c68e3e1379a6348"
+    },
+    {
+      "path": "src/reverse_client_actions/EngineMouseGetterContracts.cs",
+      "bytes": 6515,
+      "sha256": "808fe7b46e63ea65bffda8acd79ed3bee97cf9e15fb50c654aa60658be412280"
+    },
+    {
+      "path": "src/reverse_client_actions/ControllerAiLookupContracts.cs",
+      "bytes": 5042,
+      "sha256": "c0ecdd55ef9ea3602f33ca03ef05d9ef583998144cb020b44c92fc5b993feff2"
+    },
+    {
+      "path": "src/reverse_client_actions/SkillReferenceNumberContracts.cs",
+      "bytes": 8064,
+      "sha256": "a51055a373eb5028a43d7199b3275e5d64b6c214020c4b48870c734c5d74f898"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMoveActionConstruction.cs",
+      "bytes": 7554,
+      "sha256": "2e258e8b66e00e723c905a59fc043a6fa029751f885afc2fdc361d2fae2b368e"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldPositionWordBridge.cs",
+      "bytes": 1680,
+      "sha256": "f5ac9ed7b47862c8a761293ee38bde6ec9856826b28b10ecf852013f6d6ba420"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldCoordinateContracts.cs",
+      "bytes": 11600,
+      "sha256": "17f7250d375099968efaf39f51d6da9cdb7b1aaa23be65543c52907aeab8dfe4"
+    },
+    {
+      "path": "src/reverse_client_actions/ActionDispatch.cs",
+      "bytes": 11430,
+      "sha256": "713793fc9dc748a2f9861af50a11f0d2d5eac702b411424a2ba4a32ebe6d7ab5"
+    },
+    {
+      "path": "src/reverse_client_actions/ActionExecutor.cs",
+      "bytes": 3898,
+      "sha256": "8f246e35a087647312604093747efc33d8560c4e1ad094e7b3fd030767e278a7"
+    },
+    {
+      "path": "src/reverse_client_actions/MoveActionState.cs",
+      "bytes": 4145,
+      "sha256": "94834f62edf84161774142dac5714f6c6d1011bde746530a1d6b550c322cab5b"
+    },
+    {
+      "path": "src/reverse_client_actions/MoveBoundaries.cs",
+      "bytes": 4695,
+      "sha256": "d8ab940c1dc0e36aaac39daecd21a78c2132fa45b0cbff4b1b0c1872d0a0e916"
+    },
+    {
+      "path": "src/reverse_client_actions/MoveContracts.cs",
+      "bytes": 10133,
+      "sha256": "ae09ce2bb749341b35130c0e10baa60fd60be8df65af7d419525e72fe0c2c198"
+    },
+    {
+      "path": "src/reverse_client_actions/PlayerMoveRequestContracts.cs",
+      "bytes": 20747,
+      "sha256": "a4ecc9211cf1e098d2571fd96ef6ccab2318cb2124e7de09e38d4a1468fe8561"
+    },
+    {
+      "path": "src/reverse_client_actions/ControllerStateTransitionState.cs",
+      "bytes": 12105,
+      "sha256": "a8cdfe767b58d2198b3dbdf4746dc18b230d845c5651a7e4978765b87e9e1d79"
+    },
+    {
+      "path": "src/reverse_client_actions/ControllerStateTransitionContracts.cs",
+      "bytes": 20068,
+      "sha256": "6de51e517e7ac4b137b86186b70b4341a4ff248fb4227d562c0baafa9301d0de"
+    },
+    {
+      "path": "src/reverse_client_actions/GameDurationDamageManager.cs",
+      "bytes": 12034,
+      "sha256": "9df5ed2c6fbbce4a14605e744c552472b7a5e1411fef2eb7cac699651455260b"
+    },
+    {
+      "path": "src/reverse_client_actions/GameRunSpeedState.cs",
+      "bytes": 2404,
+      "sha256": "eb6194fc449d4953c8790a1e6fea745585b17a2beca20290ce94e30dce6bf9da"
+    },
+    {
+      "path": "src/reverse_client_actions/GameRunSpeedContracts.cs",
+      "bytes": 6783,
+      "sha256": "6bb417bf2970a0b3f9fd9dccf17f4d815661398d13244141172f00ab5aae5cb4"
+    },
+    {
+      "path": "src/reverse_client_actions/MoveManagerContracts.cs",
+      "bytes": 4208,
+      "sha256": "06ad8a3ade3992878773cbff1119fe80b8ed699bfb151ff3846372f89bcb55fb"
+    },
+    {
+      "path": "src/reverse_client_actions/SkillReferenceContracts.cs",
+      "bytes": 6792,
+      "sha256": "4db7f5c449101376e5cc11e911933d8d481e4f3427dd0e0437573b11b2e47e35"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldVectorDifferenceContracts.cs",
+      "bytes": 2658,
+      "sha256": "7847f051714fdb51fa2cd0f5c370691492727945dbc1fc1e73b88fb38f435368"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldDistanceContracts.cs",
+      "bytes": 4036,
+      "sha256": "9c8eadc38244500b3f69442f986d27ad9b4e26b87c16852d322c62cfcffc26db"
+    },
+    {
+      "path": "src/reverse_client_actions/GamePathPrecheckContracts.cs",
+      "bytes": 13491,
+      "sha256": "b748d368946a77e308577508eb901a335fecb526047966f36c70ddc2464629a9"
+    },
+    {
+      "path": "src/reverse_client_actions/WaypointState.cs",
+      "bytes": 3397,
+      "sha256": "131f3f485297c88da59a1a52d35b90d9849042a974e528357833d3a4272b5b5c"
+    },
+    {
+      "path": "src/reverse_client_actions/WaypointContracts.cs",
+      "bytes": 11300,
+      "sha256": "8d01cb4234516dc7463367a38436e037159e4e2cd60cc846b933b280189cc1fe"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationMoveObjectContracts.cs",
+      "bytes": 19697,
+      "sha256": "73f0a08e7ac7134f6b0959892bd0981a3c3801c9849900803ddf07b5819c8161"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationCrowdAdapterContracts.cs",
+      "bytes": 13927,
+      "sha256": "a8b84543c281f478b500f8ea0c3ba56849422e40cac903a7124e41d0d43d0940"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationCrowdPathContracts.cs",
+      "bytes": 22857,
+      "sha256": "bc25e51d7037e666eb09ada9e1f71154a3453bc93d2747628a8e7b76e346ed6d"
+    },
+    {
+      "path": "src/reverse_client_actions/NavigationCrowdStateContracts.cs",
+      "bytes": 26800,
+      "sha256": "5777a5d208a95ee9ae72d352ac871a70bb72925382ffa2cccc0c945245506154"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldPositionInitializationContracts.cs",
+      "bytes": 4672,
+      "sha256": "d34b9dd74b846cef92f4e2373cef8f04dab111719d4fd5f1d3d2615be2f22bdd"
+    }
+  ],
+  "expected_integration": {
+    "actual_target_submitted": true,
+    "repeat_preserved_identity": true,
+    "ignored_floor_zero": true,
+    "post_submission_prefix": true,
+    "begin_waypoint_connected": true,
+    "next_stop_rva": "0x5ae40",
+    "action_submission_completed": false,
+    "walking_accepted": false,
+    "gameplay_accepted": false
+  },
+  "original_read": false,
+  "original_executed": false,
+  "backend_started": false,
+  "build_executed": false,
+  "tests_executed": false,
+  "system_library_loaded": false,
+  "native_math_calls": 0,
+  "physical_mouse": false,
+  "walking_accepted": false,
+  "action_submission_completed": false,
+  "gameplay_accepted": false,
+  "boundary": "Ordinary same-Region no-portal queue and Agent target request composition only. Actual saved Ground, existing navigation, real Agent construction/Created/GetGroup/Join and real MoveObject are used; OWN initial position, hot globals, queue allocator/storage and address registry binding stay explicit. Full request reaches later unbound Animations05AE40 if validated; no movement frame, physical mouse or game acceptance.",
+  "resource_policy": "Root live resource/mutex review and exact formal approval before two serial small compiles and one new targeted test mode. No Rea or original input is opened."
+}

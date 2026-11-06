@@ -1,0 +1,36 @@
+{
+    "schema":  "grim-dynasty-r1-ground-hit-official-receipt",
+    "utc":  "2026-11-05T07:14:03.5551427Z",
+    "recipe":  ".tooling/r1-ground-hit-build-v2-prepared",
+    "manifest_sha256":  "f1fe95a6b825fd0957f2eb02f9719c7ef6e4ad57a170f1feaf2a6fd633d886a0",
+    "build_script_sha256":  "c607fd008bc99e1db0cb90d6e1ef277c87d81f2d7cc4069e19f0e9fbd71e325a",
+    "result":  {
+                   "path":  ".tooling/r1-ground-hit-validation-2/result.json",
+                   "sha256":  "631dbdda806e0788dfe7b66017af7ce8783f3a3cdc725f32847323883d5c5f10",
+                   "status":  "passed-click-to-move-ground-hit",
+                   "scenarios":  1,
+                   "assertions":  3,
+                   "compiles":  1,
+                   "failure":  null
+               },
+    "pins":  {
+                 "sources":  1,
+                 "dependencies":  54,
+                 "receipts":  2,
+                 "compiler_sha256":  "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00"
+             },
+    "gate":  "the 5 GiB physical/commit gate was applied before both the compile and the run",
+    "scope":  {
+                  "writes_to_target":  0,
+                  "debugger_used":  false,
+                  "original_read":  false,
+                  "original_executed":  false,
+                  "backend_started":  false
+              },
+    "what_it_establishes":  "A synthetic 2x2 flat ground produces an ordered, positive hit distance through the real intersection contract, and Position08.Q0 stays Unknown, i.e. the contract does not produce the hit position.",
+    "what_it_does_not_establish":  [
+                                       "that a loaded map behaves the same",
+                                       "that the ground position is available",
+                                       "any movement, navigation or presentation behaviour"
+                                   ]
+}

@@ -97,6 +97,16 @@ public static class MoveContractsTests {
   public override void Destroy0(ActionRecord action,uint flags){Arg0=action;U0=flags;Hit("destroy");var a=action as MoveActionRecord;if(a!=null)a.MarkReleased();}
  }
 
+ public static int Scenarios{get{return scenarios;}}
+ public static int Assertions{get{return assertions;}}
+ public static void RunAnimationKindNaNRegression(){scenarios=assertions=0;AnimationKindNaNRegression();}
+ static void AnimationKindNaNRegression(){
+  Test("different animation still replays with NaN speed and exact arguments",delegate{
+   var f=new F();f.B.Already=0;f.B.StateValue=5;f.B.OldSpeed=Single.NaN;f.B.AnimationValue.Kind08.Write(8);object name=f.Context.NoNameImport609568.Read(1);
+   f.B.On=delegate(string n,Probe p){if(n=="play"){Same(f.Role,p.Arg1,"Role identity");Same(name,p.Arg2,"Imported no-name identity");Equal(7u,p.U0,"Requested animation");Equal((byte)1,p.B0,"Loop byte");Equal(0u,p.U1,"Trailing DWORD");Equal(2.5f,p.F0,"Requested speed");}};
+   Pass(Move(f,999,7,2.5f));Equal(1,Count(f.B,"play"),"One replay");
+  });
+  }
  static void RunAll(){
   Test("fixed native class address rejects replacement identity",delegate{
    var f=new F();f.Context.CharacterClass.Write(f.CharacterClass);
@@ -203,12 +213,8 @@ public static class MoveContractsTests {
    float[] old={Single.NaN,2.5f,Single.NaN};float[] requested={2.5f,Single.NaN,Single.NaN};
    for(int j=0;j<old.Length;j++){var f=new F();f.B.Already=0;f.B.StateValue=5;f.B.OldSpeed=old[j];f.B.On=delegate(string n,Probe p){if(n=="animation-speed")p.AnimationValue.Kind08.Write(999);};Pass(Move(f,Single.NaN,7,requested[j]));Check(!Has(f.B,"play"),"NaN accepts captured animation match");Check(!Has(f.B,"set-state"),"No state change");}
   });
-  Test("different animation still replays with NaN speed and exact arguments",delegate{
-   var f=new F();f.B.Already=0;f.B.StateValue=5;f.B.OldSpeed=Single.NaN;f.B.AnimationValue.Kind08.Write(8);object name=f.Context.NoNameImport609568.Read(1);
-   f.B.On=delegate(string n,Probe p){if(n=="play"){Same(f.Role,p.Arg1,"Role identity");Same(name,p.Arg2,"Imported no-name identity");Equal(7u,p.U0,"Requested animation");Equal((byte)1,p.B0,"Loop byte");Equal(0u,p.U1,"Trailing DWORD");Equal(2.5f,p.F0,"Requested speed");}};
-   Pass(Move(f,999,7,2.5f));Equal(1,Count(f.B,"play"),"One replay");
-  });
-  Test("animation failure stops current manager then restores state",delegate{
+  AnimationKindNaNRegression();
+ Test("animation failure stops current manager then restores state",delegate{
    var f=new F();f.B.Already=0;f.B.PlayAccepted=0;var fresh=new MovementManager();var sequence=new List<uint>();
    f.B.On=delegate(string n,Probe p){if(n=="play")f.Role.MovementDC0.Write(fresh);if(n=="stop-manager")Same(fresh,p.Arg0,"Manager refreshed after Play");if(n=="set-state")sequence.Add(p.U0);};
    Pass(Move(f,0,7,2.5f));Equal(2,sequence.Count,"Two state calls");Equal(5u,sequence[0],"Enter moving");Equal(1u,sequence[1],"Restore after stop");

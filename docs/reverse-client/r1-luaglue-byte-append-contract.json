@@ -1,0 +1,70 @@
+{
+  "schema": "gd-luaglue-byte-append-contract-v1",
+  "status": "255CE0-normal-byte-append-evidenced-fixed11-domain-bounded",
+  "saved_utc": "2026-11-03T05:40:00.674Z",
+  "evidence": [
+    {
+      "path": "docs/reverse-client/r1-engine-luaglue-append-run1/04-LuaGlueByteAppend-0x180255ce0-procedure_pseudo_code.json",
+      "sha256": "89c9a5cb9ccedfa8e140b8ae141714bb4cdb3b0081ba2c2c793a501b1ed3a8a9"
+    },
+    {
+      "path": "docs/reverse-client/r1-engine-luaglue-append-run1/05-LuaGlueByteAppend-0x180255ce0-procedure_assembly.json",
+      "sha256": "4d5f7371fbd7e015299d5c285661fa8643cf0fd9a237ba091db1a936512edc5d"
+    }
+  ],
+  "prior_contract": "docs/reverse-client/r1-luaglue-source-preparation-contract.json remains unchanged as earlier partial knowledge",
+  "parameters": "RCX=destination descriptor; DL=captured input byte.255CEE zero-extends DL into ESI before any allocator call.",
+  "steps": [
+    {
+      "at": "255CEA..255CFC",
+      "effect": "Read64-bit len, compute (len+2) modulo2^64, compare unsigned against current capacity; JBE skips growth."
+    },
+    {
+      "at": "255CFE..255D16",
+      "effect": "Growth computes2*(len+2) modulo2^64, uses unsigned max with8 via CMOVA, writes capacity FIRST at255D12, then allocates that size. Failure does not justify rolling back the already-written capacity."
+    },
+    {
+      "at": "255D1B..255D30",
+      "effect": "After allocator return reload live len. If nonzero, reload live old pointer and memcpy len+1 bytes into actual new pointer. Zero len skips copy. Overflow, reentrant mutation and validity checks are not added by this body."
+    },
+    {
+      "at": "255D35..255D3D",
+      "effect": "Reload old pointer, free it, then publish new pointer. No further capacity store occurs."
+    },
+    {
+      "at": "255D45..255D4C",
+      "effect": "Reload live length and buffer, store the captured byte at buffer[length]."
+    },
+    {
+      "at": "255D50..255D60",
+      "effect": "Increment64-bit length in memory, then separately reload length and pointer and store one NUL at buffer[new_length]. No boolean return value is established."
+    }
+  ],
+  "bounded_composition": {
+    "domain": "Fixed11 hash-verified embedded byte records, explicit fresh nonaliasing descriptors, stable source descriptors/buffers, successful ordinary allocation and no external mutation. No arbitrary source input.",
+    "meaning": "255F70 calls this helper only for bytes other than09. With those conditions it retains every non-TAB byte in original order and each actual append updates length and appends NUL. This is now supported by the helper body; the prior plain-copy assumption remains invalid.",
+    "growth_condition": "Initial capacity is original source length N. With at least one TAB in each fixed record, total kept K<=N-1; for each append old_len+2<=K+1<=N, so the fixed ordinary path never needs growth. Establish actual TAB counts from pinned bytes, not from pseudocode display or injected data.",
+    "output_observation": "Root reports fixed-record prepared content total4153 bytes; execution receipt must still record actual native lengths/snapshot bytes. That total is not a success stub or a substitute for observed output.",
+    "zero_domain": "255F70 zero/all-TAB paths perform no append; no NUL store follows unless another evidenced operation writes it. Do not generalize the append terminator to an untouched buffer."
+  },
+  "failure_and_lifetime": {
+    "allocation": "Capacity may already have changed before allocator failure; old pointer/length remain as last observed unless external effects intervene.",
+    "copy_or_free": "Previously written capacity and any partial copy/free effects remain uncertain. New pointer publication occurs only after free returns.",
+    "stores": "A failure at the byte store, length increment or NUL store leaves a distinct partial prefix. No exception handler/rollback was established.",
+    "alias_reentry": "Reload order is proven; safe behavior under overlap, pointer invalidation, concurrent/reentrant mutation or wrapped sizes is not. Those domains remain Unsupported in bounded own implementation."
+  },
+  "limits": [
+    "No general native allocator/EH/lifetime equivalence",
+    "No arbitrary script loader",
+    "No service Initialized58 store",
+    "No completed2568D0 return; subsequent registry publication remains separate"
+  ],
+  "activity": {
+    "new_queries": 0,
+    "original_reads": 0,
+    "production_execution": 0,
+    "builds": 0,
+    "tests": 0
+  }
+}
+

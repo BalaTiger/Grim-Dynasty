@@ -1,0 +1,53 @@
+{
+    "schema":  "grim-dynasty-r1-engine-global-contradiction-v1",
+    "utc":  "2026-11-05T05:34:56.7674761Z",
+    "status":  "open-contradiction-no-conclusion",
+    "subject":  {
+                    "file":  "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+                    "sha256":  "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+                    "matches_evidence_baseline":  true,
+                    "image_base":  "0x180000000",
+                    "size_of_image":  "0xae6000"
+                },
+    "sections":  {
+                     "text":  "0x1000-0x608173 (0x60000020 read-only)",
+                     "rdata":  "0x609000-0xa5ae58",
+                     "data":  "0xa58000-0xa69ef0"
+                 },
+    "claimed_writer":  {
+                           "function":  "0x18001c040",
+                           "instruction":  "0x18001c0a0 MOV qword ptr [0x180421398], RBX",
+                           "second":  "0x18001c0df MOV qword ptr [0x1804213a0], RAX",
+                           "evidence_file":  "docs/reverse-client/r1-engine-reached-goal-dependencies-run1/05-EngineReachedGoal-0x18001c040-procedure_assembly.json"
+                       },
+    "observation":  {
+                        "target_rva":  "0x421398",
+                        "section_by_rva":  ".text",
+                        "disk_qword_at_0x421398":  "0xcccccc001e8e2b25",
+                        "runtime_qword_at_0x421398":  "0xcccccc001e8e2b25",
+                        "disk_qword_at_0x4213a0":  "0x1ba28498b48",
+                        "runtime_qword_at_0x4213a0":  "0x1ba28498b48",
+                        "disk_equals_runtime":  true,
+                        "code_identity_checks":  {
+                                                     "0x123810":  "match",
+                                                     "0x122960":  "match"
+                                                 }
+                    },
+    "why_this_matters":  "A store into a read-only .text page cannot be observed as \"disk equals runtime\". Either the operand interpretation of the saved body is wrong, or the RVA/file-offset mapping is wrong somewhere, or the two code-identity checks are not sufficient to prove a build match.",
+    "no_conclusion_drawn":  [
+                                "the Engine global address",
+                                "the ObjectManager global address",
+                                "any character or controller field value",
+                                "that the saved 1C040 body belongs to this build"
+                            ],
+    "disconfirming_facts_for_cycle_1_2":  [
+                                              "the sampling spec rooted at 0x421428 read code bytes, not a pointer",
+                                              "the 0x4213A0 value is byte-identical on disk, so it is not a runtime publication",
+                                              "VirtualQuery reported the value at 0x4213A0 as MEM_FREE only because that value was never a valid object pointer"
+                                          ],
+    "next_discriminators":  [
+                                "Disassemble 0x1C040 directly from the current disk image with dumpbin and compare byte-for-byte with the saved assembly, rather than trusting the saved text.",
+                                "Re-derive the .text/.data boundary from the current headers and re-map every RVA used by this chain.",
+                                "Only after those agree, decide whether the getter writes a global or something else."
+                            ]
+}

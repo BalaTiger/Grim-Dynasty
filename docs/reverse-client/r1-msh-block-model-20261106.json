@@ -1,0 +1,20 @@
+{
+ "schema": "grim-dynasty-r1-msh-block-model-v1",
+ "status": "block structure found, geometry layout still being pinned down",
+ "header_observation": {
+  "offsets_52_to_112": "a short field header. At offset 60 and 64 sit the 16-bit values 10 and 24, which look like counts. From offset 68 a run of floats begins.",
+  "offsets_116_to_139": "six consecutive 32-bit integers with the values 4, 1, 6, 5, 2, 3, which read as two triangles (4,1,6) and (5,2,3). This is index data, not vertices.",
+  "offsets_140_onward": "floats resume, and a 00 FF FF FF 00 00 80 3F marker appears at offset 173"
+ },
+ "conclusion": "the mesh is stored per section as index data followed by vertex data, so there is no single global vertex array followed by one index buffer. My earlier attempt to treat everything from 113 onward as a uniform 76-byte vertex array was wrong: it counted index words as record fields.",
+ "corrected_uv_finding": "with the base set at 141 the slots +12 and +16 are inside [0,1] for 610 of 610 records with ranges 0.4917 to 0.7967 and 0.0109 to 0.3344, so the UV pair is real but its absolute offsets shift with the section base. The UV values themselves match the earlier +40/+44 measurement to within the same ranges, which is consistent.",
+ "still_open": [
+  "the per-section index count and vertex count fields are not yet decoded",
+  "the vertex stride within a section is not yet proven",
+  "no drawable buffer assembly yet"
+ ],
+ "not_claimed": [
+  "that the index buffer format is fully understood",
+  "that a correct draw can be issued"
+ ]
+}

@@ -1,0 +1,326 @@
+{
+  "schema": "gd-original-readonly-code-prefix-stage-v1",
+  "archived_utc": "2026-11-04T17:23:29.9677737Z",
+  "status": "readonly-three-prefix-disk-mapped-differences-observed;released;cause-and-dispatch-unproven;disk-Rea-body-plan-held",
+  "report": {
+    "file": "docs/reverse-client/r1-original-readonly-code-prefix-20261104.md",
+    "sha256": "e6c236d94ebde78561d6972c343111d7f5657c0cd4ac983880bdee93d9cca684"
+  },
+  "original": {
+    "pid": 48596,
+    "creation_filetime": "134382857841687798",
+    "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\grim dawn.exe",
+    "disk_sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "loaded_exe_base": "0x7ff7bc200000",
+    "hwnd": 10490082,
+    "normal_Steam_launch_reported_by_parent": true,
+    "ui_safety_source": "Parent CUA session screenshots only, no local screenshot artifact",
+    "steam_offline_observed_utc_approx": "2026-11-04T17:07Z",
+    "cloud_off_observed_utc_approx": "2026-11-04T17:08Z"
+  },
+  "observation": {
+    "source": {
+      "file": ".tooling/gd-click-readonly-code-prefix-20261104/snapshot-e9a4502ba6ca4024b6a70c7597f52fc4.json",
+      "sha256": "45e385300df50245a2cae3547c2382fc3691c8905ebe0d28ca2b1fc7a9e53e04"
+    },
+    "started_utc": "2026-11-04T17:15:12.9147389Z",
+    "completed_utc": "2026-11-04T17:15:12.9518873Z",
+    "status": "observed-consistent-not-atomic",
+    "reads": 62,
+    "target_bytes_read": 1200,
+    "byte_total_includes_double_reads_and_widget_input_identity_checks": true,
+    "planned_unique_code_bytes": 192,
+    "observed_unique_code_bytes": 192,
+    "target_code_read_bytes_including_two_passes": 384,
+    "disk_comparison_prefix_bytes": 192,
+    "process_access": "0x101010",
+    "native_handle_closed": true,
+    "snapshot_is_atomic": false,
+    "click_causality_proven": false
+  },
+  "prefixes": [
+    {
+      "rva": "0x21000",
+      "preferred_va": "0x140021000",
+      "loaded_va": "0x7ff7bc221000",
+      "disk_file_offset": "0x20400",
+      "bytes": 64,
+      "differing_byte_count": 63,
+      "mapped_double_read_equal": true,
+      "raw_equal": false,
+      "full_bytes_source": ".tooling/gd-click-readonly-code-prefix-20261104/snapshot-e9a4502ba6ca4024b6a70c7597f52fc4.json",
+      "function_or_thunk_semantics_proven": false
+    },
+    {
+      "rva": "0x32340",
+      "preferred_va": "0x140032340",
+      "loaded_va": "0x7ff7bc232340",
+      "disk_file_offset": "0x31740",
+      "bytes": 64,
+      "differing_byte_count": 64,
+      "mapped_double_read_equal": true,
+      "raw_equal": false,
+      "full_bytes_source": ".tooling/gd-click-readonly-code-prefix-20261104/snapshot-e9a4502ba6ca4024b6a70c7597f52fc4.json",
+      "function_or_thunk_semantics_proven": false
+    },
+    {
+      "rva": "0x2acb92",
+      "preferred_va": "0x1402acb92",
+      "loaded_va": "0x7ff7bc4acb92",
+      "disk_file_offset": "0x2abf92",
+      "bytes": 64,
+      "differing_byte_count": 64,
+      "mapped_double_read_equal": true,
+      "raw_equal": false,
+      "full_bytes_source": ".tooling/gd-click-readonly-code-prefix-20261104/snapshot-e9a4502ba6ca4024b6a70c7597f52fc4.json",
+      "function_or_thunk_semantics_proven": false
+    }
+  ],
+  "bounded_interpretation": [
+    {
+      "rva": "0x32340",
+      "observed_bytes": "32c0c3",
+      "meaning": "XOR AL,AL; near RET",
+      "complete_EAX_or_RAX_zero_proven": false,
+      "following_padding_or_neighbor_is_same_function_proven": false
+    },
+    {
+      "rva": "0x2acb92",
+      "observed_bytes": "ff25288f0200",
+      "meaning": "RIP-relative indirect jump through slot",
+      "formula": "0x2acb92+6+0x28f28=0x2d5ac0",
+      "iat_rva": "0x2d5ac0",
+      "import_module": "Engine.dll",
+      "descriptor_index": 8,
+      "first_thunk_rva": "0x2d5060",
+      "zero_based_import_index": 332,
+      "cached_symbol": "?HandleMouseEvent@DisplayWidget@GAME@@UEAA_NAEBUMouseEvent@InputDevice@2@@Z",
+      "live_IAT_pointer_sampled": false,
+      "live_binding_to_Engine_D480_proven": false
+    },
+    {
+      "rva": "0x21000",
+      "bytes_examined": 64,
+      "meaning": "Prologue and incoming RCX/RDX preservation, then pointer load through gEngine import slot and dereference",
+      "formula": "0x21036+7+0x2b4203=0x2d5240",
+      "iat_rva": "0x2d5240",
+      "import_module": "Engine.dll",
+      "descriptor_index": 8,
+      "first_thunk_rva": "0x2d5060",
+      "zero_based_import_index": 60,
+      "cached_symbol": "?gEngine@GAME@@3PEAVEngine@1@EA",
+      "live_IAT_pointer_sampled": false,
+      "call_event_field_read_or_movement_branch_in_prefix": false,
+      "whole_handler_semantics_proven": false
+    }
+  ],
+  "interpretation_sources": "Existing raw mapped bytes plus hash-matched ordered import inventory and descriptor; no new original read or test during interpretation.",
+  "safety": {
+    "no_debugger_attach": true,
+    "no_breakpoints": true,
+    "no_target_writes": true,
+    "no_suspend_resume": true,
+    "no_target_calls": true,
+    "no_decryption_patching_or_full_dump": true,
+    "no_settings_change": true,
+    "resource_start_physical_and_commit_bytes": 5368709120,
+    "resource_per_read_physical_and_commit_bytes": 2147483648,
+    "minimum_observed_physical_bytes": 13662756864,
+    "minimum_observed_commit_headroom_bytes": 21941080064,
+    "deadline": "15s soft check between operations, not cancellation of blocking calls",
+    "compile_monitor": "Add-Type has no internal continuous 2GiB sampler",
+    "byte_difference_cause": "unknown; not classified as relocation, protection, transformation or debugger failure cause"
+  },
+  "release": {
+    "source": {
+      "file": ".tooling/gd-click-readonly-code-prefix-20261104/release.json",
+      "sha256": "e65bdc395b7ca296459c706762f51c599824cbb7dc09a3c7a60e8145e09b57c3"
+    },
+    "utc": "2026-11-04T17:16:23.5050785Z",
+    "status": "current-release-and-fixed-hashes-verified",
+    "known_unique_pids_absent": [
+      48596,
+      50192,
+      2072,
+      54192,
+      44352,
+      37144,
+      55088,
+      3168
+    ],
+    "remaining": [],
+    "game_processes": [],
+    "external_build_or_java_processes": [],
+    "steam_processes_remain_running": true,
+    "physical_available_bytes": 15838994432,
+    "commit_headroom_bytes": 26093060096,
+    "original_hashes_matched": 4,
+    "backup_copy_hashes_matched": [
+      19,
+      19
+    ],
+    "normal_close_requested": "CUA Alt+F4; HWND10490082 disappeared",
+    "original_exit_code": null,
+    "native_exit_code_observed": false,
+    "processes_terminated": false,
+    "original_saves_read": false,
+    "original_saves_restored": false,
+    "save_or_cloud_state_after_gameplay_verified": false
+  },
+  "prior_widget_stage": {
+    "file": "docs/reverse-client/r1-original-readonly-widget-click-20261104.json",
+    "sha256": "242b3f795e774b1c337091b2b8406dfcde1d91aad8bf50c5456142f0c6bb97be"
+  },
+  "owned_dll_postrun_audit": {
+    "source": {
+      "file": ".tooling/lldb-dll-breakpoint-20261104/postrun-audit.json",
+      "sha256": "fbeac820334b1de38b22318976ad1c0f99675cda0b253b7198eae7c0e2c12561"
+    },
+    "main_single_call_result": 42,
+    "main_call_count": 1,
+    "after_detach_DONE_debugger": 0,
+    "main_child_exit": 0,
+    "aggregate_status": "failed",
+    "failure": "Intermediate AFTER_DLL debugger=0 assertion was too early",
+    "worker_case_executed": false,
+    "whole_suite_passed": false,
+    "original_compatibility_verified": false
+  },
+  "preserved_failure": "docs/reverse-client/r1-original-onehit-click-20261104.json; original failure and unknown cause remain unchanged.",
+  "paused_Rea_plan": {
+    "directory": ".tooling/r1-live-widget-slot-bodies-prepared",
+    "targets": [
+      "0x140021000",
+      "0x140032340",
+      "0x1402acb92"
+    ],
+    "executed": false,
+    "reason": "Compared disk prefixes differ from observed loaded bytes; disk body analysis cannot be treated as the loaded handler."
+  },
+  "next": {
+    "status": "bounded-readonly-plan-only;no-original-or-backend-launch-this-round",
+    "targets": [
+      "EXE RVA0x21000 direct handler body",
+      "runtime IAT RVA0x2d5ac0",
+      "runtime IAT RVA0x2d5240"
+    ],
+    "basis": "Use saved runtime prefixes and fixed PE/import evidence to define the next bounded read; no query or execution added by this archive.",
+    "disk_pdata_candidate": {
+      "begin_rva": "0x21000",
+      "end_rva_exclusive": "0x226dd",
+      "bytes": 5853,
+      "loaded_function_boundary_proven": false,
+      "execution_proven": false
+    },
+    "limitations": "192 unique code bytes are insufficient. Do not treat disk Rea output as loaded semantics; no whole-image dump, decryption, patching, or interference with Steam verification.",
+    "next_formal_start_requires": [
+      "fresh original identity",
+      "original resource thresholds",
+      "Steam offline and per-game Cloud off",
+      "applicable formal approval and visible-launch notification"
+    ],
+    "production_changes": 0,
+    "production_builds": 0,
+    "interactive_reversed_client_available": false
+  },
+  "evidence": [
+    {
+      "file": ".tooling/gd-click-readonly-code-prefix-20261104/snapshot-e9a4502ba6ca4024b6a70c7597f52fc4.json",
+      "sha256": "45e385300df50245a2cae3547c2382fc3691c8905ebe0d28ca2b1fc7a9e53e04"
+    },
+    {
+      "file": ".tooling/gd-click-readonly-code-prefix-20261104/release.json",
+      "sha256": "e65bdc395b7ca296459c706762f51c599824cbb7dc09a3c7a60e8145e09b57c3"
+    },
+    {
+      "file": ".tooling/gd-click-readonly-code-prefix-20261104/config.json",
+      "sha256": "6a780236914ed3ac09eedd0bb314d83fb6621e4179afd0f3576384222e6531c8"
+    },
+    {
+      "file": ".tooling/gd-click-readonly-code-prefix-20261104/native-identity.json",
+      "sha256": "baed99d98a0ee303369c444217cf7621de63aad15878e1cd7eff5c22db0e55dd"
+    },
+    {
+      "file": ".tooling/gd-click-readonly-code-prefix-20261104/backup-recheck.json",
+      "sha256": "b1a99f9af4831364a00fd56f5c3279a3fdfe2e9506bbc3114126aae8592bbd19"
+    },
+    {
+      "file": ".tooling/gd-click-readonly-code-prefix-20261104/snapshot.cs",
+      "sha256": "380b823e5fdac15748517ebcd53bd2dcaaf1f1160a115c8c4fc6f1fb6be91f7f"
+    },
+    {
+      "file": ".tooling/gd-click-readonly-code-prefix-20261104/snapshot.ps1",
+      "sha256": "ab9dab0e5ee5dbf278c2d11b33fbdd53174d6fb81888b49bee0d1ea8f7600a53"
+    },
+    {
+      "file": "docs/reverse-client/r1-live-widget-slot-boundaries/inspection.json",
+      "sha256": "ad2bb1507f9a2a05650064bc99aa1b55c44e5918e2b01650a8adfce834396b9f"
+    },
+    {
+      "file": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "file": "docs/reverse-client/r1-provider-exe-iat/inspection.json",
+      "sha256": "4ef253f3155c548641a4f7f0f2cccd56fe1e24a7603ad10088c0e7d05260d8fc"
+    },
+    {
+      "file": "docs/reverse-client/r1-widget-exe-iat-derived/derivation.json",
+      "sha256": "9d7b916bd380706bebf297ddecbe7b07c003f215e0c28cc63a20c556efa9f3fb"
+    },
+    {
+      "file": "docs/phase-1/boundary-audit/boundary_inventory.py",
+      "sha256": "354e00aeefbdfbc1beefa3de4f2c8c93635a0cb9ad824329f0011454f47ce224"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-mouse-core/14-DisplayWidget-HandleMouseEvent-0x18000d480-procedure_assembly.json",
+      "sha256": "45ef30e5fd82cb9b9ed9c845255f457d8fc1848374592ddaaac15aa4c69c306c"
+    },
+    {
+      "file": "docs/reverse-client/r1-original-readonly-widget-click-20261104.json",
+      "sha256": "242b3f795e774b1c337091b2b8406dfcde1d91aad8bf50c5456142f0c6bb97be"
+    },
+    {
+      "file": "docs/reverse-client/r1-original-readonly-widget-click-20261104.md",
+      "sha256": "7586466d7c93679ce02e28056aea28c4e0d454bd81df479ef1d9ad6a5b3bd0ee"
+    },
+    {
+      "file": ".tooling/lldb-dll-breakpoint-20261104/postrun-audit.json",
+      "sha256": "fbeac820334b1de38b22318976ad1c0f99675cda0b253b7198eae7c0e2c12561"
+    }
+  ],
+  "archive_operations": {
+    "new_original_reads": 0,
+    "new_target_or_backend_launches": 0,
+    "new_tests": 0,
+    "new_implementation_or_builds": 0,
+    "original_saves_accessed": false,
+    "full_checkpoint_backup_copies_created": 0
+  },
+  "execution_receipts": {
+    "provenance": "Parent observed formal tool receipts; raw evidence files preserved.",
+    "snapshot": {
+      "session": 29531,
+      "initial_chunk": "b9d6d9",
+      "final_chunk": "a3dcc4",
+      "exit_code": 0,
+      "stdout_summary_fields_null": true,
+      "persisted_json_status": "observed-consistent-not-atomic"
+    },
+    "identity": {
+      "session": 48226,
+      "final_chunk": "3eeec4",
+      "exit_code": 0,
+      "stdout_summary_fields_null": true,
+      "persisted_identity_file_passed": true
+    },
+    "release": {
+      "session": 27210,
+      "final_chunk": "ad9f4c",
+      "exit_code": 0,
+      "json_output_normal": true
+    },
+    "summary_defect": "Final Select-Object projected OrderedDictionary members rather than dictionary values. Null stdout summaries do not override complete persisted JSON.",
+    "original_scripts_or_receipts_changed": false
+  }
+}

@@ -1,0 +1,30 @@
+{
+    "schema":  "grim-dynasty-r1-bootstrap-order-v1",
+    "utc":  "2026-11-06T01:53:25.9240373Z",
+    "key_correction":  "I had assumed GraphicsEngine::Initialize would precede CreateDevice. The call order in Engine::Initialize is the reverse: the device is created first, then the graphics resources are initialised.",
+    "call_order":  {
+                       "0x18007476b":  "GraphicsEngine::GraphicsEngine() at 0x90730, on a 0x1C0-byte allocation stored to Engine+0x1F8",
+                       "0x180074781":  "GraphicsEngine::CreateDevice(EWindow*, GraphicsEngineSettings const\u0026) at 0x90ba0, with rdx = window, r8 = settings",
+                       "0x180074aca":  "GraphicsEngine::Initialize(EWindow*, settings const\u0026, ResourceLoader*) at 0x90e60, with rdx = window, r8 = settings, r9 = [Engine+0x210]"
+                   },
+    "argument_map_for_engine_initialize":  {
+                                               "rcx":  "this (kept in rsi)",
+                                               "rdx":  "EWindow* (kept in r15), passed through to CreateDevice and GraphicsEngine::Initialize",
+                                               "r8":  "GraphicsEngineSettings const* (kept in r12), passed through likewise",
+                                               "r9b":  "bool, stored to [this+0x292]",
+                                               "stack+0xA0":  "FileSystem*, stored to [this+0x358] and never read or dereferenced anywhere in Initialize",
+                                               "stack+0xB0":  "bool to [this+0xC21]",
+                                               "stack+0xB8":  "bool to [this+0xC22]",
+                                               "stack+0xC8":  "bool to [this+0xC25]",
+                                               "stack+0xD0":  "bool to [this+0xC26]",
+                                               "stack+0xD8":  "bool to [this+0xC27]"
+                                           },
+    "filesystem_may_be_null":  "The FileSystem pointer is stored once at [this+0x358] and is never loaded again inside the 3049-byte body, so passing null does not fault there. Whether a later subsystem dereferences it out of band is not established.",
+    "resource_loader_is_internal":  "ResourceLoader is created inside Initialize and stored at [this+0x210] at 0x1800748f5, then reused at five later sites. A host does not need to build or supply it.",
+    "graphics_engine_initialize_nature":  "Its body contains no CreateDevice call. It performs six repeated rounds of allocation, string construction, a call to 0x1972c0 and one to 0x23090, which reads as populating internal resource or shader tables rather than creating the device.",
+    "not_established":  [
+                            "the meaning of the four trailing strings and the five booleans",
+                            "whether the six rounds in GraphicsEngine::Initialize depend on files being present",
+                            "whether any later engine subsystem dereferences the FileSystem pointer"
+                        ]
+}

@@ -15,10 +15,13 @@ namespace GrimDynasty.ReverseClient.Actions {
   public WorldPosition24 Destination,Source,FreshDestination;
   public Displacement3 Delta;
   public Field<ulong> RegionToken;
-  public bool RegionReturned,CoordinatesReturned,DifferenceReturned,DirectionWritten,PreviousWritten,RunSpeedEntered,Returned;
+  public GameRunSpeedInvocation RunSpeedCall;
+  public GameControllerMoveProductionInvocation MoveProductionCall;
+  public Field<float> ProducedRunSpeed;
+  public bool RegionReturned,CoordinatesReturned,DifferenceReturned,DirectionWritten,PreviousWritten,RunSpeedEntered,RunSpeedReturned,Returned;
   public int LookupCalls;
   public ControllerMoveToEntryInvocation(){Begin();}
-  internal void Begin(){Native.At=Coordinates.At=Difference.At=RunSpeed.At=0;FirstData=new ControllerCurrentDataInvocation();SecondData=new ControllerCurrentDataInvocation();Lookup=new PlayerMousePlayerLookupInvocation();Destination=new WorldPosition24();Source=new WorldPosition24();FreshDestination=new WorldPosition24();Delta=new Displacement3();RegionToken=new Field<ulong>();RegionReturned=CoordinatesReturned=DifferenceReturned=DirectionWritten=PreviousWritten=RunSpeedEntered=Returned=false;LookupCalls=0;}
+  internal void Begin(){Native.At=Coordinates.At=Difference.At=RunSpeed.At=0;FirstData=new ControllerCurrentDataInvocation();SecondData=new ControllerCurrentDataInvocation();Lookup=new PlayerMousePlayerLookupInvocation();Destination=new WorldPosition24();Source=new WorldPosition24();FreshDestination=new WorldPosition24();Delta=new Displacement3();RegionToken=new Field<ulong>();RunSpeedCall=new GameRunSpeedInvocation(RunSpeed);MoveProductionCall=null;ProducedRunSpeed=new Field<float>();RegionReturned=CoordinatesReturned=DifferenceReturned=DirectionWritten=PreviousWritten=RunSpeedEntered=RunSpeedReturned=Returned=false;LookupCalls=0;}
  }
  public sealed class ControllerStateTransitionInvocation {
   public readonly Invocation Native=new Invocation();
@@ -91,7 +94,7 @@ namespace GrimDynasty.ReverseClient.Actions {
     if(previous!=null){
      Exit(previous,i);c.ExitReturned=true;if(state.Changed2D0.Read(At(i,0x123e07))!=0){At(i,0x123f37);c.Returned=true;return;}
      At(i,0x123e17);oldFlag.Write(1);At(i,0x123e1a);var current=GetCurrentStateData125A00(controller,context,c.CurrentData);
-     uint incoming=unchecked((uint)Need(payload,At(i,0x123e1f)).Zero00.Read(i.At));if(current.ReadDword00(At(i,0x123e22))!=incoming){
+     At(i,0x123e1f);var incomingBits=Need(payload,i.At).Zero00.Snapshot();At(i,0x123e22);uint incoming=unchecked((uint)incomingBits.Read(i.At));if(current.ReadDword00(i.At)!=incoming){
       At(i,0x123e2d);current=GetCurrentStateData125A00(controller,context,c.CurrentData);uint oldId=current.ReadDword00(At(i,0x123e32));At(i,0x123e34);var manager=GameReachedGoalEngineContracts.GetObjectManager01C040(context.Lookup.Engine,i);
       At(i,0x123e3f);throw new MissingContract(0x019190,"Actual019190 target lookup remains unclosed after singleton; captured target="+oldId+", manager="+(manager==null?"null":"nonnull"));
      }
@@ -124,8 +127,14 @@ namespace GrimDynasty.ReverseClient.Actions {
   static MoveCharacter Resolve(Field<MoveCharacter> captured,PlayerMouseState state,ControllerStateTransitionContext context,ControllerMoveToEntryInvocation c,uint test,uint ownerAt,uint call,uint store){
    var i=c.Native;var role=captured.Read(At(i,test));if(role!=null)return role;At(i,ownerAt);var owner=state.Owner08.Snapshot();At(i,call);c.LookupCalls++;role=PlayerMousePlayerLookupContracts.Resolve128530(owner.Read(0x128536),context.Lookup,c.Lookup);At(i,store);state.CachedRole10.Write(role);return role;
   }
-  static float RunSpeed069040(MoveCharacter role,byte mode,Invocation i){At(i,0x069040);throw new MissingContract(i.At,"Recovered GetRunSpeed069040 still requires actual attribute and virtual-stat producers; no speed field/default/callback substituted");}
-  static void Move124340(Controller controller,WorldPosition24 destination,float speed,Invocation i){At(i,0x124340);throw new MissingContract(i.At,"124340 allocation/531A30/082B10/127DD0 production composition is not implemented; no MoveAction or navigation request invented");}
+  static float RunSpeed069040(MoveCharacter role,byte mode,ControllerStateTransitionContext context,ControllerMoveToEntryInvocation c){if(context.RunSpeed==null){At(c.RunSpeed,0x069040);throw new MissingContract(c.RunSpeed.At,"Run-speed composition is unbound; no speed field/default/callback substituted");}return GameRunSpeedContracts.GetRunSpeed069040(role,mode,context.RunSpeed,c.RunSpeedCall);}
+  static void Move124340(Controller controller,WorldPosition24 destination,float speed,ControllerStateTransitionContext context,ControllerMoveToEntryInvocation call){
+   At(call.Native,0x124340);if(context.MoveProduction==null)throw new MissingContract(call.Native.At,"124340 production composition is unbound; no MoveAction or navigation request invented");
+   // These are the concrete166020 caller's register/stack values, not defaults
+   // for the general124340 contract. Keep the nested failure prefix available.
+   call.MoveProductionCall=new GameControllerMoveProductionInvocation();
+   try{GameControllerMoveProductionContracts.MoveTo124340(controller,destination,Field<uint>.Of(0),Field<uint>.Of(0),Field<uint>.Of(5),Field<float>.Of(speed),context.MoveProduction,call.MoveProductionCall);}catch(MissingContract error){call.Native.At=error.Address;throw;}
+  }
   public static void MoveToOnBegin166020(PlayerMouseState state,ControllerStateTransitionContext context,ControllerMoveToEntryInvocation invocation){
    var c=Need(invocation,0x16602c);c.Begin();var i=c.Native;ControllerPlayerStateFields.ForBound(state,At(i,0x16602c));var ownerBits=state.Owner08.Snapshot();At(i,0x166030);var data=GetCurrentStateData125A00(ownerBits.Read(0x125a0a),context,c.FirstData);
    CopyPosition(data.Position10,c.Destination,i,0x16603a,0x16603e,0x166043,0x166048);At(i,0x16604e);c.RegionToken.CopyFrom(c.Destination.Q0);c.RegionReturned=true;
@@ -139,8 +148,8 @@ namespace GrimDynasty.ReverseClient.Actions {
    At(i,0x1660ef);x=fields.Direction20.X0.Snapshot();At(i,0x1660f4);y=fields.Direction20.Y4.Snapshot();At(i,0x1660fc);z=fields.Direction20.Z8.Snapshot();float yy=y.Read(At(i,0x166104));yy=F(yy*yy);float vx=x.Read(At(i,0x16610b));float xx=F(vx*vx);float vz=z.Read(At(i,0x16610f));float zz=F(vz*vz);At(i,0x166113);float squared=F(xx+yy);At(i,0x16611a);squared=F(squared+zz);At(i,0x16611e);float length=F((float)Math.Sqrt(squared));float scale=F(one.Read(At(i,0x166122))/length);At(i,0x166126);vx=F(vx*scale);At(i,0x16612a);float vy=F(y.Read(i.At)*scale);At(i,0x16612e);vz=F(vz*scale);
    At(i,0x166138);fields.Direction20.X0.Write(vx);fields.Direction20.Y4.Write(vy);At(i,0x166147);fields.Direction20.Z8.Write(vz);c.DirectionWritten=true;
    At(i,0x16614a);var prior=GameMovedContracts.ConstructWorldVec228AB0(c.FreshDestination,i);At(i,0x166158);var q=prior.Q0.Snapshot();var px=prior.D8.Snapshot();var py=prior.DC.Snapshot();At(i,0x16615b);fields.Previous30.Q0.CopyFrom(q);fields.Previous30.D8.CopyFrom(px);fields.Previous30.DC.CopyFrom(py);At(i,0x16615f);var pz=prior.D10.Snapshot();var pad=prior.D14.Snapshot();At(i,0x166164);cached=state.CachedRole10.Snapshot();At(i,0x166168);fields.Previous30.D10.CopyFrom(pz);fields.Previous30.D14.CopyFrom(pad);c.PreviousWritten=true;
-   role=Resolve(cached,state,context,c,0x16616d,0x166172,0x166176,0x16617b);At(i,0x166184);c.RunSpeedEntered=true;float speed=RunSpeed069040(role,0,c.RunSpeed);
-   At(i,0x166189);ownerBits=state.Owner08.Snapshot();At(i,0x1661a6);Move124340(ownerBits.Read(0x12437f),c.Destination,speed,i);At(i,0x1661b3);c.Returned=true;
+   role=Resolve(cached,state,context,c,0x16616d,0x166172,0x166176,0x16617b);At(i,0x166184);c.RunSpeedEntered=true;float speed=RunSpeed069040(role,0,context,c);c.ProducedRunSpeed.Write(speed);c.RunSpeedReturned=true;
+   At(i,0x166189);ownerBits=state.Owner08.Snapshot();At(i,0x1661a6);Move124340(ownerBits.Read(0x12437f),c.Destination,speed,context,c);At(i,0x1661b3);c.Returned=true;
   }
  }
 }

@@ -1,0 +1,46 @@
+{
+ "schema": "grim-dynasty-r1-geometry-verified-v1",
+ "status": "passed-geometry-cross-validated",
+ "vertex_format": {
+  "+0": "position float3",
+  "+12": "texcoord float2, both components inside [0,1] for 2292 of 2292 vertices, U 0.4917 to 0.9998, V 0.0057 to 0.4247",
+  "+20": "normal float3, unit length for 2292 of 2292",
+  "+32": "colour ubyte4, ten distinct values, ARGB white on most",
+  "+36": "blendweight float4, sums to exactly 1.0 for 2292 of 2292 vertices",
+  "+52": "tangent float3, unit length for 2292 of 2292",
+  "+64": "bitangent float3, unit length for 2292 of 2292",
+  "stride": 76,
+  "count": 2292
+ },
+ "index": {
+  "count": 3660,
+  "width": "u16",
+  "triangles": 1220,
+  "max": 2291,
+  "every_vertex_referenced": "yes, all 2292 indices appear"
+ },
+ "winding": {
+  "natural_order": "2 of 1218 triangles have a face normal agreeing with the averaged vertex normal, which is 0.2 percent",
+  "reversed_order": "1216 of 1218 agree, which is 99.8 percent",
+  "conclusion": "the stored index order is opposite to the vertex normal convention, so a draw must reverse the winding or disable back-face culling"
+ },
+ "degenerate_triangles": 2,
+ "unique_positions": "630 distinct positions among 2292 vertices, which is the expected duplication at UV seams",
+ "edge_topology": "2944 edges are used by one triangle and 356 by two, so the part is an open shell rather than a closed solid",
+ "scale": {
+  "bounding_box_metres": "0.272 x 0.417 x 0.320",
+  "centre": [
+   -0.001,
+   2.329,
+   -0.021
+  ],
+  "median_edge": "0.0161",
+  "max_edge": "0.0921",
+  "interpretation": "the part is limb-sized rather than a whole body, and it sits about 2.33 metres above the origin, so a per-section model transform is applied when the game places it"
+ },
+ "why_this_is_strong_evidence": "independent fields agree: positions produce face normals that match the stored normals at 99.8 percent once the winding is flipped, and the four blend weights sum to 1.0 exactly for every vertex. Random or misframed data would not satisfy either test.",
+ "files": {
+  "vertex_buffer": ".tooling/arc-extract/hero.vb.bin (174192 bytes)",
+  "index_buffer": ".tooling/arc-extract/hero.ib.bin (7320 bytes)"
+ }
+}

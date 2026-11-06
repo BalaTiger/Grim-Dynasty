@@ -20,20 +20,23 @@ namespace GrimDynasty.ReverseClient.Actions {
   public readonly Field<float> Seconds=new Field<float>(),MaximumRadius=new Field<float>(),NeighborFactor=new Field<float>(),CenterX=new Field<float>(),CenterZ=new Field<float>();
   public NavigationCrowdAgent Agent {get;internal set;}
   public bool Reached25CB73 {get;internal set;}
+  public bool Reached25CF79 {get;internal set;}
+  public bool SteeringChoiceReturned {get;internal set;}
   public bool EarlyMovedReturned {get;internal set;}
   public bool UpdateReturned {get;internal set;}
   public bool RaycastCalled {get;internal set;}
   public bool RaycastReturned {get;internal set;}
   public bool WaypointPopped {get;internal set;}
+  public bool StoppedState3Returned {get;internal set;}
   readonly List<uint> steps=new List<uint>();
   public uint[] ObservedAddresses {get{return steps.ToArray();}}
   public NavigationCrowdTickPrefixInvocation(){Reset();}
-  internal void Reset(){Native.At=0;EarlyMoved=new GameMovedInvocation();SynchronousReplan=null;Seconds.Forget();MaximumRadius.Forget();NeighborFactor.Forget();CenterX.Forget();CenterZ.Forget();Agent=null;Reached25CB73=false;EarlyMovedReturned=false;UpdateReturned=false;RaycastCalled=false;RaycastReturned=false;WaypointPopped=false;steps.Clear();}
+  internal void Reset(){Native.At=0;EarlyMoved=new GameMovedInvocation();SynchronousReplan=null;Seconds.Forget();MaximumRadius.Forget();NeighborFactor.Forget();CenterX.Forget();CenterZ.Forget();Agent=null;Reached25CB73=false;Reached25CF79=false;SteeringChoiceReturned=false;EarlyMovedReturned=false;UpdateReturned=false;RaycastCalled=false;RaycastReturned=false;WaypointPopped=false;StoppedState3Returned=false;steps.Clear();}
   internal void At(uint at){Native.At=at;steps.Add(at);}
  }
- // Actual saved25C440 prefix through the nonempty-waypoint edge to25CB73.
- // Bounded OWN domain: one State2 Member, optional synchronous replan, one
- // resulting Work. State1 and asynchronous request creation remain Unsupported.
+ // Actual saved25C440 prefix through the moving edges, plus an explicit
+ // single-State3/empty-Work continuation. Legacy ready entries still require
+ // State2 and one Work. State1/asynchronous creation remain Unsupported.
  // No Work reset occurs at entry: the real preceding tail must leave it empty.
  // Its native End read is not moved earlier merely to validate this precondition.
  // Created is a registration callback outside this body; callers may invoke the
@@ -106,9 +109,26 @@ namespace GrimDynasty.ReverseClient.Actions {
     byte ok=NavigationCrowdAdapterContracts.Project030BB0(q,a.Target78,ten,p==null?null:p.AsPoint(c.Native.At),b.Production.Adapter,c.Native);
     if(ok==0){c.At(0x25cb6a);var begin=points.Begin00.Snapshot();c.At(0x25cb6d);points.End08.CopyFrom(begin);}
    }
-   c.At(0x25cb28);var finalEnd=points.End08.Snapshot();c.At(0x25cb2c);if(SamePoint(finalEnd.Read(c.Native.At),points.Begin00.Read(c.Native.At),c.Native.At)){c.At(0x25cb31);a.NeedReplan140.Write(1);c.At(0x25cf79);throw new MissingContract(c.Native.At,"Empty waypoint takes the actual steering-skip edge; nonempty producer cannot be invoked");}
+   c.At(0x25cb28);var finalEnd=points.End08.Snapshot();c.At(0x25cb2c);if(SamePoint(finalEnd.Read(c.Native.At),points.Begin00.Read(c.Native.At),c.Native.At)){c.At(0x25cb31);a.NeedReplan140.Write(1);c.At(0x25cf79);c.Reached25CF79=true;}
   }
   public static void RunSingleReady25C440(NavigationCrowdGroup group,NavigationCrowdAgent agent,NavigationCrowdPointerDomain<NavigationCrowdAgent> domain,int ticks,NavigationCrowdTickPrefixBoundaries boundaries,GameMovedContext game,NavigationCrowdTickPrefixInvocation invocation){
+   RunSingleReadyCore(group,agent,domain,ticks,boundaries,game,invocation,false,null,null);
+  }
+  // A fixed alternate entry admits the observed empty-waypoint edge. It does
+  // not mark Goal or reset velocity/neighbors; the common producer must run.
+  public static void RunSingleReadyThroughSteeringChoice25C440(NavigationCrowdGroup group,NavigationCrowdAgent agent,NavigationCrowdPointerDomain<NavigationCrowdAgent> domain,int ticks,NavigationCrowdTickPrefixBoundaries boundaries,GameMovedContext game,NavigationCrowdTickPrefixInvocation invocation){
+   RunSingleReadyCore(group,agent,domain,ticks,boundaries,game,invocation,true,null,null);
+  }
+  // Explicit bounded State3 entry, preserving the same preparation, Previous
+  // copy and real projection before25C710. It never resumes after an exception.
+  // The shared registration Half is this entry's one34BADC source; the legacy
+  // ready entries retain their existing separately supplied constant view.
+  public static void RunSingleStoppedState3NoWork25C440(NavigationCrowdGroup group,NavigationCrowdAgent agent,NavigationCrowdPointerDomain<NavigationCrowdAgent> domain,int ticks,NavigationCrowdTickPrefixBoundaries boundaries,GameMovedContext game,NavigationCrowdTickPrefixInvocation invocation,NavigationCrowdStoppedFrameBoundaries stopped,NavigationCrowdStoppedFrameInvocation suffix){
+   var c=Need(invocation,0x25c440);c.Reset();c.At(0x25c440);Need(suffix,0x25c440).Reset();Need(stopped,0x25c440);var production=Need(Need(boundaries,0x25c440).Production,0x25c440);
+   if(!Object.ReferenceEquals(stopped.Proximity,production.Proximity)||!Object.ReferenceEquals(stopped.Constants,production.Constants)||!Object.ReferenceEquals(stopped.Global422980,production.Global422980))throw new MissingContract(0x25c440,"Stopped continuation must borrow the same prefix proximity, constants and global identities");
+   RunSingleReadyCore(group,agent,domain,ticks,boundaries,game,invocation,false,stopped,suffix);
+  }
+  static void RunSingleReadyCore(NavigationCrowdGroup group,NavigationCrowdAgent agent,NavigationCrowdPointerDomain<NavigationCrowdAgent> domain,int ticks,NavigationCrowdTickPrefixBoundaries boundaries,GameMovedContext game,NavigationCrowdTickPrefixInvocation invocation,bool allowEmptySteeringEdge,NavigationCrowdStoppedFrameBoundaries stopped,NavigationCrowdStoppedFrameInvocation suffix){
    var c=Need(invocation,0x25c440);c.Reset();var i=c.Native;c.At(0x25c461);var g=Need(group,i.At);var members=NavigationCrowdPointerHeader<NavigationCrowdAgent>.BorrowTyped(g.Members28);var end=members.Capture(NavigationCrowdPointerSlot.End,i.At);c.At(0x25c469);long memberCount=Difference(end.Read(i.At),members.Read(NavigationCrowdPointerSlot.Begin,i.At),i.At);
    c.At(0x25c4a1);var b=Need(boundaries,i.At);var production=Need(b.Production,i.At);var constants=Need(production.Constants,i.At);var scale=constants.SpeedTolerance34B9B0.Snapshot();
    var work=NavigationCrowdBorrowedPointerContracts.Work40(g,domain);c.At(0x25c4aa);var capacity=work.Capture(NavigationCrowdPointerSlot.Capacity,i.At);c.At(0x25c4ae);long workCapacity=Difference(capacity.Read(i.At),work.Read(NavigationCrowdPointerSlot.Begin,i.At),i.At);
@@ -116,13 +136,21 @@ namespace GrimDynasty.ReverseClient.Actions {
    c.At(0x25c4bd);float tickFloat=F(ticks,i.At);float seconds=Mul(tickFloat,R(scale,c,0x25c4d2),c,0x25c4d2);c.At(0x25c4d7);c.Seconds.Write(seconds);
    c.At(0x25c4e0);if(unchecked((ulong)workCapacity)<1){c.At(0x25c4eb);NavigationCrowdBorrowedPointerContracts.Reallocate034FE0(work,1,i);}
    c.At(0x25c50e);NavigationCrowdProximityContracts.Prepare25E900(new NavigationCrowdProximityIndex(g),1,i);
-   c.At(0x25c513);var seedX=b.Global4228C0.X.Snapshot();var seedY=b.Global4228C0.Y.Snapshot();c.At(0x25c51f);var ten=constants.Ten34BC70.Snapshot();c.At(0x25c528);c.MaximumRadius.Write(0);c.At(0x25c52c);var half=constants.Half34BADC.Snapshot();
+   c.At(0x25c513);var seedX=b.Global4228C0.X.Snapshot();var seedY=b.Global4228C0.Y.Snapshot();c.At(0x25c51f);var ten=constants.Ten34BC70.Snapshot();c.At(0x25c528);c.MaximumRadius.Write(0);c.At(0x25c52c);var half=(stopped==null?constants.Half34BADC:Need(production.Proximity,i.At).Half34BADC).Snapshot();
    c.At(0x25c535);g.Lower10.X.CopyFrom(seedX);g.Lower10.Y.CopyFrom(seedY);c.At(0x25c53b);var seedZ=b.Global4228C0.Z.Snapshot();c.At(0x25c541);g.Lower10.Z.CopyFrom(seedZ);
    c.At(0x25c545);seedX=b.Global4228C0.X.Snapshot();seedY=b.Global4228C0.Y.Snapshot();c.At(0x25c54d);g.Upper1C.X.CopyFrom(seedX);g.Upper1C.Y.CopyFrom(seedY);c.At(0x25c553);seedZ=b.Global4228C0.Z.Snapshot();c.At(0x25c559);g.Upper1C.Z.CopyFrom(seedZ);
    c.At(0x25c570);var begin=members.Capture(NavigationCrowdPointerSlot.Begin,i.At);c.At(0x25c574);var p=Need(begin.Read(i.At),i.At);var a=Need(p.Buffer.At(p.Index,i.At).Read(i.At),i.At);if(!Object.ReferenceEquals(a,agent))throw new MissingContract(i.At,"Caller agent differs from the actual single Member");c.Agent=a;
    CopyPoint(a.PreviousC4,a.Position48,c,0x25c57f,0x25c584,0x25c58c,0x25c58f);Project(g,a,ten,b,game,c);
    c.At(0x25c65a);if(a.State70.Read(i.At)==1){c.At(0x25c664);throw new MissingContract(i.At,"State1 request-completion/lock prefix lies outside the ready State2 domain");}
-   c.At(0x25c710);if(a.State70.Read(i.At)!=2){c.At(0x25c8c2);throw new MissingContract(i.At,"Non-State2 enters another actual membership path; ready producer not established");}
+   c.At(0x25c710);uint state=a.State70.Read(i.At);
+   if(state!=2){
+    c.At(0x25c8c2);
+    if(stopped==null||state!=3)throw new MissingContract(i.At,"Non-State2 requires the explicit same-State3 continuation; other membership paths remain unsupported");
+    try{NavigationCrowdStoppedFrameContracts.FinishReachedSingleState3NoWorkCaptured25C8C2(g,a,domain,stopped,Need(game,i.At).Callbacks,half,scale,suffix);}
+    catch(MissingContract error){c.UpdateReturned=suffix.UpdateReturned;c.At(error.Address);throw;}
+    c.MaximumRadius.CopyFrom(suffix.MaximumRadius.Snapshot());c.CenterX.CopyFrom(suffix.CenterX.Snapshot());c.CenterZ.CopyFrom(suffix.CenterZ.Snapshot());c.UpdateReturned=suffix.UpdateReturned;c.At(suffix.Native.At);c.StoppedState3Returned=true;return;
+   }
+   if(stopped!=null)throw new MissingContract(i.At,"Explicit stopped entry does not replace the State2 steering path");
    c.At(0x25c71a);if(a.NeedReplan140.Read(i.At)!=0){c.At(0x25c727);c.SynchronousReplan=new NavigationCrowdSynchronousReplanInvocation();NavigationCrowdSynchronousReplanContracts.Run25C727(g,a,production,c.SynchronousReplan,i);}
    c.At(0x25c832);NavigationCrowdTickHeaderContracts.PublishReachedWorkAndProximity25C832(g,a,domain,production.Proximity,i);BoundsAndUpdate(g,a,half,game,c);
    c.At(0x25c9c6);int lowerX=g.Lower10.X.Read(i.At);c.At(0x25c9ca);int upperX=g.Upper1C.X.Read(i.At);c.At(0x25c9ce);var workEnd=work.Capture(NavigationCrowdPointerSlot.End,i.At);int widthX=unchecked(upperX-lowerX);c.At(0x25c9d4);long workCount=Difference(workEnd.Read(i.At),work.Read(NavigationCrowdPointerSlot.Begin,i.At),i.At);
@@ -130,7 +158,7 @@ namespace GrimDynasty.ReverseClient.Actions {
    float centerX=Add(F(lowerX,0x25c9e8),Mul(F(widthX,0x25ca18),R(half,c,0x25ca1f),c,0x25ca1f),c,0x25ca27);float centerZ=Mul(F(widthZ,0x25ca24),R(half,c,0x25ca2b),c,0x25ca2b);c.At(0x25ca30);c.CenterX.Write(centerX);centerZ=Add(F(lowerZ,0x25ca3a),centerZ,c,0x25ca3d);c.At(0x25ca41);c.CenterZ.Write(centerZ);
    c.At(0x25ca46);if(workCount==0){c.At(0x25d2ef);throw new MissingContract(i.At,"Actual empty Work skips steering; no single-Work producer invoked");}if(workCount!=1)throw new MissingContract(i.At,"OWN prefix requires one resulting Work; the prior tail must really clear Work");
    c.At(0x25ca4f);c.NeighborFactor.CopyFrom(b.NeighborFactor34BC64.Snapshot());c.At(0x25ca70);var wp=work.Capture(NavigationCrowdPointerSlot.Begin,i.At);c.At(0x25ca73);p=Need(wp.Read(i.At),i.At);if(!Object.ReferenceEquals(p.Buffer.At(p.Index,i.At).Read(i.At),a))throw new MissingContract(i.At,"Actual Work identity differs from the processed Member");
-   Waypoints(g,a,ten,b,c);c.At(0x25cb73);c.Reached25CB73=true;
+   Waypoints(g,a,ten,b,c);if(c.Reached25CF79){if(!allowEmptySteeringEdge)throw new MissingContract(c.Native.At,"Empty waypoint takes the actual steering-skip edge; nonempty producer cannot be invoked");c.SteeringChoiceReturned=true;return;}c.At(0x25cb73);c.Reached25CB73=true;c.SteeringChoiceReturned=true;
   }
  }
 }

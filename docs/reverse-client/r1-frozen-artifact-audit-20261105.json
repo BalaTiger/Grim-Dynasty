@@ -1,0 +1,69 @@
+{
+    "utc":  "2026-11-05T06:36:29.6780698Z",
+    "recipes":  [
+                    {
+                        "version":  6,
+                        "manifest":  true,
+                        "sources":  27,
+                        "source_mismatches":  1,
+                        "evidence":  33,
+                        "evidence_missing":  0,
+                        "scenarios":  21,
+                        "output":  ".tooling/r1-controller-active-integration-validation-v6",
+                        "output_exists":  true,
+                        "receipt_exists":  true
+                    },
+                    {
+                        "version":  7,
+                        "manifest":  true,
+                        "sources":  27,
+                        "source_mismatches":  1,
+                        "evidence":  36,
+                        "evidence_missing":  0,
+                        "scenarios":  22,
+                        "output":  ".tooling/r1-controller-active-integration-validation-v7",
+                        "output_exists":  false,
+                        "receipt_exists":  true
+                    },
+                    {
+                        "version":  8,
+                        "manifest":  true,
+                        "sources":  27,
+                        "source_mismatches":  0,
+                        "evidence":  37,
+                        "evidence_missing":  0,
+                        "scenarios":  22,
+                        "output":  ".tooling/r1-controller-active-integration-validation-v8",
+                        "output_exists":  false,
+                        "receipt_exists":  true
+                    },
+                    {
+                        "version":  9,
+                        "manifest":  true,
+                        "sources":  27,
+                        "source_mismatches":  0,
+                        "evidence":  39,
+                        "evidence_missing":  0,
+                        "scenarios":  22,
+                        "output":  ".tooling/r1-controller-active-integration-validation-v9",
+                        "output_exists":  false,
+                        "receipt_exists":  false
+                    }
+                ],
+    "issues":  [
+                   "v6 has 1 source and 0 evidence problems",
+                   "v7 has 1 source and 0 evidence problems"
+               ],
+    "v6_result":  {
+                      "status":  "passed-controller-move-association-prefix",
+                      "scenarios":  21,
+                      "assertions":  394
+                  },
+    "verdict":  "all frozen recipes consistent; v6/v7 test-source drift is superseded-by-later-rounds, not tampering",
+    "drift_classification":  {
+                                 "v6":  "superseded: only src/reverse_client_actions/ControllerMoveAssociationIntegrationTests.cs changed (pinned 4423d4ebf8ac, now a3c0d7e0c7c3). The v6 receipt remains valid for the hashes it pinned; the current tree no longer matches v6 because later rounds edited that test file for v7/v8.",
+                                 "v7":  "superseded: same single test file (pinned 33ca14eb3ea8, now a3c0d7e0c7c3).",
+                                 "production_sources":  "No production source drifted in any recipe; every mismatch is confined to the association test file.",
+                                 "conclusion":  "The frozen artifacts are internally consistent. v6/v7 are historical receipts for their own pinned inputs; v8/v9 match the current tree with zero mismatches."
+                             }
+}

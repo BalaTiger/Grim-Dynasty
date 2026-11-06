@@ -1,0 +1,35 @@
+{
+    "schema":  "grim-dynasty-r1-window-creation-v1",
+    "utc":  "2026-11-05T10:37:08.4993972Z",
+    "evidence":  "docs/reverse-client/r1-engine-window-run3/inspection.json",
+    "winwindow_initialize":  {
+                                 "rva":  "0x2179b0",
+                                 "rows":  125,
+                                 "signature":  "bool WinWindow::Initialize(std::string const\u0026 title, int a, int b, int c, int d, void const* icon, EWindow::Style style, HWND__* parent)",
+                                 "sequence":  [
+                                                  "release the previous handle at this+8 through IAT 0x80302620 / 0x80302618, then clear it",
+                                                  "store the incoming integers: +0x2C (width), +0x30 (height), +0x34, +0x38, +0x3C (style selector)",
+                                                  "store the parent HWND argument at this+0x10",
+                                                  "choose one of two WndProc procedures by style: cmp eax,1 after sub eax,3 with cmova, selecting 0x218090 or 0x218210",
+                                                  "call IAT 0x80302390 with rcx=0 (module handle) and IAT 0x803020D0 with ecx=4 (cursor), the usual class/instance and cursor setup before window creation"
+                                              ],
+                                 "reading":  "The real window creation path: geometry and style are recorded, the parent HWND is kept at this+0x10, a window procedure is selected by style, and class/instance handles are prepared."
+                             },
+    "wndproc":  {
+                    "0x218090":  "window procedure variant A",
+                    "0x218210":  "window procedure variant B"
+                },
+    "correction":  "The two addresses are code (window procedures), not class-name strings; reading them as strings returns instruction bytes.",
+    "what_this_establishes":  [
+                                  "the window geometry/style/parent fields and their offsets on WinWindow",
+                                  "two window procedures exist and the style selects between them",
+                                  "creation loads the module handle and a cursor before creating the window"
+                              ],
+    "not_established":  [
+                            "the exact CreateWindowEx call site and its arguments",
+                            "the window class registration",
+                            "the plugin name string",
+                            "any executed window or device"
+                        ],
+    "next":  "Decode the remainder of 0x2179b0 to reach CreateWindowEx and the class registration, and decode 0x197020 for the plugin name resolution."
+}

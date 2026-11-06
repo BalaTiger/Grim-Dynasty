@@ -1,0 +1,31 @@
+{
+    "schema":  "grim-dynasty-r1-watchpoint-tool-selftest-v1",
+    "utc":  "2026-11-05T11:56:38.0250854Z",
+    "tool":  ".tooling/r1-watch-present-prepared/watch_engine_global.py",
+    "mechanism":  "CreateProcessW(DEBUG_ONLY_THIS_PROCESS) + WaitForDebugEvent + SetThreadContext with DR0/DR7; no int3, no code or memory modification, no injected module",
+    "registers":  {
+                      "dr0":  "target address",
+                      "dr7":  "0x90001",
+                      "dr7_decoded":  "L0=1, RW0=01 (write), LEN0=10 (8 bytes)"
+                  },
+    "selftest":  {
+                     "target":  ".tooling/r1-watch-present-prepared/bin/WatchTarget.exe",
+                     "fixed_address":  "0x40000000",
+                     "alloc_returned":  "0x40000000",
+                     "hit":  "true",
+                     "exception":  "0x80000004 STATUS_SINGLE_STEP",
+                     "dr6":  "0xffff0ff1",
+                     "dr6_bit0":  "set, so the trap came from DR0",
+                     "rip":  "0x7ffbdc29c1f5",
+                     "elapsed_s":  3.2
+                 },
+    "conclusion":  "The hardware watchpoint tooling works: it armed on a debug register, trapped the first 8-byte write to the watched address, and reported the instruction after the store.",
+    "why_this_matters":  "The single approved observation of the original client can now be taken with validated tooling instead of an untested script.",
+    "safety":  {
+                   "software_breakpoints":  false,
+                   "code_modified":  false,
+                   "target_memory_modified":  false,
+                   "module_injected":  false,
+                   "original_files_modified":  false
+               }
+}

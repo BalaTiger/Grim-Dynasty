@@ -1,0 +1,81 @@
+{
+  "schema": "grim-dynasty-fixed-exe-provider-byte-candidates-v1",
+  "started_utc": "2026-11-03T11:20:14.602Z",
+  "target": {
+    "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Grim Dawn.exe",
+    "sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "bytes": 4687944
+  },
+  "reader_sha256": "e301ca59555aa74465cbdc77e80027997dc08e96972c44db0797ac2f64ac9941",
+  "plan_sha256": "f96b9b6a6bcb51fcbf0ba6eaa3d4ac9dd6cf9351480eb3025746304153a6c3e1",
+  "proofs": [
+    {
+      "path": "docs/reverse-client/r1-provider-exe-iat/inspection.json",
+      "sha256": "4ef253f3155c548641a4f7f0f2cccd56fe1e24a7603ad10088c0e7d05260d8fc"
+    },
+    {
+      "path": "docs/reverse-client/r1-exe-register-provider-run1/summary.json",
+      "sha256": "e2ad212ac67642b7b98703be6fc1ff8c9ce3e648002e5089ecfe1f9269852706"
+    },
+    {
+      "path": "docs/reverse-client/r1-exe-register-provider-run1/owned-memory-summary.json",
+      "sha256": "9c183975251e2907bae2b0b3ab86de90982263c7cf58a0beff45c94d42c42f3c"
+    },
+    {
+      "path": "docs/reverse-client/r1-exe-register-provider-run1/04-RegisterProvider-IAT-0x1402d5510-xrefs.json",
+      "sha256": "7a4325cc02f37c8aa1288e63e1e3a3835f8c5707c8fca4688328b0d84fa7fa9b"
+    }
+  ],
+  "limits": {
+    "text_bytes": 3145728,
+    "text_read_passes": 1,
+    "candidate_count": 16,
+    "pdata_bytes": 4608,
+    "pdata_read_operations": 384,
+    "pdata_search_steps_per_candidate": 24,
+    "hash_chunk_bytes": 65536,
+    "report_bytes": 131072
+  },
+  "image_base": "0x140000000",
+  "operand_target": "0x1402d5510",
+  "search_section": {
+    "name": ".text",
+    "rva": 4096,
+    "raw_offset": 1024,
+    "raw_size": 2963456,
+    "flags": 1610612768
+  },
+  "text_bytes_examined": 2963456,
+  "text_read_passes": 1,
+  "single_pass_complete": true,
+  "pdata_bytes": 0,
+  "pdata_read_operations": 0,
+  "pdata_reads": [],
+  "candidates": [],
+  "candidate_limit_exceeded": false,
+  "byte_match_self_test": {
+    "status": "passed-analysis-byte-matcher",
+    "cases": 8,
+    "original_bytes_read": 0,
+    "game_tests": false
+  },
+  "decoded_instruction_bytes": 0,
+  "instruction_alignment_verified": false,
+  "direct_callers_proven": false,
+  "subprocesses": 0,
+  "backend_started": false,
+  "original_loaded_or_executed": false,
+  "source_stat_stable": true,
+  "source_closed": true,
+  "failures": [],
+  "limitations": [
+    "Only three byte encodings addressing the exact proven IAT slot are considered in one .text pass. Overlapping bytes or inline data can match; every candidate is unverified.",
+    "A .pdata range containing a candidate start is only a runtime-function metadata hint. It does not establish instruction alignment, complete function ownership, call semantics or an actual caller.",
+    "Other executable sections including .bind, address-size/prefix variants, register-indirect calls, thunk chains and runtime resolution remain unexamined. Zero candidates does not establish absence of callers.",
+    "Full-file before/after hashes use the same readonly descriptor and64KiB chunks, separately from the interpreted .text and bounded .pdata budgets;not an atomic snapshot."
+  ],
+  "sha256_before": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+  "sha256_after": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+  "finished_utc": "2026-11-03T11:20:14.719Z",
+  "status": "passed"
+}

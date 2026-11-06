@@ -1,0 +1,291 @@
+{
+  "schema": "grim-dynasty.fixed-move-action-construction-build.v1",
+  "preparation_status": "frozen-not-executed",
+  "compiles": 4,
+  "constructor_scenarios": 11,
+  "bridge_scenarios": 12,
+  "new_scenarios": 23,
+  "affected_regression_scenarios": 3,
+  "sources": [
+    {
+      "path": "src/reverse_client_actions/ActionDispatch.cs",
+      "bytes": 11258,
+      "sha256": "9f2db57e02c73c158d2351884bc09eccf691bfa5cee29b879758392e8478bb31"
+    },
+    {
+      "path": "src/reverse_client_actions/ActionExecutor.cs",
+      "bytes": 3898,
+      "sha256": "8f246e35a087647312604093747efc33d8560c4e1ad094e7b3fd030767e278a7"
+    },
+    {
+      "path": "src/reverse_client_actions/MoveActionState.cs",
+      "bytes": 4145,
+      "sha256": "94834f62edf84161774142dac5714f6c6d1011bde746530a1d6b550c322cab5b"
+    },
+    {
+      "path": "src/reverse_client_actions/MoveBoundaries.cs",
+      "bytes": 4695,
+      "sha256": "d8ab940c1dc0e36aaac39daecd21a78c2132fa45b0cbff4b1b0c1872d0a0e916"
+    },
+    {
+      "path": "src/reverse_client_actions/MoveContracts.cs",
+      "bytes": 10133,
+      "sha256": "ae09ce2bb749341b35130c0e10baa60fd60be8df65af7d419525e72fe0c2c198"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldCoordinateContracts.cs",
+      "bytes": 11600,
+      "sha256": "17f7250d375099968efaf39f51d6da9cdb7b1aaa23be65543c52907aeab8dfe4"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMoveActionConstruction.cs",
+      "bytes": 7554,
+      "sha256": "2e258e8b66e00e723c905a59fc043a6fa029751f885afc2fdc361d2fae2b368e"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldPositionWordBridge.cs",
+      "bytes": 1680,
+      "sha256": "f5ac9ed7b47862c8a761293ee38bde6ec9856826b28b10ecf852013f6d6ba420"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMoveActionConstructionTests.cs",
+      "bytes": 14301,
+      "sha256": "8e91a191b6323290e2d4ea647e04570bc182aca02ae9760515c8b03c5025bb02"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldPositionWordBridgeTests.cs",
+      "bytes": 20725,
+      "sha256": "2f7761e4e81a9557bb860d2fa3e43cd4f9eb69c2fc9d4da552c5022ea40d87e3"
+    }
+  ],
+  "actions_sources": [
+    "src/reverse_client_actions/ActionDispatch.cs",
+    "src/reverse_client_actions/ActionExecutor.cs",
+    "src/reverse_client_actions/MoveActionState.cs",
+    "src/reverse_client_actions/MoveBoundaries.cs",
+    "src/reverse_client_actions/MoveContracts.cs"
+  ],
+  "world_sources": [
+    "src/reverse_client_actions/WorldCoordinateContracts.cs"
+  ],
+  "new_production_sources": [
+    "src/reverse_client_actions/GameMoveActionConstruction.cs",
+    "src/reverse_client_actions/WorldPositionWordBridge.cs"
+  ],
+  "test_sources": [
+    "src/reverse_client_actions/GameMoveActionConstructionTests.cs",
+    "src/reverse_client_actions/WorldPositionWordBridgeTests.cs"
+  ],
+  "assemblies": [
+    {
+      "name": "GrimDynasty.MoveManager.dll",
+      "path": ".tooling/r1-skill-reference-validation/GrimDynasty.MoveManager.dll",
+      "bytes": 6144,
+      "sha256": "7563b6e32745e79ddc8308d2ea48ca7336050271d8dc8c9ce1e75346a52232da"
+    },
+    {
+      "name": "GrimDynasty.GameReachedGoal.dll",
+      "path": ".tooling/r1-skill-reference-validation/GrimDynasty.GameReachedGoal.dll",
+      "bytes": 22016,
+      "sha256": "e552a5952f658366b507f9b7d57e096c1aca93808adad109ba3a887e60554971"
+    },
+    {
+      "name": "GrimDynasty.GameMoved.dll",
+      "path": ".tooling/r1-skill-reference-validation/GrimDynasty.GameMoved.dll",
+      "bytes": 15872,
+      "sha256": "eb47edce8ecb3d495ea1263eefee90e19c8d17bf828213e34359af560f4e59ec"
+    },
+    {
+      "name": "GrimDynasty.EntityMovement.dll",
+      "path": ".tooling/r1-skill-reference-validation/GrimDynasty.EntityMovement.dll",
+      "bytes": 11776,
+      "sha256": "85d848625fce7d5fc580feb04839898bd580a96f0c48308c3aca5b8ab142f84d"
+    },
+    {
+      "name": "GrimDynasty.GameMovementCallbacks.dll",
+      "path": ".tooling/r1-skill-reference-validation/GrimDynasty.GameMovementCallbacks.dll",
+      "bytes": 13312,
+      "sha256": "21aa8443153c7a06575f25c32b4f7ef53d73b8d20c0cdc8ccda11c532ee0f5ed"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdState.dll",
+      "path": ".tooling/r1-skill-reference-validation/GrimDynasty.NavigationCrowdState.dll",
+      "bytes": 26624,
+      "sha256": "064f74a1649af7301276fc510fd1793ef5250660b25ba39a8ee69b5258d50198"
+    },
+    {
+      "name": "GrimDynasty.NavigationNearest.dll",
+      "path": ".tooling/r1-skill-reference-validation/GrimDynasty.NavigationNearest.dll",
+      "bytes": 35840,
+      "sha256": "75f303c482679df6ba2c8f01aad7759ba9ed322ad6386100525b690cd9b9dfd0"
+    }
+  ],
+  "prerequisites": [
+    {
+      "path": ".tooling/r1-move-contract-validation/result.json",
+      "bytes": 2785,
+      "sha256": "0355c487fc1dd26d78133640920a9f4c362944a4449df8bbea48090fc514e1f0",
+      "status": "passed-isolated-move-contracts"
+    },
+    {
+      "path": ".tooling/r1-move-manager-validation/result.json",
+      "bytes": 2279,
+      "sha256": "2e2190737bd01e396f302d211189aae114decd35307f5ca764b442bcae149516",
+      "status": "passed-isolated-move-manager-contracts"
+    },
+    {
+      "path": ".tooling/r1-world-coordinate-validation/result.json",
+      "bytes": 4882,
+      "sha256": "93644347fd4018108c3b94c09142a24f81141da276a5a38b7f55ac138e6e28ac",
+      "status": "passed-isolated-world-coordinate-contracts-only"
+    },
+    {
+      "path": ".tooling/r1-skill-reference-validation/result.json",
+      "bytes": 59890,
+      "sha256": "921562ead910a729005b3b47befba1f07afa6f42c3de81cf361819db5d303797",
+      "status": "passed-new-skill-reference-components-only"
+    }
+  ],
+  "dependency_receipt": {
+    "path": ".tooling/r1-skill-reference-validation/result.json",
+    "bytes": 59890,
+    "sha256": "921562ead910a729005b3b47befba1f07afa6f42c3de81cf361819db5d303797"
+  },
+  "unchanged_dependency_sources": [
+    {
+      "path": "src/reverse_client_actions/MoveManagerContracts.cs",
+      "bytes": 4208,
+      "sha256": "06ad8a3ade3992878773cbff1119fe80b8ed699bfb151ff3846372f89bcb55fb"
+    },
+    {
+      "path": "src/reverse_client_actions/GameMovedContracts.cs",
+      "bytes": 7702,
+      "sha256": "340049eaf569e12d78bec8f32396531ee77a700cd06e6c6019300019044e23b0"
+    },
+    {
+      "path": "src/reverse_client_actions/GameReachedGoalContracts.cs",
+      "bytes": 12196,
+      "sha256": "185e472d6c21858e8c4b5aadefbfdd1c0df774d2201cab8fab6db9ba489a0994"
+    }
+  ],
+  "rea_completed": [
+    {
+      "path": "docs/reverse-client/r1-movement-action-path/summary.json",
+      "bytes": 56956,
+      "sha256": "d9bbdea2cfaaf78990fef3aa1728562838832703e180a9136b364a4d38458e93",
+      "calls": 18,
+      "target_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-production-engine-run1/summary.json",
+      "bytes": 45800,
+      "sha256": "e7a25b947c3871b8bd9993f807f43d2fe22c32ea65fddad110526040084df72d",
+      "calls": 11,
+      "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/reverse-client/r1-move-production-imports/inspection.json",
+      "bytes": 8136,
+      "sha256": "ec6646c086f0126aedc5ec2e35e0e347666731827de176db43edbfbe71a2bccc"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-production-engine-run1/04-EngineMoveProduction-0x180008300-procedure_pseudo_code.json",
+      "bytes": 11879,
+      "sha256": "4ba1b90285465d7cf017da7553908f9ba93c1268dfc47a0e85c68585831cfa79"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-production-engine-run1/05-EngineMoveProduction-0x180008300-procedure_assembly.json",
+      "bytes": 10102,
+      "sha256": "caa0502bd403f5ac8f465cd0f53b37958c5ae46f25fefea2e8bf0c4ddbfb6b9b"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-production-engine-run1/06-EngineMoveProduction-0x180008300-procedure_callees.json",
+      "bytes": 10427,
+      "sha256": "f2f521ae4aeeea6f04d0546ac7cab7e737c41a27952930a560205141376a3cf8"
+    },
+    {
+      "path": "docs/reverse-client/r1-movement-action-path/07-MoveAction-0x180082b10-procedure_pseudo_code.json",
+      "bytes": 17211,
+      "sha256": "02d22f5d05340a8698afb5d7d42a37e05ebf2be4ff3eddbeb04ecd9a36a97ac2"
+    },
+    {
+      "path": "docs/reverse-client/r1-movement-action-path/08-MoveAction-0x180082b10-procedure_assembly.json",
+      "bytes": 17775,
+      "sha256": "0e14d2fbc26f938e2f6cb3c63ce058b55e33b35beb05ff20f5832a5319a5fe36"
+    },
+    {
+      "path": "docs/reverse-client/r1-movement-action-path/09-MoveAction-0x180082b10-procedure_callees.json",
+      "bytes": 10612,
+      "sha256": "ed32596c5d925d4fa4081af5c803ea4b09185c1aa87bc43b18f5c520fb68e96a"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-worldvec3-constructor-boundary/metadata.json",
+      "bytes": 11304,
+      "sha256": "030c5dfda0c05127a67e6fb4dd1b77996ff6248f58b0f1a33e3a8f592c467dad"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-worldvec3-constructor/228ab0-candidate.bin",
+      "bytes": 48,
+      "sha256": "c21e5be4a0e6a717e2ce4fe8986c46810e49e140f0d6c416fe93adb4d95b4a7d"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-worldvec3-constructor/228ab0-dumpbin.txt",
+      "bytes": 1228,
+      "sha256": "cffd222dc90e8c18fb53c6e4abb355ec0a5b93f7808116408ea80e5def355abe"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-worldvec3-constructor/inspection.json",
+      "bytes": 2342,
+      "sha256": "f9bd0aa503ff1c7d5f3388662cab6eccb1a5267419db4b51bbc4cd66f5851b2f"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-callback-dependencies/inspection.json",
+      "bytes": 41045,
+      "sha256": "c0f0348d8f0712b35efd22d7ed36282065bfc31c78ee18b0f1d870e036a4afab"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-start-dependencies/08-MoveDependency-0x18005e670-procedure_assembly.json",
+      "bytes": 11733,
+      "sha256": "181231a18473ab6b2a76c84a6df77b571344827d62920e26faf5582aca99999b"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-manager/14-MoveManager-0x18005d9a0-procedure_assembly.json",
+      "bytes": 14029,
+      "sha256": "26ee2b2b816165da77bfe187506914c1b834e9a0fbf8da4e403ac57bbf0d5d4a"
+    }
+  ],
+  "output": ".tooling/r1-move-action-construction-validation",
+  "production_names": [
+    "GrimDynasty.Actions.dll",
+    "GrimDynasty.WorldCoordinates.dll",
+    "GrimDynasty.MoveActionConstruction.dll"
+  ],
+  "test_name": "MoveActionConstructionTests.exe",
+  "entrypoint": "GameMoveActionConstructionValidationProgram",
+  "test_modes": [
+    "new-components",
+    "affected-regression"
+  ],
+  "old_test_suites_rerun": 0,
+  "old_executable_entrypoints_invoked": [],
+  "original_read": false,
+  "original_executed": false,
+  "backend_started": false,
+  "system_library_loaded": false,
+  "native_math_calls": 0,
+  "physical_mouse": false,
+  "walking_accepted": false,
+  "action_submitted": false,
+  "gameplay_accepted": false,
+  "constructor_evidence_limit": "WorldVec228AB0 reuse is limited to the complete first11 bytes MOV qword[RCX],0;MOV RAX,RCX;RET and exact binding. The older whole-window inspection reported failure at truncated trailing bytes and is not relabelled passed.",
+  "dependency_policy": "Reuse only7 pinned DLLs from the passed SkillReference output; rebuildActions andWorldCoordinates under unchanged assembly names in a new output. No oldActions/WorldCoordinates copy, no oldEXE invocation, no saved-map/UCRT/full-suite inputs.",
+  "support": [
+    "Bounded082B10/008300 normal construction on explicit own shared state; exact write widths, partial knowledge, aliases, lifetime and failure prefix.",
+    "Explicit DWORD/QWORD knowledge views, not generic callbacks or independent mirrored coordinates.",
+    "New targeted tests call existing SetAttackTarget16+8 and SetPathPosition all-three-capture paths; old full suite entrypoints are not invoked.",
+    "No native allocation/dispatch, loaded game, physical input, movement success or gameplay acceptance.",
+    "The SetPathPosition fresh hidden buffer cannot be rebound to a preexisting source through the current public API. Its new regression checks partial/fresh source reads, ignored returned identity and failure prefix; all-three-capture ordering also has saved-source/field-level contrast, not a claim of dynamic hidden-buffer overlap coverage."
+  ]
+}

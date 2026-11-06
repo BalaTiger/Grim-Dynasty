@@ -1,0 +1,805 @@
+{
+  "schema_version": 1,
+  "purpose": "Exactly one Engine WorldCamera::GetImagePoint wrapper body at disk-export-confirmed 0x1802290e0: pseudocode, assembly and direct callees; no original execution, debugger, xrefs or automatic followup.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-engine-worldcamera-imagepoint-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-lua-base-log-slot.json",
+      "sha256": "0178883646ad899fa03ff2dcf512fe06c57e05c9b59bded0857c307146fd3bd9",
+      "addresses": [
+        "0x180077050"
+      ],
+      "slot_va": "0x18033e308",
+      "slot_bytes": "5070078001000000",
+      "source_kind": "Exact8-byte baseconstructor-vtable slot read withoriginal/copy hashes;runtime global dynamic type remainsunknown"
+    }
+  ],
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+    "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0",
+    "same_registration_as": "r1-move-world-distance",
+    "budget_id": "engine-parser-384m-v1",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "parallel_mcp_requests": 1,
+    "one_backend": true,
+    "profile_or_protection_changes_authorized": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1802290e0"
+      },
+      "label": "04-WorldCameraGetImagePoint-0x1802290e0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1802290e0"
+      },
+      "label": "05-WorldCameraGetImagePoint-0x1802290e0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1802290e0"
+      },
+      "label": "06-WorldCameraGetImagePoint-0x1802290e0-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Only this isolated candidate may run after review, fresh resource/identity admission and formal execution approval. Active runner and all historical results remain unchanged.",
+    "Exactly8plannedcalls:3setup,one fixed pseudocode/assembly/callees triple,2close. No xrefs, callers, scan, debugger, original runtime or automatic followup.",
+    "Save full raw response before semantic verification; nonempty body and exact target/procedure identity are required. Unsupported/not_found is not usable evidence.",
+    "Existing8guard pins,384Mheap,5GiB physical+commit launch,2GiB runtime,identity Job nonce time mutex freshness and cleanup remain unchanged; historical release is never current admission.",
+    "Inherited Lua/provider/source records remain historical guard provenance only and are not evidence for WorldCamera semantics. Only worldcamera_binding_source establishes this target."
+  ],
+  "unchanged_guard_pins": [
+    {
+      "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "c6968067faa5b180556feaaf5e5aa62750e0ae0aa7bf031c5d1ceef990ae1f64"
+    },
+    {
+      "file": "tools/static_analysis/measure_job_process_memory.ps1",
+      "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_sampler_failure.ps1",
+      "sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/rea_java_role.mjs",
+      "sha256": "00e612e2113690baf53e87900f67b8f8003f47aa3b9a3968932a17dd779f1f22"
+    },
+    {
+      "file": "tools/static_analysis/rea_project_environment.mjs",
+      "sha256": "3808055da161a942867474e13edea86710d2981bda0ccf4ed5d385df5e794f88"
+    }
+  ],
+  "prior_engine_query": {
+    "file": "docs/reverse-client/r1-engine-lua-publication-run1/summary.json",
+    "sha256": "9733bc9fc23944c0b1282f75f5b275886e84f5361fca82cd1a75022f04cc0fd9",
+    "calls": 21
+  },
+  "batch_kind": "engine-worldcamera-imagepoint",
+  "runner_patch_deferred": false,
+  "reused_existing_bodies": [
+    {
+      "file": "docs/reverse-client/r1-engine-lua-manager-core-run1/07-LuaManagerInitialize-0x1800f2e00-procedure_pseudo_code.json",
+      "sha256": "f0178bba6c20f67ab1350fac14c3d06cb9d08bb8b18a462b432b9a17ef2e6126",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x1800f2e00"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-manager-core-run1/08-LuaManagerInitialize-0x1800f2e00-procedure_assembly.json",
+      "sha256": "189560d9bffcb960574a4477ef472497a78d9263f4f1fd017b70c2bd0980464a",
+      "operation": "procedure_assembly",
+      "procedure": "0x1800f2e00"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-manager-core-run1/09-LuaManagerInitialize-0x1800f2e00-procedure_callees.json",
+      "sha256": "1689c8a4b76528b3f29ef28bce86de40f2fb114998757723ed7634552b6a1855",
+      "operation": "procedure_callees",
+      "procedure": "0x1800f2e00"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-core-open-run1/04-LuaInitializeDirect-0x18025a030-procedure_pseudo_code.json",
+      "sha256": "267c66100e95a1df13805254a983fa596b9ea816b390dc79aadb21e93d3aebef",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x18025a030"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-core-open-run1/05-LuaInitializeDirect-0x18025a030-procedure_assembly.json",
+      "sha256": "1feda1cb91d2da4b2990e9508ff5b710346c0a9ae46ad7b3fbb6afc2c9dd1040",
+      "operation": "procedure_assembly",
+      "procedure": "0x18025a030"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-core-open-run1/06-LuaInitializeDirect-0x18025a030-procedure_callees.json",
+      "sha256": "74005956888c03702267d87ce558201963a7ca16695ad61328d351d17216a8f5",
+      "operation": "procedure_callees",
+      "procedure": "0x18025a030"
+    }
+  ],
+  "supporting_cached_evidence": [
+    {
+      "file": "docs/reverse-client/r1-lua-manager-bindings/inspection.json",
+      "sha256": "841c72e555cd23ba71bb3d7497bec39c26c59a25f1b9fcc72083f6692c903dcd",
+      "source_kind": "Exact disk bindings for already retrieved GetState and Initialize,not new25A030 body"
+    },
+    {
+      "file": ".tooling/lua-registry-writer-boundary-run1/result.json",
+      "sha256": "cdeacb4aa0125cf93c21895b5531d097618427aa591040e3bce363b4434248a5",
+      "source_kind": "No containing.pdata entry for008004 after168 metadata bytes; not guessedfunction absence"
+    },
+    {
+      "file": ".tooling/lua-publication-leaves-run1/result.json",
+      "sha256": "7e3392d572c230159ae31a743016358e471c546d49fe0d1ca81002db02540954",
+      "source_kind": "Preservedfailedwriter alignment plus two successful boundedleaf ranges;neverrepeatfirsttwo"
+    }
+  ],
+  "prior_engine_release": {
+    "file": "docs/reverse-client/r1-engine-lua-publication-run1/owned-memory-summary.json",
+    "sha256": "8477ad6e4feddd7c43058f6bcd13bad77a44e53e5b3f8245fa4d627f8ee33a4d"
+  },
+  "cache_dedup": {
+    "status": "filename-search-no-existing-target-body",
+    "target": "0x1802290e0",
+    "searched_roots": [
+      "docs/reverse-client",
+      ".tooling"
+    ],
+    "pattern": "*2290e0*",
+    "matching_files": 0,
+    "limitation": "Filename inventory only; no claim of semantic global-cache completeness."
+  },
+  "prior_current_release": {
+    "file": "docs/reverse-client/r1-lua-manager-core-release.json",
+    "sha256": "80d97abe575eab33b1e0b9713071a63655865afcca04af54c9552b454b71cdb7",
+    "fresh_launch_checks_still_required": true
+  },
+  "post_luajit_release": {
+    "file": "docs/reverse-client/r1-luajit204-postrelease.json",
+    "sha256": "dc1c1923b124c04420224d1876a94f8633b38f4ca798260aed2966d1be2f459b",
+    "historical_empty_proof_required": false,
+    "fresh_current_checks_required": true
+  },
+  "interrupted_query": {
+    "summary": "docs/reverse-client/r1-engine-lua-writer-log-run1/summary.json",
+    "summary_sha256": "257f2252883da364418211b7ba9f265589a3d996a6538f7e8b4e690f07dba0d9",
+    "release": "docs/reverse-client/r1-engine-lua-writer-log-run1/owned-memory-summary.json",
+    "release_sha256": "9b88c86e7f7f2acc8f2fb8ba4c0f23719789d5b21933bb9b4a899d03ca8b8e52",
+    "failure_response": "docs/reverse-client/r1-engine-lua-writer-log-run1/06-RegistryWriter-0x180008004-prev_address.json",
+    "failure_sha256": "6cd933655369b502c6ea7769d44ae8f7318f0bc5a83b0f2643d7f78a1c085502",
+    "historical_status": "failed",
+    "completed_plan_calls": 5,
+    "actual_tool_calls": 8,
+    "reason": "capability_unavailable/unsupported_provider;prev_address not declared byghidra,retryablefalse",
+    "not_retried": [
+      "inspect_native_instruction008004",
+      "resolve_containing_procedure008004",
+      "prev_address008004"
+    ],
+    "pending_target": "0x180077050",
+    "clean_release_preserves_failure": true
+  },
+  "selection_sources": [
+    {
+      "file": "docs/reverse-client/r1-engine-lua-writer-log-run1/04-RegistryWriter-0x180008004-inspect_native_instruction.json",
+      "sha256": "3bbbb3d503ce1fda53f4ecf56c22c2d83a328941419996c6676b9c94a6b21e90",
+      "kind": "Knownwriter008004 MOV[422888],EAX;sourcevalueandentryunknown"
+    },
+    {
+      "file": ".tooling/lua-publication-leaves-run1/registry-index-writer-neighborhood-dumpbin.txt",
+      "sha256": "931bf39c22ee156ab20358c8f2a356807fb18588dca7fbc50ac880a4417b8cf4",
+      "kind": "Retainedmisalignedrawspan:bytes008001..008003=0F45C1;candidatelocationonly,nosemanticsaccepted"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-writer-log-run1/tool-catalog-selected.json",
+      "sha256": "4440932e214fe9d8c278335ad05308c656d1d54e2fcc1902d845481e0d38bcb2",
+      "kind": "inspect_native_instruction contract distinguishes exactboundary/nonboundary/data/unknown"
+    }
+  ],
+  "latest_completed_query": {
+    "summary": "docs/reverse-client/r1-engine-lua-base-log-run1/summary.json",
+    "summary_sha256": "d013eb56bbe2750641cd65c9d0656d340612dbf2042708aef68b98f1cfe52d1c",
+    "release": "docs/reverse-client/r1-engine-lua-base-log-run1/owned-memory-summary.json",
+    "release_sha256": "ef01e4eca094b8a33e86e5f9f56fa8f507032cf9cad1090dd8ec0b97cc0617b2",
+    "completed_calls": 8,
+    "fresh_current_checks_required": true
+  },
+  "preparation_baseline": {
+    "runner": ".tooling/r1-provider-callers-prepared/runner-candidate.mjs",
+    "runner_sha256": "07b6d328fcec3a18aa3c78018d37ace335b6a283a8afb165dfabaea1d210db1e",
+    "active_runner_modified": false,
+    "monitor_validation_required_before_application": false,
+    "candidate_location_not_directly_executable": false,
+    "isolated_candidate_path": ".tooling/r1-camera-ray-incoming-prepared/runner-candidate.mjs"
+  },
+  "dataflow": {
+    "source_pins": [
+      {
+        "file": ".tooling/lua-registry-writer-dataflow-run1/result.json",
+        "sha256": "04d27549475666162a4f202af67e8f5067b65383bfa2f5ef9fa54900616ca0e6"
+      },
+      {
+        "file": "docs/reverse-client/r1-lua-registry-selection-run1/04-RegistrySelection-0x180008001-inspect_native_instruction.json",
+        "sha256": "398b5de56f2bdde56646d678ac53e29288e49d6c0c50e22c3f159f33ab5f030a"
+      },
+      {
+        "file": "docs/reverse-client/r1-lua-registry-selection-run1/05-RegistrySelection-0x180008000-inspect_native_instruction.json",
+        "sha256": "108523ca501281acf0c96764273abf576633a36fe5c650bbe21fbeaf56220f22"
+      },
+      {
+        "file": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1/05-LuaInitializeDependency-0x180258e50-procedure_assembly.json",
+        "sha256": "b61d98ddad9968e13c7f6c9be8551a98eb4e03e8faccc7913ee461394896a8bf"
+      }
+    ],
+    "prefix_start": "0x7fc4",
+    "prefix_bytes": 64,
+    "prefix_sha256": "f4d24a7ca3a77f7a1266efe05475791ccd85634f11c34b5d8e6c627732b6a479",
+    "candidate_boundary_status": "unproven until exact instruction responses",
+    "function_entry": "UNKNOWN",
+    "candidates": [
+      {
+        "address": "0x180007ff0",
+        "prefix_offset": 44,
+        "bytes": "833de597410002",
+        "length": 7,
+        "candidate_instruction": "CMP dword ptr [0x1804217dc],2",
+        "next_rva": "0x7ff7",
+        "signed_disp32": "0x4197e5",
+        "computed_target_rva": "0x4217dc"
+      },
+      {
+        "address": "0x180007ff7",
+        "prefix_offset": 51,
+        "bytes": "b8d8b9f0ff",
+        "length": 5,
+        "candidate_instruction": "MOV EAX,0xfff0b9d8",
+        "signed_imm32": -1001000
+      },
+      {
+        "address": "0x180007ffc",
+        "prefix_offset": 56,
+        "bytes": "b9f0d8ffff",
+        "length": 5,
+        "candidate_instruction": "MOV ECX,0xffffd8f0",
+        "signed_imm32": -10000
+      }
+    ],
+    "binding_writer": {
+      "assembly_file": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1/05-LuaInitializeDependency-0x180258e50-procedure_assembly.json",
+      "gate": "258E58/258E5E: skip binding when byte422B84 !=0",
+      "writes": [
+        "258EC6 may clear4217DC after missing lua_getglobal",
+        "258EEC sets2 if lua_getglobal is present",
+        "258F08 sets1 or3 according to luaJIT_setmode null/non-null",
+        "Later missing required exports can reset4217DC to0",
+        "259B2B sets binding gate1;259B32 returns current4217DC!=0"
+      ],
+      "writer_execution_order_relative_to_7ff0": "UNKNOWN",
+      "not_queried_again": true
+    },
+    "conditional_inference": "Only if the candidate contiguous boundaries are confirmed: version==2 leaves EAX=-1001000; version!=2 selects ECX=-10000 at known8001. Actual version at writer time, owner entry, reachability and initialization order remain UNKNOWN."
+  },
+  "latest_current_query": {
+    "summary": "docs/reverse-client/r1-lua-registry-selection-run1/summary.json",
+    "summary_sha256": "fae94a6ad11100e1f4d50d7b38bc1667a5edabaec7a1f1fa762a065953e8ec03",
+    "release": "docs/reverse-client/r1-lua-registry-selection-run1/owned-memory-summary.json",
+    "release_sha256": "3c2f7a787bcb69ac52c2f8bea5a4a6abe342ca74315a815fd3dd4f5bf1b63407",
+    "completed_calls": 7,
+    "fresh_current_checks_required": true
+  },
+  "luaglue_copy_sources": [
+    {
+      "file": "docs/reverse-client/r1-engine-lua-publication-run1/10-LuaPublicationDirect-0x1802568d0-procedure_pseudo_code.json",
+      "sha256": "424cee3ce91716d8381950684e194d576fcee10ea372ad2b9d9421276e319de9",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x1802568d0"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-publication-run1/11-LuaPublicationDirect-0x1802568d0-procedure_assembly.json",
+      "sha256": "6d146c88e86f64a2b49424906c8d741d402c029abfd88ee7070fbf6fed79d060",
+      "operation": "procedure_assembly",
+      "procedure": "0x1802568d0"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-publication-run1/12-LuaPublicationDirect-0x1802568d0-procedure_callees.json",
+      "sha256": "2bd41e5bc54f1d3366c2cccd87fc4ff218252bddff3e253d27afc06317d487de",
+      "operation": "procedure_callees",
+      "procedure": "0x1802568d0"
+    }
+  ],
+  "current_predecessor": {
+    "summary": "docs/reverse-client/r1-lua-registry-selection-run2/summary.json",
+    "summary_sha256": "a93b11f6d9ec8c6ee95d7afc24fe877918eba04679a362e6c74f72e12283e0ed",
+    "release": "docs/reverse-client/r1-lua-registry-selection-run2/owned-memory-summary.json",
+    "release_sha256": "781a2626886c89c58bd752de149ead7625bb9031155ca4690ff7b968ae4b2ccc",
+    "completed_calls": 8,
+    "fresh_current_checks_required": true
+  },
+  "luaglue_append_sources": [
+    {
+      "file": "docs/reverse-client/r1-engine-luaglue-copy-run1/04-LuaGlueRecordCopy-0x180255f70-procedure_pseudo_code.json",
+      "sha256": "2b2eab053dacae8462d954cc47f3b186d02dc13b1e29dba095917acfa93af450",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x180255f70"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-luaglue-copy-run1/05-LuaGlueRecordCopy-0x180255f70-procedure_assembly.json",
+      "sha256": "1473782cb22c88f8e85bd6a3717355af21c05cf5ccefab2e88955bff8fe7aa17",
+      "operation": "procedure_assembly",
+      "procedure": "0x180255f70"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-luaglue-copy-run1/06-LuaGlueRecordCopy-0x180255f70-procedure_callees.json",
+      "sha256": "e42b9fbba371fe6d0548d374a0ac0d2e3702b3ac097876f384c0e5d9837513e8",
+      "operation": "procedure_callees",
+      "procedure": "0x180255f70"
+    }
+  ],
+  "getglobal_adapter_sources": {
+    "binder": {
+      "file": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1/05-LuaInitializeDependency-0x180258e50-procedure_assembly.json",
+      "sha256": "b61d98ddad9968e13c7f6c9be8551a98eb4e03e8faccc7913ee461394896a8bf"
+    },
+    "inspection": {
+      "file": "docs/reverse-client/r1-luaglue-embedded-data-run1/inspection.json",
+      "sha256": "acfd23e2e33c962d629765b30e2345ea92ebda04c446d66f8724c4e2551ca35c"
+    },
+    "bytes": {
+      "file": "docs/reverse-client/r1-luaglue-embedded-data-run1/getglobal-258da0-raw.bin",
+      "sha256": "970ddbbc3ac61108cbad509e75e7279f9e73b1d7df282dba2d5e347acabda13a"
+    },
+    "hex": "4c8bc2baeed8ffff48ff25118c1c00cc",
+    "bytes_count": 16,
+    "candidate_boundaries": [
+      "0x180258da0",
+      "0x180258da3",
+      "0x180258da8"
+    ],
+    "candidate_semantics_unverified": true
+  },
+  "append_predecessor": {
+    "summary": "docs/reverse-client/r1-engine-luaglue-copy-run1/summary.json",
+    "summary_sha256": "c3a0de7e6faba61d1ea8db0642dd7da17edea4ddb77ebd313ffba7d9088efea5",
+    "release": "docs/reverse-client/r1-engine-luaglue-copy-run1/owned-memory-summary.json",
+    "release_sha256": "f692cd845125ba0ead1ff74c291cc7be82446dc39387a3c39c042fc784d648e3",
+    "completed_calls": 8,
+    "fresh_current_checks_required": true
+  },
+  "luaglue_gc_source": {
+    "file": "docs/reverse-client/r1-engine-lua-publication-run1/11-LuaPublicationDirect-0x1802568d0-procedure_assembly.json",
+    "sha256": "6d146c88e86f64a2b49424906c8d741d402c029abfd88ee7070fbf6fed79d060",
+    "operation": "procedure_assembly",
+    "procedure": "0x1802568d0",
+    "required_lines": [
+      "0x180257682: LEA RDX, [0x180256150]",
+      "0x18025768c: CALL qword ptr [0x1804219c8]",
+      "0x1802576cd: LEA RDX, [0x1802561a0]",
+      "0x1802576d7: CALL qword ptr [0x1804219c8]"
+    ],
+    "selection_kind": "Cached registration addresses only; target body semantics not assumed"
+  },
+  "gc_predecessor": {
+    "summary": "docs/reverse-client/r1-engine-luaglue-append-run1/summary.json",
+    "summary_sha256": "9e8c0c6d6da63a9ee72341e6f3df85cc7d6ab73c089f29ca47c87f0daea25494",
+    "release": "docs/reverse-client/r1-engine-luaglue-append-run1/owned-memory-summary.json",
+    "release_sha256": "36e8bad594125f8f9b0de2b313797ea87ea562a429c3e182c05cace04fec27c6",
+    "completed_calls": 11,
+    "fresh_current_checks_required": true
+  },
+  "luaglue_tail_source": {
+    "file": "docs/reverse-client/r1-engine-lua-publication-run1/11-LuaPublicationDirect-0x1802568d0-procedure_assembly.json",
+    "sha256": "6d146c88e86f64a2b49424906c8d741d402c029abfd88ee7070fbf6fed79d060",
+    "operation": "procedure_assembly",
+    "procedure": "0x1802568d0",
+    "required_lines": [
+      "0x180257707: TEST byte ptr [0x1804217d8], 0x1",
+      "0x18025770e: JZ 0x180257729",
+      "0x180257724: CALL 0x180257cb0",
+      "0x180257729: MOV BL, 0x1",
+      "0x18025772b: JMP 0x180257780",
+      "0x18025777e: XOR BL, BL",
+      "0x180257780: LEA R9, [0x1802577c0]",
+      "0x180257787: MOV EDX, 0x50",
+      "0x18025778c: LEA R8D, [RDX + -0x45]",
+      "0x180257790: LEA RCX, [RSP + 0x40]",
+      "0x180257795: CALL 0x1802dc3d4",
+      "0x18025779a: MOVZX EAX, BL"
+    ],
+    "semantics": "Exact observed read/conditional call/cleanup callback address and direct dispatcher call. Writer, log and cleanup contracts remain unknown."
+  },
+  "flags_predecessor": {
+    "summary": "docs/reverse-client/r1-engine-luaglue-gc-run1/summary.json",
+    "summary_sha256": "c81bfda9fa9da8848fe6daaef3100cfa5165ab033489cbefc70951ad654655f4",
+    "release": "docs/reverse-client/r1-engine-luaglue-gc-run1/owned-memory-summary.json",
+    "release_sha256": "74c745a46c90bdb805425044e053ad9922fab564fabea64d922f21f71468a079",
+    "completed_calls": 11,
+    "fresh_current_checks_required": true
+  },
+  "registry_build_history": {
+    "product": ".tooling/r1-lua-registry-validation/result.json",
+    "product_sha256": "7f7ff93600baca70bb8ea60d4886ba7641092529e4c279273870592b09573d7d",
+    "launch": ".tooling/r1-lua-registry-build-prepared/launch-result.json",
+    "launch_sha256": "15c680cc0adab553d5244bc5801ea31dd0d7386ac8f6f43b2ca728af4a4efca4",
+    "release": "docs/reverse-client/r1-lua-registry-closure-release.json",
+    "release_sha256": "7329f44e5d8b4a3bfc7284411886f4185d93de4ff45de1aff45f2f1a3989bb20",
+    "session": 86392,
+    "historical_job_empty_observed": false,
+    "historical_status": "failed",
+    "later_current_absence_is_not_historical_empty": true,
+    "fresh_launch_checks_required": true
+  },
+  "luaglue_writer_reference_source": {
+    "file": "docs/reverse-client/r1-engine-luaglue-flags-run1/04-LuaGlueFlag-0x1804217d8-xrefs.json",
+    "sha256": "e08a5fa7f9d987059b71951e460984bf9d2eb6c0010432950d3ebbadc5ef8e01",
+    "operation": "xrefs",
+    "address": "0x1804217d8",
+    "observed_addresses": [
+      "0x1800743c7",
+      "0x1800f0568",
+      "0x1800f0af8",
+      "0x1800f1088",
+      "0x1800f1b7b",
+      "0x1800f1c30",
+      "0x1800f1cce",
+      "0x1802560f9",
+      "0x180256203",
+      "0x180257707",
+      "0x180257b61",
+      "0x180257c6f",
+      "0x1802581aa"
+    ],
+    "requested_addresses": [
+      "0x1800743c7",
+      "0x1800f0568",
+      "0x1800f0af8",
+      "0x1800f1088",
+      "0x1800f1b7b",
+      "0x1800f1c30",
+      "0x1800f1cce",
+      "0x1802560f9",
+      "0x180256203",
+      "0x180257b61",
+      "0x180257c6f",
+      "0x1802581aa"
+    ],
+    "excluded_addresses": [
+      "0x180257707"
+    ],
+    "reference_semantics": "Bare untyped source references only; exact instruction observations may reveal reads,writes,nonboundaries or data. No writer inference beforequery."
+  },
+  "writers_predecessor": {
+    "summary": "docs/reverse-client/r1-engine-luaglue-flags-run1/summary.json",
+    "summary_sha256": "c4dd4c5a1b7b00a1c7c8190978fab3bd47d24057d22e895b2f90fe8792e462c8",
+    "release": "docs/reverse-client/r1-engine-luaglue-flags-run1/owned-memory-summary.json",
+    "release_sha256": "d2f55dbd27c472314c1fd92f3b9682b602e822186fd6ced25bc5fd91501f9901",
+    "completed_calls": 15,
+    "fresh_current_checks_required": true
+  },
+  "flag_writer_entry_sources": {
+    "instruction": {
+      "file": "docs/reverse-client/r1-engine-luaglue-writers-run1/04-LuaGlueFlagReference-0x1800743c7-inspect_native_instruction.json",
+      "sha256": "4cc99b3b720e4d2b031ec57e27a9a835c1be553d5743efd5945826df64c361c1",
+      "address": "0x1800743c7",
+      "owner": "0x1800743c0",
+      "bytes": "89050bd43a00",
+      "length": 6,
+      "mnemonic": "MOV",
+      "raw_disassembly": "MOV dword ptr [0x1804217d8],EAX",
+      "write_target": "0x1804217d8"
+    },
+    "format_caller": {
+      "file": "docs/reverse-client/r1-engine-luaglue-flags-run1/06-LuaGlueTailDirect-0x180257cb0-procedure_assembly.json",
+      "sha256": "372b644a3fe24bed56cf8343b02b6cddcb560cf997476a26df56a90479732144",
+      "procedure": "0x180257cb0",
+      "required_line": "0x180257cf7: CALL 0x180031280"
+    },
+    "unknown": "EAX producer,writer callers andformat behavior; sole directwriter onlyamong13observedrefs,not global completeness."
+  },
+  "writer_entry_predecessor": {
+    "summary": "docs/reverse-client/r1-engine-luaglue-writers-run1/summary.json",
+    "summary_sha256": "ecce498f9e3a30ff5eb1bf305a62a395e9a6a73f4f5f09e66cf87ec0dd9fa988",
+    "release": "docs/reverse-client/r1-engine-luaglue-writers-run1/owned-memory-summary.json",
+    "release_sha256": "efdaeb933e25b7d153b6bb043f76e2942b78ec8142ce80d245db7ad8751e7993",
+    "completed_calls": 17,
+    "fresh_current_checks_required": true
+  },
+  "script_registration_source": {
+    "file": "docs/reverse-client/r1-engine-lua-publication-run1/14-LuaPublicationDirect-0x1800ef8b0-procedure_assembly.json",
+    "sha256": "d1d88dc7f7140c4c86d87710cc03dc726bd99f0ecf7ac770f2202118d2face6d",
+    "operation": "procedure_assembly",
+    "procedure": "0x1800ef8b0",
+    "required_lines": [
+      "0x1800ef913: CALL 0x1800efad0",
+      "0x1800ef924: CALL 0x1800efca0",
+      "0x1800ef935: CALL 0x1800efe80"
+    ],
+    "targets": [
+      "0x1800efad0",
+      "0x1800efca0",
+      "0x1800efe80"
+    ]
+  },
+  "script_registration_predecessor": {
+    "summary": "docs/reverse-client/r1-engine-luaglue-flag-writer-run1/summary.json",
+    "summary_sha256": "08771af821013f9101c196f3cc5cdfef89ee3e3f7d739eff10ca2255e6bfefd5",
+    "release": "docs/reverse-client/r1-engine-luaglue-flag-writer-run1/owned-memory-summary.json",
+    "release_sha256": "12534b2340e202594d0c10f802e8646533f9a2db046bf28e08ebd28817e586ab",
+    "completed_calls": 12,
+    "fresh_current_checks_required": true
+  },
+  "script_binding_sources": [
+    {
+      "file": "docs/reverse-client/r1-engine-script-registration-run1/05-ScriptRegistration-0x1800efad0-procedure_assembly.json",
+      "sha256": "4ca89a9ac313878a06b3ec8f0beb8fdeedf9ea1bf4bf808bf30e505288e407e6",
+      "procedure": "0x1800efad0",
+      "required_line": "0x1800efc66: CALL 0x1800f0060",
+      "target": "0x1800f0060",
+      "owner_instruction": {
+        "file": "docs/reverse-client/r1-engine-luaglue-writers-run1/05-LuaGlueFlagReference-0x1800f0568-inspect_native_instruction.json",
+        "sha256": "6addc03bd1d40a3ee808089ba8260018c793f5630b17f0c12d144b7d086617f2",
+        "address": "0x1800f0568",
+        "procedure": "0x1800f0060"
+      }
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-script-registration-run1/08-ScriptRegistration-0x1800efca0-procedure_assembly.json",
+      "sha256": "b73bc5377f755b67ab186d76e9c50c00b222cc8f317310bc718aa2e4151b9a59",
+      "procedure": "0x1800efca0",
+      "required_line": "0x1800efe39: CALL 0x1800f05f0",
+      "target": "0x1800f05f0",
+      "owner_instruction": {
+        "file": "docs/reverse-client/r1-engine-luaglue-writers-run1/06-LuaGlueFlagReference-0x1800f0af8-inspect_native_instruction.json",
+        "sha256": "b3f5dcca41c9c777293681f31a4ef2ce1fe1cdc27a07e5587bdc0d20dce8ab0e",
+        "address": "0x1800f0af8",
+        "procedure": "0x1800f05f0"
+      }
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-script-registration-run1/11-ScriptRegistration-0x1800efe80-procedure_assembly.json",
+      "sha256": "a0c85724044895ca8436641b8b624aef981dc922598e306fc70a04571e429dc1",
+      "procedure": "0x1800efe80",
+      "required_line": "0x1800f0017: CALL 0x1800f0b80",
+      "target": "0x1800f0b80",
+      "owner_instruction": {
+        "file": "docs/reverse-client/r1-engine-luaglue-writers-run1/07-LuaGlueFlagReference-0x1800f1088-inspect_native_instruction.json",
+        "sha256": "689c2e1caf2a3d67e8fd575bc6ea4751616fe7d066f2d30597c7fbf5519335f1",
+        "address": "0x1800f1088",
+        "procedure": "0x1800f0b80"
+      }
+    }
+  ],
+  "script_binding_predecessor": {
+    "summary": "docs/reverse-client/r1-engine-script-registration-run1/summary.json",
+    "summary_sha256": "fb4aab218a9f98b82ed39aa6593af170d3554bb35b8e96e409649285286042f1",
+    "release": "docs/reverse-client/r1-engine-script-registration-run1/owned-memory-summary.json",
+    "release_sha256": "ee6ba732640b3dc1e71bc33e9d0d4754f46ec1ac8e6e1bc1c54a55feccdf0a75",
+    "completed_calls": 14,
+    "fresh_current_checks_required": true
+  },
+  "script_lifecycle_sources": [
+    {
+      "file": "docs/reverse-client/r1-engine-script-bindings-run1/05-ScriptBindingCore-0x1800f0060-procedure_assembly.json",
+      "sha256": "cbcb6967173daa1e773e79a71e2c9147c07d0d93022ab354d6a536c24ac22294",
+      "procedure": "0x1800f0060",
+      "required_lines": [
+        "0x1800f052d: MOV R8D, 0x1",
+        "0x1800f0533: LEA RDX, [0x1800f1b40]",
+        "0x1800f053a: MOV RCX, RBP",
+        "0x1800f053d: CALL qword ptr [0x1804219c8]"
+      ],
+      "target": "0x1800f1b40",
+      "owner_instruction": {
+        "file": "docs/reverse-client/r1-engine-luaglue-writers-run1/08-LuaGlueFlagReference-0x1800f1b7b-inspect_native_instruction.json",
+        "sha256": "24814ee346f85a09ef3bb5aed35ce2bf9162ef1eec2e55ca869323b89f598ce0",
+        "address": "0x1800f1b7b",
+        "procedure": "0x1800f1b40"
+      }
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-script-bindings-run1/08-ScriptBindingCore-0x1800f05f0-procedure_assembly.json",
+      "sha256": "ea76659480d1f5e1539cd58f8a4824ad71c83134f2b03191064171ec4a9d0007",
+      "procedure": "0x1800f05f0",
+      "required_lines": [
+        "0x1800f0abd: MOV R8D, 0x1",
+        "0x1800f0ac3: LEA RDX, [0x1800f1bd0]",
+        "0x1800f0aca: MOV RCX, RBP",
+        "0x1800f0acd: CALL qword ptr [0x1804219c8]"
+      ],
+      "target": "0x1800f1bd0",
+      "owner_instruction": {
+        "file": "docs/reverse-client/r1-engine-luaglue-writers-run1/09-LuaGlueFlagReference-0x1800f1c30-inspect_native_instruction.json",
+        "sha256": "3d70d7a92a5c27801d3b6fbec50e32ace0eca168bddf435b2c9a8185dcaa97b1",
+        "address": "0x1800f1c30",
+        "procedure": "0x1800f1bd0"
+      }
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-script-bindings-run1/11-ScriptBindingCore-0x1800f0b80-procedure_assembly.json",
+      "sha256": "98d52ee9984cc9c8234cf5a82810975e58e95dc7b4e875bb3b2a1eeab41cd894",
+      "procedure": "0x1800f0b80",
+      "required_lines": [
+        "0x1800f104d: MOV R8D, 0x1",
+        "0x1800f1053: LEA RDX, [0x1800f1c80]",
+        "0x1800f105a: MOV RCX, RBP",
+        "0x1800f105d: CALL qword ptr [0x1804219c8]"
+      ],
+      "target": "0x1800f1c80",
+      "owner_instruction": {
+        "file": "docs/reverse-client/r1-engine-luaglue-writers-run1/10-LuaGlueFlagReference-0x1800f1cce-inspect_native_instruction.json",
+        "sha256": "3724c50d670cf223ec169bf0c6c695931fcee9c6e0a39b0b632f3226fde77c87",
+        "address": "0x1800f1cce",
+        "procedure": "0x1800f1c80"
+      }
+    }
+  ],
+  "script_lifecycle_slot": {
+    "file": "docs/reverse-client/r1-script-node-slots/inspection.json",
+    "sha256": "0dc344fac99e5529fb8e6c3e32d06aec1d4813051af631b7d4a7a48f626f4e0d",
+    "slot_rvas": [
+      "0x340180",
+      "0x3401e0",
+      "0x3401b0"
+    ],
+    "unique_target": "0x1800f13b0",
+    "descriptor_rva": "0x307e60",
+    "disk_descriptor_byte": 0,
+    "loaded_descriptor_observed": false,
+    "function_boundary_verified": false
+  },
+  "script_lifecycle_predecessor": {
+    "summary": "docs/reverse-client/r1-engine-script-bindings-run1/summary.json",
+    "summary_sha256": "d41dc8fe2ae86bcb2ff36a1b1d2a6c53be13c07b1b262822760745ab2c60f519",
+    "release": "docs/reverse-client/r1-engine-script-bindings-run1/owned-memory-summary.json",
+    "release_sha256": "6837ad4447550f74a95dd3946f1a3fb14ff3e649539216c6c1fa86321ca51b80",
+    "completed_calls": 14,
+    "fresh_current_checks_required": true
+  },
+  "provider_import_source": {
+    "file": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7",
+    "relative_path": "x64/Grim Dawn.exe",
+    "import_module": "Engine.dll",
+    "symbol": "?RegisterProvider@LuaManager@GAME@@QEAAXPEAVLuaProvider@2@@Z",
+    "address_known": false
+  },
+  "provider_predecessor": {
+    "summary": "docs/reverse-client/r1-engine-script-lifecycle-run1/summary.json",
+    "summary_sha256": "9953e1694a4a7aa66edd31f105a4dd11a728b877c9fbeaf4ccdd3a8951101cf4",
+    "release": "docs/reverse-client/r1-engine-script-lifecycle-run1/owned-memory-summary.json",
+    "release_sha256": "3b31cb2c493217bf09d13561cf717ca8728a3e931b44b706d656a75bf5eaae25",
+    "completed_calls": 17,
+    "fresh_current_checks_required": true
+  },
+  "provider_followup_limit": 32,
+  "camera_ray_sources": [
+    {
+      "file": "docs/reverse-client/r1-engine-input/07-GetRayThroughImagePoint-0x180229700-procedure_pseudo_code.json",
+      "sha256": "dd6ccbded5cca87060504ebe406913e34fca3cde3164ad78301787dc03582c15",
+      "operation": "procedure_pseudo_code",
+      "procedure": "0x180229700"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-input/08-GetRayThroughImagePoint-0x180229700-procedure_assembly.json",
+      "sha256": "4e70b6429b52f378c9decc3362e30bc018597fcff55bee0ac8e37df1da9c227e",
+      "operation": "procedure_assembly",
+      "procedure": "0x180229700"
+    }
+  ],
+  "camera_ray_predecessor": {
+    "summary": "docs/reverse-client/r1-engine-lua-provider-callers-run1/summary.json",
+    "summary_sha256": "0ff14335e9f1bb06a3bcb413b4c2887dcf1944aed5f50b9999a273f55273328e",
+    "release": "docs/reverse-client/r1-engine-lua-provider-callers-run1/owned-memory-summary.json",
+    "release_sha256": "2e5f70c4d1b92e721439b743f2828c78dae8e07d6f09fb5e96930f56e0b85a3e",
+    "completed_calls": 6,
+    "fresh_current_checks_required": true
+  },
+  "camera_ray_current_release": {
+    "file": "docs/reverse-client/r1-provider-callers-release.json",
+    "sha256": "4c32f147e213a1d77d657e6e245810f234177fcbf715b2332d5729dd1cae5597",
+    "historical_release_only": true,
+    "fresh_current_checks_required": true
+  },
+  "worldcamera_binding_source": {
+    "file": ".tooling/gd-widget-camera-target-20261104/inspection.json",
+    "sha256": "a88b23dd7d345c5da8f59e011267f59d96c9c0eeca570c34dea7512069b7da9c",
+    "symbol": "?GetImagePoint@WorldCamera@GAME@@QEBA?AVWorldVec3@2@AEBVVec2@2@AEBVViewport@2@@Z",
+    "iat_rva": "0x2d5bd8",
+    "hint": 2863,
+    "ordinal": 2864,
+    "target_rva": "0x2290e0",
+    "preferred_va": "0x1802290e0",
+    "runtime_binding_verified": false
+  },
+  "isolated_baseline": {
+    "runner": ".tooling/r1-camera-ray-incoming-prepared/runner-candidate.mjs",
+    "runner_sha256": "1e2713a4dbab46734b3028fd3f911688e9c30479a157acf02e77ae5ad2213b99",
+    "launcher": ".tooling/r1-camera-ray-incoming-prepared/launch.ps1",
+    "launcher_sha256": "28f7b6bc743afb1c35446fb32950d60dad6d549e98571de9608db08e4ab8c193",
+    "prior_summary": "docs/reverse-client/r1-engine-camera-ray-incoming-run1/summary.json",
+    "prior_summary_sha256": "a415d63c1044d510996f50730a582ccc96d143915e49c6a30dc1c450ca721eda",
+    "prior_release": "docs/reverse-client/r1-engine-camera-ray-incoming-run1/owned-memory-summary.json",
+    "prior_release_sha256": "f8295873184139a8a40add1a6f2a73b02d733edd656800e3d9df75a06861c05b",
+    "historical_only": true,
+    "new_execution_performed": false
+  }
+}

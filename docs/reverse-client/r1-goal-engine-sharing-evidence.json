@@ -1,0 +1,52 @@
+{
+  "schema": "gd-goal-engine-sharing-evidence-v1",
+  "utc": "2026-11-02T22:49:05.6148720Z",
+  "basis": "docs/reverse-client/r1-hook-initialize-evidence.json",
+  "basis_sha256": "750f6e5d175246b75a951c293372c8d860d46d4aae9a1c121a7b8d2b671cc077",
+  "new_Rea_calls": 0,
+  "original_binary_reads_by_this_analysis": 0,
+  "native_read_order": [
+    "EBB0E capture gEngine pointer",
+    "EBB15 Engine+68 dereference",
+    "EBB19 service+00 dereference",
+    "EBB1C TEST captured Lua value",
+    "EC0A0 failure log separately recaptures same global;EC0B0 consumes pointer"
+  ],
+  "own_binding": "GoalContext borrows existing MoveContext.EngineGlobal Field<WorldEngine>; CWT sidecar per WorldEngine. No second WorldEngine or copied global. Captured pointer bits immutable, pointee fields shared mutable; fresh capture sees current global.",
+  "legacy": "Standalone component Engine421428 field retained; known legacy value rejects first shared binding. After binding shadow is ignored and cannot fill unknown authoritative field.",
+  "cached_service_source": {
+    "file": "docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json",
+    "sha256": "ab597744f4a4cf617c6227fe7a50100e5b03733aa48dda43a730f65509bdca26",
+    "json_array_index": 2,
+    "instruction_indices": "453..471",
+    "function": "Engine0743D0",
+    "reached_slice": "074BF1..074C43",
+    "conditions": [
+      "Same RSI Engine; graphics initialization success edge074788->07485C keeps R14=0",
+      "Earlier074BEC->258E50 normal return is an unimplemented precondition, never stubbed",
+      "Explicit valid OWN storage at least0x78; no original allocator execution"
+    ],
+    "stores": [
+      "074C02 +00 QWORD=R14",
+      "074C05 +08 WORD=0101",
+      "074C0B..074C2B +10,+18,+20,+28,+30,+38,+40,+48,+50 QWORD=0",
+      "074C2F +58 BYTE=0",
+      "074C33/37/3B +60,+68,+70 QWORD=0",
+      "074C3F Engine+68=service identity last"
+    ],
+    "not_written": [
+      "+0A..0F",
+      "+59..5F"
+    ],
+    "post_publication": "Subsequent Ambiance/Weather, Options/Fx, conditional Overlay, connection/network, Router/Style/Debug, World construction and Unpause calls remain; no proof service/Lua state survives unchanged until Goal.",
+    "current_implementation": "No OWN service publisher added and no null Lua supplied to integration. Only shared-global binding implemented."
+  },
+  "diagnostic_expected": "Known shared Engine but +68 Unknown -> EBB19; keep Initialized0, Work1, no Goal/tail return. Only actual successful tail may clear Work, and actual State3 prefix+suffix is still necessary for post-stop frames.",
+  "not_claimed": [
+    "Complete original Engine initialization",
+    "Runtime gEngine publisher recovered",
+    "Lua decode/execution",
+    "Goal or stopped full frame",
+    "Physical mouse/gameplay"
+  ]
+}

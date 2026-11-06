@@ -1,0 +1,109 @@
+{
+  "result": {
+    "_meta": {
+      "provenance": {
+        "untrusted_content": true,
+        "source": "analysis_target"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"evidence_id\":\"ev_d5bdf07917a58e1dcf03fbead08f4f1a9ce0649db505d01c2236e0830fdddaca\",\"subject\":{\"name\":\"Engine.dll\",\"digest\":{\"sha256\":\"4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153\"},\"local_path\":\"D:\\\\Steam\\\\steamapps\\\\common\\\\Grim Dawn\\\\x64\\\\Engine.dll\",\"format\":\"pe\",\"architecture\":\"x86_64\"},\"provider\":{\"id\":\"ghidra\",\"name\":\"Ghidra\",\"version\":\"12.1.4\"},\"analysis_profile\":{\"provider\":{\"id\":\"ghidra\",\"name\":\"Ghidra\",\"version\":\"12.1.4\"},\"parameters\":{\"target_kind\":\"executable\",\"target_format\":\"pe\",\"executable_role\":\"shared-library\",\"managed\":false,\"native_aot_metadata\":{\"contract_revision\":\"rtr-9.1-x64-pe-read-only-v3\",\"source_bytes\":134217728,\"work_units\":67108864,\"working_memory_bytes\":67108864,\"report_bytes\":4194304},\"architecture\":\"x86_64\",\"available_architectures\":[\"x86_64\"],\"import_mode\":\"ephemeral-source-immutable\",\"pdb_observations\":\"program-info-v1\",\"annotation_policy\":\"atomic-function-entry-metadata-v1\",\"load_image_observations\":\"source-mappings-entry-context-v2\",\"function_body_evidence\":\"complete-inclusive-ranges-v1\",\"function_references\":\"complete-body-and-entry-reference-manager-v2\",\"call_relationship_coverage\":\"function-body-call-coverage-v5\",\"function_dossier_coverage\":\"observed-facets-and-call-relationships-v1\",\"string_inventory_evidence\":\"defined-data-coverage-v1\",\"location_resolution\":\"explicit-address-exact-entry-symbol-first-v3\",\"procedure_file_offset_resolution\":\"address-first-unique-target-source-mapping-v2\",\"instruction_flow_evidence\":\"decoded-return-pcode-v1\",\"instruction_references\":\"exact-address-incoming-v1\",\"function_boundary_observations\":\"ghidra-function-boundary-limitations-v3\",\"no_return_repair\":\"disabled-windows-p0\",\"process_launch\":\"official-headless-script-v1\",\"jump_table_evidence\":\"typed-case-default-blocks-v1\",\"decompiler_jump_loads\":true,\"loader\":\"auto-from-header\",\"language_id\":\"auto-from-header\",\"compiler_spec_id\":\"auto-default\",\"analyzer_preset\":\"ghidra-default\"},\"digest\":\"dcc676845881c04a2d22833fb35d26569462e033daee5e99a95edac5aa61ac05\"},\"predicate_type\":\"rea.analysis\",\"operation\":\"procedure_assembly\",\"parameters\":{\"procedure\":\"0x1800ef8b0\"},\"raw_result\":{\"value\":\"0x1800ef8b0: PUSH RDI\\n0x1800ef8b2: SUB RSP, 0x50\\n0x1800ef8b6: MOV qword ptr [RSP + 0x30], -0x2\\n0x1800ef8bf: MOV qword ptr [RSP + 0x60], RBX\\n0x1800ef8c4: MOV RBX, qword ptr [RCX]\\n0x1800ef8c7: MOV qword ptr [RSP + 0x38], RBX\\n0x1800ef8cc: MOV dword ptr [RSP + 0x40], 0x0\\n0x1800ef8d4: MOV dword ptr [RSP + 0x44], 0xfffffffe\\n0x1800ef8dc: XOR R8D, R8D\\n0x1800ef8df: XOR EDX, EDX\\n0x1800ef8e1: MOV RCX, RBX\\n0x1800ef8e4: CALL qword ptr [0x180421800]\\n0x1800ef8ea: MOV EDX, dword ptr [0x180422888]\\n0x1800ef8f0: MOV RCX, RBX\\n0x1800ef8f3: CALL qword ptr [0x180421850]\\n0x1800ef8f9: MOV EDI, EAX\\n0x1800ef8fb: MOV dword ptr [RSP + 0x44], EAX\\n0x1800ef8ff: MOV dword ptr [RSP + 0x40], 0x2\\n0x1800ef907: LEA RDX, [0x180310b04]\\n0x1800ef90e: LEA RCX, [RSP + 0x38]\\n0x1800ef913: CALL 0x1800efad0\\n0x1800ef918: LEA RDX, [0x180310b04]\\n0x1800ef91f: LEA RCX, [RSP + 0x38]\\n0x1800ef924: CALL 0x1800efca0\\n0x1800ef929: LEA RDX, [0x180310b04]\\n0x1800ef930: LEA RCX, [RSP + 0x38]\\n0x1800ef935: CALL 0x1800efe80\\n0x1800ef93a: MOV RCX, RBX\\n0x1800ef93d: CMP dword ptr [0x1804217dc], 0x2\\n0x1800ef944: JNZ 0x1800ef997\\n0x1800ef946: MOV EDX, 0xfff0b9d8\\n0x1800ef94b: MOV R8D, 0x2\\n0x1800ef951: CALL qword ptr [0x180421a18]\\n0x1800ef957: LEA RDX, [0x180310b04]\\n0x1800ef95e: MOV RCX, RBX\\n0x1800ef961: CALL qword ptr [0x180421a10]\\n0x1800ef967: MOV R8D, EDI\\n0x1800ef96a: MOV EDX, dword ptr [0x180422888]\\n0x1800ef970: MOV RCX, RBX\\n0x1800ef973: CALL qword ptr [0x180421a18]\\n0x1800ef979: MOV EDX, 0xfffffffd\\n0x1800ef97e: MOV RCX, RBX\\n0x1800ef981: CALL qword ptr [0x180421a20]\\n0x1800ef987: MOV EDX, 0xfffffffe\\n0x1800ef98c: MOV RCX, RBX\\n0x1800ef98f: CALL qword ptr [0x1804217f0]\\n0x1800ef995: JMP 0x1800ef9c5\\n0x1800ef997: LEA RDX, [0x180310b04]\\n0x1800ef99e: CALL qword ptr [0x180421a10]\\n0x1800ef9a4: MOV R8D, EDI\\n0x1800ef9a7: MOV EDX, dword ptr [0x180422888]\\n0x1800ef9ad: MOV RCX, RBX\\n0x1800ef9b0: CALL qword ptr [0x180421a18]\\n0x1800ef9b6: MOV EDX, 0xffffd8ee\\n0x1800ef9bb: MOV RCX, RBX\\n0x1800ef9be: CALL qword ptr [0x180421a20]\\n0x1800ef9c4: NOP\\n0x1800ef9c5: MOV R8D, EDI\\n0x1800ef9c8: MOV EDX, dword ptr [0x180422888]\\n0x1800ef9ce: MOV RCX, RBX\\n0x1800ef9d1: CALL qword ptr [0x180421808]\\n0x1800ef9d7: NOP\\n0x1800ef9d8: MOV RBX, qword ptr [RSP + 0x60]\\n0x1800ef9dd: ADD RSP, 0x50\\n0x1800ef9e1: POP RDI\\n0x1800ef9e2: RET\",\"limitations\":[]},\"normalized_result\":\"0x1800ef8b0: PUSH RDI\\n0x1800ef8b2: SUB RSP, 0x50\\n0x1800ef8b6: MOV qword ptr [RSP + 0x30], -0x2\\n0x1800ef8bf: MOV qword ptr [RSP + 0x60], RBX\\n0x1800ef8c4: MOV RBX, qword ptr [RCX]\\n0x1800ef8c7: MOV qword ptr [RSP + 0x38], RBX\\n0x1800ef8cc: MOV dword ptr [RSP + 0x40], 0x0\\n0x1800ef8d4: MOV dword ptr [RSP + 0x44], 0xfffffffe\\n0x1800ef8dc: XOR R8D, R8D\\n0x1800ef8df: XOR EDX, EDX\\n0x1800ef8e1: MOV RCX, RBX\\n0x1800ef8e4: CALL qword ptr [0x180421800]\\n0x1800ef8ea: MOV EDX, dword ptr [0x180422888]\\n0x1800ef8f0: MOV RCX, RBX\\n0x1800ef8f3: CALL qword ptr [0x180421850]\\n0x1800ef8f9: MOV EDI, EAX\\n0x1800ef8fb: MOV dword ptr [RSP + 0x44], EAX\\n0x1800ef8ff: MOV dword ptr [RSP + 0x40], 0x2\\n0x1800ef907: LEA RDX, [0x180310b04]\\n0x1800ef90e: LEA RCX, [RSP + 0x38]\\n0x1800ef913: CALL 0x1800efad0\\n0x1800ef918: LEA RDX, [0x180310b04]\\n0x1800ef91f: LEA RCX, [RSP + 0x38]\\n0x1800ef924: CALL 0x1800efca0\\n0x1800ef929: LEA RDX, [0x180310b04]\\n0x1800ef930: LEA RCX, [RSP + 0x38]\\n0x1800ef935: CALL 0x1800efe80\\n0x1800ef93a: MOV RCX, RBX\\n0x1800ef93d: CMP dword ptr [0x1804217dc], 0x2\\n0x1800ef944: JNZ 0x1800ef997\\n0x1800ef946: MOV EDX, 0xfff0b9d8\\n0x1800ef94b: MOV R8D, 0x2\\n0x1800ef951: CALL qword ptr [0x180421a18]\\n0x1800ef957: LEA RDX, [0x180310b04]\\n0x1800ef95e: MOV RCX, RBX\\n0x1800ef961: CALL qword ptr [0x180421a10]\\n0x1800ef967: MOV R8D, EDI\\n0x1800ef96a: MOV EDX, dword ptr [0x180422888]\\n0x1800ef970: MOV RCX, RBX\\n0x1800ef973: CALL qword ptr [0x180421a18]\\n0x1800ef979: MOV EDX, 0xfffffffd\\n0x1800ef97e: MOV RCX, RBX\\n0x1800ef981: CALL qword ptr [0x180421a20]\\n0x1800ef987: MOV EDX, 0xfffffffe\\n0x1800ef98c: MOV RCX, RBX\\n0x1800ef98f: CALL qword ptr [0x1804217f0]\\n0x1800ef995: JMP 0x1800ef9c5\\n0x1800ef997: LEA RDX, [0x180310b04]\\n0x1800ef99e: CALL qword ptr [0x180421a10]\\n0x1800ef9a4: MOV R8D, EDI\\n0x1800ef9a7: MOV EDX, dword ptr [0x180422888]\\n0x1800ef9ad: MOV RCX, RBX\\n0x1800ef9b0: CALL qword ptr [0x180421a18]\\n0x1800ef9b6: MOV EDX, 0xffffd8ee\\n0x1800ef9bb: MOV RCX, RBX\\n0x1800ef9be: CALL qword ptr [0x180421a20]\\n0x1800ef9c4: NOP\\n0x1800ef9c5: MOV R8D, EDI\\n0x1800ef9c8: MOV EDX, dword ptr [0x180422888]\\n0x1800ef9ce: MOV RCX, RBX\\n0x1800ef9d1: CALL qword ptr [0x180421808]\\n0x1800ef9d7: NOP\\n0x1800ef9d8: MOV RBX, qword ptr [RSP + 0x60]\\n0x1800ef9dd: ADD RSP, 0x50\\n0x1800ef9e1: POP RDI\\n0x1800ef9e2: RET\",\"confidence\":\"observed\",\"authority\":\"shipped-artifact\",\"environment\":null,\"limitations\":[\"The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.\",\"The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.\",\"Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.\",\"Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.\",\"Assembly is Ghidra Listing text and does not claim textual equivalence with Hopper output.\",\"Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.\",\"The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no Bearer [REDACTED]\",\"Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.\",\"The target references PDB Engine.pdb (GUID ec8709dc-8335-4732-aeed-629eb2e398f4, age (hex) 2, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion.\"],\"relationship_coverage\":null,\"locations\":[],\"evidence_links\":[]}"
+      }
+    ],
+    "structuredContent": {
+      "evidence_id": "ev_d5bdf07917a58e1dcf03fbead08f4f1a9ce0649db505d01c2236e0830fdddaca",
+      "subject": {
+        "name": "Engine.dll",
+        "digest": {
+          "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+        },
+        "local_path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+        "format": "pe",
+        "architecture": "x86_64"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "pe",
+          "executable_role": "shared-library",
+          "managed": false,
+          "native_aot_metadata": {
+            "contract_revision": "rtr-9.1-x64-pe-read-only-v3",
+            "source_bytes": 134217728,
+            "work_units": 67108864,
+            "working_memory_bytes": 67108864,
+            "report_bytes": 4194304
+          },
+          "architecture": "x86_64",
+          "available_architectures": [
+            "x86_64"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "pdb_observations": "program-info-v1",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-v1",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v3",
+          "no_return_repair": "disabled-windows-p0",
+          "process_launch": "official-headless-script-v1",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "auto-from-header",
+          "language_id": "auto-from-header",
+          "compiler_spec_id": "auto-default",
+          "analyzer_preset": "ghidra-default"
+        },
+        "digest": "dcc676845881c04a2d22833fb35d26569462e033daee5e99a95edac5aa61ac05"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "procedure_assembly",
+      "parameters": {
+        "procedure": "0x1800ef8b0"
+      },
+      "raw_result": {
+        "value": "0x1800ef8b0: PUSH RDI\n0x1800ef8b2: SUB RSP, 0x50\n0x1800ef8b6: MOV qword ptr [RSP + 0x30], -0x2\n0x1800ef8bf: MOV qword ptr [RSP + 0x60], RBX\n0x1800ef8c4: MOV RBX, qword ptr [RCX]\n0x1800ef8c7: MOV qword ptr [RSP + 0x38], RBX\n0x1800ef8cc: MOV dword ptr [RSP + 0x40], 0x0\n0x1800ef8d4: MOV dword ptr [RSP + 0x44], 0xfffffffe\n0x1800ef8dc: XOR R8D, R8D\n0x1800ef8df: XOR EDX, EDX\n0x1800ef8e1: MOV RCX, RBX\n0x1800ef8e4: CALL qword ptr [0x180421800]\n0x1800ef8ea: MOV EDX, dword ptr [0x180422888]\n0x1800ef8f0: MOV RCX, RBX\n0x1800ef8f3: CALL qword ptr [0x180421850]\n0x1800ef8f9: MOV EDI, EAX\n0x1800ef8fb: MOV dword ptr [RSP + 0x44], EAX\n0x1800ef8ff: MOV dword ptr [RSP + 0x40], 0x2\n0x1800ef907: LEA RDX, [0x180310b04]\n0x1800ef90e: LEA RCX, [RSP + 0x38]\n0x1800ef913: CALL 0x1800efad0\n0x1800ef918: LEA RDX, [0x180310b04]\n0x1800ef91f: LEA RCX, [RSP + 0x38]\n0x1800ef924: CALL 0x1800efca0\n0x1800ef929: LEA RDX, [0x180310b04]\n0x1800ef930: LEA RCX, [RSP + 0x38]\n0x1800ef935: CALL 0x1800efe80\n0x1800ef93a: MOV RCX, RBX\n0x1800ef93d: CMP dword ptr [0x1804217dc], 0x2\n0x1800ef944: JNZ 0x1800ef997\n0x1800ef946: MOV EDX, 0xfff0b9d8\n0x1800ef94b: MOV R8D, 0x2\n0x1800ef951: CALL qword ptr [0x180421a18]\n0x1800ef957: LEA RDX, [0x180310b04]\n0x1800ef95e: MOV RCX, RBX\n0x1800ef961: CALL qword ptr [0x180421a10]\n0x1800ef967: MOV R8D, EDI\n0x1800ef96a: MOV EDX, dword ptr [0x180422888]\n0x1800ef970: MOV RCX, RBX\n0x1800ef973: CALL qword ptr [0x180421a18]\n0x1800ef979: MOV EDX, 0xfffffffd\n0x1800ef97e: MOV RCX, RBX\n0x1800ef981: CALL qword ptr [0x180421a20]\n0x1800ef987: MOV EDX, 0xfffffffe\n0x1800ef98c: MOV RCX, RBX\n0x1800ef98f: CALL qword ptr [0x1804217f0]\n0x1800ef995: JMP 0x1800ef9c5\n0x1800ef997: LEA RDX, [0x180310b04]\n0x1800ef99e: CALL qword ptr [0x180421a10]\n0x1800ef9a4: MOV R8D, EDI\n0x1800ef9a7: MOV EDX, dword ptr [0x180422888]\n0x1800ef9ad: MOV RCX, RBX\n0x1800ef9b0: CALL qword ptr [0x180421a18]\n0x1800ef9b6: MOV EDX, 0xffffd8ee\n0x1800ef9bb: MOV RCX, RBX\n0x1800ef9be: CALL qword ptr [0x180421a20]\n0x1800ef9c4: NOP\n0x1800ef9c5: MOV R8D, EDI\n0x1800ef9c8: MOV EDX, dword ptr [0x180422888]\n0x1800ef9ce: MOV RCX, RBX\n0x1800ef9d1: CALL qword ptr [0x180421808]\n0x1800ef9d7: NOP\n0x1800ef9d8: MOV RBX, qword ptr [RSP + 0x60]\n0x1800ef9dd: ADD RSP, 0x50\n0x1800ef9e1: POP RDI\n0x1800ef9e2: RET",
+        "limitations": []
+      },
+      "normalized_result": "0x1800ef8b0: PUSH RDI\n0x1800ef8b2: SUB RSP, 0x50\n0x1800ef8b6: MOV qword ptr [RSP + 0x30], -0x2\n0x1800ef8bf: MOV qword ptr [RSP + 0x60], RBX\n0x1800ef8c4: MOV RBX, qword ptr [RCX]\n0x1800ef8c7: MOV qword ptr [RSP + 0x38], RBX\n0x1800ef8cc: MOV dword ptr [RSP + 0x40], 0x0\n0x1800ef8d4: MOV dword ptr [RSP + 0x44], 0xfffffffe\n0x1800ef8dc: XOR R8D, R8D\n0x1800ef8df: XOR EDX, EDX\n0x1800ef8e1: MOV RCX, RBX\n0x1800ef8e4: CALL qword ptr [0x180421800]\n0x1800ef8ea: MOV EDX, dword ptr [0x180422888]\n0x1800ef8f0: MOV RCX, RBX\n0x1800ef8f3: CALL qword ptr [0x180421850]\n0x1800ef8f9: MOV EDI, EAX\n0x1800ef8fb: MOV dword ptr [RSP + 0x44], EAX\n0x1800ef8ff: MOV dword ptr [RSP + 0x40], 0x2\n0x1800ef907: LEA RDX, [0x180310b04]\n0x1800ef90e: LEA RCX, [RSP + 0x38]\n0x1800ef913: CALL 0x1800efad0\n0x1800ef918: LEA RDX, [0x180310b04]\n0x1800ef91f: LEA RCX, [RSP + 0x38]\n0x1800ef924: CALL 0x1800efca0\n0x1800ef929: LEA RDX, [0x180310b04]\n0x1800ef930: LEA RCX, [RSP + 0x38]\n0x1800ef935: CALL 0x1800efe80\n0x1800ef93a: MOV RCX, RBX\n0x1800ef93d: CMP dword ptr [0x1804217dc], 0x2\n0x1800ef944: JNZ 0x1800ef997\n0x1800ef946: MOV EDX, 0xfff0b9d8\n0x1800ef94b: MOV R8D, 0x2\n0x1800ef951: CALL qword ptr [0x180421a18]\n0x1800ef957: LEA RDX, [0x180310b04]\n0x1800ef95e: MOV RCX, RBX\n0x1800ef961: CALL qword ptr [0x180421a10]\n0x1800ef967: MOV R8D, EDI\n0x1800ef96a: MOV EDX, dword ptr [0x180422888]\n0x1800ef970: MOV RCX, RBX\n0x1800ef973: CALL qword ptr [0x180421a18]\n0x1800ef979: MOV EDX, 0xfffffffd\n0x1800ef97e: MOV RCX, RBX\n0x1800ef981: CALL qword ptr [0x180421a20]\n0x1800ef987: MOV EDX, 0xfffffffe\n0x1800ef98c: MOV RCX, RBX\n0x1800ef98f: CALL qword ptr [0x1804217f0]\n0x1800ef995: JMP 0x1800ef9c5\n0x1800ef997: LEA RDX, [0x180310b04]\n0x1800ef99e: CALL qword ptr [0x180421a10]\n0x1800ef9a4: MOV R8D, EDI\n0x1800ef9a7: MOV EDX, dword ptr [0x180422888]\n0x1800ef9ad: MOV RCX, RBX\n0x1800ef9b0: CALL qword ptr [0x180421a18]\n0x1800ef9b6: MOV EDX, 0xffffd8ee\n0x1800ef9bb: MOV RCX, RBX\n0x1800ef9be: CALL qword ptr [0x180421a20]\n0x1800ef9c4: NOP\n0x1800ef9c5: MOV R8D, EDI\n0x1800ef9c8: MOV EDX, dword ptr [0x180422888]\n0x1800ef9ce: MOV RCX, RBX\n0x1800ef9d1: CALL qword ptr [0x180421808]\n0x1800ef9d7: NOP\n0x1800ef9d8: MOV RBX, qword ptr [RSP + 0x60]\n0x1800ef9dd: ADD RSP, 0x50\n0x1800ef9e1: POP RDI\n0x1800ef9e2: RET",
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Assembly is Ghidra Listing text and does not claim textual equivalence with Hopper output.",
+        "Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+        "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no Bearer [REDACTED]",
+        "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.",
+        "The target references PDB Engine.pdb (GUID ec8709dc-8335-4732-aeed-629eb2e398f4, age (hex) 2, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 16
+}

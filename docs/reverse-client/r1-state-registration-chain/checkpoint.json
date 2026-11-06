@@ -1,5 +1,150 @@
 {
   "schema": "grim-dynasty-r1-state-registration-chain-v1",
+  "lightweight_after_resource_release": {
+    "status": "compiled; selected5production+9field+2old scenarios passed,286mixed assertions; native animation resource production remains unclosed",
+    "animation_composition": "src/reverse_client_actions/GameMoveAnimationProductionContracts.cs",
+    "animation_preparation_checkpoint": {
+      "file": ".tooling/r1-move-animation-prepared/production-animation-preparation-checkpoint.json",
+      "sha256": "cb77d1bec1960bc651e29304218c4531ba6e5e25f4e54b226967f9d19bd721a1"
+    },
+    "new_tests": [
+      "src/reverse_client_actions/GameMoveAnimationProductionTests.cs",
+      "src/reverse_client_actions/GameMoveAnimationFieldCaptureTests.cs"
+    ],
+    "scenarios_now_passed": {
+      "production": 5,
+      "field_capture": 9,
+      "selected_older_regressions": 2
+    },
+    "patches": [
+      ".tooling/r1-move-animation-prepared/opaque-move-fields.patch",
+      ".tooling/r1-move-animation-prepared/production-animation.patch"
+    ],
+    "superseded_inactive_patch": ".tooling/r1-move-animation-prepared/state-slots.patch; do not apply together with production-animation.patch",
+    "finite_ground_candidate": ".tooling/r1-finite-ground-own-cold-profile-candidate/candidate.json",
+    "finite_ground_review": ".tooling/r1-finite-ground-own-cold-profile-candidate/REVIEW.md",
+    "finite_ground_patch_sha256": "b431e0eb9cd42e761baf8d6e2dd34a991773baab7474eac2c368754a6b27b3a1",
+    "finite_ground_scope": "Explicit OWN constructor/tick shared global input; zero is declared OWN policy, never recovered native initial state. Keep historical Unknown stop; no Vector60 patch after failure. Bounded16candidates stop at first success or Unsupported.",
+    "next_query_preparation_directory": ".tooling/r1-animation-set-production-prepared",
+    "next_query_preparation_checkpoint": {
+      "file": ".tooling/r1-animation-set-production-prepared/checkpoint.json",
+      "sha256": "bad9eab62b383032609d25a5f60b6d0343d49dc861f96e69c1904d61d91e9cd2"
+    },
+    "next_query_scope": "Inactive14call candidate: actual namedGame024080,024D30,024D80 pseudo/asm/callees plus lifecycle. Not executed, no semantic claims from names.",
+    "production_changes_applied": true,
+    "compiled_or_tested": false,
+    "native_play_recovered": false,
+    "gameplay_accepted": false,
+    "heavy_operation_pending": false
+  },
+  "latest_heavy_resource_handoff": {
+    "reason": "Parent explicitly scheduled OW short build/UE window after Game animation batch fully exited",
+    "state": "returned-to-gd-ow-below-its-memory-gate",
+    "heavy_launch_allowed_now": true,
+    "running_or_pending_heavy_operation": false,
+    "last_completed_session": 60369,
+    "last_completed_rea_session": 51303,
+    "last_job_empty_and_sampler_exit_verified": true,
+    "prior_owned_pids_present_on_postcheck": [],
+    "permitted_current_work": "Parent returned GD resource slot; own formal CIM query succeeded07:34:34 with8270209024 physicalbytes andnoexternalheavy. Engine027410 fixed batch nowrunning; nootherheavywork inparallel.",
+    "resume": "Check session51303 and current Engine output before retry. Call4pending; do not count it complete or repeat uncertainquery. No Game05AE40/024DE0 requery.",
+    "engine_query_preparation": {
+      "directory": ".tooling/r1-engine-animation-speed-prepared",
+      "manifest_sha256": "497b18e457a4b355d1908a5d9502472f3cadb5d9058daaf7b9a35ffc2bd84c4d",
+      "candidate_runner_sha256": "3ba6f377d35571cba914224af7706f24164257e6664dd93f213fbe5abfd96778",
+      "plan_sha256": "c9ee0df27dcdac1253f1c589a8edad1d53468582d7289131c26898ff2e44974c",
+      "mode": "--r1-engine-animation-speed",
+      "calls": 8,
+      "active_runner_modified": true,
+      "syntax_or_offline_verification_run": true,
+      "backend_started": true,
+      "status": "passed-and-cleaned",
+      "session_id": 51303,
+      "owned_root_pid": 18480,
+      "controller_pid": 40168,
+      "monitor_ready": true,
+      "calls_completed_at_checkpoint": 8,
+      "pending_call": null,
+      "summary_sha256": "d748b0edbef03337e3eba8f85372318281a7e101e640e6fc22d5450bf625a71c",
+      "exit_code": 0,
+      "finished_utc": "2026-10-26T07:37:12.098Z",
+      "session_closed_process_exit_job_empty_sampler_exit": true,
+      "monitor_failures": [],
+      "engine_hash_stable": true,
+      "post_exit_pid_check_utc": "2026-10-26T07:42:03.9583373Z",
+      "prior_owned_pids_present": [],
+      "body": "027416 captures primary;02741C virtual+370; signed index*0x68;027426 MOVSS from returnedmesh+0x130+offset. Saved Character/Player+370 both mapGame06DA30, already implemented via shared ActorBoundingBox mesh identities. Base-mesh fallback and loaded speed data remain unresolved.",
+      "output": "docs/reverse-client/r1-engine-animation-speed-run1",
+      "protection": "Uses previously successful Engine default monitor/wrapper with current Job/exit guards; no Game target impersonation or selector change. Original5GiB/384M/2GiB remains."
+    }
+  },
+  "animation_followup": {
+    "status": "passed-fixed-game-animation-bodies",
+    "session_id": 29437,
+    "mode": "--r1-game-waypoint-animation",
+    "output": "docs/reverse-client/r1-game-waypoint-animation-run1",
+    "plan_sha256": "3e0cce7ca80468aaf8741b448237586afafa64a7036dd0c5ac1a2575675c07ee",
+    "runner_sha256": "f0fca77b7703caae38f0de085ec650437e3f14e9cccf894e8840e5e842d025f7",
+    "sampler_sha256": "20777a75b720d7b57d23d1cd4e91b7f699e7758034d2b670186836d2f2ca22ff",
+    "targets": [
+      "0x18005ae40",
+      "0x180024de0"
+    ],
+    "planned_calls": 11,
+    "completed_at_checkpoint": 11,
+    "pending_call": null,
+    "summary": "docs/reverse-client/r1-game-waypoint-animation-run1/summary.json",
+    "summary_sha256": "d2ee75cc839b2bf78da6877687c3a5946171662768594b4193fe3b9b1bd2de0c",
+    "finished_utc": "2026-10-26T07:22:26.128Z",
+    "exit_code": 0,
+    "closed_session_verified": true,
+    "process_exit_confirmed": true,
+    "job_empty_confirmed": true,
+    "sampler_exit_confirmed": true,
+    "forced_termination": false,
+    "monitor_failures": [],
+    "game_hash_stable": true,
+    "resource_observation": {
+      "with_controller_and_sampler_working_set_peak_bytes": 1332723712,
+      "minimum_available_physical_bytes": 6967422976,
+      "minimum_commit_headroom_bytes": 15875702784
+    },
+    "post_exit_pid_check_utc": "2026-10-26T07:24:56.9438284Z",
+    "post_exit_prior_pids_still_present": [],
+    "owned_root_pid": 24196,
+    "controller_pid": 35388,
+    "monitor_ready": true,
+    "approval_denied": false,
+    "new_guard_tests": {
+      "scenarios": 13,
+      "assertions": 26,
+      "passed": true,
+      "live_identity_proof": false,
+      "file": ".tooling/r1-waypoint-animation-prepared/identity-test-result.json"
+    },
+    "animation_speed_binding": {
+      "file": "docs/reverse-client/r1-animation-speed-import/inspection.json",
+      "sha256": "8934b141d4fcaa6b6cc95664a6f0641cf149b09d18beb0d0f1be5d7fc4f4efa2",
+      "status": "passed",
+      "iat": "0x609bf0",
+      "engine_rva": "0x27410",
+      "metadata_bytes": 70,
+      "operations": 6,
+      "game_and_engine_hashes_stable": true,
+      "function_body_read": false
+    },
+    "state_adapter_patch": {
+      "file": ".tooling/r1-move-animation-prepared/state-slots.patch",
+      "sha256": "9fd03a3c253fb055fe167f8a1394e3a9f774230890b6774830d5b926fbad830d",
+      "applied": false
+    },
+    "verified_semantics": [
+      "05AE40 tests pointer2600 then2608; first non-null is returned by identity, otherwise MOV returns2578",
+      "024DE0 stores requestedKind0C first, uses unsigned kind<=51 to select52-entry table orentry0, calls chosen entry virtual+8, writesKind08 and clears0C only after true return",
+      "024DE0 callee coverage is partial: one unresolved indirect call. No claim of recovered concrete animation execution."
+    ],
+    "resume_rule": "Do not repeat completed11calls. Reuse bodies for selector and Play prefix; inspect already-saved Character constructor writers for2578/2600/2608 and entry origin. Engine027410 body is still missing; prepare exact query with proper Engine identity. State patch remains unapplied. No active command/backend or approval denial."
+  },
   "current_floor_query": {
     "status": "passed",
     "session_id": 53320,
@@ -34,26 +179,20 @@
     "native_load_completed": false,
     "floor_collision_validated": false
   },
-  "stage": "paused-by-user-20261023",
+  "stage": "controller-association-and-conditional-word-store-own-validated;mouse-stops15e292-count2f0;interactive-client-unresolved",
   "active_followup_operation": {
-    "status": "passed",
-    "session_id": 76498,
-    "mode": "--r1-ground-blocks-and-node-destroy",
-    "plan_sha256": "722db669aadec8a0e84cd235ea0db62afde7691da09305956f2eafade3b8d5ad",
-    "runner_sha256": "c171b0b8fdb3934bc2236629b0cd9f0115f47182e33cc9b5c0bf6a6b3437f2c9",
-    "targets": [
-      "11BB30",
-      "1DDE10",
-      "1DF4E0",
-      "1CE910"
-    ],
-    "pending_execution": false,
-    "old_calls_repeated": 0,
-    "summary_sha256": "2e9097e2facbb665430fb8f77beb0ac38e373a12da296f9ac5c6024a639c63ff",
-    "completed_plan_calls": 17,
-    "normal_cleanup": true,
-    "original_hash_stable": true
-  },
+  "steps": [
+    "Reuse the saved World220840/Level130130 bodies and17-case result; do not repeat successful queries or full old suites without affected changes.",
+    "Reuse saved handler21360..21755(eventtype/1D0/85),22193..2224A(hit to Widget2D8/ObjectId),225A2..22607(bool/ref args) to prepare the exact branch into existing PlayerMouseContracts with shared identity; no new query is needed for these saved spans.",
+    "Next minimal unresolved producer is EXE1BCD0: saved21358 call returns R13 at2135D, consumed as ControllerPlayer this at22604/22607. Existing Game128530 runs Controller-to-Player in the opposite direction and cannot substitute. No saved loaded1BCD0 body exists; first verify a bounded boundary, and any needed live-body capture requires a new visible-launch notice.",
+    "Native scene/publication and Spatial133E70/TerrainB8/portal fallback remain Unsupported. Do not expand into an unlocated WorldC0 writer search.",
+    "Physical input dispatch, actual loaded IAT/click invocation, and independent original-resource scene/UI rendering remain separate direct gaps. Do not substitute WASD or a redesigned UI.",
+    "Before a new heavy batch, obtain fresh5GiB physical+commit/2GiB runtime admission and identity/mutex checks. This archive only records the19:34:54 sample; do not terminate or adopt the unrelated reused-PID conhost.",
+    "Any visible original launch requires prior user notice and existing backup/offline/cloud protections. No failed debugger retry, save restore, or claim of an interactive reversed client."
+  ],
+  "pending_operations": 0,
+  "interactive_client_available": false
+},
   "canonical_actor_dispatch_validation": {
     "status": "passed",
     "result": ".tooling/r1-actor-bbox-canonical-dispatch-validation/result.json",
@@ -68,8 +207,8 @@
     "reason": "Single Entity.Virtual00 now uses preexisting GameMovementPrimaryTable identities across Created/Update/Actor bounds. Private duplicate identities removed; historical source/result retained.",
     "gameplay_accepted": false
   },
-  "last_event_utc": "2026-10-23T11:50:24.396Z",
-  "current_operation": "No further execution until user asks to resume",
+  "last_event_utc": "2026-11-04T21:19:25.448Z",
+  "current_operation": "No pending heavy operation;17 own mainmenu-ground primary-hit scenarios passed; native scene, physical input and independent rendering remain unresolved.",
   "actor_bounding_box_validation": {
     "status": "passed",
     "result": ".tooling/r1-actor-bounding-box-validation/result.json",
@@ -143,7 +282,7 @@
   "new_tests": 27,
   "old_tests_rerun": false,
   "r1_functional_acceptance": false,
-  "resume_rule": "User pause supersedes prior continuous authorization. Read pause snapshot; do not execute anything further until user requests resume.",
+  "resume_rule": "Explicit user resumption received20261026; proceed within prior scope and formal approval boundaries, pause at first usable reverse game.",
   "registration_name_result": {
     "file": "docs/reverse-client/r1-game-state-registration-search/04-ControllerAI-state-registration-search.json",
     "sha256": "dad6e1f3b97f4041fe48ee25311d604dcb03ee3778b8f8b6b4f5ff281c121fdb",
@@ -323,7 +462,7 @@
     "as_of_utc": "2026-10-23T10:32:15.658Z",
     "scope": "Latest reviewed query/build batches only; prior transport diagnostic preserved separately",
     "owned_backend_active": false,
-    "pending_command": false,
+    "pending_command": true,
     "pending_execution": false,
     "uncertain_outcome": false,
     "approval_denied": false,
@@ -336,7 +475,7 @@
     "latest_queries_normal_close_job_sampler_exit": true,
     "latest_self_build_result": ".tooling/r1-hot-slot-displayed-validation/result.json"
   },
-  "next_bounded_scope": "Continue shared Player gate/request -> saved same-region NavigationSearch -> original MoveObject/Agent bridge; no repeat queries for retained body. No runnable reversed client yet.",
+  "next_bounded_scope": "Reusecached0F2E00 caller andEngine/serviceconstruction tocloseprovider-vector initialization/publication only,thenclient/server branch;do notsetInitialized58 orrequeryScriptbodies",
   "this_resume_stage": {
     "successful_fixed_batches": 3,
     "completed_rea_calls": 43,
@@ -752,7 +891,7 @@
     "started_utc": "2026-10-22T16:57:07.9956635Z",
     "outcome": "passed-exit0"
   },
-  "pending_command": false,
+  "pending_command": null,
   "navigation_implementation_constructor_result": {
     "summary": "docs/reverse-client/r1-navigation-implementation-constructor/summary.json",
     "sha256": "21bca14c454194ae6cf753cc539ef37771b2b07e5b52d9e06fe8689b74f98e81",
@@ -3568,7 +3707,7 @@
     "original_hash_stable": true,
     "minimum_free_gib": 13.37619400024414
   },
-  "updated_utc": "2026-10-23T11:19:53.553Z",
+  "updated_utc": "2026-11-04T21:19:25.448Z",
   "terrain_type_exports": {
     "path": "docs/reverse-client/r1-terrain-type-exports/discovery.json",
     "sha256": "c9fcbf2803b2bdd02bf6d6915c5891c442c7a678546b771ac2e1d798caa8b7ce",
@@ -4128,7 +4267,7 @@
   "active_skill_reference_query": {
     "status": "passed-and-normal-cleanup-complete",
     "session_id": 91762,
-    "utc": "2026-10-23T09:44:40.720Z",
+    "utc": "2026-10-23T09:44:40.72Z",
     "mode": "--r1-game-skill-reference-direct",
     "output": "docs/reverse-client/r1-game-skill-reference-direct-run1",
     "runner_sha256": "8f0cff3e61aece23a029264c55cb59f9041b15ebaf932e6b8cc4ad6f38d77194",
@@ -4427,7 +4566,7 @@
   },
   "historical_execution_state_before_20261023T1030Z": {
     "owned_backend_active": null,
-    "pending_command": false,
+    "pending_command": true,
     "uncertain_outcome": true,
     "approval_denied": false,
     "external_process_terminated": false,
@@ -4854,52 +4993,22 @@
     "limit": "Explicit navigation polygon-center initial height; Ground-origin precheck fails4. No physical mouse or renderer. Native registration/cold startup remain explicit OWN prerequisites.",
     "full_gameplay_accepted": false
   },
-  "execution_now": {
-    "pending_commands": [],
-    "owned_backend_active": false,
-    "known_owned_pid_check": {
-      "utc": "2026-10-23T11:47:08.6762877Z",
-      "queried": [
-        36180,
-        24460,
-        13100,
-        12420,
-        37644,
-        25280
-      ],
-      "present": []
-    },
-    "completed_build_sessions": [
-      {
-        "id": 95490,
-        "exit": 0
-      },
-      {
-        "id": 33628,
-        "exit": 1
-      },
-      {
-        "id": 63523,
-        "exit": 0
-      }
-    ],
-    "completed_rea_sessions": [
-      {
-        "id": 10180,
-        "exit": 0
-      },
-      {
-        "id": 93988,
-        "exit": 0
-      },
-      {
-        "id": 62779,
-        "exit": 0
-      }
-    ],
-    "original_process_executed": false,
-    "external_processes_modified": false,
-    "scheduled_tasks_created": false
+  "animation_name_search_preparation": {
+    "manifest": ".tooling/r1-animation-set-names-prepared/manifest.json",
+    "manifest_sha256": "a95488a193fa0f8aa1b315dc30cf67bfdf2d283275fc26dde8d271d4edfb9bca",
+    "plan": "docs/reverse-client/r1-animation-set-names-plan/plan.json",
+    "plan_sha256": "7439d8e7acb3f22823b967d1fa8e031eaa8c61e47754603075d8f61e11ca630c",
+    "runner_sha256": "fd2a5b016b088e00ff829e8ee594a50eb3e2cceca1d7624d63aa50b0567905f6",
+    "sampler_sha256": "53c8db2dcfb242a629fcba6728113d2dfd7f70b27c5b28c71c9fb127bcee2552",
+    "argv_validation": ".tooling/r1-animation-set-names-prepared/identity-test-result.json",
+    "argv_scenarios": 9,
+    "argv_assertions": 18,
+    "syntax_check_exit": 0,
+    "offline_plan_exit": 0,
+    "original_read_by_offline_check": false,
+    "engine_speed_source_preparation": ".tooling/r1-move-animation-prepared/engine-speed-preparation-checkpoint.json",
+    "engine_speed_source_compiled": false,
+    "production_patches_applied": false
   },
   "main_player_hot_validation": {
     "status": "passed-new-game-main-player-hot-components-only",
@@ -4990,5 +5099,508 @@
     "sha256": "a19697eba48431db3bd2934d90a6efe26d689d1bacab5ed5e667d0ec32d5e626",
     "saved_utc": "2026-10-23T11:50:24.396Z",
     "explicit_resume_required": true
+  },
+  "resume_20261026": {
+  "file": "docs/reverse-client/r1-resume-20261026.json",
+  "sha256": "282614ad71bf9c807e0d0eb0947c7c5c47f9d2ffa5393befde0fb278c10bdd93"
+},
+  "lua_script_initialization": {
+    "file": "docs/reverse-client/r1-script-registration-stage.json",
+    "sha256": "cdf6110e5feec365309c84a22bc9b3efc02a1b8a0f4e809a19ebd415c10bb3d8",
+    "main_checkpoint": "docs/reverse-client/r1-resume-20261102.json",
+    "main_sha256": "310b02689da615b5b662cbf4060ed148f01529ccd07098dea693ab82a93023b8",
+    "result": ".tooling/r1-script-validation/resume-result.json",
+    "result_sha256": "5293dc9e38c041d60b976fd1325ba73f527114e0617c8982c6ffe19dbf6456df",
+    "release": "docs/reverse-client/r1-script-initialization-release.json",
+    "release_sha256": "89c85481e8245935dbef4948f08eafe4b4eb23896bbbb8d10719f0f26a58ef92",
+    "new_scenes": 5,
+    "new_assertions": 253,
+    "old_scenes": 1,
+    "old_assertions": 12,
+    "gameplay_accepted": false
+  },
+  "execution_now": {
+  "stage": {
+    "file": "docs/reverse-client/r1-ground-target-primary-stage-20261104.json",
+    "sha256": "74ba7cea000e91e7fe987d0427e8ad1df9bf7adc4889d991387705c7a1f284b9",
+    "report": "docs/reverse-client/r1-ground-target-primary-stage-20261104.md",
+    "report_sha256": "033c21c9a549ddce33c8c46d5fef059ddf14293494e56a2f1e1d551898421cff",
+    "status": "own-mainmenu-ground-primary-hit-validated;native-scene-and-interactive-client-unresolved;released-as-of-recorded-sample"
+  },
+  "status": "own-mainmenu-ground-primary-hit-validated;native-scene-and-interactive-client-unresolved;released-as-of-recorded-sample",
+  "pending_operations": 0,
+  "owned_heavy_tool_processes": 0,
+  "resource_released": true,
+  "last_process_check_utc": "2026-11-04T19:34:54.9962706Z",
+  "release_check": {
+    "file": ".tooling/gd-ground-maincall-binding-20261104/final-release.json",
+    "sha256": "d1525bb00226b5dbb6601a4b54d62fec000c0e9cd3b9ba9a46cb364b19f3f6f4"
+  },
+  "release_identity_resolution": {
+    "file": ".tooling/gd-ground-maincall-binding-20261104/release-identity-resolution.json",
+    "sha256": "56c63b5d65c053e6a64d8a0eea53c81f3f6fa272422b9310c5c63dd4d2a3e520"
+  },
+  "release_resolution_is_new_sample": false,
+  "original_still_running": false,
+  "original_started_this_stage": true,
+  "original_saves_accessed_this_stage": false,
+  "normal_game_local_writes_possible": true,
+  "native_click_dispatch_captured": false,
+  "new_interactive_reversed_client_available": false,
+  "next": {
+    "steps": [
+      "Reuse the saved World220840/Level130130 bodies and17-case result; do not repeat successful queries or full old suites without affected changes.",
+      "Reuse saved handler21360..21755(eventtype/1D0/85),22193..2224A(hit to Widget2D8/ObjectId),225A2..22607(bool/ref args) to prepare the exact branch into existing PlayerMouseContracts with shared identity; no new query is needed for these saved spans.",
+      "Next minimal unresolved producer is EXE1BCD0: saved21358 call returns R13 at2135D, consumed as ControllerPlayer this at22604/22607. Existing Game128530 runs Controller-to-Player in the opposite direction and cannot substitute. No saved loaded1BCD0 body exists; first verify a bounded boundary, and any needed live-body capture requires a new visible-launch notice.",
+      "Native scene/publication and Spatial133E70/TerrainB8/portal fallback remain Unsupported. Do not expand into an unlocated WorldC0 writer search.",
+      "Physical input dispatch, actual loaded IAT/click invocation, and independent original-resource scene/UI rendering remain separate direct gaps. Do not substitute WASD or a redesigned UI.",
+      "Before a new heavy batch, obtain fresh5GiB physical+commit/2GiB runtime admission and identity/mutex checks. This archive only records the19:34:54 sample; do not terminate or adopt the unrelated reused-PID conhost.",
+      "Any visible original launch requires prior user notice and existing backup/offline/cloud protections. No failed debugger retry, save restore, or claim of an interactive reversed client."
+    ],
+    "pending_operations": 0,
+    "interactive_client_available": false
   }
+},
+  "provider_initialization": {
+    "actual_tests": 0,
+    "compiled": false,
+    "stage": "docs/reverse-client/r1-provider-initialization-stage.json",
+    "main": "docs/reverse-client/r1-resume-20261102.json",
+    "main_sha256": "5a14e2c358463ba06aa8e2c862e4d32ed1e510255618ea38c8169f0a61238a2d",
+    "stage_sha256": "4286dff2e5fa61a7cc6da9f5495c5d135e5ec79791d603089f4e0aa773d5937d"
+  },
+  "interactive_availability": {
+    "file": "docs/reverse-client/r1-interactive-availability-20261103.json",
+    "sha256": "5e31f70eb605df852d034f1880d763ccd73af482de3b2831bcf32fbf0ab6303d",
+    "interactive_client_available": false,
+    "original_dynamic_comparison": false
+  },
+  "latest_original_click_observation": {
+    "resource_released": true,
+    "status": "runtime-failure;original-exited-0x80000003;zero-captures;all-owned-processes-released;no-retry",
+    "file": "docs/reverse-client/r1-click-attempt7-exit-20261104.json",
+    "sha256": "11d70407d575c659a2bed641471363edb007ad43b3e37b0ad717b395836db31a",
+    "pending_operations": 0
+  },
+  "latest_debugger_investigation": {
+    "pending": 0,
+    "sha256": "3027216b10ae0cb11122c04b1f8c3e5e01ba0bb081db8f4e8939756b0841df73",
+    "status": "bounded-investigation-complete;original-cause-unknown;original-trace-paused",
+    "file": "docs/reverse-client/r1-async-breakpoint-investigation-20261104.json"
+  },
+  "observer_terminal_revision": {
+    "file": "docs/reverse-client/r1-observer-terminal-revision-20261104.json",
+    "sha256": "237d630d64e5c7eaac8150cf5bcfbd3d549e05f961ce2191687658b0cadd8e82",
+    "status": "owned-terminal-validation-passed;original-retry-not-established",
+    "pending": 0,
+    "original_retry_scheduled": false
+  },
+  "running_stop_observation": {
+    "file": "docs/reverse-client/r1-running-stop-observation-20261104.json",
+    "sha256": "7add0350cbc08898c9110e5d9e1a6840008e01ace9493cdba271d75b4ac97bc9",
+    "status": "bounded-running-stop-observation-complete;unknown-stop-retained;original-trace-paused",
+    "pending": 0,
+    "original_retry_scheduled": false
+  },
+  "stop_differential_observation": {
+    "file": "docs/reverse-client/r1-stop-differential-20261104.json",
+    "sha256": "05aaf4ae5955fa7dd06df98508832ed7f07e33a659701b9d5458b16663d3ba40",
+    "report": "docs/reverse-client/r1-stop-differential-20261104.md",
+    "status": "owned-stop-differential-complete;deferred-owned-breakpoint-detach-verified;unknown-exception-recovery-unproven;original-paused"
+  },
+  "bounded_handoff": {
+    "file": "docs/reverse-client/r1-bounded-handoff-20261104.json",
+    "sha256": "7109f555a09ba607353c47b3fc9dafa32f6471cd8eeb491bec98b8ffef97fc4b",
+    "report": "docs/reverse-client/r1-bounded-handoff-20261104.md",
+    "status": "bounded-handoff-prepared;resource-blocked-before-worker;live-tests-not-run;original-paused"
+  },
+  "bounded_handoff_validation": {
+    "file": "docs/reverse-client/r1-bounded-handoff-validated-20261104.json",
+    "sha256": "83b0fdb7109f0c3519bc80bdb017aeeb646e0084f85435cf79a6783d553d6b93",
+    "report": "docs/reverse-client/r1-bounded-handoff-validated-20261104.md",
+    "status": "owned-bounded-readonly-hold-validated;human-takeover-unproven;original-paused"
+  },
+  "noack_timeout_validation": {
+    "file": "docs/reverse-client/r1-noack-timeout-20261104.json",
+    "sha256": "ffedbb42a03abb0224d700521ee705465f627b8366137d233fcb7ad269975412",
+    "report": "docs/reverse-client/r1-noack-timeout-20261104.md",
+    "status": "owned-noack-timeout-hold-validated;unknown-recovery-and-human-takeover-unverified;original-paused"
+  },
+  "historical_execution_before_same_session_validation": {
+    "checkpoint_sha256": "2a55e9acbda5f6c99545860f515a3561e2b6a90d729b8e0ab7493c605c8334b7",
+    "updated_utc": "2026-11-03T14:02:37.2557176Z",
+    "last_event_utc": "2026-11-03T09:33:04.4211322Z",
+    "stage": "R1 conditional Script service initialization prefix verified,notplayable",
+    "execution_now": {
+      "last_terminal_session": 27027,
+      "new_Rea_Job_created": false,
+      "stage": {
+        "file": "docs/reverse-client/r1-setui-byte-candidate-stage.json",
+        "sha256": "3ea7cfa48aa1c0ee0b506836d79769e226e112ee1baf7adc99c47731e1306cb6"
+      },
+      "resource_released": true,
+      "last_exit": 0,
+      "status": "single-pass-completed;zero-fixed-operand-candidates;UI-source-still-unresolved",
+      "pending_operations": 0,
+      "owned_heavy_processes": 0
+    },
+    "current_operation": "none",
+    "active_followup_operation": null,
+    "resume_20261026": {
+      "sha256": "5832b03d603b321b56b7750f564cc7554f8df33328ec1f7d0465f7a836425dd3",
+      "file": "docs/reverse-client/r1-resume-20261026.json"
+    }
+  },
+  "same_session_stdin_validation": {
+    "file": "docs/reverse-client/r1-same-session-stdin-20261104.json",
+    "sha256": "ecc7313368c0d38311562b71d439ff53ba92c808d9d297b3bc8ff1b16598606c",
+    "report": "docs/reverse-client/r1-same-session-stdin-20261104.md",
+    "status": "owned-same-session-readonly-validated;human-takeover-and-unknown-recovery-unverified"
+  },
+  "historical_execution_before_original_ui_update": {
+    "checkpoint_sha256": "736ded1949e29669ec30c338500b344f14d34e7429da0132a2f0f6cf0af52a88",
+    "updated_utc": "2026-11-04T16:21:26.1460861Z",
+    "last_event_utc": "2026-11-04T16:21:26.1460861Z",
+    "stage": "owned-same-session-readonly-validated;human-takeover-and-unknown-recovery-unverified;original-one-hit-authorized-preflight-preparation;new-original-launch-not-issued",
+    "execution_now": {
+      "stage": {
+        "file": "docs/reverse-client/r1-same-session-stdin-20261104.json",
+        "sha256": "d460859b1146452b0a2896edf650271589510e665f381476a21be19667042ae2",
+        "report": "docs/reverse-client/r1-same-session-stdin-20261104.md",
+        "status": "owned-same-session-readonly-validated;human-takeover-and-unknown-recovery-unverified"
+      },
+      "status": "owned-same-session-readonly-validated;human-takeover-and-unknown-recovery-unverified;original-one-hit-authorized-preflight-preparation;new-original-launch-not-issued",
+      "pending_operations": 0,
+      "pending_operation_scope": "Completed same-session batch; parent preflight/preparation not sampled by this archive",
+      "owned_heavy_tool_processes": 0,
+      "process_state_as_of_utc": "2026-11-04T16:11:04.7199838Z",
+      "resource_released": true,
+      "current_own_job_empty_observed": true,
+      "current_own_jobs_disposed": true,
+      "historical_controlled_job_empty_observed": false,
+      "last_process_check_utc": "2026-11-04T16:11:04.7199838Z",
+      "last_resource_sample_utc": "2026-11-04T16:11:03.8421086Z",
+      "original_still_running": false,
+      "original_state_scope": "No original launch issued in newly authorized one-hit attempt, as reported by parent at archive delegation",
+      "original_retry_authorized": true,
+      "original_launch_issued": false,
+      "original_attached": false,
+      "candidate_active": false,
+      "last_formal_launcher_session": 45091,
+      "last_formal_launcher_chunk": "e9878b",
+      "last_readonly_session": 25777,
+      "last_readonly_chunk": "cac767",
+      "live_new_tests_completed": 1,
+      "new_original_runtime_claim": false,
+      "next": {
+        "status": "user-authorized-original-one-hit-trace;preflight-and-preparation-ongoing",
+        "authorization_source": "Parent /root delegation to terminal_revision_review: new original one-hit tracing is user-authorized; archive only, no execution delegated here.",
+        "original_launch_issued": false,
+        "original_running_in_new_attempt": false,
+        "original_attached_in_new_attempt": false,
+        "new_original_runtime_claim": false,
+        "preparation_scope": "Parent owns original-process/backup/Steam-state/resource preflight and bounded observer preparation. This archival task performs no execution, tests or resource/process sampling.",
+        "safeguards": "Existing formal approval, exact identity, backup/Cloud checks, original resource thresholds and visible-launch notification remain applicable. No automatic Continue/Detach for an unknown stop. Disposable fixture Job termination must not be ported to the original."
+      }
+    },
+    "current_operation": "Parent authorized original-one-hit preflight/preparation; new original launch not issued at archive delegation",
+    "active_followup_operation": {
+      "status": "user-authorized-original-one-hit-trace;preflight-and-preparation-ongoing",
+      "authorization_source": "Parent /root delegation to terminal_revision_review: new original one-hit tracing is user-authorized; archive only, no execution delegated here.",
+      "original_launch_issued": false,
+      "original_running_in_new_attempt": false,
+      "original_attached_in_new_attempt": false,
+      "new_original_runtime_claim": false,
+      "preparation_scope": "Parent owns original-process/backup/Steam-state/resource preflight and bounded observer preparation. This archival task performs no execution, tests or resource/process sampling.",
+      "safeguards": "Existing formal approval, exact identity, backup/Cloud checks, original resource thresholds and visible-launch notification remain applicable. No automatic Continue/Detach for an unknown stop. Disposable fixture Job termination must not be ported to the original."
+    },
+    "resume_20261026": {
+      "file": "docs/reverse-client/r1-resume-20261026.json",
+      "sha256": "329f46e774d571d6e4c0bc540167b408d7e4b963962efc5bf5e93437a4a630af"
+    },
+    "same_session_stdin_validation": {
+      "file": "docs/reverse-client/r1-same-session-stdin-20261104.json",
+      "sha256": "d460859b1146452b0a2896edf650271589510e665f381476a21be19667042ae2",
+      "report": "docs/reverse-client/r1-same-session-stdin-20261104.md",
+      "status": "owned-same-session-readonly-validated;human-takeover-and-unknown-recovery-unverified"
+    }
+  },
+  "historical_execution_before_original_onehit_result": {
+    "checkpoint_sha256": "36fc87d5fb682ee5e76a61123f19694d61ad7de3380c691e7beb439eedad26b4",
+    "updated_utc": "2026-11-04T16:24:46.2393814Z",
+    "last_event_utc": "2026-11-04T16:24:46.2393814Z",
+    "stage": "owned-same-session-readonly-validated;human-takeover-and-unknown-recovery-unverified;authorized-original-running-existing-world;observer-not-attached",
+    "execution_now": {
+      "stage": {
+        "file": "docs/reverse-client/r1-same-session-stdin-20261104.json",
+        "sha256": "ecc7313368c0d38311562b71d439ff53ba92c808d9d297b3bc8ff1b16598606c",
+        "report": "docs/reverse-client/r1-same-session-stdin-20261104.md",
+        "status": "owned-same-session-readonly-validated;human-takeover-and-unknown-recovery-unverified"
+      },
+      "status": "owned-same-session-readonly-validated;human-takeover-and-unknown-recovery-unverified;authorized-original-running-existing-world;observer-not-attached",
+      "pending_operations": 0,
+      "pending_operation_scope": "Completed same-session batch; parent preflight/preparation not sampled by this archive",
+      "owned_heavy_tool_processes": 0,
+      "process_state_as_of_utc": "2026-11-04T16:11:04.7199838Z",
+      "resource_released": true,
+      "current_own_job_empty_observed": true,
+      "current_own_jobs_disposed": true,
+      "historical_controlled_job_empty_observed": false,
+      "last_process_check_utc": "2026-11-04T16:11:04.7199838Z",
+      "last_resource_sample_utc": "2026-11-04T16:11:03.8421086Z",
+      "original_still_running": true,
+      "original_state_scope": "Parent CUA receipt: existing character entered original town; fresh exact native process identity required before attachment.",
+      "original_retry_authorized": true,
+      "original_launch_issued": true,
+      "original_attached": false,
+      "candidate_active": false,
+      "last_formal_launcher_session": 45091,
+      "last_formal_launcher_chunk": "e9878b",
+      "last_readonly_session": 25777,
+      "last_readonly_chunk": "cac767",
+      "live_new_tests_completed": 1,
+      "next": {
+        "status": "user-authorized-original-one-hit-trace;original-entered-existing-world;observer-preparation-ongoing;not-attached",
+        "authorization_source": "Parent /root delegation to terminal_revision_review: new original one-hit tracing is user-authorized; archive only, no execution delegated here.",
+        "ui_receipt": {
+          "file": "docs/reverse-client/r1-original-relaunch-ui-20261104.json",
+          "sha256": "ed580a49cf10b1b9ab505af7d154ed1dc520bf9f75ef24f250ac6805f634a63f",
+          "recorded_utc": "2026-11-04T16:21:24.1298387Z"
+        },
+        "original_launch_issued": true,
+        "original_running_observed_ui": true,
+        "original_running_in_new_attempt": true,
+        "original_attached_in_new_attempt": false,
+        "movement_capture_yet": false,
+        "new_original_behavior_claim": false,
+        "original_window": 10617210,
+        "exact_native_process_identity": "Required before attachment; not established by this UI receipt or archival task",
+        "steam_offline_visible": true,
+        "game_cloud_toggle_visible_off": true,
+        "settings_changed": false,
+        "baseline_backup_receipt": "docs/reverse-client/r1-click-resume-preflight-20261104T1612Z.json",
+        "preparation_scope": "Parent owns original UI/process/backup/resource verification and bounded observer preparation; this archive only reads existing receipts and writes documents, with no launch/test/sampling.",
+        "safeguards": "Existing formal approval, exact identity, backup/Cloud checks, original resource thresholds and visible-launch notification remain applicable. No automatic Continue/Detach for an unknown stop. Disposable fixture Job termination must not be ported to the original."
+      },
+      "owned_batch_release_as_of_utc": "2026-11-04T16:11:04.7199838Z",
+      "original_state_as_of_utc": "2026-11-04T16:21:24.1298387Z",
+      "original_running_observed_ui": true,
+      "original_one_hit_ui": {
+        "file": "docs/reverse-client/r1-original-relaunch-ui-20261104.json",
+        "sha256": "ed580a49cf10b1b9ab505af7d154ed1dc520bf9f75ef24f250ac6805f634a63f",
+        "recorded_utc": "2026-11-04T16:21:24.1298387Z"
+      },
+      "new_original_behavior_claim": false
+    },
+    "current_operation": "Parent original game entered existing town; newonehit observer preparation, no debugger attached perUIreceipt",
+    "active_followup_operation": {
+      "status": "user-authorized-original-one-hit-trace;original-entered-existing-world;observer-preparation-ongoing;not-attached",
+      "authorization_source": "Parent /root delegation to terminal_revision_review: new original one-hit tracing is user-authorized; archive only, no execution delegated here.",
+      "ui_receipt": {
+        "file": "docs/reverse-client/r1-original-relaunch-ui-20261104.json",
+        "sha256": "ed580a49cf10b1b9ab505af7d154ed1dc520bf9f75ef24f250ac6805f634a63f",
+        "recorded_utc": "2026-11-04T16:21:24.1298387Z"
+      },
+      "original_launch_issued": true,
+      "original_running_observed_ui": true,
+      "original_running_in_new_attempt": true,
+      "original_attached_in_new_attempt": false,
+      "movement_capture_yet": false,
+      "new_original_behavior_claim": false,
+      "original_window": 10617210,
+      "exact_native_process_identity": "Required before attachment; not established by this UI receipt or archival task",
+      "steam_offline_visible": true,
+      "game_cloud_toggle_visible_off": true,
+      "settings_changed": false,
+      "baseline_backup_receipt": "docs/reverse-client/r1-click-resume-preflight-20261104T1612Z.json",
+      "preparation_scope": "Parent owns original UI/process/backup/resource verification and bounded observer preparation; this archive only reads existing receipts and writes documents, with no launch/test/sampling.",
+      "safeguards": "Existing formal approval, exact identity, backup/Cloud checks, original resource thresholds and visible-launch notification remain applicable. No automatic Continue/Detach for an unknown stop. Disposable fixture Job termination must not be ported to the original."
+    },
+    "resume_20261026": {
+      "file": "docs/reverse-client/r1-resume-20261026.json",
+      "sha256": "383b1df275f169cd0ed5aed4c34fd30b43f9fac0cc324ef84abd9265b596fda4"
+    }
+  },
+  "original_onehit_observation": {
+    "file": "docs/reverse-client/r1-original-onehit-click-20261104.json",
+    "sha256": "ee6a0c2580e60d637d75fa0468583578e6c96d6fa49a2da58878c49f5c373d6d",
+    "report": "docs/reverse-client/r1-original-onehit-click-20261104.md",
+    "status": "original-onehit-capture-failed;original-exited-0x80000003;tools-released;cause-unknown;original-closed"
+  },
+  "historical_execution_before_readonly_widget_prefix_20261104": {
+    "checkpoint_sha256": "615c62912942a7e5565d1c14300b95166ade348e3214b117bbbbc2f32f25b4c5",
+    "updated_utc": "2026-11-04T16:36:39.5874657Z",
+    "last_event_utc": "2026-11-04T16:36:39.5874657Z",
+    "stage": "original-onehit-capture-failed;original-exited-0x80000003;tools-released;cause-unknown;original-closed",
+    "execution_now": {
+      "stage": {
+        "file": "docs/reverse-client/r1-original-onehit-click-20261104.json",
+        "sha256": "ee6a0c2580e60d637d75fa0468583578e6c96d6fa49a2da58878c49f5c373d6d",
+        "report": "docs/reverse-client/r1-original-onehit-click-20261104.md",
+        "status": "original-onehit-capture-failed;original-exited-0x80000003;tools-released;cause-unknown;original-closed"
+      },
+      "status": "original-onehit-capture-failed;original-exited-0x80000003;tools-released;cause-unknown;original-closed",
+      "original_pid": 52980,
+      "original_creation_filetime": "134382828029856734",
+      "original_still_running": false,
+      "original_current_state": "closed, not paused",
+      "original_attached": false,
+      "original_relaunch_planned": false,
+      "captured_hits": 0,
+      "capture_complete": false,
+      "native_terminal_proved": true,
+      "original_exit_code": "0x80000003",
+      "exception_cause": "unknown",
+      "pending_operations": 0,
+      "owned_heavy_tool_processes": 0,
+      "last_process_check_utc": "2026-11-04T16:32:50.9695513Z",
+      "resource_released": true,
+      "current_own_job_empty_observed": true,
+      "current_own_jobs_disposed": true,
+      "forced_termination_requested": false,
+      "historical_controlled_job_empty_observed": false,
+      "last_formal_launcher_session": 72623,
+      "last_formal_tool_exit": 0,
+      "tool_exit_scope": "Successful safe-terminal accounting; requested capture failed.",
+      "independent_release": {
+        "file": ".tooling/gd-click-onehit-20261104/independent-release.json",
+        "sha256": "cbc2f7d9e9e2a4b5d818cee1e16cfc70a38cc522d0596cbc85afed5e3a778d77",
+        "status": "passed-current-release-and-backup-copies",
+        "finished_utc": "2026-11-04T16:32:50.9695513Z",
+        "known_pids": [
+          34612,
+          42756,
+          52980,
+          60364
+        ],
+        "remaining": [],
+        "current_lldb": [],
+        "current_original_game": [],
+        "limitation": "Historical owner Job release plus current PID inventory; backup integrity does not establish current original-save condition or remote Cloud state."
+      },
+      "next": {
+        "status": "two-owned-DLL-cases-preparation-only",
+        "cases_planned": 2,
+        "proposed_comparison": "Same installed LLDB address breakpoint in an already-loaded self-authored DLL, main-thread versus worker-thread calls; exact plan remains parent preparation.",
+        "original_relaunch_planned": false,
+        "repeat_same_original_attempt": false,
+        "new_executions_in_this_archive": 0,
+        "protection": "Keep original closed. No assumption about DRM or exception cause; no new debugger/software/security changes. Existing resource, identity, formal approval and exact-owned cleanup boundaries remain."
+      }
+    },
+    "current_operation": "Prepare two ownDLL address-breakpoint cases; original remains closed; no current observation or relaunch",
+    "active_followup_operation": {
+      "status": "two-owned-DLL-cases-preparation-only",
+      "cases_planned": 2,
+      "proposed_comparison": "Same installed LLDB address breakpoint in an already-loaded self-authored DLL, main-thread versus worker-thread calls; exact plan remains parent preparation.",
+      "original_relaunch_planned": false,
+      "repeat_same_original_attempt": false,
+      "new_executions_in_this_archive": 0,
+      "protection": "Keep original closed. No assumption about DRM or exception cause; no new debugger/software/security changes. Existing resource, identity, formal approval and exact-owned cleanup boundaries remain."
+    },
+    "resume_20261026": {
+      "file": "docs/reverse-client/r1-resume-20261026.json",
+      "sha256": "d9d6f284a7c408259618e04a217278a6adf4e4f10411ea9736a2289851cf97ef"
+    }
+  },
+  "original_readonly_widget_click": {
+    "file": "docs/reverse-client/r1-original-readonly-widget-click-20261104.json",
+    "sha256": "242b3f795e774b1c337091b2b8406dfcde1d91aad8bf50c5456142f0c6bb97be",
+    "report": "docs/reverse-client/r1-original-readonly-widget-click-20261104.md",
+    "report_sha256": "7586466d7c93679ce02e28056aea28c4e0d454bd81df479ef1d9ad6a5b3bd0ee",
+    "status": "two-readonly-snapshots-and-visible-click-observed;current-release-and-fixed-hashes-verified"
+  },
+  "owned_dll_postrun_audit": {
+    "file": ".tooling/lldb-dll-breakpoint-20261104/postrun-audit.json",
+    "sha256": "fbeac820334b1de38b22318976ad1c0f99675cda0b253b7198eae7c0e2c12561",
+    "main_positive_supported": true,
+    "aggregate_status": "failed",
+    "worker_case_executed": false,
+    "whole_suite_passed": false,
+    "original_compatibility_verified": false
+  },
+  "original_readonly_code_prefix": {
+    "file": "docs/reverse-client/r1-original-readonly-code-prefix-20261104.json",
+    "sha256": "4a5460fc547edec3011d0dc22f6cef2e255bd3cdc71a439e9fc078ed567d7de7",
+    "report": "docs/reverse-client/r1-original-readonly-code-prefix-20261104.md",
+    "report_sha256": "e6c236d94ebde78561d6972c343111d7f5657c0cd4ac983880bdee93d9cca684",
+    "status": "readonly-three-prefix-disk-mapped-differences-observed;released;cause-and-dispatch-unproven;disk-Rea-body-plan-held"
+  },
+"original_readonly_handler_body": {
+  "file": "docs/reverse-client/r1-original-handler-body-20261104.json",
+  "sha256": "14ec742a8a6fa8b622bafd2b5ed148c1e2ff5194db581e36222c6faa0f8ab0eb",
+  "report": "docs/reverse-client/r1-original-handler-body-20261104.md",
+  "report_sha256": "92fc48fd4c313e55111a28ca3fca7d20b38f4ef55df2473340f590fbc7df7e09",
+  "status": "readonly-handler-and-iat-confirmed;offline-body-decoded;camera-and-mouse-action-call-sites-linked;released;execution-chain-unproven"
+},
+"historical_observation_notice": "latest_original_click_observation and earlier failed debugger records are historical; current state is execution_now.",
+"worldcamera_imagepoint_stage": {
+  "file": "docs/reverse-client/r1-worldcamera-imagepoint-stage-20261104.json",
+  "sha256": "c72c486d8beac5b8d7a4da2d49b63c90a198b2fa4d70481039ef08f19cba2cbc",
+  "report": "docs/reverse-client/r1-worldcamera-imagepoint-stage-20261104.md",
+  "report_sha256": "1437286f0d8dc0db6d45687703b7201b9d6054b01ada9153797fefc403e769ac",
+  "status": "worldcamera-wrapper-and-viewport-slice-validated;ground-target-producer-unresolved;released;interactive-client-not-ready"
+},
+"ground_target_primary_stage": {
+  "file": "docs/reverse-client/r1-ground-target-primary-stage-20261104.json",
+  "sha256": "74ba7cea000e91e7fe987d0427e8ad1df9bf7adc4889d991387705c7a1f284b9",
+  "report": "docs/reverse-client/r1-ground-target-primary-stage-20261104.md",
+  "report_sha256": "033c21c9a549ddce33c8c46d5fef059ddf14293494e56a2f1e1d551898421cff",
+  "status": "own-mainmenu-ground-primary-hit-validated;native-scene-and-interactive-client-unresolved;released-as-of-recorded-sample"
+},
+"controller_lookup_stage": {
+  "file": "docs/reverse-client/r1-controller-lookup-stage-20261104.json",
+  "sha256": "c4463bc8eb255ce0bc920688a4acf87210936800d76758165c33171830ff6d0b",
+  "report": "docs/reverse-client/r1-controller-lookup-stage-20261104.md",
+  "report_sha256": "798cdf79007e6494b9f07513e3624c7db45d14aafef6896bf10249c0a6e31c58",
+  "status": "controller-lookup-captured;own-widget-caller-fragments-validated;interactive-client-unresolved",
+  "is_latest": true,
+  "resume_instruction": "Use this latest stage for resumption. Do not repeat the passed10/45caller-fragment test or97B/32-instruction loaded1BCD0 capture/decode without an affected change; originalPID64300 is already absent. Next prepare a bounded future capture of9ED0..9FC7(247B),2A33B0..2A33E3(51B),their two12B pdata records,and the necessary verified class-info IAT/slot only. Loaded2D7198 andvslot0 identity remain UNKNOWN. Any new original launch requires prior notice; no next launch has been notified or scheduled. After actual evidence resolves the producer, preserve its shared R13/Controller identity when connecting PlayerMouse; do not substitute opposite-direction Game128530 or a fake success. Physical input and independent original-resource scene/UI remain unresolved.",
+  "new_scenarios": 10,
+  "assertions": 45,
+  "loaded_body_bytes": 97,
+  "original_still_running": false
+},
+"controller_dependencies_stage": {
+  "file": "docs/reverse-client/r1-controller-dependencies-stage-20261104.json",
+  "sha256": "6650f3bed1fed7644ce0a28cc529e91af8029e3a343625f1c2fc3bd718b190f5",
+  "report": "docs/reverse-client/r1-controller-dependencies-stage-20261104.md",
+  "report_sha256": "159c293d3463238187f899de1ede2a64f06735745bd876b52f2ebf5269e4116b",
+  "status": "controller-dependencies-evidence-and-own-model-validated;interactive-client-unresolved",
+  "is_latest": true,
+  "resume_instruction": "Resume from this latest dependency stage. Reuse the accepted330B live sample,85instruction decode,classInfo binding and10scenario/52assertion own integration; do not rerun prior10/45 or17/93whole suites without affected changes. Next reuse the existing128530 body at docs/reverse-client/r1-game-mouse-state/08-Role-binding-helper-0x180128530-procedure_assembly.json and compose PlayerMousePlayerLookupBoundaries.Resolve128530 with the same Controller/ObjectId30,hot Instance4213A0 manager and GameMovementIdentityBridge; BindRole borrows the original Entity vptr cell. Only explicit OWN initialization is permitted; native ID/manager publication and runtime vptr remain unknown. Expected next15E230/CanAct460 boundary is not yet run. This stage only archives; it does not begin that implementation. Actual pixel-to-hit/frame scheduling,continuous movement and independent original-resource presentation remain separate gaps. No new Rea or original launch is scheduled by this archive; any visible launch still requires prior notice and existing protection.",
+  "new_scenarios": 10,
+  "assertions": 52,
+  "loaded_dependency_bytes": 298,
+  "original_still_running": false,
+  "new_interactive_reversed_client_available": false
+},
+"controller_player_lookup_stage": {
+  "file": "docs/reverse-client/r1-controller-player-lookup-stage-20261104.json",
+  "sha256": "634bf827bd87b7b03f9424f8811fc6c0251117593e6eaaaada64c346fe5da9b1",
+  "report": "docs/reverse-client/r1-controller-player-lookup-stage-20261104.md",
+  "report_sha256": "22beddf1cec87f42e286aa162ec87ab6f853affddcd6a3821754e1818f09895e",
+  "status": "controller-to-player-and-alive-own-integration-validated;stopped15e23e-byte242a;interactive-client-unresolved",
+  "is_latest": true,
+  "resume_instruction": "Resume this latest stage: reuse the passed11scenarios/140assertions,62310getter and existing lookup/Alive composition; no repeat of earlier whole suites or successful queries without an affected change. Next lightly inspect existing constructor/writer evidence forByte242A at15E23E; keep it Unknown until supported. Keep the same nonzero AssociatedId16C0 in downstream association queries; do not reuse an earlier zero-value fixture to bypass that branch. Production writers forCharacter16C0/Controller30,native manager/singleton publication and runtime vptr remain unverified. The original Widget full input/hit/frame chain and independent original-resource presentation are still incomplete. No new original launch,Rea or movement run is scheduled here.",
+  "new_scenarios": 11,
+  "assertions": 140,
+  "frontier": "15E23E unknownByte242A",
+  "movement_executed": false,
+  "new_interactive_reversed_client_available": false
+},
+"controller_association_stage": {
+  "file": "docs/reverse-client/r1-controller-association-stage-20261104.json",
+  "sha256": "83fbd20ec4947bab2c3cd8cf8a9a7c7187beefcf060d557e3b3750713ec39713",
+  "report": "docs/reverse-client/r1-controller-association-stage-20261104.md",
+  "report_sha256": "95a8a88f53c8b42baa1b20a542cd1a3151291f99115b048060698a6d641d901f",
+  "status": "controller-association-and-conditional-word-store-own-validated;mouse-stops15e292-count2f0;interactive-client-unresolved",
+  "is_latest": true,
+  "resume_instruction": "Resume this latest stage without repeating the passed focused tests or 48-byte disk reads. Reuse existing selected-state Count2F0/State2A0 publication evidence; do not invent an active-state default. Legacy GameControllerMoveProduction.Associated still does not use the new adapter: integrate only with an explicit shared binding and preserve its nonzero-ID path. Controller vslots +60/+80 have addresses only, not verified bodies. Native 16C0/+30 writers, runtime vptr/singleton publication, full mouse/hit/frame chain and original-resource presentation remain unresolved.",
+  "new_scenarios": 10,
+  "assertions": 129,
+  "frontier": "15E292 unknownCount2F0",
+  "movement_executed": false,
+  "new_interactive_reversed_client_available": false
+}
 }

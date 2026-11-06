@@ -1,0 +1,45 @@
+{
+    "schema":  "grim-dynasty-r1-runtime-live-state-v1",
+    "utc":  "2026-11-05T08:10:00.4015177Z",
+    "pid":  2352,
+    "method":  "the state pointer at Controller+0x2A0 was read as a live vtable pointer, converted to an RVA with the live Game.dll base, and compared against the 24-state map resolved from RegisterStates",
+    "base":  {
+                 "Game.dll":  "0x7ffa83de0000",
+                 "Engine.dll":  "0x7ffb7eb50000"
+             },
+    "live_state_pointer":  "0x7ffa84524bc8",
+    "live_state_rva":  "0x744bc8",
+    "matched_state":  "LongIdle",
+    "slot70":  "0x15880 (the shared `ret 0` empty stub)",
+    "exactness":  "The RVA matches the disk-resolved LongIdle vtable exactly, not approximately; the neighbouring Idle 0x744e60 and MoveTo 0x744930 are distinct.",
+    "players":  {
+                    "player1":  {
+                                    "object":  "0x22ee167b010",
+                                    "controller":  "0x22ec4716920",
+                                    "state":  "0x7ff64f66b868",
+                                    "count_2f0":  7,
+                                    "overlay_2e8":  "0"
+                                },
+                    "player2":  {
+                                    "object":  "0x22f02154b20",
+                                    "controller":  "0x22f23229280",
+                                    "state":  "0x22f5ce9c150",
+                                    "count_2f0":  0,
+                                    "overlay_2e8":  "0x22f1f1508d0"
+                                }
+                },
+    "why_it_matters":  "Both live controllers sit in LongIdle, whose +0x70 is the shared empty stub. EndOfPathReached therefore returns without any state change or movement in this state, which is consistent with the whole OWN chain stopping rather than moving. A real click must first move the controller into MoveTo, whose +0x70 is the real body 0x1663F0.",
+    "not_claimed":  [
+                        "that a click always selects MoveTo",
+                        "why Count2F0 is 7 on player1 while its overlay is null",
+                        "that movement would occur",
+                        "any presentation behaviour"
+                    ],
+    "next":  "Either sample immediately after a real ground click to catch the transient MoveTo state, or find the SetState(\"MoveTo\") caller in the click path.",
+    "superseded":  {
+                       "by":  "docs/reverse-client/r1-runtime-click-transition-20261105.json and r1-runtime-moveto-confirmed-20261105.json",
+                       "reason":  "This file treated Controller+0x2A0 as the vtable pointer. It is a pointer to a state OBJECT whose first qword is the vtable. The matched_state=LongIdle claim here is therefore wrong and must not be cited.",
+                       "corrected_value":  "The state object is 0x22f5ce9bc10 with internal vtable 0x7ffa84524e60 (RVA 0x744e60 = Idle).",
+                       "use_this_instead":  "r1-runtime-moveto-confirmed-20261105.json"
+                   }
+}

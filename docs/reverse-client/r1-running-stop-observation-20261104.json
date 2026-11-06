@@ -1,0 +1,712 @@
+{
+  "schema": "gd-owned-running-stop-stage-v1",
+  "utc": "2026-11-04T14:03:57.8447550Z",
+  "status": "bounded-running-stop-observation-complete;unknown-stop-retained;original-trace-paused",
+  "observations_completed": 3,
+  "actual_running_stop_calls": 2,
+  "non_destructive_resume_verified": false,
+  "overlapping_stop_exit_observed": false,
+  "old_suites_replayed": false,
+  "original_started": false,
+  "original_attached": false,
+  "saves_accessed": false,
+  "steam_or_security_settings_changed": false,
+  "visible_apps_started": false,
+  "production_helper_or_candidate_changed": false,
+  "cases": [
+    {
+      "case": "stop-before-go",
+      "status": "completed-observation",
+      "before_helper": {
+        "utc": "2026-11-04T22:00:53.842253+08:00",
+        "state": 6,
+        "stop_id": 1,
+        "native": {
+          "utc": "2026-11-04T22:00:53.842253+08:00",
+          "creation_filetime": "134382744530830609",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        }
+      },
+      "helper_commands": {
+        "Stop": 1,
+        "Detach": 0,
+        "Continue": 0,
+        "Kill": 0
+      },
+      "outcome": "unknown",
+      "terminal_unknown": {
+        "message": "Terminal verification failed: Non-owned stop reason; keep original stopped for manual review",
+        "evidence": {
+          "outcome": null,
+          "safe_to_close_debugger": false,
+          "native_terminal": false,
+          "detach": null,
+          "stop": {
+            "success": true,
+            "error": null
+          },
+          "terminal": null,
+          "native_last": {
+            "utc": "2026-11-04T22:00:53.844365+08:00",
+            "creation_filetime": "134382744530830609",
+            "wait": 258,
+            "exit_code": 259,
+            "exit_code_hex": "0x00000103"
+          },
+          "foreign_stop": false,
+          "lldb_state": 5,
+          "inspected_stop_id": 2,
+          "check_error": {
+            "type": "RuntimeError",
+            "message": "Non-owned stop reason; keep original stopped for manual review"
+          }
+        }
+      },
+      "terminal_result": null,
+      "inspection": {
+        "phase": "pre-detach",
+        "stop_id": 2,
+        "allow_explicit_interrupt": true,
+        "unexpected": [
+          {
+            "thread_id": 43628,
+            "reason": 6,
+            "data_count": 1,
+            "data": [
+              "0xffffffffffffffff"
+            ]
+          }
+        ],
+        "accepted_interrupt_threads": []
+      },
+      "state_events": [
+        {
+          "utc": "2026-11-04T22:00:53.789124+08:00",
+          "phase": "awaiting-owner-phase",
+          "pid": 43084,
+          "unique_id": 1,
+          "state": 6,
+          "interrupted": false,
+          "restarted": false,
+          "description": "000001584AC88840 Event: broadcaster = 0000015849AA3A20 (lldb.process), type = 0x00000001 (state-changed), data = { process = 0000015849AA3A00 (pid = 43084), state = running}"
+        },
+        {
+          "utc": "2026-11-04T22:00:53.844365+08:00",
+          "phase": "helper-terminal-stop-result",
+          "pid": 43084,
+          "unique_id": 1,
+          "state": 5,
+          "interrupted": true,
+          "restarted": false,
+          "description": "000001584AC882A0 Event: broadcaster = 0000015849AA3A20 (lldb.process), type = 0x00000001 (state-changed), data = { process = 0000015849AA3A00 (pid = 43084), state = stopped}"
+        },
+        {
+          "utc": "2026-11-04T22:00:53.905666+08:00",
+          "phase": "owned-cleanup-wait",
+          "pid": 43084,
+          "unique_id": 1,
+          "state": 10,
+          "interrupted": false,
+          "restarted": false,
+          "description": "000001584AC88630 Event: broadcaster = 0000015849AA3A20 (lldb.process), type = 0x00000001 (state-changed), data = { process = 0000015849AA3A00 (pid = 43084), state = exited}"
+        }
+      ],
+      "listener_errors": [],
+      "listener_unsubscribed": true,
+      "race_coverage": "Stop-called-observe-raw-outcome",
+      "owned_cleanup": {
+        "kind": "own-fixture-only",
+        "kill_attempted": true,
+        "kill_success": true,
+        "native_first": {
+          "utc": "2026-11-04T22:00:53.845434+08:00",
+          "creation_filetime": "134382744530830609",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "identity": {
+          "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+          "creation_filetime": "134382744530830609",
+          "pid": 43084
+        },
+        "kill_error": null,
+        "sdk_state": 10,
+        "native_final": {
+          "utc": "2026-11-04T22:00:53.905666+08:00",
+          "creation_filetime": "134382744530830609",
+          "wait": 0,
+          "exit_code": 0,
+          "exit_code_hex": "0x00000000"
+        }
+      },
+      "canonical": ".tooling/lldb-running-stop-20261104/stop-before-go-result.json"
+    },
+    {
+      "case": "stop-after-work",
+      "status": "completed-observation",
+      "before_helper": {
+        "utc": "2026-11-04T22:00:55.79176+08:00",
+        "state": 6,
+        "stop_id": 1,
+        "native": {
+          "utc": "2026-11-04T22:00:55.79176+08:00",
+          "creation_filetime": "134382744549613742",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        }
+      },
+      "helper_commands": {
+        "Stop": 1,
+        "Detach": 0,
+        "Continue": 0,
+        "Kill": 0
+      },
+      "outcome": "unknown",
+      "terminal_unknown": {
+        "message": "Terminal verification failed: Non-owned stop reason; keep original stopped for manual review",
+        "evidence": {
+          "outcome": null,
+          "safe_to_close_debugger": false,
+          "native_terminal": false,
+          "detach": null,
+          "stop": {
+            "success": true,
+            "error": null
+          },
+          "terminal": null,
+          "native_last": {
+            "utc": "2026-11-04T22:00:55.800757+08:00",
+            "creation_filetime": "134382744549613742",
+            "wait": 258,
+            "exit_code": 259,
+            "exit_code_hex": "0x00000103"
+          },
+          "foreign_stop": false,
+          "lldb_state": 5,
+          "inspected_stop_id": 2,
+          "check_error": {
+            "type": "RuntimeError",
+            "message": "Non-owned stop reason; keep original stopped for manual review"
+          }
+        }
+      },
+      "terminal_result": null,
+      "inspection": {
+        "phase": "pre-detach",
+        "stop_id": 2,
+        "allow_explicit_interrupt": true,
+        "unexpected": [
+          {
+            "thread_id": 55816,
+            "reason": 6,
+            "data_count": 1,
+            "data": [
+              "0xffffffffffffffff"
+            ]
+          }
+        ],
+        "accepted_interrupt_threads": []
+      },
+      "state_events": [
+        {
+          "utc": "2026-11-04T22:00:55.737004+08:00",
+          "phase": "awaiting-owner-phase",
+          "pid": 51896,
+          "unique_id": 1,
+          "state": 6,
+          "interrupted": false,
+          "restarted": false,
+          "description": "000001EBFF0A5560 Event: broadcaster = 000001EBFDA36B40 (lldb.process), type = 0x00000001 (state-changed), data = { process = 000001EBFDA36B20 (pid = 51896), state = running}"
+        },
+        {
+          "utc": "2026-11-04T22:00:55.800757+08:00",
+          "phase": "helper-terminal-stop-result",
+          "pid": 51896,
+          "unique_id": 1,
+          "state": 5,
+          "interrupted": true,
+          "restarted": false,
+          "description": "000001EBFB4BDD20 Event: broadcaster = 000001EBFDA36B40 (lldb.process), type = 0x00000001 (state-changed), data = { process = 000001EBFDA36B20 (pid = 51896), state = stopped}"
+        },
+        {
+          "utc": "2026-11-04T22:00:55.868018+08:00",
+          "phase": "owned-cleanup-wait",
+          "pid": 51896,
+          "unique_id": 1,
+          "state": 10,
+          "interrupted": false,
+          "restarted": false,
+          "description": "000001EBFB4BDD20 Event: broadcaster = 000001EBFDA36B40 (lldb.process), type = 0x00000001 (state-changed), data = { process = 000001EBFDA36B20 (pid = 51896), state = exited}"
+        }
+      ],
+      "listener_errors": [],
+      "listener_unsubscribed": true,
+      "race_coverage": "Stop-called-observe-raw-outcome",
+      "owned_cleanup": {
+        "kind": "own-fixture-only",
+        "kill_attempted": true,
+        "kill_success": true,
+        "native_first": {
+          "utc": "2026-11-04T22:00:55.802756+08:00",
+          "creation_filetime": "134382744549613742",
+          "wait": 258,
+          "exit_code": 259,
+          "exit_code_hex": "0x00000103"
+        },
+        "identity": {
+          "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\lldb-async-controlled-20261104\\fixture.exe",
+          "creation_filetime": "134382744549613742",
+          "pid": 51896
+        },
+        "kill_error": null,
+        "sdk_state": 10,
+        "native_final": {
+          "utc": "2026-11-04T22:00:55.868018+08:00",
+          "creation_filetime": "134382744549613742",
+          "wait": 0,
+          "exit_code": 0,
+          "exit_code_hex": "0x00000000"
+        }
+      },
+      "canonical": ".tooling/lldb-running-stop-20261104/stop-after-work-result.json"
+    },
+    {
+      "case": "stop-exit-race",
+      "status": "completed-observation",
+      "before_helper": {
+        "utc": "2026-11-04T22:00:57.769134+08:00",
+        "state": 10,
+        "stop_id": 2,
+        "native": {
+          "utc": "2026-11-04T22:00:57.769134+08:00",
+          "creation_filetime": "134382744569774090",
+          "wait": 0,
+          "exit_code": 2147483651,
+          "exit_code_hex": "0x80000003"
+        }
+      },
+      "helper_commands": {
+        "Stop": 0,
+        "Detach": 0,
+        "Continue": 0,
+        "Kill": 0
+      },
+      "outcome": "exited",
+      "terminal_unknown": null,
+      "terminal_result": {
+        "outcome": "exited",
+        "safe_to_close_debugger": true,
+        "native_terminal": true,
+        "detach": null,
+        "stop": null,
+        "terminal": null,
+        "native_last": {
+          "utc": "2026-11-04T22:00:57.769134+08:00",
+          "creation_filetime": "134382744569774090",
+          "wait": 0,
+          "exit_code": 2147483651,
+          "exit_code_hex": "0x80000003"
+        },
+        "foreign_stop": false,
+        "phase": "entry"
+      },
+      "inspection": null,
+      "state_events": [
+        {
+          "utc": "2026-11-04T22:00:57.70933+08:00",
+          "phase": "awaiting-owner-phase",
+          "pid": 20364,
+          "unique_id": 1,
+          "state": 6,
+          "interrupted": false,
+          "restarted": false,
+          "description": "0000019AD0AC7BB0 Event: broadcaster = 0000019AD100F740 (lldb.process), type = 0x00000001 (state-changed), data = { process = 0000019AD100F720 (pid = 20364), state = running}"
+        },
+        {
+          "utc": "2026-11-04T22:00:57.769134+08:00",
+          "phase": "before-helper",
+          "pid": 20364,
+          "unique_id": 1,
+          "state": 10,
+          "interrupted": false,
+          "restarted": false,
+          "description": "0000019AD0AC74C0 Event: broadcaster = 0000019AD100F740 (lldb.process), type = 0x00000001 (state-changed), data = { process = 0000019AD100F720 (pid = 20364), state = exited}"
+        }
+      ],
+      "listener_errors": [],
+      "listener_unsubscribed": true,
+      "race_coverage": "not-tested-exit-before-Stop",
+      "owned_cleanup": {
+        "kind": "already-exited-wait-only",
+        "kill_attempted": false,
+        "kill_success": null,
+        "native_first": {
+          "utc": "2026-11-04T22:00:57.770136+08:00",
+          "creation_filetime": "134382744569774090",
+          "wait": 0,
+          "exit_code": 2147483651,
+          "exit_code_hex": "0x80000003"
+        },
+        "native_final": {
+          "utc": "2026-11-04T22:00:57.770136+08:00",
+          "creation_filetime": "134382744569774090",
+          "wait": 0,
+          "exit_code": 2147483651,
+          "exit_code_hex": "0x80000003"
+        }
+      },
+      "canonical": ".tooling/lldb-running-stop-20261104/stop-exit-race-result.json"
+    }
+  ],
+  "owner": {
+    "minimum_commit_headroom_gib": 24.243812561035156,
+    "job_disposed": true,
+    "failure": null,
+    "job_termination_requested": false,
+    "cleanup_failure": null,
+    "worker_exit_code": 0,
+    "status": "completed-owned-running-stop",
+    "helper_compiles": 1,
+    "minimum_physical_gib": 14.331794738769531,
+    "native_fixture_compiles": 0,
+    "job_empty_observed": true
+  },
+  "current_release": {
+    "utc": "2026-11-04T14:01:51.3833555Z",
+    "source": "This batch exact Job samples and child receipts; PID reuse is not ownership",
+    "known_pids": [
+      1992,
+      18148,
+      20364,
+      34728,
+      43084,
+      46300,
+      46924,
+      48240,
+      49348,
+      50788,
+      51896,
+      52424,
+      57080,
+      58996,
+      59956,
+      62232,
+      63612
+    ],
+    "remaining": [],
+    "resource": {
+      "utc": "2026-11-04T14:01:50.8889311Z",
+      "available_physical_bytes": 15060602880,
+      "system_commit_bytes": 33345798144,
+      "system_commit_limit_bytes": 59886112768,
+      "external_build_or_java_processes": []
+    },
+    "owner_status": "completed-owned-running-stop",
+    "job_empty_observed": true,
+    "job_disposed": true,
+    "processes_modified": false,
+    "original_started": false,
+    "pending_tool_sessions": 0
+  },
+  "original_failure_addendum": "docs/reverse-client/r1-attempt7-log-addendum-20261104.md",
+  "original_cause": "unknown; no original fault address/chance/backend records",
+  "pending_operations": 0,
+  "safe_original_retry_established": false,
+  "next": "Keep original launch/attach paused. Review a bounded owned-program nondestructive Stop recovery plan before any retry proposal. No new tests or original startup scheduled.",
+  "evidence": [
+    {
+      "file": "docs/reverse-client/r1-running-stop-observation-20261104.md",
+      "bytes": 5615,
+      "sha256": "df8d6d9e27ccf5f5cbce907ad0b6084845913aea9f1fff3bdc0bc094c78198e0"
+    },
+    {
+      "file": "docs/reverse-client/r1-attempt7-log-addendum-20261104.md",
+      "bytes": 3433,
+      "sha256": "3e49df15b071b79d5a7e8c1786ee9ae54bcf09b816d55939fdaebd83af62e19d"
+    },
+    {
+      "file": "tools/static_analysis/observer_terminal.py",
+      "bytes": 8036,
+      "sha256": "089262c0a55a11318d71baf3f00f73676a20182a5fbe37a1e9b789d26298e09c"
+    },
+    {
+      "file": ".tooling/gd-click-observer-terminal-candidate-20261104/trace_probe.py",
+      "bytes": 26724,
+      "sha256": "499fb2cae0aeb09b3a697ec8144290b1390e03eaa4d2c1742cb107481b95893c"
+    },
+    {
+      "file": ".tooling/gd-click-observation-20261104/trace_probe.py",
+      "bytes": 24868,
+      "sha256": "b2b44a535726002e71942dd1a43097b14bfe32ffdbd5dc701567b263f5299906"
+    },
+    {
+      "file": ".tooling/gd-click-observation-20261104/trace-result.json",
+      "bytes": 14546,
+      "sha256": "f1646d32d43f19ff58932955a96e49b821f96c774715e2c270accc96a340b64b"
+    },
+    {
+      "file": ".tooling/gd-click-observation-20261104/worker-result.json",
+      "bytes": 17199,
+      "sha256": "75492373e30f9c9878ead2d9a9f59a07c252b6a60608aae968a9800dde3bf31e"
+    },
+    {
+      "file": ".tooling/gd-click-observation-20261104/lldb.stdout.log",
+      "bytes": 454,
+      "sha256": "3608eda01605e772da35d548ef626e7e2ccffcb550f874bac8fb3b286f28f536"
+    },
+    {
+      "file": ".tooling/gd-click-observation-20261104/lldb.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/gd-click-observation-20261104/attempt7-native-exit-check.json",
+      "bytes": 3018,
+      "sha256": "c1598cb70365c95eaf0da103d592eac4fa129dd895e4ff631319bf4c1856d0d4"
+    },
+    {
+      "file": ".tooling/gd-click-observation-20261104/attempt7-owned-release-retry.json",
+      "bytes": 1704,
+      "sha256": "6316ca61eaa6d1a303324e02962b7c347461704f2b9cb8e507d0e5c2adc97e24"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/gate.mjs",
+      "bytes": 15117,
+      "sha256": "4f95698223e51c61efc8f00873a9597a8eeb3bb431ae7a0dfed2dfd8ca95f083"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/launch-owned.ps1",
+      "bytes": 15176,
+      "sha256": "68d515ec5d083871cba37514fa1c2b3283d2fa10e75540d323128feb93deb1d3"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/launch-result.json",
+      "bytes": 29857,
+      "sha256": "e604d89d5152ac1ea13701e9c188ea1f716ea49c3e505154dd1abdf6222b2cd8"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/manifest.json",
+      "bytes": 3160,
+      "sha256": "e8572a14e5326b9eea8fde4625eadfa1948301bc6dd04fff97f7b4e11010e49d"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/prepared.json",
+      "bytes": 757,
+      "sha256": "6b170ec55a958ad8013f9d626e30c28b0ef178d1bcf13884a72399e7acd8551c"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/release-check.json",
+      "bytes": 1391,
+      "sha256": "4e0576a3dee7bcc54f6f5a27aceb93c3d910af839ddbda8cac42947a47a757c0"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/resources-stop-after-work.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/resources-stop-after-work.stdout.log",
+      "bytes": 191,
+      "sha256": "839ffc4e3bd6688cae6377dd5899b9cad201a31b35dbffc3d81a3049d6cf3fe9"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/resources-stop-before-go.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/resources-stop-before-go.stdout.log",
+      "bytes": 191,
+      "sha256": "8aea70c1b273680759bba4e73f75b66ac68b6fa3ea5ec4315cd3d1de568bae5c"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/resources-stop-exit-race.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/resources-stop-exit-race.stdout.log",
+      "bytes": 191,
+      "sha256": "c2ce2671d2c855f1a4ca7671874cc668f862726bb40f24f255986dc7a29d53c8"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/result.json",
+      "bytes": 47744,
+      "sha256": "ba14b9dc55748ebffdffaca47792c09d74b3710122dbd5d120cf5bfb5506bccf"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop_probe.py",
+      "bytes": 21272,
+      "sha256": "78e359aaac53b7621abfe3c3b182bd79608f3e6a7f503d3b195185a35234ac01"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-after-work-config.json",
+      "bytes": 402,
+      "sha256": "adb8f94fea2a451c5acde5cb366ce466f39a4a28119b8d33d36518fc9c919916"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-after-work-debugger.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-after-work-debugger.stdout.log",
+      "bytes": 1400,
+      "sha256": "33b43c8beda29d01725a4909f2b088aeb8ccd076d047a069cd7a895e9b5e8454"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-after-work-events.ndjson",
+      "bytes": 1780,
+      "sha256": "0669738366a55d612f89e19309c12934f6f353b94c655a7ecf73921e8a4fe505"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-after-work-fixture.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-after-work-fixture.stdout.log",
+      "bytes": 280,
+      "sha256": "5c64cba3078fb3bcf45cbb00f93418b27fd515eb3a1a65c2269adbfe32a4041a"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-after-work-identity.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-after-work-identity.stdout.log",
+      "bytes": 162,
+      "sha256": "980cc43d50d962e7ee182459e3aa192d9a6a48d54af7742681b7557e0332148a"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-after-work-result.json",
+      "bytes": 11338,
+      "sha256": "554276efeaebd6bb14e9290a77e43b7909228f8422566f587ff60de17e029f37"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-after-work-stop.json",
+      "bytes": 77,
+      "sha256": "411e5fe05382e8d3d63df552fb6fdecda04caa6d545d98f8ae89acc2f013e6b1"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-before-go-config.json",
+      "bytes": 402,
+      "sha256": "0cd89d83933b9fac05548fa4231e1b5930860bf3c8f2b28abf6b3a9909919eb8"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-before-go-debugger.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-before-go-debugger.stdout.log",
+      "bytes": 1396,
+      "sha256": "e79553c65a3e22757c384264666b5f12db727212b13e134f9825b35222082b1d"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-before-go-events.ndjson",
+      "bytes": 1780,
+      "sha256": "d69b1971fe38d7a33c56da147cd430cd06e53eb39c33c48c800001ad9d6a339d"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-before-go-fixture.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-before-go-fixture.stdout.log",
+      "bytes": 140,
+      "sha256": "50114875bad03dd4bc71bb8998d79fab37008509248602d338db37cf4527f1a2"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-before-go-identity.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-before-go-identity.stdout.log",
+      "bytes": 162,
+      "sha256": "4d23290ee90b8ff562de75075edc3c383111b726837a32b46526a039c00129cc"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-before-go-result.json",
+      "bytes": 11336,
+      "sha256": "6e6f0746887a5130d8c36d9832388afaea511c2c457874d2e85f9b6ad720655a"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-before-go-stop.json",
+      "bytes": 76,
+      "sha256": "9cfa492957690ec44b00fe15716986ac796094b18468a0dcc70512a2f3a74fb7"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-exit-race-config.json",
+      "bytes": 402,
+      "sha256": "65a732816219ab187f7bc263228e510c0b14016a7c5b0b6184a7823f7d6765b9"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-exit-race-debugger.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-exit-race-debugger.stdout.log",
+      "bytes": 1109,
+      "sha256": "b13e86b662ca9e95b5d8287def91c8b4a01a4ef95364b7f5de00191fe9bdd8d1"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-exit-race-events.ndjson",
+      "bytes": 1262,
+      "sha256": "1c96764d62e87f7e1999d6a6165e8203677ecba299bc93795bda29af70cd8e70"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-exit-race-fixture.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-exit-race-fixture.stdout.log",
+      "bytes": 269,
+      "sha256": "35e7ad545ef106109e0e448631db4727f0e9fb7df79bf5227676afbfd048da80"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-exit-race-identity.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-exit-race-identity.stdout.log",
+      "bytes": 162,
+      "sha256": "b7c24f02c4641dd83fc4dd79784c8202e70c04849f4682427231f77ecb252d9c"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-exit-race-result.json",
+      "bytes": 6602,
+      "sha256": "058ded290570b9cc951b29cb4736715aacfcb6689436949935823b3e39f1d6e9"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/stop-exit-race-stop.json",
+      "bytes": 76,
+      "sha256": "b5a097046a1c0406ec0ab6eaf36b39886765cb224273c21a1af8e52498976213"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/verify-release.ps1",
+      "bytes": 2073,
+      "sha256": "dedd2e0c8a8b7415098d7e28b545cf716f376dff9031019ef80e71ecffebdd49"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/worker.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": ".tooling/lldb-running-stop-20261104/worker.stdout.log",
+      "bytes": 1583,
+      "sha256": "fe2c6e3a02b6e1d6b810da7abd13807f9408fac7321d6543ccd8b77b6a6ff24e"
+    }
+  ]
+}

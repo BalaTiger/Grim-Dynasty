@@ -1,0 +1,62 @@
+{
+  "schema": "grim-dynasty-player-move-begin-frame-stage-v1",
+  "utc": "2026-11-02T19:45:25.7435534Z",
+  "status": "completed-same-player-two-frames-and-two-unknown-regressions-passed",
+  "prior_checkpoint": "docs/reverse-client/r1-resume-20261102.json",
+  "prior_checkpoint_sha256": "e321acf4d71a01d45ab10fe2645cd46b50ba3bb18bcb465e9c2a3ba6f6d7bce5",
+  "goal": "Same original Player/Agent from returning Ground mouse request into two actual ready-prefix/tail frames",
+  "required_player_flags": "0x800004c5",
+  "explicit_own_cold_input": true,
+  "native_global_value_verified": false,
+  "default_unknown_stop": "05E1AE",
+  "engine_identity_must_be_checked": true,
+  "new_queries": 0,
+  "compiles": 1,
+  "test_executions": 1,
+  "pending_operations": 0,
+  "heavy_processes_started": 0,
+  "cumulative_checkpoint_counted": true,
+  "original_executed": false,
+  "native_decoding": false,
+  "native_playback": false,
+  "physical_mouse": false,
+  "gameplay_accepted": false,
+  "stop_rule": "Preserve first actual Unsupported; no Agent recreation, no second Move151130, no Character flag substitution, no default success.",
+  "execution": {
+    "session": 85202,
+    "exit": 1,
+    "pending": false,
+    "build": ".tooling/r1-player-move-begin-frame-build-prepared/build.ps1",
+    "build_sha256": "ff5636b886b54e9154c6a7e09833e5fe6d7db58065bea8d740e90ddb5f20c36d",
+    "manifest_sha256": "40e342d4652bcee6b2a0a8d60256dc57ef8f6d65ccac9da46597e05dacd6d01b",
+    "output": ".tooling/r1-player-move-begin-frame-validation",
+    "rule": "Poll session/check receipt before any retry"
+  },
+  "initial_failure": {
+    "receipt": ".tooling/r1-player-move-begin-frame-validation/result.json",
+    "sha256": "35d5c50e65a8399ec0bdfe18ee6a073e1122227523a9bded9280162bc9397113",
+    "reason": "CS0136 lambda parameter r conflicts with later local r; renamed parameter positionOwner only",
+    "completed_compiles": 0,
+    "tests_run": 0,
+    "denied": false,
+    "fixed_source_sha256": "e5d06335fe217873b3f4e3391cda246fc405e198a1bf6838a36d18ecbf8502ae"
+  },
+  "retry1": {
+    "session": 92667,
+    "exit": 0,
+    "pending": false,
+    "build": ".tooling/r1-player-move-begin-frame-build-retry1-prepared/build.ps1",
+    "build_sha256": "c2988f83e4c2f4b3bd4074add958a36d93447f876c20822c6d35a1ded1386756",
+    "manifest_sha256": "892419eef25cf07bed34697298fed6a3e5c5bec7037668a381f8dd08719ca8f0",
+    "output": ".tooling/r1-player-move-begin-frame-validation-retry1",
+    "rule": "Poll session/check receipt before retry"
+  },
+  "evidence": {
+    "file": "docs/reverse-client/r1-player-move-begin-frame-evidence.json",
+    "sha256": "633eaf54c96c2ebee0a1ef77c7df4064db556745a0f9cd334c41d906d86b0465"
+  },
+  "release": {
+    "file": "docs/reverse-client/r1-player-move-begin-frame-release.json",
+    "sha256": "5f2285d4552bac0c7eabc062c1a3255bb8eed1f9c9a6db80e096baebde1288f9"
+  }
+}

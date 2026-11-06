@@ -1,0 +1,22 @@
+{
+    "schema":  "grim-dynasty-r1-string-params-v1",
+    "utc":  "2026-11-06T02:02:13.0489100Z",
+    "finding":  "The trailing std::string parameters of Engine::Initialize are per-subsystem initialisation arguments, and the engine also consults an Options object for strings.",
+    "resolved_symbols":  {
+                             "0x1b30c0":  "SoundManager::SoundManager(ResourceLoader*) - the loader comes from Engine+0x210",
+                             "0x1b3710":  "SoundManager::Initialize(EWindow*, std::string const\u0026) - receives EWindow in rdx and the first string parameter in r8 from [rbp+0xC0]",
+                             "0x182ce0":  "Options::GetString(StringName) - the engine reads configuration strings from an Options object"
+                         },
+    "subsystem_confirmed":  {
+                                "sound":  "Engine::Initialize constructs a SoundManager into Engine+0x58 and then calls its Initialize with the window and the first string parameter",
+                                "order":  "the SoundManager construction happens after the graphics device and graphics initialisation, at 0x180074ba9 and 0x180074bc0"
+                            },
+    "implication":  "The four strings are not free-form labels; each is consumed by a specific subsystem initialiser, and at least one engine path also reads strings out of an Options object. A host must therefore either supply plausible strings or expect those subsystems to report failure, and must decide what to do about the missing Options object.",
+    "not_established":  [
+                            "which subsystems consume the remaining three strings",
+                            "whether SoundManager::Initialize tolerates an empty or dummy string",
+                            "whether an Options object must exist before Engine::Initialize runs",
+                            "what Options::GetString is called for in this path"
+                        ],
+    "next":  "Trace the remaining three string parameters to their consumers, and determine whether an Options object is required before Initialize."
+}

@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "purpose": "Two fixed input-plugin factory entries directly required by cached Engine InputDevice::Create. Static queries only; no plugin load or original execution.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "runner_patch_deferred": true,
+  "batch_kind": "directinput-factory",
+  "planned_output": "docs/reverse-client/r1-directinput-factory-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/directinput.dll",
+    "sha256": "9cc12125db6f7e1a64c8d280d31961e4fa80addfe03aa7f43bff153acc92bcd6",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 11,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+    "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0",
+    "same_registration_as": "r1-move-world-distance",
+    "budget_id": "engine-parser-384m-v1",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "parallel_mcp_requests": 1,
+    "one_backend": true,
+    "profile_or_protection_changes_authorized": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/directinput.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-DirectInput-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-DirectInput-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1800017b0"
+      },
+      "label": "04-CreateInputDevice-0x1800017b0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1800017b0"
+      },
+      "label": "05-CreateInputDevice-0x1800017b0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1800017b0"
+      },
+      "label": "06-CreateInputDevice-0x1800017b0-procedure_callees"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x1800017d0"
+      },
+      "label": "07-DestroyInputDevice-0x1800017d0-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x1800017d0"
+      },
+      "label": "08-DestroyInputDevice-0x1800017d0-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x1800017d0"
+      },
+      "label": "09-DestroyInputDevice-0x1800017d0-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "10-DirectInput-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "11-final-session"
+    }
+  ],
+  "unchanged_guard_pins": [
+    {
+      "file": "tools/static_analysis/measure_job_process_memory.ps1",
+      "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_sampler_failure.ps1",
+      "sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/rea_project_environment.mjs",
+      "sha256": "3808055da161a942867474e13edea86710d2981bda0ccf4ed5d385df5e794f88"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-directinput-exports/inspection.json",
+      "sha256": "2e983d54e595b4404d02d90ab0be0f0e627c91c491c19e19afd3340c1d0f4fde",
+      "addresses": [
+        "0x1800017b0",
+        "0x1800017d0"
+      ],
+      "source_kind": "Exact non-forwarded export metadata; static candidate path, runtime binding unobserved"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-input-dispatch-run1/04-InputDeviceCreate-0x1801241e0-procedure_pseudo_code.json",
+      "sha256": "8b8714b57626bae5bf61e44a40b6dd16841ebccc06b23171a72a7c6ceb7ba8d7",
+      "procedure": "0x1801241e0",
+      "operation": "procedure_pseudo_code",
+      "source_module": "Engine.dll",
+      "source_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "source_kind": "Static LoadLibraryA and both GetProcAddress names, not observed runtime binding"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-input-dispatch-run1/05-InputDeviceCreate-0x1801241e0-procedure_assembly.json",
+      "sha256": "7f8fe30ebdb2d816e80e9493fead304d8f4102d962cb4e78a434760609bb64e9",
+      "procedure": "0x1801241e0",
+      "operation": "procedure_assembly",
+      "source_module": "Engine.dll",
+      "source_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "source_kind": "Exact two GetProcAddress calls and guarded indirect tail call"
+    }
+  ],
+  "predecessor": {
+    "summary": "docs/reverse-client/r1-widget-exe-incoming-run1/summary.json",
+    "summary_sha256": "39d29b733bad8ee467efd26654599c554159d54547cd27e39c5127e1cbbf2502",
+    "release": "docs/reverse-client/r1-widget-exe-incoming-run1/owned-memory-summary.json",
+    "release_sha256": "6c6c062b146f3e0a84df628a93d6e6cda049a1461c53ae1fcbd771d85e4d128b",
+    "completed_calls": 7,
+    "target_sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "current_release": "docs/reverse-client/r1-widget-exe-incoming-release.json",
+    "current_release_sha256": "e2acf989734590ae19bf5af115729e95bcc537cc9ac605e040391cbd4c89e96a",
+    "historical_release_only": true,
+    "fresh_current_checks_required": true
+  },
+  "cache_dedup": {
+    "scope": "Fixed plugin factory exports selected from completed bounded metadata and cached Engine Create; no previous body query reported",
+    "targets": [
+      {
+        "label": "CreateInputDevice",
+        "address": "0x1800017b0"
+      },
+      {
+        "label": "DestroyInputDevice",
+        "address": "0x1800017d0"
+      }
+    ],
+    "cached_target_bodies": [],
+    "reused_not_queried": [
+      "Engine InputDevice::Create 0x1801241e0"
+    ],
+    "excluded_this_batch": [
+      "System dinput8.dll",
+      "Other input-plugin entries",
+      "Actual plugin loading",
+      "Input hooks",
+      "Runtime binding observations"
+    ],
+    "absence_is_limited_cache_observation": true
+  },
+  "preparation_baseline": {
+    "runner": ".tooling/r1-process-user-input-prepared/runner-candidate.mjs",
+    "runner_sha256": "d4ee15849621460bb5f816fa23c2bf461533075f13bb87282ccc6ec39f5497dd",
+    "active_runner_modified": false,
+    "active_runner_sha256": "48cd6b79827cdc05af126b5fd4e723a171a446db2758b1640420f027ef077309",
+    "isolated_candidate_path": ".tooling/r1-directinput-factory-prepared/runner-candidate.mjs"
+  },
+  "execution_requirements": [
+    "Exactly two approved game-local DirectInput factory entries, each pseudo/assembly/callees plus five lifecycle calls. No automatic followup or original DLL loading.",
+    "Six original guard files remain byte-identical; two separately pinned isolated copies add only the authorized exact DirectInput target identity and import relocations. No arbitrary hash/path policy, impersonation, or bypass.",
+    "Reuse unchanged 384M budget, fresh physical and commit >=5GiB, runtime >=2GiB, identity, mutex, one owned Job, freshness, timeouts and cleanup. Engine budget provenance is not the new module identity.",
+    "Engine source proofs and previous EXE release retain their own original module hashes. New target pre/post hashes use only the fixed DirectInput hash. Historical release never replaces new live admission.",
+    "Parent review and pure identity validation completed for this fixed isolated profile. Formal query execution and fresh live admission remain separate. No original game, saves/cloud, installs, security changes, commit/push/deploy."
+  ],
+  "target_profile": "directinput",
+  "target_bytes": 55296,
+  "isolated_identity_profile": {
+    "name": "directinput",
+    "sha256": "9cc12125db6f7e1a64c8d280d31961e4fa80addfe03aa7f43bff153acc92bcd6",
+    "snapshot_name": "target-9cc12125db6f.dll",
+    "only_fixed_target_added": true,
+    "dynamic_target_parameters_allowed": false,
+    "active_guards_modified": false,
+    "review_status": "frozen-reviewed"
+  },
+  "isolated_guard_pins": [
+    {
+      "file": ".tooling/r1-directinput-factory-prepared/rea_owned_memory_profile.mjs",
+      "sha256": "ed7b8defe97a849c2b3ef4012c0c7e2f35375df0a9f9765c838831a236a9331e",
+      "baseline": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "baseline_sha256": "c6968067faa5b180556feaaf5e5aa62750e0ae0aa7bf031c5d1ceef990ae1f64",
+      "change": "Only module imports relocated; monitor logic unchanged"
+    },
+    {
+      "file": ".tooling/r1-directinput-factory-prepared/rea_java_role.mjs",
+      "sha256": "d8403a70ad1ad469aa026f1ca432444e3706698566ed99f570daccab265e9d9d",
+      "baseline": "tools/static_analysis/rea_java_role.mjs",
+      "baseline_sha256": "00e612e2113690baf53e87900f67b8f8003f47aa3b9a3968932a17dd779f1f22",
+      "change": "Only environment import relocation and exact directinput fixed-profile enum addition"
+    }
+  ],
+  "identity_validation": {
+    "source": {
+      "file": ".tooling/r1-directinput-factory-prepared/directinput-profile.test.mjs",
+      "sha256": "10102ec5899d7db5d7f54802776067714d52d9490c6a808e33e5850721812d47"
+    },
+    "result": {
+      "file": ".tooling/r1-directinput-factory-prepared/profile-validation-run2.json",
+      "sha256": "5e04086c756f566234d79d713db8968709cbcbd1fa670ee1580fd407f3f921b1"
+    },
+    "tap": {
+      "file": ".tooling/r1-directinput-factory-prepared/profile-validation-run2.tap",
+      "sha256": "3bffbdec098e08d8102f88e4a3a4e8e4dad84d1cf296cc9dcbbc1be3f468855b"
+    },
+    "diffs": [
+      {
+        "file": ".tooling/r1-directinput-factory-prepared/rea_java_role.diff",
+        "sha256": "1e634ffadc326e7194ad6a9c16878e555d9a63d7d98b6103c2b67594e449c53f"
+      },
+      {
+        "file": ".tooling/r1-directinput-factory-prepared/rea_owned_memory_profile.diff",
+        "sha256": "3531439802d1ca5090ec771eb1eedc55e95ac0c4b7eb40c46ed19fe413eb4d17"
+      }
+    ],
+    "retained_failures": [
+      {
+        "file": ".tooling/r1-directinput-factory-prepared/profile-validation-attempt1-error.json",
+        "sha256": "ff9336ce0e422a7987ed2a481114074476e2d73a3247b0b605df5a554b826435"
+      },
+      {
+        "file": ".tooling/r1-directinput-factory-prepared/profile-validation.json",
+        "sha256": "1b64b88a53ed12313d99b4a7c7a26b79a4b5d1ff114e0afe07d6e8bfc1f3af47"
+      },
+      {
+        "file": ".tooling/r1-directinput-factory-prepared/profile-validation.tap",
+        "sha256": "a3a339da682cb21dbf7fd3a242345ddeaf200a0d56ecb2e53b79735c4bdaa1ad"
+      }
+    ],
+    "observed_tests": 15,
+    "new_tests": 12,
+    "selected_existing_identity_tests": 3,
+    "game_tests": 0,
+    "real_sampler_or_java_started": false
+  },
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "engine-parser-384m-v1",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "measurements": "docs/object-lifecycle/subobject-profile-validation/measured-budget.json",
+    "measurements_sha256": "1d388548ba551519f82ae14d53d99e0a3b07dfcfcdd657b41cbebb456eba543c",
+    "task_allowance_gib": 2.25,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 4.25,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "guard_changes_applied": true,
+    "no_system_settings_change": true,
+    "scope": "Two exact Engine targets22C690 and12B750 only; unchanged Engine384M budget and strict5GiB additional launch floor.",
+    "additional_launch_floor_gib": 5
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "previous_sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "serializer_file": "tools/static_analysis/rea_sampler_failure.ps1",
+    "serializer_sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "candidate_file": ".tooling/r1-owned-job-diagnostic-candidate/ReaOwnedJobDiagnosticCandidate.cs",
+    "candidate_sha256": "b52e6ba242277ab864a431433f43efe671bc6c37e73c1fd94d8b0977b7400544",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "serializer_validation_file": ".tooling/r1-owned-job-diagnostic-validation/serializer/result.json",
+    "serializer_validation_sha256": "eb5dc1cd79621686a5b646ba03897cec638674dd1d6894ec69cee1d5ceb04a60",
+    "runner_validation_file": ".tooling/r1-owned-job-diagnostic-validation/runner-result.json",
+    "runner_validation_sha256": "1ff5539479a0ba058bb7e3b4e6692293a07515e48d226c56f5b6667857c4bb29",
+    "deployment_file": ".tooling/r1-owned-job-diagnostic-deploy/deployment.json",
+    "deployment_sha256": "ef9be6d39c736f99fe4dd365b1ed08f6849f4280eacc698fdc9b4b75d4977dbf",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 49,
+    "scenario_groups": 10,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "serializer_assertions": 39,
+    "production_normalization": "Remove two candidate-only header lines and namespace suffix; serializer identical to tested candidate",
+    "limitations": "Diagnostic observation only. Native permissions,100ms shared wait budget,admission and fail-closed rules are unchanged. Isolated fault tests do not reproduce or establish the21:48 failure root cause."
+  },
+  "diagnostic_monitor_review": {
+    "status": "passed-and-pinned",
+    "diagnostics_only_intended": true,
+    "approved_source_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "production_monitor_must_not_be_changed_by_this_preparation": true,
+    "root_cause_proven": false,
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false
+  },
+  "sampler_observation_deployment": {
+    "status": "passed-additive-serialization-deployed",
+    "previous_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "evidence": [
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/deployment.json",
+        "sha256": "e978a7fbb0256233a2a5bbdacec662ebcbe808c1c227d20ef216dce8cf3d0db9"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/measure_job_process_memory.before.ps1",
+        "sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/measure_job_process_memory.ps1",
+        "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test_member_identity_serialization.ps1",
+        "sha256": "3afa73f7130a87959e38e76ba313f715bd0e4448e146a0417b3163b55ac84ae2"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test-result.json",
+        "sha256": "812f576f55ce8989638accf2a668a6b1b19e0d23e2869328be63ba7822c3062d"
+      }
+    ],
+    "only_added_field": "membership_queries.after_counters_member_identities",
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false,
+    "resource_limits_changed": false,
+    "tests_rerun": false
+  },
+  "recovery_requirement": {
+    "status": "confirmed-retained-after-Codex-restart",
+    "recovery_result_file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+    "recovery_result_sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829",
+    "evidence": [
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+        "sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-inventory.json",
+        "sha256": "e9baee1d751ebe2dbc329ceb068f25fc33ee96d3474e77bfd0a84a6978ca3dcf"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-move.json",
+        "sha256": "34967759d2622ffe3f46942681014a903ebf626f7f9557a0633f0b8c49beb272"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-after-move.json",
+        "sha256": "b2500ac78ffab31fc94c6e19a6db7c3287401bbf40a6b3e7055b5bf4e1a0c8e8"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before-move.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-after.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-final.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/historical-identities.json",
+        "sha256": "98c290f49b3b071a4127529aa21c7bbf816a6b59596f9be210adc0fecd302d45"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/classification-test-result.json",
+        "sha256": "0158c21bfa6fa46d87656030888cce9e8853b18086547599a6ce668527d80554"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/retain_interrupted_runtime_post_restart.ps1",
+        "sha256": "0769a1fbcf8c44b12a09fe35a31823a6a75eee2d24494814d1ae4334d15b32a9"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/post_restart_classification.ps1",
+        "sha256": "c5fb0a7b207f5c6e0fdd4d55b624aef69df4619c758034c59ca1a5645cf534f2"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/test_post_restart_classification.ps1",
+        "sha256": "bb88bbf79eb8c61b023d6a7d1468b40af09d4007433a3f111c832235e89fe611"
+      }
+    ],
+    "require_source_runtime_absent_and_exact_retained_directory": true,
+    "require_equal_content_manifests_and_zero_deleted_files": true,
+    "require_normal_fresh_launch_identity_resource_mutex_guards": true,
+    "old_terminal_flags_must_remain_unconfirmed": true,
+    "single_owner_job_termination_is_inference": true
+  },
+  "runtime_registration": {
+    "query_plan_sha256": "7a3759d94e9edcb93bf97af8241e4dc811f97c7e02b71ddda850040bce60017e",
+    "profile": {
+      "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+      "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0"
+    },
+    "metadata_keys": [
+      "memory_profile",
+      "time_limits",
+      "monitor_revision",
+      "diagnostic_monitor_review",
+      "sampler_observation_deployment",
+      "recovery_requirement"
+    ],
+    "cleanup_prerequisites": [
+      {
+        "file": "docs/reverse-client/r1-skill-moved-direct/summary.json",
+        "sha256": "596d4499deb89419964abfd35c52e9df60ee0f6785c4a4d40b9c930f4c773dab",
+        "calls": 8,
+        "target": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+      },
+      {
+        "file": "docs/reverse-client/r1-world-position-and-level-initialization/summary.json",
+        "sha256": "dba34660d80fc2cf496d5025f2e160de946f07908ad9373aa49e5dfe5ea350f8",
+        "calls": 11,
+        "target": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+      }
+    ],
+    "frozen_query_input": "plan.json",
+    "profile_scope_text_is_historical": true,
+    "query_scope_unchanged": true
+  }
+}

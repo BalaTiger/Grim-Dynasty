@@ -1,0 +1,138 @@
+{
+  "schema": "r1-stop-old-job-recovery-review-v1",
+  "utc": "2026-11-02T21:17:41.7677515Z",
+  "status": "current-recorded-processes-absent-historical-job-terminal-unconfirmed",
+  "read_only_query": {
+    "script": ".tooling/r1-stop-old-job-readonly-check.ps1",
+    "script_sha256": "04b2d53c1203bd79cf04e29cbc77ca5e25ff633ccaf13c1ddbf351d3e295aadd",
+    "sha256": "c5affe7967ca913d1c524b56e56aad36ce1c17de9ffa55b4d1db435ac76ae7f9",
+    "file": "docs/reverse-client/r1-movement-manager-name-search-run1/readonly-recovery-check-20261102.json",
+    "first_dispatch_not_started": "Tool only supports shell identifier powershell; absolute shell path was rejected before execution. Same reviewed script then ran through supported powershell identifier.",
+    "session": 95839,
+    "exit": 0
+  },
+  "process_observation": {
+    "recorded_pid_matches": [],
+    "heavy_processes": [],
+    "available_physical_gib": 14.06,
+    "runtime_marker_matches": [],
+    "recorded_pid_count": 60,
+    "unreadable_relevant_identities": [],
+    "utc": "2026-11-02T21:15:53.7880843Z",
+    "commit_headroom_gib": 29.054
+  },
+  "job_lifetime": {
+    "unknown": "Exit status of PID43664 at the original failing image-query instant and final oldJob accounting remain unobserved.",
+    "os_contract_inference": "Closing the last KILL_ON_JOB_CLOSE handle terminates associated processes. Exited sampler plus current inventory supports cleanup but is not an observed final accounting receipt.",
+    "failed_operation": "Search_procedures CharacterMovementManager call4 produced no response after QueryFullProcessImageName error5 on PID43664; no retry",
+    "historical_closed_session": false,
+    "sampler_file": "tools/static_analysis/measure_game_associated_repair_memory.ps1",
+    "why": "Unnamed Job and original monitor are gone; supported OpenJobObject requires a name. No terminal QueryInformationJobObject receipt was retained before monitor failure.",
+    "guard_file": "tools/static_analysis/ReaOwnedJob.cs",
+    "observed_source_contract": "CreateJobObject(NULL,NULL), non-inheritable unnamed handle; onlyKILL_ON_JOB_CLOSE flag read back; no breakaway; sampler finally disposes handle; no DuplicateHandle/OpenJob API in audited helper.",
+    "supported_api_reference": [
+      "https://learn.microsoft.com/en-us/windows/win32/api/jobapi2/nf-jobapi2-createjobobjectw",
+      "https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects"
+    ],
+    "retained_job_handle_available": false,
+    "guard_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "sampler_sha256": "dcc18bc620104666512b1683bb549b0e22cf7cf36a3f6718429510de6f1b8ab0",
+    "historical_empty_job_receipt": false,
+    "reopen_by_name_supported": false
+  },
+  "cache_reuse": {
+    "loaded_iat_or_runtime_success_verified": false,
+    "add_object": {
+      "target": "151020",
+      "symbol": "?AddObject@NavManager@GAME@@QEAAXPEAVEntity@2@@Z",
+      "sha256": "3d28fed37708f2ce0ea679a4eb32d88e4709a6689dfb835dc302edce3f3bfe78",
+      "file": "docs/reverse-client/r1-add-object-binding/inspection.json",
+      "game_iat": "609F58",
+      "dll": "Engine.dll"
+    },
+    "correction": "Both exact static bindings existed already; prior next-task binding gap is replaced by implementation/publication and heap-domain gaps.",
+    "free": {
+      "symbol": "free",
+      "sha256": "8b8138b7268652cad7c60683ce0b0d7fa366e3903cd0b4b9ade7ca9e3767e9c1",
+      "file": "docs/object-lifecycle/offline-class-helper-storage-imports/metadata.json",
+      "game_iat": "60B888",
+      "thunk": "5DC36E",
+      "dll": "api-ms-win-crt-heap-l1-1-0.dll"
+    },
+    "supporting_hash_checks": [
+      {
+        "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+        "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+        "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+        "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+      },
+      {
+        "path": "docs/reverse-client/r1-navigation-binding/inspection.json",
+        "sha256": "d0c171ce77a6d67e153a6911fc7c3a17ea4d61e80ab9492f3287384524e14264"
+      },
+      {
+        "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+        "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+      },
+      {
+        "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+        "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-questitem-boundaries/boundary.json",
+        "sha256": "fa5ae01ef102377d8ec976607622c3aab8d1af23144d8a408e42cf15f3ec4f05"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-game-crt-imports-metadata/metadata.json",
+        "sha256": "675999fee760e0a6b84e881818942b25950d1e4c563f2c6964fd13fa25c4ed2b"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-storage-failure/inspection.json",
+        "sha256": "bef2849860977dbbdad1e979051f3e9521983d1b964f3ae10a72720a5f21517e"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-throw-thunk/inspection.json",
+        "sha256": "e7579a6faff63557f5a16b92739ea3af4356c799d382e2fd5909d3f234e1eecd"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-storage-failure/5dc374.bin",
+        "sha256": "2e2c427236086b2c39ef1eebe92c3c2850acc1efca6ef872657d9bf9fe5c6ffb"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-storage-failure/5dc36e.bin",
+        "sha256": "0ddd1d83ed64cd02ccd5daf1051c9f46bd7e443da814d2453fb7de62f8720cf8"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-storage-failure/5dc3a4.bin",
+        "sha256": "e97a10c8d9adfa22b9dc9a857264293a8672dcd165e81572905c2882f75689ea"
+      },
+      {
+        "path": "docs/object-lifecycle/offline-class-static-helper-throw-thunk/5dc362.bin",
+        "sha256": "b66def74b98ab50b0a8dca95d1db2a95b9b28f16c6aab49d7ef8d5c5057c80b9"
+      }
+    ]
+  },
+  "operation_policy": {
+    "tests_run": 0,
+    "reason": "Parent requires supported terminal recovery evidence before new heavy operation; do not promote historical unknown flag from later successes.",
+    "security_changed": false,
+    "heavy_operations_held": true,
+    "processes_terminated": 0,
+    "image_query_retried": false,
+    "approval_denied": false,
+    "originals_opened": false,
+    "backend_started": false,
+    "guard_changed": false,
+    "old_receipts_modified": false,
+    "compiles": 0,
+    "active_or_pending_operations": 0,
+    "approval_pending": false
+  },
+  "next_minimal_task": "Cached609F58->Engine151020 and60B888->CRTfree are already exact-bound; do not query again. Hold new heavy operations until old unnamed-Job recovery criterion is resolved. Then reuse151020/25AE20 and inspect only missing05DF10/01FB90 registration publication; preserve manager6D/Engine292 and flag1-before-registration semantics. Connect same-object Goal->Stop3/destructor->post-stop frame only within proven lifetime/heap and callback boundaries."
+}

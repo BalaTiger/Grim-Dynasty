@@ -1,0 +1,13 @@
+Controller-to-Player lookup and Alive integration
+
+The new production addition is the evidenced Character::GetControllerId62310 getter. Exact export metadata identified ordinal12437/RVA62310 in14steps/1222B; the separately read7B prefix8b81c0160000c3 returns DWORD[Character+16C0]. No pdata query,loaded getter check,live field value or writer was observed. Original hash checks matched and files closed. The first test key now reads the canonical Bridge owner's AssociatedId16C0; explicit OWN16C0=7 is not proof of native initialization.
+
+The existing ControllerLookup→Widget→PlayerMousePlayerLookupBoundaries/Resolve128530→Alive components are now composed with the same Controller,ObjectId30,hot Instance4213A0 manager and canonical role/vptr cells. The two ID sources remain distinct; each singleton Get re-reads mutable state. Under supported explicit Video19B0=null conditions,Alive returns true and the current path stops at15E23E on unknown Byte242A. This crosses the previous configuration's128530 binding stop; neither physical input nor movement executed.
+
+V2 completed two product compiles plus one existing owner-helper compile:11focused scenarios/140assertions passed,zero old whole suites rerun. Existing ControllerLookup methods were preserved; before-62310source snapshots and the completely unexecuted v1 recipe remain available. Tests report actual getter/controller lookup/player lookup,shared canonical role and Alive prefix true; native initialization,physical mouse,movement and gameplay acceptance remain false. No new original launch or Rea occurred in this stage.
+
+The result receipt's phrase 'composition awaits this test' is preset boundary text. Its actual two completed compiles,11/140test result and null failure/postcheck fields confirm this own composition passed; the raw receipt is preserved unchanged.
+
+The owner ended20:54:35.8487037Z with worker14180 exit0 and empty/disposed Job. Resource sampling at20:55:05.3704750Z showed no game or external heavy process. A separate20:55:05.4410663Z check found14180/20520/30736 absent; current absence is not historical exit-code evidence. Historical failures and UNKNOWN are retained.
+
+Next: reuse existing Byte242A constructor/writer evidence without a guessed default,and retain the same nonzero16C0 association in subsequent queries instead of bypassing with an older zero fixture. The16C0/+30writers,runtime vptr,singleton/manager publication and original Widget full input/hit/frame/presentation remain unknown. No usable independent game is claimed. The archive changes only three status/time/latest-stage references and preserves all other raw historical values; no commit,push,deployment or save action.

@@ -1,0 +1,49 @@
+{
+  "status": "ordinary-move-path-assessed; downstream-submit-and-tail-unclosed",
+  "summary_sha256": "e5d21c09f0efef3faab46bc941fd87d70ca3dfd7d0685b89329c243f0f015492",
+  "assembly_sha256": "3b8e6c98f4e8c879b38a4b252cc29fd98cbf9c022e67efea0391d2adeb0e3285",
+  "pseudo_sha256": "b8b30bab242843a2dcdf1a7a8fc2db9cbfbfcc95b95e6b9855b02cfc0f35e3ce",
+  "target_sha256_before_and_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "entry": "Game3E2900 Player::PlayAnimation; primary table787100+2F8",
+  "selection": {
+    "first": "3E2935..294A selects first nonnull2600/2608 else2578;2951 captures DWORD Kind08",
+    "second": "3E2958..296B independently selects again from2600;2972 captures DWORD Pending0C",
+    "reuse": "Use existing Character animation field identities. These are inline loads, not actual calls to05AE40. Do not collapse selections or eagerly require numeric Kind before second selection.",
+    "first_kind_consumption": "CMP3E2979 after both snapshots. Pointer dereference validity and numeric knowledge remain distinct."
+  },
+  "ordinary_pending5": {
+    "required_domain": "Actual second selected Set.Pending0C must read as5; do not substitute the outer animation argument or assume both selected Set identities match.",
+    "basis": "Existing166020 requests animation5;024DE0 writes Pending0C before selected entry dispatch",
+    "old_kind": "Signed JLE comparisons. For Pending5, oldKind45 changes finalINT32 to75; all other oldKind values retain inputINT32. Pending==1 resets do not apply.",
+    "table_bypass": "3E299E DWORD(5-17)=FFFFFFF4; unsignedCMP32/JA at3E29A4 branches3E29C6. Neither3E2A40 byte table nor3E2A38 target table is read.",
+    "unvalidated": "Other Pending values requiring table bytes are not covered by this ordinary-path inference."
+  },
+  "submission_order": [
+    "3E29C6 reread primaryvptr;3E29CC virtual370. Both saved primary table bindings point Game06DA30; reuse same Actor and BorrowedMeshBounds, preserving the both-null609688 stop.",
+    "3E29D8 import609D20 GraphicsMeshInstance::GetAnimChannel on returned mesh, original signed channel index",
+    "3E29F2 import60A628 AnimChannel::PlayAnimation(channel, original GraphicsAnim, original bool byte, inputFLOAT32, adjustedINT32)",
+    "3E29FF Game285E50 on originalPlayer+5C8",
+    "3E2A04 reread primaryvptr;3E2A2F tailJMP virtual2C0"
+  ],
+  "tail_call": {
+    "arguments": "Player, capturedPendingDWORD, hand-state returnedDWORD, originalbool lowBYTE, adjustedINT32",
+    "fifth_argument_evidence": "3E2A0E writesEBX atcurrentRSP+70; afterepilogue this is callerRSP+28. Pseudocode omits this fifth argument.",
+    "boundary": "Tail virtual jump is distinct from earlier data switch. Actual target/body unbound; do not treat the warning as a table to scan or successful return."
+  },
+  "failure_state": "Unknown downstream call after channel submission retains earlier side effects. No rollback or successful Player return may be invented.",
+  "no_name_logical_import": {
+    "symbol": "Engine.dll!?noName@Name@GAME@@2V12@B",
+    "game_iat": "609000 +173*8 =609568",
+    "saved_oft": "A43028 raw307ca40000000000 -> HintNameA47C30",
+    "import_cache": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+    "import_cache_sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e",
+    "ordered_name_inventory": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "inventory_sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7",
+    "own_adapter_candidate": "One canonical OWN symbol keyed by exact module hash and symbol can feed existing import identity cell; independent NameDWORD storage staysUnknown. NoName contents are not consumed on020840 path.",
+    "not_claimed": "No native export RVA, forwarder status, loaded IAT value, Name initialization or native lifetime has been observed. Do not substitute arbitrary object/default0 for a bound symbol. No implementation added yet."
+  },
+  "next_frozen_group": ["Engine077820", "Engine091A20"],
+  "later_direct_gaps_not_added_to_this_group": ["609D20 exact Engine binding/body", "60A628 exact Engine binding/body", "Game285E50", "Player primary+2C0 binding/body"],
+  "new_model_or_tests": false,
+  "native_or_playable_acceptance": false
+}

@@ -1,0 +1,30 @@
+{
+    "schema":  "grim-dynasty-r1-msh-format-v1",
+    "utc":  "2026-11-06T05:59:26.0395100Z",
+    "status":  "passed-game-decoded-model-obtained",
+    "how":  "I gave ArchiveFile a destination buffer at [file+0x28], then called vtable slot 2 (0x83230) with (0,222717); the routine copied the decoded file out and it saved as 223717 bytes, exactly matching the entry raw length.",
+    "why_earlier_attempt_failed":  "slot 2 returns 0 immediately when [file+0x28] is null, which is why my first call reported success but produced nothing. Supplying the destination buffer made it work.",
+    "file_layout":  {
+                        "0 to ~181733":  "binary vertex and index data",
+                        "~181909":  "skeleton begins, first bone Bip01 Pelvis",
+                        "186673":  "Object01, the mesh object record",
+                        "186785":  "shader reference Shaders/standardskinned.ssh",
+                        "186906":  "material block: baseTexture, bumpTexture, specTexture, specularColor, specularPower, outlineThickness",
+                        "186925":  "base texture path Creatures/pc/hero02.tex",
+                        "186971":  "normal map path Creatures/pc/hero02_nml.tex",
+                        "187029":  "AttachPoint list, with named points such as Mouth on Bip01 Head",
+                        "192108":  "RigidBodyDescription list, physics bodies per bone with extents and mass",
+                        "216572":  "JointDescription list, joints with type and stop limits",
+                        "end":  "text block closed by a trailing NUL"
+                    },
+    "skeleton":  {
+                     "bones":  81,
+                     "naming":  "Bip01 series, the 3ds Max Biped convention, so the rig is a standard humanoid",
+                     "cloth_bones":  "CoatTail and Coat_Loin chains, 42 mentions, used for the coat",
+                     "weapon_attach":  "Weapon_L_Parent, Weapon_R_Parent and their Fix variants"
+                 },
+    "textures_needed":  "Creatures/pc/hero02.tex and Creatures/pc/hero02_nml.tex, both reachable through the same archive layer already proven to work.",
+    "significance":  "This is the complete, game-decoded initial character model: geometry, skeleton, material, textures by name, attach points and physics. Nothing here was guessed.",
+    "saved":  ".tooling/arc-extract/hero_from_game.bin (223717 bytes)",
+    "next":  "extract the two textures from Items.arc or Creatures.arc and then feed geometry plus textures through the render path"
+}

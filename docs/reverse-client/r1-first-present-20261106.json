@@ -1,0 +1,38 @@
+{
+    "schema":  "grim-dynasty-r1-first-present-v1",
+    "utc":  "2026-11-06T02:43:20.8510597Z",
+    "status":  "passed-swapchain-and-first-present",
+    "device":  {
+                   "object":  "GraphicsEngine+0x58",
+                   "vtable":  "matched Direct3D11.dll+0x175E8 exactly",
+                   "slot5":  "0x6480 CreatePrimarySurface",
+                   "slot27":  "0x7b90 BeginFrame",
+                   "slot29":  "0x7c40 PresentSurface"
+               },
+    "sequence":  {
+                     "create_primary_surface":  "returned 0x1f5e5330",
+                     "begin_frame":  "returned 1",
+                     "present_surface":  "returned normally, which runs IDXGISwapChain::Present through slot 0x40"
+                 },
+    "settings_used":  {
+                          "RenderDeviceSettings+0x04":  800,
+                          "+0x08":  600,
+                          "+0x14":  1,
+                          "+0x1c":  1,
+                          "+0x20":  1,
+                          "+0x24":  0
+                      },
+    "what_this_proves":  [
+                             "the renderer plugin in our host is a real, usable Direct3DDevice11",
+                             "the primary surface (swapchain) can be created against an EWindow we built",
+                             "the frame bracket BeginFrame .. PresentSurface executes without fault",
+                             "the shipped renderer presented a frame to a real window in our process"
+                         ],
+    "what_it_does_not_prove":  [
+                                   "that anything is drawn in that frame beyond whatever Clear state the device had",
+                                   "that terrain or a character can be drawn",
+                                   "that the D3D11 device inside the plugin was fully initialised by CreateDevice, since BeginFrame and PresentSurface tolerate an empty frame"
+                               ],
+    "boundary":  "The host published the engine global and drove these calls. Presentation came from the shipped renderer, not from a reimplementation.",
+    "next":  "Attempt Clear with a visible colour to confirm the frame is really ours, then assess what asset loading would be needed for terrain and a character."
+}

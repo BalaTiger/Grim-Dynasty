@@ -1,0 +1,67 @@
+{
+    "schema":  "grim-dynasty-r1-ground-hit-fixture-v1",
+    "utc":  "2026-11-05T06:42:42.4115074Z",
+    "status":  "passed-standalone-not-frozen",
+    "file":  "src/reverse_client_actions/ClickToMoveBridgeTests.cs",
+    "sha256":  "b0c4e2458548fef0cedde00c4cf3f68c1333a1c8346bf5eee92aa461e20473fd",
+    "result":  {
+                   "status":  "passed-click-to-move-ground-hit",
+                   "scenarios":  1,
+                   "assertions":  3
+               },
+    "requirement_chain":  "Six explicit publications were needed before a real ground hit was produced, each proven by the reported stop address:",
+    "requirements":  [
+                         {
+                             "step":  1,
+                             "issue":  "Region lacks explicit shared floor/publication binding",
+                             "fix":  "World.BindRegion(77,region) in addition to Floor.BindRegion",
+                             "evidence":  "contract message"
+                         },
+                         {
+                             "step":  2,
+                             "issue":  "Level lacks explicit shared floor binding",
+                             "fix":  "World.BindLevel(identity), called after the world view exists",
+                             "evidence":  "contract message"
+                         },
+                         {
+                             "step":  3,
+                             "issue":  "null reference in the constructor",
+                             "fix":  "the World view must exist before BindLevel is called",
+                             "evidence":  "NRE located by stage markers"
+                         },
+                         {
+                             "step":  4,
+                             "issue":  "Level and Ground must share the same observed global operand cells",
+                             "fix":  "build the ground owner first and use ground.Context.IntersectionOperands.Geometry for the floor operands",
+                             "evidence":  "contract message"
+                         },
+                         {
+                             "step":  5,
+                             "issue":  "Unobserved field at 0x1301C9",
+                             "fix":  "level.Level.Spatial10.Write(null) - this fixture has no spatial objects",
+                             "evidence":  "ADDR=0x1301c9"
+                         },
+                         {
+                             "step":  6,
+                             "issue":  "Unobserved field at 0x13020B",
+                             "fix":  "level.Water40.Write(null) - no water in this fixture",
+                             "evidence":  "ADDR=0x13020b"
+                         }
+                     ],
+    "why_it_matters":  "This overturns the earlier conclusion that no real-ground intersection could be produced. A hit is achievable offline with a synthetic 2x2 flat ground and six explicit publications.",
+    "boundaries":  [
+                       "The hit is against a synthetic flat 2x2 ground chunk, not a loaded map.",
+                       "No widget, input event, camera, portal or native Engine initialization is involved.",
+                       "The distance is asserted ordered and positive; it is not compared with a native value.",
+                       "This test is not part of any frozen recipe yet."
+                   ],
+    "next":  "Add the second half: feed the produced position into PlayerMoveRequestContracts.MoveIdle165CB0 (which returns early when the region token at +0x00 is 0), then freeze a recipe for both halves.",
+    "correction":  {
+                       "utc":  "2026-11-05T06:43:40.8338967Z",
+                       "observed":  "Reading Output.Position08.Q0 after the hit throws \"Unobserved field\".",
+                       "meaning":  "GetIntersection130130/GetIntersection220840 write the hit DISTANCE (and material in the floor path), but they do not produce the hit position in WorldIntersectionObserved44.Position08.",
+                       "consequence":  "The R1 ground target coordinate is NOT produced by this contract. It must come from the camera ray plus the returned distance, or from another contract, neither of which is established here.",
+                       "test_change":  "The test now asserts both: distance is ordered and positive, and Position08.Q0 remains Unknown."
+                   },
+    "false_start_avoided":  "An earlier version of this round printed Position08.Q0 as if the hit had produced it; that would have overstated the result and was removed."
+}

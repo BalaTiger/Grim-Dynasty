@@ -1,0 +1,24 @@
+{
+    "schema":  "grim-dynasty-r1-publisher-closure-v1",
+    "utc":  "2026-11-05T13:34:05.5319454Z",
+    "claim":  "No static code path in Engine.dll, Game.dll or Direct3D11.dll publishes the field at 0x421428.",
+    "coverage":  {
+                     "direct_store_all_encodings":  "RIP-relative qword/dword/byte/immediate, XMM 16-byte, disp32 with and without SIB, unaligned stores whose range covers the slot: 0 hits in all three modules",
+                     "lea_into_block":  "5 hits total, 3 of them belong to a different structure at 0x421450, and none of the 5 performs a store to the slot",
+                     "getter_indirection":  "Enumerated every 8-byte address-of getter in the module by byte pattern (lea rax,[rip+d]; ret): 183 getters exist, only two target the block region (0x31280 -\u003e 0x4213c0 and 0x4dd70 -\u003e 0x4213e8), and both have very few callers whose bodies contain no store at +0x40",
+                     "static_initialiser_tables":  "7691 DIR64 relocations grouped into 552 runs and 51 function-pointer tables; the largest candidate (0x302d50, 132 entries) is a dispatch table and none of its entries references the slot",
+                     "relocation_application":  "no relocation covers 0x4213f0..0x421470, so the loader does not write the block",
+                     "cross_module":  "Game.dll contains zero RIP-relative references to 0x4213c0..0x421500, and its only two 4-byte matches in that range are call rel32 displacements (0x1bae55 and 0x1baef2), both of which resolve to 0x1805dc33e. Direct3D11.dll likewise has no store and no reference."
+                 },
+    "object_model":  "0x4213e8 is a global object; 0x421428 is its field at +0x40 and holds an engine pointer that other code dereferences and dispatches virtually.",
+    "conclusion":  "The publish operation is not represented anywhere in the static image of the three modules, and it was not observed in any attach-based watchpoint session. Taken together with the accessor and relocation coverage, the static routes are closed with a negative result.",
+    "remaining":  [
+                      "the value is nevertheless present at run time, so the write exists; it must occur through a mechanism that is invisible to these methods, for example a module not yet examined or code loaded from a source other than these files"
+                  ],
+    "not_claimed":  [
+                        "that no publisher exists",
+                        "that the field is unused",
+                        "that engine startup is understood"
+                    ],
+    "final_statement":  "Routes A and B are complete and both are negative, as are the two follow-up hypotheses (getter indirection and cross-module writes). The static image of the three shipped modules contains no publisher for the field at 0x421428, while the field demonstrably holds an engine pointer at run time."
+}

@@ -1,0 +1,36 @@
+{
+    "schema":  "grim-dynasty-r1-engine-global-static-exhausted-v1",
+    "utc":  "2026-11-05T12:53:18.7278992Z",
+    "question":  "Which instruction publishes the singleton block at Engine.dll+0x4213f0..0x421470, including the slot at 0x421428?",
+    "established_facts":  {
+                              "runtime_block":  "00e93b4499010000 0000000000000000 02000000 03000000 05000000 04000000 e015a86699010000 b0175ac4fb7f0000 d0175ac4fb7f0000 301d374499010000",
+                              "static_block":  "b22e010090343600c02e0100...",
+                              "verdict":  "the whole block differs between disk and memory, so the block is populated at run time, not by the loader",
+                              "relocations":  "7691 DIR64 entries exist module-wide; none covers 0x4213f0..0x421470"
+                          },
+    "encodings_scanned":  {
+                              "RIP-relative qword store (REX.W 89, mod=00 rm=101)":  0,
+                              "RIP-relative dword store (89, no REX.W)":  0,
+                              "RIP-relative dword immediate store (C7 /0)":  0,
+                              "RIP-relative byte store (88)":  0,
+                              "XMM 16-byte store (0F 11/29/7F)":  0,
+                              "disp32 store through a register (mod=10, rm!=4/5)":  0,
+                              "disp32 store with SIB (mod=10, rm=100, index=none)":  0,
+                              "LEA of the exact slot":  0,
+                              "LEA of any base below the slot plus matching offset, 400-byte window":  0,
+                              "absolute immediates anywhere in 0x4213f0..0x421470 across three modules":  0
+                          },
+    "false_positive_corrected":  "The single Game.dll hit at 0x1baef2 was not an immediate: those bytes are the rel32 of \"call 0x1805dc33e\" (0x1805dc33e - 0x1801baef6 = 0x421448). It is recorded here so the lead is not pursued again.",
+    "conclusion":  "No x86-64 store encoding that could target a fixed absolute address exists anywhere in Engine.dll, Game.dll or Direct3D11.dll for this block. Static byte-pattern analysis is therefore exhausted for this specific question.",
+    "remaining_explanations":  [
+                                   "the block is written by code in a module not yet considered, or by dynamically generated code",
+                                   "the block is written through an address computed from a runtime pointer held elsewhere, so no literal or fixed displacement appears near the store",
+                                   "the loaded module differs from the file scanned in a way not yet examined"
+                               ],
+    "honest_position":  "I will not present any of these as the answer. What is established is the negative result and the exact list of encodings excluded.",
+    "next_realistic_options":  [
+                                   "HKLM Image File Execution Options with elevation, arming the watchpoint before the first instruction",
+                                   "a hypervisor- or DBI-based start-up trace, which changes the tooling class rather than the rule",
+                                   "accept the boundary: presentation stays decoded-and-documented but not executed"
+                               ]
+}

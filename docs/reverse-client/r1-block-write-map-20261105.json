@@ -1,0 +1,45 @@
+{
+    "schema":  "grim-dynasty-r1-block-write-map-v1",
+    "utc":  "2026-11-05T13:35:25.4176497Z",
+    "method":  "Mapped every store whose RIP-relative target lands anywhere in 0x4213c0..0x421500, then projected the targets onto a byte grid to see which slots are never written.",
+    "written_slots":  [
+                          "0x4213c4",
+                          "0x4213c8",
+                          "0x4213cc",
+                          "0x4213d0",
+                          "0x4213d8",
+                          "0x4213e0",
+                          "0x4213f0",
+                          "0x4213f8",
+                          "0x421400",
+                          "0x421408",
+                          "0x42140c",
+                          "0x421410",
+                          "0x421430",
+                          "0x421438",
+                          "0x42143c",
+                          "0x421440",
+                          "0x421458",
+                          "0x421468"
+                      ],
+    "uncovered_8byte_slots":  [
+                                  "0x4213c0",
+                                  "0x4213e8",
+                                  "0x421418",
+                                  "0x421420",
+                                  "0x421428"
+                              ],
+    "interpretation":  {
+                           "fact":  "Almost every slot in the region has an identified writer; exactly five 8-byte slots never receive a direct store: 0x4213c0, 0x4213e8, 0x421418, 0x421420 and 0x421428.",
+                           "getters":  "Two of those five, 0x4213c0 and 0x4213e8, are the targets of the only two address-of getters in the module that reach this region, and both are only touched by an or-based link stub rather than by a store.",
+                           "grouping":  "The three remaining untouched slots, 0x421418, 0x421420 and 0x421428, are consecutive and sit at 0x4213e8 + 0x30, +0x38 and +0x40, so they read as fields of the object at 0x4213e8.",
+                           "consequence":  "The object at 0x4213e8 is therefore constructed or copied as a whole by code that never stores to those offsets directly, which is consistent with a constructor that receives the object address in a register or with a bulk copy, and with the field holding a live heap pointer at run time."
+                       },
+    "adjacent_writers_explained":  "0x3a530 and 0x3a600 are the lazy-create and destroy pair for a different singleton (0x4213d8 / 0x4213e0): new 0x18, vtables 0x33d398 and 0x348880, then new 0x28 stored at +0x10. They do not touch the object at 0x4213e8.",
+    "boundary":  "Routes A and B, the getter-indirection follow-up and the cross-module check are all complete and all negative. The publisher of 0x421428 is not visible as a direct store anywhere in the static image of the three modules.",
+    "not_claimed":  [
+                        "that no publisher exists in these modules under any encoding",
+                        "that the object at 0x4213e8 is identified by name",
+                        "any runtime behaviour"
+                    ]
+}

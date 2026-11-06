@@ -1,0 +1,65 @@
+{
+    "schema":  "grim-dynasty-r1-runtime-click-transition-v1",
+    "utc":  "2026-11-05T08:18:17.7671429Z",
+    "clock_local":  "16:12:09 start, 16:15:39 end; the user clicked at about 16:12:11 local",
+    "pid":  2352,
+    "watch":  "75 Hz polling of Controller+0x2A0, +0x2F0 and +0x2E8 on both player controllers",
+    "events":  [
+                   {
+                       "clock":  "16:12:09",
+                       "player":  "0x22ee167b010 (player1)",
+                       "event":  "initial",
+                       "state":  "0x7ff64f66b868",
+                       "count":  7,
+                       "overlay":  "0"
+                   },
+                   {
+                       "clock":  "16:12:09",
+                       "player":  "0x22f02154b20 (player2)",
+                       "event":  "initial",
+                       "state":  "0x22f5ce9c150",
+                       "count":  0,
+                       "overlay":  "0x22f1f1508d0"
+                   },
+                   {
+                       "clock":  "16:12:11",
+                       "player":  "0x22f02154b20 (player2)",
+                       "event":  "change",
+                       "state":  "0x22f45ee2a80",
+                       "count":  0,
+                       "overlay":  "0x22f1f1508d0"
+                   },
+                   {
+                       "clock":  "16:12:11",
+                       "player":  "0x22f02154b20 (player2)",
+                       "event":  "change",
+                       "state":  "0x22f5ce9bc10",
+                       "count":  0,
+                       "overlay":  "0x22f1f1508d0"
+                   }
+               ],
+    "retraction_2":  {
+                         "retracted":  "The previous round claimed the live state vtable was LongIdle by comparing Controller+0x2A0 directly with the state table.",
+                         "why_wrong":  "Controller+0x2A0 holds a pointer to a STATE OBJECT; the vtable is the first qword inside that object. player1\u0027s value happened to look like a Game.dll pointer and was misread.",
+                         "corrected":  "The state object is 0x22f5ce9bc10 whose first qword is 0x7ffa84524e60, i.e. RVA 0x744e60 = Idle."
+                     },
+    "identified":  {
+                       "real_player":  "0x22f02154b20 (the one whose state actually changes on a click)",
+                       "controller":  "0x22f23229280",
+                       "state_object":  "0x22f5ce9bc10",
+                       "state_vtable_rva":  "0x744e60",
+                       "state":  "Idle",
+                       "slot70":  "0x15880 (shared empty stub)",
+                       "count_2f0":  0,
+                       "overlay_2e8":  "0x22f1f1508d0",
+                       "other_player":  "0x22ee167b010 never changed; its state 0x7ff64f66b868 has an internal vtable 0x7ff64f355820 that is not in Game.dll, so that controller is not the local player view used by the click path."
+                   },
+    "what_the_click_showed":  "A single ground click moved the local player controller through two state objects within the same second and settled in Idle. The transient states did not persist long enough to resolve their vtables, and no MoveTo vtable was observed at the sample rate.",
+    "not_claimed":  [
+                        "that the transient states were MoveTo",
+                        "that movement occurred",
+                        "why the controller settles in Idle",
+                        "any field value on the transient objects"
+                    ],
+    "next":  "Poll faster and capture the transient state objects immediately, or read the transient vtable as soon as the pointer changes (record it in the same iteration, not later)."
+}

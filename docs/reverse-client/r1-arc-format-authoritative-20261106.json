@@ -1,0 +1,32 @@
+{
+    "schema":  "grim-dynasty-r1-arc-authoritative-v1",
+    "utc":  "2026-11-06T04:57:14.4967979Z",
+    "source":  "Recovered from Archive::Open 0x38e40 and its header reader 0x397b0, which is the code the game itself runs.",
+    "header_2048":  {
+                        "read":  "ReadFile of exactly 0x800 bytes; the reader rejects anything else, which is why an archive must be at least 2048 bytes",
+                        "off 0x00":  "the ASCII string \"ARC\" (compared against the constant at 0x308454)",
+                        "off 0x04":  "u32 version, must equal 3",
+                        "off 0x08":  "u32 file count = 3341 for Creatures.arc",
+                        "off 0x0C":  "u32 block count = 5265 for Creatures.arc",
+                        "off 0x10":  "u32 = 63180 (not yet interpreted)",
+                        "off 0x14":  "u32 name table byte length = 150660",
+                        "off 0x18":  "u32 file offset of the block table = 462022506"
+                    },
+    "tables":  {
+                   "block_table":  "at 0x18, blockCount entries of 12 bytes each, each entry {u32 offset, u32 storedLength, u32 field3}",
+                   "name_table":  "immediately after the block table, nameLength bytes of consecutive NUL-terminated ASCII names, one per file",
+                   "verification":  "every consecutive pair satisfies offset + storedLength == next.offset, with 0 exceptions across all 5264 transitions, so the block table is a contiguous, correctly understood layout",
+                   "player_model_index":  "pc/hero_00.msh is name index 2461"
+               },
+    "block_header":  {
+                         "layout":  "u16 length, 3-byte magic (MSH/ANM/TEX), u8 version, u32 zero, u32 field1, u32 field2, then payload",
+                         "observed":  "block 0 at 2048 is MSH version 3 with field1=38 and field2=34",
+                         "payload":  "starts near offset 56 but the bytes are not plaintext and are not zlib or raw deflate"
+                     },
+    "not_solved":  {
+                       "compression":  "no zlib or raw-deflate stream exists anywhere in block 0, so the payload uses a different scheme or none",
+                       "strings":  "the region that looks like \"Creatures\\\\Anomali\" continues with 0A 00 F0 02 then \"yA01.mif\", so it is not a plain path but an encoded string stream",
+                       "mapping":  "the block table has 5265 entries while the name table has 3341 names, so one file can span several blocks and the mapping is not yet derived"
+                   },
+    "next":  "decode Archive::ReadFile or whichever routine the game uses to pull a file out, since that code contains the exact inverse of this encoding."
+}

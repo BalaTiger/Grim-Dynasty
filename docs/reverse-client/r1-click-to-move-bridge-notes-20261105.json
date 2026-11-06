@@ -1,0 +1,55 @@
+{
+    "schema":  "grim-dynasty-r1-click-to-move-bridge-notes-v1",
+    "utc":  "2026-11-05T06:26:30.6932852Z",
+    "status":  "stage-a-achieved-after-reclean",
+    "findings":  [
+                     "The pick compiles against the v6 dependency set only after adding GrimDynasty.CameraWorldRay.dll (found in .tooling/r1-camera-world-ray-validation), because WorldRayObserved36 is defined in CameraWorldRayContracts.cs and is not part of the v6 references.",
+                     "A minimal scene of one region, one AABB and one ray compiles and runs but stops with \"Unobserved field\" inside the intersection: the intersection consumes more world/floor inputs than that.",
+                     "The proven WorldIntersectionTests scene is an empty-ground fixture: every case asserts s.Miss(), i.e. the ray does not hit. Its initial Output values (distance 123, entity/position placeholders) are pre-set values, not the result of a hit.",
+                     "Therefore producing a real ground hit requires actual ground triangle geometry (the shape WorldFloorTests.OwnFlatGround builds), not just a region ring and an AABB."
+                 ],
+    "implication":  "The bridge is not a fixture-plumbing problem; it needs a real flat-ground triangle set plus the navigation context for the request half. That is a new test program of substantially more than 40 lines.",
+    "artifacts_left":  "src/reverse_client_actions/ClickToMoveBridgeTests.cs holds the pick-only skeleton that compiles and runs; it is NOT part of any frozen recipe and is not evidence.",
+    "not_claimed":  [
+                        "that any pick hit was produced",
+                        "that the move request was reached",
+                        "any movement or presentation behaviour"
+                    ],
+    "next_options":  [
+                         "Extend WorldFloorTests-style flat ground into a new self-contained bridge program (largest effort, fully offline).",
+                         "Prefer runtime sampling instead: one in-world sample would settle Gate26AF and World50, which is what actually blocks the movement chain."
+                     ],
+    "stage_a_attempt":  {
+                            "utc":  "2026-11-05T06:28:50.0226624Z",
+                            "what":  "Built a real flat-ground scene (OwnFlatGround + GroundOwner) and ran the intersection against it.",
+                            "progressed":  "The empty-ground miss was replaced by real floor consumption: the run now reaches the floor path instead of returning a miss.",
+                            "errors_in_order":  [
+                                                    "Region lacks explicit shared floor/publication binding -\u003e fixed by World.BindRegion(77,region)",
+                                                    "Level lacks explicit shared floor binding -\u003e fixed by World.BindLevel(identity)",
+                                                    "NullReferenceException remains after both bindings, with the level identity reused for Floor.BindLevel and World.BindLevel"
+                                                ],
+                            "conclusion":  "Stage A (a real ordered hit) is NOT achieved. The remaining fault is inside the floor/world view wiring, not in the pick contract.",
+                            "artifact":  "src/reverse_client_actions/ClickToMoveBridgeTests.cs compiles and runs but throws; it is not part of any recipe and is not evidence."
+                        },
+    "final_outcome":  {
+                          "utc":  "2026-11-05T06:41:51.7695285Z",
+                          "session_result":  "not achieved; skeleton deleted",
+                          "sequence_of_fixes":  [
+                                                    "World.BindRegion(77, region) in addition to Floor.BindRegion",
+                                                    "World.BindLevel(identity) called after the world view exists",
+                                                    "published empty Level.PathableActors and RegionView.Neighbors",
+                                                    "shared ground geometry between floor operands and the ground owner (ground.Context.IntersectionOperands.Geometry)",
+                                                    "identified 0x1301C9 = level.Level.Spatial10 as the next unobserved field"
+                                                ],
+                          "where_it_stopped":  "After publishing ground geometry the contract advanced to 0x1301C9 (Level.Spatial10). Publishing it required further edits that broke the test file\u0027s local scoping, at which point the skeleton was deleted rather than left broken.",
+                          "why_deleted":  "The file was in no recipe and produced no evidence; keeping a broken skeleton would mislead future work. The findings above are preserved instead.",
+                          "honest_note":  "No ground hit was ever produced. The existing WorldIntersectionTests fixture only asserts misses, so this path had no reference implementation to copy."
+                      },
+    "stage_a_result":  {
+                           "utc":  "2026-11-05T06:42:49.8993865Z",
+                           "result":  "passed-click-to-move-ground-hit (1 scenario, 2 assertions)",
+                           "what_changed":  "After deleting the broken skeleton I rewrote the fixture cleanly with all six requirements baked in; the sixth (level.Water40 = null) let the intersection return an ordered positive distance.",
+                           "corrections_to_earlier_statements":  "The earlier claim that \"the repo has no reference implementation for a real ground hit\" was true for the existing fixtures, but a real ground hit IS achievable offline with a synthetic 2x2 flat chunk plus six explicit publications.",
+                           "artifacts":  "src/reverse_client_actions/ClickToMoveBridgeTests.cs (standalone, not in any recipe); docs/reverse-client/r1-ground-hit-fixture-20261105.json"
+                       }
+}

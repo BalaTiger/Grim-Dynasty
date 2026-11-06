@@ -1,0 +1,126 @@
+{
+  "schema": "grim-dynasty-player-stop-continuation-evidence-v1",
+  "utc": "2026-11-02T21:06:39.7243913Z",
+  "status": "writer-identified-stop-and-destructor-prefix-components-verified",
+  "native": [
+    {
+      "target": "Game08ED40",
+      "file": "docs/reverse-client/r1-movement-activation-run1/05-MovementActivate-0x18008ed40-procedure_assembly.json",
+      "sha256": "22234f724cd6b38a72d3ffa0f74e50f15763a1beebd944e4176f29674bb33606",
+      "contract": "Readmanager+6D at08ED46; nonzero returns08ED83. Readimport609050/globalengine/+292; nonzero returns without altering+6C. Enabled08ED62 writes BYTE+6C=1 BEFORE GetNav609C10; owner00 is read08ED6C afterward; tail609F58 at08ED77. AddObject return/registration success not implied byflag1."
+    },
+    {
+      "target": "Engine25B560",
+      "file": "docs/reverse-client/r1-engine-stop-final-dependencies-run1/05-CrowdStop-0x18025b560-procedure_assembly.json",
+      "sha256": "6abe6fb459f9feb1fe199383bdda4f8d0dc81aa71385840fcf53288a41c61a06",
+      "contract": "Actual05DAF0 registry lookup. Non-sentinel/non-nullAgent: capture Position48 XY8/Z4, writeTarget78 XY8/Z4, DWORD State70=3, DWORD Timer6C=0. No clearing of velocity/work/request/Moving. MissingAgent assertion bytes422B8E and42144A are ordered live reads; diagnostics remainUnsupported25B5F8."
+    },
+    {
+      "target": "Engine0485E0",
+      "file": "docs/reverse-client/r1-engine-stop-final-dependencies-run1/08-CharacterActionDestructor-0x1800485e0-procedure_assembly.json",
+      "sha256": "8e4c1e59bd7ddaead519aacdd36cca84c9198086e458848f7faa67c46121caf1",
+      "contract": "Only LEA339EF0/MOVprimaryvptr/RET. RAX table identity differs from outerGame088EB0 this-return. Scalarflags1 remainsUnsupported088F2A because exact60B888 freeimport is not bound; native allocation/lifetime not claimed."
+    }
+  ],
+  "bindings": {
+    "code_scan": false,
+    "exports_sha256": "edad691f67c8dbb04d50baf5c13e97840f2b0f1f5172a5666d26f82cccb919d7",
+    "formatter_failed_export_runs": 1,
+    "exports": "docs/reverse-client/r1-movement-manager-export-names.json",
+    "destructor_sha256": "f220d8c34409d902d95c54e53e4d8de0260053aaaa0335b7746b86363ea837d4",
+    "class_symbols": 28,
+    "all_export_metadata_enumerated": 25113,
+    "successful_export_metadata_runs": 1,
+    "destructor": "docs/reverse-client/r1-character-action-destructor-binding/inspection.json"
+  },
+  "implementation": {
+    "existing_goal_production_sources_modified": false,
+    "source_pins": [
+      {
+        "path": "src/reverse_client_actions/NavigationStopObjectContracts.cs",
+        "sha256": "0f0131fe5e90ce3c8ab284453364fdc67dc216ce271c0fa2d519147ee9e14f28",
+        "freeze_status": "frozen-author-stable-root-reviewed"
+      },
+      {
+        "path": "src/reverse_client_actions/GameMoveActionDestructionContracts.cs",
+        "sha256": "9f37d0bd48c2743dc4b6bc923088c82219ff58579a3795b333c06146b33b45ad",
+        "freeze_status": "frozen-author-stable-root-reviewed"
+      },
+      {
+        "path": "src/reverse_client_actions/NavigationStopObjectTests.cs",
+        "sha256": "b3e44798fd4c01e497d42c7ee241e0c7e4b7b04b3e3c868329934a9f8073209a",
+        "freeze_status": "frozen-author-stable-root-reviewed"
+      },
+      {
+        "path": "src/reverse_client_actions/GameMoveActionDestructionTests.cs",
+        "sha256": "98cde66dcdb4ffb7f79dd174d74c202703548ea9778337f09d282ab422cbf718",
+        "freeze_status": "frozen-author-stable-root-reviewed"
+      },
+      {
+        "path": ".tooling/r1-navigation-stop-build-prepared/NavigationStopValidationProgram.cs",
+        "sha256": "cd5b7bc0cea431976723d2d060fb1f50ee8b2cb0fdba8f1aace376bf6b429e07",
+        "freeze_status": "frozen-author-stable-root-reviewed"
+      }
+    ],
+    "registered_flag_defaulted": false,
+    "actual_live_registration_wired": false,
+    "native_heap_free": false,
+    "actual_goal_path_wired_to_new_stop": false
+  },
+  "validation": {
+    "destruction_assertions": 64,
+    "session": 33256,
+    "old_whole_suites": 0,
+    "exit": 0,
+    "old_regressions": 0,
+    "new_scenarios": 20,
+    "post_stop_no_drift_verified": false,
+    "successful_compiles": 2,
+    "gameplay_accepted": false,
+    "stop_scenarios": 12,
+    "destruction_scenarios": 8,
+    "stop_assertions": 153,
+    "assertions": 217,
+    "sha256": "f1745bdde75ec6941084c9748ba23e1105c847753faa3f38ac00bde349c20734",
+    "arrival_diagnostic_rerun": false,
+    "file": ".tooling/r1-navigation-stop-validation/result.json"
+  },
+  "query_execution": {
+    "game_activation_exit": 0,
+    "successful_batch_calls": 19,
+    "both_successful_jobs_and_samplers_released": true,
+    "guard_or_wait_policy_changed": false,
+    "failed_name_query_response_received": false,
+    "new_function_targets": 3,
+    "engine_exit": 0,
+    "failed_runtime_retained": true,
+    "completed_mcp_calls": 22,
+    "attempted_mcp_calls": 23,
+    "pending": 0,
+    "denied": false,
+    "game_activation_session": 87620,
+    "engine_session": 72256,
+    "old_function_bodies_repeated": 0,
+    "failed_game_job_empty_receipt_unknown": true,
+    "failed_name_query_retried": false
+  },
+  "release": {
+    "utc": "2026-11-02T21:04:10.9573508Z",
+    "file": "docs/reverse-client/r1-player-stop-continuation-release.json",
+    "sha256": "b25987aa272f829dd830cd8f7f7047e5a4ce8feccfb2df74fccb371afe3e2e2d"
+  },
+  "original_hashes": {
+    "preserved": true,
+    "Game": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "Engine": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "previous_real_map_boundary": "Historical same request reaches Goal onframe23, but live Stop stillUnknown083027. New components were not substituted into that fixture; no arrival success or no-drift accepted.",
+  "remaining": [
+    "Manager6D and Engine292 actual initialization/publication; trueAddObject609F58 binding/25AE20 registry insertion before claiming valid registeredAgent.",
+    "ExactfreeIAT60B888/nativeheap domain; noMarkReleased/Handler.Current clear afterunclosedfree.",
+    "HookPack/event9 and State3 post-stop correction/neighbor path25DBB6; noemptyWork shortcut.",
+    "Physicalmouse/hitcoordinates/frameclock/originalsceneUI and actualdecode/playback stillunaccepted."
+  ],
+  "next_minimal_task": "Bind Game609F58 AddObject and resolve Game60B888 exact free import from existing metadata first. Reuse cached Engine151020/25AE20; its registration still needs05DF10 node publication and01FB90 map update. Bind live manager6D/Engine292 observations without zero defaults; preserve08ED62 flag1 before registration success. Then connect shared Goal->Stop3/destructor and actual State3 post-stop frame path. Do not repeat three current bodies, failed name search, or unchanged old suites.",
+  "commit_push_deploy": false
+}

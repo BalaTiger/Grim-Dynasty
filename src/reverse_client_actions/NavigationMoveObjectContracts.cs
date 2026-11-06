@@ -21,7 +21,7 @@ namespace GrimDynasty.ReverseClient.Actions {
   public ulong Address(GameMovementInterfaceView view,uint at){if(view==null)return 0;Game.Owner(view,at).Entity.RequireLive(at);ulong address;if(!addresses.TryGetValue(view,out address))throw new MissingContract(at,"Interface38 has no explicit own address binding");return address;}
  }
  public sealed class NavigationMoveRegistryNode:NavigationView {
-  public readonly Field<NavigationMoveRegistryNode> Next00=new Field<NavigationMoveRegistryNode>();
+  public readonly Field<NavigationMoveRegistryNode> Next00=new Field<NavigationMoveRegistryNode>(),Prev08=new Field<NavigationMoveRegistryNode>();
   public readonly Field<ulong> Key10=new Field<ulong>();
   public readonly Field<NavigationCrowdAgent> Agent18=new Field<NavigationCrowdAgent>();
  }
@@ -34,14 +34,18 @@ namespace GrimDynasty.ReverseClient.Actions {
   internal NavigationMoveRegistryBucket At(ulong index,uint at){RequireLive(at);if(index>=(ulong)Cells.Length||Cells[(int)index]==null)throw new MissingContract(at,"Outside own stride16 hash bucket extent");return Cells[(int)index];}
  }
  // One sidecar for missing CrowdManager+28 map fields; no second Agent list.
- // Its node.Agent18 must point to the same pre-existing registered Agent.
- // Header construction/insertion (AddAgent) is NOT implemented by this view.
+ // Its node.Agent18 is the same Agent consumed by registration and movement.
+ // Header construction is not implied; publication uses the separate evidence-
+ // backed registration component, leaving unobserved header cells Unknown.
  public sealed class NavigationMoveRegistry {
   static readonly ConditionalWeakTable<NavigationCrowdManager,NavigationMoveRegistry> maps=new ConditionalWeakTable<NavigationCrowdManager,NavigationMoveRegistry>();
   public readonly NavigationCrowdManager Manager;
+  public readonly Field<float> MaxLoadFactor28=new Field<float>();
   public readonly Field<NavigationMoveRegistryNode> Sentinel30=new Field<NavigationMoveRegistryNode>();
+  public readonly Field<ulong> Count38=new Field<ulong>();
   public readonly Field<NavigationMoveRegistryBuckets> Buckets40=new Field<NavigationMoveRegistryBuckets>();
   public readonly Field<ulong> Mask58=new Field<ulong>();
+  public readonly Field<ulong> BucketCount60=new Field<ulong>();
   NavigationMoveRegistry(NavigationCrowdManager manager){Manager=manager;}
   public static NavigationMoveRegistry ForManager(NavigationCrowdManager manager){if(manager==null)throw new ArgumentNullException("manager");return maps.GetValue(manager,delegate(NavigationCrowdManager value){return new NavigationMoveRegistry(value);});}
  }
@@ -63,8 +67,10 @@ namespace GrimDynasty.ReverseClient.Actions {
   public readonly NavigationCrowdAdapterBoundaries Adapter;
   public readonly NavigationCrowdPathBoundaries Path;
   public readonly Field<float> Half34BADC=new Field<float>(),Quarter34BA80=new Field<float>();
-  public readonly Field<byte> DisableMissingAgent422B8D=new Field<byte>(),DisableAllAssert42144A=new Field<byte>();
-  public NavigationMoveObjectContext(NavigationMoveAddressSpace addresses,NavigationCrowdAdapterBoundaries adapter,NavigationCrowdPathBoundaries path){if(addresses==null||adapter==null||path==null)throw new ArgumentNullException("move context");Addresses=addresses;Adapter=adapter;Path=path;}
+  public readonly Field<byte> DisableMissingAgent422B8D=new Field<byte>();
+  public readonly Field<byte> DisableAllAssert42144A;
+  public NavigationMoveObjectContext(NavigationMoveAddressSpace addresses,NavigationCrowdAdapterBoundaries adapter,NavigationCrowdPathBoundaries path):this(addresses,adapter,path,new Field<byte>()){}
+  public NavigationMoveObjectContext(NavigationMoveAddressSpace addresses,NavigationCrowdAdapterBoundaries adapter,NavigationCrowdPathBoundaries path,Field<byte> common42144A){if(addresses==null||adapter==null||path==null||common42144A==null)throw new ArgumentNullException("move context");Addresses=addresses;Adapter=adapter;Path=path;DisableAllAssert42144A=common42144A;}
   // Saved disk operands only: explicit OWN choice, not loaded-state evidence.
   public void UseObservedConstants(){Half34BADC.Write(0.5f);Quarter34BA80.Write(0.25f);}
  }

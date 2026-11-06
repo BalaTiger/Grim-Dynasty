@@ -1,0 +1,56 @@
+{
+  "schema": "grim-dynasty-r1-ui-dynamic-observation-proposal-v1",
+  "utc": "2026-11-03T16:02:18.6153541Z",
+  "status": "proposal-only-not-authorized-or-executed",
+  "trigger": "仅在有限静态 UI 资源引用仍不能定位世界 Widget 或坐标生产调用者时启用。",
+  "current_static_work_continues": false,
+  "goal": "观察原版实际 HUD 选择、Widget 注册，以及一次物理鼠标事件到 WorldVec3 的转换，不访问真实玩家数据。",
+  "isolation": {
+    "writes": "仅写访客临时配置和新建测试角色；不复制或导入真实存档。",
+    "fallback_not_sufficient": "复制 EXE 或仅重定向 APPDATA 不能证明已隔离 Known Folders 和 Steam 云数据。",
+    "network": "观察期间禁用访客网络；不改变主机网络或 Steam 设置。",
+    "license": "仅使用合法获授权的离线启动方式。若必须接触账户或云数据、安装软件，停止并提出具体审批；不绕过 DRM。",
+    "preferred": "独立、可丢弃的 Windows 访客系统，使用全新用户和独立虚拟磁盘；必须先核实既有环境、GPU 与合法离线启动条件。",
+    "mapped_input": "仅映射已授权游戏副本，且为只读；不映射主机用户目录、Documents、Steam userdata 或云数据。"
+  },
+  "minimum_observations": [
+    "加载模块哈希、ASLR 基址，同一 Engine、Widget、Player 的对象身份。",
+    "在 Engine 0781B0 或已证世界 Widget writer 观察对象、vptr、+18 目标、调用栈及列表发布顺序。",
+    "实际 HUD 记录名、字段消费者、普通 HUD 与 Orb HUD 的选择条件。",
+    "一次真实鼠标事件的客户区像素、DPI、viewport、相机命中输入输出，以及同一 ControllerPlayer 15E1F0 的参数。",
+    "UI 消费与移动调用的因果顺序；不得注入 fixture 成功回调。"
+  ],
+  "capture_mechanism": "优先使用已有获批调试器的硬件断点及只读内存观察；目前未核实调试器可用性或具体命令。原版启动、附加调试及任何新工具均需另行明确批准。",
+  "stop_conditions": [
+    "需要读取或写入真实存档、主机用户目录或云数据。",
+    "合法启动方式或 GPU 不受支持。",
+    "需要安全设置变更、DRM 绕过或未经批准安装。",
+    "内存预算或进程归属无法确认。"
+  ],
+  "approval_needed": [
+    "具体隔离原版启动和调试附加动作。",
+    "若本机尚无隔离环境或调试器，所需安装。",
+    "许可、认证或网络准备；不得隐含授权访问云数据。"
+  ],
+  "risks": [
+    "访客 GPU、DPI 和输入行为可能不同，需记录并校准。",
+    "调试暂停会影响帧时序，需限制采样范围并注明。",
+    "Windows Sandbox 对本机 Steam 版本的兼容性未验证，此方案尚不可直接运行。"
+  ],
+  "official_sources": [
+    {
+      "supports": "Guestnetwork canbedisabled; mappedfolders canberead-only; writtenmappedhostfilespersist; GPU/memorysettings affectcompatibility",
+      "url": "https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-configure-using-wsb-file"
+    },
+    {
+      "supports": "Cloudcanincludeprofiles/settings/saves; offlineplaycanlatersync/conflict,soofflinehostlaunchaloneinsufficient",
+      "url": "https://help.steampowered.com/en/faqs/view/68d2-35ab-09a9-7678"
+    }
+  ],
+  "original_launched": false,
+  "settings_changed": false,
+  "real_saves_accessed": false,
+  "pending_operation": false,
+  "bounded_static_result": "Actual HUD records, literal addresses and two adjacent pointer values are proven; no native consumer from this finite query set. No further automatic expansion of this set.",
+  "current_status_utc": "2026-11-03T16:28:05.6052206Z"
+}

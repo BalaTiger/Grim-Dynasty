@@ -1,0 +1,45 @@
+{
+    "schema":  "grim-dynasty-r1-watchpoint-observation-v1",
+    "utc":  "2026-11-05T12:08:17.8092225Z",
+    "approval":  "One hardware watchpoint observation, authorised by the user after the rule review.",
+    "tool":  {
+                 "path":  ".tooling/r1-watch-present-prepared/watch_engine_global.py",
+                 "selftest":  "docs/reverse-client/r1-watchpoint-tool-selftest-20261105.json",
+                 "selftest_result":  "hit in 3.2 s with DR6 bit0 set"
+             },
+    "attempts":  [
+                     {
+                         "n":  1,
+                         "outcome":  "invalid",
+                         "reason":  "my own scoping bug raised UnboundLocalError before the watch could arm; the client never started properly",
+                         "events":  1
+                     },
+                     {
+                         "n":  2,
+                         "outcome":  "completed-cleanly",
+                         "reason":  "watch armed on Engine.dll load and ran to the deadline",
+                         "events":  9209262,
+                         "hits":  0,
+                         "threads_armed":  4,
+                         "engine_base":  "0x7ffbaa940000",
+                         "watch_address":  "0x7ffbaad61428"
+                     }
+                 ],
+    "observed":  "With the watchpoint correctly armed on Engine.dll+0x421428 for the whole start-up and run, no write to those 8 bytes was trapped.",
+    "contradiction":  "An earlier session recorded the same slot as non-null at runtime (0x22ee236aeb0). That reading has NOT been reproduced in this session: the clean re-read attempt did not obtain an Engine.dll module at all (the client did not come up in that run), so it neither confirms nor refutes the old value.",
+    "possible_explanations":  {
+                                  "late_write":  "The write happens later than the observation window, for example when the graphics device or the level is created. Not tested.",
+                                  "pre_arm_write":  "The write happened before the watch was armed, e.g. during loader notification ordering around Engine.dll DllMain. Not tested.",
+                                  "stale_old_reading":  "The earlier non-null reading came from a process whose module base differed from the constant used at that moment. Not verified; the base was re-checked within that session and looked stable, but this cannot be proven now."
+                              },
+    "corrections_made":  {
+                             "relocation_parser":  "My earlier relocation scan filtered type 3 (HIGHLOW). On PE32+ the relevant type is 10 (DIR64). Re-parsing with the correct type finds 7691 DIR64 entries, and still none inside 0x4213f0..0x421470, so the earlier conclusion survives, but the original filter was wrong."
+                         },
+    "honest_status":  "The watchpoint result is a negative result obtained with validated tooling. It does not identify the writer and it does not by itself invalidate the old reading; it shows that the write does not occur during the observed window.",
+    "not_claimed":  [
+                        "that the slot is never written",
+                        "that the old non-null reading was wrong",
+                        "that engine start-up is understood"
+                    ],
+    "next":  "Arm before any user code runs (hook the import resolution or break on Engine.dll map rather than on the load event) and extend the window past device creation, since CreateDevice is where the helper dereferences the global."
+}

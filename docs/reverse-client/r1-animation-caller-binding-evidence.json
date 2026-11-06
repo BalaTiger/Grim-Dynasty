@@ -1,0 +1,194 @@
+{
+  "schema": "grim-dynasty.animation-caller-binding-evidence.v1",
+  "utc": "2026-11-02T17:08:33.4596990Z",
+  "status": "passed-animation-caller-binding-components-only",
+  "chain": [
+    "existing Game05AE40 owner -> same AnimationSet",
+    "Game024D80 unsigned slot -> simple entry table6D4D48+28",
+    "Game020910 first-NUL short temporary -> same gEngine cell",
+    "Engine077820 +1F8 -> Graphics091A20 +20/virtual+10",
+    "actual manager03AC50 factory/cache -> same resource and reference record",
+    "Game020910 cleanup then resource+10 and float+1C/+20 publication"
+  ],
+  "source_pins": [
+    {
+      "path": "src/reverse_client_actions/EngineGraphicsResourceConstruction.cs",
+      "sha256": "8487d9578e5724f75cc42feb6f556db2d11b014d46462ef503ba0f373bbd22e7"
+    },
+    {
+      "path": "src/reverse_client_actions/EngineAnimationResourceManager.cs",
+      "sha256": "c33cadefc70ce8049ee8c8e36cf4b813bbf8986dc02c479952d3506a6d5607d9"
+    },
+    {
+      "path": "src/reverse_client_actions/GameAnimationResourceBinding.cs",
+      "sha256": "a97e795332a69fc3c6a1bc66da955746ef2afd064e52b4763b325adee11a4169"
+    },
+    {
+      "path": "src/reverse_client_actions/GameAnimationResourceBindingTests.cs",
+      "sha256": "5fcc9dabe67ddb44f388fc4194e9dd4cf7c40702b332ee4e0960236e6b328052"
+    }
+  ],
+  "support_boundary": "Existing Player/Character GetAnimationSet05AE40 -> same AnimationSet Add024D80 -> simple entry020910 -> same Engine+1F8/Graphics+20 -> actual manager03AC50 cold/warm -> same resource reference publication. Stable exclusive OWN storage; Game first-NUL prefix <=15 bytes only, >15 stops at164FB/016340, KnownC byte manager domain, eight-key normal cache with ninth published Unsupported retained. One canonical Actions/Field/AnimationSet/WorldEngine and existing owner types; one compile of four sources,49 prior assemblies reused (829952bytes), no old suites rerun. No full AnimationSet construction/preload, decoder, Player channel/play, native runtime or gameplay acceptance.",
+  "validation": ".tooling/r1-animation-caller-binding-validation/result.json",
+  "validation_sha256": "bd52ef5dfd3c2bed4c49ec79cbda2d5cd2d90015dda3d5a5add33618e418939c",
+  "new_scenarios": 22,
+  "new_assertions": 134,
+  "compiles": 1,
+  "old_suites_rerun": 0,
+  "reused_assemblies": 49,
+  "reused_assembly_bytes": 829952,
+  "new_rea_calls": 0,
+  "original_files_read_this_stage": false,
+  "cached_original_sha256": {
+    "Engine": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "Game": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+  },
+  "evidence_pins": [
+    {
+      "path": "docs/reverse-client/r1-animation-resource-load-run1/05-AnimationResourceLoad-0x18003ac50-procedure_assembly.json",
+      "sha256": "9f3a19af5613727b016f6636ed70b7ee0bae0f4c5ff7deacbd7105da9fbb098b"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-load-dependencies/08-LoadFile-lookup-0x18003c8e0-assembly.json",
+      "sha256": "f8567c9508576018f836e131b89a9ceb6181a349a2bf6373dd2442370705701a"
+    },
+    {
+      "path": "docs/reverse-client/r1-animation-manager-insert-run1/05-AnimationManagerInsert-0x18003c480-procedure_assembly.json",
+      "sha256": "022153a694ea830fee637e73185a541c35570f8b52cc940abbf747b23fd6f999"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-load-dependencies/05-LoadFile-name-processing-0x18027b3c0-assembly.json",
+      "sha256": "8097aba369f485d561765e1bb33eb9b3cc41c404ac6bc1ed87b346f61701d2ef"
+    },
+    {
+      "path": "docs/reverse-client/r1-animation-insert-helper-run1/05-AnimationInsertHelper-0x18003ca50-procedure_assembly.json",
+      "sha256": "8f92e0086cbede2825941d1a030e5da349f08c4ba36ad6924c91346c53a8cf9d"
+    },
+    {
+      "path": "docs/reverse-client/r1-animation-node-constructor-run1/05-AnimationNodeConstructor-0x18002ef40-procedure_assembly.json",
+      "sha256": "eef05362d63b63b9e7e91547fe09054de54637da5ac0c7beb8954f30b6876069"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-cache-node-inspection/01f170-instructions.json",
+      "sha256": "d6ee428d3e56c754b9ba28c127c75f98ec382a55ccd2453d3d88e3a1e6b0c0e1"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-record-cache-maintenance/05-Cache-helper-0x18002ea80-assembly.json",
+      "sha256": "ccb9240a89f420481fd7ea4cff2ab29f443a2a216fe8b8f0b819a3c62a2ba0b1"
+    },
+    {
+      "path": "docs/reverse-client/r1-crowd-vector-growth-retry-1/05-CrowdVectorGrowth-0x180034ec0-procedure_assembly.json",
+      "sha256": "ed9e2ba9ce77858ed5825f28c71cfdbe267833720cdb9e6c0a96d17dcdd25065"
+    },
+    {
+      "path": "docs/reverse-client/r1-animation-create-and-key-run1/05-AnimationCreateAndKey-0x180094650-procedure_assembly.json",
+      "sha256": "95f6704caa89f243789ab758f143ec470c36450dcc0a2900bf790fa5a449374f"
+    },
+    {
+      "path": "docs/reverse-client/r1-graphics-animation-constructor-run1/05-GraphicsAnimationConstructor-0x180095ea0-procedure_assembly.json",
+      "sha256": "bac78965c553087cbf0a91fdbbdd6e16e7650bc0242bc131a950492197535b96"
+    },
+    {
+      "path": "docs/reverse-client/r1-resource-constructor-run1/05-ResourceConstructor-0x180199970-procedure_assembly.json",
+      "sha256": "d7b944eedbcb1cedb7cb4c243d3f05ab7f9143a2d3c7a8f719925a7dc1ef1d69"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-object-name-assignment/05-Object-name-assignment-0x180023180-assembly.json",
+      "sha256": "366e92084dae96b73957c3e932927417909acbeaa6531888fe1c3bb8efa6110a"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-object-name-growth/05-Object-name-growth-0x180022f70-assembly.json",
+      "sha256": "e9d598f8f6cf8a486d6c0b55247f48dfdacf3103c38814fe9337a133af2b205c"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-archive-container-init/03c740-instructions.json",
+      "sha256": "d65e5c255b54001645a97b3b244beb9e608b8f6353be6b694a087797949507e3"
+    },
+    {
+      "path": "docs/object-lifecycle/rea-registration-containers/11-Container-whole-chain-followup-0x18001b4f0-assembly.json",
+      "sha256": "1529d7985f5678abfcb62119eceb01f23758eef0bcf53ed51487961f6f31d644"
+    },
+    {
+      "path": "docs/object-lifecycle/record-load-discovery/tolower-import.json",
+      "sha256": "adbb67caa6d2d9c6a3c5673eb4a2790a063e7a1e7485bc831af0736ce531428b"
+    },
+    {
+      "path": "docs/reverse-client/r1-animation-set-production-run3/05-AnimationSetProduction-0x180024080-procedure_assembly.json",
+      "sha256": "1ff40cb2e36c15911d4f3c85867397d2802ba1c69150d20222feb3f44df46876"
+    },
+    {
+      "path": "docs/reverse-client/r1-animation-set-production-run3/08-AnimationSetProduction-0x180024d30-procedure_assembly.json",
+      "sha256": "0fae165458d8df45140538376ac38eeefd35ed42e677e3b718a65e6babb596e8"
+    },
+    {
+      "path": "docs/reverse-client/r1-animation-set-production-run3/11-AnimationSetProduction-0x180024d80-procedure_assembly.json",
+      "sha256": "85f8d9341c0a15586fe42f4964f8b6832416cf4924a2c1c27c0786475f28a2fc"
+    },
+    {
+      "path": "docs/reverse-client/r1-animation-entry-bodies-run1/11-AnimationEntryBodies-0x180020910-procedure_assembly.json",
+      "sha256": "5446a7ec9ec2fc1c94d3f0bf070d27acc6611f1db47f7efc940c1cd606454353"
+    },
+    {
+      "path": "docs/reverse-client/r1-animation-entry-bodies-run1/14-AnimationEntryBodies-0x180020840-procedure_assembly.json",
+      "sha256": "64c384f4348510dbc70bf8074b55abd2c116499d5f28feba6586900f4a643104"
+    },
+    {
+      "path": "docs/reverse-client/r1-player-animation-submit-run1/05-PlayerAnimationSubmit-0x1803e2900-procedure_assembly.json",
+      "sha256": "3b8e6c98f4e8c879b38a4b252cc29fd98cbf9c022e67efea0391d2adeb0e3285"
+    },
+    {
+      "path": "docs/reverse-client/r1-graphics-animation-loader-run1/05-GraphicsAnimationLoader-0x180077820-procedure_assembly.json",
+      "sha256": "1d8314799e92dde067b4ada19698424bea5ce4432694a5a6d769faeeaed6c438"
+    },
+    {
+      "path": "docs/reverse-client/r1-graphics-animation-loader-run1/08-GraphicsAnimationLoader-0x180091a20-procedure_assembly.json",
+      "sha256": "65387a6c19e40f0c33f5579c5707405f45a9c01942ab5e8a5264a8f5f6572737"
+    },
+    {
+      "path": "docs/reverse-client/r1-animation-entry-bindings/inspection.json",
+      "sha256": "e9822332a86e715ce41b42efcba921793b41329d094790c5bf21029192a087a5"
+    },
+    {
+      "path": "docs/reverse-client/r1-graphics-animation-import-binding/inspection.json",
+      "sha256": "825f9af4daaec9973ab2a1bab353839e5a536b2726e5aa6bf18d2830c8bfe479"
+    },
+    {
+      "path": "docs/reverse-client/r1-animation-resource-slot/inspection.json",
+      "sha256": "531708ea2f98cc64f98756c5f974ae6aa5667bcc3a0c99d59bf47742ba909efe"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-item-name-assign/016460-dumpbin.txt",
+      "sha256": "9500d0132915783b020b6b44d8f3f066381907fadc4a0baa7d7149afe5a751f8"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-item-name-assign/016460-instructions.json",
+      "sha256": "acf327dda597d7a6eb974fb35ebd9720d79b102d015fafd11585fd122454dfb5"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-item-name-assign/016460-exact.bin",
+      "sha256": "e36a5e1f2c7fa5e9e7f1ee9fef5880533281d5c43cc43c543abcdf0a1c95ab4a"
+    },
+    {
+      "path": "docs/object-lifecycle/offline-item-name-assign/inspection.json",
+      "sha256": "5a9167e7cf619e8c07ff33d74fee66e021de32bf6c638e54b67758eb7579c317"
+    },
+    {
+      "path": ".tooling/r1-animation-resource-manager-build-prepared/manifest.json",
+      "sha256": "23df7e2d1672e87233b05d15aaad7ac5b5319f5bd0e9df36a2ebecf702929248"
+    }
+  ],
+  "review": {
+    "independent_review": "animation_reuse_review: no blocking issue after three opaque-pointer capture fixes; root added global-pointer failure assertions and marker-only trace comment",
+    "tests_run_after_review": true
+  },
+  "prior_stage": "docs/reverse-client/r1-animation-resource-manager-evidence.json",
+  "release": "docs/reverse-client/r1-animation-caller-binding-release.json",
+  "release_sha256": "4e08d993ae1134bc4b89ae988bea2dfd82e809ba4da49b91ddf5775050653588",
+  "remaining": [
+    "Game016340 for temporary C-string prefixes longer than15; no Engine growth substitution",
+    "Complete AnimationSet construction and actual resource names/publication",
+    "020840/3E2900 channel retrieval, decoder and actual playback",
+    "Player physical mouse/map continuous movement/rendered original interaction"
+  ],
+  "gameplay_accepted": false
+}

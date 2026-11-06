@@ -1,0 +1,46 @@
+{
+    "schema":  "grim-dynasty-r1-static-routes-ab-v1",
+    "utc":  "2026-11-05T13:32:06.7987320Z",
+    "route_b":  {
+                    "method":  "scanned every RIP-relative LEA in Engine.dll whose target lies in 0x4213c0..0x421490, independent of what follows",
+                    "hits":  5,
+                    "detail":  [
+                                   "0x31280 -\u003e 0x4213c0",
+                                   "0x4dd70 -\u003e 0x4213e8",
+                                   "0x18c535 -\u003e 0x421450 (in 0x18c520-0x18c541)",
+                                   "0x18c75e -\u003e 0x421480 (in 0x18c720-0x18c787)",
+                                   "0x18c9d8 -\u003e 0x421450 (in 0x18c950-0x18ca56)"
+                               ],
+                    "finding":  "The three hits at 0x18c5xx belong to a subsystem structure at 0x421450 with a count at 0x421580 and a pointer array at 0x421480. None of them stores to 0x421428."
+                },
+    "route_a":  {
+                    "method":  "grouped all 7691 DIR64 relocation targets into runs to recover pointer tables, then tested the largest candidate table for references to the slot",
+                    "relocs":  7691,
+                    "runs":  552,
+                    "function_pointer_tables":  51,
+                    "largest_candidate":  "0x302d50 with 132 entries",
+                    "result":  "none of the 132 entry functions contains any reference to 0x421428; the table is a thunk/dispatch table rather than a static initialiser list"
+                },
+    "slot_semantics_confirmed":  {
+                                     "evidence":  "0x256f0 does mov rax,[0x180421428]; mov rdx,[rax+0x1F8]; mov rcx,[rdx+0xC0]; call [rax+8]",
+                                     "meaning":  "the slot is an engine root object; it is dereferenced and dispatched virtually, exactly as 0x90ae0 does with call [rax+0x18]",
+                                     "count":  "2046 read references in Engine.dll"
+                                 },
+    "exhausted":  [
+                      "all x86-64 store encodings to a fixed absolute address: RIP-relative qword/dword/byte/immediate, XMM 16-byte, disp32 with and without SIB, unaligned stores whose range covers the slot, LEA-then-store, block-wide immediates",
+                      "loader relocation application (7691 DIR64 entries, none covering the block)",
+                      "the accessor route (route B): only three subsystems take the address, none writes the slot",
+                      "the static-initialiser route (route A): the candidate table is a dispatch table, not initialisers"
+                  ],
+    "verdict":  "With the evidence gathered, the store that publishes Engine.dll+0x421428 does not exist in the static code of Engine.dll, Game.dll or Direct3D11.dll, and it does not happen during the observable part of a running session. It must occur during process or module start-up in a way the current static and attach-based methods cannot capture.",
+    "not_proven":  [
+                       "that the store is in a fourth module",
+                       "that start-up ordering alone explains it",
+                       "that the client cannot be instrumented at creation time"
+                   ],
+    "next_options":  [
+                         "arm before the first instruction via a start-up hook that does not require HKLM (not identified yet)",
+                         "DBI or hypervisor-class tracing",
+                         "accept the boundary"
+                     ]
+}

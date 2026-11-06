@@ -1,0 +1,24 @@
+{
+    "schema":  "grim-dynasty-r1-fs-mounted-init-v1",
+    "utc":  "2026-11-06T04:52:30.7859937Z",
+    "status":  "passed-hand-built-filesystem-drives-engine-initialize",
+    "decisive_result":  {
+                            "pre-Initialize AddSource(resources)":  1,
+                            "Engine::Initialize":  "returned normally",
+                            "Engine+0x1F8":  "0x1ce9d430 non-null",
+                            "Engine+0x3E0":  "0x1ce94040 non-null"
+                        },
+    "what_this_settles":  [
+                              "a hand-built FileSystem made with the default constructor and given a directory source is good enough for the engine",
+                              "the earlier failure at LocalizationManager::InitializeLanguage was not a broken FileSystem object but the absence of any mounted source to consult",
+                              "my withdrawn claim that FileSystem was incompletely initialised is now doubly refuted: AddSource succeeds, and Initialize completes"
+                          ],
+    "sequence_that_works":  [
+                                "FileSystem::FileSystem() on a large zeroed buffer",
+                                "FileSystem::AddSource(Partition=1, resourcesPath, name=null, true, true, false) returns 1",
+                                "pass that FileSystem to Engine::Initialize, which then returns normally"
+                            ],
+    "delegate_requirement":  "every stack parameter must be declared as a full slot (IntPtr); declaring the trailing bools as byte misaligns them and faults",
+    "not_yet":  "the archive inside resources is not mounted yet, so pc/hero_00.msh still does not resolve; AddSource currently contributes a directory source only",
+    "next":  "either make AddSource mount the .arc inside the directory, or find the archive-mount call that the game performs, with the delegate layout now known to be correct"
+}

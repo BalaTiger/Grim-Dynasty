@@ -1,0 +1,65 @@
+{
+  "schema": "gd-hook-initialize-evidence-v1",
+  "utc": "2026-11-02T22:35:05.2846442Z",
+  "module": "Engine.dll",
+  "entry_rva": "0x0EBAE0",
+  "caller": "Engine0EC02A after byte1C==0",
+  "summary": "docs/reverse-client/r1-engine-hook-initialize-run1/summary.json",
+  "summary_sha256": "af61289dfd3ee5514daa4205d44894653122de7c4b3c5b55a98b1bd72fb57e36",
+  "original_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "ctor": {
+    "chain": "Game3CC418 -> 052030;052D66 fullOwner+45F0;052D75 count11;052D7D IAT609980 -> Engine0EBDE0",
+    "byte1C": "0EBE15 writes0",
+    "count18": "0EBE12 DWORD count",
+    "records10": "0EBE0E QWORD0; normal allocation/array construction;0EBE8B publish",
+    "record": "stride0x80; EBEB0 writes length30=QWORD0,capacity38=QWORD15,Lua40=QWORD0,Type60=DWORDFFFFFFFE",
+    "runtime_guard": "2DCC75 indirect constructor guard2DD4C0 remains platform/runtime conditional; managed OWN construction does not claim native guard execution"
+  },
+  "initialize": {
+    "global_read": "0EBB0E gEngine421428 ->0EBB15 Engine+68 ->0EBB19 pointee+0",
+    "null_root": "Only Lua root value null branches0EBDBB; Engine or+68 object null is dereference failure, not an empty Hook",
+    "count": "Non-null Lua root reads DWORD Count18 at0EBB2A; zero ->0EBDBB",
+    "loop": "0EBB47 reread Records10, unsigned index stride80;0EBB4B reads QWORD Length30; zero skips to0EBDA7",
+    "nonempty": "0EBB5A capacity38;>=16 selects pointer20;0EBB70 CALL2577F0 (Lua resolution) and dependent effects unclosed",
+    "publication": "Initialized1C=1 only at0EBDB4 after loop or0EBDBB after root-null/count-zero; no early success",
+    "loop_count": "0EBDAA rereads Count18 after each record"
+  },
+  "boundary": "No original loading/runtime/Lua behavior inferred. Cold HookPack is not automatically an initialized inactive Hook. First Engine68 state source must remain explicit/Unknown until proven.",
+  "source_files": [
+    {
+      "sha256": "82594674c4d54fac3cb6fa1562fe6e9ebd5695b7a5e0a52de54160e7dfa10508",
+      "path": "docs/reverse-client/r1-engine-hook-initialize-run1/04-HookInitialize-0x1800ebae0-procedure_pseudo_code.json"
+    },
+    {
+      "sha256": "251d606e249a60544c873e8eafcc2fc86658ff3a32284135621dcd3b85221bcb",
+      "path": "docs/reverse-client/r1-engine-hook-initialize-run1/05-HookInitialize-0x1800ebae0-procedure_assembly.json"
+    },
+    {
+      "sha256": "739d46dd70d2ed9fd1f20eed89d3e0b1ab6cf90bea9c61373f9a7d74966c085c",
+      "path": "docs/reverse-client/r1-engine-hook-initialize-run1/06-HookInitialize-0x1800ebae0-procedure_callees.json"
+    },
+    {
+      "sha256": "9083e6b9037ded4e5ee7224b5544ac2b9abae3b6a1ecca612e9d7663b8f484ce",
+      "path": "docs/object-lifecycle/offline-actor-198-constructor/0ebde0-instructions.json"
+    },
+    {
+      "sha256": "cced24bf2aa60a7272eaea738d25c28337fc7bb23f332c563682d93cad146bb5",
+      "path": "docs/object-lifecycle/offline-actor-198-leaf-prefixes/0ebeb0-instructions.json"
+    }
+  ],
+  "new_Rea_calls": 8,
+  "repeated_body_queries": 0,
+  "job_empty": true,
+  "sampler_exited": true,
+  "original_executed": false,
+  "cached_engine_service_source": {
+    "file": "docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json",
+    "sha256": "ab597744f4a4cf617c6227fe7a50100e5b03733aa48dda43a730f65509bdca26",
+    "initial_constructor": "07297F writes Engine+68 null; not sufficient for dereference",
+    "success_condition": "074781 GraphicsInitialize;074786 TEST AL;074788 JNZ07485C skips R14-changing error path",
+    "error_path": "074805/074810 string length changes R14;074855 imported exit; do not model normal return",
+    "publication": "074BF6 alloc0x78;074C02 QWORD[new+0]=R14;074C3F Engine+68=new; R14 remains0 only on observed normal success branch",
+    "unclosed": "Native gEngine421428 publisher and later service first-field writers; later direct/virtual calls prevent claiming the value staysnull untilGoal",
+    "existing_identity": "MoveContext.EngineGlobal Field<WorldEngine> and WorldEngine already shared by movement/resource manager; Goal Engine421428 view is independently typed and must not be presumed identical"
+  }
+}

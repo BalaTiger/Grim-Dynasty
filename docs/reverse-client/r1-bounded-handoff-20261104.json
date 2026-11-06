@@ -1,0 +1,131 @@
+{
+  "schema": "gd-owned-bounded-handoff-stage-v1",
+  "utc": "2026-11-04T14:50:36.3501615Z",
+  "status": "bounded-handoff-prepared;resource-blocked-before-worker;live-tests-not-run;original-paused",
+  "planned_cases": [
+    "no-hit",
+    "foreign-stop"
+  ],
+  "live_cases_executed": 0,
+  "negative_requests_planned_per_case": 5,
+  "valid_readonly_ack_planned_per_case": 1,
+  "planned_hold_seconds": 2,
+  "tests_passed": null,
+  "tests_not_run": true,
+  "code_prepared_and_reviewed": true,
+  "reviewer": "/root/terminal_revision_review",
+  "review_scope": "Frozen 15 pins/owner pairing, initial Continue transition, 5 negative requests, read-only ACK, 2-second hold and explicit end, time-order checks, failure hold instead of batch return; no live execution by reviewer",
+  "human_takeover_verified": false,
+  "unknown_exception_recovery_verified": false,
+  "no_ack_timeout_live_tested": false,
+  "failure_hold_live_tested": false,
+  "original_handoff_ready": false,
+  "admission": {
+    "utc": "2026-11-04T14:47:01.0412477Z",
+    "physical_available_gib": 3.890216827392578,
+    "commit_headroom_gib": 9.20150375366211,
+    "minimum_physical_and_commit_gib": 5,
+    "runtime_minimum_gib": 2,
+    "external_processes_observed": [
+      {
+        "ProcessId": 31628,
+        "ParentProcessId": 47796,
+        "Name": "dotnet.exe"
+      }
+    ],
+    "external_ownership_inferred": false,
+    "external_processes_modified": false
+  },
+  "execution": {
+    "session_id": 52215,
+    "final_chunk": "30a263",
+    "exit_code": 1,
+    "approval_denied": false,
+    "outcome_uncertain": false,
+    "exact_action": "Frozen launch-owned.ps1 for two owned handoff cases",
+    "failure": "System.Management.Automation.RuntimeException: Physical/commit gate failed: before-helper",
+    "helper_compile_attempted": false,
+    "worker_start_attempted": false,
+    "worker_started": false,
+    "job_created": false,
+    "cleanup_state": "no-worker-started",
+    "cleanup_failure": null,
+    "job_release": "not-applicable-no-job-created",
+    "pending_tools": 0,
+    "owned_heavy_processes": 0,
+    "started_utc": "2026-11-04T14:47:00.9281657Z",
+    "finished_utc": "2026-11-04T14:47:02.9058474Z"
+  },
+  "boundaries": {
+    "no_hit_target_is_running_not_suspended": true,
+    "unknown_stop_auto_continue_allowed": false,
+    "controller_ack_is_human_takeover": false,
+    "generic_original_timeout_cleanup_supported": false,
+    "original_started": false,
+    "original_attached": false,
+    "saves_or_steam_accessed": false,
+    "security_settings_changed": false,
+    "new_software": false,
+    "visible_app_started": false,
+    "old_suites_replayed": false,
+    "production_observer_changed": false
+  },
+  "known_risks": [
+    "No-hit cannot promise a future owned stop; only automated debugger actions are paused.",
+    "An unknown exception cannot safely be resumed or detached based solely on these observations.",
+    "Hidden batch has no verified human frontend; owner/Job lifetime must persist during any genuine handoff.",
+    "Failure hold and outer disposable-Job cleanup are not a nondestructive original-game policy; no-ACK/FAILED branches remain unexecuted."
+  ],
+  "prepared": {
+    "utc": "2026-11-04T14:45:47.2354270Z",
+    "stage": "frozen-await-final-review-before-formal-execution",
+    "execution_started": false,
+    "cases": [
+      "no-hit",
+      "foreign-stop"
+    ],
+    "probe_sha256": "035d28f91d3d85eb23c3500d54526c27c011cd942e8aed37df41abd53414ebce",
+    "gate_sha256": "269f0a1d911d878e9fc07f33a73b8b22be8709418286449450cb53534767b289",
+    "manifest_sha256": "5c2a7cb6e4dbbd2fe6518a8d504ceafd025891b4e63cb442821ea2b4d5c49918",
+    "owner_sha256": "23d1d7932bc019e9ca05d2e5f97914bf9b8f1f29fb255880bc3e0e5a522f0904",
+    "pins": 15,
+    "negative_requests_per_case": 5,
+    "unknown_resume": false,
+    "human_takeover_verified": false,
+    "no_ack_timeout_live_test_planned": false,
+    "new_software": false,
+    "original_launch_or_attach": false,
+    "next": "Read-only final review, then formal exact owner with fresh 5GiB physical/commit and 2GiB runtime safety; no original operations."
+  },
+  "evidence": [
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104/probe.py",
+      "sha256": "035d28f91d3d85eb23c3500d54526c27c011cd942e8aed37df41abd53414ebce"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104/gate.mjs",
+      "sha256": "269f0a1d911d878e9fc07f33a73b8b22be8709418286449450cb53534767b289"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104/manifest.json",
+      "sha256": "5c2a7cb6e4dbbd2fe6518a8d504ceafd025891b4e63cb442821ea2b4d5c49918"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104/launch-owned.ps1",
+      "sha256": "23d1d7932bc019e9ca05d2e5f97914bf9b8f1f29fb255880bc3e0e5a522f0904"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104/prepared.json",
+      "sha256": "9aa27c47061a836d3ad00a2ebfa376f88176e06aaab024689a4b9693b5087cad"
+    },
+    {
+      "file": ".tooling/lldb-bounded-handoff-20261104/launch-result.json",
+      "sha256": "f97a7aba61add4597b0913d3c9d7686647d7e1b7a5d7516a2fccf629c261d6e2"
+    }
+  ],
+  "report": {
+    "file": "docs/reverse-client/r1-bounded-handoff-20261104.md",
+    "sha256": "dc2442b5734b78168b7a841c67d4d50185b656c30d81aa562814fcdc5858d260"
+  },
+  "next": "Keep original paused. Fresh read-only 5GiB physical/commit and external-conflict preflight before any resumed attempt. Preserve this failed receipt; prepare a distinct reviewed attempt/receipt with the same guards, then only the two planned owned cases. No new execution scheduled now."
+}

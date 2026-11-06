@@ -1,0 +1,35 @@
+{
+    "schema":  "grim-dynasty-r1-launch-mode-control-v1",
+    "utc":  "2026-11-05T13:11:45.2445720Z",
+    "why":  "The user correctly pointed out that the earlier \"client rejects debugging\" conclusion rested on launch failures whose cause had not been isolated, and asked for a controlled re-test of both launch modes before accepting that conclusion.",
+    "finding":  "Both direct launches fail, with different codes: 53 without a debugger and 84 with one. The Steam launch works. So the fast exits are caused by launching the executable directly rather than by debugging.",
+    "retraction":  "My earlier statement that \"the client rejects being debugged\" is WRONG and is withdrawn. It was inferred from a launch failure that had a different cause. Trial A is specifically decisive: no watchpoint was armed at all, so no breakpoint could have been involved, yet the process still exited with 84.",
+    "supporting_history":  "This also explains earlier inconsistent results: the debugged direct launches that produced 9,209,262 and 37,450,741 debug events show the client can run for a long time under a debugger.",
+    "what_remains_open":  "Whether a hardware watchpoint can be armed on a Steam-launched client early enough to trap the write to Engine.dll+0x421428.",
+    "process_note":  "A control run isolating one variable at a time was the right move here, and I should have done it before drawing the conclusion.",
+    "trials":  [
+                   {
+                       "id":  "A",
+                       "mode":  "direct CreateProcess WITH DEBUG_ONLY_THIS_PROCESS, no watchpoint armed at all",
+                       "exit_code":  84,
+                       "exit_code_hex":  "0x54",
+                       "elapsed_s":  3.6,
+                       "watch":  "absolute 0x1, i.e. no valid watch, so no breakpoint was involved"
+                   },
+                   {
+                       "id":  "B",
+                       "mode":  "direct CreateProcess, NOT debugged",
+                       "exit_code":  53,
+                       "exit_code_hex":  "0x35",
+                       "elapsed_s":  2,
+                       "watch":  "none"
+                   },
+                   {
+                       "id":  "C",
+                       "mode":  "launch through Steam (steam://rungameid/219990)",
+                       "result":  "reached 851 MB and ran normally within 8 s",
+                       "exit_code":  null,
+                       "watch":  "none"
+                   }
+               ]
+}

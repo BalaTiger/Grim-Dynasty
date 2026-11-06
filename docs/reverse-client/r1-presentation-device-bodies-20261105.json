@@ -1,0 +1,51 @@
+{
+    "schema":  "grim-dynasty-r1-presentation-device-bodies-v1",
+    "utc":  "2026-11-05T09:59:46.1714139Z",
+    "status":  "decoded-not-implemented",
+    "source":  {
+                   "file":  "Direct3D11.dll",
+                   "size":  141312,
+                   "sha256":  "862a9ef1e67617c29122dc8b8b9c25dbbafe2e518ed98c0bb52b24b37d75ab5b"
+               },
+    "evidence":  "docs/reverse-client/r1-presentation-device-run2/inspection.json",
+    "method":  "dumpbin over a synthetic PE containing only each fixed window; the original was opened read-only and never handed to the tool",
+    "functions":  {
+                      "Initialize":  {
+                                         "rva":  "0x5af0",
+                                         "rows":  75,
+                                         "window":  320,
+                                         "observed":  [
+                                                          "stack canary from qword [0x180022000]",
+                                                          "early return when [this+0x98] is null",
+                                                          "loop: rcx=[this+0x98]; rax=[rcx]; call [rax+38h]  -\u003e a COM vtable slot",
+                                                          "cmp eax,0x887A0002 -\u003e DXGI_ERROR_NOT_FOUND branch to 0x5C36",
+                                                          "rcx=[rsp+58h]; rax=[rcx]; call [rax+40h] -\u003e next COM slot, then test eax/js on the HRESULT"
+                                                      ],
+                                         "reading":  "DXGI adapter/output enumeration through the interface stored at this+0x98, using HRESULT checks including DXGI_ERROR_NOT_FOUND."
+                                     },
+                      "CreateSwapChain":  {
+                                              "rva":  "0x3f70",
+                                              "rows":  71,
+                                              "window":  256,
+                                              "observed":  [
+                                                               "r14=rdx (settings argument), rbx=rcx (this)",
+                                                               "if [this+0x48] != 0: rax=[rcx]; call [rax+10h]; [this+0x48]=0   -\u003e COM Release of the old swapchain",
+                                                               "if [this+0xA0] != 0: rax=[rcx]; call [rax+10h]; [this+0xA0]=0   -\u003e COM Release of the old target",
+                                                               "cmp [this] with 0x1800175E8, then call [rax+98h]                -\u003e device virtual creates the new swapchain"
+                                                           ],
+                                              "reading":  "Releases the existing swapchain at +0x48 and surface at +0xA0 via vtable slot +0x10 (Release), then dispatches a device virtual at +0x98 to create the new swapchain from RenderDeviceSettings."
+                                          }
+                  },
+    "what_this_establishes":  [
+                                  "the two frozen export bodies are decoded and their COM/DXGI call structure is readable",
+                                  "the renderer releases and recreates its swapchain through COM vtable slots, so the presentation lifecycle is recoverable from the shipped plugin"
+                              ],
+    "not_established":  [
+                            "the exact RenderDeviceSettings layout",
+                            "which device virtual sits at +0x98",
+                            "window binding (CreatePrimarySurface) and the per-frame present path",
+                            "any runnable device",
+                            "any GUI recovery"
+                        ],
+    "next":  "Decode CreatePrimarySurface 0x6480, BeginFrame 0x7B90, EndFrame 0x6470 and PresentSurface 0x7C40 with the same decoder to complete the presentation lifecycle picture."
+}

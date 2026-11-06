@@ -1,0 +1,76 @@
+{
+    "schema":  "grim-dynasty-r1-official-receipt-v9",
+    "utc":  "2026-11-05T06:57:22.1137385Z",
+    "recipe":  ".tooling/r1-controller-active-integration-build-v9-prepared",
+    "manifest_sha256":  "e25f723854fa3d0e5811bfb477c1544fbe2acfb33b940547294d1d447dd34923",
+    "owner_receipt":  {
+                          "path":  ".tooling/r1-controller-active-integration-build-v9-prepared/launch-result.json",
+                          "sha256":  "f14f68a869b8ab5d5a9a19a70cc58bdc7d9ad38d3e4f3334416d3825088e14d1",
+                          "status":  "completed-owned-controller-active-integration-build",
+                          "worker_exit_code":  0,
+                          "job_created":  true,
+                          "job_empty_observed":  true,
+                          "termination_requested":  false,
+                          "resource_samples":  13
+                      },
+    "build_receipt":  {
+                          "path":  ".tooling/r1-controller-active-integration-validation-v9/result.json",
+                          "sha256":  "16d00d91184ec8917e037e43518966acfb455f04d01332a4d985f1d0ba568d2b",
+                          "status":  "passed-controller-move-association-prefix",
+                          "completed_compiles":  4,
+                          "scenarios":  22,
+                          "assertions":  400,
+                          "native_math_calls":  0,
+                          "original_read":  false,
+                          "original_executed":  false,
+                          "backend_started":  false,
+                          "gameplay_accepted":  false,
+                          "old_whole_suites_run":  0
+                      },
+    "flags":  {
+                  "status":  "passed-controller-move-association-prefix",
+                  "scenarios":  22,
+                  "assertions":  400,
+                  "actual_move_to_begin":  true,
+                  "actual_controller_association":  true,
+                  "shared_identity":  true,
+                  "conditional_count_store":  true,
+                  "actual_slot60_store":  true,
+                  "actual_slot80_selection":  true,
+                  "unknown_state_slot70_retained":  true,
+                  "prestart_slot70_empty_stub":  true,
+                  "moveto_endofpath_setstate_entered":  true,
+                  "caller_routing_regressions":  2,
+                  "caller_navigation_is_fixture_input":  true,
+                  "caller_production_navigation_verified":  false,
+                  "old_suites_executed":  false,
+                  "native_active_state_initialized":  false,
+                  "native_constructor_completed":  false,
+                  "runtime_class_graph_verified":  false,
+                  "movement_executed":  false,
+                  "physical_mouse_verified":  false
+              },
+    "artifacts":  [
+                      {
+                          "name":  "GrimDynasty.ControllerMoveProduction.dll",
+                          "bytes":  106496,
+                          "sha256":  "c9fb131c5d9c61f57867bc5a5110fa6b763abc484d66a154a6ff45356c8011db"
+                      },
+                      {
+                          "name":  "GrimDynasty.Actions.dll",
+                          "bytes":  24576,
+                          "sha256":  "c4b09c8b6ce1bfe6bd314186a732a3e153f07ecbd966abd6a6fade653fcb832e"
+                      },
+                      {
+                          "name":  "GrimDynasty.ControllerLookup.dll",
+                          "bytes":  18944,
+                          "sha256":  "d7d7856b30c82aab47194ce9ae88fddf928fe2e4fd9aa743791cea86a2e89df5"
+                      },
+                      {
+                          "name":  "ControllerMoveAssociationIntegrationTests.exe",
+                          "bytes":  97792,
+                          "sha256":  "8f04fd7faecfa842327ffc10ecf5735157762f9c5f4cbe84aaed1df46e1ad882"
+                      }
+                  ],
+    "significance":  "This is the first official receipt that includes the MoveTo end-of-path chain: the registry tree publication, the Exit call, the payload copy into state.Data2A8, and the Current2A0 publication, all asserted rather than assumed. movement_executed remains false."
+}

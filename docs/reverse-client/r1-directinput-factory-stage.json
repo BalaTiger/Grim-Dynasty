@@ -1,0 +1,192 @@
+{
+  "schema": 1,
+  "utc": "2026-11-03T12:45:22.5159255Z",
+  "status": "fixed-identity-tested;two-factory-bodies-recovered;released-at-unknown-constructor",
+  "scope": "Only static original game-local directinput.dll factory entries 1800017B0/1800017D0 under explicit parent authorization",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/directinput.dll",
+    "bytes": 55296,
+    "sha256": "9cc12125db6f7e1a64c8d280d31961e4fa80addfe03aa7f43bff153acc92bcd6"
+  },
+  "authorization": {
+    "prior_blocker": "Tool unsupported target profile, not approval denial",
+    "original_loaded_or_executed": false,
+    "action": "Independent fixed-hash DirectInput identity configuration, mismatch tests, then only two fixed Rea entries",
+    "parent_thread": "01a18c54-7983-7072-b0a9-46235c79400e"
+  },
+  "recovery": {
+    "previous_recorded_pids_absent": 26,
+    "terminal": "24ec70",
+    "utc": "2026-11-03T12:34:23.8865539Z",
+    "exit": 0,
+    "runtime_directories": [
+      "host",
+      "hsperfdata_zhuzi"
+    ],
+    "heavy_or_pending": 0,
+    "session": 86843
+  },
+  "test_attempts": [
+    {
+      "state": "PowerShell literal typo before sampling/tests, corrected",
+      "terminal": "484e27",
+      "file": ".tooling/r1-directinput-factory-prepared/profile-validation-attempt1-error.json"
+    },
+    {
+      "state": "14 of 15 passed; fixture expected mixed-case instead of preexisting normalized Windows path; guard unchanged",
+      "terminal": "540318",
+      "file": ".tooling/r1-directinput-factory-prepared/profile-validation.json"
+    }
+  ],
+  "pending_operations": 0,
+  "owned_heavy_processes": 0,
+  "new_Rea_calls": 11,
+  "new_product_compiles": 0,
+  "new_game_tests": 0,
+  "interactive_client_available": false,
+  "next": "Review already identified2C50 constructor/vtable publication as next bounded candidate; no automatic followup launched. Keep caller-visible return and failure semantics unknown until verified. Concrete widget, physical mouse coordinates/buttons, same-session scheduling and original scene/UI presentation remain.",
+  "identity_validation": {
+    "receipt": ".tooling/r1-directinput-factory-prepared/profile-validation-run2.json",
+    "receipt_sha256": "5e04086c756f566234d79d713db8968709cbcbd1fa670ee1580fd407f3f921b1",
+    "output": ".tooling/r1-directinput-factory-prepared/profile-validation-run2.tap",
+    "output_sha256": "3bffbdec098e08d8102f88e4a3a4e8e4dad84d1cf296cc9dcbbc1be3f468855b",
+    "terminal": "ee63be",
+    "exit": 0,
+    "tests": 15,
+    "passed": 15,
+    "new_identity_tests": 12,
+    "necessary_old_identity_regressions": 3,
+    "game_tests": 0,
+    "reason_for_retest": "Fixture expected original mixed-case path; existing Windows path normalization lowercases it. Only fixture expectation corrected."
+  },
+  "execution": {
+    "session": 36518,
+    "initial_chunk": "b7660d",
+    "state": "completed",
+    "entry": ".tooling/r1-directinput-factory-prepared/launch.ps1",
+    "entry_sha256": "aa4c8d2cb3476d8a4facda8061c563f0328211a91b4ea51366743482a5e6adb4",
+    "plan_sha256": "7a3759d94e9edcb93bf97af8241e4dc811f97c7e02b71ddda850040bce60017e",
+    "offline_verify_terminal": "ca700b",
+    "offline_verify_exit": 0,
+    "repeat_forbidden_until_result_known": true,
+    "terminal_chunk": "9cbb0b",
+    "exit_code": 0
+  },
+  "query_result": {
+    "summary": "docs/reverse-client/r1-directinput-factory-run1/summary.json",
+    "summary_sha256": "b1083ba84cb54c384727038b7476c9ccc4af60551706a5be873d68043417fd18",
+    "completed_calls": 11,
+    "semantic_queries": 6,
+    "lifecycle_calls": 5,
+    "new_functions": 2,
+    "old_queries_repeated": 0,
+    "methods": [
+      "procedure_pseudo_code",
+      "procedure_assembly",
+      "procedure_callees"
+    ],
+    "evidence": [
+      {
+        "file": "docs/reverse-client/r1-directinput-factory-run1/04-CreateInputDevice-0x1800017b0-procedure_pseudo_code.json",
+        "sha256": "695191418feb273fc69b00e384b26b6dcbead918e7672265f00ff4291d0a3170"
+      },
+      {
+        "file": "docs/reverse-client/r1-directinput-factory-run1/05-CreateInputDevice-0x1800017b0-procedure_assembly.json",
+        "sha256": "6916157d7f7912d33c4fc5a0bb0a64aa0f5372118c4822ade41a31c21b728250"
+      },
+      {
+        "file": "docs/reverse-client/r1-directinput-factory-run1/06-CreateInputDevice-0x1800017b0-procedure_callees.json",
+        "sha256": "e75f85620bcee109afd9ce050dc029cb21d84b5255b8bfe621e2d96b019ed246"
+      },
+      {
+        "file": "docs/reverse-client/r1-directinput-factory-run1/07-DestroyInputDevice-0x1800017d0-procedure_pseudo_code.json",
+        "sha256": "8864bd92e449e30e7f38fd094ad90f8ca1b1e309363475ed0cfe17e444e48d01"
+      },
+      {
+        "file": "docs/reverse-client/r1-directinput-factory-run1/08-DestroyInputDevice-0x1800017d0-procedure_assembly.json",
+        "sha256": "1f4f0cdf61ff8bd1fc9bb89b0aa4dcbae194a7fd48ade57d4dd7011af68a4f0e"
+      },
+      {
+        "file": "docs/reverse-client/r1-directinput-factory-run1/09-DestroyInputDevice-0x1800017d0-procedure_callees.json",
+        "sha256": "73da6668a229ed383390cb12182fc8fe30a7212e82b256c588014e0c3cb178ff"
+      }
+    ],
+    "original_before_after_match": true,
+    "native_execution_or_dynamic_comparison": false
+  },
+  "native_static_contracts": {
+    "create": {
+      "rva": "17B0",
+      "allocation_bytes": 824,
+      "allocation_instruction": "17B4 writes ECX=0x338, zero-extending RCX",
+      "allocator_target": "180007344",
+      "constructor_target": "180002C50",
+      "flow": "17B9 call7344;17BE RCX=RAX;17C1 restore stack;17C5 tail JMP2C50",
+      "null_allocation_check_in_wrapper": false,
+      "return_identity": "Unknown until constructor body is verified; pseudo void is not ABI proof",
+      "failure_boundary": "Allocator/constructor failure and exceptional cleanup not established"
+    },
+    "destroy": {
+      "rva": "17D0",
+      "argument": "Address of caller-owned 8-byte object-pointer slot, retained in RBX",
+      "outer_null_check": false,
+      "object_read_bits": 64,
+      "vtable_read_bits": 64,
+      "nonempty_call": "vslot+0(object, RDX=1 via 32-bit EDX write)",
+      "normal_return": "17EB writes all 8 bytes of retained caller slot to zero, including initially-null object",
+      "callback_visibility": "No slot reread after call: a callback replacement is also cleared on normal return",
+      "failure_prefix": "Invalid outer/object/vtable dereference or nonreturning virtual call reaches no final clear",
+      "indirect_callees_empty_not_no_dependency": true,
+      "concrete_destructor_target": "Unknown",
+      "alias_boundary": "Writable caller slot must remain valid through virtual call; storage inside freed object not established"
+    }
+  },
+  "remaining_blocker": {
+    "kind": "Missing direct constructor/vtable semantics",
+    "state": "Unqueried; not denied; no pending execution",
+    "target": "directinput.dll RVA2C50 and its same-object vtable publication",
+    "reason": "Create wrapper tailcalls2C50; wrapper alone does not establish returned object, slots, event production or failure/cleanup",
+    "scope_this_batch": "17B0/17D0 only, stop at unknown as instructed",
+    "no_fake_device_or_success": true,
+    "separate_widget_provider_and_rendering_gaps_remain": true
+  },
+  "release": {
+    "file": "docs/reverse-client/r1-directinput-factory-release.json",
+    "sha256": "11052590a21d6c7e8bbfc5e1d9530ad25f6bc29e9716276adb9da35202e59235",
+    "recorded_pid_count": 36,
+    "all_recorded_pids_absent": true,
+    "job_empty_confirmed": true,
+    "sampler_exit": 0,
+    "pending": 0,
+    "current_resource": {
+      "utc": "2026-11-03T12:43:15.7664583Z",
+      "available_physical_bytes": 9425006592,
+      "system_commit_bytes": 47122354176,
+      "system_commit_limit_bytes": 59886112768,
+      "external_build_or_java_processes": []
+    },
+    "minimum_physical_bytes": 8205467648,
+    "minimum_commit_headroom_bytes": 11499257856,
+    "task_sampled_working_set_peak_bytes": 1205587968,
+    "resource_slot_released": true
+  },
+  "independent_review": "lua_build_prepare/exception_test_review: fixed profile and runner guards; lua_targeted_tests: both bodies, widths, alias and failure-prefix evidence verified",
+  "boundaries": {
+    "active_runner_unchanged": true,
+    "original_guards_unchanged": true,
+    "engine_identity_not_reused": true,
+    "formal_approval_denied": false,
+    "formal_approval_pending": false,
+    "unknown_current_execution": false,
+    "new_product_code": false,
+    "new_product_compiles": 0,
+    "new_game_tests": 0,
+    "old_game_suites_rerun": 0,
+    "new_interactive_executable": false,
+    "original_loaded_or_executed": false,
+    "real_saves_accessed": false,
+    "security_changed": false,
+    "commit_push_deploy": false,
+    "historical_failures_preserved": true
+  }
+}

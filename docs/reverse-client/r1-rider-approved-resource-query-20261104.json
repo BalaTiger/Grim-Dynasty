@@ -1,0 +1,36 @@
+{
+  "schema": "gd-rider-approved-resource-query-v1",
+  "status": "formal-readonly-query-approved-and-completed",
+  "script": "tools/static_analysis/read_rea_resource_preflight.ps1",
+  "script_sha256": "9d61ef613ea1be941b02a47be881a59ae28b9dd90e98dc209248697c984dfff9",
+  "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "arguments": "-NoLogo -NoProfile -NonInteractive -File C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\tools\\static_analysis\\read_rea_resource_preflight.ps1",
+  "mechanism": "exec_command sandbox_permissions=require_escalated; only the existing read-only resource query requested",
+  "launch_chunk": "5bfc5c",
+  "terminal_session": 77979,
+  "completion_chunk": "1be519",
+  "exit_code": 0,
+  "raw_result": {
+    "utc": "2026-11-04T04:31:23.9384809Z",
+    "available_physical_bytes": 8121544704,
+    "system_commit_bytes": 50330959872,
+    "system_commit_limit_bytes": 59886112768,
+    "external_build_or_java_processes": []
+  },
+  "derived": {
+    "available_physical_GiB": 7.563777923583984,
+    "commit_headroom_bytes": 9555152896,
+    "commit_headroom_GiB": 8.898929595947266,
+    "both_at_least_5_GiB_at_sample": true,
+    "matched_external_conflicts_at_sample": 0
+  },
+  "interpretation": "The same unchanged script completed through formal external-sandbox approval. No execution-policy, ACL or registry modification was required. This does not identify every cause of the earlier in-sandbox authorization failure and does not prove all machine processes absent.",
+  "history_preserved": "docs/reverse-client/r1-rider-native-probe-preflight-20261104.json retains the earlier AuthorizationManager UnauthorizedAccess failure unchanged.",
+  "scope": "Approval covered this resource query only. Rider, fixture build/run and original Steam/game were not started. Any next operation needs a fresh resource sample and its applicable approval; this historical sample is not a launch token.",
+  "pending_operations": 0,
+  "new_owned_Jobs": 0,
+  "new_heavy_processes_started": 0,
+  "system_or_account_settings_changed": false,
+  "original_save_access": false,
+  "next": "Resume the already specified harmless Rider fixture preparation under the applicable execution boundary; do not infer sandbox-external build/debug approval from this read-only success."
+}

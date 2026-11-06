@@ -104,6 +104,10 @@ namespace GrimDynasty.ReverseClient.Actions {
  public sealed class ControllerStateTransitionContext {
   public readonly PlayerMousePlayerLookupContext Lookup;
   public readonly Field<float> One7A8054,NullDifference338458;
+  public GameRunSpeedContext RunSpeed{get;private set;}
+  public GameControllerMoveProductionContext MoveProduction{get;private set;}
+  public void BindMoveProduction(GameControllerMoveProductionContext value){if(value==null)throw new ArgumentNullException("move production context");if(!Object.ReferenceEquals(value.Lookup,Lookup))throw new ArgumentException("Move production must use the original controller lookup context");if(MoveProduction!=null&&!Object.ReferenceEquals(MoveProduction,value))throw new InvalidOperationException("Move production context cannot be replaced");MoveProduction=value;}
+  public void BindRunSpeed(GameRunSpeedContext value){if(value==null)throw new ArgumentNullException("run speed context");if(!Object.ReferenceEquals(value.State.Cap.Bridge,Lookup.Bridge))throw new ArgumentException("Run speed must use the original controller lookup bridge");if(RunSpeed!=null&&!Object.ReferenceEquals(RunSpeed,value))throw new InvalidOperationException("Run speed context cannot be replaced");RunSpeed=value;}
   public ControllerStateTransitionContext(PlayerMousePlayerLookupContext lookup,Field<float> one,Field<float> nullDifference){if(lookup==null||one==null||nullDifference==null)throw new ArgumentNullException("shared state-entry dependencies");Lookup=lookup;One7A8054=one;NullDifference338458=nullDifference;}
   public ControllerStateTransitionContext(PlayerMoveRequestContext request):this(Require(request).Lookup,request.One7A8054,request.Path.NullDifference338458){}
   static PlayerMoveRequestContext Require(PlayerMoveRequestContext request){if(request==null)throw new ArgumentNullException("request");return request;}

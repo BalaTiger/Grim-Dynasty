@@ -16,6 +16,7 @@ namespace GrimDynasty.ReverseClient.Actions {
   public CameraImagePoint2(Field<float> x,Field<float> y){if(x==null||y==null)throw new ArgumentNullException("image cells");X0=x;Y4=y;}
  }
  public sealed class CameraViewport {
+  public readonly Field<int> OriginX00=new Field<int>(),OriginY04=new Field<int>();
   public readonly Field<int> Width08=new Field<int>(),Height0C=new Field<int>();
  }
  // Only the36 observed bytes. This is not a native sizeof/layout declaration.
@@ -53,9 +54,13 @@ namespace GrimDynasty.ReverseClient.Actions {
   public void UseObservedConstants(){Half34BADC.Write(0x3f000000);One34BB44.Write(0x3f800000);Fallback338458.Write(0x7f800000);}
   internal CameraImageState Image(PortalCamera camera,uint at){CameraImageState state;if(camera==null||!images.TryGetValue(camera,out state))throw new MissingContract(at,"Camera image state has no explicit canonical binding");return state;}
   internal void BeginRay(){LastRayGetterCount=0;LastRayFirstHidden=null;LastRaySecondHidden=null;LastRayFirstReturned=null;LastRaySecondReturned=null;}
-  internal CameraCoordinates32 Target(PortalCamera camera,PortalCameraVTable table,uint at){
+  internal CameraCoordinatesGetter CheckedTarget(PortalCameraVTable table,uint at){
    var actual=Camera.Slot18Target(table,at);CameraCoordinatesGetter expected;
    if(table==null||!actualTargets.TryGetValue(table,out expected)||!actual.Equals(expected))throw new MissingContract(at,"Camera slot18 is not the bound observed GameGetTarget implementation");
+   return actual;
+  }
+  internal CameraCoordinates32 Target(PortalCamera camera,PortalCameraVTable table,uint at){
+   var actual=CheckedTarget(table,at);
    var hidden=new CameraCoordinates32();LastRayGetterCount++;
    if(LastRayGetterCount==1)LastRayFirstHidden=hidden;else LastRaySecondHidden=hidden;
    var returned=actual(camera,hidden);

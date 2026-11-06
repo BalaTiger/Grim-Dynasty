@@ -1,0 +1,81 @@
+{
+ "schema": "grim-dynasty-r1-shader-standardskinned-v1",
+ "source": "extracted from resources/Shaders.arc via the game FileSourceArchive path",
+ "bytes": 517089,
+ "container": {
+  "magic": "SSH",
+  "version_byte": 4,
+  "note": "the header names a shader model string GeForce3 near offset 8"
+ },
+ "shader_models": {
+  "vertex": [
+   "vs_1_1",
+   "vs_2_0"
+  ],
+  "pixel": [
+   "ps_2_0"
+  ],
+  "compiler": "Microsoft (R) D3DX9 Shader Compiler 9.15.779.0000"
+ },
+ "implication": "these are Direct3D 9 shader profiles, so the shipped Direct3D11.dll acts as a compatibility layer that translates D3D9 shader bytecode, which explains the BeginPerfEvent and other legacy-shaped slots on the device vtable.",
+ "constants": {
+  "seen": [
+   "alphaMaskFactor",
+   "alphaScrollSpeed",
+   "ambientColor",
+   "ambientIntensity",
+   "baseSampler",
+   "bladeHeight",
+   "blendFactor",
+   "blendedGlobalFadeFactor",
+   "blue",
+   "boneFadeFactor",
+   "boneMatrix",
+   "bottomColor",
+   "brightnessAdjustment",
+   "bumpSampler",
+   "bumpScrollRate",
+   "cameraDirection",
+   "cameraOrigin",
+   "cameraToShadowMatrix",
+   "clipPlane",
+   "clipToViewSpaceMatrix",
+   "colorScrollSpeed",
+   "contrastAdjustment",
+   "dShadowBias",
+   "dSpecularIntensity",
+   "deferredOutlineStyle",
+   "depthFogParams",
+   "depthLookupSampler",
+   "depthMapFStyle",
+   "depthMapStyle",
+   "depthParams",
+   "depthStyle",
+   "diffuseColor",
+   "dissolveColor",
+   "dissolveValue",
+   "distortion",
+   "dofDistance",
+   "dofRange",
+   "extractConst",
+   "farClipDist",
+   "filmThickness"
+  ],
+  "notable": [
+   "boneMatrix",
+   "objectToWorldMatrix",
+   "objectToScreenMatrix",
+   "diffuseColor",
+   "groundAmbientColor",
+   "skyAmbientColor",
+   "lightColor",
+   "lightDirection",
+   "baseSampler",
+   "depthFogParams",
+   "fogColor",
+   "heightFogParams"
+  ],
+  "meaning": "boneMatrix confirms skinning: the vertex shader expects a bone matrix array even for a bind pose"
+ },
+ "vs_occurrences": 96
+}

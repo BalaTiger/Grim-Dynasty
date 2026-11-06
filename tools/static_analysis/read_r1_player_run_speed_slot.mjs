@@ -99,7 +99,7 @@ export function inspectPlayerRunSpeedSlot(reviewedScriptSha256,reviewedPlanSha25
 };
  const self=fileURLToPath(import.meta.url),root=path.resolve(path.dirname(self),'../..');
  const hash=b=>createHash('sha256').update(b).digest('hex'),hex=n=>'0x'+n.toString(16);
- assert.equal(process.platform,'win32');assert.equal(root.toLowerCase(),'c:\users\zhuzi\documents\grim-dynasty');
+ assert.equal(process.platform,'win32');assert.equal(root.toLowerCase(),path.resolve('C:/Users/zhuzi/Documents/Grim-Dynasty').toLowerCase());
  assert.equal(path.basename(self),'read_r1_player_run_speed_slot.mjs');
  function normal(p){for(let q=path.resolve(p);;q=path.dirname(q)){assert(!fs.lstatSync(q).isSymbolicLink(),'Redirected path');assert.equal(fs.realpathSync.native(q).toLowerCase(),q.toLowerCase());if(path.dirname(q)===q)break;}}
  function regular(p){normal(p);const s=fs.statSync(p);assert(s.isFile());assert.equal(s.nlink,1);assert(s.ino!==0);return s;}
@@ -117,9 +117,7 @@ export function inspectPlayerRunSpeedSlot(reviewedScriptSha256,reviewedPlanSha25
   const def=plan.source,gp=proofs.get('game_pe');assert.equal(gp.target,def.path);assert.equal(gp.expected_bytes,def.bytes);assert(gp.source_hash_preserved&&gp.source_stat_stable&&gp.source_handle_closed);assert.equal(gp.sha256_before,def.sha256);assert.equal(gp.sha256_after,def.sha256);
   const pe=gp.pe;assert.equal(pe.image_base,'0x180000000');assert(Number.isSafeInteger(pe.image_size)&&pe.image_size>0);assert(Array.isArray(pe.sections)&&pe.sections.length>0&&pe.sections.length<=16);
   for(const s of pe.sections)for(const k of ['rva','raw_size','raw_offset','characteristics'])assert(Number.isSafeInteger(s[k])&&s[k]>=0);
-  for(const p of plan.assembly_proofs){const sc=proofs.get(p.key).result.structuredContent;assert.equal(sc.operation,'procedure_assembly');assert.equal(sc.parameters.procedure,p.procedure);assert.equal(sc.provider.id,'ghidra');assert.equal(sc.subject.digest.sha256,def.sha256);assert.equal(path.normalize(sc.subject.local_path),path.normalize(def.path));const lines=sc.normalized_result.split(/
-?
-/);for(const line of p.instructions)assert(lines.includes(line),line);}
+  for(const p of plan.assembly_proofs){const sc=proofs.get(p.key).result.structuredContent;assert.equal(sc.operation,'procedure_assembly');assert.equal(sc.parameters.procedure,p.procedure);assert.equal(sc.provider.id,'ghidra');assert.equal(sc.subject.digest.sha256,def.sha256);assert.equal(path.normalize(sc.subject.local_path),path.normalize(def.path));const lines=sc.normalized_result.split(String.fromCharCode(10)).map(line=>line.endsWith(String.fromCharCode(13))?line.slice(0,-1):line);for(const line of p.instructions)assert(lines.includes(line),line);}
   const sum=proofs.get('run_speed_summary');assert.equal(sum.status,'passed');assert.equal(sum.completed_plan_calls,8);assert.equal(sum.target.sha256_before,def.sha256);assert.equal(sum.target.sha256_after,def.sha256);assert(sum.closed_session_verified&&sum.process_exit_confirmed&&sum.owned_memory_profile.job_empty_confirmed&&sum.owned_memory_profile.sampler_exit_confirmed);
   report.proofs_verified=true;
   function map(rva,n){assert(Number.isSafeInteger(rva)&&rva>=0&&Number.isSafeInteger(n)&&n>0);const hits=pe.sections.filter(s=>rva>=s.rva&&rva+n<=s.rva+s.raw_size);assert.equal(hits.length,1,'Unique raw-backed PE section required');const section=hits[0],offset=section.raw_offset+rva-section.rva;assert(offset>=0&&offset+n<=def.bytes);return {section,offset};}

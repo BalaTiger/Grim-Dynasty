@@ -1,0 +1,291 @@
+{
+  "schema": "grim-dynasty-ground-cold-running-sound-evidence-v1",
+  "utc": "2026-11-02T19:26:22.7435436Z",
+  "status": "two-separate-supported-paths-no-combined-player-tick-or-game-acceptance",
+  "native_query": {
+    "target": "Game RVA05CDC0",
+    "methods": [
+      "procedure_pseudo_code",
+      "procedure_assembly",
+      "procedure_callees"
+    ],
+    "calls": 8,
+    "receipt": {
+      "file": "docs/reverse-client/r1-game-running-sound-run1/summary.json",
+      "sha256": "e99969a35ad9ae1c22555fec479d69eb333dba5460304656209090d0e117b3f8"
+    },
+    "body": {
+      "file": "docs/reverse-client/r1-game-running-sound-run1/04-RunningSound-0x18005cdc0-procedure_pseudo_code.json",
+      "sha256": "4d761e8559528d65a24f2dd20870e667c4a9b46d7009293156d30cbf7242987d"
+    },
+    "assembly": {
+      "file": "docs/reverse-client/r1-game-running-sound-run1/05-RunningSound-0x18005cdc0-procedure_assembly.json",
+      "sha256": "9cbb710532ff80817c320ea4e05b945ee71bd89deddfc860b9ca3b1c246ee3c0"
+    },
+    "contract": "Read2210/test; if null read2110/test; both known-null return05CE41. Nonnull enters IsPlaying/GetCoords/vslot30/ObjectID/Track and remains unsupported. Unknown pointer is never defaulted."
+  },
+  "ground_provenance": {
+    "inspection": {
+      "file": "docs/reverse-client/r1-mainmenu-complete-member/inspection.json",
+      "sha256": "03711dddbc2b6559eaf000c840481ac83041569febff21328d3b9723c18dd222"
+    },
+    "member": "Levels.arc -> mainmenu/mainmenu.map",
+    "member_sha256": "a0e4559c417802c284b19038bfa9e23f3419996457dd78b4d2669d292313b289",
+    "ground_offset": 273260,
+    "ground_length": 149073,
+    "pathing_offset": 422373,
+    "pathing_length": 442996,
+    "start_xz": [
+      62.25,
+      62.75
+    ],
+    "destination_xz": [
+      64.25,
+      64.75
+    ],
+    "ground_ray_seed_y": 29.5,
+    "height_source": "Actual saved Ground PutOnFloor collision return, not nav height",
+    "own_values": "Candidate XZ, region77/zero offset, navigation cold configuration and named zero-vector profile are OWN inputs; native spawn/global values not recovered.",
+    "old_zero_reference_failure_preserved": {
+      "file": ".tooling/r1-game-path-precheck-validation/result.json",
+      "sha256": "23f3d6ee2824dbeef499a9878842bc46e8b852e856cf48f7b8e97cf2f136ffff"
+    },
+    "old_zero_reference_failure_rerun": false
+  },
+  "cold_validation": {
+    "receipt": {
+      "file": ".tooling/r1-finite-ground-own-cold-start-validation-retry1/result.json",
+      "sha256": "8035a7815e11c9bb4c808a61c11841736a4b3f572f205262a43d6257e52bc1d2"
+    },
+    "session": 38433,
+    "exit": 0,
+    "compiled": 2,
+    "unknown_regression_passed": true,
+    "unknown_regression_checks": 39,
+    "unknown_regression_stop": "05E1AE",
+    "own_probe_checks": 99,
+    "attempted": 1,
+    "limit": 16,
+    "frames": [
+      {
+        "frame": 1,
+        "early_projection_moved": true,
+        "sync": true,
+        "generation": 1,
+        "navigation_position": [
+          62.3409576,
+          19.5294533,
+          64.03411
+        ],
+        "published_ground_position": [
+          62.3409576,
+          16.261816,
+          64.03411
+        ],
+        "work_cleared": true,
+        "suffix_reference": 4197379,
+        "update_returned": true
+      },
+      {
+        "frame": 2,
+        "early_projection_moved": false,
+        "sync": false,
+        "generation": 1,
+        "navigation_position": [
+          62.4318581,
+          19.5112724,
+          64.0682
+        ],
+        "published_ground_position": [
+          62.4318581,
+          16.2507477,
+          64.0682
+        ],
+        "work_cleared": true,
+        "suffix_reference": 4197379,
+        "update_returned": true
+      }
+    ],
+    "same_constructor_tick_global": true,
+    "native_global_value_verified": false,
+    "native_math_calls": 6,
+    "scope": "Actual Move/precheck, request production, early projection, Ground publication and two ready-prefix frames in Character composition. Not the Player MoveBegin composition and not continuous/full tick."
+  },
+  "ground_sound_validation": {
+    "receipt": {
+      "file": ".tooling/r1-move-begin-ground-sound-validation-retry1/result.json",
+      "sha256": "25ebb01023153215e27d552fd207c605f79eddc829d6e8ee107e5e7b2e74bb4a"
+    },
+    "session": 58965,
+    "exit": 0,
+    "retry_compiles": 1,
+    "reused_production_sha256": "b943d26f73918c872b5be48d1f4cfc63e709245937e7c06b7e2abf47e12eeb41",
+    "new_scenarios": 8,
+    "new_assertions": 136,
+    "selected_old_scenarios": 1,
+    "selected_old_assertions": 58,
+    "setup_checks_excluded": 41,
+    "results": [
+      {
+        "status": "passed-move-begin-ground-sound-and-selected-regression-only",
+        "scenarios": 9,
+        "new_scenarios": 8,
+        "ground_scenarios": 1,
+        "sound_scenarios": 7,
+        "selected_older_regressions": 1,
+        "assertions": 194,
+        "new_assertions": 136,
+        "ground_assertions": 69,
+        "sound_assertions": 67,
+        "regression_assertions": 58,
+        "fixture_setup_checks_excluded": 41,
+        "new_fixture_setup_checks_excluded": 35,
+        "regression_fixture_setup_checks_excluded": 6,
+        "normal_stop_rva": "0x5cdc0",
+        "regression_stop_rva": "0x5ae40",
+        "ground_path_result": 0,
+        "corridor_count": 3,
+        "ground_start_height": 16.5022278,
+        "ground_destination_height": 16.0587463,
+        "sound_ground_begin_returned": true,
+        "sound_ground_outer_returned": true,
+        "sound_ground_request_returned": true,
+        "sound_ground_outer_result": 1,
+        "sound_ground_path_result": 0,
+        "sound_ground_return_rva": "0x5ce41",
+        "old_whole_suites_run": 0,
+        "native_decoding": false,
+        "native_playback": false,
+        "original_read": false,
+        "original_executed": false,
+        "backend_started": false,
+        "physical_mouse": false,
+        "frame_motion": false,
+        "gameplay_accepted": false
+      }
+    ],
+    "scope": "One shared Player/Agent/Entity composition: saved Ground, logical mouse request, path result0/corridor3, actual resource create/Add/Player tail and proven two-null sound return. Outer request/MoveBegin return1. Entity has not advanced; frame motion not run."
+  },
+  "failures_preserved": [
+    {
+      "receipt": {
+        "file": ".tooling/r1-finite-ground-own-cold-start-validation/result.json",
+        "sha256": "832d7fecbadacc33c0359fbd6333504accb40a8ccece11d1c05b43040a36546e"
+      },
+      "session": 60275,
+      "exit": 1,
+      "reason": "Compile manifest omitted same-assembly borrowed-pointer companion. Restored original proven dependency; failed output untouched."
+    },
+    {
+      "receipt": {
+        "file": ".tooling/r1-move-begin-ground-sound-validation/result.json",
+        "sha256": "c60ea65db363a738972edb4548e12e2f87ff02d0ed6ded3c127cf7fd3710db7b"
+      },
+      "session": 76012,
+      "exit": 1,
+      "reason": "Two compiles succeeded; binding fixture lacked shared CharacterClass. One existing-composition identity setup line added; production unchanged and reused."
+    }
+  ],
+  "stage_counts": {
+    "new_scenarios": 8,
+    "new_assertions": 136,
+    "selected_old_scenarios": 1,
+    "selected_old_assertions": 58,
+    "new_finite_probes": 1,
+    "new_probe_checks": 99,
+    "default_unknown_probe_regressions": 1,
+    "default_unknown_checks": 39,
+    "successful_compiles": 5,
+    "failed_compile_attempts": 1,
+    "failed_test_invocations": 1,
+    "rea_calls": 8,
+    "repeated_native_queries": 0,
+    "old_whole_suites_rerun": 0
+  },
+  "sources": [
+    {
+      "file": "src/reverse_client_actions/NavigationCrowdStateContracts.cs",
+      "sha256": "fbab11a965e1a2bef0ed724ba377ec2b49ed12b2b26275b723dcb54f6ee1d928"
+    },
+    {
+      "file": "src/reverse_client_actions/FiniteGroundStartMovementProbe.cs",
+      "sha256": "87164144277d4d3e837f498cf369b3e33d934596737a495337ebdb71783c132d"
+    },
+    {
+      "file": "src/reverse_client_actions/GameWaypointProductionIntegrationTests.cs",
+      "sha256": "8ebba7436b6466cf87c30db9fba97e54df53622a45cdaa7b4faacebecdea0ef7"
+    },
+    {
+      "file": "src/reverse_client_actions/GameMoveBeginResourceIntegrationTests.cs",
+      "sha256": "0046cc722d22643deef3249d2fe99ba2ffe285325dfdb655bf9a561ab110014f"
+    },
+    {
+      "file": "src/reverse_client_actions/GameMoveBeginGroundIntegrationTests.cs",
+      "sha256": "2aaf8d73bcd02d58efd5c109413daa70c2aa06dc4184431a8f3c51bade273c05"
+    },
+    {
+      "file": "src/reverse_client_actions/GameRunningSoundContracts.cs",
+      "sha256": "5252197b2197ae0f6eac60312c6ec377b356bba53dcbea0c4c75aafa9baa41a0"
+    },
+    {
+      "file": "src/reverse_client_actions/GameControllerMoveProductionContracts.cs",
+      "sha256": "c062b2be57711555250e77f1a0852abfe998dc29e8aa253481315bf9b3f1db27"
+    },
+    {
+      "file": "src/reverse_client_actions/GameRunningSoundTests.cs",
+      "sha256": "708ea0567d9312f8eb4058b6efb84b0730b179d70f60f2e555f5af858589c05e"
+    }
+  ],
+  "cached_camera": "1636D7 is inside saved163490, not a new function. Engine229160 binding/body and GameCameraPosition already cached. No new camera query or fixed-origin retry performed.",
+  "boundaries": {
+    "physical_mouse": false,
+    "combined_player_to_ready_tick": false,
+    "native_global_initialization": false,
+    "continuous_motion": false,
+    "full_tick": false,
+    "native_animation_decode": false,
+    "native_animation_playback": false,
+    "scene_rendering": false,
+    "first_usable_game": false,
+    "nonnull_sound": false
+  },
+  "original_hash_checks": [
+    {
+      "phase": "before",
+      "label": "Game",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "utc": "2026-11-02T19:24:12.9967944Z"
+    },
+    {
+      "phase": "before",
+      "label": "Engine",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "utc": "2026-11-02T19:24:13.0037474Z"
+    },
+    {
+      "phase": "after",
+      "label": "Game",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "utc": "2026-11-02T19:24:19.5423439Z"
+    },
+    {
+      "phase": "after",
+      "label": "Engine",
+      "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "utc": "2026-11-02T19:24:19.5480859Z"
+    }
+  ],
+  "release": {
+    "file": "docs/reverse-client/r1-ground-cold-running-sound-release.json",
+    "sha256": "d359716d5378b150624f4e7b867934167d9b68f5425d18261f7a994fb86ee325"
+  },
+  "next": "Connect the already-returning Player MoveBegin composition to the proven shared Agent ready-prefix/tail without recreating/copying its owner or request. Bind the explicit OWN constructor/tick global before Agent construction, then preserve and expose the first real unsupported dependency. Reuse cached evidence; physical mouse, animation decoding/playback, native initialization and scene rendering remain separate gaps."
+}

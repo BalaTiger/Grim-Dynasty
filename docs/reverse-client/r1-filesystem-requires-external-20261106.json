@@ -1,0 +1,24 @@
+{
+    "schema":  "grim-dynasty-r1-fs-external-v1",
+    "utc":  "2026-11-06T04:18:13.6133088Z",
+    "established":  {
+                        "engine_ctor":  "Engine::Engine 0x72930 stores zero to [this+0x358] at 0x72bd5 (mov [rdi+0x358], rbp with rbp=0), so the constructor only clears the field",
+                        "engine_initialize":  "Engine::Initialize 0x743d0 stores the FileSystem argument into [this+0x358] at 0x74443 (mov [rsi+0x358], rax with rax loaded from the stack argument), so the caller must supply it",
+                        "consequence":  "the FileSystem used by the engine is created by whoever calls Initialize; in the shipped game that is Game.dll, not Engine.dll",
+                        "no_initializer":  "FileSystem exports no Initialize or Setup method; the only construction entry points are the default constructor 0x86370, a copy constructor 0x87e0 and an assignment 0x8830",
+                        "default_ctor_is_minimal":  "FileSystem::FileSystem 0x86370 is 65 bytes and writes only the vtable, so it leaves internal containers uninitialised"
+                    },
+    "measured":  {
+                     "hand_made_fs":  "a FileSystem built with only the default constructor then AddSource(Partition=1, path, name=null, 1,1,0) crashes inside AddSource; this is exactly the argument shape the game uses at its four call sites",
+                     "char_pointer_fix":  "DoesFileExist and GetFileSize take char const*, not std::string; passing a plain NUL-terminated buffer made the calls return normally instead of faulting"
+                 },
+    "why_it_matters":  "This explains both failures: my hand-built FileSystem lacks the internal state AddSource expects, and my earlier std::string misuse masked the real problem.",
+    "next":  [
+                 "find how Game.dll builds its FileSystem before handing it to Engine::Initialize, since that is the only construction path that is known to work",
+                 "or reconstruct the missing internal members by decoding AddSource\u0027s expectations"
+             ],
+    "not_claimed":  [
+                        "that a FileSystem can be built by hand yet",
+                        "that the archive can be read through it"
+                    ]
+}

@@ -1,0 +1,619 @@
+{
+  "schema": "grim-dynasty-r1-window-handle-bridge-v1",
+  "utc": "2026-11-03T15:43:59.1239893Z",
+  "status": "activation-close-native-contracts-recovered;worldWidget-and-coordinate-caller-still-unresolved;released",
+  "prior_stage": {
+    "file": "docs/reverse-client/r1-window-registered-widgets-stage.json",
+    "sha256": "2a56ce7170e8ae85bc05eb8525751b8578003a558518105d79e7e024c96170be"
+  },
+  "scope": "Known WinWindow handle/create/activation/close contracts and bounded cached worldWidget/data-drivenUI source review; no adjacent-IAT sweep",
+  "pending_operations": 0,
+  "new_Rea_calls": 55,
+  "new_game_tests": 0,
+  "new_product_compiles": 0,
+  "old_tests_rerun": 0,
+  "original_executed": false,
+  "saves_accessed": false,
+  "slot_execution": {
+    "initial_chunk": "cc0cc2",
+    "output": "docs/reverse-client/r1-winwindow-input-slots-run1",
+    "offline_chunk": "6b7ecc",
+    "launch_sha256": "de4539443245bd7c3d4303adbb0b0aca46428d1d214d5795f435cdda68ee5a3a",
+    "expected_calls": 8,
+    "semantic_bytes": 24,
+    "independent_review_passed": true,
+    "runner_sha256": "a787d46993621a11f2cc55ab556e0e6812b416f1f16f122238d2fe7dc3c3360e",
+    "state": "completed-passed",
+    "offline_exit": 0,
+    "session": 51500,
+    "repeat_forbidden": true,
+    "plan": ".tooling/r1-winwindow-input-slots-prepared/plan.json",
+    "plan_sha256": "1a5d4147b00f57fe0bdf657ccf237be9938b332ca80d75d41d424aec74c5e148",
+    "exit": 0,
+    "final_chunk": "f20d10",
+    "actual_calls": 8,
+    "summary_sha256": "ef3b5641da0f28f1579b1924e30e4f457c2221da4576bf0ba8a1870dffcfb304"
+  },
+  "slots": [
+    {
+      "offset": "C0",
+      "address": "0x18033f580",
+      "target": "0x180025730",
+      "evidence": {
+        "sha256": "9b6f07e99e59dd163f686fa0dde97f21eb6e76d46e341508379c7fef4dc76f2c",
+        "file": "docs/reverse-client/r1-winwindow-input-slots-run1/04-WinWindowVslot-0x18033f580-read_bytes.json"
+      }
+    },
+    {
+      "offset": "58",
+      "address": "0x18033f518",
+      "target": "0x180217f40",
+      "evidence": {
+        "sha256": "eb931a4312129b4de74085c55b789ba9e9095d0a7885aa8d9e800f3408b4336c",
+        "file": "docs/reverse-client/r1-winwindow-input-slots-run1/05-WinWindowVslot-0x18033f518-read_bytes.json"
+      }
+    },
+    {
+      "offset": "50",
+      "address": "0x18033f510",
+      "target": "0x1800ec510",
+      "evidence": {
+        "sha256": "0c0787f1feb490a1f87e6300956fe26d91e139cf9758709fdf40e66f6a806b7c",
+        "file": "docs/reverse-client/r1-winwindow-input-slots-run1/06-WinWindowVslot-0x18033f510-read_bytes.json"
+      }
+    },
+    {
+      "bytes": "7080218001000000",
+      "offset": "60",
+      "runtime_verified": false,
+      "evidence": {
+        "sha256": "9b5bfc3f0e7b414014c02b9ab3d4fd8895da74fdb72f18e2cd06cba0d6843243",
+        "file": "docs/reverse-client/r1-window-activation-close-run1/06-WindowCloseSlot-0x18033f520-read_bytes.json"
+      },
+      "target": "0x180218070",
+      "address": "0x18033f520"
+    }
+  ],
+  "world_widget_cache_review": {
+    "sha256": "9d7b916bd380706bebf297ddecbe7b07c003f215e0c28cc63a20c556efa9f3fb",
+    "no_queries_repeated": true,
+    "existing_name_queries": "unresolved/name_not_found,not resolved emptyrefs",
+    "no_global_scan": true,
+    "existing_IAT_xrefs": "Both returned empty in r1-widget-exe-incoming-run1",
+    "actual_EXE_IATs": [
+      "0x1402d5678 AddWidget index195",
+      "0x1402d5ae8 DisplayWidgetCtor index337"
+    ],
+    "Game_has_these_imports": false,
+    "derivation": "docs/reverse-client/r1-widget-exe-iat-derived/derivation.json",
+    "existing_Engine_callers": "0781B0/05F000 both empty in r1-widget-writer-callers-run1",
+    "actual_world_widget_writer": "UNKNOWN",
+    "latest_bounded_review": {
+      "new_source_backed_targets": 0,
+      "sources": [
+        {
+          "sha256": "1d4427d9d4f73b3d364ffec01b0825981c4b48dfae5c89c7b6f6ea02a64e9cbe",
+          "file": "docs/reverse-client/r1-engine-widget-constructors-run1/04-RegisteredObjectCtor-0x1801975c0-procedure_pseudo_code.json"
+        },
+        {
+          "sha256": "61ddcf681d8c1fe28a870e2f14d8edce00d0ce33ae85edb88c6db735c71eee3b",
+          "file": "docs/reverse-client/r1-widget-event-handler-run1/04-WidgetDirectHelper-0x1801996c0-procedure_pseudo_code.json"
+        }
+      ],
+      "finding": "KnownregisteredWidget1975C0->199220->1996C0 onlylocalhorizontaldrag/valueclamp;noneofreviewedsources establishesactualUIlayout loader/worldWidgetwriter/pixelmapping",
+      "whole_program_absence_proven": false,
+      "scope": "Existing reverse-client UI/Widget caches and module-boundary records only"
+    }
+  },
+  "unknown": [
+    "ActualEXEwindowcreationcaller/productionstyle andworldWidget registration/+18caller",
+    "Activation container registrar,concrete object identities andtheir+18 implementations; no proven identity withEngine+3E8 Widget list",
+    "Window message-loop shutdown/lifetime beyondPostQuitMessage and+40byte; userdata publication success",
+    "Clientpixel-to-cameraimageconversion andsameControllerPlayer mouse-actioncaller",
+    "Texture/model/UIlayout/visible-scenedraw"
+  ],
+  "next": "Return tosource-backeddata-drivenUI/actualworldWidgetwriter beforeanynewfixedquery; currentcache yields0newentry. Do notqueryneighborIAT ormorewindowlifecycle toclaimmouseprogress. Allcurrentoperationscomplete.",
+  "release": {
+    "file": "docs/reverse-client/r1-window-close-body-release.json",
+    "sha256": "2026812055dfa73856e26cb090babc17e19e02b790ac8eac9ce280babedb840b",
+    "status": "released-recorded-pids-absent"
+  },
+  "current_resource": {
+    "utc": "2026-11-03T15:42:22.3215653Z",
+    "available_physical_bytes": 9785643008,
+    "system_commit_bytes": 46053978112,
+    "system_commit_limit_bytes": 59886112768,
+    "external_build_or_java_processes": []
+  },
+  "world_movement_caller_cache_review": {
+    "closest_body": "GameControllerPlayer::HandleActionFromMouse18015E1F0 accepts bools,already formed WorldVec3,objectID reference;does not generate physical target",
+    "prior_IAT_xrefs": "r1-exe-mouse-callers returned[]",
+    "new_queries": 0,
+    "non_call_xrefs": [
+      "180881608 export entry",
+      "180A7C744 runtime function/unwind entry"
+    ],
+    "classification": "docs/reverse-client/r1-mouse-link-metadata/xref-classification.json",
+    "EXE_IAT": "1402D78A0",
+    "do_not_repeat": true,
+    "limitations": "Limited forms only;absence does not prove no caller or identify its reason. No new caller address in checked cache.",
+    "prior_bounded_code_checks": [
+      "r1-exe-mouse-candidates FF15/FF25 no candidates",
+      "r1-exe-mouse-pointer-candidates REX.W MOV no candidates"
+    ]
+  },
+  "body_execution": {
+    "state": "completed-passed",
+    "session": 47828,
+    "initial_chunk": "5577ed",
+    "offline_chunk": "8fc764",
+    "offline_exit": 0,
+    "expected_calls": 11,
+    "output": "docs/reverse-client/r1-winwindow-slot-targets-run1",
+    "plan": ".tooling/r1-winwindow-slot-targets-prepared/plan.json",
+    "plan_sha256": "ee6092bca74aba593832b4cad0cfa061926e8787137cd2e51500c05a13d3dacb",
+    "runner_sha256": "d1ae235d638eee0443fdc129997a16fcf723d183cb09a08c8ee77e68fa78136d",
+    "launch_sha256": "a66b143026b345fa1c885ee84ad734f64407b5e9b7844f8e805e618ceab886ad",
+    "repeat_forbidden": true,
+    "actual_calls": 11,
+    "summary_sha256": "0458bf978a68bfbb52da31e79ae5baca0a1f78da5f83ba2c2bdeb609b1a0a28c",
+    "final_chunk": "22f2f2",
+    "exit": 0,
+    "independent_review_passed": true
+  },
+  "original_static_contracts": {
+    "C0": {
+      "entry": "0x180025730",
+      "body": "MOV RAX,QWORD[RCX+8];RET",
+      "return_identity": "Current same-object QWORD+8, no validity/null check",
+      "alias_warning": "Folded shared entry has GraphicsMesh first decompiler name; WinWindow role follows actual slot and constructor/Initialize writes, not that name",
+      "input_bridge": "Conditioned on actual WinWindow instance/current vptr:DirectInput2DF7 calls C0 -> currentHWND+8 ->2DFD stores same pointer to input+50",
+      "runtime_instance_verified": false
+    },
+    "slot58": {
+      "entry": "0x180217f40",
+      "prefix": "GetWindowRect(captured current+8, uninitialized stackRECT40); ignore BOOL. Reload currentvptr; virtual90(this,uninitialized output50,R8D=0)",
+      "arithmetic": "Low32 subtraction/addition; CDQ/SUB/SAR signed truncation toward zero for halves. No float coordinate conversion",
+      "writes": "217FA7 DWORDthis+2C=x;217FC6 re-readQWORDthis+8;217FCC DWORDthis+30=y",
+      "suffix": "SetWindowPos(newly readHWND,NULL,x,y,0,0,flags5);ignore BOOL;no rollback",
+      "unknown": "Virtual90 target/output; failedAPI uninitialized bytes; callbacks/reentry may change currentHWND or vptr",
+      "no_mouse_mapping": true
+    },
+    "slot50": {
+      "entry": "0x1800ec510",
+      "body": "ReadQWORDthis+8 first; TEST DL; nonzeroEDX5,zeroEDX0;tailJMP IAT302660 ShowWindow",
+      "no_jump_table": true,
+      "success_not_checked": true,
+      "no_object_writes": true
+    },
+    "initialize": "CreateWindow nonnull -> currentvirtual58 Center -> re-readHWND SetForegroundWindow -> re-readvptrvirtual50 withDL1 ->AL1. No finalHWND validity or OS success test. Earlier failure prefixes retained.",
+    "creation_callback_binding": {
+      "source": "docs/reverse-client/r1-winwindow-initialization-run1/07-WinWindowInitialize-0x1802179b0-procedure_assembly.json",
+      "sha256": "cabdf2b2f8245329abbac932b06ec00237b4ca78023302cfe2ef3b14e41aa8c4",
+      "selection": "217A6F readsDWORDthis+3C;unsigned(style-3)>1 selects218090,else218210;217A8A storesselectedclasscallback",
+      "same_this": "2179D5 savesoriginalRCX toRBX;217B8C passesRBX asCreateWindowExAlpParam;217BBE callsAPI;217BC4 storesreturnHWND tosameobject+8",
+      "both_callbacks": "Message1 readsQWORD[lParam+0], callsSetWindowLongPtrA(hwnd,-21,pointer), ignoresresult, thenDefWindowProcA(original4args) andreturnsitsLRESULT",
+      "timing": "OfficialOS contract deliversWM_CREATE beforeCreateWindow returns; callbackpointer publication attempt is earlier thanInitialize217BC4 HWNDfieldpublication",
+      "failure": "NoSetLastError/GetLastError test or rollback. NormalSetWindowLongPtr return0 is not a failure/success certificate; no evidence publication succeeded at runtime. Unknown or invalid pointers are not silentlydefaulted.",
+      "lifecycle": "Noexplicituserdata-clear in eitherbody;currentobject lifetime,destroyedhandle/stateandactualEXEinstance remainunproven",
+      "proven": "Static same-pointer argument/storage path, conditional on real OS delivery andsuccessfuluserdatawrite; nooriginalruntime or ownwindowcreated"
+    },
+    "window_proc_218090": {
+      "ordinary_message_prefix": "Non-message1 callsGetWindowLongPtrA(hwnd,-21) once at2180C7;RCX becomesreturnedpointer.No universalnullcheck.Noseconduserdataread thisinvocation.",
+      "close": "message0x10 readsobjectcurrentvptr+60 andcallswithsameobject;normalreturnthenEAX1 withoutDef;virtualtarget/lifecycleunknown",
+      "minmax": "message0x24 callsDef first,thenDWORD[lParam+20]=7fffffff followedDWORD[lParam+24]=7fffffff;EAX0;noobjectfieldwrite orrollback",
+      "activate": "message6 tests16bits16..31ofwParam==0;thenDL=(low16!=0),calls217940;normalreturnDef.Onlybytebooleanargumentproven.",
+      "cursor": "message20h readsBYTEobject+28;ifzero,readsQWORD+20,callsSetCursor,ignoresreturn,returns1;elseDef",
+      "syskey": "message104h requiresfullwParam==Dh andlParam bit29set,then2178E0;normalreturnDef",
+      "syscommand": "message112h comparescomplete64bitwParam,noFff0mask. F100returns0;F020calls217820 thenDef;F120calls217880 thenDef;F000/F010/F030/F140/F170 readDWORDobject+3C:2returns1,else217880thenDef;othersDef",
+      "default": "OriginalHWND,32bitmessage,64bitwParam/lParam forwarded;returnfullDefLRESULT",
+      "boundary": "No worldWidgetpublication,pixelmapping,ray,groundhit orHandleActionFromMousecall inthisbody; helpersemanticsnotinferredfromnames"
+    },
+    "screensaver_proc_218210": {
+      "prefix": "Aftercurrentuserdataread21824D capturepointer inRBX;nullgivesEDX0,nonnullcallsitscurrentvirtual88 thenEDX=returnedEAX.CapturedRBXidentity retained acrosscallback;notreplacedbynewuserdata.",
+      "mode": "DWORDreturnedbyunknownvirtual88;do notequate tolive+3C withoutactualtargetevidence",
+      "close": "Readsnewcurrentvptr fromcapturedRBX andcalls+60 withsameobject;normalreturnthenDef,returnitsLRESULT.Differsfromordinaryclose.No universalnullprotection.",
+      "counter": "DirectbranchreadsDWORDglobal41D23C,decrementsmodulo2^32,writesbeforeTEST/JG;ifsignedresult>0Def,elseclose.No rollback/atomicity orinitialvalueproved.",
+      "event_mapping": "Decompiler reportscreation/lifecycle,cursor,keyboardandmouseevents triggeringcloseorDef. Exactlowmessagecase mapping usesdata218378/21838C;thisbatchdidnotreadtablebytes,so not independentlydecoded.",
+      "outside_scope": "No screensaverimplementation ornewcounterinitialization;notworldinteraction.Mouseeventclosebehavior mustnotbeusedascharacter movement."
+    },
+    "activation": {
+      "iteration": "uint32 EBX increment wraps; zero-extend into RCX; unsigned CMP/JC against 64bit arithmetic-shift count",
+      "entry": "0x180217940",
+      "persistent_activation_field_write": false,
+      "direct_coordinate_or_movement_call": false,
+      "worldWidget_identity_proven": false,
+      "failure": "Failure before normalreturn prevents reload/indexincrement; earlier callback effects not rolled back",
+      "callback": "Current begin[index] actualobject, currentvptr+18. No callback-return consumption",
+      "container": "QWORD window+18; begin+0/end+8;64bit difference SAR3. First only TEST nonzero; no validity/order/alignment guards",
+      "reentry": "After normalreturn reload originalwindow+18,increment index,recompute begin/end. No snapshot",
+      "input": "Capture DL raw byte in SIL; MOVZX EDX,SIL for each callback, no bool normalization"
+    },
+    "close60": {
+      "prefix": "218076 save originalRCX toRBX;218079 ECX=0;21807B callIAT302650 identified asPostQuitMessage",
+      "entry": "0x180218070",
+      "os_semantics": "PostQuitMessage requests thread-loop termination byWM_QUIT; does not prove message consumed,loop exited,window destroyed orprocess gone",
+      "write": "Only after normalreturn,218081 BYTE[originalthis+40]=1",
+      "failure": "If call does not normallyreturn, bytewrite not reached. No return-value successcheck or BOOL result",
+      "slot": "0x18033f520",
+      "no_direct_actions": [
+        "HWND destruction",
+        "HWND/userdata clearing",
+        "listener traversal",
+        "object free",
+        "worldWidget/mousecoordinate/movement call"
+      ],
+      "runtime_observed": false
+    }
+  },
+  "stage_delta": {
+    "new_game_scenarios": 0,
+    "slot_bytes": 32,
+    "new_original_function_bodies": 7,
+    "new_tooling_cases": 0,
+    "original_runtime_comparison": false,
+    "new_Rea_calls": 55,
+    "old_tests_rerun": 0,
+    "lifecycle_calls": 35,
+    "interactive_client_available": false,
+    "new_product_compiles": 0,
+    "analysis_calls": 20
+  },
+  "body_sources": [
+    {
+      "file": "docs/reverse-client/r1-winwindow-slot-targets-run1/04-WinWindowSlotC0-0x180025730-procedure_pseudo_code.json",
+      "sha256": "5b39e5b21868fda1292d34fb1bfc62de7b76604b394ba380093a9519c5c4795a"
+    },
+    {
+      "file": "docs/reverse-client/r1-winwindow-slot-targets-run1/05-WinWindowSlotC0-0x180025730-procedure_assembly.json",
+      "sha256": "9f14443ed1a7cd5995e010ea666d0924eabc90e41dcfffd4f49b08e3622dfb48"
+    },
+    {
+      "file": "docs/reverse-client/r1-winwindow-slot-targets-run1/06-WinWindowSlot58-0x180217f40-procedure_pseudo_code.json",
+      "sha256": "b3f0e50246f85699c78e55bdf7e893762232490eb3d8df4f3b418bdf1fbb281c"
+    },
+    {
+      "file": "docs/reverse-client/r1-winwindow-slot-targets-run1/07-WinWindowSlot58-0x180217f40-procedure_assembly.json",
+      "sha256": "d13e8848dfd5ddd3fc60e3935ec2d7d7e82468670f7521371c8bae01897631b9"
+    },
+    {
+      "file": "docs/reverse-client/r1-winwindow-slot-targets-run1/08-WinWindowSlot50-0x1800ec510-procedure_pseudo_code.json",
+      "sha256": "413e8625384146019df693d071eb2824b99bd4be25129a80275020d4597b35a8"
+    },
+    {
+      "file": "docs/reverse-client/r1-winwindow-slot-targets-run1/09-WinWindowSlot50-0x1800ec510-procedure_assembly.json",
+      "sha256": "7b0ddaeff7dd734fc7ca7c0145b8e72fd06ea16398f51b3800f9395e04690c15"
+    }
+  ],
+  "next_source_candidate": {
+    "kind": "Cached exact EXE WinWindow constructor IAT",
+    "address": "0x1402d6168",
+    "formula": "0x140000000+0x2d5060+545*8",
+    "symbol": "??0WinWindow@GAME@@QEAA@XZ",
+    "first_thunk_source": "docs/reverse-client/r1-provider-exe-iat/inspection.json",
+    "first_thunk_sha256": "4ef253f3155c548641a4f7f0f2cccd56fe1e24a7603ad10088c0e7d05260d8fc",
+    "symbol_source": "docs/phase-1/boundary-audit/module-boundaries.json",
+    "symbol_source_sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7",
+    "index": 545,
+    "descriptor": 8,
+    "queried": true,
+    "actual_slot_bytes_read": false,
+    "worldWidget_link_proven": false,
+    "cache_review": "Finite existing window batches contain no xrefs query for thisIAT; not an exhaustive history scan",
+    "query_result_sha256": "fb96d0f946698860a135723f9bf81b5f1f9ae7a532e7a79d912310588b98baca",
+    "query_result_file": "docs/reverse-client/r1-winwindow-exe-incoming-run1/04-WinWindowConstructor-IAT-0x1402d6168-xrefs.json",
+    "query_result": "observed[];no caller located",
+    "not_permission_failure": true,
+    "does_not_prove_no_caller": true,
+    "status": "Historical exactIAT query exhausted; preserve result; do not repeat"
+  },
+  "exe_incoming_execution": {
+    "state": "completed-passed-empty-xrefs",
+    "session": 25567,
+    "initial_chunk": "5ee2ae",
+    "offline_chunk": "932737",
+    "offline_exit": 0,
+    "expected_calls": 6,
+    "output": "docs/reverse-client/r1-winwindow-exe-incoming-run1",
+    "plan": ".tooling/r1-winwindow-exe-incoming-prepared/plan.json",
+    "plan_sha256": "bb19bc410dedc39dee3b2bacfa4ce062a1b04bd39e6535936605b35b181ebc34",
+    "runner_sha256": "daae996916e553a40048141496e78d63ba30406243f74017dc4fe9a341931b9d",
+    "launch_sha256": "1c84a3b0f431764771a753c10b134840f916fe0bbb0ad412b2c3bed4bab28c4d",
+    "independent_review_passed": true,
+    "repeat_forbidden": true,
+    "result": "docs/reverse-client/r1-winwindow-exe-incoming-run1/04-WinWindowConstructor-IAT-0x1402d6168-xrefs.json",
+    "analysis_coverage": "Provider reports operations admitted only after Ghidra default auto-analysis complete. Complete caller/indirect-reference coverage NOT established; relationship_coverage null.",
+    "xref_count": 0,
+    "exit": 0,
+    "summary_sha256": "c5a6abbaccfa8719c95a2a49bd7680f5d474a58f60849accf4b99f93e5ab7632",
+    "final_chunk": "5c707a",
+    "raw_preserved": true,
+    "result_sha256": "fb96d0f946698860a135723f9bf81b5f1f9ae7a532e7a79d912310588b98baca",
+    "actual_calls": 6
+  },
+  "releases": [
+    {
+      "file": "docs/reverse-client/r1-winwindow-input-slots-release.json",
+      "sha256": "dce6c4e10c2df59e346d8b08aa44211e89851c7b0acde1cf2f5a447310face41"
+    },
+    {
+      "file": "docs/reverse-client/r1-winwindow-slot-targets-release.json",
+      "sha256": "788cfb06a76141dde7d8c5db836a8b777cdbed9f26f1b832a089e1e890282978"
+    },
+    {
+      "file": "docs/reverse-client/r1-winwindow-exe-incoming-release.json",
+      "sha256": "3d8929aa91d38cebae8177a9e1690da50a0fa3dfe0de33336e92862c41a2efa7"
+    },
+    {
+      "file": "docs/reverse-client/r1-winwindow-init-incoming-release.json",
+      "sha256": "3df072f40b9fcc5ee7e0b1d2dd55532f586eb180e56cb4db4af42447f8255050"
+    },
+    {
+      "file": "docs/reverse-client/r1-winwindow-callbacks-release.json",
+      "sha256": "e21279c3176850fdcd33f53da31d77599017e285624cab811a10011f2ec0fdf1"
+    },
+    {
+      "sha256": "6c511c80240fffa73f88b1a05d2bded44302adefa43ca3baae66fd3a795b40c2",
+      "file": "docs/reverse-client/r1-window-activation-close-release.json"
+    },
+    {
+      "sha256": "2026812055dfa73856e26cb090babc17e19e02b790ac8eac9ce280babedb840b",
+      "file": "docs/reverse-client/r1-window-close-body-release.json"
+    }
+  ],
+  "blocker": {
+    "action": "Connect physicalmouse event toactualworldWidget groundhit andsameControllerPlayer15E1F0",
+    "denied": false,
+    "target": "ConcreteworldWidget constructor/registration/vtablewriter oractualUIlayout loaderandcaller",
+    "permission_change_needed_now": false,
+    "reason": "Activation/close bodiescontain no directmapping/movement; activationcallbackidentitiesunknown. BoundedUIcachehas0newsource-backedentry;prior exactEXEIATxref[]isnotproofnocaller.",
+    "uncertain_execution": false,
+    "kind": "missing-original-call/dataflow-evidence",
+    "runtime_compatibility_unverified": true,
+    "pending": false
+  },
+  "xrefs_readiness": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "raw_limitations": [
+      "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+      "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+      "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+      "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+      "The direct address list projects exact Ghidra references to one address but does not expose their kinds; procedure_references and analyze_function preserve available kind metadata.",
+      "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+      "Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+      "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no Bearer [REDACTED]",
+      "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.",
+      "The target references PDB Grim Dawn.pdb (GUID cf7d537f-36a2-4f20-ba91-e614193fa30b, age (hex) 2, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion."
+    ],
+    "relationship_coverage": null,
+    "runtime_original_observed": false,
+    "complete_program_call_graph_proven": false,
+    "no_cause_assumed_for_empty": true,
+    "no_automatic_retry": true,
+    "read_only_source_review": {
+      "provider": ".tooling/rea/node_modules/rea-agents/dist/ghidra/GhidraProviderClient.js",
+      "client": ".tooling/rea/node_modules/rea-agents/dist/ghidra/GhidraClient.js",
+      "startup": ".tooling/rea/node_modules/rea-agents/dist/ghidra/GhidraClientStartup.js",
+      "actual_contract": "PE query awaits start;callTool awaits start;analysis_timed_out returns analysis_timeout. Corrected abbreviated filenames after readonly terminaldc5f28 file-not-found; no execution/security bypass."
+    }
+  },
+  "initialize_incoming_execution": {
+    "state": "completed-passed-empty-xrefs",
+    "session": 11867,
+    "initial_chunk": "96a2b3",
+    "offline_chunk": "05ce62",
+    "offline_exit": 0,
+    "expected_calls": 6,
+    "output": "docs/reverse-client/r1-winwindow-init-incoming-run1",
+    "plan": ".tooling/r1-winwindow-init-incoming-prepared/plan.json",
+    "plan_sha256": "62e080cb63d4aee38580bfcb08c052ec5d2189a0d6a58a8fa074cfa9419ca1c5",
+    "runner_sha256": "e9c8cbd361d9d05c54d589997a436e336926274caaba05141a0b78493eec0ffe",
+    "launch_sha256": "5beea56500d696dcd0f209582a42948b13ae27bcc350117730e51f76c7fc92e0",
+    "independent_review_passed": true,
+    "repeat_forbidden": true,
+    "original_executed": false,
+    "relationship_coverage": null,
+    "result_sha256": "f2a48580e25070f4c2d9b8a4ee9f2c3e63f5827ad0dcd435c96867477a4021b0",
+    "exit": 0,
+    "result": "docs/reverse-client/r1-winwindow-init-incoming-run1/04-WinWindowInitialize-IAT-0x1402d6188-xrefs.json",
+    "final_chunk": "ea3f07",
+    "summary_sha256": "555f297d48f7388e00ee9791aecad90ccd2c0dd27d86ea3fba65009f0ec857d2",
+    "actual_calls": 6,
+    "raw_preserved": true,
+    "xref_count": 0,
+    "absence_not_proven": true
+  },
+  "cached_creation_route_review": {
+    "engine_initialize_entry": "0x1800743d0",
+    "exe_import_index": 547,
+    "meaning": "Receives existingEWindow; does not replace WinWindowInitialize2179B0 creation",
+    "source": "docs/phase-1/round-4/initialization-locations.json",
+    "sha256": "bdc0e1838162463d18fce89dfea20fe6baf073d889db757e62c59ae3ed8faf1e",
+    "cached_candidateCallSites": [],
+    "prior_scan": "One finite.text FF15/FF25 only; not repeated",
+    "actual_EXE_caller_found": false,
+    "adjacent_import_query_not_planned": true,
+    "next_direct_source": "WinWindowInitialize registers actualcallback218090/218210 andsameobjectlpParam; finite cache review beforequery, notworldWidget proof"
+  },
+  "callback_execution": {
+    "state": "completed-passed",
+    "session": 87245,
+    "initial_chunk": "801d1e",
+    "offline_chunk": "d46273",
+    "offline_exit": 0,
+    "expected_calls": 9,
+    "output": "docs/reverse-client/r1-winwindow-callbacks-run1",
+    "plan": ".tooling/r1-winwindow-callbacks-prepared/plan.json",
+    "plan_sha256": "08d0e30d0d2fdccb61925345652e5d0715c898e38fc6863547ae04cd9f21e073",
+    "runner_sha256": "8fb39961593218c95085f9bc0b753e41a5939ae8366c1adbbd9ada29172d4f9e",
+    "launch_sha256": "2961f26825f7a0835125c72c0f645c0b853f8cb170f6138817b25d036ebafbf0",
+    "independent_review_passed": true,
+    "repeat_forbidden": true,
+    "original_executed": false,
+    "preparation_fix": "Two unrelated8->11 substitutions reverted before any execution; no guard or active runner changes",
+    "final_chunk": "76b075",
+    "review_status": "root-and-independent-review-passed",
+    "summary_sha256": "791b453a722703712ce5f6187524bbb50446bb1b0c7f322e89ff7df06eab26dc",
+    "actual_calls": 9,
+    "exit": 0,
+    "body_sources": [
+      {
+        "file": "docs/reverse-client/r1-winwindow-callbacks-run1/04-WinWindowCallback-0x180218090-procedure_pseudo_code.json",
+        "sha256": "112267f4f1f9a69ed261f6fa27450bab021f0206b078ffbacc42da7f8ca3ed84"
+      },
+      {
+        "file": "docs/reverse-client/r1-winwindow-callbacks-run1/05-WinWindowCallback-0x180218090-procedure_assembly.json",
+        "sha256": "900c25b5f49ee441e900981741ddaa3b6127ccfa74b10349b8f7556450ff5612"
+      },
+      {
+        "file": "docs/reverse-client/r1-winwindow-callbacks-run1/06-WinWindowCallback-0x180218210-procedure_pseudo_code.json",
+        "sha256": "7fccc2f05719130b2d16fe46643780f2f6cc0130bfd50af441feb9ac65b136fb"
+      },
+      {
+        "file": "docs/reverse-client/r1-winwindow-callbacks-run1/07-WinWindowCallback-0x180218210-procedure_assembly.json",
+        "sha256": "f4325d2912eb1d661ba14024627bea54a098cbd2f5c02f862ecef58af5fb2697"
+      }
+    ]
+  },
+  "directly_unresolved_window_dependencies": {
+    "ordinary_helpers": [
+      "217820 minimize",
+      "217880 restore",
+      "2178E0 fullscreen toggle"
+    ],
+    "ordinary_close_virtual": "Resolved33F520->218070;bodyrecovered",
+    "screensaver_only": [
+      "+88 target",
+      "41D23C writer/initialstate",
+      "218378/21838C selector tables"
+    ],
+    "not_queried_this_stage": false,
+    "no_arbitrary_default_callbacks": true,
+    "scope_note": "Only217940 andclose60 resolvedthisturn;otherhelper/screensaver branches remainunknown andnotnextmovementtargets"
+  },
+  "platform_documentation": {
+    "scope": "OfficialOS semanticcrosscheck only;doesnotverifyoriginalruntime.Browsed2026-11-03.NooriginalDLLloaded.",
+    "sources": [
+      {
+        "url": "https://learn.microsoft.com/en-us/windows/win32/winmsg/wm-create",
+        "claim": "WM_CREATE=1,lParamCREATESTRUCT;deliverybeforeCreateWindowreturns"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/windows/win32/api/winuser/ns-winuser-createstructa",
+        "claim": "FirstmemberlpCreateParamscontainstheCreateWindowlpParamvalue"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowlongptra",
+        "claim": "Index-21isGWLP_USERDATA;return0alonecannotcertifyfailurebecausepreviousvaluemayzero"
+      },
+      {
+        "claim": "PostQuitMessage postsWM_QUIT tocallingthreadsqueue,returnsimmediately,no returnvalue; originalmessage-loopconsumption unobserved",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-postquitmessage"
+      }
+    ]
+  },
+  "latest_turn_delta": {
+    "slot_bytes": 8,
+    "Rea_calls": 15,
+    "actual_function_bodies": 2,
+    "original_files_changed": false,
+    "new_game_tests": 0,
+    "lifecycle_calls": 10,
+    "old_tests_rerun": 0,
+    "empty_xref_results": 0,
+    "new_product_compiles": 0,
+    "original_runtime_observation": false,
+    "approval_denied": false,
+    "offline_verifier_passes": 2,
+    "uncertain_operations": 0,
+    "completed_analysis_calls": 5,
+    "offline_verifier_failures": 1
+  },
+  "activation_close_execution": {
+    "initial_chunk": "51369a",
+    "plan": ".tooling/r1-window-activation-close-prepared/plan.json",
+    "repeat_forbidden": true,
+    "runner_sha256": "b1e1c50d09788e25ab604eb45ae1ca609f4b93a86111e6c5df42b073e2e6dbdf",
+    "expected_calls": 8,
+    "offline_chunk": "1af8e5",
+    "independent_review_passed": true,
+    "offline_exit": 0,
+    "state": "completed-passed",
+    "correction": "Six U+0008 changed to literal regex word boundaries; failed input preserved; no backend started by verifier",
+    "output": "docs/reverse-client/r1-window-activation-close-run1",
+    "session": 87462,
+    "prior_offline_exit": 1,
+    "plan_sha256": "8f486de91446648e71854b18d466aba6f455ee67c7cb206806ec8ff3daffa2fd",
+    "launch_sha256": "46e81b0fe44a4f46b4e39b1c60b90fe846e432531c2cd0410875b73016f632ff",
+    "prior_offline_failed_chunk": "9ae537",
+    "exit": 0,
+    "final_chunk": "34f5eb",
+    "actual_calls": 8,
+    "summary_sha256": "daa94d5a9b7a982ad8fa827ddce1aca2f6a3500ec17dfe0d66e6b548afe9fe26",
+    "independent_semantic_review_passed": true,
+    "body_sources": [
+      {
+        "sha256": "10194058a56b0727aedafaef4144e767557a6e4459e720ca73fb1aed0511f767",
+        "file": "docs/reverse-client/r1-window-activation-close-run1/04-WindowActivation-0x180217940-procedure_pseudo_code.json"
+      },
+      {
+        "sha256": "071f90afb189a1252bd5238b3b593bd0dff1f6417fca8070baba73658469f107",
+        "file": "docs/reverse-client/r1-window-activation-close-run1/05-WindowActivation-0x180217940-procedure_assembly.json"
+      },
+      {
+        "sha256": "9b5bfc3f0e7b414014c02b9ab3d4fd8895da74fdb72f18e2cd06cba0d6843243",
+        "file": "docs/reverse-client/r1-window-activation-close-run1/06-WindowCloseSlot-0x18033f520-read_bytes.json"
+      }
+    ]
+  },
+  "close_body_execution": {
+    "plan": ".tooling/r1-window-close-body-prepared/plan.json",
+    "plan_sha256": "516b6cbdf388577e34c903657e4fc82cb7439cd9d0f0d6dfb5f9bc9befd0953b",
+    "offline_chunk": "4ce20d",
+    "session": 27332,
+    "independent_review_passed": true,
+    "initial_chunk": "7d5ca3",
+    "expected_calls": 7,
+    "offline_exit": 0,
+    "repeat_forbidden": true,
+    "output": "docs/reverse-client/r1-window-close-body-run1",
+    "launch_sha256": "25020e8da40eb5b8a3d70c6b4ccaea108b9c3912163f50638cb129577a482805",
+    "runner_sha256": "ae231387bbe8163753fda202da9ecb93315aac2dda2fcdce86320a759f575884",
+    "state": "completed-passed",
+    "exit": 0,
+    "final_chunk": "822cda",
+    "actual_calls": 7,
+    "summary_sha256": "f6a433896002818cc893f1ba6a4679320c0ed970b0dd7f7fbbb1e81216554848",
+    "independent_semantic_review_passed": true,
+    "body_sources": [
+      {
+        "sha256": "5adfe10a758d8595e8f09151c76f4f10573af0ab486e671904cf3cc009815dea",
+        "file": "docs/reverse-client/r1-window-close-body-run1/04-WindowClose-0x180218070-procedure_pseudo_code.json"
+      },
+      {
+        "sha256": "565ea5c10b9001ffa64d7486c27abf943bd675ac7bea8332445f8d23557d89d2",
+        "file": "docs/reverse-client/r1-window-close-body-run1/05-WindowClose-0x180218070-procedure_assembly.json"
+      }
+    ]
+  },
+  "key_path_contribution": {
+    "not_proved": "WorldWidget identity,physicalmouse targetconversion or visiblegameplay",
+    "new_interactive_capability": false,
+    "proved": "Window activation notification order/reentrantlivecontainer behavior;exactclose slotandquit-request-beforebyteflag order",
+    "decision": "Stop expandingwindowlifecycle asclickmovement evidence. Redirect toactualdata-drivenUI loader/construct/register reference orconcreteworldWidget writer; no concretefreshqueryaddress incheckedcache.",
+    "product_implementation_added": false
+  },
+  "next_trace": {
+    "data_driven_route": "Identify one actualUIlayout file/record anditsloader->controlconstructor/registration directreference",
+    "caller_route": "Identify one realcall/writer publishingconcreteworldWidget intoEngine+3E8,thenitsvptr+18 targetandcaller dataflow",
+    "candidate_address": null,
+    "no_adjacent_IAT_queries": true,
+    "acceptance": "Trace actualclientpixel->camera groundhit->sameControllerPlayer15E1F0; keepknownmap/navigation/movement asreuse",
+    "no_arbitrary_defaults": true
+  }
+}

@@ -1,0 +1,44 @@
+{
+    "schema":  "grim-dynasty-r1-native-device-attempt-v1",
+    "utc":  "2026-11-05T10:56:44.3868475Z",
+    "status":  "window-and-engine-ok-create-device-crashed",
+    "observed":  {
+                     "base":  "0x7ffb75d10000",
+                     "winctor":  "0x7ffb75f27710",
+                     "wininit":  "0x7ffb75f279b0",
+                     "settings_ctor":  "0x7ffb75da06e0",
+                     "engine_ctor":  "0x7ffb75da0730",
+                     "create_device":  "0x7ffb75da0ba0",
+                     "window_returned":  1,
+                     "hwnd":  "0xc0b26",
+                     "is_window":  true,
+                     "settings_string_len":  10,
+                     "engine_vtable":  "0x7ffb7604f498",
+                     "crash":  "access violation 0xC0000005 during CreateDevice"
+                 },
+    "reading":  {
+                    "settings":  "Length 10 confirms the default \"direct3d11\" plugin name was written by the original constructor.",
+                    "engine":  "The engine object constructed and its vtable relocated correctly (base + 0x33F498).",
+                    "crash":  "CreateDevice faulted, which indicates the engine object is not usable in that state even though its constructor returned."
+                },
+    "likely_cause":  "GAME::GraphicsEngine is a large subsystem whose exported 0x90730 constructor is only part of its initialisation; calling CreateDevice on a bare 16 KiB zeroed buffer omits whatever setup the real startup performs before device creation. This is a hypothesis, not a conclusion.",
+    "what_worked":  [
+                        "loading the module and resolving five exports",
+                        "creating a real window twice with identical results",
+                        "constructing GraphicsEngineSettings and confirming its default plugin name",
+                        "constructing GraphicsEngine and observing a correctly relocated vtable"
+                    ],
+    "what_failed":  "The device creation call itself; the process died with an access violation.",
+    "not_claimed":  [
+                        "that any device exists",
+                        "that the plugin was loaded",
+                        "that a frame was presented"
+                    ],
+    "next":  "Read GAME::GraphicsEngine::GraphicsEngine 0x90730 in full to see what it depends on, and prefer the engine\u0027s own CreateDevice(string, bool) overload which performs the startup sequence the game uses.",
+    "safety":  {
+                   "original_process_used":  false,
+                   "touches_original_files":  false,
+                   "debugger":  false,
+                   "saves_or_network":  false
+               }
+}

@@ -53,11 +53,21 @@ namespace GrimDynasty.ReverseClient.Actions {
   static long PointerCount(NavigationCrowdPointerHeader<NavigationCrowdAgent> h,uint endAt,uint subAt){var e=h.Capture(NavigationCrowdPointerSlot.End,endAt).Read(subAt);var b=h.Read(NavigationCrowdPointerSlot.Begin,subAt);if(e==null&&b==null)return 0;if(e==null||b==null||!Object.ReferenceEquals(e.Buffer,b.Buffer))throw new MissingContract(subAt,"OWN pointer subtraction needs one allocation");return e.Index-b.Index;}
   // This entry guard declares the bounded composition domain; it is not an
   // invented native branch or proof that the preceding25C440 blocks ran.
-  static void SingleWorkDomain(NavigationCrowdGroup g,NavigationCrowdAgent a,NavigationCrowdPointerDomain<NavigationCrowdAgent> d){const uint at=0x25cb73;var work=NavigationCrowdBorrowedPointerContracts.Work40(Need(g,at),d);var member=NavigationCrowdPointerHeader<NavigationCrowdAgent>.BorrowTyped(g.Members28);if(PointerCount(work,at,at)!=1||PointerCount(member,at,at)!=1)throw new MissingContract(at,"OWN reached continuation requires exactly one Work and one Member; no multi-agent phase ordering inferred");var wp=work.Read(NavigationCrowdPointerSlot.Begin,at);var mp=member.Read(NavigationCrowdPointerSlot.Begin,at);if(!Object.ReferenceEquals(wp.Buffer.At(wp.Index,at).Read(at),a)||!Object.ReferenceEquals(mp.Buffer.At(mp.Index,at).Read(at),a))throw new MissingContract(at,"Work/Member must reference this same actual agent");}
+  static void SingleWorkDomain(NavigationCrowdGroup g,NavigationCrowdAgent a,NavigationCrowdPointerDomain<NavigationCrowdAgent> d,uint at){var work=NavigationCrowdBorrowedPointerContracts.Work40(Need(g,at),d);var member=NavigationCrowdPointerHeader<NavigationCrowdAgent>.BorrowTyped(g.Members28);if(PointerCount(work,at,at)!=1||PointerCount(member,at,at)!=1)throw new MissingContract(at,"OWN reached continuation requires exactly one Work and one Member; no multi-agent phase ordering inferred");var wp=work.Read(NavigationCrowdPointerSlot.Begin,at);var mp=member.Read(NavigationCrowdPointerSlot.Begin,at);if(!Object.ReferenceEquals(wp.Buffer.At(wp.Index,at).Read(at),a)||!Object.ReferenceEquals(mp.Buffer.At(mp.Index,at).Read(at),a))throw new MissingContract(at,"Work/Member must reference this same actual agent");}
   public static void ProduceReachedSingleWork25CB73(NavigationCrowdGroup g,NavigationCrowdAgent a,NavigationCrowdPointerDomain<NavigationCrowdAgent> domain,Field<float> capturedMaximumRadius,Field<float> capturedNeighborFactor,Field<float> capturedSeconds,NavigationCrowdTickProductionBoundaries b,Invocation i){
-   Need(i,0x25cb73);Need(a,0x25cb73);Need(b,0x25cb73);b.ProjectionOutcome=null;b.ProjectionReference=0;SingleWorkDomain(g,a,domain);
+   Need(i,0x25cb73);Need(a,0x25cb73);Need(b,0x25cb73);b.ProjectionOutcome=null;b.ProjectionReference=0;SingleWorkDomain(g,a,domain,0x25cb73);
    NavigationCrowdTickHeaderContracts.PopulateReachedNeighbors25CB73(g,a,domain,capturedMaximumRadius,capturedNeighborFactor,b.Proximity,i);
-   Steer25CBBD(a,b,i);Avoid25CFCA(g,a,domain,b,i);Advance25D307(a,domain,capturedSeconds,b,i);
+   Steer25CBBD(a,b,i);AfterSteering(g,a,domain,capturedSeconds,b,i);
+  }
+  // Saved25CB31 writes NeedReplan, then25CB38 jumps to25CF79. For one Work
+  // the loop ends and enters the same avoidance/integration/publication path.
+  // The skipped block includes neighbor population AND steering: preserve
+  // their old live cells, including Unknown or nonempty neighbor storage.
+  public static void ProduceReachedSingleWork25CF79(NavigationCrowdGroup g,NavigationCrowdAgent a,NavigationCrowdPointerDomain<NavigationCrowdAgent> domain,Field<float> capturedSeconds,NavigationCrowdTickProductionBoundaries b,Invocation i){
+   Need(i,0x25cf79);Need(a,0x25cf79);Need(b,0x25cf79);b.ProjectionOutcome=null;b.ProjectionReference=0;SingleWorkDomain(g,a,domain,0x25cf79);i.At=0x25cf79;AfterSteering(g,a,domain,capturedSeconds,b,i);
+  }
+  static void AfterSteering(NavigationCrowdGroup g,NavigationCrowdAgent a,NavigationCrowdPointerDomain<NavigationCrowdAgent> domain,Field<float> capturedSeconds,NavigationCrowdTickProductionBoundaries b,Invocation i){
+   Avoid25CFCA(g,a,domain,b,i);Advance25D307(a,domain,capturedSeconds,b,i);
    Correct25DB74(g,a,domain,b,i);Publish25DE07(g,a,capturedSeconds,b,i);
   }
   // First waypoint is the actual request-produced address; no direction or

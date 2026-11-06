@@ -1,0 +1,41 @@
+{
+  "schema": "gd-resource-monitor-safety-stop-v1",
+  "recorded_utc": "2026-11-04 08:41:24 UTC",
+  "supersedes_live_monitor_state_in": "docs/reverse-client/r1-click-observation-monitor-20261104.json",
+  "monitor_cell_id": "272",
+  "monitor_state": "terminated-by-tool-rejection;no-fixed-count-or-time-stop",
+  "last_successful_sample": {
+    "utc": "2026-11-04T08:38:00.0996587Z",
+    "physicalGiB": 0.4111824035644531,
+    "commitGiB": 0.9165878295898438,
+    "pid": 38316,
+    "creation_filetime": "134382473153235939",
+    "admitted": false,
+    "conflicts": [],
+    "tool_chunk": "824bb1"
+  },
+  "blocked_action": {
+    "action": "Start existing Windows PowerShell5.1 read-identity.ps1 for the next low-frequency read-only memory/process sample",
+    "target": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\gd-click-observation-20261104\\read-identity.ps1",
+    "mechanism": "exec_command sandbox_permissions=require_escalated",
+    "outcome": "denied-before-process-creation",
+    "reason": "当前物理仅约0.41 GiB、提交余量约0.92 GiB，继续启动 PowerShell 采样可能加剧严重内存压力；用户已要求遇资源问题停止并报告。",
+    "retry_attempted": false,
+    "workaround_attempted": false
+  },
+  "work_completed": {
+    "continuous_monitoring_started_after": "2026-11-04T08:14:06.0286058Z",
+    "original_game_restarted": false,
+    "original_debugger_attaches": 0,
+    "original_click_hits": 0,
+    "new_observer_starts": 0,
+    "persistent_scheduler_created": false,
+    "external_processes_modified": false,
+    "save_or_cloud_settings_changed": false
+  },
+  "latest_original_state": "Same PID and exact creation identity last proven at08:38; no new post-denial query",
+  "current_owned_observer_or_build_jobs": "None started in this watch; prior six attempts have terminal receipts",
+  "pending_local_execution": false,
+  "checkpoint_limit": "No new shell was started after denial to update existing hash-linked checkpoint files; this separate stop receipt supersedes their earlier active-cell status",
+  "resume": "Do not retry or substitute a sampler. Need materially new evidence that memory pressure has eased and explicit user approval for one exact read-only sample; use formal approval once. Check any uncertain outcome before retry. Preserve original5GiB start,2GiB runtime guards and stable startup buffer. No new observer before all conditions pass."
+}

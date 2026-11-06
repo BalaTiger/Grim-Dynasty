@@ -1,0 +1,61 @@
+{
+    "schema":  "grim-dynasty-r1-presentation-plugin-loading-v1",
+    "utc":  "2026-11-05T10:36:03.0249473Z",
+    "evidence":  [
+                     "docs/reverse-client/r1-engine-window-run1/inspection.json",
+                     "docs/reverse-client/r1-engine-window-run2/inspection.json"
+                 ],
+    "winwindow_constructor":  {
+                                  "rva":  "0x217710",
+                                  "rows":  120,
+                                  "sequence":  [
+                                                   "[this]=0x18033F4C0 (WinWindow vtable)",
+                                                   "[this+0x20]=0,[this+0x28]=0",
+                                                   "[this+8]=0",
+                                                   "[this+0x34]=0,[this+0x3C]=0,[this+0x40]=0",
+                                                   "call 0x2DC398 with size 0x18 -\u003e [this+0x18] = new object"
+                                               ],
+                                  "reading":  "A plain memory object: vtable plus zeroed fields and one 0x18-byte child. No HWND is created here, so window creation must happen in Create/Activate."
+                              },
+    "create_device":  {
+                          "rva":  "0x90ba0",
+                          "rows":  130,
+                          "sequence":  [
+                                           "[this+0x190] = EWindow* argument",
+                                           "if settings+0x2A != 0 -\u003e [this+0x1B8]=1",
+                                           "if settings+0x2B != 0 -\u003e [this+0x1B9]=1",
+                                           "r8d = byte[settings+0x2F]; call 0x90AE0(this, settings)",
+                                           "on false: read the settings std::string and log"
+                                       ],
+                          "settings_layout_hint":  "The settings begin with an MSVC std::string (capacity at +0x18, data at +0, length at +0x10), followed by byte flags at +0x2A, +0x2B and +0x2F."
+                      },
+    "device_creation_helper":  {
+                                   "rva":  "0x90ae0",
+                                   "rows":  65,
+                                   "sequence":  [
+                                                    "rcx = settings string data (the plugin name); edx = byte[settings+0x2F]",
+                                                    "call 0x180197020            -\u003e look up / load the renderer plugin by name",
+                                                    "[this+0x58] = plugin object; if null -\u003e failure log at 0x18030DE98",
+                                                    "call [plugin_vtable+0]       -\u003e plugin initialise, returns bool",
+                                                    "if false -\u003e release plugin via 0x197120 and log",
+                                                    "rcx = [0x180421428]          -\u003e the Engine global already validated at runtime",
+                                                    "call [engine_vtable+0x18]    -\u003e register the device with the engine",
+                                                    "return true"
+                                                ],
+                                   "reading":  "The renderer is loaded by NAME from the settings string, stored at this+0x58, initialised through its vtable slot 0 and then registered with the engine through engine slot 0x18.",
+                                   "cross_link":  "[0x180421428] is exactly the Engine global that was read live earlier (0x22ee236aeb0 at runtime, while the same RVA in Game.dll is code). The static creation path and the runtime sample therefore agree."
+                               },
+    "what_this_establishes":  [
+                                  "the renderer plugin is selected by name through GraphicsEngineSettings",
+                                  "where the plugin object is stored and which virtual slots initialise and register it",
+                                  "the static path uses the same Engine global that was validated at runtime"
+                              ],
+    "not_established":  [
+                            "the name string actually used",
+                            "how 0x197020 resolves a name to a module",
+                            "the GraphicsEngineSettings full layout",
+                            "EWindow creation (no HWND in the WinWindow constructor)",
+                            "any executed device or presented frame"
+                        ],
+    "next":  "Decode 0x197020 (plugin lookup by name) and find WinWindow::Create/Activate to see HWND creation, then the plugin name string used by the game."
+}

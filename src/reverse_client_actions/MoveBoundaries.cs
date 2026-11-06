@@ -23,6 +23,12 @@ namespace GrimDynasty.ReverseClient.Actions {
   public virtual object Region(WorldPosition position){throw Missing(0x6094a0,"Position region");}
   public virtual void Associated60(object associated,uint flags){throw Missing(0x082cd1,"Associated virtual +60");}
   public virtual void Associated80(object associated){throw Missing(0x05f91e,"Associated virtual +80");}
+  // Additive bridges keep old boundary overrides usable. Their unknown vptr
+  // is not an observed native value; concrete production overrides capture
+  // the real shared cell and consume it only at the indirect call.
+  public virtual Field<object> CaptureAssociatedPrimary(object associated,uint at){return new Field<object>();}
+  public virtual void Associated60Captured(object associated,Field<object> primary,Field<uint> flags,Invocation i){Associated60(associated,MoveContracts.Need(flags,i.At).Read(i.At));}
+  public virtual void Associated80Captured(object associated,Field<object> primary,Invocation i){Associated80(associated);}
   public virtual float DistanceSquared(object world,WorldPosition a,WorldPosition b){throw Missing(0x609a10,"World distance");}
   public virtual void SetPathPosition(MoveCharacter role,WorldPosition position){throw Missing(0x05d9a0,"SetPathPosition");}
   public virtual uint SkillId(MoveCharacter role,uint reference){throw Missing(0x531c50,"Skill reference -> ID");}
@@ -42,6 +48,16 @@ namespace GrimDynasty.ReverseClient.Actions {
   public virtual AnimationSet Animations(MoveCharacter role){throw Missing(0x05ae40,"GetAnimationSet");}
   public virtual float AnimationSpeed(MoveCharacter role,uint index){throw Missing(0x609bf0,"Actor animation speed");}
   public virtual byte Play(AnimationSet set,MoveCharacter role,uint animation,object name,float speed,byte loop,uint extra){throw Missing(0x024de0,"PlayAnimation");}
+  // Additive register captures preserve existing concrete overrides. Native
+  // MOV/MOVSS returns can remain Unknown until the caller consumes them.
+  public virtual Field<AnimationSet> AnimationsCaptured(MoveCharacter role){return Field<AnimationSet>.Of(Animations(role));}
+  public virtual Field<float> AnimationSpeedCaptured(MoveCharacter role,uint index){return Field<float>.Of(AnimationSpeed(role,index));}
+  public virtual byte PlayCaptured(Field<AnimationSet> set,MoveCharacter role,uint animation,object name,float speed,byte loop,uint extra){
+   // 024DF0 is PlayAnimation's first use of RCX, after the caller's name load.
+   // This bridge provides no entry virtual+8 behavior or successful default.
+   var value=MoveContracts.Need(MoveContracts.Need(set,0x024df0).Read(0x024df0),0x024df0);
+   return Play(value,role,animation,name,speed,loop,extra);
+  }
   public virtual byte IsMoving(MoveCharacter role){throw Missing(0x05bc20,"IsMoving");}
   public virtual void StopMoving(MoveCharacter role,byte first,byte second){throw Missing(0x05fc90,"StopMoving");}
   public virtual byte SoundCheck(object sound){throw Missing(0x609a08,"Stop-path sound check import");}

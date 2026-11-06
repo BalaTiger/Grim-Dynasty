@@ -1,0 +1,25 @@
+{
+    "schema":  "grim-dynasty-r1-ifeo-incident-recovery-v1",
+    "utc":  "2026-11-05T13:03:38.7506557Z",
+    "incident":  {
+                     "what":  "I wrote an HKLM Image File Execution Options Debugger entry while running without elevation, then discovered I could not remove it from that same session.",
+                     "effect":  "Every launch of the client was intercepted by the watchpoint wrapper, so Steam failed with error 84 and the game would not start.",
+                     "my_error":  "I changed a machine-wide setting without first securing a way to undo it in the same session.",
+                     "duration":  "a few minutes, until the user removed the key from an elevated shell",
+                     "resolved":  true
+                 },
+    "recovery":  {
+                     "key_removed_by_user":  true,
+                     "hklm_absent":  true,
+                     "hkcu_absent":  true,
+                     "game_launches_normally":  true,
+                     "evidence":  "client started through Steam and reached a normal working set"
+                 },
+    "technical_finding":  {
+                              "ifeo_works":  true,
+                              "detail":  "With the HKLM entry present the wrapper was invoked at process creation: the log shows threads_armed 4, plus 2 later threads, and the watch address was Engine.dll base + 0x421428.",
+                              "client_rejects_debugging":  true,
+                              "detail2":  "The debugged process exited after 1.1 s with only 56 debug events, which matches the earlier observation that a directly created (debugged) client exits after about 2.4 s."
+                          },
+    "process_rule_adopted":  "Any future change outside the workspace must be paired with a verified, same-session rollback path, or it must not be attempted."
+}

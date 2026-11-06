@@ -1,0 +1,31 @@
+{
+    "schema":  "grim-dynasty-r1-build-gate-block-v2",
+    "utc":  "2026-11-05T06:31:33.4822730Z",
+    "recipe":  ".tooling/r1-controller-active-integration-build-v8-prepared",
+    "outcome":  "failed-before-worker-start",
+    "failure":  "Physical/commit gate failed: before-helper",
+    "observed":  {
+                     "available_physical_bytes":  5110038528,
+                     "available_physical_gib":  4.76,
+                     "required_gib":  5,
+                     "system_commit_bytes":  43050848256,
+                     "system_commit_limit_bytes":  59886112768,
+                     "commit_headroom_gib":  15.68,
+                     "external_build_or_java_processes":  0
+                 },
+    "why_it_looked_open":  "An independent ComputerInfo reading peaked at 5.01 GB about 2 seconds before the recipe probe, which then sampled 4.76 GiB. The physical figure fluctuates around the threshold on this machine.",
+    "consequences":  {
+                         "validation_dir_created":  false,
+                         "worker_started":  false,
+                         "job_created":  false,
+                         "auto_retry":  false,
+                         "rerun_of_v8_allowed":  false,
+                         "reason":  "launch-owned rejects an existing receipt; a later attempt needs a new frozen v9 with the same sources."
+                     },
+    "same_condition_rounds":  [
+                                  "v7 (round 14-15)",
+                                  "v8 (round 21)"
+                              ],
+    "control":  "Not controllable by the agent: the shortfall is the user\u0027s resident applications (about 27 GiB of 31.77 GiB). Lowering the gate is not permitted by the project rules.",
+    "next":  "Free roughly 0.5 GiB (or more), then freeze v9 with the same sources and run once; alternatively run the runtime sampling session while the game is in a loaded level."
+}

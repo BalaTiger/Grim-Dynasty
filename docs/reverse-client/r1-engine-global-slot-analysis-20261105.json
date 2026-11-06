@@ -1,0 +1,47 @@
+{
+    "schema":  "grim-dynasty-r1-engine-global-slot-analysis-v1",
+    "utc":  "2026-11-05T11:44:23.0801800Z",
+    "section":  {
+                    "name":  ".data",
+                    "rva":  "0x419000",
+                    "vsize":  "0xaf98",
+                    "raw":  "0x417800",
+                    "characteristics":  "0xc0000040 (initialized data, readable, writable)",
+                    "file_offset_of_slot":  "0x41fc28"
+                },
+    "static_contents":  {
+                            "0x4213f0":  "0x36208000012de9",
+                            "0x4213f8":  "0x12e1f00012df0",
+                            "0x421400":  "0x12e2000362080",
+                            "0x421408":  "0x36349000012eb2",
+                            "0x421410":  "0x12f1100012ec0",
+                            "0x421418":  "0x12f2000362080",
+                            "0x421420":  "0x36208000012f67",
+                            "0x421428":  "0x1300200012f70",
+                            "0x421430":  "0x13010003634b0",
+                            "0x421438":  "0x36208000013049",
+                            "0x421440":  "0x130e200013050",
+                            "0x421448":  "0x130f0003634d0",
+                            "reading":  "Each qword decomposes into two plausible 32-bit RVAs: a small .text RVA in the low half and a .rdata RVA in the high half. The region therefore reads like a table of 32-bit pairs rather than a block of pointer-sized singletons."
+                        },
+    "searches_exhausted":  [
+                               "direct RIP-relative qword store in Engine.dll: 0",
+                               "direct RIP-relative qword store in Game.dll: 0 (a cross-module store would use a computed base, so this scan cannot exclude it)",
+                               "LEA of the slot address in Engine.dll: 0",
+                               "LEA of a neighbouring base followed by a store at the matching offset: 0",
+                               "the literal 0x421428 as an immediate in Engine.dll, Game.dll and Direct3D11.dll: 0",
+                               "relocation entries covering 0x421400..0x421460: 0, so the static contents are not loader-applied pointers"
+                           ],
+    "what_is_excluded":  "The slot is not published by any direct store in Engine.dll, not by a constant-offset store in any of the three modules, and not by a loader relocation.",
+    "hard_boundary":  {
+                          "fact":  "Determining who writes the slot at runtime requires a memory-write watchpoint.",
+                          "prohibition":  "The project forbids debuggers after the 2026-11-04 breakpoint attempt terminated the client with 0x80000003.",
+                          "consequence":  "Static analysis alone cannot currently answer the question, and I will not guess an answer or substitute a hand-made engine object."
+                      },
+    "not_established":  "the runtime writer of Engine.dll+0x421428, and consequently the engine startup sequence",
+    "next_options":  [
+                         "Decode _initterm invocations inside 0x2dcef8 to enumerate static initialisers and look for an indirect publication of this block.",
+                         "Look for a memset/memcpy over the .data block 0x4213f0..0x421470 that would explain a wholesale overwrite.",
+                         "Accept the documented boundary and keep presentation marked as not recovered."
+                     ]
+}

@@ -1,0 +1,287 @@
+{
+  "schema": "gd-script-registration-stage-v1",
+  "utc": "2026-11-03T09:32:03.9459868Z",
+  "status": "passed-conditional-own-Script-registration-and-node-lifecycle",
+  "previous_stage": "docs/reverse-client/r1-luaglue-flags-stage.json",
+  "previous_stage_sha256": "d06b15c2e7a56dd18e0d155afc524dff752c1a90b47e92c02b0165b4eb076f81",
+  "evidence": [
+    {
+      "file": "docs/reverse-client/r1-engine-lua-publication-run1/13-LuaPublicationDirect-0x1800ef8b0-procedure_pseudo_code.json",
+      "sha256": "f89c2e42bbb66c0c00ca9ccf32991ba81a7d4197919397e4449e8fadf9fbfb78"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-publication-run1/14-LuaPublicationDirect-0x1800ef8b0-procedure_assembly.json",
+      "sha256": "d1d88dc7f7140c4c86d87710cc03dc726bd99f0ecf7ac770f2202118d2face6d"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-publication-run1/15-LuaPublicationDirect-0x1800ef8b0-procedure_callees.json",
+      "sha256": "bb1802d481cea59942086cf568a4a12c45ec84e9d449d62f05daeccee59e9bd6"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-lua-initialize-dependency-run1/04-LuaInitializeDependency-0x180258e50-procedure_pseudo_code.json",
+      "sha256": "3bc5be5d0ba79b5e140c063755411958e404768bc6044cdcb5527275dc6ee7d5"
+    }
+  ],
+  "contracts": [
+    "0EF8C4 captures current same-service Lua00 once into local record and RBX; later helper callbacks do not reload it",
+    "0EF8E4 actual lua_createtable(0,0), current422888 read at0EF8EA, luaL_ref0EF8F3, then localstate2/reference",
+    "0EF913/0EF924/0EF935 invoke0EFAD0/0EFCA0/0EFE80 using same localrecord and Script literal310B04; no return-value branch between calls",
+    "Only after three real helpers: read live4217DC at0EF93D, publish Script per version branch, reload422888 and unref at0EF9D1",
+    "No service Initialized58 store; abnormal cleanup not proved"
+  ],
+  "unknown": [
+    "0F2EDF provider vector+40/+48 iteration,provider vslot0 andclient/server publication order notimplemented",
+    "ServiceInitialized58 actualnative readiness notpublished",
+    "Scriptbusiness helpers0F1930/0F17A0/0F1640 andsignatureerror2561D0 remainUnsupported;live422890 writer unknown",
+    "307E60 disk0 notloadedobservation:successfulfixturesuseexplicitOWNbyteinput",
+    "Logging-enabledregistration,overloadexistingCfunction,alternateLua-version profile,nativeallocator/EHunproved",
+    "Fullservice normal0 continuation notdirectlyexercised;onlyactualhelper0-to-directScriptsequence tested",
+    "No physicalmouse/real-scene rendering/nativeanimationdecodeplayback/gameplayacceptance"
+  ],
+  "cache_review": "lua_runtime_review: no helper body filenames under docs/reverse-client; limited Lua/Script cache content only caller13/14/15. No new query repeated",
+  "fixed_targets": [
+    "0x1800efad0",
+    "0x1800efca0",
+    "0x1800efe80"
+  ],
+  "planned_analysis_calls": 9,
+  "planned_lifecycle_calls": 5,
+  "pending_operations": 0,
+  "new_queries": 45,
+  "new_compiles": 3,
+  "new_tests": 5,
+  "current_heavy_operations": 0,
+  "original_executed": false,
+  "saves_accessed": false,
+  "service_initialized58_written": false,
+  "gameplay_accepted": false,
+  "next": "Reusecached0F2E00 caller andEngine/serviceconstruction tocloseprovider-vector initialization/publication only,thenclient/server branch;do notsetInitialized58 orrequeryScriptbodies",
+  "query": {
+    "outcome": "passed",
+    "session": 37195,
+    "prepared": ".tooling/r1-script-registration-prepared",
+    "plan_sha256": "5521964e41826ef6a7a8cfe6c72313acdbb49d90c558b0ca7225243d63c559a6",
+    "offline_exit": 0,
+    "output": "docs/reverse-client/r1-engine-script-registration-run1",
+    "offline_chunk": "929c72",
+    "launcher_sha256": "d838eb8af3b1db911e622757ed9f8d3cb07a4fdf2af17be5becd1b28d5d0ef3d",
+    "pending": false,
+    "runner_sha256": "f66b4136423af476e286102bf6005ec00eb7e6d73fbdaaa7797cad938de2eb65",
+    "exit": 0,
+    "summary_sha256": "fb4aab218a9f98b82ed39aa6593af170d3554bb35b8e96e409649285286042f1"
+  },
+  "release": {
+    "file": "docs/reverse-client/r1-script-registration-release.json",
+    "sha256": "8c08bca9c39418be15f55d3a3ba275f5ad6cad877b5cfc5307f62b1e85d50793"
+  },
+  "direct_helper_result": {
+    "callback_entry_proven": false,
+    "normal_tail": "Only after core returns: settop(L,-2), free actual name storage; abnormal cleanup unknown",
+    "callbacks": [
+      "0x1800ef9f0",
+      "0x1800efa10",
+      "0x1800efa30"
+    ],
+    "no_success_claim": "Names/table preparation does not establish callback registration or service readiness",
+    "wrapper_read": "Each helper loads mutable wrapper L/state/ref; state1 pushvalue, otherwise live422888 rawgeti; gettop result passed R8D to corresponding core",
+    "names": [
+      "Script.Load",
+      "Script.RegisterForUpdate",
+      "Script.UnregisterForUpdate"
+    ],
+    "cores": [
+      "0x1800f0060",
+      "0x1800f05f0",
+      "0x1800f0b80"
+    ]
+  },
+  "binding_query": {
+    "pending": false,
+    "outcome": "passed",
+    "offline_chunk": "fad8b2",
+    "output": "docs/reverse-client/r1-engine-script-bindings-run1",
+    "plan_sha256": "61c369d177799b2cbc19a6393178edf1fa9ab48cec1b85bc9f0b624df6311eee",
+    "session": 6823,
+    "launcher_sha256": "1d60bed212caa77247e028728cd69e5bb7b126a2d6c97843e579e30d7cad9a65",
+    "runner_sha256": "c7138bea04f76cd78da7c9fa5ed625d420ffcdacb0d8c8488ec0d307b65c0a9b",
+    "offline_exit": 0,
+    "exit": 0,
+    "summary_sha256": "d41dc8fe2ae86bcb2ff36a1b1d2a6c53be13c07b1b262822760745ab2c60f519"
+  },
+  "binding_release": {
+    "sha256": "fdecfc9b480d928169a6a2bbd21fd4a532b376855d22b33050bb1c3d56034dcd",
+    "file": "docs/reverse-client/r1-script-bindings-release.json"
+  },
+  "node_contract": {
+    "descriptor_value_known": false,
+    "closure_dispatchers": [
+      "0F1B40",
+      "0F1BD0",
+      "0F1C80"
+    ],
+    "descriptor_rva": "307E60",
+    "descriptor_width": 1,
+    "failed_prefix": "userdata metatable precedes payload publication; no assumed null or original exception cleanup",
+    "normal_branch": "fresh table field not C function: rawget, actual userdata8 withregistry[-4]metatable, node38 constructor/name copy, node pointer publication, one-upvalueclosure, rawset, oldvaluepop",
+    "node_bytes": 56,
+    "next_direct_gap": "GC2561A0 nonnull userdata -> node vtable slot0(flags1); actual destructors and closure dispatchers unclosed",
+    "current_null_only_gc_sufficient": false,
+    "vtable_rvas": [
+      "340180",
+      "3401E0",
+      "3401B0"
+    ],
+    "userdata_bytes": 8,
+    "unwritten_padding": "+31..37"
+  },
+  "lifecycle_query": {
+    "status": "passed",
+    "session_id": 70072,
+    "started_record_utc": "2026-11-03T08:47:57.4251006Z",
+    "plan": ".tooling/r1-script-lifecycle-prepared/plan.json",
+    "plan_sha256": "891e36c5eb3a35e325a99cdefe9ed223480fffd3c46796657c2c80b17867d193",
+    "output": "docs/reverse-client/r1-engine-script-lifecycle-run1",
+    "completed_calls": 17,
+    "do_not_repeat": true,
+    "terminal_exit_code": 0
+  },
+  "node_slot_read": {
+    "status": "completed",
+    "inspection": "docs/reverse-client/r1-script-node-slots/inspection.json",
+    "sha256": "0dc344fac99e5529fb8e6c3e32d06aec1d4813051af631b7d4a7a48f626f4e0d",
+    "semantic_bytes": 25,
+    "descriptor_disk": 0,
+    "loaded_descriptor_observed": false,
+    "sole_slot_target": "0x1800f13b0"
+  },
+  "lifecycle_release": "docs/reverse-client/r1-script-lifecycle-release.json",
+  "lifecycle_contract": {
+    "node_destructor": "0F13B0 writes base-vtable340218, free(name+08), ifflags&1 free(node), return originalidentity",
+    "gc_input_flags": 1,
+    "closed_supported_range": "fresh3ScriptregistrationandownedGC;business dispatch remainsUnsupported",
+    "unclosed_business": [
+      "0F1930",
+      "0F17A0",
+      "0F1640",
+      "2561D0",
+      "live422890"
+    ],
+    "descriptor": "disk0 only;explicitOWNknown/value required,no assumedloadedvalue"
+  },
+  "original_hash_check": {
+    "target": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "source": "docs/reverse-client/r1-engine-script-lifecycle-run1/summary.json"
+  },
+  "implementation_decisions": [
+    "OWN liveVersion field written only from actual approved export classification; unknown is not0",
+    "Recapture current sameService VM at0EF8C4; native localwrapper and capturedouterL/ref remain separate",
+    "Use actual userdata/closure/table/ref operations and knownownnode provenance; no originaldll loaded",
+    "MissingownobjectGCmetatable afterrealsetmetatable => explicitUnsupported before nodeallocation; no syntheticrepair",
+    "PreservepriorLuaGlueerrorstackprefix; failureunwind OWN protectedadaptation distinctfromnativeEH",
+    "OnlynewScriptprofiletested; oldAPIsretainstop; ServiceInitialized58 remainsunchanged"
+  ],
+  "implementation_status": {
+    "native": "compiled-and-targeted-tested",
+    "managed": "compiled-and-targeted-tested",
+    "tests": "6passed265checks",
+    "native_c_sha256": "8ae027e6db085270c669d06de3b368a359bc28f2f90a1c9a80b2fd04ebe37fb4",
+    "header_sha256": "7c3b568b739f27153ab2c2a9cfbc1de615ed1dd02bd9f68ddddf059c247e0bce",
+    "tests_sha256": "2c57e98e954d23d06b12d363132fa8cb0a2baec5a6d6ba6e2b60ded5258a868c"
+  },
+  "review_fixes": [
+    {
+      "file": "src/reverse_client_actions/OwnLuaCallbackBridge.cs",
+      "change": "AddfixedScriptobservation23enumandadmission",
+      "sha256": "b008abdfb57e9d0b2a7f05c363ecf806e504453a9ca6b9042018a9e5cbd4fd1c"
+    },
+    {
+      "file": "src/reverse_client_actions/native/own_luajit204_bridge.c",
+      "change": "Helpergrowthcopiesexact7bytesScript.dot,not8byteNUL",
+      "sha256": "8ae027e6db085270c669d06de3b368a359bc28f2f90a1c9a80b2fd04ebe37fb4"
+    }
+  ],
+  "build": {
+    "session": 56212,
+    "outcome": "failed-parser-no-tests",
+    "launcher": ".tooling/r1-script-build-prepared/launch-owned.ps1",
+    "launcher_sha256": "400943da7e91fcb3fa4d3e00bd2ca62725546b86f6965ad17aa68311db2a87b1",
+    "manifest_sha256": "6d5b55175e1858f6b51b319db93e71724570473ff7e31f2f7525369974ed62be",
+    "result": ".tooling/r1-script-validation/result.json",
+    "planned_product_compiles": 3,
+    "planned_new_scenes": 5,
+    "planned_old_scenes": 1,
+    "executed_counts": {
+      "native_compiles": 1,
+      "managed_compiles": 0,
+      "tests": 0
+    },
+    "terminal_exit": 1,
+    "release": "docs/reverse-client/r1-script-build-run1-release.json"
+  },
+  "resume_build": {
+    "session": 94061,
+    "status": "passed",
+    "manifest": ".tooling/r1-script-resume-prepared/manifest.json",
+    "manifest_sha256": "0aad762f82adbe3b9919cc0beec1fa5e76789f722de9a8479707c70d790add5f",
+    "launcher_sha256": "f47f9623ce99c3a31c79ff009b93993258a46a43fe2cced3986586990c719839",
+    "result": ".tooling/r1-script-validation/resume-result.json",
+    "planned_compiles": 2,
+    "native_recompiled": false,
+    "dumpbin_repeated": false,
+    "old_failure_preserved": true,
+    "terminal_exit": 0,
+    "actual_compiles": 2,
+    "actual_scenarios": 6,
+    "actual_assertions": 265,
+    "result_sha256": "5293dc9e38c041d60b976fd1325ba73f527114e0617c8982c6ffe19dbf6456df"
+  },
+  "new_assertions": 253,
+  "old_scenes_rerun": 1,
+  "old_assertions_rerun": 12,
+  "old_whole_suites_rerun": 0,
+  "validation": {
+    "result": ".tooling/r1-script-validation/resume-result.json",
+    "sha256": "5293dc9e38c041d60b976fd1325ba73f527114e0617c8982c6ffe19dbf6456df",
+    "native_dll": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\r1-script-validation\\own_luajit204_bridge.dll",
+    "native_dll_sha256": "8b641c1c57e7eca44b98bb063b0abb6b15b9dd5af73eeb139fa66e4962021dc5",
+    "native_bytes": 67072,
+    "exports": 11,
+    "goal_dll": ".tooling/r1-script-validation/GrimDynasty.GameReachedGoal.dll",
+    "goal_sha256": "a4ffdd01bbb0d3171c716a06bee8dfd58f698af23e068b3d17b97b6b35865756",
+    "test_exe": ".tooling/r1-script-validation/OwnLuaScriptTests.exe",
+    "test_sha256": "fc5d0e6dd24120522b3d58b9ac74f7de34412599043d4bbb3e4df05b19e776c6",
+    "tests": 6,
+    "assertions": 265,
+    "scalar_receipts": 26
+  },
+  "final_release": {
+    "file": "docs/reverse-client/r1-script-initialization-release.json",
+    "sha256": "89c85481e8245935dbef4948f08eafe4b4eb23896bbbb8d10719f0f26a58ef92"
+  },
+  "verified_capability": [
+    "Same real VM Script table,3fixedCclosures withactualuserdata/node identity observation",
+    "Current sameService VM recaptured once atEF8C4,oldbinding notforced,closedVM rejected",
+    "Actualknown-nodeGC name thennode release,closeinvalidation;unpublishedOWNcleanup separate",
+    "Unknownregistry/version/descriptor/flags preserveexactfailureprefix",
+    "RealLuaGlue normal0 followedbydirectScript preservesexistingstringerroridentity;missingGCmetatable notinvented",
+    "Normal1 fullserviceprefix reaches0F2EDF;Initialized58 remainsunchanged"
+  ],
+  "remaining_boundaries": [
+    "0F2EDF provider vector+40/+48 iteration,provider vslot0 andclient/server publication order notimplemented",
+    "ServiceInitialized58 actualnative readiness notpublished",
+    "Scriptbusiness helpers0F1930/0F17A0/0F1640 andsignatureerror2561D0 remainUnsupported;live422890 writer unknown",
+    "307E60 disk0 notloadedobservation:successfulfixturesuseexplicitOWNbyteinput",
+    "Logging-enabledregistration,overloadexistingCfunction,alternateLua-version profile,nativeallocator/EHunproved",
+    "Fullservice normal0 continuation notdirectlyexercised;onlyactualhelper0-to-directScriptsequence tested",
+    "No physicalmouse/real-scene rendering/nativeanimationdecodeplayback/gameplayacceptance"
+  ],
+  "preimplementation_unknown": [
+    "Three direct helper bodies and callback registration semantics",
+    "Live-version and registry change behavior outside fixed independently built Lua51 profile",
+    "Original exception cleanup and native startup order",
+    "Remaining service initialization and actual ready58 publication"
+  ],
+  "independent_result_review": "26scalarreceipts identicalbetween actualresult/log;passed-readonly-review-no-reexecution"
+}

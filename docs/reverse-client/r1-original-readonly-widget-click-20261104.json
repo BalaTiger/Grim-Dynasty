@@ -1,0 +1,162 @@
+{
+  "schema": "gd-original-readonly-widget-click-stage-v1",
+  "status": "two-readonly-snapshots-and-visible-click-observed;current-release-and-fixed-hashes-verified",
+  "scope": "Archive existing observations only; no new execution, target reads, tests, or checkpoint edits during archival.",
+  "original": {
+    "pid": 50192,
+    "creation_filetime": "134382845186810346",
+    "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\grim dawn.exe",
+    "hwnd": 5838148,
+    "launch_requested_utc": "2026-11-04T16:48:37.754Z",
+    "existing_character": "coldbreath",
+    "level": 75,
+    "location": "库恩堡",
+    "launch_and_ui_source": "Parent conversation's actual CUA observations and in-session tool screenshots; no local screenshot path is available and no screenshot was recreated."
+  },
+  "ui_observations": {
+    "steam_offline": {"observed_utc_approx": "2026-11-04T16:47Z", "source": "Parent-reported Steam UI observation"},
+    "grim_dawn_cloud_off": {"observed_utc_approx": "2026-11-04T16:48Z", "source": "Parent-reported Steam screenshot observation"},
+    "click": {
+      "call_started_utc": "2026-11-04T16:51:14.473Z",
+      "call_returned_utc": "2026-11-04T16:51:14.555Z",
+      "button": "left",
+      "pixel": [1516, 864],
+      "target": "Town ground in the existing original-game window",
+      "visual_result": "Parent observed character/camera movement in the returned screenshot.",
+      "native_call_stack_captured": false
+    },
+    "close": {
+      "observed_utc_approx": "2026-11-04T16:54Z",
+      "sequence": "Two Escape presses did not show a menu; Alt+F4 then requested normal application closure.",
+      "window_disappeared": true,
+      "hwnd": 5838148,
+      "exit_code": null,
+      "native_exit_observed_on_retained_handle": false,
+      "meaning": "UI disappearance after a normal close request; not proof of exit code 0, completed save, or verified process release."
+    }
+  },
+  "reader_contract": {
+    "process_access": "0x101010: PROCESS_VM_READ | PROCESS_QUERY_LIMITED_INFORMATION | SYNCHRONIZE",
+    "debugger_attached": false,
+    "breakpoints_inserted": false,
+    "target_memory_written": false,
+    "target_suspended_or_resumed": false,
+    "same_process_identity_both_snapshots": true,
+    "byte_counts_include_double_reads_and_are_not_unique_data_sizes": true,
+    "four_module_paths_hashes_and_bases_equal": true,
+    "disk_module_hashes_are_not_a_full_loaded_image_hash": true,
+    "snapshot_is_atomic": false,
+    "double_reads_detect_only_some_races": true,
+    "object_lifetime_or_no_ABA_guaranteed": false,
+    "launch_minimum_physical_and_commit_bytes": 5368709120,
+    "per_target_read_minimum_physical_and_commit_bytes": 2147483648,
+    "deadline_note": "15-second checks are a soft bound between operations, not cancellation of a blocked system call or hash. Add-Type does not have an internal continuous resource monitor."
+  },
+  "snapshots": [
+    {
+      "position": "before-click",
+      "path": ".tooling/gd-click-readonly-snapshot-20261104/snapshot-e6273d68585149ef97c0ceeac8a353f5.json",
+      "sha256": "50bf66101ba150981c35c1f634e333833354a178a0049d4cc96bb8ddec6607a4",
+      "started_utc": "2026-11-04T16:50:21.1020302Z",
+      "completed_utc": "2026-11-04T16:50:21.1379399Z",
+      "status": "observed-consistent-not-atomic",
+      "reads": 56,
+      "target_bytes_read": 816,
+      "native_handle_closed": true,
+      "client_xy": [1272, 1347],
+      "event_count": 1,
+      "decoded_event": {"type_u32_at_0": 0, "x_float32_at_4": 1272, "y_float32_at_8": 1347, "wheel_at_12": 0, "eight_button_bytes_at_16": [0, 0, 0, 0, 0, 0, 0, 0], "modifiers_u32_at_24": 0},
+      "event_bytes_hex": "0000000000009f440060a84400000000000000000000000000000000",
+      "minimum_observed_physical_bytes": 13117468672,
+      "minimum_observed_commit_headroom_bytes": 21669138432
+    },
+    {
+      "position": "after-click",
+      "path": ".tooling/gd-click-readonly-snapshot-20261104/snapshot-be2e35b182424600a605bcf55a63495a.json",
+      "sha256": "b1fec08f96a35a6ee095dad85a4129e8854f8448dc7e456d3e38c72f45e1867d",
+      "started_utc": "2026-11-04T16:51:51.5165173Z",
+      "completed_utc": "2026-11-04T16:51:51.5484918Z",
+      "status": "observed-consistent-not-atomic",
+      "reads": 56,
+      "target_bytes_read": 816,
+      "native_handle_closed": true,
+      "client_xy": [1516, 864],
+      "event_count": 1,
+      "decoded_event": {"type_u32_at_0": 0, "x_float32_at_4": 1516, "y_float32_at_8": 864, "wheel_at_12": 0, "eight_button_bytes_at_16": [0, 0, 0, 0, 0, 0, 0, 0], "modifiers_u32_at_24": 0},
+      "event_bytes_hex": "000000000080bd440000584400000000000000000000000000000000",
+      "minimum_observed_physical_bytes": 13289230336,
+      "minimum_observed_commit_headroom_bytes": 21716598784
+    }
+  ],
+  "registered_widgets": {
+    "engine_object": "0x2250b846c20",
+    "begin": "0x22604533c10",
+    "end": "0x22604533c58",
+    "count": 9,
+    "all_nine_object_vtable_and_slot18_rows_equal_across_snapshots": true,
+    "rows": [
+      {"index": 0, "object": "0x2255dafe920", "module": "Engine.dll", "vtable_rva": "0x342c78", "slot18_rva": "0x199220"},
+      {"index": 1, "object": "0x2255dadb010", "module": "Engine.dll", "vtable_rva": "0x342928", "slot18_rva": "0xd480"},
+      {"index": 2, "object": "0x2255d565eb0", "module": "Engine.dll", "vtable_rva": "0x3433c8", "slot18_rva": "0xd480"},
+      {"index": 3, "object": "0x2255db97f70", "module": "Engine.dll", "vtable_rva": "0x342510", "slot18_rva": "0xd480"},
+      {"index": 4, "object": "0x2255dccd6f0", "module": "Grim Dawn.exe", "vtable_rva": "0x31dd80", "slot18_rva": "0x2acb92"},
+      {"index": 5, "object": "0x2250b890f20", "module": "Grim Dawn.exe", "vtable_rva": "0x309738", "slot18_rva": "0x2acb92"},
+      {"index": 6, "object": "0x2255dbf9410", "module": "Grim Dawn.exe", "vtable_rva": "0x31dd28", "slot18_rva": "0x2acb92"},
+      {"index": 7, "object": "0x2255dcd3030", "module": "Grim Dawn.exe", "vtable_rva": "0x312ab0", "slot18_rva": "0x32340"},
+      {"index": 8, "object": "0x225adbecbb0", "module": "Grim Dawn.exe", "vtable_rva": "0x3098c0", "slot18_rva": "0x21000"}
+    ],
+    "interpretation": "Observed registered objects and current slot values only; which handler received or consumed this click remains unknown."
+  },
+  "directinput_identity": {"object": "0x2255d901e20", "vtable_module": "DirectInput.dll", "vtable_rva": "0x9850", "event_record_bytes": 28, "post_click_coordinates_match_requested_pixel": true, "buffered_event_is_the_click_proven": false, "event_type_interpretation": "Both raw records have DWORD type 0 and float32 coordinates matching the corresponding signed client fields. Cached mouse_producer identifies type0 as the frame-tail coordinate event, not a button press or release.", "cached_semantic_source": "docs/reverse-client/r1-directinput-device-stage.json#mouse_producer", "existing_raw_decode_tool_result": "03240d"},
+  "backup": {
+    "receipt": ".tooling/gd-click-readonly-snapshot-20261104/backup-recheck.json",
+    "sha256": "f968047d41ab3fc0566199dedb59b5f9fe1c893f8131cd4679753ab51cbd7448",
+    "utc": "2026-11-04T16:48:28.7169385Z",
+    "baseline_A_verified": 19,
+    "restore_verification_verified": 19,
+    "original_saves_read": false,
+    "restored": false,
+    "boundary": "38 backup-copy hash checks, not a post-run audit of original saves or remote Steam Cloud. Ordinary game writes were not measured or rolled back."
+  },
+  "related_owned_dll_audit": {
+    "path": ".tooling/lldb-dll-breakpoint-20261104/postrun-audit.json",
+    "sha256": "fbeac820334b1de38b22318976ad1c0f99675cda0b253b7198eae7c0e2c12561",
+    "summary": "Existing main-thread own-DLL evidence supports one exact hit and one call returning 42. AFTER_DLL and DONE report that same single call; after Detach, DONE confirms count=1 and debugger=0, followed by exit0. Aggregate failed on an overly early debugger=0 assertion; worker case did not run. No rerun or original compatibility claim.",
+    "original_onehit_failure_preserved": "docs/reverse-client/r1-original-onehit-click-20261104.json"
+  },
+  "supporting_evidence": [
+    {"path": ".tooling/gd-click-readonly-snapshot-20261104/native-identity.json", "sha256": "c548999e7819d4007d1b515a70cf1341b7c10584e22ef0356773fb6cf9e6b5d8"},
+    {"path": ".tooling/gd-click-readonly-snapshot-20261104/config-before.json", "sha256": "f4ed11468e7fbf9a631b9875a2e63b2e7786a85f45c43905cd9a18bf69e0790b"},
+    {"path": ".tooling/gd-click-readonly-snapshot-20261104/config-after.json", "sha256": "ec80c3fb92cf671856c18c7a054b786c0c00bd88484d9ca1632091915b7bf0e2"},
+    {"path": ".tooling/gd-click-readonly-snapshot-20261104/snapshot.cs", "sha256": "f071d88d5bc9f9093cb34bd24772de76fca1d49b4e78c9acb0dd49eedf913e44"},
+    {"path": ".tooling/gd-click-readonly-snapshot-20261104/snapshot.ps1", "sha256": "7eb7321de245f49d159ea3703dd91bd5d9a00bfd38b4a3c4ae3ede9bb1e8f3f7"}
+  ],
+  "release": {
+    "independent_receipt": ".tooling/gd-click-readonly-snapshot-20261104/release.json",
+    "sha256": "6c3d382bf3dcd07f9838cfa04ba6429260f72ca2397b581c119a6c5ec0a2ae5d",
+    "tool_result_reference": "06bf07",
+    "status": "current-release-and-fixed-hashes-verified",
+    "utc": "2026-11-04T16:54:47.4193975Z",
+    "known_unique_pids_absent": [50192, 2072, 54192, 44352, 37144, 55088, 3168],
+    "game_processes": [],
+    "external_build_or_java_processes": [],
+    "steam_processes_remained_running": true,
+    "physical_available_bytes": 15385837568,
+    "commit_headroom_bytes": 25874149376,
+    "original_module_hashes_matched": 4,
+    "backup_copy_hashes_matched": [19, 19],
+    "processes_terminated_by_release_check": false,
+    "reader_handles_closed": true,
+    "original_window_disappeared_parent_observed": true,
+    "original_process_exit_code": null,
+    "original_saves_read_or_restored": false
+  },
+  "next": {
+    "finite_static_targets": ["Grim Dawn.exe RVA 0x21000", "Grim Dawn.exe RVA 0x32340", "Grim Dawn.exe RVA 0x2acb92"],
+    "reason": "These are runtime-observed slot18 values; establish bounded function/thunk ownership and semantics before following direct dependencies.",
+    "reuse": "Engine 0x199220 slider and 0xD480 default handler evidence is cached; do not query them again or reinterpret the slider as world movement.",
+    "no_original_relaunch_in_this_archive": true,
+    "new_standalone_interactive_reversed_client_available": false,
+    "checkpoint_modified": false
+  }
+}

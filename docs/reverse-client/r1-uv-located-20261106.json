@@ -1,0 +1,26 @@
+{
+    "schema":  "grim-dynasty-r1-uv-located-v1",
+    "utc":  "2026-11-06T06:41:38.0940174Z",
+    "status":  "uv-slot-identified-block-nature-unresolved",
+    "solid":  {
+                  "stride":  "76 bytes per record",
+                  "records":  2155,
+                  "marker":  "each record ends with the bytes 00 FF FF FF 00 00 80 3F; this marker occurs 2155 times and the gap between consecutive occurrences is exactly 76 bytes in 2126 of 2154 cases",
+                  "record_start":  "the block begins at 113; the marker sits at record offset +60",
+                  "uv":  "record offset +40 holds a float that is inside [0,1] for 2155 of 2155 records, ranging 0.4917 to 0.9998; record offset +44 holds a float inside [0,1] for 2155 of 2155 records, ranging 0.0057 to 0.4247. No other slot is bounded to [0,1] for all records, so +40 and +44 are the UV pair.",
+                  "unit_vectors":  "record offsets +04, +16 and +48 each have vector length 1.0 at the median and a max of 1.0, so they are normal, tangent and bitangent",
+                  "position":  "record offsets +28, +32, +36 give vector lengths 2.13 to 2.54 and form the only triple with metre scale"
+              },
+    "why_block_nature_is_unresolved":  {
+                                           "y_concentration":  "the y component of the +28 triple sits between 2.12 and 2.54 and a histogram in 0.25 bins puts 1878 of 2155 records in the single 2.00 to 2.25 bin, which is far too uniform for a human body surface spread over a 2.4 metre figure",
+                                           "bounding_box":  "the +28 triple spans only 0.27 by 0.42 by 0.32 metres, which is a limb-sized box rather than a whole body",
+                                           "extent":  "the block runs from 113 to 163893, which is 90 percent of the region before the text section, and the bytes immediately after it continue the same pattern",
+                                           "interpretation":  "so this may be a per-bone or per-skinning record array rather than the mesh vertices, even though the field layout inside each 76-byte record is self-consistent"
+                                       },
+    "not_claimed":  [
+                        "that the mesh vertex buffer has been found",
+                        "that 2155 is the vertex count",
+                        "that a drawable mesh can be built from this block yet"
+                    ],
+    "next":  "separate the geometry stream from the skeleton stream: find where the record pattern stops and determine whether a second, differently strided block follows, then confirm the true vertex count against an index buffer maximum"
+}

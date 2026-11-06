@@ -6,13 +6,46 @@ namespace GrimDynasty.ReverseClient.Actions {
  // These are not native allocations, ABI wrappers, or a recovered running game.
  public sealed class Field<T> {
   private bool known; private T value;
-  public T Read(uint at) { if(!known) throw new MissingContract(at,"Unobserved field"); return value; }
-  public void Write(T v) { value=v; known=true; }
-  public void Forget() { known=false; value=default(T); }
+  // Only explicit ulong Split/Join, or opaque copies from that domain, opt in.
+  // In this mode the pair is authoritative; the old scalar slot stays unused.
+  private UInt64FieldWords words;
+  public T Read(uint at) { if(words!=null)return (T)(object)((ulong)words.Low32.Read(at)|((ulong)words.High32.Read(at)<<32));if(!known) throw new MissingContract(at,"Unobserved field"); return value; }
+  public void Write(T v) { if(words!=null){ulong bits=(ulong)(object)v;words.Low32.Write(unchecked((uint)bits));words.High32.Write((uint)(bits>>32));return;}value=v; known=true; }
+  public void Forget() { if(words!=null){words.Low32.Forget();words.High32.Forget();return;}known=false; value=default(T); }
   // Opaque native copies preserve knowledge, including an unobserved value.
-  public Field<T> Snapshot() { var f=new Field<T>(); f.known=known; f.value=value; return f; }
-  public void CopyFrom(Field<T> source) { known=source.known; value=source.value; }
+  public Field<T> Snapshot() { var f=new Field<T>();if(words!=null)f.words=new UInt64FieldWords(words.Low32.Snapshot(),words.High32.Snapshot());else{f.known=known;f.value=value;}return f; }
+  public void CopyFrom(Field<T> source) {
+   if(words==null&&source.words==null){known=source.known;value=source.value;return;}
+   // Capture BOTH halves before any destination store, including when fields
+   // overlap in swapped order. No Read is used merely to copy unknown bits.
+   Field<uint> low,high;
+   if(source.words!=null){low=source.words.Low32.Snapshot();high=source.words.High32.Snapshot();}
+   else{low=new Field<uint>();high=new Field<uint>();if(source.known){ulong bits=(ulong)(object)source.value;low.Write(unchecked((uint)bits));high.Write((uint)(bits>>32));}}
+   if(words==null){words=new UInt64FieldWords(new Field<uint>(),new Field<uint>());known=false;value=default(T);}
+   words.Low32.CopyFrom(low);words.High32.CopyFrom(high);
+  }
   public static Field<T> Of(T v) { var f=new Field<T>();f.Write(v);return f; }
+  internal UInt64FieldWords SplitUInt64(){
+   if(typeof(T)!=typeof(ulong))throw new InvalidOperationException("Only ulong fields have DWORD views");
+   if(words==null){var low=new Field<uint>();var high=new Field<uint>();if(known){ulong bits=(ulong)(object)value;low.Write(unchecked((uint)bits));high.Write((uint)(bits>>32));}words=new UInt64FieldWords(low,high);known=false;value=default(T);}
+   return words;
+  }
+  internal static Field<T> JoinUInt64(Field<uint> low,Field<uint> high){
+   if(typeof(T)!=typeof(ulong))throw new InvalidOperationException("Only ulong fields have DWORD views");
+   var pair=new UInt64FieldWords(low,high);var f=new Field<T>();f.words=pair;return f;
+  }
+ }
+ // Explicit little-endian storage view, not an evaluator/callback mechanism.
+ // Pair/cell identities never change after binding. Join borrows its inputs;
+ // Split migrates an ordinary whole word once, without making unknown bits known.
+ public sealed class UInt64FieldWords {
+  public readonly Field<uint> Low32,High32;
+  internal UInt64FieldWords(Field<uint> low,Field<uint> high){
+   if(low==null||high==null)throw new ArgumentNullException("DWORD cell");
+   if(Object.ReferenceEquals(low,high))throw new ArgumentException("Distinct DWORD offsets require distinct cells");Low32=low;High32=high;
+  }
+  public static UInt64FieldWords Split(Field<ulong> word){if(word==null)throw new ArgumentNullException("word");return word.SplitUInt64();}
+  public static Field<ulong> Join(Field<uint> low,Field<uint> high){return Field<ulong>.JoinUInt64(low,high);}
  }
  public sealed class MissingContract:Exception {
   public readonly uint Address;
@@ -98,7 +131,9 @@ namespace GrimDynasty.ReverseClient.Actions {
    current=Active(role,0x16014e);int oldKind=0;
    if(current!=null){i.At=0x160166;oldKind=b.Kind58(current);}
    if(oldKind!=8){i.At=0x16017b;if(b.IsRunningSkill(role)!=0)return 0;}
-   Engine engine=NonNull(e.EngineGlobal.Read(0x16018e),0x160195);
+   // A composition without the permission-table projection stops at its first
+   // actual global access; earlier no-permission paths do not invent one.
+   Engine engine=NonNull(NonNull(e,0x16018e).EngineGlobal.Read(0x16018e),0x160195);
    long displacement=0x3616cL+((long)firstKind*26L+(long)oldKind)*4L;
    int permission;if(!engine.PermissionCells.TryGetValue(displacement,out permission))throw new MissingContract(0x160195,"Unobserved permission cell at signed displacement "+displacement);
    if(permission!=3)return permission;

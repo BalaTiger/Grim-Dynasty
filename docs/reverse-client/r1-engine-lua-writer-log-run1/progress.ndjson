@@ -1,0 +1,21 @@
+{"utc":"2026-11-03T04:04:20.905Z","state":"starting","wrapper":"C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\tools\\static_analysis\\rea_profiled_server.mjs","plan_sha256":"425246dbf4e19f506085121701f7cb660f4e010f5872dd9fb703e424ba091d70","target_sha256":"4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153","owned_pid":55440,"memory":{"heap_limit":"384M","required_reserve_gib":2,"launch_threshold_gib":5,"stop_threshold_gib":2,"interval_ms":2000,"samples":1,"minimum_free_gib":10.448101043701172,"stop_triggered":false,"calibration_only":false,"owned_profile_budget":{"id":"engine-parser-384m-v1","heap":"384M","launchBytes":4563402752,"stopBytes":2147483648,"maximumSampleAgeMs":5000,"staleAfterMs":15000,"taskAllowanceGiB":2.25,"systemSpareGiB":2}}}
+{"utc":"2026-11-03T04:04:22.182Z","state":"owned-memory-monitor-ready","owned_pid":55440,"controller_pid":25340}
+{"utc":"2026-11-03T04:04:23.263Z","state":"request","call":1,"label":"01-initial-session","tool":"binary_session"}
+{"utc":"2026-11-03T04:04:23.643Z","state":"completed","call":1,"label":"01-initial-session"}
+{"utc":"2026-11-03T04:04:23.643Z","state":"request","call":2,"label":"02-Engine-open","tool":"open_binary"}
+{"utc":"2026-11-03T04:04:23.655Z","state":"completed","call":2,"label":"02-Engine-open"}
+{"utc":"2026-11-03T04:04:23.656Z","state":"request","call":3,"label":"03-Engine-session","tool":"binary_session"}
+{"utc":"2026-11-03T04:04:23.684Z","state":"completed","call":3,"label":"03-Engine-session"}
+{"utc":"2026-11-03T04:04:23.684Z","state":"request","call":4,"label":"04-RegistryWriter-0x180008004-inspect_native_instruction","tool":"inspect_native_instruction"}
+{"utc":"2026-11-03T04:04:53.689Z","state":"waiting","call":4,"label":"04-RegistryWriter-0x180008004-inspect_native_instruction","elapsed_seconds":30}
+{"utc":"2026-11-03T04:05:23.704Z","state":"waiting","call":4,"label":"04-RegistryWriter-0x180008004-inspect_native_instruction","elapsed_seconds":60}
+{"utc":"2026-11-03T04:05:52.373Z","state":"completed","call":4,"label":"04-RegistryWriter-0x180008004-inspect_native_instruction"}
+{"utc":"2026-11-03T04:05:52.373Z","state":"request","call":5,"label":"05-RegistryWriter-0x180008004-resolve_containing_procedure","tool":"resolve_containing_procedure"}
+{"utc":"2026-11-03T04:05:52.379Z","state":"completed","call":5,"label":"05-RegistryWriter-0x180008004-resolve_containing_procedure"}
+{"utc":"2026-11-03T04:05:52.379Z","state":"request","call":6,"label":"06-RegistryWriter-0x180008004-prev_address","tool":"prev_address"}
+{"utc":"2026-11-03T04:05:52.383Z","state":"failed","call":6,"label":"06-RegistryWriter-0x180008004-prev_address","error":"Tool error: \"MCP isError=true\""}
+{"utc":"2026-11-03T04:05:52.383Z","state":"request","call":7,"label":"cleanup-close","tool":"close_binary"}
+{"utc":"2026-11-03T04:05:52.685Z","state":"completed","call":7,"label":"cleanup-close"}
+{"utc":"2026-11-03T04:05:52.686Z","state":"request","call":8,"label":"cleanup-session","tool":"binary_session"}
+{"utc":"2026-11-03T04:05:52.715Z","state":"completed","call":8,"label":"cleanup-session"}
+{"utc":"2026-11-03T04:05:54.190Z","state":"failed","tool_calls":8,"completed_plan_calls":5,"closed_session_verified":true}

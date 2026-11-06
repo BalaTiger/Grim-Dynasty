@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "purpose": "One fixed Engine0x151150 body from successful339B/19op move-stop disk binding. Retrieve pseudo-code, assembly and direct callees. Preserve same Handler.Current08/Agent/NavManager identity. Do not infer deletion or stop success from export/slot alone.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-engine-stop-object-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-move-stop-bindings/inspection.json",
+      "sha256": "1f17e5ce6a2e39ec3d5e05068da3b8d286e10e1cd04b84a2d245b126cb27a120",
+      "addresses": [
+        "0x180151150"
+      ],
+      "source_kind": "Actual339B/19op receipt binds Game609F50 StopObject exact import/export to Engine151150; Game609C10 resolves previously known01C510 and is excluded from new queries."
+    }
+  ],
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+    "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0",
+    "same_registration_as": "r1-move-world-distance",
+    "budget_id": "engine-parser-384m-v1",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "parallel_mcp_requests": 1,
+    "one_backend": true,
+    "profile_or_protection_changes_authorized": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x180151150"
+      },
+      "label": "04-StopObject-0x180151150-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x180151150"
+      },
+      "label": "05-StopObject-0x180151150-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x180151150"
+      },
+      "label": "06-StopObject-0x180151150-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Isolated candidate only, based on active e88b8ce10f25663c4185a4c87bbba20965485cb0babf62d450f14163416d135e. Root reviews/applies and formally approves; preparation runs no Node/Rea/build/test/original/resource sampler.",
+    "Only this single pseudo/assembly/directcallees set plus5 lifecycle calls=8. Engine/Game use existing separate modes and are run serially. No01C510 repeat or callee expansion.",
+    "All existing8 common guards, profile/identity/Job/nonce/parent/time/absolute paths/384M heap/5GiB launch/2GiB stop/timeouts stay unchanged. Fresh resource/mutex and previous backend release required at execution.",
+    "New fixed output and launch receipts only; no overwrite/retry. Original read-only hashes preserved, no original execution or saves/security/commit/push/deployment.",
+    "Fixed339B/19op receipt is pinned and validated; prior Engine synced and Game RunningSound clean receipts prove previous controlled exit only and cannot substitute for live resource checks."
+  ],
+  "unchanged_guard_pins": [
+    {
+      "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "c6968067faa5b180556feaaf5e5aa62750e0ae0aa7bf031c5d1ceef990ae1f64"
+    },
+    {
+      "file": "tools/static_analysis/measure_job_process_memory.ps1",
+      "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_sampler_failure.ps1",
+      "sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/rea_java_role.mjs",
+      "sha256": "00e612e2113690baf53e87900f67b8f8003f47aa3b9a3968932a17dd779f1f22"
+    },
+    {
+      "file": "tools/static_analysis/rea_project_environment.mjs",
+      "sha256": "3808055da161a942867474e13edea86710d2981bda0ccf4ed5d385df5e794f88"
+    }
+  ],
+  "prior_engine_query": {
+    "file": "docs/reverse-client/r1-engine-synced-animation-run1/summary.json",
+    "sha256": "66160ae95d35bf8691ff101243348645ebbad72e8b985811f45d5043406b7e98",
+    "calls": 8
+  },
+  "batch_kind": "engine-stop-object-one-bound-target",
+  "runner_patch_deferred": false,
+  "prior_clean_running_sound": {
+    "file": "docs/reverse-client/r1-game-running-sound-run1/summary.json",
+    "sha256": "e99969a35ad9ae1c22555fec479d69eb333dba5460304656209090d0e117b3f8",
+    "calls": 8,
+    "target_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+  }
+}

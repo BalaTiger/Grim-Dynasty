@@ -1,0 +1,31 @@
+{
+    "schema":  "grim-dynasty-r1-graphics-engine-settings-v1",
+    "utc":  "2026-11-05T10:42:28.7071054Z",
+    "evidence":  "docs/reverse-client/r1-engine-window-run4/inspection.json",
+    "constructor":  {
+                        "rva":  "0x906e0",
+                        "rows":  92
+                    },
+    "layout":  {
+                   "+0x00":  "MSVC std::string data (SSO buffer); capacity at +0x18 = 0x0F, length at +0x10 = 0",
+                   "+0x10":  "string length (set to 0, then assigned 10)",
+                   "+0x18":  "string capacity (0x0F, small-string optimisation)",
+                   "+0x20":  "qword, zeroed",
+                   "+0x28":  "dword, zeroed",
+                   "+0x2C":  "byte, zeroed (CreateDevice reads +0x2A and +0x2B; those are the byte pair inside this dword)",
+                   "+0x2F":  "byte, zeroed; passed as the second argument to the plugin loader helper",
+                   "+0x30":  "qword, zeroed"
+               },
+    "decisive":  "The default constructor assigns the literal \"direct3d11\" (address 0x18030dee0, length 0x0A) into the settings string, which proves that the leading std::string is the renderer plugin name and that its default value is direct3d11.",
+    "what_this_establishes":  [
+                                  "the full observed layout of GraphicsEngineSettings",
+                                  "that the plugin name field defaults to \"direct3d11\"",
+                                  "why the plugin loader helper can treat the settings string as the module name"
+                              ],
+    "not_established":  [
+                            "the meaning of +0x20, +0x28, +0x2C, +0x30",
+                            "how 0x197020 turns the name into a module",
+                            "any executed device or presented frame"
+                        ],
+    "significance":  "Together with the plugin loader, the device constructor and the present contract, the static path from an EWindow to a presented frame is now fully described, although not yet executed."
+}

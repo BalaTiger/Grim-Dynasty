@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "purpose": "Final fixed Engine07F490 PlaySyncedAnimation body reached from the proven Game5DA02E FF25 thunk through Game609358. Retrieve pseudo-code, assembly and direct callees once; do not infer ABI, execution or success from export names. No automatic callee following or repeat Game thunk query.",
+  "expected_package_version": "6.5.0",
+  "status": "prepared-not-executed",
+  "runner_mode_registered": false,
+  "planned_output": "docs/reverse-client/r1-engine-synced-animation-run1",
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "provider_id": "ghidra"
+  },
+  "max_tool_calls": 8,
+  "lifecycle_in_calls": true,
+  "contract_sources": [
+    {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    {
+      "file": "docs/reverse-client/r1-move-start-dependencies/tool-catalog-selected.json",
+      "sha256": "ef8650e91c7c3fcf290da39594707c8fb31d19d34cf6c2d43a00059aaab2878c"
+    }
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-player-synced-animation-import-binding/inspection.json",
+      "sha256": "f1934693b5532d9800b9ee396b2215982c3c6b445b13fcb5bb8c8ef7344ea3bc",
+      "addresses": [
+        "0x18007f490"
+      ],
+      "source_kind": "Actual fixed200B/6op import/export binding: cached Game ILT index107, fresh exact hint/name and hinted Engine name/ordinal/EAT establish Game609358 -> Engine07F490; both original hashes stable, handles closed. No body or loaded-runtime claim."
+    },
+    {
+      "file": "docs/reverse-client/r1-player-animation-tail-thunk/inspection.json",
+      "sha256": "00fc6fa1e3b6312a03f91503370fffc714137fcced0f1ce790a5e632cb70d53c",
+      "addresses": [
+        "0x18007f490"
+      ],
+      "source_kind": "Prior exact6B/1op Game5DA02E bytes ff2524f30200 prove JMP qword ptr [Game609358]; destination follows only the separately pinned import/export binding. No repeated thunk or original read in preparation."
+    }
+  ],
+  "runtime_profile_reference": {
+    "file": "tools/static_analysis/rea-r1-world-position-and-level-initialization-plan.json",
+    "sha256": "2e94c3fdf888357a6be8a84bd03b8db4a54b66164e501785ff80352d79b9a2f0",
+    "same_registration_as": "r1-move-world-distance",
+    "budget_id": "engine-parser-384m-v1",
+    "heap": "384M",
+    "effective_launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "parallel_mcp_requests": 1,
+    "one_backend": true,
+    "profile_or_protection_changes_authorized": false
+  },
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "procedure_pseudo_code",
+    "procedure_assembly",
+    "procedure_callees"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Engine-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Engine-session"
+    },
+    {
+      "tool": "procedure_pseudo_code",
+      "args": {
+        "procedure": "0x18007f490"
+      },
+      "label": "04-SyncedAnimation-0x18007f490-procedure_pseudo_code"
+    },
+    {
+      "tool": "procedure_assembly",
+      "args": {
+        "procedure": "0x18007f490"
+      },
+      "label": "05-SyncedAnimation-0x18007f490-procedure_assembly"
+    },
+    {
+      "tool": "procedure_callees",
+      "args": {
+        "procedure": "0x18007f490"
+      },
+      "label": "06-SyncedAnimation-0x18007f490-procedure_callees"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "07-Engine-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "08-final-session"
+    }
+  ],
+  "execution_requirements": [
+    "Inactive scratch candidate from active d18b7bdd6acd48184ab6835f4d738bd851eca8e15764f3c831029454c7ad6901; retain current Game284720/284670 configuration. Root reviews and applies then separately approves offline/live execution after the ongoing Game batch has released its backend. Preparation executes nothing.",
+    "Reuse --r1-engine-animation-speed, only07F490 pseudo/assembly/directcallees plus5 lifecycle calls=8. This is the final query target of the stage; no callee expansion, repeat285E50/5DA02E or automatic retry.",
+    "Retain all8 Engine guard pins, default sampler/wrapper,384M heap,5GiB physical/commit launch,2GiB stop,nonce/parent/time/Job/mutex/watchdog protections and Sample-Utc. Prior Engine11call channel receipt must prove normal close/process/Job/sampler and original hashes; no invented zero counter-gap requirement.",
+    "Require fresh output and launch receipt. Preserve failed/old evidence. Verify exact200B/6op binding and existing6B/1op thunk receipt, not cached name/index assumptions. Parent filename absence review is reused without another scan.",
+    "No original writes/execution,saves/cloud,installation/security changes,commit/push/deployment. No ABI or playback success claim without body evidence and supported own validation."
+  ],
+  "unchanged_guard_pins": [
+    {
+      "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "c6968067faa5b180556feaaf5e5aa62750e0ae0aa7bf031c5d1ceef990ae1f64"
+    },
+    {
+      "file": "tools/static_analysis/measure_job_process_memory.ps1",
+      "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_sampler_failure.ps1",
+      "sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/rea_java_role.mjs",
+      "sha256": "00e612e2113690baf53e87900f67b8f8003f47aa3b9a3968932a17dd779f1f22"
+    },
+    {
+      "file": "tools/static_analysis/rea_project_environment.mjs",
+      "sha256": "3808055da161a942867474e13edea86710d2981bda0ccf4ed5d385df5e794f88"
+    }
+  ],
+  "prior_engine_query": {
+    "file": "docs/reverse-client/r1-engine-animation-channel-run1/summary.json",
+    "sha256": "b19be1ebf827f219553f95399e243cebe4259862c732e68d879780b8bc65e7b5",
+    "calls": 11
+  },
+  "batch_kind": "engine-player-synced-animation-one-bound-import-target",
+  "runner_patch_deferred": false
+}

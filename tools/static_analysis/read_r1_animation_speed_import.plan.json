@@ -1,0 +1,42 @@
+{
+  "schema": "grim-dynasty.fixed-animation-speed-import.v1",
+  "script": "tools/static_analysis/read_r1_animation_speed_import.mjs",
+  "entrypoint": "inspectAnimationSpeedImport(reviewedScriptSha256,reviewedPlanSha256)",
+  "status": "prepared-not-executed",
+  "output": "docs/reverse-client/r1-animation-speed-import/inspection.json",
+  "template": {"path":"tools/static_analysis/read_r1_move_world_distance_import.mjs","sha256":"60e19469751422491a128caf79778f411a8033b89f27781f6c82c40ceb2cc167"},
+  "inventory_origin": {"path":"docs/phase-1/boundary-audit/boundary_inventory.py","sha256":"354e00aeefbdfbc1beefa3de4f2c8c93635a0cb9ad824329f0011454f47ce224","import_parser_lines":"28-35: preserve OFT(orFT) array order until null; named import string from IMAGE_IMPORT_BY_NAME+2","output_lines":"52-54: complete importModules and same-buffer SHA256; export list is not emitted in full"},
+  "sources": {
+    "Game": {"path":"D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll","bytes":11385856,"sha256":"cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"},
+    "Engine": {"path":"D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll","bytes":4485632,"sha256":"4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"}
+  },
+  "binding": {
+    "iat_rva":"0x609bf0","index":382,"descriptor_rva":"0xa4297c","oft_rva":"0xa436b0",
+    "inventory_symbol":"?GetAnimationSpeedMultiplier@Actor@GAME@@QEBAMH@Z",
+    "source_key":"move_start","procedure":"0x18005f870","instruction":"0x18005fa08: CALL qword ptr [0x180609bf0]"
+  },
+  "caller_targets": [
+    {"procedure":"0x18005ae40","assembly_calls":["0x18005f9fb: CALL 0x18005ae40","0x18005fa48: CALL 0x18005ae40"]},
+    {"procedure":"0x180024de0","assembly_calls":["0x18005fa70: CALL 0x180024de0"]}
+  ],
+  "source_pins": [
+    {"key":"imports","path":"docs/object-lifecycle/offline-questitem-imports/import-bindings.json","sha256":"94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"},
+    {"key":"game_pe","path":"docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json","sha256":"227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"},
+    {"key":"engine_pe","path":"docs/object-lifecycle/offline-class-registration-exports/discovery.json","sha256":"0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"},
+    {"key":"inventory","path":"docs/phase-1/boundary-audit/module-boundaries.json","sha256":"d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"},
+    {"key":"move_start","path":"docs/reverse-client/r1-move-start-dependencies/05-MoveDependency-0x18005f870-procedure_assembly.json","sha256":"9e4e921f209d02922dff53ae248eaca7c8642472b5d5107ac000ccb1bb6f7463"},
+    {"key":"start_summary","path":"docs/reverse-client/r1-move-start-dependencies/summary.json","sha256":"123ce9f5ac00996934eaa5316de665da8e735e20df7fecd0479ca5dd1e2389ca"},
+    {"key":"start_callees","path":"docs/reverse-client/r1-move-start-dependencies/06-MoveDependency-0x18005f870-procedure_callees.json","sha256":"5e7bc9e16fd66af7cd5f96265d3800d4a9644d891f0659b51951031b0461224f"}
+  ],
+  "limits": {"metadata_bytes":70,"metadata_operations":6,"metadata_single_read":50,"name_bytes_including_nul":50,"new_IAT_bytes":0,"new_OFT_bytes":8,"new_hint_bytes":2,"new_descriptor_bytes":0,"new_PE_header_bytes":0,"code_bytes":0,"rtti_bytes":0,"hash_chunk_bytes":65536},
+  "requirements": [
+    "Preparation only. Importing this module is inert. Execution requires separate formal approval of the frozen script and plan, plus Windows Attributes/reparse preflight over all source, proof and output ancestors.",
+    "The Game609BF0 import name is already proved by same-image complete importModules[Engine.dll].symbols[382], generator order, and saved descriptor FirstThunk609000. Do not reread descriptor, IAT or import-name bytes to reconfirm this binding.",
+    "Read Game OFT8 at a436b0 and the selected IMAGE_IMPORT_BY_NAME hint2 only to obtain the missing Engine export-name index. This entry is beyond saved raw OFT prefix0..349. No cached selected-OFT equality is claimed; no prefix/tail scan or import-name read is permitted.",
+    "Use pinned same-image Engine PE/export-directory metadata. Read only the hinted export name pointer4, exact50-byte decorated name including NUL, matched ordinal2 and EAT4. Require exact name equality. Hint out of range/name mismatch is Unsupported, with no search/fallback or other candidates. Total6 operations/70 semantic metadata bytes.",
+    "Null/ordinal/unbounded import pointer, out-of-range hint/ordinal, forwarder or non-executable cached target classification stops and preserves partial evidence. No target payload read. Cached section classification does not prove function boundaries, runtime IAT or ABI.",
+    "Preserve read-only open, same-handle before/after full hashes, stable file identity/stat, ancestor path checks and finally-close for each original. Whole-file hash streams are identity checks, not semantic scans or atomic snapshots.",
+    "Create only a fresh isolated output directory and inspection.json with exclusive writes. Preserve failed/uncertain output and do not automatically retry.",
+    "No original loading/execution, Rea/backend, subprocesses, network, saves/cloud, installations, permission changes, commit/push/deploy or unrelated metadata expansion."
+  ]
+}

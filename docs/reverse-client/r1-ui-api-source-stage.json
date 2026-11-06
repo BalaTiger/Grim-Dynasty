@@ -1,0 +1,285 @@
+{
+  "schema": "grim-dynasty-r1-ui-api-source-v1",
+  "utc": "2026-11-03T16:56:05.0718329Z",
+  "status": "three-native-API-contracts-confirmed;concrete-HUD-UI-publication-caller-unresolved",
+  "previous_stage": {
+    "file": "docs/reverse-client/r1-ui-resource-source-stage.json",
+    "sha256": "3f721b427c330a063dc5704379ca35b8dd6ce01bd19807f5e9d6afe58d4c919f"
+  },
+  "scope": "ObjectManager::LoadTableFile and GameEngine::SetUI/GetUI; source-backed imports only",
+  "metadata_reads": [
+    {
+      "status": "passed-fixed-ui-api-engine-export-read",
+      "exit": 0,
+      "launch_sha256": "d7fe424bef9de352e981683a406267063a7ee90e86d81446e0e02a4c530c79c2",
+      "original_hash_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "metadata_bytes": 1786,
+      "original_hash_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "launch": ".tooling/r1-ui-api-exports-prepared/engine/launch-result.json",
+      "sha256": "03f7e5226eecc7b26ed35741a4c6305090099e5fe45a3e031b6a3b4a6714d278",
+      "module": "engine",
+      "file": "docs/reverse-client/r1-ui-api-engine-exports/inspection.json",
+      "bindings": [
+        {
+          "name": "?LoadTableFile@ObjectManager@GAME@@QEAAPEBVLoadTable@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+          "status": "NamedExportAddressCandidate",
+          "binary_search_steps": 13,
+          "name_index": 4239,
+          "ordinal": 4240,
+          "rva": "0x17ee90",
+          "preferred_va": "0x18017ee90",
+          "forwarded": false,
+          "target_payload_bytes_read": 0,
+          "runtime_binding_verified": false,
+          "section": ".text",
+          "section_executable": true
+        }
+      ]
+    },
+    {
+      "status": "passed-fixed-ui-api-game-export-read",
+      "exit": 0,
+      "launch_sha256": "e36e8b2fea53be2069749a6772ba7630432c8e0dc6f662f70b1a23d5487c7398",
+      "original_hash_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "metadata_bytes": 2740,
+      "original_hash_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "launch": ".tooling/r1-ui-api-exports-prepared/game/launch-result.json",
+      "sha256": "5df540f0f96eddce6de74d48f062c686beefffd50540923bd1494911cefeac2e",
+      "module": "game",
+      "file": "docs/reverse-client/r1-ui-api-game-exports/inspection.json",
+      "bindings": [
+        {
+          "name": "?SetUI@GameEngine@GAME@@QEAAXPEAVGameUIInterface@2@@Z",
+          "status": "NamedExportAddressCandidate",
+          "binary_search_steps": 14,
+          "name_index": 23241,
+          "ordinal": 23242,
+          "rva": "0x2e3bd0",
+          "preferred_va": "0x1802e3bd0",
+          "forwarded": false,
+          "target_payload_bytes_read": 0,
+          "runtime_binding_verified": false,
+          "section": ".text",
+          "section_executable": true
+        },
+        {
+          "name": "?GetUI@GameEngine@GAME@@QEBAPEAVGameUIInterface@2@XZ",
+          "status": "NamedExportAddressCandidate",
+          "binary_search_steps": 14,
+          "name_index": 17104,
+          "ordinal": 17105,
+          "rva": "0x2e3bc0",
+          "preferred_va": "0x1802e3bc0",
+          "forwarded": false,
+          "target_payload_bytes_read": 0,
+          "runtime_binding_verified": false,
+          "section": ".text",
+          "section_executable": true
+        }
+      ]
+    }
+  ],
+  "new_Rea_calls": 19,
+  "new_game_tests": 0,
+  "new_product_compiles": 0,
+  "old_suites_rerun": 0,
+  "pending_operations": 0,
+  "owned_heavy_processes": 0,
+  "original_executed": false,
+  "saves_accessed": false,
+  "interactive_client_available": false,
+  "next": "Do not repeat these three bodies or follow EAT xrefs as code. Next minimum static target is exact EXE SetUI import binding and an actual instruction caller supplying its object, with LoadTableFile caller/record argument as the related resource path. Use verified import descriptors/name thunks; cached index arithmetic alone is not a read binding. If no source-backed instruction is found, preserve the gap rather than adjacent-slot traversal. Dynamic observation remains unexecuted and requires a feasible isolated environment plus exact authorization.",
+  "cache_review": {
+    "scope": "32 reverse-client entry/export/binding inspection files including the 2 new outputs, selected filename indexes and known round-4 bodies",
+    "confirmed_prior_bodies": [],
+    "unknown_full_history_absence": true,
+    "no_actual_HUD_reference_proven": true,
+    "Game_SetUI_GetUI_slots_read": false,
+    "Engine_cached_descriptor": {
+      "LoadTableFile_actual_slot_read": false,
+      "FirstThunk": "0x2d5060",
+      "file": "docs/reverse-client/r1-provider-exe-iat/inspection.json",
+      "sha256": "4ef253f3155c548641a4f7f0f2cccd56fe1e24a7603ad10088c0e7d05260d8fc",
+      "OriginalFirstThunk": "0x3868a8"
+    }
+  },
+  "engine_execution": {
+    "plan_sha256": "0430fe9a124ccbdaef5b57f450069787fd9494ede78598099b1a0ba5f4373d9d",
+    "runner_sha256": "a8bcdd96448c41c4be4c7c8bd1ccfb7921f81face821f3267a46836b6939c9cf",
+    "repeat_until_checked": false,
+    "initial_chunk": "ad20db",
+    "plan": ".tooling/r1-ui-api-engine-prepared/plan.json",
+    "expected_calls": 8,
+    "offline_chunk": "8a2f36",
+    "outcome": "passed",
+    "offline_exit": 0,
+    "launcher_sha256": "7ef1ed0863c5f5f4445996cb959e44089935cb476f8521760d7d6f7cb7f4866f",
+    "session": 7913,
+    "output": "docs/reverse-client/r1-ui-api-engine-run1",
+    "exit": 0,
+    "final_chunk": "b1b384",
+    "actual_calls": 8,
+    "summary_sha256": "1deb22fc0d0afe3e23922536ff7b1246e3f15e731129ef59eb5187e7ecca9bf1",
+    "release": {
+      "sha256": "d04e404fae56d46d05baeb8868502582f893e940984dfabca03f1812975c7d20",
+      "file": "docs/reverse-client/r1-ui-api-engine-release.json"
+    }
+  },
+  "engine_contract": {
+    "callee_evidence_reused": {
+      "sha256": "09c5e996bbe2d23b35ad7de140e77940899602a35a0209bc5f070ee8bbc2b166",
+      "file": "docs/object-lifecycle/rea-object-base/11-TableDepot-LoadFile-0x1801c4d20-assembly.json"
+    },
+    "exact_instructions": [
+      "ADD RCX, 0x170",
+      "JMP 0x1801c4d20"
+    ],
+    "actual_HUD_consumer_proven": false,
+    "concrete_UI_object_proven": false,
+    "callee": "Engine TableDepot::LoadFile",
+    "incoming_addresses": [
+      "0x1803b3964"
+    ],
+    "incoming_classification": "0x1803b3964 equals export address table entry: 0x3af728+(4240-1)*4, file offset0x3b2964, raw90ee1700; data, not a code caller",
+    "entry": "0x18017ee90",
+    "own_changes_before_tail": "Only RCX pointer adjustment; RDX string reference unchanged; no local null/validity guard or result translation"
+  },
+  "engine_sources": [
+    {
+      "sha256": "dea5287594a5c0968a6feb16db610cb964a9c556b502556a80f77588cccff71e",
+      "file": "docs/reverse-client/r1-ui-api-engine-run1/04-LoadTableFile-0x18017ee90-procedure_pseudo_code.json"
+    },
+    {
+      "sha256": "4d834b1614ae99420fe14df5c012fb573920ee87b85df6f6950fb483281772a2",
+      "file": "docs/reverse-client/r1-ui-api-engine-run1/05-LoadTableFile-0x18017ee90-procedure_assembly.json"
+    },
+    {
+      "sha256": "1d0b4c0b84840249805d31784c0dcc835b912fdd37f7cc1e78f1e1e5690bd8ae",
+      "file": "docs/reverse-client/r1-ui-api-engine-run1/06-LoadTableFile-0x18017ee90-xrefs.json"
+    }
+  ],
+  "game_execution": {
+    "session": 74813,
+    "offline_chunk": "f5473c",
+    "expected_calls": 11,
+    "launcher_sha256": "388326fecad2ed0f583e81fabe033cdb0dbdc55ddd586b0fab2126ee5d5d213c",
+    "repeat_until_checked": false,
+    "runner_sha256": "a38a1e4e27ad2c0929e8805c0ec913f76435ff71ab079bf6bd5fd2841ec64ca7",
+    "offline_exit": 0,
+    "plan": ".tooling/r1-ui-api-game-prepared/plan.json",
+    "outcome": "passed",
+    "plan_sha256": "0b62ac05f40d0c996697f140a3c3bb7ebe0d2ba8d962a258b37fe37a3128fad0",
+    "output": "docs/reverse-client/r1-ui-api-game-run1",
+    "initial_chunk": "a4d31b",
+    "exit": 0,
+    "final_chunk": "22b32b",
+    "actual_calls": 11,
+    "summary_sha256": "3421ba9527c888bb3b6f0c9f46ee40b02e20498549ed4047e6fea132a615a804",
+    "release": {
+      "file": "docs/reverse-client/r1-ui-api-game-release.json",
+      "sha256": "b264623e9ab1e7d76cf3bd17b25ce812903125c78fafe3cc293b41c8f0da6458"
+    }
+  },
+  "game_contract": {
+    "incoming_classification": "Both addresses exactly equal saved selected-address 4-byte EAT reads in non-executable .rdata, not code callers",
+    "GetUI": {
+      "instructions": [
+        "MOV RAX, qword ptr [RCX + 0x19b0]",
+        "RET"
+      ],
+      "semantics": "Reads and returns the current QWORD from the same field; no local null/validity check or fallback",
+      "entry": "0x1802e3bc0"
+    },
+    "cached_selected_export_entries": [
+      {
+        "bytes": 4,
+        "file_offset": "0x88578c",
+        "executable": false,
+        "raw_hex": "d03b2e00",
+        "preferred_va": "0x18088718c",
+        "section": ".rdata"
+      },
+      {
+        "bytes": 4,
+        "file_offset": "0x87f7a8",
+        "executable": false,
+        "raw_hex": "c03b2e00",
+        "preferred_va": "0x1808811a8",
+        "section": ".rdata"
+      }
+    ],
+    "concrete_object_creation_proven": false,
+    "incoming_addresses": [
+      "0x18088718c",
+      "0x1808811a8"
+    ],
+    "equivalence_to_Engine_3E8_worldWidget_proven": false,
+    "object_lifetime_proven": false,
+    "SetUI": {
+      "instructions": [
+        "MOV qword ptr [RCX + 0x19b0], RDX",
+        "RET"
+      ],
+      "semantics": "Writes the supplied pointer bits to the same GameEngine object at+19B0; no local validation, allocation, reference-count operation or helper call",
+      "entry": "0x1802e3bd0"
+    }
+  },
+  "game_sources": [
+    {
+      "file": "docs/reverse-client/r1-ui-api-game-run1/04-SetUI-0x1802e3bd0-procedure_pseudo_code.json",
+      "sha256": "9c8b939a9324a45eab1d4060fec70dc64b952c9c3164a4397c8c5d219ed00fc7"
+    },
+    {
+      "file": "docs/reverse-client/r1-ui-api-game-run1/05-SetUI-0x1802e3bd0-procedure_assembly.json",
+      "sha256": "f5cab9117db6a4d40814ad53d09e13f2390a0a6ba674dd98f29f7177788b0b88"
+    },
+    {
+      "file": "docs/reverse-client/r1-ui-api-game-run1/06-SetUI-0x1802e3bd0-xrefs.json",
+      "sha256": "ad3237eafc6cc1aa55d6de6ba0a7849ab12a45ff11c44a8bef8f7e49d7e20eb8"
+    },
+    {
+      "file": "docs/reverse-client/r1-ui-api-game-run1/07-GetUI-0x1802e3bc0-procedure_pseudo_code.json",
+      "sha256": "ee1a76f60eada6c1804093c1846df880a6996a13a4318c56a107647b512a36d7"
+    },
+    {
+      "file": "docs/reverse-client/r1-ui-api-game-run1/08-GetUI-0x1802e3bc0-procedure_assembly.json",
+      "sha256": "2ca00c43800680a206c500d94c161d56342b674fc37704b233cac33bd58b8ad3"
+    },
+    {
+      "file": "docs/reverse-client/r1-ui-api-game-run1/09-GetUI-0x1802e3bc0-xrefs.json",
+      "sha256": "314e6aff59a27038d57f019b43200c3090dac70172b2308626b619c4b14550aa"
+    }
+  ],
+  "actual_resource_crosscheck": {
+    "field_type": 2,
+    "sources": [
+      "docs/reverse-client/r1-ui-resource-index-run1/hud_mastertable-record.json",
+      "docs/reverse-client/r1-ui-resource-index-run1/hud_orbmastertable-record.json"
+    ],
+    "actual_native_link_to_this_batch": false,
+    "limitation": "Neither wrapper contains a HUD resource name, table selector or concrete widget constructor; the cached resource relationship is not a native consumer link",
+    "both_hudObjectiveWindow": "records/ui/objectivewindow/objectivewindow_table.dbr"
+  },
+  "contribution": "Confirms the public record-loading bridge to an already-evidenced depot and exact shared UI pointer storage. Provides precise publisher/read field candidates, but not physical-mouse or rendering integration.",
+  "remaining": [
+    "Actual SetUI object producer, concrete class/vtable, lifetime and registration",
+    "Actual HUD root-name/normal-orb selection and record-field consumers",
+    "World Widget+18 override and physical pixel-to-ground-hit-to-movement connection",
+    "Original scene/texture/model/UI rendering and native startup"
+  ],
+  "current_release": {
+    "file": "docs/reverse-client/r1-ui-api-game-release.json",
+    "sha256": "b264623e9ab1e7d76cf3bd17b25ce812903125c78fafe3cc293b41c8f0da6458"
+  },
+  "current_resource": {
+    "utc": "2026-11-03T16:55:01.4219493Z",
+    "available_physical_bytes": 9298669568,
+    "system_commit_bytes": 46338830336,
+    "system_commit_limit_bytes": 59886112768,
+    "external_build_or_java_processes": []
+  },
+  "source_dll_hashes_unchanged": true,
+  "active_runner_sha256": "48cd6b79827cdc05af126b5fd4e723a171a446db2758b1640420f027ef077309",
+  "no_install_or_permission_changes": true,
+  "independent_semantic_review": "provider_evidence: all three bodies, exact EAT identities, cached TableDepot bridge and missing HUD/concrete-object boundaries agree; readonly review only"
+}

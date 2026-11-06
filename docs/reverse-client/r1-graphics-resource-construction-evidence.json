@@ -1,0 +1,83 @@
+{
+  "schema": "grim-dynasty.graphics-resource-construction-evidence.v1",
+  "status": "original-static-contracts-and-own-normal-construction-validated",
+  "target_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "sources": [
+    {
+      "file": "docs/reverse-client/r1-animation-create-and-key-run1/05-AnimationCreateAndKey-0x180094650-procedure_assembly.json",
+      "sha256": "95f6704caa89f243789ab758f143ec470c36450dcc0a2900bf790fa5a449374f"
+    },
+    {
+      "file": "docs/reverse-client/r1-graphics-animation-constructor-run1/05-GraphicsAnimationConstructor-0x180095ea0-procedure_assembly.json",
+      "sha256": "bac78965c553087cbf0a91fdbbdd6e16e7650bc0242bc131a950492197535b96"
+    },
+    {
+      "file": "docs/reverse-client/r1-resource-constructor-run1/05-ResourceConstructor-0x180199970-procedure_assembly.json",
+      "sha256": "d7b944eedbcb1cedb7cb4c243d3f05ab7f9143a2d3c7a8f719925a7dc1ef1d69"
+    }
+  ],
+  "return_identity": "094650 allocates0x1A0 then calls095EA0.095EA0 calls199970 before derived writes and explicitly returns originalthis at095F97.199970 explicitly returns its originalthis at199A34. Thus the normal factory return is original allocation identity; this does not guarantee allocator/base/platform success.",
+  "resource_199970": {
+    "arguments": "Capture original resource typeR9D, sourceR8, managerRDX andthisRCX before calls.095EA0 supplies type0. Manager is opaque copied identity, not dereferenced.",
+    "before_name_copy": "19999D QWORDvptr342CC8;1999A4 QWORDnamecapacity+20=15;1999AE QWORDnamelen+18=0;1999C1 BYTEat+8=0. Other inline bytes remain untouched.",
+    "name_copy": "1999CE CALL023180(this+8, original source, position0, countUINT64_MAX). Pseudocode's apparent fifth -2 argument is not an established argument contract; assembly only establishes these four registers. Reuse existing normal valid byte-string semantics, not ObjectNameAssignment's extra object-key hash write.",
+    "after_name_copy": "1999D4 QWORD+28=0;1999D8 DWORD+30=capturedtype;1999DB DWORD+40=0;1999DE QWORD+44=0 (unaligned eight-byte store);1999E2 DWORD+4C=0;1999F5 QWORD+58=vptr33D398;1999FF QWORD+60=vptr348880;199A03 QWORD+68=0.",
+    "synchronization": "199A0C CALL2DC398(size0x28),199A11 publishes actual allocation at+68,199A18 callsIAT302318 with that pointer. Rea names the import InitializeCriticalSection. No nullcheck or success return test appears. Own managed allocation/synchronization must be labelled platform adaptation, not recovered native allocation/EH/CRT.",
+    "tail": "Only after sync call returns:199A1E DWORD+70=0;199A21 QWORD+78=0;199A25 QWORD+38=capturedmanager;199A29 DWORD+74=4;199A30 QWORD+50=0;199A34 returns originalthis.",
+    "failure_prefix": "An unreturned/unsupported name or synchronization dependency leaves completed prior writes and blocks following base and all derived writes. Native exception cleanup remains unknown."
+  },
+  "graphics_095EA0": {
+    "base": "095EAC calls199970(originalthis, manager, originalname,0). Its RAX is not used to select the derived object.",
+    "derived_prefix": "095EBA QWORDvptr33F670. Five string slots88/118/138/158/178 each get capacity15 QWORD, length0 QWORD and firstBYTE0 in that order. QWORDzeros B0/B8/C0/D0/D8/E0/E8/F0/F8/100/108/110 occur between the first and later string initialization. Do not clear whole0x1A0 allocation or unwritten padding.",
+    "engine_read": "095F89 loads global421428 after derived prefix;095F90 reads QWORDengine+1F8. Unknown/null Engine pointer stops at dereference, preserving prefix and leavingA8/C8/80/198 unchanged. Known Engine with unknown+1F8 content is an opaque copy, not a required dereference: preserve Unknown inA8 and continue.",
+    "tail": "095F9A QWORD+A8=capturedgraphicsidentity;095FA1 QWORD+C8=0;095FA8 DWORD+80=0;095FAE BYTE+198=0;returns originalthis. A8 receives a value snapshot, not a shared Engine field cell; later publication must not change existing resources."
+  },
+  "production_boundary": "This closes constructor control flow and return identity only. Resource+28 begins null, later03AC50 publishes actual loader after factory return. No resource file decode, loaded status, channel binding or playback success follows merely from this constructor. Physical mouse/continuous movement/original scene/UI remain unaccepted.",
+  "execution": [
+    {
+      "session": 48511,
+      "summary": "docs/reverse-client/r1-graphics-animation-constructor-run1/summary.json",
+      "sha256": "77ac4524940cc8c675c2be2bf003450cd0409c06019c6fa298082a1266bfa2fa",
+      "exit": 0,
+      "calls": 8,
+      "job_empty": true,
+      "sampler_exited": true,
+      "hash_preserved": true
+    },
+    {
+      "session": 28515,
+      "summary": "docs/reverse-client/r1-resource-constructor-run1/summary.json",
+      "sha256": "123eb98dbd580e9ae86ed9523eebf77baaf21e00d729118380994f1bc94fcaea",
+      "exit": 0,
+      "calls": 8,
+      "job_empty": true,
+      "sampler_exited": true,
+      "hash_preserved": true
+    }
+  ],
+  "reuse_check": "Before queries: project-wide address filenames and relevant evidence indexes/aggregates, animation resource directories, summaries andsrc were checked. No095EA0/199970 body found in that bounded inventory; absence from all unindexed historical content is not claimed.27B3C0/302BC8 are explicitly reused from old evidence and were not queried again in these two batches.",
+  "validation": {
+    "receipt": ".tooling/r1-graphics-resource-construction-validation/result.json",
+    "sha256": "ad5ffd677f7a15452cd5f36753af2e81fe46496ef8d1ce92d56f3aaee811a593",
+    "session": 12212,
+    "exit": 0,
+    "finished_utc": "2026-11-02T15:45:17.1317154Z",
+    "compiles": 1,
+    "scenarios": 20,
+    "assertions": 455,
+    "old_test_suites_rerun": 0,
+    "production_source": "src/reverse_client_actions/EngineGraphicsResourceConstruction.cs",
+    "production_source_sha256": "8487d9578e5724f75cc42feb6f556db2d11b014d46462ef503ba0f373bbd22e7",
+    "test_source": "src/reverse_client_actions/EngineGraphicsResourceConstructionTests.cs",
+    "test_source_sha256": "adb2409c5037bb70ff4cf26aae6b26d0b2ce4612659d7ff4d3ab3cec1b7f8120",
+    "own_platform": "Managed allocation and actual private Monitor instances; no original memory/CRT/Win32 storage executed",
+    "support": "Normal complete disjoint byte names<=65536, shared resource identity and canonical existingWorldEngine sidecar, precise widths/prefixes, value-copy publication. Unwritten bytes remain unknown; old heap identity invalidated when inline byte0 is written.",
+    "not_verified": [
+      "Native allocator and exception cleanup",
+      "Native storage ABI or real concurrent mutation",
+      "Animation resource decoding/loading",
+      "Player channel playback",
+      "Continuous physical mouse gameplay"
+    ]
+  }
+}

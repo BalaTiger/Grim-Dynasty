@@ -1,0 +1,116 @@
+{
+  "schema": "gd-worldcamera-imagepoint-stage-v1",
+  "utc": "2026-11-04T18:45:40.073Z",
+  "status": "worldcamera-wrapper-and-viewport-slice-validated;ground-target-producer-unresolved;released;interactive-client-not-ready",
+  "report": {
+    "file": "docs/reverse-client/r1-worldcamera-imagepoint-stage-20261104.md",
+    "sha256": "1437286f0d8dc0db6d45687703b7201b9d6054b01ada9153797fefc403e769ac"
+  },
+  "evidence": [
+    {
+      "file": ".tooling/gd-widget-camera-target-20261104/inspection.json",
+      "sha256": "a88b23dd7d345c5da8f59e011267f59d96c9c0eeca570c34dea7512069b7da9c"
+    },
+    {
+      "file": ".tooling/gd-widget-camera-target-20261104/target-flow-note.json",
+      "sha256": "5dc4426d6e83d1c0ac76b97b1a4ba3da287a31ee53241018508bd5113c2072ec"
+    },
+    {
+      "file": ".tooling/gd-widget-camera-target-20261104/target-flow-callreturns-delta.json",
+      "sha256": "0d185b82d917065c0c77eba12a42256dbe0a855893cb463da8cf2dc02b1bdcab"
+    },
+    {
+      "file": ".tooling/gd-click-readonly-handler-20261104/offline-decode-callreturns.json",
+      "sha256": "ab23ef7f568cc8a9d6d323d6cff46672017d8afbc442d35fe5258cb9952d5df2"
+    },
+    {
+      "file": ".tooling/gd-ground-target-boundary-20261104/inspection.json",
+      "sha256": "a1e423e2a6b37c661bc38d85d06453e9c124b56e9f943c1dae2a0496bf6cc452"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-worldcamera-imagepoint-run1/summary.json",
+      "sha256": "1af77126ddc1657d2dc065c3482b5968d703d30ff3c95739793943720771750b"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-worldcamera-imagepoint-run1/owned-memory-summary.json",
+      "sha256": "83e2f6cb0050fec6b05b84308c1c976e5ae81cf7cb94dab24c64a2f643c8e7d6"
+    },
+    {
+      "file": ".tooling/r1-worldcamera-imagepoint-validation/result.json",
+      "sha256": "01886dcb5ab9f8c88da748aef83e1ca47f0d8fb2a9a669a06ef4680b064fa275"
+    },
+    {
+      "file": ".tooling/r1-worldcamera-imagepoint-build-prepared/launch-result.json",
+      "sha256": "060dc1a305ea33e7020c641aba7281cbffcaab6271265c3235f95fbc44ff6431"
+    },
+    {
+      "file": ".tooling/gd-widget-camera-target-20261104/final-release.json",
+      "sha256": "8792b78caa5c029edbe8e91616cf46a1775b6699bb30de459449ff492ede7374"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-worldcamera-imagepoint-run1/04-WorldCameraGetImagePoint-0x1802290e0-procedure_pseudo_code.json",
+      "sha256": "c4fe5b34612b6157e3ca75f0a3e6b20fbd22005ac319fa2f26063f9b9086cb2d"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-worldcamera-imagepoint-run1/05-WorldCameraGetImagePoint-0x1802290e0-procedure_assembly.json",
+      "sha256": "de2427897804268b60e4c13af66c6be6c8973a5e02513a6b0c6490a319554f13"
+    },
+    {
+      "file": "docs/reverse-client/r1-engine-worldcamera-imagepoint-run1/06-WorldCameraGetImagePoint-0x1802290e0-procedure_callees.json",
+      "sha256": "6559c7aa82cd8c60a6ed5e836d2afe63c38f1607e541e2946e6d4c3d4aebf97b"
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/reverse_client_actions/CameraWorldRayContracts.cs",
+      "sha256": "740f09fd52481663b7128b2a2d0e38c4cf86ba0b0e2bfefd345aafd4b16de022"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldCameraImageContracts.cs",
+      "sha256": "7ecd6ea012add3d855efe2e08899f734bec8127adc67a1d36d36bc4af00a28ee"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldCameraImageTests.cs",
+      "sha256": "8fb0ff2276022abb3058ec22b4dfc1b7ee0a2b4e9013d7a0897d2beb3061b4a3"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "GrimDynasty.CameraWorldRay.dll",
+      "sha256": "51e3a2b3e8e4937f4f77d008d891ef4665b4a2981248e2897ee54d19fbd9bbb1",
+      "bytes": 16896
+    },
+    {
+      "name": "WorldCameraImageTests.exe",
+      "sha256": "f0ec30c87a5e3489ef2aa20c432d4a49353475e8fcec45712ef1c1eba21ee5ac",
+      "bytes": 17920
+    }
+  ],
+  "validation": {
+    "product_compiles": 2,
+    "protection_helper_compiles": 1,
+    "new_scenarios": 11,
+    "necessary_regressions": 1,
+    "assertions": 73,
+    "mode": "Own Mode1 fixtures",
+    "old_whole_suites_rerun": 0,
+    "native_comparison": false,
+    "interactive_client_available": false
+  },
+  "next": {
+    "steps": [
+      "Reuse all completed body queries and12-case validation; do not rerun them without an affected change.",
+      "Next bounded loaded-read candidate: EXE[2DDC0,2E1FD)1085B, its12B .pdata entry3D3DF4, and4B constant30953C;1101 unique bytes,2202 double-read bytes, identity/resource reads separately counted.",
+      "Before any visible original launch, notify the parent/user, then recheck backup, Steam offline/per-game Cloud off, process identity and5GiB physical+commit/2GiB runtime protections. No failed breakpoint retry or save restore.",
+      "Loaded IAT2D5BD8 and actual click invocation are not proven. Any future8B slot read must be explicitly added to a reviewed fixed plan.",
+      "After actual ground-helper evidence, connect only supported target production to the existing mouse-action and movement chain. Controller lookup1BCD0 and independent scene/UI presentation remain gaps."
+    ],
+    "pending_operations": 0,
+    "interactive_client_available": false
+  },
+  "release": {
+    "file": ".tooling/gd-widget-camera-target-20261104/final-release.json",
+    "sha256": "8792b78caa5c029edbe8e91616cf46a1775b6699bb30de459449ff492ede7374"
+  },
+  "historical_failures_changed": false
+}

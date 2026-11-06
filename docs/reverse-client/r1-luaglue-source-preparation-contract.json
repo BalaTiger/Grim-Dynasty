@@ -1,0 +1,158 @@
+{
+  "schema": "gd-luaglue-source-preparation-contract-v1",
+  "status": "255F70-assembly-contract-confirmed-255CE0-remains-unknown-no-implementation",
+  "saved_utc": "2026-11-03T05:34:13.742Z",
+  "target": {
+    "module": "Engine.dll",
+    "entry_rva": "255F70",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "evidence": [
+    {
+      "id": "pseudo",
+      "path": "docs/reverse-client/r1-engine-luaglue-copy-run1/04-LuaGlueRecordCopy-0x180255f70-procedure_pseudo_code.json",
+      "sha256": "2b2eab053dacae8462d954cc47f3b186d02dc13b1e29dba095917acfa93af450"
+    },
+    {
+      "id": "assembly",
+      "path": "docs/reverse-client/r1-engine-luaglue-copy-run1/05-LuaGlueRecordCopy-0x180255f70-procedure_assembly.json",
+      "sha256": "1473782cb22c88f8e85bd6a3717355af21c05cf5ccefab2e88955bff8fe7aa17"
+    },
+    {
+      "id": "callees",
+      "path": "docs/reverse-client/r1-engine-luaglue-copy-run1/06-LuaGlueRecordCopy-0x180255f70-procedure_callees.json",
+      "sha256": "e42b9fbba371fe6d0548d374a0ac0d2e3702b3ac097876f384c0e5d9837513e8"
+    },
+    {
+      "id": "raw-data-inspection",
+      "path": "docs/reverse-client/r1-luaglue-embedded-data-run1/inspection.json",
+      "sha256": "acfd23e2e33c962d629765b30e2345ea92ebda04c446d66f8724c4e2551ca35c"
+    }
+  ],
+  "evidence_boundary": "Only cached Rea bodies and extraction receipt read. The older inspection's transformation UNKNOWN is preserved in place; this new report closes only255F70, not its255CE0 dependency.",
+  "entry": {
+    "registers": "RCX=destination descriptor D, RDX=source descriptor S; D captured in RDI at255F93, S in RSI at255F90.",
+    "descriptor_words": {
+      "10": "length word",
+      "00": "byte-buffer pointer",
+      "08": "allocation-size/capacity word"
+    },
+    "sizes": "Pointers and all three descriptor words are64-bit. Byte input is zero-extended into EDX.",
+    "return": "256011 returns the same D identity in RAX on normal completion; no boolean success or independent returned buffer."
+  },
+  "sequence": [
+    {
+      "at": "255F96..255FA3",
+      "effect": "XOR EBX,EBX clears64-bit RBX; write D+00=0, then D+08=0, then D+10=0 as three ordered8-byte stores. Existing D contents are not preserved or freed before these writes."
+    },
+    {
+      "at": "255FAF..255FBB",
+      "effect": "Capture N=S+10 into64-bit RBP after destination zero stores. If N!=0, call2DC900 with RCX=N exactly, not N+1. Retain actual returned pointer in R14 at255FC0. No explicit null-return check occurs here."
+    },
+    {
+      "at": "255FC3..255FD5",
+      "effect": "After allocator return, reload M=D+10. If M!=0, compute R8=M+1 using64-bit INC (unchecked wrap), reload D+00 as source, and call2DDB0E(new_pointer,live_old_pointer,M+1). Do not erase this branch merely because D+10 was zero before the external call."
+    },
+    {
+      "at": "255FDA..255FE5",
+      "effect": "Reload D+00 again; call2DC8F8 with that actual pointer. Only after return publish D+00=R14, then D+08=captured N. No second D+10 reset is present."
+    },
+    {
+      "at": "255FE9..255FEE",
+      "effect": "Read current64-bit S+10 again. Unsigned compare against0 skips traversal exactly when it is0."
+    },
+    {
+      "at": "255FF0..255FF6",
+      "effect": "First index is zero. Each iteration reloads current S+00 and reads exactly one byte at that pointer plus the zero-extended32-bit index; MOVZX EDX preserves the byte value0..255."
+    },
+    {
+      "at": "255FFA..256002",
+      "effect": "Compare DL with09. TAB skips the helper. For every other byte set RCX=D and call255CE0 with the observed byte still in EDX. The pseudo signature omits this second argument; assembly is authoritative."
+    },
+    {
+      "at": "256007..25600F",
+      "effect": "INC EBX wraps modulo2^32; MOV ECX,EBX zero-extends the next index; compare64-bit RCX against freshly read64-bit S+10, then unsigned JC loops to255FF3. Both source pointer and bound remain live at their respective reads."
+    },
+    {
+      "at": "256011..256026",
+      "effect": "Return D. This function contains no direct output-byte write or trailing-NUL store; those semantics cannot be assigned until255CE0 is known."
+    }
+  ],
+  "zero_and_filter_domains": [
+    {
+      "condition": "Ordinary fresh nonaliasing destination; N=0 remains0 through255FE9",
+      "result": "All three D words remain0; no allocation, free, source-pointer dereference or255CE0 call. No empty-string allocation/NUL write."
+    },
+    {
+      "condition": "Ordinary fresh nonaliasing D, stable positive N, allocator/free do not mutate descriptors; every visited byte is09",
+      "result": "Allocate exactly N bytes, D+00 becomes actual allocation, D+08=N, D+10 remains0. No source-preparation body writes initialize any output byte or NUL; do not infer buffer content."
+    },
+    {
+      "condition": "Non-TAB bytes including zero or bytes>=80",
+      "result": "All are forwarded byte-for-byte in EDX; this body applies no Unicode, whitespace, CR/LF, encoding or NUL-termination filtering. Actual helper output remains UNKNOWN."
+    },
+    {
+      "condition": "Stable bound in1..FFFFFFFF and all called operations return",
+      "result": "32-bit index can reach the terminating bound without wrapping. This does not itself establish valid input memory or helper semantics."
+    },
+    {
+      "condition": "Stable64-bit bound>=100000000 hex and all reads/calls continue",
+      "result": "Index wraps32-bit and cannot become >=bound; no finite completion is proved. Do not replace the loop with64-bit iteration or count a bounded diagnostic cutoff as success."
+    }
+  ],
+  "alias_and_reentrancy": {
+    "exact_descriptor_alias": {
+      "condition": "D==S, otherwise ordinary sequential execution with no external mutation",
+      "result": "The three initial destination stores also clear source length. Both later length reads observe0, so return the zeroed descriptor without allocating or reading prior source bytes. This follows store order, not a safe general in-place transform."
+    },
+    "partial_overlap": "UNKNOWN general alias domain. D stores can overlap S fields or source bytes; the function has no overlap check, saved descriptor copy or invalidation detection. No memmove-style guarantee.",
+    "live_dependencies": "N is captured only for initial allocation and D+08 publication. Post-allocation D+10/D+00, post-free output publication, each iteration S+00, and post-helper S+10 are independently ordered reads/writes.",
+    "conditional_external_mutation": "The reloads are proven instructions, not proof that allocator/free/helper actually reenter or mutate these objects. If such mutation occurs, it can alter copy count/free identity/source pointer/bound; nonreentrant dead-branch assumptions are not valid for a broader model.",
+    "invalidation": "No evidence here establishes safe behavior after a source allocation/descriptor is freed or a live pointer is invalidated. Do not convert unknown lifetime into null/default, retain an obsolete buffer snapshot, or claim a guarded native failure.",
+    "overflow": "M+1 uses64-bit INC without local overflow/bounds check; no guarantee that this count fits captured initial allocation N. Future bounded own implementation must name supported domains rather than invent native guards."
+  },
+  "failure_prefixes": [
+    {
+      "boundary": "2DC900 at255FBB does not return",
+      "observed_prefix": "D's three zero stores and captured N already occurred; no new-pointer publication or loop. Native EH/allocator failure contract UNKNOWN."
+    },
+    {
+      "boundary": "2DDB0E at255FD5 does not return",
+      "observed_prefix": "Allocation returned and live M/pointer were read; final free and D pointer/capacity publication have not executed. Partial memory-copy effects and cleanup UNKNOWN."
+    },
+    {
+      "boundary": "2DC8F8 at255FDD does not return",
+      "observed_prefix": "The free operand was read after any memcpy; D+00=R14 and D+08=N stores have not executed. Cleanup/ownership outcome UNKNOWN."
+    },
+    {
+      "boundary": "Source byte dereference at255FF6 invalid",
+      "observed_prefix": "Earlier initialization/allocation/publication and previous iterations may remain; no checked error branch or C++ exception guarantee established."
+    },
+    {
+      "boundary": "255CE0 at256002 does not return",
+      "observed_prefix": "Current input byte captured and found non-TAB; prior helper effects may remain. INC EBX and next length compare have not executed. Helper's partial writes/growth/cleanup UNKNOWN."
+    }
+  ],
+  "caller_and_next": {
+    "caller": "2568D0 passes record[i]+38 source descriptor and temporary RSP+20 destination.2575AC consumes the actual prepared pointer and prepared length; raw declared source length is not a replacement for that result.",
+    "established_raw_data": "Inspection validates11 source/name/chunk spans and original hash stability; bytes remain uninterpreted. This does not prove helper output or runtime execution.",
+    "minimal_unknown": "Only direct helper255CE0 is next for append/growth/length/NUL/ownership semantics. Preserve known allocator/memcpy/free calls without silently supplying failure behavior.",
+    "forbidden_claims": [
+      "plain-copy algorithm",
+      "complete TAB-removal output before255CE0 is known",
+      "native alias/reentry safety",
+      "native exception cleanup equivalence",
+      "LuaGlue execution passed",
+      "service Initialized58 may be set"
+    ]
+  },
+  "activity": {
+    "new_rea_calls": 0,
+    "new_original_reads": 0,
+    "production_edits": 0,
+    "old_report_edits": 0,
+    "builds": 0,
+    "tests": 0
+  }
+}
+

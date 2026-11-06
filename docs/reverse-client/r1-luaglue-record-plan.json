@@ -1,0 +1,348 @@
+{
+  "schema": "gd-luaglue-record-plan-v1",
+  "status": "cached-static-record-metadata-only-no-production-or-execution",
+  "saved_utc": "2026-11-03T05:25:31.466Z",
+  "target": {
+    "module": "Engine.dll",
+    "entry_rva": "2568D0",
+    "sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+  },
+  "evidence": [
+    {
+      "id": "pseudo",
+      "path": "docs/reverse-client/r1-engine-lua-publication-run1/10-LuaPublicationDirect-0x1802568d0-procedure_pseudo_code.json",
+      "sha256": "424cee3ce91716d8381950684e194d576fcee10ea372ad2b9d9421276e319de9",
+      "selector": "result.structuredContent.raw_result.value"
+    },
+    {
+      "id": "assembly",
+      "path": "docs/reverse-client/r1-engine-lua-publication-run1/11-LuaPublicationDirect-0x1802568d0-procedure_assembly.json",
+      "sha256": "6d146c88e86f64a2b49424906c8d741d402c029abfd88ee7070fbf6fed79d060",
+      "selector": "result.structuredContent.raw_result.value"
+    },
+    {
+      "id": "caller",
+      "path": "docs/reverse-client/r1-engine-lua-manager-core-run1/08-LuaManagerInitialize-0x1800f2e00-procedure_assembly.json",
+      "sha256": "189560d9bffcb960574a4477ef472497a78d9263f4f1fd017b70c2bd0980464a",
+      "selector": "result.structuredContent.raw_result.value"
+    }
+  ],
+  "record_layout": {
+    "count": 11,
+    "stride_bytes": 80,
+    "base": "RSP+40 at257572",
+    "offsets": {
+      "10": "name length",
+      "18": "owned chunk-name pointer",
+      "20": "chunk allocation-size word",
+      "28": "chunk-name length",
+      "30": "publish byte;31..37 padding not inferred",
+      "38": "owned source pointer / input string object to255F70",
+      "40": "source allocation-size word",
+      "48": "declared source length",
+      "00": "owned name pointer",
+      "08": "name allocation-size word"
+    },
+    "claim": "Observed local layout only, not a public ABI or executed object."
+  },
+  "records": [
+    {
+      "index": 0,
+      "name": "dump",
+      "name_rva": "3457F8",
+      "name_length_bytes": 4,
+      "name_copy_bytes_including_nul": 5,
+      "chunk_name": "luaglue-dump",
+      "chunk_rva": "346170",
+      "chunk_length_bytes": 12,
+      "chunk_copy_bytes_including_nul": 13,
+      "source_rva": "346100",
+      "source_length_bytes": 106,
+      "copy_bytes_including_nul": 107,
+      "length_store_rva": "2569D6",
+      "copy_instructions": "2569F6..256A56",
+      "initial_publish_flag": 1,
+      "flag_store_rva": "2569D1",
+      "source_byte_status": "NOT_RAW_BYTE_VERIFIED"
+    },
+    {
+      "index": 1,
+      "name": "dumpr",
+      "name_rva": "346190",
+      "name_length_bytes": 5,
+      "name_copy_bytes_including_nul": 6,
+      "chunk_name": "luaglue-dumpr",
+      "chunk_rva": "346180",
+      "chunk_length_bytes": 13,
+      "chunk_copy_bytes_including_nul": 14,
+      "source_rva": "345840",
+      "source_length_bytes": 118,
+      "copy_bytes_including_nul": 119,
+      "length_store_rva": "256AC3",
+      "copy_instructions": "256AE2..256B49",
+      "initial_publish_flag": 1,
+      "flag_store_rva": "256ABF",
+      "source_byte_status": "NOT_RAW_BYTE_VERIFIED"
+    },
+    {
+      "index": 2,
+      "name": "dumpex",
+      "name_rva": "345830",
+      "name_length_bytes": 6,
+      "name_copy_bytes_including_nul": 7,
+      "chunk_name": "luaglue-dumpex",
+      "chunk_rva": "3460F0",
+      "chunk_length_bytes": 14,
+      "chunk_copy_bytes_including_nul": 15,
+      "source_rva": "3458C0",
+      "source_length_bytes": 2091,
+      "copy_bytes_including_nul": 2092,
+      "length_store_rva": "256BCA",
+      "copy_instructions": "256BEB..256C6B",
+      "initial_publish_flag": 1,
+      "flag_store_rva": "256BC6",
+      "source_byte_status": "UNKNOWN_COMPLETE_BYTES_PSEUDOCODE_TRUNCATED"
+    },
+    {
+      "index": 3,
+      "name": "readonly",
+      "name_rva": "346618",
+      "name_length_bytes": 8,
+      "name_copy_bytes_including_nul": 9,
+      "chunk_name": "luaglue-readonly",
+      "chunk_rva": "346600",
+      "chunk_length_bytes": 16,
+      "chunk_copy_bytes_including_nul": 17,
+      "source_rva": "346630",
+      "source_length_bytes": 203,
+      "copy_bytes_including_nul": 204,
+      "length_store_rva": "256CD4",
+      "copy_instructions": "256CF5..256D6E",
+      "initial_publish_flag": 0,
+      "flag_store_rva": "256CD0",
+      "source_byte_status": "NOT_RAW_BYTE_VERIFIED"
+    },
+    {
+      "index": 4,
+      "name": "igetter",
+      "name_rva": "346628",
+      "name_length_bytes": 7,
+      "name_copy_bytes_including_nul": 8,
+      "chunk_name": "luaglue-igetter",
+      "chunk_rva": "3465D8",
+      "chunk_length_bytes": 15,
+      "chunk_copy_bytes_including_nul": 16,
+      "source_rva": "3461A0",
+      "source_length_bytes": 1076,
+      "copy_bytes_including_nul": 1077,
+      "length_store_rva": "256DD5",
+      "copy_instructions": "256DFF..256E82",
+      "initial_publish_flag": 0,
+      "flag_store_rva": "256DCE",
+      "source_byte_status": "NOT_RAW_BYTE_VERIFIED"
+    },
+    {
+      "index": 5,
+      "name": "isetter",
+      "name_rva": "3465F8",
+      "name_length_bytes": 7,
+      "name_copy_bytes_including_nul": 8,
+      "chunk_name": "luaglue-isetter",
+      "chunk_rva": "3465E8",
+      "chunk_length_bytes": 15,
+      "chunk_copy_bytes_including_nul": 16,
+      "source_rva": "346990",
+      "source_length_bytes": 977,
+      "copy_bytes_including_nul": 978,
+      "length_store_rva": "256EE6",
+      "copy_instructions": "256F10..256F9C",
+      "initial_publish_flag": 0,
+      "flag_store_rva": "256EDF",
+      "source_byte_status": "NOT_RAW_BYTE_VERIFIED"
+    },
+    {
+      "index": 6,
+      "name": "tgetter",
+      "name_rva": "346988",
+      "name_length_bytes": 7,
+      "name_copy_bytes_including_nul": 8,
+      "chunk_name": "luaglue-tgetter",
+      "chunk_rva": "346F78",
+      "chunk_length_bytes": 15,
+      "chunk_copy_bytes_including_nul": 16,
+      "source_rva": "346D70",
+      "source_length_bytes": 514,
+      "copy_bytes_including_nul": 515,
+      "length_store_rva": "257001",
+      "copy_instructions": "25702B..25709C",
+      "initial_publish_flag": 0,
+      "flag_store_rva": "256FFA",
+      "source_byte_status": "NOT_RAW_BYTE_VERIFIED"
+    },
+    {
+      "index": 7,
+      "name": "tsetter",
+      "name_rva": "346710",
+      "name_length_bytes": 7,
+      "name_copy_bytes_including_nul": 8,
+      "chunk_name": "luaglue-tsetter",
+      "chunk_rva": "346700",
+      "chunk_length_bytes": 15,
+      "chunk_copy_bytes_including_nul": 16,
+      "source_rva": "346730",
+      "source_length_bytes": 592,
+      "copy_bytes_including_nul": 593,
+      "length_store_rva": "257100",
+      "copy_instructions": "25712A..2571AD",
+      "initial_publish_flag": 0,
+      "flag_store_rva": "2570F9",
+      "source_byte_status": "NOT_RAW_BYTE_VERIFIED"
+    },
+    {
+      "index": 8,
+      "name": "instance",
+      "name_rva": "346718",
+      "name_length_bytes": 8,
+      "name_copy_bytes_including_nul": 9,
+      "chunk_name": "luaglue-instance",
+      "chunk_rva": "347920",
+      "chunk_length_bytes": 16,
+      "chunk_copy_bytes_including_nul": 17,
+      "source_rva": "347580",
+      "source_length_bytes": 920,
+      "copy_bytes_including_nul": 921,
+      "length_store_rva": "257229",
+      "copy_instructions": "257253..2572C4",
+      "initial_publish_flag": 0,
+      "flag_store_rva": "257222",
+      "source_byte_status": "NOT_RAW_BYTE_VERIFIED"
+    },
+    {
+      "index": 9,
+      "name": "derive",
+      "name_rva": "347948",
+      "name_length_bytes": 6,
+      "name_copy_bytes_including_nul": 7,
+      "chunk_name": "luaglue-derive",
+      "chunk_rva": "347938",
+      "chunk_length_bytes": 14,
+      "chunk_copy_bytes_including_nul": 15,
+      "source_rva": "346F90",
+      "source_length_bytes": 382,
+      "copy_bytes_including_nul": 383,
+      "length_store_rva": "25735B",
+      "copy_instructions": "257385..257432",
+      "initial_publish_flag": 0,
+      "flag_store_rva": "257354",
+      "source_byte_status": "NOT_RAW_BYTE_VERIFIED"
+    },
+    {
+      "index": 10,
+      "name": "class",
+      "name_rva": "346F88",
+      "name_length_bytes": 5,
+      "name_copy_bytes_including_nul": 6,
+      "chunk_name": "luaglue-class",
+      "chunk_rva": "347568",
+      "chunk_length_bytes": 13,
+      "chunk_copy_bytes_including_nul": 14,
+      "source_rva": "347110",
+      "source_length_bytes": 1105,
+      "copy_bytes_including_nul": 1106,
+      "length_store_rva": "2574B7",
+      "copy_instructions": "2574E1..25756C",
+      "initial_publish_flag": 1,
+      "flag_store_rva": "2574B0",
+      "source_byte_status": "NOT_RAW_BYTE_VERIFIED"
+    }
+  ],
+  "record_notes": {
+    "address_convention": "All addresses are hexadecimal RVAs; integers for lengths/counts are decimal.",
+    "names": "Text from cached decompiler literals/immediate character values, matched to assembly copy locations; no fresh original-byte read.",
+    "name_chunk_lengths": "Lengths match record+10/+28 stores in cached assembly; copies cover length+1 bytes. These are actual copied spans, not padded name-allocation sizes (some short names allocate8).",
+    "encoding": "Name/chunk ASCII spelling is displayed by the cached decompiler. Full source byte encoding is UNKNOWN; do not transcode or normalize future extracted bytes.",
+    "copy_count": "Full destination copy spans from cached assembly equal source_length_bytes+1 for all11. The including-NUL label follows cached string representation; terminal bytes have not been independently raw-read in this task.",
+    "total_source_copy_bytes": 8095,
+    "instance_flag": "257222 stores R14B: R14=4 at256960, copied (not consumed) for tgetter at257032, then decremented to0 by tsetter loop25717D/181. Zero is a normal-path register result, not an assumed cold field.",
+    "derive_flag": "257354 stores SIL: RSI=7 at256D71, copied for isetter at256F17, then decremented to0 by instance loop2572AC/2B0. Zero is a normal-path register result.",
+    "mutable_flags": "Initial flag values are proved stores.2575D3 rereads the current record+30 after successful pcall; do not replace the load by a cached flag if callback-visible mutation is admitted.",
+    "source_text": "No script text reconstructed, exported or repaired here. Dumpex has an explicit TRUNCATED STRING LITERAL marker; other displayed literals are not byte-verified source artifacts."
+  },
+  "sequence": [
+    {
+      "at": "0F2ECF/0F2ED2;2568FD",
+      "step": "Caller reloads service+00; function captures that one Lua identity in RBX. Do not rebind it to later service values."
+    },
+    {
+      "at": "256905..25695A",
+      "step": "Publish __luaglue table with version from3456F4 and __luaglue_version. Version bytes are UNKNOWN in these cached bodies."
+    },
+    {
+      "at": "256960..25756C",
+      "step": "Construct all11 records before executing any source; source allocations/copies and actual flags are listed above."
+    },
+    {
+      "at": "257580..257595",
+      "step": "Select record[i]+38 by i*50 and call255F70 into temporary buffer object RSP+20. Transformation and output length remain UNKNOWN; declared source length is not a proved loadbuffer length."
+    },
+    {
+      "at": "25759B..2575AC",
+      "step": "Call421888 with captured Lua, actual temporary pointer RSP+20, actual prepared length RSP+30 and current record+18 chunk pointer."
+    },
+    {
+      "at": "2575B7/2575C5/2575CD",
+      "step": "On zero load status, pcall with arguments0/results0/errorFunction0. Branch on actual returned status."
+    },
+    {
+      "at": "2575D3..25760B",
+      "step": "After successful pcall, read current flag. Nonzero: get __luaglue; get current record-name field at-1; publish that name globally; settop(-2)."
+    },
+    {
+      "at": "257612..257625",
+      "step": "Free actual prepared temporary pointer, increment index, advance record by50; iterate while index<11."
+    },
+    {
+      "at": "25762B..257729",
+      "step": "Only after all11: publish registry keys-1..-4, callback tables256150/2561A0 with unknown3479B8 key; read live4217D8 bit0 and conditionally call257CB0; set BL=1."
+    },
+    {
+      "at": "257780..25779A",
+      "step": "Destroy11 records using2DC3D4/2577C0, stride50; return zero-extended BL."
+    }
+  ],
+  "failures": [
+    {
+      "at": "2575B7 ->25772D",
+      "condition": "Actual load status nonzero",
+      "effect": "Read top; only top>0 and isstring(-1)!=0 obtains tolstring(-1), calls255BC0(&41D218,message), then settop(-2). Other arms do not execute that stack pop."
+    },
+    {
+      "at": "2575CD ->257774",
+      "condition": "Actual pcall status nonzero",
+      "effect": "No error-stack clearing observed before temporary free."
+    },
+    {
+      "at": "257774..25779A",
+      "condition": "Handled load/pcall failure reaches common tail",
+      "effect": "Free temporary; BL=0; destroy11 records; return0. Existing globals/registry effects are not rolled back."
+    },
+    {
+      "at": "255F70/allocation/LuaAPI/helper",
+      "condition": "Exception, nonreturn or unknown external contract",
+      "effect": "UNKNOWN unwinding/cleanup; normal failure-tail semantics must not be assigned without evidence."
+    }
+  ],
+  "continuation": {
+    "caller": "0F2ED2 return is ignored;0F2EDA calls0EF8B0 even when2568D0 returned0.",
+    "ready_byte": "Only native0F30F9 stores service+58=1, after LuaGlue, Script helpers, live provider-vector iteration and selected Client/Server branches. This plan implements none of that continuation.",
+    "minimal_next": "Parent-owned investigation:3456F4 bytes and255F70. Then obtain bounded exact source spans as needed; do not infer source from truncated pseudo or execute cached text as verified bytes."
+  },
+  "activity": {
+    "new_rea_calls": 0,
+    "original_byte_reads": 0,
+    "production_edits": 0,
+    "builds": 0,
+    "tests": 0
+  }
+}
+

@@ -1,0 +1,36 @@
+{
+  "schema": "grim-dynasty.fixed-move-world-distance-import.v1",
+  "script": "tools/static_analysis/read_r1_move_world_distance_import.mjs",
+  "entrypoint": "inspectMoveWorldDistanceImport(reviewedScriptSha256,reviewedPlanSha256)",
+  "status": "prepared-not-executed",
+  "output": "docs/reverse-client/r1-move-world-distance-import/inspection.json",
+  "template": {"path":"tools/static_analysis/read_r1_move_production_imports.mjs","sha256":"652714ce4d0c15f27955916baa9a79a7ccb812337eb14c23d2bd9817c8abe410"},
+  "sources": {
+    "Game": {"path":"D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll","bytes":11385856,"sha256":"cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"},
+    "Engine": {"path":"D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll","bytes":4485632,"sha256":"4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"}
+  },
+  "binding": {
+    "iat_rva":"0x609a10","index":322,"descriptor_rva":"0xa4297c","oft_rva":"0xa434d0",
+    "inventory_symbol":"?GetDistanceSquared@World@GAME@@QEBAMAEBVWorldVec3@2@0@Z",
+    "source_key":"move_start","procedure":"0x180082c00","instruction":"0x180082cf8: CALL qword ptr [0x180609a10]"
+  },
+  "source_pins": [
+    {"key":"imports","path":"docs/object-lifecycle/offline-questitem-imports/import-bindings.json","sha256":"94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"},
+    {"key":"game_pe","path":"docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json","sha256":"227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"},
+    {"key":"engine_pe","path":"docs/object-lifecycle/offline-class-registration-exports/discovery.json","sha256":"0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"},
+    {"key":"inventory","path":"docs/phase-1/boundary-audit/module-boundaries.json","sha256":"d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"},
+    {"key":"move_start","path":"docs/reverse-client/r1-move-start/05-MoveStart-0x180082c00-procedure_assembly.json","sha256":"5694ff6ab9547a98ff95fe607fbc55e19f167aa80b086bb69c6f06758daea971"},
+    {"key":"start_summary","path":"docs/reverse-client/r1-move-start/summary.json","sha256":"9cd4a5f209e25bae004cf8b455467f5f4d26bc4dc00e75a0f8412d67fe91ea63"}
+  ],
+  "limits": {"metadata_bytes":162,"metadata_operations":9,"metadata_single_read":57,"name_bytes_including_nul":57,"new_IAT_bytes":8,"new_OFT_bytes":8,"new_descriptor_bytes":20,"new_PE_header_bytes":0,"code_bytes":0,"rtti_bytes":0,"hash_chunk_bytes":65536},
+  "requirements": [
+    "Preparation only. Module import is inert; inspect requires separate formal execution approval of both frozen hashes, plus Windows Attributes/reparse preflight over all source, proof and output ancestors.",
+    "Read only the fixed Game import descriptor20B, selected OFT8B and IAT8B; verify each against pinned same-image metadata before following the one named import. Index322 is already within saved OFT prefix0..349; no new prefix or tail scan.",
+    "Read the selected hint2B and exact57B import name including NUL; require equality with the saved same-hash inventory symbol before Engine lookup. No presumed target RVA.",
+    "Reuse pinned Engine PE/export-directory metadata. Read only the hinted export name pointer4B and the expected57B name including NUL, require exact equality, then read the matched ordinal2B and EAT4B. Hint/name mismatch is Unsupported, without binary search/fallback, other name candidates or target payload reads. Total9 operations/162 metadata bytes.",
+    "Unexpected descriptor/OFT/IAT or name, ordinal import, out-of-range hint, forwarder or non-executable cached target classification stops and preserves partial evidence. Cached section classification is not a function-boundary or runtime ABI claim.",
+    "Preserve the reviewed template's read-only open, same-handle before/after full hashes, stable file identity/stat, ancestor path checks and finally-close. Whole-file hashes are identity checks, not semantic scans or atomic snapshots.",
+    "Create only the new isolated output directory and inspection.json with no overwrite/deletion. Preserve failed or uncertain prior output; do not automatically retry.",
+    "No original loading/execution, Rea/backend, subprocesses, network, saves/cloud, installation, permission changes, commit/push/deploy or unrelated import/export expansion."
+  ]
+}

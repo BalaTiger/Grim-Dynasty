@@ -1,0 +1,424 @@
+{
+  "schema_version": 1,
+  "purpose": "Complete only the unissued DisplayWidget constructor exact-name workflow query. Retain prior AddWidget raw unresolved observation and failed validator receipt; no repeated AddWidget, fallback, extra name or explicit list_names call. The approved workflow internally enumerates this module analyzed name inventory then exact-matches.",
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    ".tooling/rea/node_modules/rea-agents/dist/ghidra/GhidraTargetSnapshot.js"
+  ],
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-widget-exe-iat-derived/derivation.json",
+      "sha256": "9d7b916bd380706bebf297ddecbe7b07c003f215e0c28cc63a20c556efa9f3fb",
+      "addresses": [
+        "0x1402d5678",
+        "0x1402d5ae8"
+      ],
+      "source_kind": "Cached FirstThunk+ordered import index*8; selected slot bytes and runtime binding remain unknown"
+    },
+    {
+      "file": "docs/reverse-client/r1-provider-exe-iat/inspection.json",
+      "sha256": "4ef253f3155c548641a4f7f0f2cccd56fe1e24a7603ad10088c0e7d05260d8fc",
+      "source_kind": "Pinned cached derivation input; no new original read"
+    },
+    {
+      "file": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7",
+      "source_kind": "Pinned cached derivation input; no new original read"
+    },
+    {
+      "file": "docs/phase-1/boundary-audit/boundary_inventory.py",
+      "sha256": "354e00aeefbdfbc1beefa3de4f2c8c93635a0cb9ad824329f0011454f47ce224",
+      "source_kind": "Pinned cached derivation input; no new original read"
+    }
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Grim Dawn.exe",
+    "sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "provider_id": "ghidra"
+  },
+  "target_profile": "client",
+  "snapshot_naming": {
+    "file": ".tooling/rea/node_modules/rea-agents/dist/ghidra/GhidraTargetSnapshot.js",
+    "sha256": "a27e410752f5474b3a97f7388bf8fdace65d21d5dad8858ad3c27e310f03f52b",
+    "snapshot_name": "target-d3915e259931.exe",
+    "rule": "Installed implementation uses the first twelve SHA256 characters plus safeExtension(sourcePath); the fixed source extension .exe passes its extension grammar."
+  },
+  "max_tool_calls": 6,
+  "lifecycle_in_calls": true,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "find_xrefs_to_name"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Grim Dawn.exe",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Client-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Client-session"
+    },
+    {
+      "tool": "find_xrefs_to_name",
+      "args": {
+        "name": "??0DisplayWidget@GAME@@QEAA@XZ"
+      },
+      "label": "04-DisplayWidgetCtor-exact-name-find_xrefs_to_name"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "05-Client-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "06-final-session"
+    }
+  ],
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "execution_requirements": [
+    "Only the still-unissued exact imported DisplayWidget constructor name. Already returned AddWidget evidence is checked offline and never sent again.",
+    "Exactly one find_xrefs_to_name plus five lifecycle calls. Tool internally enumerates current-module analysis names then matches exact literal; no added explicit list_names, new names/functions, code scanning or fallback. Preserve unresolved/empty observations and original failed batch.",
+    "Use unchanged EXE client profile:384M heap, launch physical and commit>=5GiB, running stop<2GiB, original freshness/deadline/Job/identity/mutex/runtime guards.",
+    "Preserve prior failed provider-validation batch and original historical vctip cleanup records. Current prior-batch release is separately pinned; fresh admission remains mandatory.",
+    "Only inspect the approved original EXE read-only and verify before/after hash. No original execution, saves/cloud, installation, permissions change or external process termination."
+  ],
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "client-mouse-first-calibration-384m-v1",
+    "calibration_only": true,
+    "measured_client_peak_available": false,
+    "budget_source": "provisional-first-client-EXE-calibration",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "task_allowance_gib": 3,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "no_system_settings_change": true,
+    "scope": "Reuse unchanged provisional EXE384M budget for the sole remaining exact constructor-name workflow query; no measured peak or later-query bound is inferred."
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false,
+    "scope": "Existing startup absolute deadline and per-request outer deadline; not a whole-batch runtime guarantee."
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "previous_sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "serializer_file": "tools/static_analysis/rea_sampler_failure.ps1",
+    "serializer_sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "candidate_file": ".tooling/r1-owned-job-diagnostic-candidate/ReaOwnedJobDiagnosticCandidate.cs",
+    "candidate_sha256": "b52e6ba242277ab864a431433f43efe671bc6c37e73c1fd94d8b0977b7400544",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "serializer_validation_file": ".tooling/r1-owned-job-diagnostic-validation/serializer/result.json",
+    "serializer_validation_sha256": "eb5dc1cd79621686a5b646ba03897cec638674dd1d6894ec69cee1d5ceb04a60",
+    "runner_validation_file": ".tooling/r1-owned-job-diagnostic-validation/runner-result.json",
+    "runner_validation_sha256": "1ff5539479a0ba058bb7e3b4e6692293a07515e48d226c56f5b6667857c4bb29",
+    "deployment_file": ".tooling/r1-owned-job-diagnostic-deploy/deployment.json",
+    "deployment_sha256": "ef9be6d39c736f99fe4dd365b1ed08f6849f4280eacc698fdc9b4b75d4977dbf",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 49,
+    "scenario_groups": 10,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "serializer_assertions": 39,
+    "production_normalization": "Remove two candidate-only header lines and namespace suffix; serializer identical to tested candidate",
+    "limitations": "Diagnostic observation only. Native permissions,100ms shared wait budget,admission and fail-closed rules are unchanged. Isolated fault tests do not reproduce or establish the21:48 failure root cause."
+  },
+  "diagnostic_monitor_review": {
+    "status": "passed-and-pinned",
+    "diagnostics_only_intended": true,
+    "approved_source_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "production_monitor_must_not_be_changed_by_this_preparation": true,
+    "root_cause_proven": false,
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false
+  },
+  "sampler_observation_deployment": {
+    "status": "passed-additive-serialization-deployed",
+    "previous_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "evidence": [
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/deployment.json",
+        "sha256": "e978a7fbb0256233a2a5bbdacec662ebcbe808c1c227d20ef216dce8cf3d0db9"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/measure_job_process_memory.before.ps1",
+        "sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/measure_job_process_memory.ps1",
+        "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test_member_identity_serialization.ps1",
+        "sha256": "3afa73f7130a87959e38e76ba313f715bd0e4448e146a0417b3163b55ac84ae2"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test-result.json",
+        "sha256": "812f576f55ce8989638accf2a668a6b1b19e0d23e2869328be63ba7822c3062d"
+      }
+    ],
+    "only_added_field": "membership_queries.after_counters_member_identities",
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false,
+    "resource_limits_changed": false,
+    "tests_rerun": false
+  },
+  "recovery_requirement": {
+    "status": "confirmed-retained-after-Codex-restart",
+    "recovery_result_file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+    "recovery_result_sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829",
+    "evidence": [
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+        "sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-inventory.json",
+        "sha256": "e9baee1d751ebe2dbc329ceb068f25fc33ee96d3474e77bfd0a84a6978ca3dcf"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-move.json",
+        "sha256": "34967759d2622ffe3f46942681014a903ebf626f7f9557a0633f0b8c49beb272"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-after-move.json",
+        "sha256": "b2500ac78ffab31fc94c6e19a6db7c3287401bbf40a6b3e7055b5bf4e1a0c8e8"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before-move.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-after.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-final.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/historical-identities.json",
+        "sha256": "98c290f49b3b071a4127529aa21c7bbf816a6b59596f9be210adc0fecd302d45"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/classification-test-result.json",
+        "sha256": "0158c21bfa6fa46d87656030888cce9e8853b18086547599a6ce668527d80554"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/retain_interrupted_runtime_post_restart.ps1",
+        "sha256": "0769a1fbcf8c44b12a09fe35a31823a6a75eee2d24494814d1ae4334d15b32a9"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/post_restart_classification.ps1",
+        "sha256": "c5fb0a7b207f5c6e0fdd4d55b624aef69df4619c758034c59ca1a5645cf534f2"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/test_post_restart_classification.ps1",
+        "sha256": "bb88bbf79eb8c61b023d6a7d1468b40af09d4007433a3f111c832235e89fe611"
+      }
+    ],
+    "require_source_runtime_absent_and_exact_retained_directory": true,
+    "require_equal_content_manifests_and_zero_deleted_files": true,
+    "require_normal_fresh_launch_identity_resource_mutex_guards": true,
+    "old_terminal_flags_must_remain_unconfirmed": true,
+    "single_owner_job_termination_is_inference": true
+  },
+  "current_release": {
+    "file": "docs/reverse-client/r1-provider-retry2-current-release.json",
+    "sha256": "626a5a33912ff1b832ec327499e9262eb5c9f4244a02bf21e14c9c86eeb7ebb2",
+    "historical_job_empty_observed": false,
+    "current_absence_not_historical_empty_proof": true
+  },
+  "protection_metadata_source": {
+    "file": "tools/static_analysis/rea-r1-skill-moved-direct-plan.json",
+    "sha256": "96e164adb4ff4909806229a8a4a7dce460cb134d76de0cc21768e9ea29313677",
+    "scope": "Only already-reviewed current monitor/sampler/recovery metadata; EXE384M budget remains unchanged"
+  },
+  "metadata_contract": {
+    "status": "derived-cache-only-no-new-original-read",
+    "dll": "Engine.dll",
+    "descriptor_index": 8,
+    "first_thunk_rva": "0x2d5060",
+    "image_base": "0x140000000",
+    "import_indices": [
+      195,
+      337
+    ],
+    "selected_slot_values_observed": false,
+    "runtime_binding_verified": false
+  },
+  "preparation": {
+    "frozen": true,
+    "runner_base_sha256": "ea16dcbb45f703c4bda2219063256d1f2618bbcf56253cd4c2d919af3a356475",
+    "candidate_only": true,
+    "active_runner_modified": false,
+    "backend_launched": false,
+    "original_read_by_preparation": false
+  },
+  "name_reference_contract": {
+    "names": [
+      "??0DisplayWidget@GAME@@QEAA@XZ"
+    ],
+    "exact_only": true,
+    "additional_queries_allowed": false,
+    "helper": {
+      "file": ".tooling/r1-widget-name-reference-prepared/name-reference-contract.mjs",
+      "sha256": "a3c31c8009d5ee671a7fb6a51c1fc572e07f46403e0aad0ad62d456be220fbd1"
+    },
+    "test": {
+      "file": ".tooling/r1-widget-name-reference-prepared/name-reference-contract.test.mjs",
+      "sha256": "1c15a537e238ebed5e09e2755852f35f41866fdceafcb7a74e7fba06059bef06"
+    },
+    "tool_catalog": {
+      "file": "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+      "sha256": "7d275adbaeec1e160829cf17acf3a65eada54da400d8761056e5e7d1faea43f8"
+    },
+    "availability_session": {
+      "file": "docs/reverse-client/r1-widget-exe-incoming-run1/03-Client-session.json",
+      "sha256": "d353233620c89ee8a5a6adeafa1ffa8f5ac42856a64c2dc8d3ed1b0876b07cf4"
+    },
+    "tests_executed": true,
+    "test_validation": {
+      "result": {
+        "file": ".tooling/r1-widget-name-reference-prepared/name-validation.json",
+        "sha256": "0c3043b075a942da486419638d4d18650ce436b3d98cc928bd00e3ccb36996a9"
+      },
+      "tap": {
+        "file": ".tooling/r1-widget-name-reference-prepared/name-validation.tap",
+        "sha256": "eac41eaf2028509c3dc0865fb18ad0b84ca915df226c797aeea902a2e6918a00"
+      },
+      "launcher": {
+        "file": ".tooling/r1-widget-name-reference-prepared/validate-name.ps1",
+        "sha256": "af7507c6ab8a5dae3d7f4a3e514780d6776129f3174d500faf03e708f236a025"
+      },
+      "observed_tests": 6,
+      "game_tests": 0,
+      "fresh_admission_required": true
+    },
+    "cache_scope": "Prior exact AddWidget workflow response already returned and checked offline; constructor exact-name query remains unissued",
+    "cached_matching_response_files": 1,
+    "runtime_binding_verified": false,
+    "game_test": false
+  },
+  "workflow_contract": {
+    "provider": {
+      "id": "rea-workflow",
+      "name": "REA composed investigation workflow",
+      "version": "1"
+    },
+    "upstream_provider": "ghidra",
+    "must_match_live_session_profile": true,
+    "helper": {
+      "file": ".tooling/r1-widget-name-reference-complete-prepared/workflow-evidence-contract.mjs",
+      "sha256": "ce20875e99cb2465d3e46a5a6abdb93d5c66dd32091b94745120e73399434174"
+    },
+    "test": {
+      "file": ".tooling/r1-widget-name-reference-complete-prepared/workflow-evidence-contract.test.mjs",
+      "sha256": "5550fe8f6ca5f2a89c98ef65acb1394b69140edb8b8c53ee6a0e44458a9ff64d"
+    },
+    "source_pins": [
+      {
+        "file": ".tooling/rea/node_modules/rea-agents/dist/mcp/main-kBXHZ8S5.js",
+        "sha256": "12a70d8ab2a57de0cc71d794e38470031bfbdde855ba4a435e0ac0613f2fe82e"
+      },
+      {
+        "file": ".tooling/rea/node_modules/rea-agents/dist/mcp/WorkflowEvidence-umWrB_wm.js",
+        "sha256": "9ab1c4b1604bf69aab409785b7d75846fb0c87f8baf57c43ab74bcb6ae774f03"
+      },
+      {
+        "file": ".tooling/rea/node_modules/rea-agents/dist/mcp/InterfaceBuilderDecodeBudget-5F2AkxJT.js",
+        "sha256": "dd022eb911f11eed479115b58db0a9088a95528c1e13dae48ce99d9006258982"
+      }
+    ],
+    "tests_executed": true,
+    "test_validation": {
+      "result": {
+        "file": ".tooling/r1-widget-name-reference-complete-prepared/workflow-validation.json",
+        "sha256": "a8815414c9888d9220e2243594e58893fd783688e483fbd14edd10d4f489b6bc"
+      },
+      "tap": {
+        "file": ".tooling/r1-widget-name-reference-complete-prepared/workflow-validation.tap",
+        "sha256": "6962daf1e5568ddfd1544f000810aad45911c647128d5a2bce9b5245ea1ec6f8"
+      },
+      "launcher": {
+        "file": ".tooling/r1-widget-name-reference-complete-prepared/validate-workflow.ps1",
+        "sha256": "9e2213d4a1f0a25cb1673288ccf6261320f4212d1933b85239777e6f9863efde"
+      },
+      "observed_tests": 5,
+      "game_tests": 0,
+      "old_shape_tests_rerun": false,
+      "fresh_admission_required": true
+    }
+  },
+  "prior_name_query": {
+    "raw": {
+      "file": "docs/reverse-client/r1-widget-name-reference-run1/04-AddWidget-exact-name-find_xrefs_to_name.json",
+      "sha256": "6d2f48779b09c97bed7b9b5974c28f6f3aee98b1c14bdffde9b4374bb8486c84"
+    },
+    "session": {
+      "file": "docs/reverse-client/r1-widget-name-reference-run1/03-Client-session.json",
+      "sha256": "25e73eeaec0f34f2acf6db3d4141310d54ccbd651a44d20d98215f9a233fb2f8"
+    },
+    "summary": {
+      "file": "docs/reverse-client/r1-widget-name-reference-run1/summary.json",
+      "sha256": "fc407f6cfd5a871a46f10e6e4b87170a0516662a8470dbd6633c872bbca5fbd2"
+    },
+    "memory": {
+      "file": "docs/reverse-client/r1-widget-name-reference-run1/owned-memory-summary.json",
+      "sha256": "0b3524778a9ee22d31e8fc76599c618afacb95ff6238ffe1f9a5e3781cef2032"
+    },
+    "release": {
+      "file": "docs/reverse-client/r1-widget-name-reference-run1-release.json",
+      "sha256": "ccf8d86fa15aa6ec48ff46e31bc622b66386adf8f8e12429e25681ca910e3a1d"
+    },
+    "launch": {
+      "file": ".tooling/r1-widget-name-reference-prepared/launch-result.json",
+      "sha256": "3bba242452d97d8eb445512f59f9b7fee01fef67c30021d277663d6604228652"
+    },
+    "historical_status": "failed-own-validator-provider-mismatch",
+    "already_returned_name": "?AddWidget@Engine@GAME@@QEAAXPEAVDisplayWidget@2@@Z",
+    "second_name_query_issued": false,
+    "fresh_admission_required": true
+  }
+}

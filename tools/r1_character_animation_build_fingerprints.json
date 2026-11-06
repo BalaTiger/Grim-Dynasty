@@ -1,0 +1,107 @@
+{
+  "schema": "grim-dynasty.fixed-character-animation-build.v1",
+  "status": "frozen-not-executed",
+  "compiles": 1,
+  "scenarios": 7,
+  "sources": [
+    {
+      "path": "src/reverse_client_actions/GameCharacterAnimationContracts.cs",
+      "sha256": "e1d9b84058ef5332724f9b8910a7ca2bf2945acc8020d1af9e2e4c2ca5f89f57"
+    },
+    {
+      "path": "src/reverse_client_actions/GameCharacterAnimationTests.cs",
+      "sha256": "cea44fd387eaceed916ba69267630e9060ebdb4825e6c3e1341823d5edc54da6"
+    },
+    {
+      "path": "src/reverse_client_actions/GameCharacterAnimationValidationProgram.cs",
+      "sha256": "74480c00d7f7848b8fc917cbb1f2906b15f6154837843c16a5132ea26f36b575"
+    }
+  ],
+  "assemblies": [
+    {
+      "name": "GrimDynasty.Actions.dll",
+      "path": ".tooling/r1-waypoint-production-validation/GrimDynasty.Actions.dll",
+      "sha256": "2a58d78272c2ee0f41f96e4450f09309031b9e04b1497812dc92449b66ba8ae6"
+    },
+    {
+      "name": "GrimDynasty.EntityMovement.dll",
+      "path": ".tooling/r1-waypoint-production-validation/GrimDynasty.EntityMovement.dll",
+      "sha256": "85d848625fce7d5fc580feb04839898bd580a96f0c48308c3aca5b8ab142f84d"
+    },
+    {
+      "name": "GrimDynasty.GameMovementCallbacks.dll",
+      "path": ".tooling/r1-waypoint-production-validation/GrimDynasty.GameMovementCallbacks.dll",
+      "sha256": "21aa8443153c7a06575f25c32b4f7ef53d73b8d20c0cdc8ccda11c532ee0f5ed"
+    },
+    {
+      "name": "GrimDynasty.WorldCoordinates.dll",
+      "path": ".tooling/r1-waypoint-production-validation/GrimDynasty.WorldCoordinates.dll",
+      "sha256": "796566bdf812c09296539a8f3c3a9c7c50482c9440a82c03573e4e03b74a1acf"
+    },
+    {
+      "name": "GrimDynasty.NavigationNearest.dll",
+      "path": ".tooling/r1-waypoint-production-validation/GrimDynasty.NavigationNearest.dll",
+      "sha256": "75f303c482679df6ba2c8f01aad7759ba9ed322ad6386100525b690cd9b9dfd0"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdState.dll",
+      "path": ".tooling/r1-waypoint-production-validation/GrimDynasty.NavigationCrowdState.dll",
+      "sha256": "064f74a1649af7301276fc510fd1793ef5250660b25ba39a8ee69b5258d50198"
+    },
+    {
+      "name": "GrimDynasty.MoveManager.dll",
+      "path": ".tooling/r1-waypoint-production-validation/GrimDynasty.MoveManager.dll",
+      "sha256": "7563b6e32745e79ddc8308d2ea48ca7336050271d8dc8c9ce1e75346a52232da"
+    },
+    {
+      "name": "GrimDynasty.NavigationCrowdAdapter.dll",
+      "path": ".tooling/r1-waypoint-production-validation/GrimDynasty.NavigationCrowdAdapter.dll",
+      "sha256": "04215144406cd87357b98bd32911f96281453c4010e4f2f61e1c6997b065b73e"
+    },
+    {
+      "name": "GrimDynasty.NavigationCorridor.dll",
+      "path": ".tooling/r1-waypoint-production-validation/GrimDynasty.NavigationCorridor.dll",
+      "sha256": "1afd6850ae3f2fc1c0f13c6562ce6b5749a3ea98d3b2e5792d67234d4c779e33"
+    },
+    {
+      "name": "GrimDynasty.NavigationMeshTiles.dll",
+      "path": ".tooling/r1-waypoint-production-validation/GrimDynasty.NavigationMeshTiles.dll",
+      "sha256": "0b8604244b7681e6f0f5e13a63c93f2f815069bbe74109e974938c94d9ee4d57"
+    }
+  ],
+  "receipt": {
+    "path": ".tooling/r1-waypoint-production-validation/result.json",
+    "sha256": "d02bedb781ad56886918acb1389219501e79ad87f15b2330c88644183c8eb4a7"
+  },
+  "evidence": [
+    {
+      "path": "docs/reverse-client/r1-game-waypoint-animation-run1/summary.json",
+      "sha256": "d2ee75cc839b2bf78da6877687c3a5946171662768594b4193fe3b9b1bd2de0c"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-waypoint-animation-run1/04-WaypointAnimation-0x18005ae40-procedure_pseudo_code.json",
+      "sha256": "304868c8f2111bac73febbb5c8ed412903b6be1e156dd6822bfcb9acab61577d"
+    },
+    {
+      "path": "docs/reverse-client/r1-game-waypoint-animation-run1/05-WaypointAnimation-0x18005ae40-procedure_assembly.json",
+      "sha256": "f9aaf6f3d3bae45b0b6c6f3a19e78bc917950161c3ca90cad1cbf4ad5bd558a1"
+    }
+  ],
+  "dependency_selection": "Read-only PEReader AssemblyRef/TypeDef closure from Actions, EntityMovement, GameMovementCallbacks.10managed DLLs copied from one passed Waypoint output; no assembly loading/execution for inventory, no47dependency repetition, no old test EXE references.",
+  "source_partition": "Three sources compiled together into one independent test executable; no production adapter/state-machine source or patch.",
+  "output": ".tooling/r1-character-animation-validation",
+  "entrypoint": "GameCharacterAnimationValidationProgram",
+  "test_executable": "GameCharacterAnimationTests.exe",
+  "old_test_suites_rerun": 0,
+  "state_patch_applied": false,
+  "build_executed": false,
+  "tests_executed": false,
+  "original_read": false,
+  "backend_started": false,
+  "production_animation_connected": false,
+  "animation_resources_loaded": false,
+  "native_play_restored": false,
+  "gameplay_accepted": false,
+  "approval": "Root reviews fixed inputs/output and separately requests formal execution; preparation grants no execution permission.",
+  "scope": "Only GetAnimationSet05AE40 typed pointer priority/fallback/lifetime semantics under explicit own fields. No animation resources, Play implementation, production hookup, mouse or game acceptance."
+}

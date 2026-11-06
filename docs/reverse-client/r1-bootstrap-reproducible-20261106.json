@@ -1,0 +1,41 @@
+{
+    "schema":  "grim-dynasty-r1-bootstrap-reproducible-v1",
+    "utc":  "2026-11-06T02:21:38.9452240Z",
+    "status":  "passed-three-consecutive-runs",
+    "runs":  [
+                 {
+                     "run":  1,
+                     "done":  true,
+                     "initialize_returned":  true,
+                     "plugin_loaded":  true,
+                     "graphics_engine":  "0x1d929790"
+                 },
+                 {
+                     "run":  2,
+                     "done":  true,
+                     "initialize_returned":  true,
+                     "plugin_loaded":  true,
+                     "graphics_engine":  "0x1dbed700"
+                 },
+                 {
+                     "run":  3,
+                     "done":  true,
+                     "initialize_returned":  true,
+                     "plugin_loaded":  true,
+                     "graphics_engine":  "0x1d0d66d0"
+                 }
+             ],
+    "interpretation":  "Three consecutive runs each completed all four stages: window creation, settings and Engine construction, host-side publish, and Engine::Initialize returning with the renderer plugin loaded. The graphics engine address differs per run as expected under ASLR and heap allocation, while every stage outcome is identical.",
+    "stages_verified":  {
+                            "1 module and exports":  "five exports resolved, including Engine::Initialize at base+0x743d0",
+                            "2 window":  "WinWindow::Initialize returned 1 and IsWindow true, on every run",
+                            "3 construction":  "settings default string length 10 and explicit +0x0c accepted; Engine vtable equalled base+0x33e2f0 on every run",
+                            "4 publish and initialize":  "global written by the host then read by Engine::Initialize, which returned; Direct3D11.dll present in the module list on every run"
+                        },
+    "boundary":  "The publish of the Engine pointer is performed by the host. It reproduces the game operation; it is not a recovery of the game\u0027s own publish code, which static search showed does not exist as a store in the three modules.",
+    "not_claimed":  [
+                        "that an ID3D11Device is usable",
+                        "that a swapchain exists",
+                        "that a frame can be presented"
+                    ]
+}

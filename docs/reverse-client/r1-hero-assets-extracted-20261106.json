@@ -1,0 +1,34 @@
+{
+    "schema":  "grim-dynasty-r1-hero-assets-v1",
+    "utc":  "2026-11-06T06:05:30.3812596Z",
+    "status":  "passed-model-and-textures-extracted-and-verified",
+    "method":  "A generic extractor stage (--stage9 \u003cinternal path\u003e \u003coutput\u003e) mounts Creatures.arc, opens the requested internal path, supplies a destination buffer at File+0x28, calls the File read method, and saves the decoded bytes.",
+    "assets":  {
+                   "Creatures/pc/hero_00.msh":  {
+                                                    "bytes":  223717,
+                                                    "saved":  "hero_00_game.msh"
+                                                },
+                   "Creatures/pc/hero02.tex":  {
+                                                   "bytes":  174916,
+                                                   "saved":  "hero02.tex / hero02.dds / hero02.png",
+                                                   "format":  "DDS 512x512 DXT1, 10 mipmaps"
+                                               },
+                   "Creatures/pc/hero02_nml.tex":  {
+                                                       "bytes":  349692,
+                                                       "saved":  "hero02_nml.tex / hero02_nml.dds / hero02_nml.png",
+                                                       "format":  "DDS 512x512 DXT5, 10 mipmaps"
+                                                   }
+               },
+    "tex_container_format":  {
+                                 "header":  "the ASCII tag TEX, then u32 version 2, then u32 payload length, then the literal tag DDSR",
+                                 "payload":  "everything after the four characters DDSR is a standard DDS file body whose own header reports size 124, which is the normal DDS header size",
+                                 "conversion":  "replacing the four characters DDSR with the four characters DDS followed by a space yields a file any DDS reader accepts"
+                             },
+    "verification":  {
+                         "reproducibility":  "re-extracting hero_00.msh produced exactly 223717 bytes again, matching the earlier run",
+                         "colour_map":  "hero02.png decodes to 512x512 RGBA with 10280 distinct colours, mean RGB 62.8 50.6 37.5 and a warm brown palette consistent with leather, cloth and skin; a 4x4 grid of averages shows a continuous surface rather than flat blocks",
+                         "normal_map":  "hero02_nml.png has mean RGB 128.4 128.1 251.0, which is the signature of a tangent-space normal map with a nearly flat blue channel (standard deviation 6.0) and real detail in red and green (21.8 and 25.5)"
+                     },
+    "not_yet":  "The textures and geometry exist on disk but have not been submitted to the renderer. The vertex layout inside the first 181733 bytes still has to be pinned down against the skeleton and material data before a vertex buffer can be built honestly.",
+    "next":  "determine the vertex layout from the model file itself, then create the vertex and index buffers and the textures through the device and draw"
+}

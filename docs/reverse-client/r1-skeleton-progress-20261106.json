@@ -1,0 +1,64 @@
+{
+ "schema": "grim-dynasty-r1-skeleton-progress-v1",
+ "state": "bind pose parsed and saved; not yet bound to the mesh sections",
+ "done": {
+  "record_stride": 88,
+  "bone_count": 57,
+  "field_layout": {
+   "+0..+31": "name, 32 bytes NUL padded ASCII",
+   "+32": "u32 bone id",
+   "+36": "u32 unknown second field; it is not a usable parent index",
+   "+40..+75": "9 floats, row-major 3x3 rotation",
+   "+76..+87": "3 floats, translation xyz"
+  },
+  "validation": [
+   "Bip01 root translation (0, 0.0122, 1.364) is a plausible pelvis height",
+   "mirrored pairs agree in magnitude and differ only in sign: L/R Thigh (-0.0933, 0.0214, +-0.1438), L/R Clavicle (-0.1075, 0.0501, +-0.0433), CoatTail_LT/RT (0.1600, +-0.1772, 0.1313)",
+   "Calf and Foot both (0.6182, 0, 0), a plausible shin length",
+   "rotation matrices are orthonormal for the sampled bones"
+  ],
+  "hierarchy": "the parent id in the record does not form a tree, so hierarchy is inferred from name prefixes following the 3ds Max Biped convention",
+  "saved_to": "docs/reverse-client/r1-skeleton-extract-20261106.json"
+ },
+ "families": {
+  "Control object": 1,
+  "Bip01 spine/root": 6,
+  "CoatTail chain": 16,
+  "Coat_Loin chain": 3,
+  "Bip01 limb L Thigh": 1,
+  "Bip01 limb R Thigh": 1,
+  "Bip01 limb L Calf": 1,
+  "Bip01 limb R Calf": 1,
+  "Bip01 limb L Clavicle": 1,
+  "Bip01 limb R Clavicle": 1,
+  "Bip01 limb L Foot": 1,
+  "Bip01 limb R Foot": 1,
+  "Bip01 limb L UpperArm": 1,
+  "Bip01 limb R UpperArm": 1,
+  "Bip01 limb L Toe0": 1,
+  "Bip01 limb R Toe0": 1,
+  "Bip01 limb L Forearm": 1,
+  "Bip01 limb L ForeTwist": 1,
+  "Shoulder helper": 2,
+  "Bip01 limb R Forearm": 1,
+  "Bip01 limb R ForeTwist": 1,
+  "Bip01 limb L Hand": 1,
+  "Bip01 limb R Hand": 1,
+  "Bip01 limb L Finger0": 1,
+  "Bip01 limb L Finger1": 1,
+  "Weapon attach": 4,
+  "Bip01 limb R Finger0": 1,
+  "Bip01 limb R Finger1": 1,
+  "Bip01 limb L Weapon": 1,
+  "Bip01 limb R Weapon": 1,
+  "Object node": 1
+ },
+ "open_items": [
+  "the true parent index is not identified; the +36 field is something else",
+  "the mesh section to bone binding is not derived, so skinning cannot be driven yet",
+  "bone weights are only suspected at mesh record +68 and +72 and are not confirmed",
+  "the .anm animation files reference these bone names but no animation channel has been parsed"
+ ],
+ "why_kept": "this bind pose is the rest pose any later animation work needs, and the bone names line up with the shipped .anm files, so the work is not wasted even though it is paused here.",
+ "paused_at": "by user instruction, not pursued further for now"
+}

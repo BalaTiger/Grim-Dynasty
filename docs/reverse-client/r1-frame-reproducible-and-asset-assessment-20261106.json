@@ -1,0 +1,48 @@
+{
+    "schema":  "grim-dynasty-r1-frame-repro-and-assets-v1",
+    "utc":  "2026-11-06T02:59:30.6778108Z",
+    "part1_frame_reproducible":  {
+                                     "runs":  2,
+                                     "result":  "both runs produced self_pixel samples of R0 G0 B255 at three positions",
+                                     "geometry":  "client 800x600, window 806x629 at 877,406",
+                                     "calls":  "CreatePrimarySurface, BeginFrame=1, Clear, PresentSurface all returned normally",
+                                     "note":  "an attempt to add SetTargetSurface and SetRenderTarget before BeginFrame turned the frame black, so those calls were reverted; the shipped BeginFrame already establishes the target"
+                                 },
+    "part2_device_interface":  {
+                                   "slots":  80,
+                                   "geometry_path":  {
+                                                         "20 SetTargetSurface(int, RenderSurface*)":  "0x7a60",
+                                                         "21 SetRenderTarget(int, RenderSurface*)":  "0x7b00",
+                                                         "22 SetDepthTarget(RenderSurface*)":  "0x7b20",
+                                                         "30 SetViewport(Viewport const\u0026)":  "0x7cb0",
+                                                         "36 CreateVertexBuffer(uint, void const*, uint)":  "0x7f90",
+                                                         "38 CreateDynamicVertexBuffer(int)":  "0x8000",
+                                                         "42 CreateVertexDeclaration(VertexElement const*, uint)":  "0x80c0",
+                                                         "44 CreateIndexBuffer(uint, uint, void const*, uint)":  "0x81e0",
+                                                         "46 CreateRenderPass(std::string const\u0026)":  "0x8290",
+                                                         "48 CreateVertexShader(std::string const\u0026, void const*, uint)":  "0x83a0",
+                                                         "50 CreatePixelShader(std::string const\u0026, void const*, uint)":  "0x8420",
+                                                         "59/61 SetVertexShader / SetPixelShader":  "0x8710 / 0x87b0",
+                                                         "63 SetTexture(Name const\u0026, uint, RenderTexture*)":  "0x8850",
+                                                         "67 RenderPrimitives(RenderPrimitiveType, int,int,int,int,int)":  "0x8940"
+                                                     }
+                               },
+    "part3_what_terrain_and_a_character_require":  {
+                                                       "geometry_submission":  "needs a vertex declaration, a vertex buffer, a render pass, a vertex and pixel shader, constants, and a RenderPrimitives call through slots 36-67. None of these has been exercised yet.",
+                                                       "shaders_by_name":  "CreateVertexShader and CreateRenderPass take a std::string name, so shaders are fetched from the resource system by name rather than compiled from bytes here. That ties shader use to the asset system.",
+                                                       "textures":  "CreateTexture takes raw bytes, but the bytes come from game archives.",
+                                                       "terrain_data":  "terrain lives in the game map archives; reaching it requires FileSystem::OpenFile or OpenFullFilePath plus the world/level loading code the game runs when a level is entered.",
+                                                       "character_data":  "the initial character needs a model, a rig, animations and equipment state, all from archives, plus the character spawn path.",
+                                                       "scene_pipeline":  "camera matrices, visibility and batching live in the engine subsystems that Engine::Initialize stands up but that have never been driven."
+                                                   },
+    "part4_verdict":  {
+                          "verdict":  "Rendering terrain and a character is not a matter of a few more calls. It requires the asset system (FileSystem plus archive decoding) and the scene/level pipeline, neither of which has been exercised.",
+                          "realistic_next_steps":  [
+                                                       "prove the geometry path with a single triangle built from our own vertex data (no assets)",
+                                                       "then prove FileSystem can open a real game archive and read a known file",
+                                                       "then find the level-load entry the game uses when a character enters a map"
+                                                   ],
+                          "do_not_claim":  "A visible pure colour frame is not a picture of the game world."
+                      },
+    "boundary":  "The host published the engine global. Presentation came from the shipped renderer."
+}

@@ -1,0 +1,86 @@
+{
+  "schema": "grim-dynasty.fixed-world-distance-build.v1",
+  "preparation_status": "frozen-not-executed",
+  "compiles": 2,
+  "new_scenarios": 8,
+  "sources": [
+    {
+      "path": "src/reverse_client_actions/WorldDistanceContracts.cs",
+      "bytes": 4036,
+      "sha256": "9c8eadc38244500b3f69442f986d27ad9b4e26b87c16852d322c62cfcffc26db"
+    },
+    {
+      "path": "src/reverse_client_actions/WorldDistanceTests.cs",
+      "bytes": 11926,
+      "sha256": "ebfa27041f2597cdbf348aec743182510d87b36e81f0c81ce280dabd764ecc74"
+    }
+  ],
+  "assemblies": [
+    {
+      "name": "GrimDynasty.Actions.dll",
+      "path": ".tooling/r1-controller-move-production-validation/GrimDynasty.Actions.dll",
+      "bytes": 23552,
+      "sha256": "2a58d78272c2ee0f41f96e4450f09309031b9e04b1497812dc92449b66ba8ae6"
+    },
+    {
+      "name": "GrimDynasty.WorldCoordinates.dll",
+      "path": ".tooling/r1-controller-move-production-validation/GrimDynasty.WorldCoordinates.dll",
+      "bytes": 9216,
+      "sha256": "796566bdf812c09296539a8f3c3a9c7c50482c9440a82c03573e4e03b74a1acf"
+    },
+    {
+      "name": "GrimDynasty.MoveManager.dll",
+      "path": ".tooling/r1-controller-move-production-validation/GrimDynasty.MoveManager.dll",
+      "bytes": 6144,
+      "sha256": "7563b6e32745e79ddc8308d2ea48ca7336050271d8dc8c9ce1e75346a52232da"
+    }
+  ],
+  "prerequisite": {
+    "path": ".tooling/r1-controller-move-production-validation/result.json",
+    "bytes": 85249,
+    "sha256": "10bcb0b41e4754d89179fe7730617ad7c8de8ae1cd7aa1cf5bfd7c8f393637cc"
+  },
+  "rea_completed": {
+    "path": "docs/reverse-client/r1-move-world-distance-run1/summary.json",
+    "bytes": 36486,
+    "sha256": "d50cc0ca743cfe5c52640617a06ad0e22bc01d415d3f800c833274c3521f4899"
+  },
+  "evidence": [
+    {
+      "path": "docs/reverse-client/r1-move-world-distance-run1/04-EngineWorldDistance-0x180224770-procedure_pseudo_code.json",
+      "bytes": 23639,
+      "sha256": "4933c2fe7914f0818de20fed35852df7db4867de8f6a1b57f06762fd9885eb84"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-world-distance-run1/05-EngineWorldDistance-0x180224770-procedure_assembly.json",
+      "bytes": 29270,
+      "sha256": "6707388241983f9fb8a639c49e7ff9780dece5050b6130daddaf26e9c58d8d86"
+    },
+    {
+      "path": "docs/reverse-client/r1-move-world-distance-run1/06-EngineWorldDistance-0x180224770-procedure_callees.json",
+      "bytes": 10599,
+      "sha256": "c013d7f877dadf65269c716617a7dd6fc7a3afbf47ebcb30375395e12be3556b"
+    }
+  ],
+  "original_engine_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "output": ".tooling/r1-world-distance-validation",
+  "production_name": "GrimDynasty.WorldDistance.dll",
+  "test_name": "WorldDistanceTests.exe",
+  "entrypoint": "WorldDistanceValidationProgram",
+  "arguments": [],
+  "old_sources_recompiled": [],
+  "old_executable_entrypoints_invoked": [],
+  "old_test_suites_rerun": 0,
+  "original_read": false,
+  "original_executed": false,
+  "backend_started": false,
+  "build_executed": false,
+  "tests_executed": false,
+  "physical_mouse": false,
+  "action_submission_completed": false,
+  "walking_accepted": false,
+  "gameplay_accepted": false,
+  "dependency_policy": "Three already-passed DLLs from the latest controller production validation; read-only PE metadata confirms WorldCoordinates -> Actions, MoveManager and MoveManager -> Actions. No project assembly loaded for inventory, no old executable, no old suite.",
+  "support": "Only Engine224770 null-region and same-region distance. Different-region stops at2247FB; no Game connection or complete movement claim.",
+  "resource_policy": "Two serial small csc compilations and one new own test executable only, through parent formal approval after current resource/process preflight. No Rea, Java or original binary execution."
+}

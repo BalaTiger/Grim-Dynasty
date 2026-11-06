@@ -1,0 +1,36 @@
+{
+  "status": "publication-identities-proven; actual-animation-load-and-play-unclosed",
+  "summary_sha256": "8c5f60310cae0a601271baa158079c2b6308face5cf7653ceee6fbdef0471b4a",
+  "original_sha256_before_and_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+  "actual_tools": ["procedure_pseudo_code", "procedure_assembly", "procedure_callees"],
+  "engine_publication_saved_supplement": {
+    "source": "docs/phase-1/round-4/Engine-function-evidence-bounded-v2.json",
+    "sha256": "ab597744f4a4cf617c6227fe7a50100e5b03733aa48dda43a730f65509bdca26",
+    "ctor": "072E22 stores known-null QWORD at Engine+1F8, after072951 capturedthis and07295E zeroedEBP.",
+    "initialize": "Entry0743D0 capturesEngine inRSI at074405. Alloc1C0, CALL090730 at07476B, store actualRAX atEngine+1F8 at074771, thenCALL090BA0 at074781. Nonnull publication precedes device success. Devicefalse path reports thenexit(-1); later074ACA calls090E60 withsameEngine+1F8 andResourceLoader+210.",
+    "source_kind": "Previously saved Ghidra assembly; reused, not queried again this batch."
+  },
+  "graphics_ctor_090730": {
+    "assembly_sha256": "f9a1ed00ca7495869c787d22161468fccacd96ba0f0255b95337ac320b67d192",
+    "loader_zero": "0907EF writes QWORD zero tothis+20 only after090777 SystemTimer.GetInternalTime and090792 timer virtual call return. Do not initialize thiscell early or infer untouched bytes.",
+    "return_identity": "Normal return is originalthis; timer and exception paths remain prerequisites, not fabricated callbacks."
+  },
+  "create_device_090BA0": {
+    "assembly_sha256": "0d97fdacf5a6934fa374910a4761d03b0941f07cc777335a2b500bb6d84bb440",
+    "scope": "No direct+20 write. Calls090AE0, optionally retriesdirect3d, uses actualRenderDevice+58 and surface+90. Only+90nonnull reachestrue; failure logging mustreturn beforeALfalse. Prior+190 and conditional+1B8/+1B9 writes persist as executedprefix.",
+    "not_implemented": "Device, Options.Save, windows, retries and logging are not simulated or executed. No extra device-system queries."
+  },
+  "animation_manager_publication_090E60": {
+    "assembly_sha256": "90dc01613e49f687756bca1e61f98ad497e34566eae3e99d917903f80a88639a",
+    "order": ["090E86 capturesResourceLoader R9inR15;090E89 capturesGraphicsEngine inRSI", "0911CC/1D1 allocE8;0911D6 capturesallocationRAX inRBX", "0911FE constructs temporarystring: - AnimationResourceManager, length1A", "09120B R8=originalResourceLoader;09120E RDX=tempstring;091212 RCX=RBX;091215 CALL03A8C0", "09121A RAX=&Engine33F478;091221 storesvptr at[RBX]", "091224 publishes sameallocationRBX atGraphicsEngine+20", "09123F conditionally destroyslocalstring afterpublication"],
+    "identity": "The E8 AnimationResourceManager is distinct from ResourceLoader. Publish originalallocationRBX, not BaseResourceManager constructorreturnRAX. No +E8 RenderDevice wrapper field or1972C0 registration in thisE8 segment; do not require unrelated five resource managers for a conditional animation-only path.",
+    "failure_prefix": "Baseconstructor nonreturn stops beforevptr/publication; laterfailure occurs afterpublication. No null/success checks in this segment. Exception unwind cleanup/rollback not established.",
+    "whole_initialize": "Beforethissegment actualRenderDevice+58/+108/+118 and earlier managers are required. TailAL1 at091447 only follows normalreturn of priorcalls, not validation of all resources. Do not fabricate successful Initialize.",
+    "next_slot": "091A20 uses actualinterfacevptr+10, now locatedatEngine33F488. Its8-byte value and functionbody are still unknown atthisassessment."
+  },
+  "execution": {"session":37716,"exit":0,"calls":14,"finished":"2026-10-26T14:14:34.559Z","closed":true,"process_exit":true,"job_empty":true,"sampler_exit":true,"forced":false,"counter_gaps":0,"peak_combined_working_set_bytes":1338728448,"minimum_physical_bytes":9157775360,"minimum_commit_headroom_bytes":18852376576},
+  "new_production_compiles": 0,
+  "new_tests": 0,
+  "old_suites_rerun": 0,
+  "first_usable_game": false
+}

@@ -1,0 +1,42 @@
+{
+    "schema":  "grim-dynasty-r1-presentation-startup-chain-v1",
+    "utc":  "2026-11-05T10:33:01.1958084Z",
+    "finding":  "The presentation startup path is not hidden: the window classes and the device-creation entry point are ordinary exports of Engine.dll (6283 exports total).",
+    "engine":  {
+                   "file":  "Engine.dll",
+                   "size":  4485632,
+                   "sha256":  "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+                   "export_count":  6283
+               },
+    "startup_symbols":  {
+                            "GraphicsEngine::CreateDevice(GAME::EWindow*, GAME::GraphicsEngineSettings const\u0026)":  "0x90ba0",
+                            "GraphicsEngine::CreateDevice(std::string const\u0026, bool)":  "present as a second overload in the export table",
+                            "WinWindow::WinWindow()":  "0x217710",
+                            "HwndWindow::HwndWindow(HWND__*)":  "0xec380",
+                            "WinWindow vtable":  "0x33f4c0",
+                            "HwndWindow vtable":  "0x33fc48",
+                            "WindowEventHandler vtable":  "0x33f4a0",
+                            "WinWindow::Activate":  "0xec5e0",
+                            "WinWindow::Close":  "0x218070"
+                        },
+    "also_exported":  [
+                          "GraphicsEngine constructor and destructor",
+                          "GraphicsEngineSettings constructors",
+                          "GraphicsEngine query surface such as AreMeshesEnabled, AreShadowsEnabled, BeginPerfEvent, AlignPositionToScreen"
+                      ],
+    "why_it_matters":  "A recovered host can create a real window through the shipped WinWindow class and ask the real GraphicsEngine to create the device, instead of inventing a window or a renderer. Both are symbol-bearing code, so each step can be evidenced the same way as the movement path.",
+    "implied_chain":  [
+                          "construct WinWindow() -\u003e an EWindow with a real HWND and a WindowEventHandler vtable",
+                          "construct GraphicsEngineSettings() and set the observed fields",
+                          "call GraphicsEngine::CreateDevice(EWindow*, GraphicsEngineSettings\u0026) -\u003e loads the renderer plugin and creates Direct3DDevice11",
+                          "call device-\u003eCreatePrimarySurface(EWindow*, RenderDeviceSettings\u0026) -\u003e binds this+0x10 and creates the swapchain",
+                          "per frame: BeginFrame, submit work, PresentSurface (DXGI slot 0x40)"
+                      ],
+    "not_established":  [
+                            "that this chain has been executed",
+                            "the GraphicsEngineSettings layout",
+                            "how the renderer plugin is located and loaded",
+                            "any presented frame"
+                        ],
+    "next":  "Decode GraphicsEngine::CreateDevice 0x90ba0 and WinWindow::WinWindow 0x217710 to recover the exact creation order and the settings layout."
+}

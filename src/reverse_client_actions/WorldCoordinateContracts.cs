@@ -2,14 +2,18 @@ using System;
 using System.Collections.Generic;
 namespace GrimDynasty.ReverseClient.Actions {
  // One authoritative24-byte view. D14 is independent knowledge, never a
- // synthesized high half of a coarse Q16. This deliberately does not mirror or
- // synchronize the frozen WorldPosition type. A same-address alias shares all
- // cells and the address identity; arbitrary shifted/cross-type aliases are out.
+ // synthesized high half of a coarse Q16. Explicit word views borrow these
+ // same cells without a mirror or synchronization step. A same-address alias
+ // shares the cells and address identity; arbitrary native byte aliases are out.
  public sealed class WorldPosition24 {
   public readonly object AddressIdentity;
   public readonly Field<ulong> Q0;
   public readonly Field<uint> D8,DC,D10,D14;
   public WorldPosition24(){AddressIdentity=new object();Q0=new Field<ulong>();D8=new Field<uint>();DC=new Field<uint>();D10=new Field<uint>();D14=new Field<uint>();}
+  public WorldPosition24(object addressIdentity,Field<ulong> q0,Field<uint> d8,Field<uint> dc,Field<uint> d10,Field<uint> d14){
+   if(addressIdentity==null||q0==null||d8==null||dc==null||d10==null||d14==null)throw new ArgumentNullException("shared position address/cell");
+   AddressIdentity=addressIdentity;Q0=q0;D8=d8;DC=dc;D10=d10;D14=d14;
+  }
   public WorldPosition24(WorldPosition24 sameAddress){if(sameAddress==null)throw new ArgumentNullException("sameAddress");AddressIdentity=sameAddress.AddressIdentity;Q0=sameAddress.Q0;D8=sameAddress.D8;DC=sameAddress.DC;D10=sameAddress.D10;D14=sameAddress.D14;}
  }
  public sealed class WorldBounds24 {

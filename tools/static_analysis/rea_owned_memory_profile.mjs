@@ -4,7 +4,13 @@ import {spawn} from 'node:child_process';
 import {calibrationBudget, checkResourceBudget} from './rea_resource_budget.mjs';
 import {validateJavaRole, resolveJavaTargetProfile, assertJavaSessionTarget} from './rea_java_role.mjs';
 
-export function startOwnedMemoryProfile({root, output, backendPid, controllerPid, onFailure, budget = calibrationBudget, ownedJob, targetProfile = 'engine'}, dependencies = {}) {
+export function startOwnedMemoryProfile({root, output, backendPid, controllerPid, onFailure, budget = calibrationBudget, ownedJob, targetProfile = 'engine', samplerIdentity = 'default'}, dependencies = {}) {
+  let samplerFile = ownedJob ? 'tools/static_analysis/measure_job_process_memory.ps1' : 'tools/static_analysis/measure_owned_process_memory.ps1';
+  if (samplerIdentity === 'game-associated-identity-repair') {
+    if (!ownedJob) throw Error('Associated identity repair requires the owned Job gate');
+    if (targetProfile !== 'game') throw Error('Associated identity repair requires the fixed Game target');
+    samplerFile = 'tools/static_analysis/measure_game_associated_repair_memory.ps1';
+  } else if (samplerIdentity !== 'default') throw Error('Unknown fixed sampler identity');
   const fixedTarget = resolveJavaTargetProfile(targetProfile); // Reject before sampler spawn.
   const spawnProcess = dependencies.spawn ?? spawn;
   const now = dependencies.now ?? Date.now;
@@ -12,7 +18,7 @@ export function startOwnedMemoryProfile({root, output, backendPid, controllerPid
   const unschedule = dependencies.clearInterval ?? clearInterval;
   const file = path.join(output, 'owned-memory.ndjson');
   const executable = path.join(process.env.SystemRoot, 'System32/WindowsPowerShell/v1.0/powershell.exe');
-  const args = ['-NoLogo', '-NoProfile', '-NonInteractive', '-File', path.join(root, ownedJob ? 'tools/static_analysis/measure_job_process_memory.ps1' : 'tools/static_analysis/measure_owned_process_memory.ps1'), '-RootProcessId', String(backendPid), '-ControllerProcessId', String(controllerPid), '-DurationSeconds', '600', '-IntervalMilliseconds', '1000', '-OutputFile', file];
+  const args = ['-NoLogo', '-NoProfile', '-NonInteractive', '-File', path.join(root, samplerFile), '-RootProcessId', String(backendPid), '-ControllerProcessId', String(controllerPid), '-DurationSeconds', '600', '-IntervalMilliseconds', '1000', '-OutputFile', file];
   if (ownedJob) args.push('-RunNonce', ownedJob.nonce, '-NodeExecutable', ownedJob.nodeExecutable);
   else args.push('-StreamSamples');
   const sampler = spawnProcess(executable, args, {cwd: root, windowsHide: true, stdio: [ownedJob ? 'pipe' : 'ignore', 'pipe', 'pipe']});

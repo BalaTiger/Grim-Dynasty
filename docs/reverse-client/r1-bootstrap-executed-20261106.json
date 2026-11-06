@@ -1,0 +1,31 @@
+{
+    "schema":  "grim-dynasty-r1-bootstrap-executed-v1",
+    "utc":  "2026-11-06T02:19:47.2987873Z",
+    "status":  "passed-engine-startup-executed",
+    "summary":  "The original Engine.dll start-up path was driven end to end in a host process: window, settings, Engine construction, host-side publish, and Engine::Initialize, which returned normally and left both the GraphicsEngine and the Options objects in place.",
+    "observations":  {
+                         "engine_base":  "0x7ffb638f0000",
+                         "exports_resolved":  "windctor 0x7ffb63b07710, wininit 0x7ffb63b079b0, settings 0x7ffb639806e0, engine 0x7ffb63962930, engineinit 0x7ffb639643d0, filesystem 0x7ffb63976370",
+                         "window":  "WinWindow::Initialize returned 1 and IsWindow was true",
+                         "settings":  "default ctor produced the direct3d11 string with length 10; an explicit +0x0c of 2 was accepted",
+                         "engine":  "Engine::Engine produced vtable 0x7ffb63c2e2f0 which equals base+0x33E2F0, exactly the expected value",
+                         "publish":  "global_before 0x0, global_after 0x1d5f5b40",
+                         "initialize":  "Engine::Initialize returned normally",
+                         "graphics_engine":  "engine+0x1f8 = 0x1d604930, non-null",
+                         "options":  "engine+0x3e0 = 0xdeaab0, non-null"
+                     },
+    "first_attempt_failure":  {
+                                  "cause":  "FileSystem passed as null",
+                                  "crash":  "0xC0000005 at RVA 0x148495 inside LocalizationManager::InitializeLanguage",
+                                  "fix":  "construct a real FileSystem with FileSystem::FileSystem() 0x86370 and pass it"
+                              },
+    "symbol_learned":  "The four trailing std::string parameters belong to LocalizationManager::InitializeLanguage(string const\u0026, string const\u0026, string const\u0026, string const\u0026) and are localisation names; the two I supplied were \"english\".",
+    "benign_noise":  "0x40010006 is STATUS_MS_VC_EXCEPTION and 0xE06D7363 is a C++ throw caught by the engine; neither is a failure.",
+    "boundary":  "The publish of the Engine pointer into Engine.dll+0x421428 was performed by this host. It reproduces the game operation but is not a recovery of the game\u0027s own publish code.",
+    "not_yet_established":  [
+                                "whether the device was actually created inside CreateDevice during this run",
+                                "whether a frame can be presented",
+                                "whether the remaining engine subsystems that Initialize stands up are functional",
+                                "what the last two localisation strings should be"
+                            ]
+}

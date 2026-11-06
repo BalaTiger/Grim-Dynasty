@@ -1,0 +1,72 @@
+{
+    "schema":  "grim-dynasty-r1-presentation-lifecycle-v1",
+    "utc":  "2026-11-05T10:28:15.6599695Z",
+    "status":  "decoded-not-implemented",
+    "source":  {
+                   "file":  "Direct3D11.dll",
+                   "sha256":  "862a9ef1e67617c29122dc8b8b9c25dbbafe2e518ed98c0bb52b24b37d75ab5b"
+               },
+    "evidence":  "docs/reverse-client/r1-presentation-device-run3/inspection.json",
+    "object_layout_observed":  {
+                                   "this+0x10":  "EWindow* (CreatePrimarySurface releases and replaces it)",
+                                   "this+0x48":  "primary IDXGISwapChain* (PresentSurface uses it for the primary surface)",
+                                   "this+0x98":  "DXGI factory/interface used by Initialize enumeration",
+                                   "this+0xA0":  "a second surface released by CreateSwapChain",
+                                   "this+0xE0":  "dword passed as the Present sync interval",
+                                   "this+0x5190":  "the primary RenderSurface* identity",
+                                   "this+0x52C0":  "critical section guarding PresentSurface",
+                                   "this+0x53E8":  "cached byte compared against the window-active predicate in BeginFrame",
+                                   "render surface +0x38":  "that surface\u0027s IDXGISwapChain*"
+                               },
+    "contracts":  {
+                      "PresentSurface":  {
+                                             "rva":  "0x7c40",
+                                             "rows":  72,
+                                             "sequence":  [
+                                                              "lock this+0x52C0 via IAT 0x1800170E0",
+                                                              "edx = [this+0xE0]; r8d = 0",
+                                                              "swapchain = (surface == [this+0x5190]) ? [this+0x48] : [surface+0x38]",
+                                                              "call [swapchain_vtable+0x40]   -\u003e IDXGISwapChain::Present(SyncInterval=edx, Flags=0)",
+                                                              "unlock via tail jmp [0x1800170D8]"
+                                                          ],
+                                             "reading":  "This is the actual present call: DXGI vtable slot 0x40 is Present, with the sync interval taken from this+0xE0 and flags 0."
+                                         },
+                      "BeginFrame":  {
+                                         "rva":  "0x7b90",
+                                         "rows":  48,
+                                         "sequence":  [
+                                                          "if [this+0x1C]!=0 and [this+0x1D]!=0 -\u003e return false",
+                                                          "rcx = *[0x180017080]; call [0x1800170F8]  (global predicate)",
+                                                          "if returned byte != [this+0x53E8] -\u003e call 0x46B0, re-read the predicate, store it back"
+                                                      ],
+                                         "reading":  "A window/device-active gate that caches its answer at this+0x53E8 and can return false early."
+                                     },
+                      "EndFrame":  {
+                                       "rva":  "0x6470",
+                                       "sequence":  [
+                                                        "ret 0"
+                                                    ],
+                                       "reading":  "Empty stub in this build; it performs no work."
+                                   },
+                      "CreatePrimarySurface":  {
+                                                   "rva":  "0x6480",
+                                                   "rows":  120,
+                                                   "sequence":  [
+                                                                    "if [this+0x10] == EWindow argument -\u003e skip",
+                                                                    "otherwise release the previous window binding at this+0x10"
+                                                                ],
+                                                   "reading":  "Binds the device to an EWindow; the window pointer lives at this+0x10."
+                                               }
+                  },
+    "what_this_establishes":  [
+                                  "the complete present lifecycle is readable from the shipped plugin: bind window, create swapchain, guard frame, present via DXGI slot 0x40, empty EndFrame",
+                                  "the object offsets needed to drive that lifecycle are identified"
+                              ],
+    "not_established":  [
+                            "RenderDeviceSettings layout",
+                            "how an EWindow is constructed",
+                            "the RenderDevice vtable order needed to substitute a device",
+                            "any running device or presented frame"
+                        ],
+    "correction":  "The user requires presentation itself to come from reverse engineering. A self-built GDI view therefore does NOT satisfy the milestone and is not the deliverable; it is only a movement test harness."
+}

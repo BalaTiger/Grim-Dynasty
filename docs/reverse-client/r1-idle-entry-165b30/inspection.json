@@ -1,0 +1,192 @@
+{
+  "schema": "grim-dynasty-r1-idle-entry-165b30-v1",
+  "status": "decoded-exact-pdata-window-manual-review-required",
+  "started_utc": "2026-11-05T06:14:49.480Z",
+  "original": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+  "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+  "source_evidence": {
+    "file": "docs/reverse-client/r1-player-state-slots/inspection.json",
+    "sha256": "acef5697258ef3f87d6fc98db0ac1881f6fa514c3cfcfe6687a9aec11257e078"
+  },
+  "window": {
+    "rva": "0x165b30",
+    "length": 107,
+    "end_exclusive": "0x165b9b",
+    "kind": "exact-pdata-bounded-function"
+  },
+  "tool": "D:/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/dumpbin.exe",
+  "expected_tool_sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815",
+  "original_executed": false,
+  "original_given_to_dumpbin": false,
+  "subprocesses": 1,
+  "code_bytes": 107,
+  "failures": [],
+  "limitations": [
+    "The window is exactly the saved .pdata fragment for slot+0x220; a pdata fragment is not a proof of logical completeness.",
+    "No call target, vtable slot or neighbouring function is followed.",
+    "A disk decode does not establish runtime behaviour or native ABI semantics."
+  ],
+  "tool_before": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815"
+  },
+  "code_sha256": "9630eee82fb7d2957f0620ff1029527aaac5951394a8b6e405e03d11b869bd60",
+  "rows": [
+    {
+      "address": "0x180165b30",
+      "bytes": "4057",
+      "instruction": "push        rdi"
+    },
+    {
+      "address": "0x180165b32",
+      "bytes": "4883ec30",
+      "instruction": "sub         rsp,30h"
+    },
+    {
+      "address": "0x180165b36",
+      "bytes": "48c7442420feffffff",
+      "instruction": "mov         qword ptr [rsp+20h],0FFFFFFFFFFFFFFFEh"
+    },
+    {
+      "address": "0x180165b3f",
+      "bytes": "48895c2448",
+      "instruction": "mov         qword ptr [rsp+48h],rbx"
+    },
+    {
+      "address": "0x180165b44",
+      "bytes": "488bf9",
+      "instruction": "mov         rdi,rcx"
+    },
+    {
+      "address": "0x180165b47",
+      "bytes": "488b5908",
+      "instruction": "mov         rbx,qword ptr [rcx+8]"
+    },
+    {
+      "address": "0x180165b4b",
+      "bytes": "b948000000",
+      "instruction": "mov         ecx,48h"
+    },
+    {
+      "address": "0x180165b50",
+      "bytes": "e86f4b4700",
+      "instruction": "call        00000001805DA6C4"
+    },
+    {
+      "address": "0x180165b55",
+      "bytes": "4889442440",
+      "instruction": "mov         qword ptr [rsp+40h],rax"
+    },
+    {
+      "address": "0x180165b5a",
+      "bytes": "8b5330",
+      "instruction": "mov         edx,dword ptr [rbx+30h]"
+    },
+    {
+      "address": "0x180165b5d",
+      "bytes": "488bc8",
+      "instruction": "mov         rcx,rax"
+    },
+    {
+      "address": "0x180165b60",
+      "bytes": "e8dbbef1ff",
+      "instruction": "call        0000000180081A40"
+    },
+    {
+      "address": "0x180165b65",
+      "bytes": "90",
+      "instruction": "nop"
+    },
+    {
+      "address": "0x180165b66",
+      "bytes": "488bd0",
+      "instruction": "mov         rdx,rax"
+    },
+    {
+      "address": "0x180165b69",
+      "bytes": "488bcb",
+      "instruction": "mov         rcx,rbx"
+    },
+    {
+      "address": "0x180165b6c",
+      "bytes": "e85f22fcff",
+      "instruction": "call        0000000180127DD0"
+    },
+    {
+      "address": "0x180165b71",
+      "bytes": "488b0d10079000",
+      "instruction": "mov         rcx,qword ptr [0000000180A66288h]"
+    },
+    {
+      "address": "0x180165b78",
+      "bytes": "4881c108130000",
+      "instruction": "add         rcx,1308h"
+    },
+    {
+      "address": "0x180165b7f",
+      "bytes": "bad0070000",
+      "instruction": "mov         edx,7D0h"
+    },
+    {
+      "address": "0x180165b84",
+      "bytes": "448bc2",
+      "instruction": "mov         r8d,edx"
+    },
+    {
+      "address": "0x180165b87",
+      "bytes": "ff150b3f4a00",
+      "instruction": "call        qword ptr [0000000180609A98h]"
+    },
+    {
+      "address": "0x180165b8d",
+      "bytes": "894720",
+      "instruction": "mov         dword ptr [rdi+20h],eax"
+    },
+    {
+      "address": "0x180165b90",
+      "bytes": "488b5c2448",
+      "instruction": "mov         rbx,qword ptr [rsp+48h]"
+    },
+    {
+      "address": "0x180165b95",
+      "bytes": "4883c430",
+      "instruction": "add         rsp,30h"
+    },
+    {
+      "address": "0x180165b99",
+      "bytes": "5f",
+      "instruction": "pop         rdi"
+    },
+    {
+      "address": "0x180165b9a",
+      "bytes": "c3",
+      "instruction": "ret"
+    }
+  ],
+  "control_transfers": [
+    {
+      "address": "0x180165b50",
+      "instruction": "call        00000001805DA6C4"
+    },
+    {
+      "address": "0x180165b60",
+      "instruction": "call        0000000180081A40"
+    },
+    {
+      "address": "0x180165b6c",
+      "instruction": "call        0000000180127DD0"
+    },
+    {
+      "address": "0x180165b87",
+      "instruction": "call        qword ptr [0000000180609A98h]"
+    },
+    {
+      "address": "0x180165b9a",
+      "instruction": "ret"
+    }
+  ],
+  "source_closed": true,
+  "tool_after": {
+    "sha256": "cfee7ed764b7b0866aae0be12f9c0ad2a7f5aecc4046ba2b7de26335827ca815"
+  },
+  "finished_utc": "2026-11-05T06:14:49.940Z"
+}

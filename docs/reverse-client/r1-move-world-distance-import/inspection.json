@@ -1,0 +1,178 @@
+{
+  "schema": "grim-dynasty.fixed-move-world-distance-import.v1",
+  "started_utc": "2026-10-26T04:40:25.585Z",
+  "script_sha256": "60e19469751422491a128caf79778f411a8033b89f27781f6c82c40ceb2cc167",
+  "plan_sha256": "504481417949604b635dbd254bc32586c5f67a361039102041ea9eedc06fb600",
+  "source_pins": [
+    {
+      "key": "imports",
+      "path": "docs/object-lifecycle/offline-questitem-imports/import-bindings.json",
+      "sha256": "94d695f5026e1f50a7c1a2968d6f091146db634e28618ef0565b671857aa6f5e"
+    },
+    {
+      "key": "game_pe",
+      "path": "docs/object-lifecycle/offline-item-950-elements-boundaries/metadata.json",
+      "sha256": "227610d69da80a91e5b96d40765e6cbf17cf070ca5b792809f3d84b24deea58b"
+    },
+    {
+      "key": "engine_pe",
+      "path": "docs/object-lifecycle/offline-class-registration-exports/discovery.json",
+      "sha256": "0aa3b2f40baef67b2e60e572d472733ba40be7a156155ccde814e477b1f46a58"
+    },
+    {
+      "key": "inventory",
+      "path": "docs/phase-1/boundary-audit/module-boundaries.json",
+      "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7"
+    },
+    {
+      "key": "move_start",
+      "path": "docs/reverse-client/r1-move-start/05-MoveStart-0x180082c00-procedure_assembly.json",
+      "sha256": "5694ff6ab9547a98ff95fe607fbc55e19f167aa80b086bb69c6f06758daea971"
+    },
+    {
+      "key": "start_summary",
+      "path": "docs/reverse-client/r1-move-start/summary.json",
+      "sha256": "9cd4a5f209e25bae004cf8b455467f5f4d26bc4dc00e75a0f8412d67fe91ea63"
+    }
+  ],
+  "metadata_bytes": 162,
+  "metadata_operations": 9,
+  "new_IAT_bytes": 8,
+  "new_OFT_bytes": 8,
+  "new_PE_header_bytes": 0,
+  "new_descriptor_bytes": 20,
+  "code_bytes": 0,
+  "rtti_bytes": 0,
+  "original_loaded_or_executed": false,
+  "backend_started": false,
+  "subprocesses": 0,
+  "whole_table_scanned": false,
+  "files": [
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Game.dll",
+      "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "reads": [
+        {
+          "kind": "exact-import-descriptor",
+          "rva": "0xa4297c",
+          "file_offset": 10751868,
+          "bytes": 20,
+          "raw_hex": "c02aa4000000000000000000a66aa50000906000"
+        },
+        {
+          "kind": "exact-OFT-slot",
+          "rva": "0xa434d0",
+          "file_offset": 10754768,
+          "bytes": 8,
+          "raw_hex": "ae9aa40000000000"
+        },
+        {
+          "kind": "exact-IAT-slot",
+          "rva": "0x609a10",
+          "file_offset": 6324240,
+          "bytes": 8,
+          "raw_hex": "ae9aa40000000000"
+        },
+        {
+          "kind": "exact-import-hint",
+          "rva": "0xa49aae",
+          "file_offset": 10780846,
+          "bytes": 2,
+          "raw_hex": "510a"
+        },
+        {
+          "kind": "exact-import-name",
+          "rva": "0xa49ab0",
+          "file_offset": 10780848,
+          "bytes": 57,
+          "raw_hex": "3f47657444697374616e63655371756172656440576f726c644047414d454040514542414d41454256576f726c645665633340324030405a00"
+        }
+      ],
+      "hash_bytes": 22771712,
+      "closed": true,
+      "stable": true,
+      "sha256_before": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "sha256_after": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2"
+    },
+    {
+      "source": "D:/Steam/steamapps/common/Grim Dawn/x64/Engine.dll",
+      "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "reads": [
+        {
+          "kind": "exact-hinted-export-name-pointer",
+          "rva": "0x3b8298",
+          "file_offset": 3895960,
+          "bytes": 4,
+          "raw_hex": "63063e00"
+        },
+        {
+          "kind": "exact-export-name",
+          "rva": "0x3e0663",
+          "file_offset": 4060771,
+          "bytes": 57,
+          "raw_hex": "3f47657444697374616e63655371756172656440576f726c644047414d454040514542414d41454256576f726c645665633340324030405a00"
+        },
+        {
+          "kind": "exact-name-ordinal",
+          "rva": "0x3bd022",
+          "file_offset": 3915810,
+          "bytes": 2,
+          "raw_hex": "510a"
+        },
+        {
+          "kind": "exact-EAT-entry",
+          "rva": "0x3b206c",
+          "file_offset": 3870828,
+          "bytes": 4,
+          "raw_hex": "70472200"
+        }
+      ],
+      "hash_bytes": 8971264,
+      "closed": true,
+      "stable": true,
+      "sha256_before": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "sha256_after": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153"
+    }
+  ],
+  "bindings": [
+    {
+      "iat_rva": "0x609a10",
+      "index": 322,
+      "dll": "Engine.dll",
+      "symbol": "?GetDistanceSquared@World@GAME@@QEBAMAEBVWorldVec3@2@0@Z",
+      "hint": 2641,
+      "lookup_rva": "0xa434d0",
+      "hint_name_rva": "0xa49aae",
+      "loaded_IAT_observed": false
+    }
+  ],
+  "exports": [
+    {
+      "iat_rva": "0x609a10",
+      "symbol": "?GetDistanceSquared@World@GAME@@QEBAMAEBVWorldVec3@2@0@Z",
+      "hint": 2641,
+      "ordinal_index": 2641,
+      "ordinal": 2642,
+      "target_rva": "0x224770",
+      "target_va": "0x180224770",
+      "target_section": ".text",
+      "target_payload_read": false,
+      "function_boundary_verified": false,
+      "loaded_value_observed": false
+    }
+  ],
+  "unsupported": [],
+  "failures": [],
+  "disk_bindings_complete": true,
+  "limitations": [
+    "One disk import/export binding only; loaded IAT, function boundaries, target body and callable ABI remain unverified.",
+    "Only fixed descriptor/OFT/IAT and bounded selected name/export metadata are interpreted; cached same-image PE ranges supply header continuity.",
+    "Only the one hinted export name is checked; mismatch stops without search/fallback or other candidates.",
+    "Complete same-handle hash streams are identity checks separate from bounded semantic metadata reads, not atomic snapshots.",
+    "Node path checks do not recognize every Windows reparse tag. Separate Windows Attributes/reparse preflight is required before this function is authorized."
+  ],
+  "saved_proofs_verified": true,
+  "cached_OFT_entries": 350,
+  "finished_utc": "2026-10-26T04:40:25.640Z",
+  "status": "passed"
+}

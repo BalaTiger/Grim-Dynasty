@@ -1,0 +1,92 @@
+{
+  "schema": "grim-dynasty-host-observation-assessment-v1",
+  "utc": "2026-11-04T02:13:11.5030522Z",
+  "status": "read-only-assessment-complete;original-execution-not-authorized;no-dynamic-session-started",
+  "conclusion": "无需先启用 CPU 虚拟化或重启。宿主机标准账户方案有条件可行，但当前尚无已验证的调试前端、存档/Steam 访问边界或合法独立启动路径；不能立即安全启动原版。",
+  "scope": "只读核查已保存依赖证据、已知工具位置及官方文档；仅新增此报告和检查点引用。没有访问真实存档、Steam userdata/config/cloud、创建账户、安装软件、修改权限/网络或执行原游戏/DLL。",
+  "evidence": {
+    "imports": {"file": "docs/phase-1/boundary-audit/module-boundaries.json", "sha256": "d1ec79916baeb45b3257f7c7c2ce356c262f804ae9b2577888a0d14de53e7ba7", "fields": "root[].relativePath; importModules[].module/symbols; categories.path_configuration/save_lifecycle"},
+    "previous_assessment": "docs/reverse-client/r1-no-virtualization-options-20261104.json",
+    "completed_static_filter": {"file": "docs/reverse-client/r1-setui-byte-candidate-stage.json", "result": "one bounded .text pass; zero candidates for actual SetUI IAT1402D7318; no .pdata/body follow-up warranted; not proof of no runtime caller", "rerun": false},
+    "original_identity": {
+      "exe": {"path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Grim Dawn.exe", "sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4"},
+      "engine_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+      "game_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+      "status": "Historical verified identities; EXE before/after hash verified in preceding 02:05 UTC static pass. No original binary read or loaded in this assessment. Future execution requires fresh matching identities."
+    }
+  },
+  "debugger_inventory": {
+    "utc": "2026-11-04T02:08:50.4481755Z",
+    "receipt": "tool chunk505363; read-only path/version and exact App Paths queries",
+    "present": [
+      {"path": "D:\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Remote Debugger\\x64\\msvsmon.exe", "version": "17.14.20325.5805 (VS Build:37502.0)", "meaning": "Remote monitor only; not evidence of a usable Visual Studio debugger frontend; not started."},
+      {"path": "C:\\Windows\\System32\\vsjitdebugger.exe", "version": "17.0.157.0", "meaning": "JIT debugger entry only; no crash generated or registration changed."}
+    ],
+    "absent_at_exact_checked_paths": ["D:\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\devenv.exe", "C:\\Users\\zhuzi\\AppData\\Local\\Microsoft\\WindowsApps\\WinDbgX.exe", "C:\\Users\\zhuzi\\AppData\\Local\\Microsoft\\WindowsApps\\windbg.exe"],
+    "prior_inventory": "01:57 UTC PATH windbg/cdb/x64dbg/x32dbg/procmon/procmon64 not found; known Windows Kits10 x64 Debuggers paths absent. Installed dumpbin is static only. Rea/Ghidra verified static workflow does not establish dynamic attach/breakpoint support.",
+    "denied_read": {
+      "action": "Get-ItemProperty exact HKCU App Paths keys for windbg.exe and WinDbgX.exe",
+      "targets": ["HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\App Paths\\windbg.exe", "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\App Paths\\WinDbgX.exe"],
+      "error": "SecurityException: Requested registry access is not allowed.",
+      "status": "denied-by-OS;not-auto-review-denial;not-retried-or-escalated",
+      "implication": "Cannot conclude the debugger is absent globally. HKLM counterparts were absent. Prior Appx inventory denial also remains; no retry."
+    },
+    "candidate_if_install_needed": {"source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/", "tool": "Microsoft WinDbg x64", "status": "No download/install/run. Exact package version, signature/hash and installation scope must be fixed and approved before execution; official direct/Store distribution may auto-update."}
+  },
+  "startup_evidence": [
+    {"module": "Grim Dawn.exe", "facts": "Imports Engine.dll,Game.dll,lua51.dll,StatReport.dll,CrashReport.dll and VC/UCRT. Includes registry read/write, file create/copy/delete, ShellExecuteA and InternetOpenUrlA. Imports SetSavePath,SetBaseUserPath, log/dump/settings/keymap setters, Steamworks Initialize/Update/Shutdown and CloudRead/Write/Delete/Copy.", "limit": "Imported capabilities, not proven startup order, parameter values or actual telemetry/network execution."},
+    {"module": "Engine.dll", "facts": "Imports steam_api64.dll,FreeImage.dll,lua51.dll,zlibwapi.dll, VC/UCRT; LoadLibraryA/GetProcAddress, environment/current-directory/module/temp paths, file/mapping APIs.", "steam_imports": ["SteamAPI_GetHSteamUser", "SteamInternal_FindOrCreateUserInterface", "SteamInternal_ContextInit", "SteamInternal_GameServer_Init_V2", "SteamInternal_CreateInterface", "SteamAPI_RegisterCallback", "SteamInternal_SteamAPI_Init", "SteamAPI_RunCallbacks", "SteamAPI_Shutdown", "SteamAPI_UnregisterCallback", "SteamGameServer_GetHSteamUser", "SteamInternal_FindOrCreateGameServerInterface", "SteamGameServer_Shutdown", "SteamGameServer_RunCallbacks"], "limit": "Ordinary imports do NOT contain SteamAPI_RestartAppIfNecessary or exact SteamAPI_Init. SDK relaunch behavior is a potential risk, NOT an observed local call. Dynamic imports/delay imports and transitive dependencies are not fully covered."},
+    {"module": "Game.dll", "facts": "Imports SHGetSpecialFolderPathA, file/directory APIs, SaveManager DirectRead/DirectWrite/AddJob and Steam Cloud methods.", "limit": "CSIDL, resolved folder and timing unknown. Environment-variable redirection alone is not established containment."},
+    {"module": "directinput.dll", "facts": "Cached construction calls DirectInput8Create(0x800), two CreateDevice operations, GetModuleHandleA/SetWindowsHookExA and GetKeyboardState; failure prefixes retained.", "limit": "Full import inventory/actual dynamic DLL path/input success not proven by cached candidate names."}
+  ],
+  "possible_data_locations_not_probed": [
+    {"pattern": "<Windows Documents known folder>\\My Games\\Grim Dawn\\save", "basis": "Crate developer public support posts; folder may be redirected", "local_resolution": "unknown; not enumerated/opened/hashed"},
+    {"pattern": "<Steam client root>\\userdata\\<Steam account id>\\219990\\remote\\save", "basis": "Crate developer public support post", "local_resolution": "unknown; game library root does not establish Steam client/userdata root"},
+    {"pattern": "test/current-user registry, settings/keymap/log/dump paths, TEMP, game working directory, dynamically selected DLL/data paths", "basis": "ordinary import capabilities", "local_resolution": "exact keys/files and startup accesses unknown; no real-user content read"},
+    {"pattern": "Steam client configuration/cache/IPC and Cloud for the licensed account", "basis": "Steamworks interfaces/imports and official sync behavior", "local_resolution": "not inspected; offline mode or another Windows account is not a proven no-access guarantee"}
+  ],
+  "options": [
+    {"method": "继续有界静态分析", "feasibility": "当前可做；无原版运行或新工具", "risk": "低；可能仍无法恢复真实 UI 实例调用者", "next": "优先复用缓存核对 Engine SetBaseUserPath RVA0BAC0/GetSavePath073900、Game GetRootSavePath2C7F50/GetUserSettingsFolder2E31D0/GetUserSaveDataFolder2E3270 的路径来源和初始化顺序；仅作为下一有限候选，尚未查询，不再遍历空导入槽。"},
+    {"method": "独立非管理员 Windows 账户 + 独立游戏副本 + 同账户调试器", "feasibility": "首选评估的宿主机候选，无 CPU 虚拟化要求；尚不具备启动条件", "boundary": "独立 HKCU/用户配置只是部分边界。需证明不能读写真实用户数据或共享 Steam 数据，且不通过 Steam IPC/服务逃出试验范围。不要以新账户自动推定 ACL 隔离。", "risks": "账户/配置持久变更、共享目录可读、同一 Steam 账户 Cloud、外部客户端重新启动安装版、输入焦点和调试暂停。单独副本不解决这些问题。", "approval_needed": "精确的新账户/试验目录/必要权限元数据核验及仅试验目录 ACL 方案；已有或新增调试器；后续另批原版运行/调试。若必须访问真实 Steam 状态，则当前范围停止，不能借账户方案默许。"},
+    {"method": "Restricted token 或 AppContainer 原生进程隔离", "feasibility": "不依赖虚拟机，但本工程没有已验证启动器；仍属于隔离技术", "boundary": "限制令牌需真正限制读取与写入；WRITE_RESTRICTED、低完整性或 Job 单独不足。AppContainer 可限制文件/注册表/网络，Steam、图形、DirectInput、窗口兼容性未知。", "risks": "自写安全启动器和能力/ACL配置复杂，不能为推进游戏临时放宽；需要先用自有合成路径/程序作拒绝测试，不用真实存档当探针。", "approval_needed": "仅在具体设计完成后审批隔离配置和良性探针；当前不实现、不创建容器、不更改 ACL。"},
+    {"method": "当前账户下复制目录、改环境变量、离线模式或仅附加调试器", "feasibility": "不满足现有原数据零接触边界", "reason": "相同用户身份/注册表/Known Folders/Steam IPC 仍可能指向原数据；调试器观察不是访问阻止；非侵入快照不能捕获未来初始化调用。", "approval_needed": "不能把它当免批准替代路线。"}
+  ],
+  "proposed_bounded_observation_not_executed": {
+    "goal": "取得具体 UI 对象/vtable 与真实调用者、实际 HUD 记录参数，补静态证据缺口；不是直接验收完整鼠标移动。",
+    "preconditions": [
+      "确认许可支持的启动方式及最小依赖；不创建 steam_appid.txt、不替换/打补丁 Steam API、不绕过许可。Steam SDK要求同OS用户上下文/有效许可；本机具体启动失败分支尚未核实。",
+      "先落实试验账户/目录及可证明的数据与IPC/网络边界；若需要读真实目录的权限元数据必须单独批准且不读内容。禁止用真实存档作访问探针。仅网络阻断不阻止本地 Cloud 缓存访问。",
+      "先用自有无敏感数据的良性程序验证允许/拒绝矩阵和生命周期，再申请原版单次启动；当前没有生成或运行该探针。",
+      "确认已有调试器或批准官方固定包；目标与调试器同一非管理员身份，不请求系统调试特权、不更改JIT注册/防火墙策略。",
+      "复制内容仅限已授权安装文件，不含玩家数据/凭据/Steam配置；新副本路径及空间需求需先确认，当前未复制。实时资源须满足既有5GiB/2GiB门及额外游戏负载评估，旧Rea门限本身不证明游戏峰值可承受。",
+      "经明确批准后，启动固定副本并校验加载模块哈希/路径、ASLR基址、进程创建时间和归属；任何未知重启/外部Steam进程不接管、不终止、不视为受控子进程。"
+    ],
+    "targets": [
+      {"module": "Game.dll", "rva": "0x2E3BD0", "name": "GameEngine::SetUI", "capture": "RCX Engine实例、RDX UI指针、返回地址/调用栈、有效非空对象的首个vptr与所属已核模块。已证正文只写[RCX+19B0]=RDX；不推定所有权，也不等同Engine+3E8世界Widget。"},
+      {"module": "Engine.dll", "rva": "0x17EE90", "name": "ObjectManager::LoadTableFile", "capture": "RCX、同一个RDX std::string const&对象、调用者。先核具体string布局/长度后只读有界记录名；RDX不是已证char*，禁止直接按C字符串解释。目标关联已证hud_mastertable/hud_orbmastertable，而非遍历用户内容。"}
+    ],
+    "technique": "可评估WinDbg用户态处理器执行断点 ba e 1 <verified-module-base+RVA>；不是本次执行命令。它修改调试寄存器并暂停线程/改变时序，不能称为完全无扰动。需核线程覆盖、模块装载时机；无命中不等于函数未调用。非侵入模式仅能快照，不能监控未来执行。",
+    "bounds": "未来提案最多16个目标命中或10分钟，先到即收束；这些是自有采证上限，不是原游戏语义。只采目标地址/寄存器/有界对象字段/记录名和归属信息，不采全进程dump，不注入代码或调用原函数。",
+    "critical_warning": "SetUI或HUD加载前就可能发生数据访问；断点不是隔离。没有先成立的数据边界，即使只进主菜单也不得启动。",
+    "outputs": "一份追加式采证日志：目标副本/模块哈希、PID与创建时间、线程/基址、调用者RVA、UI vptr、记录名和命中时序；测试数据/日志仅留试验目录；保留失败与未命中。用户账户名、凭据和原存档内容不收集。",
+    "stop_conditions": "未知模块/身份、共享Steam启动、边界失败、资源跌破原门、工具拒绝或初始化无法合法运行时停止本次动作。只收尾已确证自有进程；不杀用户Steam或其他进程。"
+  },
+  "authorization_gates": [
+    {"gate": "准备", "exact_actions": "选择并核验现有调试器，或固定官方WinDbg版本/签名/哈希并申请下载安装运行；申请具体标准测试账户及目录创建；如必要，单独批准访问控制元数据核验和仅测试区域权限配置。", "status": "not-requested/not-executed;current task is assessment only"},
+    {"gate": "隔离验证", "exact_actions": "在自有合成数据上运行最小访问/IPC/网络边界探针；任何网络规则/持久容器配置另列精确变更，不自动应用。", "status": "not-designed-to-executable-detail;not-executed"},
+    {"gate": "原版观察", "exact_actions": "批准固定副本一次启动、同用户调试、上述两入口有界采证及自有正常收尾；只允许测试数据写入。真实存档和Steam数据仍排除。", "status": "not-authorized;blocked by unresolved environment, debugger and startup/data boundary, not a denied execution"}
+  ],
+  "sources": {
+    "remote_debugger": "https://learn.microsoft.com/en-us/visualstudio/debugger/remote-debugging?view=vs-2022",
+    "debugger_install": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/",
+    "processor_breakpoint": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debuggercmds/ba--break-on-access-",
+    "noninvasive": "https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/noninvasive-debugging--user-mode-",
+    "steam_startup": "https://partner.steamgames.com/doc/api/steam_api",
+    "steam_cloud": "https://partner.steamgames.com/doc/features/cloud",
+    "developer_save_paths": "https://forums.crateentertainment.com/t/game-crashes-in-mourndale/132885",
+    "developer_path_redirection": "https://forums.crateentertainment.com/t/new-pc-all-my-saves-are-gone-no-steam-cloud-saves-wtf/114432",
+    "restricted_tokens": "https://learn.microsoft.com/en-us/windows/win32/secauthz/restricted-tokens",
+    "appcontainer": "https://learn.microsoft.com/en-us/windows/win32/secauthz/appcontainer-isolation"
+  },
+  "execution_state": {"new_Rea_calls": 0, "builds": 0, "tests": 0, "original_runs": 0, "debugger_runs": 0, "new_background_or_Job": false, "pending_local_operations": 0, "current_interactive_reverse_client_available": false, "historical_failures_preserved": true, "no_BIOS_or_reboot_required_by_this_result": true}
+}

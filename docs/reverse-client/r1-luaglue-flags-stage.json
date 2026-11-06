@@ -1,0 +1,436 @@
+{
+  "schema": "gd-luaglue-flags-stage-v1",
+  "utc": "2026-11-03T08:12:06.3521581Z",
+  "status": "product-passed-own-luaglue-clear-tail-current-processes-released-supervisor-cleanup-failure-preserved",
+  "previous_stage": "docs/reverse-client/r1-lua-registry-closure-stage.json",
+  "previous_stage_sha256": "3abda247aff490916f51326ec1324da281c42880ece0287f9d0bee858379ec5b",
+  "latest_resource": {
+    "schema": "gd-luaglue-tail-current-release-v1",
+    "utc": "2026-11-03T08:12:06.3521581Z",
+    "formal_session": 61956,
+    "formal_exit": 1,
+    "worker_exit": 0,
+    "approval_denied": false,
+    "approval_pending": false,
+    "pending_operations": 0,
+    "uncertain_current_operations": 0,
+    "launch": ".tooling/r1-luaglue-tail-build-prepared/launch-result.json",
+    "launch_sha256": "e756488ce136feb214bf3150abd3aa872dc738e0287a2ba52e1a7e12bcaae7c4",
+    "result": ".tooling/r1-luaglue-tail-validation/result.json",
+    "result_sha256": "ba7bc29fc00e78c7a5660e2b4404aaa662a26d844fa028f3af9898a93e92de15",
+    "historical_launch_status": "failed",
+    "historical_job_empty_observed": false,
+    "job_disposed": true,
+    "historical_cleanup_state": "unknown",
+    "historical_cleanup_failure": "System.Management.Automation.RuntimeException: Exact owned Job did not become observably empty",
+    "historical_receipt_unchanged": true,
+    "last_historical_member": [
+      {
+        "ProcessId": 63244,
+        "CreationUtc": "/Date(1793693046139)/",
+        "CreationTicks": 639292898461399303,
+        "InJob": true,
+        "HasExited": false,
+        "ExecutablePath": "D:\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\vctip.exe",
+        "ExecutablePathErrorCode": null,
+        "ExecutablePathDiagnostic": null
+      }
+    ],
+    "recorded_pid_check_utc": "2026-11-03T08:12:06.3521581Z",
+    "recorded_pids": [
+      25108,
+      33012,
+      47896,
+      58520,
+      61612,
+      62364,
+      63244,
+      64132
+    ],
+    "current_matches": [],
+    "current_recorded_pids_absent": true,
+    "current_resource": {
+      "utc": "2026-11-03T08:10:23.4032188Z",
+      "available_physical_bytes": 12237426688,
+      "system_commit_bytes": 45423669248,
+      "system_commit_limit_bytes": 59886112768,
+      "external_build_or_java_processes": []
+    },
+    "resource_probe_session": 71364,
+    "resource_probe_exit": 0,
+    "resource_probe_chunk": "f8ebb1",
+    "current_resource_slot_released": true,
+    "current_own_heavy_processes": 0,
+    "external_processes_terminated": false,
+    "executable_name_query_retried": false,
+    "historical_empty_job_repaired": false,
+    "explanation": "Product worker exited0; supervisor failed its five-second empty-Job observation while own vctip63244 remained, then recorded Job disposal. Fresh inventory finds all8 recorded worker/controller/child/member PIDs absent and resource probe found no heavy conflicts. This current release does not retroactively establish historical empty Job."
+  },
+  "cached_contract": {
+    "flag": "257707 reads BYTE4217D8 bit0 after fourregistrywrites; no writer in39cachedLua bodies",
+    "caller": "0F2ED2 ignoresGlueEAX.0F2EDA invokes0EF8B0,thenproviders andtwoinputbranches;58=1only0F30F9; early0F30FDreturnsold58",
+    "cleanup": "2DC3D4 over11 records,stride0x50,2577C0; onlyafterreturn25779A MOVZX EAX,BL",
+    "set": "257724 invokes257CB0 withcapturedVM,347990format,3456F4version,VM; returnunchecked",
+    "failure": "load/pcall failure clearBL aftererrorhandling/temporaryfree, thenrecordcleanup; priorpublicationsnotrollback",
+    "clear": "257729 BL1 then257795"
+  },
+  "planned_query_targets": [
+    "xrefs0x1804217d8",
+    "0x180257cb0 pseudo/asm/callees",
+    "0x1802577c0 pseudo/asm/callees",
+    "0x1802dc3d4 pseudo/asm/callees"
+  ],
+  "planned_analysis_calls": 10,
+  "planned_lifecycle_calls": 5,
+  "pending_operations": 0,
+  "new_queries": 44,
+  "new_compiles": 3,
+  "new_tests": 5,
+  "current_heavy_operations": 0,
+  "original_executed": false,
+  "saves_accessed": false,
+  "service_initialized58_written": false,
+  "no_default_global": true,
+  "next": "Reuse cached Script initializer0EF8B0 called at0F2EDA, including recapture of current same-service Lua00 at0EF8C4. First inspect cached direct helpers0EFAD0/0EFCA0/0EFE80 and Script-name/publication evidence; only missing direct contracts justify new query. Preserve Initialized58 until actual0F30F9, unknown flag/startup timing, enabled logging257724, loadfailure255BC0 and native allocator/CFG/EH limits. Do not rerun this completed batch or old suites. Any next heavy operation requires fresh original memory/identity/Job gates.",
+  "query": {
+    "output": "docs/reverse-client/r1-engine-luaglue-flags-run1",
+    "plan": ".tooling/r1-luaglue-flags-prepared/plan.json",
+    "pending": false,
+    "plan_sha256": "07af051f5b4aaf7eef114cc3bce541763134289f97b532113189288ea7b8e862",
+    "session": 72112,
+    "runner_sha256": "e22251481ee48244b862de0b4e416619828cdae2cf3c0e965bcbb65f549a92f1",
+    "offline_verified": true,
+    "planned_calls": 15,
+    "do_not_repeat_uncertain": true,
+    "launch_sha256": "44c0e273a3ddb6b89fea4d321283e3116b5e7014cc35bf9614af0ef7ba3b6999",
+    "exit": 0,
+    "summary_sha256": "c4dd4c5a1b7b00a1c7c8190978fab3bd47d24057d22e895b2f90fe8792e462c8",
+    "release_sha256": "d2f55dbd27c472314c1fd92f3b9682b602e822186fd6ced25bc5fd91501f9901",
+    "job_empty": true,
+    "sampler_exited": true
+  },
+  "code_design_note": "Oldprefix frees11records beforereturn. Newcompleteentry mustretain sameactualrecords acrosshelpers torealcleanup; cannotfake acontinuationorcopyfreedrecords. No newproductcodewritten.",
+  "new_contract": {
+    "flag_writer_unclassified": false,
+    "log": "257CB0 getglobalprint, lua_type(-1) EXACT0(nil)skipformat+pop; nonzeroformatvia031280/UCRT,pushstring,pcall1to0;errorpopped;returnvoid. Earlierisfunctionwordingwrongandwithdrawn.",
+    "flag_known_reader": "257707",
+    "iterator": "2DC3D4 index10downto0;2DD4C0(callback) checkbeforeeachcallback; cachedloadconfigbindsitCFGslot302D38, runtime targetnotassumedfromdiskCE70",
+    "flag_xrefs": 13,
+    "record_lifetime": "Oldprefix hasalreadyfreedownrecords; completeentryneedsretainsameallocationsacrosshelpers, nofakecleanup",
+    "record_destructor": "2577C0 frees stored source+38 thenchunk+18 thenname+00; nofieldzeroing",
+    "flag_value_source": "0743C0 exportedSetLuaGlueLogging: NEGDL/SBBEAX,EAX/AND7/storeDWORD. Explicitfalse0/truenonzero7. Noactualstartupcaller/timingproved;sharedglobalunknownuntilknownwriter.",
+    "format_options": "031280 returnsaddress4213C0;257CB0 readsqword andOR1;runtimeoptionsunknown,logging-onremainsUnsupported"
+  },
+  "writer_classification": {
+    "next_fixed_batch": "12 exactinspect_native_instruction +5lifecycle;no function-body duplication",
+    "cached_reader": "0x180257707",
+    "cache_checked_instruction_files": 403,
+    "unresolved": [],
+    "cache_checked_assembly_files": 373,
+    "write": "0743C7 MOV DWORD4217D8,EAX in0743C0",
+    "reads": "Other12directrefs inclcached257707 are TESTBYTE bits1/2/4"
+  },
+  "writer_query": {
+    "do_not_repeat_uncertain": true,
+    "pending": false,
+    "plan_sha256": "6e0a417eeae56d862a01e29500a9bcff867cbe6a9a6173a3e698ecf36c468e08",
+    "runner_sha256": "c3529fd10a375a5c1a429da180d4cc2aff712f0c46384b32f37875f123477040",
+    "plan": ".tooling/r1-luaglue-writers-prepared/plan.json",
+    "offline_verified": true,
+    "session": 67770,
+    "output": "docs/reverse-client/r1-engine-luaglue-writers-run1",
+    "planned_calls": 17,
+    "launch_sha256": "671bcd98a33cafe6169822064c61e7b649396698ed22fdaf191a344e39752772",
+    "exit": 0,
+    "summary_sha256": "ecce498f9e3a30ff5eb1bf305a62a395e9a6a73f4f5f09e66cf87ec0dd9fa988",
+    "release_sha256": "efdaeb933e25b7d153b6bb043f76e2942b78ec8142ce80d245db7ad8751e7993",
+    "job_empty": true,
+    "sampler_exited": true
+  },
+  "writer_entry_query": {
+    "output": "docs/reverse-client/r1-engine-luaglue-flag-writer-run1",
+    "pending": false,
+    "session": 7210,
+    "runner_sha256": "b84eb33326ac10d152cfaee5e2834aa4ac4ddbf35fd1e323550804137621f2fb",
+    "calls": 12,
+    "plan_sha256": "861e2938c2f4bdd3c23e395fb4f6bdf27059df00295d76104022203805721093",
+    "offline_verified": true,
+    "plan": ".tooling/r1-luaglue-flag-writer-prepared/plan.json",
+    "exit": 0,
+    "summary_sha256": "08771af821013f9101c196f3cc5cdfef89ee3e3f7d739eff10ca2255e6bfefd5",
+    "release_sha256": "12534b2340e202594d0c10f802e8646533f9a2db046bf28e08ebd28817e586ab",
+    "job_empty": true,
+    "sampler_exited": true
+  },
+  "code_written": true,
+  "code_compiled": true,
+  "code_tested": true,
+  "test_plan": {
+    "normal0_service_path_runtime": "Not injected into newservice VM; helpernormal0 willbetested,callerignoredEAXstaticonly",
+    "new_scenarios": 5,
+    "necessary_old_scenarios": 1,
+    "failure_fixture_note": "11failsbeforeconstruct,12postchunkpublication;21newOWNmetatable inducesrealfirstchunkpcallfailurewithouteditingrecords",
+    "builds": 0,
+    "executed": 0
+  },
+  "original_hashes": {
+    "game": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "engine": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+    "engine_before_after_verified_all3_batches": true,
+    "game_not_read_this_stage_yet": false,
+    "game_engine_build_before_after_verified": true
+  },
+  "runtime_claims": {
+    "game_usable": false,
+    "original_startup_flag_unobserved": true,
+    "own_cold_logging_off_explicit_configuration": true,
+    "normalclear_tail_expected_not_verified": false,
+    "newcode_tested": true,
+    "ServiceInitialized58": false,
+    "newcode_compiled": true,
+    "normalclear_tail_verified": true
+  },
+  "review_findings": {
+    "fixture11_correction": "Earlytablepublicationerror,notpcallerror; earlierworkingmessagewithdrawn",
+    "new_tests_not_executed": true,
+    "error_transport": "Actualnormal0cleanup thenOWNprotectedrethrow preservesrealerror; notoriginalC++EH equivalence",
+    "pcall_unknown_distinction": "Fixed inwrittennativecode: bridgeGeneratedUnknown rethrowswithoutnormal0; fixture22written butnotexecuted"
+  },
+  "code_pins": [
+    {
+      "path": "src/reverse_client_actions/native/own_luajit204_bridge.c",
+      "sha256": "b5a2abcc29355266ef5d8710bd9cae0c1ccbb93183fe93c6425dee9c87410125",
+      "bytes": 56699
+    },
+    {
+      "path": "src/reverse_client_actions/native/own_luajit204_bridge.h",
+      "sha256": "0cc5f20662653cd5dc8fc16b879fe9f5e5d4a3386b9dac895b49ffe920725548",
+      "bytes": 15179
+    },
+    {
+      "path": "src/reverse_client_actions/native/own_luaglue_embedded_data.h",
+      "sha256": "fd6d3eb8b58439bb8ca01f4e61422a319ce4287df927087a5bcadf9d1cf21b32",
+      "bytes": 49670
+    },
+    {
+      "path": "src/reverse_client_actions/OwnLuaCallbackBridge.cs",
+      "sha256": "afc75baf37db8227237fabc791cff912b7e2445b64eb53946d8211877d46b066",
+      "bytes": 17668
+    },
+    {
+      "path": "src/reverse_client_actions/OwnLuaGlueCompletion.cs",
+      "sha256": "95892b82afd3ee12bc9ad5888947eadefb4b96d99deba367652c8959a7dc4d7a",
+      "bytes": 8499
+    },
+    {
+      "path": "src/reverse_client_actions/GameLuaServiceInitializationContracts.cs",
+      "sha256": "d32f4fffe5d7970e8ee32f5ed11575ce94a0481db8516c9d12604b5487d3b114",
+      "bytes": 13716
+    },
+    {
+      "path": "src/reverse_client_actions/GameLuaGlueCompletionTests.cs",
+      "sha256": "632b6c9b98b2063fdb64a5cd073f46d15ca0ecc4d0f2e1a9f87a035233232f0e",
+      "bytes": 21454
+    }
+  ],
+  "build_preparation": ".tooling/r1-luaglue-tail-build-prepared",
+  "build_preparation_status": "Frozen bundle executed once; actual worker passed; supervisor cleanup failure preserved",
+  "review_status": {
+    "native_final_independent_review_complete": true,
+    "interruption": "Subagentsreturnedusage-limit errors aftercodewritten; noheavyexecutionfromagents",
+    "managed_static_review_complete": true,
+    "test_final_independent_review_complete": true,
+    "root_native_narrow_review_complete": true,
+    "latest": "Resumedreviewcomplete;staticonly,noexecution",
+    "receipt": ".tooling/r1-luaglue-tail-build-prepared/independent-code-review.json",
+    "result_readonly_review_complete": true
+  },
+  "release_file": "docs/reverse-client/r1-luaglue-tail-release.json",
+  "release_sha256": "a774a061cbf6c7801f634547e6152765e78ca60595b88b839975046eb13793bf",
+  "watch": {
+    "physical_bytes": 12237426688,
+    "last_utc": "2026-11-03T08:10:23.4032188Z",
+    "admitted": true,
+    "conflicts": [],
+    "current_turn_only": true,
+    "commit_bytes": 45423669248,
+    "commit_limit_bytes": 59886112768,
+    "next_heavy": "Reviewedfixed3compile6scenarioonly",
+    "persistent_task_created": false,
+    "last_sample_session": 71364,
+    "requested_interval_minutes": 5,
+    "completed": true,
+    "active": false,
+    "reason": "Original gate admitted08:03, frozen batch executed once and current release verified; no persistent sampler"
+  },
+  "build": {
+    "root_pin_validation_exit": 0,
+    "root_pin_validation_chunk": "bc177d",
+    "output_exists": true,
+    "launcher_sha256": "d5693a3fb780897de03457f28bb499f77bee4f843a45ebfb3e6a08128e375714",
+    "directory": ".tooling/r1-luaglue-tail-build-prepared",
+    "planned_compiles": 3,
+    "source_pins_checked": 15,
+    "gate_sha256": "9910987b044d343c15c7900296a5255a9325703657449bcd7676ad46ed11a36d",
+    "planned_scenarios": 6,
+    "launch_receipt_exists": true,
+    "manifest_sha256": "6eaee535ed53a160a6b9f08dc82d7a729bfa91b7975664616c74ec75a8bc5d1f",
+    "build_sha256": "2d5b944d49afc959bf1196fac7680f794204bfc5c8d28592148aaad3717c8fa1",
+    "executed": true,
+    "session": 61956,
+    "pending": false,
+    "outcome": "passed-own-luaglue-completion-clear-prefix",
+    "formal_exit": 1,
+    "worker_exit": 0,
+    "result": ".tooling/r1-luaglue-tail-validation/result.json",
+    "result_sha256": "ba7bc29fc00e78c7a5660e2b4404aaa662a26d844fa028f3af9898a93e92de15",
+    "launch_receipt": ".tooling/r1-luaglue-tail-build-prepared/launch-result.json",
+    "launch_sha256": "e756488ce136feb214bf3150abd3aa872dc738e0287a2ba52e1a7e12bcaae7c4"
+  },
+  "connection_recovery": "docs/reverse-client/r1-luaglue-tail-recovery-20261103T0731Z.json",
+  "new_assertions": 391,
+  "total_test_scenarios": 6,
+  "total_test_assertions": 404,
+  "selected_old_regressions": 1,
+  "selected_old_assertions": 13,
+  "validation": {
+    "status": "passed-own-luaglue-completion-clear-prefix",
+    "result": ".tooling/r1-luaglue-tail-validation/result.json",
+    "sha256": "ba7bc29fc00e78c7a5660e2b4404aaa662a26d844fa028f3af9898a93e92de15",
+    "formal_session": 61956,
+    "supervisor_exit": 1,
+    "worker_exit": 0,
+    "compiles": 3,
+    "helper_compiles": 1,
+    "test_invocations": 1,
+    "scenarios": 6,
+    "checks": 404,
+    "new_scenarios": 5,
+    "new_checks": 391,
+    "selected_old_scenarios": 1,
+    "selected_old_interfaces": 2,
+    "selected_old_checks": 13,
+    "old_whole_suites_rerun": 0,
+    "native_bridge": {
+      "path": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\r1-luaglue-tail-validation\\own_luajit204_bridge.dll",
+      "sha256": "40dbfff903a56f61fd509c57ff0c968b41ce6bdc6c190ec8bcf3c0e9785f2658",
+      "bytes": 50688,
+      "exports": [
+        "gd_lj204_attach",
+        "gd_lj204_begin_close",
+        "gd_lj204_complete_close",
+        "gd_lj204_execute_fixture",
+        "gd_lj204_initialize_luaglue",
+        "gd_lj204_initialize_luaglue_completion",
+        "gd_lj204_publish_luaglue_registry",
+        "gd_lj204_publish_prefix",
+        "gd_lj204_read_gc_audit"
+      ],
+      "imports": [
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll"
+      ],
+      "static_lua_import": false,
+      "metadata_sha256": "26e86e01ba4a485bf7f0fb9cb5593ac4e5bb1816ee5218e85731b000b29777c4",
+      "identity_source": "C:\\Users\\zhuzi\\Documents\\Grim-Dynasty\\.tooling\\r1-luaglue-tail-validation\\OwnLuaCallbackBridgeBuildIdentity.cs",
+      "identity_source_sha256": "1b50551c86f09aadeecb92a581237b9959660a81c712ba634a0bbcdc516c5146",
+      "generated_from_actual_artifact": true
+    },
+    "generated_libraries": [
+      {
+        "name": "GrimDynasty.GameReachedGoal.dll",
+        "sha256": "cd2aa70eca5929b07a773be63b5de87357d963e86f41d7514c5727b3ace8ce13",
+        "identity": "GrimDynasty.GameReachedGoal, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      }
+    ],
+    "new_executables": [
+      {
+        "name": "OwnLuaGlueCompletionTests.exe",
+        "bytes": 35840,
+        "sha256": "1121766917d76c29969b00f6d64a9578a9957e2472c652a8f750495374b4fcfa"
+      }
+    ],
+    "targeted_checks": [
+      {
+        "name": "Explicit setter clear branch completes same records across two real VM lifetimes",
+        "assertions": 156
+      },
+      {
+        "name": "Unknown live DWORD stops after real definitions and registry with distinct OWN cleanup",
+        "assertions": 30
+      },
+      {
+        "name": "Actual setter enabled value stops before the unimplemented log helper",
+        "assertions": 32
+      },
+      {
+        "name": "Actual first definition pcall failure returns native zero after normal cleanup and retains error",
+        "assertions": 72
+      },
+      {
+        "name": "Publication errors and unknown callback errors preserve their actual failure classifications",
+        "assertions": 101
+      },
+      {
+        "name": "Selected regression: old Glue and registry entries keep independent prefix boundaries",
+        "assertions": 13
+      }
+    ],
+    "normal_cleanup_order_observed": true,
+    "shared_global_two_vm_lifetimes": true,
+    "handled_pcall_zero_helper_tested": true,
+    "handled_pcall_zero_service_branch_executed": false,
+    "explicit_observed_setter_used": true,
+    "own_error_transfer_distinct": true,
+    "unknown_callback_not_reclassified_zero": true,
+    "original_hash_checks": [
+      {
+        "phase": "before",
+        "label": "Game",
+        "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+        "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+        "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+        "utc": "2026-11-03T08:04:00.7984940Z"
+      },
+      {
+        "phase": "before",
+        "label": "Engine",
+        "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+        "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+        "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+        "utc": "2026-11-03T08:04:00.8128893Z"
+      },
+      {
+        "phase": "after",
+        "label": "Game",
+        "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Game.dll",
+        "expected_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+        "actual_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+        "utc": "2026-11-03T08:04:16.8191808Z"
+      },
+      {
+        "phase": "after",
+        "label": "Engine",
+        "path": "D:\\Steam\\steamapps\\common\\Grim Dawn\\x64\\Engine.dll",
+        "expected_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+        "actual_sha256": "4c2ea14ce1c591b315cc29a8a96819a5c3c7e194adbd6f7eea208b9bb8a93153",
+        "utc": "2026-11-03T08:04:16.8284691Z"
+      }
+    ],
+    "native_lease_cleanup_failures": [],
+    "postcheck_failure": null,
+    "expected_service_stop": 995034,
+    "service_initialized58_written": false,
+    "native_startup_verified": false,
+    "original_executed": false,
+    "physical_mouse": false,
+    "gameplay_accepted": false,
+    "independent_result_review": "lua_build_prepare readonly: actual files/logs/export metadata and counts matched; no additional execution"
+  },
+  "prior_query_release": {
+    "file": "docs/reverse-client/r1-luaglue-flags-release.json",
+    "sha256": "ce27abb3e30e88d0be7fee2d2a084b880d58bf5c8706958fe06b0158d7e3258f"
+  }
+}

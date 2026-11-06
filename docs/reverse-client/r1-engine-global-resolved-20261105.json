@@ -1,0 +1,35 @@
+{
+    "schema":  "grim-dynasty-r1-engine-global-resolved-v1",
+    "utc":  "2026-11-05T12:40:06.1963751Z",
+    "decisive_measurement":  {
+                                 "rva":  "0x421428",
+                                 "static_hex":  "702f010002300100",
+                                 "static_qword":  "0x1300200012f70",
+                                 "static_reading":  "two 32-bit RVAs (0x12f70 and 0x13002)",
+                                 "runtime_hex":  "e015a86699010000",
+                                 "runtime_qword":  "0x19966a815e0",
+                                 "differs_from_static":  true,
+                                 "neighbour_context":  "the 0x40-byte block at 0x421408 also contains 0x7ffbc45a17b0 and 0x7ffbc45a17d0, i.e. image pointers, so the block is a live singleton table at run time"
+                             },
+    "contradiction_resolved":  {
+                                   "question":  "Why did 420 s of hardware watchpoint observation over 101 threads and 37.4 million debug events record no write, when the slot demonstrably holds a heap pointer at run time?",
+                                   "answer":  "Because the write happens before the debugger can attach. The slot is written during process start-up, and the client cannot be started by a debugger directly: a direct CreateProcess of Grim Dawn.exe exits after about 2.4 s, while the Steam launch works.",
+                                   "support":  "Both halves are measured: the runtime value differs from the static image (so a write does occur), and the observation window that began after start-up saw none (so the write precedes it)."
+                               },
+    "what_this_settles":  [
+                              "the original runtime reading was correct and is now reproduced with the static image side by side",
+                              "the slot is really published at run time",
+                              "the reason the watchpoint missed it is start-up ordering, not a tool defect"
+                          ],
+    "remaining_obstacle":  "To trap the write, the watch must be armed before any code of the process runs, while the process is still created by Steam.",
+    "options":  {
+                    "ifeo":  "An Image File Execution Options Debugger entry would let our watcher own the process at creation. This modifies the registry (HKLM or HKCU Image File Execution Options) and therefore needs an explicit decision.",
+                    "steam_child":  "Intercepting Steam\u0027s child creation is not possible without hooking Steam.",
+                    "static_finish":  "Alternatively, finish statically: the block behaves as a singleton table, so locating the initialiser that fills it (the function that runs before any window exists) would answer the question without runtime help."
+                },
+    "not_claimed":  [
+                        "that the writer is identified",
+                        "that presentation can be executed",
+                        "that the registry route is acceptable"
+                    ]
+}

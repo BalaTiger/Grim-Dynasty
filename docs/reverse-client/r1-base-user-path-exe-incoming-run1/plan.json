@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "expected_package_version": "6.5.0",
+  "contract_sources": [
+    "docs/condition-evaluator/rea-leaves/tool-catalog.json",
+    ".tooling/rea/node_modules/rea-agents/dist/ghidra/GhidraTargetSnapshot.js"
+  ],
+  "target": {
+    "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Grim Dawn.exe",
+    "sha256": "d3915e2599317b6670cc088ba958afb2b2f4fa8141cfd1d777ee02f9ea1fc4c4",
+    "provider_id": "ghidra"
+  },
+  "target_profile": "client",
+  "snapshot_naming": {
+    "file": ".tooling/rea/node_modules/rea-agents/dist/ghidra/GhidraTargetSnapshot.js",
+    "sha256": "a27e410752f5474b3a97f7388bf8fdace65d21d5dad8858ad3c27e310f03f52b",
+    "snapshot_name": "target-d3915e259931.exe",
+    "rule": "Installed implementation uses the first twelve SHA256 characters plus safeExtension(sourcePath); the fixed source extension .exe passes its extension grammar."
+  },
+  "lifecycle_in_calls": true,
+  "status": "prepared-not-executed",
+  "runner_mode_registered": true,
+  "memory_profile": {
+    "heap": "384M",
+    "budget_id": "client-mouse-first-calibration-384m-v1",
+    "calibration_only": true,
+    "measured_client_peak_available": false,
+    "budget_source": "provisional-first-client-EXE-calibration",
+    "one_backend": true,
+    "parallel_mcp_requests": 1,
+    "cpu_settings_changed": false,
+    "task_allowance_gib": 3,
+    "system_spare_gib": 2,
+    "launch_physical_and_commit_gib": 5,
+    "stop_physical_or_commit_gib": 2,
+    "maximum_sample_age_ms": 5000,
+    "stale_monitor_ms": 15000,
+    "no_system_settings_change": true,
+    "scope": "Unchanged client budget for one exact SetBaseUserPath IAT incoming-reference query; no inferred runtime peak or coverage."
+  },
+  "time_limits": {
+    "provider_startup_ms": 330000,
+    "outer_request_ms": 600000,
+    "changed": false,
+    "scope": "Existing startup absolute deadline and per-request outer deadline; not a whole-batch runtime guarantee."
+  },
+  "monitor_revision": {
+    "file": "tools/static_analysis/ReaOwnedJob.cs",
+    "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "previous_sha256": "6b507ae86d9a3e05432d3bd13b0053ebe9fe17312dd3edba5939ef4a8c3d0e40",
+    "serializer_file": "tools/static_analysis/rea_sampler_failure.ps1",
+    "serializer_sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2",
+    "sampler_file": "tools/static_analysis/measure_job_process_memory.ps1",
+    "sampler_sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "candidate_file": ".tooling/r1-owned-job-diagnostic-candidate/ReaOwnedJobDiagnosticCandidate.cs",
+    "candidate_sha256": "b52e6ba242277ab864a431433f43efe671bc6c37e73c1fd94d8b0977b7400544",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "serializer_validation_file": ".tooling/r1-owned-job-diagnostic-validation/serializer/result.json",
+    "serializer_validation_sha256": "eb5dc1cd79621686a5b646ba03897cec638674dd1d6894ec69cee1d5ceb04a60",
+    "runner_validation_file": ".tooling/r1-owned-job-diagnostic-validation/runner-result.json",
+    "runner_validation_sha256": "1ff5539479a0ba058bb7e3b4e6692293a07515e48d226c56f5b6667857c4bb29",
+    "deployment_file": ".tooling/r1-owned-job-diagnostic-deploy/deployment.json",
+    "deployment_sha256": "ef9be6d39c736f99fe4dd365b1ed08f6849f4280eacc698fdc9b4b75d4977dbf",
+    "validation_status": "passed-isolated-contract-tests",
+    "assertions": 49,
+    "scenario_groups": 10,
+    "own_processes": 4,
+    "exits_confirmed": 4,
+    "serializer_assertions": 39,
+    "production_normalization": "Remove two candidate-only header lines and namespace suffix; serializer identical to tested candidate",
+    "limitations": "Diagnostic observation only. Native permissions,100ms shared wait budget,admission and fail-closed rules are unchanged. Isolated fault tests do not reproduce or establish the21:48 failure root cause."
+  },
+  "diagnostic_monitor_review": {
+    "status": "passed-and-pinned",
+    "diagnostics_only_intended": true,
+    "approved_source_sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118",
+    "validation_file": ".tooling/r1-owned-job-diagnostic-validation/test-result.json",
+    "validation_sha256": "8d7189e0d2db0a1f740b2894ca1cc364de3d854d3ad428c5bea5d5a53fa0f6c3",
+    "production_monitor_must_not_be_changed_by_this_preparation": true,
+    "root_cause_proven": false,
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false
+  },
+  "sampler_observation_deployment": {
+    "status": "passed-additive-serialization-deployed",
+    "previous_sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d",
+    "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca",
+    "evidence": [
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/deployment.json",
+        "sha256": "e978a7fbb0256233a2a5bbdacec662ebcbe808c1c227d20ef216dce8cf3d0db9"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-deploy/measure_job_process_memory.before.ps1",
+        "sha256": "d2f95d1675ae6a79f72aa6f7620c18ef212c9b809f315628ff9abd184edd3e0d"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/measure_job_process_memory.ps1",
+        "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test_member_identity_serialization.ps1",
+        "sha256": "3afa73f7130a87959e38e76ba313f715bd0e4448e146a0417b3163b55ac84ae2"
+      },
+      {
+        "file": ".tooling/r1-member-identity-serialization-candidate/test-result.json",
+        "sha256": "812f576f55ce8989638accf2a668a6b1b19e0d23e2869328be63ba7822c3062d"
+      }
+    ],
+    "only_added_field": "membership_queries.after_counters_member_identities",
+    "permissions_changed": false,
+    "wait_limit_changed": false,
+    "admission_checks_changed": false,
+    "resource_limits_changed": false,
+    "tests_rerun": false
+  },
+  "recovery_requirement": {
+    "status": "confirmed-retained-after-Codex-restart",
+    "recovery_result_file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+    "recovery_result_sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829",
+    "evidence": [
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-quarantine-result.json",
+        "sha256": "3719d9efdf8719d5575f870704e6c28edd831d611ab28eed93a84441479fc829"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-inventory.json",
+        "sha256": "e9baee1d751ebe2dbc329ceb068f25fc33ee96d3474e77bfd0a84a6978ca3dcf"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-before-move.json",
+        "sha256": "34967759d2622ffe3f46942681014a903ebf626f7f9557a0633f0b8c49beb272"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/process-after-move.json",
+        "sha256": "b2500ac78ffab31fc94c6e19a6db7c3287401bbf40a6b3e7055b5bf4e1a0c8e8"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-before-move.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-after.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/runtime-content-final.json",
+        "sha256": "e2f9d06b75bc26f6418b21bc3e68a6983c22b59324d93dc9d2914f18784c3b20"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/historical-identities.json",
+        "sha256": "98c290f49b3b071a4127529aa21c7bbf816a6b59596f9be210adc0fecd302d45"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/classification-test-result.json",
+        "sha256": "0158c21bfa6fa46d87656030888cce9e8853b18086547599a6ce668527d80554"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/retain_interrupted_runtime_post_restart.ps1",
+        "sha256": "0769a1fbcf8c44b12a09fe35a31823a6a75eee2d24494814d1ae4334d15b32a9"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/post_restart_classification.ps1",
+        "sha256": "c5fb0a7b207f5c6e0fdd4d55b624aef69df4619c758034c59ca1a5645cf534f2"
+      },
+      {
+        "file": ".tooling/r1-game-callback-remaining-post-restart-prepared/test_post_restart_classification.ps1",
+        "sha256": "bb88bbf79eb8c61b023d6a7d1468b40af09d4007433a3f111c832235e89fe611"
+      }
+    ],
+    "require_source_runtime_absent_and_exact_retained_directory": true,
+    "require_equal_content_manifests_and_zero_deleted_files": true,
+    "require_normal_fresh_launch_identity_resource_mutex_guards": true,
+    "old_terminal_flags_must_remain_unconfirmed": true,
+    "single_owner_job_termination_is_inference": true
+  },
+  "protection_metadata_source": {
+    "file": "tools/static_analysis/rea-r1-skill-moved-direct-plan.json",
+    "sha256": "96e164adb4ff4909806229a8a4a7dce460cb134d76de0cc21768e9ea29313677",
+    "scope": "Only already-reviewed current monitor/sampler/recovery metadata; EXE384M budget remains unchanged"
+  },
+  "preparation": {
+    "frozen": true,
+    "runner_base_sha256": "b2d06f72047ccdb8388b4d49f4981514785ae824f330258bc4dbb79fc377fd8a",
+    "candidate_only": true,
+    "active_runner_modified": false,
+    "backend_launched": false,
+    "original_read_by_preparation": false,
+    "pending": "Parent review and formal fresh admission. Preparation does not run the runner, backend, resource probe or original program.",
+    "template_file": ".tooling/r1-setui-exe-incoming-retry1-prepared/runner-candidate.mjs"
+  },
+  "label_contract": {
+    "pattern": "^[A-Za-z0-9_-]+$",
+    "exact_full_match": true,
+    "all_plan_labels_before_backend": true,
+    "unique": true,
+    "save_uses_same_validator": true,
+    "offline_negative_groups": 0
+  },
+  "purpose": "One fixed xrefs(0x1402d60e0) query for the metadata-proven EXE SetBaseUserPath IAT slot plus five lifecycle calls. Historical SetUI failure/retention checks remain unchanged; this does not retry SetUI.",
+  "address_sources": [
+    {
+      "file": "docs/reverse-client/r1-base-user-path-exe-iat/inspection.json",
+      "sha256": "4a0cb9ccb338f6eee50c5f860e6f8bad600336be3ab6fa954994ffe676105a56",
+      "source_kind": "Successful same-fd before/after fixed-EXE import read: Engine.dll descriptor8/import528, exact SetBaseUserPath symbol, matching OFT/name/IAT, preferred-image IAT VA0x1402d60e0."
+    }
+  ],
+  "max_tool_calls": 6,
+  "allowed_tools": [
+    "binary_session",
+    "open_binary",
+    "close_binary",
+    "xrefs"
+  ],
+  "calls": [
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "01-initial-session"
+    },
+    {
+      "tool": "open_binary",
+      "args": {
+        "path": "D:/Steam/steamapps/common/Grim Dawn/x64/Grim Dawn.exe",
+        "provider_id": "ghidra"
+      },
+      "label": "02-Client-open"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "03-Client-session"
+    },
+    {
+      "tool": "xrefs",
+      "args": {
+        "address": "0x1402d60e0"
+      },
+      "label": "04-SetBaseUserPathIAT-0x1402d60e0-xrefs"
+    },
+    {
+      "tool": "close_binary",
+      "args": {},
+      "label": "05-Client-close"
+    },
+    {
+      "tool": "binary_session",
+      "args": {
+        "expected_package_version": "6.5.0"
+      },
+      "label": "06-final-session"
+    }
+  ],
+  "binding_contract": {
+    "dll": "Engine.dll",
+    "symbol": "?SetBaseUserPath@Engine@GAME@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+    "descriptor_index": 8,
+    "descriptor_rva": "0x3866f0",
+    "import_index": 528,
+    "lookup_rva": "0x387928",
+    "iat_rva": "0x2d60e0",
+    "iat_va": "0x1402d60e0",
+    "hint_name_rva": "0x395ef2",
+    "hint": 5111,
+    "disk_iat_value": "0x395ef2"
+  },
+  "latest_game_release": {
+    "file": "docs/reverse-client/r1-ui-api-game-release.json",
+    "sha256": "b264623e9ab1e7d76cf3bd17b25ce812903125c78fafe3cc293b41c8f0da6458",
+    "summary_file": "docs/reverse-client/r1-ui-api-game-run1/summary.json",
+    "summary_sha256": "3421ba9527c888bb3b6f0c9f46ee40b02e20498549ed4047e6fea132a615a804",
+    "memory_file": "docs/reverse-client/r1-ui-api-game-run1/owned-memory-summary.json",
+    "memory_sha256": "4e81b62f5d377aecbbc9fa2adbedb4830707f2ccb73e9a0fc572699972ca79b9",
+    "source_module": "Game.dll",
+    "target_sha256": "cd7ecd7942d719f96b42aff4896f8c25d52152b4a41191f71a4a66ea48cecad2",
+    "completed_calls": 11,
+    "fresh_checks_required": true
+  },
+  "unchanged_guard_pins": [
+    {
+      "file": "tools/static_analysis/rea_owned_memory_profile.mjs",
+      "sha256": "c6968067faa5b180556feaaf5e5aa62750e0ae0aa7bf031c5d1ceef990ae1f64"
+    },
+    {
+      "file": "tools/static_analysis/measure_job_process_memory.ps1",
+      "sha256": "3916ee1f49eddb5f701cce1764dddeaf944badc61fe833ff469600ee58b6d6ca"
+    },
+    {
+      "file": "tools/static_analysis/rea_profiled_server.mjs",
+      "sha256": "a80d9d31cc6d3b400b1695481da37a6d4860bb0cf26cf88a124572e9486fb2be"
+    },
+    {
+      "file": "tools/static_analysis/ReaOwnedJob.cs",
+      "sha256": "ad11defc7f3e5436c7f6e1aed19530a3376fe8f5b449101a5d641ea152241118"
+    },
+    {
+      "file": "tools/static_analysis/rea_sampler_failure.ps1",
+      "sha256": "dc1da620b889cd727e9eb2fe3eaea733fa565f31cd0007a6270d7543317c89a2"
+    },
+    {
+      "file": "tools/static_analysis/rea_resource_budget.mjs",
+      "sha256": "272eec378c42f80ce5c9f1ac7bf8988b2848d01995151afda4e72f28e800712c"
+    },
+    {
+      "file": "tools/static_analysis/rea_java_role.mjs",
+      "sha256": "00e612e2113690baf53e87900f67b8f8003f47aa3b9a3968932a17dd779f1f22"
+    },
+    {
+      "file": "tools/static_analysis/rea_project_environment.mjs",
+      "sha256": "3808055da161a942867474e13edea86710d2981bda0ccf4ed5d385df5e794f88"
+    }
+  ],
+  "planned_output": "docs/reverse-client/r1-base-user-path-exe-incoming-run1",
+  "execution_requirements": [
+    "Exactly one xrefs(address0x1402d60e0) plus five lifecycle calls, six total. No other target, byte read, body query or automatic retry.",
+    "Retain the template's historical SetUI failed-run1/retention/release checks unchanged. This new batch does not query the old SetUI IAT or upgrade its failed outcome.",
+    "Keep existing client384M, fresh physical and commit5GiB, runtime2GiB, sampler timestamps, identity, mutex and owned Job guards unchanged. Existing runtime-root admission remains mandatory.",
+    "Raw response is saved before validation; empty xrefs is valid while failed/unreturned is not empty. All labels share the existing strict save/preflight validation.",
+    "Historical Game and EXE release proofs remain independently identity-checked and never replace fresh admission.",
+    "No recovery move, original load, original execution, scan or additional query is performed by preparation. Unknown or mismatching evidence stops without fallback.",
+    "Engine SetBaseUserPath body is already evidenced as assignment to this+0x138; its observed Engine xref is EAT data. This query establishes only available EXE incoming references and cannot alone prove executable callers or initialization order."
+  ],
+  "cache_dedup": {
+    "scope": "Filename-selected docs/reverse-client plan/summary JSON only; exact1402d60e0 or bounded2d60e0 matching",
+    "indexes_read": 783,
+    "address_matches": 0,
+    "query_previously_completed": false,
+    "planned_response": "docs/reverse-client/r1-base-user-path-exe-incoming-run1/04-SetBaseUserPathIAT-0x1402d60e0-xrefs.json",
+    "result": "No matching cached query found in the selected indices;no original read or backend run."
+  },
+  "retry_contract": {
+    "retry_number": 1,
+    "maximum_new_attempts": 1,
+    "automatic_retry": false,
+    "stop_on_repeated_failure": true,
+    "monitor_or_budget_changed": false,
+    "failure_error": "Owned memory monitoring: Resource sample timestamp is invalid or stale",
+    "summary": {
+      "file": "docs/reverse-client/r1-setui-exe-incoming-run1/summary.json",
+      "sha256": "9aa5178a896025e9bfc5c574ab297f7bcb91df0fb78a0a0f848416c1d033d80a"
+    },
+    "memory": {
+      "file": "docs/reverse-client/r1-setui-exe-incoming-run1/owned-memory-summary.json",
+      "sha256": "5a8aa74241487be95ff150b368b337c2b09412cf3fbabcad4cefddce7f1fd3fc"
+    },
+    "launch": {
+      "file": ".tooling/r1-setui-exe-incoming-prepared/launch-result.json",
+      "sha256": "2ec36d97af77f8269cc654d57aa05a5217f757ee5facdc840f94ae4c82c4845d"
+    },
+    "current_release": {
+      "file": "docs/reverse-client/r1-setui-exe-incoming-run1-release.json",
+      "sha256": "bb364c19b80a52813d6dcfc33b724d5aae02ab63585909b352f1eb3f0d40e1af"
+    },
+    "retention": {
+      "file": ".tooling/r1-setui-runtime-recovery/runtime-quarantine-result.json",
+      "sha256": "1597bcf56407d1b27c6b13360864d552704c7ea7ec111ad20eb0883671c3bc58"
+    },
+    "original_runtime": "analysis-runtime/rea/rea-ghidra-2b5e5ce106114d1634a0a6e6f9da6477",
+    "retained_runtime": "analysis-runtime/retained/failed-r1-setui-exe-incoming-2b5e5ce106114d1634a0a6e6f9da6477",
+    "original_closed_session_verified": false,
+    "original_analysis_results": 0,
+    "historical_status": "failed",
+    "root_retention_completed": true
+  },
+  "historical_retry_contract_scope": "retry_contract belongs to the unchanged historical SetUI failed batch and retention guard,not this new SetBaseUserPath query. No retry loop is added."
+}
