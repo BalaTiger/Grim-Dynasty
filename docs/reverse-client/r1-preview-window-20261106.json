@@ -1,0 +1,39 @@
+{
+ "schema": "grim-dynasty-r1-preview-window-v1",
+ "status": "passed-window-preview-of-recovered-character-part",
+ "what_is_shown": "the initial character part recovered from resources/Creatures.arc, drawn with its own extracted base texture, presented in a window with three viewpoints",
+ "pipeline_step_by_step": [
+  "ArchiveFile read through the game's own FileSourceArchive path produced hero_00_game.msh, 223717 bytes",
+  "vertex block at offset 141, 2292 records of 76 bytes",
+  "index block at offset 174349, 3660 u16 indices, 1220 triangles, max index 2291",
+  "vertex fields: position at +0, UV at +12, normal at +20, colour at +32, four blend weights at +36 summing to 1.0, tangent at +52, bitangent at +64",
+  "base texture Creatures/pc/hero02.tex decoded from the TEX container to a 512x512 DXT1 DDS and then to RGB",
+  "software rasteriser with a z-buffer, per-pixel texture sampling and one directional light"
+ ],
+ "measured_result": {
+  "render_front.png": "7.09 percent of the frame covered, 3287 distinct colours, bounding box 205 by 305 pixels",
+  "render_side.png": "7.50 percent covered, 3198 distinct colours, bounding box 236 by 306 pixels",
+  "render_3q.png": "6.57 percent covered, 4267 distinct colours, bounding box 196 by 271 pixels",
+  "interpretation": "thousands of distinct colours can only come from sampling the texture, and the coverage bounding boxes are roughly 2:3 which matches a limb or torso shaped part rather than a flat plane"
+ },
+ "window": "PreviewWindow.exe displayed the three renders side by side and logged that it had shown them",
+ "honest_limits": [
+  "this is my own software rasteriser, not the shipped renderer",
+  "the part is limb sized: bounding box 0.272 by 0.417 by 0.320 metres, sitting about 2.33 metres above the origin, so a per-section model transform is still needed to place it",
+  "the Direct3D 11 route through my own device stalled: CreateVertexShader returns E_INVALIDARG even though the compiled blob is a valid DXBC container of 1564 bytes, and Present reports the device removed. That path is abandoned for now rather than papered over.",
+  "blend indices for skinning are still not located; only the four weights are present in the record"
+ ],
+ "artifacts": {
+  "renders": [
+   "render_front.png",
+   "render_side.png",
+   "render_3q.png"
+  ],
+  "viewer": ".tooling/r1-bootstrap-host-prepared/bin/PreviewWindow.exe",
+  "buffers": [
+   "hero.vb.bin",
+   "hero.ib.bin"
+  ],
+  "texture": "hero02.dds / hero02.png"
+ }
+}

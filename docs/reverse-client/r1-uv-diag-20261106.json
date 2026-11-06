@@ -1,0 +1,23 @@
+{
+ "schema": "grim-dynasty-r1-uv-diag-v1",
+ "status": "uv slot confirmed by several independent tests, yet the rendered result is still visually wrong",
+ "tests_that_support_slot_12_16": {
+  "overlap_factor": "for the U+12 V+16 pair the summed UV triangle area divided by the unique covered area is 1.45, the lowest of every candidate pair; alternatives score 2.5 to 11.7",
+  "texture_coverage": "the pair covers 16.1 percent of texture space, the largest of the candidates",
+  "v_flip_direction": "sampling the texture at both ends of shared edges gives a mean colour delta of 55.9 with V unflipped against 97.1 flipped, while random vertex pairs give 94.2, so unflipped V is measurably correct",
+  "vertex_base": "only a vertex base of 141 yields unit-length normals for 100 percent of records; bases 133, 137, 145 and 149 give 5.7, 12.4, 0.2 and 0.0 percent",
+  "index_alignment": "index starts of 174349 plus a multiple of 6 bytes give 14.1 percent inverted UV triangles, while other alignments give 40 to 42 percent"
+ },
+ "what_still_does_not_add_up": {
+  "texture_delta": "55.9 across shared edges is far from zero, so UVs are only locally continuous",
+  "inverted_uv_triangles": "172 of 1218 triangles have negative UV area, about 14 percent",
+  "seam_duplication": "only 16 of 630 distinct positions carry more than one UV, which is far fewer than a normal unwrap produces at seams",
+  "reading": "the pair at +12 and +16 behaves like a UV set, but the mesh may reference more than one UV set, or the part may be assembled from several sub-meshes whose UV origins differ"
+ },
+ "honest_statement": "I cannot claim the UV mapping is fully correct. The slot is well supported by four independent measurements, but the rendered image is visibly wrong, so something else in the interpretation is still missing.",
+ "next_ideas": [
+  "check whether the record holds a second UV pair, since three unit-length triples were found at +20, +52 and +64 and the remaining room at +36..+48 is occupied by blend weights",
+  "check whether the model references multiple material blocks, each with its own UV scale or offset",
+  "verify against a second mesh that is less fragmented, for example a simple prop, to separate model-specific behaviour from format behaviour"
+ ]
+}

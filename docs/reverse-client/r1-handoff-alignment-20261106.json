@@ -1,0 +1,20 @@
+{
+ "schema": "grim-dynasty-r1-handoff-alignment-v1",
+ "status": "pipeline aligned with the handoff",
+ "corrections_taken_from_handoff": {
+  "uv": "+12/+16 is correct, no V flip. The earlier wrong look was caused by texture decoding: DDSR stores mip levels from smallest to largest, so renaming the magic and handing the file to a normal DDS reader makes it read the 512x512 base from the wrong offset.",
+  "texture_fix": "rebuild the DDS by slicing each level by block size at 140, then reversing the level order; each level's bytes stay as-is. Both fixed textures now regenerate.",
+  "index_count": "3654 u16 indices, not 3660. The extra 12 bytes belonged to the face-group header that follows.",
+  "index_range": "[174349,181657) = 7308 bytes",
+  "blend_indices": "+32 is BLENDINDICES after all, four packed bytes, not a colour. A byte is 0xFF exactly when its matching weight is zero, and the live indices 0 to 4 address the face-group bone table [29,26,17,31,30] = Head, Neck, Spine1, R Clavicle, L Clavicle.",
+  "semantic_ids": "tag 4 lists 0,4,1,6,5,2,3 which map to POSITION, TEXCOORD0, NORMAL, BLENDINDICES, BLENDWEIGHT, TANGENT, BINORMAL"
+ },
+ "my_reproduction": {
+  "weld_test": "welding the 2292 vertices by position gives 630 distinct positions, 1809 edges used twice, 1791 of those with identical UV at both sides, and 18 true UV seams. This matches the handoff exactly, so my reader now agrees with it.",
+  "invalid_metric_noted": "I also computed a colour difference across shared edges and it got worse after the fix, but the handoff explains that this metric cannot judge seam continuity: two sides of a seam legitimately carry different UVs. That metric is discarded, not used as evidence."
+ },
+ "renders_produced": [
+  "fixed_head_front.png",
+  "fixed_head_back.png"
+ ]
+}
